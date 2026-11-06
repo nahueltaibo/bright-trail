@@ -49,6 +49,13 @@ export default function ProfilePickerScreen() {
             <Text style={styles.devText}>Dev: add sample kids</Text>
           </Pressable>
         )}
+        {__DEV__ && (
+          <Link href="/dev/learning" asChild>
+            <Pressable accessibilityRole="button" style={styles.devButton}>
+              <Text style={styles.devText}>Dev: learning preview</Text>
+            </Pressable>
+          </Link>
+        )}
       </View>
     </SafeAreaView>
   );
