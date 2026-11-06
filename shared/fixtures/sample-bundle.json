@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "version": "sample-1",
+  "generatedAt": "2026-11-06T12:00:00Z",
+  "skills": [
+    {
+      "id": "k-count-to-20",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.8"],
+      "title": "Count to 20",
+      "description": "Count out loud all the way to 20, one number at a time.",
+      "prerequisiteIds": []
+    },
+    {
+      "id": "g1-numbers-to-50",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B1.1", "B1.5"],
+      "title": "Numbers to 50",
+      "description": "Read, count, and show numbers up to 50.",
+      "prerequisiteIds": ["k-count-to-20"]
+    },
+    {
+      "id": "g1-add-within-10",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B2.2"],
+      "title": "Adding to 10",
+      "description": "Put two small groups together and find how many there are.",
+      "prerequisiteIds": ["g1-numbers-to-50"]
+    }
+  ],
+  "nuggets": [
+    {
+      "id": "k-count-to-20-story",
+      "skillId": "k-count-to-20",
+      "cards": [
+        {
+          "narration": "Pip the penguin loves to count fish.",
+          "visual": { "kind": "emoji", "emoji": "🐧" }
+        },
+        {
+          "narration": "Here are five fish. One, two, three, four, five.",
+          "text": "5",
+          "visual": { "kind": "objects", "emoji": "🐟", "count": 5 }
+        },
+        {
+          "narration": "Five more fish swim by. Six, seven, eight, nine, ten.",
+          "text": "10",
+          "visual": { "kind": "objects", "emoji": "🐟", "count": 10 }
+        },
+        {
+          "narration": "Pip keeps counting. Eleven, twelve, all the way to twenty!",
+          "text": "20",
+          "visual": { "kind": "objects", "emoji": "🐟", "count": 20 }
+        },
+        {
+          "narration": "Every new number means one more fish. Now you count with Pip!",
+          "visual": { "kind": "emoji", "emoji": "🎉" }
+        }
+      ]
+    },
+    {
+      "id": "g1-numbers-to-50-story",
+      "skillId": "g1-numbers-to-50",
+      "cards": [
+        {
+          "narration": "Maya is collecting shells at the beach.",
+          "visual": { "kind": "emoji", "emoji": "🐚" }
+        },
+        {
+          "narration": "She puts ten shells in each bucket so they are easy to count.",
+          "visual": { "kind": "ten-frame", "filled": 10 }
+        },
+        {
+          "narration": "Two full buckets is twenty. Three full buckets is thirty.",
+          "text": "10, 20, 30"
+        },
+        {
+          "narration": "Four full buckets and three more shells. Forty, forty-one, forty-two, forty-three.",
+          "text": "43"
+        },
+        {
+          "narration": "Counting by tens first makes big numbers quick to count.",
+          "text": "10, 20, 30, 40, 50"
+        },
+        {
+          "narration": "Maya has fifty shells. Great counting!",
+          "text": "50",
+          "visual": { "kind": "emoji", "emoji": "🏖️" }
+        }
+      ]
+    },
+    {
+      "id": "g1-add-within-10-story",
+      "skillId": "g1-add-within-10",
+      "cards": [
+        {
+          "narration": "Leo has three apples.",
+          "visual": { "kind": "objects", "emoji": "🍎", "count": 3 }
+        },
+        {
+          "narration": "His friend gives him two more apples.",
+          "visual": { "kind": "objects", "emoji": "🍎", "count": 2 }
+        },
+        {
+          "narration": "Put them together and count them all. One, two, three, four, five.",
+          "visual": { "kind": "objects", "emoji": "🍎", "count": 5 }
+        },
+        {
+          "narration": "Three plus two makes five.",
+          "text": "3 + 2 = 5"
+        },
+        {
+          "narration": "You can also start at three and count on. Four, five!",
+          "text": "3 … 4, 5"
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "k-count-to-20-tap-1",
+      "skillId": "k-count-to-20",
+      "type": "tap",
+      "difficulty": 1,
+      "narration": "How many fish are there? Seven, eight, or six?",
+      "prompt": "How many fish?",
+      "visual": { "kind": "objects", "emoji": "🐟", "count": 7 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 7 },
+        { "id": "b", "kind": "number", "value": 8 },
+        { "id": "c", "kind": "number", "value": 6 }
+      ],
+      "answerChoiceId": "a",
+      "why": "Touch each fish once as you count: one, two, three, four, five, six, seven."
+    },
+    {
+      "id": "k-count-to-20-keypad-1",
+      "skillId": "k-count-to-20",
+      "type": "keypad",
+      "difficulty": 2,
+      "narration": "What number comes after fourteen?",
+      "prompt": "14, ?",
+      "answer": 15,
+      "why": "Counting on from fourteen, the next number is fifteen."
+    },
+    {
+      "id": "k-count-to-20-line-1",
+      "skillId": "k-count-to-20",
+      "type": "number-line",
+      "difficulty": 2,
+      "narration": "Drag the frog to twelve.",
+      "prompt": "Find 12",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "target": 12,
+      "why": "Twelve is two jumps past ten."
+    },
+    {
+      "id": "g1-numbers-to-50-tap-1",
+      "skillId": "g1-numbers-to-50",
+      "type": "tap",
+      "difficulty": 1,
+      "narration": "Which one shows thirty-four? Thirty-four, forty-three, or three hundred four?",
+      "prompt": "Which is thirty-four?",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "43" },
+        { "id": "b", "kind": "text", "text": "34" },
+        { "id": "c", "kind": "text", "text": "304" }
+      ],
+      "answerChoiceId": "b",
+      "why": "Thirty-four is three tens and four ones, so it is written 34."
+    },
+    {
+      "id": "g1-numbers-to-50-keypad-1",
+      "skillId": "g1-numbers-to-50",
+      "type": "keypad",
+      "difficulty": 2,
+      "narration": "Count by tens. Ten, twenty, thirty, forty. What comes next?",
+      "prompt": "10, 20, 30, 40, ?",
+      "answer": 50,
+      "why": "Counting by tens, forty is followed by fifty."
+    },
+    {
+      "id": "g1-numbers-to-50-line-1",
+      "skillId": "g1-numbers-to-50",
+      "type": "number-line",
+      "difficulty": 3,
+      "narration": "Drag the frog to thirty-five.",
+      "prompt": "Find 35",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "target": 35,
+      "why": "Thirty-five is halfway between thirty and forty."
+    },
+    {
+      "id": "g1-add-within-10-tap-1",
+      "skillId": "g1-add-within-10",
+      "type": "tap",
+      "difficulty": 1,
+      "narration": "Four apples and two apples. Which picture shows how many in all?",
+      "prompt": "4 + 2",
+      "choices": [
+        {
+          "id": "a",
+          "kind": "visual",
+          "visual": { "kind": "objects", "emoji": "🍎", "count": 5 },
+          "narration": "Five apples"
+        },
+        {
+          "id": "b",
+          "kind": "visual",
+          "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
+          "narration": "Six apples"
+        }
+      ],
+      "answerChoiceId": "b",
+      "why": "Start at four and count on two more: five, six."
+    },
+    {
+      "id": "g1-add-within-10-keypad-1",
+      "skillId": "g1-add-within-10",
+      "type": "keypad",
+      "difficulty": 2,
+      "narration": "What is five plus three?",
+      "prompt": "5 + 3 = ?",
+      "visual": { "kind": "ten-frame", "filled": 5 },
+      "answer": 8,
+      "why": "Start at five and count on three: six, seven, eight."
+    },
+    {
+      "id": "g1-add-within-10-line-1",
+      "skillId": "g1-add-within-10",
+      "type": "number-line",
+      "difficulty": 2,
+      "narration": "Start at six and jump three more. Drag the frog to where you land.",
+      "prompt": "6 + 3",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 9,
+      "why": "From six, three jumps land on nine."
+    }
+  ]
+}
