@@ -17,6 +17,7 @@
     "typecheck": "npm run typecheck --workspaces --if-present",
     "app:start": "npm run start -w @bright-trail/app",
     "content:validate": "npm run validate -w @bright-trail/content",
+    "content:graph": "npm run graph -w @bright-trail/content",
     "build": "npm run build --workspaces --if-present"
   },
   "devDependencies": {
