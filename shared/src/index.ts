@@ -2,6 +2,7 @@ export * from './attempt';
 export * from './bundle';
 export * from './child';
 export * from './common';
+export * from './engine';
 export * from './grade';
 export * from './item';
 export * from './mastery';
