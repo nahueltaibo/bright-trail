@@ -37,7 +37,7 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
   const usable = Math.max(0, width - pad * 2);
   const xOf = (i: number) => pad + (i / n) * usable;
   const lineY = markerSize + 16;
-  const height = lineY + 64 * scale;
+  const height = lineY + 96 * scale;
   const locked = !!outcome;
 
   const placeAt = (x: number) => {
@@ -116,7 +116,7 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
               accessibilityLabel={`The answer is ${formatNumber(item.target)}`}
               style={[
                 styles.target,
-                { left: xOf(targetIndex) - 26 * scale, top: lineY + 12, width: 52 * scale },
+                { left: xOf(targetIndex) - 26 * scale, top: lineY + 48 * scale, width: 52 * scale },
               ]}
             >
               <Text style={[styles.targetText, { fontSize: 20 * scale }]}>
@@ -154,7 +154,8 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
 }
 
 const styles = StyleSheet.create({
-  track: { alignSelf: 'stretch' },
+  // No text selection on web while dragging.
+  track: { alignSelf: 'stretch', userSelect: 'none' },
   noTouch: { pointerEvents: 'none' },
   line: { position: 'absolute', height: 6, borderRadius: 3, backgroundColor: colors.ink },
   tick: { position: 'absolute', width: 3, backgroundColor: colors.ink },

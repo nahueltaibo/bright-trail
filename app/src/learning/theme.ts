@@ -16,6 +16,9 @@ export const colors = {
   dot: '#FF8A65',
 };
 
+/** Width share of the answer pane in landscape. The question side needs less. */
+export const ANSWER_PANE_SHARE = 0.55;
+
 /** Smallest tap target, in points. */
 export const MIN_TAP = 64;
 

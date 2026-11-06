@@ -2,7 +2,14 @@ import type { Visual } from '@bright-trail/shared';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { BigButton, FlagButton, ReplayButton, TopBar } from './controls';
-import { colors, CORRECT_TEXT, fontSizeFor, MISS_TEXT, useLayout } from './theme';
+import {
+  ANSWER_PANE_SHARE,
+  colors,
+  CORRECT_TEXT,
+  fontSizeFor,
+  MISS_TEXT,
+  useLayout,
+} from './theme';
 import type { AnswerResult, ItemViewProps } from './types';
 import { FitVisual } from './VisualView';
 
@@ -163,8 +170,8 @@ export function ItemFrame({
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.background },
   row: { flexDirection: 'row' },
-  pane: { flex: 1 },
-  answerPane: { justifyContent: 'center', paddingVertical: 8 },
+  pane: { flex: 1 - ANSWER_PANE_SHARE },
+  answerPane: { flex: ANSWER_PANE_SHARE, justifyContent: 'center', paddingVertical: 8 },
   question: {
     flex: 1,
     alignItems: 'center',
@@ -173,7 +180,8 @@ const styles = StyleSheet.create({
     gap: 8,
   },
   prompt: { color: colors.ink, fontWeight: '700', textAlign: 'center' },
-  answer: { flexShrink: 1, padding: 12, justifyContent: 'center' },
+  // The question gives way first: answer controls must keep their full tap size.
+  answer: { flexShrink: 0, padding: 12, justifyContent: 'center' },
   feedback: {
     flexDirection: 'row',
     alignItems: 'center',
