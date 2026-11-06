@@ -1,6 +1,11 @@
 import { fireEvent, render, screen } from '@testing-library/react-native';
-import { SAMPLE_CHILDREN } from '../dev/sampleChildren';
+import type { ChildProfile } from '@bright-trail/shared';
 import { ProfilePicker } from './ProfilePicker';
+
+const SAMPLE_CHILDREN: ChildProfile[] = [
+  { id: 'maya', firstName: 'Maya', birthdate: '2020-03-14', avatar: 'fox', readingMode: false },
+  { id: 'leo', firstName: 'Leo', birthdate: '2016-07-02', avatar: 'owl', readingMode: true },
+];
 
 describe('ProfilePicker', () => {
   it('shows one avatar button per child and reports the one tapped', async () => {

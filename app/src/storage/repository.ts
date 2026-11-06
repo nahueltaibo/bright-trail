@@ -1,15 +1,17 @@
 import {
   AttemptSchema,
   ChildProfileSchema,
+  IsoDateTimeSchema,
   MasteryStateSchema,
+  WalkBackSchema,
   type Attempt,
   type ChildProfile,
   type MasteryState,
+  type WalkBack,
 } from '@bright-trail/shared';
 import type { SqlDatabase } from './db';
 import { ContentFlagSchema, type ContentFlag, type StoredContentFlag } from './flag';
 import { migrate } from './migrations';
-import { WalkBackSchema, type WalkBack } from './walkBack';
 
 type ChildRow = {
   id: string;
@@ -53,6 +55,7 @@ type FlagRow = {
   card_index: number | null;
   bundle_version: string;
   created_at: string;
+  resolved_at: string | null;
 };
 
 const toChild = (r: ChildRow): ChildProfile =>
@@ -103,6 +106,7 @@ const toFlag = (r: FlagRow): StoredContentFlag => ({
     bundleVersion: r.bundle_version,
     createdAt: r.created_at,
   }),
+  resolvedAt: r.resolved_at === null ? null : IsoDateTimeSchema.parse(r.resolved_at),
 });
 
 const ATTEMPT_COLUMNS = `child_id, skill_id, item_id, answer, correct, time_to_answer_ms,
@@ -255,17 +259,46 @@ export function createRepository(db: SqlDatabase) {
         [f.childId, f.contentKind, f.contentId, f.cardIndex, f.bundleVersion, f.createdAt],
       );
     },
-    /** Newest first. */
-    async list(): Promise<StoredContentFlag[]> {
-      const rows = await db.getAllAsync<FlagRow>('SELECT * FROM flags ORDER BY id DESC', []);
+    /** Newest first. Resolved flags are left out unless asked for. */
+    async list({ includeResolved = true } = {}): Promise<StoredContentFlag[]> {
+      const where = includeResolved ? '' : 'WHERE resolved_at IS NULL';
+      const rows = await db.getAllAsync<FlagRow>(
+        `SELECT * FROM flags ${where} ORDER BY id DESC`,
+        [],
+      );
       return rows.map(toFlag);
+    },
+    /** Marks a flag handled. It stays in the table and the export. */
+    async resolve(id: number, resolvedAt: string): Promise<void> {
+      IsoDateTimeSchema.parse(resolvedAt);
+      await db.runAsync('UPDATE flags SET resolved_at = ? WHERE id = ?', [resolvedAt, id]);
+    },
+    /** Puts a resolved flag back on the open list. */
+    async reopen(id: number): Promise<void> {
+      await db.runAsync('UPDATE flags SET resolved_at = NULL WHERE id = ?', [id]);
     },
     async remove(id: number): Promise<void> {
       await db.runAsync('DELETE FROM flags WHERE id = ?', [id]);
     },
   };
 
-  return { children, mastery, walkBack, attempts, flags };
+  const settings = {
+    async get(key: string): Promise<string | null> {
+      const row = await db.getFirstAsync<{ value: string }>(
+        'SELECT value FROM settings WHERE key = ?',
+        [key],
+      );
+      return row?.value ?? null;
+    },
+    async set(key: string, value: string): Promise<void> {
+      await db.runAsync('INSERT OR REPLACE INTO settings (key, value) VALUES (?, ?)', [key, value]);
+    },
+    async remove(key: string): Promise<void> {
+      await db.runAsync('DELETE FROM settings WHERE key = ?', [key]);
+    },
+  };
+
+  return { children, mastery, walkBack, attempts, flags, settings };
 }
 
 export type Repository = ReturnType<typeof createRepository>;
