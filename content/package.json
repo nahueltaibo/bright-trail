@@ -5,10 +5,16 @@
   "type": "module",
   "scripts": {
     "validate": "tsx src/validate.ts",
+    "graph": "tsx src/graph/build-graph.ts",
     "test": "vitest run",
     "typecheck": "tsc -p ."
   },
   "dependencies": {
-    "@bright-trail/shared": "*"
+    "@anthropic-ai/sdk": "^1.6.0",
+    "@bright-trail/shared": "*",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "prettier": "^3.9.10"
   }
 }
