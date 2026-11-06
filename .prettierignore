@@ -6,3 +6,6 @@ web-build/
 .docs/
 .playwright-mcp/
 *.code-workspace
+
+# Official curriculum text: keep it byte-for-byte as fetched.
+content/sources/
