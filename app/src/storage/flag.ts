@@ -23,4 +23,8 @@ export const ContentFlagSchema = z
 export type ContentFlag = z.infer<typeof ContentFlagSchema>;
 
 /** A stored flag with its row id, so a parent screen can act on it. */
-export type StoredContentFlag = ContentFlag & { id: number };
+export type StoredContentFlag = ContentFlag & {
+  id: number;
+  /** When a parent marked it handled. Null while open. */
+  resolvedAt: string | null;
+};

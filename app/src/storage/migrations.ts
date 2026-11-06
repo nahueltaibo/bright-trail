@@ -55,6 +55,15 @@ export const MIGRATIONS: readonly string[] = [
   `,
   // JSON of the learner engine's walk-back state. Null when no walk-back has run.
   `ALTER TABLE children ADD COLUMN walk_back TEXT;`,
+  // Flags are resolved, not deleted, so the test log keeps every report. `settings` holds
+  // device-wide key-value pairs, such as the parent PIN hash on web.
+  `
+  ALTER TABLE flags ADD COLUMN resolved_at TEXT;
+  CREATE TABLE settings (
+    key TEXT PRIMARY KEY NOT NULL,
+    value TEXT NOT NULL
+  );
+  `,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;

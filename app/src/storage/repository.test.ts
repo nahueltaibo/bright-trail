@@ -241,10 +241,37 @@ describe('repository', () => {
       await repo.flags.add(itemFlag);
 
       const flags = await repo.flags.list();
-      expect(flags.map(({ id, ...flag }) => flag)).toEqual([itemFlag, cardFlag]);
+      expect(flags.map(({ id, ...flag }) => flag)).toEqual([
+        { ...itemFlag, resolvedAt: null },
+        { ...cardFlag, resolvedAt: null },
+      ]);
 
       await repo.flags.remove(flags[0].id);
       expect((await repo.flags.list()).map((f) => f.contentKind)).toEqual(['card']);
+    });
+
+    it('resolves a flag without deleting it, and can reopen it', async () => {
+      await repo.children.save(maya);
+      await repo.flags.add(cardFlag);
+      const [{ id }] = await repo.flags.list();
+
+      await repo.flags.resolve(id, '2026-11-07T09:00:00Z');
+      expect(await repo.flags.list()).toEqual([
+        { id, ...cardFlag, resolvedAt: '2026-11-07T09:00:00Z' },
+      ]);
+      expect(await repo.flags.list({ includeResolved: false })).toEqual([]);
+
+      await repo.flags.reopen(id);
+      expect(await repo.flags.list({ includeResolved: false })).toEqual([
+        { id, ...cardFlag, resolvedAt: null },
+      ]);
+    });
+
+    it('rejects a resolve time that is not an ISO date-time', async () => {
+      await repo.children.save(maya);
+      await repo.flags.add(cardFlag);
+      const [{ id }] = await repo.flags.list();
+      await expect(repo.flags.resolve(id, 'yesterday')).rejects.toThrow();
     });
 
     it('requires a card index for cards only', async () => {
@@ -253,6 +280,18 @@ describe('repository', () => {
         repo.flags.add({ ...cardFlag, contentKind: 'item', childId: null }),
       ).rejects.toThrow(/cardIndex/);
     });
+  });
+});
+
+describe('settings', () => {
+  it('stores, replaces, and removes a value by key', async () => {
+    const repo = await openRepository(openNodeSqliteDatabase(':memory:'));
+    expect(await repo.settings.get('pin')).toBeNull();
+    await repo.settings.set('pin', 'a');
+    await repo.settings.set('pin', 'b');
+    expect(await repo.settings.get('pin')).toBe('b');
+    await repo.settings.remove('pin');
+    expect(await repo.settings.get('pin')).toBeNull();
   });
 });
 
@@ -282,7 +321,7 @@ describe('storage across an app restart', () => {
         attempt(),
         attempt({ childId: 'leo', answer: 'choice-a' }),
       ]);
-      expect(await second.flags.list()).toEqual([{ id: 1, ...cardFlag }]);
+      expect(await second.flags.list()).toEqual([{ id: 1, ...cardFlag, resolvedAt: null }]);
       expect(await second.walkBack.get('maya')).toEqual({
         probes: ['k-count-to-20'],
         targets: ['g1-add-within-10'],
