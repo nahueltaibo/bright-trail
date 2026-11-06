@@ -1,0 +1,99 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "k-count-to-20",
+        "title": "Count to 20 by 1s",
+        "description": "Count out loud, 1, 2, 3, all the way to 20. You can start at any number, like 7, 8, 9!",
+        "expectationCodes": ["A6.8"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "k-uses-of-numbers",
+        "title": "What numbers are used for",
+        "description": "Numbers tell us how many, which one is first or second, and names like player number 24. Pick how the number is being used.",
+        "expectationCodes": ["A6.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "k-subitize-5",
+        "title": "See 1 to 5 at a glance",
+        "description": "Look quickly at some dots and tell how many there are, without counting one by one.",
+        "expectationCodes": ["A6.4"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "k-read-write-numbers-20",
+        "title": "Read and write numbers to 20",
+        "description": "Match numerals from 0 to 20 to groups of things, and type the number you see.",
+        "expectationCodes": ["A6.3"],
+        "prerequisiteIds": ["k-count-to-20"]
+      },
+      {
+        "id": "k-count-forward-back",
+        "title": "Counting up and counting down",
+        "description": "When we count forward the number gets bigger. When we count back it gets smaller.",
+        "expectationCodes": ["A6.2"],
+        "prerequisiteIds": ["k-count-to-20"]
+      },
+      {
+        "id": "k-more-less-same",
+        "title": "More, less, or the same",
+        "description": "Look at two groups and tell which has more, which has less, or if they are the same.",
+        "expectationCodes": ["A6.6"],
+        "prerequisiteIds": ["k-count-to-20"]
+      },
+      {
+        "id": "k-compare-numbers-20",
+        "title": "Compare numbers from 0 to 20",
+        "description": "Tell which of two numbers is greater or less. Find the number that is 1 or 2 more, or 1 or 2 less.",
+        "expectationCodes": ["A6.10"],
+        "prerequisiteIds": ["k-read-write-numbers-20", "k-more-less-same", "k-count-forward-back"]
+      },
+      {
+        "id": "k-estimate-and-count",
+        "title": "Estimate, then count to check",
+        "description": "Make a smart guess about how many things there are, like closer to 5 or 10. Then count to check.",
+        "expectationCodes": ["A6.7"],
+        "prerequisiteIds": ["k-count-to-20", "k-subitize-5"]
+      },
+      {
+        "id": "k-make-numbers-to-10",
+        "title": "Break apart and build 10",
+        "description": "Show that a number is made of two smaller parts, like 6 is 4 and 2. Find the missing part.",
+        "expectationCodes": ["A6.5"],
+        "prerequisiteIds": ["k-subitize-5", "k-read-write-numbers-20"]
+      },
+      {
+        "id": "k-add-sub-facts-5",
+        "title": "Add and take away to 5",
+        "description": "Put groups together or take some away when the numbers stay 5 or less. Know answers like 2 and 3 make 5.",
+        "expectationCodes": ["A6.11"],
+        "prerequisiteIds": ["k-make-numbers-to-10"]
+      },
+      {
+        "id": "k-add-sub-stories-10",
+        "title": "Add and subtract stories to 10",
+        "description": "Solve story problems about joining, taking away, parts, and comparing, with answers up to 10. Use counters or fingers to help.",
+        "expectationCodes": ["A6.12"],
+        "prerequisiteIds": ["k-add-sub-facts-5"]
+      },
+      {
+        "id": "k-equal-share",
+        "title": "Share equally",
+        "description": "Share things so every friend gets the same amount. Tell how many each friend gets.",
+        "expectationCodes": ["A6.9"],
+        "prerequisiteIds": ["k-more-less-same"]
+      },
+      {
+        "id": "k-coins-and-bills",
+        "title": "Coins and bills",
+        "description": "Name Canadian coins and bills. Tell how much each is worth, up to 25¢ for coins and $10 for bills.",
+        "expectationCodes": ["A6.13"],
+        "prerequisiteIds": ["k-read-write-numbers-20"]
+      }
+    ]
+  }
+}

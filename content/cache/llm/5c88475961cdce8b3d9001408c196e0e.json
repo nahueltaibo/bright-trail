@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g3-fair-share-20",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-division-sharing"],
+        "title": "",
+        "description": "",
+        "reason": "g2-fair-share-fractions is redundant here. g2-division-sharing already lists g2-fair-share-fractions as a prerequisite, so the dependency is covered through it. The rule requires removing a prerequisite that another listed prerequisite already depends on."
+      },
+      {
+        "skillId": "g3-arrays-multiply-divide",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-division-sharing"],
+        "title": "",
+        "description": "",
+        "reason": "g2-equal-groups-multiply is redundant here. g2-division-sharing already lists g2-equal-groups-multiply as a prerequisite, so the dependency is covered through it."
+      },
+      {
+        "skillId": "g3-add-sub-algorithms",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-place-value", "g2-mental-math-50"],
+        "title": "",
+        "description": "",
+        "reason": "g2-add-sub-problems-100 is not needed to learn the column algorithm. The stories skill is about word problems, and a kid can learn column addition without them. The algorithm does need two-digit regrouping (making tens, taking away in parts), which g2-mental-math-50 teaches directly. That skill is not in this skill's ancestry, so it should be listed."
+      }
+    ],
+    "notes": "Reviewed all 16 proposed Grade 3 skills. Prerequisites all point to earlier grades or earlier Grade 3 skills, with no self-references or forward links. Titles and descriptions read clearly aloud and match their expectations. Three prerequisite lists needed correction. Two were redundant transitive links (g2-fair-share-fractions and g2-equal-groups-multiply), and one was a non-needed stories prerequisite with a missing two-digit regrouping prerequisite. Left as is but worth a look: g3-mult-div-properties uses 4 × 5 in its example before the 5s facts skill, which is a teaching-sequence concern rather than a graph error. g3-mental-math-1000 lists g3-round-numbers, which is defensible because estimation by rounding is part of its description."
+  }
+}

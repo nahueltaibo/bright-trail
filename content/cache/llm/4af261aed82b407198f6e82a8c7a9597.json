@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g6-add-sub-unlike-fractions",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g5-add-sub-like-fractions", "g5-equivalent-fractions"],
+        "title": "",
+        "description": "",
+        "reason": "Adding or subtracting fractions with different bottom numbers, like 1/2 + 3/4, first requires rewriting one or both fractions with a common denominator (1/2 = 2/4). That is the equivalent-fractions skill, g5-equivalent-fractions, which is not reachable through any other listed prerequisite here, so it is a missing direct prerequisite. g5-add-sub-like-fractions is kept because adding same-size pieces is needed once the denominators match."
+      }
+    ],
+    "notes": "Reviewed all 25 proposed Grade 6 skills against the Grade 5 and earlier skills and the Grade 6 expectations. Only one correction: g6-add-sub-unlike-fractions is missing g5-equivalent-fractions, which is needed to make denominators match. The other prerequisite lists are direct, point only to earlier grades, and have no redundant entries. Titles and descriptions read clearly aloud and match their expectations. Two lists were borderline but left unchanged: g6-integers lists g5-compare-order-100000, which is a weak link, and g6-multiply-by-tenths lists g5-multiply-two-by-two-digit, which is needed for the area-model method named in its description. A reviewer who wants stricter pruning could revisit these."
+  }
+}
