@@ -1,0 +1,99 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g2-whole-numbers-200",
+        "title": "Read and build numbers to 200",
+        "description": "Read, write, and build numbers up to 200 with hundreds, tens, and ones. Break numbers apart in different ways, like 124 is 100 and 24, or 12 tens and 4 ones.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g1-compose-decompose-50"]
+      },
+      {
+        "id": "g2-compare-order-200",
+        "title": "Compare and order to 200",
+        "description": "Tell which number is greater or less, up to 200. Put numbers in order from least to greatest or greatest to least.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g1-compare-order-50", "g2-whole-numbers-200"]
+      },
+      {
+        "id": "g2-count-200",
+        "title": "Count to 200 by 20s, 25s, 50s",
+        "description": "Count out loud to 200 by 1s, 20s, 25s, and 50s. Start at any number, and use coins, bills, or a number line to help.",
+        "expectationCodes": ["B1.4"],
+        "prerequisiteIds": ["g1-count-50"]
+      },
+      {
+        "id": "g2-estimate-200",
+        "title": "Estimate up to 200, then count",
+        "description": "Make a smart guess about how many things are in a big group, up to 200. Count a small bunch first, then count to check.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g1-estimate-50", "g2-count-200"]
+      },
+      {
+        "id": "g2-even-odd",
+        "title": "Even and odd numbers",
+        "description": "An even number can be split into pairs with none left over. An odd number always has one left over.",
+        "expectationCodes": ["B1.5"],
+        "prerequisiteIds": ["g1-equal-groups", "g2-whole-numbers-200"]
+      },
+      {
+        "id": "g2-fair-share-fractions",
+        "title": "Fair shares with thirds and sixths",
+        "description": "Draw a picture to share up to 10 things equally with 2, 3, 4, or 6 friends. Say how much each friend gets, like 3 and one third.",
+        "expectationCodes": ["B1.6"],
+        "prerequisiteIds": ["g1-compare-unit-fractions"]
+      },
+      {
+        "id": "g2-third-equals-two-sixths",
+        "title": "One third equals two sixths",
+        "description": "Share the same whole in thirds or in sixths. See that one third is the same amount as two sixths.",
+        "expectationCodes": ["B1.7"],
+        "prerequisiteIds": ["g2-fair-share-fractions"]
+      },
+      {
+        "id": "g2-add-sub-properties",
+        "title": "Adding and subtracting rules and checks",
+        "description": "Adding in any order gives the same answer, and zero changes nothing. Use adding to check taking away, and use equal jumps to see how adding links to multiplying.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g1-add-sub-properties", "g1-equal-groups"]
+      },
+      {
+        "id": "g2-add-sub-facts-20",
+        "title": "Add and subtract facts to 20",
+        "description": "Know adding facts with totals up to 20, like 9 + 9 = 18, and the take-away facts that go with them. Use doubles and making 10 to help.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g1-mental-math-20", "g1-add-sub-properties"]
+      },
+      {
+        "id": "g2-mental-math-50",
+        "title": "Add and subtract in your head to 50",
+        "description": "Add and subtract in your head with answers up to 50. Try counting on, making 10s, or taking away in parts, and tell how you did it.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g2-add-sub-facts-20", "g1-compose-decompose-50"]
+      },
+      {
+        "id": "g2-add-sub-problems-100",
+        "title": "Add and subtract stories to 100",
+        "description": "Use objects, drawings, and equations to solve stories about joining, taking away, and comparing, up to 100. Find the missing number, wherever it hides.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g1-add-sub-problems-50", "g2-whole-numbers-200"]
+      },
+      {
+        "id": "g2-equal-groups-multiply",
+        "title": "Equal groups and repeated adding",
+        "description": "Find how many in all when there are equal groups, like 4 groups of 5. Groups of one half and one fourth count too.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g1-equal-groups", "g2-count-200"]
+      },
+      {
+        "id": "g2-division-sharing",
+        "title": "Share up to 12 equally",
+        "description": "Share up to 12 things equally. Find how many in each group, or how many groups you can make.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g2-equal-groups-multiply", "g1-fair-share-drawings"]
+      }
+    ]
+  }
+}

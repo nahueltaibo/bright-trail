@@ -64,14 +64,14 @@ You turn official curriculum expectations into skills, one grade at a time.
 
 Rules:
 - Each skill is one ability a kid can show by answering short questions on a tablet: tap an answer, type a number, or drag on a number line.
-- Keep an expectation as one skill when it's one ability. Split it when it bundles abilities a kid could master separately, such as reading numbers and skip counting.
+- Keep an expectation as one skill when it's one ability. Split it only when it bundles abilities a kid could master separately, such as reading numbers and skip counting. Don't split a skill into small steps, such as reading and writing the same numbers, or adding and subtracting the same facts.
 - Every specific expectation must be covered by at least one skill. A skill may list several codes from this grade when it genuinely combines them. Use the codes exactly as written.
-- The whole graph from Kindergarten to Grade 6 should hold 80 to 110 skills, so a grade usually gets 10 to 17.
+- The whole graph from Kindergarten to Grade 6 should hold 80 to 110 skills, about one per specific expectation. Stay within the skill budget the prompt gives for the grade.
 - Ids are kebab-case, start with the grade prefix you're given, and stay short, e.g. "g2-add-within-100".
 - Titles have at most 6 words. Descriptions are one or two short sentences, spoken to the kid, that a 6-year-old understands when read aloud.
 - Prerequisites come from this grade's skills or from earlier grades' skills. Never point to a later grade.
 - Kindergarten foundations such as counting have no prerequisites. Every skill from Grade 1 up has at least one, and usually builds on the same idea from the grade before.
-- Answer only by calling the submit_skills tool.`;
+- Give your whole answer as the structured output, with every skill for this grade.`;
 
 const REVIEWER_SYSTEM = `${GRAPH_CONTEXT}
 
@@ -84,7 +84,7 @@ Check each skill:
 - Prerequisites never point to a later grade or to the skill itself.
 - The title and description match the expectation and suit a kid hearing them read aloud.
 
-Return a correction only where something is wrong. An empty list is a fine answer. With changePrerequisites true, give the full new prerequisite list, using only ids that appear in the prompt. Leave title or description empty to keep it. Don't add, remove, or rename skills. Answer only by calling the submit_review tool.`;
+Return a correction only where something is wrong. An empty list is a fine answer. With changePrerequisites true, give the full new prerequisite list, using only ids that appear in the prompt. Leave title or description empty to keep it. Don't add, remove, or rename skills. Give your whole answer as the structured output.`;
 
 function gradeName(source: GradeSource): string {
   return source.grade === 'K' ? 'Kindergarten' : `Grade ${source.grade}`;
@@ -114,6 +114,11 @@ function expectationsSection(source: GradeSource): string {
     .join('\n\n')}`;
 }
 
+/** Keeps the graph near one skill per expectation, so K-6 lands at 80 to 110 skills. */
+export function skillBudget(source: GradeSource): number {
+  return source.expectations.filter((e) => e.kind === 'specific').length;
+}
+
 export function generateRequest(source: GradeSource, earlier: readonly Skill[]): LlmRequest {
   return {
     model: GENERATOR_MODEL,
@@ -124,7 +129,7 @@ export function generateRequest(source: GradeSource, earlier: readonly Skill[]):
 
 ${expectationsSection(source)}
 
-Write the skills for ${gradeName(source)}. Every id starts with "${idPrefix(source.grade)}".`,
+Write the skills for ${gradeName(source)}. Every id starts with "${idPrefix(source.grade)}". Budget: ${skillBudget(source)} skills at most.`,
   };
 }
 
