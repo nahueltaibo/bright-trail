@@ -17,7 +17,7 @@
   }
   :root[data-theme="dark"] {
     --bg: #15171a; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2c3036;
-    --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;scripts/remove-worktree-folders.ps1. ai-toolbox.worktrees
+    --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;
   }
   * { box-sizing: border-box; }
   body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
@@ -37,12 +37,20 @@
   .note { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 6px; margin: 16px 0; }
   .risk { background: var(--warn-soft); border-left: 4px solid var(--warn); padding: 10px 14px; border-radius: 6px; margin: 16px 0; }
   code { background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .diagram { position: relative; cursor: zoom-in; }
+  .diagram .expand { position: absolute; top: 8px; right: 8px; font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--card); color: var(--fg); cursor: pointer; }
+  dialog.lightbox { width: 96vw; height: 92vh; max-width: none; max-height: none; padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--fg); }
+  dialog.lightbox::backdrop { background: rgba(0,0,0,.6); }
+  .lightbox .bar { position: sticky; top: 0; display: flex; gap: 6px; justify-content: flex-end; padding: 8px; background: var(--card); border-bottom: 1px solid var(--line); z-index: 1; }
+  .lightbox .bar button { font: inherit; min-width: 40px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+  .lightbox .stage { overflow: auto; height: calc(100% - 50px); padding: 16px; }
+  .lightbox .stage svg { display: block; margin: 0 auto; max-width: none !important; height: auto; }
 </style>
 </head>
 <body>
 <main>
 <h1>BrightTrail — Product Requirements</h1>
-<p class="sub">AI-assisted learning for kids · Draft v0.2 · 2026-11-06 · No code yet</p>
+<p class="sub">AI-assisted learning for kids · Draft v0.4 · 2026-11-06 · No code yet</p>
 
 <nav>
 <ol>
@@ -57,12 +65,12 @@
   <li><a href="#safety">Safety, privacy, compliance</a></li>
   <li><a href="#nfr">Non-functional requirements</a></li>
   <li><a href="#mvp">MVP scope and phases</a></li>
-  <li><a href="#open">Open questions and risks</a></li>
+  <li><a href="#open">Decisions and risks</a></li>
 </ol>
 </nav>
 
 <h2 id="vision">1. Vision and principles</h2>
-<p>Help a child reach the official standard for their grade and location. Find what they don't know yet, teach it with short, fun content, then confirm they mastered it. For some kids this closes a few gaps; for others it is the whole curriculum.</p>
+<p>Help a child reach the official standard for their grade. We start with the Ontario curriculum only. Find what they don't know yet, teach it with short, fun content, then confirm they mastered it. For some kids this closes a few gaps; for others it is the whole curriculum.</p>
 <ul>
   <li><strong>Works with or without a school.</strong> In remote or under-resourced areas BrightTrail may be the only source of learning. It must teach every skill of a grade from scratch, not only patch gaps.</li>
   <li><strong>Curriculum-grounded.</strong> Every exercise maps to a real expectation (e.g. Ontario Grade 3 Math, strand B1.2).</li>
@@ -75,13 +83,12 @@
 <p>Proposed vocabulary. Your "learning nugget" idea is kept as the unit of teaching.</p>
 <table>
   <tr><th>Concept</th><th>What it is</th></tr>
-  <tr><td><strong>Learner</strong></td><td>Child profile: first name, grade (age as fallback), city, interests, language, reading level.</td></tr>
-  <tr><td><strong>Jurisdiction</strong></td><td>Who sets the standard. City → province/state → curriculum framework (Toronto → Ontario).</td></tr>
-  <tr><td><strong>Framework</strong></td><td>The official curriculum, e.g. Ontario Mathematics 2020. Versioned.</td></tr>
+  <tr><td><strong>Learner</strong></td><td>Child profile: first name, birthdate, city, interests, language, reading level. Grade is derived from birthdate.</td></tr>
+  <tr><td><strong>Framework</strong></td><td>The official curriculum, e.g. Ontario Mathematics 2020. Versioned. Ontario only for now.</td></tr>
   <tr><td><strong>Subject → Strand</strong></td><td>Math → Number. Language → Reading. Mirrors the official document.</td></tr>
   <tr><td><strong>Skill</strong></td><td>One testable expectation. Our atomic unit. Has a grade, prerequisites, and difficulty.</td></tr>
-  <tr><td><strong>Skill graph</strong></td><td>Skills linked by prerequisites. A Grade 3 gap may trace back to a Grade 2 skill.</td></tr>
-  <tr><td><strong>Mastery state</strong></td><td>Per learner, per skill: unknown, gap, learning, mastered, review due. Includes a probability score.</td></tr>
+  <tr><td><strong>Skill graph</strong></td><td>A tech tree, like in strategy games. A skill unlocks only when its prerequisites are mastered. See <a href="#skillgraph">Skill graph</a>.</td></tr>
+  <tr><td><strong>Mastery state</strong></td><td>Per learner, per skill: unknown, assumed, gap, learning, mastered, review due. Includes a probability score.</td></tr>
   <tr><td><strong>Item</strong></td><td>One question or interaction used to measure a skill. Tagged with skill, difficulty, and misconceptions.</td></tr>
   <tr><td><strong>Learning Nugget</strong></td><td>2–5 minute teaching unit for one skill. Formats: story/text, short video, mini-game, interactive walkthrough.</td></tr>
   <tr><td><strong>Mastery Check</strong></td><td>3–6 game-like items that confirm a skill after a nugget.</td></tr>
@@ -91,8 +98,7 @@
 <div class="diagram"><pre class="mermaid">
 erDiagram
   PARENT ||--o{ LEARNER : owns
-  LEARNER }o--|| JURISDICTION : "lives in"
-  JURISDICTION ||--o{ FRAMEWORK : publishes
+  LEARNER }o--|| FRAMEWORK : follows
   FRAMEWORK ||--o{ SUBJECT : contains
   SUBJECT ||--o{ STRAND : contains
   STRAND ||--o{ SKILL : contains
@@ -112,8 +118,8 @@ erDiagram
 <h2 id="journey">3. Learner journey</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart TD
-  A[Parent creates account<br/>and gives consent] --> B[Child onboarding<br/>name, grade, city, interests]
-  B --> C[Resolve jurisdiction<br/>and framework]
+  A[Parent creates account<br/>and gives consent] --> B[Parent onboarding<br/>child name, birthdate, city, interests]
+  B --> C[Derive grade<br/>mark earlier skills assumed]
   C --> D[Initial assessment<br/>adaptive, game-like, per subject]
   D --> E[Diagnosis<br/>skill map: mastered vs gaps]
   E --> F[Plan quests<br/>prioritize gaps by prerequisites]
@@ -130,8 +136,8 @@ flowchart TD
 
 <h3>Onboarding inputs</h3>
 <ul>
-  <li><strong>Grade, not just age.</strong> Ontario places kids by birth year, so age alone is ambiguous. Ask the parent for grade; derive from age only as a fallback.</li>
-  <li><strong>City</strong> resolves to a jurisdiction. Store the jurisdiction, not precise location.</li>
+  <li><strong>Birthdate, not grade.</strong> Ontario places kids by calendar birth year: a child starts Grade 1 in September of the year they turn 6. Grade = school-year start year − birth year − 5. The parent can correct it for a child held back or skipped ahead.</li>
+  <li><strong>City</strong> confirms the child is in Ontario. Store the city, not a precise location.</li>
   <li><strong>Interests</strong> (dinosaurs, soccer, space) theme the content. They do not change what is taught.</li>
   <li><strong>Subjects to focus on</strong> (optional). The parent or child can pick; otherwise we assess all core subjects.</li>
   <li><strong>Language</strong> of instruction (e.g. English, French immersion).</li>
@@ -141,7 +147,10 @@ flowchart TD
 <p>Each skill moves through these states for each learner.</p>
 <div class="diagram"><pre class="mermaid">
 stateDiagram-v2
-  [*] --> Unknown
+  [*] --> Unknown: skill at or above grade
+  [*] --> Assumed: skill below starting grade
+  Assumed --> Mastered: confirmed by probe or use
+  Assumed --> Gap: probe failed
   Unknown --> Mastered: assessment shows strong
   Unknown --> Gap: assessment shows weak
   Gap --> Learning: nugget started
@@ -165,16 +174,31 @@ flowchart LR
   S[Official sources<br/>Ontario curriculum PDFs and site] --> P[AI extraction<br/>subjects, strands, expectations]
   P --> N[Normalize<br/>one skill per testable expectation]
   N --> R[AI proposes prerequisites<br/>and difficulty]
-  R --> H[Human review<br/>educator sign-off]
+  R --> H[Second-model review<br/>educator sign-off later]
   H --> G[(Skill graph<br/>versioned)]
   G --> X[Item bank seeding]
 </pre></div>
 <ul>
-  <li><strong>Ontario first.</strong> Kindergarten Program, then Grades 1–8: Math, Language, Science and Technology, Social Studies, French.</li>
+  <li><strong>Ontario only.</strong> Kindergarten Program, then Grades 1–8: Math, Language, Science and Technology, Social Studies, French.</li>
   <li><strong>Versioned.</strong> Ontario revises subjects on different years. A learner stays pinned to the version their school uses.</li>
-  <li><strong>Pluggable jurisdictions.</strong> Later: other provinces, US states (Common Core, NGSS, state variants), other countries.</li>
-  <li><strong>Cross-framework mapping</strong> (optional, later): link equivalent skills to reuse content across jurisdictions.</li>
-  <li><strong>Human review is required.</strong> AI-extracted structure must not reach kids unchecked.</li>
+  <li><strong>Reusable nuggets.</strong> Nuggets attach to a skill, not to a framework. Most skills are the same across curricula, so another framework can later map its expectations onto existing skills and reuse their nuggets.</li>
+  <li><strong>AI review first.</strong> A second model checks the extracted structure. Educator review comes later.</li>
+</ul>
+
+<h3 id="skillgraph">Skill graph</h3>
+<p>Skills form a tech tree. A skill unlocks only when all its prerequisites are mastered or assumed.</p>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+  A["Count to 50<br/>Grade 1 · assumed"] --> C["Add within 20<br/>Grade 1 · assumed"]
+  B["Place value tens<br/>Grade 1 · assumed"] --> D["Add 2-digit numbers<br/>Grade 2 · assumed"]
+  C --> D
+  D --> E["Add 3-digit numbers<br/>Grade 3 · learning"]
+  E --> F["Multiply as repeated addition<br/>Grade 3 · locked"]
+</pre></div>
+<ul>
+  <li><strong>Assumed mastery.</strong> A child who starts in Grade 3 gets every earlier skill marked assumed: approved without proof.</li>
+  <li><strong>Walk back on a gap.</strong> When a skill fails, probe its prerequisites. An assumed prerequisite that fails becomes a gap, and the walk continues to its own prerequisites until a mastered skill is found.</li>
+  <li><strong>Confirm by use.</strong> Passing a check on a skill confirms its assumed prerequisites as mastered.</li>
 </ul>
 
 <h2 id="assessment">6. Assessment and diagnosis</h2>
@@ -233,8 +257,9 @@ flowchart LR
 <ul>
   <li><strong>Grounded.</strong> Every prompt includes the skill text, grade, examples, and known misconceptions.</li>
   <li><strong>Verified.</strong> Math answers checked by a deterministic solver. Other subjects checked by a second model pass.</li>
-  <li><strong>Age-fit.</strong> Reading level matched to grade. Ages 4–7 get audio-first, picture-heavy content.</li>
-  <li><strong>Reuse first.</strong> Generated content is cached and shared across learners. Only theme and name change. This controls cost and allows human review of popular content.</li>
+  <li><strong>Audio-first.</strong> Every nugget, item and prompt is narrated, so a child can learn without an adult who reads. The child can turn narration off and read instead.</li>
+  <li><strong>Age-fit.</strong> Reading level matched to grade. Younger kids get picture-heavy content.</li>
+  <li><strong>Reuse first.</strong> Generated content is cached and shared across learners. Only theme and name change. This controls cost and allows later review of popular content.</li>
   <li><strong>No PII in prompts.</strong> The child's name is inserted after generation, never sent to the model.</li>
   <li><strong>Model tiers.</strong> A strong model (e.g. Claude Sonnet 5.5) for nuggets; a fast model (e.g. Claude Haiku 5.5) for validation and hints.</li>
 </ul>
@@ -243,9 +268,9 @@ flowchart LR
 <div class="diagram"><pre class="mermaid">
 flowchart TB
   subgraph Clients
-    KA[Kid app<br/>tablet-first, web + mobile]
+    KA[Kid app<br/>phone and tablet, web later]
     PA[Parent dashboard]
-    AD[Admin and educator review tool]
+    AD[Admin review tool]
   end
 
   subgraph Backend
@@ -302,10 +327,10 @@ flowchart TB
 <h3>Moving parts</h3>
 <table>
   <tr><th>Component</th><th>Responsibility</th></tr>
-  <tr><td>Kid app</td><td>Onboarding, assessment, quests, games, rewards. Big buttons, audio prompts, minimal text for young kids.</td></tr>
+  <tr><td>Kid app</td><td>Mobile app for phone and tablet. Onboarding, assessment, quests, games, rewards. Big buttons, audio-first. Built on a cross-platform stack so the code can be reused for a web app later.</td></tr>
   <tr><td>Parent dashboard</td><td>Consent, child profiles, progress against curriculum, session limits, printable worksheets.</td></tr>
-  <tr><td>Educator review tool</td><td>Approve skill graphs, review flagged or popular content, edit items.</td></tr>
-  <tr><td>Curriculum service</td><td>Jurisdiction lookup, frameworks, skills, prerequisites.</td></tr>
+  <tr><td>Admin review tool</td><td>Review flagged content and edit items. Educators use it later to approve skill graphs.</td></tr>
+  <tr><td>Curriculum service</td><td>Ontario framework versions, skills, prerequisites.</td></tr>
   <tr><td>Assessment engine</td><td>Picks the next item, scores answers, calls the learner model.</td></tr>
   <tr><td>Learner model</td><td>Holds mastery probabilities and history per skill.</td></tr>
   <tr><td>Planner</td><td>Orders gaps into quests, schedules reviews, balances subjects.</td></tr>
@@ -342,7 +367,7 @@ sequenceDiagram
 <ul>
   <li><strong>Laws to meet:</strong> PIPEDA and Québec Law 25 (Canada), COPPA (US), GDPR and UK Age Appropriate Design Code (if offered in Europe). MFIPPA applies if Ontario school boards adopt it.</li>
   <li><strong>Verifiable parental consent</strong> before any child data is collected.</li>
-  <li><strong>Data minimization:</strong> first name only, grade, jurisdiction. No photos, no precise location, no last name.</li>
+  <li><strong>Data minimization:</strong> first name, birthdate, city. No photos, no precise location, no last name.</li>
   <li><strong>No open chat with the AI</strong> for young kids. Any free-text input is moderated and never stored longer than needed.</li>
   <li><strong>Data residency:</strong> keep Canadian learner data in Canada if targeting schools.</li>
   <li><strong>Content safety:</strong> every generated asset passes moderation. Kids can flag content; flags go to the review tool.</li>
@@ -355,37 +380,38 @@ sequenceDiagram
   <tr><th>Area</th><th>Requirement</th></tr>
   <tr><td>Latency</td><td>Next item under 300 ms. Pre-generate the next nugget while the child plays the current one; kids won't wait for AI.</td></tr>
   <tr><td>Cost</td><td>Track LLM, TTS, and image cost per active learner per month. Library reuse is the main lever.</td></tr>
-  <tr><td>Accessibility</td><td>Audio for all text, dyslexia-friendly font, color-blind safe palettes, large tap targets.</td></tr>
+  <tr><td>Accessibility</td><td>Audio for all text, on by default. Dyslexia-friendly font, color-blind safe palettes, large tap targets.</td></tr>
   <tr><td>Languages</td><td>English and French at launch for Ontario. Content and UI fully localizable.</td></tr>
   <tr><td>Devices and connectivity</td><td>Run on low-end Android phones and shared family devices. Downloadable offline packs (nuggets, checks, audio) that sync progress when back online. Low-bandwidth mode with no video.</td></tr>
-  <tr><td>Quality</td><td>Educator review sample of generated content. Measure learning gains, not only engagement.</td></tr>
+  <tr><td>Quality</td><td>Automated validation of all generated content. Measure learning gains, not only engagement.</td></tr>
   <tr><td>Observability</td><td>Log every generation with prompt version, model, validation result, and cost.</td></tr>
 </table>
 
 <h2 id="mvp">11. MVP scope and phases</h2>
 <table>
   <tr><th>Phase</th><th>Scope</th><th>Goal</th></tr>
-  <tr><td><strong>0. Prototype</strong></td><td>Ontario Math Grades 2–4. Hand-reviewed skill graph. Text and 2–3 mini-game types. One child, one parent.</td><td>Prove the assess → teach → check loop works and kids enjoy it.</td></tr>
-  <tr><td><strong>1. MVP</strong></td><td>Ontario Math and Language Grades 1–6. Parent dashboard. Consent flow. Content library and caching.</td><td>First real families. Measure gap closure.</td></tr>
+  <tr><td><strong>0. Prototype</strong></td><td>Ontario Math Grades 2–4. AI-reviewed skill graph. Narrated text and 2–3 mini-game types. Mobile app. One child, one parent.</td><td>Prove the assess → teach → check loop works and kids enjoy it.</td></tr>
+  <tr><td><strong>1. MVP</strong></td><td>Ontario Math and Language Grades 1–5 (ages 6–10). Free for the first year. Parent dashboard. Consent flow. Content library and caching.</td><td>First real families. Measure gap closure.</td></tr>
   <tr><td><strong>2. Expand subjects</strong></td><td>Science and Technology, Social Studies, French. Narrated video nuggets. Printable worksheets.</td><td>Full core coverage for Ontario.</td></tr>
   <tr><td><strong>3. Expand regions</strong></td><td>Other provinces, US states via Common Core and NGSS.</td><td>Prove the pluggable curriculum model.</td></tr>
   <tr><td><strong>4. Schools</strong></td><td>Teacher view, class rosters, school-board compliance.</td><td>B2B channel.</td></tr>
 </table>
 
-<h2 id="open">12. Open questions and risks</h2>
-<h3>Questions to decide</h3>
-<ul>
-  <li>Who pays: parents, schools, NGOs, or governments? Kids in poor areas need a free or sponsored tier.</li>
-  <li>Which age range first? 6–10 is a strong start: clear curriculum, high parent concern.</li>
-  <li>Without a school, who confirms grade progression, and do we issue progress certificates?</li>
-  <li>Who supports a child with no adult nearby who can read? Audio-first design must cover the parent role too.</li>
-  <li>How much educator review can we afford per skill and per nugget?</li>
-  <li>Native mobile apps or a web app first?</li>
-</ul>
+<h2 id="open">12. Decisions and risks</h2>
+<h3>Decisions</h3>
+<table>
+  <tr><th>Question</th><th>Decision</th></tr>
+  <tr><td>Who pays?</td><td>Free for about the first year. Pricing comes later, so charging stays possible.</td></tr>
+  <tr><td>Which age range first?</td><td>Ages 6–10 (Grades 1–5).</td></tr>
+  <tr><td>Who confirms grade progression?</td><td>The app tracks knowledge per skill and approximates a grade from it. No certificates at first.</td></tr>
+  <tr><td>Who helps a child with no adult who reads?</td><td>Audio-first design. The child can turn narration off and read instead.</td></tr>
+  <tr><td>How much educator review?</td><td>None at first. AI validation is enough. Revisit later.</td></tr>
+  <tr><td>Mobile or web first?</td><td>Mobile app for phone and tablet first, on a stack that can be reused for web.</td></tr>
+</table>
 <h3>Risks</h3>
 <ul>
-  <li><strong>AI errors</strong> teach a wrong fact. Mitigation: solvers, second-model review, educator sampling, kid flagging.</li>
-  <li><strong>Curriculum parsing quality.</strong> Mitigation: human sign-off per framework version.</li>
+  <li><strong>AI errors</strong> teach a wrong fact. Mitigation: solvers, second-model review, kid flagging. Educator sampling later.</li>
+  <li><strong>Curriculum parsing quality.</strong> Without educator sign-off, a wrong prerequisite or a missed expectation can go unnoticed. Mitigation: second-model review per framework version.</li>
   <li><strong>Assessment fatigue</strong> in young kids. Mitigation: short, split sessions and continuous assessment during quests.</li>
   <li><strong>Engagement drop</strong> after novelty. Mitigation: quests, avatars, interest themes, parent nudges.</li>
   <li><strong>Unit cost</strong> of generation. Mitigation: library reuse, cheaper models for validation, pre-generation off-peak.</li>
@@ -393,9 +419,56 @@ sequenceDiagram
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<dialog class="lightbox" aria-label="Diagram">
+  <div class="bar">
+    <button data-zoom="out" aria-label="Zoom out">−</button>
+    <button data-zoom="fit">Fit</button>
+    <button data-zoom="in" aria-label="Zoom in">+</button>
+    <button data-close aria-label="Close">✕</button>
+  </div>
+  <div class="stage"></div>
+</dialog>
 <script>
   const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-  mermaid.initialize({ startOnLoad: true, theme: dark ? 'dark' : 'default', securityLevel: 'strict' });
+  mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'default', securityLevel: 'strict' });
+
+  const box = document.querySelector('dialog.lightbox');
+  const stage = box.querySelector('.stage');
+  let svg, fitWidth, scale = 1;
+
+  function applyScale() { svg.style.width = (fitWidth * scale) + 'px'; }
+
+  function open(diagram) {
+    svg = diagram.querySelector('svg').cloneNode(true);
+    svg.removeAttribute('height');
+    stage.replaceChildren(svg);
+    box.showModal();
+    // Fit the diagram to the stage, keeping its aspect ratio.
+    const vb = svg.viewBox.baseVal;
+    const w = stage.clientWidth - 32, h = stage.clientHeight - 32;
+    fitWidth = Math.min(w, h * vb.width / vb.height);
+    scale = 1;
+    applyScale();
+  }
+
+  box.querySelector('.bar').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.hasAttribute('data-close')) return box.close();
+    scale = b.dataset.zoom === 'in' ? scale * 1.25 : b.dataset.zoom === 'out' ? scale / 1.25 : 1;
+    applyScale();
+  });
+  box.addEventListener('click', e => { if (e.target === box) box.close(); });
+
+  mermaid.run({ querySelector: '.mermaid' }).then(() => {
+    document.querySelectorAll('.diagram').forEach(d => {
+      const btn = document.createElement('button');
+      btn.className = 'expand';
+      btn.textContent = 'Expand';
+      d.append(btn);
+      d.addEventListener('click', () => open(d));
+    });
+  });
 </script>
 </body>
 </html>
