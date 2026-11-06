@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrightTrail POC Tasks</title>
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #1f2328; --muted: #5b636d; --line: #e3e0d8;
+    --card: #ffffff; --accent: #2f6fd6; --accent-soft: #e8f0fc; --warn: #b4540a; --warn-soft: #fdf1e6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2c3036;
+      --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171a; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2c3036;
+    --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 80px; }
+  h1 { font-size: 2rem; margin: 0 0 4px; }
+  h2 { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .95rem; display: block; overflow-x: auto; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { background: var(--accent-soft); }
+  td:first-child { white-space: nowrap; font-weight: 600; }
+  .diagram { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 16px 0; overflow-x: auto; }
+  .note { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 6px; margin: 16px 0; }
+  code { background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .diagram { position: relative; cursor: zoom-in; }
+  .diagram .expand { position: absolute; top: 8px; right: 8px; font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--card); color: var(--fg); cursor: pointer; }
+  dialog.lightbox { width: 96vw; height: 92vh; max-width: none; max-height: none; padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--fg); }
+  dialog.lightbox::backdrop { background: rgba(0,0,0,.6); }
+  .lightbox .bar { position: sticky; top: 0; display: flex; gap: 6px; justify-content: flex-end; padding: 8px; background: var(--card); border-bottom: 1px solid var(--line); z-index: 1; }
+  .lightbox .bar button { font: inherit; min-width: 40px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+  .lightbox .stage { overflow: auto; height: calc(100% - 50px); padding: 16px; }
+  .lightbox .stage svg { display: block; margin: 0 auto; max-width: none !important; height: auto; }
+</style>
+</head>
+<body>
+<main>
+<h1>BrightTrail — POC Tasks</h1>
+<p class="sub">High-level tasks to build and run the POC · Draft v0.1 · 2026-11-06 · Delivers the <a href="poc-requirements.html">POC requirements</a></p>
+
+<p>C1 can start right away. The rest of the two tracks run in parallel once the schemas exist: <strong>content</strong> (scripts on your computer) and <strong>app</strong> (Expo). They meet when the app loads the real bundle. Size is relative effort: S, M, or L.</p>
+
+<div class="diagram"><pre class="mermaid">
+flowchart TD
+  T1[T1 Repo setup] --> T2[T2 Shared schemas]
+  C1[C1 Curriculum sources] --> C2
+  T2 --> C2[C2 Skill graph build]
+  C2 --> C3[C3 Content generation]
+  C3 --> C4[C4 Validators]
+  T2 --> A1[A1 Learner engine]
+  T2 --> A2[A2 App shell and storage]
+  A2 --> A3[A3 Narration]
+  A2 --> A4[A4 Nugget and item screens]
+  A1 --> A5[A5 Placement]
+  A1 --> A6[A6 Session flow]
+  A3 --> A6
+  A4 --> A6
+  A5 --> A6
+  A2 --> A7[A7 Parent screen]
+  C4 --> I1[I1 Load real bundle]
+  A6 --> I1
+  A7 --> I1
+  I1 --> I2[I2 Install on devices]
+  I2 --> R1[R1 Dry run and fixes]
+  R1 --> R2[R2 Three-week test]
+  R2 --> R3[R3 Score and decide]
+</pre></div>
+
+<h2 id="foundation">1. Foundation</h2>
+<table>
+  <tr><th>Task</th><th>What</th><th>Done when</th><th>Size</th></tr>
+  <tr><td>T1 Repo setup<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/1">#1</a></td><td>Folders for <code>app/</code> (Expo, TypeScript), <code>content/</code> (Node build scripts), and <code>shared/</code> (types). Lint, format, test runner.</td><td>The app starts on a phone through Expo, and a script in <code>content/</code> runs.</td><td>S</td></tr>
+  <tr><td>T2 Shared schemas<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/3">#3</a></td><td>Types and runtime validation (e.g. Zod) for skill, story nugget, the three item types, attempt, and mastery state.</td><td>Both tracks import the same types. A sample bundle with 3 skills passes validation.</td><td>S</td></tr>
+</table>
+
+<h2 id="content">2. Content track</h2>
+<table>
+  <tr><th>Task</th><th>What</th><th>Done when</th><th>Size</th></tr>
+  <tr><td>C1 Curriculum sources<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/2">#2</a></td><td>Collect Ontario Math 2020 Strand B text for Grades 1–6, and the number expectations from the Kindergarten Program. Save as text in the repo.</td><td>One source file per grade, with expectation codes kept.</td><td>S</td></tr>
+  <tr><td>C2 Skill graph build<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/4">#4</a></td><td>Script: LLM splits expectations into skills, proposes prerequisites, and a second model reviews. Detect cycles and orphans in code.</td><td><code>skills.json</code> with about 80 skills, no cycles, every skill reachable from a Kindergarten root. You've skimmed it.</td><td>M</td></tr>
+  <tr><td>C3 Content generation<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/5">#5</a></td><td>Script: per skill, one story nugget of 5–8 cards and 15 items across the three types. Grade-aware tone. Resumable, so a failed skill reruns alone.</td><td>Every skill has its nugget and 15 items in the bundle.</td><td>M</td></tr>
+  <tr><td>C4 Validators<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/6">#6</a></td><td>Schema check, math answer solver, reading-level check, second-model review. Failures go back to C3 with the reason.</td><td>The bundle passes all checks. A report lists any skill that needed a rerun.</td><td>M</td></tr>
+</table>
+
+<h2 id="app">3. App track</h2>
+<table>
+  <tr><th>Task</th><th>What</th><th>Done when</th><th>Size</th></tr>
+  <tr><td>A1 Learner engine<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/7">#7</a></td><td>Pure TypeScript, no UI: mastery states, unlock rule, assumed mastery, 4-of-5 pass rule, walk-back, review at 2 days and 1 week.</td><td>Unit tests cover each state change in the session diagram, including a walk-back two levels deep.</td><td>M</td></tr>
+  <tr><td>A2 App shell and storage<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/8">#8</a></td><td>Navigation, profile picker by avatar, SQLite tables for children, mastery, attempts, and flags.</td><td>Profiles and attempts survive an app restart.</td><td>M</td></tr>
+  <tr><td>A3 Narration<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/9">#9</a></td><td>Wrapper over <code>expo-speech</code>: read card, read question and choices, replay button, reading-mode toggle per child.</td><td>Every screen reads itself aloud, and reading mode silences it.</td><td>S</td></tr>
+  <tr><td>A4 Nugget and item screens<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/10">#10</a></td><td>Story card viewer. Tap-the-answer, number keypad, and number-line drag. Feedback with a short "why". Flag button on each.</td><td>All three item types work with sample content on phone and tablet.</td><td>L</td></tr>
+  <tr><td>A5 Placement<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/11">#11</a></td><td>Adaptive probe: start at the derived grade, step down on misses, mark lower skills assumed. Can pause and resume.</td><td>Simulated answer patterns for a Grade 1 and a Grade 5 kid give sensible skill maps.</td><td>M</td></tr>
+  <tr><td>A6 Session flow<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/12">#12</a></td><td>Wire engine and screens: review first, then next gap, nugget, check. 10-minute cap. Trail map with stars.</td><td>A full session runs end to end with sample content.</td><td>M</td></tr>
+  <tr><td>A7 Parent screen<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/13">#13</a></td><td>PIN gate. Add child with birthdate and grade override. Skill tree by state, placement list, flagged items, JSON export, reset.</td><td>A parent can set up both kids and export a log without help.</td><td>M</td></tr>
+</table>
+
+<h2 id="integrate">4. Integrate and run</h2>
+<table>
+  <tr><th>Task</th><th>What</th><th>Done when</th><th>Size</th></tr>
+  <tr><td>I1 Load real bundle<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/14">#14</a></td><td>Swap sample content for the generated bundle. Check load time and app size.</td><td>All 80 skills are playable, and the app opens in under 3 seconds.</td><td>S</td></tr>
+  <tr><td>I2 Install on devices<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/15">#15</a></td><td>Expo development build on each family phone or tablet.</td><td>Both kids' devices run the app with no computer attached.</td><td>S</td></tr>
+  <tr><td>R1 Dry run and fixes<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/16">#16</a></td><td>Both parents play as each kid and miss answers on purpose to trigger walk-back. Fix what breaks.</td><td>No blocking bugs. Walk-back triggers as designed.</td><td>M</td></tr>
+  <tr><td>R2 Three-week test<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/17">#17</a></td><td>Week 1 with a parent watching, weeks 2–3 alone, with daily notes. Fix flagged content in the bundle as it comes up.</td><td>3 weeks of logs for both kids.</td><td>L</td></tr>
+  <tr><td>R3 Score and decide<br/><a href="https://github.com/nahueltaibo/bright-trail/issues/18">#18</a></td><td>Small script reads the exported logs and scores each pass bar. Parents add their notes.</td><td>A one-page result with a continue, change, or stop decision.</td><td>S</td></tr>
+</table>
+
+<div class="note">The riskiest tasks are A4 (three interactive item types that must feel good to a 6-year-old) and C3 (content quality without educators). Start them early. A rough A4 prototype with hard-coded questions, shown to the kids, is worth doing before the rest of the app.</div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<dialog class="lightbox" aria-label="Diagram">
+  <div class="bar">
+    <button data-zoom="out" aria-label="Zoom out">−</button>
+    <button data-zoom="fit">Fit</button>
+    <button data-zoom="in" aria-label="Zoom in">+</button>
+    <button data-close aria-label="Close">✕</button>
+  </div>
+  <div class="stage"></div>
+</dialog>
+<script>
+  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'default', securityLevel: 'strict' });
+
+  const box = document.querySelector('dialog.lightbox');
+  const stage = box.querySelector('.stage');
+  let svg, fitWidth, scale = 1;
+
+  function applyScale() { svg.style.width = (fitWidth * scale) + 'px'; }
+
+  function open(diagram) {
+    svg = diagram.querySelector('svg').cloneNode(true);
+    svg.removeAttribute('height');
+    stage.replaceChildren(svg);
+    box.showModal();
+    const vb = svg.viewBox.baseVal;
+    const w = stage.clientWidth - 32, h = stage.clientHeight - 32;
+    fitWidth = Math.min(w, h * vb.width / vb.height);
+    scale = 1;
+    applyScale();
+  }
+
+  box.querySelector('.bar').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.hasAttribute('data-close')) return box.close();
+    scale = b.dataset.zoom === 'in' ? scale * 1.25 : b.dataset.zoom === 'out' ? scale / 1.25 : 1;
+    applyScale();
+  });
+  box.addEventListener('click', e => { if (e.target === box) box.close(); });
+
+  mermaid.run({ querySelector: '.mermaid' }).then(() => {
+    document.querySelectorAll('.diagram').forEach(d => {
+      const btn = document.createElement('button');
+      btn.className = 'expand';
+      btn.textContent = 'Expand';
+      d.append(btn);
+      d.addEventListener('click', () => open(d));
+    });
+  });
+</script>
+</body>
+</html>
