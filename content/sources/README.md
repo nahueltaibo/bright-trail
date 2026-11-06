@@ -6,16 +6,15 @@ Official Ontario curriculum text that the skill graph build (C2) reads. Each fil
 
 | File | Source | Codes |
 |---|---|---|
-| `kindergarten.md` | *The Kindergarten Program, 2016* and Kindergarten Curriculum (2026) | 2016: OE15, 15.1–15.10, OE20, 20.1–20.2. 2026: A6, A6.1–A6.13 |
+| `kindergarten.md` | Kindergarten Curriculum (2026), Strand A | A6, A6.1–A6.13 |
 | `grade-1.md` … `grade-6.md` | *The Ontario Curriculum, Grades 1–8: Mathematics, 2020*, Strand B: Number | B1, B1.x, B2, B2.x |
 
 - Grade files keep each specific expectation's Examples and Key concepts. Sample tasks are left out. Images appear as their official alt text.
-- The 2026 Kindergarten curriculum replaces the 2016 program from the 2026–27 school year. `kindergarten.md` holds both, so pick one before building the graph.
+- Kindergarten uses the 2026 curriculum, which replaces *The Kindergarten Program, 2016* from the 2026–27 school year.
 
 ## Where It Came From
 
-- Grades 1–6 and Kindergarten 2026 come from the Curriculum and Resources site ([dcp.edu.gov.on.ca](https://www.dcp.edu.gov.on.ca/en/)). The site renders in the browser, so the text was pulled from the public content API it uses.
-- Kindergarten 2016 comes from the [official PDF](https://files.ontario.ca/books/edu_the_kindergarten_program_english_aoda_web_oct7.pdf). Its old ontario.ca page now redirects to the 2026 curriculum.
+- All files come from the Curriculum and Resources site ([dcp.edu.gov.on.ca](https://www.dcp.edu.gov.on.ca/en/)). The site renders in the browser, so the text was pulled from the public content API it uses.
 
 ## How to Refresh
 
@@ -35,7 +34,7 @@ Official Ontario curriculum text that the skill graph build (C2) reads. Each fil
    | 4 | `math___grade_4___b` |
    | 5 | `math___grade_4___b__copy_` |
    | 6 | `math___grade_6___b` |
-   | K 2026 | `kinder___a___foundations_literacy_and_mathematics` (overall expectation `kinder___dlmb___oe17`) |
+   | K | `kinder___a___foundations_literacy_and_mathematics` (overall expectation `kinder___dlmb___oe17`) |
 
 3. In the response, `item.elements.overall_expectations` lists the overall expectations in page order. Each one's `specific_expectations` lists its children. Codes are in `title_index` and wording is in `content`. Examples and Key concepts are the `elaborations` items tagged with those `pedagogical_supports` names. Embedded tables are `<object>` tags that point at other items in `modular_content`.
 4. Convert to Markdown in the existing layout and update the retrieval date in each header.
