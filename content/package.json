@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "hello": "tsx src/hello.ts",
+    "validate": "tsx src/validate.ts",
     "test": "vitest run",
     "typecheck": "tsc -p ."
   },

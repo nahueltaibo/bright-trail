@@ -1,15 +1,19 @@
-import { greet } from '@bright-trail/shared';
+import type { Skill } from '@bright-trail/shared';
 import { StyleSheet, Text, View } from 'react-native';
 
 type Props = {
-  learnerName: string;
+  skills: readonly Skill[];
 };
 
-export function HomeScreen({ learnerName }: Props) {
-  const greeting = greet(learnerName);
+export function HomeScreen({ skills }: Props) {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{greeting.message}</Text>
+      <Text style={styles.title}>Welcome to BrightTrail!</Text>
+      {skills.map((skill) => (
+        <Text key={skill.id} style={styles.skill}>
+          {skill.title}
+        </Text>
+      ))}
     </View>
   );
 }
@@ -20,10 +24,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    gap: 12,
     padding: 24,
   },
   title: {
     fontSize: 24,
     textAlign: 'center',
+  },
+  skill: {
+    fontSize: 18,
   },
 });
