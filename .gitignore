@@ -1,1 +1,38 @@
 .playwright-mcp/
+
+# Dependencies
+node_modules/
+
+# Expo
+.expo/
+dist/
+web-build/
+expo-env.d.ts
+.metro-health-check*
+
+# Generated native folders (Continuous Native Generation)
+app/ios/
+app/android/
+.kotlin/
+*.orig.*
+
+# Signing keys
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.pem
+
+# Env files (Claude API key lives here)
+.env
+.env*.local
+
+# Logs and caches
+npm-debug.*
+*.tsbuildinfo
+coverage/
+
+# OS
+.DS_Store
+Thumbs.db
