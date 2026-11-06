@@ -1,0 +1,14 @@
+{
+  "name": "@bright-trail/content",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "hello": "tsx src/hello.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p ."
+  },
+  "dependencies": {
+    "@bright-trail/shared": "*"
+  }
+}
