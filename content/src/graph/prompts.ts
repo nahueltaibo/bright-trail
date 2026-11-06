@@ -71,7 +71,7 @@ Rules:
 - Titles have at most 6 words. Descriptions are one or two short sentences, spoken to the kid, that a 6-year-old understands when read aloud.
 - Prerequisites come from this grade's skills or from earlier grades' skills. Never point to a later grade.
 - Kindergarten foundations such as counting have no prerequisites. Every skill from Grade 1 up has at least one, and usually builds on the same idea from the grade before.
-- Answer only by calling the submit_skills tool.`;
+- Give your whole answer as the structured output, with every skill for this grade.`;
 
 const REVIEWER_SYSTEM = `${GRAPH_CONTEXT}
 
@@ -84,7 +84,7 @@ Check each skill:
 - Prerequisites never point to a later grade or to the skill itself.
 - The title and description match the expectation and suit a kid hearing them read aloud.
 
-Return a correction only where something is wrong. An empty list is a fine answer. With changePrerequisites true, give the full new prerequisite list, using only ids that appear in the prompt. Leave title or description empty to keep it. Don't add, remove, or rename skills. Answer only by calling the submit_review tool.`;
+Return a correction only where something is wrong. An empty list is a fine answer. With changePrerequisites true, give the full new prerequisite list, using only ids that appear in the prompt. Leave title or description empty to keep it. Don't add, remove, or rename skills. Give your whole answer as the structured output.`;
 
 function gradeName(source: GradeSource): string {
   return source.grade === 'K' ? 'Kindergarten' : `Grade ${source.grade}`;
