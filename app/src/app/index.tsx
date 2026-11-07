@@ -4,6 +4,7 @@ import { useCallback, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProfilePicker } from '../components/ProfilePicker';
+import { SHOW_DEV_TOOLS } from '../devTools';
 import { SpeakerButton, useAutoNarration } from '../narration';
 import { useStorage } from '../storage/StorageProvider';
 
@@ -46,7 +47,7 @@ export default function ProfilePickerScreen() {
           profiles && <Text style={styles.empty}>{EMPTY_MESSAGE}</Text>
         )}
 
-        {__DEV__ && (
+        {SHOW_DEV_TOOLS && (
           <Link href="/dev/learning" asChild>
             <Pressable accessibilityRole="button" style={styles.devButton}>
               <Text style={styles.devText}>Dev: learning preview</Text>

@@ -46,6 +46,7 @@ export function ChildForm({
         <Text style={styles.label}>First name</Text>
         <TextInput
           accessibilityLabel="First name"
+          testID="child-first-name"
           value={draft.firstName}
           onChangeText={(firstName) => set({ firstName })}
           autoCapitalize="words"
