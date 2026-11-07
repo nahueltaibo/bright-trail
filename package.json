@@ -24,6 +24,7 @@
     "e2e:build:android": "node scripts/build-android.mjs --e2e",
     "android:build:family": "node scripts/build-android.mjs --family",
     "android:install": "node scripts/install-android.mjs",
+    "ota:publish": "node scripts/ota-publish.mjs",
     "e2e:android": "node e2e/scripts/run-android.mjs"
   },
   "devDependencies": {

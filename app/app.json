@@ -23,6 +23,23 @@
       "favicon": "./assets/favicon.png"
     },
     "scheme": "brighttrail",
-    "plugins": ["expo-router", "expo-sqlite"]
+    "plugins": ["expo-router", "expo-sqlite"],
+    "extra": {
+      "eas": {
+        "projectId": "7a8f3368-c0fe-4be9-8519-a0be139fd8bb"
+      }
+    },
+    "owner": "nahueltaibo",
+    "runtimeVersion": {
+      "policy": "fingerprint"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/7a8f3368-c0fe-4be9-8519-a0be139fd8bb",
+      "checkAutomatically": "ON_LOAD",
+      "fallbackToCacheTimeout": 0,
+      "requestHeaders": {
+        "expo-channel-name": "production"
+      }
+    }
   }
 }
