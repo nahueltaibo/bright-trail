@@ -27,12 +27,28 @@ function visualCount(visual: Visual | undefined): number | undefined {
   if (!visual) return undefined;
   if (visual.kind === 'objects') return visual.count;
   if (visual.kind === 'ten-frame') return visual.filled;
+  if (visual.kind === 'fraction') return visual.shaded;
   return undefined;
+}
+
+/** The amount a fraction picture shows, e.g. 3 of 4 parts shaded is 3/4. */
+function fractionOf(visual: Visual | undefined): Rational | undefined {
+  if (visual?.kind !== 'fraction') return undefined;
+  return new Rational(BigInt(visual.shaded), BigInt(visual.parts));
+}
+
+function pictureContext(visual: Visual | undefined): ExprContext {
+  return {
+    count: visualCount(visual),
+    ...(visual?.kind === 'fraction' ? { parts: visual.parts, shaded: visual.shaded } : {}),
+  };
 }
 
 function intrinsicValues(choice: Choice): Rational[] | null {
   if (choice.kind === 'number') return [Rational.of(choice.value)];
   if (choice.kind === 'text') return parseNumberText(choice.text);
+  const fraction = fractionOf(choice.visual);
+  if (fraction) return [fraction];
   const count = visualCount(choice.visual);
   return count === undefined ? null : [Rational.of(count)];
 }
@@ -45,8 +61,10 @@ function asNumber(v: Value, what: string): Rational {
 function questionNumbers(item: Item): Rational[] {
   const texts = [item.narration, item.prompt];
   const found = texts.flatMap(numbersMentioned);
-  const count = 'visual' in item ? visualCount(item.visual) : undefined;
+  const visual = 'visual' in item ? item.visual : undefined;
+  const count = visualCount(visual);
   if (count !== undefined) found.push(Rational.of(count));
+  if (visual?.kind === 'fraction') found.push(Rational.of(visual.parts), fractionOf(visual)!);
   if (item.type === 'number-line') found.push(Rational.of(item.min), Rational.of(item.max));
   return found;
 }
@@ -66,10 +84,25 @@ const fmt = (r: Rational) => {
   return Number.isInteger(n) ? String(n) : r.toString();
 };
 
+/**
+ * With a fraction picture, a number that the question doesn't say can only come from the
+ * picture, so it must be one the picture shows. Otherwise the picture and answer disagree.
+ */
+function pictureMismatch(item: Item, exprs: string[]): string[] {
+  const visual = 'visual' in item ? item.visual : undefined;
+  if (visual?.kind !== 'fraction') return [];
+  const missing = unmentioned(exprs, questionNumbers(item));
+  if (missing.length === 0) return [];
+  return [
+    `check uses ${missing.join(', ')}, which the question doesn't say and the picture doesn't show (${visual.shaded} of ${visual.parts} parts shaded). Read the picture with shaded and parts, or fix the picture`,
+  ];
+}
+
 /** Recomputes an item's answer from its check. Problems mean the item is wrong or unplayable. */
 export function solveItem(item: Item, check: GenCheck): SolveResult {
   const problems: string[] = [];
-  const ctx: ExprContext = { count: 'visual' in item ? visualCount(item.visual) : undefined };
+  const visual = 'visual' in item ? item.visual : undefined;
+  const ctx = pictureContext(visual);
   const fail = (message: string): SolveResult => ({ level: 'unchecked', problems: [message] });
 
   if (check.rule === 'none') {
@@ -102,6 +135,7 @@ export function solveItem(item: Item, check: GenCheck): SolveResult {
     if (!Rational.of(given).eq(expected)) {
       problems.push(`${field} is ${given} but ${check.expr} = ${fmt(expected)}`);
     }
+    problems.push(...pictureMismatch(item, [check.expr]));
     linked = unmentioned([check.expr], questionNumbers(item)).length > 0;
     return { level: linked ? 'linked' : 'solved', problems };
   }
@@ -191,6 +225,7 @@ export function solveItem(item: Item, check: GenCheck): SolveResult {
     return fail((error as Error).message);
   }
   if (unmentioned([check.expr], questionNumbers(item)).length > 0) linked = true;
+  problems.push(...pictureMismatch(item, [check.expr]));
 
   if (check.rule === 'equals') {
     const matches = entries.filter((e) => e.values.some((v) => v.eq(target))).map((e) => e.id);

@@ -327,3 +327,86 @@ describe('solveItem: greatest, least, true', () => {
     expect(solveItem(tap, numeric).problems[0]).toMatch(/is a number/);
   });
 });
+
+describe('solveItem: fraction pictures', () => {
+  const circle = (shaded: number, parts: number) => ({
+    kind: 'fraction',
+    shape: 'circle',
+    parts,
+    shaded,
+  });
+  const keypadWith = (shaded: number, parts: number, answer: number) =>
+    item({
+      type: 'keypad',
+      narration: 'How many parts of the pizza are left?',
+      prompt: 'Parts left?',
+      visual: circle(shaded, parts),
+      answer,
+    });
+
+  it('reads the picture with parts and shaded', () => {
+    expect(solveItem(keypadWith(3, 8, 5), check('equals', 'parts - shaded'))).toEqual({
+      level: 'solved',
+      problems: [],
+    });
+    expect(solveItem(keypadWith(3, 8, 4), check('equals', 'parts - shaded')).problems).toEqual([
+      'answer is 4 but parts - shaded = 5',
+    ]);
+  });
+
+  it('catches an answer the picture does not show', () => {
+    const tapItem = item({
+      type: 'tap',
+      narration: 'What fraction of the pizza is shaded? Is it 1/4, 2/4, or 3/4?',
+      prompt: 'Shaded?',
+      visual: circle(2, 4),
+      choices: [
+        { id: 'a', kind: 'text', text: '1/4' },
+        { id: 'b', kind: 'text', text: '2/4' },
+        { id: 'c', kind: 'text', text: '3/4' },
+      ],
+      answerChoiceId: 'b',
+    });
+    expect(solveItem(tapItem, check('equals', 'shaded / parts'))).toEqual({
+      level: 'solved',
+      problems: [],
+    });
+    const keypadItem = item({
+      type: 'keypad',
+      narration: 'How many parts are shaded?',
+      prompt: 'Shaded parts?',
+      visual: circle(2, 4),
+      answer: 3,
+    });
+    expect(solveItem(keypadItem, check('equals', '3')).problems).toEqual([
+      "check uses 3, which the question doesn't say and the picture doesn't show (2 of 4 parts shaded). Read the picture with shaded and parts, or fix the picture",
+    ]);
+  });
+
+  it('values picture choices by the fraction they show', () => {
+    const pick = (answer: string) =>
+      item({
+        type: 'tap',
+        narration: 'Which is more pizza, 3/4 of the circle or 1/2 of the circle?',
+        prompt: 'Which is more?',
+        choices: [
+          { id: 'a', kind: 'visual', visual: circle(3, 4), narration: '3/4 of the circle' },
+          { id: 'b', kind: 'visual', visual: circle(1, 2), narration: '1/2 of the circle' },
+        ],
+        answerChoiceId: answer,
+      });
+    expect(solveItem(pick('a'), check('greatest')).problems).toEqual([]);
+    expect(solveItem(pick('b'), check('greatest')).problems).toEqual([
+      'choice a is the greatest, but the answer is b',
+    ]);
+  });
+
+  it('needs a fraction picture for parts and shaded', () => {
+    expect(
+      solveItem(
+        item({ type: 'keypad', narration: 'How many?', prompt: '?', answer: 1 }),
+        check('equals', 'shaded'),
+      ).problems[0],
+    ).toContain('shaded used but the item shows no fraction picture');
+  });
+});

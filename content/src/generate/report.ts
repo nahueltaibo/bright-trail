@@ -1,4 +1,10 @@
-import type { Item, Skill, StoryNugget, Visual } from '@bright-trail/shared';
+import {
+  describeVisual,
+  type Item,
+  type Skill,
+  type StoryNugget,
+  type Visual,
+} from '@bright-trail/shared';
 import { GRADE_ORDER } from '../graph/sources';
 import type { ContentRun, SkillOutcome } from './pipeline';
 import { GENERATOR_MODEL, REVIEWER_MODEL } from './prompts';
@@ -16,6 +22,7 @@ function visual(v: Visual | undefined): string {
   if (!v) return '';
   if (v.kind === 'emoji') return v.emoji;
   if (v.kind === 'objects') return `${v.count} × ${v.emoji}`;
+  if (v.kind === 'fraction') return `${describeVisual(v)}${v.label ? `, label "${v.label}"` : ''}`;
   return `ten-frame, ${v.filled} filled`;
 }
 
@@ -67,10 +74,23 @@ function notesSection(outcomes: readonly SkillOutcome[]): string[] {
   const lines: string[] = [];
   for (const o of outcomes) {
     if (o.reviewNotes.length === 0 && !o.reviewSummary.trim()) continue;
+    const edited = new Set((o.edits ?? []).map((e) => e.target));
     lines.push(`- **${o.skill.id}**${o.reviewSummary.trim() ? `: ${o.reviewSummary.trim()}` : ''}`);
-    for (const n of o.reviewNotes)
-      lines.push(`  - ${n.target} (${n.severity}, ${n.category}): ${n.note}`);
+    for (const n of o.reviewNotes) {
+      const mark = edited.has(n.target) ? ' Edited by hand after review.' : '';
+      lines.push(`  - ${n.target} (${n.severity}, ${n.category}):${mark} ${n.note}`);
+    }
   }
+  return lines.length ? lines : ['None.'];
+}
+
+function editsSection(outcomes: readonly SkillOutcome[]): string[] {
+  const lines = outcomes.flatMap((o) =>
+    (o.edits ?? []).map(
+      (e) =>
+        `- \`${e.target === 'story' ? `${o.skill.id} story card ${e.card}` : e.target}\` (${Object.keys(e.set).join(', ')}): ${e.reason}`,
+    ),
+  );
   return lines.length ? lines : ['None.'];
 }
 
@@ -233,6 +253,12 @@ ${retryLines.length ? retryLines.join('\n') : 'None.'}
 Notes don't fail a skill. "Code disagrees" marks a wrong-answer claim on an answer code recomputed.
 
 ${notesSection(passed).join('\n')}
+
+## Hand Edits
+
+Fixes from \`content/content-edits.json\`, applied after review. Code checks ran again on each one.
+
+${editsSection(passed).join('\n')}
 
 ## LLM Calls
 

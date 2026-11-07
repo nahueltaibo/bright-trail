@@ -4,6 +4,16 @@ function visualOf(v: GenVisual | null): Record<string, unknown> | undefined {
   if (!v) return undefined;
   if (v.kind === 'emoji') return { kind: 'emoji', emoji: v.emoji };
   if (v.kind === 'objects') return { kind: 'objects', emoji: v.emoji, count: v.count };
+  if (v.kind === 'fraction') {
+    return {
+      kind: 'fraction',
+      shape: v.shape,
+      parts: v.parts,
+      shaded: v.shaded,
+      ...(v.wholes && v.wholes > 1 ? { wholes: v.wholes } : {}),
+      ...(v.label?.trim() ? { label: v.label.trim() } : {}),
+    };
+  }
   return { kind: 'ten-frame', filled: v.filled };
 }
 
@@ -52,15 +62,21 @@ export interface Converted {
 }
 
 /** Item ids number each type separately, e.g. `g1-count-50-tap-3`, so they match the sample bundle. */
-export function convertContent(skillId: string, content: GeneratedContent): Converted {
+export function itemIds(skillId: string, content: GeneratedContent): string[] {
   const perType = new Map<string, number>();
-  const checks = new Map<string, GenCheck>();
-  const items = content.items.map((item) => {
+  return content.items.map((item) => {
     const n = (perType.get(item.type) ?? 0) + 1;
     perType.set(item.type, n);
-    const id = `${skillId}-${item.type}-${n}`;
-    checks.set(id, item.check);
-    return itemOf(item, id, skillId);
+    return `${skillId}-${item.type}-${n}`;
+  });
+}
+
+export function convertContent(skillId: string, content: GeneratedContent): Converted {
+  const ids = itemIds(skillId, content);
+  const checks = new Map<string, GenCheck>();
+  const items = content.items.map((item, i) => {
+    checks.set(ids[i], item.check);
+    return itemOf(item, ids[i], skillId);
   });
   const nugget = {
     id: `${skillId}-story`,
