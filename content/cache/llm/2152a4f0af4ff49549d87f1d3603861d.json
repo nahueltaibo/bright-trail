@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 5 says 'If one slice is huge and one is tiny, the bottom number does not work.' This is vague. The bottom number still counts the parts; the real problem is that the parts are unequal, so the fraction does not describe them. Consider: 'The parts must be equal. If one slice is huge and one is tiny, you cannot use one fraction to name them.'"
+      }
+    ],
+    "notes": "I checked all 15 items and the story cards. Every marked answer is correct, and each distractor is clearly wrong. The VERIFY item g4-represent-fractions-tap-3 is correct: in 2/5, the bottom number 5 means parts in the whole. Picture counts match their narration (ten-frames with 3 and 6 filled, 8 and 6 pizza emoji, and so on). Keypad and number-line answers match the fractions. Only one small wording note was found."
+  }
+}

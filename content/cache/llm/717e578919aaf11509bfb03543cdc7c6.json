@@ -1,0 +1,394 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya has 43 stickers. She wants a quick guess instead of counting every one. A quick guess is called rounding.",
+        "text": "Rounding = a quick guess",
+        "visual": { "kind": "emoji", "emoji": "⭐", "count": null, "filled": null }
+      },
+      {
+        "narration": "43 sits between 40 and 50. It is closer to 40. So 43 is about 40. That is rounding to the nearest ten.",
+        "text": "43 is about 40",
+        "visual": null
+      },
+      {
+        "narration": "Here is the trick. Look at the ones digit. If it is 5 or more, round up. If it is 4 or less, stay down.",
+        "text": "0 1 2 3 4 stay down. 5 6 7 8 9 go up.",
+        "visual": null
+      },
+      {
+        "narration": "Maya's brother has 68 stickers. The ones digit is 8. That is 5 or more, so round up. 68 is about 70.",
+        "text": "68 is about 70",
+        "visual": null
+      },
+      {
+        "narration": "Now try hundreds. 237 is between 200 and 300. Look at the tens digit, which is 3. It is less than 5, so 237 is about 200.",
+        "text": "237 is about 200",
+        "visual": null
+      },
+      {
+        "narration": "Nice work! You can find the closest ten or hundred. Now let's practise rounding.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Round 34 to the nearest ten. Is it 30 or 40?",
+        "prompt": "34 to the nearest ten",
+        "why": "The ones digit in 34 is 4. That is less than 5, so we stay down. 34 is about 30.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 40,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(34,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Round 72 to the nearest ten. Type your answer.",
+        "prompt": "72 to the nearest ten",
+        "why": "The ones digit in 72 is 2. That is less than 5, so we stay down. 72 is about 70.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 70,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(72,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Round 28 to the nearest ten. Move the frog to the answer.",
+        "prompt": "28 to the nearest ten",
+        "why": "The ones digit in 28 is 8. That is 5 or more, so we round up. 28 is about 30.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 30,
+        "check": { "rule": "equals", "expr": "roundTo(28,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia scored 82 points in a game. Is that closer to 80 or closer to 90?",
+        "prompt": "82 is closer to?",
+        "why": "82 is only 2 away from 80. It is 8 away from 90. So 82 is closer to 80.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 80,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 90,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "82",
+          "choices": [
+            { "id": "a", "expr": "80" },
+            { "id": "b", "expr": "90" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Round 48 to the nearest ten. Type your answer.",
+        "prompt": "48 to the nearest ten",
+        "why": "The ones digit in 48 is 8. That is 5 or more, so we round up. 48 is about 50.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 50,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(48,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Round 65 to the nearest ten. Move the frog to the answer.",
+        "prompt": "65 to the nearest ten",
+        "why": "The ones digit in 65 is 5. When it is 5, we round up. 65 is about 70.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 70,
+        "check": { "rule": "equals", "expr": "roundTo(65,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A store has 356 apples. Round 356 to the nearest ten. Type your answer.",
+        "prompt": "356 to the nearest ten",
+        "why": "Look at the ones digit in 356. It is 6, so we round up. 356 is about 360.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 360,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(356,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A hockey rink has 372 seats. Round 372 to the nearest hundred. Is it 300, 400, or 370?",
+        "prompt": "372 to the nearest hundred",
+        "why": "For hundreds, look at the tens digit. In 372 it is 7, so we round up. 372 is about 400.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 300,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 370,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 400,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(372,100)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Round 683 to the nearest hundred. Move the frog to the answer.",
+        "prompt": "683 to the nearest hundred",
+        "why": "The tens digit in 683 is 8. That is 5 or more, so we round up. 683 is about 700.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 700,
+        "check": { "rule": "equals", "expr": "roundTo(683,100)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam's pencil is 56 millimetres long. Is it about 50 millimetres or about 60 millimetres?",
+        "prompt": "56 mm to the nearest ten",
+        "why": "The ones digit in 56 is 6. That is 5 or more, so we round up. 56 is about 60.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 60,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 50,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(56,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Round 450 to the nearest hundred. Type your answer.",
+        "prompt": "450 to the nearest hundred",
+        "why": "The tens digit in 450 is 5. When it is exactly halfway, we round up. 450 is about 500.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 500,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(450,100)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Round 237 to the nearest ten. The line goes from 200 to 300. Move the frog to the answer.",
+        "prompt": "237 to the nearest ten",
+        "why": "The ones digit in 237 is 7. That is 5 or more, so we round up to 240.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 200,
+        "max": 300,
+        "step": 10,
+        "target": 240,
+        "check": { "rule": "equals", "expr": "roundTo(237,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Jo scored 48 points, then 33 points. Round each to the nearest ten and add. Is the quick guess 70, 80, or 90?",
+        "prompt": "48 + 33 is about?",
+        "why": "48 rounds up to 50. 33 rounds down to 30. Then 50 + 30 = 80.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 90,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 70,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 80,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "roundTo(48,10) + roundTo(33,10)",
+          "choices": [],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A toy costs 67 cents. Round the cost to the nearest ten. How many dimes is that? Type your answer.",
+        "prompt": "About how many dimes?",
+        "why": "67 rounds up to 70 cents. A dime is 10 cents, so 70 cents is 7 dimes.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(67,10)/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Round 550 to the nearest hundred. Move the frog to the answer.",
+        "prompt": "550 to the nearest hundred",
+        "why": "The tens digit in 550 is 5. When it is exactly halfway, we round up. 550 is about 600.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 600,
+        "check": { "rule": "equals", "expr": "roundTo(550,100)", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

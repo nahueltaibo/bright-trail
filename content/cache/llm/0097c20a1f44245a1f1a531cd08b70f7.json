@@ -1,0 +1,495 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. Mia loves numbers. Numbers help us in three ways. Let's find them!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "👧", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia has 3 apples. The number 3 means how many. We can count them.",
+        "text": "3 = how many",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Now 5 ducks stand in a line. Numbers can tell which one. This duck is first.",
+        "text": "first, second, third",
+        "visual": { "kind": "objects", "emoji": "🦆", "count": 5, "filled": null }
+      },
+      {
+        "narration": "The next duck is second. Then comes third. First, second, third show the place in line.",
+        "text": "1st, 2nd, 3rd",
+        "visual": { "kind": "objects", "emoji": "🦆", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Mia has a team shirt. It has the number 24. Here, the number is a name.",
+        "text": "24",
+        "visual": { "kind": "emoji", "emoji": "👕", "count": null, "filled": null }
+      },
+      {
+        "narration": "So numbers can mean how many. They can mean which one. And they can be a name.",
+        "text": "how many, which one, a name",
+        "visual": { "kind": "emoji", "emoji": "🔢", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now you try! Mia will help you find how numbers are used.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🌟", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has 4 cats. The number 4 is used for what? Is it how many, or a name?",
+        "prompt": "4 cats",
+        "why": "Mia counts 4 cats. The number tells how many cats there are.",
+        "visual": { "kind": "objects", "emoji": "🐱", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a name",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "how many",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 2" },
+            { "id": "b", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count the stars. How many stars are there?",
+        "prompt": "How many stars?",
+        "why": "Touch each star and count. The last number you reach is how many.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 3, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Mia has 5 balloons. Hop the frog to 5.",
+        "prompt": "Hop to 5",
+        "why": "Mia has 5 balloons. Count 1, 2, 3, 4, 5 along the line.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Ben's shirt has the number 7. The 7 is his player number. Is it a name, or how many?",
+        "prompt": "Shirt number 7",
+        "why": "A player number is like a name. It does not count anything.",
+        "visual": { "kind": "emoji", "emoji": "👕", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a name",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "how many",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 1" },
+            { "id": "b", "expr": "1 == 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are some fish. How many fish do you count?",
+        "prompt": "How many fish?",
+        "why": "Count each fish one time. The last number is how many fish.",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam is first in line. Does first mean how many, which one, or a name?",
+        "prompt": "Sam is first",
+        "why": "First tells the place in line. It tells which one Sam is.",
+        "visual": { "kind": "emoji", "emoji": "🧒", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "how many",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a name",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "which one",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 2" },
+            { "id": "b", "expr": "1 == 2" },
+            { "id": "c", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Sam has 8 balls. Hop the frog to the number that tells how many.",
+        "prompt": "8 balls",
+        "why": "Sam has 8 balls. Hop to 8 on the line.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one uses a number for how many? Is it 6 hats, or bus number 6?",
+        "prompt": "Which means how many?",
+        "why": "6 hats is a group we can count. Bus number 6 is just a name.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "bus number 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "6 hats",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 2" },
+            { "id": "b", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Five ducks stand in a line. The last duck is at what place? Type the number.",
+        "prompt": "Last duck's place?",
+        "why": "Count the ducks in line. The last duck is at the same number as all the ducks.",
+        "visual": { "kind": "objects", "emoji": "🦆", "count": 5, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "A frog is third in line. Hop the frog to 3.",
+        "prompt": "Third is 3",
+        "why": "First is 1, second is 2, and third is 3. Hop to 3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Jo's door has the number 12 on it. Is the 12 how many, which one, or a name?",
+        "prompt": "Door number 12",
+        "why": "The 12 on a door is a name for the home. It does not count things.",
+        "visual": { "kind": "emoji", "emoji": "🚪", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a name",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "which one",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "how many",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 1" },
+            { "id": "b", "expr": "1 == 2" },
+            { "id": "c", "expr": "1 == 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Jo has some apples. Count them. How many apples does Jo have?",
+        "prompt": "How many apples?",
+        "why": "Count each apple one time. The last number you say is how many.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 10, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Ana is seventh in line. Hop the frog to the number for her place.",
+        "prompt": "Seventh place",
+        "why": "Seventh means the place after sixth. Count to 7 and hop there.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one uses a number as a name? Is it shirt number 8, 8 dogs, or eighth in line?",
+        "prompt": "Which is a name?",
+        "why": "Shirt number 8 names a player. 8 dogs counts, and eighth gives a place.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "8 dogs",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "eighth in line",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "shirt number 8",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 2" },
+            { "id": "b", "expr": "1 == 2" },
+            { "id": "c", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "The cat is second in line. Which number matches the cat's place?",
+        "prompt": "Second place",
+        "why": "First is 1. Second comes next, so second is 2.",
+        "visual": { "kind": "emoji", "emoji": "🐱", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

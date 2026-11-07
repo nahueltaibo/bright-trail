@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-whole-numbers-200-keypad-6",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "VERIFY item. The arithmetic is right (100 + 50 + 14 = 164), but the item teaches a non-standard place-value form. Grade 2 place value expects 164 = 1 hundred, 6 tens, 4 ones. Asking for '14 ones' implies the ones place can hold more than 9, which contradicts the story's model and the skill's goal of breaking numbers apart. Suggested fix: '164 is 1 hundred, 6 tens, and how many ones?' with screen '164 = 100 + 60 + ?' and answer 4. Its 'Why' should then say 100 and 60 make 160, and 4 more is 164."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Checked all seven cards. The place-value statements are accurate (10 ones = 1 ten, 10 tens = 100, 124 = 100 + 24, 124 = 12 tens + 4 ones, 120 + 4 = 124). The story is clear and works by ear. No changes needed."
+      }
+    ],
+    "notes": "Checked every item's marked answer against its choices and screen. Keypad-1 (142), tap-1 (10), number-line-1 (150), tap-2 (126), keypad-2 (107), keypad-3 (15 tens), tap-3 (24), number-line-2 (165), keypad-4 (140), keypad-5 (105), tap-5 (176), number-line-3 (175) and tap-6 (190 greatest) are correct. VERIFY item tap-4 is correct: 12 tens 5 ones is 125, so 'false' is right. The only blocker is keypad-6, whose answer is arithmetically valid but teaches non-standard place value. Difficulty levels look appropriate for Grade 2 and the narrations work by ear."
+  }
+}

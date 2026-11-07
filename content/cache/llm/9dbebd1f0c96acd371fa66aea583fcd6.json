@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 jumps from 'Pip hops to the end. 18, 19, 20!' and skips 16 and 17, even though card 5 ends at 15. Audio-only children can't see the gap, so they may hear that counting skips numbers. Consider 'Pip hops on: 16, 17, 18, 19, 20!' or a short gap-filling line."
+      },
+      {
+        "target": "k-count-to-20-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Choice c (19) is the last number already on screen (17, 18, 19). It is a weak distractor because it repeats the sequence a child just heard. Consider a choice such as 21 or 15. Keep the marked answer 20, which is correct."
+      },
+      {
+        "target": "k-count-to-20-number-line-4",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration says 'Count 18, 19, 20' before the child hops, which gives away the answer. Consider 'Hop 3 more. Where does Pip land?' and keep the counting hint for the Why text."
+      }
+    ],
+    "notes": "Checked every story card and item. All marked answers are correct: tap-1 (4), tap-2 (9), keypad-1 (5 frogs), keypad-2 (7), number-line-1 (3), tap-3 (14), tap-4 (17), keypad-3 (13), number-line-2 (12), number-line-3 (15), tap-5 (20), keypad-4 (20), keypad-5 (14 stars), number-line-4 (20), number-line-5 (17). Each VERIFY item was worked out and matches its marked answer. Each choice in the tap items is a single correct answer with no duplicates of the right value. The picture counts match their values. No blockers found. The notes are small wording and difficulty points."
+  }
+}

@@ -1,0 +1,446 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She has 3 red apples.",
+        "text": "3",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Her friend gives her 2 more. Now she has 5 apples.",
+        "text": "3 + 2 = 5",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Mia has 8 apples. She gives 3 away. Now she has 5.",
+        "text": "8 - 3 = 5",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 8, "filled": null }
+      },
+      {
+        "narration": "Here are 7 apples. 5 are red. The rest are green. 2 are green.",
+        "text": "7 - 5 = 2",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 }
+      },
+      {
+        "narration": "Ben has 4 apples. Mia has 8. Mia has 4 more than Ben.",
+        "text": "8 - 4 = 4",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 8, "filled": null }
+      },
+      {
+        "narration": "Now let's practise with Mia! Use your fingers to help.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🍎", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Tom has 2 cats. 1 more cat comes. How many cats now? Is it 2, 3, or 4?",
+        "prompt": "2 + 1 = ?",
+        "why": "Start with 2 cats. Add 1 more. Count on: 3.",
+        "visual": { "kind": "objects", "emoji": "🐱", "count": 2, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Pip has 4 fish. 1 fish swims away. How many fish are left?",
+        "prompt": "4 - 1 = ?",
+        "why": "Start with 4 fish. Take away 1. Count back: 3.",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 4, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 - 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Mia has 3 apples. She gets 2 more. Hop the frog to how many apples she has.",
+        "prompt": "3 + 2 = ?",
+        "why": "Start at 3. Hop 2 more: 4, 5. Mia has 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "3 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam has 5 balloons. 2 balloons pop. How many are left? Is it 4, 2, or 3?",
+        "prompt": "5 - 2 = ?",
+        "why": "Start with 5. Take away 2. Count back: 4, 3. Sam has 3.",
+        "visual": { "kind": "objects", "emoji": "🎈", "count": 5, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "2 birds sit on a branch. 2 more birds come. How many birds now?",
+        "prompt": "2 + 2 = ?",
+        "why": "Hold up 2 fingers. Then 2 more. Count them all: 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Lily has 6 stars. She gets 3 more. Hop the frog to how many stars she has.",
+        "prompt": "6 + 3 = ?",
+        "why": "Start at 6. Count on 3: 7, 8, 9. Lily has 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "6 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Max has 9 cookies. He eats 4. How many cookies are left?",
+        "prompt": "9 - 4 = ?",
+        "why": "Start at 9. Count back 4: 8, 7, 6, 5. Max has 5.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 9, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ana has 7 balloons. 5 are red. The rest are blue. How many are blue? Is it 2, 3, or 1?",
+        "prompt": "7 - 5 = ?",
+        "why": "Take the 5 red away from 7. Count what is left: 2 blue.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ben has 8 grapes. Zoe has 5 grapes. How many more does Ben have? Is it 2, 4, or 3?",
+        "prompt": "8 - 5 = ?",
+        "why": "Match each of Zoe's grapes to one of Ben's. Ben has 3 left over.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Leo has 10 stickers. He gives 4 away. Hop the frog to how many stickers he has now.",
+        "prompt": "10 - 4 = ?",
+        "why": "Start at 10. Count back 4: 9, 8, 7, 6. Leo has 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "10 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Kim has 6 shells. She finds 4 more. How many shells does she have?",
+        "prompt": "6 + 4 = ?",
+        "why": "Start at 6. Count on 4: 7, 8, 9, 10. Kim has 10.",
+        "visual": { "kind": "objects", "emoji": "🐚", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "There are 10 ducks. 6 are in the pond. The rest are on the grass. How many are on the grass? Is it 3, 5, 6, or 4?",
+        "prompt": "10 - 6 = ?",
+        "why": "Take the 6 pond ducks away from 10. Count back: 4 ducks on the grass.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 - 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Dan has 9 cars. Eve has 4 cars. How many more cars does Dan have?",
+        "prompt": "9 - 4 = ?",
+        "why": "Match 4 cars to 4 cars. Count Dan's extra cars: 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Tom has 5 apples. He gets 3 more. Then he eats 2. Hop the frog to how many apples Tom has.",
+        "prompt": "5 + 3 - 2 = ?",
+        "why": "5 and 3 more makes 8. Then take away 2. Tom has 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "5 + 3 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Jo has 3 hats. Ali has 7 hats. How many fewer hats does Jo have? Is it 3, 4, 5, or 10?",
+        "prompt": "7 - 3 = ?",
+        "why": "Match 3 hats to 3 hats. Ali has 4 extra. So Jo has 4 fewer.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 - 3", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

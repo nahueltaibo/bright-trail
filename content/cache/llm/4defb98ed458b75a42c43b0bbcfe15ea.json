@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 3 narration says 'Mia has 5. Pip has 3' and card 5 says 'Pip and Mia each have 4', but each picture shows only one group (5 apples, then 4 apples). The second group is never drawn, so the comparison the narration describes is not visible. Consider showing both groups side by side on these cards."
+      },
+      {
+        "target": "k-more-less-same-tap-3",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Narration says Pip and Mia each have 4 apples, but the picture shows only one row of 4 apples. The answer 'the same' is correct, but the picture should show both groups so the child can match them."
+      },
+      {
+        "target": "k-more-less-same-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Narration and screen describe Pip with 7 and Mia with 5, but the picture shows only the 7 apples. Mia's 5 are not drawn. The marked answer 'more' is correct (7 > 5), but the picture should include Mia's group."
+      },
+      {
+        "target": "k-more-less-same-tap-6",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Narration says 'Another has 10', but the only picture is the 9-dot ten-frame. The 10 group is never drawn. The marked answer 'less' is correct (9 < 10) and the question can be answered by ear, but a ten-frame for 10 should be shown so the picture matches the narration."
+      },
+      {
+        "target": "k-more-less-same-keypad-4",
+        "severity": "note",
+        "category": "other",
+        "note": "'How many more' (finding a difference by subtraction, 8 − 5 = 3) is close to the top of Kindergarten scope and is harder than the rest of this skill. Answer 3 is correct, so this is only a note on level. Consider moving it to a later skill or marking it as a stretch item."
+      }
+    ],
+    "notes": "I checked every marked answer and all are correct: tap-1 (7 stars), tap-2 (3 dogs), keypad-1 (9), number-line-1 (5), tap-3 (the same), tap-4 (9 hearts), tap-5 (more), keypad-2 (7), number-line-2 (6), keypad-3 (2), tap-6 (less), tap-7 (6 stars), keypad-4 (3), number-line-3 (9), number-line-4 (7). Each \"why\" explanation is accurate. I found no blockers. The main recurring issue is that several story cards and items describe two groups by narration but draw only one group. Because children learn by ear, the narration carries the meaning, but the pictures should still match it. No item is ambiguous when heard alone."
+  }
+}

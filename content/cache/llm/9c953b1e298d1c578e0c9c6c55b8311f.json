@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-count-50-tap-5",
+        "severity": "blocker",
+        "category": "ambiguous",
+        "note": "The question asks what comes 'just before 50' and offers both 48 and 49. Read plainly, 49 is the number just before 50, so a child could reasonably tap 49 and be marked wrong. The answer is only 48 if the child holds onto 'counts by 2s', and the screen text 'Just before 50' does not say that. Reword so only 48 fits, for example 'If Pia counts by 2s, what number is just before 50?' Also, the narration names Pia, but the story character is Mia."
+      }
+    ],
+    "notes": "I checked every item's marked answer against its question and found no other errors. Story cards: the counts, the picture counts (10 stars, 10 socks, 4 hands, ten-frame of 10, 6 hands = 30 fingers) and the frog hops all agree with the narration. Keypad answers 10, 20, 18, 50, 45, 30 and 40 are correct. Tap answers 8, 30, 40 and 15 are the only correct choices in their sets. Number-line targets 30, 35, 38 and 40 are reachable with the stated steps, and the hop counts are right (3, 7). Grade-level and skill fit are appropriate for Grade 1 counting by 1s, 2s, 5s and 10s to 50. No VERIFY items were present. Only tap-5 needs a fix."
+  }
+}

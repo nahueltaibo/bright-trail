@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 3 says \"Mia counts hands by 5s\" but she counts fingers by 5s, one hand at a time. Consider \"Mia counts the fingers on each hand by 5s.\" This keeps the unit clear for a child listening by ear."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 4 says \"Count by 10s. 10, 20, 30, 40, 50\" but the picture is a single ten-frame with 10 dots. Narration reaches 50 and the picture shows only one 10. Consider adding more ten-frames or saying \"one full ten-frame is 10. Ten more is 20.\""
+      }
+    ],
+    "notes": "Checked every story card and all 16 items. Every marked answer is correct, each distractor is wrong, and each item is answerable by ear. No VERIFY-tagged items were present. Story facts are true: socks come in pairs, a hand has 5 fingers, and a full ten-frame has 10 dots. The two notes above are wording or picture-alignment issues, not errors. No blockers found."
+  }
+}

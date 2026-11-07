@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 ('Now let's practise with Mia! Use your fingers to help.') gives no numbers or question, and its single apple picture doesn't match any count. A child listening can't tell what to practise. Consider stating a short problem, such as 'Mia has 4 apples. 2 more come. How many now?', with the matching screen and picture."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 4 says 'Here are 7 apples' but its picture is a ten-frame of dots, not apples. The narration should say the dots are apples, or the picture should show apples, so the two stay consistent."
+      },
+      {
+        "target": "k-add-sub-stories-10-number-line-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Two-step problem (5 + 3 - 2) with difficulty 3 is likely above the Kindergarten add/subtract-within-10 focus. Consider a one-step item or moving it to a later skill."
+      },
+      {
+        "target": "k-add-sub-stories-10-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "'How many more does Ben have?' is a comparison question with no picture or counters. By ear alone it is hard to follow, and the 'more' versus 'fewer' wording is easy to confuse. Consider adding a short spoken setup, such as 'Ben has 8 grapes. Zoe has 5.'"
+      },
+      {
+        "target": "k-add-sub-stories-10-keypad-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Comparison ('How many more cars does Dan have?') with no picture is hard to follow by ear. Consider adding a spoken setup with both quantities, or a picture."
+      },
+      {
+        "target": "k-add-sub-stories-10-tap-6",
+        "severity": "note",
+        "category": "other",
+        "note": "Comparison ('How many fewer hats does Jo have?') with no picture and difficulty 3 is hard by ear alone. The 'fewer' wording is also easy to confuse with 'more'. Consider a clearer spoken setup or a picture."
+      }
+    ],
+    "notes": "I checked every story card and item. All marked answers are correct: each arithmetic result matches the screen equation, each tap item has exactly one right choice, and each why-explanation is accurate. I found no blockers. The problems listed are notes on wording, pictures, and difficulty, not errors in the answers."
+  }
+}

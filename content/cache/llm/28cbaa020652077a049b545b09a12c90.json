@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Steps 3, 4 and 6 narrate slices (4 slices = 4/4 = 1 whole; 5 slices; 6 slices), but the picture is 4 × 🍕, 5 × 🍕 and 6 × 🍕, which shows whole pizzas. Four pizza emojis read as 4 wholes, which contradicts '4/4 = 1 whole' and the 6/4 count. Draw the slices of one pizza, e.g. a pizza cut into 4 parts, or a count of slice emojis, so the picture matches the narration."
+      },
+      {
+        "target": "g4-count-unit-fractions-keypad-1",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Narration says 'pizza slices, each slice is 1/4 of a pizza', but the picture is 7 × 🍕, which shows 7 whole pizzas. Seven whole pizzas would be 7 wholes, not 7 one fourths. Show 7 slice pieces instead, so the picture matches the narration and the answer 7."
+      },
+      {
+        "target": "g4-count-unit-fractions-tap-2",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says 6 sandwich pieces, each one half, but the picture is 6 × 🥪, which shows 6 whole sandwiches. The answer 6 is still right. For clarity, draw the pieces, or say 6 whole sandwiches, each cut into halves, and ask how many one halves."
+      }
+    ],
+    "notes": "Checked every item's arithmetic and marked answer. All marked answers are correct: tap-1 (3/4), tap-2 (6), keypad-1 (7), number-line-1 (4), keypad-2 (3), tap-3 (4/3), tap-4 (yes; 5/3 > 1), keypad-3 (9), number-line-2 (7), keypad-4 (5), tap-5 (9/8), tap-6 (5/3), keypad-5 (3), keypad-6 (12), number-line-3 (9). No choice set has two correct answers and none is missing the right answer. The story text itself is mathematically accurate. The main problem is the picture for the pizza items: a whole-pizza emoji is used to show slices. Grade-level fit looks reasonable for the Ontario Grade 4 unit-fraction skill, with denominators up to 8 and improper fractions only in simple counting form."
+  }
+}

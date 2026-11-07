@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 ('Now let's practise with Mia! Use your fingers to help.') has no question or number to solve, so a child gets no task. Add a short question, such as 'Mia has 4 apples. 2 more come. How many now?', or drop the card."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 4 says 5 apples are red and 2 are green, but the ten-frame with 7 dots shows no colours. A child listening can't match the red/green split to the picture. Either the picture should show two colour groups, or the narration should say the picture is just 7 dots."
+      },
+      {
+        "target": "k-add-sub-stories-10-tap-3",
+        "severity": "note",
+        "category": "other",
+        "note": "Narration says 5 balloons are red and the rest are blue, but the ten-frame with 7 dots has no colours, so the picture can't show the split. Same fix as story card 4."
+      },
+      {
+        "target": "k-add-sub-stories-10-number-line-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Two operations in one item (5 + 3 - 2) is a step above the other Kindergarten items. It stays within 10, so it is valid, but it is harder than difficulty 3 suggests for by-ear play. Consider moving it to a later skill or marking it harder."
+      },
+      {
+        "target": "k-add-sub-stories-10-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "There is no picture, and the question asks how many more by comparing two groups. A child who hears only the narration has to hold 8 and 5 in memory. A ten-frame or row of emoji for each child would make the comparison easier to follow."
+      }
+    ],
+    "notes": "I checked the story cards and all 19 items. Every marked answer is correct: tap-1 3, keypad-1 3, number-line-1 5, tap-2 3, keypad-2 4, number-line-2 9, keypad-3 5, tap-3 2, tap-4 3, number-line-3 6, keypad-4 10, tap-5 4, keypad-5 5, number-line-4 6, tap-6 4. Each tap item has exactly one correct choice, and the picture counts match the narration. Story arithmetic is correct, including card 5 (8 - 4 = 4). I found no blockers. The notes are about wording and picture clarity, and about the practice prompt on card 6, which has no question."
+  }
+}

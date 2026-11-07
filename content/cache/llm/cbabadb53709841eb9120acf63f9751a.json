@@ -1,0 +1,8 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [],
+    "notes": "Reviewed the story cards and all 19 items for g2-division-sharing. I checked every marked answer by working out the division, and checked each tap choice against its value.\n\nStory: The arithmetic is correct (8 ÷ 2 = 4; 12 ÷ 3 = 4 bags; 4 groups of 3 = 12). The narration works by ear.\n\nVERIFY item g2-division-sharing-tap-5: 12 ÷ 2 = 6 and 12 ÷ 4 = 3, so 2 friends get more each. The marked answer \"2 friends\" is correct, and \"4 friends\" is wrong. Its screen text (\"Who gets more?\") has no numbers, so it depends on the narration, which does state both options. That is acceptable.\n\nOther items: All marked answers are correct, with exactly one right choice for each tap item. The keypad answers (5, 2, 3, 6, 2, 3, 3) and the number-line answers (2, 3, 3) are correct. Tap-6 asks how many friends, and 9 ÷ 3 = 3 friends is right.\n\nPossible small polish (not reported as problems): keypad-5 and tap-6 use the \"how many groups\" reading of division, which the narration makes clear."
+  }
+}

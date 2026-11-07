@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "k-subitize-5-number-line-1",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "The narration gives the answer outright (\"Hop the frog to 1\"), so the child only needs to hear and copy the number. It doesn't test subitizing. Consider asking the child to find the number from the dot card, or describing the dots without naming the value."
+      },
+      {
+        "target": "k-subitize-5-number-line-2",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "Same issue: \"Sam sees 4 dots... Hop the frog to 4\" states the answer in the narration. The item checks listening, not quick recognition of 4 dots."
+      },
+      {
+        "target": "k-subitize-5-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "This item is addition (2 + 3) rather than subitizing. It is a reasonable Kindergarten stretch, but it sits outside the skill's stated goal of seeing a group at once without counting. The answer 5 is correct and reachable on the 0 to 5 line."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 (\"Now you try!\") shows only one ladybug and asks no question. It should show the first practice picture or say what to look for, so a child listening by ear knows what to find."
+      }
+    ],
+    "notes": "I checked every marked answer against its picture or narration and found no wrong answers and no items with more than one correct choice. The story cards match their pictures (2, 3, 4 and 1 ladybugs; a full ten-frame row of 5; \"two and two make 4\"). None of the items were marked VERIFY. All items stay within Kindergarten subitizing up to 5. The problems above are notes on tone, clarity, and item quality, not blockers."
+  }
+}

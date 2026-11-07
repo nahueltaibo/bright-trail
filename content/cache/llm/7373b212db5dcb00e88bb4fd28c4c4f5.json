@@ -1,0 +1,438 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam helps count seats at the hockey arena. There are 1237 seats. Counting each one takes a long time. A quick, close number is easier to use.",
+        "text": "1237 seats",
+        "visual": { "kind": "emoji", "emoji": "🏒", "count": null, "filled": null }
+      },
+      {
+        "narration": "Rounding gives a close number that is easy to work with. First pick a place to round to: ten, hundred, or thousand. Then find the closest one.",
+        "text": null,
+        "visual": null
+      },
+      {
+        "narration": "Round 1237 to the nearest ten. Look at the ones digit. It is 7. That is 5 or more, so go up. 1237 is about 1240.",
+        "text": "1237 is about 1240",
+        "visual": null
+      },
+      {
+        "narration": "Now round 1237 to the nearest hundred. Look at the tens digit. It is 3. That is less than 5, so stay down. 1237 is about 1200.",
+        "text": "1237 is about 1200",
+        "visual": null
+      },
+      {
+        "narration": "Round to the nearest thousand. Look at the hundreds digit. It is 2, so stay down. 1237 is about 1000. The bigger the place, the rougher the guess.",
+        "text": "1237 is about 1000",
+        "visual": null
+      },
+      {
+        "narration": "What if the digit is exactly 5? Then the number is in the middle. Always round up. 1250 to the nearest hundred is 1300.",
+        "text": "1250 is about 1300",
+        "visual": null
+      },
+      {
+        "narration": "Sam can now tell a friend, about 1200 seats. Let's practise rounding. Look at the digit just right of the place you round to.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Round 462 to the nearest ten. What number do you get?",
+        "prompt": "462 to the nearest 10",
+        "why": "Look at the ones digit, 2. It is less than 5, so stay down. 462 is about 460.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 460,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(462,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Round 748 to the nearest hundred. Is it 800 or 700?",
+        "prompt": "748 to the nearest 100",
+        "why": "Look at the tens digit, 4. It is less than 5, so stay down. 748 is about 700.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 800,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 700,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(748,100)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Round 83 to the nearest ten. Move the frog to your answer.",
+        "prompt": "83 to the nearest 10",
+        "why": "Look at the ones digit, 3. It is less than 5, so stay down. 83 is about 80.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 80,
+        "check": { "rule": "equals", "expr": "roundTo(83,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A town has 4612 people. Round to the nearest thousand. Is it 4000 or 5000?",
+        "prompt": "4612 to the nearest 1000",
+        "why": "Look at the hundreds digit, 6. It is 5 or more, so go up. 4612 is about 5000.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(4612,1000)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A library has 1349 books. Round to the nearest hundred. What number do you get?",
+        "prompt": "1349 to the nearest 100",
+        "why": "Look at the tens digit, 4. It is less than 5, so stay down. 1349 is about 1300.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1300,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(1349,100)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Round 3550 to the nearest hundred. Is it 3500 or 3600?",
+        "prompt": "3550 to the nearest 100",
+        "why": "The tens digit is 5. That is exactly in the middle, so round up. 3550 is about 3600.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3500,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3600,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(3550,100)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "The running track path is 8465 metres long. Round to the nearest ten. What number do you get?",
+        "prompt": "8465 to the nearest 10",
+        "why": "The ones digit is 5. That is the middle, so round up. 8465 is about 8470.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8470,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(8465,10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Round 3640 to the nearest hundred. Move the frog to your answer.",
+        "prompt": "3640 to the nearest 100",
+        "why": "Look at the tens digit, 4. It is less than 5, so stay down. 3640 is about 3600.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 3000,
+        "max": 4000,
+        "step": 100,
+        "target": 3600,
+        "check": { "rule": "equals", "expr": "roundTo(3640,100)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A library has 5284 books. Round to the nearest hundred. Is it 5000, 5200, or 5300?",
+        "prompt": "5284 to the nearest 100",
+        "why": "Look at the tens digit, 8. It is 5 or more, so go up. 5284 is about 5300.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5200,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5300,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(5284,100)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A town has 7482 people. Round to the nearest thousand. What number do you get?",
+        "prompt": "7482 to the nearest 1000",
+        "why": "Look at the hundreds digit, 4. It is less than 5, so stay down. 7482 is about 7000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7000,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(7482,1000)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number rounds to 5000 when rounded to the nearest thousand? Is it 4480, 4520, 5500, or 6499?",
+        "prompt": "Rounds to 5000",
+        "why": "Check the hundreds digit. 4520 has a 5 there, so it goes up to 5000. 4480 goes down to 4000.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4480,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4520,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5500,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 6499,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "roundTo(4480,1000)==5000" },
+            { "id": "b", "expr": "roundTo(4520,1000)==5000" },
+            { "id": "c", "expr": "roundTo(5500,1000)==5000" },
+            { "id": "d", "expr": "roundTo(6499,1000)==5000" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Round 9960 to the nearest hundred. What number do you get?",
+        "prompt": "9960 to the nearest 100",
+        "why": "The tens digit is 6, so go up. 9900 plus 100 makes 10000. So 9960 is about 10000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10000,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(9960,100)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A stadium has 6500 seats. Round to the nearest thousand. Move the frog to your answer.",
+        "prompt": "6500 to the nearest 1000",
+        "why": "The hundreds digit is 5. That is the middle, so round up. 6500 is about 7000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10000,
+        "step": 1000,
+        "target": 7000,
+        "check": { "rule": "equals", "expr": "roundTo(6500,1000)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sam rounds 4468 and gets 4470. Which place did Sam round to? The nearest hundred, thousand, or ten?",
+        "prompt": "4468 rounds to 4470",
+        "why": "4470 is only 2 away from 4468, so Sam rounded to the nearest ten. Hundred gives 4500 and thousand gives 4000.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "hundred",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "thousand",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "ten",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "roundTo(4468,100)==4470" },
+            { "id": "b", "expr": "roundTo(4468,1000)==4470" },
+            { "id": "c", "expr": "roundTo(4468,10)==4470" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A race is 6995 metres long. Round to the nearest ten. What number do you get?",
+        "prompt": "6995 to the nearest 10",
+        "why": "The ones digit is 5, the middle, so round up. 6990 plus 10 makes 7000. So 6995 is about 7000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7000,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(6995,10)", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

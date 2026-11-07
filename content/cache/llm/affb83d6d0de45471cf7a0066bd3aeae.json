@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 1 narration asks \"Who scored more?\" but the screen shows \"345 or 354?\". A child hears a question about a person and sees two numbers, so the screen text doesn't match the question. Consider a screen like \"Maya or Sam: who scored more?\" or \"Who scored more: 345 or 354?\""
+      }
+    ],
+    "notes": "I checked every story card and item. Each marked answer is correct, and each distractor is wrong: tap-1 (430), tap-2 (250), tap-3 (583), tap-4 (less than 500), tap-5 (570), tap-6 (998), tap-7 (655 is the only number between 640 and 680), keypad-1 (410), keypad-2 (604 is the middle of 460, 604, 640), keypad-3 (372 is second greatest), keypad-4 (469), and all four number-line answers (700, 250, 650, 775). The story's ordering examples (280, 345, 620 and 620, 345, 280) and its 500-helper explanations are also correct. Each VERIFY item checks out: tap-4, number-line-3 and tap-7 have marked answers that match their questions. The only issue is the card 1 wording note above. Item difficulty and grade-level fit look appropriate for Grade 3."
+  }
+}

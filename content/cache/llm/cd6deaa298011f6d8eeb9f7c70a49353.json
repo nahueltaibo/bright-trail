@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Step 3 shows 2 cookies and step 4 shows 4 cookies, which are the cookies handed out so far, but the story never says so and the pictures look the same as the full set. Step 5 shows all 6. A child listening by ear may not track that the pile is shrinking. Consider saying 'Two cookies are shared' or similar in the narration."
+      },
+      {
+        "target": "k-equal-share-keypad-6",
+        "severity": "note",
+        "category": "age",
+        "note": "Working backward from equal groups to a total (4 friends x 2 each = 8) is closer to Grade 1 multiplication/equal-groups than to Kindergarten sharing, and it is rated difficulty 3. Consider rephrasing it as counting out 2 for each friend, or moving it out of the Kindergarten set. The answer 8 is correct."
+      }
+    ],
+    "notes": "No blockers found. I checked every marked answer by working it out:\n- tap-1 (VERIFY): 2 and 2 is equal, so Yes is correct. The picture of 4 cookies matches the narration.\n- keypad-1: 2 apples for 2 friends gives 1 each.\n- number-line-1: 4 ducks for 2 ponds gives 2 each.\n- tap-2: 4 stickers for 4 friends gives 1 each. Only choice c is right.\n- keypad-2: 6 cookies for 2 friends gives 3 each.\n- tap-3: 6 berries for 3 friends gives 2 each. Only choice c is right.\n- keypad-3: 8 cars for 2 friends gives 4 each.\n- number-line-2: 9 grapes for 3 friends gives 3 each, and the answer is within 0 to 10.\n- tap-4 (VERIFY): Ana 4 and Ben 2 are not equal, so No is correct.\n- keypad-4: 10 stars for 2 friends gives 5 each.\n- tap-5: 8 pencils for 4 friends gives 2 each. Only choice d is right.\n- keypad-5: 9 apples for 3 friends gives 3 each.\n- number-line-3: 10 balloons for 5 friends gives 2 each, and the answer is within 0 to 10.\n- keypad-6: 4 friends with 2 each gives 8 total.\n- tap-6 (VERIFY): 3 and 3 is the only equal split of 6, and the other choices (4 and 2, 5 and 1) are unequal. Only choice b is right.\nThe 'Why' explanations are accurate, and every item can be understood by ear. The story's facts are correct."
+  }
+}

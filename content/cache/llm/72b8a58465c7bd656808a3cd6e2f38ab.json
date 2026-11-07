@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Step 1 says Maya has 43 stickers but the picture is a single ⭐. One star doesn't show 43 of anything, so the picture and narration don't match. A ten-frame or a row of 20 stars with a count would fit the 43 stickers better."
+      },
+      {
+        "target": "g3-round-numbers-keypad-4",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "450 to the nearest hundred is an exactly-halfway case. The answer 500 follows the 5-or-more-rounds-up rule in the story, so it is correct, but halfway cases are a convention and may confuse a Grade 3 child. Consider using a non-halfway number here, or saying in the story that 5 rounds up."
+      },
+      {
+        "target": "g3-round-numbers-number-line-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "550 to the nearest hundred is also an exactly-halfway case. The answer 600 is right under the story's rule, but it is the same convention issue as keypad-4. Consider a clearer example, or keep it and make the 5-rounds-up rule explicit."
+      },
+      {
+        "target": "g3-round-numbers-tap-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The question asks for the nearest hundred but offers 370 as a choice. 370 is a nearest-ten answer, so it is a distractor that could mislead a child who has just learned tens. It is not marked wrong, so this is only a teaching-clarity note."
+      }
+    ],
+    "notes": "I checked every marked answer and every rounding rule against the story. All answers are correct: 34→30, 72→70, 28→30, 82 is closer to 80, 48→50, 65→70, 356→360, 372→400 (hundreds), 683→700, 56→60, 450→500 (half-up), 237→240 (tens), 48+33 rounds to 50+30=80, 67 cents→70 cents=7 dimes, and 550→600 (half-up). No item has more than one right choice or a missing right answer. The story's rules (ones digit for tens, tens digit for hundreds, 5 or more rounds up) are accurate and match every item's explanation. The number-line items are understandable by ear, since the narration gives the number and the target. No blockers found. Notes are minor: a picture that doesn't match the 43-sticker count in story step 1, and two exactly-halfway items that rely on the round-half-up convention."
+  }
+}

@@ -1,0 +1,467 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has a piggy bank. It is full of money! Let's look at each one.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐷", "count": null, "filled": null }
+      },
+      {
+        "narration": "This is a nickel. It is a coin. A nickel is worth 5¢.",
+        "text": "nickel = 5¢",
+        "visual": { "kind": "emoji", "emoji": "🪙", "count": null, "filled": null }
+      },
+      {
+        "narration": "This is a dime. It is a coin too. A dime is worth 10¢.",
+        "text": "dime = 10¢",
+        "visual": { "kind": "emoji", "emoji": "🪙", "count": null, "filled": null }
+      },
+      {
+        "narration": "This is a quarter. It is a big coin. A quarter is worth 25¢.",
+        "text": "quarter = 25¢",
+        "visual": { "kind": "emoji", "emoji": "🪙", "count": null, "filled": null }
+      },
+      {
+        "narration": "Loonies and toonies are coins too! A loonie is worth $1.",
+        "text": "loonie = $1",
+        "visual": { "kind": "emoji", "emoji": "🪙", "count": null, "filled": null }
+      },
+      {
+        "narration": "A toonie is a coin. It is worth $2. That is more than a loonie!",
+        "text": "toonie = $2",
+        "visual": { "kind": "emoji", "emoji": "🪙", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia finds bills! A $5 bill is worth $5. A $10 bill is worth $10.",
+        "text": "$5 bill  $10 bill",
+        "visual": { "kind": "emoji", "emoji": "💵", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now you can name the money. Let's play!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐷", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "How much is a nickel worth? Is it 5¢ or 10¢?",
+        "prompt": "A nickel is worth?",
+        "why": "A nickel is worth 5¢. A dime is worth 10¢.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "5¢",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "10¢",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "5",
+          "choices": [
+            { "id": "a", "expr": "5" },
+            { "id": "b", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A loonie is a coin. How many dollars is a loonie worth?",
+        "prompt": "Loonie = $?",
+        "why": "A loonie is worth $1. Just one dollar!",
+        "visual": { "kind": "emoji", "emoji": "🪙", "count": null, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Is a toonie a coin or a bill?",
+        "prompt": "Coin or bill?",
+        "why": "A toonie is a coin. Loonies and toonies are coins too!",
+        "visual": { "kind": "emoji", "emoji": "🪙", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "bill",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "coin",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "1",
+          "choices": [
+            { "id": "a", "expr": "1 == 0" },
+            { "id": "b", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "A dime is worth 10¢. Move the frog to 10.",
+        "prompt": "Dime = 10¢",
+        "why": "A dime is worth 10¢. Hop to 10!",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 25,
+        "step": 5,
+        "target": 10,
+        "check": { "rule": "equals", "expr": "10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A toonie is a coin. How many dollars is a toonie worth?",
+        "prompt": "Toonie = $?",
+        "why": "A toonie is worth $2. That is two dollars.",
+        "visual": { "kind": "emoji", "emoji": "🪙", "count": null, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which is worth more, a dime or a nickel?",
+        "prompt": "Worth more?",
+        "why": "A dime is worth 10¢. A nickel is worth only 5¢. So the dime is worth more.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "nickel",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "dime",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "10",
+          "choices": [
+            { "id": "a", "expr": "5" },
+            { "id": "b", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "A quarter is worth some cents. Move the frog to the cents a quarter is worth.",
+        "prompt": "Quarter = ?¢",
+        "why": "A quarter is worth 25¢. Hop all the way to 25!",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 25,
+        "step": 5,
+        "target": 25,
+        "check": { "rule": "equals", "expr": "25", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A $10 bill is a bill. How many dollars is it worth?",
+        "prompt": "$10 bill = $?",
+        "why": "A $10 bill is worth $10. The number on the bill is its worth.",
+        "visual": { "kind": "emoji", "emoji": "💵", "count": null, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which is worth the least? A loonie, a toonie, or a $5 bill?",
+        "prompt": "Worth the least?",
+        "why": "A loonie is $1. A toonie is $2. A $5 bill is $5. So the loonie is worth the least.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "toonie",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "$5 bill",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "loonie",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "least",
+          "expr": "1",
+          "choices": [
+            { "id": "a", "expr": "2" },
+            { "id": "b", "expr": "5" },
+            { "id": "c", "expr": "1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "A $5 bill is worth some dollars. Move the frog to that many dollars.",
+        "prompt": "$5 bill = $?",
+        "why": "A $5 bill is worth $5. Hop to 5!",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Sam has a loonie and a toonie. How many dollars does he have?",
+        "prompt": "$1 + $2 = ?",
+        "why": "A loonie is $1. A toonie is $2. Count 1, then 2 more. That makes 3 dollars.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "1 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is worth the most? A quarter, a toonie, or a dime?",
+        "prompt": "Worth the most?",
+        "why": "A toonie is $2. That is more than 25¢ or 10¢. So the toonie is worth the most.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "quarter",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "dime",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "toonie",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "200",
+          "choices": [
+            { "id": "a", "expr": "25" },
+            { "id": "b", "expr": "10" },
+            { "id": "c", "expr": "200" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Here are 2 nickels. Each nickel is 5¢. How many cents is that?",
+        "prompt": "5¢ + 5¢ = ?",
+        "why": "Each nickel is 5¢. Count 5, then 10. Two nickels make 10¢.",
+        "visual": { "kind": "objects", "emoji": "🪙", "count": 2, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Max has a toonie and a $5 bill. Move the frog to how many dollars he has.",
+        "prompt": "$2 + $5 = ?",
+        "why": "A toonie is $2. A $5 bill is $5. Start at 5 and hop 2 more to 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "2 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one is worth $2? A loonie, a toonie, or a $10 bill?",
+        "prompt": "Which is $2?",
+        "why": "A toonie is worth $2. A loonie is $1. A $10 bill is $10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "$10 bill",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "loonie",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "toonie",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "2",
+          "choices": [
+            { "id": "a", "expr": "10" },
+            { "id": "b", "expr": "1" },
+            { "id": "c", "expr": "2" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia the squirrel. She collects acorns. Today she will add and take away in her head. Let's learn some quick tricks!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐿️", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia has 24 acorns. She finds 3 more. Start at the big number and count on. 25, 26, 27!",
+        "text": "24 + 3 = 27",
+        "visual": null
+      },
+      {
+        "narration": "Mia has 18 acorns. She finds 5 more. Take 2 from the 5 to make 20. Then add the last 3. That is 23.",
+        "text": "18 + 5 = 23",
+        "visual": null
+      },
+      {
+        "narration": "Mia has 26 acorns and finds 12 more. Add the tens first. 26 + 10 is 36. Then add 2 more. That is 38.",
+        "text": "26 + 12 = 38",
+        "visual": null
+      },
+      {
+        "narration": "Mia has 35 acorns. She gives 12 away. Take away 10 first. That leaves 25. Then take away 2 more. Now she has 23.",
+        "text": "35 - 12 = 23",
+        "visual": null
+      },
+      {
+        "narration": "Mia has 47 acorns. Her friend has 44. How many more? Start at 44 and count up to 47. That is 3 hops.",
+        "text": "47 - 44 = 3",
+        "visual": null
+      },
+      {
+        "narration": "Great job! You can add and take away in your head. Now it is your turn to practise with Mia.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🌰", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 12 + 5? Type the answer.",
+        "prompt": "12 + 5 = ?",
+        "why": "Start at 12 and count on 5. 13, 14, 15, 16, 17. The answer is 17.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 17,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 30 - 4? Is it 26, 34, 27, or 25?",
+        "prompt": "30 - 4 = ?",
+        "why": "Take away 4 from 30. Count back 4: 29, 28, 27, 26. The answer is 26.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 26,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 34,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 27,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 25,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "30 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "What is 25 + 5? Move the frog to the answer.",
+        "prompt": "25 + 5 = ?",
+        "why": "25 and 5 more makes the next ten. 25 + 5 is 30.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "target": 30,
+        "check": { "rule": "equals", "expr": "25 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Nina has 20 stickers. She gets 7 more. How many stickers now? Is it 13, 17, 26, or 27?",
+        "prompt": "20 + 7 = ?",
+        "why": "20 and 7 more is 27. The 2 tens stay the same. Add the 7 ones.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 13,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 17,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 26,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 27,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20 + 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 29 - 10? Type the answer.",
+        "prompt": "29 - 10 = ?",
+        "why": "Taking away 10 changes the tens. 29 has 2 tens. One less ten makes 19.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 19,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "29 - 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "What is 28 + 5? Try making 20 first. Type the answer.",
+        "prompt": "28 + 5 = ?",
+        "why": "28 needs 2 more to make 30. Take 2 from the 5. Then 30 + 3 is 33.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 33,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "28 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 36 - 12? Is it 48, 26, 24, or 23?",
+        "prompt": "36 - 12 = ?",
+        "why": "Take away 10 first. 36 - 10 is 26. Then take away 2 more. The answer is 24.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 48,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 26,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 24,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 23,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "36 - 12", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "What is 18 + 9? Move the frog to the answer.",
+        "prompt": "18 + 9 = ?",
+        "why": "Add 10 to 18 to get 28. But 9 is one less than 10. So take 1 back. The answer is 27.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 20,
+        "max": 50,
+        "step": 1,
+        "target": 27,
+        "check": { "rule": "equals", "expr": "18 + 9", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "What is 45 - 8? Type the answer.",
+        "prompt": "45 - 8 = ?",
+        "why": "Take away 5 to get to 40. Then take away 3 more. 40 - 3 is 37.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 37,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "45 - 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Let's estimate. Is 24 + 18 closer to 30 or closer to 40?",
+        "prompt": "24 + 18 is close to?",
+        "why": "Round to friendly numbers. 24 is close to 25 and 18 is close to 20. That is about 45, so 40 is closer.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 40,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "24 + 18",
+          "choices": [
+            { "id": "a", "expr": "30" },
+            { "id": "b", "expr": "40" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "What is 27 + 16? Type the answer.",
+        "prompt": "27 + 16 = ?",
+        "why": "Add the tens first. 27 + 10 is 37. Then add 6 more. 37 + 6 is 43.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 43,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "27 + 16", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "What is 50 - 6? Is it 56, 43, 44, or 45?",
+        "prompt": "50 - 6 = ?",
+        "why": "Count back from 50. Take away 6 to get 44. You can check: 44 + 6 is 50.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 56,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 43,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 44,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 45,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "50 - 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "What is 48 - 15? Move the frog to the answer.",
+        "prompt": "48 - 15 = ?",
+        "why": "Take away 10 first. 48 - 10 is 38. Then take away 5 more. The answer is 33.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 10,
+        "max": 50,
+        "step": 1,
+        "target": 33,
+        "check": { "rule": "equals", "expr": "48 - 15", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Leo has 41 cards. He gives 17 cards away. How many cards are left? Type the answer.",
+        "prompt": "41 - 17 = ?",
+        "why": "Take away 10 to get 31. Take away 1 more to get 30. Then take away 6 more. The answer is 24.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 24,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "41 - 17", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia has 15 acorns. She finds 9, then finds 12 more. How many acorns now? Is it 36, 35, 26, or 46?",
+        "prompt": "15 + 9 + 12 = ?",
+        "why": "Add 15 and 9 to get 24. Then add 12. 24 + 10 is 34, and 2 more is 36.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 36,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 35,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 26,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 46,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15 + 9 + 12", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

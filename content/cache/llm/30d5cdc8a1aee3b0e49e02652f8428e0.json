@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-whole-numbers-10000-number-line-3",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The answer 4650 is correct, but the 'Why' explanation is false as written. 4650 is 650 past 4000, which is 13 jumps of 50, not '1 jump of 50 past 4000'. A child could come away thinking one jump of 50 from 4000 reaches 4650. Suggested rewrite: 'Each jump is 50. From 4000 to 4650 is 650, which is 13 jumps of 50. Or think 4000 + 600 + 50 = 4650.'"
+      }
+    ],
+    "notes": "I checked every item and the story. The story cards are arithmetically and place-value correct, including the expanded form, word name, zero-placeholder, and regrouping examples (3482 = 2000 + 1400 + 80 + 2). I independently worked out all VERIFY items (keypad-1, keypad-2, keypad-3, tap-4, keypad-5, tap-5, keypad-6, tap-6). Each marked answer is correct, and each distractor is wrong: in tap-2, tap-3, tap-4, and tap-5 only the marked choice matches its value. The number-line answers (4000, 6500, 4650) land correctly on their scales. Only the number-line-3 explanation needs fixing."
+  }
+}

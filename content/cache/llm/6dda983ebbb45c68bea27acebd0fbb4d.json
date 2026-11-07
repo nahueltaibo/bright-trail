@@ -1,0 +1,443 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has 8 cookies. She wants to share them with her friends.",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 8, "filled": null }
+      },
+      {
+        "narration": "Mia has 2 plates. She shares the cookies equally. Each plate gets the same number.",
+        "text": "8 cookies, 2 plates",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 8, "filled": null }
+      },
+      {
+        "narration": "One for this plate, one for that plate. Again and again. Each plate gets 4 cookies.",
+        "text": "8 ÷ 2 = 4",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Now Mia has 12 muffins. She puts 3 muffins in each bag. How many bags can she fill?",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🧁", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Count by 3s. 3, 6, 9, 12. That makes 4 bags.",
+        "text": "12 ÷ 3 = 4",
+        "visual": { "kind": "objects", "emoji": "🧁", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Division can find how many in each group. It can also find how many groups.",
+        "text": "4 groups of 3 = 12",
+        "visual": null
+      },
+      {
+        "narration": "You know how to share equally now. Let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia shares 6 apples equally between 2 friends. How many apples does each friend get? Is it 2, 3, or 4?",
+        "prompt": "6 ÷ 2 = ?",
+        "why": "Give one apple to each friend again and again. Each friend gets 3 apples.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Ben has 10 cookies. He shares them equally on 2 plates. How many cookies are on each plate?",
+        "prompt": "10 ÷ 2 = ?",
+        "why": "Share the cookies one at a time to each plate. Each plate gets 5 cookies.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 10, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Eight stickers are shared equally by 4 friends. Move the frog to how many stickers each friend gets.",
+        "prompt": "8 ÷ 4 = ?",
+        "why": "Share 8 stickers with 4 friends, one at a time. Each friend gets 2 stickers.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "8 / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam has 6 fish. He puts 2 fish in each bowl. How many bowls does he fill?",
+        "prompt": "6 ÷ 2 = ?",
+        "why": "Count by 2s. 2, 4, 6. That is 3 bowls.",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Zoe has 4 balloons. She shares them equally between 2 kids. How many balloons does each kid get? Is it 1, 3, or 2?",
+        "prompt": "4 ÷ 2 = ?",
+        "why": "Give one balloon to each kid, then one more to each. Each kid gets 2 balloons.",
+        "visual": { "kind": "objects", "emoji": "🎈", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Pat has 12 peaches. He packs them equally in 3 baskets. How many peaches are in each basket? Is it 3, 4, 5, or 6?",
+        "prompt": "12 ÷ 3 = ?",
+        "why": "Share the peaches one at a time into 3 baskets. Each basket gets 4 peaches.",
+        "visual": { "kind": "objects", "emoji": "🍑", "count": 12, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12 / 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Pat has 12 peaches. He puts 4 peaches in each basket. How many baskets does he fill?",
+        "prompt": "12 ÷ 4 = ?",
+        "why": "Count by 4s. 4, 8, 12. That is 3 baskets.",
+        "visual": { "kind": "objects", "emoji": "🍑", "count": 12, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12 / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Nine grapes are shared equally by 3 kids. Move the frog to how many grapes each kid gets.",
+        "prompt": "9 ÷ 3 = ?",
+        "why": "Share 9 grapes one at a time with 3 kids. Each kid gets 3 grapes.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "9 / 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Ella has 12 cookies. She shares them equally with 6 friends. How many cookies does each friend get?",
+        "prompt": "12 ÷ 6 = ?",
+        "why": "Give each of the 6 friends one cookie. Then give each friend one more. Each gets 2.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 12, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12 / 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ava has 10 beads. She puts 5 beads in each bag. How many bags does she fill? Is it 3, 5, or 2?",
+        "prompt": "10 ÷ 5 = ?",
+        "why": "Count by 5s. 5, 10. That makes 2 bags.",
+        "visual": { "kind": "objects", "emoji": "🔵", "count": 10, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 / 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Nia has 12 cookies. Who gets more cookies each: 2 friends sharing the 12, or 4 friends sharing the 12? Is it 2 friends or 4 friends?",
+        "prompt": "Who gets more?",
+        "why": "12 ÷ 2 = 6, but 12 ÷ 4 = 3. Fewer friends means bigger shares.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 12, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2 friends",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "12 / 4" },
+            { "id": "b", "expr": "12 / 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Leo has 12 stars. He puts 2 stars in each group. How many groups does he make?",
+        "prompt": "12 ÷ 2 = ?",
+        "why": "Count by 2s up to 12. 2, 4, 6, 8, 10, 12. That is 6 groups.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 12, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Twelve muffins go into bags. Each bag holds 4 muffins. Move the frog to how many bags Mia fills.",
+        "prompt": "12 ÷ 4 = ?",
+        "why": "Count by 4s. 4, 8, 12. That is 3 bags.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "12 / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "We know 4 groups of 3 make 12. Now share 12 things equally into 4 groups. How many are in each group?",
+        "prompt": "12 ÷ 4 = ?",
+        "why": "4 groups of 3 make 12. So 12 shared into 4 groups gives 3 each.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12 / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Kim has 9 plums. She gives 3 plums to each friend. How many friends get plums? Is it 3, 2, or 4?",
+        "prompt": "9 ÷ 3 = ?",
+        "why": "Count by 3s. 3, 6, 9. That is 3 friends.",
+        "visual": { "kind": "objects", "emoji": "🍑", "count": 9, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 / 3", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

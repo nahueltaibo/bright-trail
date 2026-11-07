@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-third-equals-two-sixths-keypad-4",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The item uses subtraction (6 - 2 - 2). That is a different skill from the equivalence this unit teaches. It works arithmetically (2 sixths left), but it adds a second skill. Consider replacing it with an equivalence question, such as how many sixths are in 2/3."
+      },
+      {
+        "target": "g2-third-equals-two-sixths-tap-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration 'How many parts match?' is not clear by ear. It should say what Ben must eat to match Ana, for example: 'How many of Ben's sixths equal what Ana ate?' The screen 'Ben eats ?/6' helps, but the spoken question is the only cue for a child who cannot read."
+      },
+      {
+        "target": "g2-third-equals-two-sixths-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The line runs from 0 to 8, but the answer is 6 and every other sixths line runs 0 to 6. The extra steps may confuse a child about where the answer is. Consider 0 to 6, or keep 0 to 8 and say so in the narration. The answer 6 is correct: 2/3 + 1/3 = 4/6 + 2/6 = 6/6."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "The story is accurate: 3 kids each take 2 of 6 pieces, and 2/6 = 1/3 and 4/6 = 2/3 are both correct. No changes are required. The picture at step 2 shows 3 loaves for 3 pieces, which matches the narration."
+      }
+    ],
+    "notes": "I checked every item's marked answer by working it out, and each one is correct with exactly one right choice: tap-1 (b, 2), keypad-1 (3), tap-2 (yes, VERIFY), keypad-2 (2), number-line-1 (2), tap-3 (same amount, VERIFY), keypad-3 (4), tap-4 (4/6), keypad-4 (2), number-line-2 (4, VERIFY), tap-5 (2), tap-6 (false, VERIFY), keypad-5 (6), keypad-6 (4), number-line-3 (6, VERIFY). The story's fraction facts are accurate. I found no blockers. The notes cover one off-skill item and two wording or layout points that are less clear by ear."
+  }
+}

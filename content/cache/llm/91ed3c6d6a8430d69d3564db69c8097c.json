@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Step 5 jumps from 'Mia has 13' to 'Now Mia has 20 apples' with no explanation of where the 7 extra apples came from. A child listening by ear will lose the thread. Add a line such as 'Mia picks 7 more apples. Now she has 20.'"
+      },
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Step 5 says '8 are green. The rest are red.' but the picture is 20 red 🍎 apples with no green ones shown. The narration and the picture disagree on colour, and a child cannot see the colour difference from the audio alone. Use a green apple emoji (🍏) for the 8 green ones, or drop the colour detail and say '8 are eaten'."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Step 4: 'Mia has 4 more' could be heard as 'Mia gets 4 more apples'. Say 'Mia has 4 more apples than Sam.'"
+      },
+      {
+        "target": "g1-add-sub-problems-50-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "VERIFIED: 9 - 4 = 5 is correct and the marked choice is the only correct one. The question asks 'How many are left?' but the choices are equations, so the child picks an operation rather than a count. This is understandable by ear, but a choice like '5' would match the question better. Choice values mean what they say."
+      },
+      {
+        "target": "g1-add-sub-problems-50-number-line-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The frog's starting position is not shown. The screen says only '27 + ? = 35' and the child must drag to 8. Consider placing the frog at 27 at the start so the child counts on from there."
+      }
+    ],
+    "notes": "I checked every item's arithmetic and marked answer. All 20 items compute correctly, each has exactly one right choice, and each 'why' explanation is accurate. Number-line answers (9, 14, 45, 32, 8) all fall on their grids. The only VERIFY item, tap-5, is correct. The blocker is the green/red apple mismatch in story step 5; the other points are wording and clarity notes."
+  }
+}

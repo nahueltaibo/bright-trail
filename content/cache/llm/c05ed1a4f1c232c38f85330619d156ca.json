@@ -1,0 +1,8 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [],
+    "notes": "Checked every story card and item for g2-count-200 by working out each answer by hand. No blockers found.\n\nVerified answers: keypad-1 (200), tap-1 (80), number-line-1 (150), tap-2 (100), keypad-2 ($80), number-line-2 (120, six hops), keypad-3 (175), tap-3 (150), keypad-4 ($150), number-line-3 (175, seven hops), keypad-5 (190), keypad-6 ($140: 100 + 40), number-line-4 (160, three hops from 100).\n\nVERIFY items:\n- tap-4: counting by 20s from 0 gives 20, 40, 60, 80, 100, so 90 is skipped. \"no\" is correct.\n- tap-5: counting by 25s from 0 gives 25, 50, 75, 100, 125, 150. Of the choices, only 125 is reached, so 125 is correct and the other three are not.\n\nStory cards: the arithmetic is right (3 × $20 = $60, 4 × $50 = $200, 4 quarters at 25¢ reach 100¢, and 100, 120, 140, 160 is correct). Picture counts match the narration (4 × 💵 for $20 bills, 3 × 💵 for $50 bills, 4 × 🪙 for quarters).\n\nMinor, non-blocking: the grade level is at the upper end for Grade 2 (counting by 25s and 50s is often a Grade 2–3 expectation). That is within the skill as written, so I have not flagged it."
+  }
+}

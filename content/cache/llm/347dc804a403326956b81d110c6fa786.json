@@ -1,0 +1,447 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has 6 yummy cookies. Her friend Sam comes to play.",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 6, "filled": null }
+      },
+      {
+        "narration": "Mia wants to share. Sharing equally means everyone gets the same.",
+        "text": "Share equally",
+        "visual": { "kind": "emoji", "emoji": "🤝", "count": null, "filled": null }
+      },
+      {
+        "narration": "One cookie for Mia. One cookie for Sam. Same for both!",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 2, "filled": null }
+      },
+      {
+        "narration": "Again! One more for Mia. One more for Sam. Now they each have 2.",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 4, "filled": null }
+      },
+      {
+        "narration": "One more each! Now all 6 cookies are shared. Each friend gets 3.",
+        "text": "6 cookies, 2 friends, 3 each",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 6, "filled": null }
+      },
+      {
+        "narration": "You can share fairly too. Let's play!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🌟", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia gets 2 cookies. Sam gets 2 cookies. Is it fair? Yes or no?",
+        "prompt": "Is it fair?",
+        "why": "Mia has 2 and Sam has 2. They have the same, so it is fair.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "2 == 2" },
+            { "id": "b", "expr": "2 != 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "There are 2 apples and 2 friends. Each friend gets the same. How many apples does each get?",
+        "prompt": "2 apples, 2 friends",
+        "why": "Give one apple to each friend. Then no apples are left. Each friend gets 1.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 2, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "4 ducks swim to 2 ponds. Each pond gets the same. Hop the frog to how many ducks each pond gets.",
+        "prompt": "4 ducks, 2 ponds",
+        "why": "Put one duck in each pond, then one more in each. Each pond has 2 ducks.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "4 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "There are 4 stickers and 4 friends. Each friend gets the same. How many stickers does each get? 1, 2, or 4?",
+        "prompt": "4 stickers, 4 friends",
+        "why": "There is one sticker for each friend. Each friend gets 1 sticker.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam has 6 cookies. He shares them with 2 friends. How many cookies does each friend get?",
+        "prompt": "6 cookies, 2 friends",
+        "why": "Hand out one cookie at a time to each friend. Each friend ends up with 3.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Lily has 6 berries. She shares them with 3 friends. How many berries does each friend get? 2, 3, or 4?",
+        "prompt": "6 berries, 3 friends",
+        "why": "Give one berry to each of 3 friends, then another to each. Each friend gets 2.",
+        "visual": { "kind": "objects", "emoji": "🍓", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 / 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Max has 8 toy cars. He shares them with 2 friends. How many cars does each friend get?",
+        "prompt": "8 cars, 2 friends",
+        "why": "Give out the cars one for each friend again and again. Each friend gets 4.",
+        "visual": { "kind": "objects", "emoji": "🚗", "count": 8, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "9 grapes are shared by 3 friends. Hop the frog to how many grapes each friend gets.",
+        "prompt": "9 grapes, 3 friends",
+        "why": "Give 3 friends one grape each, three times. Each friend gets 3 grapes.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "9 / 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ana gets 4 cookies. Ben gets 2 cookies. Is it fair? Yes or no?",
+        "prompt": "Is it fair?",
+        "why": "Ana has more than Ben. They need the same amount, so it is not fair.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "4 != 2" },
+            { "id": "b", "expr": "4 == 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "There are 10 stars. 2 friends share them equally. How many stars does each friend get?",
+        "prompt": "10 stars, 2 friends",
+        "why": "Give each friend one star at a time until all are gone. Each friend gets 5.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 10, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Zoe has 8 pencils. She shares them with 4 friends. How many pencils does each friend get? 1, 2, 3, or 4?",
+        "prompt": "8 pencils, 4 friends",
+        "why": "Give 4 friends one pencil each. That uses 4. Give one more each. Each friend gets 2.",
+        "visual": { "kind": "objects", "emoji": "✏️", "count": 8, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "There are 9 apples. 3 friends share them equally. How many apples does each friend get?",
+        "prompt": "9 apples, 3 friends",
+        "why": "Give each friend one apple, three times. All 9 are shared. Each friend gets 3.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 9, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "10 balloons are shared by 5 friends. Hop the frog to how many balloons each friend gets.",
+        "prompt": "10 balloons, 5 friends",
+        "why": "Give 5 friends one balloon each. Then give one more each. Each friend gets 2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "10 / 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "4 friends each get 2 cookies. All the cookies were shared equally. How many cookies were there?",
+        "prompt": "4 friends, 2 each",
+        "why": "Count 2 for the first friend, then 2 more, again and again. 2 and 2 and 2 and 2 is 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "There are 6 cookies for 2 friends. Which way shares them equally? 4 and 2, 3 and 3, or 5 and 1?",
+        "prompt": "Share 6 cookies fairly",
+        "why": "Equal means the same number each. 3 and 3 is the same, and it makes 6.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4 and 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3 and 3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5 and 1",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "4 == 2" },
+            { "id": "b", "expr": "3 == 3" },
+            { "id": "c", "expr": "5 == 1" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,444 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Dana runs the 100 metre sprint. Her coach records each time in seconds. Today the stopwatch reads 12.45. How do we read that number?",
+        "text": "12.45",
+        "visual": { "kind": "emoji", "emoji": "⏱️", "count": null, "filled": null }
+      },
+      {
+        "narration": "The first digit after the dot counts tenths. The second digit counts hundredths. So 12.45 is 12 ones, 4 tenths, and 5 hundredths.",
+        "text": "12.45 = 12 + 0.4 + 0.05",
+        "visual": null
+      },
+      {
+        "narration": "Money helps. A dollar splits into 10 dimes, and each dime is 1 tenth. Each dime is also 10 pennies, so 1 tenth equals 10 hundredths.",
+        "text": "0.4 = 0.40",
+        "visual": { "kind": "objects", "emoji": "🪙", "count": 10, "filled": null }
+      },
+      {
+        "narration": "Dana's rival, Leo, ran 12.5 seconds. Add a zero in the hundredths place to get 12.50. The value does not change. Now both times use hundredths.",
+        "text": "12.5 = 12.50",
+        "visual": null
+      },
+      {
+        "narration": "Compare 12.45 and 12.50. That is 45 hundredths against 50 hundredths. Since 45 is less than 50, Dana's time is smaller. She ran faster.",
+        "text": "12.45 < 12.50",
+        "visual": null
+      },
+      {
+        "narration": "To compare decimals, start with the whole numbers. If they match, compare tenths, then hundredths. Adding zeros helps you line them up. Now try some on your own.",
+        "text": "3.20 > 3.02",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number equals 0.5: 0.05, 0.50, or 5.00?",
+        "prompt": "Equal to 0.5?",
+        "why": "5 tenths is the same as 50 hundredths. Adding a zero after the 5 gives 0.50 and does not change the value.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "0.05",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "0.50",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5.00",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "0.5",
+          "choices": [
+            { "id": "a", "expr": "0.05" },
+            { "id": "b", "expr": "0.50" },
+            { "id": "c", "expr": "5.00" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "In the number 4.36, which digit is in the hundredths place? Type that digit.",
+        "prompt": "Hundredths digit of 4.36",
+        "why": "The first digit after the dot is tenths, and the second is hundredths. In 4.36 the second digit is 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 0.4 on the number line.",
+        "prompt": "Find 0.4",
+        "why": "The line from 0 to 1 is split into 10 equal parts, each one tenth. Count 4 parts from 0 to reach 0.4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1,
+        "step": 0.1,
+        "target": 0.4,
+        "check": { "rule": "equals", "expr": "0.4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which is greater, 0.6 or 0.06?",
+        "prompt": "Which is greater?",
+        "why": "0.6 is 60 hundredths, and 0.06 is only 6 hundredths. Since 60 is more than 6, 0.6 is greater.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 0.6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 0.06,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "max(0.6, 0.06)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "The decimal 0.3 is the same as how many hundredths? Type the number.",
+        "prompt": "0.3 = ? hundredths",
+        "why": "One tenth is 10 hundredths. So 3 tenths is 3 × 10, which is 30 hundredths, or 0.30.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 30,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which is least: 2.45, 2.54, or 2.4?",
+        "prompt": "Which is least?",
+        "why": "Think of 2.4 as 2.40. Then compare 240, 245, and 254 hundredths. The smallest is 2.40, so 2.4 is least.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2.45,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2.54,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 2.4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "least", "expr": "min(2.45, 2.54, 2.4)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "The line runs from 3.2 to 3.3 in steps of one hundredth. Move the frog to 3.25.",
+        "prompt": "Find 3.25",
+        "why": "Each step is 1 hundredth. From 3.2, count 5 steps to reach 3.25. That is halfway to 3.3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 3.2,
+        "max": 3.3,
+        "step": 0.01,
+        "target": 3.25,
+        "check": { "rule": "equals", "expr": "3.25", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Type the decimal for 75 hundredths.",
+        "prompt": "75 hundredths = ?",
+        "why": "Hundredths sit in the second place after the dot. 75 hundredths is 75 out of 100, so it is 0.75.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 0.75,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "75/100", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Is 6.3 equal to 6.30? Yes or no?",
+        "prompt": "6.3 = 6.30?",
+        "why": "3 tenths is the same as 30 hundredths. Adding a zero in the hundredths place does not change the value, so they are equal.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "6.3 == 6.30",
+          "choices": [
+            { "id": "a", "expr": "not (6.3 == 6.30)" },
+            { "id": "b", "expr": "6.3 == 6.30" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "The line runs from 0 to 0.5 in steps of one hundredth times five. Move the frog to 0.35.",
+        "prompt": "Find 0.35",
+        "why": "Each step is 5 hundredths. 0.35 is 35 hundredths, so count 7 steps from 0.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 0.5,
+        "step": 0.05,
+        "target": 0.35,
+        "check": { "rule": "equals", "expr": "0.35", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number equals 4 + 0.3 + 0.07: 4.37, 4.73, or 43.7?",
+        "prompt": "4 + 0.3 + 0.07 = ?",
+        "why": "The 4 is ones, the 0.3 is 3 tenths, and the 0.07 is 7 hundredths. Putting the places together gives 4.37.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4.73,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 43.7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4.37,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "437/100", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A number has 5 ones, 2 tenths, and 8 hundredths. Type the number.",
+        "prompt": "5 ones, 2 tenths, 8 hundredths",
+        "why": "Ones go before the dot. Tenths come first after the dot, then hundredths. So the number is 5.28.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5.28,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 + 2/10 + 8/100", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is greatest: 3.09, 3.9, 3.19, or 3.1?",
+        "prompt": "Which is greatest?",
+        "why": "All have 3 ones. Rename them as 3.09, 3.90, 3.19, and 3.10. Now 90 hundredths is the most, so 3.9 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3.09,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3.9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3.19,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 3.1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "max(3.09, 3.9, 3.19, 3.1)",
+          "choices": [],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Sam has 4 loonies and 1 quarter. A loonie is 1 dollar, and a quarter is 25¢. Type the total in dollars.",
+        "prompt": "4 loonies + 1 quarter",
+        "why": "4 loonies make $4. A quarter is 25 hundredths of a dollar, or 0.25. Together that is 4.25 dollars.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4.25,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 + 25/100", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The line runs from 8 to 9 in steps of 5 hundredths. Move the frog to 8.65.",
+        "prompt": "Find 8.65",
+        "why": "Each step is 0.05. 8.65 is 65 hundredths past 8. Counting by 5 hundredths takes 13 steps from 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 8,
+        "max": 9,
+        "step": 0.05,
+        "target": 8.65,
+        "check": { "rule": "equals", "expr": "8.65", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

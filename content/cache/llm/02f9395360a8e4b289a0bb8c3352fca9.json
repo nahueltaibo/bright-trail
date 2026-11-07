@@ -1,0 +1,505 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia baked 12 cookies. She shares them equally among 4 friends. Each friend gets 3 cookies, because 12 ÷ 4 = 3. Nothing is left over.",
+        "text": "12 ÷ 4 = 3",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Next day Mia baked 14 cookies. She still has 4 friends. Each friend gets 3 cookies. That uses 12 cookies, so 2 cookies are left over.",
+        "text": "14 ÷ 4 = 3 and 2 left",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 14, "filled": null }
+      },
+      {
+        "narration": "Mia does not want to waste them. She shares the 2 left over cookies among 4 friends. Each friend gets 2 out of 4 of a cookie. That is 2/4.",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 2, "filled": null }
+      },
+      {
+        "narration": "So 14 ÷ 4 = 3 and 2/4. The whole number is how many each friend gets. The left over becomes the top number. The number you divide by is the bottom number.",
+        "text": "14 ÷ 4 = 3 2/4",
+        "visual": null
+      },
+      {
+        "narration": "Try 33 ÷ 4. We know 4 × 8 = 32. That leaves 1. Share that 1 among 4. So 33 ÷ 4 = 8 and 1/4.",
+        "text": "33 ÷ 4 = 8 1/4",
+        "visual": null
+      },
+      {
+        "narration": "Bigger numbers work the same way. For 125 ÷ 4, think 4 × 30 = 120. That leaves 5. Then 4 more fit, leaving 1. So the answer is 31 and 1/4.",
+        "text": "125 ÷ 4 = 31 1/4",
+        "visual": null
+      },
+      {
+        "narration": "Now you try. Find how many each gets. Then find what is left over and share it too. Ready to practise?",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia shares 12 cookies equally among 3 friends. How many cookies does each friend get? Is it 3, 6, 4, or 9?",
+        "prompt": "12 ÷ 3 = ?",
+        "why": "Think of the fact 3 × 4 = 12. So 12 ÷ 3 = 4. Each friend gets 4 cookies.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 12, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12/3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A team has 45 players. They make 5 equal groups. How many players are in each group?",
+        "prompt": "45 ÷ 5 = ?",
+        "why": "Use the fact 5 × 9 = 45. So 45 ÷ 5 = 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "45/5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the answer of 24 ÷ 4.",
+        "prompt": "24 ÷ 4 = ?",
+        "why": "Think 4 × 6 = 24. So 24 ÷ 4 = 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "24/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam has 17 cards. He gives 5 friends 3 cards each. That uses 15 cards. How many cards are left over? Is it 3, 2, 1, or 4?",
+        "prompt": "17 - 15 = ?",
+        "why": "Sam started with 17 and gave away 15. So 17 - 15 = 2 cards are left over.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "17-15", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Lena shares 13 stickers among 4 friends. Each friend gets 3 stickers. How many stickers are left over?",
+        "prompt": "Left over?",
+        "why": "4 × 3 = 12 stickers are given out. 13 - 12 = 1 sticker is left over.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "13 - 4*3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 33 ÷ 4? Is it 8 1/4, 8 3/4, 4 1/8, or 8 1/2?",
+        "prompt": "33 ÷ 4 = ?",
+        "why": "4 × 8 = 32, and 1 is left over. Share the 1 among 4 to get 1/4. So the answer is 8 1/4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "8 3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4 1/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "8 1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "8 1/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "33/4",
+          "choices": [
+            { "id": "a", "expr": "8 + 3/4" },
+            { "id": "b", "expr": "4 + 1/8" },
+            { "id": "c", "expr": "8 + 1/2" },
+            { "id": "d", "expr": "8 + 1/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A coach has 58 balls. She puts them equally into 7 bags. How many whole balls go in each bag?",
+        "prompt": "58 ÷ 7 → whole number",
+        "why": "7 × 8 = 56, which is close to 58. So each bag gets 8 balls, and 2 are left over.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "floor(58/7)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "38 stickers are shared equally among 5 friends. Move the frog to the whole number of stickers each friend gets.",
+        "prompt": "38 ÷ 5 → whole number",
+        "why": "5 × 7 = 35, and 5 × 8 = 40 is too big. So each friend gets 7 stickers.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "floor(38/5)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 22 ÷ 5? Is it 4 1/5, 4 2/5, 4 3/5, or 5 2/5?",
+        "prompt": "22 ÷ 5 = ?",
+        "why": "5 × 4 = 20, and 2 is left over. Share the 2 among 5 to get 2/5. So the answer is 4 2/5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4 1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4 2/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4 3/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "5 2/5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "22/5",
+          "choices": [
+            { "id": "a", "expr": "4 + 1/5" },
+            { "id": "b", "expr": "4 + 2/5" },
+            { "id": "c", "expr": "4 + 3/5" },
+            { "id": "d", "expr": "5 + 2/5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A store has 75 pens. It packs them into boxes of 5 pens. How many boxes does it fill?",
+        "prompt": "75 ÷ 5 = ?",
+        "why": "Think 5 × 10 = 50 and 5 × 5 = 25. That is 15 fives, so 75 ÷ 5 = 15.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "75/5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A club shares 125 pencils equally among 4 classes. What is 125 ÷ 4? Is it 31 1/4, 31 1/2, 30 1/4, or 31 3/4?",
+        "prompt": "125 ÷ 4 = ?",
+        "why": "4 × 31 = 124, and 1 is left over. Share the 1 among 4 to get 1/4. So the answer is 31 1/4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "31 1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "30 1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "31 3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "31 1/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "125/4",
+          "choices": [
+            { "id": "a", "expr": "31 + 1/2" },
+            { "id": "b", "expr": "30 + 1/4" },
+            { "id": "c", "expr": "31 + 3/4" },
+            { "id": "d", "expr": "31 + 1/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A builder has 144 bricks. She stacks them in 6 equal piles. How many bricks are in each pile?",
+        "prompt": "144 ÷ 6 = ?",
+        "why": "6 × 20 = 120, and 144 - 120 = 24. Then 24 ÷ 6 = 4. So 20 + 4 = 24 bricks.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 24,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "144/6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Two friends share 15 apples equally. Move the frog to the number of apples each friend gets. Each step is a half.",
+        "prompt": "15 ÷ 2 = ?",
+        "why": "2 × 7 = 14, and 1 is left over. Share it between 2 to get 1/2. Each friend gets 7 and a half.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 0.5,
+        "target": 7.5,
+        "check": { "rule": "equals", "expr": "15/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A bus holds 7 people. 250 fans need rides. 35 buses are full. How many fans are left over?",
+        "prompt": "250 ÷ 7, left over?",
+        "why": "7 × 35 = 245. Then 250 - 245 = 5 fans are left over.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "250 - 7*35", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sam thinks 47 ÷ 5 is 9 and 3/5. Is he right? Yes or no?",
+        "prompt": "Is 47 ÷ 5 = 9 3/5?",
+        "why": "5 × 9 = 45, and 47 - 45 = 2 is left over. So the answer is 9 2/5, not 9 3/5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "47/5 == 9 + 3/5",
+          "choices": [
+            { "id": "a", "expr": "47/5 == 9 + 3/5" },
+            { "id": "b", "expr": "not (47/5 == 9 + 3/5)" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

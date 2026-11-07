@@ -1,0 +1,491 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Pip the frog. Pip has 3 apples. Yum!",
+        "text": "3",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Mia is Pip's friend. Mia has 5 apples.",
+        "text": "5",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Mia has 5. Pip has 3. Mia has more apples than Pip.",
+        "text": "5 is more than 3",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Pip has fewer apples. 3 is less than 5.",
+        "text": "3 is less than 5",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Now Pip and Mia each have 4 apples. It is the same!",
+        "text": "4 = 4",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Now you try! Is it more, less, or the same? Hop in!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which group has more, 2 stars or 7 stars?",
+        "prompt": "Which has more?",
+        "why": "7 stars is a bigger group than 2 stars. So 7 stars has more.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "⭐", "count": 2, "filled": null },
+            "narration": "2 stars"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "⭐", "count": 7, "filled": null },
+            "narration": "7 stars"
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "2" },
+            { "id": "b", "expr": "7" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which group has less, 6 dogs or 3 dogs?",
+        "prompt": "Which has less?",
+        "why": "3 dogs is a smaller group than 6 dogs. So 3 dogs has less.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "🐶", "count": 6, "filled": null },
+            "narration": "6 dogs"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "🐶", "count": 3, "filled": null },
+            "narration": "3 dogs"
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "least",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "6" },
+            { "id": "b", "expr": "3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Which number is more, 4 or 9? Type the bigger number.",
+        "prompt": "4 or 9: more?",
+        "why": "9 comes after 4 when we count. So 9 is more than 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "max(4, 9)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Hop the frog to 1 more than 4.",
+        "prompt": "1 more than 4",
+        "why": "Count 4, then 5. One more than 4 is 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "4 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Pip has 4 apples. Mia has 4 apples. Is it more, less, or the same?",
+        "prompt": "4 and 4",
+        "why": "Both have 4. When two groups match, they are the same.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "less",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the same",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "more",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "4 < 4" },
+            { "id": "b", "expr": "4 == 4" },
+            { "id": "c", "expr": "4 > 4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which group has more, 8 hearts or 9 hearts?",
+        "prompt": "Which has more?",
+        "why": "Count up: 8, then 9. 9 comes later, so 9 hearts has more.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "❤️", "count": 9, "filled": null },
+            "narration": "9 hearts"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "❤️", "count": 8, "filled": null },
+            "narration": "8 hearts"
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "9" },
+            { "id": "b", "expr": "8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Pip has 7 apples. Mia has 5 apples. Does Pip have more, less, or the same?",
+        "prompt": "Pip has 7. Mia has 5.",
+        "why": "7 is a bigger group than 5. So Pip has more.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 7, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "more",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "less",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the same",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "7 > 5" },
+            { "id": "b", "expr": "7 < 5" },
+            { "id": "c", "expr": "7 == 5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Pip has 6 apples. Mia has 1 more than Pip. How many does Mia have?",
+        "prompt": "1 more than 6",
+        "why": "Start at 6 and count one more. 7! Mia has 7.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Hop the frog to 2 less than 8.",
+        "prompt": "2 less than 8",
+        "why": "Count back from 8. 7, then 6. Two less than 8 is 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "8 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Which number is less, 7 or 2? Type the smaller number.",
+        "prompt": "7 or 2: less?",
+        "why": "2 comes before 7 when we count. So 2 is less than 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "min(7, 2)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "This ten-frame shows 9. Another has 10. Is 9 more, less, or the same?",
+        "prompt": "9 and 10",
+        "why": "9 is one dot short of a full ten-frame. So 9 is less than 10.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 9 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "more",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the same",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "less",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "9 > 10" },
+            { "id": "b", "expr": "9 == 10" },
+            { "id": "c", "expr": "9 < 10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Here are 6 apples. Which is the same? 5 stars, 6 stars, or 7 stars?",
+        "prompt": "Find the same as 6",
+        "why": "Match each apple with a star. 6 stars matches 6 apples, so it is the same.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "⭐", "count": 5, "filled": null },
+            "narration": "5 stars"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "⭐", "count": 6, "filled": null },
+            "narration": "6 stars"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "⭐", "count": 7, "filled": null },
+            "narration": "7 stars"
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "count",
+          "choices": [
+            { "id": "a", "expr": "5" },
+            { "id": "b", "expr": "6" },
+            { "id": "c", "expr": "7" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Tom has 8 cars. Sam has 5 cars. How many more cars does Tom have?",
+        "prompt": "8 and 5: how many more?",
+        "why": "Match 5 cars with 5 cars. Then count the extra ones: 3. Tom has 3 more.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Hop the frog to 3 more than 6.",
+        "prompt": "3 more than 6",
+        "why": "Count up from 6: 7, 8, 9. Three more than 6 is 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "6 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Pip has 10 apples. Mia has 3 fewer. Hop the frog to how many Mia has.",
+        "prompt": "3 fewer than 10",
+        "why": "Count back from 10: 9, 8, 7. Mia has 7 apples.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "10 - 3", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

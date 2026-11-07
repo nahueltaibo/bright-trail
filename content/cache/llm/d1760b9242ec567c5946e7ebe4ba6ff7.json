@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "k-read-write-numbers-20-tap-6",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The choices 31 and 13 are easy to mix up by ear, since 'thirty-one' and 'thirteen' sound alike in fast speech. The marked answer 13 is correct. The Why text ('a 1 first, then a 3') could be clearer for a child, for example 'one ten and three ones'."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 18 items (tap, keypad, and number-line for 0 to 20). Every marked answer matches its picture or prompt: fish 4, dots 5, stars 9, ten-frame 7, zero, ladybugs 11, balloons 15, strawberries 18, flowers 20, frog 1, apples 2, and number-line targets 6, 12, and 17 (17 is reachable with step 1). Hop-by-2s to 12 is valid on a 0 to 20 line with step 2. No item has more than one correct choice or is missing one. The story's counts match its pictures (3 apples, 7 dots, 0 dots, 12 stars). No VERIFY items were flagged. The only issue is a minor clarity note on tap-6. No blockers found."
+  }
+}

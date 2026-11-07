@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-decimal-tenths-keypad-4",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The question asks how many tenths 48.6 has, and the 'Why' says there are 6 tenths. That is false. 48.6 is 486 tenths. Only the tenths digit is 6. The explanation teaches the misconception that the tenths digit equals the total tenths. Fix the screen and narration to ask for the tenths digit (for example, 'What digit is in the tenths place of 48.6?'), keep the answer 6, and rewrite the 'Why' to say the tenths digit is 6, so 48.6 has 6 tenths in the tenths place."
+      }
+    ],
+    "notes": "I checked every story card and item. The story is accurate and clear by ear. Story steps 1–7 are correct, and the picture counts match their narration. The marked answers are correct for tap-1, tap-2, tap-3, tap-4, tap-5, keypad-1, keypad-2, keypad-3, keypad-5, and all five number-line items (the answer to number-line-5 is 25.4, which is 24 plus seven steps of 0.2). The only blocker is keypad-4, which states a false fact. Minor, non-blocking suggestion: number-line-5 uses 0.2 steps, which goes slightly beyond the tenths-only focus, and its 'Why' starts at 25 when the line starts at 24. The arithmetic is still correct, so this is a note only and I have not logged it."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-compare-order-50-tap-8",
+        "severity": "note",
+        "category": "audio",
+        "note": "VERIFY passed: 40, 25, 9 is the only greatest-to-least choice and it is marked right. The narration is hard to follow by ear. It lists three sequences with commas, 'Is it 9, 25, 40, or 40, 25, 9, or 25, 40, 9?', so a child cannot easily tell where one option ends and the next begins. Consider saying each option with a clear pause or word, such as 'Choice one: 9, then 25, then 40.'"
+      },
+      {
+        "target": "g1-compare-order-50-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration asks 'Who has fewer?' but the screen says 'Which is less?' and the choices are bare numbers (32, 23). The child is asked about a person but answers with a number. Consider asking 'Which number is less, 23 or 32?' so the question and answers match, or pair the choices with the names."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 3 says 'Big numbers have more tens.' This is loose. The useful rule is that the number with more tens is greater, and it only holds when comparing numbers within the 10–50 range. Consider 'Compare the tens first. 34 has 3 tens and 28 has 2 tens, so 34 is greater.' This keeps the rule precise and matches the item explanations."
+      }
+    ],
+    "notes": "I checked every item and the story against its marked answer. All marked answers are correct, and the VERIFY items (number-line-3 answer 39, tap-8 answer 40, 25, 9) hold up. Each item's 'Why' explanation is accurate. No blockers were found. The notes above are wording and audio clarity suggestions. The content stays within numbers up to 50 and within the Grade 1 skill."
+  }
+}

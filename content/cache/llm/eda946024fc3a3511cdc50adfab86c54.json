@@ -1,0 +1,421 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has 10 stars. She counts them by 1s. 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.",
+        "text": "1, 2, 3 ... 10",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 10, "filled": null }
+      },
+      {
+        "narration": "Socks come in twos. Mia counts by 2s. 2, 4, 6, 8, 10. Each jump adds 2.",
+        "text": "2, 4, 6, 8, 10",
+        "visual": { "kind": "objects", "emoji": "🧦", "count": 10, "filled": null }
+      },
+      {
+        "narration": "One hand has 5 fingers. Mia counts hands by 5s. 5, 10, 15, 20. Each jump adds 5.",
+        "text": "5, 10, 15, 20",
+        "visual": { "kind": "objects", "emoji": "🖐️", "count": 4, "filled": null }
+      },
+      {
+        "narration": "A full ten-frame is 10 dots. Count by 10s. 10, 20, 30, 40, 50. Each jump adds 10.",
+        "text": "10, 20, 30, 40, 50",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Mia counts by 5s. 5, 10, 15. What comes next? Add 5 to 15. It is 20.",
+        "text": "15 + 5 = 20",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now you try. Count by 1s, 2s, 5s, and 10s. Hop with the frog. Let's go!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count by 1s. 7, 8, 9. What number comes next?",
+        "prompt": "7, 8, 9, ?",
+        "why": "When you count by 1s, you add 1 each time. 9 and 1 more is 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Count by 2s. 2, 4, 6. What number comes next? Is it 7, 8, or 9?",
+        "prompt": "2, 4, 6, ?",
+        "why": "When you count by 2s, you add 2 each time. 6 and 2 more is 8.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Count by 10s. Hop the frog from 0 to 30.",
+        "prompt": "Go to 30",
+        "why": "Hop by 10s. 10, 20, 30. That is three hops.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 10,
+        "target": 30,
+        "check": { "rule": "equals", "expr": "30", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count by 5s. 5, 10, 15. What number comes next?",
+        "prompt": "5, 10, 15, ?",
+        "why": "When you count by 5s, you add 5 each time. 15 and 5 more is 20.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 20,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Count by 10s. 10, 20. What number comes next? Is it 21, 25, or 30?",
+        "prompt": "10, 20, ?",
+        "why": "When you count by 10s, you add 10 each time. 20 and 10 more is 30.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 21,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 25,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20 + 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Count by 5s. Hop the frog from 0 to 35.",
+        "prompt": "Go to 35",
+        "why": "Hop by 5s. 5, 10, 15, 20, 25, 30, 35. That is seven hops.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "target": 35,
+        "check": { "rule": "equals", "expr": "35", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Count by 2s. 12, 14, 16. What number comes next?",
+        "prompt": "12, 14, 16, ?",
+        "why": "When you count by 2s, you add 2 each time. 16 and 2 more is 18.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 18,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "16 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Count by 5s. 25, 30, 35. What number comes next? Is it 36, 40, or 45?",
+        "prompt": "25, 30, 35, ?",
+        "why": "When you count by 5s, you add 5 each time. 35 and 5 more is 40.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 36,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 45,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 40,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "35 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Count by 10s. 30, 40. What number comes next?",
+        "prompt": "30, 40, ?",
+        "why": "When you count by 10s, you add 10 each time. 40 and 10 more is 50.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 50,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "40 + 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Count by 5s from 0. Do you land on 12, 15, 22, or 28?",
+        "prompt": "Count by 5s",
+        "why": "Count by 5s. 5, 10, 15. You land on 15. The other numbers get skipped.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 22,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 28,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Count by 2s. Hop the frog from 0 to 38.",
+        "prompt": "Go to 38",
+        "why": "Hop by 2s. 2, 4, 6, and on up to 38. Check that each hop adds 2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "target": 38,
+        "check": { "rule": "equals", "expr": "38", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Count by 5s. 35, 40, then a missing number, then 50. What is the missing number?",
+        "prompt": "35, 40, ?, 50",
+        "why": "Add 5 to 40 to get 45. Then 45 and 5 more is 50. It fits!",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 45,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "40 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Pia counts by 2s and stops at 50. What number did she say just before 50? Is it 40, 45, 48, or 49?",
+        "prompt": "Just before 50",
+        "why": "Counting by 2s goes back 2 from 50. 50 take away 2 is 48.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 45,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 49,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 40,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 48,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "50 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Each hand has 5 fingers. Here are 6 hands. Count by 5s. How many fingers in all?",
+        "prompt": "How many fingers?",
+        "why": "Count by 5s once for each hand. 5, 10, 15, 20, 25, 30. That is 30 fingers.",
+        "visual": { "kind": "objects", "emoji": "🖐️", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 30,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count * 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Start at 0. Hop 4 times. Each hop is 10. Where does the frog land?",
+        "prompt": "4 hops of 10",
+        "why": "Count by 10s for each hop. 10, 20, 30, 40. The frog lands on 40.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 10,
+        "target": 40,
+        "check": { "rule": "equals", "expr": "4 * 10", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

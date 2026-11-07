@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g5-decimals-hundredths-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration 'in steps of one hundredth times five' is awkward to hear and hard to follow by ear. Say 'in steps of 5 hundredths' instead."
+      },
+      {
+        "target": "g5-decimals-hundredths-number-line-1",
+        "severity": "note",
+        "category": "audio",
+        "note": "The number-line items (number-line-1 to -4) depend on seeing the line and frog. A child who cannot read may not know where the frog is. The app should speak the frog's position and each step (for example, 'four tenths') as the child moves it, so the item can be played from sound alone."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Dana's 12.45 seconds for the 100 m sprint is very fast for a Grade 5 child (typical times are well over 15 seconds). It is not wrong, but a more typical time, such as 17.45 seconds, would sound more realistic for this age group."
+      }
+    ],
+    "notes": "I checked every item by working out its answer. All marked answers are correct, and the VERIFY items (keypad-1 answer 6, keypad-2 answer 30, tap-4 answer Yes, tap-5 answer 4.37) hold up. Each distractor is clearly wrong and no item has more than one right choice. Story math is correct throughout: 12.45 = 12 + 0.4 + 0.05, 1 tenth = 10 hundredths, 12.5 = 12.50, 3.20 > 3.02. The three problems above are wording, audio-accessibility, and realism notes, not wrong answers."
+  }
+}

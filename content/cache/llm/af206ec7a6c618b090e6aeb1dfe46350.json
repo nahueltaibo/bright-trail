@@ -1,0 +1,495 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Marcus works at the hockey arena. Tonight the scoreboard shows the crowd size: 24 336 fans. Every digit in that number has a place, and the place tells its value.",
+        "text": "24 336",
+        "visual": { "kind": "emoji", "emoji": "🏒", "count": null, "filled": null }
+      },
+      {
+        "narration": "Start on the left. The digit 2 is in the ten thousands place. That means 2 ten thousands, which is 20 000.",
+        "text": "2 × 10 000 = 20 000",
+        "visual": null
+      },
+      {
+        "narration": "The 4 is in the thousands place. That is 4 thousands, or 4000. Then the 3 in the hundreds place is 3 hundreds, or 300.",
+        "text": "4 × 1000 = 4000",
+        "visual": null
+      },
+      {
+        "narration": "The next 3 is in the tens place, so it is worth 30. The last digit, 6, is in the ones place, so it is worth 6.",
+        "text": "3 × 10 = 30 and 6 × 1 = 6",
+        "visual": null
+      },
+      {
+        "narration": "Add the place values to get expanded form. 24 336 equals 20 000 plus 4000 plus 300 plus 30 plus 6.",
+        "text": "24 336 = 20 000 + 4000 + 300 + 30 + 6",
+        "visual": null
+      },
+      {
+        "narration": "In words, it is twenty-four thousand three hundred thirty-six. A zero holds a place. In 40 205, there are 0 thousands and 0 tens, so those parts are left out of the expanded form.",
+        "text": "40 205 = 40 000 + 200 + 5",
+        "visual": null
+      },
+      {
+        "narration": "Now you can read a number, build it, and break it apart by place value. Let's practise with some scoreboard numbers.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "In the number 52 814, what is the value of the digit 5? Is it 5000, 50 000, 500, or 5?",
+        "prompt": "Value of 5 in 52 814",
+        "why": "The 5 is the first digit in a five-digit number, so it sits in the ten thousands place. That makes it 5 × 10 000 = 50 000.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 50000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 500,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "50000", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A number has 3 ten thousands, 2 thousands, 4 hundreds, 1 ten, and 5 ones. Type the number.",
+        "prompt": "3 ten thousands, 2 thousands, 4 hundreds, 1 ten, 5 ones",
+        "why": "Put each digit in its place: 3 in ten thousands, 2 in thousands, 4 in hundreds, 1 in tens, 5 in ones. That gives 32 415.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 32415,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "30000 + 2000 + 400 + 10 + 5",
+          "choices": [],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 60 000.",
+        "prompt": "Go to 60 000",
+        "why": "Each jump on this line is 10 000. Count by ten thousands: 10 000, 20 000, 30 000, 40 000, 50 000, 60 000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100000,
+        "step": 10000,
+        "target": 60000,
+        "check": { "rule": "equals", "expr": "60000", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number is forty-five thousand two hundred eleven? Is it 45 021, 4521, 45 211, or 45 201?",
+        "prompt": "Forty-five thousand two hundred eleven",
+        "why": "Forty-five thousand is 45 000. Add two hundred, which is 200, and eleven. That gives 45 211.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 45021,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4521,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 45211,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 45201,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "45211", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here is a number in expanded form: 60 000 + 7000 + 300 + 20 + 4. Type the number in standard form.",
+        "prompt": "60 000 + 7000 + 300 + 20 + 4 = ?",
+        "why": "Add the parts by place value. 6 ten thousands, 7 thousands, 3 hundreds, 2 tens, and 4 ones make 67 324.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 67324,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "60000 + 7000 + 300 + 20 + 4",
+          "choices": [],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which is the expanded form of 48 506? Is it 40 000 + 8000 + 500 + 6, 40 000 + 800 + 50 + 6, 4000 + 800 + 500 + 6, or 40 000 + 8000 + 50 + 6?",
+        "prompt": "Expanded form of 48 506",
+        "why": "The digits are 4 ten thousands, 8 thousands, 5 hundreds, 0 tens, and 6 ones. So it is 40 000 + 8000 + 500 + 6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "40 000 + 8000 + 500 + 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "40 000 + 800 + 50 + 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4000 + 800 + 500 + 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "40 000 + 8000 + 50 + 6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "48506",
+          "choices": [
+            { "id": "a", "expr": "40000 + 8000 + 500 + 6" },
+            { "id": "b", "expr": "40000 + 800 + 50 + 6" },
+            { "id": "c", "expr": "4000 + 800 + 500 + 6" },
+            { "id": "d", "expr": "40000 + 8000 + 50 + 6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A number has 7 ten thousands, 0 thousands, 4 hundreds, 0 tens, and 9 ones. Type the number.",
+        "prompt": "7 ten thousands, 0 thousands, 4 hundreds, 0 tens, 9 ones",
+        "why": "A zero holds its place. Put 7, 0, 4, 0, 9 in order from ten thousands to ones. That gives 70 409.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 70409,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "70000 + 400 + 9", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to 46 000.",
+        "prompt": "Go to 46 000",
+        "why": "This line goes from 40 000 to 50 000 in jumps of 1000. Count 6 jumps from 40 000 to land on 46 000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 40000,
+        "max": 50000,
+        "step": 1000,
+        "target": 46000,
+        "check": { "rule": "equals", "expr": "46000", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which number has a 3 in the thousands place? Is it 31 482, 48 312, 24 831, or 83 214?",
+        "prompt": "3 in the thousands place",
+        "why": "The thousands place is the second digit from the left in a five-digit number. In 83 214, that digit is 3.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 31482,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 48312,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 24831,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 83214,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "83214", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "The number 10 620 can be split into hundreds and ones. It is 106 hundreds and how many ones?",
+        "prompt": "10 620 = 106 hundreds + ? ones",
+        "why": "106 hundreds is 10 600. To reach 10 620, you need 20 more. So there are 20 ones.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 20,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10620 - 106 * 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number equals 3 ten thousands and 15 hundreds? Is it 30 150, 31 500, 31 050, or 45 000?",
+        "prompt": "3 ten thousands + 15 hundreds",
+        "why": "3 ten thousands is 30 000. 15 hundreds is 1500. Add them to get 31 500.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 30150,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 31500,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 31050,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 45000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 10000 + 15 * 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "The number 84 620 is made of some hundreds and 20 ones. How many hundreds are there?",
+        "prompt": "84 620 = ? hundreds + 20 ones",
+        "why": "Take away the 20 ones to get 84 600. Then divide by 100. That gives 846 hundreds.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 846,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "(84620 - 20) / 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to ninety-four thousand. That is 94 000.",
+        "prompt": "Go to 94 000",
+        "why": "This line runs from 80 000 to 100 000 in jumps of 2000. From 80 000, count 7 jumps: 82 000, 84 000, up to 94 000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 80000,
+        "max": 100000,
+        "step": 2000,
+        "target": 94000,
+        "check": { "rule": "equals", "expr": "94000", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A stadium sold ninety thousand eight hundred five tickets. Type that number in digits.",
+        "prompt": "Ninety thousand eight hundred five",
+        "why": "Ninety thousand is 90 000. Add 800 and 5. The thousands and tens places are zero, so the number is 90 805.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 90805,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "90000 + 800 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sam says 52 037 equals 50 000 + 2000 + 300 + 7. Is he right? Yes or no?",
+        "prompt": "52 037 = 50 000 + 2000 + 300 + 7?",
+        "why": "The digit in the hundreds place of 52 037 is 0, and the tens digit is 3. So it is 50 000 + 2000 + 30 + 7. Sam is not right.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "not (50000 + 2000 + 300 + 7 == 52037)" },
+            { "id": "b", "expr": "50000 + 2000 + 300 + 7 == 52037" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

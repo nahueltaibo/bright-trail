@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-ratios-1-2-5-10-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The marked answer (1 to 10) is correct, since 7 × 10 = 70 and no other choice works. The item is hard to follow by ear, though. 'A number scales up from 7 to 70' is unfamiliar wording, and the 'Why' relies on dividing 70 by 7, which a Grade 3 child may not connect to a ratio of pairs. Consider rewording the narration as 'Seven became 70. Each 1 became 10. Which ratio was used?' or similar."
+      }
+    ],
+    "notes": "I checked every story card and every item. The arithmetic and marked answers are correct, distractors are not also correct, number-line targets lie within the stated ranges and steps, and picture counts are within the 20-emoji limit. The only issue I found is a wording note on tap-5. No blockers."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 1 adds oats and honey by volume. That works as a recipe total, but it mixes two ingredients, which can blur the 'same-size pieces' idea. A clearer setup would use one ingredient, or say 'how much dry and wet ingredient together.' Step 6 also switches to a different honey amount (7/8 cup) with no link to step 1."
+      },
+      {
+        "target": "g5-add-sub-like-fractions-tap-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The marked answer 9/12 is correct but not in simplest form (3/4). No choice offers 3/4, so a child may think 9/12 is the final form. Acceptable for this skill, but consider a note that equivalent fractions are fine here."
+      },
+      {
+        "target": "g5-add-sub-like-fractions-number-line-4",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration and screen say '5 1/2', a mixed number that text-to-speech may read as 'five one half' or 'fifty-one halves'. Consider narrating it as 'five and one half' so it is clear by ear."
+      },
+      {
+        "target": "g5-add-sub-like-fractions-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Verified: 5/6 + 4/6 = 9/6, which is more than 1 whole (6/6), so 'Yes' is correct and 'No' is wrong. Difficulty 3 is high for a yes/no comparison; difficulty 2 would fit better."
+      }
+    ],
+    "notes": "Reviewed all story cards and all 16 items. Every marked answer checks out: tap-1 3/5, keypad-1 7, number-line-1 1, tap-2 4/7, keypad-2 3, tap-3 9/12, number-line-2 3, keypad-3 5, tap-4 6/6, number-line-3 2, keypad-4 12, tap-5 Yes (VERIFY item confirmed), number-line-4 4, keypad-5 4, number-line-5 3. Distractors are wrong, and each Why explanation is accurate. No blockers found. The story arithmetic is correct: 7/8 + 4/8 = 11/8 = 1 3/8, and 7/8 - 3/8 = 4/8. Picture counts match their narration. The items stay within same-denominator addition and subtraction at Grade 5 level."
+  }
+}

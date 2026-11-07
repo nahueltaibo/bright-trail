@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-mult-div-facts-2-5-10-number-line-3",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The line runs 0 to 20, but the narration and why-text say to count by 5s up to 45. A child can't reach 45 on this line, so the path described isn't visible on screen. The marked answer 9 is correct and is on the line. Consider a 0 to 50 line (step 1 or 5) so the counting path matches the picture, or reword the why-text to match the line."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Step 4 says 'This is one box' and then counts 10, 20, 30 to reach 3 boxes, but the picture shows only one ten-frame while the screen shows 3 × 10 = 30. Audio-only players may find it unclear whether 3 boxes are shown. Consider a narration such as 'Here are 3 boxes, each with 10 stars' or a picture of three ten-frames."
+      }
+    ],
+    "notes": "I checked every item's marked answer against the question: all are correct, and no item has more than one right choice or a missing right answer. Story facts are correct. No blockers found. The two notes are clarity issues, not wrong content."
+  }
+}

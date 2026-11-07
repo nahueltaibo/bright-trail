@@ -1,0 +1,478 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya collects stamps. Today she counts 240 stamps in her album. Big numbers are fine. We can add and take away by hundreds, tens, and ones.",
+        "text": "240 stamps",
+        "visual": { "kind": "emoji", "emoji": "📬", "count": null, "filled": null }
+      },
+      {
+        "narration": "Her uncle gives her 130 more stamps. That is joining. Start at 240. Add 100 to get 340. Then add 30 more to get 370.",
+        "text": "240 + 130 = 370",
+        "visual": null
+      },
+      {
+        "narration": "Maya gives 50 stamps to her cousin. That is taking away. Start at 370. Take away 50. Now she has 320 stamps.",
+        "text": "370 - 50 = 320",
+        "visual": null
+      },
+      {
+        "narration": "Her friend Leo has 500 stamps. How many more does Leo have than Maya? Compare 320 and 500. From 320 hop 80 to 400. Then hop 100 to 500.",
+        "text": "500 - 320 = 180",
+        "visual": null
+      },
+      {
+        "narration": "Sometimes a number hides. Maya has 240 and wants 400. What does she need? Count up. 240 plus 60 makes 300. Then 100 more makes 400. So she needs 160.",
+        "text": "240 + ? = 400",
+        "visual": null
+      },
+      {
+        "narration": "You can use a number line, or lining up hundreds, tens, and ones. Find the hidden number in each story. Ready to practise?",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Ava has 300 beads. She buys 400 more beads. How many beads does she have now?",
+        "prompt": "300 + 400 = ?",
+        "why": "Add the hundreds. 3 hundreds plus 4 hundreds is 7 hundreds. So 300 + 400 = 700.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 700,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "300+400", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Leo has 600 points in a game. He loses 200 points. How many points does he have left? Is it 200, 300, 400, or 500?",
+        "prompt": "600 - 200 = ?",
+        "why": "Take away 2 hundreds from 6 hundreds. That leaves 4 hundreds, or 400.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 200,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 300,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 400,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 500,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "600-200", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Sam has 200 stickers. He gets 500 more. Move the frog to his total.",
+        "prompt": "200 + 500 = ?",
+        "why": "Start at 200. Hop 5 hundreds to the right. You land on 700.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 700,
+        "check": { "rule": "equals", "expr": "200+500", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Nina has 350 coins. She finds 40 more coins. How many coins does she have? Is it 310, 390, 354, or 430?",
+        "prompt": "350 + 40 = ?",
+        "why": "Only the tens change. 5 tens plus 4 tens is 9 tens. So 350 + 40 = 390.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 310,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 390,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 354,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 430,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "350+40", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "The red team has 500 points. The blue team has 200 points. How many more points does the red team have?",
+        "prompt": "500 - 200 = ?",
+        "why": "To compare, find the difference. 500 - 200 is 5 hundreds take away 2 hundreds. That is 300.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 300,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "500-200", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Omar read 346 pages in May. He read 235 pages in June. How many pages did he read in all?",
+        "prompt": "346 + 235 = ?",
+        "why": "Add ones: 6 + 5 is 11, so trade ten ones for a ten. Then tens: 4 + 3 + 1 is 8. Hundreds: 3 + 2 is 5. The total is 581.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 581,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "346+235", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Rosa walks 450 steps before lunch. After lunch she walks 175 more steps. Move the frog to her total steps.",
+        "prompt": "450 + 175 = ?",
+        "why": "Start at 450. Hop 100 to 550. Hop 50 to 600. Then hop 25 to 625.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 400,
+        "max": 800,
+        "step": 25,
+        "target": 625,
+        "check": { "rule": "equals", "expr": "450+175", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A store has 705 pencils. It sells 128 pencils. How many pencils are left? Is it 577, 623, 587, or 683?",
+        "prompt": "705 - 128 = ?",
+        "why": "Take away 100 to get 605. Take away 5 to get 600. Then take away 23 more to get 577.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 577,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 623,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 587,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 683,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "705-128", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Tia saves 433 dollars. She wants to save 600 dollars. How many more dollars does she need?",
+        "prompt": "433 + ? = 600",
+        "why": "Count up from 433. 7 more makes 440. 60 more makes 500. 100 more makes 600. Add 7, 60, and 100 to get 167.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 167,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "600-433", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Max has 472 hockey cards. Zoe has 681 hockey cards. How many more cards does Zoe have? Is it 109, 219, 1153, or 209?",
+        "prompt": "681 - 472 = ?",
+        "why": "Find the difference. From 472 hop 200 to 672. Then hop 9 to 681. The difference is 209.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 109,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 219,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 1153,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 209,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "681-472", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A pool has 900 tickets. Some tickets are used. Now 347 tickets are left. How many tickets were used?",
+        "prompt": "900 - ? = 347",
+        "why": "Find the part that is gone. Subtract 900 - 347. Count up from 347 to 400 is 53. Then 500 more makes 553.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 553,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "900-347", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Jo got 120 more marbles. Now Jo has 640 marbles. How many did Jo start with? Move the frog to that number.",
+        "prompt": "? + 120 = 640",
+        "why": "The start is hiding. Go backwards from 640 by 120. Take away 100 to get 540. Take away 20 more to get 520.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 400,
+        "max": 700,
+        "step": 20,
+        "target": 520,
+        "check": { "rule": "equals", "expr": "640-120", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A shop has 250 apples. It gets 375 more apples. Then it sells 400 apples. How many apples are left? Is it 175, 225, 275, or 625?",
+        "prompt": "250 + 375 - 400 = ?",
+        "why": "First add: 250 + 375 is 625. Then take away 400. That leaves 225 apples.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 175,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 225,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 275,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 625,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "250+375-400", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Ben scored 468 points. Kim scored 295 fewer points than Ben. How many points did Ben and Kim score together?",
+        "prompt": "Ben and Kim together?",
+        "why": "First find Kim: 468 - 295 is 173. Then add Ben's points: 468 + 173 is 641.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 641,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "468+(468-295)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Dan has 276 cards. He wants 500 cards. How many more cards does he need? Is it 224, 234, 324, or 776?",
+        "prompt": "276 + ? = 500",
+        "why": "Count up from 276. 4 more makes 280. 20 more makes 300. 200 more makes 500. Add 4, 20, and 200 to get 224.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 224,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 234,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 324,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 776,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "500-276", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

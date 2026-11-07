@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-arrays-multiply-divide-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The Why says \"10 times any number adds a zero.\" That holds for whole numbers, which is all Grade 3 uses here, but it is a rule-of-thumb that can later mislead students with decimals. Consider \"Ten rows of 7 is 70, since 10 × 7 is 7 tens.\""
+      }
+    ],
+    "notes": "I checked every item's arithmetic and marked answer, and the story's arithmetic and picture counts. All are correct: 10, 12, 12, 5, 3, 42, 4 × 8 (32), 7, 4, 45, 72, 70, 48, 10, and 56. Every item stays within the 10 × 10 and 100 ÷ 10 scope. The distractors are wrong, and each narration names its choices so the question can be answered by ear. The VERIFY item tap-3, plus tap-5 and number-line-2, were worked through and confirmed. The story is accurate and matches its pictures. The only issue is the one note above. No blockers."
+  }
+}

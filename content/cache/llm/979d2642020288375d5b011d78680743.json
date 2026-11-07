@@ -1,0 +1,469 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia is setting out cookies for her soccer team. She puts 5 cookies on each tray. She has 4 trays. That is 4 groups of 5, so 4 × 5 = 20.",
+        "text": "4 × 5 = 20",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 20, "filled": null }
+      },
+      {
+        "narration": "Now Mia turns it around. She makes 5 trays with 4 cookies on each. That is 5 × 4. It is still 20 cookies. You can multiply in any order.",
+        "text": "4 × 5 = 5 × 4",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 20, "filled": null }
+      },
+      {
+        "narration": "Mia wants 4 trays with 6 cookies each. She splits 6 into 5 and 1. First 4 × 5 = 20. Then 4 × 1 = 4. Add them: 20 + 4 = 24.",
+        "text": "4 × 6 = 4 × 5 + 4 × 1",
+        "visual": null
+      },
+      {
+        "narration": "So breaking a number into easy parts helps. You can solve a hard fact using facts you already know.",
+        "text": "4 × 6 = 20 + 4 = 24",
+        "visual": null
+      },
+      {
+        "narration": "Now Mia shares 20 cookies equally onto 4 trays. That is 20 ÷ 4. Each tray gets 5 cookies.",
+        "text": "20 ÷ 4 = 5",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 20, "filled": null }
+      },
+      {
+        "narration": "Mia checks by multiplying. 4 trays with 5 cookies each is 4 × 5 = 20. That matches, so 20 ÷ 4 = 5 is right. Multiplying checks dividing.",
+        "text": "5 × 4 = 20",
+        "visual": null
+      },
+      {
+        "narration": "You can swap the order, break a number into parts, and check a divide with multiply. Let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "3 × 5 is the same as 5 × what number? Is it 5, 8, 3, or 15?",
+        "prompt": "3 × 5 = 5 × ?",
+        "why": "You can multiply in any order. 3 × 5 and 5 × 3 both make 15.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Mia knows 6 × 2 = 12. So what is 2 × 6?",
+        "prompt": "2 × 6 = ?",
+        "why": "Swapping the order does not change the answer. 2 × 6 is the same as 6 × 2, which is 12.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 12,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2*6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the answer of 4 × 2.",
+        "prompt": "4 × 2 = ?",
+        "why": "4 groups of 2 is 2 + 2 + 2 + 2. That makes 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "4*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "12 ÷ 3 = 4. Which fact checks it? Is it 4 + 3 = 7, or 4 × 3 = 12?",
+        "prompt": "Check 12 ÷ 3 = 4",
+        "why": "Multiply the answer by the number you divided by. 4 × 3 = 12, so it matches.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4 + 3 = 7",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4 × 3 = 12",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "4+3==12" },
+            { "id": "b", "expr": "4*3==12" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are 10 apples. Mia shares them equally into 2 baskets. How many apples are in each basket?",
+        "prompt": "10 ÷ 2 = ?",
+        "why": "Think 2 times what is 10. 2 × 5 = 10, so each basket gets 5.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 10, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "4 × 6 is the same as 4 × 5 plus 4 times what number? Is it 2, 4, 6, or 1?",
+        "prompt": "4 × 6 = 4 × 5 + 4 × ?",
+        "why": "Split 6 into 5 and 1. So 4 × 6 is 4 × 5 plus 4 × 1.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "1", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Sam knows 3 × 5 = 15. He adds one more group of 3. What is 3 × 6?",
+        "prompt": "3 × 6 = ?",
+        "why": "3 × 6 is 3 × 5 plus one more 3. 15 + 3 = 18.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 18,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3*6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the answer of 5 × 7.",
+        "prompt": "5 × 7 = ?",
+        "why": "Swap to 7 × 5. Count by 5s seven times: 5, 10, 15, 20, 25, 30, 35.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "target": 35,
+        "check": { "rule": "equals", "expr": "5*7", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "24 cookies are shared equally onto 4 trays. Think 4 times what number is 24. How many cookies are on each tray?",
+        "prompt": "24 ÷ 4 = ?",
+        "why": "Use multiplying to divide. 4 × 6 = 24, so 24 ÷ 4 = 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "24/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "6 × 3 = 18. Which division fact goes with it? Is it 18 ÷ 3 = 6, 18 ÷ 6 = 6, or 18 ÷ 3 = 3?",
+        "prompt": "Fact family for 6 × 3 = 18",
+        "why": "If 6 groups of 3 make 18, then 18 split into groups of 3 gives 6. So 18 ÷ 3 = 6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "18 ÷ 3 = 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "18 ÷ 6 = 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "18 ÷ 3 = 3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "18/3==6" },
+            { "id": "b", "expr": "18/6==6" },
+            { "id": "c", "expr": "18/3==3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Lena wants 8 × 7. She uses 8 × 5 = 40 and 8 × 2 = 16. Add the two parts. What is 8 × 7?",
+        "prompt": "8 × 7 = ?",
+        "why": "Split 7 into 5 and 2. Then 40 + 16 = 56.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 56,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8*7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the answer of 36 ÷ 4. Think 4 times what number is 36.",
+        "prompt": "36 ÷ 4 = ?",
+        "why": "4 × 9 = 36, so 36 ÷ 4 = 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "36/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Ben thinks 42 ÷ 6 = 8. He checks with 8 × 6 = 48. Is Ben right? Yes or no?",
+        "prompt": "Is 42 ÷ 6 = 8 right?",
+        "why": "Multiplying checks dividing. 8 × 6 is 48, not 42, so Ben is not right. The answer is 7.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "8*6==42" },
+            { "id": "b", "expr": "not (8*6==42)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Zoe wants 6 × 9. She splits 9 into 5 and 4. 6 × 5 = 30 and 6 × 4 = 24. What is 6 × 9?",
+        "prompt": "6 × 9 = ?",
+        "why": "Add the two parts: 30 + 24 = 54. So 6 × 9 = 54.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 54,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6*9", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one is the same as 7 × 6? Is it 7 × 5 + 1, 6 × 5 + 7, or 7 × 5 + 7?",
+        "prompt": "Same as 7 × 6",
+        "why": "Split 6 into 5 and 1. So 7 × 6 is 7 × 5 plus 7 × 1, which is 35 + 7 = 42.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "7 × 5 + 1",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "6 × 5 + 7",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "7 × 5 + 7",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "7*5+1==42" },
+            { "id": "b", "expr": "6*5+7==42" },
+            { "id": "c", "expr": "7*5+7==42" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

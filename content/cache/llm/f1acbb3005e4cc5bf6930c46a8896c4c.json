@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Step 4 narration says 'Here are 4 halves. That is 4 groups of one half', but the picture is 4 × 🍊, which shows four whole oranges. A child hearing the narration while seeing four whole oranges gets a conflicting picture of what a half is. The picture should show halves (for example, 4 half-orange pieces) or the narration should describe whole oranges."
+      },
+      {
+        "target": "g1-equal-groups-tap-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "VERIFY checked: 3 groups of 2 = 6 and 2 groups of 4 = 8, so the marked answer (2 groups of 4) is correct and the explanation is accurate. Two wording issues: the narration says 'greater' while the screen says 'Which has more?', and comparing two multiplication-style products is a stretch for Grade 1 equal groups, so this item is also a difficulty-3 item that may be off-skill. Consider rewording it as a 'how many in all' comparison, or cutting it."
+      }
+    ],
+    "notes": "I checked every item's arithmetic and marked answer. Tap-1 (4), tap-2 (3 leaves), tap-3 (8), tap-4 (5 halves), keypad-1 through keypad-6 (6, 10, 2, 3, 9, 5), and number-line-1 through number-line-4 (6, 10, 5, 6) are all correct, and their explanations are accurate. Each tap item has exactly one correct choice. The only blocker is the step 4 story picture, which shows whole oranges for a narration about halves."
+  }
+}

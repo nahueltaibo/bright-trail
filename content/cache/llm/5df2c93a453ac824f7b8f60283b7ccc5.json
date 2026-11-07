@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-add-sub-problems-100-keypad-2",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says 8 apples, then 5 more come, but the picture shows only the 8 starting apples. The picture could show the 5 added apples too, or the narration could say the 5 are coming, so the picture matches the story. The answer 13 is correct."
+      },
+      {
+        "target": "g2-add-sub-problems-100-tap-4",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "35 - 24 and 59 - 24 are not wrong arithmetic. 59 - 24 is the reverse of 35 + 24 and gives 35. The story never mentions a total of 59, so the marked answer 35 + 24 is the only sentence that fits 'gets 24 more', and it is correct. Consider adding a total or making the 59 distractor clearly unrelated to make the choice less confusing for a child listening by ear."
+      }
+    ],
+    "notes": "I checked every story card and all 20 items. Every marked answer is correct and each tap item has exactly one right choice. Calculations checked: 45+20=65, 65-30=35, 65-40=25, ?+20=70 gives 50, 38+6=44, 30+20=50, 60-10=50, 40+5=45, 8+5=13, 40+?=50 gives 10, 47+6=53, 90-20=70, 72-50=22, ?+20=75 gives 55, 35+24 is the fit, 68+27=95, 80-15=65, 91-?=64 gives 27, ?-28=40 gives 68, 85-59=26. The explanations are also accurate. No blockers found. The two notes above are minor wording and clarity points."
+  }
+}

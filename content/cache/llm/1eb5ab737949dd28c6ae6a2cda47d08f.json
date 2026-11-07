@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-round-whole-numbers-number-line-1",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration says only 'Round 83 to the nearest ten. Move the frog to your answer.' A child who cannot read may not know the line runs from 0 to 100. Narration could state the range, for example 'The line goes from 0 to 100.'"
+      },
+      {
+        "target": "g4-round-whole-numbers-number-line-2",
+        "severity": "note",
+        "category": "audio",
+        "note": "The line runs from 3000 to 4000 in steps of 100, but the narration does not say the endpoints. A child who relies on sound would not know the scale. Consider adding 'The line goes from 3000 to 4000.'"
+      },
+      {
+        "target": "g4-round-whole-numbers-number-line-3",
+        "severity": "note",
+        "category": "audio",
+        "note": "The line runs from 0 to 10000 in steps of 1000, and the answer 7000 sits near the far end. The narration does not state the scale, and the item is hard to place by ear. Consider stating the endpoints in the narration."
+      }
+    ],
+    "notes": "I checked every story card and all 18 items against the rounding rule (look at the digit one place right of the rounding place; 5 or more rounds up). Every marked answer is correct, and no distractor is also correct. The VERIFY items were worked out by hand. tap-5: only 4520 rounds to 5000 (4480→4000, 5500→6000, 6499→6000). tap-6: 4468 rounds to 4470 only at the nearest ten (hundred gives 4500, thousand gives 4000). The story's worked examples (1237→1240/1200/1000, 1250→1300) are also correct. The only problems are audio-accessibility notes on the number-line items. Keypad-5 (answer 10000) needs a five-digit keypad, which is worth confirming but is not an error."
+  }
+}

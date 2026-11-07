@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "tap-6",
+        "severity": "note",
+        "category": "other",
+        "note": "The stem states the answer before asking: \"Each gets 1 whole one and a half.\" It gives away the correct choice. The phrase \"1 whole one and a half\" is also awkward to hear. Consider \"Each gets 1 whole sandwich, and then some halves. How much does each get?\""
+      },
+      {
+        "target": "number-line-2",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says the bunnies share the carrots, but the line says \"Move the frog.\" Keep the frog as the control and name it in the narration, or match the animal to the story."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "age",
+        "note": "The skill mixes sharing division (8 ÷ 4, 16 ÷ 4, 20 ÷ 4) and fourths (\"1 and a fourth\", \"fourths\"). Both may be later than Grade 1 in the Ontario curriculum, which usually covers halves and sharing. Check the grade-level alignment with the curriculum expectations."
+      }
+    ],
+    "notes": "I checked every item's arithmetic and marked answer, including the VERIFY items (tap-2, tap-3, tap-6, tap-7). All marked answers are correct, and each wrong choice is actually wrong. Story cards 1–7 are arithmetically correct. No blockers found. The problems listed are notes only: wording, a stem that gives away its answer, a frog/bunny mismatch, and a possible grade-level concern."
+  }
+}

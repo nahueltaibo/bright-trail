@@ -1,0 +1,467 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya plays ring toss at the fair. She scores 345 points. Her brother Sam scores 354 points. Who scored more?",
+        "text": "345 or 354?",
+        "visual": { "kind": "emoji", "emoji": "🎯", "count": null, "filled": null }
+      },
+      {
+        "narration": "Start with the hundreds. Both numbers have 3 hundreds. That is a tie, so we look at the tens next.",
+        "text": "3 hundreds and 3 hundreds",
+        "visual": null
+      },
+      {
+        "narration": "345 has 4 tens. 354 has 5 tens. 5 tens is more than 4 tens. So 354 is greater than 345.",
+        "text": "354 is greater than 345",
+        "visual": null
+      },
+      {
+        "narration": "Later, Maya scores 620 and Sam scores 280. We can use 500 as a helper. 620 is more than 500. 280 is less than 500.",
+        "text": "620 is greater than 500. 280 is less than 500.",
+        "visual": null
+      },
+      {
+        "narration": "So 620 is greater than 280. A helper number like 500 is a quick way to compare big gaps.",
+        "text": "620 is greater than 280",
+        "visual": null
+      },
+      {
+        "narration": "To put numbers in order, find the least first. For 620, 280, and 345, the order from least to greatest is 280, 345, 620.",
+        "text": "280, 345, 620",
+        "visual": null
+      },
+      {
+        "narration": "Greatest to least goes the other way. It is 620, 345, 280. Now let's practise comparing and ordering.",
+        "text": "620, 345, 280",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which is greater, 430 or 340?",
+        "prompt": "Which is greater?",
+        "why": "Look at the hundreds first. 430 has 4 hundreds and 340 has 3 hundreds. So 430 is greater.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 430,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 340,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "max(430, 340)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which is less, 520 or 250?",
+        "prompt": "Which is less?",
+        "why": "Compare the hundreds. 250 has 2 hundreds and 520 has 5 hundreds. So 250 is less.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 520,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 250,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "least", "expr": "min(520, 250)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam has 275 points, Maya has 90 points, and Lena has 410 points. What is the greatest number of points?",
+        "prompt": "Greatest: 275, 90, 410",
+        "why": "410 has 4 hundreds. 275 has 2 hundreds and 90 has none. So 410 is the greatest.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 410,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "max(275, 90, 410)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 700.",
+        "prompt": "Go to 700",
+        "why": "Count by hundreds from 0. 100, 200, 300, 400, 500, 600, 700.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 700,
+        "check": { "rule": "equals", "expr": "700", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 250.",
+        "prompt": "Go to 250",
+        "why": "This line goes from 200 to 300 by tens. 250 is halfway between 200 and 300.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 200,
+        "max": 300,
+        "step": 10,
+        "target": 250,
+        "check": { "rule": "equals", "expr": "250", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which is greater, 583 or 538?",
+        "prompt": "Which is greater?",
+        "why": "Both have 5 hundreds. Compare the tens. 8 tens is more than 3 tens, so 583 is greater.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 583,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 538,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "max(583, 538)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Maya has 462 stickers. Is 462 greater than 500 or less than 500?",
+        "prompt": "462 and 500",
+        "why": "462 has 4 hundreds. 500 has 5 hundreds. So 462 is less than 500.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "greater than 500",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "less than 500",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "462 < 500",
+          "choices": [
+            { "id": "a", "expr": "462 > 500" },
+            { "id": "b", "expr": "462 < 500" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Put 640, 604, and 460 in order from least to greatest. What is the middle number?",
+        "prompt": "Middle of 640, 604, 460",
+        "why": "The order is 460, 604, 640. The number in the middle is 604.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 604,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "604", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the number with 6 hundreds, 5 tens, and 0 ones.",
+        "prompt": "6 hundreds, 5 tens",
+        "why": "6 hundreds is 600. 5 tens is 50. Put them together to get 650.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 50,
+        "target": 650,
+        "check": { "rule": "equals", "expr": "600 + 50", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which number is least: 705, 750, or 570?",
+        "prompt": "Which is least?",
+        "why": "570 has 5 hundreds. The other two have 7 hundreds. So 570 is the least.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 705,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 750,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 570,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "least", "expr": "min(705, 750, 570)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number is greatest: 899, 989, 898, or 998?",
+        "prompt": "Which is greatest?",
+        "why": "All have 8 or 9 hundreds. 989 and 998 have 9 hundreds. Then 9 tens beats 8 tens, so 998 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 899,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 989,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 898,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 998,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "max(899, 989, 898, 998)",
+          "choices": [],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Put 372, 327, 732, and 237 in order from greatest to least. What number is second?",
+        "prompt": "Second greatest",
+        "why": "The order from greatest is 732, 372, 327, 237. The second number is 372.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 372,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "372", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Sam has 468 stickers. Maya has more than Sam but fewer than 470. How many stickers does Maya have?",
+        "prompt": "More than 468, less than 470",
+        "why": "The number right after 468 is 469. It is more than 468 and less than 470.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 469,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "468 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the number that is 100 less than 875.",
+        "prompt": "100 less than 875",
+        "why": "100 less means one fewer hundred. 875 becomes 775.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 600,
+        "max": 800,
+        "step": 25,
+        "target": 775,
+        "check": { "rule": "equals", "expr": "875 - 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number is between 640 and 680: 630, 655, 690, or 710?",
+        "prompt": "Between 640 and 680",
+        "why": "The number must be more than 640 and less than 680. Only 655 fits.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 630,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 655,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 690,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 710,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "655 > 640 and 655 < 680",
+          "choices": [
+            { "id": "a", "expr": "630 > 640 and 630 < 680" },
+            { "id": "b", "expr": "655 > 640 and 655 < 680" },
+            { "id": "c", "expr": "690 > 640 and 690 < 680" },
+            { "id": "d", "expr": "710 > 640 and 710 < 680" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

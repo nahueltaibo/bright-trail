@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-count-unit-fractions-tap-2",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration says each sandwich piece is one half (1/2), but the picture shows 6 whole sandwich emoji. A child could hear this as 6 whole sandwiches and wonder why each is a half. Consider saying 'six halves of a sandwich' or 'six pieces, each one half of a sandwich' so the audio matches the picture. The marked answer (6) is correct."
+      }
+    ],
+    "notes": "I checked the story cards and every item. The math is correct throughout: the story's counting, 4/4 = 1 whole, 5/4 and 6/4 past one whole, and 4 × 1/3 = 4/3 all hold. Each marked answer is right, and no item has a second correct choice or a missing right answer. Specific checks: tap-1 (3/4), tap-3 (4/3), keypad-1 (7), keypad-2 (3), keypad-3 (9), number-line-1 (4), number-line-2 (7), keypad-4 (5), tap-5 (9/8 is the largest count), tap-6 (1 whole is 3/3, plus 2 thirds, is 5/3), keypad-5 (12 quarters = 3 wholes), keypad-6 (12 sixths = 2 wholes), and number-line-3 (3 × 3 = 9). I verified tap-4 as flagged VERIFY: 5/3 is more than 1 whole, so \"yes\" is correct and \"no\" is the only other choice. All items stay within Grade 4 unit fractions and rely on audio-readable prompts. Only one minor wording note came up, on tap-2."
+  }
+}

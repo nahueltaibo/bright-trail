@@ -1,0 +1,451 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Sam. He hops along a number line like a frog. Each hop is the same size. Equal hops make equal groups.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "Sam starts at 0. He makes 4 hops of 5. He lands on 5, then 10, then 15, then 20. That is 4 groups of 5.",
+        "text": "4 × 5 = 20",
+        "visual": null
+      },
+      {
+        "narration": "Now Mia has 12 cookies. She shares them equally among 3 friends. Each friend gets 4 cookies. We know the total and the groups.",
+        "text": "12 ÷ 3 = 4",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Mia tries again. She puts 4 cookies on each plate. Now she needs 3 plates. We know the total and the size of each group.",
+        "text": "12 ÷ 4 = 3",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Groups can be small parts too. Sam hops 1/2 at a time. After 4 hops of 1/2, he lands on 2.",
+        "text": "4 × 1/2 = 2",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "Sam tries hops of 1/3. Three hops of 1/3 reach 1. Six hops of 1/3 reach 2. Hops of 1/4 work the same way.",
+        "text": "6 × 1/3 = 2",
+        "visual": null
+      },
+      {
+        "narration": "To find a total, multiply. To find the groups or the size of each group, divide. Now let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Ana has 4 bags. Each bag has 3 apples. How many apples does she have in all? Is it 7, 9, 12, or 15?",
+        "prompt": "4 × 3 = ?",
+        "why": "4 bags with 3 apples each is 4 groups of 3. Count by threes: 3, 6, 9, 12.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4*3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here are 12 cookies. Mia shares them equally among 3 friends. How many cookies does each friend get? Is it 4, 3, 9, or 36?",
+        "prompt": "12 ÷ 3 = ?",
+        "why": "Share the cookies one at a time to 3 friends. Each friend gets 4.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 12, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 36,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12/3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam makes 5 hops of 4 on a number line. Which number sentence matches? Is it 5 + 4, 5 × 4, or 4 ÷ 5?",
+        "prompt": "5 hops of 4",
+        "why": "Equal hops are equal groups. 5 hops of 4 means 5 groups of 4, so multiply: 5 × 4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "5 + 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "5 × 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4 ÷ 5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "5*4",
+          "choices": [
+            { "id": "a", "expr": "5+4" },
+            { "id": "b", "expr": "5*4" },
+            { "id": "c", "expr": "4/5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Tom has 20 marbles. He puts 5 marbles in each bag. How many bags does he fill? Is it 15, 25, 5, or 4?",
+        "prompt": "20 ÷ 5 = ?",
+        "why": "Make groups of 5 from 20. Hop back by 5 from 20 and count the hops. There are 4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 25,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20/5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Dan makes 8 batches of muffins. Each batch needs 1/4 cup of milk. How many cups of milk does he use in all? Is it 1, 2, 4, or 8?",
+        "prompt": "8 × 1/4 = ?",
+        "why": "Four hops of 1/4 make 1. So 8 hops of 1/4 make 2 cups.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8*(1/4)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "There are 3 boxes. Each box has 5 pencils. How many pencils are there in all?",
+        "prompt": "3 × 5 = ?",
+        "why": "3 groups of 5 is 5, 10, 15. There are 15 pencils.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Eli has 24 stickers. He shares them equally among 6 friends. How many stickers does each friend get?",
+        "prompt": "24 ÷ 6 = ?",
+        "why": "Think of 6 times what is 24. Since 6 × 4 = 24, each friend gets 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "24/6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A team has 8 players. There are 56 players in all. How many teams are there?",
+        "prompt": "56 ÷ 8 = ?",
+        "why": "Count how many groups of 8 fit in 56. Since 8 × 7 = 56, there are 7 teams.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "56/8", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A frog hops 1/3 each time, starting at 0. How many hops does it take to reach 2?",
+        "prompt": "Hops of 1/3 to reach 2",
+        "why": "It takes 3 hops of 1/3 to reach 1. To reach 2, it takes 3 more. That is 6 hops.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2/(1/3)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Mia fills 9 glasses. Each glass gets 1/2 cup of juice. How many cups of juice does she use? Type it as a decimal.",
+        "prompt": "9 × 1/2 = ?",
+        "why": "Two glasses use 1 cup. So 8 glasses use 4 cups. One more half cup makes 4.5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4.5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9*(1/2)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "The frog starts at 0. It makes 4 hops of 3. Drag the frog to where it lands.",
+        "prompt": "4 hops of 3",
+        "why": "Hop by 3 four times: 3, 6, 9, 12. The frog lands on 12.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 15,
+        "step": 1,
+        "target": 12,
+        "check": { "rule": "equals", "expr": "4*3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "The frog starts at 0. It makes 5 hops of 2. Drag the frog to where it lands.",
+        "prompt": "5 hops of 2",
+        "why": "Hop by 2 five times: 2, 4, 6, 8, 10. The frog lands on 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 10,
+        "check": { "rule": "equals", "expr": "5*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "The frog starts at 30. It hops back 5 each time. It makes 4 hops back. Drag the frog to where it lands.",
+        "prompt": "30 - 4 hops of 5",
+        "why": "Hop back by 5 four times: 25, 20, 15, 10. The frog lands on 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 30,
+        "step": 5,
+        "target": 10,
+        "check": { "rule": "equals", "expr": "30-4*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The frog starts at 0. It makes 7 hops of 1/2. Drag the frog to where it lands.",
+        "prompt": "7 hops of 1/2",
+        "why": "Two hops of 1/2 make 1. Six hops make 3. One more half lands on 3.5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 0.5,
+        "target": 3.5,
+        "check": { "rule": "equals", "expr": "7*(1/2)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The frog starts at 4. It hops back 1/2 each time. It makes 5 hops back. Drag the frog to where it lands.",
+        "prompt": "4 minus 5 hops of 1/2",
+        "why": "Five hops of 1/2 is 2 and a half. Going back from 4 lands on 1.5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 4,
+        "step": 0.5,
+        "target": 1.5,
+        "check": { "rule": "equals", "expr": "4-5*(1/2)", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

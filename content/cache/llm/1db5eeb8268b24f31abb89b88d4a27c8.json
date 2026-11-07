@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "The same star emoji stands for a sheet of 100 in step 1 and for a single sticker in step 2 (7 × ⭐). Since children hear the narration and can't see the picture's meaning, a short spoken cue (for example, 'each big star is a sheet') would make the picture clearer."
+      },
+      {
+        "target": "g3-whole-numbers-1000-keypad-2",
+        "severity": "note",
+        "category": "other",
+        "note": "The picture uses ⭐ for a sheet of 100, but in story step 2 the same ⭐ means one single sticker. The narration explains it, but the picture's meaning changes between the two places. Consider a different emoji for sheets, or say in the narration that each star is worth 100."
+      }
+    ],
+    "notes": "I checked every item's marked answer and its distractors. All of them are correct and have only one right choice: keypad-1 (346), tap-1 (452), tap-2 (721), keypad-2 (600), tap-3 (806), keypad-3 (904), tap-4 (80), keypad-4 (8), keypad-5 (440), tap-5 (750), tap-6 (300 + 60 = 360), and the number-line targets 700, 350, 625, and 950. The story arithmetic (327, 405, 638 = 600 + 30 + 8) and the 500 halfway point are also correct. I found no blockers. The two notes are about the ⭐ icon being used for different values. Also, keypad-4 gives the digits in the narration (the number is 238), so it is a fairly easy item, but it is not wrong."
+  }
+}

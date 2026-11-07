@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 3 says \"Each friend gets 2 out of 4 of a cookie. That is 2/4.\" The math is right, but \"2 out of 4 of a cookie\" is hard to follow by ear. Clearer: \"Each friend gets 2 of the 4 equal parts of a cookie, which is 2/4.\""
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 4 presents 2/4 without saying it can be simplified to 1/2. Later, number-line-3 uses a half (7 and 1/2) for the same kind of share. Adding one line that 2/4 is the same as 1/2 would avoid confusion."
+      }
+    ],
+    "notes": "Checked every story card and item. All marked answers are correct, and each item has one right choice: 12÷3=4; 45÷5=9; 24÷4=6; 17−15=2; 13−12=1; 33÷4=8 1/4; 58÷7 whole=8; 38÷5 whole=7; 22÷5=4 2/5; 75÷5=15; 125÷4=31 1/4; 144÷6=24; 15÷2=7.5; 250÷7 remainder 5; 47÷5 is not 9 3/5 (it is 9 2/5), so \"No\" is right. The VERIFY item tap-6 checks out: 5×9=45 and 47−45=2. Pictures are within the 20-emoji limit and match the narration. No blockers found."
+  }
+}

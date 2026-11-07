@@ -1,0 +1,8 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [],
+    "notes": "I checked every story card and item, including the VERIFY items, and found no blockers or notes. Each marked answer is correct and each distractor is wrong:\n- tap-1: the 5 in 52 814 is 50 000.\n- keypad-1: 32 415.\n- tap-2: 45 211 is the only match.\n- keypad-2: 67 324.\n- tap-3: 40 000 + 8000 + 500 + 6 = 48 506. The other three choices sum to 40 856, 5306 and 48 056.\n- keypad-3: 70 409.\n- tap-4: the thousands digit of 83 214 is 3, and no other choice has a 3 there.\n- keypad-4: 106 × 100 + 20 = 10 620.\n- tap-5: 30 000 + 1500 = 31 500. The distractors are wrong.\n- keypad-5: 84 600 / 100 = 846.\n- keypad-6: 90 805.\n- tap-6: 52 037 is not 52 307, so \"No\" is right.\n- Number lines: 60 000 is 6 jumps of 10 000; 46 000 is 6 jumps of 1000 from 40 000; 94 000 is 7 jumps of 2000 from 80 000.\n- Story card 6: 40 205 = 40 000 + 200 + 5, which is correct.\nThe content is within the Grade 5 whole-numbers-to-100 000 scope and the narration can be followed by ear."
+  }
+}

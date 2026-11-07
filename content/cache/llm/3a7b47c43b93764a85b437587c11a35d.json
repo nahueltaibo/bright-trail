@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-fair-share-20-keypad-3",
+        "severity": "blocker",
+        "category": "other",
+        "note": "The answer 2.5 is a decimal, which is outside the Grade 3 fair-shares skill. The skill and story teach halves and thirds as fraction words (\"one half\", \"one third\"), never decimals. The narration \"as a decimal\" asks for a form the child was never taught. The marked answer is arithmetically correct (15 ÷ 6 = 2 1/2), so the fix is to accept or ask for \"2 1/2\" as a mixed number."
+      },
+      {
+        "target": "g3-fair-share-20-keypad-4",
+        "severity": "blocker",
+        "category": "other",
+        "note": "Same problem as keypad-3. The answer 2.5 is a decimal, which is outside the Grade 3 fraction skill and not taught in the story. The marked answer is correct (20 ÷ 8 = 2 1/2), but the child is asked to type a decimal. Ask for the mixed number instead."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Step 1 says that with Sam and his 3 friends there are 4 players. Step 5 then says Sam has 14 cookies for 3 players, and the sharing in steps 5 and 6 uses 3 players. A child listening by ear could lose track of who is counted. Consider saying \"14 cookies for 3 friends\" or \"for 3 players, not counting Sam\"."
+      },
+      {
+        "target": "g3-fair-share-20-number-line-2",
+        "severity": "note",
+        "category": "audio",
+        "note": "The answer 1.5 is a point halfway between 1 and 2 on a line with 0.5 steps. Nothing in the narration or screen says these points are \"one and a half\" or \"halves\", so a child who listens by ear cannot tell which spot is right. Consider naming the halfway mark or using the story's \"one and one half\" wording."
+      },
+      {
+        "target": "g3-fair-share-20-number-line-3",
+        "severity": "note",
+        "category": "audio",
+        "note": "The answer 4.5 is a point halfway between 4 and 5 on a 0.5-step line. Same problem as number-line-2: the narration does not name the halfway mark, so a child listening by ear cannot tell which spot is right."
+      }
+    ],
+    "notes": "Checked every item's arithmetic and marked answer. Items tap-1 through tap-7, keypad-1, keypad-2, keypad-5, and number-line-1 are correct, and each wrong choice is clearly wrong. tap-6 is marked VERIFY: 12 ÷ 3 = 4, 12 ÷ 4 = 3, and 12 ÷ 6 = 2, so 3 friends gives the largest share and the marked answer is right. Choice labels match their values. The story's arithmetic and fraction explanations are correct (12÷4=3; 7÷2=3 1/2; 14÷3=4 2/3). The blockers are about decimals (keypad-3, keypad-4), which fall outside the fraction skill. The remaining items are notes only."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 5 says 'Here are 6 halves' but the picture shows 6 whole sandwich emoji. A child may count 6 sandwiches and think each is one whole. Consider a picture or wording that makes each emoji clearly one half, or say 'Here are 6 half sandwiches, and every 2 make 1 whole.'"
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 6 has the same issue: 'Here are 8 slices' is shown as 8 whole-pizza emoji. Pair this with a clear 'each picture is one slice' cue, as card 6 does in its narration."
+      },
+      {
+        "target": "g2-equal-groups-multiply-tap-3",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Narration says 'Each picture is a half sandwich', but the picture is a whole 🥪 emoji. The sound and the picture disagree slightly. Consider aligning the picture with the halves wording."
+      },
+      {
+        "target": "g2-equal-groups-multiply-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Narration says 'Each picture is one pizza slice, or 1/4 of a pizza', but the picture is 12 whole 🍕 emoji. Same mismatch as tap-4 and the story card."
+      },
+      {
+        "target": "g2-equal-groups-multiply-keypad-5",
+        "severity": "note",
+        "category": "other",
+        "note": "7 × 4 (horse legs) uses 4s and 7s, which are a bit above the typical Grade 2 skip-counting set (2s, 5s, 10s). It is not wrong, but it may be too hard for a first-year item. Consider a 2s, 5s or 10s version."
+      },
+      {
+        "target": "g2-equal-groups-multiply-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "A 0 to 5 line with steps of 0.5 is hard to follow by ear, since the child has to hear 'half' at each hop. Make sure the audio says the landing spot each time, or use a shorter line."
+      }
+    ],
+    "notes": "I checked every marked answer by working it out. All are correct and each VERIFY item has exactly one right choice: tap-2 (5+5+5=15, the only option equal to 15), tap-6 (Zoe 12 > Ben 10). The other answers also check out: tap-1 (6), keypad-1 (10), number-line-1 (8), keypad-2 (5), keypad-3 (12), tap-3 (3), number-line-2 (25), keypad-4 (30), tap-4 (2), tap-5 (3), number-line-3 (3), keypad-6 (14). The main content is mathematically correct and has no blockers. The notes are about picture/narration alignment for halves and fourths, and about whether a few items are a bit hard for Grade 2 by ear."
+  }
+}

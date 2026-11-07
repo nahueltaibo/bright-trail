@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-count-1000-number-line-2",
+        "severity": "note",
+        "category": "other",
+        "note": "The explanation 'Three hundreds make 300, and one more 50 makes 350' is muddled. The 300 comes from six jumps of 50, not from three hundreds. Suggested wording: 'Six jumps of 50 make 300, and one more jump of 50 makes 350.' The answer 350 is correct."
+      },
+      {
+        "target": "g3-count-1000-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Choice d (886) is already printed on the screen as the last number in the sequence, so a child can pick it by matching rather than by counting. Consider a distractor that does not appear in the sequence. The marked answer 786 is correct."
+      },
+      {
+        "target": "g3-count-1000-keypad-2",
+        "severity": "note",
+        "category": "other",
+        "note": "This item counts by 1s, which the skill description includes, so it is in scope. It is also a very easy warm-up, and it is the only item that does not use the 50s, 100s, or 200s focus of the story. The answer 400 is correct."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 16 items. Every marked answer checks out: 400, 200, 700, 800, 400, 500, 700, 350, 575, 750, 900, 821, 786, 750 and 650. Each tap item has exactly one correct choice, and the VERIFY items were worked out by hand. The story arithmetic is correct: 100/200/300/400, 50/100/150/200, five 200s reach 1000, and 221/421/621/821. No blockers found. The three notes cover one muddled explanation, one distractor that duplicates a number on screen, and one easy item. The number-line items depend on dragging a frog, so a child who cannot read or drag cannot finish them even though the narration is audible. That is an inherent design limit of the activity rather than a content error, so I did not flag it per item."
+  }
+}

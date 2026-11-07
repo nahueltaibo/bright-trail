@@ -1,0 +1,472 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam collects hockey cards. He has 241 cards. His friend gives him 174 more. How many cards does Sam have now? Let's add them by place value.",
+        "text": "241 + 174 = ?",
+        "visual": { "kind": "objects", "emoji": "🏒", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Line up the numbers. Hundreds go over hundreds, tens over tens, and ones over ones. Start on the right with the ones. 1 + 4 = 5.",
+        "text": "1 + 4 = 5 ones",
+        "visual": null
+      },
+      {
+        "narration": "Now the tens. 4 tens and 7 tens make 11 tens. That is too many for the tens place.",
+        "text": "4 + 7 = 11 tens",
+        "visual": null
+      },
+      {
+        "narration": "Here are 10 ones. Ten ones can be traded for 1 ten. In the same way, 10 tens can be traded for 1 hundred.",
+        "text": "10 ones = 1 ten",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Trade 10 of the 11 tens for 1 hundred. That leaves 1 ten. Now add the hundreds: 2 + 1 + 1 = 4. Sam has 415 cards.",
+        "text": "241 + 174 = 415",
+        "visual": null
+      },
+      {
+        "narration": "Subtracting works the same way, but you trade the other way. Take 52 - 27. You cannot take 7 from 2 ones. Trade 1 ten for 10 ones.",
+        "text": "52 - 27",
+        "visual": null
+      },
+      {
+        "narration": "Now there are 4 tens and 12 ones. 12 - 7 = 5. Then 4 tens take away 2 tens leaves 2 tens. So 52 - 27 = 25.",
+        "text": "52 - 27 = 25",
+        "visual": null
+      },
+      {
+        "narration": "Always start with the ones and trade when you need to. Now it is your turn to practise.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam has 34 stickers. He gets 25 more. How many stickers does he have now?",
+        "prompt": "34 + 25 = ?",
+        "why": "Add the ones: 4 + 5 = 9. Then add the tens: 3 + 2 = 5 tens. That makes 59.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 59,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "34 + 25", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "To add 46 + 38, start with the ones. What is 6 + 8? Is it 12, 13, 14, or 15?",
+        "prompt": "6 + 8 = ?",
+        "why": "Count on from 8: 9, 10, 11, 12, 13, 14. So 6 + 8 = 14.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 13,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 14,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "14", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Jo scored 300 points in one game and 200 points in another. Move the frog to the total.",
+        "prompt": "300 + 200 = ?",
+        "why": "3 hundreds plus 2 hundreds make 5 hundreds. That is 500.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 500,
+        "check": { "rule": "equals", "expr": "300 + 200", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "In 52 - 27, you cannot take 7 from 2 ones. So you trade 1 ten for how many ones? Is it 1, 5, 12, or 10?",
+        "prompt": "1 ten = ? ones",
+        "why": "One ten is the same as 10 ones. Trade it, and the ones place has more to take from.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A store had 76 apples. It sold 24 apples. How many apples are left?",
+        "prompt": "76 - 24 = ?",
+        "why": "Take away the ones: 6 - 4 = 2. Then the tens: 7 - 2 = 5 tens. That makes 52.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 52,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "76 - 24", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Mia read 148 pages last month and 235 pages this month. How many pages did she read in all?",
+        "prompt": "148 + 235 = ?",
+        "why": "Ones: 8 + 5 = 13. Trade 10 ones for 1 ten. Tens: 4 + 3 + 1 = 8. Hundreds: 1 + 2 = 3. The total is 383.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 383,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "148 + 235", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Add 47 + 36. The ones make 13, so you trade 10 ones for 1 ten. How many tens are there now? Is it 8, 7, 9, or 10?",
+        "prompt": "47 + 36: how many tens?",
+        "why": "Add the tens: 4 + 3 = 7. Then add the 1 ten from the trade. That makes 8 tens.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 + 3 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "A team has 135 players on its list. 90 more join. Move the frog to the new total.",
+        "prompt": "135 + 90 = ?",
+        "why": "Add the tens: 3 tens + 9 tens = 12 tens. Trade 10 tens for 1 hundred. That gives 2 hundreds and 2 tens, plus 5 ones. The total is 225.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 200,
+        "max": 300,
+        "step": 25,
+        "target": 225,
+        "check": { "rule": "equals", "expr": "135 + 90", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Ravi has 62 marbles. He gives 38 marbles to a friend. How many marbles does he have left?",
+        "prompt": "62 - 38 = ?",
+        "why": "You cannot take 8 from 2. Trade 1 ten for 10 ones. Then 12 - 8 = 4, and 5 tens take away 3 tens leaves 2 tens. The answer is 24.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 24,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "62 - 38", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 71 - 45? Is it 24, 26, 36, or 34?",
+        "prompt": "71 - 45 = ?",
+        "why": "Trade 1 ten for 10 ones. Then 11 - 5 = 6, and 6 tens take away 4 tens leaves 2 tens. The answer is 26.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 24,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 26,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 36,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 34,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "71 - 45", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A school has 503 books. It gives away 247 books. How many books are left?",
+        "prompt": "503 - 247 = ?",
+        "why": "There are no tens, so trade 1 hundred for 10 tens. Then trade 1 ten for 10 ones. Now 13 - 7 = 6, 9 - 4 = 5, and 4 - 2 = 2. The answer is 256.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 256,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "503 - 247", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "On Friday, 478 people came to a soccer game. On Saturday, 367 people came. How many people came in all?",
+        "prompt": "478 + 367 = ?",
+        "why": "Ones: 8 + 7 = 15, so trade for 1 ten. Tens: 7 + 6 + 1 = 14, so trade for 1 hundred. Hundreds: 4 + 3 + 1 = 8. The total is 845.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 845,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "478 + 367", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Lena ran 276 metres, then 154 metres more. Move the frog to the total distance.",
+        "prompt": "276 + 154 = ?",
+        "why": "Ones: 6 + 4 = 10, so trade for 1 ten. Tens: 7 + 5 + 1 = 13, so trade for 1 hundred. Hundreds: 2 + 1 + 1 = 4. The total is 430.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 400,
+        "max": 500,
+        "step": 10,
+        "target": 430,
+        "check": { "rule": "equals", "expr": "276 + 154", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "What is 300 - 148? Is it 252, 152, or 162?",
+        "prompt": "300 - 148 = ?",
+        "why": "Trade 1 hundred for 10 tens, then 1 ten for 10 ones. Now 10 - 8 = 2, 9 - 4 = 5, and 2 - 1 = 1. The answer is 152.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 252,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 162,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 152,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "152", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Omar thinks 400 - 175 = 335. Is Omar right? Choose yes or no.",
+        "prompt": "Is 400 - 175 = 335?",
+        "why": "Trade from the hundreds to get 10 tens, then 10 ones. Then 10 - 5 = 5, 9 - 7 = 2, and 3 - 1 = 2. The answer is 225, so Omar is not right.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "400 - 175 == 335" },
+            { "id": "b", "expr": "not (400 - 175 == 335)" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

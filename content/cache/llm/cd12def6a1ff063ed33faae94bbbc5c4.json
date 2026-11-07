@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 4 ends with Mia at 13 apples, but step 5 says 'Now Mia has 20 apples' with no story step explaining the 7 extra. Add a line such as 'Mia picks 7 more apples. Now she has 20.' so the sequence makes sense by ear."
+      },
+      {
+        "target": "g1-add-sub-problems-50-tap-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration asks 'How many are left?' but the choices are equations (9 + 4 = 13 and 9 - 4 = 5), not counts. The marked answer is correct and the only right choice, but the question and the choices don't match. Consider asking 'Which equation shows how many are left?' or offering numeric choices such as 13 and 5 plus the operation. Also, the screen does not show the equation, so a child hears only the story."
+      },
+      {
+        "target": "g1-add-sub-problems-50-number-line-5",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "The number line runs 0 to 20, but the problem is 27 + ? = 35. Neither 27 nor 35 is on the line, so the child cannot show the count-up from 27 to 35 the narration describes. The marked answer 8 is arithmetically correct, but the line cannot represent the problem. Use a line that covers 27 to 35, for example 20 to 40 or 0 to 40 with a step of 1 or 5."
+      }
+    ],
+    "notes": "Checked all 5 tap items, 5 keypad items and 5 number-line items. Every marked answer is arithmetically correct, and each why-explanation is accurate. Story arithmetic (12+5=17, 17-4=13, 13-9=4, 20-8=12) is also correct. The only blocker is number-line-5, where the line cannot show the problem's numbers. The story continuity gap and the tap-5 choice wording are notes."
+  }
+}

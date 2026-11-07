@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-equivalent-fair-shares-tap-1",
+        "severity": "note",
+        "category": "audio",
+        "note": "Choices are written as fraction strings (\"1/4\", \"2/4\"). A device voice may read these as \"one slash four\" or similar rather than \"one fourth\" or \"two fourths\". Since the child is answering by ear, consider having the choice text spoken as words, or check how the TTS voices fraction strings across the tap items."
+      },
+      {
+        "target": "g3-equivalent-fair-shares-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration lists the choices as 2/4, 3/6, 4/6, 5/10, but the answer choices are ordered 2/4, 3/6, 5/10, 4/6. Matching the order would make it easier to follow by ear. The marked answer (d, 4/6) is correct, since 2/4, 3/6 and 5/10 each equal one half and 4/6 does not."
+      },
+      {
+        "target": "g3-equivalent-fair-shares-keypad-6",
+        "severity": "note",
+        "category": "other",
+        "note": "The explanation \"Cut both numbers in half\" is correct but could be clearer. Saying \"divide the top and bottom by 2\" would make the rule explicit. The answer 4 is correct: 6/8 = 3/4."
+      }
+    ],
+    "notes": "I checked every item's marked answer against the fraction arithmetic and found no wrong answers, no multiple correct choices, and no missing right answers. The story cards are accurate and in the right grade range. The VERIFY items (keypad-3, number-line-2, tap-4, number-line-3, tap-5, number-line-4) all hold up: 2/3 = 4/6, 3/5 = 6/10, Sam and Ana both eat one half, 4/5 = 8/10, 4/6 is the odd one out, and 2/3 of 6 pieces is 4 sixths. The only items I flagged are small audio and wording notes, not blockers."
+  }
+}

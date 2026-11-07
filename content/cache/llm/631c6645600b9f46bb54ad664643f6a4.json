@@ -1,0 +1,434 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya packs snack bags for her soccer team. Each bag gets 5 crackers. Here is one bag.",
+        "text": "1 bag of 5",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Now Maya packs 2 bags. That is 5 and 5 more, which makes 10. We write it as 2 × 5 = 10.",
+        "text": "2 × 5 = 10",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 10, "filled": null }
+      },
+      {
+        "narration": "With 4 bags, count by 5s. 5, 10, 15, 20. So 4 × 5 = 20 crackers.",
+        "text": "4 × 5 = 20",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 20, "filled": null }
+      },
+      {
+        "narration": "Her coach has boxes with 10 stars each. This is one box. Count by 10s. 10, 20, 30. So 3 boxes make 3 × 10 = 30.",
+        "text": "3 × 10 = 30",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Socks come in pairs. Count by 2s. 2, 4, 6, 8, 10, 12. So 6 pairs is 6 × 2 = 12 socks.",
+        "text": "6 × 2 = 12",
+        "visual": { "kind": "objects", "emoji": "🧦", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Division goes the other way. Maya has 30 crackers and puts 5 in each bag. How many bags? Think 6 × 5 = 30, so 30 ÷ 5 = 6.",
+        "text": "30 ÷ 5 = 6",
+        "visual": null
+      },
+      {
+        "narration": "You can use skip counting for 2s, 5s, and 10s. Now let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 2 × 5? Is it 7, 10, or 12?",
+        "prompt": "2 × 5 = ?",
+        "why": "2 groups of 5 is 5 and 5 more. 5 + 5 = 10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 3 × 10?",
+        "prompt": "3 × 10 = ?",
+        "why": "Count by 10s three times. 10, 20, 30. So 3 × 10 = 30.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 30,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Count by 2s to find 4 × 2. Move the frog to that number.",
+        "prompt": "4 × 2 = ?",
+        "why": "Skip count by 2s four times. 2, 4, 6, 8. So 4 × 2 = 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 2,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "4*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Maya shares these 10 cookies equally between 2 friends. How many cookies does each friend get?",
+        "prompt": "10 ÷ 2 = ?",
+        "why": "Think 2 times what is 10? 5 × 2 = 10, so each friend gets 5.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 10, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 20 ÷ 10? Is it 2, 10, or 30?",
+        "prompt": "20 ÷ 10 = ?",
+        "why": "Count by 10s. 10, 20. That takes 2 jumps, so 20 ÷ 10 = 2.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 7 × 5? Is it 30, 35, 40, or 45?",
+        "prompt": "7 × 5 = ?",
+        "why": "Count by 5s seven times. 5, 10, 15, 20, 25, 30, 35. So 7 × 5 = 35.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 40,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 45,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 35,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Jay has 8 pairs of socks. Each pair has 2 socks. How many socks is that in all?",
+        "prompt": "8 × 2 = ?",
+        "why": "Double 8. 8 + 8 = 16. So 8 × 2 = 16 socks.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 16,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Count by 5s to find 7 × 5. Move the frog to that number.",
+        "prompt": "7 × 5 = ?",
+        "why": "Hop by 5s seven times. 5, 10, 15, 20, 25, 30, 35. The frog lands on 35.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "target": 35,
+        "check": { "rule": "equals", "expr": "7*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A hockey coach has 40 pucks. She puts 5 pucks in each bucket. How many buckets does she fill?",
+        "prompt": "40 ÷ 5 = ?",
+        "why": "Think 5 times what is 40? Count by 5s to 40. That is 8 jumps, so 40 ÷ 5 = 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "40/5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Leo shares 18 stickers equally between 2 friends. How many stickers does each friend get? Is it 8, 9, 16, or 20?",
+        "prompt": "18 ÷ 2 = ?",
+        "why": "Think 2 times what is 18? Double 9 is 18, so 9 × 2 = 18 and 18 ÷ 2 = 9.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 16,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "18/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "9 kids on a team each score 5 points. How many points did the team score in all?",
+        "prompt": "9 × 5 = ?",
+        "why": "Count by 5s nine times. 5, 10, 15, 20, 25, 30, 35, 40, 45. So 9 × 5 = 45.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 45,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Find 45 ÷ 5. Think 5 times what is 45? Move the frog to that number.",
+        "prompt": "45 ÷ 5 = ?",
+        "why": "Count by 5s until you reach 45. 5, 10, 15, 20, 25, 30, 35, 40, 45. That is 9 jumps.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "45/5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "What number times 5 makes 35? Is it 6, 7, 8, or 9?",
+        "prompt": "? × 5 = 35",
+        "why": "Count by 5s to 35. 5, 10, 15, 20, 25, 30, 35. That is 7 jumps, so 7 × 5 = 35.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "35/5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "What number times 10 makes 80?",
+        "prompt": "? × 10 = 80",
+        "why": "Count by 10s to 80. 10, 20, 30, 40, 50, 60, 70, 80. That is 8 jumps, so 8 × 10 = 80.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "80/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A coach packs 6 boxes. Each box has 10 stars. Move the frog to the total number of stars.",
+        "prompt": "6 × 10 = ?",
+        "why": "Count by 10s six times. 10, 20, 30, 40, 50, 60. So there are 60 stars.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 60,
+        "check": { "rule": "equals", "expr": "6*10", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

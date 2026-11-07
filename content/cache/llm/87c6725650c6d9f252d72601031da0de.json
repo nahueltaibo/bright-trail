@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-add-sub-properties-keypad-5",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration says the word \"Blank\", which a child may hear as a word rather than a missing number. \"What number goes in the empty box?\" or \"What number makes this true?\" would be clearer by ear. The answer 11 is correct: 11 + 8 = 19 and 8 + 11 = 19."
+      },
+      {
+        "target": "g1-add-sub-properties-tap-6",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration lists the choices as 8 + 0, 9 + 0, 2 + 6, but the choice order is 8 + 0, 2 + 6, 9 + 0. The screen only says \"Which is greatest?\", so a child hearing the options must match each one to its position. Reading the choices in the same order as the on-screen buttons would help. The marked answer 9 + 0 is correct and the only greatest total."
+      }
+    ],
+    "notes": "I checked every item's marked answer and the arithmetic, and all of them are correct. The VERIFY items (tap-3, tap-4, tap-5, tap-6) each have exactly one right choice that matches its value. The story cards are accurate and match their pictures, with counts of 7, 7, 5, 5, 5 → 9 and 9 apples. Nothing is out of Grade 1 scope. The two notes above are wording and clarity suggestions, not blockers."
+  }
+}

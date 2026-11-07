@@ -1,0 +1,63 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "audio",
+        "note": "The skill description says 'Look at the picture', but this app is audio-first and many items have no picture. Consider wording like 'Listen to the story' so a child who can't read or see the picture isn't told to look."
+      },
+      {
+        "target": "g3-fair-share-20-tap-3",
+        "severity": "note",
+        "category": "audio",
+        "note": "The picture uses a cupcake emoji (🧁) while the narration says 'muffins'. A child could see a different item than the one narrated. Consider a muffin-like emoji or 'cakes'."
+      },
+      {
+        "target": "g3-fair-share-20-tap-3",
+        "severity": "note",
+        "category": "audio",
+        "note": "Choices are spoken as '4 1/2' and '5'. Text-to-speech may read '4 1/2' as 'four one slash two', which is hard to follow by ear. Consider writing the mixed number as words ('four and a half') in the audio."
+      },
+      {
+        "target": "g3-fair-share-20-tap-4",
+        "severity": "note",
+        "category": "audio",
+        "note": "Choices '3 2/3', '3', '3 1/3' are spoken as fraction notation. Text-to-speech may not read these clearly by ear. Consider spoken forms such as 'three and one third'."
+      },
+      {
+        "target": "g3-fair-share-20-tap-5",
+        "severity": "note",
+        "category": "audio",
+        "note": "Choices '2 1/2', '2 2/3', '2 1/3' are spoken as fraction notation, which may be unclear by ear. Consider spoken forms such as 'two and one third'."
+      },
+      {
+        "target": "g3-fair-share-20-tap-7",
+        "severity": "note",
+        "category": "audio",
+        "note": "Choice '1/2' is spoken as fraction notation, which may be unclear by ear. Consider 'one half', matching the story wording."
+      },
+      {
+        "target": "g3-fair-share-20-keypad-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The item asks only for the number of leftovers, not the fair share per friend. It is a useful step, but the skill is about what each friend gets. The on-screen prompt 'How many are left over?' also differs from the narration 'How many slices are left to cut?'. Consider aligning the two."
+      },
+      {
+        "target": "g3-fair-share-20-keypad-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Like keypad-3, this asks for the leftover count rather than each friend's share. The on-screen prompt 'How many are left over?' differs from the narration 'How many strawberries are left to cut?'. Consider aligning the wording."
+      },
+      {
+        "target": "g3-fair-share-20-keypad-5",
+        "severity": "note",
+        "category": "other",
+        "note": "This is a missing-total problem (? ÷ 5 = 3) rather than 'what each friend gets'. It is still Grade 3 content, but it is a step beyond the skill as described. The screen shows a division sentence with no picture, which a child who can't read may find hard to follow by ear alone."
+      }
+    ],
+    "notes": "I checked the arithmetic and answers for every story card and item. All marked answers are correct, and no choices are wrongly marked. This includes tap-6 (VERIFY): 12 shared by 3 gives 4 each, by 4 gives 3 each, and by 6 gives 2 each, so 3 friends is the right answer. The story's worked examples (12÷4=3, 7÷2=3 1/2, 14÷3=4 2/3) are accurate. The number-line answers (6, 1.5, 4.5) sit within their ranges. The problems above are wording, audio-clarity and scope notes, not blockers."
+  }
+}
