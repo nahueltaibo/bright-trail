@@ -18,7 +18,9 @@
     "app:start": "npm run start -w @bright-trail/app",
     "content:validate": "npm run validate -w @bright-trail/content",
     "content:graph": "npm run graph -w @bright-trail/content",
-    "build": "npm run build --workspaces --if-present"
+    "build": "npm run build --workspaces --if-present",
+    "e2e:build:android": "node e2e/scripts/build-android.mjs",
+    "e2e:android": "node e2e/scripts/run-android.mjs"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

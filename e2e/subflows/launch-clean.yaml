@@ -1,0 +1,8 @@
+# Fresh install state: no PIN, no children.
+appId: com.nahueltaibo.brighttrail
+---
+- launchApp:
+    clearState: true
+- extendedWaitUntil:
+    visible: Parent area
+    timeout: 30000

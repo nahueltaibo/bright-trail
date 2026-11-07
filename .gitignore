@@ -1,5 +1,8 @@
 .playwright-mcp/
 
+# Maestro runs: APK copy, reports, screenshots
+e2e/output/
+
 # Dependencies
 node_modules/
 

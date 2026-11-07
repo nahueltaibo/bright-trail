@@ -1,0 +1,16 @@
+# From parent home, adds a child with the default birthdate. Needs NAME and AVATAR.
+appId: com.nahueltaibo.brighttrail
+---
+- tapOn: Add a child
+- tapOn:
+    id: child-first-name
+- inputText: ${NAME}
+- hideKeyboard
+- tapOn: ${AVATAR}
+- scrollUntilVisible:
+    element: Add child
+    direction: DOWN
+- tapOn: Add child
+- extendedWaitUntil:
+    visible: ${NAME}, .*
+    timeout: 10000
