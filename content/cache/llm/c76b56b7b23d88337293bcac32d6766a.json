@@ -1,0 +1,464 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "This is Pip the frog. Pip loves to count. Today he hops on stones.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "Here are 3 stones. Pip counts 1, 2, 3. We count by ones.",
+        "text": "1, 2, 3",
+        "visual": { "kind": "objects", "emoji": "🪨", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Hop one more. After 3 comes 4. After 4 comes 5.",
+        "text": "3, 4, 5",
+        "visual": { "kind": "objects", "emoji": "🪨", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Pip can start anywhere. Now he starts at 7. Next is 8, then 9.",
+        "text": "7, 8, 9",
+        "visual": { "kind": "objects", "emoji": "🪨", "count": 9, "filled": null }
+      },
+      {
+        "narration": "Keep going! 10, 11, 12, 13, 14, 15. Each stone is one more.",
+        "text": "10 to 15",
+        "visual": { "kind": "objects", "emoji": "🪨", "count": 15, "filled": null }
+      },
+      {
+        "narration": "Pip hops to the end. 18, 19, 20! He counted to 20.",
+        "text": "18, 19, 20",
+        "visual": { "kind": "objects", "emoji": "🪨", "count": 20, "filled": null }
+      },
+      {
+        "narration": "Now you count with Pip. Are you ready?",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Count with Pip. 1, 2, 3. What comes next? Is it 4, 7, or 2?",
+        "prompt": "1, 2, 3, ?",
+        "why": "After 3 comes 4. We count by ones: 1, 2, 3, 4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "4",
+          "choices": [
+            { "id": "a", "expr": "7" },
+            { "id": "b", "expr": "4" },
+            { "id": "c", "expr": "2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Pip is on stone 8. What number comes next? Is it 9, 6, or 10?",
+        "prompt": "8, ?",
+        "why": "After 8 comes 9. Count one more: 8, 9.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "9",
+          "choices": [
+            { "id": "a", "expr": "9" },
+            { "id": "b", "expr": "6" },
+            { "id": "c", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count the frogs. How many frogs are there?",
+        "prompt": "How many frogs?",
+        "why": "Touch each frog and count: 1, 2, 3, 4, 5. There are 5.",
+        "visual": { "kind": "objects", "emoji": "🐸", "count": 5, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count with Pip. 4, 5, 6. What number comes next?",
+        "prompt": "4, 5, 6, ?",
+        "why": "After 6 comes 7. We count by ones: 4, 5, 6, 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Hop Pip to the number 3.",
+        "prompt": "Hop to 3",
+        "why": "Count the hops from 0: 1, 2, 3. Pip lands on 3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Count with Pip. 11, 12, 13. What comes next? Is it 14, 15, or 12?",
+        "prompt": "11, 12, 13, ?",
+        "why": "After 13 comes 14. Count one more each time.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 14,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "14",
+          "choices": [
+            { "id": "a", "expr": "15" },
+            { "id": "b", "expr": "12" },
+            { "id": "c", "expr": "14" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What number comes after 16? Is it 15, 18, 17, or 13?",
+        "prompt": "16, ?",
+        "why": "We count 16, 17. The number after 16 is 17.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 18,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 17,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 13,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "17",
+          "choices": [
+            { "id": "a", "expr": "15" },
+            { "id": "b", "expr": "18" },
+            { "id": "c", "expr": "17" },
+            { "id": "d", "expr": "13" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Pip is on stone 12. Which number does he hop to next?",
+        "prompt": "12, ?",
+        "why": "After 12 comes 13. Count one more: 12, 13.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 13,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "13", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Pip is on 11. Hop him one more, to the next number.",
+        "prompt": "11, then ?",
+        "why": "After 11 comes 12. Pip hops one stone to 12.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 12,
+        "check": { "rule": "equals", "expr": "12", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Count 13, 14. Hop Pip to the next number.",
+        "prompt": "13, 14, ?",
+        "why": "After 14 comes 15. Count 13, 14, 15.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 15,
+        "check": { "rule": "equals", "expr": "15", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Count with Pip. 17, 18, 19. What comes next? Is it 20, 16, or 19?",
+        "prompt": "17, 18, 19, ?",
+        "why": "After 19 comes 20. Pip counted all the way to 20!",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 16,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 19,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "20",
+          "choices": [
+            { "id": "a", "expr": "20" },
+            { "id": "b", "expr": "16" },
+            { "id": "c", "expr": "19" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Count with Pip. 18, 19. What number comes next?",
+        "prompt": "18, 19, ?",
+        "why": "After 19 comes 20. Count one more: 18, 19, 20.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 20,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Count the stars. How many stars are there?",
+        "prompt": "How many stars?",
+        "why": "Touch each star and count by ones. The last number is 14.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 14, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 14,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Pip is on 17. Hop 3 more. Count 18, 19, 20. Where does he land?",
+        "prompt": "17 and 3 more",
+        "why": "Hop one at a time: 18, 19, 20. Pip lands on 20.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 20,
+        "check": { "rule": "equals", "expr": "20", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Start at 14. Count 15, 16, 17. Hop Pip to the last number.",
+        "prompt": "14, 15, 16, ?",
+        "why": "Count by ones: 15, 16, 17. The last number is 17.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 17,
+        "check": { "rule": "equals", "expr": "17", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

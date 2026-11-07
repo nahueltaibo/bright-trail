@@ -1,0 +1,485 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She has a tray of cookies. She wants to guess how many. A good guess is called an estimate.",
+        "text": "estimate = a good guess",
+        "visual": { "kind": "emoji", "emoji": "🍪", "count": null, "filled": null }
+      },
+      {
+        "narration": "Here are 5 cookies. Mia sees 5 at one look. Small groups are easy to know.",
+        "text": "5",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Now Mia has 18 cookies. Is it closer to 10 or closer to 20? It is closer to 20.",
+        "text": "18 is closer to 20",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 18, "filled": null }
+      },
+      {
+        "narration": "A ten-frame holds 10. Here are 10 dots. Mia uses 10 as a helper. She thinks of piles of 10.",
+        "text": "10",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Mia has 4 bags. Each bag has 10 marbles. Count by 10s. 10, 20, 30, 40. That is about 40.",
+        "text": "10, 20, 30, 40",
+        "visual": { "kind": "objects", "emoji": "🛍️", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Mia can also count by 5s. 5, 10, 15, 20. Groups make a big pile easy to guess.",
+        "text": "5, 10, 15, 20",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 20, "filled": null }
+      },
+      {
+        "narration": "Last, Mia counts to check. Her guess was close! Now it is your turn to practise.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🌟", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has 4 apples. Is it closer to 5 or closer to 20?",
+        "prompt": "4 apples: closer to 5 or 20?",
+        "why": "4 is just 1 away from 5. It is far from 20. So it is closer to 5.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 20",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "4",
+          "choices": [
+            { "id": "a", "expr": "5" },
+            { "id": "b", "expr": "20" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Mia has 2 groups of 5 fish. How many fish are there in all?",
+        "prompt": "How many fish?",
+        "why": "Count by 5s. 5, 10. There are 10 fish.",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 10, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has 19 stars. Is it closer to 10 or closer to 20?",
+        "prompt": "19 stars: closer to 10 or 20?",
+        "why": "19 is just 1 away from 20. It is 9 away from 10. So it is closer to 20.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 19, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 20",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "19",
+          "choices": [
+            { "id": "a", "expr": "20" },
+            { "id": "b", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Mia counted 7 shells to check her guess. Move the frog to 7.",
+        "prompt": "Move the frog to 7",
+        "why": "Start at 0 and hop 7 times. Stop at 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Leo has 5 full bags of 10 stickers. Is it closer to 20 or closer to 50?",
+        "prompt": "5 bags of 10: closer to 20 or 50?",
+        "why": "Count by 10s. 10, 20, 30, 40, 50. That is 50, so it is closer to 50.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 20",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 50",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "50",
+          "choices": [
+            { "id": "a", "expr": "20" },
+            { "id": "b", "expr": "50" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia has 12 berries. Is it closer to 10 or closer to 20?",
+        "prompt": "12 berries: closer to 10 or 20?",
+        "why": "12 is just 2 away from 10. It is 8 away from 20. So it is closer to 10.",
+        "visual": { "kind": "objects", "emoji": "🍓", "count": 12, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 20",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "12",
+          "choices": [
+            { "id": "a", "expr": "20" },
+            { "id": "b", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Ben has 4 full bags of 10 marbles and 3 more. How many marbles does he have?",
+        "prompt": "4 tens and 3 more = ?",
+        "why": "Count by 10s. 10, 20, 30, 40. Then count 3 more. 41, 42, 43.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 43,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "43", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Mia counts 6 groups of 5 cookies. Count by 5s. Move the frog to how many cookies there are.",
+        "prompt": "6 groups of 5",
+        "why": "Count by 5s. 5, 10, 15, 20, 25, 30. The frog goes to 30.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "target": 30,
+        "check": { "rule": "equals", "expr": "6 * 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ava has 3 full bags of 10 beads and 4 more. Is it closer to 30 or closer to 50?",
+        "prompt": "3 tens and 4: closer to 30 or 50?",
+        "why": "3 bags of 10 is 30. Then 4 more makes 34. That is closer to 30.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 50",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 30",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "34",
+          "choices": [
+            { "id": "a", "expr": "50" },
+            { "id": "b", "expr": "30" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Sam counts 3 groups of 5 cookies. How many cookies are there in all?",
+        "prompt": "3 groups of 5 = ?",
+        "why": "Count by 5s. 5, 10, 15. There are 15 cookies.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 15, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Zoe has 4 full bags of 10 buttons and 8 more. Is it closer to 30 or closer to 50?",
+        "prompt": "4 tens and 8: closer to 30 or 50?",
+        "why": "4 bags of 10 is 40. Then 8 more makes 48. That is closer to 50.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 30",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 50",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "48",
+          "choices": [
+            { "id": "a", "expr": "30" },
+            { "id": "b", "expr": "50" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Mia has 4 full bags of 10 marbles. Count by 10s. Move the frog to how many marbles there are.",
+        "prompt": "4 bags of 10",
+        "why": "Count by 10s. 10, 20, 30, 40. The frog goes to 40.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 10,
+        "target": 40,
+        "check": { "rule": "equals", "expr": "4 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Leo has 7 groups of 5 cookies. Count by 5s. How many cookies does he have?",
+        "prompt": "7 groups of 5 = ?",
+        "why": "Count by 5s. 5, 10, 15, 20, 25, 30, 35. Leo has 35 cookies.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 35,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 * 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A tray has 17 cookies. Mia guesses 20. Sam guesses 40. Whose guess is closer, Mia or Sam?",
+        "prompt": "17 cookies: Mia 20 or Sam 40?",
+        "why": "17 is only 3 away from 20. It is 23 away from 40. Mia is closer.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 17, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Sam",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Mia",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "17",
+          "choices": [
+            { "id": "a", "expr": "40" },
+            { "id": "b", "expr": "20" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Max has 2 full bags of 10 coins and 2 more. Is it closer to 20 or closer to 30?",
+        "prompt": "2 tens and 2: closer to 20 or 30?",
+        "why": "2 bags of 10 is 20. Then 2 more makes 22. That is closer to 20.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 20",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 30",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "22",
+          "choices": [
+            { "id": "a", "expr": "20" },
+            { "id": "b", "expr": "30" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

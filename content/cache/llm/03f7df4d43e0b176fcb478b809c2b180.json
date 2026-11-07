@@ -1,0 +1,475 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam is building a fence. One piece is 14.9 metres long. Another piece is 24.6 metres long. How long are they together?",
+        "text": "14.9 + 24.6 = ?",
+        "visual": { "kind": "emoji", "emoji": "🔨", "count": null, "filled": null }
+      },
+      {
+        "narration": "14.9 is a bit awkward. It is just one tenth short of 15. Nine tenths, and one more tenth makes a whole.",
+        "text": "14.9 + 0.1 = 15.0",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 9 }
+      },
+      {
+        "narration": "Sam adds one tenth to 14.9 to make 15.0. Then he takes one tenth from 24.6 to pay it back. That leaves 24.5.",
+        "text": "15.0 and 24.5",
+        "visual": null
+      },
+      {
+        "narration": "Now it is easy. 15.0 plus 24.5 is 39.5. The total did not change. So the fence is 39.5 metres long.",
+        "text": "15.0 + 24.5 = 39.5",
+        "visual": null
+      },
+      {
+        "narration": "Subtracting works too. Sam cuts 17.9 metres from a 35.7 metre rope. Round 17.9 up to 18.0 first. Then 35.7 minus 18.0 is 17.7.",
+        "text": "35.7 - 18.0 = 17.7",
+        "visual": null
+      },
+      {
+        "narration": "But Sam took away one tenth too much. So he puts that tenth back. 17.7 plus 0.1 is 17.8 metres.",
+        "text": "17.7 + 0.1 = 17.8",
+        "visual": null
+      },
+      {
+        "narration": "Make a friendly number, then fix it after. Now it is your turn to practise.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Nia has 6.9 metres of ribbon. She gets 0.1 metres more. How long is it now? Is it 7, 6.8, 7.1, or 7.9?",
+        "prompt": "6.9 + 0.1 = ?",
+        "why": "6.9 is nine tenths past 6. One more tenth makes a whole, so the ribbon is 7 metres.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6.8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 7.1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 7.9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6.9+0.1", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Leo has 7.9 points and scores 2.1 more points. How many points does he have now?",
+        "prompt": "7.9 + 2.1 = ?",
+        "why": "Add 0.1 to 7.9 to make 8. Take 0.1 from 2.1 to get 2. Then 8 + 2 = 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7.9+2.1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Sam has 7.9 metres of rope and adds 0.1 metres. Move the frog to the new length.",
+        "prompt": "7.9 + 0.1 = ?",
+        "why": "7.9 plus one tenth is 8. Move the frog to 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "7.9+0.1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "To find 14.9 + 6.5, Sam changes 14.9 to 15.0. He added 0.1. What should 6.5 become so the total stays the same? Is it 6.4, 6.6, 6.5, or 5.5?",
+        "prompt": "14.9 + 6.5 = 15.0 + ?",
+        "why": "Sam added one tenth to 14.9. So he must take one tenth from 6.5. That makes 6.4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6.6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 6.4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6.5-0.1", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A rope is 10 metres long. Mia cuts off 0.1 metres. How long is the rope now?",
+        "prompt": "10 - 0.1 = ?",
+        "why": "10 is the same as ten tenths of a whole less one. Take away one tenth to get 9.9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9.9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10-0.1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ravi runs 24.9 kilometres one week and 13.6 kilometres the next. How far is that in all? Is it 37.5, 38.5, 38.6, or 39.5?",
+        "prompt": "24.9 + 13.6 = ?",
+        "why": "Make 24.9 into 25.0 by adding 0.1. Take 0.1 from 13.6 to get 13.5. Then 25 + 13.5 = 38.5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 37.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 38.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 38.6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 39.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "24.9+13.6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Ana buys a board that is 35.8 metres long and another that is 12.7 metres long. How many metres in all?",
+        "prompt": "35.8 + 12.7 = ?",
+        "why": "Add 0.2 to 35.8 to make 36. Take 0.2 from 12.7 to get 12.5. Then 36 + 12.5 = 48.5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 48.5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "35.8+12.7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Kai swims 16.9 lengths before lunch and 8.1 lengths after. Move the frog to the total.",
+        "prompt": "16.9 + 8.1 = ?",
+        "why": "16.9 plus 0.1 is 17. Then 8.1 minus 0.1 is 8. So 17 + 8 = 25.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 20,
+        "max": 30,
+        "step": 1,
+        "target": 25,
+        "check": { "rule": "equals", "expr": "16.9+8.1", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A shelf plank is 50 centimetres long. Jon cuts off 19.9 centimetres. How long is the plank now?",
+        "prompt": "50 - 19.9 = ?",
+        "why": "Round 19.9 up to 20. Then 50 - 20 = 30. You took away 0.1 too much, so add it back to get 30.1.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 30.1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "50-19.9", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A tower is 42.3 centimetres tall. Eli takes off a block that is 9.9 centimetres. How tall is it now? Is it 32.2, 33.4, 31.4, or 32.4?",
+        "prompt": "42.3 - 9.9 = ?",
+        "why": "Round 9.9 up to 10. Then 42.3 - 10 = 32.3. Add back the 0.1 to get 32.4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 32.2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 33.4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 31.4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 32.4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "42.3-9.9", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A rope is 35.7 metres long. Sam cuts off 17.9 metres. How long is the rest? Is it 17.8, 18.2, 17.6, or 18.8?",
+        "prompt": "35.7 - 17.9 = ?",
+        "why": "Round 17.9 up to 18. Then 35.7 - 18 = 17.7. You took away 0.1 too much, so add it back to get 17.8.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 18.2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 17.6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 17.8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 18.8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "35.7-17.9", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A truck carries 47.8 kilograms of sand and then 26.9 kilograms more. How many kilograms is that in all?",
+        "prompt": "47.8 + 26.9 = ?",
+        "why": "Add 0.1 to 26.9 to make 27. Take 0.1 from 47.8 to get 47.7. Then 47.7 + 27 = 74.7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 74.7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "47.8+26.9", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A pool hose is 62.1 metres long. Dana cuts off 28.9 metres. Move the frog to the length that is left.",
+        "prompt": "62.1 - 28.9 = ?",
+        "why": "Round 28.9 up to 29. Then 62.1 - 29 = 33.1. Add back 0.1 to get 33.2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 32,
+        "max": 34,
+        "step": 0.2,
+        "target": 33.2,
+        "check": { "rule": "equals", "expr": "62.1-28.9", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Maya runs 8.9 kilometres Monday, 9.8 kilometres Tuesday, and 11.3 kilometres Wednesday. How many kilometres is that in all?",
+        "prompt": "8.9 + 9.8 + 11.3 = ?",
+        "why": "Make 8.9 into 9 and 9.8 into 10. Then 9 + 10 + 11.3 = 30.3. You added 0.3 too much, so take it away to get 30.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 30,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8.9+9.8+11.3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia works out 28.7 + 19.9 and gets 48.6. Is Mia right? Answer yes or no.",
+        "prompt": "28.7 + 19.9 = 48.6?",
+        "why": "Make 19.9 into 20. Then 28.7 + 20 = 48.7. Take away 0.1 to get 48.6. So Mia is right.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "28.7+19.9",
+          "choices": [
+            { "id": "a", "expr": "not (abs(28.7+19.9-48.6)<0.01)" },
+            { "id": "b", "expr": "abs(28.7+19.9-48.6)<0.01" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

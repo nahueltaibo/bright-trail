@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g5-compare-order-fractions-tap-6",
+        "severity": "note",
+        "category": "other",
+        "note": "The why and story step 6 write 10/6 as 1 4/6 without simplifying. Mathematically correct, but 10/6 = 1 2/3 is the simplified form, and an unsimplified mixed number may confuse children who are learning equivalent fractions. Consider showing 1 2/3 or saying that 4/6 is the same as 2/3."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 6 says 10/6 is 1 4/6, which is unsimplified (same as 1 2/3). Consider simplifying, or adding a short line saying the fraction can be shortened. This is the same point as the tap-6 note."
+      }
+    ],
+    "notes": "I checked every story step and item against the arithmetic. All marked answers are correct, and no item has more than one right choice or a missing right answer. The benchmark claims (3/8 < 1/2, 5/6 > 1/2, 7/8 closer to 1 than 5/6, 11/8 < 3/2) and the number-line positions (3/4 = 0.75, 5/2 = 2.5, 13/4 = 3.25) are all correct. The keypad answers (2, 4, 2, 7) are also correct. Both VERIFY items (tap-3 and tap-8) check out. The only issues are small wording points about unsimplified mixed numbers. Ear-only risk: mixed numbers such as \"1 1/2\" and \"2 1/4\" and fractions such as \"5/8\" could be read oddly by device text-to-speech. I could not hear the audio, so I did not flag this as a problem; the audio should be spot-checked."
+  }
+}

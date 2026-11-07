@@ -1,0 +1,8 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [],
+    "notes": "Checked the story cards and all 14 items for g2-whole-numbers-200. Every marked answer is correct, and each explanation is accurate. The VERIFY items hold up: tap-4 (12 tens and 5 ones is 125, not 152, so \"false\" is right), keypad-6 (100 + 60 + 4 = 164, so the answer is 4), and tap-6 (190 > 185 > 179, so choice c is greatest). Choice labels match their values. Number-line targets (150, 165, 175) are correct for the stated scales. The story's place-value statements are accurate. No blockers and no notes."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Step 5 says the picture shows the wheels for 3 cars but draws 12 soccer balls (⚽). A soccer ball doesn't look like a wheel, so a child listening to the narration may be confused about what the picture shows. Consider a more wheel-like emoji if the set has one."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "The story only teaches the multiply-groups-by-rate case (groups × rate = total). Items tap-4 (finding the rate from a total) and keypad-4 (dividing a total into groups) ask for division. The story should mention that case, or those items should be checked for being ahead of the story."
+      },
+      {
+        "target": "g4-whole-number-rates-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Marked answer 5 per strip is correct: 15 ÷ 3 = 5. Each choice matches its value (a=3, b=15, c=12, d=5). This item asks the child to find the rate from a total, which is harder than the story's groups × rate lesson. At difficulty 2 it may be a little hard for this stage."
+      }
+    ],
+    "notes": "I checked every item's marked answer by working it out, and all are correct: tap-1 (10), keypad-1 (6), number-line-1 (8), tap-2 (12), keypad-2 (10), tap-3 (24), keypad-3 (18), number-line-2 (40), tap-4 (5 per strip), keypad-4 (7), keypad-5 (54), number-line-3 (30), tap-5 (3 bags of 9 = 27, the largest of 24, 27, 20), keypad-6 (35), and tap-6 (False, since 6 × 4 = 24, not 20). The VERIFY items (tap-4, tap-5, tap-6) have choice values matching their labels. No blockers found. The notes cover the soccer-ball wheel picture, the story not covering division-based items, and the difficulty of tap-4."
+  }
+}

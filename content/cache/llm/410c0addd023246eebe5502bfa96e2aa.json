@@ -1,0 +1,505 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam is building a fence. One whole fence has 10 boards. Here are the 10 boards.",
+        "text": "1 fence = 10 boards",
+        "visual": { "kind": "objects", "emoji": "🪵", "count": 10, "filled": null }
+      },
+      {
+        "narration": "Sam paints 1 board. That is 1 out of 10. We call it one tenth. As a fraction it is 1/10. As a decimal it is 0.1.",
+        "text": "1/10 = 0.1",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 1 }
+      },
+      {
+        "narration": "Now Sam has painted 5 boards. That is 5 tenths. It is 5/10, or 0.5. It is also one half of the fence!",
+        "text": "5/10 = 0.5 = 1/2",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 5 }
+      },
+      {
+        "narration": "Sam paints all 10 boards. That is 10 tenths. It makes 1 whole fence. As a decimal, it is 1.0.",
+        "text": "10/10 = 1.0",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Next, Sam paints 15 boards across two fences. That is 15 tenths. It is 1 whole fence and 5 tenths more. As a decimal, it is 1.5.",
+        "text": "15/10 = 1.5",
+        "visual": { "kind": "objects", "emoji": "🪵", "count": 15, "filled": null }
+      },
+      {
+        "narration": "Here is the trick. The first digit after the dot counts tenths. So 0.3 is 3 tenths, and 3/10 is the same amount.",
+        "text": "0.3 = 3/10",
+        "visual": null
+      },
+      {
+        "narration": "Now you can match fractions and decimals. Let's practise with Sam's fences!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam painted 1/2 of a fence. Which decimal is the same amount: 0.2, 0.5, 1.5, or 0.1?",
+        "prompt": "1/2 = ?",
+        "why": "One half is 5 out of 10 equal parts. Five tenths is written as 0.5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 0.2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 0.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 1.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 0.1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "0.5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A ten-frame has 7 dots out of 10 spots. Type the decimal for 7 tenths.",
+        "prompt": "7 tenths = ?",
+        "why": "Each dot is one tenth. Seven dots make 7 tenths, and the decimal is 0.7.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 0.7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 3/10 on the number line.",
+        "prompt": "Find 3/10",
+        "why": "The line from 0 to 1 has 10 equal jumps. Count 3 jumps from 0 to land on 0.3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1,
+        "step": 0.1,
+        "target": 0.3,
+        "check": { "rule": "equals", "expr": "3/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which fraction is the same as 0.4: 1/10, 4/10, 6/10, or 10/4?",
+        "prompt": "0.4 = ?",
+        "why": "The digit after the dot counts tenths. The 4 means 4 tenths, so 0.4 is 4/10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "6/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "10/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "4/10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "0.4",
+          "choices": [
+            { "id": "a", "expr": "1/10" },
+            { "id": "b", "expr": "6/10" },
+            { "id": "c", "expr": "10/4" },
+            { "id": "d", "expr": "4/10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "How many tenths make 1 whole? Type the number.",
+        "prompt": "? tenths = 1 whole",
+        "why": "A whole fence has 10 boards, and each board is one tenth. So 10 tenths make 1 whole.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to 15 tenths on the number line.",
+        "prompt": "Find 15/10",
+        "why": "15 tenths is 1 whole and 5 tenths more. That is 1.5, halfway between 1 and 2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 2,
+        "step": 0.1,
+        "target": 1.5,
+        "check": { "rule": "equals", "expr": "15/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Maya ran 6/10 of a kilometre. Which decimal is the same: 0.6, 6, 1.6, or 0.4?",
+        "prompt": "6/10 = ?",
+        "why": "Six tenths means 6 in the tenths place. So 6/10 is 0.6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 1.6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 0.6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 0.4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "How many tenths are in 1.3? Type the number of tenths.",
+        "prompt": "1.3 = ? tenths",
+        "why": "1 whole is 10 tenths. Add 3 more tenths to get 13 tenths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 13,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "1.3 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Is 7/10 the same amount as 0.07? Yes or no?",
+        "prompt": "7/10 = 0.07?",
+        "why": "The first digit after the dot is tenths. So 7 tenths is 0.7, not 0.07.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "7/10 == 0.07",
+          "choices": [
+            { "id": "a", "expr": "7/10 == 0.07" },
+            { "id": "b", "expr": "not (7/10 == 0.07)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A dime is 1/10 of a dollar. Zoe has 3 dimes. Type that part of a dollar as a decimal.",
+        "prompt": "3 dimes = ? dollar",
+        "why": "Each dime is one tenth of a dollar. Three dimes are 3 tenths, which is 0.3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 0.3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which fraction is the same as 1.3: 3/10, 13/10, 1/3, or 31/10?",
+        "prompt": "1.3 = ?",
+        "why": "1.3 is 1 whole and 3 tenths. One whole is 10 tenths, so that is 13 tenths.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "31/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "13/10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1.3",
+          "choices": [
+            { "id": "a", "expr": "3/10" },
+            { "id": "b", "expr": "1/3" },
+            { "id": "c", "expr": "31/10" },
+            { "id": "d", "expr": "13/10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to 24 tenths on the number line.",
+        "prompt": "Find 24/10",
+        "why": "24 tenths is 2 wholes, which is 20 tenths, plus 4 more tenths. That lands on 2.4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 3,
+        "step": 0.1,
+        "target": 2.4,
+        "check": { "rule": "equals", "expr": "24/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A rope is 2 and 7 tenths metres long. Type its length as a decimal.",
+        "prompt": "2 7/10 = ?",
+        "why": "The 2 wholes go before the dot. The 7 tenths go after the dot. That makes 2.7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2.7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 7/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to 4/5 on the number line. Think about tenths.",
+        "prompt": "Find 4/5",
+        "why": "Two fifths match 4 tenths, so each fifth is 2 tenths. Four fifths are 8 tenths, or 0.8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1,
+        "step": 0.1,
+        "target": 0.8,
+        "check": { "rule": "equals", "expr": "4/5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which fraction is the same as 1.5: 1/5, 5/10, 2/3, or 3/2?",
+        "prompt": "1.5 = ?",
+        "why": "1.5 is 15 tenths, which is 1 whole and a half. Three halves is also 1 whole and a half.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "2/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1.5",
+          "choices": [
+            { "id": "a", "expr": "3/2" },
+            { "id": "b", "expr": "1/5" },
+            { "id": "c", "expr": "5/10" },
+            { "id": "d", "expr": "2/3" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

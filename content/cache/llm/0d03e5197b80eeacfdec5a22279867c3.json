@@ -1,0 +1,443 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam sets up seats for a soccer game. He makes 6 rows. Each row has 12 seats. How many seats are there in all?",
+        "text": "6 × 12 = ?",
+        "visual": null
+      },
+      {
+        "narration": "Here is one row of 12 seats. Twelve is tricky to multiply at once. Let's split 12 into 10 and 2.",
+        "text": "12 = 10 + 2",
+        "visual": { "kind": "objects", "emoji": "🪑", "count": 12, "filled": null }
+      },
+      {
+        "narration": "First, do 6 groups of 10. You know your tens. 6 × 10 = 60.",
+        "text": "6 × 10 = 60",
+        "visual": null
+      },
+      {
+        "narration": "Next, do 6 groups of 2. That is a fact you know. 6 × 2 = 12.",
+        "text": "6 × 2 = 12",
+        "visual": null
+      },
+      {
+        "narration": "Now add the two parts. 60 + 12 = 72. So Sam has 72 seats.",
+        "text": "60 + 12 = 72",
+        "visual": null
+      },
+      {
+        "narration": "Big numbers work the same way. For 4 × 230, split 230 into 200 and 30. Then 4 × 200 = 800 and 4 × 30 = 120. Add them to get 920.",
+        "text": "4 × 230 = 800 + 120 = 920",
+        "visual": null
+      },
+      {
+        "narration": "Splitting a number into parts makes multiplying easier. Now it is your turn to practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 4 × 20?",
+        "prompt": "4 × 20 = ?",
+        "why": "4 × 2 = 8, so 4 × 20 is 8 tens. That is 80.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 80,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 * 20", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam splits 6 × 14 into 6 × 10 and 6 × 4. What is 6 × 10? Is it 6, 60, 600, or 24?",
+        "prompt": "6 × 10 = ?",
+        "why": "Multiplying by 10 moves each digit one place left. So 6 × 10 = 60.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 60,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 600,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 24,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the answer of 7 × 10.",
+        "prompt": "7 × 10 = ?",
+        "why": "7 groups of 10 is 70. Count by tens seven times to land on 70.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 70,
+        "check": { "rule": "equals", "expr": "7 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A box has 11 markers. Lena has 3 boxes. How many markers is that?",
+        "prompt": "3 × 11 = ?",
+        "why": "Split 11 into 10 and 1. 3 × 10 = 30 and 3 × 1 = 3. Then 30 + 3 = 33.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 33,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 11", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 8 × 100? Is it 80, 108, 800, or 8000?",
+        "prompt": "8 × 100 = ?",
+        "why": "Multiplying by 100 moves each digit two places left. So 8 × 100 = 800.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 80,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 108,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 800,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 8000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 * 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A hockey team buys 7 packs of pucks. Each pack has 14 pucks. How many pucks is that?",
+        "prompt": "7 × 14 = ?",
+        "why": "Split 14 into 10 and 4. 7 × 10 = 70 and 7 × 4 = 28. Then 70 + 28 = 98.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 98,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 * 14", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the answer of 5 × 24.",
+        "prompt": "5 × 24 = ?",
+        "why": "Split 24 into 20 and 4. 5 × 20 = 100 and 5 × 4 = 20. Then 100 + 20 = 120.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 20,
+        "target": 120,
+        "check": { "rule": "equals", "expr": "5 * 24", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A box holds 23 pencils. Ana has 6 boxes. How many pencils does she have? Is it 128, 118, 148, or 138?",
+        "prompt": "6 × 23 = ?",
+        "why": "Split 23 into 20 and 3. 6 × 20 = 120 and 6 × 3 = 18. Then 120 + 18 = 138.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 128,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 118,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 148,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 138,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 * 23", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A school trip uses 8 buses. Each bus holds 42 kids. How many kids can go?",
+        "prompt": "8 × 42 = ?",
+        "why": "Split 42 into 40 and 2. 8 × 40 = 320 and 8 × 2 = 16. Then 320 + 16 = 336.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 336,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 * 42", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the answer of 6 × 15.",
+        "prompt": "6 × 15 = ?",
+        "why": "Split 15 into 10 and 5. 6 × 10 = 60 and 6 × 5 = 30. Then 60 + 30 = 90.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 90,
+        "check": { "rule": "equals", "expr": "6 * 15", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A builder buys 7 loads of bricks. Each load has 235 bricks. How many bricks is that?",
+        "prompt": "7 × 235 = ?",
+        "why": "Split 235 into 200, 30, and 5. 7 × 200 = 1400, 7 × 30 = 210, 7 × 5 = 35. Add: 1645.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1645,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 * 235", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia needs a quick guess for 6 × 48. Is the answer closer to 200 or closer to 300?",
+        "prompt": "About 6 × 48?",
+        "why": "48 is close to 50. 6 × 50 = 300. So the answer is closer to 300.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": 300,
+            "text": "closer to 300",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": 200,
+            "text": "closer to 200",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "6 * 48",
+          "choices": [
+            { "id": "a", "expr": "300" },
+            { "id": "b", "expr": "200" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A farm packs 9 crates. Each crate holds 450 eggs. How many eggs is that?",
+        "prompt": "9 × 450 = ?",
+        "why": "Split 450 into 400 and 50. 9 × 400 = 3600 and 9 × 50 = 450. Then 3600 + 450 = 4050.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4050,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 * 450", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the answer of 3 × 150.",
+        "prompt": "3 × 150 = ?",
+        "why": "Split 150 into 100 and 50. 3 × 100 = 300 and 3 × 50 = 150. Then 300 + 150 = 450.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 600,
+        "step": 50,
+        "target": 450,
+        "check": { "rule": "equals", "expr": "3 * 150", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which way gives the same answer as 7 × 26? Is it 7 × 2 + 7 × 6, 7 × 20 + 6, or 7 × 20 + 7 × 6?",
+        "prompt": "Same as 7 × 26?",
+        "why": "Split 26 into 20 and 6. Multiply each part by 7. So 7 × 26 = 7 × 20 + 7 × 6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "7 × 2 + 7 × 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "7 × 20 + 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "7 × 20 + 7 × 6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "7 * 26",
+          "choices": [
+            { "id": "a", "expr": "7 * 2 + 7 * 6 == 7 * 26" },
+            { "id": "b", "expr": "7 * 20 + 6 == 7 * 26" },
+            { "id": "c", "expr": "7 * 20 + 7 * 6 == 7 * 26" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

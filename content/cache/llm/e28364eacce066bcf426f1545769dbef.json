@@ -1,0 +1,435 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Pip the frog. Pip loves numbers! Let's count with Pip.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "Pip sees apples. Count them. 1, 2, 3. There are 3 apples.",
+        "text": "3",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 3, "filled": null }
+      },
+      {
+        "narration": "We use a number for 3. It looks like this. This is the number 3.",
+        "text": "3",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Now Pip sees dots in a box. Count them. There are 7 dots. The number is 7.",
+        "text": "7",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 }
+      },
+      {
+        "narration": "Oh! This box has no dots. No dots is 0. Zero means none.",
+        "text": "0",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 0 }
+      },
+      {
+        "narration": "Pip sees lots of stars. Count to 12. The number is 12.",
+        "text": "12",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 12, "filled": null }
+      },
+      {
+        "narration": "You can match numbers to things. Ready to play with Pip?",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Count the fish. How many fish are there? Is it 3, 4, or 5?",
+        "prompt": "How many fish?",
+        "why": "Touch each fish and count. 1, 2, 3, 4. There are 4 fish.",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Pip has some apples. Count them. Type how many apples.",
+        "prompt": "How many apples?",
+        "why": "Count each apple one by one. 1, 2. There are 2 apples.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 2, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Help Pip hop. Move the frog to the number 6.",
+        "prompt": "Hop to 6",
+        "why": "Count along the line. 0, 1, 2, 3, 4, 5, 6. Stop at 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Look at the dots in the box. How many dots? Is it 6, 5, or 4?",
+        "prompt": "How many dots?",
+        "why": "Count the dots one by one. 1, 2, 3, 4, 5. There are 5 dots.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 5 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here is one frog. Type the number of frogs.",
+        "prompt": "How many frogs?",
+        "why": "There is just one frog. One is written as 1.",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Pip sees stars. How many stars are there? Is it 8, 9, or 10?",
+        "prompt": "How many stars?",
+        "why": "Count each star one time. You get to 9. There are 9 stars.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 9, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Count the dots in the box. Type how many dots.",
+        "prompt": "How many dots?",
+        "why": "Count the dots one by one. 1, 2, 3, 4, 5, 6, 7. There are 7.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Pip hops by 2s. Move the frog to the number 12.",
+        "prompt": "Hop to 12",
+        "why": "Hop by 2s. 0, 2, 4, 6, 8, 10, 12. Stop at 12.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 2,
+        "target": 12,
+        "check": { "rule": "equals", "expr": "12", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "The box has no dots. What number is that? Is it 1, 0, or 10?",
+        "prompt": "How many dots?",
+        "why": "There are no dots at all. No dots is the number 0.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 0 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 0,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "0", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Pip found ladybugs. Count them. Type how many ladybugs.",
+        "prompt": "How many ladybugs?",
+        "why": "Count each bug one time. You get to 11. There are 11 ladybugs.",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 11, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 11,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "11", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Pip has balloons. How many balloons are there? Is it 14, 15, or 16?",
+        "prompt": "How many balloons?",
+        "why": "Count the balloons one by one. After 14 comes 15. There are 15.",
+        "visual": { "kind": "objects", "emoji": "🎈", "count": 15, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 16,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 14,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Pip picked strawberries. Count them all. Type how many strawberries.",
+        "prompt": "How many strawberries?",
+        "why": "Count each one time. Go slowly up to 18. There are 18.",
+        "visual": { "kind": "objects", "emoji": "🍓", "count": 18, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 18,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "18", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Help Pip hop far. Move the frog to the number 17.",
+        "prompt": "Hop to 17",
+        "why": "Count along the line. Go past 10, 11, 12, up to 17. Stop at 17.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 17,
+        "check": { "rule": "equals", "expr": "17", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Pip wants the number 13. Which number is 13? Is it 31, 3, or 13?",
+        "prompt": "Find 13",
+        "why": "The number 13 has a 1 first, then a 3. It is 13.",
+        "visual": { "kind": "objects", "emoji": "🪨", "count": 13, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 31,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 13,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "13", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Pip has lots of flowers. Count them all. Type how many flowers.",
+        "prompt": "How many flowers?",
+        "why": "Count each flower one time. Keep going to 20. There are 20 flowers.",
+        "visual": { "kind": "objects", "emoji": "🌼", "count": 20, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 20,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

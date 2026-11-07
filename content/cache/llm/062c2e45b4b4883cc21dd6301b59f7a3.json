@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Step 5 says 'A number with fewer digits is usually less.' For whole numbers with no leading zeros, a number with fewer digits is always less, so 'usually' is imprecise. Consider 'is always less' or 'is less' so children don't learn that it is an exception-prone rule."
+      }
+    ],
+    "notes": "Checked every story card and all 15 items. I re-worked each VERIFY item (tap-4, keypad-4, tap-5, keypad-5) and each marked answer is correct and unique. Other checks: tap-1, tap-2, tap-3 and tap-6 marked answers are correct and only one choice is right; keypad-1, keypad-2, keypad-3 and keypad-6 answers are correct; the number-line targets (5000, 7500, 4650) are correct and their explanations are accurate. The explanations match the marked answers. No blockers found. The only note is the 'usually' wording in story card 5."
+  }
+}

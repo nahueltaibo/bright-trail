@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-add-sub-facts-10-keypad-6",
+        "severity": "note",
+        "category": "other",
+        "note": "Two-step item (8 - 3 + 2) with a story context. The skill is single addition and take-away facts to 10, so this goes a bit beyond it. Its arithmetic is correct (8 - 3 = 5, then 5 + 2 = 7), so the answer is 7 and nothing needs fixing."
+      },
+      {
+        "target": "g1-add-sub-facts-10-tap-2",
+        "severity": "note",
+        "category": "other",
+        "note": "The Why line 'Start with 5. Take away 2. 4, 3. You have 3 left.' is choppy when read aloud. A clearer version would be: 'Start with 5. Take away 2: 4, then 3. You have 3 left.'"
+      }
+    ],
+    "notes": "I checked every story card and item. The arithmetic, marked answers, and distractors are all correct. Verified items: g1-add-sub-facts-10-tap-5 (9 - 3 = 6 is true, since 3 + 6 = 9) and g1-add-sub-facts-10-tap-6 (5 + 5 = 10 is the greatest of 9, 8, and 10). Story picture counts match their narration (4 apples, 7 apples, 6 dots in the ten-frame, 10 apples, 6 apples). Each item's narration also matches its picture or screen, so the content can be followed by ear. I found no blockers. The two notes above are minor."
+  }
+}

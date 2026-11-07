@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-mult-div-by-10s-keypad-4",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration asks two questions in a row: \"How many packs is that? What is 450 ÷ 10?\" Both mean the same thing, and a child listening by ear may be unsure which one to answer. Consider keeping only \"How many packs is that?\" or only \"What is 450 ÷ 10?\""
+      }
+    ],
+    "notes": "I checked every story card and every item. The math is correct throughout: each marked answer is right, each distractor is wrong, and each number line includes its answer on a step. The story explains place-value moves accurately for ×10, ×100, ×1000 and ÷10, and it does not teach a misconception. No items are marked VERIFY. The only issue I found is the wording note on keypad-4."
+  }
+}

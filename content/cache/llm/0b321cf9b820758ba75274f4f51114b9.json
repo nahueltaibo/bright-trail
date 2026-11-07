@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g5-compare-order-100000-tap-7",
+        "severity": "note",
+        "category": "other",
+        "note": "The explanation is muddled. It says 'Among the rest, compare hundreds: 8 is most, then tens 4 beats 0', but 67 408 has 4 hundreds and is not a tie with the 8s. Clearer: 66 984 is out because its thousands are lower. Then 67 804, 67 840 and 67 408 share 7 ten thousands and 7 thousands, and the hundreds 8, 8 and 4 eliminate 67 408. Last, 67 840 beats 67 804 on the tens (4 vs 0). The marked answer 67 840 is correct."
+      },
+      {
+        "target": "g5-compare-order-100000-tap-8",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The marked answer is correct (12 m = 1 200 cm, which is longer than 360 cm). But comparing lengths with unit conversion is measurement, not this skill's comparing and ordering whole numbers to 100 000. Consider swapping for a pure number comparison so the item stays on skill."
+      },
+      {
+        "target": "g5-compare-order-100000-keypad-3",
+        "severity": "note",
+        "category": "audio",
+        "note": "The answer 6 is correct: 35 500 is below 36 000 and 36 500 is above it. The narration packs several conditions into one long sentence (3 ten thousands, some thousands, 5 hundreds, no tens or ones, least digit greater than 36 000). That is hard to follow by ear alone at difficulty 3. Consider shortening it or repeating the number's structure in a simpler form."
+      }
+    ],
+    "notes": "I checked every story card and item by working out the answers. All marked answers are correct, and no item has more than one right choice or a missing right answer. The VERIFY items are tap-3 (40 000 > 4 000 is Yes), keypad-3 (least thousands digit is 6) and tap-8 (12 m is longer than 360 cm); each marked answer matches its question. The story's ordering examples (32 598, 32 601, 43 598, 76 400) are correct in both directions. The explanations for tap-4, tap-5, tap-6, keypad-1, keypad-2, keypad-4 and the number-line items are accurate. Nothing found reaches blocker level, so the problems above are all notes on wording, skill fit and audio clarity."
+  }
+}

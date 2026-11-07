@@ -1,0 +1,447 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has 4 red apples. Here they are.",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Mia gets 3 more apples. Now she has 7 apples. 4 and 3 make 7.",
+        "text": "4 + 3 = 7",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 7, "filled": null }
+      },
+      {
+        "narration": "A ten frame holds 10 dots. Here are 6 dots. 4 more dots make 10.",
+        "text": "6 + 4 = 10",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Mia eats 4 of the 10 apples. Now 6 apples are left.",
+        "text": "10 - 4 = 6",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 6, "filled": null }
+      },
+      {
+        "narration": "4 and 6 make 10. So 10 take away 4 is 6. The facts go together!",
+        "text": "4 + 6 = 10",
+        "visual": null
+      },
+      {
+        "narration": "Now you try! Add and take away with Mia.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 3 + 2? Is it 4, 5, or 6?",
+        "prompt": "3 + 2 = ?",
+        "why": "Start at 3 and count up 2 more. 4, 5. The answer is 5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam has 4 fish. 1 more fish swims in. How many fish are there now?",
+        "prompt": "4 + 1 = ?",
+        "why": "One more than 4 is 5. So 4 + 1 = 5.",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 4, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the answer of 5 + 2.",
+        "prompt": "5 + 2 = ?",
+        "why": "Start at 5. Hop 2 times to the right. You land on 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "5 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 5 - 2? That is 5 take away 2. Is it 2, 4, or 3?",
+        "prompt": "5 - 2 = ?",
+        "why": "Start with 5. Take away 2. 4, 3. You have 3 left.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 5 + 5?",
+        "prompt": "5 + 5 = ?",
+        "why": "Two groups of 5 make 10. So 5 + 5 = 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 7 + 2? Is it 9, 8, or 10?",
+        "prompt": "7 + 2 = ?",
+        "why": "Start at 7. Count up 2. 8, 9. The answer is 9.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "What is 9 - 4? That is 9 take away 4.",
+        "prompt": "9 - 4 = ?",
+        "why": "4 and 5 make 9. So 9 take away 4 is 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the answer of 8 - 5. That is 8 take away 5.",
+        "prompt": "8 - 5 = ?",
+        "why": "Start at 8. Hop back 5 times. You land on 3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "8 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "4 and what number make 10? Is it 5, 7, 4, or 6?",
+        "prompt": "4 + ? = 10",
+        "why": "4 and 6 make 10. Count up from 4 to 10. That is 6 steps.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "The ten frame has 7 dots. How many more dots make 10?",
+        "prompt": "7 + ? = 10",
+        "why": "The ten frame has 3 empty spots. 7 and 3 make 10.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 - 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sam knows 3 + 6 = 9. Is it true or false that 9 take away 3 is 6?",
+        "prompt": "9 - 3 = 6",
+        "why": "3 and 6 make 9. So 9 take away 3 is 6. It is true.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "9 - 3 == 6",
+          "choices": [
+            { "id": "a", "expr": "9 - 3 == 6" },
+            { "id": "b", "expr": "not (9 - 3 == 6)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "What number and 3 make 10?",
+        "prompt": "? + 3 = 10",
+        "why": "Start at 10 and take away 3. That leaves 7. So 7 and 3 make 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 - 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The frog starts at 10. Take away 6. Move the frog to the answer.",
+        "prompt": "10 - 6 = ?",
+        "why": "6 and 4 make 10. So 10 take away 6 is 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "10 - 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is greatest: 6 + 3, 4 + 4, or 5 + 5?",
+        "prompt": "Which is greatest?",
+        "why": "6 + 3 is 9. 4 + 4 is 8. 5 + 5 is 10. So 5 + 5 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "6 + 3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4 + 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5 + 5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "6 + 3" },
+            { "id": "b", "expr": "4 + 4" },
+            { "id": "c", "expr": "5 + 5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Ana has 8 stickers. She gives 3 away. Then she gets 2 more. How many stickers does she have now?",
+        "prompt": "8 - 3 + 2 = ?",
+        "why": "8 take away 3 is 5. Then 5 and 2 more make 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 - 3 + 2", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-division-sharing-tap-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "I worked the VERIFY item: 12 ÷ 2 = 6 and 12 ÷ 4 = 3, so the marked answer '2 friends' is correct and the other choice is wrong. The screen text 'Who gets more?' is vague by ear. Consider reading it as 'Which way gives each friend more cookies?' and making the choices say what they mean, e.g. '2 friends (6 each)' and '4 friends (3 each)'. Otherwise the item is fine."
+      }
+    ],
+    "notes": "Checked every item's arithmetic and marked answers: tap-1 (6÷2=3), keypad-1 (10÷2=5), number-line-1 (8÷4=2), keypad-2 (6÷2=3 bowls), tap-2 (4÷2=2), tap-3 (12÷3=4), keypad-3 (12÷4=3), number-line-2 (9÷3=3), keypad-4 (12÷6=2), tap-4 (10÷5=2 bags), tap-5 (VERIFY, correct), keypad-5 (12÷2=6), number-line-3 (12÷4=3), keypad-6 (12÷4=3), tap-6 (9÷3=3 friends). All marked answers are correct, each tap item has exactly one right choice, and the 'why' explanations are accurate. All quantities stay within 12 and the skill's scope. Story cards match their pictures and screens: 8÷2=4, 12÷3=4 bags counted by 3s, and 4 groups of 3 = 12. No blockers found. The story wording is clear for listening alone. Number-line items use a 0–12 line, which covers every answer.\""
+  }
+}

@@ -1,0 +1,487 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has a big pizza. She wants to share it fairly with her friends.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🍕", "count": null, "filled": null }
+      },
+      {
+        "narration": "Two friends share the pizza. Each gets 1 of 2 equal pieces. Here are 2 slices, one for each friend.",
+        "text": "1/2",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 2, "filled": null }
+      },
+      {
+        "narration": "Now 4 friends share the same pizza. Each slice is smaller. Here are 4 slices, one for each friend.",
+        "text": "1/4",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Now 8 friends share the same pizza. Each slice is tiny. Here are 8 slices, one for each friend.",
+        "text": "1/8",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 8, "filled": null }
+      },
+      {
+        "narration": "More friends means smaller pieces. One eighth is smaller than one fourth. One fourth is smaller than one half.",
+        "text": "more friends = smaller piece",
+        "visual": { "kind": "emoji", "emoji": "🍕", "count": null, "filled": null }
+      },
+      {
+        "narration": "Fewer friends means bigger pieces. Two friends get the biggest slices. The pizza must stay the same size.",
+        "text": "fewer friends = bigger piece",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 2, "filled": null }
+      },
+      {
+        "narration": "You are ready to practise. Think about how many friends are sharing. Then pick the biggest or smallest piece.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is shared by 2 friends. The same pizza is shared by 8 friends. Who gets the bigger piece, 2 friends or 8 friends?",
+        "prompt": "Bigger piece?",
+        "why": "Fewer friends means bigger pieces. With 2 friends, the pizza is cut in just 2 big pieces.",
+        "visual": { "kind": "emoji", "emoji": "🍕", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "8 friends",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/2" },
+            { "id": "b", "expr": "1/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A cake is shared by 3 friends. The same cake is shared by 6 friends. Who gets the smaller piece, 3 friends or 6 friends?",
+        "prompt": "Smaller piece?",
+        "why": "More friends means smaller pieces. The cake is cut in 6 pieces for 6 friends, so each piece is small.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "6 friends",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "least",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/3" },
+            { "id": "b", "expr": "1/6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Two pies are the same size. One is shared by 2 friends. One is shared by 10 friends. How many friends get the smaller pieces?",
+        "prompt": "How many friends?",
+        "why": "More friends means smaller pieces. 10 friends is more than 2 friends, so the answer is 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "max(2, 10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "A pizza is shared by 2 friends, or 5 friends, or 9 friends. Move the frog to the number of friends who get the biggest piece.",
+        "prompt": "Biggest piece",
+        "why": "Fewer friends means bigger pieces. The smallest number of friends is 2, so 2 friends get the biggest piece.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "min(2, 5, 9)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam shares a pizza with 2 friends. Then Sam shares the same pizza with 4 friends. Is each piece now bigger or smaller?",
+        "prompt": "Bigger or smaller?",
+        "why": "More friends means smaller pieces. 4 friends get smaller pieces than 2 friends.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "bigger",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "smaller",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "not (1/4 < 1/2)" },
+            { "id": "b", "expr": "1/4 < 1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "The same pie is shared by 3 friends, or 5 friends, or 10 friends. Who gets the smallest piece: 3 friends, 5 friends, or 10 friends?",
+        "prompt": "Smallest piece?",
+        "why": "The most friends make the smallest pieces. 10 is the most friends, so 10 friends get the smallest piece.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "10 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5 friends",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "least",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/3" },
+            { "id": "b", "expr": "1/10" },
+            { "id": "c", "expr": "1/5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Ana can share a melon with 4 friends, or 6 friends, or 3 friends. How many friends give the biggest piece?",
+        "prompt": "How many friends?",
+        "why": "Fewer friends means bigger pieces. The smallest number here is 3, so 3 friends give the biggest piece.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "min(4, 6, 3)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Pies are the same size. They are shared by 4 friends, or 7 friends, or 6 friends. Move the frog to the number with the smallest piece.",
+        "prompt": "Smallest piece",
+        "why": "The most friends make the smallest pieces. 7 is the most, so move the frog to 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "max(4, 7, 6)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Two pizzas are the same size. Which piece is bigger, 1/5 of a pizza or 1/3 of a pizza?",
+        "prompt": "Which is bigger?",
+        "why": "Sharing with 3 makes bigger pieces than sharing with 5. So 1/3 is bigger than 1/5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/5" },
+            { "id": "b", "expr": "1/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A pie is shared fairly. Each friend gets 1/6 of the pie. How many friends are sharing?",
+        "prompt": "How many friends?",
+        "why": "One sixth means the pie is shared by 6 friends. So the answer is 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "The pies are all the same size. Which is the smallest piece: 1/3, 1/10, 1/5, or 1/2?",
+        "prompt": "Smallest piece?",
+        "why": "The biggest number of friends makes the smallest piece. 10 is the biggest, so 1/10 is smallest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "1/10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "least",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/3" },
+            { "id": "b", "expr": "1/2" },
+            { "id": "c", "expr": "1/5" },
+            { "id": "d", "expr": "1/10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Two same-size cakes are shared. One group has 12 friends. One group has 20 friends. How many friends are in the group with bigger pieces?",
+        "prompt": "How many friends?",
+        "why": "Fewer friends means bigger pieces. 12 is less than 20, so the group of 12 gets bigger pieces.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 12,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "min(12, 20)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The same pie is shared by 15 friends, or 6 friends, or 11 friends. Move the frog to the number of friends with the biggest piece.",
+        "prompt": "Biggest piece",
+        "why": "Fewer friends means bigger pieces. 6 is the smallest number, so 6 friends get the biggest piece.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "min(15, 6, 11)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Is this true or false? A pie shared by 5 friends gives a bigger piece than the same pie shared by 3 friends.",
+        "prompt": "True or false?",
+        "why": "More friends means smaller pieces. 5 friends get smaller pieces than 3 friends, so it is false.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/5 > 1/3" },
+            { "id": "b", "expr": "not (1/5 > 1/3)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A piece for some friends is smaller than for 4 friends. It is bigger than for 6 friends. Move the frog to how many friends.",
+        "prompt": "Between 4 and 6",
+        "why": "Smaller than for 4 means more than 4 friends. Bigger than for 6 means fewer than 6. So it is 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-mental-math-50-tap-4",
+        "severity": "note",
+        "category": "factual",
+        "note": "The answer 40 is correct (24 + 18 = 42, which is closer to 40 than 30). But the 'Why' says the estimate is 'about 45', and 45 is equally close to 40 and 50. Saying 'about 42' or 'about 45, which is closer to 40 than to 30' would be cleaner. Estimation is also a little beyond the 'add and subtract in your head' wording of the skill, so this may be better framed as a mental-math check."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 uses the word 'hops' ('That is 3 hops'), which is jargon a pre-reader won't know from audio alone. 'That is 3 more jumps' or 'Count up: 45, 46, 47. That is 3 more.' would be clearer. The rest of the story arithmetic checks out (24+3=27, 18+5=23, 26+12=38, 35-12=23, 47-44=3)."
+      }
+    ],
+    "notes": "I checked every story card and all 18 items by working out the arithmetic and confirming the marked answer. All marked answers are correct, and no item has more than one right choice or is missing its right answer. Every explanation's steps are arithmetically sound. Number-line answers fall inside their line ranges (0–50 step 5, 20–50 step 1, 10–50 step 1). The items use the 'tap-6' three-number item (15 + 9 + 12 = 36) correctly, and no items were marked VERIFY. I found no blockers. The two notes are wording and clarity suggestions only."
+  }
+}

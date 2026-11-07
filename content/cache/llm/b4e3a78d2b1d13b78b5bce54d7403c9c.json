@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 2-4 show the same coin emoji (coin) for nickel, dime, quarter, loonie and toonie. Children hear the name, so this works by ear, but the picture doesn't help tell the coins apart. Consider a distinct cue or a size/colour hint if the drawing set allows it."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 4 calls the quarter 'a big coin'. It is bigger than the nickel and dime but smaller than the loonie and toonie, so 'big' is only true relative to the small coins. Consider 'a bigger coin' or dropping the size claim, so kids don't leave thinking the quarter is the largest coin."
+      },
+      {
+        "target": "k-coins-and-bills-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Choices mix units: $2 (toonie) against 25 cents and 10 cents. The marked answer (toonie) is correct, since $2 = 200 cents, but the item asks kids to compare across units that the story never converts. Fine as a stretch item; consider a same-unit version if this is meant to be an easy check."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 16 items for the Kindergarten coins-and-bills skill. Every marked answer checks out: nickel 5 cents, dime 10 cents, quarter 25 cents, loonie $1, toonie $2, $5 and $10 bills; the coin-vs-bill, dime-vs-nickel, least/most, $2-identification, 2 nickels = 10 cents, $1+$2 = 3, and $2+$5 = 7 items all have the right marked choice; and each number-line target (10, 25, 5, 7) sits inside its line range. No blockers found. The three notes are wording and picture-clarity points, plus one stretch item that mixes cents and dollars."
+  }
+}

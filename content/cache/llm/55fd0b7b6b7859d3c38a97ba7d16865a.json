@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-compare-order-10000-tap-5",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The marked answer 6505 is correct, but the explanation is false. It says 6505 has 'more than 5 hundreds and 0 tens.' 6505 has exactly 5 hundreds, not more than 5. The correct reason is that 6505 has 5 more ones than 6500, or that 6505 comes after 6500 when counting up. As written, the explanation teaches a wrong comparison rule."
+      },
+      {
+        "target": "g4-compare-order-10000-keypad-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The answer 3079 is correct. The explanation starts with 'Put the smallest digit in the biggest place,' which is the rule for the smallest digit overall (0), but then says zero can't lead and uses 3. Reword to 'Put the smallest digit that can lead (not 0) in the biggest place' so the rule is not contradicted in the same sentence."
+      }
+    ],
+    "notes": "I checked every story card and item by working each answer out. All other marked answers are correct and each has one right choice: tap-1, tap-2, keypad-1, keypad-2, number-line-1, tap-3, tap-4 (7305 is not greater than 7350, so 'no' is right), keypad-3, keypad-4 (5000 is the only whole number between 4999 and 5001), number-line-2, tap-6, keypad-6 (order 4037, 4073, 4307, 4730), and number-line-3. The story cards are accurate, including the 982, 2405, 2450, 4100 ordering and the 4132 < 5000 < 6200 benchmark. Narrations are understandable by ear. The only substantive problem is the tap-5 explanation."
+  }
+}

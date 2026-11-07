@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-equal-groups-tap-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "VERIFIED: 3 groups of 2 = 6 and 2 groups of 4 = 8, so the marked answer (2 groups of 4) is correct. Wording is a note: the narration asks which is 'greater' but the screen asks 'Which has more?'. Use one term. There is also no picture, so a child must work out both totals by ear. That is fine at difficulty 3, but the narration could say the totals aloud as a hint."
+      },
+      {
+        "target": "g1-equal-groups-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Marked answer 5 is correct (5 bowls x one half = 5 halves). Counting 'groups of one half' as whole counts is a stretch for Grade 1 halves work, which is mostly fair shares. Consider whether this framing belongs in this skill, or add a sentence that each half is part of a whole."
+      },
+      {
+        "target": "g1-equal-groups-number-line-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Answer 6 is correct (6 friends x one half = 6 halves). Same scope concern as tap-4: 'groups of one half' is more advanced than Grade 1 fair-share halves. Consider rewording so the question is clearly about counting the halves."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 4 says 'groups of one half' and card 4's picture shows 4 pizza slices, which is consistent. Card 4 also introduces halves as equal groups, which is above the core Grade 1 skill. Consider a clearer lead-in, such as 'each slice is half a pizza', so a child hearing it understands the idea."
+      }
+    ],
+    "notes": "I checked every item's arithmetic and the marked answer. All tap, keypad, and number-line answers are correct, and each picture count matches its narration and answer. The story cards are accurate. No blockers were found. Only wording and scope notes remain, all about halves-as-groups and the 'greater/more' phrasing in tap-5."
+  }
+}

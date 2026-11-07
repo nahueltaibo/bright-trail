@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Step 1 says Sam has 241 cards and gets 174 more, but the picture shows 5 hockey-stick emoji (5 × 🏒). The picture contradicts the narrated counts, and the emoji is a stick, not a card. Either remove the picture or draw it to match the story (for example, show the ones digit only and say so)."
+      }
+    ],
+    "notes": "I checked every item's arithmetic and marked answers by working each one out. All are correct: keypad-1 (59), tap-1 (14), number-line-1 (500), tap-2 (10), keypad-2 (52), keypad-3 (383), tap-3 (8 tens, VERIFY), number-line-2 (225, on the 200-300 line), keypad-4 (24), tap-4 (26), keypad-5 (256), keypad-6 (845), number-line-3 (430, on the 400-500 line), tap-5 (152), and tap-6 (No; 400 - 175 = 225, VERIFY). The story's worked examples (241 + 174 = 415 and 52 - 27 = 25) are correct, and the step-by-step explanations in the Why fields are correct. Only the story step 1 picture is a problem."
+  }
+}

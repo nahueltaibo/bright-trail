@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-mental-math-1000-tap-4",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The scenario is odd: a 'bus' with '612 seats in a stadium section', and seats 'taken away'. The arithmetic (612 - 9 = 603) and the marked answer are correct, but a clearer context such as 'A stadium section has 612 seats. 9 seats are blocked off.' would be easier to follow by ear."
+      }
+    ],
+    "notes": "I checked every story card and item. All arithmetic is correct, and each marked answer is the only right choice.\n\nStory: 326+4=330; 326+38=364 (4 then 34); 245+99=344 (345 then minus 1); 500-298=202 (300 then add back 2); 398+203=601, about 600 by rounding to 400 and 200. Each strategy explanation is sound.\n\nItems: keypad-1 (350), tap-1 (595 is the only correct choice), number-line-1 (270), tap-2 (304+395=699, closest to 700), number-line-2 (680, on the 20-step grid), keypad-2 (364), tap-3 (344), number-line-3 (550, on the 10-step grid), keypad-3 (202), tap-4 (603; 602 is the wrong adjustment and 604 is off by one), keypad-4 (733), tap-5 (612+289=901, closest to 900), number-line-4 (650, on the 50-step grid), keypad-5 (803-478=325; 22+300+3 is correct).\n\ntap-6 (VERIFY): 725-198=527, so Dev is right and \"Yes\" is correct. \"No\" is the only other choice and is wrong. The explanation (725-200=525, then add back 2) is correct.\n\nOnly a wording note on tap-4. Number-line items depend on the frog's scale being read aloud, which I cannot check from the text alone.\""
+  }
+}

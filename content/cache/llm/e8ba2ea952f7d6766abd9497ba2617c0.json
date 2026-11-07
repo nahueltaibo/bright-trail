@@ -1,0 +1,446 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia and her brother share one flatbread. They cut it into 2 equal pieces. Each piece is one half.",
+        "text": "1/2",
+        "visual": { "kind": "emoji", "emoji": "🫓", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now they cut the same size flatbread into 4 equal pieces. Mia takes 2 pieces. That is two fourths.",
+        "text": "2/4",
+        "visual": null
+      },
+      {
+        "narration": "Mia gets the same amount both ways. Two fourths is the same as one half. The pieces are smaller, but she takes more of them.",
+        "text": "1/2 = 2/4",
+        "visual": null
+      },
+      {
+        "narration": "Cut it into 8 equal pieces, and Mia takes 4. That is four eighths. It is still the same amount as one half.",
+        "text": "1/2 = 2/4 = 4/8",
+        "visual": null
+      },
+      {
+        "narration": "Five friends share a flatbread. Each gets one fifth. Now ten friends share one. Two friends together get two tenths. One fifth is the same as two tenths.",
+        "text": "1/5 = 2/10",
+        "visual": null
+      },
+      {
+        "narration": "You know one third equals two sixths. It works for more. Two thirds equals four sixths. Twice the pieces, and you take twice as many.",
+        "text": "2/3 = 4/6",
+        "visual": null
+      },
+      {
+        "narration": "Different fractions can name the same share. Let's practise with Mia and her friends.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🫓", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia eats one half of a flatbread. Is that the same amount as 1/4 or 2/4?",
+        "prompt": "1/2 = ?",
+        "why": "Cut into 4 equal pieces, 2 pieces make one half. So one half is the same as 2/4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1/2",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "2/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "One half is the same as how many fourths?",
+        "prompt": "1/2 = ?/4",
+        "why": "A flatbread cut into 4 equal pieces has 2 pieces in one half. So one half is two fourths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "A flatbread is cut into 4 equal pieces. Move the frog to how many pieces make one half.",
+        "prompt": "Pieces in one half",
+        "why": "Half of 4 pieces is 2 pieces. Two fourths is the same as one half.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Is one third the same amount as 3/6 or 2/6?",
+        "prompt": "1/3 = ?",
+        "why": "You know one third equals two sixths. Three sixths is one half, which is different.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2/6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1/3",
+          "choices": [
+            { "id": "a", "expr": "3/6" },
+            { "id": "b", "expr": "2/6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "One fifth is the same as how many tenths?",
+        "prompt": "1/5 = ?/10",
+        "why": "Ten pieces are twice as many as five. So one fifth becomes two tenths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Leo wants one half of a pizza cut in 8 equal slices. Is it 3/8, 4/8, or 5/8?",
+        "prompt": "1/2 = ?/8",
+        "why": "Half of 8 slices is 4 slices. So one half is the same as four eighths.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "5/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4/8",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1/2",
+          "choices": [
+            { "id": "a", "expr": "3/8" },
+            { "id": "b", "expr": "5/8" },
+            { "id": "c", "expr": "4/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Two thirds is the same as how many sixths?",
+        "prompt": "2/3 = ?/6",
+        "why": "Each third splits into 2 sixths. Two thirds is 2 times 2, which is four sixths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "A flatbread is cut into 10 equal pieces. Move the frog to how many tenths are the same as 3 fifths.",
+        "prompt": "3/5 = ?/10",
+        "why": "Each fifth is two tenths. Three fifths is 3 groups of 2, so six tenths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Leo eats 3 of 6 equal slices. That is the same as how many fourths?",
+        "prompt": "3/6 = ?/4",
+        "why": "Three sixths is one half. One half is the same as two fourths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam eats 2/4 of a pizza. Ana eats 4/8 of the same size pizza. Who eats more?",
+        "prompt": "2/4 or 4/8?",
+        "why": "Both are the same as one half. So Sam and Ana eat the same amount.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Sam",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Ana",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Same amount",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "2/4 == 4/8",
+          "choices": [
+            { "id": "a", "expr": "2/4 > 4/8" },
+            { "id": "b", "expr": "4/8 > 2/4" },
+            { "id": "c", "expr": "2/4 == 4/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Four fifths is the same as how many tenths? Move the frog to the number.",
+        "prompt": "4/5 = ?/10",
+        "why": "Each fifth is two tenths. Four fifths is 4 groups of 2, so eight tenths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "8", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Five equal pieces make one half of a flatbread. How many equal pieces make the whole?",
+        "prompt": "5 pieces = 1/2",
+        "why": "Two halves make a whole. So the whole is 5 pieces and 5 more pieces, which is 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one is not the same amount as one half? Is it 2/4, 3/6, 4/6, or 5/10?",
+        "prompt": "Not equal to 1/2",
+        "why": "2/4, 3/6, and 5/10 are all one half. Four sixths is more than one half.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "4/6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "4/6 != 1/2",
+          "choices": [
+            { "id": "a", "expr": "2/4 != 1/2" },
+            { "id": "b", "expr": "3/6 != 1/2" },
+            { "id": "c", "expr": "5/10 != 1/2" },
+            { "id": "d", "expr": "4/6 != 1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Zoe eats 2/3 of a flatbread cut in 6 equal pieces. Move the frog to how many sixths she eats.",
+        "prompt": "2/3 = ?/6",
+        "why": "Each third is two sixths. Two thirds is 2 groups of 2, so four sixths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 6,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Ravi eats 6 eighths of a pie. That is the same as 3 out of how many equal parts?",
+        "prompt": "6/8 = 3/?",
+        "why": "Cut both numbers in half. Six eighths becomes three fourths, so the answer is 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 / 2", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

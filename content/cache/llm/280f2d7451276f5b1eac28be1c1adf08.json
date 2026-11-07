@@ -1,0 +1,460 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Pia likes stickers. She counts them in groups of ten. Here are 10 stickers. That is 1 ten.",
+        "text": "10 ones = 1 ten",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 10, "filled": null }
+      },
+      {
+        "narration": "Pia keeps counting. Ten tens make one hundred. A hundred is a big group.",
+        "text": "10 tens = 100",
+        "visual": null
+      },
+      {
+        "narration": "Now Pia has 1 hundred, 2 tens, and 4 ones. We read it as one hundred twenty-four.",
+        "text": "100 + 20 + 4 = 124",
+        "visual": null
+      },
+      {
+        "narration": "We can break 124 apart. It is 100 and 24. The amount stays the same.",
+        "text": "124 = 100 + 24",
+        "visual": null
+      },
+      {
+        "narration": "Here is another way. 124 is 12 tens and 4 ones. Ten tens are 100, and 2 more tens make 12.",
+        "text": "124 = 12 tens + 4 ones",
+        "visual": null
+      },
+      {
+        "narration": "Here are 4 ones. Add them to 12 tens. You get 124 again.",
+        "text": "120 + 4 = 124",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Great job, Pia! Now you can read and build numbers to 200. Let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Pia has 1 hundred, 4 tens, and 2 ones. What number is that?",
+        "prompt": "100 + 40 + 2 = ?",
+        "why": "1 hundred is 100. 4 tens is 40. 2 ones is 2. Put them together to get 142.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 142,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "100 + 40 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "How many tens make one hundred? Is it 5, 10, 20, or 100?",
+        "prompt": "? tens = 100",
+        "why": "Ten tens make one hundred. Count by tens ten times to reach 100.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 100,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 150.",
+        "prompt": "Find 150",
+        "why": "150 is halfway between 100 and 200. Count by tens from 100: 110, 120, 130, 140, 150.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "target": 150,
+        "check": { "rule": "equals", "expr": "150", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number is one hundred twenty-six? Is it 162, 126, or 106?",
+        "prompt": "one hundred twenty-six",
+        "why": "One hundred twenty-six is 1 hundred, 2 tens, and 6 ones. That is 126.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 162,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 126,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 106,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "126", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 100 + 7?",
+        "prompt": "100 + 7 = ?",
+        "why": "There are no tens. So 1 hundred and 7 ones is 107.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 107,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "100 + 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Sam has 150 beads. How many tens is that?",
+        "prompt": "150 = ? tens",
+        "why": "10 tens make 100. 5 more tens make 50. So 150 is 15 tens.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "150 / 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "124 is 100 and how many more? Is it 24, 42, 4, or 12?",
+        "prompt": "124 = 100 + ?",
+        "why": "Take away the 100 from 124. What is left is 24.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 42,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 24,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "124 - 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to 165.",
+        "prompt": "Find 165",
+        "why": "165 is 1 hundred, 6 tens, and 5 ones. Go to 160, then 5 more.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "target": 165,
+        "check": { "rule": "equals", "expr": "165", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "12 tens and 5 ones is the same as 152. Is that true or false?",
+        "prompt": "12 tens 5 ones = 152",
+        "why": "12 tens is 120. Add 5 ones to get 125, not 152. So it is false.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "12 * 10 + 5 == 152",
+          "choices": [
+            { "id": "a", "expr": "12 * 10 + 5 == 152" },
+            { "id": "b", "expr": "not (12 * 10 + 5 == 152)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A box holds 10 pencils. Sam has 14 boxes. How many pencils is that?",
+        "prompt": "14 tens = ?",
+        "why": "14 tens is 10 tens and 4 tens. That is 100 and 40, so 140.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 140,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "14 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Mia has 9 tens and 15 ones. What number is that?",
+        "prompt": "90 + 15 = ?",
+        "why": "9 tens is 90. 15 ones is 10 and 5. So 90 and 10 make 100, and 5 more is 105.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 105,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "90 + 15", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number is the same as 17 tens and 6 ones? Is it 167, 176, or 76?",
+        "prompt": "17 tens 6 ones = ?",
+        "why": "17 tens is 170. Add 6 ones to get 176.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 167,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 76,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 176,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "17 * 10 + 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the number with 17 tens and 5 ones.",
+        "prompt": "17 tens 5 ones",
+        "why": "17 tens is 170. Add 5 ones to land on 175.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 5,
+        "target": 175,
+        "check": { "rule": "equals", "expr": "17 * 10 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "164 is 1 hundred, 5 tens, and how many ones?",
+        "prompt": "164 = 100 + 50 + ?",
+        "why": "100 and 50 make 150. From 150 to 164 is 14 more. So there are 14 ones.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 14,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "164 - 150", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number is greatest? 1 hundred 9 tens, 18 tens 5 ones, or 17 tens 9 ones?",
+        "prompt": "Which is greatest?",
+        "why": "1 hundred 9 tens is 190. 18 tens 5 ones is 185. 17 tens 9 ones is 179. So 190 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "18 tens 5 ones",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "17 tens 9 ones",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1 hundred 9 tens",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "190",
+          "choices": [
+            { "id": "a", "expr": "185" },
+            { "id": "b", "expr": "179" },
+            { "id": "c", "expr": "190" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

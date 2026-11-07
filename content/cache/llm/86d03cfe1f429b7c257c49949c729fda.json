@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-add-sub-10000-number-line-1",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration says only 'Move the frog' and never says where the line starts or ends. A child who can't see the line can't tell where 0.4 sits or how far a hop is, so the item depends on sight. Consider adding a spoken cue such as 'Start at 0.4 and hop 3 tenths to the right.'"
+      },
+      {
+        "target": "g4-add-sub-10000-number-line-2",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration says only 'Move the frog' and does not mention the 0 to 1000 scale or the step size of 50. Sound alone does not give the child the scale, so this item depends on sight. Consider a spoken cue that gives the start (450) and the hop (250)."
+      },
+      {
+        "target": "g4-add-sub-10000-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration says only 'Move the frog' and does not give the 0 to 4 scale or the 0.1 step. The child needs sight to tell where 1.7 is on a 40-step line. Consider a spoken cue with the start (3.5) and the hop (1.8 back)."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Numbers are written with spaces as thousands separators ('1 200', '3 250', '5 000'). Device text-to-speech may read these as separate digits or as a list rather than as one number. Check how the narration is spoken, or write the numbers in a form the voice reads as whole numbers."
+      }
+    ],
+    "notes": "I checked every answer by hand and all are correct. Story arithmetic: 1 200 + 300 = 1 500; 1 500 + 1 750 = 3 250; 5 000 − 3 250 = 1 750; 1.8 + 0.6 = 2.4. Items: keypad-1 2 500; tap-1 7 000; number-line-1 0.7; keypad-2 500; tap-2 1.8; keypad-3 3 765; tap-3 3 800; number-line-2 700; keypad-4 5.2; tap-4 6 000; keypad-5 9 233; keypad-6 5 245; number-line-3 1.7; tap-5 5 000; tap-6 670. Each tap item has exactly one correct choice, and each worked explanation is accurate. Every item stays within Grade 4 addition and subtraction to 10 000 and decimal tenths. No blockers found. The notes flag only how the number-line items depend on sight and a possible text-to-speech issue with spaced numbers. Items marked VERIFY: none were marked."
+  }
+}

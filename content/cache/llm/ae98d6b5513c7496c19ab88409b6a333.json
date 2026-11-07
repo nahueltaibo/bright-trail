@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 6 narration says '4 trays with 5 cookies each is 4 × 5 = 20', but the screen shows '5 × 4 = 20'. The math is correct, but a child listening and watching could hear one order and see the other. Consider matching the screen to the narration, or saying 'or 5 × 4' aloud."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 4 screen shows '4 × 6 = 20 + 4 = 24', which skips the 4 × 5 and 4 × 1 parts from card 3. It is correct shorthand, but for a child listening by ear the link back to the split is weaker. Consider showing '4 × 5 + 4 × 1 = 20 + 4 = 24' or narrating the parts."
+      }
+    ],
+    "notes": "Checked every item by working it out. All marked answers are correct and each has exactly one right choice: tap-1 (3), tap-2 (4 × 3 = 12), tap-3 (1), tap-4 (18 ÷ 3 = 6 only; 18 ÷ 6 = 3 and 18 ÷ 3 = 3 are false), tap-5 (No, since 8 × 6 = 48 ≠ 42 and the answer is 7), tap-6 (7 × 5 + 7 = 42; 7 × 5 + 1 = 36 and 6 × 5 + 7 = 37 are not). Keypad answers are correct: 12, 5, 18, 6, 56, 54. Number-line answers are correct and sit within their ranges: 8 on 0–10, 35 on 0–40 by 5s, 9 on 0–10. Story arithmetic (4 × 5 = 20, 4 × 6 = 24, 20 ÷ 4 = 5, 5 × 4 = 20) is correct. Both VERIFY items (tap-2, tap-4) and the tap-5 and tap-6 VERIFY items check out. Nothing is a blocker. The two notes are wording and clarity issues on the story cards."
+  }
+}

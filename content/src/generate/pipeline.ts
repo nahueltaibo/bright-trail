@@ -200,7 +200,15 @@ export interface ContentRun {
 export async function generateAll(
   contexts: readonly SkillContext[],
   llm: LlmClient,
-  { concurrency = 3, log = () => {} }: { concurrency?: number; log?: (m: string) => void } = {},
+  {
+    concurrency = 3,
+    maxRetries = () => MAX_RETRIES,
+    log = () => {},
+  }: {
+    concurrency?: number;
+    maxRetries?: (skillId: string) => number;
+    log?: (m: string) => void;
+  } = {},
 ): Promise<ContentRun> {
   const outcomes = new Map<string, SkillOutcome>();
   let next = 0;
@@ -210,7 +218,10 @@ export async function generateAll(
     while (stoppedBy === null && next < contexts.length) {
       const context = contexts[next++];
       try {
-        const outcome = await generateSkill(context, llm, { log });
+        const outcome = await generateSkill(context, llm, {
+          maxRetries: maxRetries(context.skill.id),
+          log,
+        });
         outcomes.set(context.skill.id, outcome);
         log(`${context.skill.id}: ${outcome.status} after ${outcome.attempts.length} attempts`);
       } catch (error) {

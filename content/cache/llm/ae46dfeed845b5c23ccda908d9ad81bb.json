@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-add-sub-facts-20-tap-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Verified: 17 - 9 = 8 is correct and is the only offered choice that is true. The other two choices are false (17 - 8 = 9, not 8; 17 - 7 = 10, not 9). However, the fact family for 8 + 9 = 17 also includes 17 - 8 = 9, which is not offered, so 'which take-away fact goes with it' has more than one valid answer in principle. Consider rewording to 'Which take-away fact is true?' or offering 17 - 8 = 9 as a choice."
+      }
+    ],
+    "notes": "Checked the whole skill. The story arithmetic is correct: 8+8=16, 9+4 via making 10 gives 13, 7+8 via 7+7+1 gives 15, and 13-9=4 from 9+4=13. Every item's marked answer is correct and no other choice is right: tap-1 (10), keypad-1 (9), number-line-1 (9), tap-2 (6), keypad-2 (4), tap-3 (16), keypad-3 (14), number-line-2 (7), tap-4 (8), keypad-4 (15), keypad-5 (7), number-line-3 (9), tap-6 (6 + 9 = 15 is the only greatest sum), keypad-6 (8). The VERIFY items were checked: tap-5 is correct as marked, and tap-6 is correct as marked. Explanations are accurate. All answers are within the skill (totals to 20, doubles, make-10, and related take-away facts), and the number lines contain their answers. Narration matches the screen and picture data throughout. The only point raised is the tap-5 wording note above."
+  }
+}

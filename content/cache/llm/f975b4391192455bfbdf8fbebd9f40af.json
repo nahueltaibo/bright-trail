@@ -1,0 +1,456 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Jo. Jo has 8 apples in a basket. Then Jo picks 8 more apples.",
+        "text": "8 + 8",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 8, "filled": null }
+      },
+      {
+        "narration": "8 and 8 is a double. Doubles are easy to know. 8 + 8 = 16. Jo has 16 apples.",
+        "text": "8 + 8 = 16",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 16, "filled": null }
+      },
+      {
+        "narration": "Now 9 + 4. Take 1 from the 4 and give it to the 9. That makes 10. Then 10 + 3 = 13.",
+        "text": "9 + 4 = 13",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 9 }
+      },
+      {
+        "narration": "Try 7 + 8. Use a double. 7 + 7 = 14. Then add 1 more. 7 + 8 = 15.",
+        "text": "7 + 8 = 15",
+        "visual": null
+      },
+      {
+        "narration": "Take away is adding in reverse. What is 13 - 9? Think 9 + 4 = 13. So 13 - 9 = 4.",
+        "text": "13 - 9 = 4",
+        "visual": null
+      },
+      {
+        "narration": "Jo knows doubles, making 10, and think addition. Now it is your turn to practise!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🍎", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 5 + 5? Is it 8, 10, or 12?",
+        "prompt": "5 + 5 = ?",
+        "why": "5 and 5 is a double. Count 5, then 5 more. You get 10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Jo has 6 stars. Jo gets 3 more stars. How many stars now?",
+        "prompt": "6 + 3 = ?",
+        "why": "Start at 6. Count up 3 more: 7, 8, 9. The answer is 9.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the answer of 4 + 5.",
+        "prompt": "4 + 5 = ?",
+        "why": "Start at 4 and hop 5 times. You land on 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "4 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 10 - 4? Is it 5, 6, or 7?",
+        "prompt": "10 - 4 = ?",
+        "why": "Think 4 + 6 = 10. So 10 - 4 = 6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "There are 9 birds. 5 birds fly away. How many birds are left?",
+        "prompt": "9 - 5 = ?",
+        "why": "Think 5 + 4 = 9. So 9 - 5 = 4.",
+        "visual": { "kind": "objects", "emoji": "🐦", "count": 9, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 8 + 8? Is it 14, 18, or 16?",
+        "prompt": "8 + 8 = ?",
+        "why": "8 and 8 is a double. Double 8 is 16.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 14,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 18,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 16,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 + 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "What is 9 + 5? Make 10 first.",
+        "prompt": "9 + 5 = ?",
+        "why": "Take 1 from 5 to make 9 into 10. Then 10 + 4 = 14.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 14,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the answer of 12 - 5.",
+        "prompt": "12 - 5 = ?",
+        "why": "Think 5 + 7 = 12. So 12 - 5 = 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "12 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 14 - 6? Is it 7, 8, 9, or 10?",
+        "prompt": "14 - 6 = ?",
+        "why": "Go back to 10 first. 14 - 4 = 10. Then take away 2 more to get 8.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "14 - 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "What is 7 + 8? Use a double to help.",
+        "prompt": "7 + 8 = ?",
+        "why": "7 + 7 = 14. Then add 1 more. The answer is 15.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 + 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "8 + 9 = 17. Which take-away fact goes with it? Is it 17 - 9 = 8, 17 - 8 = 8, or 17 - 7 = 9?",
+        "prompt": "Fact family for 8 + 9 = 17",
+        "why": "Take one part away from 17 to get the other part. 17 - 9 = 8.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "17 - 8 = 8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "17 - 7 = 9",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "17 - 9 = 8",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "17 - 8 == 8" },
+            { "id": "b", "expr": "17 - 7 == 9" },
+            { "id": "c", "expr": "17 - 9 == 8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "8 plus what number makes 15? Find the missing number.",
+        "prompt": "8 + ? = 15",
+        "why": "Count up from 8 to 10. That is 2. Then 5 more to reach 15. 2 + 5 = 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15 - 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the answer of 16 - 7.",
+        "prompt": "16 - 7 = ?",
+        "why": "Think 7 + 9 = 16. So 16 - 7 = 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "16 - 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which sum is greatest? Is it 7 + 7, 6 + 9, or 8 + 6?",
+        "prompt": "Which sum is greatest?",
+        "why": "7 + 7 = 14. 6 + 9 = 15. 8 + 6 = 14. So 6 + 9 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "7 + 7",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "6 + 9",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "8 + 6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "7 + 7" },
+            { "id": "b", "expr": "6 + 9" },
+            { "id": "c", "expr": "8 + 6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Sam has 20 stickers. Sam gives away 12 stickers. How many stickers are left?",
+        "prompt": "20 - 12 = ?",
+        "why": "Think 12 + 8 = 20. So Sam has 8 stickers left.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20 - 12", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

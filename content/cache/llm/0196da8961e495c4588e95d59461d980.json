@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g5-compare-order-100000-tap-4",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The explanation is false. 58 300 and 58 030 do not share their first three digits. They share only 5 and 8, then the hundreds differ (3 vs 0). The answer 58300 is correct, but the text teaches the wrong place-value check. Change it to: 'The ten thousands and thousands match (5 and 8). The hundreds differ: 3 hundreds is more than 0 hundreds, so 58 300 is greater.'"
+      },
+      {
+        "target": "g5-compare-order-100000-tap-8",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Marked answer is correct (12 m = 1 200 cm, which is more than 360 cm). But the item tests metre-to-centimetre conversion, not comparing whole numbers up to 100 000, so it is off the stated skill. Consider replacing it with a whole-number comparison item."
+      },
+      {
+        "target": "g5-compare-order-100000-tap-7",
+        "severity": "note",
+        "category": "other",
+        "note": "Marked answer 67 840 is correct. The explanation is hard to follow by ear: 67 804 and 67 840 both have 8 hundreds, so the tens decide (4 beats 0), and 67 408 is out because it has only 4 hundreds. Say that more plainly, for example: 'Two numbers have 8 hundreds. Then 4 tens beats 0 tens, so 67 840 is greatest.'"
+      },
+      {
+        "target": "g5-compare-order-100000-keypad-3",
+        "severity": "note",
+        "category": "other",
+        "note": "Answer 6 is correct (35 500 is below 36 000; 36 500 is above). The narration is dense for listening only: 'some thousands', 'least thousands digit', and the nested conditions are hard to hold in memory without reading. Consider a shorter prompt, such as: 'A number is 3_ 5 00 (with the thousands digit blank). What is the smallest digit you can put in the blank to make it greater than 36 000?'"
+      }
+    ],
+    "notes": "I checked every story card and item. The story's place-value steps, the ordering lists (least to greatest and greatest to least), and the second-greatest answer are all correct. The marked answers for the other items are correct, including the two VERIFY items that were checked by hand (tap-3 and keypad-3), and the number-line targets are right. The one blocker is the false explanation in tap-4, which teaches the wrong place-value check. The notes cover one item that is off-skill (tap-8, units), one unclear explanation (tap-7), and one dense spoken prompt (keypad-3)."
+  }
+}

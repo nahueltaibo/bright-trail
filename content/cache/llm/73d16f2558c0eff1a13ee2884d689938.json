@@ -1,0 +1,480 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya collects stickers. She packs them in big sheets of 100, strips of 10, and single stickers. Each size is a different place value.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "⭐", "count": null, "filled": null }
+      },
+      {
+        "narration": "Today Maya has 3 sheets, 2 strips, and 7 single stickers. That is 3 hundreds, 2 tens, and 7 ones. Here are the 7 singles.",
+        "text": "300 + 20 + 7",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 7, "filled": null }
+      },
+      {
+        "narration": "Put the parts together. 300 and 20 and 7 make 327. We read it as three hundred twenty-seven.",
+        "text": "327",
+        "visual": null
+      },
+      {
+        "narration": "Next day, Maya has 4 sheets, no strips, and 5 singles. No tens means a 0 in the tens place. The number is 405.",
+        "text": "400 + 0 + 5 = 405",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 5 }
+      },
+      {
+        "narration": "Numbers have a spot on a number line too. The line goes from 0 to 1000. 500 is halfway. 638 is a bit past halfway.",
+        "text": "638 = 600 + 30 + 8",
+        "visual": null
+      },
+      {
+        "narration": "Now you try. Build numbers from hundreds, tens, and ones. Read them, and find them on the number line.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What number is 4 hundreds, 5 tens, and 2 ones? Is it 452, 425, 542, or 245?",
+        "prompt": "4 hundreds, 5 tens, 2 ones",
+        "why": "Hundreds go first, then tens, then ones. 4 hundreds is 400, 5 tens is 50, and 2 ones is 2. That makes 452.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 425,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 452,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 542,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 245,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "452", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Maya has 300 + 40 + 6 stickers. What number is that?",
+        "prompt": "300 + 40 + 6 = ?",
+        "why": "Add the hundreds, tens, and ones. 300 plus 40 is 340, and 6 more makes 346.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 346,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "346", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 700 on the number line.",
+        "prompt": "Find 700",
+        "why": "The line counts by hundreds. Count 100, 200, 300, 400, 500, 600, 700. Seven hops of 100 get you there.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 700,
+        "check": { "rule": "equals", "expr": "700", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number is seven hundred twenty-one? Is it 721, 712, 127, or 701?",
+        "prompt": "seven hundred twenty-one",
+        "why": "Seven hundred is 700. Twenty-one is 20 and 1. Put them together to get 721.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 712,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 127,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 701,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 721,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "721", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Each star is a sheet of 100 stickers. Maya has these sheets. How many stickers is that in all?",
+        "prompt": "How many stickers?",
+        "why": "There are 6 sheets, and each one is 100. 6 hundreds is 600.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 600,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count * 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 800 + 6? Is it 86, 806, 860, or 8006?",
+        "prompt": "800 + 6 = ?",
+        "why": "There are no tens, so the tens place holds a 0. 8 hundreds and 6 ones make 806.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 86,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 860,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8006,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 806,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "800 + 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Type the number with 9 hundreds, 0 tens, and 4 ones.",
+        "prompt": "9 hundreds, 0 tens, 4 ones",
+        "why": "9 hundreds is 900. There are no tens, and 4 ones. So the number is 904.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 904,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "900 + 0 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to 350 on the number line.",
+        "prompt": "Find 350",
+        "why": "350 is halfway between 300 and 400. Count by 50s from 300 to land on 350.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 50,
+        "target": 350,
+        "check": { "rule": "equals", "expr": "350", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "In the number 583, what is the 8 worth? Is it 8, 80, or 800?",
+        "prompt": "Value of the 8 in 583",
+        "why": "The 8 is in the tens place. 8 tens is 80.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 800,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 80,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "80", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A number has 2 hundreds, 3 tens, and some ones. The number is 238. How many ones does it have?",
+        "prompt": "238 = 200 + 30 + ?",
+        "why": "200 plus 30 is 230. To reach 238, you need 8 more. So there are 8 ones.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "238 - 200 - 30", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Jay has 3 sheets of 100 stickers and 14 strips of 10 stickers. How many stickers does he have?",
+        "prompt": "3 hundreds + 14 tens = ?",
+        "why": "14 strips of 10 is 140. Add the 3 sheets, which is 300. 300 plus 140 makes 440.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 440,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 100 + 14 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to six hundred twenty-five on the number line.",
+        "prompt": "Find 625",
+        "why": "Six hundred twenty-five is 600 and 25. Go to 600, then hop one more step of 25.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 25,
+        "target": 625,
+        "check": { "rule": "equals", "expr": "625", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number is 6 hundreds and 15 tens? Is it 750, 615, 651, or 156?",
+        "prompt": "6 hundreds + 15 tens",
+        "why": "15 tens is 150. Add 600 and 150 to get 750.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 615,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 651,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 750,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 156,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "600 + 15 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which way builds 360? Is it 300 + 60, 300 + 6, 30 + 60, or 3 + 60?",
+        "prompt": "Build 360",
+        "why": "360 is 3 hundreds and 6 tens. That is 300 plus 60.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "300 + 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "300 + 60",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "30 + 60",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "3 + 60",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "360",
+          "choices": [
+            { "id": "a", "expr": "300 + 6" },
+            { "id": "b", "expr": "300 + 60" },
+            { "id": "c", "expr": "30 + 60" },
+            { "id": "d", "expr": "3 + 60" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to nine hundred fifty on the number line.",
+        "prompt": "Find 950",
+        "why": "Nine hundred fifty is 900 and 50. It sits halfway between 900 and 1000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 50,
+        "target": 950,
+        "check": { "rule": "equals", "expr": "950", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

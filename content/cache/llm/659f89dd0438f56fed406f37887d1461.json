@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-count-unit-fractions-keypad-1",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "The narration says only \"Here are some cake slices\" and never gives the number. The count of 7 appears only in the picture (7 × 🍰), so the question can't be answered by ear alone. Put the number in the narration, for example \"Here are 7 cake slices.\""
+      },
+      {
+        "target": "g4-count-unit-fractions-tap-2",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "\"Each piece is one half, or 1/2\" is unclear, because a half needs a whole to be a half of. Consider \"Each piece is one half of a sandwich\" so the unit is clear by ear."
+      },
+      {
+        "target": "g4-count-unit-fractions-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Difficulty 3 looks too easy. The answer is just the largest top number, so the item mostly tests reading the numbers. Consider lowering it or adding a comparison that needs more reasoning."
+      }
+    ],
+    "notes": "I checked the story cards and all items. The story narration matches its picture counts (3, 4, 5, 6 slices). The marked answers are correct for tap-1, tap-3, tap-4 (VERIFY: 5/3 is more than 1 whole, so \"yes\" is right), tap-6 (1 whole = 3/3, plus 2/3 gives 5/3), keypad-2 through keypad-6, and number-line-1 through number-line-3. Each item has exactly one right choice. The only blocker is keypad-1, where the count lives only in the picture."
+  }
+}

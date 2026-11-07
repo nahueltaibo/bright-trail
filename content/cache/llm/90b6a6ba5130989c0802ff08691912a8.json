@@ -1,0 +1,454 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya plays ring toss at the fair. She has 326 points. She wins 4 more. Count on: 327, 328, 329, 330. Now she has 330 points.",
+        "text": "326 + 4 = 330",
+        "visual": { "kind": "emoji", "emoji": "🎯", "count": null, "filled": null }
+      },
+      {
+        "narration": "Next she wins 38 points. That is a big jump. Split 38 into 4 and 34. First add 4 to reach 330. Then add 34 to get 364.",
+        "text": "326 + 38 = 364",
+        "visual": null
+      },
+      {
+        "narration": "Later Maya has 245 points and wins 99. Here is a trick. Add 100 instead to get 345. Then take away the extra 1. She has 344.",
+        "text": "245 + 99 = 344",
+        "visual": null
+      },
+      {
+        "narration": "Now Maya spends points. She has 500 and buys a prize for 298. Take away 300 to get 200. That was 2 too many, so add 2 back. She has 202.",
+        "text": "500 - 298 = 202",
+        "visual": null
+      },
+      {
+        "narration": "You can also take a quick guess. For 398 + 203, round to 400 and 200. That makes about 600. The real answer, 601, is very close.",
+        "text": "398 + 203 is about 600",
+        "visual": { "kind": "emoji", "emoji": "🏆", "count": null, "filled": null }
+      },
+      {
+        "narration": "Count on, split numbers, adjust, or round for a guess. Pick the trick that fits the numbers. Let's practise adding and subtracting in your head!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Maya has 346 points. She wins 4 more. How many points does she have now?",
+        "prompt": "346 + 4 = ?",
+        "why": "Count on 4 from 346: 347, 348, 349, 350. The answer is 350.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 350,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "346 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam has 600 stickers. He gives away 5. How many does he have now? Is it 505, 595, 605, or 590?",
+        "prompt": "600 - 5 = ?",
+        "why": "Count back 5 from 600: 599, 598, 597, 596, 595. Sam has 595.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 505,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 595,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 605,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 590,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "600 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "A team has 240 points. They score 30 more. Move the frog to the new total.",
+        "prompt": "240 + 30 = ?",
+        "why": "Add 3 tens to 240. That is 250, 260, 270. The frog goes to 270.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 200,
+        "max": 300,
+        "step": 10,
+        "target": 270,
+        "check": { "rule": "equals", "expr": "240 + 30", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Make a quick guess for 304 + 395. Is the sum closer to 500, 700, or 900?",
+        "prompt": "About 304 + 395",
+        "why": "Round 304 to 300 and 395 to 400. Then 300 + 400 is 700. So the guess is 700.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 500,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 700,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 900,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "nearest", "expr": "304 + 395", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Ella has 700 steps on her step counter. She takes off 20. Move the frog to the answer.",
+        "prompt": "700 - 20 = ?",
+        "why": "Take away 2 tens from 700. That is 680.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 600,
+        "max": 800,
+        "step": 20,
+        "target": 680,
+        "check": { "rule": "equals", "expr": "700 - 20", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Maya has 326 points. She wins 38 more. How many points does she have? Try adding 4 first, then 34.",
+        "prompt": "326 + 38 = ?",
+        "why": "Add 4 to reach 330. Then add 34 more to get 364.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 364,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "326 + 38", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Leo adds 245 + 99 by adding 100 and then taking away 1. What is 245 + 99? Is it 334, 354, 344, or 345?",
+        "prompt": "245 + 99 = ?",
+        "why": "245 + 100 is 345. Then take away the extra 1. The answer is 344.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 334,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 354,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 344,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 345,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "245 + 99", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Jo has 480 points. She wins 70 more. Move the frog to her new total.",
+        "prompt": "480 + 70 = ?",
+        "why": "480 + 20 makes 500. Then add the other 50 to get 550.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 400,
+        "max": 600,
+        "step": 10,
+        "target": 550,
+        "check": { "rule": "equals", "expr": "480 + 70", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A game has 500 tickets. Ravi uses 298 of them. How many tickets are left?",
+        "prompt": "500 - 298 = ?",
+        "why": "Take away 300 to get 200. That is 2 too many, so add 2 back. The answer is 202.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 202,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "500 - 298", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A bus has 612 seats in a stadium section. 9 seats are taken away. What is 612 - 9? Is it 603, 602, 604, or 621?",
+        "prompt": "612 - 9 = ?",
+        "why": "Take away 10 first to get 602. That is 1 too many, so add 1 back. The answer is 603.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 603,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 602,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 604,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 621,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "612 - 9", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Nina scores 475 points in round one and 258 in round two. How many points in all?",
+        "prompt": "475 + 258 = ?",
+        "why": "Add 250 to 475 to get 725. Then add the last 8 to get 733.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 733,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "475 + 258", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Make a quick guess for 612 + 289. Is the sum closer to 800, 1000, or 900?",
+        "prompt": "About 612 + 289",
+        "why": "Round 612 to 600 and 289 to 300. Then 600 + 300 is 900. So the guess is 900.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 800,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 1000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 900,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "nearest", "expr": "612 + 289", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A trail is 1000 metres long. Kai has hiked 350 metres. Move the frog to how many metres are left.",
+        "prompt": "1000 - 350 = ?",
+        "why": "Take away 300 from 1000 to get 700. Then take away 50 more to get 650.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 500,
+        "max": 800,
+        "step": 50,
+        "target": 650,
+        "check": { "rule": "equals", "expr": "1000 - 350", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A store has 803 balls. It sells 478 of them. How many balls are left? Try counting up from 478.",
+        "prompt": "803 - 478 = ?",
+        "why": "From 478 count up 22 to reach 500. Then 300 more reaches 800, and 3 more reaches 803. Add 22, 300, and 3 to get 325.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 325,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "803 - 478", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Dev thinks 725 - 198 is 527. He took away 200, then added 2 back. Is Dev right? Yes or no?",
+        "prompt": "Is 725 - 198 = 527?",
+        "why": "725 - 200 is 525. That took away 2 too many, so add 2 back. That makes 527, so Dev is right.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "725 - 198 == 527",
+          "choices": [
+            { "id": "a", "expr": "not (725 - 198 == 527)" },
+            { "id": "b", "expr": "725 - 198 == 527" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

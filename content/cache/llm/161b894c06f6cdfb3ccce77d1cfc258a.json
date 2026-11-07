@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-compare-order-50-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration asks \"Who has fewer?\" but the screen says \"Which is less?\" and the choices are bare numbers (32, 23). A child has to map 23 back to Sam by ear. Consider making the choices name the owner (e.g., \"Sam's 23\" / \"Mia's 32\") or changing the narration to \"Which number is fewer, 23 or 32?\" The marked answer 23 is correct."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 3 says \"Big numbers have more tens,\" which is only true when the tens digits differ. Step 4 covers the matching-tens case, but step 3 could say \"When the tens are different, the number with more tens is greater\" to avoid an overgeneralization. The facts themselves are correct."
+      }
+    ],
+    "notes": "Reviewed all story cards and all 16 items. Verified every marked answer: tap-1 (12), tap-2 (9), keypad-1 (11), number-line-1 (13), tap-3 (11 apples), tap-4 (34), keypad-2 (36), number-line-2 (31), tap-5 (23), tap-6 (14), keypad-3 (27), tap-7 (41), keypad-4 (19), and the VERIFY items: number-line-3 (39 is the only whole number between 38 and 40, and it lies on the 30–50 line) and tap-8 (40, 25, 9 is the correct greatest-to-least order). Each marked answer is correct and no other choice is also correct. Story arithmetic and place-value statements are accurate. No blockers found."
+  }
+}

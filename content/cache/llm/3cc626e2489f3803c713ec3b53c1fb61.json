@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Step 4 says Mia eats 4 of \"the 10 apples\", but step 2 left her with 7 apples and no step shows 10 apples. The count doesn't carry through. Step 4 should say 7 apples (7 - 4 = 3), or the earlier steps should be changed so the 10 apples are set up first."
+      },
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Step 3 narration says \"Here are 6 dots. 4 more dots make 10,\" but the picture is a ten-frame already showing 10 dots. The picture should show 6 filled dots with 4 empty spots, so ear and eye agree."
+      }
+    ],
+    "notes": "I checked all 16 items and their marked answers. Each arithmetic answer is correct, and each VERIFY item (tap-5 and tap-6) holds up: 9 - 3 = 6 is true, and 5 + 5 = 10 is the greatest of the three sums. Keypad-6 (8 - 3 + 2 = 7) is correct but is a two-step mixed-operation item, a bit beyond the single-fact focus of this skill. It is a note only. The two story blockers above are the only real problems."
+  }
+}

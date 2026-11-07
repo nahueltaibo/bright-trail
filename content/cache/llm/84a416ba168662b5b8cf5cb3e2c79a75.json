@@ -1,0 +1,462 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has 3 apples in her left hand. She has 4 apples in her right hand.",
+        "text": "3 + 4 = 7",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 7, "filled": null }
+      },
+      {
+        "narration": "Now Mia swaps hands. She adds 4 and 3. It is still 7 apples. Order does not change the total.",
+        "text": "4 + 3 = 7",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 7, "filled": null }
+      },
+      {
+        "narration": "Mia has 5 apples. She adds 0 more. Zero means none. She still has 5.",
+        "text": "5 + 0 = 5",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Now she takes away 0 apples. Nothing leaves. She still has 5.",
+        "text": "5 - 0 = 5",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Mia has 9 apples. A bird takes 4. Now 5 apples are left.",
+        "text": "9 - 4 = 5",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Let's check. Add the 4 back to the 5. We get 9 again. Adding checks taking away!",
+        "text": "5 + 4 = 9",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 9, "filled": null }
+      },
+      {
+        "narration": "You know three big tricks now. Any order, zero, and checking. Let's practise!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 6 + 0?",
+        "prompt": "6 + 0 = ?",
+        "why": "Adding 0 adds nothing. So 6 + 0 stays 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 + 0", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "We know 2 + 5 = 7. What is 5 + 2? Is it 8, 7, or 6?",
+        "prompt": "5 + 2 = ?",
+        "why": "Adding in any order gives the same total. 5 + 2 is 7, just like 2 + 5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "What is 8 - 0? Hop the frog to the answer.",
+        "prompt": "8 - 0 = ?",
+        "why": "Taking away 0 changes nothing. 8 - 0 is still 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "8 - 0", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has 4 apples. She adds 0 more. How many apples does she have now? Is it 0, 5, or 4?",
+        "prompt": "How many apples?",
+        "why": "Adding 0 means no more apples. She still has 4.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 0,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 + 0", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "3 + 4 = 4 + what number?",
+        "prompt": "3 + 4 = 4 + ?",
+        "why": "Both sides use the same two numbers. Swap 3 and 4 to see the missing number is 3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "We know 9 - 4 = 5. Which one checks it? Is it 5 + 4 = 9, 5 + 5 = 10, or 9 + 4 = 13?",
+        "prompt": "Check 9 - 4 = 5",
+        "why": "To check, add the answer 5 and the 4 you took away. 5 + 4 = 9, which is where we began.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "5 + 5 = 10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "9 + 4 = 13",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5 + 4 = 9",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "5 + 4 == 9",
+          "choices": [
+            { "id": "a", "expr": "5 + 5 == 9" },
+            { "id": "b", "expr": "9 + 4 == 9" },
+            { "id": "c", "expr": "5 + 4 == 9" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "We know 8 + 7 = 15. So what is 7 + 8?",
+        "prompt": "7 + 8 = ?",
+        "why": "Order does not matter when adding. 7 + 8 is the same as 8 + 7, so it is 15.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 + 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "We know 13 - 6 = 7. To check, hop the frog to 7 + 6.",
+        "prompt": "7 + 6 = ?",
+        "why": "Add the answer 7 and the 6 you took away. 7 + 6 is 13, the number we began with.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 13,
+        "check": { "rule": "equals", "expr": "7 + 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "We know 12 - 5 = 7. To check, what is 7 + 5?",
+        "prompt": "7 + 5 = ?",
+        "why": "Add the answer back to the part you took away. 7 + 5 is 12, so the take-away was right.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 12,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one is the same as 6 + 9? Is it 9 + 6, 6 + 6, or 9 - 6?",
+        "prompt": "Same as 6 + 9",
+        "why": "Swapping the numbers in an add gives the same total. 9 + 6 is the same as 6 + 9.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "6 + 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "9 + 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "9 - 6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "9 + 6 == 6 + 9",
+          "choices": [
+            { "id": "a", "expr": "6 + 6 == 6 + 9" },
+            { "id": "b", "expr": "9 + 6 == 6 + 9" },
+            { "id": "c", "expr": "9 - 6 == 6 + 9" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "What number makes this true? Blank + 8 = 8 + 11.",
+        "prompt": "? + 8 = 8 + 11",
+        "why": "Adding in any order gives the same total. So the missing number is 11.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 11,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "11", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sam thinks 15 - 6 = 8. Add 8 + 6 to check. Is Sam right, yes or no?",
+        "prompt": "Is 15 - 6 = 8 right?",
+        "why": "8 + 6 is 14, not 15. So 15 - 6 is not 8. It is 9.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "not (8 + 6 == 15)",
+          "choices": [
+            { "id": "a", "expr": "8 + 6 == 15" },
+            { "id": "b", "expr": "not (8 + 6 == 15)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Start at 17. Add 0. Then take away 0. Where does the frog land?",
+        "prompt": "17 + 0 - 0 = ?",
+        "why": "Adding 0 and taking away 0 change nothing. The frog stays on 17.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "target": 17,
+        "check": { "rule": "equals", "expr": "17 + 0 - 0", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Ana gave away 8 stickers. Now she has 9 left. How many did she start with?",
+        "prompt": "? - 8 = 9",
+        "why": "Use adding to undo the take-away. Add the 9 left and the 8 given away to get 17.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 17,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 + 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which total is greatest? Is it 8 + 0, 9 + 0, or 2 + 6?",
+        "prompt": "Which is greatest?",
+        "why": "8 + 0 is 8 and 9 + 0 is 9. Also 2 + 6 is 8. So 9 + 0 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "8 + 0",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2 + 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "9 + 0",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "9 + 0",
+          "choices": [
+            { "id": "a", "expr": "8 + 0" },
+            { "id": "b", "expr": "2 + 6" },
+            { "id": "c", "expr": "9 + 0" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

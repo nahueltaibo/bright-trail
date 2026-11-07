@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-place-value-keypad-2",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The screen and narration say 'how many tens are there in the tens place?' This is awkward to hear and could be read as asking for the number of tens in 639 (63). The answer 3 is correct, so reword to something like 'What digit is in the tens place of 639?' or 'How many tens does the tens digit of 639 stand for?'"
+      },
+      {
+        "target": "g3-place-value-keypad-6",
+        "severity": "note",
+        "category": "other",
+        "note": "Regrouping to 2 hundreds, 14 tens, 3 ones is a stretch for a first practice item at difficulty 3. The answer 343 is correct. Consider keeping it as a stretch item or moving it to a harder tier."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 5 says 'Without it, we would have 47.' That is true, but a child may hear it as the same number. Consider 'we would write 47, which is a much smaller number.'"
+      }
+    ],
+    "notes": "Reviewed the story cards and all 18 items. Every marked answer is correct and each item has exactly one right choice: 300, 426, 500, 80, 3, 300-vs-30 ratio 10, 862→60, 650, 423, 805, 500 (the 5 in 583), 30, 370, 10, and 343. The VERIFY items (keypad-1, keypad-2, tap-3, number-line-2, tap-4, keypad-4, tap-5, number-line-3, keypad-6) were each worked out and match their answers and choice meanings. No factual errors, no picture/narration mismatches, and nothing outside the Grade 3 place-value skill. The three notes above are wording and difficulty suggestions only."
+  }
+}

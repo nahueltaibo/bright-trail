@@ -1,0 +1,437 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam counts fans at two hockey games. Game one had 3482 fans. Game two had 3519 fans. Which game had more fans?",
+        "text": "3482 or 3519?",
+        "visual": { "kind": "emoji", "emoji": "🏒", "count": null, "filled": null }
+      },
+      {
+        "narration": "Start with the biggest place, the thousands. Both numbers have 3 thousands. They match, so move to the hundreds.",
+        "text": "3 thousands and 3 thousands",
+        "visual": null
+      },
+      {
+        "narration": "Now compare hundreds. 3482 has 4 hundreds. 3519 has 5 hundreds. Five is more than four, so 3519 is greater.",
+        "text": "3519 is greater than 3482",
+        "visual": null
+      },
+      {
+        "narration": "Sometimes the thousands are different. Compare 6120 and 4985. Six thousands is more than 4 thousands. So 6120 is greater. You can stop right there.",
+        "text": "6120 is greater than 4985",
+        "visual": null
+      },
+      {
+        "narration": "A number with fewer digits is usually less. Sam lists 982, 4100, 2450 and 2405. From least to greatest, they go 982, 2405, 2450, 4100.",
+        "text": "982, 2405, 2450, 4100",
+        "visual": null
+      },
+      {
+        "narration": "A benchmark helps too. 4132 is less than 5000. 6200 is more than 5000. So 4132 is less than 6200.",
+        "text": "4132 < 5000 < 6200",
+        "visual": null
+      },
+      {
+        "narration": "Now you try. Start with the biggest place that is different. You can do it!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which is greater, 3500 or 5300?",
+        "prompt": "Which is greater?",
+        "why": "Compare the thousands first. 5 thousands is more than 3 thousands, so 5300 is greater.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3500,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5300,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which is less, 842 or 4200?",
+        "prompt": "Which is less?",
+        "why": "842 has only hundreds. 4200 has thousands. So 842 is less.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4200,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 842,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "least", "expr": "", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Type the greater number, 835 or 2150.",
+        "prompt": "Greater: 835 or 2150",
+        "why": "2150 has a thousands digit and 835 does not. So 2150 is greater.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2150,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "max(835, 2150)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Tia took 6200 steps on Monday and 2600 steps on Tuesday. Type the number for the day with fewer steps.",
+        "prompt": "Fewer steps?",
+        "why": "Compare thousands. 2 thousands is less than 6 thousands. So 2600 is the lesser number.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2600,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "min(6200, 2600)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 5000. It is halfway to 10 000.",
+        "prompt": "Go to 5000",
+        "why": "The line goes from 0 to 10 000. Halfway between them is 5000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10000,
+        "step": 1000,
+        "target": 5000,
+        "check": { "rule": "equals", "expr": "5000", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which is greater, 6240 or 6420?",
+        "prompt": "Which is greater?",
+        "why": "The thousands match. Compare hundreds. 4 hundreds is more than 2 hundreds, so 6420 is greater.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6420,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6240,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Is 7305 greater than 7350? Is it yes or no?",
+        "prompt": "Is 7305 greater than 7350?",
+        "why": "Thousands and hundreds match. Tens: 0 is less than 5. So 7305 is less than 7350.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "7305 > 7350" },
+            { "id": "b", "expr": "not (7305 > 7350)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A team sold 7305, 7035 and 7350 tickets in three games. Type the least number.",
+        "prompt": "Least number?",
+        "why": "All start with 7 thousands. Compare hundreds. 7035 has 0 hundreds, the fewest. So 7035 is least.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7035,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "min(7305, 7035, 7350)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Type the whole number that is greater than 4999 and less than 5001.",
+        "prompt": "Between 4999 and 5001",
+        "why": "Count up from 4999. The next number is 5000. Then comes 5001. So 5000 is in between.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5000,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5000", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to 7500. It is greater than 7000 and less than 8000.",
+        "prompt": "Go to 7500",
+        "why": "7500 is halfway between 7000 and 8000. Count by 500 from 7000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10000,
+        "step": 500,
+        "target": 7500,
+        "check": { "rule": "equals", "expr": "7500", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number is greater than 6500: 6050, 6499, 6505, or 5999?",
+        "prompt": "Greater than 6500?",
+        "why": "Use 6500 as a benchmark. 6505 is 5 more than 6500, so it is greater. The other numbers are all less than 6500.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6050,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6499,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6505,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 5999,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "6050 > 6500" },
+            { "id": "b", "expr": "6499 > 6500" },
+            { "id": "c", "expr": "6505 > 6500" },
+            { "id": "d", "expr": "5999 > 6500" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is the greatest: 9098, 9980, 9089, or 9908?",
+        "prompt": "Greatest number?",
+        "why": "All have 9 thousands. Compare hundreds. 9980 has 9 hundreds and 8 tens. 9908 has 9 hundreds and 0 tens. So 9980 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 9098,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 9980,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 9089,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 9908,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Use the digits 7, 0, 3 and 9 once each. Type the least four-digit number you can make.",
+        "prompt": "Least number from 7, 0, 3, 9",
+        "why": "Put the smallest digit in the biggest place. Zero can't lead, so start with 3. Then 0, 7, 9 gives 3079.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3079,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3079", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Put 4073, 4730, 4037 and 4307 in order from least to greatest. Type the third number.",
+        "prompt": "Third number, least to greatest",
+        "why": "The order is 4037, 4073, 4307, 4730. The third number is 4307.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4307,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4307", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to 4650. It is greater than 4600 and less than 4700.",
+        "prompt": "Go to 4650",
+        "why": "The line starts at 4000 and counts by 50. 4650 is halfway between 4600 and 4700.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 4000,
+        "max": 5000,
+        "step": 50,
+        "target": 4650,
+        "check": { "rule": "equals", "expr": "4650", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 4 says 'Here are 4 halves' and 'Mia has orange pieces', but the picture is 4 whole 🍊 emoji. A child looking at the picture could read it as 4 whole oranges, not 4 halves. Consider a picture that shows halves (for example, a half-orange emoji or a split shape) so the picture matches the narration."
+      },
+      {
+        "target": "g1-equal-groups-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Answer is correct: 3 groups of 2 = 6 and 2 groups of 4 = 8, so 2 groups of 4 has more. The item needs the child to work out two products by ear with no picture, which is harder than the other tap items and may be beyond the grade 1 focus on counting equal groups. Consider a simpler comparison or a picture, or keep it as a stretch item."
+      }
+    ],
+    "notes": "I checked every story card and item. All marked answers are correct: tap-1 (4), keypad-1 (6), number-line-1 (6), tap-2 (3 leaves), keypad-2 (10), tap-3 (8), keypad-3 (2), number-line-2 (10), tap-4 (5 halves), keypad-4 (3), number-line-3 (5 jumps), keypad-5 (9), tap-5 (2 groups of 4), keypad-6 (5), number-line-4 (6 halves). Each tap item has exactly one correct choice, and each number-line target is within the 0 to 10 line. No blockers found. The two notes above are the only issues I found."
+  }
+}

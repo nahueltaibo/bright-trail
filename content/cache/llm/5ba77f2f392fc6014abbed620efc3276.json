@@ -1,0 +1,453 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya collects hockey cards. She puts 10 cards in a bundle. One bundle is called a ten. Ten loose cards make one ten.",
+        "text": "10 ones = 1 ten",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Maya has 352 cards. Every digit has a place. The 3 is in the hundreds place. So the 3 means 3 hundreds, or 300.",
+        "text": "352: the 3 is 300",
+        "visual": null
+      },
+      {
+        "narration": "The 5 in 352 is in the tens place. It means 5 tens, or 50. The 2 is in the ones place. It means just 2.",
+        "text": "352 = 300 + 50 + 2",
+        "visual": null
+      },
+      {
+        "narration": "Now Maya flips the digits to 253. The 2 is now in the hundreds place. It is worth 200. The place changes what a digit is worth.",
+        "text": "253 is not 352",
+        "visual": null
+      },
+      {
+        "narration": "Her friend Omar has 407 cards. That is 4 hundreds, 0 tens, and 7 ones. The zero holds the tens place. Without it, we would have 47.",
+        "text": "407 = 400 + 0 + 7",
+        "visual": null
+      },
+      {
+        "narration": "Each place is ten times bigger than the place to its right. 10 ones make a ten. 10 tens make a hundred.",
+        "text": "10 ones = 1 ten, 10 tens = 1 hundred",
+        "visual": null
+      },
+      {
+        "narration": "You know how to read each digit now. Let's practise with some number puzzles!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "In the number 352, what is the 3 worth? Is it 3, 30, or 300?",
+        "prompt": "The 3 in 352 is worth?",
+        "why": "The 3 is in the hundreds place. That means 3 hundreds, which is 300.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 300,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "300", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Maya has 4 hundreds, 2 tens, and 6 ones. What number is that?",
+        "prompt": "4 hundreds, 2 tens, 6 ones",
+        "why": "4 hundreds is 400. 2 tens is 20. 6 ones is 6. Put them together to get 426.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 426,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "400 + 20 + 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 5 hundreds.",
+        "prompt": "5 hundreds",
+        "why": "One hundred is 100. Five hundreds is 100 five times, which is 500.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 500,
+        "check": { "rule": "equals", "expr": "5 * 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "In the number 84, what is the 8 worth? Is it 8, 80, or 800?",
+        "prompt": "The 8 in 84 is worth?",
+        "why": "The 8 is in the tens place. That means 8 tens, which is 80.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 800,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 80,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "80", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "In the number 639, how many tens are there in the tens place?",
+        "prompt": "Tens digit of 639?",
+        "why": "The tens place is the middle digit. In 639, the middle digit is 3, so there are 3 tens.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Omar has 507 cards. What does the zero in 507 do? Does it hold the tens place, make the number bigger, or is it worth 7?",
+        "prompt": "What does the 0 in 507 do?",
+        "why": "The zero shows there are no tens. It holds the tens place so the 5 stays in the hundreds place.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "makes the number bigger",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "is worth 7",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "holds the tens place",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "1",
+          "choices": [
+            { "id": "a", "expr": "1 == 0" },
+            { "id": "b", "expr": "1 == 2" },
+            { "id": "c", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "In the number 862, what is the 6 worth?",
+        "prompt": "The 6 in 862 is worth?",
+        "why": "The 6 is in the tens place. That means 6 tens, which is 60.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 60,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the number with 6 hundreds and 5 tens.",
+        "prompt": "6 hundreds, 5 tens",
+        "why": "6 hundreds is 600. 5 tens is 50. Together that makes 650.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 600,
+        "max": 700,
+        "step": 10,
+        "target": 650,
+        "check": { "rule": "equals", "expr": "600 + 50", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which number has a 4 in the hundreds place? Is it 342, 423, or 234?",
+        "prompt": "4 in the hundreds place?",
+        "why": "The hundreds place is the first digit. In 423 the first digit is 4, so it has 4 hundreds.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 342,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 234,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 423,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "1",
+          "choices": [
+            { "id": "a", "expr": "floor(342 / 100) == 4" },
+            { "id": "b", "expr": "floor(234 / 100) == 4" },
+            { "id": "c", "expr": "floor(423 / 100) == 4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Tom has 8 hundreds, 0 tens, and 5 ones. What number is that?",
+        "prompt": "8 hundreds, 0 tens, 5 ones",
+        "why": "8 hundreds is 800. There are no tens. 5 ones is 5. The zero holds the tens place, so the number is 805.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 805,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "800 + 0 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which 5 is worth more, the 5 in 358 or the 5 in 583?",
+        "prompt": "Which 5 is worth more?",
+        "why": "In 358 the 5 is in the tens place, so it is 50. In 583 the 5 is in the hundreds place, so it is 500.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the 5 in 358",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the 5 in 583",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "50" },
+            { "id": "b", "expr": "500" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "10 tens make one hundred. How many tens are in 300?",
+        "prompt": "How many tens in 300?",
+        "why": "Each hundred is 10 tens. 300 is 3 hundreds, so it is 3 times 10 tens, which is 30 tens.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 30,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "300 / 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the number with 3 hundreds, 7 tens, and 0 ones.",
+        "prompt": "3 hundreds, 7 tens, 0 ones",
+        "why": "3 hundreds is 300. 7 tens is 70. The zero ones add nothing. So the number is 370.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 300,
+        "max": 400,
+        "step": 10,
+        "target": 370,
+        "check": { "rule": "equals", "expr": "300 + 70 + 0", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "The 3 in 30 is worth 30. The 3 in 300 is worth 300. How many times as much is 300 as 30? Is it 3, 10, or 100 times?",
+        "prompt": "300 is how many times 30?",
+        "why": "Each place is ten times bigger than the place next to it. 30 is 3 tens and 300 is 30 tens, so it is 10 times as much.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 100,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "300 / 30", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A number has 2 hundreds, 14 tens, and 3 ones. What number is it?",
+        "prompt": "2 hundreds, 14 tens, 3 ones",
+        "why": "2 hundreds is 200. 14 tens is 140. 3 ones is 3. Add 200, 140, and 3 to get 343.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 343,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "200 + 140 + 3", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

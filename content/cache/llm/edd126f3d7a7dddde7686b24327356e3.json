@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-compare-unit-fractions-tap-6",
+        "severity": "note",
+        "category": "age",
+        "note": "Comparing 1/3, 1/2, 1/5 and 1/10 at once is a harder unlike-denominator unit-fraction task than Grade 1 usually covers. The marked answer 1/10 is correct, so this is a difficulty and grade-fit concern, not a blocker. Consider a simpler set such as 1/2 vs 1/4."
+      },
+      {
+        "target": "g1-compare-unit-fractions-tap-5",
+        "severity": "note",
+        "category": "age",
+        "note": "Comparing 1/5 and 1/3 is closer to Grade 3 unit-fraction work than Grade 1. The marked answer 1/3 is correct (fewer friends, bigger piece), so only the grade fit is in question."
+      },
+      {
+        "target": "g1-compare-unit-fractions-number-line-4",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration 'A piece for some friends is smaller than for 4 friends. It is bigger than for 6 friends' needs two comparisons to be parsed by ear, which is hard for a child listening only. Consider saying 'More friends than 4, but fewer than 6. How many friends?' The answer 5 is correct and the only whole number that fits."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 7 is about pizza slices but shows a frog picture (🐸). The frog is the number-line mascot, so the picture does not match the story. Consider a pizza or slice emoji. The story text and the other cards are accurate."
+      }
+    ],
+    "notes": "I checked every item's marked answer against its narration and the 'why' text. All answers are correct and unique: tap-1 (2 friends), tap-2 (6 friends), keypad-1 (10), number-line-1 (2), tap-3 (smaller), tap-4 (10 friends), keypad-2 (3), number-line-2 (7), tap-5 (1/3), keypad-3 (6), tap-6 (1/10), keypad-4 (12), number-line-3 (6, on a 0–20 line), tap-7 (false), number-line-4 (5). The story card facts are correct, including 1/8 < 1/4 < 1/2. No blockers found. The notes are about grade fit, listening clarity, and one mismatched picture."
+  }
+}

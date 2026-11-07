@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "number-line-2",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "The narration says 'That is the same as 1 3/4', which gives away the answer. The frog's answer (1.75) is correct, but the hint makes the item trivial. Consider removing the second sentence from the narration and keeping it for the feedback."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Step 3 says 'Divide both by the same number, and you get one too.' This should say the number must divide both evenly (a common factor), or children may divide by any number and get a non-equivalent fraction. Adding 'that divides both evenly' would make the rule accurate."
+      }
+    ],
+    "notes": "Checked every story card and item. All marked answers are correct, and no distractor is also correct. Items checked: tap-1 (2/4), keypad-1 (2), number-line-1 (1.5), tap-2 (1 1/4), keypad-2 (2), tap-3 (6/8), keypad-3 (8), number-line-2 (1.75), tap-4 (7/3), keypad-4 (2), tap-5 VERIFY (Yes: both reduce to 3/4), keypad-5 (2), number-line-3 (2.75), keypad-6 (23), number-line-4 (0.75). Story arithmetic also checks out: 2/3 = 4/6, 7 ÷ 4 = 1 r3, and 1×4+3 = 7. No blockers found. The two notes above are wording and clarity issues only. Narration of fractions by device TTS (e.g. '17/5', '3 5/6') could be read awkwardly, but I cannot verify that from the text alone."
+  }
+}

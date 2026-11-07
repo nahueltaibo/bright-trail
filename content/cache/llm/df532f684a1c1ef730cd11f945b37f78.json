@@ -1,0 +1,405 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia is setting out snacks. She puts 2 cookies on a plate. That is 1 group of 2.",
+        "text": "1 group of 2",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 2, "filled": null }
+      },
+      {
+        "narration": "Now Mia has 3 plates. Each plate has 2 cookies. Count by 2s: 2, 4, 6. There are 6 cookies in all.",
+        "text": "3 groups of 2 = 6",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 6, "filled": null }
+      },
+      {
+        "narration": "Sam has 2 cups. Each cup has 5 grapes. Count by 5s: 5, 10. That is 10 grapes.",
+        "text": "2 groups of 5 = 10",
+        "visual": { "kind": "objects", "emoji": "🍇", "count": 10, "filled": null }
+      },
+      {
+        "narration": "Mia has orange pieces. Each piece is one half. Here are 4 halves. That is 4 groups of one half.",
+        "text": "4 groups of one half",
+        "visual": { "kind": "objects", "emoji": "🍊", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Now Mia has 8 stars. She puts 2 stars in each box. Count by 2s: 2, 4, 6, 8. That is 4 boxes.",
+        "text": "8 stars, 2 in each box = 4 boxes",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 8, "filled": null }
+      },
+      {
+        "narration": "Equal groups all have the same number. Now you can try some with Mia!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🍪", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has 2 plates. Each plate has 2 cookies. How many cookies in all? Is it 3, 4, or 5?",
+        "prompt": "2 groups of 2 = ?",
+        "why": "Count by 2s. 2, then 4. There are 4 cookies in all.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam has 3 bags. Each bag has 2 apples. How many apples in all?",
+        "prompt": "3 groups of 2 = ?",
+        "why": "Count by 2s. 2, 4, 6. Sam has 6 apples.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "A frog starts at 0. It jumps 2 each time. It jumps 3 times. Where does the frog land?",
+        "prompt": "3 jumps of 2",
+        "why": "Jump by 2s. 2, 4, 6. The frog lands on 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "3 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here are 6 ladybugs. Each leaf has 2 ladybugs. How many leaves are there? Is it 2, 3, or 4?",
+        "prompt": "How many leaves?",
+        "why": "Make groups of 2 and count them. 2, 4, 6. That is 3 groups, so 3 leaves.",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Lin has 2 hands. Each hand has 5 fingers. How many fingers in all?",
+        "prompt": "2 groups of 5 = ?",
+        "why": "Count by 5s. 5, then 10. Lin has 10 fingers.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 * 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia has 4 plates. Each plate has 2 cookies. How many cookies in all? Is it 6, 8, or 10?",
+        "prompt": "4 groups of 2 = ?",
+        "why": "Count by 2s. 2, 4, 6, 8. There are 8 cookies.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Here are 10 stars. Each page has 5 stars. How many pages are there?",
+        "prompt": "How many pages?",
+        "why": "Make groups of 5. 5, then 10. That is 2 groups, so 2 pages.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 10, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 / 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "There are 5 boxes. Each box has 2 pencils. How many pencils in all?",
+        "prompt": "5 groups of 2",
+        "why": "Count by 2s five times. 2, 4, 6, 8, 10. There are 10 pencils.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 10,
+        "check": { "rule": "equals", "expr": "5 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ben puts one half of an orange in each of 5 bowls. How many halves in all? Is it 4, 5, or 6?",
+        "prompt": "5 groups of one half",
+        "why": "Each bowl has 1 half. Count the bowls: 1, 2, 3, 4, 5. That is 5 halves.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 * 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Here are 9 grapes. Each cup gets 3 grapes. How many cups are there?",
+        "prompt": "How many cups?",
+        "why": "Make groups of 3. 3, 6, 9. That is 3 groups, so 3 cups.",
+        "visual": { "kind": "objects", "emoji": "🍇", "count": 9, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 / 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A frog wants to get to 10. It jumps 2 each time from 0. How many jumps does it make?",
+        "prompt": "How many jumps of 2?",
+        "why": "Jump by 2s and count the jumps. 2, 4, 6, 8, 10. That is 5 jumps.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "10 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Zoe has 3 boxes. Each box has 3 crayons. How many crayons in all?",
+        "prompt": "3 groups of 3 = ?",
+        "why": "Count by 3s. 3, 6, 9. Zoe has 9 crayons.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Is 3 groups of 2 greater, or 2 groups of 4?",
+        "prompt": "Which has more?",
+        "why": "3 groups of 2 is 2, 4, 6. 2 groups of 4 is 4, 8. So 2 groups of 4 has more.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3 groups of 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2 groups of 4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "3 * 2" },
+            { "id": "b", "expr": "2 * 4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Here are 10 shoes. Each pair has 2 shoes. How many pairs are there?",
+        "prompt": "How many pairs?",
+        "why": "Make groups of 2. 2, 4, 6, 8, 10. That is 5 groups, so 5 pairs.",
+        "visual": { "kind": "objects", "emoji": "👟", "count": 10, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Each friend gets one half of a sandwich. There are 6 friends. How many halves are needed?",
+        "prompt": "6 groups of one half",
+        "why": "Each friend needs 1 half. Count the friends: 1, 2, 3, 4, 5, 6. We need 6 halves.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "6 * 1", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

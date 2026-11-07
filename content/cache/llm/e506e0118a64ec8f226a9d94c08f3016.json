@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-compare-unit-fractions-keypad-3",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration says \"1/6\" aloud. Device TTS may read this as \"one six\" or \"1 slash 6\", which a child who can't read won't follow. Say \"one sixth\" in the narration, and keep the 1/6 notation for the screen only."
+      },
+      {
+        "target": "g1-compare-unit-fractions-tap-5",
+        "severity": "note",
+        "category": "audio",
+        "note": "Narration \"1/5 of a pizza or 1/3 of a pizza\" depends on fraction notation that TTS may not read clearly. Spell out \"one fifth\" and \"one third\" in the narration. Consider also a picture-free cue, since the item has no picture."
+      },
+      {
+        "target": "g1-compare-unit-fractions-tap-6",
+        "severity": "note",
+        "category": "audio",
+        "note": "Four spoken fractions (1/3, 1/10, 1/5, 1/2) are hard to follow by ear. Spell out the names (one third, one tenth, and so on) in the narration and the choices. Also, 1/10 is a stretch for Grade 1, so consider whether this difficulty-3 item is too hard."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "audio",
+        "note": "Card 5 reads \"One eighth\", \"One fourth\" and \"One half\" in words, which is good. Keep the same spoken form in items that use numerals like 1/5, 1/6 and 1/10 so the story and items match by ear."
+      }
+    ],
+    "notes": "I checked the marked answers for every item, and each one is correct with exactly one right choice. tap-1 (2 friends), tap-2 (6 friends), keypad-1 (10), number-line-1 (2), tap-3 (smaller), tap-4 (10 friends), keypad-2 (3), number-line-2 (7), tap-5 (1/3), keypad-3 (6), tap-6 (1/10), keypad-4 (12), number-line-3 (6), tap-7 (false), and number-line-4 (5) all match their narration and reasoning. The VERIFY items were checked the same way, and each choice means what its label says. The story cards are factually correct and in the right order. The notes above are all about how the content sounds by ear and about difficulty. None is a blocker."
+  }
+}

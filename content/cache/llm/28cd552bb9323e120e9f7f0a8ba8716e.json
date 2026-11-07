@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-add-sub-problems-1000-keypad-6",
+        "severity": "note",
+        "category": "other",
+        "note": "The screen text is only 'Ben and Kim together?' with no number sentence, so a child who can't read must rely entirely on the narration for the two-step plan (find Kim's score, then add). The answer 641 is correct (468 - 295 = 173; 468 + 173 = 641). Consider adding a screen line such as 'Kim = ? then Ben + Kim = ?' to help the audio-only player."
+      },
+      {
+        "target": "g3-add-sub-problems-1000-number-line-1",
+        "severity": "note",
+        "category": "audio",
+        "note": "The frog drag depends on seeing the number line (0 to 1000, step 100). The narration says only 'Move the frog to his total.' Make sure the device reads the line's range and step aloud so a child who can't see it knows the scale. The answer 700 is correct."
+      },
+      {
+        "target": "g3-add-sub-problems-1000-number-line-2",
+        "severity": "note",
+        "category": "audio",
+        "note": "Same concern as the other number-line items: the 400 to 800 scale in steps of 25 must be announced by sound. The answer 625 is correct."
+      },
+      {
+        "target": "g3-add-sub-problems-1000-number-line-3",
+        "severity": "note",
+        "category": "audio",
+        "note": "Same concern: the 400 to 700 scale in steps of 20 must be announced by sound. The answer 520 is correct (520 + 120 = 640)."
+      }
+    ],
+    "notes": "I checked every arithmetic claim in the story cards and all 16 items, including the 'Why' explanations and the distractors. All marked answers are correct, each tap item has exactly one right choice, and every 'Why' explanation is accurate. Story figures are correct: 240 + 130 = 370, 370 - 50 = 320, 500 - 320 = 180, and 240 + 160 = 400. The content stays within Grade 3 add/subtract to 1000, including the two- and three-step items. No blockers found. The notes are minor audio-accessibility and clarity suggestions. No item was marked VERIFY."
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya reads books. For every 1 book she reads, she gets 2 stickers. That is a ratio of 1 to 2.",
+        "text": "1 to 2",
+        "visual": { "kind": "emoji", "emoji": "📖", "count": null, "filled": null }
+      },
+      {
+        "narration": "Maya reads 3 books. Each book gives 2 stickers. So she gets 2 + 2 + 2 = 6 stickers. Here are 6 stickers.",
+        "text": "3 × 2 = 6",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 6, "filled": null }
+      },
+      {
+        "narration": "At the park, 1 smiley stands for 5 kids. That is a ratio of 1 to 5. Here are 3 smileys. They stand for 15 kids.",
+        "text": "3 × 5 = 15",
+        "visual": { "kind": "objects", "emoji": "😀", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Maya's crayons come in boxes. 1 box has 10 crayons. That is a ratio of 1 to 10. Here are 4 boxes. They hold 40 crayons.",
+        "text": "4 × 10 = 40",
+        "visual": { "kind": "objects", "emoji": "📦", "count": 4, "filled": null }
+      },
+      {
+        "narration": "To make a number bigger, multiply it. Use 2, 5, or 10. You already know these times facts.",
+        "text": "× 2, × 5, × 10",
+        "visual": null
+      },
+      {
+        "narration": "Now you try. Use the ratio to scale up each number. Ready to practise with Maya?",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Each cup has 2 straws. That is a ratio of 1 to 2. How many straws are in 3 cups? Is it 4, 6, or 8?",
+        "prompt": "3 cups, 2 straws each",
+        "why": "Each cup has 2 straws. Count 2 + 2 + 2 = 6, or think 3 × 2 = 6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "1 smiley stands for 5 kids. Here are 2 smileys. How many kids do they stand for?",
+        "prompt": "How many kids?",
+        "why": "Each smiley is 5 kids. Add 5 + 5 = 10, or think 2 × 5 = 10.",
+        "visual": { "kind": "objects", "emoji": "😀", "count": 2, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Each bag has 2 apples. Move the frog to the number of apples in 4 bags.",
+        "prompt": "4 bags, 2 apples each",
+        "why": "Each bag has 2 apples. Count 2, 4, 6, 8. The answer is 4 × 2 = 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 2,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "4*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "1 pack has 10 cards. That is a ratio of 1 to 10. How many cards are in 2 packs? Is it 12, 2, 20, or 30?",
+        "prompt": "2 packs of 10 cards",
+        "why": "Each pack has 10 cards. Two packs make 10 + 10 = 20 cards.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "1 hand has 5 fingers. How many fingers are on 4 hands?",
+        "prompt": "4 hands, 5 fingers each",
+        "why": "Each hand has 5 fingers. Count by 5s: 5, 10, 15, 20. So 4 × 5 = 20.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 20,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "1 box holds 5 pencils. Move the frog to the number of pencils in 7 boxes.",
+        "prompt": "7 boxes, 5 pencils each",
+        "why": "Each box holds 5 pencils. Count by 5s seven times to reach 35. So 7 × 5 = 35.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "target": 35,
+        "check": { "rule": "equals", "expr": "7*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "1 bag has 10 marbles. How many marbles are in 6 bags?",
+        "prompt": "6 bags, 10 marbles each",
+        "why": "Each bag has 10 marbles. Count by 10s six times to get 60. So 6 × 10 = 60.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 60,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "1 team has 5 players. That is a ratio of 1 to 5. How many players are on 8 teams? Is it 40, 13, 45, or 35?",
+        "prompt": "8 teams, 5 players each",
+        "why": "Each team has 5 players. Multiply 8 × 5 to get 40 players.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 40,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 13,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 45,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 35,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "1 bike has 2 wheels. How many wheels are on 9 bikes?",
+        "prompt": "9 bikes, 2 wheels each",
+        "why": "Each bike has 2 wheels. Double 9 to get 18. So 9 × 2 = 18.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 18,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "A tray holds 10 muffins. Move the frog to the number of muffins on 7 trays.",
+        "prompt": "7 trays, 10 muffins each",
+        "why": "Each tray holds 10 muffins. Count by 10s seven times to reach 70.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 70,
+        "check": { "rule": "equals", "expr": "7*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "At the pet shop, the ratio of dogs to cats is 1 to 5. There are 6 dogs. How many cats are there? Is it 11, 20, 56, or 30?",
+        "prompt": "6 dogs, how many cats?",
+        "why": "For every 1 dog there are 5 cats. So 6 dogs go with 6 × 5 = 30 cats.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 11,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 56,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Zoe has 10 times as many stickers as Leo. Leo has 8 stickers. How many stickers does Zoe have?",
+        "prompt": "10 times 8 = ?",
+        "why": "Ten times as many means multiply by 10. So 8 × 10 = 80 stickers.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 80,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "At a party, the ratio of pizzas to drinks is 1 to 2. There are 12 pizzas. Move the frog to the number of drinks.",
+        "prompt": "12 pizzas, how many drinks?",
+        "why": "Each pizza goes with 2 drinks. So 12 pizzas go with 12 × 2 = 24 drinks.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 30,
+        "step": 2,
+        "target": 24,
+        "check": { "rule": "equals", "expr": "12*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A number scales up from 7 to 70. Which ratio was used: 1 to 2, 1 to 5, or 1 to 10?",
+        "prompt": "7 becomes 70",
+        "why": "Divide 70 by 7 to get 10. The number was multiplied by 10, so the ratio is 1 to 10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1 to 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1 to 5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1 to 10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "70/7",
+          "choices": [
+            { "id": "a", "expr": "2" },
+            { "id": "b", "expr": "5" },
+            { "id": "c", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "In a jump rope game, 1 round is 5 jumps. Tim plays 11 rounds. How many jumps is that?",
+        "prompt": "11 rounds, 5 jumps each",
+        "why": "Each round is 5 jumps. Count by 5s eleven times to reach 55. So 11 × 5 = 55.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 55,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "11*5", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

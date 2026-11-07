@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-read-numbers-50-number-line-3",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The line runs from 30 to 50, but the explanation says 'Start at 40'. Counting from 40 is valid, but the explanation skips the 30 to 40 step. Consider 'Start at 30, count 13 more' or 'Start at 40 (4 tens), count 3 more' so the line and the explanation match."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 4 shows a single star while the screen says 24. Card 2 shows 13 stars and card 3 shows 20 stars. For a child who cannot read yet, one star for 24 does not match the number. Show 24 stars or use a ten-frame pair plus 4."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "The skill description says students should pick how a number is used 'like on a clock or a house'. The story covers only the house-number label (card 6), and no item covers clock use. Either add a clock example or drop 'clock' from the description."
+      },
+      {
+        "target": "g1-read-numbers-50-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The answer choice says 'a name', but the story (card 6) and tap-7 use 'a label' for the same idea. Use one term, such as 'a label', across the story and items so the child hears the same word for the same idea."
+      },
+      {
+        "target": "g1-read-numbers-50-number-line-1",
+        "severity": "note",
+        "category": "other",
+        "note": "The why text 'Fifteen is five past ten' uses a clock phrase that is not taught in the story, and it is not clear by ear. Consider 'Fifteen is 1 ten and 5 ones' to match the tens-and-ones teaching."
+      }
+    ],
+    "notes": "I checked every item's marked answer against its choices and the story. All answers are correct and only one choice is right in each multiple-choice item. The VERIFY items (tap-5, tap-7, tap-8) are correct as marked: 'a name' or 'a label' for the player and house numbers, and 3 tens and 9 ones for thirty-nine. No blockers found. The problems listed are wording and clarity notes only."
+  }
+}

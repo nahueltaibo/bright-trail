@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-multiply-by-one-digit-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "VERIFY checked. 6 × 48 = 288, which is 12 from 300 and 88 from 200, so 'closer to 300' is correct. The story never teaches rounding or estimation, though. A child who hasn't seen that strategy has nothing in the story to help them, so consider adding a short story card or a hint."
+      },
+      {
+        "target": "g4-multiply-by-one-digit-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "VERIFY checked. 7 × 26 = 182 and 7 × 20 + 7 × 6 = 140 + 42 = 182, so the marked choice is correct. The distractors are wrong: 7 × 2 + 7 × 6 = 56 and 7 × 20 + 6 = 146. The story only shows splitting a number, not splitting one factor into a sum of products, so this item goes a step beyond what the story teaches."
+      }
+    ],
+    "notes": "Reviewed the story and all 17 items. Story arithmetic is correct: 6 × 12 = 72, 4 × 230 = 920. Every keypad, tap, and number-line answer checks out: 80, 60, 800, 70, 33, 98, 120, 138, 336, 90, 1645, 4050, and 450. The three VERIFY items (tap-4, tap-5) both have the correct marked answer and their choices match their values. No blockers found. Two notes are listed above, both about items that go beyond what the story teaches. Spoken narration and choices are clear by ear, and the number-line ranges contain their answers."
+  }
+}

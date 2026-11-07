@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-decimal-number-line-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Skip-counting by 0.2 goes a little beyond the tenths-only skill, and it is the hardest item on the number line. Consider a step of 0.1 here, or keep it for a later skill. The marked answer 25.4 is correct (24 + 0.2 × 7)."
+      }
+    ],
+    "notes": "I checked every story card and all 20 items. The marked answers are correct, each item has exactly one right choice, and the VERIFY items (keypad-1, keypad-2, keypad-3, keypad-4, keypad-5, tap-3, tap-5) all check out by calculation. The story facts are accurate: 1 whole = 10 tenths, 0.6, 1.4, 3.2 < 5.1, 24.7 > 24.3, and 5.0 = 5. Nothing is a blocker. One thing to watch: the number-line items (1 to 5) depend on seeing tick marks and the frog's position. Children who play by sound alone get no spoken cue for where the frog is, so consider adding audio feedback such as reading out the landed value. That is a design point for the app, not an error in this content."
+  }
+}

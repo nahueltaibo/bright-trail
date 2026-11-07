@@ -1,0 +1,435 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam helps at a hockey fundraiser. He counts money and snacks all day. Math rules can make his counting faster and easier.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🏒", "count": null, "filled": null }
+      },
+      {
+        "narration": "Sam sells 8 hot dogs, then 53 more. He finds that 8 + 53 gives the same total as 53 + 8. Order does not change a sum.",
+        "text": "8 + 53 = 53 + 8",
+        "visual": null
+      },
+      {
+        "narration": "Next Sam adds 8 + 53 + 7. He adds 53 + 7 first to make 60. Then 60 + 8 is 68. Grouping to make a ten is smart.",
+        "text": "53 + 7 = 60, 60 + 8 = 68",
+        "visual": null
+      },
+      {
+        "narration": "Adding 0 changes nothing. Multiplying by 1 changes nothing too. Here are 5 pucks. 5 × 1 is still 5 pucks.",
+        "text": "5 × 1 = 5",
+        "visual": { "kind": "objects", "emoji": "🏒", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Sam sees 6 rows of 14 seats. That is hard in one step. Split 14 into 10 and 4. 6 × 10 is 60, and 6 × 4 is 24. The total is 84.",
+        "text": "6 × 14 = 60 + 24 = 84",
+        "visual": null
+      },
+      {
+        "narration": "Sam checks with the opposite operation. 84 ÷ 6 is 14, because 6 × 14 is 84. And 68 - 8 is 60, because 60 + 8 is 68.",
+        "text": "84 ÷ 6 = 14, so 6 × 14 = 84",
+        "visual": null
+      },
+      {
+        "narration": "Sam uses order, grouping, splitting, and opposite checks. Now it is your turn to practise with these rules.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Fill the gap. 9 + 6 is the same as 6 + what number?",
+        "prompt": "9 + 6 = 6 + ?",
+        "why": "Order does not change a sum. 9 + 6 is the same as 6 + 9, so the missing number is 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 47 × 1? Is it 0, 1, 47, or 48?",
+        "prompt": "47 × 1 = ?",
+        "why": "Multiplying by 1 leaves a number the same. So 47 × 1 is 47.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 0,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 47,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 48,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "47*1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the answer to 6 × 3. Hint: 3 × 6 is the same.",
+        "prompt": "6 × 3 = ?",
+        "why": "Order does not change a product. 3 × 6 is 18, so 6 × 3 is 18 too.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 18,
+        "check": { "rule": "equals", "expr": "6*3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam knows 7 × 4 = 28. Use that to find 28 ÷ 7.",
+        "prompt": "28 ÷ 7 = ?",
+        "why": "Division is the opposite of multiplying. Since 7 × 4 is 28, 28 ÷ 7 is 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "28/7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam knows 15 - 6 = 9. Which fact checks it? Is it 9 + 6 = 15, or 9 × 6 = 15?",
+        "prompt": "Check 15 - 6 = 9",
+        "why": "Adding is the opposite of subtracting. 9 + 6 makes 15, so it checks the answer.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "9 + 6 = 15",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "9 × 6 = 15",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "9+6==15" },
+            { "id": "b", "expr": "9*6==15" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Sam adds 28 + 35 + 12. He adds 28 and 12 first to make a ten. Then he adds 35. What is the total?",
+        "prompt": "28 + 35 + 12 = ?",
+        "why": "28 + 12 is 40. Then 40 + 35 is 75. Grouping numbers that make a ten helps.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 75,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "28+35+12", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which is the same as 6 × 14? Is it 6 × 10 + 4, or 6 × 10 + 6 × 4?",
+        "prompt": "Split 6 × 14",
+        "why": "Split 14 into 10 and 4. Then multiply both parts by 6, so it is 6 × 10 + 6 × 4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "6 × 10 + 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "6 × 10 + 6 × 4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "6*10+4==6*14" },
+            { "id": "b", "expr": "6*10+6*4==6*14" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to 7 × 12. Split 12 into 10 and 2 to help.",
+        "prompt": "7 × 12 = ?",
+        "why": "7 × 10 is 70. 7 × 2 is 14. Then 70 + 14 is 84.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 4,
+        "target": 84,
+        "check": { "rule": "equals", "expr": "7*12", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Mia divides 96 ÷ 8 and gets 12. To check, she multiplies 12 × 8. What number should she get?",
+        "prompt": "12 × 8 = ?",
+        "why": "Multiplying checks division. 12 × 10 is 120 minus 12 × 2 which is 24, so 96. That matches.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 96,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12*8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam had 90 tickets. He gave some away and has 55 left. To check, he adds 55 + what number to get 90? Is it 125, 45, 35, or 55?",
+        "prompt": "55 + ? = 90",
+        "why": "Add up from 55 to 90. That is 35 more. So Sam gave away 35 tickets.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 125,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 45,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 35,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 55,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "90-55", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Sam finds 5 × 13 × 2. He multiplies 5 × 2 first. Then he multiplies by 13. What is the answer?",
+        "prompt": "5 × 13 × 2 = ?",
+        "why": "Grouping helps. 5 × 2 is 10. Then 10 × 13 is 130.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 130,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5*13*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to 6 × 25. Think of 6 × 20 plus 6 × 5.",
+        "prompt": "6 × 25 = ?",
+        "why": "6 × 20 is 120. 6 × 5 is 30. Then 120 + 30 is 150.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 10,
+        "target": 150,
+        "check": { "rule": "equals", "expr": "6*25", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Zoe divides 156 ÷ 12 and gets 13. Which fact checks it? Is it 12 × 13 = 156, 12 × 156 = 13, or 13 + 12 = 156?",
+        "prompt": "Check 156 ÷ 12 = 13",
+        "why": "Multiplying is the opposite of dividing. 12 × 13 is 156, so the answer 13 is right.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "12 × 13 = 156",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "12 × 156 = 13",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "13 + 12 = 156",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "12*13==156" },
+            { "id": "b", "expr": "12*156==13" },
+            { "id": "c", "expr": "13+12==156" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Leo finds 300 - 120 and gets 180. To check, move the frog to 180 + 120.",
+        "prompt": "180 + 120 = ?",
+        "why": "Adding is the opposite of subtracting. 180 + 120 is 300, which matches where Leo started.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 400,
+        "step": 20,
+        "target": 300,
+        "check": { "rule": "equals", "expr": "180+120", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Ava has 6 boxes with 15 cards in each box. She gives away 20 cards. How many cards does she have left?",
+        "prompt": "6 × 15 - 20 = ?",
+        "why": "First find 6 × 15. That is 60 + 30, so 90. Then subtract 20 to get 70.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 70,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6*15-20", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

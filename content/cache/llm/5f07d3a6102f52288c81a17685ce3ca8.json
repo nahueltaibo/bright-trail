@@ -1,0 +1,488 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam collects sports cards. Each pack has 6 cards. He knows his fives, so 5 packs is 5 × 6 = 30 cards.",
+        "text": "5 × 6 = 30",
+        "visual": { "kind": "objects", "emoji": "🃏", "count": 6, "filled": null }
+      },
+      {
+        "narration": "Sam buys one more pack. That adds 6 more cards. So 6 × 6 is 30 plus 6, which is 36. Add one more set!",
+        "text": "6 × 6 = 30 + 6 = 36",
+        "visual": null
+      },
+      {
+        "narration": "Now Sam has 4 packs of 7 cards. He knows 2 × 7 is 14. Four packs is double that. Double 14 is 28.",
+        "text": "4 × 7 = 28",
+        "visual": { "kind": "objects", "emoji": "🃏", "count": 7, "filled": null }
+      },
+      {
+        "narration": "Three packs of 4 cards? Start with 2 × 4, which is 8. Then add one more 4. That makes 12.",
+        "text": "3 × 4 = 8 + 4 = 12",
+        "visual": { "kind": "objects", "emoji": "🃏", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Sam shares 42 cards into packs of 6. He knows 7 × 6 is 42. So 42 ÷ 6 is 7 packs.",
+        "text": "42 ÷ 6 = 7",
+        "visual": null
+      },
+      {
+        "narration": "A times fact and a divide fact are partners. Use facts you know to find new ones. Let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 4 × 3?",
+        "prompt": "4 × 3 = ?",
+        "why": "Start with 2 × 3, which is 6. Double 6 is 12. So 4 × 3 is 12.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 12,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4*3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "2 × 8 is 16. Double 16 to find 4 × 8. Is it 24, 32, 36, or 40?",
+        "prompt": "4 × 8 = ?",
+        "why": "4 × 8 is double 2 × 8. Double 16 is 32.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 24,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 32,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 36,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 40,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4*8", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 4 × 6.",
+        "prompt": "4 × 6",
+        "why": "2 × 6 is 12. Double 12 is 24. Hop to 24.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 40,
+        "step": 4,
+        "target": 24,
+        "check": { "rule": "equals", "expr": "4*6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 30 ÷ 6? Is it 3, 4, 5, or 6?",
+        "prompt": "30 ÷ 6 = ?",
+        "why": "Think of the partner fact. 5 × 6 is 30, so 30 ÷ 6 is 5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "30/6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Mia puts 18 stickers into 3 equal groups. How many stickers are in each group?",
+        "prompt": "18 ÷ 3 = ?",
+        "why": "Think 3 times what is 18. 3 × 6 is 18, so 18 ÷ 3 is 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "18/3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "What is 8 × 4?",
+        "prompt": "8 × 4 = ?",
+        "why": "4 × 8 is double double 8. Double 8 is 16, and double 16 is 32.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 32,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8*4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam knows 5 × 8 is 40. Add one more 8. What is 6 × 8? Is it 42, 46, 48, or 54?",
+        "prompt": "6 × 8 = ?",
+        "why": "6 × 8 is 5 × 8 plus one more 8. 40 plus 8 is 48.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 42,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 46,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 48,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 54,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6*8", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to 9 × 6.",
+        "prompt": "9 × 6",
+        "why": "10 × 6 is 60. Take away one 6 to get 54.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 60,
+        "step": 6,
+        "target": 54,
+        "check": { "rule": "equals", "expr": "9*6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 56 ÷ 7? Is it 8, 7, 6, or 9?",
+        "prompt": "56 ÷ 7 = ?",
+        "why": "Use the partner fact. 8 × 7 is 56, so 56 ÷ 7 is 8.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "56/7", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A coach has 48 water bottles. She puts 8 bottles in each box. How many boxes does she need?",
+        "prompt": "48 ÷ 8 = ?",
+        "why": "Think 8 times what is 48. 6 × 8 is 48, so she needs 6 boxes.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "48/8", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "What is 7 × 8?",
+        "prompt": "7 × 8 = ?",
+        "why": "Try 7 × 8 as 7 × 5 plus 7 × 3. That is 35 plus 21, which is 56.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 56,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7*8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "72 players make teams of 8. How many teams are there? Is it 8, 12, 7, or 9?",
+        "prompt": "72 ÷ 8 = ?",
+        "why": "Think 8 times what is 72. 9 × 8 is 72, so there are 9 teams.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "72/8", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Sam has 9 boxes with 8 balls in each box. Move the frog to the number of balls.",
+        "prompt": "9 × 8",
+        "why": "10 × 8 is 80. Take away one 8 to get 72.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 80,
+        "step": 8,
+        "target": 72,
+        "check": { "rule": "equals", "expr": "9*8", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "What number times 6 makes 54?",
+        "prompt": "? × 6 = 54",
+        "why": "Use division. 54 ÷ 6 is 9, because 9 × 6 is 54.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "54/6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is greatest, 6 × 7, 5 × 9, 8 × 6, or 4 × 10?",
+        "prompt": "Greatest product?",
+        "why": "6 × 7 is 42, 5 × 9 is 45, 8 × 6 is 48, and 4 × 10 is 40. So 8 × 6 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "6 × 7",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "8 × 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5 × 9",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "4 × 10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "6*7" },
+            { "id": "b", "expr": "8*6" },
+            { "id": "c", "expr": "5*9" },
+            { "id": "d", "expr": "4*10" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

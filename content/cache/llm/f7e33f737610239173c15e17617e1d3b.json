@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-read-numbers-50-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The marked answer 'a name' is correct for the question, but the story (step 7) and tap-7 teach this idea as a 'label'. A jersey number is better called a label than a name, and the 'why' text says it works 'like a name'. Using 'a label' as the choice would match the story and avoid mixing two terms for the same idea."
+      }
+    ],
+    "notes": "I checked every item's arithmetic and marked answer by hand: tap-1 (7 dots), keypad-1 (12), number-line-1 (15), tap-2 (12), keypad-2 (30), keypad-3 (35), tap-3 (4 tens in 42), number-line-2 (27 from 20), tap-4 (46), keypad-4 (48), tap-6 (27), number-line-3 (43), tap-7 (house number is a label), and tap-8 (39 = 3 tens and 9 ones, and 9 tens and 3 ones is 93). Each marked answer is correct, the distractors are wrong, and each narration matches its screen and picture. The VERIFY items tap-5, tap-7 and tap-8 are all correct as marked. The story card facts (10 per sheet, 13 = 1 ten 3 ones, 2 tens = 20, 24, 30/40/50 names, house number as a label) are accurate and match their pictures. No blockers found."
+  }
+}

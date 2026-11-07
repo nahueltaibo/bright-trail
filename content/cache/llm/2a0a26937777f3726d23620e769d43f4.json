@@ -1,0 +1,481 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya has a strip of stickers. Every strip has 5 stickers on it. Here is one strip.",
+        "text": "5 stickers per strip",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 5, "filled": null }
+      },
+      {
+        "narration": "We can describe this with a rate. A rate tells how many are in each group. Here the rate is 5 stickers per strip.",
+        "text": "rate: 5 per strip",
+        "visual": null
+      },
+      {
+        "narration": "Maya buys 2 strips. Each strip has 5 stickers. So 5 + 5 makes 10 stickers in all.",
+        "text": "2 × 5 = 10",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 10, "filled": null }
+      },
+      {
+        "narration": "Now she has 3 strips. That is 3 groups of 5. Count by fives: 5, 10, 15. Maya has 15 stickers.",
+        "text": "3 × 5 = 15",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 15, "filled": null }
+      },
+      {
+        "narration": "Sam builds toy cars. Each car needs 4 wheels. That is a rate of 4 wheels per car. Here are the wheels for 3 cars.",
+        "text": "3 × 4 = 12",
+        "visual": { "kind": "objects", "emoji": "⚽", "count": 12, "filled": null }
+      },
+      {
+        "narration": "To find how many in all, multiply the number of groups by the rate. Now you try some rate problems.",
+        "text": "groups × rate = total",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Each strip has 5 stickers. Maya has 2 strips. How many stickers does she have in all? Is it 7, 12, 10, or 5?",
+        "prompt": "2 strips, 5 per strip",
+        "why": "There are 2 groups of 5. Add 5 + 5 to get 10 stickers.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Each bag has 2 apples. There are 3 bags. How many apples are there in all?",
+        "prompt": "3 bags, 2 per bag",
+        "why": "There are 3 groups of 2. Count by twos: 2, 4, 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "One hexagon uses 2 trapezoids. Sam builds 4 hexagons. Move the frog to how many trapezoids he used.",
+        "prompt": "4 hexagons, 2 per hexagon",
+        "why": "There are 4 groups of 2. Count by twos: 2, 4, 6, 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "4*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Each box holds 3 pens. Mia has 4 boxes. How many pens does she have in all? Is it 9, 12, 7, or 15?",
+        "prompt": "4 boxes, 3 per box",
+        "why": "There are 4 groups of 3. Count by threes: 3, 6, 9, 12.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4*3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A toonie is worth $2. Jo has 5 toonies. How many dollars does she have in all?",
+        "prompt": "5 toonies, $2 each",
+        "why": "There are 5 groups of 2 dollars. Count by twos: 2, 4, 6, 8, 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5*2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Each carton holds 6 eggs. A baker has 4 cartons. How many eggs does the baker have in all? Is it 24, 10, 20, or 28?",
+        "prompt": "4 cartons, 6 per carton",
+        "why": "There are 4 groups of 6. Add 6 + 6 + 6 + 6 to get 24.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 24,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 28,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4*6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Leo bikes at a rate of 3 kilometres per hour. How many kilometres does he bike in 6 hours?",
+        "prompt": "3 km per hour, 6 hours",
+        "why": "Each hour is a group of 3 kilometres. There are 6 groups, and 6 × 3 = 18.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 18,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6*3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Each pack has 10 hockey cards. Dev buys 4 packs. Move the frog to how many cards he has.",
+        "prompt": "4 packs, 10 per pack",
+        "why": "There are 4 groups of 10. Count by tens: 10, 20, 30, 40.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 10,
+        "target": 40,
+        "check": { "rule": "equals", "expr": "4*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "There are 15 stickers on 3 strips. Each strip has the same number. What is the rate? Is it 5 per strip, 3 per strip, 15 per strip, or 12 per strip?",
+        "prompt": "15 stickers, 3 strips",
+        "why": "Share 15 stickers into 3 equal strips. 15 ÷ 3 = 5, so the rate is 5 per strip.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3 per strip",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "15 per strip",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "12 per strip",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "5 per strip",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "15/3",
+          "choices": [
+            { "id": "a", "expr": "3" },
+            { "id": "b", "expr": "15" },
+            { "id": "c", "expr": "12" },
+            { "id": "d", "expr": "5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "One hexagon uses 2 trapezoids. Sam has 14 trapezoids. How many hexagons can he make?",
+        "prompt": "14 trapezoids, 2 per hexagon",
+        "why": "Make groups of 2 from 14. 14 ÷ 2 = 7 hexagons.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "14/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Each box holds 6 muffins. A cafe fills 9 boxes. How many muffins is that in all?",
+        "prompt": "9 boxes, 6 per box",
+        "why": "There are 9 groups of 6. Think 10 groups of 6 is 60, then take away 6 to get 54.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 54,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9*6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Kai earns $5 for each hour of yard work. He works 6 hours. Move the frog to how many dollars he earns.",
+        "prompt": "$5 per hour, 6 hours",
+        "why": "There are 6 groups of 5 dollars. Count by fives: 5, 10, 15, 20, 25, 30.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "target": 30,
+        "check": { "rule": "equals", "expr": "6*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which plan gives the most marbles? Is it 4 bags of 6 marbles, 3 bags of 9 marbles, or 5 bags of 4 marbles?",
+        "prompt": "Most marbles in all",
+        "why": "Find each total. 4 × 6 = 24, 3 × 9 = 27, and 5 × 4 = 20. The most is 27.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4 bags of 6 marbles",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "5 bags of 4 marbles",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "3 bags of 9 marbles",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "4*6" },
+            { "id": "b", "expr": "5*4" },
+            { "id": "c", "expr": "3*9" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Ava has 4 strips with 5 stickers on each strip. She buys 3 more strips. How many stickers does she have now?",
+        "prompt": "4 strips and 3 more, 5 each",
+        "why": "She has 4 + 3 = 7 strips in all. Each has 5 stickers, and 7 × 5 = 35.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 35,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "(4+3)*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Each car needs 4 wheels. A garage has 6 cars. A worker thinks they need 20 wheels. Is that true or false?",
+        "prompt": "6 cars need 20 wheels?",
+        "why": "There are 6 groups of 4 wheels. 6 × 4 = 24, not 20, so it is false.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "6*4 == 20" },
+            { "id": "b", "expr": "not (6*4 == 20)" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

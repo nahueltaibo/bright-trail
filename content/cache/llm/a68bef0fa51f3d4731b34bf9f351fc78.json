@@ -1,0 +1,450 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam helps at a school sale. Each bag holds 10 stickers. Here are 3 bags. How many stickers is that?",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🎒", "count": 3, "filled": null }
+      },
+      {
+        "narration": "3 bags of 10 is 3 tens. That is 30. Every digit moves one place to the left. A zero fills the empty ones place.",
+        "text": "3 × 10 = 30",
+        "visual": null
+      },
+      {
+        "narration": "A big box holds 100 stickers. 4 big boxes is 4 hundreds. Each digit moves two places left. That makes 400.",
+        "text": "4 × 100 = 400",
+        "visual": { "kind": "objects", "emoji": "📦", "count": 4, "filled": null }
+      },
+      {
+        "narration": "A crate holds 1000 stickers. 2 crates is 2 thousands. The digit moves three places left. That makes 2000.",
+        "text": "2 × 1000 = 2000",
+        "visual": { "kind": "objects", "emoji": "🧰", "count": 2, "filled": null }
+      },
+      {
+        "narration": "It works for bigger numbers too. 35 bags of 10 is 35 tens. The digits move left, and a zero goes on the end. That is 350.",
+        "text": "35 × 10 = 350",
+        "visual": null
+      },
+      {
+        "narration": "Dividing by 10 goes the other way. The digits move one place right. 350 stickers in bags of 10 makes 35 bags.",
+        "text": "350 ÷ 10 = 35",
+        "visual": null
+      },
+      {
+        "narration": "Now you try. Move the digits left to multiply by 10, 100, or 1000. Move them right to divide by 10.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 6 × 10? Is it 6, 16, 60, or 600?",
+        "prompt": "6 × 10 = ?",
+        "why": "6 tens is 60. The 6 moves one place left, and a zero fills the ones place.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 16,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 60,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 600,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam has 4 boxes. Each box holds 100 stickers. How many stickers is that?",
+        "prompt": "4 × 100 = ?",
+        "why": "4 hundreds is 400. The 4 moves two places left, and two zeros follow it.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 400,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4*100", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the answer of 7 × 10.",
+        "prompt": "7 × 10",
+        "why": "7 tens is 70. Count by tens seven times to land on 70.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 70,
+        "check": { "rule": "equals", "expr": "7*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 80 ÷ 10?",
+        "prompt": "80 ÷ 10 = ?",
+        "why": "Dividing by 10 moves the digits one place right. 80 becomes 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "80/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 5 × 1000? Is it 50, 500, 5000, or 50 000?",
+        "prompt": "5 × 1000 = ?",
+        "why": "5 thousands is 5000. The 5 moves three places left, so three zeros follow it.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 50,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 500,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 50000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5*1000", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "What is 34 × 10?",
+        "prompt": "34 × 10 = ?",
+        "why": "34 tens is 340. Each digit moves one place left, and a zero goes on the end.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 340,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "34*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 27 × 100? Is it 207, 270, 2700, or 27 000?",
+        "prompt": "27 × 100 = ?",
+        "why": "Move each digit two places left. 27 becomes 2700, with two zeros on the end.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 207,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 270,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 27000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 2700,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "27*100", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the answer of 60 × 10.",
+        "prompt": "60 × 10",
+        "why": "60 is 6 tens. Ten times 60 is 600, so the 6 moves to the hundreds place.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 600,
+        "check": { "rule": "equals", "expr": "60*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A team has 450 water bottles. They put 10 bottles in each pack. How many packs is that? What is 450 ÷ 10?",
+        "prompt": "450 ÷ 10 = ?",
+        "why": "Dividing by 10 moves each digit one place right. 450 becomes 45.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 45,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "450/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Leo has 15 packs of hockey cards. Each pack has 10 cards. How many cards does he have? Is it 15, 25, 150, or 1500?",
+        "prompt": "15 × 10 = ?",
+        "why": "15 packs of 10 is 15 × 10. Move the digits one place left to get 150.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 150,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 1500,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 25,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the answer of 35 × 100.",
+        "prompt": "35 × 100",
+        "why": "Move each digit two places left. 35 becomes 3500.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5000,
+        "step": 500,
+        "target": 3500,
+        "check": { "rule": "equals", "expr": "35*100", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "What is 60 × 1000?",
+        "prompt": "60 × 1000 = ?",
+        "why": "6 tens times 1000 is 60 thousands. Move 60 three places left to get 60 000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 60000,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "60*1000", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "What is 206 × 10?",
+        "prompt": "206 × 10 = ?",
+        "why": "Move each digit one place left. The zero in the tens place moves too. 206 becomes 2060.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2060,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "206*10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "What is 4200 ÷ 10? Is it 42, 420, 4200, or 42 000?",
+        "prompt": "4200 ÷ 10 = ?",
+        "why": "Dividing by 10 moves each digit one place right. 4200 becomes 420.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 42,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 42000,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4200,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 420,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4200/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A store has 2500 pencils. It packs 10 pencils in each box. Move the frog to the number of boxes. What is 2500 ÷ 10?",
+        "prompt": "2500 ÷ 10",
+        "why": "Move each digit one place right. 2500 becomes 250.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 500,
+        "step": 50,
+        "target": 250,
+        "check": { "rule": "equals", "expr": "2500/10", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

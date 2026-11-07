@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "audio",
+        "note": "Fractions are written as '1/2', '1/3', '1/4' in narration and screen text. Device text-to-speech may read these as 'one slash two' or as a plain number, which a non-reader can't follow. Consider wording such as 'one half', 'one third', 'one fourth' in the narration."
+      },
+      {
+        "target": "g3-mult-div-problems-keypad-5",
+        "severity": "note",
+        "category": "age",
+        "note": "The answer 4.5 requires a decimal, which is usually taught after Grade 3 in Ontario. Grade 3 fractions are halves, thirds and fourths. Also, a child may not have a decimal point key on the keypad. Consider asking for a fraction or mixed number (4 and 1/2), or using a whole-number total such as 8 glasses of 1/2 cup = 4 cups."
+      },
+      {
+        "target": "g3-mult-div-problems-number-line-4",
+        "severity": "note",
+        "category": "age",
+        "note": "The answer 3.5 is a decimal position on a 0-to-5 line with steps of 0.5. This is above the Grade 3 fraction scope. Consider labelling the line in halves (0, 1/2, 1, ...) or using a whole-number target such as 3 hops of 1/2 to reach 1 1/2."
+      },
+      {
+        "target": "g3-mult-div-problems-number-line-5",
+        "severity": "note",
+        "category": "age",
+        "note": "The answer 1.5 is a decimal and the line has 0.5 steps, which is beyond Grade 3 fraction work. Consider labelling the halves as fractions, or using a whole-number result."
+      },
+      {
+        "target": "g3-mult-div-problems-keypad-4",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration says '1/3' and the screen says 'Hops of 1/3 to reach 2'. Read aloud, the fraction may be unclear. Say 'one third' in the narration."
+      },
+      {
+        "target": "g3-mult-div-problems-tap-5",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration says 'Each batch needs 1/4 cup of milk.' Text-to-speech may not read '1/4' as 'one quarter'. Say 'one fourth of a cup' so the child can hear the amount."
+      }
+    ],
+    "notes": "I checked every item's marked answer and arithmetic. All are correct: tap-1 12, tap-2 4, tap-3 5 × 4, tap-4 4, tap-5 2; keypad-1 15, keypad-2 4, keypad-3 7, keypad-4 6, keypad-5 4.5; number-line-1 12, number-line-2 10, number-line-3 10, number-line-4 3.5, number-line-5 1.5. The VERIFY item tap-3 is correct: 5 hops of 4 is 5 groups of 4, so the answer is 5 × 4, and the other choices (5 + 4 and 4 ÷ 5) are wrong. The 'why' explanations are accurate. I found no blockers. The story steps are mathematically correct. The only concerns are grade-level fit of the decimal answers (4.5, 3.5, 1.5) and the spoken clarity of fraction notation like '1/2' in the narration."
+  }
+}

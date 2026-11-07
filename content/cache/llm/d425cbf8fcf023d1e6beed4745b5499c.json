@@ -1,0 +1,439 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has 12 stars. She wants to split them up. Let's see how.",
+        "text": "12",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Mia fills a box with 10 stars. That is one full ten. Then 2 stars are left over.",
+        "text": "10 and 2",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "10 and 2 make 12. So 12 is 10 and 2. Put them back, and it is 12 again.",
+        "text": "12 = 10 + 2",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Mia can split 12 in a new way. 6 and 6 make 12 too. The amount stays the same.",
+        "text": "6 + 6 = 12",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Now Mia has 28 stickers. That is 20 and 8. It is also 10 and 10 and 8.",
+        "text": "28 = 20 + 8",
+        "visual": null
+      },
+      {
+        "narration": "You can build numbers and break them apart. The total never changes. Let's practise with Mia!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "⭐", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number is 10 and 3? Is it 30, 13, or 8?",
+        "prompt": "10 and 3 = ?",
+        "why": "10 and 3 more makes 13. Start at 10 and count up 3: 11, 12, 13.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 13,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Mia has 10 stars in a box and 4 more. How many stars is that in all?",
+        "prompt": "10 + 4 = ?",
+        "why": "Start at 10 and count up 4 more: 11, 12, 13, 14. The answer is 14.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 14,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Leo has 10 and 6 shells. Move the frog to the total number of shells.",
+        "prompt": "10 and 6 make?",
+        "why": "10 and 6 make 16. Start at 10 and hop 6 more.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 16,
+        "check": { "rule": "equals", "expr": "10 + 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which is the same as 12? Is it 10 and 2, or 10 and 5?",
+        "prompt": "Same as 12?",
+        "why": "12 is one ten and 2 ones. So 12 is 10 and 2.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "10 and 5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "10 and 2",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "12",
+          "choices": [
+            { "id": "a", "expr": "10 + 5" },
+            { "id": "b", "expr": "10 + 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "15 is 10 and what? Type the missing part.",
+        "prompt": "15 = 10 + ?",
+        "why": "Take 10 away from 15. What is left is 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15 - 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "24 is 20 and what? Is it 14, 4, or 2?",
+        "prompt": "24 = 20 + ?",
+        "why": "Take 20 away from 24. That leaves 4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 14,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "24 - 20", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "20 and 7 make what number?",
+        "prompt": "20 + 7 = ?",
+        "why": "20 is two tens. Add 7 ones to get 27.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 27,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20 + 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Lia has 20 and 9 shells. Move the frog to the total number of shells.",
+        "prompt": "20 and 9 make?",
+        "why": "20 and 9 make 29. Start at 20 and hop 9 more.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 20,
+        "max": 40,
+        "step": 1,
+        "target": 29,
+        "check": { "rule": "equals", "expr": "20 + 9", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam has 3 tens and 5 ones. What number is that? Is it 35, 53, or 8?",
+        "prompt": "3 tens and 5 ones",
+        "why": "3 tens is 30. Add 5 ones to make 35.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 53,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 35,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 10 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Ben has 36 blocks. 36 is 30 and what? Type the missing part.",
+        "prompt": "36 = 30 + ?",
+        "why": "Take 30 away from 36. That leaves 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "36 - 30", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Is 10 and 10 and 8 the same as 28?",
+        "prompt": "10 + 10 + 8 = 28?",
+        "why": "10 and 10 make 20. Then 20 and 8 make 28. So yes!",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "10 + 10 + 8 == 28",
+          "choices": [
+            { "id": "a", "expr": "not (10 + 10 + 8 == 28)" },
+            { "id": "b", "expr": "10 + 10 + 8 == 28" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "10 and 10 and 10 and 5 make what number?",
+        "prompt": "10 + 10 + 10 + 5 = ?",
+        "why": "Three 10s make 30. Then 30 and 5 make 35.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 35,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 + 10 + 10 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Ava makes 9 groups of 5 beads. Move the frog to the total number of beads.",
+        "prompt": "9 groups of 5",
+        "why": "Count by 5s nine times: 5, 10, 15, 20, 25, 30, 35, 40, 45. The total is 45.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "target": 45,
+        "check": { "rule": "equals", "expr": "9 * 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which parts make 34? Is it 20 and 4, 30 and 14, or 30 and 4?",
+        "prompt": "Which makes 34?",
+        "why": "3 tens is 30, and 4 ones is 4. So 30 and 4 make 34.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "20 and 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "30 and 14",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "30 and 4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "34",
+          "choices": [
+            { "id": "a", "expr": "20 + 4" },
+            { "id": "b", "expr": "30 + 14" },
+            { "id": "c", "expr": "30 + 4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Max has 4 tens and 7 ones. Move the frog to his number.",
+        "prompt": "4 tens and 7 ones",
+        "why": "4 tens is 40. Then add 7 ones to land on 47.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 30,
+        "max": 50,
+        "step": 1,
+        "target": 47,
+        "check": { "rule": "equals", "expr": "4 * 10 + 7", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

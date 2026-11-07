@@ -1,0 +1,500 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam works at the hockey arena. Today the arena sold 3482 tickets. That is a big number, so Sam breaks it into parts.",
+        "text": "3482",
+        "visual": { "kind": "emoji", "emoji": "🎟️", "count": null, "filled": null }
+      },
+      {
+        "narration": "Each digit has a place. In 3482, the 3 is thousands, the 4 is hundreds, the 8 is tens, and the 2 is ones.",
+        "text": "3 thousands, 4 hundreds, 8 tens, 2 ones",
+        "visual": null
+      },
+      {
+        "narration": "Now add the parts. 3000 plus 400 plus 80 plus 2 makes 3482. This is called expanded form.",
+        "text": "3000 + 400 + 80 + 2 = 3482",
+        "visual": null
+      },
+      {
+        "narration": "You can say the number with words too. 3482 is three thousand four hundred eighty-two.",
+        "text": "three thousand four hundred eighty-two",
+        "visual": null
+      },
+      {
+        "narration": "Zero holds a place. The number 5060 is five thousand sixty. It has 0 hundreds and 0 ones.",
+        "text": "5060 = 5000 + 0 + 60 + 0",
+        "visual": null
+      },
+      {
+        "narration": "You can also regroup. 10 hundreds make 1 thousand. So 3482 is also 2 thousands, 14 hundreds, 8 tens, and 2 ones.",
+        "text": "3482 = 2000 + 1400 + 80 + 2",
+        "visual": null
+      },
+      {
+        "narration": "Nice work, Sam is ready. Now it is your turn to read and build numbers up to 10 000.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "How many thousands are in 6254? Is it 2, 5, 6, or 4?",
+        "prompt": "Thousands in 6254?",
+        "why": "The first digit of a four-digit number is the thousands place. In 6254, the 6 means 6 thousands.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What number is 700 + 20 + 5?",
+        "prompt": "700 + 20 + 5 = ?",
+        "why": "Put each part in its place. 7 hundreds, 2 tens, and 5 ones make 725.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 725,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "725", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 4000.",
+        "prompt": "Find 4000",
+        "why": "Each jump is 1000. Count 1000, 2000, 3000, 4000 to land on the spot.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10000,
+        "step": 1000,
+        "target": 4000,
+        "check": { "rule": "equals", "expr": "4000", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number is two thousand five hundred thirty? Is it 2053, 2530, 2503, or 5230?",
+        "prompt": "two thousand five hundred thirty",
+        "why": "Two thousand is 2000. Five hundred is 500. Thirty is 30. Together that is 2530.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2053,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2503,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5230,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 2530,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2530", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Type the number with 4 thousands, 3 hundreds, 1 ten, and 9 ones.",
+        "prompt": "4 thousands, 3 hundreds, 1 ten, 9 ones",
+        "why": "Put 4 in thousands, 3 in hundreds, 1 in tens, and 9 in ones. That makes 4319.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4319,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4319", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which number is 5 thousands, 0 hundreds, 3 tens, and 8 ones? Is it 5380, 5038, 538, or 5308?",
+        "prompt": "5 thousands, 0 hundreds, 3 tens, 8 ones",
+        "why": "Zero hundreds means a 0 in the hundreds place. So the number is 5038.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5380,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5038,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 538,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 5308,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5038", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Type the number seven thousand forty-six.",
+        "prompt": "seven thousand forty-six",
+        "why": "Seven thousand is 7000. There are no hundreds, so put a 0 there. Forty-six is 46. The number is 7046.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7046,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7046", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to 6500.",
+        "prompt": "Find 6500",
+        "why": "Each jump is 500. Halfway between 6000 and 7000 is 6500.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10000,
+        "step": 500,
+        "target": 6500,
+        "check": { "rule": "equals", "expr": "6500", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which is the word name for 9040? Is it nine thousand four, nine thousand forty, ninety-four hundred, or nine hundred forty?",
+        "prompt": "Words for 9040",
+        "why": "9040 has 9 thousands, 0 hundreds, and 4 tens. That is nine thousand forty.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "nine thousand four",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "ninety-four hundred",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "nine hundred forty",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "nine thousand forty",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "9040",
+          "choices": [
+            { "id": "a", "expr": "9004" },
+            { "id": "b", "expr": "9400" },
+            { "id": "c", "expr": "940" },
+            { "id": "d", "expr": "9040" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Ten hundreds make one thousand. What number is 7 thousands and 10 hundreds?",
+        "prompt": "7000 + 1000 = ?",
+        "why": "10 hundreds is the same as 1 thousand. So 7 thousands plus 1 thousand is 8000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8000,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7000 + 10 * 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "8621 is the same as 7 thousands, some hundreds, 2 tens, and 1 one. How many hundreds?",
+        "prompt": "7 thousands + ? hundreds + 2 tens + 1 one",
+        "why": "Take 1 thousand from 8621 and turn it into 10 hundreds. Now there are 6 hundreds plus 10 hundreds, which is 16 hundreds.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 16,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "(8621 - 7000 - 20 - 1) / 100",
+          "choices": [],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is the same as 3482? Is it 2000 + 1400 + 80 + 2, 3000 + 800 + 40 + 2, 3000 + 480 + 20, or 2000 + 1300 + 80 + 2?",
+        "prompt": "Same as 3482?",
+        "why": "Add each choice. 2000 + 1400 + 80 + 2 makes 3482, because 14 hundreds is 1400.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3000 + 800 + 40 + 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2000 + 1400 + 80 + 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "3000 + 480 + 20",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "2000 + 1300 + 80 + 2",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3482",
+          "choices": [
+            { "id": "a", "expr": "3000 + 800 + 40 + 2" },
+            { "id": "b", "expr": "2000 + 1400 + 80 + 2" },
+            { "id": "c", "expr": "3000 + 480 + 20" },
+            { "id": "d", "expr": "2000 + 1300 + 80 + 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to 4650.",
+        "prompt": "Find 4650",
+        "why": "The line goes from 4000 to 5000 in jumps of 50. 4650 is 6 hundreds and 1 jump of 50 past 4000.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 4000,
+        "max": 5000,
+        "step": 50,
+        "target": 4650,
+        "check": { "rule": "equals", "expr": "4650", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Jo has 3 thousands, 15 hundreds, and 4 ones. What number is that?",
+        "prompt": "3 thousands + 15 hundreds + 4 ones",
+        "why": "15 hundreds is 1500. Add 3000 + 1500 + 4 to get 4504.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4504,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3000 + 15 * 100 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "True or false: 7 thousands, 16 hundreds, and 2 tens make 8620.",
+        "prompt": "7000 + 1600 + 20 = 8620?",
+        "why": "16 hundreds is 1600. Then 7000 + 1600 + 20 makes 8620, so it is true.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "7000 + 1600 + 20 == 8620",
+          "choices": [
+            { "id": "a", "expr": "not (7000 + 1600 + 20 == 8620)" },
+            { "id": "b", "expr": "7000 + 1600 + 20 == 8620" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

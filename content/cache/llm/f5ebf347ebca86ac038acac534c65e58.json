@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-mental-decimal-tenths-keypad-2",
+        "severity": "note",
+        "category": "other",
+        "note": "The explanation '10 is the same as ten tenths of a whole less one' is confusing and hard to follow by ear. Simpler: '10 is 10 wholes. Take away one tenth to get 9.9.' The answer 9.9 is correct."
+      }
+    ],
+    "notes": "I checked every story card and item. All arithmetic is correct, and every marked answer is the only right choice: tap-1 (7), tap-2 (6.4), tap-3 (38.5), tap-4 (32.4), tap-5 (17.8), tap-6 (yes, 28.7 + 19.9 = 48.6). Keypad answers are also correct: 10, 9.9, 48.5, 30.1, 74.7, and 30 for keypad-6 (8.9 + 9.8 + 11.3 = 30.0). Number-line answers are correct: 8, 25, and 33.2, which lies on the 0.2 grid from 32. The friendly-number explanations are valid, with the adjustments correctly sized (for example, 0.3 too much in keypad-6). The story's worked examples (15.0 + 24.5 = 39.5; 35.7 - 18.0 = 17.7, then +0.1 = 17.8) are right. Only one wording note was found."
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Card 5 narrates '4 full bags of 10 marbles' but the picture is 4 × 🔮 (crystal ball), not marbles. Narration and picture disagree. Use a marble-like emoji such as ⚪ or 🔵, or change the wording to match the picture."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 5 says 'That is about 40' right after counting exactly 10, 20, 30, 40 with 4 full bags of 10. 'About' suggests the count is approximate, which muddles the exact count-by-10s lesson. Consider 'That is 40.'"
+      }
+    ],
+    "notes": "I checked the arithmetic and marked answers for every item. All VERIFY items (tap-1, tap-2, tap-3, tap-4, keypad-2, tap-5, tap-6, tap-7, tap-8) have the correct marked choice, and each choice matches its value. The keypad, number-line and remaining tap answers are also correct: 10, 7, 43, 30, 15, 40, 35. Only the story card 5 picture mismatch is a blocker."
+  }
+}

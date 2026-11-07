@@ -1,0 +1,437 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia is saving money. She has $20 bills. Let's count them by 20s. Each bill adds 20 more.",
+        "text": "Count by 20s",
+        "visual": { "kind": "emoji", "emoji": "💵", "count": null, "filled": null }
+      },
+      {
+        "narration": "Here are 3 bills. Count them: 20, 40, 60. Mia has $60.",
+        "text": "20, 40, 60",
+        "visual": { "kind": "objects", "emoji": "💵", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Now Mia has $50 bills. Count by 50s: 50, 100, 150, 200. Four bills make $200.",
+        "text": "50, 100, 150, 200",
+        "visual": { "kind": "objects", "emoji": "💵", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Mia finds quarters. Each one is 25¢. Count by 25s: 25, 50, 75, 100.",
+        "text": "25, 50, 75, 100",
+        "visual": { "kind": "objects", "emoji": "🪙", "count": 4, "filled": null }
+      },
+      {
+        "narration": "You can start at any number. Start at 100 and count by 20s: 100, 120, 140, 160.",
+        "text": "100, 120, 140, 160",
+        "visual": null
+      },
+      {
+        "narration": "Great counting! Let's practise skip counting up to 200.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count by 50s: 50, 100, 150. What number comes next?",
+        "prompt": "50, 100, 150, ?",
+        "why": "Each count adds 50. 150 plus 50 is 200.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 200,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "150 + 50", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Count by 20s: 20, 40, 60. What number comes next? Is it 70, 80, 90, or 100?",
+        "prompt": "20, 40, 60, ?",
+        "why": "Each count adds 20. 60 plus 20 is 80.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 70,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 90,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 80,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 100,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "60 + 20", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Hop the frog by 50s from 0. Move the frog to 150.",
+        "prompt": "Hop to 150",
+        "why": "Hop by 50s: 50, 100, 150. Three hops land on 150.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 50,
+        "target": 150,
+        "check": { "rule": "equals", "expr": "150", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Count by 25s: 25, 50, 75. What number comes next? Is it 80, 90, 100, or 125?",
+        "prompt": "25, 50, 75, ?",
+        "why": "Each count adds 25. 75 plus 25 is 100.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 100,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 80,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 90,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 125,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "75 + 25", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are some $20 bills. Count them by 20s. How many dollars are there?",
+        "prompt": "How many dollars?",
+        "why": "Count by 20s: 20, 40, 60, 80. There are 4 bills, so $80.",
+        "visual": { "kind": "objects", "emoji": "💵", "count": 4, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 80,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count * 20", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Hop the frog by 20s from 0. Move the frog to 120.",
+        "prompt": "Hop to 120",
+        "why": "Hop by 20s: 20, 40, 60, 80, 100, 120. Six hops land on 120.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 20,
+        "target": 120,
+        "check": { "rule": "equals", "expr": "120", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Count by 25s: 100, 125, 150. What number comes next?",
+        "prompt": "100, 125, 150, ?",
+        "why": "Each count adds 25. 150 plus 25 is 175.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 175,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "150 + 25", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Count by 25s: 100, 125, a missing number, then 175. What is the missing number? Is it 140, 150, 160, or 170?",
+        "prompt": "100, 125, ?, 175",
+        "why": "Each count adds 25. 125 plus 25 is 150.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 140,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 160,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 170,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 150,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "125 + 25", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Sam has some $50 bills. Count them by 50s. How many dollars are there?",
+        "prompt": "How many dollars?",
+        "why": "Count by 50s: 50, 100, 150. There are 3 bills, so $150.",
+        "visual": { "kind": "objects", "emoji": "💵", "count": 3, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 150,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count * 50", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Count by 20s from 0. Do you land on 90? Is it yes or no?",
+        "prompt": "Do you land on 90?",
+        "why": "Counting by 20s goes 80, 100. It skips 90, so the answer is no.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "90",
+          "choices": [
+            { "id": "a", "expr": "90 % 20 == 0" },
+            { "id": "b", "expr": "not (90 % 20 == 0)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Hop the frog by 25s from 0. Move the frog to 175.",
+        "prompt": "Hop to 175",
+        "why": "Hop by 25s: 25, 50, 75, 100, 125, 150, 175. Seven hops land on 175.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 25,
+        "target": 175,
+        "check": { "rule": "equals", "expr": "175", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Start at 40. Count by 50s: 40, 90, 140. What number comes next?",
+        "prompt": "40, 90, 140, ?",
+        "why": "Each count adds 50, even when you start at 40. 140 plus 50 is 190.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 190,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "140 + 50", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Count by 25s from 0. Which number do you land on? Is it 90, 125, 130, or 160?",
+        "prompt": "Which number do you land on?",
+        "why": "Counting by 25s goes 25, 50, 75, 100, 125. So you land on 125.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 90,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 130,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 160,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 125,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 * 25", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Ben has two $50 bills and two $20 bills. First count by 50s, then by 20s. How many dollars in all?",
+        "prompt": "How many dollars?",
+        "why": "Count 50, 100 for the $50 bills. Then count 120, 140 for the $20 bills. Ben has $140.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 140,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 * 50 + 2 * 20", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Start at 100 and hop by 20s. Move the frog to 160.",
+        "prompt": "Hop from 100 to 160",
+        "why": "Start at 100. Hop by 20s: 120, 140, 160. Three hops land on 160.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 100,
+        "max": 200,
+        "step": 20,
+        "target": 160,
+        "check": { "rule": "equals", "expr": "160", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

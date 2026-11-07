@@ -1,0 +1,439 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya works at the school fair. She sells tickets for the games. There are lots of tickets, so she counts them in big jumps.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🎟️", "count": null, "filled": null }
+      },
+      {
+        "narration": "First, Maya counts by 100s. Each jump adds one hundred. She counts 100, 200, 300, 400.",
+        "text": "100, 200, 300, 400",
+        "visual": null
+      },
+      {
+        "narration": "Next, she counts by 50s. Two jumps of 50 make 100. So she counts 50, 100, 150, 200.",
+        "text": "50, 100, 150, 200",
+        "visual": null
+      },
+      {
+        "narration": "Now she counts by 200s from zero. She counts 200, 400, 600, 800, 1000. Five jumps get her to one thousand.",
+        "text": "200, 400, 600, 800, 1000",
+        "visual": null
+      },
+      {
+        "narration": "Maya can start at any number. She starts at 221 and counts by 200s. She gets 221, 421, 621, 821. The ones and tens stay the same.",
+        "text": "221, 421, 621, 821",
+        "visual": null
+      },
+      {
+        "narration": "Now it is your turn. Count along with Maya. You can use the number line to help.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Maya counts by 100s: 100, 200, 300. What number comes next?",
+        "prompt": "100, 200, 300, ?",
+        "why": "Counting by 100s adds one hundred each time. 300 plus 100 is 400.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 400,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "400", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Count by 50s: 50, 100, 150. What number comes next? Is it 175, 200, 250, or 160?",
+        "prompt": "50, 100, 150, ?",
+        "why": "Each jump adds 50. 150 plus 50 is 200.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 175,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 200,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 250,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 160,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "200", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Count by 100s from zero. Move the frog to 700.",
+        "prompt": "Hop to 700",
+        "why": "Count the jumps of 100: 100, 200, 300, 400, 500, 600, 700.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 700,
+        "check": { "rule": "equals", "expr": "700", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Count by 200s: 200, 400, 600. What number comes next? Is it 700, 900, or 800?",
+        "prompt": "200, 400, 600, ?",
+        "why": "Each jump adds 200. 600 plus 200 is 800.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 700,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 900,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 800,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "800", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam counts by 1s: 398, 399. What number comes next?",
+        "prompt": "398, 399, ?",
+        "why": "Counting by 1s adds one each time. After 399 comes 400, the next hundred.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 400,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "400", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Count by 50s: 350, 400, 450. What number comes next?",
+        "prompt": "350, 400, 450, ?",
+        "why": "Each jump adds 50. 450 plus 50 is 500.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 500,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "500", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Count by 50s from zero. Move the frog to 350.",
+        "prompt": "Hop to 350",
+        "why": "Two jumps of 50 make 100. Three hundreds make 300, and one more 50 makes 350.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 50,
+        "target": 350,
+        "check": { "rule": "equals", "expr": "350", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Start at 100 and count by 200s: 100, 300, 500. What number comes next? Is it 700, 600, or 800?",
+        "prompt": "100, 300, 500, ?",
+        "why": "Each jump adds 200. 500 plus 200 is 700.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 700,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 600,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 800,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "700", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Start at 275 and count by 100s: 275, 375, 475. What number comes next?",
+        "prompt": "275, 375, 475, ?",
+        "why": "Counting by 100s changes only the hundreds digit. 475 becomes 575.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 575,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "575", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ravi counts by 50s from zero. Which number will he land on? Is it 740, 760, 775, or 750?",
+        "prompt": "Which is a count by 50s?",
+        "why": "Numbers in the count by 50s end in 00 or 50. Only 750 fits.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 740,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 760,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 775,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 750,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "740 % 50 == 0" },
+            { "id": "b", "expr": "760 % 50 == 0" },
+            { "id": "c", "expr": "775 % 50 == 0" },
+            { "id": "d", "expr": "750 % 50 == 0" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Start at 100. Count by 200s four times: 300, 500, 700, and then one more. Move the frog to where you land.",
+        "prompt": "Start at 100, hop by 200 four times",
+        "why": "From 100, the four jumps land on 300, 500, 700, and 900.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 100,
+        "target": 900,
+        "check": { "rule": "equals", "expr": "900", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Zoe counts by 200s: 221, 421, 621. What number comes next?",
+        "prompt": "221, 421, 621, ?",
+        "why": "Add 200 to 621. The hundreds digit goes up by 2, and the 21 stays. That makes 821.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 821,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "821", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Count by 100s: 586, 686, a missing number, 886. What is the missing number? Is it 776, 796, 786, or 886?",
+        "prompt": "586, 686, ?, 886",
+        "why": "Each jump adds 100. 686 plus 100 is 786, and 786 plus 100 is 886.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 776,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 796,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 786,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 886,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "786", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Leo has 350 points. He wins 4 rounds and gets 100 points each time. How many points does he have now?",
+        "prompt": "350 + 4 jumps of 100",
+        "why": "Count by 100s four times from 350: 450, 550, 650, 750.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 750,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "350 + 4 * 100", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Start at 450 and count by 50s four times. Move the frog to where you land.",
+        "prompt": "Start at 450, hop by 50 four times",
+        "why": "Count on from 450: 500, 550, 600, 650. Four jumps of 50 land on 650.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1000,
+        "step": 50,
+        "target": 650,
+        "check": { "rule": "equals", "expr": "650", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

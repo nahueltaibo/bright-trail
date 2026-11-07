@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Story cards 3 and 4 compare Mia's and Pip's groups, but each picture shows only one group (5 apples, then 3 apples). A child who can't read can't see the comparison on the picture, so the audio has to carry it. Consider showing both groups side by side on the comparison cards."
+      },
+      {
+        "target": "k-more-less-same-tap-3",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Narration describes two groups (Pip has 4, Mia has 4), but the picture shows only one row of 4 apples. Show two matching rows so the 'same' answer can be seen as well as heard."
+      },
+      {
+        "target": "k-more-less-same-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Narration and screen say Pip has 7 and Mia has 5, but the picture shows only Pip's 7 apples. Mia's group is not pictured, so the comparison cannot be checked from the picture. Add Mia's 5 apples."
+      },
+      {
+        "target": "k-more-less-same-tap-6",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Narration says 'Another has 10', but the picture shows only the ten-frame with 9 dots. The 10 comparison group is never drawn. Consider showing a second full ten-frame so the child can see that 9 is one short."
+      },
+      {
+        "target": "k-more-less-same-keypad-4",
+        "severity": "note",
+        "category": "other",
+        "note": "'How many more' as a difference (8 minus 5) is closer to Grade 1 work, and there is no picture to match cars one-to-one. It is a harder item than the Kindergarten 'more, less, same' focus. It is correct as marked (answer 3), so this is only a suggestion to consider moving it or adding a picture."
+      }
+    ],
+    "notes": "I checked every item's marked answer against its narration and explanation. All marked answers are correct: tap-1 (7 stars), tap-2 (3 dogs), keypad-1 (9), number-line-1 (5), tap-3 (same), tap-4 (9 hearts), tap-5 (more), keypad-2 (7), number-line-2 (6), keypad-3 (2), tap-6 (less), tap-7 (6 stars), keypad-4 (3), number-line-3 (9), number-line-4 (7). The explanations are accurate and no blockers were found. The notes concern picture coverage, where the audio describes two groups but the picture shows only one, plus one item that may be above Kindergarten level. The VERIFY items (tap-3, tap-5, tap-6) have correct marked answers, but their pictures do not show the full comparison."
+  }
+}

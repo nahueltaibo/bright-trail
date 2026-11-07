@@ -1,0 +1,493 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has a sticker sheet. It holds 10 stars. A full sheet is one ten.",
+        "text": "10 = 1 ten",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Mia gets 3 more stars. Now she has 13. That is 1 ten and 3 ones.",
+        "text": "13 = 1 ten 3 ones",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 13, "filled": null }
+      },
+      {
+        "narration": "Mia fills two sheets. Two tens make 20 stars. We say twenty.",
+        "text": "2 tens = 20",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 20, "filled": null }
+      },
+      {
+        "narration": "Now she adds 4 more. 2 tens and 4 ones is 24. We say twenty-four.",
+        "text": "24 = 2 tens 4 ones",
+        "visual": { "kind": "emoji", "emoji": "⭐", "count": null, "filled": null }
+      },
+      {
+        "narration": "Big tens have names too. 30 is thirty. 40 is forty. 50 is fifty.",
+        "text": "30 40 50",
+        "visual": null
+      },
+      {
+        "narration": "Mia lives at house number 35. That number is a label. It does not tell how many.",
+        "text": "35",
+        "visual": { "kind": "emoji", "emoji": "🏠", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now you can read numbers to 50. Let's practise!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🌟", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "How many dots are in the ten-frame? Is it 6, 7, or 8?",
+        "prompt": "How many dots?",
+        "why": "Count each dot one by one. There are 7 dots.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count the apples. How many are there? Type the number.",
+        "prompt": "How many apples?",
+        "why": "Count each apple one time. There are 12 apples.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 12, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 12,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to fifteen.",
+        "prompt": "Go to 15",
+        "why": "Count up from 0 to 15. Fifteen is five past ten.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 15,
+        "check": { "rule": "equals", "expr": "15", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number is twelve? Is it 21, 12, or 2?",
+        "prompt": "Find twelve",
+        "why": "Twelve is one ten and two ones. That is 12.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 21,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Type the number thirty.",
+        "prompt": "Type thirty",
+        "why": "Thirty is 3 tens and 0 ones. We type 30.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 30,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "30", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Mia has 3 tens and 5 ones. What number is that? Type it.",
+        "prompt": "3 tens 5 ones",
+        "why": "3 tens is 30. Add 5 ones to get 35.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 35,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 10 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "How many tens are in the number 42? Is it 2, 4, or 42?",
+        "prompt": "Tens in 42",
+        "why": "The first digit tells the tens. In 42, the 4 means 4 tens.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 42,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "floor(42 / 10)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to twenty-seven.",
+        "prompt": "Go to 27",
+        "why": "Start at 20. Count 7 more to reach 27.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 20,
+        "max": 50,
+        "step": 1,
+        "target": 27,
+        "check": { "rule": "equals", "expr": "27", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which number is forty-six? Is it 64, 36, 41, or 46?",
+        "prompt": "Find forty-six",
+        "why": "Forty is 4 tens. Six is 6 ones. So forty-six is 46.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 64,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 36,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 41,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 46,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "46", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Lena wears player number 24 on her shirt. Does 24 tell how many, or is it a name?",
+        "prompt": "How is 24 used?",
+        "why": "A player number is like a name for the player. It does not count anything.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "how many",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a name",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "1 == 1",
+          "choices": [
+            { "id": "a", "expr": "1 == 2" },
+            { "id": "b", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Type the number forty-eight.",
+        "prompt": "Type forty-eight",
+        "why": "Forty is 4 tens. Eight is 8 ones. Together that is 48.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 48,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "48", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A number has 2 tens and 7 ones. Is it 72, 27, or 29?",
+        "prompt": "2 tens 7 ones",
+        "why": "2 tens is 20. Add 7 ones to make 27.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 72,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 29,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 27,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 * 10 + 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to forty-three.",
+        "prompt": "Go to 43",
+        "why": "Start at 40, which is 4 tens. Count 3 more to reach 43.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 30,
+        "max": 50,
+        "step": 1,
+        "target": 43,
+        "check": { "rule": "equals", "expr": "43", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "The pizza shop is at house number 35. Does 35 tell how many, or is it a label?",
+        "prompt": "How is 35 used?",
+        "why": "A house number tells where a house is. It does not count things.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "how many",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a label",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "1 == 1",
+          "choices": [
+            { "id": "a", "expr": "1 == 2" },
+            { "id": "b", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is the same as thirty-nine? Is it 3 tens and 9 ones, or 9 tens and 3 ones?",
+        "prompt": "Thirty-nine is...",
+        "why": "Thirty-nine starts with thirty, so 3 tens. Then 9 ones. That is 39.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "9 tens and 3 ones",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3 tens and 9 ones",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "39 == 3 * 10 + 9",
+          "choices": [
+            { "id": "a", "expr": "39 == 9 * 10 + 3" },
+            { "id": "b", "expr": "39 == 3 * 10 + 9" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,472 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia cuts a pizza into 5 equal slices. Each slice is one fifth of the pizza. We write one fifth like this.",
+        "text": "1/5",
+        "visual": null
+      },
+      {
+        "narration": "The bottom number tells the size of the pieces. The 5 means fifths. The top number counts the pieces.",
+        "text": "bottom = size, top = count",
+        "visual": null
+      },
+      {
+        "narration": "Mia eats 2 slices. That is one fifth plus one fifth. Two slices make 2/5.",
+        "text": "1/5 + 1/5 = 2/5",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 2, "filled": null }
+      },
+      {
+        "narration": "Her friend eats 3 slices. That is one fifth added 3 times. Three slices make 3/5.",
+        "text": "1/5 + 1/5 + 1/5 = 3/5",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Here are 4 slices. Each slice is one fifth. Add one fifth four times and you get 4/5.",
+        "text": "4/5 = 1/5 added 4 times",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 4, "filled": null }
+      },
+      {
+        "narration": "So the top number is how many times you add the unit piece. In 4/5, you add one fifth four times.",
+        "text": null,
+        "visual": null
+      },
+      {
+        "narration": "Now you try. Count the pieces and watch the bottom number. Ready to practise?",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "The fraction 3/5 is one fifth added how many times? Is it 2, 3, 5, or 8?",
+        "prompt": "3/5 = 1/5 added ? times",
+        "why": "The top number counts the pieces. In 3/5 the top number is 3, so you add one fifth 3 times.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam eats one fourth of a sandwich, and then another one fourth. Which fraction is that in all? Is it 2/4, 1/8, 4/4, or 1/2 of 4?",
+        "prompt": "1/4 + 1/4 = ?",
+        "why": "Each piece is one fourth. Two pieces of one fourth make 2/4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "1/2 of 4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 0" },
+            { "id": "b", "expr": "1 == 0" },
+            { "id": "c", "expr": "1 == 1" },
+            { "id": "d", "expr": "1 == 0" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "In the fraction 3/8, what does the bottom number 8 tell us? Is it the size of the pieces, or how many pieces we have?",
+        "prompt": "What does the 8 tell us?",
+        "why": "The bottom number names the size of the piece. Here the pieces are eighths. The top number counts them.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "how many pieces we have",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the size of the pieces",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 0" },
+            { "id": "b", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ana adds one third, one third, one third, and one third. Which fraction is that? Is it 3/4, 4/3, 4/4, or 1/12?",
+        "prompt": "1/3 four times = ?",
+        "why": "The pieces are thirds, so the bottom number is 3. There are 4 pieces, so the top number is 4. The answer is 4/3.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/12",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "4/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 0" },
+            { "id": "b", "expr": "1 == 0" },
+            { "id": "c", "expr": "1 == 0" },
+            { "id": "d", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Leo adds one eighth five times. Which fraction does he have? Is it 8/5, 5/8, 5/5, or 1/40?",
+        "prompt": "1/8 added 5 times = ?",
+        "why": "Each piece is one eighth, so the bottom number stays 8. He adds 5 pieces, so the top number is 5. That is 5/8.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "5/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "8/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "1/40",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 1" },
+            { "id": "b", "expr": "1 == 0" },
+            { "id": "c", "expr": "1 == 0" },
+            { "id": "d", "expr": "1 == 0" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Each slice is one fifth of a pizza. Ted eats all the slices you see. How many slices is that? Type the top number of his fraction.",
+        "prompt": "Top number of ?/5",
+        "why": "Count the slices. There are 3, so Ted ate 3/5. The top number is 3.",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 3, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Dan eats one sixth of a pie, four times. He ate ? over 6. What is the top number?",
+        "prompt": "1/6 four times = ?/6",
+        "why": "The top number counts how many pieces were added. Dan added 4 pieces, so he ate 4/6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Zoe adds one tenth six times. She gets 6 over what number? Type the bottom number.",
+        "prompt": "1/10 six times = 6/?",
+        "why": "The bottom number is the size of the piece. The piece is one tenth, so the bottom number is 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Raj adds one fifth 4 times. Then he adds one fifth 3 more times. How many fifths does he have in all?",
+        "prompt": "4 fifths + 3 fifths = ? fifths",
+        "why": "Count all the pieces. 4 and 3 more make 7. So Raj has 7 fifths, or 7/5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Jo ate 3/6 of a pan of brownies. Then she ate one sixth two more times. What is the top number of her fraction now?",
+        "prompt": "3/6 + 1/6 + 1/6 = ?/6",
+        "why": "Start with 3 sixths. Add 2 more pieces to get 5 sixths. The top number is 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "The fraction 3/5 is one fifth added how many times? Move the frog to that number.",
+        "prompt": "3/5 = 1/5 added ? times",
+        "why": "The top number counts the pieces. In 3/5 the top number is 3, so the frog goes to 3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "The fraction 6/8 is one eighth added how many times? Move the frog to that number.",
+        "prompt": "6/8 = 1/8 added ? times",
+        "why": "The top number is 6. That tells us we add one eighth 6 times.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Sam scoops one fourth of a cup, 9 times. That is 9 fourths. How many scoops did he add? Move the frog to that number.",
+        "prompt": "9/4 = 1/4 added ? times",
+        "why": "Each scoop is one fourth. The top number 9 counts the scoops, so he added 9 scoops.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "9", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Kim adds one third again and again, until she has 7/3. How many times did she add one third? Move the frog to that number.",
+        "prompt": "7/3 = 1/3 added ? times",
+        "why": "The bottom number 3 is the piece size. The top number 7 is how many pieces she added. She added 7 times.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The fraction 11/12 is one twelfth added how many times? Move the frog to that number.",
+        "prompt": "11/12 = 1/12 added ? times",
+        "why": "Twelfths are the piece size. The top number 11 counts the pieces, so we add one twelfth 11 times.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 15,
+        "step": 1,
+        "target": 11,
+        "check": { "rule": "equals", "expr": "11", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

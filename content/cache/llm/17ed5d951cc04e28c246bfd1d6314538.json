@@ -1,0 +1,505 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam brings 12 cookies to soccer practice. He wants to share them fairly with 3 friends and himself. That is 4 players.",
+        "text": "12 cookies, 4 players",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Fair means everyone gets the same. Give one cookie to each player, again and again. Each player gets 3 cookies.",
+        "text": "12 ÷ 4 = 3",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Next day, Sam has 7 cookies for 2 players. Each player gets 3 cookies. There is 1 cookie left over.",
+        "text": "7 ÷ 2",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 7, "filled": null }
+      },
+      {
+        "narration": "Sam cuts the last cookie into 2 equal pieces. Each piece is one half. Each player gets 3 cookies and one half.",
+        "text": "7 ÷ 2 = 3 1/2",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 1, "filled": null }
+      },
+      {
+        "narration": "Then Sam has 14 cookies for 3 players. Each gets 4 cookies. That uses 12. Two cookies are left.",
+        "text": "14 ÷ 3",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 14, "filled": null }
+      },
+      {
+        "narration": "Sam cuts each leftover cookie into 3 equal pieces. Each piece is one third. That makes 6 pieces. Each player gets 2 pieces.",
+        "text": "14 ÷ 3 = 4 2/3",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 2, "filled": null }
+      },
+      {
+        "narration": "Remember, more players means a smaller share for each. Now you can practise fair shares.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Ten cookies are shared fairly by 2 friends. How many cookies does each friend get? Is it 4, 5, or 6?",
+        "prompt": "10 ÷ 2 = ?",
+        "why": "Split the 10 cookies into 2 equal groups. Each group has 5 cookies, so each friend gets 5.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 10, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Twelve apples are shared fairly by 3 friends. How many apples does each friend get?",
+        "prompt": "12 ÷ 3 = ?",
+        "why": "Give out the apples one at a time to 3 friends. Each friend ends up with 4 apples.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 12, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12/3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Eighteen stickers are shared fairly by 3 friends. Move the frog to how many stickers each friend gets.",
+        "prompt": "18 ÷ 3 = ?",
+        "why": "Make 3 equal groups from 18 stickers. Each group has 6 stickers, so the frog goes to 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "18/3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Twenty grapes are shared fairly by 10 friends. How many grapes does each friend get? Is it 2, 5, or 10?",
+        "prompt": "20 ÷ 10 = ?",
+        "why": "With 10 friends, each friend gets 1 grape, then 1 more. That is 2 grapes for each friend.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sixteen pencils are shared fairly by 8 kids. How many pencils does each kid get?",
+        "prompt": "16 ÷ 8 = ?",
+        "why": "Share 16 pencils among 8 kids. Each kid gets 2 pencils.",
+        "visual": { "kind": "objects", "emoji": "✏️", "count": 16, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "16/8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Nine muffins are shared fairly by 2 friends. How much does each friend get? Is it 4, 4 1/2, or 5?",
+        "prompt": "9 ÷ 2 = ?",
+        "why": "Each friend gets 4 muffins. One muffin is left. Cut it in 2 equal pieces, so each friend gets 4 and one half.",
+        "visual": { "kind": "objects", "emoji": "🧁", "count": 9, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4 1/2",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "9/2",
+          "choices": [
+            { "id": "a", "expr": "4" },
+            { "id": "b", "expr": "5" },
+            { "id": "c", "expr": "4.5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Fifteen orange slices are shared fairly by 6 players. Type how many each player gets, as a decimal.",
+        "prompt": "15 ÷ 6 = ?",
+        "why": "Each player gets 2 slices. That uses 12. Three are left. Three shared by 6 is one half each. So the answer is 2.5.",
+        "visual": { "kind": "objects", "emoji": "🍊", "count": 15, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2.5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15/6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Nine bananas are shared fairly by 6 monkeys. Move the frog to how many bananas each monkey gets.",
+        "prompt": "9 ÷ 6 = ?",
+        "why": "Each monkey gets 1 banana. Three are left, and 3 shared by 6 is one half each. So each gets 1 and one half.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 4,
+        "step": 0.5,
+        "target": 1.5,
+        "check": { "rule": "equals", "expr": "9/6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ten pancakes are shared fairly by 3 friends. How much does each friend get? Is it 3, 3 1/3, or 3 2/3?",
+        "prompt": "10 ÷ 3 = ?",
+        "why": "Each friend gets 3 pancakes. One is left. Cut it into 3 equal pieces, so each friend gets one third more.",
+        "visual": { "kind": "objects", "emoji": "🥞", "count": 10, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3 2/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "3 1/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "10/3",
+          "choices": [
+            { "id": "a", "expr": "3+2/3" },
+            { "id": "b", "expr": "3" },
+            { "id": "c", "expr": "3+1/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Twenty strawberries are shared fairly by 8 friends. Type how many each friend gets, as a decimal.",
+        "prompt": "20 ÷ 8 = ?",
+        "why": "Each friend gets 2 strawberries. That uses 16. Four are left. Four shared by 8 is one half each. So the answer is 2.5.",
+        "visual": { "kind": "objects", "emoji": "🍓", "count": 20, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2.5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "20/8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Fourteen granola bars are shared fairly by 6 hikers. How much does each hiker get? Is it 2 1/3, 2 1/2, or 2 2/3?",
+        "prompt": "14 ÷ 6 = ?",
+        "why": "Each hiker gets 2 bars. That uses 12. Two are left. Cut each into 3 pieces. That is 6 pieces, so each hiker gets one third.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2 1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2 2/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2 1/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "14/6",
+          "choices": [
+            { "id": "a", "expr": "2.5" },
+            { "id": "b", "expr": "2+2/3" },
+            { "id": "c", "expr": "2+1/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Twelve cookies can be shared fairly by 3 friends, by 4 friends, or by 6 friends. Which group gives each friend the most cookies? Is it 6 friends, 4 friends, or 3 friends?",
+        "prompt": "Who gets the most?",
+        "why": "Fewer friends means bigger shares. Sharing 12 by 3 gives 4 each. By 4 gives 3 each. By 6 gives 2 each.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 12, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "6 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "3 friends",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "12/3",
+          "choices": [
+            { "id": "a", "expr": "12/6" },
+            { "id": "b", "expr": "12/4" },
+            { "id": "c", "expr": "12/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Eighteen cards are shared fairly by 4 players. Move the frog to how many cards each player gets.",
+        "prompt": "18 ÷ 4 = ?",
+        "why": "Each player gets 4 cards. That uses 16. Two are left. Two shared by 4 is one half each. So each gets 4 and one half.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 6,
+        "step": 0.5,
+        "target": 4.5,
+        "check": { "rule": "equals", "expr": "18/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Some stickers are shared fairly by 5 friends. Each friend gets 3 stickers. How many stickers were shared in all?",
+        "prompt": "? ÷ 5 = 3",
+        "why": "There are 5 friends and each got 3 stickers. Add 3 five times, or multiply 5 × 3. That makes 15 stickers.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5*3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Four sandwiches are shared fairly by 8 friends. How much does each friend get? Is it 1/2, 1, or 2?",
+        "prompt": "4 ÷ 8 = ?",
+        "why": "There are more friends than sandwiches. Cut each sandwich in 2 equal pieces to make 8 pieces. Each friend gets one half.",
+        "visual": { "kind": "objects", "emoji": "🥪", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "4/8",
+          "choices": [
+            { "id": "a", "expr": "2" },
+            { "id": "b", "expr": "1/2" },
+            { "id": "c", "expr": "1" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

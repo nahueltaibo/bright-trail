@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "k-count-forward-back-keypad-2",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration says \"What number comes next?\" for a count-down item. By ear, \"next\" suggests 6, which is the number after 5 when counting up. The answer is 4 (the number before 5). Consider \"What number comes before 5 when we count down?\" or \"Count down from 5. What number is one less?\""
+      },
+      {
+        "target": "k-count-forward-back-keypad-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The picture shows the starting 5 blocks, and the narration says Pip takes 2 away. The picture does not show the removal, so it matches the start of the story but not the action. This is minor, but the narration could say the blocks are shown before Pip takes 2 away."
+      }
+    ],
+    "notes": "I checked every item's marked answer against its narration, screen, and why text. All are correct: tap-1 (bigger), keypad-1 (7), number-line-1 (5), tap-2 (smaller), keypad-2 (4), number-line-2 (7), tap-3 (counting down), keypad-3 (10), tap-4 (6), number-line-3 (7), keypad-4 (7), tap-5 (more), number-line-4 (6), keypad-5 (3), and tap-6 (counting up). Each tap item has exactly one correct choice. The story cards are accurate and match their screen and picture text. No blockers were found. The two notes above are wording and picture-matching suggestions, not errors."
+  }
+}

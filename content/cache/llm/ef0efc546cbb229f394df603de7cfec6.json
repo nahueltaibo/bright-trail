@@ -1,0 +1,454 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia picks 12 apples. Look at her big pile.",
+        "text": "12",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Sam picks 8 apples. Mia has more. 12 is greater than 8. 8 is less than 12.",
+        "text": "12 is greater than 8",
+        "visual": { "kind": "objects", "emoji": "🍏", "count": 8, "filled": null }
+      },
+      {
+        "narration": "Big numbers have more tens. 34 has 3 tens. 28 has 2 tens. So 34 is greater than 28.",
+        "text": "34 is greater than 28",
+        "visual": { "kind": "emoji", "emoji": "🧺", "count": null, "filled": null }
+      },
+      {
+        "narration": "Sometimes the tens match. Look at 41 and 45. Both have 4 tens. 45 has more ones. So 45 is greater.",
+        "text": "45 is greater than 41",
+        "visual": { "kind": "emoji", "emoji": "🍐", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now we put numbers in order. Least to greatest means small first. Mia lines up 9, 17, 25, and 40.",
+        "text": "9, 17, 25, 40",
+        "visual": { "kind": "emoji", "emoji": "👧", "count": null, "filled": null }
+      },
+      {
+        "narration": "Greatest to least means big first. Now the line goes 40, 25, 17, and 9.",
+        "text": "40, 25, 17, 9",
+        "visual": { "kind": "emoji", "emoji": "👦", "count": null, "filled": null }
+      },
+      {
+        "narration": "You can compare and order numbers now. Let's practise with Mia and Sam!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number is greater, 7 or 12?",
+        "prompt": "Which is greater?",
+        "why": "12 has a ten and 7 does not. So 12 is greater than 7.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "max(7, 12)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number is less, 15 or 9?",
+        "prompt": "Which is less?",
+        "why": "9 is only ones. 15 has a ten. So 9 is less than 15.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "least", "expr": "min(15, 9)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Type the greater number, 6 or 11.",
+        "prompt": "6 or 11: greater?",
+        "why": "11 comes after 6 when we count. Numbers later in counting are greater. So 11 is greater.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 11,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "max(6, 11)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the greater number, 5 or 13.",
+        "prompt": "Greater: 5 or 13",
+        "why": "13 is farther along the line than 5. The number farther along is greater.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 13,
+        "check": { "rule": "equals", "expr": "max(5, 13)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which has more, 6 apples or 11 apples?",
+        "prompt": "Which has more?",
+        "why": "Count each pile. 11 is greater than 6. So 11 apples has more.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "🍎", "count": 11, "filled": null },
+            "narration": "11 apples"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "objects", "emoji": "🍎", "count": 6, "filled": null },
+            "narration": "6 apples"
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "11",
+          "choices": [
+            { "id": "a", "expr": "11" },
+            { "id": "b", "expr": "6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which number is greater, 34 or 28?",
+        "prompt": "Which is greater?",
+        "why": "34 has 3 tens. 28 has 2 tens. More tens means greater, so 34.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 28,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 34,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "max(34, 28)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Type the number that is less, 41 or 36.",
+        "prompt": "Less: 41 or 36",
+        "why": "36 has 3 tens. 41 has 4 tens. Fewer tens means less, so 36.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 36,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "min(41, 36)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the least number, 44, 31, or 38.",
+        "prompt": "Least: 44, 31, 38",
+        "why": "Look at the tens. 31 has the fewest tens. So 31 is the least.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 20,
+        "max": 50,
+        "step": 1,
+        "target": 31,
+        "check": { "rule": "equals", "expr": "min(44, 31, 38)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam has 23 stickers. Mia has 32 stickers. Who has fewer? Is it 23 or 32?",
+        "prompt": "Which is less?",
+        "why": "23 has 2 tens. 32 has 3 tens. So 23 is less.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 32,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 23,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "least", "expr": "min(23, 32)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Put 25, 14, and 38 in order from least to greatest. Which number comes first?",
+        "prompt": "Least to greatest: first?",
+        "why": "Least to greatest starts with the smallest. 14 has just 1 ten. So 14 is first.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 25,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 38,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 14,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "least", "expr": "min(25, 14, 38)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Put 18, 42, and 27 in order from greatest to least. Type the number in the middle.",
+        "prompt": "Greatest to least: middle?",
+        "why": "The order is 42, 27, 18. The number in the middle is 27.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 27,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "27", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number is greater, 38 or 41?",
+        "prompt": "Which is greater?",
+        "why": "Look at the tens first. 41 has 4 tens and 38 has 3 tens. So 41 is greater.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 38,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 41,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "max(38, 41)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the number between 38 and 40.",
+        "prompt": "Between 38 and 40",
+        "why": "Count up from 38. The next number is 39. It is before 40.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 30,
+        "max": 50,
+        "step": 1,
+        "target": 39,
+        "check": { "rule": "equals", "expr": "39", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Three kids have 26, 19, and 33 cards. Type the fewest number of cards.",
+        "prompt": "Fewest: 26, 19, 33",
+        "why": "19 has just 1 ten. 26 and 33 have more tens. So 19 is the least.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 19,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "min(26, 19, 33)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which line is in order from greatest to least? Is it 9, 25, 40, or 40, 25, 9, or 25, 40, 9?",
+        "prompt": "Greatest to least",
+        "why": "Greatest to least starts with the biggest. 40 is first, then 25, then 9.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "9, 25, 40",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "25, 40, 9",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "40, 25, 9",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "9 > 25 and 25 > 40" },
+            { "id": "b", "expr": "25 > 40 and 40 > 9" },
+            { "id": "c", "expr": "40 > 25 and 25 > 9" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

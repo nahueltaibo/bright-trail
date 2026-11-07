@@ -1,0 +1,505 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She has 6 cookies. Let's see if she can share them in pairs.",
+        "text": "6 cookies",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 6, "filled": null }
+      },
+      {
+        "narration": "Mia makes pairs. 2 and 2 and 2. Every cookie has a partner. Nothing is left over.",
+        "text": "2 + 2 + 2 = 6",
+        "visual": null
+      },
+      {
+        "narration": "When there is nothing left over, the number is even. 6 is an even number.",
+        "text": "6 is even",
+        "visual": null
+      },
+      {
+        "narration": "Now Mia has 7 cookies. She makes pairs again.",
+        "text": "7 cookies",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 7, "filled": null }
+      },
+      {
+        "narration": "2 and 2 and 2. One cookie is left over with no partner. When one is left over, the number is odd.",
+        "text": "7 is odd",
+        "visual": null
+      },
+      {
+        "narration": "Big numbers are easy too. Look at the last digit. If it is 0, 2, 4, 6, or 8, the number is even. 24 is even.",
+        "text": "24 is even",
+        "visual": null
+      },
+      {
+        "narration": "Even means pairs with none left. Odd means one is left over. Now let's practise with Mia!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here are 8 apples. Is 8 even or odd?",
+        "prompt": "Is 8 even or odd?",
+        "why": "Put the 8 apples in pairs. 2, 4, 6, 8. Nothing is left over, so 8 is even.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 8, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "even",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "odd",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "isEven(8)" },
+            { "id": "b", "expr": "isOdd(8)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here are 5 stars. Is 5 even or odd?",
+        "prompt": "Is 5 even or odd?",
+        "why": "Make pairs of stars. 2 and 2 make 4. One star is left over, so 5 is odd.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 5, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "even",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "odd",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "isEven(5)" },
+            { "id": "b", "expr": "isOdd(5)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Mia has 3 pairs of shoes. Each pair has 2 shoes. How many shoes in all?",
+        "prompt": "3 pairs of 2 = ?",
+        "why": "Count by twos. 2, 4, 6. There are 6 shoes.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "The frog hops by twos. It lands on 2, then 4, then 6. Move the frog to where it lands next.",
+        "prompt": "2, 4, 6, ?",
+        "why": "Hopping by twos, add 2 to 6. That makes 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which number is even? Is it 3, 4, or 7?",
+        "prompt": "Which is even?",
+        "why": "An even number makes pairs with none left over. 4 is 2 and 2, so 4 is even.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "isEven(3)" },
+            { "id": "b", "expr": "isEven(7)" },
+            { "id": "c", "expr": "isEven(4)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Is 13 even or odd?",
+        "prompt": "Is 13 even or odd?",
+        "why": "13 is 6 pairs and 1 left over. One left over means 13 is odd.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "odd",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "even",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "isOdd(13)" },
+            { "id": "b", "expr": "isEven(13)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Ben has 9 cookies. He makes pairs. How many cookies are left over?",
+        "prompt": "Left over = ?",
+        "why": "9 makes 4 pairs. That is 8 cookies. 1 cookie is left over.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 9, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 % 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the odd number that comes right after 12.",
+        "prompt": "Odd number after 12",
+        "why": "After 12 comes 13. 13 has one left over, so it is odd.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "target": 13,
+        "check": { "rule": "equals", "expr": "13", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which number is odd? Is it 10, 16, 15, or 12?",
+        "prompt": "Which is odd?",
+        "why": "Odd numbers have one left over. 15 is 7 pairs and 1 more, so 15 is odd.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 16,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "isOdd(10)" },
+            { "id": "b", "expr": "isOdd(16)" },
+            { "id": "c", "expr": "isOdd(12)" },
+            { "id": "d", "expr": "isOdd(15)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Count by twos. What even number comes right after 18?",
+        "prompt": "Even number after 18",
+        "why": "19 is odd. The next even number is 2 more than 18. That is 20.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 20,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "18 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Look at the last digit. Is 46 even or odd?",
+        "prompt": "Is 46 even or odd?",
+        "why": "The last digit is 6. 6 is even, so 46 is even.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "odd",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "even",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "isOdd(46)" },
+            { "id": "b", "expr": "isEven(46)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number is odd? Is it 38, 52, 77, or 90?",
+        "prompt": "Which is odd?",
+        "why": "Check the last digit. 8, 2, and 0 are even. 7 is odd, so 77 is odd.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 38,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 52,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 77,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 90,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "isOdd(38)" },
+            { "id": "b", "expr": "isOdd(52)" },
+            { "id": "c", "expr": "isOdd(77)" },
+            { "id": "d", "expr": "isOdd(90)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Use the digits 5 and 8, once each. Make an even number. Type it.",
+        "prompt": "Make an even number",
+        "why": "An even number ends in an even digit. Put 8 last. The number is 58.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 58,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "58", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The frog is on 36. Move it to the next odd number.",
+        "prompt": "Next odd after 36",
+        "why": "36 is even. The next number, 37, ends in 7. So 37 is odd.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 30,
+        "max": 40,
+        "step": 1,
+        "target": 37,
+        "check": { "rule": "equals", "expr": "37", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A number is odd. It is between 48 and 50. What is the number?",
+        "prompt": "Odd, between 48 and 50",
+        "why": "The number between 48 and 50 is 49. It ends in 9, so it is odd.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 49,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "49", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

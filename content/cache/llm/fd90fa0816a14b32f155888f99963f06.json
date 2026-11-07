@@ -1,0 +1,495 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has 5 apples. 3 are red and 2 are green.",
+        "text": "3 + 2 = 5",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Swap the numbers. 2 + 3 is also 5. Adding in any order gives the same answer.",
+        "text": "3 + 2 = 2 + 3",
+        "visual": null
+      },
+      {
+        "narration": "Mia has 4 apples. She adds 0 more. Zero changes nothing. She still has 4.",
+        "text": "4 + 0 = 4",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Now Mia has 9 apples. She gives away 4. Now 5 are left.",
+        "text": "9 - 4 = 5",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Let's check. Add the 4 back to the 5. We get 9 again. It matches!",
+        "text": "5 + 4 = 9",
+        "visual": null
+      },
+      {
+        "narration": "Frog hops 2, then 2, then 2. That is three equal jumps. It lands on 6.",
+        "text": "2 + 2 + 2 = 6",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now you try. Use order, zero, checking, and equal jumps!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "You know 5 + 3 = 8. What is 3 + 5? Is it 5, 3, 8, or 9?",
+        "prompt": "3 + 5 = ?",
+        "why": "Adding in any order gives the same answer. 5 + 3 and 3 + 5 are both 8.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 6 + 0?",
+        "prompt": "6 + 0 = ?",
+        "why": "Adding zero changes nothing. 6 plus 0 is still 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 + 0", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the answer of 4 + 3.",
+        "prompt": "4 + 3 = ?",
+        "why": "Start at 4 and hop 3 more. 4, 5, 6, 7. The answer is 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "4 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Frog hops 2, then 2, then 2. How far did it go in all? Is it 6, 5, 4, or 8?",
+        "prompt": "2 + 2 + 2 = ?",
+        "why": "Add the equal jumps. 2 and 2 is 4. Then 4 and 2 is 6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 2 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What is 8 - 0?",
+        "prompt": "8 - 0 = ?",
+        "why": "Taking away zero changes nothing. 8 take away 0 is still 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 - 0", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Is 8 + 6 the same as 6 + 8? Yes or no?",
+        "prompt": "8 + 6 and 6 + 8",
+        "why": "Adding in any order gives the same answer. Both 8 + 6 and 6 + 8 make 14.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "8 + 6 == 6 + 8",
+          "choices": [
+            { "id": "a", "expr": "not (8 + 6 == 6 + 8)" },
+            { "id": "b", "expr": "8 + 6 == 6 + 8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "You know 12 - 5 = 7. Add to check. What is 7 + 5?",
+        "prompt": "7 + 5 = ?",
+        "why": "Adding back what you took away gets you to the start. 7 + 5 is 12.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 12,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the answer of 15 - 0.",
+        "prompt": "15 - 0 = ?",
+        "why": "Taking away zero changes nothing. So 15 - 0 is 15.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 15,
+        "check": { "rule": "equals", "expr": "15 - 0", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "We know 14 - 6 = 8. Which sentence checks it? Is it 8 + 8 = 16? Is it 14 + 6 = 20? Is it 6 + 6 = 12? Or is it 8 + 6 = 14?",
+        "prompt": "Check 14 - 6 = 8",
+        "why": "To check, add the answer to the part you took away. 8 + 6 makes 14.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "8 + 8 = 16",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "14 + 6 = 20",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "6 + 6 = 12",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "8 + 6 = 14",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "8 + 6 == 14",
+          "choices": [
+            { "id": "a", "expr": "8 + 8 == 14" },
+            { "id": "b", "expr": "14 + 6 == 14" },
+            { "id": "c", "expr": "6 + 6 == 14" },
+            { "id": "d", "expr": "8 + 6 == 14" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Sam hops 5, then 5, then 5. How far did he go in all?",
+        "prompt": "5 + 5 + 5 = ?",
+        "why": "Add the equal jumps. 5 and 5 is 10. Then 10 and 5 is 15.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 + 5 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Ben gave away 8 stickers. He has 9 left. How many did he have at the start?",
+        "prompt": "? - 8 = 9",
+        "why": "Add the stickers back to check. 9 left plus 8 given away is 17.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 17,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 + 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia adds 6 + 9 + 4. What is the total? Is it 18, 19, 20, or 21?",
+        "prompt": "6 + 9 + 4 = ?",
+        "why": "Add in any order. Make a ten first: 6 + 4 is 10. Then 10 + 9 is 19.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 18,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 19,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 21,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 + 9 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Frog starts at 0 and jumps by 5, four times. Move the frog to where it lands.",
+        "prompt": "4 jumps of 5",
+        "why": "Count the jumps: 5, 10, 15, 20. Four jumps of 5 land on 20.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 30,
+        "step": 5,
+        "target": 20,
+        "check": { "rule": "equals", "expr": "5 + 5 + 5 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "What is the same as 4 + 4 + 4? Is it 3 jumps of 3? Is it 4 jumps of 4? Is it 2 jumps of 4? Or is it 3 jumps of 4?",
+        "prompt": "4 + 4 + 4",
+        "why": "4 + 4 + 4 has three equal groups of 4. That is 3 jumps of 4, which makes 12.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3 jumps of 3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4 jumps of 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2 jumps of 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "3 jumps of 4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "4 + 4 + 4",
+          "choices": [
+            { "id": "a", "expr": "9" },
+            { "id": "b", "expr": "16" },
+            { "id": "c", "expr": "8" },
+            { "id": "d", "expr": "12" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Lia thinks 25 - 9 = 16. Add to check it. What is 16 + 9?",
+        "prompt": "16 + 9 = ?",
+        "why": "Add the answer to the part taken away. 16 + 9 is 25, so Lia is right.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 25,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "16 + 9", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

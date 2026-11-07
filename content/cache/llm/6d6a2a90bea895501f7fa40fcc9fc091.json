@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 5 says 'Now Mia has 20 apples' but step 4 ended with 13 and nothing explains the jump to 20. A listening child may be lost. Add a short line such as 'Mia's mom gives her 7 more apples' before the 20."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 4 says 'Mia has 4 more', which could be heard as Mia having 4 more apples in total. Say 'Mia has 4 more apples than Sam' to be clear by ear."
+      },
+      {
+        "target": "tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Narration asks 'How many are left?' but the choices are equations (9 + 4 = 13 and 9 - 4 = 5), not numbers. The marked answer is correct, since 9 - 4 = 5 is the right equation. Consider asking 'Which equation shows how many are left?' so the question matches the choices."
+      },
+      {
+        "target": "number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The line has steps of 5, so each hop is 5. The 'Why' text says 'Hop 10 to get to 40, then hop 5 more', which describes two hops of 5 and then one more. That could confuse a child counting hops. Consider rewording it as 'Hop 2 times to get to 40, then hop 1 more time to 45'."
+      }
+    ],
+    "notes": "I checked every item's arithmetic and marked answer, and all are correct: tap-1 to tap-4, keypad-1 to keypad-5, number-line-1 to number-line-5, and the story equations (12+5=17, 17-4=13, 13-9=4, 20-8=12). Each \"Why\" explanation is also correct. No blockers. The remaining notes are about clarity by ear. Across the content, the minus sign is written as \"-\" on screen. Device text-to-speech may read it as \"dash\", so the narration should always say \"minus\" and the screen text should be checked on device. Tap-5 is the VERIFY item: I confirmed 9 - 4 = 5 is the right choice and that 9 + 4 = 13 is not."
+  }
+}

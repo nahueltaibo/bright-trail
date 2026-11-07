@@ -1,0 +1,487 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has a big jar of buttons. There are so many! Counting them one by one would take a long time.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🔘", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia has a clever plan. She counts a small bunch first. Here is a bunch of 10 buttons.",
+        "text": "1 bunch = 10",
+        "visual": { "kind": "objects", "emoji": "🔘", "count": 10, "filled": null }
+      },
+      {
+        "narration": "The jar looks like 5 bunches. Mia counts by 10s. 10, 20, 30, 40, 50.",
+        "text": "10, 20, 30, 40, 50",
+        "visual": null
+      },
+      {
+        "narration": "Now Mia picks a friendly number. Is 50 close to the jar? Is 100? Is 200? She picks the closest one.",
+        "text": "50 or 100 or 200?",
+        "visual": null
+      },
+      {
+        "narration": "If the jar looked like 9 bunches of 10, that is about 90. That is closer to 100.",
+        "text": "90 is closer to 100",
+        "visual": null
+      },
+      {
+        "narration": "Bigger bunches mean fewer counts. Bunches of 20 or 50 are quick. Mia counts 50, 100, 150, 200.",
+        "text": "50, 100, 150, 200",
+        "visual": null
+      },
+      {
+        "narration": "An estimate is a smart guess. Then Mia counts to check. Now you can practise!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🔘", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has 5 bags with 10 marbles in each bag. Is the total closer to 50 or closer to 100?",
+        "prompt": "Closer to 50 or 100?",
+        "why": "Count by 10s: 10, 20, 30, 40, 50. The total is 50, so it is closer to 50.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 50",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 100",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "5 * 10",
+          "choices": [
+            { "id": "a", "expr": "50" },
+            { "id": "b", "expr": "100" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A tray has 9 rows of 10 cookies. Is the total closer to 50 or closer to 100?",
+        "prompt": "Closer to 50 or 100?",
+        "why": "9 rows of 10 is about 90. That is much closer to 100 than to 50.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 50",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 100",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "9 * 10",
+          "choices": [
+            { "id": "a", "expr": "50" },
+            { "id": "b", "expr": "100" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here is one small bunch of stars. Count them. How many stars are there?",
+        "prompt": "How many stars?",
+        "why": "Touch each star once and count up. There are 10 stars.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 10, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 100. The line counts by 50s.",
+        "prompt": "Go to 100",
+        "why": "Count by 50s from 0: 50, then 100. The frog jumps two times.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 50,
+        "target": 100,
+        "check": { "rule": "equals", "expr": "100", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Mia has 5 bags with 10 beads in each bag. Count by 10s. How many beads in all?",
+        "prompt": "5 × 10 = ?",
+        "why": "Count by 10s: 10, 20, 30, 40, 50. There are 50 beads.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 50,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 * 10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam has 3 bags with 20 stickers in each bag. Is the total closer to 50, closer to 100, or closer to 200?",
+        "prompt": "Closer to 50, 100, or 200?",
+        "why": "Count by 20s: 20, 40, 60. The total is 60, which is closest to 50.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 100",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 200",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 50",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "3 * 20",
+          "choices": [
+            { "id": "a", "expr": "100" },
+            { "id": "b", "expr": "200" },
+            { "id": "c", "expr": "50" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A box has 4 bags with 50 beans in each bag. Is the total closer to 50, closer to 100, or closer to 200?",
+        "prompt": "Closer to 50, 100, or 200?",
+        "why": "Count by 50s: 50, 100, 150, 200. The total is 200.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 50",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 100",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 200",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "4 * 50",
+          "choices": [
+            { "id": "a", "expr": "50" },
+            { "id": "b", "expr": "100" },
+            { "id": "c", "expr": "200" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Mia counts 6 bags with 20 buttons in each bag. How many buttons are there to check?",
+        "prompt": "6 × 20 = ?",
+        "why": "Count by 20s: 20, 40, 60, 80, 100, 120. There are 120 buttons.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 120,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 * 20", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Leo has 7 bags with 20 shells in each bag. Move the frog to the total. The line counts by 20s.",
+        "prompt": "7 bags of 20",
+        "why": "Count by 20s seven times: 20, 40, 60, 80, 100, 120, 140. The total is 140.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 20,
+        "target": 140,
+        "check": { "rule": "equals", "expr": "7 * 20", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ana has 2 bags with 50 pennies in each bag, and 5 more pennies. Is the total closer to 100 or closer to 200?",
+        "prompt": "Closer to 100 or 200?",
+        "why": "2 bags of 50 is 100. Add 5 more to get 105. That is closer to 100.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 200",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 100",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "2 * 50 + 5",
+          "choices": [
+            { "id": "a", "expr": "200" },
+            { "id": "b", "expr": "100" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Tom has 3 bags of 50 cubes. He has 3 bags of 10 cubes too. Is the total closer to 100 or closer to 200?",
+        "prompt": "Closer to 100 or 200?",
+        "why": "3 bags of 50 is 150. Then 3 bags of 10 is 30 more. That makes 180, which is closer to 200.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 100",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 200",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "3 * 50 + 3 * 10",
+          "choices": [
+            { "id": "a", "expr": "100" },
+            { "id": "b", "expr": "200" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Mia counts 7 bags with 25 buttons in each bag. Count by 25s. How many buttons are there?",
+        "prompt": "7 × 25 = ?",
+        "why": "Count by 25s: 25, 50, 75, 100, 125, 150, 175. There are 175 buttons.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 175,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 * 25", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Rosa has 6 bags with 25 beads in each bag. Move the frog to the total. The line counts by 25s.",
+        "prompt": "6 bags of 25",
+        "why": "Count by 25s six times: 25, 50, 75, 100, 125, 150. The total is 150.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 200,
+        "step": 25,
+        "target": 150,
+        "check": { "rule": "equals", "expr": "6 * 25", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Mia counts 4 bags with 20 buttons in each bag, and 6 more buttons. How many buttons are there?",
+        "prompt": "4 × 20 + 6 = ?",
+        "why": "4 bags of 20 is 20, 40, 60, 80. Then add 6 more to get 86.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 86,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 * 20 + 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia counts 20 in one small bunch. The jar looks like 5 bunches. Is the jar closer to 50, closer to 100, or closer to 200?",
+        "prompt": "Closer to 50, 100, or 200?",
+        "why": "Count by 20s: 20, 40, 60, 80, 100. Five bunches is about 100.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 100",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 50",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 200",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "5 * 20",
+          "choices": [
+            { "id": "a", "expr": "100" },
+            { "id": "b", "expr": "50" },
+            { "id": "c", "expr": "200" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

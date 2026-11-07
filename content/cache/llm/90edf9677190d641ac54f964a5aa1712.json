@@ -1,0 +1,557 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya orders a pizza for her soccer team. It is cut into 4 equal slices. Here are the 4 slices.",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 4, "filled": null }
+      },
+      {
+        "narration": "The bottom number counts all the equal parts in the whole. Here, that is 4. Each slice is one fourth.",
+        "text": "1/4",
+        "visual": null
+      },
+      {
+        "narration": "Maya eats 3 slices. The top number counts the parts we pick. She ate 3 of the 4 slices. That is 3/4.",
+        "text": "3/4",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 3, "filled": null }
+      },
+      {
+        "narration": "A ten-frame has 10 spaces. Leo fills 7 of them. The bottom number is 10. The top number is 7. So 7/10 is filled.",
+        "text": "7/10",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 }
+      },
+      {
+        "narration": "The parts must be equal. If one slice is huge and one is tiny, the bottom number does not work.",
+        "text": null,
+        "visual": null
+      },
+      {
+        "narration": "You know that 3/5 is one fifth added 3 times. The bottom number is the size of each piece. The top number counts the pieces.",
+        "text": "1/5 + 1/5 + 1/5 = 3/5",
+        "visual": null
+      },
+      {
+        "narration": "Now you try. Find the top number and the bottom number in each fraction. You can do it!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A ten-frame has 10 spaces. 3 spaces are filled. What fraction is filled? Is it 7/10, 3/10, or 3/7?",
+        "prompt": "What fraction is filled?",
+        "why": "There are 10 spaces in all, so the bottom number is 10. 3 are filled, so the top number is 3. The fraction is 3/10.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 3 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": null,
+            "text": "7/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": null,
+            "text": "3/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": null,
+            "text": "3/7",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3/10",
+          "choices": [
+            { "id": "a", "expr": "7/10" },
+            { "id": "b", "expr": "3/10" },
+            { "id": "c", "expr": "3/7" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 8 equal slices. Here are the 8 slices. Each slice is what fraction of the pizza? Is it 1/8, 8/1, or 1/2?",
+        "prompt": "One slice is what fraction?",
+        "why": "The pizza has 8 equal slices, so the bottom number is 8. One slice is 1 part, so the top number is 1. Each slice is 1/8.",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 8, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": null,
+            "text": "8/1",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": null,
+            "text": "1/8",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1/8",
+          "choices": [
+            { "id": "a", "expr": "8/1" },
+            { "id": "b", "expr": "1/2" },
+            { "id": "c", "expr": "1/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 5 equal slices. Each slice is 1/5. What is the bottom number of 1/5?",
+        "prompt": "1/5: bottom number = ?",
+        "why": "The bottom number counts the equal parts in the whole. The pizza has 5 equal slices, so the bottom number is 5.",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 5, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Look at the fraction 3/6. Move the frog to its bottom number.",
+        "prompt": "Bottom number of 3/6",
+        "why": "The bottom number is the one underneath. In 3/6, the bottom number is 6. It tells how many equal parts are in the whole.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "In the fraction 2/5, what does the bottom number tell us? Is it parts in the whole, or parts we picked?",
+        "prompt": "What does the 5 in 2/5 mean?",
+        "why": "The bottom number tells how many equal parts make the whole. The top number counts the parts we picked.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "parts in the whole",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "parts we picked",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 1" },
+            { "id": "b", "expr": "1 == 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A ten-frame has 10 spaces. 4 spaces are empty and the rest are filled. What fraction is filled? Is it 4/10, 6/10, or 6/4?",
+        "prompt": "What fraction is filled?",
+        "why": "Count the filled spaces. 10 minus 4 empty is 6 filled. The bottom number is 10, so the fraction is 6/10.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 6 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": null,
+            "text": "4/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": null,
+            "text": "6/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": null,
+            "text": "6/10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "6/10",
+          "choices": [
+            { "id": "a", "expr": "4/10" },
+            { "id": "b", "expr": "6/4" },
+            { "id": "c", "expr": "6/10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A pie has 8 equal slices. Sam eats 5 slices, so 5/8 is gone. The fraction left has 8 on the bottom. What is its top number?",
+        "prompt": "Left: ?/8",
+        "why": "8 slices minus the 5 eaten leaves 3 slices. The top number counts the slices left, so it is 3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Tia colours 7 of 10 equal parts on her game board. Move the frog to the top number of her fraction.",
+        "prompt": "Top number of 7/10",
+        "why": "The top number counts the parts picked. Tia colours 7 parts, so the top number is 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Eli has a pizza with 6 equal slices. He eats 4 of them. What fraction did he eat? Is it 6/4, 4/6, or 2/6?",
+        "prompt": "What fraction did Eli eat?",
+        "why": "The pizza has 6 equal slices, so the bottom number is 6. Eli ate 4 slices, so the top number is 4. He ate 4/6.",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": null,
+            "text": "6/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": null,
+            "text": "4/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": null,
+            "text": "2/6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "4/6",
+          "choices": [
+            { "id": "a", "expr": "6/4" },
+            { "id": "b", "expr": "4/6" },
+            { "id": "c", "expr": "2/6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "You have 3 pieces. Each piece is one fifth of a whole. What fraction is that? Is it 5/3, 1/5, or 3/5?",
+        "prompt": "3 pieces of one fifth",
+        "why": "Each piece is 1/5, so the bottom number is 5. You have 3 pieces, so the top number is 3. That makes 3/5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": null,
+            "text": "5/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": null,
+            "text": "1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": null,
+            "text": "3/5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3/5",
+          "choices": [
+            { "id": "a", "expr": "5/3" },
+            { "id": "b", "expr": "1/5" },
+            { "id": "c", "expr": "3/5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A board is cut into pieces that are each one sixth. You put 5 of those pieces together. What fraction is that? Is it 6/5, 5/6, 1/5, or 1/6?",
+        "prompt": "1/6 added 5 times",
+        "why": "Each piece is 1/6, so the bottom number stays 6. Five pieces give a top number of 5. That makes 5/6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": null,
+            "text": "6/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": null,
+            "text": "1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": null,
+            "text": "1/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": null,
+            "text": "5/6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "5/6",
+          "choices": [
+            { "id": "a", "expr": "6/5" },
+            { "id": "b", "expr": "1/5" },
+            { "id": "c", "expr": "1/6" },
+            { "id": "d", "expr": "5/6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Each piece of a pie is 1/8. How many pieces of 1/8 does it take to make one whole pie?",
+        "prompt": "How many 1/8 make 1 whole?",
+        "why": "The bottom number 8 means the whole has 8 equal parts. So you need 8 pieces of 1/8 to make one whole.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The fraction 6/8 is made of pieces that are each 1/8. Move the frog to how many pieces of 1/8 are in 6/8.",
+        "prompt": "How many 1/8 are in 6/8?",
+        "why": "The top number counts how many pieces of size 1/8 there are. In 6/8, the top number is 6, so there are 6 pieces.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Rosa cuts a pie into 5 equal slices. She eats 2 slices. Her brother eats 1 slice. What fraction of the pie is left? Is it 3/5, 1/5, or 2/5?",
+        "prompt": "What fraction is left?",
+        "why": "Together they ate 3 of the 5 slices. That leaves 5 minus 3, which is 2 slices. The fraction left is 2/5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": null,
+            "text": "3/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": null,
+            "text": "1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": null,
+            "text": "2/5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "(5 - 2 - 1)/5",
+          "choices": [
+            { "id": "a", "expr": "3/5" },
+            { "id": "b", "expr": "1/5" },
+            { "id": "c", "expr": "2/5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A pie has 8 equal slices. Dev eats 2/8 of it. Ana eats 3/8 of it. Together they ate a fraction with 8 on the bottom. What is the top number?",
+        "prompt": "2/8 + 3/8 = ?/8",
+        "why": "Both fractions use slices of the same size. Add the top numbers: 2 + 3 = 5. They ate 5/8 of the pie.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 3", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

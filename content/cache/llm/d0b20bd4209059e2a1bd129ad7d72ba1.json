@@ -1,0 +1,436 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam is getting ready for soccer. He has one water jug. The jug is one whole. Sam splits it into 10 equal parts. Each part is one tenth.",
+        "text": "1 whole = 10 tenths",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Sam fills 6 of the 10 parts. That is 6 tenths. As a decimal, it looks like 0.6.",
+        "text": "6 tenths = 0.6",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 6 }
+      },
+      {
+        "narration": "The dot is called the decimal point. The 0 before it means no whole jugs. The first digit after the dot counts tenths.",
+        "text": "0 . 6",
+        "visual": null
+      },
+      {
+        "narration": "Now Sam fills 1 whole jug and 4 more tenths. That is 1 and 4 tenths. It looks like 1.4. The 1 counts wholes. The 4 counts tenths.",
+        "text": "1.4",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 4 }
+      },
+      {
+        "narration": "To compare, look at the wholes first. 3.2 is less than 5.1, because 3 is less than 5.",
+        "text": "3.2 is less than 5.1",
+        "visual": null
+      },
+      {
+        "narration": "If the wholes match, compare the tenths. 24.7 is greater than 24.3, because 7 tenths is more than 3 tenths.",
+        "text": "24.7 is greater than 24.3",
+        "visual": null
+      },
+      {
+        "narration": "A zero in the tenths place means no tenths. So 5.0 is the same as 5. Now let's practise with Sam!",
+        "text": "5.0 = 5",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A ten-frame is one whole. Seven dots are filled. Is that 0.3, 0.7, 1.7, or 7?",
+        "prompt": "What decimal is filled?",
+        "why": "The frame has 10 parts. Seven are filled, so that is 7 tenths. As a decimal, 7 tenths is 0.7.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 0.3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 1.7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 0.7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "0.7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which is greater, 0.8 or 0.3?",
+        "prompt": "0.8 or 0.3?",
+        "why": "Both are less than 1 whole. 8 tenths is more than 3 tenths. So 0.8 is greater.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 0.8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 0.3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A ten-frame is one whole. Four dots are filled. Type the decimal for the filled part.",
+        "prompt": "Type the decimal",
+        "why": "The frame has 10 parts and 4 are filled. That is 4 tenths. As a decimal, it is 0.4.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 4 },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 0.4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "0.4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Type the decimal for 9 tenths.",
+        "prompt": "9 tenths = ?",
+        "why": "Tenths go right after the decimal point. No wholes means we start with 0. So 9 tenths is 0.9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 0.9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "0.9", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 0.5 on the number line.",
+        "prompt": "Go to 0.5",
+        "why": "The line goes from 0 to 1 in 10 steps. Each step is one tenth. Count 5 steps from 0 to land on 0.5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1,
+        "step": 0.1,
+        "target": 0.5,
+        "check": { "rule": "equals", "expr": "0.5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Look at the number 24.7. What does the 7 mean? Is it 7 ones, 7 tenths, 7 tens, or 7 hundreds?",
+        "prompt": "The 7 in 24.7 is...",
+        "why": "The 7 is the first digit after the dot. That place counts tenths. So the 7 means 7 tenths.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "7 ones",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "7 tens",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "7 hundreds",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "7 tenths",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "0.7",
+          "choices": [
+            { "id": "a", "expr": "7" },
+            { "id": "b", "expr": "70" },
+            { "id": "c", "expr": "700" },
+            { "id": "d", "expr": "0.7" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Mia ran 3 whole laps and 5 tenths of another lap. Type her distance as a decimal.",
+        "prompt": "3 wholes and 5 tenths",
+        "why": "The 3 wholes go before the dot. The 5 tenths go after it. So the number is 3.5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3.5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3.5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Look at 48.6. What digit is in the tenths place? Type that digit.",
+        "prompt": "Tenths digit of 48.6",
+        "why": "The tenths place is the first spot after the dot. In 48.6, the tenths digit is 6. So the 6 counts 6 tenths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "This number line goes from 0 to 2. Move the frog to 1.4.",
+        "prompt": "Go to 1.4",
+        "why": "Start at 1. Then count 4 tenths more. That lands on 1.4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 2,
+        "step": 0.1,
+        "target": 1.4,
+        "check": { "rule": "equals", "expr": "1.4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "This number line goes from 4 to 5. Move the frog to 4.8.",
+        "prompt": "Go to 4.8",
+        "why": "The line starts at 4. Each step is one tenth. Count 8 steps from 4 to reach 4.8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 4,
+        "max": 5,
+        "step": 0.1,
+        "target": 4.8,
+        "check": { "rule": "equals", "expr": "4.8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is greatest, 7.5, 5.7, 7.1, or 5.9?",
+        "prompt": "Pick the greatest",
+        "why": "Compare the wholes first. 7 is more than 5, so it is 7.5 or 7.1. Then compare tenths. 5 tenths beats 1 tenth, so 7.5 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5.7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7.1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5.9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 7.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "greatest", "expr": "", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Is 2.0 the same as 2? Yes or no?",
+        "prompt": "Is 2.0 the same as 2?",
+        "why": "The 0 in the tenths place means no tenths. So 2.0 is 2 wholes and nothing more. It is the same as 2.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "not (2.0 == 2)" },
+            { "id": "b", "expr": "2.0 == 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A tank holds 12 tenths of a litre. Type that amount as a decimal.",
+        "prompt": "12 tenths = ?",
+        "why": "10 tenths make 1 whole. 12 tenths is 1 whole and 2 more tenths. So it is 1.2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1.2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "1.2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "This number line goes from 10 to 12. Move the frog to 11.3.",
+        "prompt": "Go to 11.3",
+        "why": "Start at 11. Then count 3 tenths more. That lands on 11.3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 10,
+        "max": 12,
+        "step": 0.1,
+        "target": 11.3,
+        "check": { "rule": "equals", "expr": "11.3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "This number line goes from 24 to 26. Each step is two tenths. Move the frog to 25.4.",
+        "prompt": "Go to 25.4",
+        "why": "Start at 25. Then 4 tenths more is two jumps of 0.2. That lands on 25.4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 24,
+        "max": 26,
+        "step": 0.2,
+        "target": 25.4,
+        "check": { "rule": "equals", "expr": "25.4", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

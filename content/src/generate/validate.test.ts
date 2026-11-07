@@ -182,4 +182,21 @@ describe('validateSkill', () => {
     });
     expect(problemsOf(content)).toEqual([]);
   });
+
+  it('does not count the listed choices toward a tap sentence length', () => {
+    const listed = mutate((c) => {
+      c.items[0].choices = [text('a', '1 and a half'), text('b', '2'), text('c', '1 and a fourth')];
+      c.items[0].narration = 'What is 1 + 1, 1 and a half, 2, or 1 and a fourth?';
+      c.items[0].check = {
+        rule: 'equals',
+        expr: '1 + 1',
+        choices: [
+          { id: 'a', expr: '3/2' },
+          { id: 'c', expr: '5/4' },
+        ],
+        note: '',
+      };
+    });
+    expect(problemsOf(listed)).toEqual([]);
+  });
 });

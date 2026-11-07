@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-estimate-200-keypad-4",
+        "severity": "note",
+        "category": "age",
+        "note": "Skip counting by 25s and the 7 × 25 multiplication are a bit beyond a typical Grade 2 estimate-to-200 skill. Consider a simpler size (for example 5s, 10s or 20s) or confirm this is intended as a stretch item."
+      },
+      {
+        "target": "g2-estimate-200-number-line-3",
+        "severity": "note",
+        "category": "age",
+        "note": "Counting by 25s to 150 is above the usual Grade 2 range. Consider keeping this skill to 10s, 20s or 50s."
+      },
+      {
+        "target": "g2-estimate-200-keypad-3",
+        "severity": "note",
+        "category": "other",
+        "note": "Narration 'How many buttons are there to check?' is awkward to hear. Suggest 'Mia counts 6 bags with 20 buttons in each bag. How many buttons are there in all?' to match the other keypad items."
+      },
+      {
+        "target": "g2-estimate-200-keypad-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The Why says '4 bags of 20 is 20, 40, 60, 80', which lists the skip-count steps but never states that 4 bags of 20 is 80. Consider 'Count by 20s: 20, 40, 60, 80. Add 6 more to get 86.'"
+      },
+      {
+        "target": "g2-estimate-200-tap-7",
+        "severity": "note",
+        "category": "other",
+        "note": "The story card says the jar looks like 5 bunches of 10, but this item uses bunches of 20 and gives a total of 100. The different bunch size is not flagged, so a child may be confused. Consider saying 'bunches of 20' clearly in the narration, or stating that this is a different jar."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 says bunches of 20 or 50 are quick, but the story never shows the count by 20s or 50s on screen. Cards 2 and 3 cover only 10s. The jump from 10s to 50s may need one more worked example for a child listening by ear."
+      }
+    ],
+    "notes": "I checked the arithmetic and the marked answer for every VERIFY item. All are correct: tap-1 (50 → closer to 50), tap-2 (90 → closer to 100), tap-3 (60 → closer to 50), tap-4 (200 → closer to 200), tap-5 (105 → closer to 100), tap-6 (180 → closer to 200), and tap-7 (100 → closer to 100). Each marked choice is the only one that fits, and each choice's label matches its value. The non-VERIFY keypad and number-line answers (10, 50, 120, 100, 140, 175, 150, 86) are also correct. The story card arithmetic is correct. No blockers found. The notes are about grade-level fit and wording only."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 3 shows 5 ducks in a line, but card 4 says 'the next duck is second, then third' and shows only 3 ducks. Showing the full line of 5 in card 4 would keep the picture consistent with card 3."
+      },
+      {
+        "target": "k-uses-of-numbers-keypad-3",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The answer is the digit 5 for 'the last duck's place', but the story only teaches first, second, third, and the narration asks 'what place' while the child types a bare number. A child may read this as 'how many ducks' or type 'fifth'. Consider wording that makes clear the answer is the place number."
+      },
+      {
+        "target": "k-uses-of-numbers-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Marked difficulty 3, but it asks the same name-versus-count distinction as the difficulty-1 items (tap-1, tap-2). It is easier than its rating suggests."
+      },
+      {
+        "target": "k-uses-of-numbers-tap-7",
+        "severity": "note",
+        "category": "other",
+        "note": "This item asks for the number that matches the ordinal 'second' (a word-to-digit mapping). It does not ask how the number is used, so it sits slightly outside the 'what numbers are used for' skill. Its digit-only choices (4, 1, 3, 2) are also hard to tell apart by sound if the TTS reads them quickly."
+      },
+      {
+        "target": "k-uses-of-numbers-number-line-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Seventh is beyond the first, second, third ordinals taught in the story, and the item asks for the place number, not a use of a number. Kindergarten ordinals up to 10th are in scope, so this is a note, not a blocker, but the story does not prepare children for it."
+      }
+    ],
+    "notes": "I checked every marked answer: each one is correct and no item has more than one right choice. The VERIFY items (tap-1, tap-2, tap-3, tap-4, tap-5, number-line-4, tap-6) all match their choice values. The keypad and number-line answers (3, 6, 5, 10, 5, 8, 3, 7) are correct for their narration. The story facts are accurate. No blockers found. The issues above are wording, consistency, and difficulty notes."
+  }
+}

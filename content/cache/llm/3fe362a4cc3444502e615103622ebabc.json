@@ -1,0 +1,8 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [],
+    "notes": "Reviewed the story cards and all 17 items for g2-compare-order-200. I found no blockers and no smaller issues.\n\nChecks:\n- Story: the comparisons (12 > 8; 125 < 152 by tens; 85 < 100 < 130; the least-to-greatest and greatest-to-least orders) are all correct. The 12-shell picture is within the 20-emoji limit.\n- Tap items 1-6: the marked answers are correct (120 > 87; 105 < 150; 190 is 10 from 200 and 90 from 100; 183 is greatest; 105 comes first least-to-greatest; 99 > 101 is false).\n- Keypad items 1-5: the answers are correct (149; 136 least; 120 is the middle of 87, 120, 150; 177 greatest of 175, 157, 171, 177; 169 is the only whole number strictly between 168 and 170).\n- Number-line items 1-4: the targets are on their lines (100 is halfway on 0-200 with step 50; 90 is least; 175 is greatest on 150-190 with step 5; 120 is the middle of 60, 120, 180 on 0-200 with step 20).\n- The \"Why\" explanations match the digits in each number.\n- Everything is within the Grade 2 compare-and-order-to-200 scope and can be followed by ear.\n\nOptional, not required: the keypad-5 narration (\"greater than 168 and less than 170\") is fine by ear, but a child may need a repeat. Tap-6 (difficulty 3) is simpler than its label."
+  }
+}

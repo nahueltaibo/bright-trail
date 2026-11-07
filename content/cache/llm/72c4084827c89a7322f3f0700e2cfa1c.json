@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-fraction-repeated-addition-tap-2",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Marked answer 2/4 is correct (1/4 + 1/4 = 2/4). The distractor '1/2 of 4' is not a second right answer, since it equals 2, not 2/4. But 2/4 is equivalent to 1/2, which is outside this skill's unit-piece addition idea and could confuse a child who hears 'one half'. Consider replacing that distractor with a plainer wrong fraction such as 1/4 or 2/8."
+      },
+      {
+        "target": "g3-fraction-repeated-addition-keypad-1",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration says 'all the slices you see', which relies on the picture. The child is playing by sound, so the question depends on sight. Consider saying 'Ted eats all 3 slices shown' or adding the count to the narration, e.g. 'Ted eats 3 slices.'"
+      },
+      {
+        "target": "g3-fraction-repeated-addition-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "The marked answer 4/3 is correct, but it is an improper fraction (greater than one). Ontario Grade 3 fraction work is usually limited to fractions less than or equal to one whole, so this item may be a little above the grade level. Consider a sum that stays at or below one whole, or move this to a later skill."
+      },
+      {
+        "target": "g3-fraction-repeated-addition-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "9/4 is an improper fraction (greater than two wholes). It is probably above Grade 3 fraction scope and could confuse children about what a fraction can be. Consider using a fraction at or below one whole, such as 3/4 added 2 times, or keeping the frog game to values of 1 or less."
+      },
+      {
+        "target": "g3-fraction-repeated-addition-number-line-4",
+        "severity": "note",
+        "category": "other",
+        "note": "7/3 is an improper fraction, the same grade-level concern as the other fractions above one whole. Consider a value at or below one whole in this Grade 3 skill."
+      }
+    ],
+    "notes": "I checked every marked answer and found no blockers. Story: the arithmetic and wording are correct, and the story uses pictures only as one emoji per slice, so it is audio-safe. Tap-1, tap-3, tap-5 (VERIFY): the marked answers are correct and the other choices are clearly wrong. Tap-4 (VERIFY): 4/3 is correct, but see the grade-level note. Tap-2 (VERIFY): 2/4 is correct; see the note on the '1/2 of 4' distractor. Keypad-1 to keypad-5: all answers are correct (3, 4, 10, 7, 5). Number-line-1, -2, -5: the frog targets are correct (3, 6, 11). Number-line-3 and -4: the targets are correct (9 and 7), but the improper-fraction concern applies. Overall the content is correct; the open issues are grade-level scope for improper fractions and some wording that depends on seeing the picture."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Step 1 says 'She shares it with Leo and Sam. That is 3 kids.' Listeners may not count Mia as one of the kids. Saying 'Mia, Leo, and Sam are 3 kids' would make it clear, since step 4 (3 kids x 2 pieces = 6 pieces) depends on that count."
+      },
+      {
+        "target": "g2-third-equals-two-sixths-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration lists the options as 2/6, 3/6, 4/6, or 5/6, but the choices are in the order 2/6, 3/6, 5/6, 4/6. Reading the choices in the same order as the narration would make the audio easier to follow."
+      },
+      {
+        "target": "g2-third-equals-two-sixths-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The line runs 0 to 8, but the answer is 6 sixths (one whole pan). Ticks 7 and 8 go past the pan, which may confuse a young child about what the whole is. Consider 0 to 6 so the whole pan is the end of the line."
+      }
+    ],
+    "notes": "Reviewed all 7 story cards and 18 items. I checked each marked answer by working it out: 1/3 = 2/6; 2/3 = 4/6; 3 thirds = 6 sixths; 1/3 + 2/6 = 4/6; 2/3 + 1/3 = 6/6 (6 sixths); 6 - 2 - 2 = 2; Ben's 2 parts; Max and Lia eat the same amount; 3/6 is not 1/3 (false). Every marked answer is correct, each item has exactly one right choice, and the story's arithmetic is correct. No blockers found. The three notes are about clarity and wording only."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [],
+    "notes": "Reviewed the story cards and all 15 items for g2-add-sub-properties. I found no blockers and no notes.\n\nChecked the arithmetic and marked answers:\n- tap-1: 3 + 5 = 8, marked c (8). Correct.\n- keypad-1: 6 + 0 = 6. Correct.\n- number-line-1: 4 + 3 = 7. Correct.\n- tap-2: 2 + 2 + 2 = 6, marked a. Correct.\n- keypad-2: 8 - 0 = 8. Correct.\n- tap-3 (VERIFY): 8 + 6 = 14 and 6 + 8 = 14, so \"yes\" is the only right choice. Correct.\n- keypad-3: 7 + 5 = 12. Correct.\n- number-line-2: 15 - 0 = 15 on a 0 to 20 line. Correct.\n- tap-4 (VERIFY): 8 + 6 = 14 is the only correct check. 8 + 8 = 16, 14 + 6 = 20 and 6 + 6 = 12 are all wrong. Marked d is correct.\n- keypad-4: 5 + 5 + 5 = 15. Correct.\n- keypad-5: 17 - 8 = 9 and 9 + 8 = 17. Correct.\n- tap-5: 6 + 9 + 4 = 19, marked b. Correct. The \"make a ten\" explanation is also correct.\n- number-line-3: four jumps of 5 land on 20 on a 0 to 30 line. Correct.\n- tap-6 (VERIFY): 4 + 4 + 4 is three groups of 4, so \"3 jumps of 4\" (d) is the only correct choice. The other choices are wrong. Correct.\n- keypad-6: 16 + 9 = 25, so Lia's check holds. Correct.\n\nThe story cards match their screens and pictures. The picture counts (5, 4, 5 apples) agree with the narration, and the frog and equal-jump cards are consistent.\n\nItems that could be looked at in a later pass, but are not errors:\n- keypad-5 asks for an unknown start in a subtraction sentence (? - 8 = 9). It is labelled difficulty 3 and is at the upper edge of the Grade 2 range. It is not off-grade.\n- The \"yes or no\" question in tap-3 is read aloud as \"no\" and \"yes\" choices, which works by ear."
+  }
+}

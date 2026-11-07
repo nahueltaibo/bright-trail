@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "k-make-numbers-to-10-keypad-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration says 'a ten frame with 7 dots' but never describes the two-row layout. The feedback relies on the 'full row of 5' and 'next row' idea, which a child who is listening without seeing the picture may not follow. Consider adding a short spoken description of the frame, for example 'a full top row of 5 and 2 dots in the bottom row'."
+      },
+      {
+        "target": "k-make-numbers-to-10-keypad-4",
+        "severity": "note",
+        "category": "other",
+        "note": "'Ten frame' is used without any spoken explanation. Story card 4 introduces the picture, but this item does not remind a child who cannot see the frame what it is. Optional: add a brief spoken cue such as 'a ten frame holds 10 dots'."
+      }
+    ],
+    "notes": "I checked every story card and item by working out the arithmetic and confirming the marked answer. All 16 items are correct: each marked answer is the only correct choice, the keypad and number-line answers match their screen equations, and the VERIFY items (tap-4: 5+3=8, the others give 7; tap-5: 7+3=10, the others give 11 and 9) hold up. The story arithmetic is also correct (4+2=6, 3+2=5). No blockers found. Two optional notes concern how the ten-frame items are described by ear. Difficulty ratings and tone look appropriate for Kindergarten."
+  }
+}

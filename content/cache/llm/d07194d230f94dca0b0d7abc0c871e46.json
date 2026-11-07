@@ -1,0 +1,429 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam is building a shelf. His board is 3.4 metres long. The shop sells boards in whole metres only. Sam needs to round.",
+        "text": "3.4 m",
+        "visual": { "kind": "emoji", "emoji": "🪵", "count": null, "filled": null }
+      },
+      {
+        "narration": "3.4 sits between 3 and 4. It is 4 tenths past 3. It is 6 tenths away from 4. So it is closer to 3.",
+        "text": "3.4 is about 3",
+        "visual": null
+      },
+      {
+        "narration": "Here is a quick trick. Look at the tenths digit, the first one after the dot. If it is 0, 1, 2, 3, or 4, round down.",
+        "text": "Tenths 0 to 4: round down",
+        "visual": null
+      },
+      {
+        "narration": "Now try 7.8. The tenths digit is 8. That is 5 or more, so round up. 7.8 is about 8.",
+        "text": "Tenths 5 to 9: round up",
+        "visual": null
+      },
+      {
+        "narration": "What about 2.5? It is exactly halfway between 2 and 3. When it is halfway, we round up. So 2.5 is about 3.",
+        "text": "2.5 is about 3",
+        "visual": null
+      },
+      {
+        "narration": "Ana runs a race in 12.6 seconds. The tenths digit is 6, so round up. Her time is about 13 seconds.",
+        "text": "12.6 s is about 13 s",
+        "visual": { "kind": "emoji", "emoji": "⏱️", "count": null, "filled": null }
+      },
+      {
+        "narration": "You can round any decimal to the nearest whole number now. Let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Is 3.2 closer to 3 or closer to 4?",
+        "prompt": "3.2 is closer to?",
+        "why": "The tenths digit is 2. That is 4 or less, so round down. 3.2 is about 3.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(3.2, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Round 6.8 to the nearest whole number. Is it 6 or 7?",
+        "prompt": "Round 6.8",
+        "why": "The tenths digit is 8. That is 5 or more, so round up. 6.8 is about 7.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(6.8, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Round 5.1 to the nearest whole number. Type your answer.",
+        "prompt": "Round 5.1",
+        "why": "The tenths digit is 1. That is small, so round down. 5.1 is about 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(5.1, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Round 2.9 to the nearest whole number. Move the frog to that number.",
+        "prompt": "Round 2.9",
+        "why": "The tenths digit is 9. That is 5 or more, so round up. 2.9 is about 3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "roundTo(2.9, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Round 8.2 to the nearest whole number. Move the frog to that number.",
+        "prompt": "Round 8.2",
+        "why": "The tenths digit is 2. That is 4 or less, so round down. 8.2 is about 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "roundTo(8.2, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Maya swims a lap in 12.6 seconds. Round her time to the nearest whole second.",
+        "prompt": "Round 12.6 s",
+        "why": "The tenths digit is 6, so round up. 12.6 seconds is about 13 seconds.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 13,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(12.6, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A bag of apples has a mass of 4.5 kilograms. Round it to the nearest whole kilogram.",
+        "prompt": "Round 4.5 kg",
+        "why": "4.5 is exactly halfway between 4 and 5. When it is halfway, round up to 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(4.5, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A board is 9.4 metres long. To the nearest whole metre, is it 8, 9, or 10?",
+        "prompt": "Round 9.4 m",
+        "why": "The tenths digit is 4, so round down. 9.4 metres is about 9 metres.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(9.4, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A backpack has a mass of 15.5 kilograms. Rounded to the nearest whole kilogram, is it 15 or 16?",
+        "prompt": "Round 15.5 kg",
+        "why": "15.5 is exactly halfway between 15 and 16. Halfway rounds up, so the answer is 16.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 16,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(15.5, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Leo jumps 13.7 feet in a long jump. Round it to the nearest whole number. Move the frog to it.",
+        "prompt": "Round 13.7",
+        "why": "The tenths digit is 7, so round up. 13.7 is about 14.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 14,
+        "check": { "rule": "equals", "expr": "roundTo(13.7, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A runner goes 49.6 kilometres in a week. Round that to the nearest whole kilometre.",
+        "prompt": "Round 49.6 km",
+        "why": "The tenths digit is 6, so round up. 49 goes up to 50.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 50,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(49.6, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A rope is 99.5 metres long. Round it to the nearest whole metre.",
+        "prompt": "Round 99.5 m",
+        "why": "99.5 is exactly halfway between 99 and 100. Halfway rounds up, so the answer is 100.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 100,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "roundTo(99.5, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A bike trip is 26.5 kilometres. Round it to the nearest whole number. Move the frog to it.",
+        "prompt": "Round 26.5",
+        "why": "26.5 is exactly halfway between 26 and 27. Halfway rounds up, so the answer is 27.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 20,
+        "max": 30,
+        "step": 1,
+        "target": 27,
+        "check": { "rule": "equals", "expr": "roundTo(26.5, 1)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which number rounds to 8? Is it 7.4, 7.5, 8.5, or 8.6?",
+        "prompt": "Which rounds to 8?",
+        "why": "7.5 is halfway between 7 and 8, so it rounds up to 8. 7.4 goes to 7. 8.5 and 8.6 go to 9.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7.4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8.6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 7.5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "roundTo(8.5, 1) == 8" },
+            { "id": "b", "expr": "roundTo(7.4, 1) == 8" },
+            { "id": "c", "expr": "roundTo(8.6, 1) == 8" },
+            { "id": "d", "expr": "roundTo(7.5, 1) == 8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Jo says 6.5 rounds down to 6. Is Jo right? Pick Yes, down to 6, or No, up to 7.",
+        "prompt": "Does 6.5 round down?",
+        "why": "6.5 is exactly halfway between 6 and 7. Halfway rounds up, so it is 7. Jo is not right.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Yes, down to 6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "No, up to 7",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "roundTo(6.5, 1) == 6" },
+            { "id": "b", "expr": "roundTo(6.5, 1) == 7" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

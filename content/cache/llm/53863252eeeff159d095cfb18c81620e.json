@@ -1,0 +1,435 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Pip the frog. Pip loves to count and hop!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "Pip has a tower. Here are 3 blocks.",
+        "text": "3",
+        "visual": { "kind": "objects", "emoji": "🧱", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Pip adds one more block. Now there are 4. We counted up!",
+        "text": "3, 4",
+        "visual": { "kind": "objects", "emoji": "🧱", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Pip adds one more. Now there are 5. Counting up makes the number bigger.",
+        "text": "4, 5",
+        "visual": { "kind": "objects", "emoji": "🧱", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Now Pip takes one block away. There are 4. We counted down!",
+        "text": "5, 4",
+        "visual": { "kind": "objects", "emoji": "🧱", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Pip takes one more away. Now there are 3. Counting down makes the number smaller.",
+        "text": "4, 3",
+        "visual": { "kind": "objects", "emoji": "🧱", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Up gets bigger. Down gets smaller. Let's play with Pip!",
+        "text": "up = bigger, down = smaller",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Pip counts up from 4 to 5. Is the number bigger or smaller?",
+        "prompt": "4 to 5",
+        "why": "Counting up makes the number bigger. 5 is bigger than 4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "bigger",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "smaller",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "5 > 4" },
+            { "id": "b", "expr": "not (5 > 4)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count up from 6. What number comes next?",
+        "prompt": "6, ?",
+        "why": "When we count up, we say the next number. After 6 comes 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Pip starts at 4. Count up one. Hop the frog to that number.",
+        "prompt": "Start at 4. Up one.",
+        "why": "Counting up one from 4 lands on 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Pip has 5 blocks. Pip takes one away. Is the number bigger or smaller now?",
+        "prompt": "5, take one away",
+        "why": "Counting down makes the number smaller. 4 is smaller than 5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "bigger",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "smaller",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "not (4 < 5)" },
+            { "id": "b", "expr": "4 < 5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count down from 5. What number comes next?",
+        "prompt": "5, ?",
+        "why": "When we count down, the number gets smaller. Just before 5 is 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Pip starts at 8. Count down one. Hop the frog to that number.",
+        "prompt": "Start at 8. Down one.",
+        "why": "Counting down one from 8 lands on 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Pip hops from 9 to 8. Is that counting up or counting down?",
+        "prompt": "9 to 8",
+        "why": "8 is smaller than 9. The number got smaller, so Pip counted down.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "counting up",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "counting down",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "8 > 9" },
+            { "id": "b", "expr": "8 < 9" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Count up from 9. What number comes next?",
+        "prompt": "9, ?",
+        "why": "Counting up gives a bigger number. After 9 comes 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Count down from 7. Which number comes next, 8, 6, or 9?",
+        "prompt": "7, down, ?",
+        "why": "Counting down makes the number smaller. Just before 7 is 6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Pip starts at 5. Count up 2 hops. Hop the frog to where Pip lands.",
+        "prompt": "Start at 5. Up 2.",
+        "why": "From 5, count up: 6, then 7. Pip lands on 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Pip starts at 4. Count up 3 hops. Where does Pip land?",
+        "prompt": "Start at 4. Up 3.",
+        "why": "From 4, count up: 5, 6, then 7. Pip lands on 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Pip has 6 blocks. Pip adds 2 more. Are there more or fewer blocks now?",
+        "prompt": "6 and 2 more",
+        "why": "Adding is like counting up. The number gets bigger, so there are more blocks.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "fewer",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "more",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "not (8 > 6)" },
+            { "id": "b", "expr": "8 > 6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Pip starts at 9. Count down 3 hops. Hop the frog to where Pip lands.",
+        "prompt": "Start at 9. Down 3.",
+        "why": "From 9, count down: 8, 7, then 6. Pip lands on 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Here are 5 blocks. Pip takes 2 away. How many blocks are left?",
+        "prompt": "5 take away 2",
+        "why": "Count down from 5: 4, then 3. There are 3 blocks left.",
+        "visual": { "kind": "objects", "emoji": "🧱", "count": 5, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Pip starts at 3 and ends at 7. Did Pip count up or count down?",
+        "prompt": "3 to 7",
+        "why": "7 is bigger than 3. The number got bigger, so Pip counted up.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "count down",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "count up",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "not (7 > 3)" },
+            { "id": "b", "expr": "7 > 3" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

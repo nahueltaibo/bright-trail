@@ -1,0 +1,430 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "This is Mia. Mia has 2 ladybugs. Look fast! You can see 2.",
+        "text": "2",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 2, "filled": null }
+      },
+      {
+        "narration": "Now Mia has 3 ladybugs. Look fast! You do not need to count. It is 3.",
+        "text": "3",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Mia finds 4 ladybugs. Two and two make 4. Look fast!",
+        "text": "4",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Here is 1 ladybug. One is easy to see.",
+        "text": "1",
+        "visual": { "kind": "emoji", "emoji": "🐞", "count": null, "filled": null }
+      },
+      {
+        "narration": "Here are 5 dots on a ten-frame. The dots fill one whole row. That is 5!",
+        "text": "5",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 5 }
+      },
+      {
+        "narration": "Now you try! Look fast and find how many. Mia will help you.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐞", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Look fast! How many ladybugs do you see? Is it 1, 2, or 3?",
+        "prompt": "How many?",
+        "why": "There are 2 ladybugs. Look at them together. You can see 2 at once.",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 2, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Look fast! How many stars do you see?",
+        "prompt": "How many stars?",
+        "why": "There are 3 stars. Three is a small group. You can see it at once.",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 3, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Mia sees 1 dot on a card. Hop the frog to 1.",
+        "prompt": "Hop to 1",
+        "why": "Mia sees 1 dot. So the frog hops to 1 on the line.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "target": 1,
+        "check": { "rule": "equals", "expr": "1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Look fast! How many dots are in the ten-frame? Is it 3, 4, or 5?",
+        "prompt": "How many dots?",
+        "why": "There are 3 dots. Look at them together. You do not need to count.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 3 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Look fast! How many apples do you see?",
+        "prompt": "How many apples?",
+        "why": "There are 2 apples. Two is a small group. You can see it at once.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 2, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Look fast! How many fish do you see? Is it 3, 4, or 5?",
+        "prompt": "How many fish?",
+        "why": "There are 4 fish. Think of two and two. That makes 4.",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Look fast! How many dots are in the ten-frame?",
+        "prompt": "How many dots?",
+        "why": "There are 4 dots. Two and two make 4. You can see it at once.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 4 },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Sam sees 4 dots on a card. Hop the frog to 4.",
+        "prompt": "Hop to 4",
+        "why": "Sam sees 4 dots. So the frog hops to 4 on the line.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Look fast! How many stars are there? Is it 4, 5, or 3?",
+        "prompt": "How many stars?",
+        "why": "There are 5 stars. Five is one full row of the ten-frame.",
+        "visual": { "kind": "objects", "emoji": "🌟", "count": 5, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Look fast! How many frogs do you see?",
+        "prompt": "How many frogs?",
+        "why": "There are 3 frogs. Look at them together. Three is quick to see.",
+        "visual": { "kind": "objects", "emoji": "🐸", "count": 3, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Look fast! How many dots are in the ten-frame? Is it 2, 4, or 5?",
+        "prompt": "How many dots?",
+        "why": "There are 5 dots. They fill one whole row. That row is 5.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 5 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Look fast! How many strawberries do you see?",
+        "prompt": "How many strawberries?",
+        "why": "There are 5 strawberries. Try seeing 3 and 2 together. That makes 5.",
+        "visual": { "kind": "objects", "emoji": "🍓", "count": 5, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Max sees 2 red dots and 3 blue dots. How many dots in all? Hop the frog there.",
+        "prompt": "2 + 3 = ?",
+        "why": "Two dots and three dots make 5 dots. So the frog hops to 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "2 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Ben sees 2 dots, then 2 more dots. Look fast! How many dots in all? Is it 3, 4, or 5?",
+        "prompt": "How many dots?",
+        "why": "Two dots and two more dots make 4. You can see 4 at once.",
+        "visual": { "kind": "objects", "emoji": "⚫", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Look very fast! How many butterflies do you see?",
+        "prompt": "How many butterflies?",
+        "why": "There are 4 butterflies. See two and two together. That makes 4.",
+        "visual": { "kind": "objects", "emoji": "🦋", "count": 4, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

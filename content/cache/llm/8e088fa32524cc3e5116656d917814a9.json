@@ -1,0 +1,8 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [],
+    "notes": "Checked the story cards and all 16 items for g1-estimate-50. No blockers found.\n\nVERIFY items, each worked out:\n- tap-1: 4 is 1 from 5 and 16 from 20. Marked \"closer to 5\" is correct.\n- tap-2: 19 is 1 from 20 and 9 from 10. Marked \"closer to 20\" is correct.\n- tap-3: 5 tens is 50. Marked \"closer to 50\" is correct.\n- tap-4: 12 is 2 from 10 and 8 from 20. Marked \"closer to 10\" is correct.\n- keypad-2: 4 tens + 3 = 43. Correct.\n- tap-5: 3 tens + 4 = 34, which is 4 from 30 and 16 from 50. Marked \"closer to 30\" is correct.\n- tap-6: 4 tens + 8 = 48, which is 2 from 50 and 18 from 30. Marked \"closer to 50\" is correct.\n- tap-7: 17 is 3 from Mia's 20 and 23 from Sam's 40. Marked \"Mia\" is correct.\n- tap-8: 2 tens + 2 = 22, which is 2 from 20 and 8 from 30. Marked \"closer to 20\" is correct.\n\nNon-VERIFY items also check out: keypad-1 (2×5=10), number-line-1 (frog at 7), number-line-2 (6×5=30), keypad-3 (3×5=15), number-line-3 (4×10=40), keypad-4 (7×5=35). Story facts are correct: 18 is closer to 20, and 4 bags of 10 is 40.\n\nNotes (non-blocking):\n- Story card 5 says \"That is about 40\" after counting exactly to 40. \"Exactly 40\" would be clearer for a child.\n- Several picture items show the exact count (keypad-1 at 10 fish, keypad-3 at 15 cookies). That is fine for a count skill, but the picture gives the answer away, so it is easier than the difficulty suggests.\n- All pictures stay at 20 or fewer emoji, as the app requires."
+  }
+}

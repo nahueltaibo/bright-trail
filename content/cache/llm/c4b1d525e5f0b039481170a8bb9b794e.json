@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Step 4 says Mia has 24 stars (2 tens and 4 ones), but its picture is a single star. The picture rules allow at most 20 copies of one emoji, so 24 can't be shown as a row. The narration and picture disagree. Use a ten-frame plus extra dots, or a 20-star row plus 4 stars, or another drawing that shows 24 and matches the narration."
+      },
+      {
+        "target": "g1-read-numbers-50-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "Choice wording 'a name' is inconsistent with the story (step 6) and tap-7, which call the same kind of use 'a label'. Use 'a label' here too so children hear one consistent term. The marked answer is correct."
+      }
+    ],
+    "notes": "I checked every item's marked answer against its question and explanation. The keypad, tap, and number-line answers are all correct: 7 dots, 12 apples, 15 on 0–20, 12, 30, 35, tens digit 4, 27 on 20–50, 46, 48, 27, 43 on 30–50, and 3 tens 9 ones = 39. The VERIFY items tap-5 (player number is a name/label), tap-7 (house number is a label), and tap-8 (39 = 3 tens and 9 ones, not 9 tens and 3 ones) have correct marked answers and each choice means what its value says. The story's numerical statements are all correct. The only blocker is the step 4 picture, which doesn't depict 24 stars. The tap-5 wording note is minor."
+  }
+}

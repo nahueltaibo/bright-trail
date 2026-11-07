@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-compose-decompose-50-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration \"9 groups of 5 beads\" uses multiplication language, which is a bit beyond this compose/decompose skill for Grade 1. The answer 45 is correct, and counting by 5s is a Grade 1 skill. Consider rewording to something like \"Count by 5s, nine times. Where do you land?\" so the item stays on place-value building."
+      },
+      {
+        "target": "g1-compose-decompose-50-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration \"Is it No, or Yes?\" is awkward to hear. Consider \"Is it yes or no?\" The marked answer (Yes) is correct: 10 + 10 + 8 = 28."
+      }
+    ],
+    "notes": "I checked every item's marked answer and the distractors, and confirmed the four VERIFY items. g1-compose-decompose-50-tap-2 (10 and 2 = 12; 10 and 5 = 15, wrong). g1-compose-decompose-50-tap-5 (10 + 10 + 8 = 28, Yes). g1-compose-decompose-50-tap-6 (30 + 4 = 34; 20 + 4 = 24 and 30 + 14 = 44 are wrong, so only one choice is right). g1-compose-decompose-50-number-line-4 (4 tens and 7 ones = 47, frog target on a 30 to 50 line). All other keypad, tap, and number-line answers are arithmetically correct and match their explanations. The story cards are accurate, and the pictures are one emoji, a row of up to 20, or a ten-frame, which is consistent with the picture rules. No blockers found."
+  }
+}

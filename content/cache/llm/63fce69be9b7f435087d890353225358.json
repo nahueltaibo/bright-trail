@@ -1,0 +1,451 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya is setting up chairs for the school show. She wants them in neat rows, so everyone can see.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🪑", "count": null, "filled": null }
+      },
+      {
+        "narration": "Maya makes 3 rows. Each row has 4 chairs. Here are the 4 chairs in one row.",
+        "text": "4 in each row",
+        "visual": { "kind": "objects", "emoji": "🪑", "count": 4, "filled": null }
+      },
+      {
+        "narration": "There are 3 rows of 4 chairs. Count by fours: 4, 8, 12. Here are all 12 chairs. That is 3 × 4 = 12.",
+        "text": "3 × 4 = 12",
+        "visual": { "kind": "objects", "emoji": "🪑", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Rows and columns of equal size make an array. Rows go across. Columns go up and down. Maya's chairs are an array.",
+        "text": "rows across, columns down",
+        "visual": null
+      },
+      {
+        "narration": "Now turn the chairs around. Make 4 rows of 3. It is still 12 chairs. So 4 × 3 matches 3 × 4.",
+        "text": "4 × 3 = 12",
+        "visual": null
+      },
+      {
+        "narration": "Next, Maya has 12 chairs and wants 3 equal rows. She puts out one chair at a time, row by row. Each row gets 4.",
+        "text": "12 ÷ 3 = 4",
+        "visual": { "kind": "objects", "emoji": "🪑", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Dividing is finding a missing number. 12 ÷ 3 asks: 3 times what is 12? Let's practise with arrays!",
+        "text": "3 × ? = 12",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "An array has 2 rows. Each row has 5 dots. How many dots are there in all?",
+        "prompt": "2 × 5 = ?",
+        "why": "Count by fives for 2 rows: 5, 10. So 2 × 5 = 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "An array has 3 rows with 4 dots in each row. How many dots in all? Is it 7, 12, 10, or 15?",
+        "prompt": "3 rows of 4",
+        "why": "Count by fours 3 times: 4, 8, 12. So 3 × 4 = 12.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3*4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Sam makes an array with 2 rows of 6 stickers. Move the frog to the number of stickers in all.",
+        "prompt": "2 × 6 = ?",
+        "why": "Two rows of 6 is 6 + 6. That makes 12 stickers.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 12,
+        "check": { "rule": "equals", "expr": "2*6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Ana puts 10 stickers in 2 equal rows. How many stickers are in each row? Is it 8, 12, 4, or 5?",
+        "prompt": "10 ÷ 2 = ?",
+        "why": "Share 10 into 2 equal rows. Each row gets 5, because 2 × 5 = 10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "An array has 12 dots. There are 4 dots in each row. How many rows are there?",
+        "prompt": "12 ÷ 4 = ?",
+        "why": "Count by fours until you reach 12: 4, 8, 12. That took 3 rows.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A hockey team lines up in an array. There are 6 rows with 7 players in each row. How many players in all?",
+        "prompt": "6 × 7 = ?",
+        "why": "Count by sevens 6 times: 7, 14, 21, 28, 35, 42. So 6 × 7 = 42.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 42,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6*7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A tray has 4 rows of muffins with 8 in each row. Which fact finds how many muffins in all? Is it 4 + 8, 8 ÷ 4, or 4 × 8?",
+        "prompt": "4 rows of 8",
+        "why": "Equal rows use multiplying. 4 rows of 8 is 4 × 8, which is 32 muffins.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4 + 8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "8 ÷ 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4 × 8",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "32",
+          "choices": [
+            { "id": "a", "expr": "12" },
+            { "id": "b", "expr": "2" },
+            { "id": "c", "expr": "32" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "There are 35 cards in an array. Each row has 5 cards. Move the frog to the number of rows.",
+        "prompt": "35 ÷ 5 = ?",
+        "why": "Think 5 times what is 35. Counting by fives, 5 × 7 = 35, so there are 7 rows.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "35/5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Leo lines up 24 counters in 6 equal rows. How many counters are in each row? Is it 3, 6, 4, or 18?",
+        "prompt": "24 ÷ 6 = ?",
+        "why": "Think 6 times what is 24. Since 6 × 4 = 24, each row has 4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 18,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "24/6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A garden has 9 rows of plants. Each row has 5 plants. How many plants are in the garden?",
+        "prompt": "9 × 5 = ?",
+        "why": "Count by fives 9 times: 5, 10, 15, 20, 25, 30, 35, 40, 45. So 9 × 5 = 45.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 45,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9*5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A game board is an array with 9 rows and 8 columns. How many squares are on the board?",
+        "prompt": "9 × 8 = ?",
+        "why": "Use 10 × 8 = 80, then take away one row of 8. 80 minus 8 is 72.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 72,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9*8", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A big array has 10 rows. Each row has 7 dots. Move the frog to the number of dots in all.",
+        "prompt": "10 × 7 = ?",
+        "why": "Each row adds 7 more. Ten rows of 7 is 70, because 10 times any number adds a zero.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 70,
+        "check": { "rule": "equals", "expr": "10*7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Zoe knows 5 × 8 is 40. Now she adds one more row of 8 to make 6 rows. What is 6 × 8? Is it 48, 40, 45, or 56?",
+        "prompt": "6 × 8 = ?",
+        "why": "Start with 5 rows of 8, which is 40. One more row adds 8. So 40 + 8 = 48.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 48,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 40,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 45,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 56,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6*8", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A big array has 100 dots. Each row has 10 dots. Move the frog to the number of rows.",
+        "prompt": "100 ÷ 10 = ?",
+        "why": "Think 10 times what is 100. Since 10 × 10 = 100, there are 10 rows.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 10,
+        "check": { "rule": "equals", "expr": "100/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A seating chart is an array with 7 rows and 8 seats in each row. Move the frog to the number of seats in all.",
+        "prompt": "7 × 8 = ?",
+        "why": "Count by eights 7 times: 8, 16, 24, 32, 40, 48, 56. So 7 × 8 = 56.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 80,
+        "step": 4,
+        "target": 56,
+        "check": { "rule": "equals", "expr": "7*8", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

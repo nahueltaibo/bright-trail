@@ -1,0 +1,8 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [],
+    "notes": "I checked the story and all 16 items for g4-operation-properties. No blockers found.\n\nArithmetic checked:\n- Story: 8+53=53+8; 53+7=60, 60+8=68; 6×14=60+24=84; 84÷6=14; 68-8=60.\n- keypad-1: 9+6=6+9, answer 9.\n- tap-1: 47×1=47, and 47 is the only correct choice.\n- number-line-1: 6×3=18, which is on the 0–20 line.\n- keypad-2: 28÷7=4.\n- tap-2 (VERIFY): 15-6=9, checked by 9+6=15. The distractor 9×6=54, so it is wrong. Marked answer is correct.\n- keypad-3: 28+12=40, 40+35=75.\n- tap-3 (VERIFY): 6×14=6×10+6×4=84. The distractor 6×10+4=64, so it is wrong. Marked answer is correct.\n- number-line-2: 7×12=84, which is a multiple of 4 and on the 0–100 line with step 4.\n- keypad-4: 12×8=96. The explanation 120-24=96 is valid.\n- tap-4: 55+35=90, so the answer 35 is correct. Other choices (125, 45, 55) are wrong.\n- keypad-5: 5×2×13=130.\n- number-line-3: 6×25=150, which is a multiple of 10 and on the 0–200 line with step 10.\n- tap-5 (VERIFY): 12×13=156, so the answer 13 is correct. The distractors 12×156 and 13+12=25 are wrong.\n- number-line-4: 180+120=300, which is a multiple of 20 and on the 0–400 line with step 20.\n- keypad-6: 6×15=90, then 90-20=70.\n\nNote-level observations (no change required):\n- tap-2 has only two choices and tap-3 and tap-5 have three. This is fine for this age, but the wrong choices are easy to rule out by size alone.\n- keypad-1 reuses the number 9 from the question, so a child could guess the answer from the sound of the question. This is fine at difficulty 1."
+  }
+}

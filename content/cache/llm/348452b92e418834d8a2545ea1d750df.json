@@ -1,0 +1,456 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She has 6 apples. Yum!",
+        "text": "6",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 6, "filled": null }
+      },
+      {
+        "narration": "Mia puts 4 apples in a red basket.",
+        "text": "4",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 4, "filled": null }
+      },
+      {
+        "narration": "2 apples are left. They go in a blue basket.",
+        "text": "2",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 2, "filled": null }
+      },
+      {
+        "narration": "4 and 2 make 6. Six has two parts!",
+        "text": "4 + 2 = 6",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 6 }
+      },
+      {
+        "narration": "Now Mia has 5 pears. 3 are in a bag. How many are out? 2!",
+        "text": "3 + 2 = 5",
+        "visual": { "kind": "objects", "emoji": "🍐", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Let's practise! Find the parts of numbers.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here are 5 apples. 3 are red and 2 are green. 3 and 2 make what? Is it 4, 5, or 6?",
+        "prompt": "3 + 2 = ?",
+        "why": "Put 3 and 2 together. Count on: 3, then 4, 5. It makes 5.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are 5 bugs. 4 are on a leaf. How many are not on the leaf?",
+        "prompt": "4 + ? = 5",
+        "why": "5 bugs in all. 4 are on the leaf. Just 1 bug is left over.",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 5, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Lola has 4 hats in all. 1 hat is red. The rest are blue. Hop to how many are blue.",
+        "prompt": "1 + ? = 4",
+        "why": "4 hats in all. Take away the 1 red hat. 3 blue hats are left.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "4 - 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here are 4 berries. 2 and 2 make what? Is it 5, 3, or 4?",
+        "prompt": "2 + 2 = ?",
+        "why": "Put 2 and 2 together. Count on: 2, then 3, 4. It makes 4.",
+        "visual": { "kind": "objects", "emoji": "🍓", "count": 4, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Max has 3 red cars and 3 blue cars. How many cars in all?",
+        "prompt": "3 + 3 = ?",
+        "why": "Put the 3 red cars with the 3 blue cars. Count them all. There are 6.",
+        "visual": { "kind": "objects", "emoji": "🚗", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Here are 6 apples. 6 is 4 and what? Is it 2, 3, or 4?",
+        "prompt": "4 + ? = 6",
+        "why": "Start at 4. Count up to 6: 5, 6. That is 2 more.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Sam has 8 coins. 5 coins are in a jar. Hop to how many are out of the jar.",
+        "prompt": "5 + ? = 8",
+        "why": "8 coins in all. 5 are in the jar. Count up from 5 to 8. That is 3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "8 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Here is a ten frame with 7 dots. 7 is 5 and what? Type the missing part.",
+        "prompt": "5 + ? = 7",
+        "why": "A full row has 5 dots. Count the dots left in the next row. There are 2.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 7 },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which pair makes 8? Is it 5 and 2, 4 and 3, or 5 and 3?",
+        "prompt": "Which makes 8?",
+        "why": "Add each pair. 5 and 3 make 8. The other pairs make 7.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "5 and 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4 and 3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5 and 3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "8",
+          "choices": [
+            { "id": "a", "expr": "5 + 2" },
+            { "id": "b", "expr": "4 + 3" },
+            { "id": "c", "expr": "5 + 3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Ana has 9 stickers. 5 are stars. The rest are hearts. Hop to how many are hearts.",
+        "prompt": "5 + ? = 9",
+        "why": "9 stickers in all. 5 are stars. Count up from 5 to 9. That is 4 hearts.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "9 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Here is a ten frame with 6 dots. How many more dots make 10?",
+        "prompt": "6 + ? = 10",
+        "why": "A full ten frame has 10 dots. Count the empty spots. There are 4.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 6 },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 - 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which pair makes 10? Is it 6 and 5, 7 and 2, or 7 and 3?",
+        "prompt": "Which makes 10?",
+        "why": "Add each pair. 7 and 3 make 10. The other pairs do not.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "6 and 5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "7 and 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "7 and 3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "10",
+          "choices": [
+            { "id": "a", "expr": "6 + 5" },
+            { "id": "b", "expr": "7 + 2" },
+            { "id": "c", "expr": "7 + 3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Tom has 10 grapes. 7 grapes are in a bowl. Hop to how many are not in the bowl.",
+        "prompt": "7 + ? = 10",
+        "why": "10 grapes in all. 7 are in the bowl. Count up from 7 to 10. That is 3.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "10 - 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Here are 9 blocks. 9 is made of 2 and a missing part. What is the missing part?",
+        "prompt": "2 + ? = 9",
+        "why": "Start at 2. Count up to 9: 3, 4, 5, 6, 7, 8, 9. That is 7 more.",
+        "visual": { "kind": "objects", "emoji": "🧱", "count": 9, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Pip has 8 flies. 6 are on a rock. The rest are on a log. How many are on the log? Is it 3, 4, 1, or 2?",
+        "prompt": "6 + ? = 8",
+        "why": "8 flies in all. 6 are on the rock. Count up from 6 to 8. That is 2.",
+        "visual": { "kind": "objects", "emoji": "🪰", "count": 8, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 - 6", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

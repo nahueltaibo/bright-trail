@@ -1,0 +1,480 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam works at a bakery. He cuts each cake into 4 equal slices. One slice is one fourth of a cake. We name it 1/4.",
+        "text": "1 slice = 1/4",
+        "visual": { "kind": "emoji", "emoji": "🍰", "count": null, "filled": null }
+      },
+      {
+        "narration": "Sam counts slices. 1 one fourth, 2 one fourths, 3 one fourths. Here are 3 slices. Each slice is 1/4, so together they are 3/4.",
+        "text": "3 one fourths = 3/4",
+        "visual": { "kind": "objects", "emoji": "🍰", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Now Sam has 4 slices. 4 one fourths is 4/4. That is the same as 1 whole cake.",
+        "text": "4/4 = 1 whole",
+        "visual": { "kind": "objects", "emoji": "🍰", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Sam keeps counting. Here are 5 slices. 5 one fourths is 5/4. That is 1 whole cake and 1 more slice. Fractions can go past 1 whole.",
+        "text": "5 one fourths = 5/4",
+        "visual": { "kind": "objects", "emoji": "🍰", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Adding slices is the same as multiplying. 1/4 + 1/4 + 1/4 + 1/4 is 4 × 1/4. That equals 4/4.",
+        "text": "1/4 + 1/4 + 1/4 + 1/4 = 4 × 1/4 = 4/4",
+        "visual": null
+      },
+      {
+        "narration": "The top number counts the slices. The bottom number tells the size of each slice. Here are 6 slices. 6 one fourths is 6/4.",
+        "text": "6 × 1/4 = 6/4",
+        "visual": { "kind": "objects", "emoji": "🍰", "count": 6, "filled": null }
+      },
+      {
+        "narration": "Great counting! Now it is your turn to practise with fractions.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam adds 1/4 + 1/4 + 1/4. Is the total 3/4, 1/4, or 4/3?",
+        "prompt": "1/4 + 1/4 + 1/4 = ?",
+        "why": "Each 1/4 is one slice. Three slices make 3 one fourths, which is 3/4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3/4",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "3/4" },
+            { "id": "c", "expr": "4/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here are 6 sandwich pieces. Each piece is one half, or 1/2. How many one halves are there? Is it 2, 3, or 6?",
+        "prompt": "How many halves?",
+        "why": "Count the pieces. There are 6, and each one is 1/2. So there are 6 one halves.",
+        "visual": { "kind": "objects", "emoji": "🥪", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are 7 cake slices. Each slice is 1/4 of a cake. Type the top number of the fraction for all the slices.",
+        "prompt": "Top number?",
+        "why": "The top number counts the slices. Count them: there are 7. So the fraction is 7/4.",
+        "visual": { "kind": "objects", "emoji": "🍰", "count": 7, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 4 equal slices. Each slice is 1/4. Move the frog to how many slices make 1 whole pizza.",
+        "prompt": "Slices in 1 whole",
+        "why": "4 one fourths make 4/4, which is 1 whole. So the frog goes to 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Counting by thirds goes 1/3, 2/3, 3/3. How many one thirds make 3/3? Type the number.",
+        "prompt": "3/3 is how many thirds?",
+        "why": "The top number counts the one thirds. 3/3 is 3 one thirds, which makes 1 whole.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia thinks 4 × 1/3 is the same as adding 1/3 four times. What is 4 × 1/3? Is it 4/3, 3/4, or 1/12?",
+        "prompt": "4 × 1/3 = ?",
+        "why": "4 × 1/3 means 4 one thirds. The top number counts them, so it is 4/3.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/12",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "4/3",
+          "choices": [
+            { "id": "a", "expr": "3/4" },
+            { "id": "b", "expr": "1/12" },
+            { "id": "c", "expr": "4/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Kai has 5/3 of a pizza. Is that more than 1 whole pizza? Yes or no?",
+        "prompt": "Is 5/3 more than 1?",
+        "why": "3 one thirds make 1 whole. 5 one thirds is 2 more than that, so it is more than 1 whole.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "5/3 > 1",
+          "choices": [
+            { "id": "a", "expr": "not (5/3 > 1)" },
+            { "id": "b", "expr": "5/3 > 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Lena adds 1/4 nine times. That makes 9/4. How many one fourths did she add? Type the number.",
+        "prompt": "9/4 is how many fourths?",
+        "why": "The top number counts the one fourths. 9/4 means 9 one fourths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Amir runs 1/5 of a kilometre each lap. He runs 7 laps. That is 7 one fifths. Move the frog to the top number of his total.",
+        "prompt": "7 × 1/5 = ?/5",
+        "why": "7 laps of 1/5 is 7 × 1/5. The top number counts the laps, so it is 7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Amir runs 1/5 of a kilometre each lap. After 7 laps he has run 7/5 of a kilometre. What is the bottom number?",
+        "prompt": "Bottom number?",
+        "why": "The bottom number is the size of each part. Each lap is 1/5, so the bottom number is 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is greatest: 7/8, 9/8, or 8/8? All are counts of one eighths.",
+        "prompt": "Greatest amount?",
+        "why": "All of them count one eighths. The biggest count is 9, so 9/8 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "9/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "7/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "8/8",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "9/8" },
+            { "id": "b", "expr": "7/8" },
+            { "id": "c", "expr": "8/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Dee has 1 whole pizza cut in thirds, plus 2 more one thirds. Is her total 5/3, 2/3, 3/5, or 6/3?",
+        "prompt": "1 whole + 2 thirds",
+        "why": "1 whole is 3/3. Add 2 more one thirds to get 5 one thirds, which is 5/3.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "6/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "5/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3/3 + 2/3",
+          "choices": [
+            { "id": "a", "expr": "2/3" },
+            { "id": "b", "expr": "3/5" },
+            { "id": "c", "expr": "6/3" },
+            { "id": "d", "expr": "5/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A ribbon is cut in pieces of 1/4 metre each. Joe has 12 pieces, which is 12/4. How many whole metres is that?",
+        "prompt": "12/4 = ? wholes",
+        "why": "Every 4 one fourths make 1 whole. 12 ÷ 4 is 3, so he has 3 whole metres.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Counting by sixths goes 1/6, 2/6, and on. How many one sixths make 2 wholes? Type the number.",
+        "prompt": "One sixths in 2 wholes",
+        "why": "6 one sixths make 1 whole. Two wholes need 6 + 6, which is 12 one sixths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 12,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 * 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Counting by thirds, 3 one thirds make 1 whole. How many one thirds make 3 wholes? Move the frog to that number.",
+        "prompt": "Thirds in 3 wholes",
+        "why": "Each whole has 3 one thirds. Three wholes make 3 × 3, which is 9 one thirds.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "3 * 3", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

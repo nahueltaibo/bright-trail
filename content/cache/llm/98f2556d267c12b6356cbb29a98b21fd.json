@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 3 shows 5 ducks in a line, but step 4 shows only 3 ducks while saying 'the next duck is second. Then comes third.' The count changes without explanation, which could confuse a child listening by ear. Consider showing all 5 ducks in step 4, or saying 'the first three ducks' in the narration."
+      },
+      {
+        "target": "k-uses-of-numbers-keypad-3",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The answer 5 is both the duck count and the last duck's place, so a child can get it right by counting the ducks without understanding place. Consider asking a place-only question, or using a different number of ducks so the count and the place differ."
+      }
+    ],
+    "notes": "I checked every VERIFY item and the marked answers are correct: tap-1 (4 cats is how many), tap-2 (shirt 7 is a name), tap-3 (first is which one), tap-4 (6 hats is how many), tap-5 (door 12 is a name), number-line-4 (seventh is 7), and tap-6 (shirt number 8 is the name). The other items (keypad-1, keypad-2, keypad-4, number-line-1, number-line-2, number-line-3, tap-7) also have correct answers. No blockers found. The story facts are accurate, and the ordinal items up to seventh are within the Ontario Kindergarten range."
+  }
+}

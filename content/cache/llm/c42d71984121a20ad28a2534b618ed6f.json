@@ -1,0 +1,476 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She loves stickers. Today Mia has 45 stickers in her book.",
+        "text": "45",
+        "visual": { "kind": "emoji", "emoji": "⭐", "count": null, "filled": null }
+      },
+      {
+        "narration": "Her friend gives her 20 more. We join them. Add the tens. 45 and 20 makes 65.",
+        "text": "45 + 20 = 65",
+        "visual": null
+      },
+      {
+        "narration": "Then Mia gives 30 stickers away. We take away. 65 take away 30 leaves 35.",
+        "text": "65 - 30 = 35",
+        "visual": null
+      },
+      {
+        "narration": "Ben has 40 stickers. Mia has 65. To compare, count up from 40 to 65. That is 25 more.",
+        "text": "65 - 40 = 25",
+        "visual": null
+      },
+      {
+        "narration": "Sometimes a number hides. Mia had some stickers. She got 20 more and now has 70. Take 20 from 70. She had 50.",
+        "text": "? + 20 = 70",
+        "visual": null
+      },
+      {
+        "narration": "To add 38 and 6, make a ten. 38 and 2 is 40. Then add 4 more. That is 44.",
+        "text": "38 + 6 = 44",
+        "visual": null
+      },
+      {
+        "narration": "Now you try! Join, take away, compare, and find the hiding number.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Sam has 30 shells. He finds 20 more shells. How many shells does he have now?",
+        "prompt": "30 + 20 = ?",
+        "why": "Join the tens. 3 tens and 2 tens make 5 tens. That is 50.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 50,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "30+20", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Pia has 60 beads. She loses 10 beads. How many beads are left? Is it 40, 50, or 70?",
+        "prompt": "60 - 10 = ?",
+        "why": "Take away 1 ten from 6 tens. That leaves 5 tens. That is 50.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 40,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 70,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 50,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "60-10", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Zip the frog sits on 40. He hops 5 more. Move the frog to where he lands.",
+        "prompt": "40 + 5",
+        "why": "Start at 40. Hop 1 step five times. You land on 45.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 40,
+        "max": 50,
+        "step": 1,
+        "target": 45,
+        "check": { "rule": "equals", "expr": "40+5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are 8 apples. Then 5 more apples come. How many apples are there now?",
+        "prompt": "How many apples?",
+        "why": "Start with 8. Count on 5 more. 9, 10, 11, 12, 13. There are 13.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 8, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 13,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8+5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Jo has 40 coins. How many more coins does Jo need to get 50 coins? Is it 10, 20, 30, or 90?",
+        "prompt": "40 + ? = 50",
+        "why": "Count up by tens from 40. One ten gets you to 50. So 10 more.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 90,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "50-40", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Leo has 47 cards. He gets 6 more cards. How many cards does Leo have now?",
+        "prompt": "47 + 6 = ?",
+        "why": "Make a ten. 47 and 3 is 50. Then add 3 more. That is 53.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 53,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "47+6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Zip the frog sits on 90. He hops back 20. Move the frog to where he lands.",
+        "prompt": "90 - 20",
+        "why": "Hopping back 20 is two jumps of 10. 90, 80, 70. He lands on 70.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 70,
+        "check": { "rule": "equals", "expr": "90-20", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ana has 72 stickers. Bo has 50 stickers. How many more stickers does Ana have? Is it 12, 22, 32, or 122?",
+        "prompt": "72 - 50 = ?",
+        "why": "Compare by taking 50 from 72. 7 tens take away 5 tens is 2 tens. Then 2 ones stay. That is 22.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 32,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 122,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 22,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "72-50", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Kim had some marbles. She found 20 more. Now she has 75 marbles. How many marbles did she have at the start?",
+        "prompt": "? + 20 = 75",
+        "why": "The hiding number is the start. Take 20 away from 75. That leaves 55.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 55,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "75-20", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Max has 35 pennies. He gets 24 more pennies. Which number sentence fits? Is it 35 + 24, 35 - 24, or 59 - 24?",
+        "prompt": "Max gets 24 more",
+        "why": "Getting more means we join. Add the two amounts. 35 + 24 is the sentence that fits.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "35 - 24",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "59 - 24",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "35 + 24",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 2" },
+            { "id": "b", "expr": "1 == 2" },
+            { "id": "c", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Rosa has 68 stickers. Her aunt gives her 27 more stickers. How many stickers does Rosa have now?",
+        "prompt": "68 + 27 = ?",
+        "why": "Add the tens first. 68 and 20 is 88. Then add 7. 88 and 7 is 95.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 95,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "68+27", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A bus has 80 riders. Then 15 riders get off. Move the frog to how many riders are left.",
+        "prompt": "80 - 15",
+        "why": "Take away 10 first to get 70. Then take away 5 more. You land on 65.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "target": 65,
+        "check": { "rule": "equals", "expr": "80-15", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Tom had 91 balloons. Some popped. Now he has 64 balloons. How many balloons popped?",
+        "prompt": "91 - ? = 64",
+        "why": "Count up from 64 to 91. 64 to 70 is 6. 70 to 91 is 21. 6 and 21 make 27.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 27,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "91-64", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Eli had some coins. He gave away 28 coins. Now he has 40 coins left. How many coins did Eli have at first? Is it 12, 58, 68, or 72?",
+        "prompt": "? - 28 = 40",
+        "why": "The start is the whole. Add the parts back together. 40 and 28 make 68.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 68,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 58,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 72,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "40+28", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "The red team has 85 points. The blue team has 59 points. How many fewer points does blue have? Is it 24, 26, 36, or 144?",
+        "prompt": "85 - 59 = ?",
+        "why": "Count up from 59 to 85. 59 to 60 is 1. 60 to 85 is 25. So 26 fewer.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 26,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 24,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 36,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 144,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "85-59", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

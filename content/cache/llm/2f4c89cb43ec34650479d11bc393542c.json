@@ -1,0 +1,437 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She has 12 apples in her basket.",
+        "text": "12",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Mia picks 5 more apples. Joining is adding. Now she has 17 apples.",
+        "text": "12 + 5 = 17",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 17, "filled": null }
+      },
+      {
+        "narration": "Mia gives 4 apples to a friend. Taking away is subtracting. Now she has 13.",
+        "text": "17 - 4 = 13",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 13, "filled": null }
+      },
+      {
+        "narration": "Sam has 9 apples. Mia has 13. To find how many more, take 9 from 13. Mia has 4 more.",
+        "text": "13 - 9 = 4",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 13, "filled": null }
+      },
+      {
+        "narration": "Now Mia has 20 apples. 8 are green. The rest are red. Take 8 from 20 to find the red ones.",
+        "text": "20 - 8 = 12",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 20, "filled": null }
+      },
+      {
+        "narration": "You can add, take away, compare, and find a missing number. Let us practise!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Ben has 8 toy cars. He gets 3 more. How many cars does he have now? Is it 10, 11, 12, or 13?",
+        "prompt": "8 + 3 = ?",
+        "why": "Start at 8 and count on 3 more. 9, 10, 11. Ben has 11 cars.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 11,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 13,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ana has 25 stickers. She gets 6 more. How many stickers does she have now? Is it 29, 30, 31, or 32?",
+        "prompt": "25 + 6 = ?",
+        "why": "Add 5 to make 30. Then add 1 more. 25 + 6 is 31.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 31,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 29,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 30,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 32,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "25 + 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Leo has 34 shells. Zoe has 28 shells. How many more shells does Leo have? Is it 5, 6, 7, or 8?",
+        "prompt": "34 - 28 = ?",
+        "why": "Count up from 28 to 30 is 2. Then 30 to 34 is 4. That is 6 more.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "34 - 28", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Some birds sat on a fence. Then 7 more came. Now there are 15 birds. How many were there at first? Is it 6, 8, 9, or 22?",
+        "prompt": "? + 7 = 15",
+        "why": "Take 7 from 15 to go back to the start. 15 - 7 = 8 birds.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 22,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "15 - 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Tom has 9 grapes. He eats 4 of them. How many are left? Is it 9 + 4 = 13, or 9 - 4 = 5?",
+        "prompt": "Tom eats 4 grapes.",
+        "why": "Eating takes grapes away. So we subtract. 9 - 4 = 5 grapes are left.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "9 + 4 = 13",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "9 - 4 = 5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "9 - 4",
+          "choices": [
+            { "id": "a", "expr": "9 + 4" },
+            { "id": "b", "expr": "9 - 4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are 6 fish. 4 more fish swim in. How many fish are there now?",
+        "prompt": "6 + 4 = ?",
+        "why": "Start at 6 and count on 4. 7, 8, 9, 10. There are 10 fish.",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 6, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Kai has 10 coins. He spends 3 coins. How many coins does he have left?",
+        "prompt": "10 - 3 = ?",
+        "why": "Take away 3 from 10. Count back: 9, 8, 7. Kai has 7 coins.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 - 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "There are 23 kids on a bus. 5 more kids get on. How many kids are on the bus now?",
+        "prompt": "23 + 5 = ?",
+        "why": "3 + 5 = 8. So 23 + 5 is 28 kids.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 28,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "23 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Mia has 36 beads. She uses 12 beads for a bracelet. How many beads are left?",
+        "prompt": "36 - 12 = ?",
+        "why": "Take away 10 first to get 26. Then take away 2 more. 24 beads are left.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 24,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "36 - 12", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Dan had some cards. He got 14 more. Now he has 40 cards. How many cards did he have at first?",
+        "prompt": "? + 14 = 40",
+        "why": "Go back from 40 by taking away 14. 40 - 14 = 26 cards.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 26,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "40 - 14", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "The frog starts at 5. It hops 4 more. Drag the frog to where it lands.",
+        "prompt": "5 + 4 = ?",
+        "why": "Start at 5. Hop 4 times to the right: 6, 7, 8, 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "5 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "The frog starts at 20. It hops back 6. Drag the frog to where it lands.",
+        "prompt": "20 - 6 = ?",
+        "why": "Hop back to the left 6 times from 20. You land on 14.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 30,
+        "step": 1,
+        "target": 14,
+        "check": { "rule": "equals", "expr": "20 - 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Pip has 30 stones. He finds 15 more. Drag the frog to how many stones he has now.",
+        "prompt": "30 + 15 = ?",
+        "why": "Hop 10 to get to 40. Then hop 5 more to 45.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 5,
+        "target": 45,
+        "check": { "rule": "equals", "expr": "30 + 15", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "There are 50 birds in a tree. 18 birds fly away. Drag the frog to how many birds are left.",
+        "prompt": "50 - 18 = ?",
+        "why": "Take away 20 to get 30. That was 2 too many, so add 2 back. 32 birds are left.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 50,
+        "step": 2,
+        "target": 32,
+        "check": { "rule": "equals", "expr": "50 - 18", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Zed has 27 marbles. He wants 35 marbles. How many more does he need? Drag the frog to the answer.",
+        "prompt": "27 + ? = 35",
+        "why": "Count up from 27 to 30 is 3. Then 30 to 35 is 5. That is 8 more.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 40,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "35 - 27", "choices": [], "note": "" }
+      }
+    ]
+  }
+}
