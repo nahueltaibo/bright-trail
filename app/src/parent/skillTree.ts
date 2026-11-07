@@ -4,6 +4,7 @@ import {
   type Attempt,
   type MasteryState,
   type MasteryStatus,
+  type PlacementState,
   type Skill,
   type SkillGrade,
 } from '@bright-trail/shared';
@@ -54,36 +55,45 @@ export function groupSkillsByGrade(
   })).filter((g) => g.rows.length > 0);
 }
 
-export type PlacedSkill = SkillRow & {
-  /** Placement items answered and answered right for this skill. Zero when it was assumed. */
-  placementAnswered: number;
-  placementCorrect: number;
+export type PlacementResultRow = {
+  skill: Skill;
+  /** What placement concluded: shown it, or found a gap. */
+  passed: boolean;
+  /** Placement items answered and answered right for this skill. */
+  answered: number;
+  correct: number;
 };
 
 /**
- * Skills placement gave a state to, in grade order, so a parent can spot-check them. Skills
- * placement asked about come with their tally. Assumed ones have none.
+ * The skills placement asked about, in grade order, so a parent can spot-check them. Tallies
+ * count only this placement's items, so attempts from before a progress reset are left out.
  */
-export function placedSkills(
+export function placementResults(
   skills: readonly Skill[],
-  mastery: readonly MasteryState[],
+  placement: Pick<PlacementState, 'results' | 'usedItemIds'>,
   attempts: readonly Attempt[],
-  today: string,
-): PlacedSkill[] {
+): PlacementResultRow[] {
+  const used = new Set(placement.usedItemIds);
+  // Placement shows each item once, so the latest answer to it is this placement's.
+  const latest = new Map<string, Attempt>();
+  for (const a of attempts)
+    if (a.phase === 'placement' && used.has(a.itemId)) latest.set(a.itemId, a);
   const tally = new Map<string, { answered: number; correct: number }>();
-  for (const a of attempts) {
-    if (a.phase !== 'placement') continue;
+  for (const a of latest.values()) {
     const t = tally.get(a.skillId) ?? { answered: 0, correct: 0 };
     t.answered++;
     if (a.correct) t.correct++;
     tally.set(a.skillId, t);
   }
-  return groupSkillsByGrade(skills, mastery, today)
-    .flatMap((g) => g.rows)
-    .filter((row) => row.state !== 'unknown' || tally.has(row.skill.id))
-    .map((row) => ({
-      ...row,
-      placementAnswered: tally.get(row.skill.id)?.answered ?? 0,
-      placementCorrect: tally.get(row.skill.id)?.correct ?? 0,
-    }));
+  const passed = new Map(placement.results.map((r) => [r.skillId, r.passed]));
+  return SKILL_GRADES.flatMap((grade) =>
+    skills
+      .filter((skill) => skill.grade === grade && passed.has(skill.id))
+      .map((skill) => ({
+        skill,
+        passed: passed.get(skill.id)!,
+        answered: tally.get(skill.id)?.answered ?? 0,
+        correct: tally.get(skill.id)?.correct ?? 0,
+      })),
+  );
 }

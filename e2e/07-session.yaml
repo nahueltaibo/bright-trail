@@ -1,0 +1,81 @@
+appId: com.nahueltaibo.brighttrail
+name: Session with placement
+---
+# A child born six years back is in Grade 1, so placement starts on the sample's Grade 1 skills.
+# Every answer here is wrong, which walks placement down to Kindergarten.
+- runFlow: subflows/launch-clean.yaml
+- runFlow: subflows/set-pin.yaml
+- runFlow:
+    file: subflows/add-child.yaml
+    env:
+      NAME: Maya
+      AVATAR: Owl
+- tapOn: ‹ Kids
+- tapOn: Maya, Owl
+- assertVisible: 0 stars on your trail
+- tapOn: Start
+
+# Placement, Grade 1: numbers to 50.
+- extendedWaitUntil:
+    visible: 10, 20, 30, 40, \?
+    timeout: 10000
+- tapOn: '1'
+- tapOn: Check my answer
+- assertVisible: Good try!
+- tapOn: Next
+- assertVisible: Which is thirty-four\?
+- tapOn: '43'
+- assertVisible: Good try!
+- tapOn: Next
+
+# Quit on the third item, flag it, and come back: placement resumes on the same item.
+- assertVisible: 5 \+ 3 = \?
+- tapOn: This looks wrong
+- assertVisible: Thanks for telling us
+- tapOn: Stop for now
+- assertVisible: Hi, Maya!
+- tapOn: Start
+- extendedWaitUntil:
+    visible: 5 \+ 3 = \?
+    timeout: 10000
+
+# Placement, Grade 1: adding to 10. Then Kindergarten: counting to 20.
+- tapOn: '1'
+- tapOn: Check my answer
+- tapOn: Next
+- assertVisible: 4 \+ 2
+- tapOn: Five apples
+- tapOn: Next
+- assertVisible: 14, \?
+- tapOn: '1'
+- tapOn: Check my answer
+- tapOn: Next
+- assertVisible: How many fish\?
+- tapOn: '8'
+- tapOn: Next
+
+# Placement is done, so the first lesson starts: the story, then its check.
+- assertVisible: Card 1 of 5
+- tapOn: Next
+- tapOn: Next
+- tapOn: Next
+- tapOn: Next
+- tapOn: Done
+- assertVisible: Find 12
+- tapOn: Stop for now
+- assertVisible: Hi, Maya!
+
+# The parent sees what placement found and the flag.
+- tapOn: Back to profiles
+- tapOn: Parent area
+- runFlow: subflows/enter-pin.yaml
+- tapOn: Maya, .*
+- tapOn: Placement review
+- assertVisible: Placed at Kindergarten\.
+- assertVisible: 3 placed skills
+- assertVisible: Count to 20
+- assertVisible: .*0 of 2 right
+- tapOn: ‹ Back
+- tapOn: ‹ Back
+- tapOn: See flags
+- assertVisible: Open \(1\)

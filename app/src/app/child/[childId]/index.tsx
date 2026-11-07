@@ -1,30 +1,44 @@
-import type { ChildProfile, ContentBundle } from '@bright-trail/shared';
-import { router, useLocalSearchParams } from 'expo-router';
-import { useEffect, useState } from 'react';
+import type { ChildProfile } from '@bright-trail/shared';
+import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
+import { useCallback, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getAvatar } from '../../../avatars';
-import { loadBundle } from '../../../content/loadBundle';
+import { TrailMap } from '../../../components/TrailMap';
+import { BigButton } from '../../../learning/controls';
 import { SpeakerButton, useAutoNarration } from '../../../narration';
+import { countStars } from '../../../session';
 import { useStorage } from '../../../storage/StorageProvider';
 
-/** Per-child home. Placeholder until A6 puts the session and trail map here. */
+/** Per-child home: the trail map and the button that starts a session. */
 export default function ChildHomeScreen() {
   const { childId } = useLocalSearchParams<{ childId: string }>();
   const repo = useStorage();
   const [child, setChild] = useState<ChildProfile | null | undefined>(undefined);
-  const [bundle, setBundle] = useState<ContentBundle | null>(null);
+  const [stars, setStars] = useState(0);
 
-  useEffect(() => {
-    repo.children.get(childId).then(setChild);
-    loadBundle().then(setBundle);
-  }, [repo, childId]);
+  // Reload on focus so stars earned in a session show on return.
+  useFocusEffect(
+    useCallback(() => {
+      let live = true;
+      Promise.all([repo.children.get(childId), repo.mastery.listForChild(childId)]).then(
+        ([profile, mastery]) => {
+          if (!live) return;
+          setChild(profile);
+          setStars(countStars(mastery));
+        },
+      );
+      return () => {
+        live = false;
+      };
+    }, [repo, childId]),
+  );
 
   const greeting =
     child === undefined
       ? null
       : child
-        ? `Hi, ${child.firstName}! Your trail is coming soon.`
+        ? `Hi, ${child.firstName}! Tap the big button to start.`
         : 'This profile is gone. Tap the house to go back.';
   useAutoNarration(greeting);
 
@@ -48,11 +62,15 @@ export default function ChildHomeScreen() {
           <>
             <Text style={styles.avatar}>{getAvatar(child.avatar).emoji}</Text>
             <Text style={styles.title}>Hi, {child.firstName}!</Text>
-            {bundle && (
-              <Text style={styles.note}>
-                Your trail is coming soon. {bundle.skills.length} skills are ready.
-              </Text>
-            )}
+            <TrailMap stars={stars} />
+            <BigButton
+              label="Start"
+              icon="▶"
+              size={120}
+              onPress={() =>
+                router.push({ pathname: '/child/[childId]/session', params: { childId } })
+              }
+            />
           </>
         ) : (
           <Text style={styles.note}>This profile no longer exists.</Text>
@@ -66,8 +84,8 @@ const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: '#FFFBF0' },
   topBar: { flexDirection: 'row', justifyContent: 'space-between', padding: 16 },
   back: { fontSize: 40 },
-  body: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 16, padding: 24 },
-  avatar: { fontSize: 120 },
+  body: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 24, padding: 24 },
+  avatar: { fontSize: 100 },
   title: { fontSize: 32, color: '#5A4A1F' },
   note: { fontSize: 18, color: '#7A6A3F', textAlign: 'center' },
 });

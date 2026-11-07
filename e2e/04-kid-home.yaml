@@ -21,7 +21,8 @@ name: Kid home and child home
 
 - tapOn: Maya, Owl
 - assertVisible: Hi, Maya!
-- assertVisible: Your trail is coming soon\. 3 skills are ready\.
+- assertVisible: 0 stars on your trail
+- assertVisible: Start
 - tapOn: Back to profiles
 - assertVisible: Maya, Owl
 

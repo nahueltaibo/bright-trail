@@ -24,7 +24,7 @@ name: Parent screens
 - tapOn: ‹ Back
 - tapOn: ‹ Back
 
-# Nothing in the app stores flags yet, so the list can only be empty.
+# No session has run, so there are no flags. 07-session checks a stored one.
 - tapOn: See flags
 - assertVisible: Open \(0\)
 - assertVisible: Nothing to look at\.
