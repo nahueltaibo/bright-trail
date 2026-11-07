@@ -6,8 +6,8 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 
 - Specs are HTML under [.docs/](.docs/): product requirements, POC requirements, and the POC task plan. Task IDs (T1, C2, A6, I1, …) come from [.docs/poc-tasks.html](.docs/poc-tasks.html), and branches are named after them (`a6-session-flow`).
 - The design system lives in [.docs/design/](.docs/design/). Each component has a `README.md` and a `preview.html`. Tokens are in `tokens.json`.
-- The app still plays the 3-skill sample bundle from `shared/fixtures/sample-bundle.json`. Swapping in the generated bundle is task I1, through `loadBundle()` in `app/src/content/loadBundle.ts`.
-- `content/out/skills.json` holds the generated K–6 skill graph. Content generation (C3) and validators (C4) aren't built yet.
+- `content/out/skills.json` holds the generated K–6 skill graph. `content/out/bundle.json` holds the generated stories and items, scoped to the targets in `content/bundle-scope.json` plus their prerequisites. Generation and its checks live in `content/src/generate/`.
+- The app still plays the 3-skill sample bundle from `shared/fixtures/sample-bundle.json`. Swapping in `content/out/bundle.json` is task I1, through `loadBundle()` in `app/src/content/loadBundle.ts`.
 
 ## Code Map
 
@@ -37,5 +37,5 @@ To see the app, run `npm run dev` and open `http://localhost:8081`. Drive it wit
 - **Adding app deps.** Use `npx expo install <pkg>` from `app/`, never plain `npm install`, so versions match Expo SDK 58.
 - **ESLint 10.** `eslint-plugin-react` can't auto-detect the React version, so `eslint.config.mjs` pins it. Bump it there when React changes.
 - **Curriculum text.** `content/sources/` stays byte-for-byte as fetched. Prettier ignores it. Don't reformat it.
-- **LLM calls.** `npm run content:graph` uses the Claude Code CLI in headless mode by default. Responses cache in `content/cache/llm/`, which is committed, so reruns are free unless a prompt changed.
+- **LLM calls.** `npm run content:graph` and `npm run content:generate` use the Claude Code CLI in headless mode by default. Responses cache in `content/cache/llm/`, which is committed, so reruns are free unless a prompt changed.
 - **Android e2e.** Windows builds need CMake 3.31+ and long paths on. See [e2e/README.md](e2e/README.md).
