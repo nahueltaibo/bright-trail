@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-fraction-repeated-addition-tap-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration names Ana, Ben and Cy, but the choices are only fractions (4/10, 4/6, 4/8). A child listening by ear has to work out that 4/6 is Ana's share. Consider making each choice name the child and its fraction, e.g. 'Ana: 4/6'. The marked answer 4/6 is correct."
+      },
+      {
+        "target": "g3-fraction-repeated-addition-keypad-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The picture shows two bars, so 8 pieces in total, of which 6 are shaded. A child looking at the picture could count 6 out of 8 and get 6/8. The narration does say '6/4' and 'one fourth added how many times', so the answer 6 is correct. Still, the item leans on an improper fraction over two wholes, which is a stretch for Grade 3 and sits against the story's 'the bottom number is how many equal parts make the whole' idea. Consider using one bar, or making the two-bar setup explicit in the narration."
+      }
+    ],
+    "notes": "I checked every item and the story against its marked answer. The marked answers are all correct: tap-1 (3/4), keypad-1 (3), number-line-1 (5), tap-2 (how many pieces), keypad-2 (8), tap-3 (3/5), keypad-3 (5), number-line-2 (7), tap-4 (four sixths, the only correct sum), keypad-4 (5), tap-5 (4/6 is biggest), keypad-5 (6), number-line-3 (6), tap-6 (Sam), keypad-6 (1). The three VERIFY items (tap-2, tap-4, tap-6) hold up: each marked choice means what its value says, and no other choice is also right. The story's arithmetic, pictures and screen text are consistent, and it teaches the right idea that the bottom number is the piece size and the top number counts pieces. I found no blockers. The two notes above are about clarity and grade fit, not wrong answers."
+  }
+}

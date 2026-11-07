@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-represent-fractions-tap-6",
+        "severity": "blocker",
+        "category": "ambiguous",
+        "note": "Two pans with 3 pieces each (6 pieces total), 4 shaded. The marked answer 4/3 counts thirds, but 4/6 and 2/3 are the same share of the whole set (4 of 6 pieces = 2/3). So three choices are true in standard math (4/3, 4/6, 2/3), which breaks the one-right-answer rule. A child who reads 2/3 of all the pieces would be marked wrong. Fix by removing 4/6 and 2/3, or by asking explicitly how many thirds are shaded. Story card 6 uses the same per-piece counting convention, so the wording should match it."
+      },
+      {
+        "target": "g4-represent-fractions-tap-7",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Narration says 3 granola bars, but the picture is 3 × 🍫 (chocolate bar). Change the emoji to a granola-style bar or change the narration to chocolate bars so audio and picture agree. The picture also does not show the sharing, so the answer depends on the narration alone."
+      },
+      {
+        "target": "g4-represent-fractions-keypad-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The question asks how many pieces are left (8 − 3 = 5). That is whole-number subtraction, not reading a fraction, so it drifts from the skill. Consider asking for the fraction that is left unshaded (5/8) or dropping the item."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 says 5 shaded pieces from 2 pans of 4 is 5/4, but it does not say why the bottom number is 4 and not 8 (each pan is one whole, so pieces are fourths). Add one sentence on this, since children may read it as 5/8. The same gap is behind the tap-6 ambiguity."
+      }
+    ],
+    "notes": "Checked all 7 story cards and 16 items. The marked answers for tap-1, keypad-1, number-line-1, tap-2, keypad-2, tap-3, number-line-2, tap-4 (VERIFY), tap-5, keypad-4, number-line-3, tap-7, and keypad-5 are correct and match their pictures and narration. tap-4 (VERIFY) checked out: the bottom number means parts in the whole, and only choice c matches. tap-6 is the main concern and should be fixed before release."
+  }
+}

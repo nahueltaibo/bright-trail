@@ -199,4 +199,44 @@ describe('validateSkill', () => {
     });
     expect(problemsOf(listed)).toEqual([]);
   });
+
+  it('needs a fraction picture choice to say the amount it shows', () => {
+    const picture = (narration: string) =>
+      mutate((c) => {
+        c.items[0].narration = `Which is more, ${narration} or 1/4 of the circle?`;
+        c.items[0].choices = [
+          {
+            id: 'a',
+            kind: 'visual',
+            value: null,
+            text: null,
+            visual: {
+              kind: 'fraction',
+              emoji: null,
+              count: null,
+              filled: null,
+              shape: 'circle',
+              parts: 4,
+              shaded: 3,
+              wholes: null,
+              label: null,
+            },
+            narration,
+          },
+          { ...text('b', '1/4 of the circle'), kind: 'text' },
+        ];
+        c.items[0].answerChoiceId = 'a';
+        c.items[0].check = {
+          rule: 'greatest',
+          expr: '',
+          choices: [{ id: 'b', expr: '1/4' }],
+          note: '',
+        };
+      });
+    expect(problemsOf(picture('3/4 of the circle'))).toEqual([]);
+    expect(problemsOf(picture('3 of 4 parts'))).toEqual([]);
+    expect(problemsOf(picture('most of the circle'))).toContain(
+      'item 1 (tap) choice a: narration "most of the circle" must name the picture\'s amount, like "3/4" or "3 of 4 parts"',
+    );
+  });
 });

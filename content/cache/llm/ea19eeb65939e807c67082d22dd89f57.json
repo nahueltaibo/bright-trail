@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-fair-share-fractions-tap-7",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "VERIFY checked: the marked answer is correct. 10 bars shared by 3 friends gives 3 1/3 each, and by 6 friends gives 1 2/3 each, so the 3-friend group gets more. The choices are group names, though, and a child hearing 'Who gets more each? 3 friends or 6 friends?' may not realise the answer is the share size, not the group. Consider adding the amounts to the narration or making the question 'Which way gives each friend more?'."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "The intro says 'Look at the picture', but the app is audio-first and several items have no picture (tap-7, keypad-4, number-line-3's narration is spoken only). Consider wording like 'Listen, then tap or type your answer.'"
+      }
+    ],
+    "notes": "I checked the arithmetic and marked answers for every item and the story cards. All marked answers are correct and each one is unique: 3, 3, 2, 5, 3 (tap-2 is 3 parts), 2, 1 1/3, 1/4, 2 1/2, 1, 2/3, 10, 3 1/3, 4, and the tap-7 comparison. The story's worked examples (1 1/3 and 2 1/2) match their pictures, where the shaded count is one friend's share. The Why explanations are accurate and none teach a misconception. Nothing is a blocker. The two notes are about wording. Mixed numbers and thirds may sit at the high end for Grade 2, so you may want to check them against the Ontario Grade 2 expectations."
+  }
+}

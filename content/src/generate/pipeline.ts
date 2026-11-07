@@ -15,6 +15,7 @@ import {
   type ReviewProblem,
 } from './schema';
 import type { CheckLevel } from './solver';
+import { applyEdits, type ContentEdit } from './edits';
 import { validateSkill } from './validate';
 
 export const MAX_RETRIES = 2;
@@ -49,6 +50,8 @@ export interface SkillOutcome {
   reviewSummary: string;
   /** LLM requests behind this skill, cached or live. */
   calls: number;
+  /** Hand edits applied after review. */
+  edits?: ContentEdit[];
 }
 
 class BadOutput extends Error {
@@ -100,14 +103,39 @@ export async function generateSkill(
   llm: LlmClient,
   {
     maxRetries = MAX_RETRIES,
+    edits = [],
     log = () => {},
-  }: { maxRetries?: number; log?: (m: string) => void } = {},
+  }: { maxRetries?: number; edits?: readonly ContentEdit[]; log?: (m: string) => void } = {},
 ): Promise<SkillOutcome> {
   const { skill } = context;
   const attempts: Attempt[] = [];
   let calls = 0;
   let request = generateRequest(context);
   let last: SkillOutcome | null = null;
+
+  // Edits land after review, so they cost no calls. Code checks run again on the result.
+  const withEdits = (outcome: SkillOutcome, output: GeneratedContent): SkillOutcome => {
+    if (edits.length === 0) return outcome;
+    const applied = applyEdits(skill.id, output, edits);
+    const validation = applied.problems.length ? null : validateSkill(skill, applied.content);
+    const problems = applied.problems.length
+      ? applied.problems
+      : validation!.problems.map((p) => `after hand edits: ${p}`);
+    if (problems.length > 0) {
+      return {
+        ...outcome,
+        status: 'failed',
+        attempts: [...attempts, { problems, reviewed: false }],
+      };
+    }
+    return {
+      ...outcome,
+      nugget: validation!.nugget,
+      items: validation!.items,
+      levels: validation!.levels,
+      edits: [...edits],
+    };
+  };
 
   for (let attempt = 0; attempt <= maxRetries; attempt++) {
     if (attempt > 0) log(`${skill.id}: retry ${attempt}`);
@@ -169,7 +197,7 @@ export async function generateSkill(
       reviewSummary,
       calls,
     };
-    if (problems.length === 0) return last;
+    if (problems.length === 0) return withEdits(last, output);
     log(`${skill.id}: ${problems.length} problems`);
     request = repairRequest(context, output, problems);
   }
@@ -203,10 +231,12 @@ export async function generateAll(
   {
     concurrency = 3,
     maxRetries = () => MAX_RETRIES,
+    edits = () => [],
     log = () => {},
   }: {
     concurrency?: number;
     maxRetries?: (skillId: string) => number;
+    edits?: (skillId: string) => readonly ContentEdit[];
     log?: (m: string) => void;
   } = {},
 ): Promise<ContentRun> {
@@ -220,6 +250,7 @@ export async function generateAll(
       try {
         const outcome = await generateSkill(context, llm, {
           maxRetries: maxRetries(context.skill.id),
+          edits: edits(context.skill.id),
           log,
         });
         outcomes.set(context.skill.id, outcome);

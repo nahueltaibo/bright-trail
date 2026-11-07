@@ -1,6 +1,7 @@
-import type { Visual } from '@bright-trail/shared';
+import { describeVisual, type Visual } from '@bright-trail/shared';
 import { useState } from 'react';
 import { StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
+import { FractionPicture } from './FractionPicture';
 import { colors } from './theme';
 
 const FRAME_BORDER = 2;
@@ -11,18 +12,6 @@ type Props = {
   width: number;
   height: number;
 };
-
-/** Short description for screen readers. */
-export function describeVisual(visual: Visual): string {
-  switch (visual.kind) {
-    case 'emoji':
-      return visual.emoji;
-    case 'objects':
-      return `${visual.count} ${visual.emoji}`;
-    case 'ten-frame':
-      return `Ten frame with ${visual.filled} filled`;
-  }
-}
 
 /** Draws a visual from data. Objects come in rows of five, like a ten-frame, to help counting. */
 export function VisualView({ visual, width, height }: Props) {
@@ -35,6 +24,14 @@ export function VisualView({ visual, width, height }: Props) {
         <Text style={[styles.emoji, { fontSize: size, lineHeight: size * 1.2 }]}>
           {visual.emoji}
         </Text>
+      </View>
+    );
+  }
+
+  if (visual.kind === 'fraction') {
+    return (
+      <View accessible accessibilityRole="image" accessibilityLabel={label}>
+        <FractionPicture visual={visual} width={width} height={height} />
       </View>
     );
   }

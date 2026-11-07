@@ -5,7 +5,12 @@ export type Value = Rational | boolean;
 export interface ExprContext {
   /** What the identifier `count` means: the count the item's picture shows. */
   count?: number;
+  /** A fraction picture's `parts` per whole and `shaded` parts. */
+  parts?: number;
+  shaded?: number;
 }
+
+const PICTURE_NAMES = ['count', 'parts', 'shaded'] as const;
 
 type Token =
   { t: 'num'; v: Rational; text: string } | { t: 'id'; v: string } | { t: 'op'; v: string };
@@ -94,7 +99,8 @@ const ARITY: Record<string, [number, number]> = {
 
 /**
  * A small exact-arithmetic language for answer checks: numbers, `+ - * / × ÷ % ^`, brackets,
- * comparisons, `and`/`or`/`not`, `count`, and the functions in `FUNCTIONS`.
+ * comparisons, `and`/`or`/`not`, the picture names `count`, `parts`, and `shaded`, and the
+ * functions in `FUNCTIONS`.
  */
 class Parser {
   private pos = 0;
@@ -227,9 +233,17 @@ class Parser {
     if (t.t === 'id') {
       this.pos++;
       if (t.v === 'true' || t.v === 'false') return t.v === 'true';
-      if (t.v === 'count') {
-        if (this.ctx.count === undefined) throw new Error('count used but the item shows no count');
-        return Rational.of(this.ctx.count);
+      const picture = PICTURE_NAMES.find((name) => name === t.v);
+      if (picture) {
+        const value = this.ctx[picture];
+        if (value === undefined) {
+          throw new Error(
+            picture === 'count'
+              ? 'count used but the item shows no count'
+              : `${picture} used but the item shows no fraction picture`,
+          );
+        }
+        return Rational.of(value);
       }
       const fn = FUNCTIONS[t.v];
       if (!fn) throw new Error(`Unknown name "${t.v}" in "${this.source}"`);

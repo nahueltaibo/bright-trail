@@ -7,6 +7,7 @@ import { ClaudeCliLlm } from '../graph/cli-llm';
 import { cacheKey, withDiskCache, type LlmClient } from '../graph/llm';
 import { loadSources } from '../graph/sources';
 import { writeFormatted } from '../graph/write';
+import { loadEdits } from './edits';
 import { buildBundle, generateAll, MAX_RETRIES } from './pipeline';
 import { generateRequest, type SkillContext } from './prompts';
 import { loadScope, prerequisiteClosure } from './scope';
@@ -32,6 +33,8 @@ const { values } = parseArgs({
     /** Every skill in the graph, ignoring bundle-scope.json. */
     all: { type: 'boolean', default: false },
     concurrency: { type: 'string', default: '3' },
+    /** Cached responses only: a miss fails that skill instead of calling the CLI. */
+    offline: { type: 'boolean', default: false },
   },
 });
 
@@ -61,6 +64,12 @@ const contextOf = (id: string): SkillContext => {
 };
 const contexts = wanted.map(contextOf);
 
+const edits = await loadEdits(join(contentDir, 'content-edits.json'));
+const unknownEdits = edits.filter((e) => !byId.has(e.skillId));
+if (unknownEdits.length > 0) {
+  throw new Error(`Edits name unknown skills: ${unknownEdits.map((e) => e.skillId).join(', ')}`);
+}
+
 const cacheDir = join(contentDir, 'cache', 'llm');
 
 /** Skills whose first generate call is already cached, so adding them as targets costs little. */
@@ -83,6 +92,7 @@ const live = new ClaudeCliLlm();
 let liveCalls = 0;
 const counted: LlmClient = {
   call: (request) => {
+    if (values.offline) return Promise.reject(new Error(`Not cached: ${cacheKey(request)}`));
     liveCalls++;
     return live.call(request);
   },
@@ -92,6 +102,7 @@ const llm = withDiskCache(counted, cacheDir);
 const run = await generateAll(contexts, llm, {
   concurrency: Number(values.concurrency),
   maxRetries: (id) => MAX_RETRIES + (scope.extraRetries[id] ?? 0),
+  edits: (id) => edits.filter((e) => e.skillId === id),
   log: (message) => console.log(message),
 });
 console.log(`${liveCalls} live CLI calls, the rest came from the cache`);

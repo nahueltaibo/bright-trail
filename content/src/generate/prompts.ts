@@ -1,9 +1,20 @@
-import type { Item, Skill, StoryNugget, Visual } from '@bright-trail/shared';
+import {
+  describeVisual as describeShape,
+  type Item,
+  type Skill,
+  type StoryNugget,
+  type Visual,
+} from '@bright-trail/shared';
 import { z } from 'zod';
 import { GENERATOR_MODEL, REVIEWER_MODEL } from '../graph/prompts';
 import type { LlmRequest, ToolSpec } from '../graph/llm';
 import { gradeRank, type Expectation } from '../graph/sources';
-import { ContentReviewSchema, GeneratedContentSchema, type GeneratedContent } from './schema';
+import {
+  BasicContentSchema,
+  ContentReviewSchema,
+  FractionContentSchema,
+  type GeneratedContent,
+} from './schema';
 import type { CheckLevel } from './solver';
 import { readingLimits } from './text-checks';
 import { CHOICE_MAX_CHARS, ITEMS_PER_SKILL, spokenChoice } from './validate';
@@ -23,10 +34,34 @@ function toolSpec(name: string, description: string, schema: z.ZodType): ToolSpe
   return { name, description, inputSchema };
 }
 
-export const SUBMIT_CONTENT = toolSpec(
+/**
+ * Skills about parts of one whole, which draw the parts with fraction pictures. Other skills keep
+ * the basic pictures, so their prompts, and cached responses, stay as they were.
+ */
+export const FRACTION_PICTURE_SKILLS = new Set([
+  'g1-fair-share-drawings',
+  'g1-half-equals-two-fourths',
+  'g1-compare-unit-fractions',
+  'g1-equal-groups',
+  'g2-fair-share-fractions',
+  'g2-third-equals-two-sixths',
+  'g2-equal-groups-multiply',
+  'g3-fair-share-20',
+  'g3-equivalent-fair-shares',
+  'g3-fraction-repeated-addition',
+  'g4-represent-fractions',
+  'g4-compare-fair-shares',
+  'g4-count-unit-fractions',
+  'g5-add-sub-like-fractions',
+]);
+
+const SUBMIT_DESCRIPTION = `Submit one skill's story cards and its ${ITEMS_PER_SKILL} practice items. Call it exactly once.`;
+
+export const SUBMIT_CONTENT = toolSpec('submit_content', SUBMIT_DESCRIPTION, BasicContentSchema);
+export const SUBMIT_FRACTION_CONTENT = toolSpec(
   'submit_content',
-  `Submit one skill's story cards and its ${ITEMS_PER_SKILL} practice items. Call it exactly once.`,
-  GeneratedContentSchema,
+  SUBMIT_DESCRIPTION,
+  FractionContentSchema,
 );
 
 export const SUBMIT_CONTENT_REVIEW = toolSpec(
@@ -80,6 +115,36 @@ check: how code re-computes the answer. Write expressions with numbers, + - * / 
 
 Give your whole answer as the structured output.`;
 
+const BASIC_PICTURES =
+  'There are no images: pictures are drawn from data as one emoji, a row of up to 20 copies of one emoji, or a ten-frame.';
+
+const BASIC_PICTURE_LIST = `- {"kind":"emoji","emoji":"🐸","count":null,"filled":null}: one emoji.
+- {"kind":"objects","emoji":"🍎","count":6,"filled":null}: 1 to 20 copies of one emoji.
+- {"kind":"ten-frame","emoji":null,"count":null,"filled":7}: a ten-frame with 0 to 10 dots.
+There are no fraction pictures, shapes, arrays, charts, or number-line pictures.`;
+
+const NONE = '"shape":null,"parts":null,"shaded":null,"wholes":null,"label":null';
+
+const FRACTION_PICTURE_LIST = `- {"kind":"emoji","emoji":"🐸","count":null,"filled":null,${NONE}}: one emoji.
+- {"kind":"objects","emoji":"🍎","count":6,"filled":null,${NONE}}: 1 to 20 copies of one whole thing.
+- {"kind":"ten-frame","emoji":null,"count":null,"filled":7,${NONE}}: a ten-frame with 0 to 10 dots.
+- {"kind":"fraction","emoji":null,"count":null,"filled":null,"shape":"circle","parts":4,"shaded":3,"wholes":null,"label":null}: one whole cut into 2 to 12 equal parts with some shaded, here 3/4 of a circle. shape is "circle" (a pizza or pie), "rectangle" (a pan or chocolate bar, cut into a grid), or "bar" (a fraction strip). For more than one whole, wholes is 2 to 4 and shading fills the first whole before the next: 7/4 is wholes 2, parts 4, shaded 7. label is short screen text under the picture, such as "3/4", or null. Leave it null when the question asks what the picture shows.
+There are no arrays, charts, number-line pictures, or shapes with unequal parts.`;
+
+const BASIC_CHECK_WORDS = "The word count means how many objects the item's picture shows.";
+const FRACTION_CHECK_WORDS = `${BASIC_CHECK_WORDS} With a fraction picture, parts is the parts in one whole and shaded is the shaded parts, so shaded / parts is the fraction it shows. When the answer is read off the picture, write it with these words, e.g. "shaded / parts" or "parts - shaded", so code checks the picture against the answer. A picture choice is worth the fraction it shows, and its narration names that amount in digits, like "3/4 of the circle".`;
+
+/** The same prompt with the fraction picture kind added. Parts a prompt lacks stay as they are. */
+export function withFractionPictures(system: string): string {
+  return system
+    .replace(
+      BASIC_PICTURES,
+      BASIC_PICTURES.replace('or a ten-frame.', 'a ten-frame, or a shape cut into equal parts.'),
+    )
+    .replace(BASIC_PICTURE_LIST, FRACTION_PICTURE_LIST)
+    .replace(BASIC_CHECK_WORDS, FRACTION_CHECK_WORDS);
+}
+
 const TONE: Record<Skill['grade'], string> = {
   K: 'The child is 4 or 5 and cannot read. Use very short sentences of 3 to 8 words, everyday words, and a warm, playful voice. Every story card has a picture. Keep numbers to 10 unless the skill needs up to 20.',
   '1': 'The child is 6 and just starting to read. Use short sentences and everyday words. Most story cards have a picture. Keep numbers inside the skill, mostly to 20 or 50.',
@@ -91,6 +156,8 @@ const TONE: Record<Skill['grade'], string> = {
 };
 
 const ESTIMATION_NOTE = `This is an estimation skill, so grade by range, not by one exact count. Most items are tap items with rule "nearest": the child sees or hears an amount and picks the closer benchmark, e.g. "Is it closer to 5 or closer to 10?", with text choices "closer to 5" and "closer to 10" valued 5 and 10 in check.choices. A picture shows at most 20 objects. For bigger amounts, describe them by groups the child can picture, e.g. "4 full bags of 10 marbles and 2 more", and keep the true amount in expr. Keypad and number-line items can ask the exact count to check the estimate.`;
+
+const FRACTION_PICTURE_NOTE = `This skill is about parts of a whole, so draw the parts with fraction pictures. Use one whenever a card or item talks about one whole cut into equal parts, such as a pizza in slices, a pan of brownies, or a strip of paper. Never show slices, halves, or pieces as copies of an emoji: 4 × 🍕 is four whole pizzas. Use objects only for whole things, such as 8 × 🍪 shared between friends, and show a leftover that gets cut as a fraction picture. The picture must match the words: if Mia eats 3 of 4 equal slices, it is a circle with parts 4 and shaded 3. Kindergarten and Grade 1 stories still need a picture on at least 6 of every 10 cards.`;
 
 const FRACTION_NOTE = `This skill is about parts of a whole, and no picture can show one thing cut into pieces. An objects picture shows whole copies: 4 × 🍕 is four pizzas, not one pizza in 4 slices. So picture the pieces as separate things, e.g. "4 slices" shown as 4 × 🍕 only when the narration calls each one a slice, or share whole objects like 8 × 🍪 between friends. Never say a picture shows one whole cut up. Kindergarten and Grade 1 stories still need a picture on at least 6 of every 10 cards.`;
 
@@ -123,13 +190,19 @@ export interface SkillContext {
 
 export function generateRequest({ skill, expectations, prerequisites }: SkillContext): LlmRequest {
   const limits = readingLimits(skill.grade);
+  const fractions = FRACTION_PICTURE_SKILLS.has(skill.id);
+  const fractionNote = fractions
+    ? `\n${FRACTION_PICTURE_NOTE}\n`
+    : isEarlyFractionSkill(skill)
+      ? `\n${FRACTION_NOTE}\n`
+      : '';
   const needs = prerequisites.length
     ? prerequisites.map((p) => `- ${p.title}: ${p.description}`).join('\n')
     : 'None. This is a starting skill.';
   return {
     model: GENERATOR_MODEL,
-    system: GENERATOR_SYSTEM,
-    tool: SUBMIT_CONTENT,
+    system: fractions ? withFractionPictures(GENERATOR_SYSTEM) : GENERATOR_SYSTEM,
+    tool: fractions ? SUBMIT_FRACTION_CONTENT : SUBMIT_CONTENT,
     maxTokens: 32000,
     prompt: `Skill ${skill.id}, ${gradeName(skill.grade)}: ${skill.title}
 ${skill.description}
@@ -142,7 +215,7 @@ The child already knows:
 ${needs}
 
 Voice: ${TONE[skill.grade]} Sentences have at most ${limits.sentenceWords} words. A story card's narration has at most ${limits.cardWords} words, a question at most ${limits.questionWords}, a why at most ${limits.whyWords}. Keep long words (3+ syllables) under ${Math.round(limits.longWordShare * 100)}% of all words; number words don't count.
-${ESTIMATION_SKILLS.has(skill.id) ? `\n${ESTIMATION_NOTE}\n` : ''}${isEarlyFractionSkill(skill) ? `\n${FRACTION_NOTE}\n` : ''}
+${ESTIMATION_SKILLS.has(skill.id) ? `\n${ESTIMATION_NOTE}\n` : ''}${fractionNote}
 Write the story and the ${ITEMS_PER_SKILL} items for ${skill.id}.`,
   };
 }
@@ -188,6 +261,8 @@ function describeVisual(v: Visual | undefined): string {
   if (!v) return 'none';
   if (v.kind === 'emoji') return v.emoji;
   if (v.kind === 'objects') return `${v.count} × ${v.emoji}`;
+  if (v.kind === 'fraction')
+    return `${describeShape(v)}${v.label ? `, labelled "${v.label}"` : ''}`;
   return `ten-frame with ${v.filled} dots`;
 }
 
@@ -228,7 +303,9 @@ export function reviewRequest(
     .join('\n');
   return {
     model: REVIEWER_MODEL,
-    system: REVIEWER_SYSTEM,
+    system: FRACTION_PICTURE_SKILLS.has(skill.id)
+      ? withFractionPictures(REVIEWER_SYSTEM)
+      : REVIEWER_SYSTEM,
     tool: SUBMIT_CONTENT_REVIEW,
     maxTokens: 16000,
     prompt: `Skill ${skill.id}, ${gradeName(skill.grade)}: ${skill.title}

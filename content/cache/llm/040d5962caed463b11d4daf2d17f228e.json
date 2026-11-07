@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-equivalent-fair-shares-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration begins 'Which picture is the same amount as 1/2 of a circle?' but no picture is shown with the question. The choices are read as fractions of a circle, so the item still works by ear. Consider 'Which one is the same amount as 1/2 of a circle?' to match the audio."
+      },
+      {
+        "target": "g3-equivalent-fair-shares-keypad-2",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration says '4 parts are shaded' and the answer is 4, so the child can answer from the narration without working out the equivalence. Consider removing the shaded count from the narration, or asking the child to name the eighths for 1/2 without stating the 4 parts."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 items (tap-1 to tap-7, keypad-1 to keypad-5, number-line-1 to number-line-3). I checked every marked answer by working it out: 2/4 = 1/2, 2/10 = 1/5, 4/8 = 1/2, 2/5 is the only non-half in tap-6, 4/10 = 2/5, 3/4 of 8 = 6 eighths, 1/4 of 8 = 2 eighths, 1/2 of 10 = 5 tenths, 3/5 = 6 tenths, 2/3 = 4/6, and 4/6 = 2/3 (2 thirds). In every case the marked answer is correct and no other choice is also correct. The VERIFY items (tap-3 and tap-6) are correct as marked. The story cards are mathematically accurate and easy to follow by ear. No blockers found. The two notes above are wording and difficulty points only."
+  }
+}

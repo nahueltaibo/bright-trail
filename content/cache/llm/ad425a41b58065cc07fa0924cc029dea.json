@@ -1,0 +1,747 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has 6 cookies. She shares them with her friend Sam. Each friend gets the same.",
+        "text": null,
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 6,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "One for Mia, one for Sam. Again and again. Each friend gets 3 cookies.",
+        "text": "6 ÷ 2 = 3",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 3,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Now Mia has 5 cookies. Each friend gets 2. One cookie is left over.",
+        "text": null,
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 5,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Cut the last cookie into 2 equal parts. Each part is one half.",
+        "text": "1/2",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 2,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/2"
+        }
+      },
+      {
+        "narration": "So each friend gets 2 cookies and one half. The sharing is fair.",
+        "text": "2 1/2",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 2,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Now 4 friends share a pan of brownies. It is cut into 4 equal parts. Each gets one fourth.",
+        "text": "1/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/4"
+        }
+      },
+      {
+        "narration": "Great job, Mia! Now it is your turn to share. Let us practise.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Eight cookies are shared by 2 friends. How many cookies does each friend get? Is it 3, 5, 4, or 6?",
+        "prompt": "8 cookies, 2 friends",
+        "why": "Give one cookie to each friend again and again. Each friend gets 4 cookies.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 8,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Two friends share these apples equally. How many apples does each friend get?",
+        "prompt": "How many apples each?",
+        "why": "Share the apples one at a time. Each friend gets 3 apples.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍎",
+          "count": 6,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Four friends share 12 grapes equally. Hop the frog to how many grapes each friend gets.",
+        "prompt": "12 grapes, 4 friends",
+        "why": "Share 12 grapes with 4 friends. Each friend gets 3 grapes.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "12 / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Two friends share one pie. Each friend gets one half. Which picture shows 1/2?",
+        "prompt": "Which shows 1/2?",
+        "why": "A half means 2 equal parts, and we take 1. That is the picture with 2 equal parts.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 2,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/2 of the circle"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 4,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/4 of the circle"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 4,
+              "shaded": 3,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "3/4 of the circle"
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "1/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Four friends share these grapes equally. How many grapes does each friend get?",
+        "prompt": "How many grapes each?",
+        "why": "Give each of the 4 friends one grape, then again. Each friend gets 2 grapes.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍇",
+          "count": 8,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Two friends share 5 cookies. Each gets 2 whole cookies. How many cookies are left to cut? Is it 0, 2, 3, or 1?",
+        "prompt": "How many are left?",
+        "why": "Each friend gets 2, so 4 cookies are given out. That leaves 1 cookie to cut in half.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 5,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 0,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 - 2 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Two friends share 7 pears. Each friend gets some whole pears first. Hop the frog to how many whole pears each gets.",
+        "prompt": "7 pears, 2 friends",
+        "why": "Give each friend 3 pears. That uses 6 pears. One pear is left to cut in half.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "floor(7 / 2)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Two friends share 3 cookies equally. How many cookies does each friend get? Is it 2, 1 1/2, or 1?",
+        "prompt": "3 cookies, 2 friends",
+        "why": "Each friend gets 1 whole cookie. The last cookie is cut in half. So each gets 1 and a half.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 3,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1 1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3 / 2",
+          "choices": [
+            { "id": "a", "expr": "2" },
+            { "id": "b", "expr": "3 / 2" },
+            { "id": "c", "expr": "1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A pan is cut into 8 equal parts. Four friends share the whole pan. How many parts does each friend get?",
+        "prompt": "How many parts each?",
+        "why": "Share the 8 parts with 4 friends, one at a time. Each friend gets 2 parts.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 8,
+          "shaded": 8,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "parts / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Four friends share this whole pizza equally. It is cut into 4 equal slices. What part of the pizza does each friend get? Is it 1/4, 1/2, or 3/4?",
+        "prompt": "What part for each friend?",
+        "why": "The pizza has 4 equal slices for 4 friends. Each friend gets 1 slice, which is 1/4.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 4,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1/4",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "1/2" },
+            { "id": "c", "expr": "3/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Four friends share 5 cookies equally. Each gets 1 whole cookie. The last cookie is cut in 4 equal parts. How much does each friend get? Is it 1 1/2, 1, 2, or 1 1/4?",
+        "prompt": "5 cookies, 4 friends",
+        "why": "Each friend gets 1 whole cookie. The last cookie is cut in 4 parts, so each gets one fourth more.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 5,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1 1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "1 1/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "5 / 4",
+          "choices": [
+            { "id": "a", "expr": "3 / 2" },
+            { "id": "b", "expr": "1" },
+            { "id": "c", "expr": "2" },
+            { "id": "d", "expr": "5 / 4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Four friends share 14 sandwiches. Each friend gets 3 whole sandwiches. How many sandwiches are left over?",
+        "prompt": "How many are left over?",
+        "why": "Four friends get 3 each, so 12 sandwiches are given out. That leaves 2 sandwiches.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🥪",
+          "count": 14,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count % 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Two friends share 18 stickers equally. Hop the frog to how many stickers each friend gets.",
+        "prompt": "18 stickers, 2 friends",
+        "why": "Share the 18 stickers into 2 equal groups. Each friend gets 9 stickers.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "18 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Four friends share one leftover cookie. It is cut into equal parts. Which picture shows what one friend gets? Is it 1/2, 3/4, or 1/4 of the circle?",
+        "prompt": "One friend's piece",
+        "why": "Four friends need 4 equal parts. One friend gets 1 of the 4 parts, which is one fourth.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 2,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/2 of the circle"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 4,
+              "shaded": 3,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "3/4 of the circle"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 4,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/4 of the circle"
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "1/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "One pie is shared by 2 friends. A pie just like it is shared by 4 friends. Who gets bigger pieces, the 2 friends or the 4 friends?",
+        "prompt": "Who gets more pie?",
+        "why": "With fewer friends, each piece is bigger. Two friends get halves, and four friends get fourths. A half is bigger.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2 friends",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "1/2" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

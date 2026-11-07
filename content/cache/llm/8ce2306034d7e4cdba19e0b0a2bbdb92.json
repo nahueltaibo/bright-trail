@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-fair-share-drawings-tap-8",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The marked answer '2 friends' is correct: halves are bigger than fourths. But the question asks 'who gets bigger pieces, the 2 friends or the 4 friends,' which is awkward to hear. Consider 'Which friends get bigger pieces: the 2 friends or the 4 friends?' The story never teaches that a piece is bigger when there are fewer friends, so this is a stretch at difficulty 3 and could be introduced in the story first."
+      },
+      {
+        "target": "g1-fair-share-drawings-keypad-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Answer 2 is correct (14 - 12 = 2). However, 'how many are left over' after sharing 14 among 4 is a remainder problem. The story only shows one leftover cookie being cut into halves or quarters, not a leftover count. The item is slightly off the 'fair shares' focus. Consider making the leftover a count the story has modelled, or reword the screen so the child knows to subtract."
+      },
+      {
+        "target": "g1-fair-share-drawings-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The answer 1/4 is correct. The picture shows all 4 slices shaded, which is the whole pizza, while the question asks what part each friend gets. A child could take the all-shaded picture as the answer to 'what part of the pizza.' Consider showing one slice shaded, or wording the narration to say 'what part of the pizza is one friend's slice.'"
+      }
+    ],
+    "notes": "I checked the story and all 16 items against their marked answers. Every marked answer is correct, only the marked choice is right in each tap item, and the number-line and keypad answers fall within their ranges. The story arithmetic is consistent: step 3 leaves 1 cookie, step 5 gives 2 1/2 per friend, and step 6 gives 1/4 per friend. tap-6 (1 1/4) and tap-4 (1 1/2) check out. tap-8 (VERIFY) is correct: two friends get halves and four friends get fourths, so the 2-friend pieces are bigger. No blockers found. The three notes concern wording, a possibly off-focus remainder question, and one picture that could be misread."
+  }
+}

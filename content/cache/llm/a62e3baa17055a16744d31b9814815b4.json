@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Step 5 says each friend gets '2 cookies and one half' and the screen reads 2 1/2, but the picture shows only 2 × 🍪. The half cookie from step 4 is missing, so the picture contradicts the narration. Add a half cookie to the picture (for example, 2 whole cookies plus one cut half)."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 2 shows the screen '6 ÷ 2 = 3' and step 5 shows the mixed number '2 1/2'. Division notation and mixed numbers go beyond what Grade 1 usually covers. Consider describing these in words, or showing them only as pictures, so the story stays within the skill."
+      },
+      {
+        "target": "g1-fair-share-drawings-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "The choice '1 1/2' is a mixed number, which may be beyond Grade 1. The answer is correct (each friend gets 1 whole cookie plus half of the last one). Consider wording it as 'one and a half' for audio."
+      },
+      {
+        "target": "g1-fair-share-drawings-tap-8",
+        "severity": "note",
+        "category": "other",
+        "note": "The answer is correct: with 2 friends each piece is a half, which is bigger than the fourths that 4 friends get. Comparing piece sizes across different groupings is a step beyond the core fair-share skill and may be hard for Grade 1 children. Consider making it easier, or keep it as a stretch item."
+      }
+    ],
+    "notes": "Checked all 15 items. Each marked answer is correct, and each item has exactly one right choice: tap-1 (4), keypad-1 (3), number-line-1 (3), tap-2 (1/2), keypad-2 (2), tap-3 (1 left), number-line-2 (3), tap-4 (1 1/2), keypad-3 (2), tap-5 (1/4), tap-6 (1 1/4), keypad-4 (2 left over), number-line-3 (9), tap-7 (1/4), tap-8 (2 friends, bigger pieces). The \"Why\" explanations are accurate. The only blocker is the story picture mismatch at step 5. The rest are wording or level notes."
+  }
+}

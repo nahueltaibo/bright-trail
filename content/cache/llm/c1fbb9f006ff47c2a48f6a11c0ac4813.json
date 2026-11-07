@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Step 5 narration says the pan has 7 eighths and the team eats 4, but the picture shows only the result: a rectangle with 3 of 8 shaded. A child listening can't see the 7-piece starting point. Consider a picture of 7 shaded pieces, or a before-and-after pair, so the picture matches the narration."
+      },
+      {
+        "target": "g5-add-sub-like-fractions-tap-2",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration uses 'left' twice: '5 sixths of the pizza are left, and Ben eats 2 sixths. How much is left?' Read by ear, this is hard to follow. Suggested wording: 'A pizza is cut into 6 equal slices, and 5 sixths are still there. Ben eats 2 sixths. How much is left?'"
+      },
+      {
+        "target": "g5-add-sub-like-fractions-tap-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The marked answer 3/12 is correct, and no other choice equals it. But 3/12 is equivalent to 1/4, and a teacher or child may ask about that. This is fine as written because 1/4 is not offered. Consider a note that the answer can also be written as 1/4 if the skill ever moves to simplifying."
+      },
+      {
+        "target": "g5-add-sub-like-fractions-keypad-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The screen shows '12/6 - 5/6', which is an unsimplified fraction greater than 1. The answer 7 is correct. The narration explains it as 2 cups = 12 sixths, which helps. Consider showing the screen as '12 sixths - 5 sixths' to match the spoken version and avoid confusing a kid who reads 12/6 as a whole-number division."
+      }
+    ],
+    "notes": "Checked every marked answer by working it out, including the three VERIFY items (tap-4, number-line-4, number-line-5). All are correct: tap-4 is Yes (9/6 > 1); number-line-4 is 2.5 (7/4 + 3/4 = 10/4); number-line-5 is 0.75 (9/4 - 6/4 = 3/4). Each choice in the tap items matches its value, and only one choice is correct in each. The story arithmetic and the picture counts (5/8, 5/4, 3/8, 5 of 6, 7 of 10) are right. No blockers found. The notes above are wording and picture-clarity suggestions only."
+  }
+}

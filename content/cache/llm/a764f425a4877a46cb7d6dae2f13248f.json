@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-represent-fractions-tap-2",
+        "severity": "note",
+        "category": "audio",
+        "note": "The three choices are distinguished only by their pictures. Read aloud, each choice says just its label (\"1/3 of the circle\", etc.), so a child who can't see the picture can answer from the label alone. Consider having the narration or choice text describe the shading (for example, \"1 of 3 equal parts shaded\") so the answer depends on the fraction, not on wording."
+      },
+      {
+        "target": "g4-represent-fractions-tap-5",
+        "severity": "note",
+        "category": "audio",
+        "note": "Same issue as tap-2: the correct rectangle is identifiable by its label alone (\"3/8 of the rectangle\"), so the picture is not needed to answer. Spoken choice text should describe the parts shaded and the total parts so the item can be solved by ear."
+      },
+      {
+        "target": "g4-represent-fractions-keypad-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The item asks for pieces left after eating (8 minus 3), which is subtraction practice rather than reading a fraction. It is a loose fit for the skill \"represent fractions\". Consider rewording to ask a fraction question, such as what fraction of the pan is left (5/8), or keep it as a clearly labelled warm-up."
+      },
+      {
+        "target": "g4-represent-fractions-tap-7",
+        "severity": "note",
+        "category": "other",
+        "note": "The picture shows 3 whole chocolate bars (3 × 🍫) but not the cutting into 4 equal pieces per person, so the answer 3/4 is not visible in the picture. The narration explains it, but the item is harder than its difficulty 3 label suggests for a child who listens only. Consider a picture of each bar cut into 4 equal parts with one person's share marked."
+      }
+    ],
+    "notes": "I checked every story card and item. The marked answers are correct: tap-1 (3/4), keypad-1 (6), number-line-1 (0.25), tap-2 (1/3), keypad-2 (2), tap-3 (7/10), number-line-2 (0.7), tap-4 (parts in the whole, VERIFY confirmed), tap-5 (3/8), keypad-4 (5), tap-6 (4/3), number-line-3 (1.25), tap-7 (3/4), keypad-5 (9). No item has a wrong, missing, or duplicate correct answer, and the story's fraction facts (bottom = equal parts in the whole, top = parts counted, 2/5 = 1/5 + 1/5, 5/4 from two pans) are accurate. Nothing rises to a blocker. The notes above are about audio-only solvability and fit to the skill."
+  }
+}

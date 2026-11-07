@@ -1,0 +1,760 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia's soccer team orders one pizza for after the game. The whole pizza is one whole.",
+        "text": null,
+        "visual": {
+          "kind": "emoji",
+          "emoji": "🍕",
+          "count": null,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "The pizza is cut into 8 equal slices. The bottom number of a fraction tells how many equal parts make one whole.",
+        "text": "8 equal parts",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 8,
+          "shaded": 8,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Mia eats 3 slices. The top number counts the parts we mean. She ate 3 of the 8 slices. That is 3/8 of the pizza.",
+        "text": "3/8",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 8,
+          "shaded": 3,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Dev has a chocolate bar with 5 equal pieces. He eats 2 of them. That is 2/5 of the bar.",
+        "text": "2/5",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 5,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Think of 2/5 as one fifth added two times. The bottom number sets the size of each piece. The top number counts the pieces.",
+        "text": "1/5 + 1/5 = 2/5",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 5,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Sometimes the top number is bigger than the bottom number. Two pans are each cut into 4 pieces. Five pieces are shaded. That is 5/4.",
+        "text": "5/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 5,
+          "wholes": 2,
+          "label": null
+        }
+      },
+      {
+        "narration": "Now it is your turn. Tap, type, or move the frog to match each fraction.",
+        "text": null,
+        "visual": {
+          "kind": "emoji",
+          "emoji": "🐸",
+          "count": null,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 4 equal slices. Mia eats 3 of them. What fraction of the pizza did she eat? Is it 3/4, 1/4, or 4/4?",
+        "prompt": "What fraction is shaded?",
+        "why": "The pizza has 4 equal slices, so the bottom number is 4. Mia ate 3 slices, so the top number is 3. That is 3/4.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 3,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "4/4" },
+            { "id": "c", "expr": "3/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 6 equal slices. Two slices are shaded. How many equal slices make the whole pizza?",
+        "prompt": "How many equal slices in the whole?",
+        "why": "Count every slice, shaded or not. The whole pizza has 6 equal slices, and that is the bottom number.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "parts", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "The line goes from 0 to 1 and is cut into 4 equal steps. Move the frog to 1/4.",
+        "prompt": "Frog to 1/4",
+        "why": "The line is cut into fourths. One fourth is the first step after 0.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1,
+        "step": 0.25,
+        "target": 0.25,
+        "check": { "rule": "equals", "expr": "1/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which circle has 1/3 shaded? Is it 1/3 of the circle, 2/3 of the circle, or 1/2 of the circle?",
+        "prompt": "Find 1/3",
+        "why": "Thirds mean 3 equal parts. One third has 1 of those 3 parts shaded.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 3,
+              "shaded": 2,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "2/3 of the circle"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 3,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/3 of the circle"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 2,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/2 of the circle"
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1/3",
+          "choices": [
+            { "id": "a", "expr": "2/3" },
+            { "id": "b", "expr": "1/3" },
+            { "id": "c", "expr": "1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A chocolate bar has 5 equal pieces. Dev eats 2 of them. What number goes on top of the fraction?",
+        "prompt": "Top number of 2/5?",
+        "why": "The top number counts the pieces we mean. Dev ate 2 pieces, so the top number is 2.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 5,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A fraction strip has 10 equal parts. Seven parts are shaded. What fraction is shaded? Is it 7/10, 3/10, 10/7, or 7/3?",
+        "prompt": "What fraction is shaded?",
+        "why": "The strip has 10 equal parts, so the bottom number is 10. Seven are shaded, so the top number is 7. That is 7/10.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 10,
+          "shaded": 7,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "10/7",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "7/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "7/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "3/10" },
+            { "id": "b", "expr": "10/7" },
+            { "id": "c", "expr": "7/10" },
+            { "id": "d", "expr": "7/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A pan of brownies has 8 equal pieces. The team ate 3 of them. How many pieces are left?",
+        "prompt": "How many pieces are left?",
+        "why": "The whole pan has 8 pieces and 3 were eaten. Take 3 away from 8 to get 5 pieces left.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 8,
+          "shaded": 3,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "parts - shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "The line goes from 0 to 1 and is cut into 10 equal steps. Move the frog to 7/10.",
+        "prompt": "Frog to 7/10",
+        "why": "Each step is one tenth. Count 7 steps from 0 to land on 7/10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1,
+        "step": 0.1,
+        "target": 0.7,
+        "check": { "rule": "equals", "expr": "7/10", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "In the fraction 3/5, the bottom number is 5. What does it tell us? Is it parts in the whole, parts we are counting, or number of wholes?",
+        "prompt": "What does the 5 mean?",
+        "why": "The bottom number tells how many equal parts make one whole. The top number is the one that counts parts.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "parts we are counting",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "number of wholes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "parts in the whole",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 0" },
+            { "id": "b", "expr": "1 == 0" },
+            { "id": "c", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which rectangle shows 3/8? Is it 3/8 of the rectangle, 5/8 of the rectangle, or 3/5 of the rectangle?",
+        "prompt": "Find 3/8",
+        "why": "Eighths mean 8 equal parts in the whole. Three eighths has 3 of those 8 parts shaded.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "rectangle",
+              "parts": 8,
+              "shaded": 5,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "5/8 of the rectangle"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "rectangle",
+              "parts": 5,
+              "shaded": 3,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "3/5 of the rectangle"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "rectangle",
+              "parts": 8,
+              "shaded": 3,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "3/8 of the rectangle"
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3/8",
+          "choices": [
+            { "id": "a", "expr": "5/8" },
+            { "id": "b", "expr": "3/5" },
+            { "id": "c", "expr": "3/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Two pizzas are each cut into 4 equal slices. Five slices are shaded. That makes a fraction with 4 on the bottom. What number is on top?",
+        "prompt": "Top number?",
+        "why": "The top number counts all the shaded fourths. There are 4 in the first pizza and 1 in the second, so 5 fourths.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 5,
+          "wholes": 2,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Two pans are each cut into 3 equal pieces. Four pieces are shaded. What fraction is shaded? Is it 4/3, 4/6, 3/4, or 2/3?",
+        "prompt": "What fraction is shaded?",
+        "why": "Each pan has 3 pieces, so the bottom number is 3. Four pieces are shaded, so the top number is 4. That is 4/3.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 3,
+          "shaded": 4,
+          "wholes": 2,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "4/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "4/6" },
+            { "id": "b", "expr": "3/4" },
+            { "id": "c", "expr": "2/3" },
+            { "id": "d", "expr": "4/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The line goes from 0 to 2 and is cut into fourths. Move the frog to 5/4.",
+        "prompt": "Frog to 5/4",
+        "why": "Each step is one fourth. Count 5 steps from 0. You pass 1 whole at 4 steps, then go one more.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 2,
+        "step": 0.25,
+        "target": 1.25,
+        "check": { "rule": "equals", "expr": "5/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "3 granola bars are shared equally by 4 people. How much does each person get? Is it 3/4, 4/3, 1/4, or 3/3?",
+        "prompt": "Each person gets?",
+        "why": "Cut each bar into 4 equal pieces. Each person takes one piece from each of the 3 bars. That is 3 fourths, or 3/4.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍫",
+          "count": 3,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "3/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3/4",
+          "choices": [
+            { "id": "a", "expr": "4/3" },
+            { "id": "b", "expr": "3/4" },
+            { "id": "c", "expr": "1/4" },
+            { "id": "d", "expr": "3/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Add one tenth nine times. The bottom number stays 10. What number is on top of the new fraction?",
+        "prompt": "1/10 added 9 times",
+        "why": "Each one tenth adds 1 to the top number. Nine of them make 9 tenths, so the top number is 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

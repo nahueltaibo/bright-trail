@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-count-unit-fractions-tap-1",
+        "severity": "blocker",
+        "category": "ambiguous",
+        "note": "The narration says only 'Some slices are shaded' and never states how many. The answer (3) is visible only in the picture, so a child playing by sound alone cannot answer. Add the count to the narration, e.g. 'Three slices are shaded.'"
+      },
+      {
+        "target": "g4-count-unit-fractions-keypad-1",
+        "severity": "blocker",
+        "category": "ambiguous",
+        "note": "The narration says only 'Some pieces are shaded' and the answer (5) is visible only in the picture. A child who hears the item cannot work out the answer. State the shaded count in the narration or describe the shading in words."
+      },
+      {
+        "target": "g4-count-unit-fractions-tap-4",
+        "severity": "blocker",
+        "category": "ambiguous",
+        "note": "The narration says only 'Some slices are shaded.' The marked answer depends on the count of 5 shaded slices, which appears only in the picture. Add the count to the narration."
+      },
+      {
+        "target": "g4-count-unit-fractions-tap-2",
+        "severity": "note",
+        "category": "other",
+        "note": "Text-to-speech may read slash fractions oddly ('two slash four'). Consider spoken forms such as 'three thirds, four thirds, two fourths' in the narration so the choices are clear by ear."
+      },
+      {
+        "target": "g4-count-unit-fractions-keypad-4",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration's 'and she also has 1 more slice' is less clear than it could be, since the picture shows 3 circles with 7 shaded. Consider 'two whole pizzas, plus one slice from a third pizza.'"
+      },
+      {
+        "target": "g4-count-unit-fractions-keypad-5",
+        "severity": "note",
+        "category": "other",
+        "note": "'Leo has 9/4 of a bar, shown in the picture' is awkward. The picture shows 3 bars with 9 pieces shaded, which is 9 one fourths. Say '9 one fourths' in the narration to keep the wording consistent with the picture."
+      }
+    ],
+    "notes": "Checked all seven story cards and every item's math. The marked answers are correct for tap-2, tap-3, tap-5, keypad-2, keypad-3, keypad-4, number-line-1, number-line-2, number-line-3, keypad-5, and the story. The VERIFY items (tap-6, tap-7) are correct: 5 × 1/3 = 5/3 is the greatest of the four amounts, and 6/5 is more than 1, so \"Yes\" is right. Each marked choice matches its value. Only one item (keypad-3) answers from the narration alone without needing the picture. Three items (tap-1, keypad-1, tap-4) hide the count in the picture only, which breaks the ear-only requirement. The story text itself is accurate and clear."
+  }
+}

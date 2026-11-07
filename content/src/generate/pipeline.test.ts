@@ -16,6 +16,7 @@ import {
 import { GENERATOR_MODEL, generateRequest, REVIEWER_MODEL, type SkillContext } from './prompts';
 import { renderContentReport, renderPilotReport } from './report';
 import type { ContentReview, GeneratedContent } from './schema';
+import type { ContentEdit } from './edits';
 
 const clean: ContentReview = { problems: [], notes: 'Looks right.' };
 
@@ -302,5 +303,66 @@ describe('generateRequest', () => {
     const g5 = generateRequest({ ...g1Context, skill: { ...g1Skill, id: 'g5-x', grade: '5' } });
     expect(g5.prompt).toContain('Do not talk down');
     expect(g5.prompt).toContain('at most 22 words');
+  });
+
+  it('offers fraction pictures only to fraction picture skills', () => {
+    const fraction = generateRequest({
+      ...g1Context,
+      skill: { ...g1Skill, id: 'g1-half-equals-two-fourths' },
+    });
+    const basic = generateRequest(g1Context);
+    for (const added of [
+      'or a shape cut into equal parts.',
+      '"kind":"fraction"',
+      'shaded / parts is the fraction it shows',
+    ]) {
+      expect(fraction.system).toContain(added);
+      expect(basic.system).not.toContain(added);
+    }
+    expect(fraction.system).not.toContain('There are no fraction pictures');
+    expect(fraction.prompt).toContain('draw the parts with fraction pictures');
+    expect(fraction.prompt).not.toContain('no picture can show one thing cut into pieces');
+    expect(JSON.stringify(fraction.tool.inputSchema)).toContain('"shaded"');
+    expect(JSON.stringify(basic.tool.inputSchema)).not.toContain('"shaded"');
+  });
+});
+
+describe('generateSkill hand edits', () => {
+  const edit = (set: Record<string, unknown>, was: Record<string, unknown>): ContentEdit => ({
+    skillId: g1Skill.id,
+    target: 'g1-add-within-10-keypad-1',
+    set,
+    was,
+    reason: 'Clearer by ear.',
+  });
+
+  it('applies an edit after review and checks it again', async () => {
+    const llm = new FakeLlm([goodContent()]);
+    const narration = 'Mia has 1 shell. She finds 2 more. How many shells now?';
+    const outcome = await generateSkill(g1Context, llm, {
+      edits: [edit({ narration }, { narration: goodContent().items[2].narration })],
+    });
+    expect(outcome.status).toBe('passed');
+    expect(outcome.calls).toBe(2);
+    expect(outcome.items.find((i) => i.id === 'g1-add-within-10-keypad-1')?.narration).toBe(
+      narration,
+    );
+    expect(outcome.edits).toHaveLength(1);
+  });
+
+  it('fails a stale edit or one that breaks a check', async () => {
+    const stale = await generateSkill(g1Context, new FakeLlm([goodContent()]), {
+      edits: [edit({ narration: 'New.' }, { narration: 'Something else.' })],
+    });
+    expect(stale.status).toBe('failed');
+    expect(stale.attempts.at(-1)?.problems[0]).toMatch(/stale/);
+
+    const broken = await generateSkill(g1Context, new FakeLlm([goodContent()]), {
+      edits: [edit({ answer: 9 }, { answer: 3 })],
+    });
+    expect(broken.status).toBe('failed');
+    expect(broken.attempts.at(-1)?.problems[0]).toBe(
+      'after hand edits: item 3 (keypad): answer is 9 but 1 + 2 = 3',
+    );
   });
 });

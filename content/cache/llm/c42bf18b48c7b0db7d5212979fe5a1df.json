@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 6 has a grammar slip: \"The pieces are from the same size whole.\" Suggest \"The pieces come from the same size whole.\" for clearer listening."
+      },
+      {
+        "target": "g1-compare-unit-fractions-number-line-2",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "\"He cuts 2 more parts than Mia\" could be heard as 2 more cuts. The marked answer 5 (3 + 2 parts) is correct, but \"He cuts 5 parts, 2 more than Mia\" would be clearer by ear."
+      },
+      {
+        "target": "g1-compare-unit-fractions-tap-8",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration never says Mia's bar was shared by 4 kids, but the Why text compares against \"4\". The answer 6 is correct. Consider adding \"Mia's bar is shared by 4 kids\" to the narration so the Why matches what the child heard."
+      }
+    ],
+    "notes": "I checked every item's marked answer against its narration and Why text: tap-1 through tap-8, keypad-1 through keypad-3, and number-line-1 through number-line-4. All marked answers are correct, each item has exactly one right choice, and the explanations are accurate. The story cards are accurate and consistent with the items. No blockers found. The three items above are small wording and clarity notes only."
+  }
+}

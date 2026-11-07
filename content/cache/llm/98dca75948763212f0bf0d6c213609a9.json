@@ -1,0 +1,693 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam has a chocolate bar. He shares it equally with one friend. That makes 2 people, so each gets 1/2.",
+        "text": "2 people share: 1/2 each",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 2,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/2"
+        }
+      },
+      {
+        "narration": "Next, Sam shares a bar of the same size with 3 friends. That is 4 people. Each person gets 1/4.",
+        "text": "4 people share: 1/4 each",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/4"
+        }
+      },
+      {
+        "narration": "Compare the two shares. One half is bigger than one fourth. When more people share, each share gets smaller.",
+        "text": "More sharers, smaller share",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 2,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/2"
+        }
+      },
+      {
+        "narration": "The bottom number tells how many people share. A bigger bottom number means a smaller share. Here is 1/6 of a pizza.",
+        "text": null,
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/6"
+        }
+      },
+      {
+        "narration": "Be careful. The wholes must be the same size. We only compare shares when the pizzas or bars match in size.",
+        "text": "Same-size wholes",
+        "visual": null
+      },
+      {
+        "narration": "Now put shares in order. Sharing by 6 gives the least. Sharing by 3 is more. Sharing by 2 gives the most.",
+        "text": "1/6, then 1/3, then 1/2",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 3,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/3"
+        }
+      },
+      {
+        "narration": "You know the secret now. More sharers means a smaller share. Let's practise comparing fair shares.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Two pizzas are the same size. One is shared by 2 friends. The other is shared by 4 friends. Who gets more, 2 friends or 4 friends?",
+        "prompt": "Who gets more pizza?",
+        "why": "Fewer people sharing means bigger pieces. Each of 2 friends gets 1/2, which is more than 1/4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2 friends",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A pizza is cut into equal slices. One slice is shaded. That slice is one friend's share. How many friends share the pizza?",
+        "prompt": "How many friends?",
+        "why": "Count all the equal slices. There are 4 slices, so 4 friends share the pizza.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 1,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "parts", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "A chocolate bar is shared equally. Each friend gets 1/5 of the bar. Move the frog to the number of friends sharing.",
+        "prompt": "How many friends share?",
+        "why": "The bottom number of the share is the number of friends. The share 1/5 means 5 friends.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Two chocolate bars are the same size. Which share is bigger, 1/3 of the bar or 1/8 of the bar?",
+        "prompt": "Which share is bigger?",
+        "why": "Sharing by 3 makes bigger pieces than sharing by 8. So 1/3 is the bigger share.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "rectangle",
+              "parts": 3,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/3 of the bar"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "rectangle",
+              "parts": 8,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/8 of the bar"
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/3" },
+            { "id": "b", "expr": "1/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is shared by 4 friends. Then the same pizza is shared by 8 friends instead. Is each share smaller, bigger, or the same?",
+        "prompt": "Each share is...",
+        "why": "More friends means more cuts. Each of 8 friends gets 1/8, which is smaller than 1/4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "smaller",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "bigger",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the same",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/8 < 1/4" },
+            { "id": "b", "expr": "1/8 > 1/4" },
+            { "id": "c", "expr": "1/8 == 1/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia and Leo have pizzas of the same size. Mia shares with 3 people. Leo shares with 6 people. Who gets less, Mia or Leo?",
+        "prompt": "Who gets less?",
+        "why": "Mia gets 1/3 and Leo gets 1/6. More sharers means a smaller share, so Leo gets less.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Leo",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Mia",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "least",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/6" },
+            { "id": "b", "expr": "1/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Four pans of brownies are the same size. Which share is the biggest: 1/5, 1/10, 1/2, or 1/4?",
+        "prompt": "Which share is biggest?",
+        "why": "The smallest number of sharers gives the biggest share. Sharing by 2 gives 1/2, the biggest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "1/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/5" },
+            { "id": "b", "expr": "1/10" },
+            { "id": "c", "expr": "1/2" },
+            { "id": "d", "expr": "1/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Pizza A is shared by 2 friends. A pizza of the same size, pizza B, is shared by 6 friends. How many more friends share pizza B?",
+        "prompt": "How many more friends?",
+        "why": "Pizza B has 6 sharers and pizza A has 2. Subtract: 6 - 2 = 4 more friends.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "A pan of 12 brownies is shared equally by 3 friends. Move the frog to how many brownies each friend gets.",
+        "prompt": "Brownies for each friend",
+        "why": "Share 12 brownies into 3 equal groups. 12 ÷ 3 = 4 brownies each.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "12 / 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Three same-size bars are shared by different numbers of friends. Which gives the smallest share: 4 friends, 5 friends, or 10 friends?",
+        "prompt": "Smallest share?",
+        "why": "Shares are 1/4, 1/5, and 1/10. The most sharers gives the smallest piece, so 10 friends.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "5 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "10 friends",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "least",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "1/5" },
+            { "id": "c", "expr": "1/10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Same-size pizzas are shared by 2, 4, and 8 friends. Which list goes from least to greatest: 1/8 then 1/4 then 1/2, or 1/2 then 1/4 then 1/8, or 1/4 then 1/8 then 1/2?",
+        "prompt": "Least to greatest",
+        "why": "Most sharers gives the least. So the order is 1/8, then 1/4, then 1/2.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/2 then 1/4 then 1/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/4 then 1/8 then 1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/8 then 1/4 then 1/2",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/2 < 1/4 and 1/4 < 1/8" },
+            { "id": "b", "expr": "1/4 < 1/8 and 1/8 < 1/2" },
+            { "id": "c", "expr": "1/8 < 1/4 and 1/4 < 1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "One pizza is shared by 2 friends. Two pizzas of the same size are shared by 4 friends. Does each friend get the same amount, yes or no?",
+        "prompt": "Same amount?",
+        "why": "One pizza for 2 friends is 1/2 each. Two pizzas for 4 friends is also 2/4, which equals 1/2.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "not (1/2 == 2/4)" },
+            { "id": "b", "expr": "1/2 == 2/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Tia gets 1/2 of a bar. Ben gets 1/8 of the same bar. How many of Ben's shares fit in Tia's share?",
+        "prompt": "Ben's shares in Tia's",
+        "why": "The bar has 8 equal parts. Tia's half is 4 of them, so 4 of Ben's shares fit.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A bar is cut into 10 equal parts for 10 friends. Move the frog to how many tenths make half of the bar.",
+        "prompt": "Tenths in one half",
+        "why": "Half of 10 equal parts is 5 parts. So 5/10 is the same as 1/2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "10 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Pizzas are all the same size. Which is the smallest share: 1/4 of the circle, 1/6 of the circle, 1/3 of the circle, or 1/10 of the circle?",
+        "prompt": "Which share is smallest?",
+        "why": "The most sharers gives the smallest share. Sharing by 10 makes 1/10, the smallest piece.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 4,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/4 of the circle"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 6,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/6 of the circle"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 3,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/3 of the circle"
+          },
+          {
+            "id": "d",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 10,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/10 of the circle"
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "least",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "1/6" },
+            { "id": "c", "expr": "1/3" },
+            { "id": "d", "expr": "1/10" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

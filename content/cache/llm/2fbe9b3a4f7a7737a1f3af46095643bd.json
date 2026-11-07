@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Step 5 says 'Two sixths is the same amount as one third', but its picture shows only a 3-part circle with 1 shaded. The 6-part, 2-shaded picture from step 4 is not shown alongside it, so the equivalence is stated but not visually demonstrated. Consider showing the 2/6 and 1/3 pictures side by side."
+      },
+      {
+        "target": "g2-third-equals-two-sixths-tap-2",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The question is answered only by looking at the choice pictures. The spoken choices ('1/6 of the circle', '1/3 of the circle', '1/2 of the circle') do not describe the shading, so a child listening without seeing the pictures cannot tell them apart. Marked answer (1/3, 3-part circle with 1 shaded) is correct."
+      },
+      {
+        "target": "g2-third-equals-two-sixths-keypad-4",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration asks the child to 'cut the same pizza into 3 equal slices instead', but the picture still shows the 6-slice circle with 2 shaded. The narration describes a re-cut the picture does not show. Answer 1 is correct (2/6 = 1/3). Consider a picture of the 3-slice pizza with 1 shaded, or reword the narration to say the 2 shaded sixths make the same amount as one third."
+      },
+      {
+        "target": "g2-third-equals-two-sixths-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The item uses a bar ('This strip') while the story and the other items use circles. This is a minor shift in representation for a difficulty-3 item and is acceptable, but the story could introduce bars if they are used elsewhere. Marked answer 2/3 is correct (4 sixths = 2 thirds)."
+      }
+    ],
+    "notes": "Checked every item's marked answer and its explanation. All three VERIFY items are correct: number-line-2 (2/3 = 4/6), tap-4 (1/6 is not equal to 1/3, so 'No' is right), and tap-6 (2/6 = 1/3, so 'Same amount' is right). The other items also check out: tap-1 (1/3), keypad-1 (6), number-line-1 (3), tap-2 (1/3 picture), keypad-2 (2), tap-3 (2/6), keypad-3 (2), tap-4 (No), tap-5 (2/3), number-line-3 (2), keypad-5 (6), number-line-4 (4 left). No blockers found. The story's maths is accurate. The notes above are minor clarity and presentation points only."
+  }
+}

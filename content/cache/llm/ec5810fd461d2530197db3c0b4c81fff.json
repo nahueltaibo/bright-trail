@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-equal-groups-tap-7",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "The marked answer 5 is correct: the picture has 6 halves with 5 shaded. But the narration says 'Zed ate 5 halves,' so a child listening by ear can pick 5 from the question alone. The item doesn't test counting the picture. Consider wording that doesn't state the number, such as 'Zed ate the shaded halves. How many?'"
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 6 has a picture labelled '1/2' and a screen cue that the device may read aloud. The narration covers the meaning ('Each part is one half'), so this is fine. Make sure the '1/2' label is read consistently, or leave it out of the spoken text so the card doesn't sound muddled."
+      }
+    ],
+    "notes": "Checked all story cards and all 17 items by working out the arithmetic and the picture counts. Every marked answer is correct and each item has exactly one right choice: tap-1 (4), keypad-1 (6), number-line-1 (6), tap-2 (2), tap-3 (3 plates), keypad-2 (8), number-line-2 (10), tap-4 (4 cups), keypad-3 (6), tap-5 (9), number-line-3 (5), keypad-4 (3), keypad-5 (2), tap-6 (5 groups of 2 = 10; 3 groups of 3 = 9 and 4 groups of 2 = 8 are wrong), tap-7 (5). VERIFY item tap-6 checks out. Narration matches the pictures and screen text, and no fact or explanation is false. The content stays within Grade 1 equal groups up to 10 and halves. No blockers found. Two minor notes are listed above."
+  }
+}

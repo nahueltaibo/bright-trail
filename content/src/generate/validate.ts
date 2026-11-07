@@ -9,6 +9,8 @@ import {
 } from '@bright-trail/shared';
 import type { z } from 'zod';
 import { convertContent } from './convert';
+import { numbersMentioned } from './numbers';
+import { Rational } from './rational';
 import type { GeneratedContent } from './schema';
 import { solveItem, type CheckLevel } from './solver';
 import {
@@ -45,11 +47,24 @@ function issues(error: z.ZodError): string[] {
 }
 
 function visualProblems(visual: Visual | undefined): string[] {
-  if (!visual || visual.kind === 'ten-frame') return [];
+  if (!visual || visual.kind === 'ten-frame' || visual.kind === 'fraction') return [];
   const ok =
     /\p{Extended_Pictographic}|\p{Regional_Indicator}/u.test(visual.emoji) &&
     !/[\p{L}\s]/u.test(visual.emoji);
   return ok ? [] : [`"${visual.emoji}" is not an emoji`];
+}
+
+/** A fraction picture choice can't be seen by a non-reader, so its label must say the amount. */
+function fractionNarrationProblems(visual: Visual, narration: string): string[] {
+  if (visual.kind !== 'fraction') return [];
+  const said = numbersMentioned(narration);
+  const has = (value: Rational) => said.some((v) => v.eq(value));
+  const shaded = Rational.of(visual.shaded);
+  const amount = shaded.div(Rational.of(visual.parts));
+  if (has(amount) || (has(shaded) && has(Rational.of(visual.parts)))) return [];
+  return [
+    `narration "${narration}" must name the picture's amount, like "${visual.shaded}/${visual.parts}" or "${visual.shaded} of ${visual.parts} parts"`,
+  ];
 }
 
 const normalize = (s: string) =>
@@ -170,7 +185,10 @@ export function validateSkill(skill: Skill, content: GeneratedContent): SkillVal
         }
         if (choice.kind === 'visual') {
           checkText(`${where} choice ${choice.id}`, choice.narration, 'choice', true);
-          for (const p of visualProblems(choice.visual))
+          for (const p of [
+            ...visualProblems(choice.visual),
+            ...fractionNarrationProblems(choice.visual, choice.narration),
+          ])
             problems.push(`${where} choice ${choice.id}: ${p}`);
         }
         if (!namesChoice(item.narration, label)) {

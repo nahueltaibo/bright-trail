@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-half-equals-two-fourths-keypad-5",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "The narration says Mia cuts each half into 2 slices and asks how many slices there are in all (answer 4). The picture shows a circle cut into only 2 equal parts with 0 shaded, so a child who counts the picture gets 2, not 4. Show the circle already cut into 4 equal slices, or change the picture to match the answer."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-tap-3",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration 'Which is the same amount?' does not say the same as what. Hearing it without seeing the screen, a child cannot tell what is being compared. Say something like 'Two slices of 4 are shaded. What fraction of the pizza is that: one half, one fourth, or one whole?'"
+      },
+      {
+        "target": "g1-half-equals-two-fourths-keypad-2",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration states 'Two halves make one whole' right before asking how many halves are shaded, which gives away the lesson's key fact and makes the item too easy. Consider removing that first sentence."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Choices are read aloud as '1/4', '3/4', '2/4'. Device TTS may read these awkwardly (for example '2 over 4' or '2 4'), and a child who can't read yet can't tell which is which. Consider spoken forms such as 'one fourth', 'three fourths', 'two fourths'."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-number-line-3",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'She cuts it into fourths' could be heard as cutting the whole pizza, which would give a different count. Say 'She cuts that half into fourths' so the answer of 2 is clearly about the kept half."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 4 says 'Leo takes 2 of the fourths' after step 2 said Leo took one half. This reads as if the pizza was re-cut and Leo's share changed. It would be clearer to say 'Mia cuts the pizza a new way, and Leo takes 2 of the fourths, which is the same as his half.'"
+      }
+    ],
+    "notes": "I checked every item's marked answer against its narration, picture, and choices. The five VERIFY items (tap-1, tap-2, tap-3, tap-5, tap-6) all have correct marked answers, and each choice matches its value. The number-line answers (2, 4, 2) and the keypad answers (4, 2, 2, 2, 4) are correct. The only blocker is keypad-5, where the picture does not show the 4 slices the answer depends on. The story's facts about halves and fourths are accurate."
+  }
+}

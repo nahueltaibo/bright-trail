@@ -1,0 +1,639 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has a plate. She puts 2 cookies on it. That is one group of 2.",
+        "text": "1 group of 2",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 2,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Now Mia has 2 plates. Each plate has 2 cookies. Count by 2s. 2, 4. There are 4 cookies.",
+        "text": "2 groups of 2 = 4",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 4,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Mia gets a third plate. It also has 2 cookies. Count by 2s. 2, 4, 6. Now there are 6 cookies.",
+        "text": "3 groups of 2 = 6",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 6,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Mia has 5 plates with 2 cookies on each. Count by 2s. 2, 4, 6, 8, 10. That is 10 cookies.",
+        "text": "5 groups of 2 = 10",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 10,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Now Mia has 8 cookies. Each plate gets 2. How many plates? Count by 2s. 2, 4, 6, 8. That is 4 plates.",
+        "text": "8 cookies, 2 on each plate = 4 plates",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 8,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Mia cuts a sandwich into 2 equal parts. Each part is one half. 2 halves make the whole sandwich.",
+        "text": "2 halves = 1 whole",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 2,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/2"
+        }
+      },
+      {
+        "narration": "Great job! You can find the total, or how many groups. Let's practise!",
+        "text": null,
+        "visual": {
+          "kind": "emoji",
+          "emoji": "🍪",
+          "count": null,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "There are 2 groups of 2 stars. How many stars in all? Is it 3, 4, or 5?",
+        "prompt": "How many stars?",
+        "why": "Count by 2s. 2, 4. So there are 4 stars in all.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "⭐",
+          "count": 4,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "There are 3 bowls with 2 fish in each bowl. How many fish in all?",
+        "prompt": "How many fish?",
+        "why": "Count by 2s. 2, 4, 6. There are 6 fish.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🐟",
+          "count": 6,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Sam has 3 cups. Each cup has 2 straws. Move the frog to how many straws in all.",
+        "prompt": "3 groups of 2",
+        "why": "Count by 2s. 2, 4, 6. Sam has 6 straws.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "3 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pie is cut into halves. How many halves make the whole pie? Is it 2, 1, or 3?",
+        "prompt": "How many halves?",
+        "why": "The pie has 2 equal parts. Each part is one half. So 2 halves make the whole pie.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 2,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "parts", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here are 6 cookies. Each plate gets 2 cookies. How many plates? Is it 3, 2, or 4?",
+        "prompt": "How many plates?",
+        "why": "Make groups of 2. 2, 4, 6. That is 3 groups, so 3 plates.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 6,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "There are 4 leaves. Each leaf has 2 bugs on it. How many bugs in all?",
+        "prompt": "How many bugs?",
+        "why": "Count by 2s. 2, 4, 6, 8. There are 8 bugs.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🐞",
+          "count": 8,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Lena has 5 bags. Each bag has 2 apples. Move the frog to how many apples in all.",
+        "prompt": "5 groups of 2",
+        "why": "Count by 2s. 2, 4, 6, 8, 10. Lena has 10 apples.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 10,
+        "check": { "rule": "equals", "expr": "5 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Here are 8 grapes. Each cup gets 2 grapes. How many cups? Is it 2, 6, or 4?",
+        "prompt": "How many cups?",
+        "why": "Make groups of 2. 2, 4, 6, 8. That is 4 groups, so 4 cups.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍇",
+          "count": 8,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Here are 3 sandwiches. Each one is cut into halves. All the halves are colored in. How many halves in all?",
+        "prompt": "How many halves?",
+        "why": "Each sandwich has 2 halves. Count by 2s. 2, 4, 6. There are 6 halves.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 2,
+          "shaded": 6,
+          "wholes": 3,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ben has 3 groups of 3 stickers. How many stickers in all? Is it 9, 6, or 8?",
+        "prompt": "3 groups of 3",
+        "why": "Count by 3s. 3, 6, 9. Ben has 9 stickers.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Tia has 10 crackers. She puts 2 crackers on each plate. Move the frog to how many plates.",
+        "prompt": "How many plates?",
+        "why": "Count by 2s. 2, 4, 6, 8, 10. That took 5 counts, so 5 plates.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "10 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Here are 9 apples. Each bag holds 3 apples. How many bags?",
+        "prompt": "How many bags?",
+        "why": "Make groups of 3. 3, 6, 9. That is 3 groups, so 3 bags.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍎",
+          "count": 9,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which story makes 10 in all? Is it 3 groups of 3, 5 groups of 2, or 4 groups of 2?",
+        "prompt": "Which makes 10?",
+        "why": "Count by 2s five times. 2, 4, 6, 8, 10. So 5 groups of 2 makes 10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3 groups of 3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "5 groups of 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4 groups of 2",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "10",
+          "choices": [
+            { "id": "a", "expr": "3 * 3" },
+            { "id": "b", "expr": "5 * 2" },
+            { "id": "c", "expr": "4 * 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Kim has 10 crackers. She puts 5 crackers on each plate. How many plates does she fill?",
+        "prompt": "How many plates?",
+        "why": "Count by 5s. 5, 10. That is 2 groups, so 2 plates.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍘",
+          "count": 10,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Zed ate 5 halves of toast. Here is the toast. How many halves did Zed eat? Is it 10, 6, or 5?",
+        "prompt": "How many halves?",
+        "why": "Each colored part is one half. Count them. 1, 2, 3, 4, 5. Zed ate 5 halves.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 2,
+          "shaded": 5,
+          "wholes": 3,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      }
+    ]
+  }
+}
