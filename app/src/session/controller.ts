@@ -14,6 +14,7 @@ import {
   type LearnerState,
   type MasteryState,
   type PlacementContent,
+  type PlacementState,
   type SkillGraph,
   type StoryNugget,
 } from '@bright-trail/shared';
@@ -118,6 +119,9 @@ export class Session {
     if (!child) throw new Error(`No child with id ${childId}`);
 
     let placement = await repo.placement.get(childId);
+    if (placement && !placement.finishedAt && !fitsContent(placement.state, content.placement)) {
+      placement = null;
+    }
     let learner: LearnerState | null = null;
     if (placement?.finishedAt) {
       learner = await loadLearner(repo, childId);
@@ -328,6 +332,16 @@ export class Session {
     await repo.placement.save(childId, this.placement);
     this.learner = learner;
   }
+}
+
+/** False when unfinished placement points at skills or items a newer bundle dropped. */
+function fitsContent(state: PlacementState, content: PlacementContent<Item>): boolean {
+  const { byId } = content.graph;
+  return (
+    (!state.current || content.itemsById.has(state.current.itemId)) &&
+    state.queue.every((id) => byId.has(id)) &&
+    state.results.every((r) => byId.has(r.skillId))
+  );
 }
 
 async function loadLearner(repo: Repository, childId: string): Promise<LearnerState> {

@@ -1,69 +1,102 @@
-import type { ContentBundle, Item, StoryNugget } from '@bright-trail/shared';
+import type { ContentBundle, Item, Skill, StoryNugget } from '@bright-trail/shared';
 import { Redirect, router } from 'expo-router';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { loadBundle } from '../../content/loadBundle';
 import { SHOW_DEV_TOOLS } from '../../devTools';
 import { ItemView, StoryCardViewer, type FlagTarget } from '../../learning';
+import { formatNumber } from '../../learning/theme';
+import { choiceLabel } from '../../learning/TapItemView';
+import { gradeLabel } from '../../parent/grades';
 
 type Step = { kind: 'nugget'; nugget: StoryNugget } | { kind: 'item'; item: Item };
 
-/** Each nugget, then the items for its skill: the order a lesson plays in. */
-function playlist(bundle: ContentBundle): Step[] {
-  return bundle.nuggets.flatMap((nugget): Step[] => [
-    { kind: 'nugget', nugget },
+/** The skill's nugget, then its items: the order a lesson plays in. */
+function playlist(bundle: ContentBundle, skillId: string): Step[] {
+  const nugget = bundle.nuggets.find((n) => n.skillId === skillId);
+  return [
+    ...(nugget ? [{ kind: 'nugget', nugget } as const] : []),
     ...bundle.items
-      .filter((item) => item.skillId === nugget.skillId)
+      .filter((item) => item.skillId === skillId)
       .map((item): Step => ({ kind: 'item', item })),
-  ]);
+  ];
 }
 
 function stepLabel(step: Step): string {
   return step.kind === 'nugget' ? `📖 ${step.nugget.id}` : `${step.item.type}: ${step.item.id}`;
 }
 
-/** Dev and e2e only: plays the sample bundle's nuggets and items. Narration shows as a caption. */
+/** The right answer, and for tap items a wrong one, as the child would enter them. */
+function answerKey(item: Item): { answer: string; miss?: string } {
+  switch (item.type) {
+    case 'tap': {
+      const answer = item.choices.find((c) => c.id === item.answerChoiceId)!;
+      const miss = item.choices.find((c) => c.id !== item.answerChoiceId)!;
+      return { answer: choiceLabel(answer), miss: choiceLabel(miss) };
+    }
+    case 'keypad':
+      return { answer: formatNumber(item.answer) };
+    case 'number-line':
+      return { answer: formatNumber(item.target) };
+  }
+}
+
+/** Dev and e2e only: plays one skill's nugget and items. Narration shows as a caption. */
 export default function LearningPreviewScreen() {
-  const [steps, setSteps] = useState<Step[] | null>(null);
+  const [bundle, setBundle] = useState<ContentBundle | null>(null);
+  const [skill, setSkill] = useState<Skill | null>(null);
   const [current, setCurrent] = useState<number | null>(null);
   const [caption, setCaption] = useState('');
   const [log, setLog] = useState('');
 
   useEffect(() => {
-    loadBundle().then((b) => setSteps(playlist(b)));
+    loadBundle().then(setBundle);
   }, []);
 
+  const steps = useMemo(() => (bundle && skill ? playlist(bundle, skill.id) : []), [bundle, skill]);
   const narrate = useCallback((texts: string[]) => setCaption(texts.join(' ')), []);
   const onFlag = useCallback((t: FlagTarget) => setLog(`flag ${JSON.stringify(t)}`), []);
 
   if (!SHOW_DEV_TOOLS) return <Redirect href="/" />;
-  if (!steps) return null;
+  if (!bundle) return null;
 
-  if (current === null) {
+  if (!skill || current === null) {
+    const rows = skill
+      ? steps.map((step, i) => ({
+          key: stepLabel(step),
+          label: stepLabel(step),
+          onPress: () => {
+            setLog('');
+            setCurrent(i);
+          },
+        }))
+      : bundle.skills.map((s) => ({
+          key: s.id,
+          label: `${gradeLabel(s.grade)} · ${s.title} · ${s.id}`,
+          onPress: () => setSkill(s),
+        }));
     return (
       <SafeAreaView style={styles.screen}>
         <ScrollView contentContainerStyle={styles.menu}>
-          <Text style={styles.title}>Learning preview</Text>
-          {steps.map((step, i) => (
+          <Text style={styles.title}>{skill ? skill.title : 'Learning preview'}</Text>
+          {!skill && <Text style={styles.devText}>Bundle {bundle.version}</Text>}
+          {rows.map((row) => (
             <Pressable
-              key={stepLabel(step)}
+              key={row.key}
               accessibilityRole="button"
-              onPress={() => {
-                setLog('');
-                setCurrent(i);
-              }}
+              onPress={row.onPress}
               style={styles.menuRow}
             >
-              <Text style={styles.menuText}>{stepLabel(step)}</Text>
+              <Text style={styles.menuText}>{row.label}</Text>
             </Pressable>
           ))}
           <Pressable
             accessibilityRole="button"
-            onPress={() => router.back()}
+            onPress={() => (skill ? setSkill(null) : router.back())}
             style={styles.menuRow}
           >
-            <Text style={styles.menuText}>⬅ Exit</Text>
+            <Text style={styles.menuText}>{skill ? '⬅ Skills' : '⬅ Exit'}</Text>
           </Pressable>
         </ScrollView>
       </SafeAreaView>
@@ -72,6 +105,7 @@ export default function LearningPreviewScreen() {
 
   const step = steps[current];
   const advance = () => setCurrent((i) => (i === null || i + 1 >= steps.length ? null : i + 1));
+  const key = step.kind === 'item' ? answerKey(step.item) : null;
 
   return (
     <SafeAreaView style={styles.screen}>
@@ -82,6 +116,18 @@ export default function LearningPreviewScreen() {
         <Text style={styles.devText} numberOfLines={2}>
           {current + 1}/{steps.length} · 🔈 {caption}
         </Text>
+        {key && (
+          <View style={styles.devRow}>
+            <Text testID="dev-answer" style={styles.devText}>
+              answer: {key.answer}
+            </Text>
+            {key.miss !== undefined && (
+              <Text testID="dev-miss" style={styles.devText}>
+                miss: {key.miss}
+              </Text>
+            )}
+          </View>
+        )}
         {log !== '' && (
           <Text style={styles.devText} numberOfLines={2}>
             {log}
@@ -130,5 +176,6 @@ const styles = StyleSheet.create({
     borderStyle: 'dashed',
     borderColor: '#999',
   },
+  devRow: { flexDirection: 'row', gap: 16 },
   devText: { fontSize: 12, color: '#666' },
 });

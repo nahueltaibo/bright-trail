@@ -13,8 +13,12 @@ name: Parent screens
 - tapOn: Skill tree
 - assertVisible: Maya's skills
 - assertVisible: Kindergarten
-- assertVisible: Count to 20
-- assertVisible: Adding to 10
+- scrollUntilVisible:
+    element: Grade 5
+    direction: DOWN
+    # 53 skill rows take more than the default 20 seconds to scroll past.
+    timeout: 90000
+- assertNotVisible: Grade 6
 - tapOn: ‹ Back
 
 - tapOn: Placement review
