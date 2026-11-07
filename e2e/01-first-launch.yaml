@@ -1,0 +1,9 @@
+appId: com.nahueltaibo.brighttrail
+name: First launch
+---
+- runFlow: subflows/launch-clean.yaml
+- assertVisible: Ask a grown-up to add you\.
+- tapOn: Parent area
+- assertVisible: Set a parent PIN
+- tapOn: ‹ Kids
+- assertVisible: Ask a grown-up to add you\.

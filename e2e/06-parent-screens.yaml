@@ -1,0 +1,65 @@
+appId: com.nahueltaibo.brighttrail
+name: Parent screens
+---
+- runFlow: subflows/launch-clean.yaml
+- runFlow: subflows/set-pin.yaml
+- runFlow:
+    file: subflows/add-child.yaml
+    env:
+      NAME: Maya
+      AVATAR: Owl
+- tapOn: Maya, .*
+
+- tapOn: Skill tree
+- assertVisible: Maya's skills
+- assertVisible: Kindergarten
+- assertVisible: Count to 20
+- assertVisible: Adding to 10
+- tapOn: ‹ Back
+
+- tapOn: Placement review
+- assertVisible: Maya's placement
+- assertVisible: 0 placed skills
+- assertVisible: Placement hasn.t run yet\.
+- tapOn: ‹ Back
+- tapOn: ‹ Back
+
+# Nothing in the app stores flags yet, so the list can only be empty.
+- tapOn: See flags
+- assertVisible: Open \(0\)
+- assertVisible: Nothing to look at\.
+- tapOn: ‹ Back
+
+# Export opens the system share sheet. Dismiss it and check the status line.
+- tapOn: Export all data
+- extendedWaitUntil:
+    notVisible: Export all data
+    timeout: 10000
+- back
+- extendedWaitUntil:
+    visible: Exported 0 attempts for 1 children\.
+    timeout: 10000
+
+# Reset asks first. Cancel keeps the progress, Reset clears it.
+- tapOn: Maya, .*
+- scrollUntilVisible:
+    element: Reset progress
+    direction: DOWN
+- tapOn: Reset progress
+- assertVisible: Reset Maya's progress\? .*
+- tapOn: Cancel
+- assertNotVisible: Reset Maya's progress\? .*
+- tapOn: Reset progress
+- tapOn: Reset
+- assertVisible: Progress reset\.
+
+# Delete asks first, then goes back to parent home.
+- scrollUntilVisible:
+    element: Delete child
+    direction: DOWN
+- tapOn: Delete child
+- assertVisible: Delete Maya\? .*
+- tapOn: Delete
+- assertVisible: No children yet\. Add one to start\.
+- tapOn: ‹ Kids
+- assertVisible: Ask a grown-up to add you\.

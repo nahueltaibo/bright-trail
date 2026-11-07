@@ -1,0 +1,31 @@
+appId: com.nahueltaibo.brighttrail
+name: Kid home and child home
+---
+- runFlow: subflows/launch-clean.yaml
+- runFlow: subflows/set-pin.yaml
+- runFlow:
+    file: subflows/add-child.yaml
+    env:
+      NAME: Maya
+      AVATAR: Owl
+- runFlow:
+    file: subflows/add-child.yaml
+    env:
+      NAME: Leo
+      AVATAR: Frog
+- tapOn: ‹ Kids
+
+- assertNotVisible: Ask a grown-up to add you\.
+- assertVisible: Maya, Owl
+- assertVisible: Leo, Frog
+
+- tapOn: Maya, Owl
+- assertVisible: Hi, Maya!
+- assertVisible: Your trail is coming soon\. 3 skills are ready\.
+- tapOn: Back to profiles
+- assertVisible: Maya, Owl
+
+- tapOn: Leo, Frog
+- assertVisible: Hi, Leo!
+- tapOn: Back to profiles
+- assertVisible: Leo, Frog

@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { loadBundle } from '../../content/loadBundle';
+import { SHOW_DEV_TOOLS } from '../../devTools';
 import { ItemView, StoryCardViewer, type FlagTarget } from '../../learning';
 
 type Step = { kind: 'nugget'; nugget: StoryNugget } | { kind: 'item'; item: Item };
@@ -22,7 +23,7 @@ function stepLabel(step: Step): string {
   return step.kind === 'nugget' ? `📖 ${step.nugget.id}` : `${step.item.type}: ${step.item.id}`;
 }
 
-/** Dev-only: plays the sample bundle's nuggets and items. Narration shows as a caption. */
+/** Dev and e2e only: plays the sample bundle's nuggets and items. Narration shows as a caption. */
 export default function LearningPreviewScreen() {
   const [steps, setSteps] = useState<Step[] | null>(null);
   const [current, setCurrent] = useState<number | null>(null);
@@ -36,7 +37,7 @@ export default function LearningPreviewScreen() {
   const narrate = useCallback((texts: string[]) => setCaption(texts.join(' ')), []);
   const onFlag = useCallback((t: FlagTarget) => setLog(`flag ${JSON.stringify(t)}`), []);
 
-  if (!__DEV__) return <Redirect href="/" />;
+  if (!SHOW_DEV_TOOLS) return <Redirect href="/" />;
   if (!steps) return null;
 
   if (current === null) {

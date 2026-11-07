@@ -1,0 +1,41 @@
+appId: com.nahueltaibo.brighttrail
+name: Parent PIN
+---
+- runFlow: subflows/launch-clean.yaml
+
+# Two different PINs start the setup over.
+- tapOn: Parent area
+- assertVisible: Set a parent PIN
+- tapOn: '1'
+- tapOn: '2'
+- tapOn: '3'
+- tapOn: '4'
+- assertVisible: Enter the PIN again
+- tapOn: '4'
+- tapOn: '3'
+- tapOn: '2'
+- tapOn: '1'
+- assertVisible: Those PINs didn't match\. Start again\.
+- assertVisible: Set a parent PIN
+- tapOn: ‹ Kids
+
+- runFlow: subflows/set-pin.yaml
+
+# Leaving the parent area locks it again.
+- tapOn: ‹ Kids
+- assertVisible: Ask a grown-up to add you\.
+- tapOn: Parent area
+- assertVisible: Parent PIN
+- tapOn: '1'
+- tapOn: '1'
+- tapOn: '1'
+- tapOn: '1'
+- assertVisible: Wrong PIN\. Try again\.
+- assertNotVisible: Add a child
+
+# A deleted digit doesn't count.
+- tapOn: '9'
+- assertVisible: 1 of 4 digits entered
+- tapOn: Delete digit
+- assertVisible: 0 of 4 digits entered
+- runFlow: subflows/enter-pin.yaml

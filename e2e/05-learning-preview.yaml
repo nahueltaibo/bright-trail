@@ -1,0 +1,93 @@
+appId: com.nahueltaibo.brighttrail
+name: Learning preview
+---
+- runFlow: subflows/launch-clean.yaml
+- tapOn: 'Dev: learning preview'
+- assertVisible: Learning preview
+
+# Story cards: next, back, flag, done.
+- tapOn: .*k-count-to-20-story
+- assertVisible: Card 1 of 5
+- assertVisible:
+    text: Back
+    enabled: false
+- tapOn: Next
+- assertVisible: Card 2 of 5
+- tapOn: Back
+- assertVisible: Card 1 of 5
+- tapOn: This looks wrong
+- assertVisible: Thanks for telling us
+- assertVisible: 'flag .*"contentKind":"card".*'
+- tapOn: Next
+- tapOn: Next
+- tapOn: Next
+- tapOn: Next
+- assertVisible: Card 5 of 5
+- tapOn: Done
+- assertVisible: How many fish\?
+
+# Tap item, answered right.
+- tapOn: ☰ Menu
+- scrollUntilVisible:
+    element: 'tap: g1-numbers-to-50-tap-1'
+    direction: DOWN
+- tapOn: 'tap: g1-numbers-to-50-tap-1'
+- assertVisible: Which is thirty-four\?
+- tapOn: '34'
+- assertVisible: Yes! Great job!
+- assertVisible: 'answer .*"correct":true.*'
+
+# Tap item, answered wrong: the "why" shows.
+- tapOn: ☰ Menu
+- scrollUntilVisible:
+    element: 'tap: g1-add-within-10-tap-1'
+    direction: DOWN
+- tapOn: 'tap: g1-add-within-10-tap-1'
+- tapOn: Five apples
+- assertVisible: Good try!
+- assertVisible: 'Start at four and count on two more: five, six\.'
+- assertVisible: 'answer .*"correct":false.*'
+
+# Keypad: type, delete, check. Then flag the item.
+- tapOn: ☰ Menu
+- scrollUntilVisible:
+    element: 'keypad: k-count-to-20-keypad-1'
+    direction: DOWN
+- tapOn: 'keypad: k-count-to-20-keypad-1'
+- assertVisible: 14, \?
+- assertVisible:
+    text: Check my answer
+    enabled: false
+- tapOn: '1'
+- tapOn: '6'
+- assertVisible: Your answer, 16
+- tapOn: Delete
+- assertVisible: Your answer, 1
+- tapOn: '5'
+- assertVisible: Your answer, 15
+- tapOn: Check my answer
+- assertVisible: Yes! Great job!
+- tapOn: This looks wrong
+- assertVisible: Thanks for telling us
+- assertVisible: 'flag .*"contentKind":"item".*'
+
+# Number line: a tap on the middle of 0 to 20 puts the frog on 10. Two steps right make 12.
+- tapOn: ☰ Menu
+- scrollUntilVisible:
+    element: 'number-line: k-count-to-20-line-1'
+    direction: DOWN
+- tapOn: 'number-line: k-count-to-20-line-1'
+- assertVisible: Find 12
+- assertVisible:
+    text: Check my answer
+    enabled: false
+- tapOn:
+    id: number-line-track
+- assertVisible:
+    text: Check my answer
+    enabled: true
+- tapOn: Move right
+- tapOn: Move right
+- tapOn: Check my answer
+- assertVisible: Yes! Great job!
+- assertVisible: 'answer .*"answer":12,.*'

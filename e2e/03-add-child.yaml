@@ -1,0 +1,70 @@
+appId: com.nahueltaibo.brighttrail
+name: Add and edit a child
+---
+- runFlow: subflows/launch-clean.yaml
+- runFlow: subflows/set-pin.yaml
+- assertVisible: No children yet\. Add one to start\.
+
+- tapOn: Add a child
+- tapOn:
+    id: child-first-name
+- inputText: Maya
+- hideKeyboard
+- tapOn: Owl
+- assertVisible:
+    text: Owl
+    selected: true
+
+# The form starts six years back. Two more makes her 8, whose grade depends on the month.
+- evalScript: "${output.grade = new Date().getMonth() >= 8 ? 'Grade 3' : 'Grade 2'}"
+- tapOn: Previous year
+- tapOn: Previous year
+- assertVisible: 'From the birthdate: ${output.grade}\..*'
+- assertVisible:
+    text: 'Auto \(${output.grade}\)'
+    selected: true
+
+# Override the grade, then go back to the derived one.
+- scrollUntilVisible:
+    element: Grade 5
+    direction: DOWN
+- tapOn: Grade 5
+- assertVisible:
+    text: Grade 5
+    selected: true
+- assertVisible:
+    text: 'Auto \(${output.grade}\)'
+    selected: false
+- tapOn: 'Auto \(${output.grade}\)'
+- assertVisible:
+    text: 'Auto \(${output.grade}\)'
+    selected: true
+
+- scrollUntilVisible:
+    element: Add child
+    direction: DOWN
+- tapOn: Add child
+- assertVisible: 'Maya, ${output.grade}'
+
+# Edit: an override shows on parent home as set by the parent.
+- tapOn: 'Maya, ${output.grade}'
+- assertVisible: Skill tree
+- scrollUntilVisible:
+    element: Grade 5
+    direction: DOWN
+- tapOn: Grade 5
+- scrollUntilVisible:
+    element: Save changes
+    direction: DOWN
+- tapOn: Save changes
+- assertVisible: Saved\.
+- tapOn: ‹ Back
+- assertVisible: Maya, Grade 5
+- assertVisible: Grade 5 \(set by parent\)
+
+- runFlow:
+    file: subflows/add-child.yaml
+    env:
+      NAME: Leo
+      AVATAR: Frog
+- assertVisible: Maya, Grade 5

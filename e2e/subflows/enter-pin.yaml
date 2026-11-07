@@ -1,0 +1,11 @@
+# On the PIN pad, enters 1234 and lands on parent home.
+appId: com.nahueltaibo.brighttrail
+---
+- assertVisible: Parent PIN
+- tapOn: '1'
+- tapOn: '2'
+- tapOn: '3'
+- tapOn: '4'
+- extendedWaitUntil:
+    visible: Add a child
+    timeout: 10000

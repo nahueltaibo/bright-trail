@@ -1,0 +1,17 @@
+# From kid home, sets the parent PIN to 1234 and lands on parent home.
+appId: com.nahueltaibo.brighttrail
+---
+- tapOn: Parent area
+- assertVisible: Set a parent PIN
+- tapOn: '1'
+- tapOn: '2'
+- tapOn: '3'
+- tapOn: '4'
+- assertVisible: Enter the PIN again
+- tapOn: '1'
+- tapOn: '2'
+- tapOn: '3'
+- tapOn: '4'
+- extendedWaitUntil:
+    visible: Add a child
+    timeout: 10000
