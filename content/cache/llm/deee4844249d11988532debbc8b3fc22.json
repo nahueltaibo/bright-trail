@@ -1,0 +1,480 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. Mia loves stars. Today she will guess, then count.",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Here is our five. A ten-frame with 5 dots. Five is a good helper.",
+        "text": "5",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 5 }
+      },
+      {
+        "narration": "Here is our ten. A full ten-frame. Ten is a good helper too.",
+        "text": "10",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 }
+      },
+      {
+        "narration": "Mia sees lots of stars. Is it closer to 5 or closer to 10? Mia guesses 10!",
+        "text": "closer to 10",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 9, "filled": null }
+      },
+      {
+        "narration": "Now Mia counts to check. 1, 2, 3, 4, 5, 6, 7, 8, 9. Nine stars! Good guess!",
+        "text": "9",
+        "visual": { "kind": "objects", "emoji": "⭐", "count": 9, "filled": null }
+      },
+      {
+        "narration": "Now it is your turn. Guess first. Then count to check!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has some apples. Is it closer to 5 or closer to 10?",
+        "prompt": "Closer to 5 or 10?",
+        "why": "There are just a few apples. That is near 5, not near a full ten.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 3, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "count",
+          "choices": [
+            { "id": "a", "expr": "5" },
+            { "id": "b", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here are lots of fish. Is it closer to 5 or closer to 10?",
+        "prompt": "Closer to 5 or 10?",
+        "why": "The fish fill up a whole ten. So the guess is closer to 10.",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 10, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "count",
+          "choices": [
+            { "id": "a", "expr": "10" },
+            { "id": "b", "expr": "5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are some berries. Count them. How many berries are there?",
+        "prompt": "How many berries?",
+        "why": "Touch each berry once as you count. The last number you count is the answer.",
+        "visual": { "kind": "objects", "emoji": "🍓", "count": 4, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Ben counted 6 bugs to check his guess. Move the frog to 6.",
+        "prompt": "Move the frog to 6",
+        "why": "Start at 0 and hop 1 at a time. Count 1, 2, 3, 4, 5, 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Here is a ten-frame with dots. Is it closer to 5 or closer to 10?",
+        "prompt": "Closer to 5 or 10?",
+        "why": "The ten-frame is almost full. That is closer to 10.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 9 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "9",
+          "choices": [
+            { "id": "a", "expr": "5" },
+            { "id": "b", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Here are some balloons. Is it closer to 5 or closer to 10?",
+        "prompt": "Closer to 5 or 10?",
+        "why": "There are a bit more than 5 balloons. That is much closer to 5 than 10.",
+        "visual": { "kind": "objects", "emoji": "🎈", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "count",
+          "choices": [
+            { "id": "a", "expr": "10" },
+            { "id": "b", "expr": "5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam has 2 ladybugs. Is that closer to 5 or closer to 10?",
+        "prompt": "Closer to 5 or 10?",
+        "why": "Two is a small number. It is closer to 5 than to 10.",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 2, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 10",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "2",
+          "choices": [
+            { "id": "a", "expr": "5" },
+            { "id": "b", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Here are some stars. Guess, then count to check. How many stars are there?",
+        "prompt": "How many stars?",
+        "why": "Count each star one time. Go one by one. The last number is the total.",
+        "visual": { "kind": "objects", "emoji": "🌟", "count": 7, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Tom counted 12 shells to check his guess. Move the frog to 12.",
+        "prompt": "Move the frog to 12",
+        "why": "Count up from 0. After 10, keep going 11, 12.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 12,
+        "check": { "rule": "equals", "expr": "12", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia has some cups. Is it closer to 10 or closer to 20?",
+        "prompt": "Closer to 10 or 20?",
+        "why": "There is one ten and a few more. That is closer to 10 than to 20.",
+        "visual": { "kind": "objects", "emoji": "🥤", "count": 13, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "count",
+          "choices": [
+            { "id": "a", "expr": "20" },
+            { "id": "b", "expr": "10" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Pip has 1 full bag of 10 marbles. Pip has 2 more. Is it closer to 10 or closer to 20?",
+        "prompt": "Closer to 10 or 20?",
+        "why": "One bag is 10. Add just 2 more and you are at 12. That is closer to 10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 20",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "10 + 2",
+          "choices": [
+            { "id": "a", "expr": "10" },
+            { "id": "b", "expr": "20" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Pip has 1 full bag of 10 beads. Pip has 8 more. Is it closer to 10 or closer to 20?",
+        "prompt": "Closer to 10 or 20?",
+        "why": "One bag is 10. Eight more makes 18. That is close to 20.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "closer to 20",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "nearest",
+          "expr": "10 + 8",
+          "choices": [
+            { "id": "a", "expr": "10" },
+            { "id": "b", "expr": "20" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Here is a full ten-frame. Zoe adds 3 more dots. How many dots now?",
+        "prompt": "10 + 3 = ?",
+        "why": "The full frame is 10. Count on 3 more: 11, 12, 13.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 10 },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 13,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Here are some cookies. Count to check. How many cookies are there?",
+        "prompt": "How many cookies?",
+        "why": "Count each cookie one time. Keep going past 10: 11, 12, 13, 14, 15.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 15, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Max counted 17 beans to check his guess. Move the frog to 17.",
+        "prompt": "Move the frog to 17",
+        "why": "Start at 10. Count up 11, 12, 13, 14, 15, 16, 17.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 10,
+        "max": 20,
+        "step": 1,
+        "target": 17,
+        "check": { "rule": "equals", "expr": "17", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

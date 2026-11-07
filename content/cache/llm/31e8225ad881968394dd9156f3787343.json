@@ -1,0 +1,487 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has one sandwich. She wants to share it with her friend Leo.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🥪", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia cuts the sandwich into 2 equal pieces. Each piece is one half.",
+        "text": "1/2",
+        "visual": null
+      },
+      {
+        "narration": "Two halves make one whole sandwich. Mia gets one half. Leo gets one half.",
+        "text": "2/2 = 1",
+        "visual": null
+      },
+      {
+        "narration": "Now Mia has a new sandwich. She cuts it into 4 equal pieces. Each piece is one fourth.",
+        "text": "1/4",
+        "visual": { "kind": "emoji", "emoji": "🥪", "count": null, "filled": null }
+      },
+      {
+        "narration": "Four fourths make one whole sandwich. Mia takes 2 fourths. Leo takes 2 fourths.",
+        "text": "4/4 = 1",
+        "visual": null
+      },
+      {
+        "narration": "Leo's 2 fourths are the same as one half. It is the same amount of sandwich!",
+        "text": "2/4 = 1/2",
+        "visual": null
+      },
+      {
+        "narration": "One half is the same as 2 fourths. Now let's practise with Mia!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "😊", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A cake is cut in half. How many equal pieces is that? Is it 4, 2, or 3?",
+        "prompt": "Cut in half = ? pieces",
+        "why": "Half means 2 equal pieces. Two halves make one whole cake.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 4 equal slices. How many fourths make one whole pizza?",
+        "prompt": "How many fourths make 1 whole?",
+        "why": "Each slice is one fourth. Count all the slices to get 4. Four fourths make one whole.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Hop the frog to the number of halves that make one whole.",
+        "prompt": "Halves in 1 whole",
+        "why": "Two halves make one whole. Hop the frog to 2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Ben ate one half of a pie. Zoe ate 2 fourths of it. Who ate more? Ben ate more, Zoe ate more, or They ate the same?",
+        "prompt": "1/2 or 2/4?",
+        "why": "One half and 2 fourths are the same amount. So they ate the same.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Ben ate more",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Zoe ate more",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "They ate the same",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "2/4 == 1/2",
+          "choices": [
+            { "id": "a", "expr": "1/2 > 2/4" },
+            { "id": "b", "expr": "2/4 > 1/2" },
+            { "id": "c", "expr": "2/4 == 1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is the same amount as one half? Is it 2 fourths, 1 fourth, or 4 fourths?",
+        "prompt": "Same as 1/2?",
+        "why": "Two fourths make one half. One fourth is smaller. Four fourths is the whole.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2 fourths",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1 fourth",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4 fourths",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "2/4 == 1/2",
+          "choices": [
+            { "id": "a", "expr": "2/4 == 1/2" },
+            { "id": "b", "expr": "1/4 == 1/2" },
+            { "id": "c", "expr": "4/4 == 1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A pizza is cut into 4 equal slices. Each slice is one fourth. How many slices make one half?",
+        "prompt": "Slices in 1/2?",
+        "why": "Half of 4 slices is 2 slices. So 2 fourths make one half.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Is 2 fourths the same as one half? Yes or no?",
+        "prompt": "2/4 = 1/2?",
+        "why": "Cut a half into 2 equal parts and you get 2 fourths. So yes, they are the same.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "2/4 == 1/2",
+          "choices": [
+            { "id": "a", "expr": "2/4 == 1/2" },
+            { "id": "b", "expr": "not (2/4 == 1/2)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "A pizza has 4 equal slices. Ana eats one half of it. Hop the frog to the number of slices Ana ate.",
+        "prompt": "Slices in one half",
+        "why": "One half of 4 slices is 2 slices. Hop the frog to 2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "4 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A sandwich is cut into 4 equal pieces. Two friends eat 2 pieces. How many fourths are left?",
+        "prompt": "4 fourths - 2 fourths = ?",
+        "why": "Start with 4 fourths and take away 2. That leaves 2 fourths, which is one half.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A pie is cut in half. Then each half is cut in half again. How many equal pieces are there? Is it 2, 4, or 8?",
+        "prompt": "Half of a half",
+        "why": "Each of the 2 halves is cut into 2 parts. That makes 4 equal pieces, or fourths.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Kim has 2 pizzas the same size. Each pizza has 4 slices. She eats one half of each pizza. How many slices does she eat?",
+        "prompt": "Slices Kim eats",
+        "why": "One half of 4 slices is 2 slices. Kim does that for 2 pizzas, so 2 + 2 = 4 slices.",
+        "visual": { "kind": "objects", "emoji": "🍕", "count": 2, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Two pies are the same size. Each is cut into fourths. Hop the frog to the number of fourths in both pies.",
+        "prompt": "Fourths in 2 pies",
+        "why": "One pie has 4 fourths. Two pies have 4 + 4 = 8 fourths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 8,
+        "check": { "rule": "equals", "expr": "4 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Tom cuts a cake into 3 fourths and 1 fourth. Is each piece one half? Yes or no?",
+        "prompt": "Are both pieces halves?",
+        "why": "Halves must be equal. 3 fourths and 1 fourth are not equal. So no, they are not halves.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "3/4 == 1/4",
+          "choices": [
+            { "id": "a", "expr": "not (3/4 == 1/4)" },
+            { "id": "b", "expr": "3/4 == 1/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Ava has 3 cookies the same size. She cuts each cookie in half. How many halves does she have?",
+        "prompt": "3 cookies in halves",
+        "why": "Each cookie makes 2 halves. Three cookies make 2 + 2 + 2 = 6 halves.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 3, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "What makes one whole? Is it 2 fourths, 3 fourths, or 2 halves?",
+        "prompt": "Which makes 1 whole?",
+        "why": "Two halves fit together to make one whole. 2 fourths is only a half. 3 fourths is not full.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2 fourths",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3 fourths",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2 halves",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "2/2 == 1",
+          "choices": [
+            { "id": "a", "expr": "2/4 == 1" },
+            { "id": "b", "expr": "3/4 == 1" },
+            { "id": "c", "expr": "2/2 == 1" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

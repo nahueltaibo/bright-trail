@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-half-equals-two-fourths-keypad-1",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says 'Here are 4 slices' of a pizza, but the picture is 4 whole pizza emojis (4 × 🍕). This follows the story's convention that one emoji stands for one piece, so it is not wrong, but a child could read it as 4 pizzas. Consider a ten-frame or a single pizza split into 4 slices. The narration also gives away the answer, so the item is quite easy."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-keypad-4",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Same picture convention as keypad-1: 'Here are 4 slices' is narrated over 4 × 🍕, which can read as 4 whole pizzas. The answer (2) is correct."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-tap-2",
+        "severity": "note",
+        "category": "other",
+        "note": "Too easy for difficulty 1 and it is a yes/no guess (50%). Acceptable, but it adds little."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-tap-7",
+        "severity": "note",
+        "category": "other",
+        "note": "The 'Why' line says 'Fourths are smaller pieces,' which could reinforce the idea that fourths are smaller amounts. The explanation should say that 2 small fourths together make one half, so Lila is not right."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-tap-5",
+        "severity": "note",
+        "category": "audio",
+        "note": "No picture and the narration asks the child to hold 'cut each of 2 halves into 2 equal pieces' and four choices in memory by ear alone. This is a bit heavy for audio-only play at difficulty 3. Consider a shorter prompt."
+      }
+    ],
+    "notes": "Checked all seven VERIFY items (tap-1, tap-2, tap-3, tap-4, number-line-3, tap-6, tap-7) and the other items. Each marked answer is correct, only one choice is right, and each choice matches its value. Keypad answers (4, 2, 2, 2, 4) and number-line answers (4, 2, 8) are correct. The story cards are mathematically accurate: 2 halves = 1 whole, 4 fourths = 1 whole, 1/2 = 2/4. No blockers found. The notes are about picture convention, wording and difficulty."
+  }
+}
