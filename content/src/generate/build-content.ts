@@ -1,14 +1,15 @@
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { SkillSchema, type Skill } from '@bright-trail/shared';
 import { ClaudeCliLlm } from '../graph/cli-llm';
-import { withDiskCache, type LlmClient } from '../graph/llm';
+import { cacheKey, withDiskCache, type LlmClient } from '../graph/llm';
 import { loadSources } from '../graph/sources';
 import { writeFormatted } from '../graph/write';
-import { buildBundle, generateAll } from './pipeline';
-import type { SkillContext } from './prompts';
+import { buildBundle, generateAll, MAX_RETRIES } from './pipeline';
+import { generateRequest, type SkillContext } from './prompts';
+import { loadScope, prerequisiteClosure } from './scope';
 import { renderContentReport, renderPilotReport } from './report';
 
 /** Skills the testers will meet first: 2 Kindergarten, 2 Grade 1, 1 Grade 5, 1 Grade 6, across topics. */
@@ -28,6 +29,8 @@ const { values } = parseArgs({
   options: {
     pilot: { type: 'boolean', default: false },
     skills: { type: 'string' },
+    /** Every skill in the graph, ignoring bundle-scope.json. */
+    all: { type: 'boolean', default: false },
     concurrency: { type: 'string', default: '3' },
   },
 });
@@ -39,12 +42,14 @@ const skills: Skill[] = graph.skills.map((s) => SkillSchema.parse(s));
 const byId = new Map(skills.map((s) => [s.id, s]));
 const sources = await loadSources(join(contentDir, 'sources'));
 
+const scope = await loadScope(join(contentDir, 'bundle-scope.json'));
+const bundleSkills = values.all ? skills : prerequisiteClosure(skills, scope.targets);
 const wanted = values.pilot
   ? PILOT_SKILLS
   : values.skills
     ? values.skills.split(',')
-    : skills.map((s) => s.id);
-const contexts: SkillContext[] = wanted.map((id) => {
+    : bundleSkills.map((s) => s.id);
+const contextOf = (id: string): SkillContext => {
   const skill = byId.get(id.trim());
   if (!skill) throw new Error(`Unknown skill ${id}`);
   const source = sources.find((s) => s.grade === skill.grade)!;
@@ -53,7 +58,26 @@ const contexts: SkillContext[] = wanted.map((id) => {
     expectations: source.expectations.filter((e) => skill.expectationCodes.includes(e.code)),
     prerequisites: skill.prerequisiteIds.map((p) => byId.get(p)!),
   };
-});
+};
+const contexts = wanted.map(contextOf);
+
+const cacheDir = join(contentDir, 'cache', 'llm');
+
+/** Skills whose first generate call is already cached, so adding them as targets costs little. */
+async function countGenerated(outside: readonly Skill[]): Promise<number> {
+  let n = 0;
+  for (const skill of outside) {
+    const file = join(cacheDir, `${cacheKey(generateRequest(contextOf(skill.id)))}.json`);
+    if (
+      await access(file).then(
+        () => true,
+        () => false,
+      )
+    )
+      n++;
+  }
+  return n;
+}
 
 const live = new ClaudeCliLlm();
 let liveCalls = 0;
@@ -63,10 +87,11 @@ const counted: LlmClient = {
     return live.call(request);
   },
 };
-const llm = withDiskCache(counted, join(contentDir, 'cache', 'llm'));
+const llm = withDiskCache(counted, cacheDir);
 
 const run = await generateAll(contexts, llm, {
   concurrency: Number(values.concurrency),
+  maxRetries: (id) => MAX_RETRIES + (scope.extraRetries[id] ?? 0),
   log: (message) => console.log(message),
 });
 console.log(`${liveCalls} live CLI calls, the rest came from the cache`);
@@ -76,11 +101,18 @@ if (values.pilot) {
   await writeFormatted(file, renderPilotReport(run));
   console.log(`Wrote ${file}`);
 } else if (!values.skills) {
-  const bundle = buildBundle(skills, run.outcomes, new Date());
+  const bundle = buildBundle(bundleSkills, run.outcomes, new Date());
   const bundleFile = join(outDir, 'bundle.json');
   await writeFormatted(bundleFile, JSON.stringify(bundle));
   const bytes = (await readFile(bundleFile)).byteLength;
-  await writeFormatted(join(outDir, 'content-report.md'), renderContentReport(skills, run, bytes));
+  await writeFormatted(
+    join(outDir, 'content-report.md'),
+    renderContentReport(bundleSkills, run, bytes, {
+      targets: values.all ? [] : scope.targets,
+      generatedOutside: await countGenerated(skills.filter((s) => !bundleSkills.includes(s))),
+      extraRetries: scope.extraRetries,
+    }),
+  );
   console.log(
     `Wrote ${bundle.nuggets.length} stories and ${bundle.items.length} items to ${bundleFile} (${(bytes / 1024).toFixed(0)} KB)`,
   );

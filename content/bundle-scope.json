@@ -1,0 +1,16 @@
+{
+  "targets": [
+    "g1-add-sub-facts-10",
+    "g1-add-sub-properties",
+    "g1-mental-math-20",
+    "g1-add-sub-problems-50",
+    "g5-equivalent-fractions",
+    "g5-compare-order-fractions",
+    "g5-add-sub-like-fractions",
+    "g5-whole-by-unit-fraction",
+    "g5-fraction-decimal-percent"
+  ],
+  "extraRetries": {
+    "g4-count-unit-fractions": 1
+  }
+}

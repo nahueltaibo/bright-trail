@@ -70,6 +70,17 @@ function namesChoice(narration: string, label: string): boolean {
   return said.includes(` ${normalize(label)} `);
 }
 
+function withoutLabels(narration: string, labels: readonly string[]): string {
+  let text = narration;
+  // Longest first, so "1 and a half" goes before "1".
+  for (const label of [...labels].sort((a, b) => b.length - a.length)) {
+    if (!label) continue;
+    const escaped = label.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    text = text.replace(new RegExp(`(?<![\\w.])${escaped}(?!\\w)`, 'gi'), ' ');
+  }
+  return text.replace(/ +([,?.!])/g, '$1');
+}
+
 /** Runs every code check on one skill's generated content. */
 export function validateSkill(skill: Skill, content: GeneratedContent): SkillValidation {
   const problems: string[] = [];
@@ -77,11 +88,18 @@ export function validateSkill(skill: Skill, content: GeneratedContent): SkillVal
   const converted = convertContent(skill.id, content);
   const texts: string[] = [];
 
-  const checkText = (where: string, text: string | undefined, role: TextRole, spoken: boolean) => {
+  // `readAs` is the text the reading level applies to, when it differs from what is spoken.
+  const checkText = (
+    where: string,
+    text: string | undefined,
+    role: TextRole,
+    spoken: boolean,
+    readAs = text,
+  ) => {
     if (!text) return;
     texts.push(text);
     const found = [
-      ...readingProblems(text, role, skill.grade),
+      ...readingProblems(readAs!, role, skill.grade),
       ...riskyProblems(text),
       ...(spoken ? speechProblems(text) : []),
     ];
@@ -128,7 +146,15 @@ export function validateSkill(skill: Skill, content: GeneratedContent): SkillVal
     levels.set(item.id, solved.level);
     for (const p of solved.problems) problems.push(`${where}: ${p}`);
 
-    checkText(`${where} narration`, item.narration, 'question', true);
+    // Tap narration must list every choice, so the choice labels don't count toward its length.
+    const labels = item.type === 'tap' ? item.choices.map(spokenChoice) : [];
+    checkText(
+      `${where} narration`,
+      item.narration,
+      'question',
+      true,
+      withoutLabels(item.narration, labels),
+    );
     checkText(`${where} prompt`, item.prompt, 'prompt', false);
     checkText(`${where} why`, item.why, 'why', true);
 
