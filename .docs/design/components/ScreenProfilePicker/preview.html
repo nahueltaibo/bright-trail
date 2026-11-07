@@ -1,0 +1,17 @@
+<!-- @dsCard group="Kid screens" height=1920 width=1860 page subtitle="Profile picker: phone and tablet" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ScreenProfilePicker — preview</title></head>
+<body style="margin:0">
+<div id="root" class=""></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(B.Board, { rows: [
+  [D('phone', 'Three kids', h(S.ProfilePicker, { kids: [{ animal: 'penguin', name: 'Maya' }, { animal: 'dinosaur', name: 'Leo' }, { animal: 'unicorn', name: 'Ava' }] })), D('phone', 'Empty', h(S.ProfilePicker, { kids: [] })), D('phone', 'Dyslexia font', h(S.ProfilePicker, { kids: [{ animal: 'penguin', name: 'Maya' }, { animal: 'dinosaur', name: 'Leo' }] }), null, { dyslexic: true })],
+  [D('tablet', 'Five kids', h(S.ProfilePicker, { cols: 5, kids: [{ animal: 'penguin', name: 'Maya' }, { animal: 'dinosaur', name: 'Leo' }, { animal: 'unicorn', name: 'Ava' }, { animal: 'fox', name: 'Sam' }, { animal: 'octopus', name: 'Noor' }] }))]
+] }));
+</script>
+</body>
+</html>

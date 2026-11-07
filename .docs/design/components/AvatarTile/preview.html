@@ -1,0 +1,16 @@
+<!-- @dsCard group="Avatars" height=230 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>AvatarTile — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-kid bt-pv"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h(B.AvatarTile, { animal: 'penguin', name: 'Maya' }),
+  h(B.AvatarTile, { animal: 'dinosaur', name: 'Leo' }),
+  h(B.AvatarTile, { animal: 'unicorn', name: 'Ava' })));
+</script>
+</body>
+</html>

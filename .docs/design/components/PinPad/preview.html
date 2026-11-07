@@ -1,0 +1,15 @@
+<!-- @dsCard group="Parent controls" height=560 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>PinPad — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-parent bt-pv bt-pv-col" style="flex-direction:row;align-items:flex-start;flex-wrap:wrap"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h('div', { className: 'bt-card bt-card-pad', style: { width: '360px' } }, h(B.PinPad, { mode: 'create', value: '12' })),
+  h('div', { className: 'bt-card bt-card-pad', style: { width: '360px' } }, h(B.PinPad, { mode: 'enter', error: 'Wrong PIN. Try again.' }))));
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<!-- @dsCard group="States" height=300 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>EmptyState — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-kid bt-pv" style="align-items:stretch;flex-wrap:nowrap"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h('div', { style: { flex: 1 } }, h(B.EmptyState, { art: h('span', { className: 'bt-avatar bt-avatar-empty', style: { '--av': '110px' } }, h(B.Icon, { name: 'plus', stroke: 3 })), title: 'Ask a grown-up to add you.' })),
+  h('div', { className: 'bt-parent', style: { flex: 1, padding: '16px', borderRadius: '16px' } }, h('div', { className: 'bt-card' }, h(B.EmptyState, { icon: 'list', title: 'Placement hasn’t run yet.', body: 'It starts the first time Maya taps Let’s go on the trail.' })))));
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!-- @dsCard group="Parent screens" height=1920 width=1860 page subtitle="PIN gate: phone and tablet" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ScreenPinGate — preview</title></head>
+<body style="margin:0">
+<div id="root" class=""></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(B.Board, { rows: [
+  [D('phone', 'Create', h(S.PinGate, { mode: 'create', value: '12' }), 'parent'), D('phone', 'Confirm', h(S.PinGate, { mode: 'confirm' }), 'parent'), D('phone', 'Mismatch', h(S.PinGate, { mode: 'create', error: 'Those PINs didn’t match. Start again.' }), 'parent'), D('phone', 'Wrong PIN', h(S.PinGate, { mode: 'enter', error: 'Wrong PIN. Try again.' }), 'parent')],
+  [D('tablet', 'Enter', h(S.PinGate, { mode: 'enter', value: '123', land: true }), 'parent')]
+] }));
+</script>
+</body>
+</html>

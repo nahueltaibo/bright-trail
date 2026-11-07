@@ -1,0 +1,18 @@
+<!-- @dsCard group="Kid controls" height=220 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>KidButton — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-kid bt-pv"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, cell('primary · icon only', h(B.KidButton, { icon: 'next', label: 'Next' })),
+  cell('plain', h(B.KidButton, { icon: 'back', label: 'Back', variant: 'plain' })),
+  cell('with caption', h(B.KidButton, { icon: 'check', label: 'Done', showLabel: true })),
+  cell('xl start', h(B.KidButton, { icon: 'play', label: 'Start', showLabel: true, size: 'xl' })),
+  cell('disabled', h(B.KidButton, { icon: 'back', label: 'Back', variant: 'plain', disabled: true }))));
+</script>
+</body>
+</html>

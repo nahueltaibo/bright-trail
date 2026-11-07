@@ -1,0 +1,15 @@
+<!-- @dsCard group="Trail" height=760 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>TrailMap — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-kid bt-pv" style="align-items:stretch;flex-wrap:nowrap"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h('div', { className: 'bt-trailpanel', style: { width: '330px', flex: 'none' } }, h(B.TrailMap, { avatar: 'penguin', rowHeight: 100, stops: [{ title: 'Count to 10', state: 'mastered' }, { title: 'Count to 20', state: 'mastered' }, { title: 'Groups of 5', state: 'review' }, { title: 'Ten-frames', state: 'next' }, { title: 'Teen numbers', state: 'ahead' }, { title: 'Count to 50', state: 'locked' }] })),
+  h('div', { className: 'bt-trailpanel', style: { flex: 1 } }, h(B.TrailMap, { avatar: 'fox', orientation: 'horizontal', height: 300, stops: [{ title: 'Count to 10', state: 'mastered' }, { title: 'Groups of 5', state: 'mastered' }, { title: 'Ten-frames', state: 'next' }, { title: 'Teen numbers', state: 'ahead' }, { state: 'locked' }] }))));
+</script>
+</body>
+</html>

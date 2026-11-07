@@ -1,0 +1,17 @@
+<!-- @dsCard group="Kid screens" height=1920 width=1860 page subtitle="Session end: phone and tablet" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ScreenSessionEnd — preview</title></head>
+<body style="margin:0">
+<div id="root" class=""></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(B.Board, { rows: [
+  [D('phone', 'Three stars today', h(S.SessionEnd, { stars: 3 })), D('phone', 'No new stars', h(S.SessionEnd, { stars: 0 }))],
+  [D('tablet', 'Three stars today', h(S.SessionEnd, { stars: 3, land: true }))]
+] }));
+</script>
+</body>
+</html>

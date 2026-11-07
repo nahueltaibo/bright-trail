@@ -1,0 +1,16 @@
+<!-- @dsCard group="Story" height=470 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>StoryCard — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-kid bt-pv" style="align-items:stretch"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h('div', { style: { width: '340px' } }, h(B.StoryCard, { text: '5', narration: 'Pip catches five fish. One, two, three, four, five!', visual: h(B.EmojiVisual, { kind: 'row', emoji: '🐟', count: 5, label: 'fish' }) })),
+  h('div', { style: { width: '340px' } }, h(B.StoryCard, { readingMode: true, narration: 'Pip the penguin loves to count fish.', visual: h(B.EmojiVisual, { kind: 'single', emoji: '🐧' }) })),
+  h('div', { className: 'bt-dys', style: { width: '340px' } }, h(B.StoryCard, { text: '10', narration: 'A full ten-frame! Pip has ten fish.', visual: h(B.EmojiVisual, { kind: 'tenframe', count: 10 }) }))));
+</script>
+</body>
+</html>

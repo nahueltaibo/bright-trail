@@ -1,0 +1,18 @@
+<!-- @dsCard group="Parent layout" height=330 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ParentRow — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-parent bt-pv bt-pv-col"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'bt-card', style: { maxWidth: '480px' } },
+    h(B.ParentRow, { leading: h(B.Avatar, { animal: 'penguin', size: '40px', decorative: true }), title: 'Maya', meta: 'Grade 1', chevron: true }),
+    h(B.ParentRow, { leading: h(B.Avatar, { animal: 'dinosaur', size: '40px', decorative: true }), title: 'Leo', meta: 'Grade 5 · set by parent', chevron: true }),
+    h(B.ParentRow, { leading: h(B.Icon, { name: 'plus' }), title: 'Add a child', action: true, onClick: function () {} }),
+    h(B.ParentRow, { title: 'Ten-frames', meta: 'B1.3', trailing: h(B.StateBadge, { state: 'gap' }) })));
+</script>
+</body>
+</html>

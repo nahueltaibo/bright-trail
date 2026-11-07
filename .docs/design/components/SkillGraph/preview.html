@@ -1,0 +1,14 @@
+<!-- @dsCard group="Skill states" height=420 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>SkillGraph — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-parent bt-pv bt-pv-col"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h('div', { className: 'bt-card bt-card-pad', style: { maxWidth: '760px' } }, h(B.SkillGraph, { width: 1000, height: 330, nodeWidth: 200, columns: [{ x: 0, label: 'Kindergarten' }, { x: 400, label: 'Grade 1' }, { x: 800, label: 'Grade 2' }], nodes: [{ id: 'a', title: 'Count to 10', state: 'mastered', x: 0, y: 40 }, { id: 'b', title: 'Groups of 5', state: 'review', x: 0, y: 170 }, { id: 'c', title: 'Ten-frames', state: 'gap', x: 400, y: 40 }, { id: 'd', title: 'Add within 10', state: 'assumed', x: 400, y: 170 }, { id: 'e', title: 'Teen numbers', state: 'unknown', x: 400, y: 270 }, { id: 'f', title: 'Count to 200', state: 'learning', x: 800, y: 100 }], edges: [['a', 'c'], ['b', 'c'], ['b', 'd'], ['c', 'f'], ['d', 'f'], ['c', 'e']] })));
+</script>
+</body>
+</html>
