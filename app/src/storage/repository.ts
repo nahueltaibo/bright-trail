@@ -3,10 +3,14 @@ import {
   ChildProfileSchema,
   IsoDateTimeSchema,
   MasteryStateSchema,
+  PlacementStateSchema,
+  SkillGradeSchema,
   WalkBackSchema,
   type Attempt,
   type ChildProfile,
   type MasteryState,
+  type PlacementState,
+  type SkillGrade,
   type WalkBack,
 } from '@bright-trail/shared';
 import type { SqlDatabase } from './db';
@@ -57,6 +61,26 @@ type FlagRow = {
   created_at: string;
   resolved_at: string | null;
 };
+
+type PlacementRow = {
+  state: string;
+  placed_grade: string | null;
+  finished_at: string | null;
+};
+
+/** A child's placement: in progress while `finishedAt` is null. */
+export type StoredPlacement = {
+  state: PlacementState;
+  /** Where teaching starts. Null while in progress, or when placed above every grade. */
+  placedGrade: SkillGrade | null;
+  finishedAt: string | null;
+};
+
+const toPlacement = (r: PlacementRow): StoredPlacement => ({
+  state: PlacementStateSchema.parse(JSON.parse(r.state)),
+  placedGrade: r.placed_grade === null ? null : SkillGradeSchema.parse(r.placed_grade),
+  finishedAt: r.finished_at === null ? null : IsoDateTimeSchema.parse(r.finished_at),
+});
 
 const toChild = (r: ChildRow): ChildProfile =>
   ChildProfileSchema.parse({
@@ -182,12 +206,13 @@ export function createRepository(db: SqlDatabase) {
       );
     },
     /**
-     * Resets a child's progress, including any walk-back. Attempts stay, so the export still has
-     * the full history.
+     * Resets a child's progress, including any walk-back and placement. Attempts stay, so the
+     * export still has the full history.
      */
     async removeForChild(childId: string): Promise<void> {
       await db.withTransactionAsync(async () => {
         await db.runAsync('DELETE FROM mastery WHERE child_id = ?', [childId]);
+        await db.runAsync('DELETE FROM placement WHERE child_id = ?', [childId]);
         await db.runAsync('UPDATE children SET walk_back = NULL WHERE id = ?', [childId]);
       });
     },
@@ -210,6 +235,29 @@ export function createRepository(db: SqlDatabase) {
         childId,
       ]);
       if (result.changes === 0) throw new Error(`No child with id ${childId}`);
+    },
+  };
+
+  const placement = {
+    /** Null until placement starts. */
+    async get(childId: string): Promise<StoredPlacement | null> {
+      const row = await db.getFirstAsync<PlacementRow>(
+        'SELECT state, placed_grade, finished_at FROM placement WHERE child_id = ?',
+        [childId],
+      );
+      return row ? toPlacement(row) : null;
+    },
+    /** Inserts or replaces the child's placement. */
+    async save(childId: string, value: StoredPlacement): Promise<void> {
+      const state = PlacementStateSchema.parse(value.state);
+      if (state.childId !== childId) throw new Error(`Placement is for ${state.childId}`);
+      const placedGrade =
+        value.placedGrade === null ? null : SkillGradeSchema.parse(value.placedGrade);
+      if (value.finishedAt !== null) IsoDateTimeSchema.parse(value.finishedAt);
+      await db.runAsync(
+        'INSERT OR REPLACE INTO placement (child_id, state, placed_grade, finished_at) VALUES (?, ?, ?, ?)',
+        [childId, JSON.stringify(state), placedGrade, value.finishedAt],
+      );
     },
   };
 
@@ -298,7 +346,7 @@ export function createRepository(db: SqlDatabase) {
     },
   };
 
-  return { children, mastery, walkBack, attempts, flags, settings };
+  return { children, mastery, walkBack, placement, attempts, flags, settings };
 }
 
 export type Repository = ReturnType<typeof createRepository>;

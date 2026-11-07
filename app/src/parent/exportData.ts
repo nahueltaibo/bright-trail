@@ -7,7 +7,7 @@ import {
   type WalkBack,
 } from '@bright-trail/shared';
 import type { StoredContentFlag } from '../storage/flag';
-import type { Repository } from '../storage/repository';
+import type { Repository, StoredPlacement } from '../storage/repository';
 
 export const EXPORT_FORMAT = 'bright-trail-export';
 export const EXPORT_VERSION = 1;
@@ -15,6 +15,8 @@ export const EXPORT_VERSION = 1;
 export type ExportedChild = ChildProfile & {
   derivedGrade: SchoolGrade;
   walkBack: WalkBack | null;
+  /** Null until placement starts. The parent's placement check scores against its results. */
+  placement: StoredPlacement | null;
 };
 
 /** Everything on the device, for scoring the POC pass bars after the test. */
@@ -40,6 +42,7 @@ export async function buildExport(
       ...child,
       derivedGrade: deriveGrade(child.birthdate, today),
       walkBack: await repo.walkBack.get(child.id),
+      placement: await repo.placement.get(child.id),
     });
     mastery.push(...(await repo.mastery.listForChild(child.id)));
   }

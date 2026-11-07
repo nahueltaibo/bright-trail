@@ -1,4 +1,4 @@
-import type { Attempt, ChildProfile, MasteryState } from '@bright-trail/shared';
+import type { Attempt, ChildProfile, MasteryState, PlacementState } from '@bright-trail/shared';
 import type { SqlDatabase } from './db';
 import type { ContentFlag } from './flag';
 import { openRepository, type Repository } from './repository';
@@ -188,6 +188,77 @@ describe('repository', () => {
       await expect(repo.walkBack.save('nobody', { probes: [], targets: [] })).rejects.toThrow(
         /No child/,
       );
+    });
+  });
+
+  describe('placement', () => {
+    beforeEach(() => repo.children.save(maya));
+
+    const state: PlacementState = {
+      childId: 'maya',
+      phase: 'search',
+      low: 0,
+      high: 2,
+      direction: null,
+      grade: 1,
+      gradeSize: 2,
+      gradePassed: 0,
+      gradeFailed: 0,
+      queue: ['g1-add-within-10'],
+      current: {
+        skillId: 'g1-numbers-to-50',
+        itemId: 'g1-numbers-to-50-keypad-1',
+        answered: 0,
+        correct: 0,
+      },
+      results: [],
+      grades: [],
+      usedItemIds: ['g1-numbers-to-50-keypad-1'],
+      itemsAnswered: 0,
+      placedRank: null,
+    };
+
+    it('stores placement in progress, then the finished outcome', async () => {
+      expect(await repo.placement.get('maya')).toBeNull();
+      await repo.placement.save('maya', { state, placedGrade: null, finishedAt: null });
+      expect(await repo.placement.get('maya')).toEqual({
+        state,
+        placedGrade: null,
+        finishedAt: null,
+      });
+      const done = { ...state, phase: 'done' as const, current: null, placedRank: 1 };
+      await repo.placement.save('maya', {
+        state: done,
+        placedGrade: '1',
+        finishedAt: '2026-11-06T14:40:00Z',
+      });
+      expect(await repo.placement.get('maya')).toEqual({
+        state: done,
+        placedGrade: '1',
+        finishedAt: '2026-11-06T14:40:00Z',
+      });
+    });
+
+    it('is cleared by a progress reset and by deleting the child', async () => {
+      await repo.placement.save('maya', { state, placedGrade: null, finishedAt: null });
+      await repo.mastery.removeForChild('maya');
+      expect(await repo.placement.get('maya')).toBeNull();
+      await repo.placement.save('maya', { state, placedGrade: null, finishedAt: null });
+      await repo.children.remove('maya');
+      expect(await repo.placement.get('maya')).toBeNull();
+    });
+
+    it('rejects a state for another child or a bad grade', async () => {
+      await expect(
+        repo.placement.save('leo', { state, placedGrade: null, finishedAt: null }),
+      ).rejects.toThrow(/maya/);
+      await expect(
+        repo.placement.save('maya', {
+          state,
+          placedGrade: '9' as never,
+          finishedAt: null,
+        }),
+      ).rejects.toThrow();
     });
   });
 

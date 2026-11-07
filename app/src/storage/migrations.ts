@@ -64,6 +64,16 @@ export const MIGRATIONS: readonly string[] = [
     value TEXT NOT NULL
   );
   `,
+  // One placement per child. `state` is the placement engine's JSON, saved after every answer so
+  // placement resumes after a restart. `finished_at` stays null until the learner state is saved.
+  `
+  CREATE TABLE placement (
+    child_id TEXT PRIMARY KEY NOT NULL REFERENCES children(id) ON DELETE CASCADE,
+    state TEXT NOT NULL,
+    placed_grade TEXT,
+    finished_at TEXT
+  );
+  `,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;

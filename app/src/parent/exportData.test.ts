@@ -73,8 +73,13 @@ describe('buildExport', () => {
       exportedAt: '2026-11-06T15:00:00-05:00',
       bundleVersion: 'sample-1',
       children: [
-        { ...maya, derivedGrade: '1', walkBack: null },
-        { ...leo, derivedGrade: '5', walkBack: { probes: ['k-count-to-20'], targets: [] } },
+        { ...maya, derivedGrade: '1', walkBack: null, placement: null },
+        {
+          ...leo,
+          derivedGrade: '5',
+          walkBack: { probes: ['k-count-to-20'], targets: [] },
+          placement: null,
+        },
       ],
       mastery: [mastery],
       attempts: [attempt('maya', 1), attempt('leo', 2), attempt('maya', 3)],
