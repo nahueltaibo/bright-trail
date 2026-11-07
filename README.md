@@ -29,3 +29,4 @@ Run these from the root:
 - `npm run typecheck` — `tsc` in every package.
 - `npm run lint` — ESLint across the repo.
 - `npm run format` — Prettier writes fixes. `npm run format:check` only reports.
+- `npm run e2e:build:android` and `npm run e2e:android` — build the e2e APK and run the Maestro flows on a device. See [e2e/README.md](e2e/README.md).
