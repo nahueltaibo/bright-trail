@@ -135,7 +135,7 @@ export function titleWords(title: string): number {
     .filter(Boolean).length;
 }
 
-function riskyTokensIn(text: string): string[] {
+export function riskyTokensIn(text: string): string[] {
   // "Tell how many" asks for a number, which a keypad can take.
   return RISKY_TOKENS.filter((token) =>
     new RegExp(`\\b${token}(s|ing|ings)?\\b(?! (many|much)\\b)`, 'i').test(text),

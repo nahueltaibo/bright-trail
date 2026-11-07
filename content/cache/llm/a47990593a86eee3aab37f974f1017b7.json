@@ -1,0 +1,521 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Priya checks the weather in Winnipeg. At noon it is 3 degrees above zero. That temperature is the integer 3, a positive number.",
+        "text": "3",
+        "visual": { "kind": "emoji", "emoji": "🌡️", "count": null, "filled": null }
+      },
+      {
+        "narration": "By midnight the temperature drops to 6 degrees below zero. Numbers below zero are negative. This temperature is the integer -6.",
+        "text": "-6",
+        "visual": null
+      },
+      {
+        "narration": "On a number line, zero sits in the middle. Positive numbers like 3 go to the right. Negative numbers like -6 go to the left.",
+        "text": "-6 ... 0 ... 3",
+        "visual": null
+      },
+      {
+        "narration": "Priya's brother uses counters. A blue counter is worth 1. A red counter is worth -1. Here are 4 red counters. Together they make -4.",
+        "text": "-4",
+        "visual": { "kind": "objects", "emoji": "🔴", "count": 4, "filled": null }
+      },
+      {
+        "narration": "One blue and one red counter make a zero pair, because 1 and -1 cancel to 0. So 6 red and 2 blue counters still make -4.",
+        "text": "1 + -1 = 0",
+        "visual": null
+      },
+      {
+        "narration": "Now compare -4 and 4. Both are 4 units from zero, but on opposite sides. Numbers like these are called opposites.",
+        "text": "-4 and 4",
+        "visual": null
+      },
+      {
+        "narration": "Integers are positive numbers, negative numbers, and zero. Let's practise placing them and comparing them.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A freezer is 5 degrees below zero. Which integer matches that temperature: 5, -5, or 0?",
+        "prompt": "5 below zero",
+        "why": "Below zero means negative. So 5 degrees below zero is -5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": -5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 0,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "-5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to -6 on the number line.",
+        "prompt": "Find -6",
+        "why": "Start at zero and go 6 steps to the left. Negative numbers are left of zero.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": -10,
+        "max": 10,
+        "step": 1,
+        "target": -6,
+        "check": { "rule": "equals", "expr": "-6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Each red counter is worth -1. These red counters make -7. How many red counters are there?",
+        "prompt": "How many counters?",
+        "why": "Count the red counters one by one. Each one is -1, so 7 counters make -7.",
+        "visual": { "kind": "objects", "emoji": "🔴", "count": 7, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which integer is the least: 6, -2, or 3?",
+        "prompt": "Least integer",
+        "why": "Negative numbers are less than zero, and zero is less than positives. So -2 is the least.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": -2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "least",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "6" },
+            { "id": "b", "expr": "3" },
+            { "id": "c", "expr": "-2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to 4 on the number line.",
+        "prompt": "Find 4",
+        "why": "Start at zero and go 4 steps to the right. Positive numbers are right of zero.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": -5,
+        "max": 5,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "On a number line, how many units is -8 from zero?",
+        "prompt": "Distance of -8 from 0",
+        "why": "Count from -8 to 0. That is 8 steps. Distance is always positive.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "abs(-8)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is the opposite of -9: 9, -9, 0, or 1?",
+        "prompt": "Opposite of -9",
+        "why": "Opposites are the same distance from zero on different sides. The opposite of -9 is 9.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": -9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 0,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "This number line counts by 5. Move the frog to -15.",
+        "prompt": "Find -15",
+        "why": "Start at zero and hop left by 5 three times. That lands on -15.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": -20,
+        "max": 20,
+        "step": 5,
+        "target": -15,
+        "check": { "rule": "equals", "expr": "-15", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A game has 2 blue counters worth 1 each, and 6 red counters worth -1 each. Pair them to make zero pairs. Which integer is left: -4, 4, -8, or 2?",
+        "prompt": "2 blue, 6 red",
+        "why": "Two zero pairs cancel out. That leaves 4 red counters, and 4 red counters make -4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": -8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": -4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 - 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A set has 9 red counters and 5 blue counters. How many zero pairs can you make?",
+        "prompt": "Zero pairs?",
+        "why": "Each zero pair needs one red and one blue counter. With only 5 blue counters, you can make 5 pairs.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "min(9, 5)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which integer is the greatest: -3, -8, -1, or -6?",
+        "prompt": "Greatest integer",
+        "why": "On a number line, the number farthest right is greatest. Among negatives, the one closest to zero wins, so -1.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": -3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": -8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": -6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": -1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "-3" },
+            { "id": "b", "expr": "-8" },
+            { "id": "c", "expr": "-6" },
+            { "id": "d", "expr": "-1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the opposite of 7.",
+        "prompt": "Opposite of 7",
+        "why": "7 is 7 units right of zero. Its opposite is 7 units left of zero, at -7.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": -10,
+        "max": 10,
+        "step": 1,
+        "target": -7,
+        "check": { "rule": "equals", "expr": "-7", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "On a number line, 2 and its opposite are how many units apart?",
+        "prompt": "Distance from -2 to 2",
+        "why": "The opposite of 2 is -2. From -2 to 0 is 2 units, and from 0 to 2 is 2 more. That makes 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A student claims -9 is greater than -2, because 9 is greater than 2. Is the claim correct: yes or no?",
+        "prompt": "Is -9 greater than -2?",
+        "why": "-9 is farther left on the number line than -2. So -9 is less than -2, and the claim is not correct.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "-9 > -2" },
+            { "id": "b", "expr": "not (-9 > -2)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which pair are opposites: 2 and -3, -6 and 6, 4 and 40, or -1 and -10?",
+        "prompt": "Which pair are opposites?",
+        "why": "Opposites are the same distance from zero on different sides. Only -6 and 6 are both 6 units from zero.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2 and -3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4 and 40",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "-1 and -10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "-6 and 6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "2 + (-3) == 0" },
+            { "id": "b", "expr": "4 + 40 == 0" },
+            { "id": "c", "expr": "(-1) + (-10) == 0" },
+            { "id": "d", "expr": "(-6) + 6 == 0" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

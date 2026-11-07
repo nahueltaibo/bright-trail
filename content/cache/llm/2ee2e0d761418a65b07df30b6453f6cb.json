@@ -1,0 +1,435 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia the frog has 8 apples. Her friend gives her 3 more. How many now? Let's use a quick trick.",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 8, "filled": null }
+      },
+      {
+        "narration": "Trick one is count on. Start at the big number, 8. Then count on 3. 9, 10, 11. Mia has 11.",
+        "text": "8 + 3 = 11",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 11, "filled": null }
+      },
+      {
+        "narration": "Trick two is make 10. Mia has 9 plums and 4 more. Take 1 from the 4 to make 10. Then add 3. That is 13.",
+        "text": "9 + 4 = 13",
+        "visual": { "kind": "objects", "emoji": "🍑", "count": 13, "filled": null }
+      },
+      {
+        "narration": "Trick three is near doubles. For 6 + 7, double 6 is 12. Seven is one more than 6. So the answer is 13.",
+        "text": "6 + 7 = 13",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 12, "filled": null }
+      },
+      {
+        "narration": "Take away is easy too. Mia has 10 grapes and eats 4. Count back 4 from 10. You land on 6.",
+        "text": "10 - 4 = 6",
+        "visual": { "kind": "objects", "emoji": "🍇", "count": 10, "filled": null }
+      },
+      {
+        "narration": "Here is another trick. For 15 - 9, think: 9 and what make 15? It is 6. So 15 - 9 is 6.",
+        "text": "15 - 9 = 6",
+        "visual": null
+      },
+      {
+        "narration": "Great job! Now it is your turn. Use a trick to add and take away in your head.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Count on from 7. What is 7 + 2?",
+        "prompt": "7 + 2 = ?",
+        "why": "Start at 7 and count on 2. That is 8, then 9. The answer is 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 9,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 9 + 1? Is it 8, 10, or 11?",
+        "prompt": "9 + 1 = ?",
+        "why": "9 and 1 more makes 10. Nine is just one away from 10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 11,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the answer of 6 + 4.",
+        "prompt": "6 + 4 = ?",
+        "why": "6 and 4 make 10. Hop from 6 four times to reach 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 10,
+        "check": { "rule": "equals", "expr": "6 + 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has 10 grapes and eats 4. How many are left? Is it 6, 4, or 5?",
+        "prompt": "10 - 4 = ?",
+        "why": "Count back 4 from 10. That is 9, 8, 7, 6. So 6 are left.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are 8 apples. Mia gets 2 more. How many apples does she have now?",
+        "prompt": "8 + 2 = ?",
+        "why": "8 and 2 make 10. Count on from 8: 9, 10.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 8, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Make 10 first. What is 8 + 5? Is it 12, 13, or 14?",
+        "prompt": "8 + 5 = ?",
+        "why": "Take 2 from the 5 to make 10 with 8. Then add the 3 left. 10 and 3 is 13.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 14,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 13,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 + 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Double 6 is 12. Now use it. What is 6 + 7?",
+        "prompt": "6 + 7 = ?",
+        "why": "Double 6 is 12. Seven is one more than 6, so add 1 to get 13.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 13,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 + 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the answer of 15 - 6.",
+        "prompt": "15 - 6 = ?",
+        "why": "Think: 6 and what make 15? Six and 9 make 15. So 15 - 6 is 9.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 9,
+        "check": { "rule": "equals", "expr": "15 - 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia has 14 plums and eats 5. How many are left? Is it 8, 9, or 10?",
+        "prompt": "14 - 5 = ?",
+        "why": "Take 4 to get to 10. Then take 1 more. 10 take away 1 is 9.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "14 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Double 8 is 16. Use it. What is 16 - 8?",
+        "prompt": "16 - 8 = ?",
+        "why": "Two 8s make 16. So if you take away one 8, one 8 is left.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "16 - 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Use near doubles or make 10. What is 7 + 8?",
+        "prompt": "7 + 8 = ?",
+        "why": "Double 7 is 14. Eight is one more than 7. So 14 and 1 is 15.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 + 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the answer of 9 + 8.",
+        "prompt": "9 + 8 = ?",
+        "why": "Take 1 from the 8 to make 10 with 9. Then add the 7 left. 10 and 7 is 17.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 20,
+        "step": 1,
+        "target": 17,
+        "check": { "rule": "equals", "expr": "9 + 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Is 6 + 7 the same as 6 + 6 + 1? Yes or no?",
+        "prompt": "6 + 7 = 6 + 6 + 1?",
+        "why": "Seven is 6 and 1 more. So 6 + 7 is double 6, plus 1. The answer is yes.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "6 + 7 == 6 + 6 + 1",
+          "choices": [
+            { "id": "a", "expr": "not (6 + 7 == 6 + 6 + 1)" },
+            { "id": "b", "expr": "6 + 7 == 6 + 6 + 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Think: 9 and what make 17? Use it to find 17 - 9.",
+        "prompt": "17 - 9 = ?",
+        "why": "Nine and 8 make 17. So 17 take away 9 is 8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "17 - 9", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia has 13 grapes and eats 8. How many are left? Is it 6, 4, or 5?",
+        "prompt": "13 - 8 = ?",
+        "why": "Think: 8 and 5 make 13. So 13 take away 8 is 5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "13 - 8", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Narration and pictures disagree. Steps 2-5 describe one sandwich cut into pieces, but step 3 shows 2 × 🥪 (two whole sandwiches) and step 4 shows 4 × 🥪 (four whole sandwiches) while saying the sandwich was cut into 4 pieces. Children may learn that two halves are two whole sandwiches. Use one sandwich cut into visible pieces, or a single 🥪 with a split-piece picture."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 4 says 'two more friends come', but step 5 only gives fourths to Leo and Mia. The two new friends disappear from the story. Name them or say who gets the other fourths."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-keypad-2",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Narration says '4 slices of one pizza', but the picture shows 4 × 🍕 (four whole pizzas). The picture does not match the narration. Show one pizza in 4 slices, or a row of 4 slice emoji, so the picture matches the ear-only question."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-tap-2",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'Zoe ate 2 fourths of it' is unclear by ear. Say 'of the same pie' so the child knows the two pies are the same size and the answer 'the same' is clearly correct."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-tap-6",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'Tom cuts a cake into 3 fourths and 1 fourth' is awkward to hear. Say 'Tom cuts a cake into 2 pieces. One piece is 3 fourths and the other is 1 fourth.' The marked answer 'no' is correct. Difficulty 3 is high for a one-word answer, so consider making it easier."
+      }
+    ],
+    "notes": "Verified every answer. Correct and unambiguous: tap-1 (2), keypad-1 (4), number-line-1 (2), tap-3 (2 fourths), tap-4 (yes), tap-5 (4), number-line-2 (2), keypad-3 (2), keypad-4 (4), keypad-5 (6), tap-7 (2 halves). The VERIFY items are all confirmed: tap-2 (same amount), tap-3, tap-4, number-line-3 (8 fourths in 2 pies, line 0 to 10), tap-6 (no), tap-7. Each choice's value matches its label. Two blockers are needed: the story picture mismatch and the keypad-2 picture mismatch. The story's ideas and fractions are otherwise correct, and the story never claims a false fact."
+  }
+}

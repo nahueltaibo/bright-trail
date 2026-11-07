@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "k-estimate-and-count-keypad-3",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says Zoe adds 3 more dots, but the picture shows only the full ten-frame (10 dots). The 3 added dots are never shown, and a single ten-frame can't hold 13. A child who listens by ear hears the addition, but the picture doesn't show it. Consider showing the 3 extra dots in a second frame, or rewording to 'Zoe has 10 dots. She adds 3 more.' The item also tests mental addition within 20, which may be a bit beyond the estimate-and-count focus of this skill."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 ('Now it is your turn. Guess first. Then count to check!') shows only a frog emoji. A child has nothing to estimate or count there, and no practice item follows that uses the frog as the object to count. Consider a countable picture (for example a row of 6 or 7 emoji) so the closing card matches the instruction."
+      }
+    ],
+    "notes": "I checked all VERIFY items by working out the counts and distances. Every marked answer is correct: tap-1 (3 is nearer 5), tap-2 (10 is nearer 10), tap-3 (9 is nearer 10), tap-4 (6 is nearer 5), tap-5 (2 is nearer 5), tap-6 (13 is nearer 10), tap-7 (12 is nearer 10), and tap-8 (18 is nearer 20). The keypad answers (4, 7, 13, 15) and number-line answers (6, 12, 17) are correct, and the number-line ranges contain their targets. The story card counts (9 stars, the 5 and 10 ten-frames) agree with the narration. No item has a wrong answer, two right answers, or a false explanation. Only the two notes above are raised. Also note that the 'closer to 10 or 20' items and the 10+3 item go somewhat beyond typical Kindergarten work; that is a judgment call for the curriculum owner."
+  }
+}

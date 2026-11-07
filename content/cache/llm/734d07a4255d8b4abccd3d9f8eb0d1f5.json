@@ -1,0 +1,515 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam keeps stats for his basketball team. In one game he made 1 of his 4 free throws. As a fraction, that is 1/4.",
+        "text": "1/4",
+        "visual": { "kind": "emoji", "emoji": "🏀", "count": null, "filled": null }
+      },
+      {
+        "narration": "His coach likes percents. The word percent means out of 100. So 1% is 1 out of 100. That is the fraction 1/100, or the decimal 0.01.",
+        "text": "1% = 1/100 = 0.01",
+        "visual": null
+      },
+      {
+        "narration": "To change 1/4 into a percent, make the denominator 100. Multiply 4 by 25 to get 100. Multiply the numerator by 25 too. So 1/4 is equivalent to 25/100.",
+        "text": "1/4 = 25/100",
+        "visual": null
+      },
+      {
+        "narration": "Now read 25/100 three ways. It is 25 hundredths, so the decimal is 0.25. It is 25 out of 100, so the percent is 25%.",
+        "text": "1/4 = 0.25 = 25%",
+        "visual": null
+      },
+      {
+        "narration": "You can also divide the numerator by the denominator. 1 ÷ 4 equals 0.25. That matches. Both ways name the same amount.",
+        "text": "1 ÷ 4 = 0.25",
+        "visual": null
+      },
+      {
+        "narration": "Try 4/5. Multiply the numerator and the denominator by 20. You get 80/100. So 4/5 is 0.80, or 80%.",
+        "text": "4/5 = 80/100 = 80%",
+        "visual": null
+      },
+      {
+        "narration": "A fraction, a decimal, and a percent can all name one amount. Let's practise changing between them.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What percent is equal to 1/2? Is it 25%, 50%, 75%, or 100%?",
+        "prompt": "1/2 = ?%",
+        "why": "Multiply the numerator and denominator of 1/2 by 50. That gives 50/100, which is 50%.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "25%",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "50%",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "75%",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "100%",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "50",
+          "choices": [
+            { "id": "a", "expr": "25" },
+            { "id": "b", "expr": "50" },
+            { "id": "c", "expr": "75" },
+            { "id": "d", "expr": "100" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "The decimal 0.25 is equal to what percent? Type the number.",
+        "prompt": "0.25 = ?%",
+        "why": "0.25 means 25 hundredths, or 25/100. Out of 100 is percent, so it is 25%.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 25,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "0.25*100", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Move the frog to the percent that is equal to 7/10.",
+        "prompt": "7/10 = ?%",
+        "why": "7/10 is equivalent to 70/100 because 10 times 10 is 100. So 7/10 is 70%.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 10,
+        "target": 70,
+        "check": { "rule": "equals", "expr": "7/10*100", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A fraction out of 100 is equal to 30%. Is it 3/100, 30/100, 13/100, or 300/100?",
+        "prompt": "30% = ?/100",
+        "why": "Percent means out of 100. So 30% is 30 out of 100, or 30/100.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/100",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "30/100",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "13/100",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "300/100",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "30/100",
+          "choices": [
+            { "id": "a", "expr": "3/100" },
+            { "id": "b", "expr": "30/100" },
+            { "id": "c", "expr": "13/100" },
+            { "id": "d", "expr": "300/100" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "What decimal is equal to 9/100? Type the number.",
+        "prompt": "9/100 = ?",
+        "why": "9/100 is 9 hundredths. The second digit after the dot is hundredths, so it is 0.09.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 0.09,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9/100", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "What percent is equal to 3/5? Type the number. Hint: make the denominator 100.",
+        "prompt": "3/5 = ?%",
+        "why": "Multiply 5 by 20 to get 100. Multiply 3 by 20 too. That gives 60/100, which is 60%.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 60,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3/5*100", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which decimal is equal to 3/4? Is it 0.34, 0.25, 0.75, or 0.7?",
+        "prompt": "3/4 = ?",
+        "why": "Multiply 4 by 25 to get 100. Multiply 3 by 25 too. That gives 75/100, which is 0.75.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 0.34,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 0.25,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 0.75,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 0.7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Move the frog to the percent that is equal to 7/20.",
+        "prompt": "7/20 = ?%",
+        "why": "Multiply 20 by 5 to get 100. Multiply 7 by 5 too. That gives 35/100, which is 35%.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 100,
+        "step": 5,
+        "target": 35,
+        "check": { "rule": "equals", "expr": "7/20*100", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "The decimal 0.8 is equal to a fraction with denominator 100. What is the numerator? Type the number.",
+        "prompt": "0.8 = ?/100",
+        "why": "0.8 is the same as 0.80, which is 80 hundredths. So it equals 80/100.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 80,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "0.8*100", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Dani got 18 out of 20 on a science quiz. What percent is that? Is it 80%, 85%, 90%, or 95%?",
+        "prompt": "18/20 = ?%",
+        "why": "Multiply 20 by 5 to get 100. Multiply 18 by 5 too. That gives 90/100, which is 90%.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "80%",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "85%",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "90%",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "95%",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "18/20*100",
+          "choices": [
+            { "id": "a", "expr": "80" },
+            { "id": "b", "expr": "85" },
+            { "id": "c", "expr": "90" },
+            { "id": "d", "expr": "95" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which amount is greatest: 55%, 7/10, 0.6, or 1/2?",
+        "prompt": "Greatest amount?",
+        "why": "Change each to hundredths. 55% is 0.55, 7/10 is 0.70, 0.6 is 0.60, and 1/2 is 0.50. The greatest is 7/10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "55%",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "7/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "0.6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "0.55" },
+            { "id": "b", "expr": "7/10" },
+            { "id": "c", "expr": "0.6" },
+            { "id": "d", "expr": "1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Ana thinks 4/25 is equal to 14%. Is she right? Choose yes or no.",
+        "prompt": "Is 4/25 = 14%?",
+        "why": "Multiply 25 by 4 to get 100. Multiply 4 by 4 too. That gives 16/100, which is 16%, not 14%.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "4/25 == 14/100" },
+            { "id": "b", "expr": "not (4/25 == 14/100)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "What decimal is equal to 9/25? Type the number.",
+        "prompt": "9/25 = ?",
+        "why": "Multiply 25 by 4 to get 100. Multiply 9 by 4 too. That gives 36/100, which is 0.36.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 0.36,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "9/25", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Move the frog to the decimal that is equal to 13/20.",
+        "prompt": "13/20 = ?",
+        "why": "Multiply 20 by 5 to get 100. Multiply 13 by 5 too. That gives 65/100, which is 0.65.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1,
+        "step": 0.05,
+        "target": 0.65,
+        "check": { "rule": "equals", "expr": "13/20", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Mia made 33 of her 50 shots in soccer practice. What percent of her shots went in? Type the number.",
+        "prompt": "33/50 = ?%",
+        "why": "Multiply 50 by 2 to get 100. Multiply 33 by 2 too. That gives 66/100, which is 66%.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 66,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "33/50*100", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

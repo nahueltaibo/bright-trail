@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g5-fraction-decimal-percent-tap-6",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "VERIFY item checked and correct: 4/25 = 16/100 = 16%, so Ana is wrong and the marked 'no' is right. The narration and screen both say 'Is 4/25 = 14%?', so the item is clear by ear. Optionally, the narration could say 'Ana thinks 4/25 equals 14 percent' so TTS reads the percent in words."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "audio",
+        "note": "Story cards show symbols such as '1/4', '1 ÷ 4', and '1% = 1/100 = 0.01' with no spoken wording. Text-to-speech may read '/' or '÷' unclearly for a child who cannot read. Consider adding narration text such as 'one quarter' or 'one divided by four' to each card so the sound matches the screen."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Step 4 says 'read 25/100 three ways' but names only the decimal and the percent after the fraction. Consider wording it as 'two other ways' or naming all three forms so the sentence matches what is shown."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Grade-level check: in the Ontario curriculum, percent is usually introduced in Grade 6, while Grade 5 focuses on fractions and decimals to hundredths. This is one grade ahead rather than far off, so it is not a blocker, but it may be worth confirming the skill's placement."
+      }
+    ],
+    "notes": "I checked every story step and every item by working out the arithmetic. All marked answers are correct, and no choice other than the marked one is right in the tap items: 1/2=50%, 30%=30/100, 3/4=0.75, 18/20=90%, greatest is 7/10, 4/25=16% (so 'no' is right), 9/25=0.36, 13/20=0.65, 33/50=66%, 7/20=35%, 0.8=80/100, 9/100=0.09, 3/5=60%, 7/10=70%, 0.25=25%. The number-line targets and the step sizes match their answers. The story arithmetic is also correct. No blockers were found. The notes concern audio clarity for story symbols, a small wording point in story step 4, and a possible grade-placement question about percent."
+  }
+}

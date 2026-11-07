@@ -1,0 +1,439 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Pip the frog. Pip loves bugs. Pip loves to count them!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "Pip sees 2 bugs on a leaf.",
+        "text": "2",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 2, "filled": null }
+      },
+      {
+        "narration": "Then 3 more bugs come. Now Pip counts them all. 5 bugs!",
+        "text": "2 + 3 = 5",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 5, "filled": null }
+      },
+      {
+        "narration": "2 and 3 make 5. Putting groups together is adding.",
+        "text": "2 + 3 = 5",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 5 }
+      },
+      {
+        "narration": "Now 2 bugs fly away. That is taking away. 3 bugs are left.",
+        "text": "5 - 2 = 3",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 3, "filled": null }
+      },
+      {
+        "narration": "You can do it too. Let's play with Pip!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Pip has 2 apples. 1 more apple comes. How many apples now? Is it 3, 2, or 4?",
+        "prompt": "2 + 1 = ?",
+        "why": "Start with 2 apples. Add 1 more. Count on: 2, then 3. The answer is 3.",
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 2, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Pip sees 2 bugs. 1 more bug comes. How many bugs in all?",
+        "prompt": "2 + 1 = ?",
+        "why": "Count the 2 bugs. Then count 1 more. That makes 3 bugs.",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 2, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Pip has 2 fish. 2 more fish swim in. Hop the frog to how many fish.",
+        "prompt": "2 + 2 = ?",
+        "why": "Start at 2. Hop 2 more steps. You land on 4.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "2 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Pip has 3 cookies. Pip eats 1. How many cookies are left? Is it 2, 1, or 3?",
+        "prompt": "3 - 1 = ?",
+        "why": "Start with 3 cookies. Take away 1. Count back: 3, then 2. So 2 are left.",
+        "visual": { "kind": "objects", "emoji": "🍪", "count": 3, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 1,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 - 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "There are 3 birds. 1 bird flies away. How many birds are left?",
+        "prompt": "3 - 1 = ?",
+        "why": "Start with 3 birds. Take away 1. That leaves 2 birds.",
+        "visual": { "kind": "objects", "emoji": "🐦", "count": 3, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 - 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "2 and 3 make how many? Is it 4, 6, or 5?",
+        "prompt": "2 + 3 = ?",
+        "why": "Start at 3. Count on 2 more: 4, 5. So 2 and 3 make 5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Pip has 5 stars. 3 stars go away. Hop the frog to how many are left.",
+        "prompt": "5 - 3 = ?",
+        "why": "Start at 5. Hop back 3 steps: 4, 3, 2. You land on 2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "5 - 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "What is 4 + 1?",
+        "prompt": "4 + 1 = ?",
+        "why": "One more than 4 is 5. So 4 + 1 = 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What is 5 - 2? Is it 3, 2, or 4?",
+        "prompt": "5 - 2 = ?",
+        "why": "Start at 5. Count back 2: 4, 3. The answer is 3.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "3 frogs sit on a log. 2 more frogs hop on. Hop to how many frogs in all.",
+        "prompt": "3 + 2 = ?",
+        "why": "Start at 3. Hop 2 more: 4, 5. You land on 5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "3 + 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Pip wants 5 bugs. Pip has 2 bugs. How many more bugs does Pip need?",
+        "prompt": "2 + ? = 5",
+        "why": "Start at 2. Count up to 5: 3, 4, 5. That is 3 more.",
+        "visual": { "kind": "objects", "emoji": "🐞", "count": 2, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 - 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which pair makes 5? Is it 1 and 3? Or 2 and 3? Or 4 and 2?",
+        "prompt": "Makes 5",
+        "why": "Add each pair. 1 and 3 make 4. 2 and 3 make 5. 4 and 2 make 6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1 and 3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2 and 3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4 and 2",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 + 3 == 5" },
+            { "id": "b", "expr": "2 + 3 == 5" },
+            { "id": "c", "expr": "4 + 2 == 5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Pip has 4 apples. Pip eats 3. Hop the frog to how many are left.",
+        "prompt": "4 - 3 = ?",
+        "why": "Start at 4. Hop back 3 steps: 3, 2, 1. You land on 1.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 1,
+        "target": 1,
+        "check": { "rule": "equals", "expr": "4 - 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Pip has 5 pears. Pip eats all 5. How many pears are left?",
+        "prompt": "5 - 5 = ?",
+        "why": "Take away all 5 pears. Nothing is left. The answer is 0.",
+        "visual": { "kind": "objects", "emoji": "🍐", "count": 5, "filled": null },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 0,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Here are 3 dots. Add 2 more dots. How many dots now? Is it 5, 4, or 3?",
+        "prompt": "3 + 2 = ?",
+        "why": "Start with 3 dots. Add 2 more: 4, 5. Now there are 5 dots.",
+        "visual": { "kind": "ten-frame", "emoji": null, "count": null, "filled": 3 },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 + 2", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

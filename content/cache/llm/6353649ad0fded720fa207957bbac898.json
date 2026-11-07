@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Card 4 is about 6 + 7 = 13, but its picture shows 12 ladybugs. A child who counts the picture gets 12, which contradicts the answer of 13. The 12 matches only the double-6 step, so the picture should show 13 (for example 6 and 7 ladybugs in two groups) or be labelled as the double."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 4's 6 + 7 is reused verbatim in tap-5 and keypad-3. Repetition is fine for a practice set, but a different near-double pair would give the practice more variety."
+      }
+    ],
+    "notes": "I checked every story card and item arithmetic. All marked answers are correct and each tap item has exactly one right choice. The tap-5 VERIFY item checks out: 6 + 7 = 13 and 6 + 6 + 1 = 13, so \"yes\" is correct. Items are at the right Grade 1 level for adding and subtracting to 20, and the narration carries the meaning for audio-only play. The only real problem is the story card 4 picture."
+  }
+}

@@ -25,6 +25,7 @@ Run these from the root:
 - `npm run app:start` — start the Expo dev server. Scan the QR code with Expo Go on a phone or tablet.
 - `npm run content:validate` — validate a content bundle. Checks the sample bundle by default. Pass a path with `npm run content:validate -- path/to/bundle.json`.
 - `npm run content:graph` — build the skill graph from `content/sources/`. It calls Claude through the Claude Code CLI in headless mode, so it runs on your Claude Code login with no API key. Set `LLM_BACKEND=sdk` to call the API with `ANTHROPIC_API_KEY` instead. Writes `content/out/skills.json` and `content/out/skills-report.md`. Responses cache in `content/cache/llm/`, so a rerun only calls the API for prompts that changed.
+- `npm run content:generate` — write a story and 15 items per skill in `skills.json` through the same CLI and cache, check them, and build `content/out/bundle.json` and `content/out/content-report.md`. Failing skills regenerate with the reasons up to 2 times. If the usage limit hits, it stops and keeps what's done: rerun to resume. Pass `-- --pilot` for the 6 pilot skills and `content/out/pilot-report.md`, or `-- --skills id,id` for a few.
 - `npm test` — Vitest in `shared/` and `content/`, jest-expo in `app/`.
 - `npm run typecheck` — `tsc` in every package.
 - `npm run lint` — ESLint across the repo.
