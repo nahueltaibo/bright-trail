@@ -37,6 +37,14 @@ export default function ProfilePickerScreen() {
         ) : (
           profiles && <Text style={styles.empty}>Ask a grown-up to add you.</Text>
         )}
+
+        {__DEV__ && (
+          <Link href="/dev/learning" asChild>
+            <Pressable accessibilityRole="button" style={styles.devButton}>
+              <Text style={styles.devText}>Dev: learning preview</Text>
+            </Pressable>
+          </Link>
+        )}
       </View>
     </SafeAreaView>
   );
@@ -48,4 +56,13 @@ const styles = StyleSheet.create({
   lock: { fontSize: 28, opacity: 0.6 },
   body: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 32, padding: 24 },
   empty: { fontSize: 22, color: '#5A4A1F', textAlign: 'center' },
+  devButton: {
+    paddingVertical: 10,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    borderWidth: 1,
+    borderStyle: 'dashed',
+    borderColor: '#999',
+  },
+  devText: { fontSize: 14, color: '#666' },
 });
