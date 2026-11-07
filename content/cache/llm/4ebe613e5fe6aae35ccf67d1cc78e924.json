@@ -1,0 +1,29 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g5-fraction-decimal-percent",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g5-decimals-hundredths",
+          "g5-equivalent-fractions",
+          "g4-fraction-decimal-equivalence"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The Grade 4 skill g4-fraction-decimal-equivalence (matching fractions and decimal tenths, like 1/2 and 0.5) is the same idea one step earlier and is missing. Grade 5 extends it to hundredths and percents, so a kid who struggles with 1/4 = 0.25 needs that Grade 4 link. It does not overlap with the other listed prerequisites, so it is direct."
+      },
+      {
+        "skillId": "g5-add-sub-like-fractions",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g5-equivalent-fractions", "g4-count-unit-fractions"],
+        "title": "",
+        "description": "",
+        "reason": "g4-add-sub-10000 is not needed: the skill adds fractions with the same denominator, which is counting unit pieces (4 one-thirds is 4/3), not whole-number or decimal addition. The missing direct prerequisite is g4-count-unit-fractions, the same idea from Grade 4, where adding like unit fractions is taught."
+      }
+    ],
+    "notes": "Reviewed all 16 proposed Grade 5 skills. All prerequisite ids exist, none point to a later grade or to the skill itself, and the chains are otherwise sound. Two skills needed corrections (g5-fraction-decimal-percent and g5-add-sub-like-fractions). Left as-is: g5-decimals-hundredths listing g5-equivalent-fractions (money or grid reasoning could work without it, but the link is defensible); g5-divide-by-two-digit listing g5-multiply-two-by-two-digit (borderline, since the division algorithm mainly needs two-digit by one-digit multiplication, which is covered transitively); and g5-mental-math-decimals listing g4-mental-decimal-tenths (borderline, but it supports the mental-math framing). Titles and descriptions read well aloud."
+  }
+}

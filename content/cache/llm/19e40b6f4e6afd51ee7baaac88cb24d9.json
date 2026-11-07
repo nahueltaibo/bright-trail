@@ -1,0 +1,104 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g1-read-numbers-50",
+        "title": "Read and show numbers to 50",
+        "description": "Read numbers up to 50 as words and numerals, and show them with tens and ones. Tell how numbers are used, like on a clock or a house.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["k-read-write-numbers-20", "k-uses-of-numbers"]
+      },
+      {
+        "id": "g1-count-50",
+        "title": "Count to 50 by 1s, 2s, 5s, 10s",
+        "description": "Count out loud to 50 by 1s, 2s, 5s, and 10s. Use a number line or hundred chart to skip count and find the next number.",
+        "expectationCodes": ["B1.5"],
+        "prerequisiteIds": ["k-count-to-20"]
+      },
+      {
+        "id": "g1-compare-order-50",
+        "title": "Compare and order to 50",
+        "description": "Tell which number is greater or less. Put numbers up to 50 in order from least to greatest, or greatest to least.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g1-read-numbers-50", "k-compare-numbers-20"]
+      },
+      {
+        "id": "g1-estimate-50",
+        "title": "Estimate up to 50, then count",
+        "description": "Make a smart guess about how many things are in a group of up to 50. Then count to check how close you were.",
+        "expectationCodes": ["B1.4"],
+        "prerequisiteIds": ["k-estimate-and-count", "g1-count-50"]
+      },
+      {
+        "id": "g1-compose-decompose-50",
+        "title": "Build and break apart numbers",
+        "description": "Put numbers together or break them into parts, like 28 is 20 and 8, or 10 and 10 and 8. The amount stays the same.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g1-read-numbers-50", "k-make-numbers-to-10"]
+      },
+      {
+        "id": "g1-fair-share-drawings",
+        "title": "Fair shares with 2 or 4 friends",
+        "description": "Draw a picture to share things equally between 2 or 4 friends. Show what each friend gets when there are some left over to cut.",
+        "expectationCodes": ["B1.6"],
+        "prerequisiteIds": ["k-equal-share"]
+      },
+      {
+        "id": "g1-half-equals-two-fourths",
+        "title": "Halves and fourths",
+        "description": "Learn that one half of a whole is the same as two fourths of that same whole. Two halves or four fourths make one whole.",
+        "expectationCodes": ["B1.7"],
+        "prerequisiteIds": ["g1-fair-share-drawings"]
+      },
+      {
+        "id": "g1-compare-unit-fractions",
+        "title": "Compare shares of a whole",
+        "description": "When a whole is shared with more friends, each piece gets smaller. Draw and order one half, one third, one fourth, and more.",
+        "expectationCodes": ["B1.8"],
+        "prerequisiteIds": ["g1-half-equals-two-fourths"]
+      },
+      {
+        "id": "g1-add-sub-facts-10",
+        "title": "Add and subtract facts to 10",
+        "description": "Know addition facts up to 10 and the take-away facts that go with them. For example, 4 and 6 make 10, so 10 take away 4 is 6.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["k-add-sub-facts-5"]
+      },
+      {
+        "id": "g1-add-sub-properties",
+        "title": "Order, zero, and checking",
+        "description": "Adding in any order gives the same answer, and adding or taking away zero changes nothing. Use adding to check a take-away answer.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g1-add-sub-facts-10"]
+      },
+      {
+        "id": "g1-mental-math-20",
+        "title": "Add and subtract in your head to 20",
+        "description": "Use tricks like counting on, making 10, and near doubles to add and subtract in your head. Your answers stay 20 or less.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g1-add-sub-facts-10"]
+      },
+      {
+        "id": "g1-add-sub-problems-50",
+        "title": "Add and subtract stories to 50",
+        "description": "Use pictures, number lines, and equations to solve stories about joining, taking away, and comparing, up to 50. Find the missing number too.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": [
+          "g1-mental-math-20",
+          "g1-add-sub-properties",
+          "g1-compose-decompose-50",
+          "k-add-sub-stories-10"
+        ]
+      },
+      {
+        "id": "g1-equal-groups",
+        "title": "Equal groups up to 10",
+        "description": "Draw or use counters to make equal groups, like 5 groups of 2, or 6 groups of one half. Find how many groups or how many in all.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g1-count-50", "g1-half-equals-two-fourths"]
+      }
+    ]
+  }
+}

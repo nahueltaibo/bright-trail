@@ -4,7 +4,6 @@ import { useCallback, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProfilePicker } from '../components/ProfilePicker';
-import { addSampleChildren } from '../dev/sampleChildren';
 import { useStorage } from '../storage/StorageProvider';
 
 /** Kid home: pick who's playing. */
@@ -18,11 +17,6 @@ export default function ProfilePickerScreen() {
 
   // Reload on focus so children added in the parent area show up on return.
   useFocusEffect(reload);
-
-  const addSamples = async () => {
-    await addSampleChildren(repo);
-    reload();
-  };
 
   return (
     <SafeAreaView style={styles.screen}>
@@ -44,11 +38,6 @@ export default function ProfilePickerScreen() {
           profiles && <Text style={styles.empty}>Ask a grown-up to add you.</Text>
         )}
 
-        {__DEV__ && (
-          <Pressable accessibilityRole="button" onPress={addSamples} style={styles.devButton}>
-            <Text style={styles.devText}>Dev: add sample kids</Text>
-          </Pressable>
-        )}
         {__DEV__ && (
           <Link href="/dev/learning" asChild>
             <Pressable accessibilityRole="button" style={styles.devButton}>

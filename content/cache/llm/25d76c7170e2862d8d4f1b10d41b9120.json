@@ -1,0 +1,37 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g4-fraction-decimal-equivalence",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g4-decimal-tenths",
+          "g4-count-unit-fractions",
+          "g3-equivalent-fair-shares"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The same idea from Grade 3 is missing. Seeing that 1/2 and 5/10 name the same amount is the idea that different fractions can name the same amount, which is what g3-equivalent-fair-shares teaches (one fifth and two tenths). No other listed prerequisite depends on g3-equivalent-fair-shares, so it is a direct prerequisite."
+      },
+      {
+        "skillId": "g4-decimal-tenths",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-place-value", "g4-represent-fractions", "g3-compare-order-1000"],
+        "title": "",
+        "description": "",
+        "reason": "Comparing and ordering decimals such as 24.7 and 3.2 requires comparing the whole-number parts, which is the Grade 3 comparing skill. Neither g3-place-value nor g4-represent-fractions depends on g3-compare-order-1000, so it is direct."
+      },
+      {
+        "skillId": "g4-multiply-by-one-digit",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-mult-div-facts-100", "g4-mult-div-by-10s", "g3-mental-math-1000"],
+        "title": "",
+        "description": "",
+        "reason": "The splitting strategy produces partial products, such as 60 and 12, that the kid must add to finish. That needs mental addition of numbers up to 1000 (g3-mental-math-1000). No other listed prerequisite depends on it, so it is direct."
+      }
+    ],
+    "notes": "Reviewed all 17 proposed Grade 4 skills. All prerequisites are from Grade 3 or earlier, or from earlier Grade 4 skills, and none point to the skill itself. The titles and descriptions match their expectations and read aloud well. Three skills had a missing direct prerequisite and are corrected above. I left the other prerequisite lists unchanged. Where a needed Grade 3 idea is already reached through a listed prerequisite (for example g3-place-value, g3-fair-share-20, g3-fraction-repeated-addition, and g3-add-sub-algorithms), adding it directly would break the directness rule, so I did not add it. g4-mult-div-by-10s keeps g4-decimal-tenths, because the skill says \"divide it by 10\" for any number, which can give tenths."
+  }
+}

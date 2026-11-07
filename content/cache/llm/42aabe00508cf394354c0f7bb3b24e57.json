@@ -1,0 +1,37 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g1-compare-order-50",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g1-read-numbers-50", "k-compare-numbers-20", "g1-count-50"],
+        "title": "",
+        "description": "",
+        "reason": "Putting numbers up to 50 in order depends on knowing the counting sequence up to 50 (which number comes next, and where each number sits on a number line or hundred chart). That is taught in g1-count-50, which is not listed. It is a direct need, not covered by any other listed prerequisite, so it should be added."
+      },
+      {
+        "skillId": "g1-add-sub-problems-50",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g1-add-sub-properties",
+          "g1-compose-decompose-50",
+          "k-add-sub-stories-10"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The skill is solving stories up to 50 with pictures, number lines, and equations, and finding the missing number. A kid can do this without mental math strategies for sums to 20, so g1-mental-math-20 is not a true prerequisite and should be removed. The remaining prerequisites are needed: the inverse relationship for finding missing numbers (g1-add-sub-properties), composing and decomposing tens and ones to work with numbers to 50 (g1-compose-decompose-50), and the story-problem idea from Kindergarten (k-add-sub-stories-10)."
+      },
+      {
+        "skillId": "g1-add-sub-properties",
+        "changePrerequisites": false,
+        "prerequisiteIds": [],
+        "title": "Any order, zero, and checking",
+        "description": "",
+        "reason": "Read aloud, the title 'Order, zero, and checking' sounds like the ordering-numbers skill (g1-compare-order-50, 'Compare and order to 50'). The skill is about the commutative property (adding in any order), so 'Any order' says what the skill teaches and avoids confusion."
+      }
+    ],
+    "notes": "I checked all 13 Grade 1 skills for unneeded, indirect, or missing prerequisites, forward or self references, and kid-friendly wording. All prerequisite ids exist in the prompt, and none point to a later grade or to the skill itself. Corrections were made only where a listed prerequisite is clearly unneeded or a needed one is missing, plus one title whose wording is ambiguous when read aloud. Items I judged acceptable and left alone: g1-count-50 in g1-equal-groups and g1-estimate-50 (skip counting by 2s, 5s, and 10s), g1-add-sub-facts-10 (k-make-numbers-to-10 is already covered through k-add-sub-facts-5), and g1-compare-unit-fractions (g1-half-equals-two-fourths is needed for comparing halves and fourths). Fixing the ordering skill leaves the rest of the chain consistent."
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g6-whole-numbers-million",
+        "title": "Read and build numbers to 1 000 000",
+        "description": "Read, write, and build numbers up to one million in words, digits, and expanded form. Tell what each digit is worth, like the 5 in 527 910 is 500 000.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g5-whole-numbers-100000"]
+      },
+      {
+        "id": "g6-integers",
+        "title": "Positive and negative numbers",
+        "description": "Show numbers below zero, like -6, and numbers above zero, like 3, on a number line or with counters. Tell what -4 and 4 have in common.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g5-compare-order-100000"]
+      },
+      {
+        "id": "g6-decimals-thousandths",
+        "title": "Read and build decimals to thousandths",
+        "description": "Read, write, and show decimals like 7.635 in words, digits, and expanded form. Compare and order them by looking at the biggest place that is different.",
+        "expectationCodes": ["B1.4"],
+        "prerequisiteIds": ["g5-decimals-hundredths"]
+      },
+      {
+        "id": "g6-compare-order-rationals",
+        "title": "Compare integers, decimals, and fractions",
+        "description": "Put negative numbers, decimals, and fractions in order, even when they are mixed together. Use a number line and benchmarks like 0, one half, and 1.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g6-integers", "g6-decimals-thousandths", "g5-compare-order-fractions"]
+      },
+      {
+        "id": "g6-round-decimals",
+        "title": "Round decimals to tenth or hundredth",
+        "description": "Round decimals, even ones that go on forever like 3.555…, to the closest whole number, tenth, or hundredth. If it is exactly halfway, round up.",
+        "expectationCodes": ["B1.5"],
+        "prerequisiteIds": ["g6-decimals-thousandths", "g5-round-decimals-tenth"]
+      },
+      {
+        "id": "g6-fraction-decimal-match",
+        "title": "Fractions and decimals that match",
+        "description": "Change fractions into decimals and decimals into fractions, like 1/4 is 0.25 and 0.625 is 5/8. A fraction can also mean the top number divided by the bottom number.",
+        "expectationCodes": ["B1.6"],
+        "prerequisiteIds": ["g6-decimals-thousandths", "g5-fraction-decimal-percent"]
+      },
+      {
+        "id": "g6-operation-properties",
+        "title": "Rules and steps for solving problems",
+        "description": "Use rules like order, grouping, and splitting numbers to make problems easier. Solve problems with more than one step, using brackets and the right order of operations.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g5-operation-properties"]
+      },
+      {
+        "id": "g6-divisibility-rules",
+        "title": "Divisibility rules",
+        "description": "Use quick tricks to tell if a number can be shared evenly by 2, 3, 4, 5, 6, 8, 9, or 10. For example, add up the digits to check for 3 or 9.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g5-mult-div-facts-144", "g5-whole-numbers-100000"]
+      },
+      {
+        "id": "g6-mental-percents",
+        "title": "Percents of numbers in your head",
+        "description": "Find percents like 1%, 5%, 10%, 15%, 25%, and 50% of a number in your head. For example, 10% of 350 is 35, so 5% is half of that.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g5-fraction-decimal-percent", "g5-mental-math-decimals"]
+      },
+      {
+        "id": "g6-add-sub-whole-decimals",
+        "title": "Add and subtract whole and decimal numbers",
+        "description": "Solve stories by adding and subtracting whole numbers and decimals. Guess the answer first by rounding, then find the exact answer and check that it makes sense.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g5-add-sub-100000-decimals", "g6-round-decimals"]
+      },
+      {
+        "id": "g6-add-sub-unlike-fractions",
+        "title": "Add and subtract different-size fractions",
+        "description": "Add and subtract fractions with different bottom numbers, like 1/2 + 3/4. Use fraction strips or a number line to make the pieces the same size.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g5-add-sub-like-fractions"]
+      },
+      {
+        "id": "g6-prime-factors",
+        "title": "Prime factors and factor trees",
+        "description": "Tell if a number is prime or composite. Break a number into prime factors with a factor tree, like 56 = 2 × 2 × 2 × 7.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g5-mult-div-facts-144"]
+      },
+      {
+        "id": "g6-multiply-by-tenths",
+        "title": "Multiply by tenths",
+        "description": "Multiply a three-digit number by a decimal like 0.3, as in 235 × 0.3 = 70.5. Use an area model or multiply by 3 and then take one tenth.",
+        "expectationCodes": ["B2.7"],
+        "prerequisiteIds": ["g5-multiply-two-by-two-digit", "g5-mental-math-decimals"]
+      },
+      {
+        "id": "g6-divide-by-tenths",
+        "title": "Divide by tenths",
+        "description": "Divide a number by a decimal like 0.5. Make both numbers 10 times bigger so you can divide whole numbers, like 5 ÷ 0.5 = 50 ÷ 5 = 10.",
+        "expectationCodes": ["B2.8"],
+        "prerequisiteIds": ["g5-divide-by-two-digit", "g5-mental-math-decimals"]
+      },
+      {
+        "id": "g6-multiply-whole-by-fraction",
+        "title": "Multiply a whole number by a fraction",
+        "description": "Find 5 × 3/4 by thinking of 5 groups of three fourths. Use fraction strips or a number line, and write the answer as an improper fraction or mixed number.",
+        "expectationCodes": ["B2.9"],
+        "prerequisiteIds": ["g5-whole-by-unit-fraction", "g5-equivalent-fractions"]
+      },
+      {
+        "id": "g6-divide-whole-by-fraction",
+        "title": "Divide a whole number by a fraction",
+        "description": "Find how many pieces like 3/4 fit into a whole number, such as 6 ÷ 3/4 = 8. Use pictures or rods to see the groups.",
+        "expectationCodes": ["B2.10"],
+        "prerequisiteIds": ["g6-multiply-whole-by-fraction"]
+      },
+      {
+        "id": "g6-divide-decimals-by-whole",
+        "title": "Divide decimals by whole numbers",
+        "description": "Divide decimals like 0.8 or 3.24 by a whole number up to 10, as in 0.24 ÷ 6 = 0.04. Use rods, grids, or short division.",
+        "expectationCodes": ["B2.11"],
+        "prerequisiteIds": ["g6-decimals-thousandths", "g4-divide-with-remainders"]
+      },
+      {
+        "id": "g6-ratios-rates-percents",
+        "title": "Ratios, rates, and percents",
+        "description": "Solve problems with ratios, rates, and percents by scaling up or down. Use ratio tables to find equal ratios, like 2 cups of sugar for 4 cups of fruit.",
+        "expectationCodes": ["B2.12"],
+        "prerequisiteIds": ["g5-equivalent-ratios-rates", "g5-fraction-decimal-percent"]
+      }
+    ]
+  }
+}

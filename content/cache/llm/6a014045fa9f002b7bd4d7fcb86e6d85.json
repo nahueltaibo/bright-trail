@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g2-division-sharing",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-equal-groups-multiply", "g2-fair-share-fractions"],
+        "title": "",
+        "description": "",
+        "reason": "g1-fair-share-drawings is already reached through g2-equal-groups-multiply (g2-equal-groups-multiply -> g1-equal-groups -> g1-half-equals-two-fourths -> g1-fair-share-drawings), so it is not a direct prerequisite. The direct sharing prerequisite is g2-fair-share-fractions, which covers equal sharing of up to 10 items among 2, 3, 4, and 6 friends, the same idea that this skill extends to 12 items. g2-equal-groups-multiply stays because equal-grouping division relies on repeated adding."
+      }
+    ],
+    "notes": "Reviewed all 15 proposed Grade 2 skills against the prerequisite rules, the Grade 2 expectations, and the Grade 1 and Kindergarten skill graph. Only g2-division-sharing needed a change. The rest have direct, needed prerequisites, no redundant links, no later-grade or self references, and titles and descriptions that match their expectations. Two non-structural observations, left unchanged: g2-add-sub-properties largely repeats the content of g1-add-sub-properties (its new element is the equal-jumps link to multiplication), and g2-count-200 and g2-even-odd do not list g2-whole-numbers-200 even though they may touch numbers above 100. Both are judgement calls rather than clear errors."
+  }
+}
