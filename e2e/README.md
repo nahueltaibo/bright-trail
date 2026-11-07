@@ -32,7 +32,7 @@ Not covered:
 npm run e2e:build:android
 ```
 
-This runs `expo prebuild` (the generated `app/android/` is gitignored), then Gradle `assembleRelease`. The JS is bundled, so no Metro is needed and the same APK works on any device. It's built with `EXPO_PUBLIC_E2E=1`, which turns on the dev-only learning preview. A normal release build still hides it. Release is signed with the debug keystore from Expo's template.
+This runs `expo prebuild` (the generated `app/android/` is gitignored), then Gradle `assembleRelease`. The JS is bundled, so no Metro is needed and the same APK works on any device. It's built with `EXPO_PUBLIC_E2E=1`, which turns on the dev-only learning preview. The family build (`npm run android:build:family`, see [docs/install-android.md](../docs/install-android.md)) hides it. Release is signed with the debug keystore from Expo's template.
 
 The APK lands at `e2e/output/bright-trail-e2e.apk`. It holds `arm64-v8a` (phones) and `x86_64` (emulators). Set `E2E_ABIS` to change that, e.g. `E2E_ABIS=armeabi-v7a` for an old 32-bit phone.
 

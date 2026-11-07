@@ -1,4 +1,5 @@
-// Builds a standalone release APK with the JS bundled and the learning preview turned on.
+// Builds a standalone release APK with the JS and content bundled. No Metro needed at run time.
+// Usage: node scripts/build-android.mjs --e2e | --family
 import { spawnSync } from 'node:child_process';
 import {
   copyFileSync,
@@ -6,16 +7,31 @@ import {
   mkdirSync,
   readdirSync,
   readFileSync,
+  statSync,
   writeFileSync,
 } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+const root = join(dirname(fileURLToPath(import.meta.url)), '..');
 const app = join(root, 'app');
 const android = join(app, 'android');
 const windows = process.platform === 'win32';
-const env = { ...process.env, EXPO_PUBLIC_E2E: '1', NODE_ENV: 'production' };
+
+const variant = process.argv.includes('--e2e')
+  ? 'e2e'
+  : process.argv.includes('--family')
+    ? 'family'
+    : null;
+if (!variant) {
+  console.error('Pass --e2e or --family.');
+  process.exit(1);
+}
+
+const env = { ...process.env, NODE_ENV: 'production' };
+// The e2e build turns on the dev-only learning preview. The family build must not inherit it.
+if (variant === 'e2e') env.EXPO_PUBLIC_E2E = '1';
+else delete env.EXPO_PUBLIC_E2E;
 
 function compareVersions(a, b) {
   const [x, y] = [a, b].map((v) => v.split('.').map(Number));
@@ -69,7 +85,15 @@ run(
 );
 
 const apk = join(android, 'app', 'build', 'outputs', 'apk', 'release', 'app-release.apk');
-const out = join(root, 'e2e', 'output', 'bright-trail-e2e.apk');
+
+const appVersion = JSON.parse(readFileSync(join(app, 'app.json'), 'utf8')).expo.version;
+const bundleVersion = JSON.parse(
+  readFileSync(join(root, 'content', 'out', 'bundle.json'), 'utf8'),
+).version;
+const out =
+  variant === 'e2e'
+    ? join(root, 'e2e', 'output', 'bright-trail-e2e.apk')
+    : join(root, 'dist', `bright-trail-${appVersion}-${bundleVersion}.apk`);
 mkdirSync(dirname(out), { recursive: true });
 copyFileSync(apk, out);
-console.log(`APK: ${out}`);
+console.log(`APK: ${out} (${(statSync(out).size / 1024 / 1024).toFixed(1)} MB)`);

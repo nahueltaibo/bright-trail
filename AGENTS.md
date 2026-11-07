@@ -7,7 +7,8 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - Specs are HTML under [.docs/](.docs/): product requirements, POC requirements, and the POC task plan. Task IDs (T1, C2, A6, I1, …) come from [.docs/poc-tasks.html](.docs/poc-tasks.html), and branches are named after them (`a6-session-flow`).
 - The design system lives in [.docs/design/](.docs/design/). Each component has a `README.md` and a `preview.html`. Tokens are in `tokens.json`.
 - `content/out/skills.json` holds the generated K–6 skill graph. `content/out/bundle.json` holds the generated stories and items, scoped to the targets in `content/bundle-scope.json` plus their prerequisites. Generation and its checks live in `content/src/generate/`.
-- The app still plays the 3-skill sample bundle from `shared/fixtures/sample-bundle.json`. Swapping in `content/out/bundle.json` is task I1, through `loadBundle()` in `app/src/content/loadBundle.ts`.
+- The app plays `content/out/bundle.json` through `loadBundle()` in `app/src/content/loadBundle.ts`.
+- Family devices run a release APK from `npm run android:build:family`. See [docs/install-android.md](docs/install-android.md).
 
 ## Code Map
 
