@@ -14,10 +14,14 @@ name: Learning preview
 - assertVisible: Card 1 of \d+
 - assertVisible:
     text: Back
+    leftOf: Next
     enabled: false
 - tapOn: Next
 - assertVisible: Card 2 of \d+
-- tapOn: Back
+# leftOf keeps the tap off the phone's own nav-bar Back button.
+- tapOn:
+    text: Back
+    leftOf: Next
 - assertVisible: Card 1 of \d+
 - tapOn: This looks wrong
 - assertVisible: Thanks for telling us

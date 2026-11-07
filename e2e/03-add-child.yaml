@@ -43,6 +43,7 @@ name: Add and edit a child
 - scrollUntilVisible:
     element: Add child
     direction: DOWN
+    centerElement: true
 - tapOn: Add child
 - assertVisible: 'Maya, ${output.grade}'
 
@@ -56,6 +57,7 @@ name: Add and edit a child
 - scrollUntilVisible:
     element: Save changes
     direction: DOWN
+    centerElement: true
 - tapOn: Save changes
 - assertVisible: Saved\.
 - tapOn: ‹ Back
