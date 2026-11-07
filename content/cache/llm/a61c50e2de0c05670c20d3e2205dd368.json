@@ -1,0 +1,620 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has one yummy pizza. She wants to share it fairly with her family.",
+        "text": null,
+        "visual": {
+          "kind": "emoji",
+          "emoji": "🍕",
+          "count": null,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "First, Mia cuts the pizza into 3 equal slices. One slice is one third of the pizza.",
+        "text": "1/3",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 3,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/3"
+        }
+      },
+      {
+        "narration": "Next, Mia cuts another pizza of the same size into 6 equal slices. One slice is one sixth.",
+        "text": "1/6",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/6"
+        }
+      },
+      {
+        "narration": "Now Mia takes 2 slices of the sixths. That is two sixths of the pizza.",
+        "text": "2/6",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 2,
+          "wholes": null,
+          "label": "2/6"
+        }
+      },
+      {
+        "narration": "Look! Two sixths is the same amount as one third. The slices are different, but the amount is equal.",
+        "text": "1/3 = 2/6",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 3,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/3"
+        }
+      },
+      {
+        "narration": "Two thirds is the same amount as four sixths too. Smaller slices means you take more of them.",
+        "text": "2/3 = 4/6",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 4,
+          "wholes": null,
+          "label": "4/6"
+        }
+      },
+      {
+        "narration": "You found that one third equals two sixths. Now let's practise with Mia!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 3 equal slices. One slice is shaded. What fraction is shaded? Is it 1/6, 1/2, or 1/3?",
+        "prompt": "What fraction is shaded?",
+        "why": "The pizza has 3 equal slices and 1 is shaded. So one third is shaded.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 3,
+          "shaded": 1,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "1/6" },
+            { "id": "b", "expr": "1/2" },
+            { "id": "c", "expr": "1/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Mia cuts a pizza into sixths. That means equal slices. How many slices does the pizza have?",
+        "prompt": "How many slices?",
+        "why": "Sixths means 6 equal slices. You can count them in the picture too. There are 6.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 1,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "parts", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Three thirds make one whole pizza. A pizza is cut into thirds. How many slices make the whole pizza?",
+        "prompt": "Slices in a whole pizza",
+        "why": "Thirds means 3 equal slices. All 3 slices make the whole pizza.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 6,
+        "step": 1,
+        "target": 3,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which picture shows one third of a pizza? Is it 1/6 of the circle, 1/3 of the circle, or 1/2 of the circle?",
+        "prompt": "Which shows 1/3?",
+        "why": "One third means 1 of 3 equal slices. Only the middle kind of cut shows that.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 6,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/6 of the circle"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 3,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/3 of the circle"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 2,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/2 of the circle"
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1/3",
+          "choices": [
+            { "id": "a", "expr": "1/6" },
+            { "id": "b", "expr": "1/3" },
+            { "id": "c", "expr": "1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 6 equal slices. Two of the 6 slices are shaded. How many sixths are shaded?",
+        "prompt": "How many sixths shaded?",
+        "why": "Two slices are shaded. Each slice is one sixth, so two sixths are shaded.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Leo eats one third of a pizza. Which is the same amount of that pizza? Is it 1/6, 3/6, or 2/6?",
+        "prompt": "Same as 1/3?",
+        "why": "Cut each third into 2 sixths. One third is 2 sixths.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2/6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1/3",
+          "choices": [
+            { "id": "a", "expr": "1/6" },
+            { "id": "b", "expr": "3/6" },
+            { "id": "c", "expr": "2/6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "One third of a pizza equals how many sixths of that pizza?",
+        "prompt": "1/3 = ?/6",
+        "why": "Each third can be cut into 2 sixths. So one third equals 2 sixths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Two thirds of a pizza equals how many sixths of it?",
+        "prompt": "2/3 = ?/6",
+        "why": "Each third is 2 sixths. Two thirds is 2 and 2 more, which is 4 sixths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 6,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Is one sixth of a pizza equal to one third of it? Yes or no?",
+        "prompt": "Is 1/6 equal to 1/3?",
+        "why": "One sixth is a small slice. One third is bigger. Two sixths would equal one third.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/6 != 1/3" },
+            { "id": "b", "expr": "1/6 == 1/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Two sixths of this pizza are shaded. Cut the same pizza into 3 equal slices instead. How many thirds are shaded?",
+        "prompt": "How many thirds?",
+        "why": "Two sixths is the same amount as one third. So 1 slice is shaded.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded / parts * 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "This strip has 4 sixths shaded. Which fraction is the same amount? Is it 1/3, 1/2, or 2/3?",
+        "prompt": "Same amount as 4/6?",
+        "why": "Every 2 sixths make 1 third. So 4 sixths make 2 thirds.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 6,
+          "shaded": 4,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "1/3" },
+            { "id": "b", "expr": "1/2" },
+            { "id": "c", "expr": "2/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Ben ate 4 sixths of a pan of brownies. That is the same as how many thirds of the pan?",
+        "prompt": "4/6 = ?/3",
+        "why": "Two sixths make one third. Four sixths make two groups, so 2 thirds.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 6,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "4 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Three friends each eat one third of a pizza. The pizza is cut in sixths. How many sixths do they eat all together?",
+        "prompt": "How many sixths?",
+        "why": "Each friend eats 2 sixths. Three friends eat 3 times 2, which is 6 sixths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia ate 2/6 of a pizza. Leo ate 1/3 of the same pizza. Who ate more? Mia ate more, Leo ate more, or same amount?",
+        "prompt": "Who ate more?",
+        "why": "Two sixths is the same as one third. So they ate the same amount.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Mia ate more",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Same amount",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Leo ate more",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "2/6 > 1/3" },
+            { "id": "b", "expr": "2/6 == 1/3" },
+            { "id": "c", "expr": "1/3 > 2/6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "A pizza is cut into 6 equal slices. Zoe eats one third of the pizza. How many sixths are left?",
+        "prompt": "Sixths left?",
+        "why": "One third is 2 sixths. Take 2 slices from 6 and 4 are left.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 6,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "6 - 2", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

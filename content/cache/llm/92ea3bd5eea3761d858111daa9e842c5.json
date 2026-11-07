@@ -1,0 +1,51 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-compare-unit-fractions-tap-3",
+        "severity": "blocker",
+        "category": "ambiguous",
+        "note": "The marked answer (2 friends) is right, but the Why says 'With 2 friends, each piece is a half.' The story says 'Mia shares with one friend. Two kids share... 1/2', so 'friend' there excludes Mia. Under that wording, 2 friends means 3 kids and thirds, not halves. The explanation contradicts the story and could teach the wrong count. Say 'two kids share' or 'two people share the pizza' so it matches the story."
+      },
+      {
+        "target": "g1-compare-unit-fractions-keypad-1",
+        "severity": "blocker",
+        "category": "audio",
+        "note": "The question can't be answered by ear. The narration never says how many parts the pizza has ('All the pieces are equal'), so the answer 4 is only in the picture. A child playing by sound alone has no way to get the count. Add the number of equal parts to the narration (for example, 'cut into 4 equal slices'). Also, 'friends' here means people sharing, but the story's 'one friend' means two kids. Make the wording consistent."
+      },
+      {
+        "target": "g1-compare-unit-fractions-keypad-2",
+        "severity": "blocker",
+        "category": "audio",
+        "note": "The question can't be answered by ear. The narration says 'This bar is cut in equal parts' with no number, and the count of 10 appears only in the picture. A child playing by sound alone can't answer. Add the number of parts to the narration, or make the item depend on something that is spoken."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 6 'The pieces are from the same size whole' is ungrammatical. Try 'The pieces come from the same size whole.' The story also says 'one friend' means Mia plus one other child ('Two kids share'), but the items use 'friends' to mean the people sharing (for example keypad-3 and tap-8). Pick one meaning, or say 'Mia and one friend' here, so children don't hear conflicting counts."
+      },
+      {
+        "target": "g1-compare-unit-fractions-keypad-3",
+        "severity": "note",
+        "category": "other",
+        "note": "This item is mainly subtraction (8 - 2 = 6) and doesn't test comparing fractions. It is off-skill for this unit. Consider replacing it with a comparison item, or leave it if the subtraction is meant as a warm-up."
+      },
+      {
+        "target": "g1-compare-unit-fractions-number-line-3",
+        "severity": "note",
+        "category": "other",
+        "note": "'Add friends so pieces get smaller' and 'Move the frog to the fewest friends that works' is ambiguous. Does the frog mark the total number of friends, or how many to add? The answer 7 is the total. Say 'Move the frog to the new number of friends, the fewest that works.'"
+      },
+      {
+        "target": "g1-compare-unit-fractions-tap-8",
+        "severity": "note",
+        "category": "other",
+        "note": "The Why says 'sharing with 4', but the narration only says 'Mia gets 1/4 of a bar'. Children can't see the 4 in the audio, so say 'Mia's 1/4 is shared by 4' in the narration. Also check the friends-versus-people convention noted for the story."
+      }
+    ],
+    "notes": "Checked every marked answer. tap-1, tap-2, tap-4, tap-5, tap-6, tap-7, keypad-3, number-line-1, number-line-2, and number-line-4 are correct as marked. tap-5 and tap-6 were confirmed as VERIFY items: 5 friends gives the smallest piece, and 'Yes' is right for 1/5 versus 1/8. tap-8 was confirmed as well: 6 friends gives a smaller piece than 1/4, and 3 friends gives a bigger one. The main issue across the skill is the 'friend' versus 'sharer' count, which the story and items use inconsistently. The keypad items with picture-only counts are not playable by ear. Nothing else needed changing."
+  }
+}

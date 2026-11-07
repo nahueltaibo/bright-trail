@@ -1,0 +1,736 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia has 6 cookies. She shares them with 1 friend. That is 2 children. Each child gets the same.",
+        "text": "6 ÷ 2 = 3",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 6,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Now Mia has 4 chocolate bars. She shares them with 3 friends. Each friend gets 1 bar.",
+        "text": "4 ÷ 3",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍫",
+          "count": 4,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "One bar is left over. Mia cuts it into 3 equal parts. Each friend gets one part.",
+        "text": null,
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 3,
+          "shaded": 1,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "So each friend gets 1 whole bar and one third of a bar. That is 1 and one third.",
+        "text": "4 ÷ 3 = 1 1/3",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 3,
+          "shaded": 4,
+          "wholes": 2,
+          "label": "1 1/3"
+        }
+      },
+      {
+        "narration": "Next, 5 pies are shared by 2 friends. Each gets 2 pies. One pie is left. Cut it in halves. Each gets 2 and one half.",
+        "text": "5 ÷ 2 = 2 1/2",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 2,
+          "shaded": 5,
+          "wholes": 3,
+          "label": "2 1/2"
+        }
+      },
+      {
+        "narration": "Share whole things first. Cut what is left into equal parts. Now you try!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "6 cookies are shared by 2 friends. How many cookies does each friend get?",
+        "prompt": "6 ÷ 2 = ?",
+        "why": "Give each friend one cookie at a time. After 3 rounds, all 6 cookies are gone. Each friend gets 3.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 6,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "8 apples are shared by 4 friends. How many apples does each friend get?",
+        "prompt": "8 ÷ 4 = ?",
+        "why": "Hand out 1 apple to each of the 4 friends. Do it again. That uses all 8. Each gets 2.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍎",
+          "count": 8,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "10 stickers are shared by 2 friends. Drag the frog to how many stickers each friend gets.",
+        "prompt": "10 ÷ 2 = ?",
+        "why": "Split the 10 stickers into 2 equal groups. Each group has 5 stickers.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "10 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "4 chocolate bars are shared by 3 friends. Each gets 1 bar. One bar is left. Into how many equal parts do we cut it?",
+        "prompt": "Cut the left bar into how many parts?",
+        "why": "There are 3 friends. So the left bar is cut into 3 equal parts. Each friend gets one part.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍫",
+          "count": 4,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "9 pears are shared by 3 friends. How many pears does each friend get?",
+        "prompt": "9 ÷ 3 = ?",
+        "why": "Make 3 equal groups from 9 pears. Each group has 3 pears.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍐",
+          "count": 9,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count / 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "4 sandwiches are shared by 3 friends. How much does each friend get? Is it 1 1/3, 1 1/2, 2, or 1 2/3?",
+        "prompt": "4 ÷ 3 = ?",
+        "why": "Each friend gets 1 whole sandwich. One is left. Cut it in 3 parts. Each friend gets 1 and one third.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🥪",
+          "count": 4,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1 1/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1 1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "1 2/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "4 / 3",
+          "choices": [
+            { "id": "a", "expr": "4 / 3" },
+            { "id": "b", "expr": "3 / 2" },
+            { "id": "c", "expr": "2" },
+            { "id": "d", "expr": "5 / 3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "7 crackers are shared by 3 friends. How many whole crackers does each friend get? Drag the frog to the number.",
+        "prompt": "Whole crackers each?",
+        "why": "Each friend gets 2 crackers. That uses 6. One cracker is left to cut up.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 6,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "floor(7 / 3)", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "One pie is cut into 4 equal parts. 4 friends share it. What part does each friend get? Is it 1/2, 1/3, 1/4, or 2/3?",
+        "prompt": "What part of the pie?",
+        "why": "The pie has 4 equal parts for 4 friends. Each friend gets 1 part. That is 1/4.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 1,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "2/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "1 / 2" },
+            { "id": "b", "expr": "1 / 3" },
+            { "id": "c", "expr": "1 / 4" },
+            { "id": "d", "expr": "2 / 3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "5 cookies are shared by 2 friends. How much does each friend get? Is it 2, 2 1/2, 3, or 2 1/4?",
+        "prompt": "5 ÷ 2 = ?",
+        "why": "Each friend gets 2 whole cookies. One is left. Cut it in halves. Each friend gets 2 and one half.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 5,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2 1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "2 1/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "5 / 2",
+          "choices": [
+            { "id": "a", "expr": "2" },
+            { "id": "b", "expr": "5 / 2" },
+            { "id": "c", "expr": "3" },
+            { "id": "d", "expr": "9 / 4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "10 bars are shared by 3 friends. Each friend gets 3 whole bars. How many bars are left over?",
+        "prompt": "How many bars are left?",
+        "why": "3 friends each get 3 bars. That is 9 bars. 10 take away 9 leaves 1 bar.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍫",
+          "count": 10,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 % 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "2 bars are shared by 3 friends. Each bar is cut into 3 equal parts. How much does each friend get? Is it 1/3, 1/2, 2/3, or 2?",
+        "prompt": "2 ÷ 3 = ?",
+        "why": "Cut each bar into thirds. Each friend takes one third from each bar. That is 2 thirds.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍫",
+          "count": 2,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "2",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "2 / 3",
+          "choices": [
+            { "id": "a", "expr": "1 / 3" },
+            { "id": "b", "expr": "1 / 2" },
+            { "id": "c", "expr": "2 / 3" },
+            { "id": "d", "expr": "2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Some bars were shared by 3 friends. Each friend got 3 and one third bars. How many bars were there?",
+        "prompt": "How many bars in all?",
+        "why": "3 friends each got 3 whole bars. That is 9 bars. The 3 thirds make 1 more bar. 9 + 1 = 10.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 3 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "10 bars can be shared by 3 friends or by 6 friends. Who gets more each? 3 friends or 6 friends?",
+        "prompt": "Who gets more each?",
+        "why": "With fewer friends, each share is bigger. 10 bars shared by 3 friends gives more than by 6 friends.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "6 friends",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3 friends",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "10 / 6" },
+            { "id": "b", "expr": "10 / 3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "10 granola bars are shared by 3 friends. How much does each friend get? Is it 3, 3 2/3, 5, or 3 1/3?",
+        "prompt": "10 ÷ 3 = ?",
+        "why": "Each friend gets 3 whole bars. That uses 9. One bar is left. Cut it in thirds. Each gets 3 and one third.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍫",
+          "count": 10,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3 2/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "3 1/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "10 / 3",
+          "choices": [
+            { "id": "a", "expr": "3" },
+            { "id": "b", "expr": "11 / 3" },
+            { "id": "c", "expr": "5" },
+            { "id": "d", "expr": "10 / 3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "10 bars are shared by 6 friends. Each friend gets 1 whole bar first. How many bars are left? Drag the frog to the number.",
+        "prompt": "How many bars are left?",
+        "why": "6 friends each get 1 bar. That uses 6 bars. 10 take away 6 leaves 4 bars to cut up.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 4,
+        "check": { "rule": "equals", "expr": "10 - 6", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

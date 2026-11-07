@@ -1,0 +1,618 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam has a chocolate bar. It is cut into 5 equal pieces.",
+        "text": null,
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 5,
+          "shaded": 0,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Each piece is one fifth of the bar. The bottom number, 5, tells the size of each piece.",
+        "text": "1/5",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 5,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/5"
+        }
+      },
+      {
+        "narration": "Sam eats one piece. Then he eats one more. One fifth plus one fifth makes two fifths.",
+        "text": "1/5 + 1/5 = 2/5",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 5,
+          "shaded": 2,
+          "wholes": null,
+          "label": "2/5"
+        }
+      },
+      {
+        "narration": "He eats one more piece. Now he has eaten one fifth three times. That is three fifths.",
+        "text": "1/5 + 1/5 + 1/5 = 3/5",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 5,
+          "shaded": 3,
+          "wholes": null,
+          "label": "3/5"
+        }
+      },
+      {
+        "narration": "The top number counts the pieces. In 3/5, we count 3 pieces. Each piece is one fifth.",
+        "text": "3/5 means 3 pieces of 1/5",
+        "visual": null
+      },
+      {
+        "narration": "If Sam eats all 5 pieces, he has five fifths. That is the whole bar.",
+        "text": "5/5 = 1 whole",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 5,
+          "shaded": 5,
+          "wholes": null,
+          "label": "5/5"
+        }
+      },
+      {
+        "narration": "Now you try. Count the pieces and add up the unit fractions.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 4 equal slices. Mia eats 3 slices. What fraction of the pizza did she eat? Is it 1/4, 3/4, or 4/4?",
+        "prompt": "What fraction did Mia eat?",
+        "why": "Each slice is one fourth. Mia ate 3 slices, so that is 3 fourths, or 3/4.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 3,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "3/4" },
+            { "id": "c", "expr": "4/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "This bar is cut into 5 equal pieces. 3 pieces are shaded. One fifth plus one fifth plus one fifth is how many fifths?",
+        "prompt": "1/5 + 1/5 + 1/5 = ? fifths",
+        "why": "Count the shaded pieces. There are 3, so you have 3 fifths.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 5,
+          "shaded": 3,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Jo eats one eighth of a pan of brownies at each bite. Move the frog to how many eighths Jo has eaten after 5 bites.",
+        "prompt": "How many eighths after 5 bites?",
+        "why": "Each bite adds one eighth. After 5 bites, Jo has 5 eighths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "target": 5,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Look at the fraction 2/5. What does the top number, 2, count? Is it how big each piece is, how many bars, or how many pieces?",
+        "prompt": "What does the top number count?",
+        "why": "The top number counts the pieces. The bottom number tells how big each piece is.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "how big each piece is",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "how many bars",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "how many pieces",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 2" },
+            { "id": "b", "expr": "1 == 3" },
+            { "id": "c", "expr": "1 == 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A circle is cut into 8 equal parts. 3 parts are shaded. That is 3/8. What is the bottom number?",
+        "prompt": "3/8: the bottom number is ?",
+        "why": "The bottom number tells how many equal parts make the whole. This circle has 8 parts.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 8,
+          "shaded": 3,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "parts", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Add one fifth three times. What fraction do you get? Is it 3/5, 5/3, 1/5, or 3/3?",
+        "prompt": "1/5 + 1/5 + 1/5 = ?",
+        "why": "Each piece is one fifth, so the bottom number is 5. You have 3 pieces, so the top number is 3. That makes 3/5.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "5/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "3/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3/5",
+          "choices": [
+            { "id": "a", "expr": "3/5" },
+            { "id": "b", "expr": "5/3" },
+            { "id": "c", "expr": "1/5" },
+            { "id": "d", "expr": "3/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "This strip has 8 equal parts. 5 parts are shaded. You add one eighth again and again to make 5/8. How many times do you add it?",
+        "prompt": "How many times is 1/8 added?",
+        "why": "The top number counts the pieces. In 5/8, there are 5 pieces of one eighth, so you add it 5 times.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 8,
+          "shaded": 5,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "The frog hops one tenth each time. How many hops does it take to reach 7/10? Move the frog to that number of hops.",
+        "prompt": "Hops of 1/10 to reach 7/10",
+        "why": "Each hop is one tenth. To get 7 tenths, the frog needs 7 hops.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 7,
+        "check": { "rule": "equals", "expr": "7", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A pizza is cut into 6 equal slices. 4 slices are shaded. Which addition matches the shaded part? Is it 1/6 + 1/6, 1/6 + 1/6 + 1/6, 1/6 + 1/6 + 1/6 + 1/6, or 1/4 + 1/4 + 1/4 + 1/4?",
+        "prompt": "Which sum matches the shaded part?",
+        "why": "Each slice is one sixth. 4 slices means adding one sixth four times, which is 4/6.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 4,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/6 + 1/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/6 + 1/6 + 1/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/6 + 1/6 + 1/6 + 1/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "1/4 + 1/4 + 1/4 + 1/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "2/6" },
+            { "id": "b", "expr": "3/6" },
+            { "id": "c", "expr": "4/6" },
+            { "id": "d", "expr": "4/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Kai eats 2 eighths of a pan of brownies. Then he eats 3 more eighths. How many eighths has he eaten in all?",
+        "prompt": "2 eighths + 3 eighths = ? eighths",
+        "why": "Each piece is one eighth. Count all the pieces: 2 and 3 more make 5 eighths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Ana takes 4 pieces of one sixth. Ben takes 4 pieces of one eighth. Cy takes 4 pieces of one tenth. Whose share is the biggest? Is it 4/10, 4/6, or 4/8?",
+        "prompt": "Which share is the biggest?",
+        "why": "All three have 4 pieces. Sixths are bigger pieces than eighths or tenths. So 4/6 is the biggest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4/8",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "4/10" },
+            { "id": "b", "expr": "4/6" },
+            { "id": "c", "expr": "4/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "There are 2 chocolate bars, each cut into 4 equal pieces. 6 pieces are shaded. That is 6/4. One fourth is added how many times?",
+        "prompt": "6/4 is 1/4 added how many times?",
+        "why": "The top number counts the pieces. In 6/4 there are 6 pieces of one fourth, so you add it 6 times.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 6,
+          "wholes": 2,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 6,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "One whole is 3 thirds. How many thirds make 2 wholes? Move the frog to that number.",
+        "prompt": "2 wholes = ? thirds",
+        "why": "One whole is 3 thirds. Two wholes is 3 + 3, which is 6 thirds.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 12,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "2 * 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sam says 5/6 is 5 pieces, and each piece is one sixth. Maya says 5/6 is 6 pieces, and each piece is one fifth. Who is right? Is it Sam or Maya?",
+        "prompt": "Who is right about 5/6?",
+        "why": "The bottom number, 6, gives the piece size, one sixth. The top number, 5, counts the pieces. So Sam is right.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Sam",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Maya",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1 == 1" },
+            { "id": "b", "expr": "1 == 2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Dev adds one twelfth 12 times. This fills a whole bar. How many wholes does he have?",
+        "prompt": "12 × 1/12 = ? whole",
+        "why": "12 pieces of one twelfth is 12/12. That fills the bar once, so it is 1 whole.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 12,
+          "shaded": 12,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 1,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded / parts", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

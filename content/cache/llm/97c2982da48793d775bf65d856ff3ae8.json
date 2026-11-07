@@ -1,0 +1,659 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Jay has a chocolate bar. It is cut into 4 equal pieces. Each piece is one fourth of the bar. We call one fourth 1/4.",
+        "text": "1/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/4"
+        }
+      },
+      {
+        "narration": "Jay eats one piece. Then he eats another. Now count the pieces: 1 one fourth, 2 one fourths. That is 2/4 of the bar.",
+        "text": "2 × 1/4 = 2/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 2,
+          "wholes": null,
+          "label": "2/4"
+        }
+      },
+      {
+        "narration": "He keeps counting. 3 one fourths, then 4 one fourths. Four fourths fill the whole bar. So 4/4 is 1 whole.",
+        "text": "4/4 = 1 whole",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 4,
+          "wholes": null,
+          "label": "4/4"
+        }
+      },
+      {
+        "narration": "Jay's friend brings a second bar, also cut in fourths. Keep counting. 5 one fourths. That is 5/4, which is more than 1 whole.",
+        "text": "5/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 5,
+          "wholes": 2,
+          "label": "5/4"
+        }
+      },
+      {
+        "narration": "Adding 1/4 again and again is the same as multiplying. Three one fourths added up is 3 × 1/4. That equals 3/4. The number of pieces goes on top.",
+        "text": "1/4 + 1/4 + 1/4 = 3 × 1/4 = 3/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 3,
+          "wholes": null,
+          "label": "3/4"
+        }
+      },
+      {
+        "narration": "Now try pizza cut in thirds. Count 5 one thirds. That is 5 × 1/3, or 5/3. It is 1 whole pizza and 2 more thirds.",
+        "text": "5 × 1/3 = 5/3",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 3,
+          "shaded": 5,
+          "wholes": 2,
+          "label": "5/3"
+        }
+      },
+      {
+        "narration": "You can count by halves, thirds, fourths, and more, even past 1 whole. Let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 4 equal slices. Some slices are shaded. How many one fourths are shaded? Is it 2, 3, 4, or 5?",
+        "prompt": "How many 1/4 are shaded?",
+        "why": "Count the shaded slices. There are 3 shaded, so that is 3 one fourths, or 3/4.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 3,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 3,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A chocolate bar is cut into 6 equal pieces. Some pieces are shaded. How many one sixths are shaded?",
+        "prompt": "How many 1/6 are shaded?",
+        "why": "Count each shaded piece. There are 5 shaded pieces, so the answer is 5 one sixths.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 6,
+          "shaded": 5,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Count by halves. 1 half, 2 halves. Two halves make 1 whole. Move the frog to 2 halves.",
+        "prompt": "Move the frog to 2 × 1/2",
+        "why": "Each half is 1/2. Two halves fill one whole, so the frog goes to 1.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 3,
+        "step": 0.5,
+        "target": 1,
+        "check": { "rule": "equals", "expr": "2 * 1/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Count by thirds: 1/3, 2/3. What comes next? Is it 3/3, 4/3, or 2/4?",
+        "prompt": "1/3, 2/3, ...",
+        "why": "Each count adds one more third. After 2/3 comes 3/3, and 3/3 is one whole.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "4/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3/3",
+          "choices": [
+            { "id": "a", "expr": "4/3" },
+            { "id": "b", "expr": "3/3" },
+            { "id": "c", "expr": "2/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A strip is cut into fifths. How many one fifths make 1 whole? Is it 4, 6, 5, or 10?",
+        "prompt": "1/5 pieces in 1 whole",
+        "why": "Fifths mean 5 equal parts. So 5 one fifths make 1 whole.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 6,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Rosa adds 1/6 five times. The total is a fraction with 6 on the bottom. What number is on top?",
+        "prompt": "5 × 1/6 = ?/6",
+        "why": "The top number counts the pieces. Adding 1/6 five times gives 5 one sixths, which is 5/6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 5,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Two pizzas are each cut into 3 equal slices. Some slices are shaded. Count the shaded slices as one thirds. What fraction is that? Is it 3/5, 2/3, 5/3, or 6/5?",
+        "prompt": "Shaded one thirds make?",
+        "why": "Count the shaded slices: 5. Each slice is 1/3. So 5 one thirds is 5/3.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 3,
+          "shaded": 5,
+          "wholes": 2,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "6/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "5/3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "3/5" },
+            { "id": "b", "expr": "2/3" },
+            { "id": "c", "expr": "6/5" },
+            { "id": "d", "expr": "5/3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Count by halves up to 5 halves. That is 5 × 1/2. Move the frog to 5 halves.",
+        "prompt": "Move the frog to 5 × 1/2",
+        "why": "Two halves make 1 whole. Five halves is 2 wholes and 1 more half, so the frog lands on 2 and a half.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 4,
+        "step": 0.5,
+        "target": 2.5,
+        "check": { "rule": "equals", "expr": "5/2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Two bars are each cut into fourths. All the pieces are shaded. How many one fourths are shaded in all?",
+        "prompt": "How many 1/4 in 2 wholes?",
+        "why": "Each bar has 4 one fourths. Two bars have 4 + 4 = 8 one fourths.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 8,
+          "wholes": 2,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Adding 1/3 four times is 4 × 1/3. What fraction is that? Is it 3/4, 1/12, 4/3, or 4/4?",
+        "prompt": "4 × 1/3 = ?",
+        "why": "Four one thirds is 4/3. The count goes on top and the size of the piece goes on the bottom.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/12",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "4/4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "4/3",
+          "choices": [
+            { "id": "a", "expr": "3/4" },
+            { "id": "b", "expr": "1/12" },
+            { "id": "c", "expr": "4/3" },
+            { "id": "d", "expr": "4/4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Mia has 2 whole pizzas, each cut into 3 slices. She also has 1 more slice. How many one thirds does she have?",
+        "prompt": "How many 1/3 in all?",
+        "why": "Each pizza is 3 one thirds. Two pizzas make 6, and 1 more makes 7 one thirds.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 3,
+          "shaded": 7,
+          "wholes": 3,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "2 * 3 + 1", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Count by fifths. Move the frog to 9 × 1/5. That is 9 fifths, more than 1 whole.",
+        "prompt": "Move the frog to 9 × 1/5",
+        "why": "Five fifths make 1 whole. Nine fifths is 1 whole and 4 more fifths, so the frog goes to 1.8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 3,
+        "step": 0.2,
+        "target": 1.8,
+        "check": { "rule": "equals", "expr": "9/5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Each amount is 5 pieces of the same kind. Which is greatest: 5 × 1/4, 5 × 1/6, 5 × 1/3, or 5 × 1/8?",
+        "prompt": "Greatest amount?",
+        "why": "Fewer cuts make bigger pieces. Thirds are the biggest pieces here, so 5 × 1/3 is greatest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "5 × 1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "5 × 1/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5 × 1/3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "5 × 1/8",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "5/4" },
+            { "id": "b", "expr": "5/6" },
+            { "id": "c", "expr": "5/3" },
+            { "id": "d", "expr": "5/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Leo has 9/4 of a bar, shown in the picture. He wants 3 whole bars. How many more one fourths does he need?",
+        "prompt": "How many more 1/4?",
+        "why": "3 whole bars is 3 × 4 = 12 one fourths. Leo has 9, so he needs 12 - 9 = 3 more.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 9,
+          "wholes": 3,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 * 4 - 9", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Is 6 × 1/5 more than 1 whole? Yes or no?",
+        "prompt": "Is 6 × 1/5 more than 1?",
+        "why": "Six one fifths is 6/5. Five fifths make 1 whole, so 6/5 is 1 whole and 1 more fifth. Yes.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "6/5 > 1" },
+            { "id": "b", "expr": "not (6/5 > 1)" }
+          ],
+          "note": ""
+        }
+      }
+    ]
+  }
+}

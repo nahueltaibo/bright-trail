@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-equal-groups-multiply-number-line-3",
+        "severity": "note",
+        "category": "age",
+        "note": "The answer 3.5 is decimal notation, which Grade 2 children don't use. The narration should say 'three and a half' so it can be understood by ear. The number line also needs its half-step marks announced, because a child who can't see the line can't tell where 3 and a half is."
+      },
+      {
+        "target": "g2-equal-groups-multiply-keypad-5",
+        "severity": "note",
+        "category": "age",
+        "note": "7 groups of 6 (7 addends of 6) is a multiplication-fact load closer to Grade 3 than the Grade 2 repeated-adding skill. 'Half carton' is also unclear by ear, since a child may not know a carton holds 12 eggs. Consider a simpler item such as 'bags of 5' or fewer groups."
+      },
+      {
+        "target": "g2-equal-groups-multiply-number-line-1",
+        "severity": "note",
+        "category": "other",
+        "note": "'Move the frog to where it lands' depends on seeing the 0 to 10 line. The narration should read out the line's endpoints and step so the item can be played from sound alone. The same applies to the other number-line items."
+      }
+    ],
+    "notes": "I checked every marked answer and arithmetic fact: 4×2=8, 3×5=15, 6×3=18, 4×3=12 (tap-3), 4×5=20, 8 fourths=2 wholes, 3×4 fourths=12, 7×6=42, 15 as the largest of 10/15/12, and frog landings 6, 35, 3.5 and 32. All are correct, and each VERIFY item (tap-1 and tap-5) has exactly one right choice that matches its value. The story arithmetic and picture descriptions (3×4=12, 4 fourths=1 whole, 6 halves=3 wholes) are also correct. No blockers were found. The notes concern grade fit and audio-only clarity for the number-line and half-carton items."
+  }
+}

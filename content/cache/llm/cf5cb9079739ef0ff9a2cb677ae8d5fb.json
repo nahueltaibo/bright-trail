@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-half-equals-two-fourths-tap-3",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration asks \"Which is the same amount?\" without saying the same as what. Heard alone, the child doesn't know the reference amount. Suggest: \"2 of the 4 slices are shaded. Which fraction is the same amount as those 2 slices?\" The marked answer (one half) is correct."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-tap-4",
+        "severity": "note",
+        "category": "audio",
+        "note": "Text-to-speech may read \"1/4\", \"3/4\" and \"2/4\" as \"one slash four\" and similar, which is hard to follow by ear. Speak them as \"one fourth of the pan\", \"three fourths of the pan\", \"two fourths of the pan\". The marked answer (2/4) is correct."
+      },
+      {
+        "target": "g1-half-equals-two-fourths-number-line-3",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "\"She cuts it into fourths\" is unclear when she keeps only a half. Suggest: \"Mia has a whole pizza cut into fourths. She keeps one half of it. Move the frog to how many fourths she keeps.\" The marked answer (2) is correct."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Step 2 has Leo take one half, then step 3 re-cuts the same pizza into fourths and step 4 has Leo take 2 fourths. A young listener may think Leo ate two separate pieces. Consider saying that Mia re-cuts the pizza, and that the half Leo already has is the same as the 2 fourths. The picture shapes also switch from circle to bar in step 5, which may confuse listeners; a short narration cue would help."
+      }
+    ],
+    "notes": "I checked all 17 items against their pictures and answers. Every marked answer is correct and each VERIFY item (tap-1, tap-2, tap-3, tap-5, tap-6) holds up: there is exactly one right choice and each choice matches its value. Keypad answers (4, 2, 2, 2, 4) and number-line answers (2, 4, 2) are correct. No factual errors or misconceptions found, and the content is within Grade 1 halves and fourths. The items above are wording and clarity notes only, with no blockers."
+  }
+}

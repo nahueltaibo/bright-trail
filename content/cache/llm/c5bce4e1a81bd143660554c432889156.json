@@ -1,0 +1,711 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Sam has a pan of brownies. He cuts it into 2 equal parts and eats 1 part. Sam ate 1/2 of the pan.",
+        "text": "1/2",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 2,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/2"
+        }
+      },
+      {
+        "narration": "Now Sam's sister cuts the same size pan into 4 equal parts. Sam eats 2 parts. Did he eat more, or less?",
+        "text": "2/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 2,
+          "wholes": null,
+          "label": "2/4"
+        }
+      },
+      {
+        "narration": "It is the same amount! 1/2 and 2/4 name the same share. The parts are smaller, so Sam needs 2 of them.",
+        "text": "1/2 = 2/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 2,
+          "wholes": null,
+          "label": "1/2 = 2/4"
+        }
+      },
+      {
+        "narration": "Cut the pan into 8 equal parts. Sam eats 4 parts. That is 4/8. Still the same amount as 1/2.",
+        "text": "1/2 = 4/8",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 8,
+          "shaded": 4,
+          "wholes": null,
+          "label": "4/8"
+        }
+      },
+      {
+        "narration": "Rin has a flatbread cut into 5 equal parts. She eats 1 part. That is 1/5 of the flatbread.",
+        "text": "1/5",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 5,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/5"
+        }
+      },
+      {
+        "narration": "Now cut the same flatbread into 10 equal parts. Rin eats 2 parts. 2/10 is the same amount as 1/5.",
+        "text": "1/5 = 2/10",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 10,
+          "shaded": 2,
+          "wholes": null,
+          "label": "2/10"
+        }
+      },
+      {
+        "narration": "More parts means smaller parts, so you take more of them. The share stays the same. Let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pan is cut into 4 equal parts. 2 parts are shaded. Which fraction is the same amount: 1/4, 3/4, or 1/2?",
+        "prompt": "Same amount as 2/4?",
+        "why": "2 of 4 equal parts is half of the pan. So 2/4 is the same amount as 1/2.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3/4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/2",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "3/4" },
+            { "id": "c", "expr": "1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 2 equal slices. Ana eats 1 slice, which is 1/2. If the pizza was cut into 4 equal slices, how many slices is the same amount?",
+        "prompt": "1/2 = ?/4",
+        "why": "Cutting each half in two makes 4 slices. Half of 4 slices is 2 slices.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 2,
+          "shaded": 1,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "A pan is cut into 4 equal pieces. How many pieces make 1/2 of the pan? Move the frog to that number.",
+        "prompt": "Pieces for 1/2",
+        "why": "Half of 4 pieces is 2 pieces. So 2/4 is the same as 1/2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 4,
+        "step": 1,
+        "target": 2,
+        "check": { "rule": "equals", "expr": "4 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 10 equal slices. 2 slices are shaded. Is that the same as 1/10, 1/5, or 2/5?",
+        "prompt": "Same as 2/10?",
+        "why": "Cut into 5 big slices, each one covers 2 small slices. So 2/10 is the same as 1/5.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 10,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "1/10",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "1/5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "2/5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "1/10" },
+            { "id": "b", "expr": "1/5" },
+            { "id": "c", "expr": "2/5" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pan has 4 equal parts. 2 parts are shaded. Is that the same amount as 1/2 of the pan? Yes or no?",
+        "prompt": "Is 2/4 the same as 1/2?",
+        "why": "2 out of 4 equal parts is half the pan. So yes, they are the same amount.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 4,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "yes",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "no",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "shaded / parts == 1/2" },
+            { "id": "b", "expr": "not (shaded / parts == 1/2)" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A circle is cut into 8 equal parts. 4 parts are shaded. That is the same as 1/2. 1/2 equals how many eighths?",
+        "prompt": "1/2 = ?/8",
+        "why": "Eight parts split into two equal groups makes 4 in each group. So 1/2 is 4/8.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 8,
+          "shaded": 4,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "1/5 of a flatbread is the same as 2/10. Now Kai eats 3/5 of the flatbread. How many tenths is that? Move the frog to that number.",
+        "prompt": "3/5 = ?/10",
+        "why": "Each fifth is 2 tenths. Three fifths is 3 groups of 2, which is 6 tenths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "3 * 10 / 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A circle is cut into 3 equal parts. 2 parts are shaded. Which is the same amount: 3/6, 2/6, or 4/6?",
+        "prompt": "2/3 = ?",
+        "why": "Cut each third into 2 sixths. Two thirds become 4 sixths.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 3,
+          "shaded": 2,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "2/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4/6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "shaded / parts",
+          "choices": [
+            { "id": "a", "expr": "3/6" },
+            { "id": "b", "expr": "2/6" },
+            { "id": "c", "expr": "4/6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which picture is the same amount as 1/2 of a circle? Is it 1/4 of the circle, 2/4 of the circle, 3/8 of the circle, or 2/6 of the circle?",
+        "prompt": "Same amount as 1/2",
+        "why": "Half of 4 equal parts is 2 parts. So 2/4 of the circle is the same as 1/2.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 4,
+              "shaded": 1,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "1/4 of the circle"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 4,
+              "shaded": 2,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "2/4 of the circle"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 8,
+              "shaded": 3,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "3/8 of the circle"
+          },
+          {
+            "id": "d",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": {
+              "kind": "fraction",
+              "emoji": null,
+              "count": null,
+              "filled": null,
+              "shape": "circle",
+              "parts": 6,
+              "shaded": 2,
+              "wholes": null,
+              "label": null
+            },
+            "narration": "2/6 of the circle"
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1/2",
+          "choices": [
+            { "id": "a", "expr": "1/4" },
+            { "id": "b", "expr": "2/4" },
+            { "id": "c", "expr": "3/8" },
+            { "id": "d", "expr": "2/6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A chocolate bar has 10 equal pieces. Zoe eats 4 pieces, which is 4/10. That is the same as how many fifths?",
+        "prompt": "4/10 = ?/5",
+        "why": "Two tenths make one fifth. Four tenths make 2 fifths.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 10,
+          "shaded": 4,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded * 5 / parts", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sam ate 1/2 of a pan. Jo ate 4/8. Kit ate 3/6. Lee ate 2/5. The pans are the same size. Who ate a different amount from the others: Sam, Jo, Kit, or Lee?",
+        "prompt": "Who ate a different amount?",
+        "why": "1/2, 4/8, and 3/6 are all half. Lee's 2/5 is less than half, so Lee is different.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Sam",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Jo",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Kit",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "Lee",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "1/2 != 1/2" },
+            { "id": "b", "expr": "4/8 != 1/2" },
+            { "id": "c", "expr": "3/6 != 1/2" },
+            { "id": "d", "expr": "2/5 != 1/2" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A pizza is cut into 6 equal slices. Mia eats 4 slices. Another pizza of the same size is cut into thirds. Mia's amount is how many thirds?",
+        "prompt": "4/6 = ?/3",
+        "why": "Two sixths make one third. Four sixths make 2 thirds.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 4,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded * 3 / parts", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Dev ate 3/4 of a pan. If the pan was cut into 8 equal pieces, how many pieces did he eat? Move the frog to that number.",
+        "prompt": "3/4 = ?/8",
+        "why": "Each fourth is 2 eighths. Three fourths is 3 groups of 2, which is 6 eighths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 8,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "3 * 8 / 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "2 friends share 1 flatbread fairly. It is cut into 10 equal slices. Each friend gets 1/2. How many tenths does each friend get: 2, 5, 10, or 8?",
+        "prompt": "1/2 = ?/10",
+        "why": "Share 10 slices between 2 friends. Each friend gets 5 slices, so 1/2 is 5/10.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 5,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 10,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "10 / 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "4 friends share 1 pan of brownies fairly. Each gets 1/4. The pan is cut into 8 equal pieces instead. How many pieces does each friend get?",
+        "prompt": "1/4 = ?/8",
+        "why": "Share 8 pieces between 4 friends. Each friend gets 2 pieces, so 1/4 is 2/8.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "8 / 4", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

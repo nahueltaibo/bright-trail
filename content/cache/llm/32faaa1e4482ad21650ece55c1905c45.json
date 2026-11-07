@@ -1,0 +1,547 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Jordan's team bakes a pan of brownies. It is cut into 8 equal pieces. Jordan eats 3 of them. That is 3 eighths of the pan.",
+        "text": "3/8",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 8,
+          "shaded": 3,
+          "wholes": null,
+          "label": "3/8"
+        }
+      },
+      {
+        "narration": "Then Sam eats 2 more pieces. All the pieces are the same size, so we can just count them. 3 eighths plus 2 eighths is 5 eighths.",
+        "text": "3/8 + 2/8 = 5/8",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 8,
+          "shaded": 5,
+          "wholes": null,
+          "label": "5/8"
+        }
+      },
+      {
+        "narration": "Notice that the denominator stays 8. It names the size of each piece. Only the numerator changes, because the numerator counts how many pieces we have.",
+        "text": "Add the numerators. Keep the denominator.",
+        "visual": null
+      },
+      {
+        "narration": "Sums can pass one whole. Ana has 3 fourths of a pizza, and she gets 2 fourths more. That is 5 fourths, which is one whole pizza and one more fourth.",
+        "text": "3/4 + 2/4 = 5/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 5,
+          "wholes": 2,
+          "label": "5/4"
+        }
+      },
+      {
+        "narration": "Subtracting works the same way. A pan has 7 eighths left, and the team eats 4 eighths. Take away 4 pieces from 7 pieces. That leaves 3 eighths.",
+        "text": "7/8 - 4/8 = 3/8",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 8,
+          "shaded": 3,
+          "wholes": null,
+          "label": "3/8"
+        }
+      },
+      {
+        "narration": "When the denominators match, you add or subtract the numerators and keep the denominator. Now try some on your own.",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What is 3/8 + 2/8? Is it 6/8, 5/8, 5/16, or 1/8?",
+        "prompt": "3/8 + 2/8 = ?",
+        "why": "The pieces are all eighths, so add the numerators: 3 + 2 = 5. The denominator stays 8, so the answer is 5/8.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "6/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "5/8",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "5/16",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "1/8",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "3/8 + 2/8",
+          "choices": [
+            { "id": "a", "expr": "6/8" },
+            { "id": "b", "expr": "5/8" },
+            { "id": "c", "expr": "5/16" },
+            { "id": "d", "expr": "1/8" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 6 equal slices. 5 sixths of the pizza are left, and Ben eats 2 sixths. How much is left? Is it 3/6, 7/6, 3/12, or 2/6?",
+        "prompt": "5/6 - 2/6 = ?",
+        "why": "Take away the pieces: 5 sixths minus 2 sixths is 3 sixths. The slices are the same size, so the denominator stays 6.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 6,
+          "shaded": 5,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "7/6",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "3/12",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "2/6",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "5/6 - 2/6",
+          "choices": [
+            { "id": "a", "expr": "3/6" },
+            { "id": "b", "expr": "7/6" },
+            { "id": "c", "expr": "3/12" },
+            { "id": "d", "expr": "2/6" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "1 fifth plus 3 fifths equals how many fifths?",
+        "prompt": "1/5 + 3/5 = ? fifths",
+        "why": "The units are both fifths. Add the counts: 1 + 3 = 4, so the answer is 4 fifths.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 4,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "1 + 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "A chocolate bar is cut into 10 equal pieces. The picture shows 7 tenths left. Lena eats 4 tenths. How many tenths are left?",
+        "prompt": "7/10 - 4/10 = ? tenths",
+        "why": "Start with 7 pieces and take away 4. That leaves 3 pieces, so 3 tenths are left.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 10,
+          "shaded": 7,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 3,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded - 4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "The number line goes from 0 to 1 in steps of one fourth, or 0.25. Move the frog to 1/4 + 2/4.",
+        "prompt": "Move the frog to 1/4 + 2/4",
+        "why": "1 fourth plus 2 fourths is 3 fourths. Count 3 steps of one fourth from 0 to land on 0.75.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 1,
+        "step": 0.25,
+        "target": 0.75,
+        "check": { "rule": "equals", "expr": "1/4 + 2/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Priya runs 4/9 of a kilometre, then 7/9 of a kilometre. How far does she run in total? Is it 3/9, 28/9, 11/9, or 11/18?",
+        "prompt": "4/9 + 7/9 = ?",
+        "why": "Add the numerators: 4 + 7 = 11. The denominator stays 9, so she runs 11/9 of a kilometre.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3/9",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "28/9",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "11/9",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "11/18",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "4/9 + 7/9",
+          "choices": [
+            { "id": "a", "expr": "3/9" },
+            { "id": "b", "expr": "28/9" },
+            { "id": "c", "expr": "11/9" },
+            { "id": "d", "expr": "11/18" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "A recipe uses 3/8 cup of sugar in the batter and 7/8 cup in the icing. The total is how many eighths of a cup?",
+        "prompt": "3/8 + 7/8 = ? eighths",
+        "why": "Both amounts are counted in eighths. Add 3 + 7 = 10, so the total is 10 eighths of a cup.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 10,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "3 + 7", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "The number line goes from 0 to 2 in steps of one fourth, or 0.25. Move the frog to 7/4 - 3/4.",
+        "prompt": "Move the frog to 7/4 - 3/4",
+        "why": "7 fourths take away 3 fourths leaves 4 fourths. That is one whole, so the frog lands on 1.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 2,
+        "step": 0.25,
+        "target": 1,
+        "check": { "rule": "equals", "expr": "7/4 - 3/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Is 5/6 + 4/6 greater than 1 whole? Yes or no?",
+        "prompt": "Is 5/6 + 4/6 more than 1?",
+        "why": "5 sixths plus 4 sixths is 9 sixths. One whole is 6 sixths, and 9 is more than 6, so the answer is yes.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "No",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Yes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "not (5/6 + 4/6 > 1)" },
+            { "id": "b", "expr": "5/6 + 4/6 > 1" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "The number line goes from 0 to 2 in steps of one fourth, or 0.25. Move the frog to 1/4 + 5/4.",
+        "prompt": "Move the frog to 1/4 + 5/4",
+        "why": "1 fourth plus 5 fourths is 6 fourths. Count 6 steps of one fourth from 0 to land on 1.5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 2,
+        "step": 0.25,
+        "target": 1.5,
+        "check": { "rule": "equals", "expr": "1/4 + 5/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Maya ate 5/12 of a pan of brownies on Friday and 4/12 on Saturday. What fraction of the whole pan is left? Is it 9/12, 9/24, 1/12, or 3/12?",
+        "prompt": "1 - 5/12 - 4/12 = ?",
+        "why": "She ate 5 + 4 = 9 twelfths. The whole pan is 12 twelfths, so 12 minus 9 leaves 3 twelfths.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "9/12",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "9/24",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "1/12",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "3/12",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "equals",
+          "expr": "1 - 5/12 - 4/12",
+          "choices": [
+            { "id": "a", "expr": "9/12" },
+            { "id": "b", "expr": "9/24" },
+            { "id": "c", "expr": "1/12" },
+            { "id": "d", "expr": "3/12" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "In a relay, Zoe runs 5/8 of a kilometre, Omar runs 7/8, and Lee runs 4/8. What is the total distance in kilometres?",
+        "prompt": "5/8 + 7/8 + 4/8 = ? km",
+        "why": "Add the numerators: 5 + 7 + 4 = 16, so the total is 16 eighths. Since 8 eighths make one whole, 16 eighths make 2.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "(5 + 7 + 4) / 8", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Sam has 2 cups of flour. Cut into sixths, that is 12 sixths. He uses 5 sixths. How many sixths of a cup are left?",
+        "prompt": "12/6 - 5/6 = ? sixths",
+        "why": "Two cups is 12 sixths. Take away 5 sixths: 12 - 5 = 7, so 7 sixths of a cup are left.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "bar",
+          "parts": 6,
+          "shaded": 12,
+          "wholes": 2,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 7,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "12 - 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The number line goes from 0 to 3 in steps of one fourth, or 0.25. Move the frog to 1 3/4 + 3/4.",
+        "prompt": "Move the frog to 1 3/4 + 3/4",
+        "why": "1 3/4 is 7 fourths. Add 3 fourths to get 10 fourths, which is 2 and 2 fourths, or 2.5.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 3,
+        "step": 0.25,
+        "target": 2.5,
+        "check": { "rule": "equals", "expr": "1.75 + 3/4", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "The number line goes from 0 to 3 in steps of one fourth, or 0.25. Move the frog to 2 1/4 - 6/4.",
+        "prompt": "Move the frog to 2 1/4 - 6/4",
+        "why": "2 1/4 is 9 fourths. Take away 6 fourths to leave 3 fourths, which is 0.75.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 3,
+        "step": 0.25,
+        "target": 0.75,
+        "check": { "rule": "equals", "expr": "2.25 - 6/4", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

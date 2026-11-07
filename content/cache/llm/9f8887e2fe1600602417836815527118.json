@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-fair-share-20-tap-7",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration states the answer before the choices are read: \"Each friend gets 3/4 of a bar. Which picture shows that?\" A child can match the spoken 3/4 to the choice without working out the share. Consider removing the amount from the question stem (e.g., \"3 granola bars are shared fairly among 4 friends. Which picture shows each friend's share?\")."
+      },
+      {
+        "target": "g3-fair-share-20-tap-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration says \"Each friend gets whole balls and a part of a ball,\" which hints at the answer structure before the child has worked it out. Consider dropping that sentence so the child has to find the share from the 14 balls and 4 friends."
+      },
+      {
+        "target": "g3-fair-share-20-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Marked answer (3 friends) is correct: 12 ÷ 3 = 4 each, and 12 ÷ 4 = 3 each, so fewer friends gives a bigger share. It is a two-choice item and the right answer is always the first choice (a). A child can guess by position. Consider shuffling the order, or adding a third choice or a check that shows the shares."
+      },
+      {
+        "target": "g3-fair-share-20-keypad-3",
+        "severity": "note",
+        "category": "other",
+        "note": "This item asks for the total from a number of friends and a share each (5 × 4 = 20), which is a multiplication reverse rather than sharing things out. It fits the skill's \"up to 20 things\" idea only loosely. Consider a version that starts with the 20 things and asks for each share."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "The skill description says items cover sharing among 2, 3, 4, 5, 6, 8, or 10 friends. No item uses 8 or 10 friends, and the story only uses 3 and 4. Consider adding an item with 8 or 10 friends, or narrowing the description."
+      }
+    ],
+    "notes": "I checked the arithmetic and the marked answer for every item. All marked answers are correct, and no choice other than the marked one is right. Story steps 1–6 are correct (8÷4=2, 10÷3=3 r1, one cookie in thirds, 3 1/3 each). Items tap-4, tap-5, and tap-6 are marked VERIFY. I worked each one: tap-4 gives 3 friends (4 each), tap-5 gives 2 2/3, and tap-6 gives 1 2/3, so all three marked answers hold and every choice matches its value. Number-line answers (2, 3, 5, 9) all fall within the 0–10 line. Picture counts are all 20 or fewer. The notes are about challenge and wording, not correctness. Some mixed numbers such as \"2 1/2\" may be read aloud ambiguously by device text-to-speech, so the TTS wording should be checked on a device."
+  }
+}

@@ -1,0 +1,546 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She is a baker. She puts 4 cookies on a plate.",
+        "text": "1 group of 4",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 4,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Now she fills 3 plates. Each plate has 4 cookies. That is 3 groups of 4.",
+        "text": "3 groups of 4",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 12,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Add the groups to count them all. 4 + 4 + 4 = 12. Mia has 12 cookies.",
+        "text": "4 + 4 + 4 = 12",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🍪",
+          "count": 12,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "Next, Mia cuts a pizza into 4 equal slices. Each slice is one fourth.",
+        "text": "1/4",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 1,
+          "wholes": null,
+          "label": "1/4"
+        }
+      },
+      {
+        "narration": "4 groups of one fourth make 1 whole pizza.",
+        "text": "4 groups of 1/4 = 1 whole",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 4,
+          "wholes": null,
+          "label": null
+        }
+      },
+      {
+        "narration": "A sandwich is cut into 2 halves. 6 groups of one half make 3 whole sandwiches.",
+        "text": "6 groups of 1/2 = 3 wholes",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "rectangle",
+          "parts": 2,
+          "shaded": 6,
+          "wholes": 3,
+          "label": null
+        }
+      },
+      {
+        "narration": "Great job! Equal groups add up fast. Let's practise!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are 4 ducks. Each duck has 2 legs. How many legs in all?",
+        "prompt": "4 groups of 2 = ?",
+        "why": "Add 2 four times. 2 + 2 + 2 + 2 = 8. So there are 8 legs.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "🦆",
+          "count": 4,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 8,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has 3 groups of 4 cookies. Which adds up to 3 groups of 4? Is it 3 + 4, 4 + 4, or 4 + 4 + 4?",
+        "prompt": "3 groups of 4",
+        "why": "3 groups of 4 means you add 4 three times. That is 4 + 4 + 4.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "3 + 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "4 + 4",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4 + 4 + 4",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "true",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "3 + 4 == 3 * 4" },
+            { "id": "b", "expr": "4 + 4 == 3 * 4" },
+            { "id": "c", "expr": "4 + 4 + 4 == 3 * 4" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 1,
+        "narration": "Frog hops 2 at a time. It makes 3 hops from 0. Move the frog to where it lands.",
+        "prompt": "3 hops of 2",
+        "why": "Hop 2, then 4, then 6. 2 + 2 + 2 = 6.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "target": 6,
+        "check": { "rule": "equals", "expr": "3 * 2", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 1,
+        "narration": "Here are 3 hands. Each hand has 5 fingers. How many fingers in all?",
+        "prompt": "3 groups of 5 = ?",
+        "why": "Add 5 three times. 5 + 5 + 5 = 15. So there are 15 fingers.",
+        "visual": {
+          "kind": "objects",
+          "emoji": "✋",
+          "count": 3,
+          "filled": null,
+          "shape": null,
+          "parts": null,
+          "shaded": null,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 15,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "count * 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pizza is cut into 4 equal slices. Each slice is one fourth. How many fourths make 1 whole pizza?",
+        "prompt": "How many fourths in 1 whole?",
+        "why": "The pizza has 4 equal slices. All 4 fourths together make 1 whole pizza.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 4,
+          "wholes": null,
+          "label": null
+        },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 4,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 8,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 2,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "parts", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Leo has 6 bags. Each bag has 3 apples. How many apples in all?",
+        "prompt": "6 groups of 3 = ?",
+        "why": "Add 3 six times. 3 + 3 + 3 + 3 + 3 + 3 = 18. Leo has 18 apples.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 18,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "6 * 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 2,
+        "narration": "Frog hops 5 at a time. It makes 7 hops from 0. Move the frog to where it lands.",
+        "prompt": "7 hops of 5",
+        "why": "Count by 5s seven times. 5, 10, 15, 20, 25, 30, 35. The frog lands on 35.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 40,
+        "step": 5,
+        "target": 35,
+        "check": { "rule": "equals", "expr": "7 * 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A tricycle has 3 wheels. There are 4 tricycles. How many wheels in all?",
+        "prompt": "4 groups of 3 wheels",
+        "why": "Add 3 four times. 3 + 3 + 3 + 3 = 12. There are 12 wheels.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 7,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 12,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 * 3", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 2,
+        "narration": "Here are 2 pizzas. Each pizza is cut into 4 equal slices. Eight slices are shaded. That is 8 groups of one fourth. How many whole pizzas is that?",
+        "prompt": "8 fourths = ? wholes",
+        "why": "Every 4 fourths make 1 whole pizza. 8 fourths is 2 groups of 4. So it is 2 wholes.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 8,
+          "wholes": 2,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 2,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded / parts", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ben has 4 feet. Each foot has 5 toes. How many toes in all?",
+        "prompt": "4 groups of 5 toes",
+        "why": "Add 5 four times. 5 + 5 + 5 + 5 = 20. Ben has 20 toes.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "number",
+            "value": 9,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "number",
+            "value": 15,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "number",
+            "value": 20,
+            "text": null,
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "number",
+            "value": 25,
+            "text": null,
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "4 * 5", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Frog hops one half at a time. It makes 7 hops from 0. Move the frog to where it lands.",
+        "prompt": "7 hops of 1/2",
+        "why": "Two hops of one half make 1. Six hops reach 3. One more half hop lands on 3 and a half.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 5,
+        "step": 0.5,
+        "target": 3.5,
+        "check": { "rule": "equals", "expr": "7 * 0.5", "choices": [], "note": "" }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "A half carton holds 6 eggs. Sam has 7 half cartons. How many eggs in all?",
+        "prompt": "7 groups of 6 = ?",
+        "why": "Add 6 seven times. 6 + 6 + 6 + 6 + 6 + 6 + 6 = 42. Sam has 42 eggs.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 42,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "7 * 6", "choices": [], "note": "" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which makes the most? Is it 5 groups of 2, 3 groups of 5, or 4 groups of 3?",
+        "prompt": "Which is the most?",
+        "why": "5 groups of 2 is 10. 3 groups of 5 is 15. 4 groups of 3 is 12. So 15 is the most.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "5 groups of 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "3 groups of 5",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "4 groups of 3",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": {
+          "rule": "greatest",
+          "expr": "",
+          "choices": [
+            { "id": "a", "expr": "5 * 2" },
+            { "id": "b", "expr": "3 * 5" },
+            { "id": "c", "expr": "4 * 3" }
+          ],
+          "note": ""
+        }
+      },
+      {
+        "type": "keypad",
+        "difficulty": 3,
+        "narration": "Here are 3 pizzas. Each pizza is cut into 4 equal slices. Every slice is one fourth. How many fourths in all?",
+        "prompt": "3 pizzas of fourths",
+        "why": "Each pizza has 4 fourths. Add 4 three times. 4 + 4 + 4 = 12 fourths.",
+        "visual": {
+          "kind": "fraction",
+          "emoji": null,
+          "count": null,
+          "filled": null,
+          "shape": "circle",
+          "parts": 4,
+          "shaded": 12,
+          "wholes": 3,
+          "label": null
+        },
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": 12,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "equals", "expr": "shaded", "choices": [], "note": "" }
+      },
+      {
+        "type": "number-line",
+        "difficulty": 3,
+        "narration": "Frog hops 4 at a time. It makes 8 hops from 0. Move the frog to where it lands.",
+        "prompt": "8 hops of 4",
+        "why": "Count by 4s eight times. 4, 8, 12, 16, 20, 24, 28, 32. The frog lands on 32.",
+        "visual": null,
+        "choices": [],
+        "answerChoiceId": "",
+        "answer": null,
+        "min": 0,
+        "max": 40,
+        "step": 4,
+        "target": 32,
+        "check": { "rule": "equals", "expr": "8 * 4", "choices": [], "note": "" }
+      }
+    ]
+  }
+}

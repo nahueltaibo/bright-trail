@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g4-count-unit-fractions-tap-4",
+        "severity": "blocker",
+        "category": "ambiguous",
+        "note": "The picture has 2 pizzas cut into 3 slices each (6 slices total) with 5 shaded. Read as 'how much of the pizzas is shaded,' 5 of 6 slices is 5/6, which is true and is offered as distractor choice c. That makes two choices correct. Fix by asking how many one thirds are shaded (or how many 1/3 pieces), or by removing 5/6 from the choices."
+      },
+      {
+        "target": "g4-count-unit-fractions-keypad-5",
+        "severity": "note",
+        "category": "other",
+        "note": "'Leo has 9/4 of a bar' is inaccurate: 9/4 is more than two bars, not a part of one bar. Clearer: 'Leo has 9 one fourths, shown in the picture.'"
+      }
+    ],
+    "notes": "Checked the story cards and all 19 items. The story arithmetic and pictures agree (5/4 across two bars, 5/3 with two pizzas, 4/4 = 1 whole). Marked answers are correct for tap-1, keypad-1, number-line-1, tap-2, tap-3, keypad-2, tap-5, keypad-3, number-line-2, keypad-4, number-line-3, keypad-5, and tap-7. Verified tap-6: 5 × 1/3 is the greatest of the four amounts. Verified tap-7: 6/5 is more than 1, so Yes is correct. Only tap-4 has a blocker; keypad-5 has a wording note."
+  }
+}
