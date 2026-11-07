@@ -6,6 +6,7 @@ import {
   type MasteryState,
 } from '@bright-trail/shared';
 import sample from '@bright-trail/shared/fixtures/sample-bundle.json';
+import { loadBundle } from '../content/loadBundle';
 import { openRepository, type Repository } from '../storage/repository';
 import { openNodeSqliteDatabase } from '../storage/testing/nodeSqliteDatabase';
 import {
@@ -175,6 +176,17 @@ describe('Session', () => {
 
       const second = await start();
       expect(second.current.kind === 'item' && second.current.item.id).toBe(onScreen);
+    });
+
+    it('restarts placement saved against a bundle that dropped its item', async () => {
+      await play(await start(), false);
+      const saved = (await repo.placement.get('maya'))!;
+      const current = { ...saved.state.current!, itemId: 'dropped-item' };
+      await repo.placement.save('maya', { ...saved, state: { ...saved.state, current } });
+
+      const session = await start();
+      expect(session.current).toMatchObject({ kind: 'item', phase: 'placement' });
+      expect((await repo.placement.get('maya'))!.state.itemsAnswered).toBe(0);
     });
 
     it('saves the learner state and placed grade, then goes straight to a lesson', async () => {
@@ -398,6 +410,52 @@ describe('Session', () => {
       },
     ]);
     expect(new Date(flags[0].createdAt).getTime()).toBe(clock.now().getTime());
+  });
+});
+
+describe('Session with the generated bundle', () => {
+  // Grade 6 is above the bundle, so placement starts at its top grade and walks down from there.
+  it('splits a long all-wrong placement over two sessions, then teaches Kindergarten', async () => {
+    const real = await loadBundle();
+    const repo = await openRepository(openNodeSqliteDatabase(':memory:'));
+    await repo.children.save({ ...maya, gradeOverride: '6' });
+    const clock = fakeClock();
+    let sessions = 0;
+    const start = () =>
+      Session.start({
+        repo,
+        bundle: real,
+        childId: 'maya',
+        sessionId: `session-${++sessions}`,
+        now: clock.now,
+      });
+    const playWrong = async (session: Session) => {
+      let answered = 0;
+      while (session.current.kind === 'item' && session.current.phase === 'placement') {
+        const { item } = session.current;
+        clock.advance(3000);
+        await session.answer({
+          itemId: item.id,
+          answer: answerFor(item, false),
+          correct: false,
+          msToAnswer: 3000,
+          replays: 0,
+        });
+        await session.next();
+        answered++;
+      }
+      return answered;
+    };
+
+    const first = await start();
+    expect(first.current.kind === 'item' && first.current.item.skillId).toMatch(/^g5-/);
+    expect(await playWrong(first)).toBe(PLACEMENT_ITEMS_PER_SESSION);
+    expect(first.current).toMatchObject({ kind: 'end', reason: 'placement-break' });
+
+    const second = await start();
+    await playWrong(second);
+    expect(second.current).toMatchObject({ kind: 'story', nugget: { skillId: 'k-count-to-20' } });
+    expect((await repo.placement.get('maya'))?.placedGrade).toBe('K');
   });
 });
 
