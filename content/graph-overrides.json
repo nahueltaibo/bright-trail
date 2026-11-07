@@ -1,0 +1,482 @@
+{
+  "overrides": [
+    {
+      "op": "addPrerequisite",
+      "skillId": "g1-equal-groups",
+      "prerequisiteId": "g1-add-sub-facts-10",
+      "reason": "Totals of equal groups up to 10 are found by adding, so walk-back must reach addition."
+    },
+    {
+      "op": "replacePrerequisite",
+      "skillId": "g1-equal-groups",
+      "from": "g1-half-equals-two-fourths",
+      "to": "g1-fair-share-drawings",
+      "reason": "Groups of one half need fair shares, not the half-equals-two-fourths equivalence."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g2-equal-groups-multiply",
+      "prerequisiteId": "g2-add-sub-facts-20",
+      "reason": "Repeated adding needs addition facts. Without it, walk-back can't reach addition gaps."
+    },
+    {
+      "op": "removePrerequisite",
+      "skillId": "g2-equal-groups-multiply",
+      "prerequisiteId": "g2-count-200",
+      "reason": "Counting by 20s, 25s, and 50s isn't needed. Skip counting by 2s, 5s, and 10s comes through g1-equal-groups."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g1-add-sub-problems-50",
+      "prerequisiteId": "g1-mental-math-20",
+      "reason": "Stories to 50 are solved with the same counting-on and make-10 strategies."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g2-add-sub-problems-100",
+      "prerequisiteId": "g2-mental-math-50",
+      "reason": "Stories to 100 need two-digit adding and subtracting."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g3-add-sub-problems-1000",
+      "prerequisiteId": "g2-add-sub-problems-100",
+      "reason": "Same story types one grade up. The Grade 2 story skill was a dead end."
+    },
+    {
+      "op": "removePrerequisite",
+      "skillId": "g5-add-sub-like-fractions",
+      "prerequisiteId": "g5-equivalent-fractions",
+      "reason": "Like denominators need no equivalence. This edge made pruning drop the real g5-equivalent-fractions link from g6-add-sub-unlike-fractions. g4-count-unit-fractions stays as the real prerequisite."
+    },
+    {
+      "op": "protectPrerequisite",
+      "skillId": "g6-add-sub-unlike-fractions",
+      "prerequisiteId": "g5-equivalent-fractions",
+      "reason": "Unlike denominators are made equal with equivalent fractions. This is the real gap."
+    },
+    {
+      "op": "protectPrerequisite",
+      "skillId": "g6-add-sub-unlike-fractions",
+      "prerequisiteId": "g5-add-sub-like-fractions",
+      "reason": "Once denominators match, the kid adds like fractions."
+    },
+    {
+      "op": "replacePrerequisite",
+      "skillId": "g5-decimals-hundredths",
+      "from": "g5-equivalent-fractions",
+      "to": "g4-fraction-decimal-equivalence",
+      "reason": "Hundredths build on matching fractions and tenths, not on fraction equivalence."
+    },
+    {
+      "op": "protectPrerequisite",
+      "skillId": "g5-fraction-decimal-percent",
+      "prerequisiteId": "g5-equivalent-fractions",
+      "reason": "1/4 = 25/100 = 25% is an equivalent-fraction step."
+    },
+    {
+      "op": "replacePrerequisite",
+      "skillId": "g2-division-sharing",
+      "from": "g2-fair-share-fractions",
+      "to": "g1-fair-share-drawings",
+      "reason": "Sharing 12 items equally needs whole-number fair sharing, not fractional leftovers."
+    },
+    {
+      "op": "protectPrerequisite",
+      "skillId": "g2-division-sharing",
+      "prerequisiteId": "g1-fair-share-drawings",
+      "reason": "Sharing is the direct idea behind division as sharing, so walk-back probes it first. It only looks transitive through g1-equal-groups."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g3-fair-share-20",
+      "prerequisiteId": "g2-fair-share-fractions",
+      "reason": "Same fair-share idea with fractional leftovers, one grade up."
+    },
+    {
+      "op": "replacePrerequisite",
+      "skillId": "g1-compare-unit-fractions",
+      "from": "g1-half-equals-two-fourths",
+      "to": "g1-fair-share-drawings",
+      "reason": "Comparing unit fractions means comparing fair-share pieces. It doesn't need the halves-fourths equivalence."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g6-compare-order-rationals",
+      "prerequisiteId": "g6-fraction-decimal-match",
+      "reason": "Ordering fractions and decimals together means converting between them."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g6-divisibility-rules",
+      "prerequisiteId": "g2-even-odd",
+      "reason": "Divisible by 2 is even. g2-even-odd was a dead end."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g6-prime-factors",
+      "prerequisiteId": "g6-divisibility-rules",
+      "reason": "Factor trees use divisibility to find each factor."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g3-mult-div-properties",
+      "prerequisiteId": "g2-add-sub-properties",
+      "reason": "Any-order and checking with the opposite operation carry over from addition."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g2-third-equals-two-sixths",
+      "prerequisiteId": "g1-half-equals-two-fourths",
+      "reason": "Same equivalence idea, one grade up."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "k-count-to-20",
+      "description": "What number comes next when you count by 1s? Start at any number, like 7, 8, 9, and keep going to 20.",
+      "reason": "Counting out loud can't be checked. A next-number question can."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "k-subitize-5",
+      "title": "See up to 5 at once",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "k-read-write-numbers-20",
+      "title": "Read and type numbers to 20",
+      "reason": "Kids tap or type, they don't write."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "k-read-write-numbers-20",
+      "description": "Match numbers from 0 to 20 to groups of things. Tap or type the number you see.",
+      "reason": "Kids tap or type, they don't write. \"Numbers\" reads easier than \"numerals\"."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "k-count-forward-back",
+      "description": "Count up and the number gets bigger. Count down and it gets smaller. Which way did it go?",
+      "reason": "Ends in a question a tap can answer."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "k-estimate-and-count",
+      "description": "Guess how many things there are. Is it closer to 5 or to 10? Then count to check.",
+      "reason": "A range choice can be graded. C3 must support range-graded items."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "k-coins-and-bills",
+      "description": "Name Canadian coins and bills and tell what each is worth, up to 10 dollars. Loonies and toonies are coins too!",
+      "reason": "Covers all of A6.13, including coins worth more than 25 cents."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g1-read-numbers-50",
+      "description": "Read numbers up to 50 in words and digits, and match them to tens and ones. Pick how a number is used, like on a clock or a house.",
+      "reason": "Removes \"tell how\" and \"numerals\". Picking a use is a tap."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g1-count-50",
+      "title": "Skip count to 50",
+      "reason": "Title had 8 words."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g1-count-50",
+      "description": "Count to 50 by 1s, 2s, 5s, and 10s. What number comes next when you count by 5s? Use a number line or hundred chart to help.",
+      "reason": "Counting out loud can't be checked. A next-number question can."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g1-estimate-50",
+      "description": "Guess how many things are in a group. Is it closer to 20 or to 50? Then count to check.",
+      "reason": "A range choice can be graded. C3 must support range-graded items."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g1-fair-share-drawings",
+      "title": "Fair shares for 2 or 4",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g1-fair-share-drawings",
+      "description": "Look at the picture and tap what each friend gets when 2 or 4 friends share. Leftovers can be cut into equal pieces.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g1-compare-unit-fractions",
+      "description": "When a whole is shared with more friends, each piece gets smaller. Look at the pictures and tap the biggest or smallest piece.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g1-mental-math-20",
+      "title": "Quick adding and subtracting to 20",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g1-equal-groups",
+      "description": "Look at the picture and tap how many in all, like 5 groups of 2, or 6 groups of one half. Or find how many groups there are.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g2-whole-numbers-200",
+      "description": "Read and build numbers up to 200 with hundreds, tens, and ones. Break numbers apart in different ways, like 124 is 100 and 24, or 12 tens and 4 ones.",
+      "reason": "Kids can't write in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g2-count-200",
+      "title": "Skip count to 200",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g2-count-200",
+      "description": "What number comes next when you count by 20s, 25s, or 50s? Start at any number and count up to 200, with coins or a number line to help.",
+      "reason": "Counting out loud can't be checked. A next-number question can."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g2-estimate-200",
+      "description": "Guess how many are in a big group. Is it closer to 50, 100, or 200? Count a small bunch first to help, then count to check.",
+      "reason": "A range choice can be graded. C3 must support range-graded items."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g2-fair-share-fractions",
+      "title": "Fair shares with leftover pieces",
+      "reason": "The skill covers 2, 3, 4, or 6 friends, not only thirds and sixths."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g2-fair-share-fractions",
+      "description": "Look at the picture and tap what each friend gets when up to 10 things are shared by 2, 3, 4, or 6 friends. Leftovers get cut into pieces, like 3 and one third.",
+      "reason": "Kids can't draw or speak an answer in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g2-mental-math-50",
+      "title": "Quick adding and subtracting to 50",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g2-mental-math-50",
+      "description": "Add and subtract in your head with answers up to 50. Try counting on, making 10s, or taking away in parts.",
+      "reason": "Explaining a strategy can't be checked."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g2-add-sub-problems-100",
+      "description": "Use objects, pictures, and equations to solve stories about joining, taking away, and comparing, up to 100. Find the missing number, wherever it hides.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g3-whole-numbers-1000",
+      "description": "Read and build numbers up to 1000 with hundreds, tens, and ones. Match them to words, digits, and spots on a number line, like 638 is 600 + 30 + 8.",
+      "reason": "Kids can't write in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g3-round-numbers",
+      "title": "Round to 10 or 100",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g3-count-1000",
+      "title": "Skip count to 1000",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g3-fair-share-20",
+      "description": "Look at the picture and tap what each friend gets when up to 20 things are shared by 2, 3, 4, 5, 6, 8, or 10 friends. It can be a whole and a part, like 2 and two thirds.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g3-mult-div-problems",
+      "description": "Solve stories about equal groups using hops on a number line or pictures. Some groups can be one half, one fourth, or one third, and you can find the total, the groups, or the size of each group.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g3-fraction-repeated-addition",
+      "description": "See that three fifths is one fifth added three times. In a fraction like 3/5, the bottom number tells the size of the pieces and the top number counts them.",
+      "reason": "Kids can't write in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g3-mental-math-1000",
+      "title": "Quick adding and subtracting to 1000",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g3-mental-math-1000",
+      "description": "Add and subtract in your head with totals up to 1000, using tricks like making 10, adding in parts, or adjusting. Round first to make a quick guess.",
+      "reason": "Explaining a strategy can't be checked."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g3-add-sub-algorithms",
+      "description": "Add and subtract bigger numbers by lining up hundreds, tens, and ones. Trade ten ones for a ten, or a ten for ones, when you need to.",
+      "reason": "Explaining the link to base ten blocks can't be checked."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g3-add-sub-problems-1000",
+      "description": "Solve stories about joining, taking away, and comparing, with numbers up to 1000. Use number lines, pictures, or column adding, and find the missing number wherever it hides.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g4-whole-numbers-10000",
+      "description": "Read and build numbers up to 10 000 with thousands, hundreds, tens, and ones. Break them apart in different ways, like 8621 is 8000 + 600 + 20 + 1.",
+      "reason": "Kids can't write in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g4-represent-fractions",
+      "description": "Look at the picture and tap the fraction it shows, like 3/4 or 7/10. Know what the bottom number and the top number mean.",
+      "reason": "Kids can't draw or write in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g4-compare-fair-shares",
+      "description": "Look at the pictures and tap who gets more when a whole is shared by different numbers of friends. Put the shares in order from least to greatest.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g4-mult-div-facts-100",
+      "title": "Times and divide facts to 100",
+      "reason": "Title had 8 words."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g4-mult-div-by-10s",
+      "title": "Multiply by 10, 100, and 1000",
+      "reason": "Title had 7 words and a semicolon."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g4-mental-decimal-tenths",
+      "title": "Quick adding and subtracting with tenths",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g4-add-sub-10000",
+      "title": "Add and subtract to 10 000",
+      "reason": "The old title ended in a dangling \"tenths\"."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g4-add-sub-10000",
+      "description": "Solve stories and problems by adding and subtracting numbers up to 10 000 and decimal tenths. Use number lines, pictures, or column adding.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g4-multiply-by-one-digit",
+      "title": "Multiply by a one-digit number",
+      "reason": "\"Multiply bigger numbers\" didn't say what the skill is."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g4-whole-number-rates",
+      "description": "Show rates like 2 trapezoids per hexagon or 5 stickers per strip. Use pictures and tools to find how many in all.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g5-whole-numbers-100000",
+      "description": "Read and build numbers up to 100 000 in words, digits, and expanded form. Break them apart by place value, like 24 336 is 2 ten thousands, 4 thousands, 3 hundreds, 3 tens, and 6 ones.",
+      "reason": "Kids can't write in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g5-mult-div-facts-144",
+      "title": "Times and divide facts to 144",
+      "reason": "Title had 8 words."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g5-add-sub-100000-decimals",
+      "title": "Add, subtract big numbers and decimals",
+      "reason": "\"Big and decimal\" read badly. \"Add and subtract big numbers and decimals\" has 7 words."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g5-add-sub-like-fractions",
+      "description": "Add and subtract fractions that have the same bottom number, like 3/8 + 2/8. You are just adding or taking away pieces of the same size.",
+      "reason": "3/8 + 12/8 was a strange first example."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g5-multiply-two-by-two-digit",
+      "description": "Multiply numbers like 24 × 38 using a rectangle split into four parts. Then do it with the written method.",
+      "reason": "Explaining how the methods match can't be checked."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g5-equivalent-ratios-rates",
+      "description": "Make ratios and rates that mean the same thing by scaling up or down, like 6 green to 1 yellow is 12 green to 2 yellow. Use tables and pictures to help.",
+      "reason": "Kids can't draw in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g6-whole-numbers-million",
+      "description": "Read and build numbers up to one million in words, digits, and expanded form. Tell what each digit is worth, like the 5 in 527 910 is 500 000.",
+      "reason": "Kids can't write in the app."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g6-decimals-thousandths",
+      "description": "Read and show decimals like 7.635 in words, digits, and expanded form. Compare and order them by looking at the biggest place that is different.",
+      "reason": "Kids can't write in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g6-operation-properties",
+      "title": "Brackets and order of operations",
+      "reason": "\"Rules and steps for solving problems\" didn't say what the skill is."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g6-add-sub-whole-decimals",
+      "title": "Add and subtract with decimals",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g6-multiply-whole-by-fraction",
+      "title": "Multiply a whole by a fraction",
+      "reason": "Title had 7 words."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g6-multiply-whole-by-fraction",
+      "description": "Find 5 × 3/4 by thinking of 5 groups of three fourths. Use fraction strips or a number line, and give the answer as an improper fraction or mixed number.",
+      "reason": "Kids can't write in the app."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g6-divide-whole-by-fraction",
+      "title": "Divide a whole by a fraction",
+      "reason": "Title had 7 words."
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 import { spawn } from 'node:child_process';
+import { existsSync, readFileSync } from 'node:fs';
+import { win32 } from 'node:path';
 import type { LlmClient, LlmRequest } from './llm';
 
 export interface CommandResult {
@@ -14,9 +16,57 @@ export type RunCommand = (
   env: NodeJS.ProcessEnv,
 ) => Promise<CommandResult>;
 
+export interface ResolvedCommand {
+  command: string;
+  /** Arguments that go before the caller's, e.g. the script a `.cmd` shim runs. */
+  prefix: string[];
+}
+
+export interface CommandLookup {
+  platform: NodeJS.Platform;
+  path: string;
+  exists: (file: string) => boolean;
+  read: (file: string) => string;
+  node: string;
+}
+
+const defaultLookup = (): CommandLookup => ({
+  platform: process.platform,
+  path: process.env.PATH ?? process.env.Path ?? '',
+  exists: existsSync,
+  read: (file) => readFileSync(file, 'utf8'),
+  node: process.execPath,
+});
+
+/**
+ * On Windows, Node can't spawn a `.cmd` shim without a shell, and a shell would mangle the
+ * multi-line system prompt and JSON schema. So this finds the `.exe` or script the shim runs.
+ */
+export function resolveCommand(command: string, lookup = defaultLookup()): ResolvedCommand {
+  if (lookup.platform !== 'win32' || /[\\/]/.test(command)) return { command, prefix: [] };
+  for (const dir of lookup.path.split(';').filter(Boolean)) {
+    const exe = win32.join(dir, `${command}.exe`);
+    if (lookup.exists(exe)) return { command: exe, prefix: [] };
+    const shim = win32.join(dir, `${command}.cmd`);
+    if (!lookup.exists(shim)) continue;
+    // npm shims run "%dp0%\<target>", where the target is an .exe or a script for node.
+    const target = /"%dp0%\\([^"]+\.(exe|js))"/i.exec(lookup.read(shim));
+    if (!target) throw new Error(`Can't read ${shim}. Set CLAUDE_BIN to the claude executable.`);
+    const file = win32.join(dir, target[1]);
+    return target[2].toLowerCase() === 'exe'
+      ? { command: file, prefix: [] }
+      : { command: lookup.node, prefix: [file] };
+  }
+  return { command, prefix: [] };
+}
+
 export const runCommand: RunCommand = (command, args, input, env) =>
   new Promise((resolve, reject) => {
-    const child = spawn(command, args, { env, stdio: ['pipe', 'pipe', 'pipe'] });
+    const resolved = resolveCommand(command);
+    const child = spawn(resolved.command, [...resolved.prefix, ...args], {
+      env,
+      stdio: ['pipe', 'pipe', 'pipe'],
+    });
     let stdout = '';
     let stderr = '';
     child.stdout.setEncoding('utf8').on('data', (chunk: string) => (stdout += chunk));

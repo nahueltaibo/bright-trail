@@ -5,7 +5,8 @@ import {
   type Skill,
   type SkillGrade,
 } from '@bright-trail/shared';
-import { gradeRank, idPrefix, type GradeSource } from './sources';
+import { edgeKey } from './overrides';
+import { gradeRank, idPrefix, type Expectation, type GradeSource } from './sources';
 
 export interface Problem {
   /** Grade the problem belongs to, so the build can send it back to that grade's generator. */
@@ -13,11 +14,28 @@ export interface Problem {
   message: string;
 }
 
+export interface CheckOptions {
+  /** Risky tokens each skill may keep on purpose, keyed by skill id. */
+  allowedTokens?: ReadonlyMap<string, ReadonlySet<string>>;
+}
+
 /**
  * Runs every deterministic check on a skill graph against the sources it came from.
  * An empty list means the graph is valid.
  */
-export function checkGraph(skills: readonly Skill[], sources: readonly GradeSource[]): Problem[] {
+export function checkGraph(
+  skills: readonly Skill[],
+  sources: readonly GradeSource[],
+  options: CheckOptions = {},
+): Problem[] {
+  return [...checkStructure(skills, sources), ...checkContent(skills, sources, options)];
+}
+
+/** Shape, links, and coverage: the checks a generator repair can fix. */
+export function checkStructure(
+  skills: readonly Skill[],
+  sources: readonly GradeSource[],
+): Problem[] {
   const problems: Problem[] = [];
   const byId = new Map(skills.map((s) => [s.id, s]));
   const gradeOf = (id: string) => byId.get(id)?.grade ?? null;
@@ -96,6 +114,141 @@ export function checkGraph(skills: readonly Skill[], sources: readonly GradeSour
   return problems;
 }
 
+/** Phrases that ask for a spoken, drawn, or written answer, which no POC item type can take. */
+export const RISKY_TOKENS = [
+  'out loud',
+  'say',
+  'draw',
+  'write',
+  'tell how',
+  'explain',
+  'show how',
+] as const;
+
+export const MAX_TITLE_WORDS = 6;
+
+/** Words in a title. A spaced number such as `10 000` counts as one word. */
+export function titleWords(title: string): number {
+  return title
+    .replace(/(\d) (?=\d{3}\b)/g, '$1')
+    .split(/\s+/)
+    .filter(Boolean).length;
+}
+
+function riskyTokensIn(text: string): string[] {
+  // "Tell how many" asks for a number, which a keypad can take.
+  return RISKY_TOKENS.filter((token) =>
+    new RegExp(`\\b${token}(s|ing|ings)?\\b(?! (many|much)\\b)`, 'i').test(text),
+  );
+}
+
+// Codes are renumbered per grade (B2.5 is multiplication in Grade 2, addition in Grade 3), so the
+// source's topic heading and statement classify an expectation instead.
+const isMultDiv = (e: Expectation) => /multiplication and division/i.test(e.topic);
+const isAddSub = (e: Expectation) =>
+  !isMultDiv(e) && /\badd(ition|ing)?\b/i.test(e.statement) && /\bsubtract/i.test(e.statement);
+
+function expectationsOf(skill: Skill, sources: readonly GradeSource[]): Expectation[] {
+  const source = sources.find((s) => s.grade === skill.grade);
+  const codes = new Set(skill.expectationCodes);
+  return source?.expectations.filter((e) => codes.has(e.code)) ?? [];
+}
+
+/** Kid-facing text, expectation codes, and walk-back coverage. Overrides fix these. */
+export function checkContent(
+  skills: readonly Skill[],
+  sources: readonly GradeSource[],
+  { allowedTokens = new Map() }: CheckOptions = {},
+): Problem[] {
+  const problems: Problem[] = [];
+  const byId = new Map(skills.map((s) => [s.id, s]));
+  const memo = new Map<string, Set<string>>();
+
+  for (const skill of skills) {
+    const at = (message: string) => problems.push({ grade: skill.grade, message });
+    const allowed = allowedTokens.get(skill.id);
+    for (const [field, text] of [
+      ['title', skill.title],
+      ['description', skill.description],
+    ] as const) {
+      for (const token of riskyTokensIn(text).filter((t) => !allowed?.has(t))) {
+        at(
+          `${skill.id}: ${field} says "${token}", which no tap, keypad, or number-line item can check`,
+        );
+      }
+    }
+    if (titleWords(skill.title) > MAX_TITLE_WORDS) {
+      at(`${skill.id}: title "${skill.title}" has more than ${MAX_TITLE_WORDS} words`);
+    }
+    if (
+      skill.expectationCodes.length > 0 &&
+      skill.expectationCodes.every((c) => !c.includes('.'))
+    ) {
+      at(`${skill.id}: cites only overall expectations (${skill.expectationCodes.join(', ')})`);
+    }
+    if (expectationsOf(skill, sources).some(isMultDiv)) {
+      const addSub = [...ancestors(skill.id, byId, memo)].some((id) => {
+        const ancestor = byId.get(id);
+        return ancestor ? expectationsOf(ancestor, sources).some(isAddSub) : false;
+      });
+      if (!addSub) {
+        at(
+          `${skill.id}: multiplication or division with no addition or subtraction skill below it`,
+        );
+      }
+    }
+  }
+
+  for (const source of sources) {
+    const count = skills.filter((s) => s.grade === source.grade).length;
+    const budget = source.expectations.filter((e) => e.kind === 'specific').length;
+    if (count > budget) {
+      problems.push({
+        grade: source.grade,
+        message: `Grade ${source.grade} has ${count} skills, more than its ${budget} specific expectations`,
+      });
+    }
+  }
+  return problems;
+}
+
+// Topic headings change name across grades, so related ones share a family.
+function topicFamilies(topic: string): string[] {
+  if (/rational/i.test(topic)) return ['whole', 'fraction'];
+  if (/fraction|decimal|percent/i.test(topic)) return ['fraction'];
+  if (/whole/i.test(topic)) return ['whole'];
+  return topic ? [topic.toLowerCase()] : [];
+}
+
+/**
+ * Grade 1+ skills that reach no skill of the grade before in the same topic. Not a failure: some
+ * ideas are new in a grade. Topics missing from the grade before, and Kindergarten's untitled
+ * topics, match any skill of that grade.
+ */
+export function findWarnings(skills: readonly Skill[], sources: readonly GradeSource[]): Problem[] {
+  const byId = new Map(skills.map((s) => [s.id, s]));
+  const memo = new Map<string, Set<string>>();
+  const families = (s: Skill) =>
+    new Set(expectationsOf(s, sources).flatMap((e) => topicFamilies(e.topic)));
+  const warnings: Problem[] = [];
+  for (const skill of skills) {
+    const rank = gradeRank(skill.grade);
+    if (rank === 0) continue;
+    const previous = skills.filter((s) => gradeRank(s.grade) === rank - 1);
+    const mine = families(skill);
+    const sameTopic = previous.filter((p) => [...families(p)].some((f) => mine.has(f)));
+    const targets = new Set((sameTopic.length > 0 ? sameTopic : previous).map((s) => s.id));
+    if (![...ancestors(skill.id, byId, memo)].some((id) => targets.has(id))) {
+      const topic = sameTopic.length > 0 ? ` in the same topic` : '';
+      warnings.push({
+        grade: skill.grade,
+        message: `${skill.id}: reaches no Grade ${previous[0]?.grade ?? '?'} skill${topic}`,
+      });
+    }
+  }
+  return warnings;
+}
+
 /** Kindergarten skills with no prerequisites: where every trail starts. */
 export function roots(skills: readonly Skill[]): Skill[] {
   return skills.filter((s) => s.grade === 'K' && s.prerequisiteIds.length === 0);
@@ -144,8 +297,13 @@ export interface RemovedEdge {
 /**
  * Drops prerequisites that another listed prerequisite already implies, so each skill lists
  * direct prerequisites only. Walk-back probes these lists, so a transitive edge would skip a level.
+ * A spurious edge upstream can make a real one look transitive, so `protectedEdges` (keys from
+ * `edgeKey`) are kept.
  */
-export function removeTransitivePrerequisites(skills: readonly Skill[]): {
+export function removeTransitivePrerequisites(
+  skills: readonly Skill[],
+  protectedEdges: ReadonlySet<string> = new Set(),
+): {
   skills: Skill[];
   removed: RemovedEdge[];
 } {
@@ -154,6 +312,7 @@ export function removeTransitivePrerequisites(skills: readonly Skill[]): {
   const removed: RemovedEdge[] = [];
   const result = skills.map((skill) => {
     const kept = skill.prerequisiteIds.filter((candidate) => {
+      if (protectedEdges.has(edgeKey(skill.id, candidate))) return true;
       const via = skill.prerequisiteIds.find(
         (other) => other !== candidate && ancestors(other, byId, memo).has(candidate),
       );

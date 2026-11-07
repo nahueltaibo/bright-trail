@@ -8,7 +8,7 @@
       "strand": "A",
       "expectationCodes": ["A6.8"],
       "title": "Count to 20 by 1s",
-      "description": "Count out loud, 1, 2, 3, all the way to 20. You can start at any number, like 7, 8, 9!",
+      "description": "What number comes next when you count by 1s? Start at any number, like 7, 8, 9, and keep going to 20.",
       "prerequisiteIds": []
     },
     {
@@ -27,7 +27,7 @@
       "grade": "K",
       "strand": "A",
       "expectationCodes": ["A6.4"],
-      "title": "See 1 to 5 at a glance",
+      "title": "See up to 5 at once",
       "description": "Look quickly at some dots and tell how many there are, without counting one by one.",
       "prerequisiteIds": []
     },
@@ -37,8 +37,8 @@
       "grade": "K",
       "strand": "A",
       "expectationCodes": ["A6.3"],
-      "title": "Read and write numbers to 20",
-      "description": "Match numerals from 0 to 20 to groups of things, and write the number you see.",
+      "title": "Read and type numbers to 20",
+      "description": "Match numbers from 0 to 20 to groups of things. Tap or type the number you see.",
       "prerequisiteIds": ["k-count-to-20"]
     },
     {
@@ -48,7 +48,7 @@
       "strand": "A",
       "expectationCodes": ["A6.2"],
       "title": "Counting up and counting down",
-      "description": "When we count forward the number gets bigger. When we count back it gets smaller.",
+      "description": "Count up and the number gets bigger. Count down and it gets smaller. Which way did it go?",
       "prerequisiteIds": ["k-count-to-20"]
     },
     {
@@ -78,7 +78,7 @@
       "strand": "A",
       "expectationCodes": ["A6.7"],
       "title": "Estimate, then count to check",
-      "description": "Make a smart guess about how many things there are, like closer to 5 or 10. Then count to check.",
+      "description": "Guess how many things there are. Is it closer to 5 or to 10? Then count to check.",
       "prerequisiteIds": ["k-count-to-20", "k-subitize-5"]
     },
     {
@@ -128,7 +128,7 @@
       "strand": "A",
       "expectationCodes": ["A6.13"],
       "title": "Coins and bills",
-      "description": "Name Canadian coins and bills. Tell how much each is worth, up to 25 cents for coins and 10 dollars for bills.",
+      "description": "Name Canadian coins and bills and tell what each is worth, up to 10 dollars. Loonies and toonies are coins too!",
       "prerequisiteIds": ["k-read-write-numbers-20"]
     },
     {
@@ -138,7 +138,7 @@
       "strand": "B",
       "expectationCodes": ["B1.1"],
       "title": "Read and show numbers to 50",
-      "description": "Read numbers up to 50 as words and numerals, and show them with tens and ones. Tell how numbers are used, like on a clock or a house.",
+      "description": "Read numbers up to 50 in words and digits, and match them to tens and ones. Pick how a number is used, like on a clock or a house.",
       "prerequisiteIds": ["k-read-write-numbers-20", "k-uses-of-numbers"]
     },
     {
@@ -147,8 +147,8 @@
       "grade": "1",
       "strand": "B",
       "expectationCodes": ["B1.5"],
-      "title": "Count to 50 by 1s, 2s, 5s, 10s",
-      "description": "Count out loud to 50 by 1s, 2s, 5s, and 10s. Use a number line or hundred chart to skip count and find the next number.",
+      "title": "Skip count to 50",
+      "description": "Count to 50 by 1s, 2s, 5s, and 10s. What number comes next when you count by 5s? Use a number line or hundred chart to help.",
       "prerequisiteIds": ["k-count-to-20"]
     },
     {
@@ -168,7 +168,7 @@
       "strand": "B",
       "expectationCodes": ["B1.4"],
       "title": "Estimate up to 50, then count",
-      "description": "Make a smart guess about how many things are in a group of up to 50. Then count to check how close you were.",
+      "description": "Guess how many things are in a group. Is it closer to 20 or to 50? Then count to check.",
       "prerequisiteIds": ["k-estimate-and-count", "g1-count-50"]
     },
     {
@@ -187,8 +187,8 @@
       "grade": "1",
       "strand": "B",
       "expectationCodes": ["B1.6"],
-      "title": "Fair shares with 2 or 4 friends",
-      "description": "Draw a picture to share things equally between 2 or 4 friends. Show what each friend gets when there are some left over to cut.",
+      "title": "Fair shares for 2 or 4",
+      "description": "Look at the picture and tap what each friend gets when 2 or 4 friends share. Leftovers can be cut into equal pieces.",
       "prerequisiteIds": ["k-equal-share"]
     },
     {
@@ -208,8 +208,8 @@
       "strand": "B",
       "expectationCodes": ["B1.8"],
       "title": "Compare shares of a whole",
-      "description": "When a whole is shared with more friends, each piece gets smaller. Draw and order one half, one third, one fourth, and more.",
-      "prerequisiteIds": ["g1-half-equals-two-fourths"]
+      "description": "When a whole is shared with more friends, each piece gets smaller. Look at the pictures and tap the biggest or smallest piece.",
+      "prerequisiteIds": ["g1-fair-share-drawings"]
     },
     {
       "id": "g1-add-sub-facts-10",
@@ -237,7 +237,7 @@
       "grade": "1",
       "strand": "B",
       "expectationCodes": ["B2.3"],
-      "title": "Add and subtract in your head to 20",
+      "title": "Quick adding and subtracting to 20",
       "description": "Use tricks like counting on, making 10, and near doubles to add and subtract in your head. Your answers stay 20 or less.",
       "prerequisiteIds": ["g1-add-sub-facts-10"]
     },
@@ -252,7 +252,8 @@
       "prerequisiteIds": [
         "g1-add-sub-properties",
         "g1-compose-decompose-50",
-        "k-add-sub-stories-10"
+        "k-add-sub-stories-10",
+        "g1-mental-math-20"
       ]
     },
     {
@@ -262,8 +263,8 @@
       "strand": "B",
       "expectationCodes": ["B2.5"],
       "title": "Equal groups up to 10",
-      "description": "Draw or use counters to make equal groups, like 5 groups of 2, or 6 groups of one half. Find how many groups or how many in all.",
-      "prerequisiteIds": ["g1-count-50", "g1-half-equals-two-fourths"]
+      "description": "Look at the picture and tap how many in all, like 5 groups of 2, or 6 groups of one half. Or find how many groups there are.",
+      "prerequisiteIds": ["g1-count-50", "g1-fair-share-drawings", "g1-add-sub-facts-10"]
     },
     {
       "id": "g2-whole-numbers-200",
@@ -272,7 +273,7 @@
       "strand": "B",
       "expectationCodes": ["B1.1"],
       "title": "Read and build numbers to 200",
-      "description": "Read, write, and build numbers up to 200 with hundreds, tens, and ones. Break numbers apart in different ways, like 124 is 100 and 24, or 12 tens and 4 ones.",
+      "description": "Read and build numbers up to 200 with hundreds, tens, and ones. Break numbers apart in different ways, like 124 is 100 and 24, or 12 tens and 4 ones.",
       "prerequisiteIds": ["g1-compose-decompose-50"]
     },
     {
@@ -291,8 +292,8 @@
       "grade": "2",
       "strand": "B",
       "expectationCodes": ["B1.4"],
-      "title": "Count to 200 by 20s, 25s, 50s",
-      "description": "Count out loud to 200 by 1s, 20s, 25s, and 50s. Start at any number, and use coins, bills, or a number line to help.",
+      "title": "Skip count to 200",
+      "description": "What number comes next when you count by 20s, 25s, or 50s? Start at any number and count up to 200, with coins or a number line to help.",
       "prerequisiteIds": ["g1-count-50"]
     },
     {
@@ -302,7 +303,7 @@
       "strand": "B",
       "expectationCodes": ["B1.3"],
       "title": "Estimate up to 200, then count",
-      "description": "Make a smart guess about how many things are in a big group, up to 200. Count a small bunch first, then count to check.",
+      "description": "Guess how many are in a big group. Is it closer to 50, 100, or 200? Count a small bunch first to help, then count to check.",
       "prerequisiteIds": ["g1-estimate-50", "g2-count-200"]
     },
     {
@@ -321,8 +322,8 @@
       "grade": "2",
       "strand": "B",
       "expectationCodes": ["B1.6"],
-      "title": "Fair shares with thirds and sixths",
-      "description": "Draw a picture to share up to 10 things equally with 2, 3, 4, or 6 friends. Say how much each friend gets, like 3 and one third.",
+      "title": "Fair shares with leftover pieces",
+      "description": "Look at the picture and tap what each friend gets when up to 10 things are shared by 2, 3, 4, or 6 friends. Leftovers get cut into pieces, like 3 and one third.",
       "prerequisiteIds": ["g1-compare-unit-fractions"]
     },
     {
@@ -333,7 +334,7 @@
       "expectationCodes": ["B1.7"],
       "title": "One third equals two sixths",
       "description": "Share the same whole in thirds or in sixths. See that one third is the same amount as two sixths.",
-      "prerequisiteIds": ["g2-fair-share-fractions"]
+      "prerequisiteIds": ["g2-fair-share-fractions", "g1-half-equals-two-fourths"]
     },
     {
       "id": "g2-add-sub-properties",
@@ -361,8 +362,8 @@
       "grade": "2",
       "strand": "B",
       "expectationCodes": ["B2.3"],
-      "title": "Add and subtract in your head to 50",
-      "description": "Add and subtract in your head with answers up to 50. Try counting on, making 10s, or taking away in parts, and tell how you did it.",
+      "title": "Quick adding and subtracting to 50",
+      "description": "Add and subtract in your head with answers up to 50. Try counting on, making 10s, or taking away in parts.",
       "prerequisiteIds": ["g2-add-sub-facts-20", "g1-compose-decompose-50"]
     },
     {
@@ -372,8 +373,8 @@
       "strand": "B",
       "expectationCodes": ["B2.4"],
       "title": "Add and subtract stories to 100",
-      "description": "Use objects, drawings, and equations to solve stories about joining, taking away, and comparing, up to 100. Find the missing number, wherever it hides.",
-      "prerequisiteIds": ["g1-add-sub-problems-50", "g2-whole-numbers-200"]
+      "description": "Use objects, pictures, and equations to solve stories about joining, taking away, and comparing, up to 100. Find the missing number, wherever it hides.",
+      "prerequisiteIds": ["g1-add-sub-problems-50", "g2-whole-numbers-200", "g2-mental-math-50"]
     },
     {
       "id": "g2-equal-groups-multiply",
@@ -383,7 +384,7 @@
       "expectationCodes": ["B2.5"],
       "title": "Equal groups and repeated adding",
       "description": "Find how many in all when there are equal groups, like 4 groups of 5. Groups of one half and one fourth count too.",
-      "prerequisiteIds": ["g1-equal-groups", "g2-count-200"]
+      "prerequisiteIds": ["g1-equal-groups", "g2-add-sub-facts-20"]
     },
     {
       "id": "g2-division-sharing",
@@ -393,7 +394,7 @@
       "expectationCodes": ["B2.6"],
       "title": "Share up to 12 equally",
       "description": "Share up to 12 things equally. Find how many in each group, or how many groups you can make.",
-      "prerequisiteIds": ["g2-equal-groups-multiply", "g2-fair-share-fractions"]
+      "prerequisiteIds": ["g2-equal-groups-multiply", "g1-fair-share-drawings"]
     },
     {
       "id": "g3-whole-numbers-1000",
@@ -402,7 +403,7 @@
       "strand": "B",
       "expectationCodes": ["B1.1"],
       "title": "Read and build numbers to 1000",
-      "description": "Read, write, and build numbers up to 1000 with hundreds, tens, and ones. Show them in words, in digits, and on a number line, like 638 is 600 + 30 + 8.",
+      "description": "Read and build numbers up to 1000 with hundreds, tens, and ones. Match them to words, digits, and spots on a number line, like 638 is 600 + 30 + 8.",
       "prerequisiteIds": ["g2-whole-numbers-200"]
     },
     {
@@ -431,7 +432,7 @@
       "grade": "3",
       "strand": "B",
       "expectationCodes": ["B1.3"],
-      "title": "Round to the nearest 10 or 100",
+      "title": "Round to 10 or 100",
       "description": "Find the closest ten or hundred to a number, like 237 is about 240 or about 200. Use rounding to make a quick guess.",
       "prerequisiteIds": ["g3-place-value", "g3-compare-order-1000"]
     },
@@ -441,7 +442,7 @@
       "grade": "3",
       "strand": "B",
       "expectationCodes": ["B1.4"],
-      "title": "Count to 1000 by 50s, 100s, 200s",
+      "title": "Skip count to 1000",
       "description": "Count up to 1000 by 1s, 50s, 100s, and 200s. Start at any number and keep going, using a number line to help.",
       "prerequisiteIds": ["g2-count-200", "g3-whole-numbers-1000"]
     },
@@ -452,8 +453,8 @@
       "strand": "B",
       "expectationCodes": ["B1.6"],
       "title": "Fair shares of up to 20",
-      "description": "Draw a picture to share up to 20 things equally with 2, 3, 4, 5, 6, 8, or 10 friends. Tell what each friend gets, even when it is a whole and a part, like 2 and two thirds.",
-      "prerequisiteIds": ["g2-division-sharing"]
+      "description": "Look at the picture and tap what each friend gets when up to 20 things are shared by 2, 3, 4, 5, 6, 8, or 10 friends. It can be a whole and a part, like 2 and two thirds.",
+      "prerequisiteIds": ["g2-division-sharing", "g2-fair-share-fractions"]
     },
     {
       "id": "g3-equivalent-fair-shares",
@@ -493,7 +494,7 @@
       "expectationCodes": ["B2.1"],
       "title": "Times and divide rules",
       "description": "Use rules to help you multiply, like 4 × 5 is the same as 5 × 4, and 4 × 6 is 4 × 5 plus 4 × 1. Use multiplying to check a divide answer.",
-      "prerequisiteIds": ["g3-arrays-multiply-divide"]
+      "prerequisiteIds": ["g3-arrays-multiply-divide", "g2-add-sub-properties"]
     },
     {
       "id": "g3-mult-div-problems",
@@ -502,7 +503,7 @@
       "strand": "B",
       "expectationCodes": ["B2.7"],
       "title": "Times and divide stories",
-      "description": "Solve stories about equal groups using hops on a number line or drawings. Some groups can be one half, one fourth, or one third, and you can find the total, the groups, or the size of each group.",
+      "description": "Solve stories about equal groups using hops on a number line or pictures. Some groups can be one half, one fourth, or one third, and you can find the total, the groups, or the size of each group.",
       "prerequisiteIds": ["g3-arrays-multiply-divide"]
     },
     {
@@ -512,7 +513,7 @@
       "strand": "B",
       "expectationCodes": ["B2.8"],
       "title": "Fractions as adding unit pieces",
-      "description": "See that three fifths is one fifth added three times. Write fractions like 3/5, where the bottom number tells the size of the pieces and the top number counts them.",
+      "description": "See that three fifths is one fifth added three times. In a fraction like 3/5, the bottom number tells the size of the pieces and the top number counts them.",
       "prerequisiteIds": ["g3-fair-share-20", "g3-mult-div-problems"]
     },
     {
@@ -531,8 +532,8 @@
       "grade": "3",
       "strand": "B",
       "expectationCodes": ["B2.3"],
-      "title": "Add and subtract in your head to 1000",
-      "description": "Add and subtract in your head with totals up to 1000, using tricks like making 10, adding in parts, or adjusting. Use rounding to guess first, then tell how you did it.",
+      "title": "Quick adding and subtracting to 1000",
+      "description": "Add and subtract in your head with totals up to 1000, using tricks like making 10, adding in parts, or adjusting. Round first to make a quick guess.",
       "prerequisiteIds": ["g2-mental-math-50", "g3-round-numbers"]
     },
     {
@@ -542,7 +543,7 @@
       "strand": "B",
       "expectationCodes": ["B2.4"],
       "title": "Column adding and subtracting",
-      "description": "Add and subtract bigger numbers by lining up hundreds, tens, and ones. Trade ten ones for a ten, or a ten for ones, when you need to, and tell how it matches base ten blocks.",
+      "description": "Add and subtract bigger numbers by lining up hundreds, tens, and ones. Trade ten ones for a ten, or a ten for ones, when you need to.",
       "prerequisiteIds": ["g3-place-value", "g2-mental-math-50"]
     },
     {
@@ -552,8 +553,8 @@
       "strand": "B",
       "expectationCodes": ["B2.5"],
       "title": "Add and subtract stories to 1000",
-      "description": "Solve stories about joining, taking away, and comparing, with numbers up to 1000. Use number lines, drawings, or column adding, and find the missing number wherever it hides.",
-      "prerequisiteIds": ["g3-add-sub-algorithms", "g3-mental-math-1000"]
+      "description": "Solve stories about joining, taking away, and comparing, with numbers up to 1000. Use number lines, pictures, or column adding, and find the missing number wherever it hides.",
+      "prerequisiteIds": ["g3-add-sub-algorithms", "g3-mental-math-1000", "g2-add-sub-problems-100"]
     },
     {
       "id": "g4-whole-numbers-10000",
@@ -562,7 +563,7 @@
       "strand": "B",
       "expectationCodes": ["B1.1"],
       "title": "Read and build numbers to 10 000",
-      "description": "Read, write, and build numbers up to 10 000 with thousands, hundreds, tens, and ones. Break them apart in different ways, like 8621 is 8000 + 600 + 20 + 1.",
+      "description": "Read and build numbers up to 10 000 with thousands, hundreds, tens, and ones. Break them apart in different ways, like 8621 is 8000 + 600 + 20 + 1.",
       "prerequisiteIds": ["g3-place-value"]
     },
     {
@@ -592,7 +593,7 @@
       "strand": "B",
       "expectationCodes": ["B1.4"],
       "title": "Fractions from halves to tenths",
-      "description": "Draw and write fractions like 3/4 or 7/10. Tell what the bottom number and the top number mean.",
+      "description": "Look at the picture and tap the fraction it shows, like 3/4 or 7/10. Know what the bottom number and the top number mean.",
       "prerequisiteIds": ["g3-fraction-repeated-addition"]
     },
     {
@@ -602,7 +603,7 @@
       "strand": "B",
       "expectationCodes": ["B1.5"],
       "title": "Compare and order fair shares",
-      "description": "Use drawings to compare how much each friend gets when a whole is shared by different numbers of friends. Put the shares in order from least to greatest.",
+      "description": "Look at the pictures and tap who gets more when a whole is shared by different numbers of friends. Put the shares in order from least to greatest.",
       "prerequisiteIds": ["g4-represent-fractions"]
     },
     {
@@ -657,7 +658,7 @@
       "expectationCodes": ["B2.1"],
       "title": "Rules and checks for operations",
       "description": "Use rules like order, grouping, and splitting numbers to help you solve problems. Use opposite operations to check your answers.",
-      "prerequisiteIds": ["g2-add-sub-properties", "g3-mult-div-properties"]
+      "prerequisiteIds": ["g3-mult-div-properties"]
     },
     {
       "id": "g4-mult-div-facts-100",
@@ -665,7 +666,7 @@
       "grade": "4",
       "strand": "B",
       "expectationCodes": ["B2.2"],
-      "title": "Times and divide facts to 10 × 10",
+      "title": "Times and divide facts to 100",
       "description": "Know all the times facts up to 10 × 10 and the divide facts that go with them, like 7 × 6 = 42 and 42 ÷ 6 = 7. Use facts you know to find new ones.",
       "prerequisiteIds": ["g3-mult-div-facts-2-5-10", "g3-mult-div-properties"]
     },
@@ -675,7 +676,7 @@
       "grade": "4",
       "strand": "B",
       "expectationCodes": ["B2.3"],
-      "title": "Times 10, 100, 1000; divide by 10",
+      "title": "Multiply by 10, 100, and 1000",
       "description": "In your head, multiply a number by 10, 100, or 1000, or divide it by 10. Each digit moves to a new place.",
       "prerequisiteIds": ["g4-whole-numbers-10000", "g3-mult-div-facts-2-5-10", "g4-decimal-tenths"]
     },
@@ -685,7 +686,7 @@
       "grade": "4",
       "strand": "B",
       "expectationCodes": ["B2.3"],
-      "title": "Add and subtract tenths in your head",
+      "title": "Quick adding and subtracting with tenths",
       "description": "Add and subtract decimals like 14.9 + 24.6 in your head. Try making a friendly number, then fix it after.",
       "prerequisiteIds": ["g4-decimal-tenths", "g3-mental-math-1000"]
     },
@@ -695,8 +696,8 @@
       "grade": "4",
       "strand": "B",
       "expectationCodes": ["B2.4"],
-      "title": "Add and subtract to 10 000, tenths",
-      "description": "Solve stories and problems by adding and subtracting numbers up to 10 000 and decimal tenths. Use number lines, drawings, or column adding.",
+      "title": "Add and subtract to 10 000",
+      "description": "Solve stories and problems by adding and subtracting numbers up to 10 000 and decimal tenths. Use number lines, pictures, or column adding.",
       "prerequisiteIds": ["g3-add-sub-problems-1000", "g4-whole-numbers-10000", "g4-decimal-tenths"]
     },
     {
@@ -705,7 +706,7 @@
       "grade": "4",
       "strand": "B",
       "expectationCodes": ["B2.5"],
-      "title": "Multiply bigger numbers",
+      "title": "Multiply by a one-digit number",
       "description": "Multiply two- or three-digit numbers by a one-digit number, or by 10, 100, or 1000. Use arrays and split the number into parts to help.",
       "prerequisiteIds": ["g4-mult-div-facts-100", "g4-mult-div-by-10s", "g3-mental-math-1000"]
     },
@@ -726,7 +727,7 @@
       "strand": "B",
       "expectationCodes": ["B2.8"],
       "title": "Rates: amounts per group",
-      "description": "Show rates like 2 trapezoids per hexagon or 5 stickers per strip. Use drawings and tools to find how many in all.",
+      "description": "Show rates like 2 trapezoids per hexagon or 5 stickers per strip. Use pictures and tools to find how many in all.",
       "prerequisiteIds": ["g3-ratios-1-2-5-10"]
     },
     {
@@ -736,7 +737,7 @@
       "strand": "B",
       "expectationCodes": ["B1.1"],
       "title": "Read and build numbers to 100 000",
-      "description": "Read, write, and build numbers up to 100 000 in words, digits, and expanded form. Break them apart by place value, like 24 336 is 2 ten thousands, 4 thousands, 3 hundreds, 3 tens, and 6 ones.",
+      "description": "Read and build numbers up to 100 000 in words, digits, and expanded form. Break them apart by place value, like 24 336 is 2 ten thousands, 4 thousands, 3 hundreds, 3 tens, and 6 ones.",
       "prerequisiteIds": ["g4-whole-numbers-10000"]
     },
     {
@@ -777,7 +778,7 @@
       "expectationCodes": ["B1.5"],
       "title": "Read and compare hundredths",
       "description": "Read, show, compare, and order decimals like 3.25. The second digit after the dot counts hundredths, and 3.2 is the same as 3.20.",
-      "prerequisiteIds": ["g4-decimal-tenths", "g5-equivalent-fractions"]
+      "prerequisiteIds": ["g4-fraction-decimal-equivalence"]
     },
     {
       "id": "g5-round-decimals-tenth",
@@ -797,7 +798,7 @@
       "expectationCodes": ["B1.7"],
       "title": "Fractions, decimals, and percents",
       "description": "Show that a fraction, a decimal, and a percent can name the same amount, like 1/4, 0.25, and 25%. Percent means out of 100.",
-      "prerequisiteIds": ["g5-decimals-hundredths", "g4-fraction-decimal-equivalence"]
+      "prerequisiteIds": ["g5-decimals-hundredths", "g5-equivalent-fractions"]
     },
     {
       "id": "g5-operation-properties",
@@ -815,7 +816,7 @@
       "grade": "5",
       "strand": "B",
       "expectationCodes": ["B2.2"],
-      "title": "Times and divide facts to 12 × 12",
+      "title": "Times and divide facts to 144",
       "description": "Know all the times facts up to 12 × 12 and the divide facts that go with them. Know that zero times anything is zero.",
       "prerequisiteIds": ["g4-mult-div-facts-100"]
     },
@@ -839,7 +840,7 @@
       "grade": "5",
       "strand": "B",
       "expectationCodes": ["B2.4"],
-      "title": "Add and subtract big and decimal",
+      "title": "Add, subtract big numbers and decimals",
       "description": "Solve problems by adding and subtracting whole numbers up to 100 000 and decimals to hundredths. Line up the places, and trade when you need to.",
       "prerequisiteIds": ["g4-add-sub-10000", "g5-whole-numbers-100000", "g5-decimals-hundredths"]
     },
@@ -850,8 +851,8 @@
       "strand": "B",
       "expectationCodes": ["B2.5"],
       "title": "Add and subtract same-size fractions",
-      "description": "Add and subtract fractions that have the same bottom number, like 3/8 + 12/8. You are just adding or taking away pieces of the same size.",
-      "prerequisiteIds": ["g5-equivalent-fractions"]
+      "description": "Add and subtract fractions that have the same bottom number, like 3/8 + 2/8. You are just adding or taking away pieces of the same size.",
+      "prerequisiteIds": ["g4-count-unit-fractions"]
     },
     {
       "id": "g5-multiply-two-by-two-digit",
@@ -860,7 +861,7 @@
       "strand": "B",
       "expectationCodes": ["B2.6"],
       "title": "Multiply two-digit by two-digit",
-      "description": "Multiply numbers like 24 × 38 using a rectangle split into four parts. Then do it with the written method and see how the two match.",
+      "description": "Multiply numbers like 24 × 38 using a rectangle split into four parts. Then do it with the written method.",
       "prerequisiteIds": ["g4-multiply-by-one-digit", "g5-operation-properties"]
     },
     {
@@ -890,7 +891,7 @@
       "strand": "B",
       "expectationCodes": ["B2.9"],
       "title": "Equal ratios and rates",
-      "description": "Make ratios and rates that mean the same thing by scaling up or down, like 6 green to 1 yellow is 12 green to 2 yellow. Use tables and drawings to help.",
+      "description": "Make ratios and rates that mean the same thing by scaling up or down, like 6 green to 1 yellow is 12 green to 2 yellow. Use tables and pictures to help.",
       "prerequisiteIds": ["g4-whole-number-rates", "g4-mult-div-facts-100"]
     },
     {
@@ -900,7 +901,7 @@
       "strand": "B",
       "expectationCodes": ["B1.1"],
       "title": "Read and build numbers to 1 000 000",
-      "description": "Read, write, and build numbers up to one million in words, digits, and expanded form. Tell what each digit is worth, like the 5 in 527 910 is 500 000.",
+      "description": "Read and build numbers up to one million in words, digits, and expanded form. Tell what each digit is worth, like the 5 in 527 910 is 500 000.",
       "prerequisiteIds": ["g5-whole-numbers-100000"]
     },
     {
@@ -920,7 +921,7 @@
       "strand": "B",
       "expectationCodes": ["B1.4"],
       "title": "Read and build decimals to thousandths",
-      "description": "Read, write, and show decimals like 7.635 in words, digits, and expanded form. Compare and order them by looking at the biggest place that is different.",
+      "description": "Read and show decimals like 7.635 in words, digits, and expanded form. Compare and order them by looking at the biggest place that is different.",
       "prerequisiteIds": ["g5-decimals-hundredths"]
     },
     {
@@ -931,7 +932,7 @@
       "expectationCodes": ["B1.3"],
       "title": "Compare integers, decimals, and fractions",
       "description": "Put negative numbers, decimals, and fractions in order, even when they are mixed together. Use a number line and benchmarks like 0, one half, and 1.",
-      "prerequisiteIds": ["g6-integers", "g6-decimals-thousandths", "g5-compare-order-fractions"]
+      "prerequisiteIds": ["g6-integers", "g5-compare-order-fractions", "g6-fraction-decimal-match"]
     },
     {
       "id": "g6-round-decimals",
@@ -959,7 +960,7 @@
       "grade": "6",
       "strand": "B",
       "expectationCodes": ["B2.1"],
-      "title": "Rules and steps for solving problems",
+      "title": "Brackets and order of operations",
       "description": "Use rules like order, grouping, and splitting numbers to make problems easier. Solve problems with more than one step, using brackets and the right order of operations.",
       "prerequisiteIds": ["g5-operation-properties"]
     },
@@ -971,7 +972,7 @@
       "expectationCodes": ["B2.2"],
       "title": "Divisibility rules",
       "description": "Use quick tricks to tell if a number can be shared evenly by 2, 3, 4, 5, 6, 8, 9, or 10. For example, add up the digits to check for 3 or 9.",
-      "prerequisiteIds": ["g5-mult-div-facts-144", "g5-whole-numbers-100000"]
+      "prerequisiteIds": ["g5-mult-div-facts-144", "g5-whole-numbers-100000", "g2-even-odd"]
     },
     {
       "id": "g6-mental-percents",
@@ -989,7 +990,7 @@
       "grade": "6",
       "strand": "B",
       "expectationCodes": ["B2.4"],
-      "title": "Add and subtract whole and decimal numbers",
+      "title": "Add and subtract with decimals",
       "description": "Solve stories by adding and subtracting whole numbers and decimals. Guess the answer first by rounding, then find the exact answer and check that it makes sense.",
       "prerequisiteIds": ["g5-add-sub-100000-decimals", "g6-round-decimals"]
     },
@@ -1001,7 +1002,7 @@
       "expectationCodes": ["B2.5"],
       "title": "Add and subtract different-size fractions",
       "description": "Add and subtract fractions with different bottom numbers, like 1/2 + 3/4. Use fraction strips or a number line to make the pieces the same size.",
-      "prerequisiteIds": ["g5-add-sub-like-fractions"]
+      "prerequisiteIds": ["g5-add-sub-like-fractions", "g5-equivalent-fractions"]
     },
     {
       "id": "g6-prime-factors",
@@ -1011,7 +1012,7 @@
       "expectationCodes": ["B2.6"],
       "title": "Prime factors and factor trees",
       "description": "Tell if a number is prime or composite. Break a number into prime factors with a factor tree, like 56 = 2 × 2 × 2 × 7.",
-      "prerequisiteIds": ["g5-mult-div-facts-144"]
+      "prerequisiteIds": ["g6-divisibility-rules"]
     },
     {
       "id": "g6-multiply-by-tenths",
@@ -1039,8 +1040,8 @@
       "grade": "6",
       "strand": "B",
       "expectationCodes": ["B2.9"],
-      "title": "Multiply a whole number by a fraction",
-      "description": "Find 5 × 3/4 by thinking of 5 groups of three fourths. Use fraction strips or a number line, and write the answer as an improper fraction or mixed number.",
+      "title": "Multiply a whole by a fraction",
+      "description": "Find 5 × 3/4 by thinking of 5 groups of three fourths. Use fraction strips or a number line, and give the answer as an improper fraction or mixed number.",
       "prerequisiteIds": ["g5-whole-by-unit-fraction", "g5-equivalent-fractions"]
     },
     {
@@ -1049,7 +1050,7 @@
       "grade": "6",
       "strand": "B",
       "expectationCodes": ["B2.10"],
-      "title": "Divide a whole number by a fraction",
+      "title": "Divide a whole by a fraction",
       "description": "Find how many pieces like 3/4 fit into a whole number, such as 6 ÷ 3/4 = 8. Use pictures or rods to see the groups.",
       "prerequisiteIds": ["g6-multiply-whole-by-fraction"]
     },

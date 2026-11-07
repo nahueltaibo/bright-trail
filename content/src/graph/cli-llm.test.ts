@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ClaudeCliLlm, parseCliOutput, type RunCommand } from './cli-llm';
+import { ClaudeCliLlm, parseCliOutput, resolveCommand, type RunCommand } from './cli-llm';
 import type { LlmRequest } from './llm';
 
 const ok = JSON.stringify({ type: 'result', is_error: false, structured_output: { answer: 5 } });
@@ -81,5 +81,65 @@ describe('ClaudeCliLlm', () => {
     await expect(new ClaudeCliLlm(run).call(request)).rejects.toThrow(
       /claude-haiku-5-5, submit, exit 1: Claude CLI printed no JSON: \nNot logged in/,
     );
+  });
+});
+
+describe('resolveCommand', () => {
+  const lookup = (files: Record<string, string>, platform: NodeJS.Platform = 'win32') => ({
+    platform,
+    path: 'C:\\npm;C:\\bin',
+    exists: (file: string) => file in files,
+    read: (file: string) => files[file],
+    node: 'C:\\node\\node.exe',
+  });
+
+  it('leaves the command alone off Windows', () => {
+    expect(resolveCommand('claude', lookup({}, 'linux'))).toEqual({
+      command: 'claude',
+      prefix: [],
+    });
+  });
+
+  it('prefers an .exe on PATH', () => {
+    const files = { 'C:\\bin\\claude.exe': '' };
+    expect(resolveCommand('claude', lookup(files))).toEqual({
+      command: 'C:\\bin\\claude.exe',
+      prefix: [],
+    });
+  });
+
+  it('follows an npm shim to the .exe it runs', () => {
+    const files = {
+      'C:\\npm\\claude.cmd':
+        '"%dp0%\\node_modules\\@anthropic-ai\\claude-code\\bin\\claude.exe"   %*',
+    };
+    expect(resolveCommand('claude', lookup(files))).toEqual({
+      command: 'C:\\npm\\node_modules\\@anthropic-ai\\claude-code\\bin\\claude.exe',
+      prefix: [],
+    });
+  });
+
+  it('runs a shim script with node', () => {
+    const files = {
+      'C:\\npm\\claude.cmd':
+        '"%_prog%"  "%dp0%\\node_modules\\@anthropic-ai\\claude-code\\cli.js" %*',
+    };
+    expect(resolveCommand('claude', lookup(files))).toEqual({
+      command: 'C:\\node\\node.exe',
+      prefix: ['C:\\npm\\node_modules\\@anthropic-ai\\claude-code\\cli.js'],
+    });
+  });
+
+  it("throws on a shim it can't read", () => {
+    expect(() => resolveCommand('claude', lookup({ 'C:\\npm\\claude.cmd': 'claude %*' }))).toThrow(
+      'Set CLAUDE_BIN',
+    );
+  });
+
+  it('keeps an explicit path', () => {
+    expect(resolveCommand('D:\\tools\\claude.exe', lookup({}))).toEqual({
+      command: 'D:\\tools\\claude.exe',
+      prefix: [],
+    });
   });
 });

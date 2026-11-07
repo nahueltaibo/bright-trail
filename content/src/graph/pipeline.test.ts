@@ -4,6 +4,7 @@ import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 import { tinySources } from './fixtures';
 import { withDiskCache, type LlmClient, type LlmRequest } from './llm';
+import type { Override } from './overrides';
 import { buildGraph } from './pipeline';
 import { GENERATOR_MODEL, REVIEWER_MODEL, type GeneratedSkills, type Review } from './prompts';
 import { renderReport } from './report';
@@ -160,6 +161,52 @@ describe('buildGraph', () => {
       'Expectation B2.1 (Grade 1) has no skill',
     ]);
     expect(renderReport(build)).toContain("**1 problem left, so `skills.json` wasn't written.**");
+  });
+
+  it('applies overrides before pruning and checks, without repair calls', async () => {
+    const risky: GeneratedSkills = {
+      skills: [
+        { ...gen('k-count', ['A6.1']), description: 'Count out loud.' },
+        gen('k-add-to-5', ['A6.2'], ['k-count']),
+      ],
+    };
+    const llm = new FakeLlm({ generate: { K: [risky], '1': [g1Skills] } });
+    const overrides: Override[] = [
+      {
+        op: 'setDescription',
+        skillId: 'k-count',
+        description: 'What comes next?',
+        reason: 'r',
+      },
+      {
+        op: 'protectPrerequisite',
+        skillId: 'g1-add-to-10',
+        prerequisiteId: 'k-count',
+        reason: 'r',
+      },
+    ];
+    const build = await buildGraph(tinySources, llm, { overrides });
+
+    expect(build.problems).toEqual([]);
+    expect(llm.requests).toHaveLength(4);
+    expect(build.removedTransitive).toEqual([]);
+    expect(build.skills.find((s) => s.id === 'g1-add-to-10')?.prerequisiteIds).toContain('k-count');
+    expect(renderReport(build)).toContain('## Overrides Applied');
+  });
+
+  it('fails the build on content problems the overrides leave', async () => {
+    const risky: GeneratedSkills = {
+      skills: [
+        { ...gen('k-count', ['A6.1']), description: 'Count out loud.' },
+        gen('k-add-to-5', ['A6.2'], ['k-count']),
+      ],
+    };
+    const llm = new FakeLlm({ generate: { K: [risky], '1': [g1Skills] } });
+    const build = await buildGraph(tinySources, llm);
+    expect(llm.requests).toHaveLength(4);
+    expect(build.problems.map((p) => p.message)).toEqual([
+      'k-count: description says "out loud", which no tap, keypad, or number-line item can check',
+    ]);
   });
 
   it('rejects malformed model output', async () => {
