@@ -1,0 +1,17 @@
+<!-- @dsCard group="Parent screens" height=1920 width=1860 page subtitle="Skill tree: phone and tablet" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ScreenSkillTree — preview</title></head>
+<body style="margin:0">
+<div id="root" class=""></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(B.Board, { rows: [
+  [D('phone', 'List', h(S.SkillTree, {}), 'parent'), D('phone', 'List, scrolled', h(S.SkillTree, {}), 'parent', { scroll: 'end' })],
+  [D('tablet', 'Tree view', h(S.SkillTree, { view: 'graph', land: true }), 'parent')]
+] }));
+</script>
+</body>
+</html>

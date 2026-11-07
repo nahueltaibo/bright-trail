@@ -1,0 +1,14 @@
+<!-- @dsCard group="Screen boards" height=120 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Device — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-parent bt-pv bt-pv-col"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h('p', { className: 'bt-p-text' }, 'Device frames wrap the screen previews below: phone 390 × 844, phone landscape 844 × 390, tablet landscape 1194 × 834.'));
+</script>
+</body>
+</html>

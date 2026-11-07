@@ -1,0 +1,17 @@
+<!-- @dsCard group="Kid screens" height=1920 width=1860 page subtitle="Check and review: phone and tablet" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ScreenCheckReview — preview</title></head>
+<body style="margin:0">
+<div id="root" class=""></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(B.Board, { rows: [
+  [D('phone', 'Check: question 3 of 5', h(S.Tap, { progress: [2, 5] })), D('phone', 'Review: question 2 of 3', h(S.Tap, { progress: [1, 3], state: 'right' })), D('phone', 'Check passed', h(S.CheckEnd, { result: 'pass' })), D('phone', 'Check not passed', h(S.CheckEnd, { result: 'retry' }))],
+  [D('tablet', 'Check passed: the star lands', h(S.CheckEnd, { result: 'pass', land: true })), D('phone', 'Review passed', h(S.CheckEnd, { result: 'pass', kind: 'review' }))]
+] }));
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+<!-- @dsCard group="Parent layout" height=380 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ParentFrame — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-parent"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h('div', { style: { height: '360px' } }, h(B.ParentFrame, { back: 'Grown-ups', title: 'Maya' }, h(B.Section, { title: 'Progress' }, h(B.ParentRow, { title: 'Skill tree', chevron: true }), h(B.ParentRow, { title: 'Placement review', chevron: true })))));
+</script>
+</body>
+</html>

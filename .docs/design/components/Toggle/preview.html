@@ -1,0 +1,15 @@
+<!-- @dsCard group="Parent controls" height=170 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Toggle — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-parent bt-pv bt-pv-col" style="max-width:460px"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h(B.Toggle, { label: 'Reading mode', hint: 'Narration starts off. For kids who read on their own.' }),
+  h(B.Toggle, { label: 'Dyslexia-friendly font', checked: true })));
+</script>
+</body>
+</html>

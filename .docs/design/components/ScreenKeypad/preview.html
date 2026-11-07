@@ -1,0 +1,18 @@
+<!-- @dsCard group="Kid screens" height=2840 width=1860 page subtitle="Number keypad item: phone and tablet" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ScreenKeypad — preview</title></head>
+<body style="margin:0">
+<div id="root" class=""></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(B.Board, { rows: [
+  [D('phone', 'Typing', h(S.Keypad, { value: '7' })), D('phone', 'Decimal answer', h(S.Keypad, { decimal: true, value: '0.7' })), D('phone', 'Answered wrong', h(S.Keypad, { state: 'wrong' }))],
+  [D('phone-land', 'Typing: display beside keys', h(S.Keypad, { kind: 'phone-land', value: '7' })), D('phone-land', 'Answered right', h(S.Keypad, { kind: 'phone-land', state: 'right' }))],
+  [D('tablet', 'Answered right', h(S.Keypad, { kind: 'tablet', state: 'right' }))]
+] }));
+</script>
+</body>
+</html>

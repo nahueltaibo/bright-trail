@@ -1,0 +1,15 @@
+<!-- @dsCard group="Answering" height=280 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>FeedbackPanel — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-kid bt-pv bt-pv-col"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, h(B.FeedbackPanel, { result: 'hit' }),
+  h(B.FeedbackPanel, { result: 'miss', why: 'Count the five, then two more: 5, 6, 7.' })));
+</script>
+</body>
+</html>

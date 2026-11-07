@@ -1,0 +1,15 @@
+<!-- @dsCard group="Story" height=140 -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ProgressDots — preview</title></head>
+<body style="margin:0">
+<div id="root" class="bt-kid bt-pv bt-pv-col"></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(React.Fragment, null, cell('story: card 3 of 6', h(B.ProgressDots, { total: 6, current: 2 })),
+  cell('check: question 3 of 5', h(B.ProgressDots, { total: 5, current: 2, variant: 'steps', noun: 'Question' }))));
+</script>
+</body>
+</html>

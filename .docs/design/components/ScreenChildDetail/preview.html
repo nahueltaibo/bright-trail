@@ -1,0 +1,17 @@
+<!-- @dsCard group="Parent screens" height=1920 width=1860 page subtitle="Child detail: phone and tablet" -->
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>ScreenChildDetail — preview</title></head>
+<body style="margin:0">
+<div id="root" class=""></div>
+<script>
+var B = window.BrightTrail, h = React.createElement, S = B.Screens;
+function cell(label, el) { return h('div', { className: 'bt-pv-cell' }, el, h('span', { className: 'bt-pv-label' }, label)); }
+function D(kind, label, el, zone, extra) { return h(B.Device, Object.assign({ key: kind + label, kind: kind, label: label, zone: zone }, extra || {}), el); }
+ReactDOM.createRoot(document.getElementById('root')).render(h(B.Board, { rows: [
+  [D('phone', 'Top', h(S.ChildDetail, {}), 'parent'), D('phone', 'Delete: confirm open', h(S.ChildDetail, { confirm: true }), 'parent', { scroll: 'end' })],
+  [D('tablet', 'Delete: confirm open', h(S.ChildDetail, { confirm: true, land: true }), 'parent')]
+] }));
+</script>
+</body>
+</html>
