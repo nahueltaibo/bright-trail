@@ -8,4 +8,5 @@ export * from './item';
 export * from './mastery';
 export * from './nugget';
 export * from './skill';
+export * from './speech';
 export * from './visual';
