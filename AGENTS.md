@@ -8,7 +8,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - The design system lives in [.docs/design/](.docs/design/). Each component has a `README.md` and a `preview.html`. Tokens are in `tokens.json`.
 - `content/out/skills.json` holds the generated K–6 skill graph. `content/out/bundle.json` holds the generated stories and items, scoped to the targets in `content/bundle-scope.json` plus their prerequisites. Generation and its checks live in `content/src/generate/`.
 - The app plays `content/out/bundle.json` through `loadBundle()` in `app/src/content/loadBundle.ts`.
-- Family devices run a release APK from `npm run android:build:family`. See [docs/install-android.md](docs/install-android.md).
+- Family devices run a release-signed APK from `npm run android:build:family` and get JS and content changes over the air from `npm run ota:publish`. See [docs/install-android.md](docs/install-android.md).
 
 ## Code Map
 
@@ -39,4 +39,5 @@ To see the app, run `npm run dev` and open `http://localhost:8081`. Drive it wit
 - **ESLint 10.** `eslint-plugin-react` can't auto-detect the React version, so `eslint.config.mjs` pins it. Bump it there when React changes.
 - **Curriculum text.** `content/sources/` stays byte-for-byte as fetched. Prettier ignores it. Don't reformat it.
 - **LLM calls.** `npm run content:graph` and `npm run content:generate` use the Claude Code CLI in headless mode by default. Responses cache in `content/cache/llm/`, which is committed, so reruns are free unless a prompt changed.
+- **OTA updates.** `runtimeVersion` uses the `fingerprint` policy, so native or app-config changes need a new family APK. `app.config.js` turns updates off when `EXPO_PUBLIC_E2E=1`.
 - **Android e2e.** Windows builds need CMake 3.31+ and long paths on. See [e2e/README.md](e2e/README.md).
