@@ -118,6 +118,21 @@ describe('useAutoNarration', () => {
   });
 });
 
+describe('useNarration', () => {
+  it('reads math formatting as words', async () => {
+    await render(
+      <NarrationProvider>
+        <SpeakerButton text="What is 3/4 of 24 336?" />
+      </NarrationProvider>,
+    );
+    await fireEvent.press(screen.getByLabelText('Hear it again'));
+    await settle();
+    expect(spoken()).toEqual([
+      'What is three fourths of twenty-four thousand three hundred thirty-six?',
+    ]);
+  });
+});
+
 describe('SpeakerButton', () => {
   it('speaks on tap even in reading mode', async () => {
     mockRouteParams = { childId: 'reader' };

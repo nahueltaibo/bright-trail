@@ -64,7 +64,9 @@ export function StoryCardViewer({ nugget, narrate, onFlag, onDone }: StoryCardVi
   return (
     <View style={styles.screen}>
       <TopBar
-        left={<ReplayButton onPress={() => narrateRef.current?.([card.narration])} />}
+        left={
+          <ReplayButton onPress={() => narrateRef.current?.([card.narration], { replay: true })} />
+        }
         right={
           <FlagButton
             key={index}

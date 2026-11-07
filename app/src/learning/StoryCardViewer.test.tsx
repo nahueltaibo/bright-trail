@@ -28,7 +28,7 @@ describe('StoryCardViewer', () => {
     await render(<StoryCardViewer nugget={nugget} narrate={narrate} />);
     await fireEvent.press(screen.getByLabelText('Say it again'));
     expect(narrate).toHaveBeenCalledTimes(2);
-    expect(narrate).toHaveBeenLastCalledWith([nugget.cards[0].narration]);
+    expect(narrate).toHaveBeenLastCalledWith([nugget.cards[0].narration], { replay: true });
   });
 
   it('turns "next" into "done" on the last card', async () => {

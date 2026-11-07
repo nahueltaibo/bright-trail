@@ -14,7 +14,8 @@
  * loses focus or unmounts. The current child comes from the `childId` route param; pass
  * `{ childId }` to override. With no child (kid home), auto-narration is on.
  *
- * To read a question then each choice: `[item.narration, ...item.choices.map(choiceText)]`.
+ * Item screens read a question through `questionSpeech` in `learning/`, which adds the choices
+ * only when the item narration doesn't already name them.
  * `speak`, `narrate`, `replay` and `stop` keep their identity across renders.
  */
 export {

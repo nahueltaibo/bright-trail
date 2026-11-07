@@ -2,6 +2,7 @@ import type { Choice, TapItem } from '@bright-trail/shared';
 import { useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
 import { ItemFrame, useItemAttempt } from './ItemFrame';
+import { questionSpeech } from './speech';
 import { colors, fontSizeFor, formatNumber, MIN_TAP, useLayout } from './theme';
 import type { ItemViewProps } from './types';
 import { VisualView } from './VisualView';
@@ -44,9 +45,9 @@ export type TapItemViewProps = ItemViewProps<TapItem> & {
 export function TapItemView(props: TapItemViewProps) {
   const { item, shuffleSeed } = props;
   const { scale, landscape, tablet } = useLayout();
-  const { outcome, answer, replay } = useItemAttempt(props);
   const [seed] = useState(() => shuffleSeed ?? Math.random().toString(36).slice(2));
   const choices = useMemo(() => shuffleChoices(item.choices, seed), [item.choices, seed]);
+  const { outcome, answer, replay } = useItemAttempt(props, questionSpeech(item, choices));
   const [tileWidth, setTileWidth] = useState(0);
 
   const twoUp = choices.length === 2;
