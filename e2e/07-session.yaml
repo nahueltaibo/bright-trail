@@ -1,8 +1,9 @@
 appId: com.nahueltaibo.brighttrail
 name: Session with placement
 ---
-# A child born six years back is in Grade 1, so placement starts on the sample's Grade 1 skills.
-# Every answer here is wrong, which walks placement down to Kindergarten.
+# A child born six years back is in Grade 1. Every answer here is wrong, which walks placement
+# from Grade 1 down to Kindergarten. The wrong choices are pinned to bundle 2026.11.07-53: after a
+# content rebuild, replay placement with all-wrong answers and update them.
 - runFlow: subflows/launch-clean.yaml
 - runFlow: subflows/set-pin.yaml
 - runFlow:
@@ -15,53 +16,59 @@ name: Session with placement
 - assertVisible: 0 stars on your trail
 - tapOn: Start
 
-# Placement, Grade 1: numbers to 50.
+# Placement, Grade 1: fair shares, a tap item then a keypad item.
 - extendedWaitUntil:
-    visible: 10, 20, 30, 40, \?
+    visible: This looks wrong
     timeout: 10000
+- tapOn: '3'
+- assertVisible: Good try!
+- tapOn: Next
 - tapOn: '1'
 - tapOn: Check my answer
 - assertVisible: Good try!
 - tapOn: Next
-- assertVisible: Which is thirty-four\?
-- tapOn: '43'
-- assertVisible: Good try!
-- tapOn: Next
 
 # Quit on the third item, flag it, and come back: placement resumes on the same item.
-- assertVisible: 5 \+ 3 = \?
+- assertVisible: 7 \+ 2 = \?
 - tapOn: This looks wrong
 - assertVisible: Thanks for telling us
 - tapOn: Stop for now
 - assertVisible: Hi, Maya!
 - tapOn: Start
 - extendedWaitUntil:
-    visible: 5 \+ 3 = \?
+    visible: 7 \+ 2 = \?
     timeout: 10000
 
-# Placement, Grade 1: adding to 10. Then Kindergarten: counting to 20.
-- tapOn: '1'
-- tapOn: Check my answer
-- tapOn: Next
-- assertVisible: 4 \+ 2
-- tapOn: Five apples
-- tapOn: Next
-- assertVisible: 14, \?
-- tapOn: '1'
-- tapOn: Check my answer
-- tapOn: Next
-- assertVisible: How many fish\?
+# Placement, Grade 1: adding to 10. Then Kindergarten: counting, then reading numbers.
 - tapOn: '8'
+- assertVisible: Good try!
+- tapOn: Next
+- tapOn: '4'
+- assertVisible: Good try!
+- tapOn: Next
+- tapOn: '15'
+- assertVisible: Good try!
+- tapOn: Next
+- tapOn: '7'
+- assertVisible: Good try!
+- tapOn: Next
+- tapOn: '10'
+- assertVisible: Good try!
+- tapOn: Next
+- tapOn: '3'
+- assertVisible: Good try!
 - tapOn: Next
 
 # Placement is done, so the first lesson starts: the story, then its check.
-- assertVisible: Card 1 of 5
-- tapOn: Next
-- tapOn: Next
-- tapOn: Next
-- tapOn: Next
+- assertVisible: Card 1 of \d+
+- repeat:
+    while:
+      notVisible: Done
+    commands:
+      - tapOn: Next
 - tapOn: Done
-- assertVisible: Find 12
+- assertNotVisible: Card \d+ of \d+
+- assertVisible: This looks wrong
 - tapOn: Stop for now
 - assertVisible: Hi, Maya!
 
@@ -72,8 +79,7 @@ name: Session with placement
 - tapOn: Maya, .*
 - tapOn: Placement review
 - assertVisible: Placed at Kindergarten\.
-- assertVisible: 3 placed skills
-- assertVisible: Count to 20
+- assertVisible: 4 placed skills
 - assertVisible: .*0 of 2 right
 - tapOn: ‹ Back
 - tapOn: ‹ Back

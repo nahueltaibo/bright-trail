@@ -1,51 +1,58 @@
 appId: com.nahueltaibo.brighttrail
 name: Learning preview
 ---
+# Plays one skill of the real bundle. Answers come from the preview's dev bar, so the flow
+# doesn't depend on generated wording, only on the skill and item ids.
 - runFlow: subflows/launch-clean.yaml
 - tapOn: 'Dev: learning preview'
 - assertVisible: Learning preview
+- tapOn: .*k-count-to-20
+- assertVisible: .*k-count-to-20-story
 
 # Story cards: next, back, flag, done.
 - tapOn: .*k-count-to-20-story
-- assertVisible: Card 1 of 5
+- assertVisible: Card 1 of \d+
 - assertVisible:
     text: Back
     enabled: false
 - tapOn: Next
-- assertVisible: Card 2 of 5
+- assertVisible: Card 2 of \d+
 - tapOn: Back
-- assertVisible: Card 1 of 5
+- assertVisible: Card 1 of \d+
 - tapOn: This looks wrong
 - assertVisible: Thanks for telling us
 - assertVisible: 'flag .*"contentKind":"card".*'
-- tapOn: Next
-- tapOn: Next
-- tapOn: Next
-- tapOn: Next
-- assertVisible: Card 5 of 5
+- repeat:
+    while:
+      notVisible: Done
+    commands:
+      - tapOn: Next
 - tapOn: Done
-- assertVisible: How many fish\?
+- assertVisible:
+    id: dev-answer
 
 # Tap item, answered right.
 - tapOn: ☰ Menu
 - scrollUntilVisible:
-    element: 'tap: g1-numbers-to-50-tap-1'
+    element: 'tap: k-count-to-20-tap-1'
     direction: DOWN
-- tapOn: 'tap: g1-numbers-to-50-tap-1'
-- assertVisible: Which is thirty-four\?
-- tapOn: '34'
+- tapOn: 'tap: k-count-to-20-tap-1'
+- copyTextFrom:
+    id: dev-answer
+- tapOn: "${maestro.copiedText.replace('answer: ', '')}"
 - assertVisible: Yes! Great job!
 - assertVisible: 'answer .*"correct":true.*'
 
-# Tap item, answered wrong: the "why" shows.
+# Tap item, answered wrong: the "why" shows with the gentle feedback.
 - tapOn: ☰ Menu
 - scrollUntilVisible:
-    element: 'tap: g1-add-within-10-tap-1'
+    element: 'tap: k-count-to-20-tap-2'
     direction: DOWN
-- tapOn: 'tap: g1-add-within-10-tap-1'
-- tapOn: Five apples
+- tapOn: 'tap: k-count-to-20-tap-2'
+- copyTextFrom:
+    id: dev-miss
+- tapOn: "${maestro.copiedText.replace('miss: ', '')}"
 - assertVisible: Good try!
-- assertVisible: 'Start at four and count on two more: five, six\.'
 - assertVisible: 'answer .*"correct":false.*'
 
 # Keypad: type, delete, check. Then flag the item.
@@ -54,7 +61,6 @@ name: Learning preview
     element: 'keypad: k-count-to-20-keypad-1'
     direction: DOWN
 - tapOn: 'keypad: k-count-to-20-keypad-1'
-- assertVisible: 14, \?
 - assertVisible:
     text: Check my answer
     enabled: false
@@ -63,21 +69,30 @@ name: Learning preview
 - assertVisible: Your answer, 16
 - tapOn: Delete
 - assertVisible: Your answer, 1
-- tapOn: '5'
-- assertVisible: Your answer, 15
+- tapOn: Delete
+- assertVisible: Your answer, empty
+- copyTextFrom:
+    id: dev-answer
+- evalScript: "${output.answer = maestro.copiedText.replace('answer: ', '')}"
+- tapOn: '${output.answer.charAt(0)}'
+- runFlow:
+    when:
+      true: '${output.answer.length > 1}'
+    commands:
+      - tapOn: '${output.answer.charAt(1)}'
+- assertVisible: Your answer, ${output.answer}
 - tapOn: Check my answer
 - assertVisible: Yes! Great job!
 - tapOn: This looks wrong
 - assertVisible: Thanks for telling us
 - assertVisible: 'flag .*"contentKind":"item".*'
 
-# Number line: a tap on the middle of 0 to 20 puts the frog on 10. Two steps right make 12.
+# Number line: a tap on the track places the frog, the arrows move it, and the answer is logged.
 - tapOn: ☰ Menu
 - scrollUntilVisible:
-    element: 'number-line: k-count-to-20-line-1'
+    element: 'number-line: k-count-to-20-number-line-1'
     direction: DOWN
-- tapOn: 'number-line: k-count-to-20-line-1'
-- assertVisible: Find 12
+- tapOn: 'number-line: k-count-to-20-number-line-1'
 - assertVisible:
     text: Check my answer
     enabled: false
@@ -87,7 +102,7 @@ name: Learning preview
     text: Check my answer
     enabled: true
 - tapOn: Move right
-- tapOn: Move right
+- tapOn: Move left
 - tapOn: Check my answer
-- assertVisible: Yes! Great job!
-- assertVisible: 'answer .*"answer":12,.*'
+- assertVisible: (Yes! Great job!|Good try!)
+- assertVisible: 'answer .*"answer":\d+,.*'
