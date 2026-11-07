@@ -5,6 +5,7 @@ import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { getAvatar } from '../../../avatars';
 import { loadBundle } from '../../../content/loadBundle';
+import { SpeakerButton, useAutoNarration } from '../../../narration';
 import { useStorage } from '../../../storage/StorageProvider';
 
 /** Per-child home. Placeholder until A6 puts the session and trail map here. */
@@ -19,6 +20,14 @@ export default function ChildHomeScreen() {
     loadBundle().then(setBundle);
   }, [repo, childId]);
 
+  const greeting =
+    child === undefined
+      ? null
+      : child
+        ? `Hi, ${child.firstName}! Your trail is coming soon.`
+        : 'This profile is gone. Tap the house to go back.';
+  useAutoNarration(greeting);
+
   if (child === undefined) return null;
 
   return (
@@ -32,6 +41,7 @@ export default function ChildHomeScreen() {
         >
           <Text style={styles.back}>🏠</Text>
         </Pressable>
+        {greeting && <SpeakerButton text={greeting} size={72} />}
       </View>
       <View style={styles.body}>
         {child ? (
@@ -54,7 +64,7 @@ export default function ChildHomeScreen() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: '#FFFBF0' },
-  topBar: { flexDirection: 'row', padding: 16 },
+  topBar: { flexDirection: 'row', justifyContent: 'space-between', padding: 16 },
   back: { fontSize: 40 },
   body: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 16, padding: 24 },
   avatar: { fontSize: 120 },

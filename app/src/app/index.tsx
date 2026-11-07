@@ -4,7 +4,11 @@ import { useCallback, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProfilePicker } from '../components/ProfilePicker';
+import { SpeakerButton, useAutoNarration } from '../narration';
 import { useStorage } from '../storage/StorageProvider';
+
+const EMPTY_MESSAGE = 'Ask a grown-up to add you.';
+const PICK_MESSAGE = "Who's playing? Tap your picture.";
 
 /** Kid home: pick who's playing. */
 export default function ProfilePickerScreen() {
@@ -18,9 +22,13 @@ export default function ProfilePickerScreen() {
   // Reload on focus so children added in the parent area show up on return.
   useFocusEffect(reload);
 
+  const message = profiles === null ? null : profiles.length > 0 ? PICK_MESSAGE : EMPTY_MESSAGE;
+  useAutoNarration(message);
+
   return (
     <SafeAreaView style={styles.screen}>
       <View style={styles.topBar}>
+        {message ? <SpeakerButton text={message} size={72} /> : <View />}
         <Link href="/parent" asChild>
           <Pressable accessibilityRole="button" accessibilityLabel="Parent area" hitSlop={12}>
             <Text style={styles.lock}>🔒</Text>
@@ -35,7 +43,7 @@ export default function ProfilePickerScreen() {
             onPick={(p) => router.push({ pathname: '/child/[childId]', params: { childId: p.id } })}
           />
         ) : (
-          profiles && <Text style={styles.empty}>Ask a grown-up to add you.</Text>
+          profiles && <Text style={styles.empty}>{EMPTY_MESSAGE}</Text>
         )}
 
         {__DEV__ && (
@@ -52,7 +60,12 @@ export default function ProfilePickerScreen() {
 
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: '#FFFBF0' },
-  topBar: { flexDirection: 'row', justifyContent: 'flex-end', padding: 16 },
+  topBar: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    padding: 16,
+  },
   lock: { fontSize: 28, opacity: 0.6 },
   body: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 32, padding: 24 },
   empty: { fontSize: 22, color: '#5A4A1F', textAlign: 'center' },
