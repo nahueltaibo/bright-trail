@@ -443,3 +443,39 @@ describe('reviews', () => {
     );
   });
 });
+
+describe('skipping skills', () => {
+  const graph = createSkillGraph([
+    { id: 'k-first', grade: 'K', prerequisiteIds: [] },
+    { id: 'g1-second', grade: '1', prerequisiteIds: [] },
+  ]);
+  const start = () => createLearnerState('mia', graph, 'K', `${DAY}T09:00:00Z`);
+
+  it('passes over a skipped lesson, and is done when only skipped ones remain', () => {
+    expect(nextStep(start(), graph, DAY, { skip: new Set(['k-first']) })).toEqual({
+      kind: 'lesson',
+      skillId: 'g1-second',
+    });
+    expect(nextStep(start(), graph, DAY, { skip: new Set(['k-first', 'g1-second']) })).toEqual({
+      kind: 'done',
+    });
+  });
+
+  it('passes over a skipped review and a skipped probe', () => {
+    const due = teach(start(), graph, 'k-first', PASS);
+    expect(nextStep(due, graph, '2026-11-08').kind).toBe('review');
+    expect(nextStep(due, graph, '2026-11-08', { skip: new Set(['k-first']) })).toEqual({
+      kind: 'lesson',
+      skillId: 'g1-second',
+    });
+
+    const state = start();
+    const probing: LearnerState = {
+      ...state,
+      skills: { ...state.skills, 'k-first': { ...state.skills['k-first'], status: 'assumed' } },
+      walkBack: { probes: ['k-first'], targets: [] },
+    };
+    expect(nextStep(probing, graph, DAY).kind).toBe('probe');
+    expect(nextStep(probing, graph, DAY, { skip: new Set(['k-first']) }).kind).toBe('lesson');
+  });
+});

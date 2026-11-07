@@ -20,6 +20,7 @@ describe('migrate', () => {
       'children',
       'flags',
       'mastery',
+      'placement',
       'settings',
     ]);
     expect(await userVersion(db)).toBe(SCHEMA_VERSION);
@@ -74,6 +75,18 @@ describe('migrate', () => {
     expect(await db.getAllAsync('SELECT content_id, resolved_at FROM flags', [])).toEqual([
       { content_id: 'g1-add-within-10-item-3', resolved_at: null },
     ]);
+    expect(await userVersion(db)).toBe(SCHEMA_VERSION);
+  });
+
+  it('upgrades a version 3 database with no placement for existing children', async () => {
+    const db = openNodeSqliteDatabase(':memory:');
+    await migrate(db, MIGRATIONS.slice(0, 3));
+    await db.runAsync(
+      "INSERT INTO children VALUES ('maya', 'Maya', '2020-03-01', NULL, 'fox', 0, NULL)",
+      [],
+    );
+    await migrate(db);
+    expect(await db.getAllAsync('SELECT child_id FROM placement', [])).toEqual([]);
     expect(await userVersion(db)).toBe(SCHEMA_VERSION);
   });
 

@@ -10,16 +10,20 @@ import {
   MISS_TEXT,
   useLayout,
 } from './theme';
+import { questionSpeech } from './speech';
 import type { AnswerResult, ItemViewProps } from './types';
 import { FitVisual } from './VisualView';
 
 export type Outcome = { answer: string | number; correct: boolean };
 
 /**
- * Timing, replays, and narration shared by every item type. Narrates the question on mount.
+ * Timing, replays, and narration shared by every item type. Narrates `question` on mount.
  * Callers should key the item view by item id so a new item starts fresh.
  */
-export function useItemAttempt({ item, narrate, onAnswer }: ItemViewProps) {
+export function useItemAttempt(
+  { item, narrate, onAnswer }: ItemViewProps,
+  question: string[] = questionSpeech(item),
+) {
   const [outcome, setOutcome] = useState<Outcome | null>(null);
   const startedAt = useRef(0);
   const replays = useRef(0);
@@ -29,6 +33,7 @@ export function useItemAttempt({ item, narrate, onAnswer }: ItemViewProps) {
   // Latest callbacks in refs, so an inline `narrate` prop doesn't re-narrate every render.
   const narrateRef = useRef(narrate);
   const onAnswerRef = useRef(onAnswer);
+  const questionRef = useRef(question);
   useEffect(() => {
     narrateRef.current = narrate;
     onAnswerRef.current = onAnswer;
@@ -36,13 +41,13 @@ export function useItemAttempt({ item, narrate, onAnswer }: ItemViewProps) {
 
   useEffect(() => {
     startedAt.current = Date.now();
-    lastSpoken.current = [item.narration];
+    lastSpoken.current = questionRef.current;
     narrateRef.current?.(lastSpoken.current);
   }, [item.id, item.narration]);
 
   const replay = () => {
     if (!answered.current) replays.current += 1;
-    narrateRef.current?.(lastSpoken.current);
+    narrateRef.current?.(lastSpoken.current, { replay: true });
   };
 
   /** Locks the item, speaks the feedback, and reports the result. `lead` is said first. */

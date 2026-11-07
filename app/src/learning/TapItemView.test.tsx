@@ -76,13 +76,13 @@ describe('TapItemView', () => {
 
     await fireEvent.press(screen.getByLabelText('Say it again'));
     await fireEvent.press(screen.getByLabelText('Say it again'));
-    expect(narrate).toHaveBeenLastCalledWith([fishCount.narration]);
+    expect(narrate).toHaveBeenLastCalledWith([fishCount.narration], { replay: true });
     await fireEvent.press(screen.getByLabelText('6'));
     await fireEvent.press(screen.getByLabelText('Say it again'));
 
     expect(onAnswer).toHaveBeenCalledWith(expect.objectContaining({ replays: 2 }));
     // After the answer, replay repeats the feedback.
-    expect(narrate).toHaveBeenLastCalledWith(['6', MISS_TEXT, fishCount.why]);
+    expect(narrate).toHaveBeenLastCalledWith(['6', MISS_TEXT, fishCount.why], { replay: true });
   });
 
   it('draws picture choices and speaks their labels', async () => {
@@ -90,6 +90,10 @@ describe('TapItemView', () => {
     const onAnswer = jest.fn();
     await render(<TapItemView item={applePictures} narrate={narrate} onAnswer={onAnswer} />);
 
+    // The narration doesn't name the pictures, so their labels follow it.
+    const [question] = narrate.mock.calls[0];
+    expect(question[0]).toBe(applePictures.narration);
+    expect(question.slice(1).sort()).toEqual(['Five apples', 'Six apples']);
     expect(screen.getByLabelText('5 🍎')).toBeTruthy();
     await fireEvent.press(screen.getByLabelText('Six apples'));
 

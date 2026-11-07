@@ -1,4 +1,4 @@
-import { localClock, type ChildProfile } from '@bright-trail/shared';
+import type { ChildProfile } from '@bright-trail/shared';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';
@@ -6,26 +6,37 @@ import { loadBundle } from '../../../../content/loadBundle';
 import { StateBadge } from '../../../../parent/components/StateBadge';
 import { ParentScreen, Section, styles as ui } from '../../../../parent/components/ui';
 import { gradeLabel } from '../../../../parent/grades';
-import { placedSkills, type PlacedSkill } from '../../../../parent/skillTree';
+import { placementResults, type PlacementResultRow } from '../../../../parent/skillTree';
+import type { StoredPlacement } from '../../../../storage/repository';
 import { useStorage } from '../../../../storage/StorageProvider';
 
-/** The skills placement gave a state to, for the parent's spot-check of 10. */
+function placedLine(placement: StoredPlacement | null): string {
+  if (!placement) return 'Placement hasn’t run yet.';
+  if (!placement.finishedAt) return 'Placement is still going. It continues next session.';
+  return placement.placedGrade
+    ? `Placed at ${gradeLabel(placement.placedGrade)}.`
+    : 'Placed above every grade in the content.';
+}
+
+/** What placement found for each skill it asked about, for the parent's spot-check of 10. */
 export default function PlacementReviewScreen() {
   const { childId } = useLocalSearchParams<{ childId: string }>();
   const repo = useStorage();
   const [child, setChild] = useState<ChildProfile | null>(null);
-  const [rows, setRows] = useState<PlacedSkill[] | null>(null);
+  const [placement, setPlacement] = useState<StoredPlacement | null>(null);
+  const [rows, setRows] = useState<PlacementResultRow[] | null>(null);
 
   useEffect(() => {
     (async () => {
-      const [profile, bundle, mastery, attempts] = await Promise.all([
+      const [profile, bundle, saved, attempts] = await Promise.all([
         repo.children.get(childId),
         loadBundle(),
-        repo.mastery.listForChild(childId),
+        repo.placement.get(childId),
         repo.attempts.listForChild(childId),
       ]);
       setChild(profile);
-      setRows(placedSkills(bundle.skills, mastery, attempts, localClock().today));
+      setPlacement(saved);
+      setRows(saved ? placementResults(bundle.skills, saved.state, attempts) : []);
     })();
   }, [repo, childId]);
 
@@ -36,23 +47,18 @@ export default function PlacementReviewScreen() {
           Pick 10 skills and check each against what you know of your child. The bar is agreeing on
           8 of 10.
         </Text>
+        {rows && <Text style={ui.text}>{placedLine(placement)}</Text>}
       </Section>
       <Section title={rows ? `${rows.length} placed skills` : 'Placed skills'}>
-        {rows?.length === 0 && <Text style={ui.muted}>Placement hasn’t run yet.</Text>}
-        {rows?.map(({ skill, state, placementAnswered, placementCorrect }) => (
+        {rows?.map(({ skill, passed, answered, correct }) => (
           <View key={skill.id} style={ui.row}>
             <View style={{ flex: 1 }}>
               <Text style={ui.text}>{skill.title}</Text>
               <Text style={ui.muted}>
-                {gradeLabel(skill.grade)} ·{' '}
-                {placementAnswered > 0
-                  ? `${placementCorrect} of ${placementAnswered} right in placement`
-                  : state === 'assumed'
-                    ? 'Not asked, assumed from grade'
-                    : 'No placement items'}
+                {gradeLabel(skill.grade)} · {correct} of {answered} right
               </Text>
             </View>
-            <StateBadge state={state} />
+            <StateBadge state={passed ? 'mastered' : 'gap'} />
           </View>
         ))}
       </Section>

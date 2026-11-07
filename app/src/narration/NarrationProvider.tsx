@@ -1,3 +1,4 @@
+import { toSpeech } from '@bright-trail/shared';
 import { useFocusEffect, useLocalSearchParams } from 'expo-router';
 import {
   createContext,
@@ -34,7 +35,7 @@ export type Narration = {
   /** True when reading mode is off, or there's no current child (kid home). */
   autoNarrate: boolean;
   isSpeaking: boolean;
-  /** Auto-narration: speaks only when `autoNarrate` is true. */
+  /** Auto-narration: speaks only when `autoNarrate` is true. Every text goes through `toSpeech`. */
   narrate(texts: string | readonly string[]): void;
   /** Explicit, for a tap: always speaks, even in reading mode. */
   speak(texts: string | readonly string[]): void;
@@ -92,9 +93,9 @@ export function useNarration(options: NarrationOptions = {}): Narration {
   const actions = useMemo(
     () => ({
       narrate: (texts: string | readonly string[]) => {
-        if (autoNarrate) narrator.speak(texts, owner);
+        if (autoNarrate) narrator.speak(spoken(texts), owner);
       },
-      speak: (texts: string | readonly string[]) => narrator.speak(texts, owner),
+      speak: (texts: string | readonly string[]) => narrator.speak(spoken(texts), owner),
       replay: () => narrator.replay(owner),
       stop: () => narrator.stop(),
     }),
@@ -103,6 +104,10 @@ export function useNarration(options: NarrationOptions = {}): Narration {
 
   return { ready, autoNarrate, isSpeaking, ...actions };
 }
+
+/** Math formatting as words, e.g. "3/4" as "three fourths", so the device voice reads it right. */
+const spoken = (texts: string | readonly string[]) =>
+  (typeof texts === 'string' ? [texts] : texts).map(toSpeech);
 
 function useNarrator(): Narrator {
   const narrator = useContext(NarrationContext);

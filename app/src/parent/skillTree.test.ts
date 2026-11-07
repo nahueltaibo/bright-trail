@@ -1,7 +1,7 @@
 import { parseContentBundle, type Attempt, type MasteryState } from '@bright-trail/shared';
 import sample from '@bright-trail/shared/fixtures/sample-bundle.json';
 import { describeFlag } from './flagText';
-import { displayState, groupSkillsByGrade, placedSkills } from './skillTree';
+import { displayState, groupSkillsByGrade, placementResults } from './skillTree';
 
 const bundle = parseContentBundle(sample);
 const TODAY = '2026-11-06';
@@ -48,39 +48,49 @@ describe('groupSkillsByGrade', () => {
   });
 });
 
-describe('placedSkills', () => {
-  it('lists skills placement set, with the placement tally for the ones it asked about', () => {
-    const attempt = (skillId: string, correct: boolean, phase: Attempt['phase']): Attempt => ({
-      childId: 'maya',
-      skillId,
-      itemId: `${skillId}-item-1`,
-      answer: 1,
-      correct,
-      timeToAnswerMs: 1000,
-      narrationReplays: 0,
-      sessionId: 's1',
-      phase,
-      timestamp: '2026-11-06T14:30:00Z',
-    });
-    const rows = placedSkills(
+describe('placementResults', () => {
+  const attempt = (itemId: string, correct: boolean, phase: Attempt['phase']): Attempt => ({
+    childId: 'maya',
+    skillId: itemId.replace(/-(tap|keypad|line)-\d+$/, ''),
+    itemId,
+    answer: 1,
+    correct,
+    timeToAnswerMs: 1000,
+    narrationReplays: 0,
+    sessionId: 's1',
+    phase,
+    timestamp: '2026-11-06T14:30:00Z',
+  });
+
+  it('lists only the skills placement asked about, in grade order, with their tally', () => {
+    const rows = placementResults(
       bundle.skills,
+      {
+        results: [
+          { skillId: 'g1-numbers-to-50', passed: false },
+          { skillId: 'k-count-to-20', passed: true },
+        ],
+        usedItemIds: [
+          'g1-numbers-to-50-keypad-1',
+          'g1-numbers-to-50-tap-1',
+          'k-count-to-20-keypad-1',
+          'k-count-to-20-line-1',
+        ],
+      },
       [
-        state('k-count-to-20', { status: 'assumed' }),
-        state('g1-numbers-to-50', { status: 'mastered' }),
+        // From a placement before a reset: superseded by the later answer to the same item.
+        attempt('g1-numbers-to-50-keypad-1', true, 'placement'),
+        attempt('g1-numbers-to-50-keypad-1', false, 'placement'),
+        attempt('g1-numbers-to-50-tap-1', false, 'placement'),
+        attempt('k-count-to-20-keypad-1', true, 'placement'),
+        attempt('k-count-to-20-line-1', true, 'placement'),
+        attempt('k-count-to-20-tap-1', false, 'check'),
       ],
-      [
-        attempt('g1-numbers-to-50', true, 'placement'),
-        attempt('g1-numbers-to-50', false, 'placement'),
-        attempt('g1-numbers-to-50', true, 'check'),
-      ],
-      TODAY,
     );
-    expect(rows.map((r) => [r.skill.id, r.state, r.placementCorrect, r.placementAnswered])).toEqual(
-      [
-        ['k-count-to-20', 'assumed', 0, 0],
-        ['g1-numbers-to-50', 'mastered', 1, 2],
-      ],
-    );
+    expect(rows.map((r) => [r.skill.id, r.passed, r.correct, r.answered])).toEqual([
+      ['k-count-to-20', true, 2, 2],
+      ['g1-numbers-to-50', false, 0, 2],
+    ]);
   });
 });
 

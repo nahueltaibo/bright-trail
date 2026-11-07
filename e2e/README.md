@@ -10,6 +10,7 @@
 - `04-kid-home` — both avatars show, each opens a child home that greets them by name.
 - `05-learning-preview` — story cards, a right and a wrong tap item, keypad, number line, flagging a card and an item.
 - `06-parent-screens` — skill tree, placement review, flags list, export, reset and delete with confirmation.
+- `07-session` — a fresh child's session: placement from Grade 1 down to Kindergarten, quit and resume on the same item, a flag, the first story and check, then the parent's placement review and flags list.
 
 Each flow starts from a cleared app. Shared steps live in `subflows/`.
 
@@ -17,7 +18,7 @@ Not covered:
 
 - **Narration.** Maestro can't hear audio. The preview's caption line shows what would be said, but the flows don't assert it.
 - **Export contents.** The flow opens the share sheet, dismisses it, and checks the status line.
-- **Stored flags.** The learning preview only logs flags, and nothing else in the app writes them yet, so the flags list is only checked empty.
+- **The caps.** The 10-minute cap and the 14-item placement split need a clock or a bigger bundle. Unit tests in `app/src/session/` cover them.
 
 ## Setup
 

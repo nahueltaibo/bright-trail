@@ -1,7 +1,10 @@
 import type { Item } from '@bright-trail/shared';
 
-/** Speaks the texts in order. A6 wires this to the narration hook from A3. */
-export type Narrate = (texts: string[]) => void;
+/**
+ * Speaks the texts in order. `replay` marks a tap on the speaker, which speaks even in reading
+ * mode.
+ */
+export type Narrate = (texts: string[], options?: { replay?: boolean }) => void;
 
 /** One answered item, as the session logs it. */
 export type AnswerResult = {
