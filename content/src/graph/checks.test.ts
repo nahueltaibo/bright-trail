@@ -1,12 +1,17 @@
 import { describe, expect, it } from 'vitest';
+import type { Skill } from '@bright-trail/shared';
 import {
+  checkContent,
   checkGraph,
   deadEnds,
+  findWarnings,
   longestChain,
   reachableFromRoots,
   removeTransitivePrerequisites,
+  titleWords,
 } from './checks';
 import { skill, tinySources, validGraph } from './fixtures';
+import type { GradeSource } from './sources';
 
 const messages = (skills = validGraph()) => checkGraph(skills, tinySources).map((p) => p.message);
 
@@ -107,5 +112,159 @@ describe('graph helpers', () => {
   it('lists dead ends below Grade 6', () => {
     const skills = [...validGraph(), skill('k-coins', [], ['A6.1'])];
     expect(deadEnds(skills).map((s) => s.id)).toEqual(['g1-add-to-10', 'k-coins']);
+  });
+});
+
+describe('checkContent', () => {
+  const contentMessages = (skills: Skill[], sources: GradeSource[] = tinySources, allowed = {}) =>
+    checkContent(skills, sources, {
+      allowedTokens: new Map(
+        Object.entries(allowed).map(([id, t]) => [id, new Set(t as string[])]),
+      ),
+    }).map((p) => p.message);
+  const withText = (description: string, title = 'Count') => {
+    const skills = validGraph();
+    skills[0] = { ...skills[0], title, description };
+    return skills;
+  };
+
+  it('passes a valid graph', () => {
+    expect(contentMessages(validGraph())).toEqual([]);
+  });
+
+  it.each([
+    ['Count out loud to 20.', 'out loud'],
+    ['Say how much each friend gets.', 'say'],
+    ['Draw a picture to share.', 'draw'],
+    ['Use drawings to compare.', 'draw'],
+    ['Read and write numbers.', 'write'],
+    ['Add in your head, and tell how you did it.', 'tell how'],
+    ['Explain your answer.', 'explain'],
+    ['Show how the two match.', 'show how'],
+  ])('flags risky tokens: %s', (description, token) => {
+    expect(contentMessages(withText(description))).toEqual([
+      `k-count: description says "${token}", which no tap, keypad, or number-line item can check`,
+    ]);
+  });
+
+  it('flags risky tokens in titles', () => {
+    expect(contentMessages(withText('Count.', 'Write numbers'))).toEqual([
+      'k-count: title says "write", which no tap, keypad, or number-line item can check',
+    ]);
+  });
+
+  it('allows "tell how many" and words that only contain a token', () => {
+    expect(
+      contentMessages(withText('Tell how many. Tell how much. Use the written method. An essay.')),
+    ).toEqual([]);
+  });
+
+  it('allows a token the overrides allowlist for that skill', () => {
+    expect(
+      contentMessages(withText('Say the number.'), tinySources, { 'k-count': ['say'] }),
+    ).toEqual([]);
+  });
+
+  it('limits titles to 6 words, counting a spaced number as one', () => {
+    expect(titleWords('Read and build numbers to 10 000')).toBe(6);
+    expect(contentMessages(withText('Count.', 'Count to 50 by 1s and 2s'))).toEqual([
+      'k-count: title "Count to 50 by 1s and 2s" has more than 6 words',
+    ]);
+  });
+
+  it('flags skills that cite only overall expectations', () => {
+    const skills = validGraph();
+    skills[2] = skill('g1-read-to-50', ['k-count'], ['B1']);
+    expect(contentMessages(skills)).toEqual([
+      'g1-read-to-50: cites only overall expectations (B1)',
+    ]);
+  });
+
+  it('flags a grade with more skills than specific expectations', () => {
+    const skills = [...validGraph(), skill('k-extra', [], ['A6.1'])];
+    expect(contentMessages(skills)).toEqual([
+      'Grade K has 3 skills, more than its 2 specific expectations',
+    ]);
+  });
+
+  describe('multiplication needs addition below it', () => {
+    const sources: GradeSource[] = [
+      tinySources[0],
+      {
+        ...tinySources[1],
+        expectations: [
+          {
+            code: 'B2.1',
+            kind: 'specific',
+            topic: 'Math Facts',
+            statement: 'recall addition facts and related subtraction facts',
+            details: '',
+          },
+          {
+            code: 'B2.5',
+            kind: 'specific',
+            topic: 'Multiplication and Division',
+            statement: 'solve equal-group problems',
+            details: '',
+          },
+        ],
+      },
+    ];
+
+    it('passes when an add/subtract skill is an ancestor', () => {
+      const skills = [
+        skill('k-count', [], ['A6.1']),
+        skill('g1-add-facts', ['k-count'], ['B2.1']),
+        skill('g1-equal-groups', ['g1-add-facts'], ['B2.5']),
+      ];
+      expect(contentMessages(skills, sources)).toEqual([]);
+    });
+
+    it('fails when none is', () => {
+      const skills = [
+        skill('k-count', [], ['A6.1']),
+        skill('g1-add-facts', ['k-count'], ['B2.1']),
+        skill('g1-equal-groups', ['k-count'], ['B2.5']),
+      ];
+      expect(contentMessages(skills, sources)).toEqual([
+        'g1-equal-groups: multiplication or division with no addition or subtraction skill below it',
+      ]);
+    });
+  });
+
+  it('is part of checkGraph', () => {
+    expect(checkGraph(withText('Draw it.'), tinySources).map((p) => p.message)).toHaveLength(1);
+  });
+});
+
+describe('findWarnings', () => {
+  const grade2: GradeSource = {
+    grade: '2',
+    framework: 'ontario-math-2020',
+    strand: 'B',
+    file: 'grade-2.md',
+    expectations: [
+      {
+        code: 'B1.1',
+        kind: 'specific',
+        topic: 'Whole Numbers',
+        statement: 'read to 200',
+        details: '',
+      },
+      { code: 'B2.1', kind: 'specific', topic: 'Math Facts', statement: 'add to 20', details: '' },
+    ],
+  };
+  const sources = [...tinySources, grade2];
+
+  it('passes skills that reach the grade before in the same topic', () => {
+    const skills = [...validGraph(), skill('g2-add-to-20', ['g1-add-to-10'], ['B2.1'])];
+    expect(findWarnings(skills, sources)).toEqual([]);
+  });
+
+  it('warns when a skill skips its topic in the grade before', () => {
+    const skills = [...validGraph(), skill('g2-add-to-20', ['g1-read-to-50'], ['B2.1'])];
+    expect(findWarnings(skills, sources).map((w) => w.message)).toEqual([
+      'g2-add-to-20: reaches no Grade 1 skill in the same topic',
+    ]);
   });
 });

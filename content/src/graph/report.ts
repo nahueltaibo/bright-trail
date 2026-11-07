@@ -1,5 +1,6 @@
 import type { Skill } from '@bright-trail/shared';
 import { deadEnds, longestChain, roots } from './checks';
+import type { Override } from './overrides';
 import type { GraphBuild } from './pipeline';
 import { GENERATOR_MODEL, REVIEWER_MODEL } from './prompts';
 import { GRADE_ORDER } from './sources';
@@ -8,7 +9,7 @@ const gradeLabel = (grade: Skill['grade']) => (grade === 'K' ? 'Kindergarten' : 
 
 /** Markdown summary for the owner to skim before content generation. */
 export function renderReport(build: GraphBuild): string {
-  const { skills, problems, removedTransitive, grades } = build;
+  const { skills, problems, warnings, removedTransitive, overrides, grades } = build;
   const chain = longestChain(skills);
   const ends = deadEnds(skills);
   const lines: string[] = [
@@ -24,6 +25,16 @@ export function renderReport(build: GraphBuild): string {
 
   if (problems.length > 0) {
     lines.push('## Problems', '', ...problems.map((p) => `- ${p.message}`), '');
+  }
+  if (warnings.length > 0) {
+    lines.push(
+      '## Warnings',
+      '',
+      "These don't fail the build. Check each one is intended.",
+      '',
+      ...warnings.map((w) => `- ${w.message}`),
+      '',
+    );
   }
 
   lines.push(
@@ -58,6 +69,17 @@ export function renderReport(build: GraphBuild): string {
     '',
   );
 
+  if (overrides.length > 0) {
+    lines.push(
+      '## Overrides Applied',
+      '',
+      `${overrides.length} hand fixes from \`content/graph-overrides.json\`, applied after the reviewer and before pruning and checks.`,
+      '',
+      ...overrides.map((o) => `- \`${o.skillId}\` ${describeOverride(o)}. ${o.reason}`),
+      '',
+    );
+  }
+
   const reviewed = grades.filter(
     (g) => g.applied.length > 0 || g.rejected.length > 0 || g.reviewerNotes,
   );
@@ -86,4 +108,23 @@ export function renderReport(build: GraphBuild): string {
     lines.push('');
   }
   return lines.join('\n');
+}
+
+function describeOverride(o: Override): string {
+  switch (o.op) {
+    case 'addPrerequisite':
+      return `adds \`${o.prerequisiteId}\``;
+    case 'removePrerequisite':
+      return `drops \`${o.prerequisiteId}\``;
+    case 'replacePrerequisite':
+      return `swaps \`${o.from}\` for \`${o.to}\``;
+    case 'protectPrerequisite':
+      return `keeps \`${o.prerequisiteId}\` through pruning`;
+    case 'setTitle':
+      return `title: "${o.title}"`;
+    case 'setDescription':
+      return 'new description';
+    case 'allowToken':
+      return `may say "${o.token}"`;
+  }
 }

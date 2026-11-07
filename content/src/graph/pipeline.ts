@@ -2,11 +2,14 @@ import type { Skill } from '@bright-trail/shared';
 import type { z } from 'zod';
 import {
   checkGraph,
+  checkStructure,
+  findWarnings,
   removeTransitivePrerequisites,
   type Problem,
   type RemovedEdge,
 } from './checks';
 import type { LlmClient, LlmRequest } from './llm';
+import { applyOverrides, type Override } from './overrides';
 import {
   GeneratedSkillsSchema,
   generateRequest,
@@ -33,12 +36,17 @@ export interface GraphBuild {
   skills: Skill[];
   /** Problems left after every repair. Empty means the graph is valid. */
   problems: Problem[];
+  /** Worth a look, but they don't fail the build. */
+  warnings: Problem[];
   removedTransitive: RemovedEdge[];
+  overrides: readonly Override[];
   grades: GradeLog[];
 }
 
 export interface BuildOptions {
   maxRepairs?: number;
+  /** Hand fixes applied after generation, before pruning and checks. */
+  overrides?: readonly Override[];
   log?: (message: string) => void;
 }
 
@@ -104,7 +112,7 @@ export function applyCorrections(
 export async function buildGraph(
   sources: readonly GradeSource[],
   llm: LlmClient,
-  { maxRepairs = 2, log = () => {} }: BuildOptions = {},
+  { maxRepairs = 2, overrides = [], log = () => {} }: BuildOptions = {},
 ): Promise<GraphBuild> {
   const ordered = [...sources].sort((a, b) => gradeRank(a.grade) - gradeRank(b.grade));
   const built: Skill[] = [];
@@ -126,7 +134,8 @@ export async function buildGraph(
     let repairs = 0;
     const sourcesSoFar = ordered.slice(0, index + 1);
     for (;;) {
-      const problems = checkGraph([...earlier, ...skills], sourcesSoFar).filter(
+      // Content checks wait for the overrides, so they never trigger a repair call.
+      const problems = checkStructure([...earlier, ...skills], sourcesSoFar).filter(
         (p) => p.grade === source.grade,
       );
       if (problems.length === 0 || repairs >= maxRepairs) break;
@@ -151,6 +160,15 @@ export async function buildGraph(
     });
   }
 
-  const { skills, removed } = removeTransitivePrerequisites(built);
-  return { skills, problems: checkGraph(skills, ordered), removedTransitive: removed, grades };
+  const fixed = applyOverrides(built, overrides);
+  const { skills, removed } = removeTransitivePrerequisites(fixed.skills, fixed.protectedEdges);
+  const stale = fixed.stale.map((message): Problem => ({ grade: null, message }));
+  return {
+    skills,
+    problems: [...stale, ...checkGraph(skills, ordered, fixed)],
+    warnings: findWarnings(skills, ordered),
+    removedTransitive: removed,
+    overrides,
+    grades,
+  };
 }
