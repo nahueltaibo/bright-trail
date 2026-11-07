@@ -4,7 +4,6 @@ import { useCallback, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProfilePicker } from '../components/ProfilePicker';
-import { addSampleChildren } from '../dev/sampleChildren';
 import { SpeakerButton, useAutoNarration } from '../narration';
 import { useStorage } from '../storage/StorageProvider';
 
@@ -26,11 +25,6 @@ export default function ProfilePickerScreen() {
   const message = profiles === null ? null : profiles.length > 0 ? PICK_MESSAGE : EMPTY_MESSAGE;
   useAutoNarration(message);
 
-  const addSamples = async () => {
-    await addSampleChildren(repo);
-    reload();
-  };
-
   return (
     <SafeAreaView style={styles.screen}>
       <View style={styles.topBar}>
@@ -51,12 +45,6 @@ export default function ProfilePickerScreen() {
         ) : (
           profiles && <Text style={styles.empty}>{EMPTY_MESSAGE}</Text>
         )}
-
-        {__DEV__ && (
-          <Pressable accessibilityRole="button" onPress={addSamples} style={styles.devButton}>
-            <Text style={styles.devText}>Dev: add sample kids</Text>
-          </Pressable>
-        )}
       </View>
     </SafeAreaView>
   );
@@ -73,13 +61,4 @@ const styles = StyleSheet.create({
   lock: { fontSize: 28, opacity: 0.6 },
   body: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 32, padding: 24 },
   empty: { fontSize: 22, color: '#5A4A1F', textAlign: 'center' },
-  devButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 16,
-    borderRadius: 8,
-    borderWidth: 1,
-    borderStyle: 'dashed',
-    borderColor: '#999',
-  },
-  devText: { fontSize: 14, color: '#666' },
 });

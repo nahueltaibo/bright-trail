@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "k-add-sub-stories-10",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["k-add-sub-facts-5", "k-more-less-same"],
+        "title": "",
+        "description": "",
+        "reason": "The description and the A6.12 expectation both include compare stories (\"Who has more? By how much?\"). A kid cannot solve those without understanding more and less, and no other listed prerequisite (k-add-sub-facts-5 depends only on k-make-numbers-to-10) provides that, so k-more-less-same is a missing direct prerequisite."
+      },
+      {
+        "skillId": "k-coins-and-bills",
+        "changePrerequisites": false,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "Name Canadian coins and bills. Tell how much each is worth, up to 25 cents for coins and 10 dollars for bills.",
+        "reason": "The symbols 25¢ and $10 do not read aloud reliably. Spelling out \"25 cents\" and \"10 dollars\" suits a kid hearing the description read aloud and keeps the same meaning."
+      },
+      {
+        "skillId": "k-read-write-numbers-20",
+        "changePrerequisites": false,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "Match numerals from 0 to 20 to groups of things, and write the number you see.",
+        "reason": "The A6.3 expectation is to identify and write numbers to 20. The description says \"type\", which describes a different activity and does not match the expectation. Changing it to \"write\" aligns the description with the expectation."
+      }
+    ],
+    "notes": "I checked all 13 Kindergarten skills for needed, direct, and missing prerequisites, for pointers to later grades or to themselves, and for title and description fit. No prerequisite is redundant: no listed prerequisite depends on another listed one, and there are no cycles or forward references. All prerequisite ids exist in the prompt. Counting-based prerequisites (k-count-to-20 in k-more-less-same and k-equal-share) are left as is, since counting is the expected strategy at this grade and the link is defensible. The k-make-numbers-to-10 title is narrower than its description but is not wrong, so I did not change it."
+  }
+}

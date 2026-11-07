@@ -15,7 +15,13 @@ describe('migrate', () => {
       "SELECT name FROM sqlite_master WHERE type = 'table' AND name NOT LIKE 'sqlite_%' ORDER BY name",
       [],
     );
-    expect(tables.map((t) => t.name)).toEqual(['attempts', 'children', 'flags', 'mastery']);
+    expect(tables.map((t) => t.name)).toEqual([
+      'attempts',
+      'children',
+      'flags',
+      'mastery',
+      'settings',
+    ]);
     expect(await userVersion(db)).toBe(SCHEMA_VERSION);
     expect(SCHEMA_VERSION).toBe(MIGRATIONS.length);
   });
@@ -53,6 +59,20 @@ describe('migrate', () => {
     await migrate(db);
     expect(await db.getAllAsync('SELECT id, walk_back FROM children', [])).toEqual([
       { id: 'maya', walk_back: null },
+    ]);
+    expect(await userVersion(db)).toBe(SCHEMA_VERSION);
+  });
+
+  it('upgrades a version 2 database so existing flags start open', async () => {
+    const db = openNodeSqliteDatabase(':memory:');
+    await migrate(db, MIGRATIONS.slice(0, 2));
+    await db.runAsync(
+      "INSERT INTO flags (child_id, content_kind, content_id, card_index, bundle_version, created_at) VALUES (NULL, 'item', 'g1-add-within-10-item-3', NULL, 'sample-1', '2026-11-06T15:00:00Z')",
+      [],
+    );
+    await migrate(db);
+    expect(await db.getAllAsync('SELECT content_id, resolved_at FROM flags', [])).toEqual([
+      { content_id: 'g1-add-within-10-item-3', resolved_at: null },
     ]);
     expect(await userVersion(db)).toBe(SCHEMA_VERSION);
   });

@@ -7,5 +7,6 @@ export * from './grade';
 export * from './item';
 export * from './mastery';
 export * from './nugget';
+export * from './placement';
 export * from './skill';
 export * from './visual';

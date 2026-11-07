@@ -1,0 +1,120 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g3-whole-numbers-1000",
+        "title": "Read and build numbers to 1000",
+        "description": "Read, write, and build numbers up to 1000 with hundreds, tens, and ones. Show them in words, in digits, and on a number line, like 638 is 600 + 30 + 8.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g2-whole-numbers-200"]
+      },
+      {
+        "id": "g3-place-value",
+        "title": "Place value of each digit",
+        "description": "Tell what each digit is worth in a number, like the 5 in 511 means 5 hundreds. See that a zero holds a place and that each place is ten times bigger than the one next to it.",
+        "expectationCodes": ["B1.5"],
+        "prerequisiteIds": ["g3-whole-numbers-1000"]
+      },
+      {
+        "id": "g3-compare-order-1000",
+        "title": "Compare and order to 1000",
+        "description": "Tell which of two numbers is greater or less, up to 1000. Put numbers in order from least to greatest or greatest to least.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g2-compare-order-200", "g3-whole-numbers-1000"]
+      },
+      {
+        "id": "g3-round-numbers",
+        "title": "Round to the nearest 10 or 100",
+        "description": "Find the closest ten or hundred to a number, like 237 is about 240 or about 200. Use rounding to make a quick guess.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g3-place-value", "g3-compare-order-1000"]
+      },
+      {
+        "id": "g3-count-1000",
+        "title": "Count to 1000 by 50s, 100s, 200s",
+        "description": "Count up to 1000 by 1s, 50s, 100s, and 200s. Start at any number and keep going, using a number line to help.",
+        "expectationCodes": ["B1.4"],
+        "prerequisiteIds": ["g2-count-200", "g3-whole-numbers-1000"]
+      },
+      {
+        "id": "g3-fair-share-20",
+        "title": "Fair shares of up to 20",
+        "description": "Draw a picture to share up to 20 things equally with 2, 3, 4, 5, 6, 8, or 10 friends. Tell what each friend gets, even when it is a whole and a part, like 2 and two thirds.",
+        "expectationCodes": ["B1.6"],
+        "prerequisiteIds": ["g2-fair-share-fractions", "g2-division-sharing"]
+      },
+      {
+        "id": "g3-equivalent-fair-shares",
+        "title": "Same share, different fractions",
+        "description": "See that different fractions can name the same amount, like one half and two fourths, or one fifth and two tenths. Use fair-share pictures to show it.",
+        "expectationCodes": ["B1.7"],
+        "prerequisiteIds": ["g3-fair-share-20", "g2-third-equals-two-sixths"]
+      },
+      {
+        "id": "g3-arrays-multiply-divide",
+        "title": "Show times and divide with arrays",
+        "description": "Use rows and columns of dots, called arrays, to show multiplying up to 10 × 10 and dividing up to 100 ÷ 10. Tell how many rows, how many in each row, and how many in all.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g2-equal-groups-multiply", "g2-division-sharing"]
+      },
+      {
+        "id": "g3-mult-div-facts-2-5-10",
+        "title": "Facts for 2, 5, and 10",
+        "description": "Know the times facts for 2, 5, and 10, like 6 × 5 = 30. Know the matching share facts too, like 30 ÷ 5 = 6.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g3-arrays-multiply-divide"]
+      },
+      {
+        "id": "g3-mult-div-properties",
+        "title": "Times and divide rules",
+        "description": "Use rules to help you multiply, like 4 × 5 is the same as 5 × 4, and 4 × 6 is 4 × 5 plus 4 × 1. Use multiplying to check a divide answer.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g3-arrays-multiply-divide"]
+      },
+      {
+        "id": "g3-mult-div-problems",
+        "title": "Times and divide stories",
+        "description": "Solve stories about equal groups using hops on a number line or drawings. Some groups can be one half, one fourth, or one third, and you can find the total, the groups, or the size of each group.",
+        "expectationCodes": ["B2.7"],
+        "prerequisiteIds": ["g3-arrays-multiply-divide"]
+      },
+      {
+        "id": "g3-fraction-repeated-addition",
+        "title": "Fractions as adding unit pieces",
+        "description": "See that three fifths is one fifth added three times. Write fractions like 3/5, where the bottom number tells the size of the pieces and the top number counts them.",
+        "expectationCodes": ["B2.8"],
+        "prerequisiteIds": ["g3-fair-share-20", "g3-mult-div-problems"]
+      },
+      {
+        "id": "g3-ratios-1-2-5-10",
+        "title": "Scaling by 2, 5, and 10",
+        "description": "Use the pairs 1 to 2, 1 to 5, and 1 to 10 to make numbers bigger. If 1 smiley is 5 kids, then 3 smileys are 15 kids.",
+        "expectationCodes": ["B2.9"],
+        "prerequisiteIds": ["g3-mult-div-facts-2-5-10"]
+      },
+      {
+        "id": "g3-mental-math-1000",
+        "title": "Add and subtract in your head to 1000",
+        "description": "Add and subtract in your head with totals up to 1000, using tricks like making 10, adding in parts, or adjusting. Use rounding to guess first, then tell how you did it.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g2-mental-math-50", "g3-round-numbers"]
+      },
+      {
+        "id": "g3-add-sub-algorithms",
+        "title": "Column adding and subtracting",
+        "description": "Add and subtract bigger numbers by lining up hundreds, tens, and ones. Trade ten ones for a ten, or a ten for ones, when you need to, and tell how it matches base ten blocks.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g3-place-value", "g2-add-sub-problems-100"]
+      },
+      {
+        "id": "g3-add-sub-problems-1000",
+        "title": "Add and subtract stories to 1000",
+        "description": "Solve stories about joining, taking away, and comparing, with numbers up to 1000. Use number lines, drawings, or column adding, and find the missing number wherever it hides.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g3-add-sub-algorithms", "g3-mental-math-1000"]
+      }
+    ]
+  }
+}

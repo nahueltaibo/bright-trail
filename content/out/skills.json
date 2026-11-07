@@ -1,0 +1,1077 @@
+{
+  "models": { "generator": "claude-sonnet-5-5", "reviewer": "claude-haiku-5-5" },
+  "skills": [
+    {
+      "id": "k-count-to-20",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.8"],
+      "title": "Count to 20 by 1s",
+      "description": "Count out loud, 1, 2, 3, all the way to 20. You can start at any number, like 7, 8, 9!",
+      "prerequisiteIds": []
+    },
+    {
+      "id": "k-uses-of-numbers",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.1"],
+      "title": "What numbers are used for",
+      "description": "Numbers tell us how many, which one is first or second, and names like player number 24. Pick how the number is being used.",
+      "prerequisiteIds": []
+    },
+    {
+      "id": "k-subitize-5",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.4"],
+      "title": "See 1 to 5 at a glance",
+      "description": "Look quickly at some dots and tell how many there are, without counting one by one.",
+      "prerequisiteIds": []
+    },
+    {
+      "id": "k-read-write-numbers-20",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.3"],
+      "title": "Read and write numbers to 20",
+      "description": "Match numerals from 0 to 20 to groups of things, and write the number you see.",
+      "prerequisiteIds": ["k-count-to-20"]
+    },
+    {
+      "id": "k-count-forward-back",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.2"],
+      "title": "Counting up and counting down",
+      "description": "When we count forward the number gets bigger. When we count back it gets smaller.",
+      "prerequisiteIds": ["k-count-to-20"]
+    },
+    {
+      "id": "k-more-less-same",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.6"],
+      "title": "More, less, or the same",
+      "description": "Look at two groups and tell which has more, which has less, or if they are the same.",
+      "prerequisiteIds": ["k-count-to-20"]
+    },
+    {
+      "id": "k-compare-numbers-20",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.10"],
+      "title": "Compare numbers from 0 to 20",
+      "description": "Tell which of two numbers is greater or less. Find the number that is 1 or 2 more, or 1 or 2 less.",
+      "prerequisiteIds": ["k-read-write-numbers-20", "k-more-less-same", "k-count-forward-back"]
+    },
+    {
+      "id": "k-estimate-and-count",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.7"],
+      "title": "Estimate, then count to check",
+      "description": "Make a smart guess about how many things there are, like closer to 5 or 10. Then count to check.",
+      "prerequisiteIds": ["k-count-to-20", "k-subitize-5"]
+    },
+    {
+      "id": "k-make-numbers-to-10",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.5"],
+      "title": "Break apart and build 10",
+      "description": "Show that a number is made of two smaller parts, like 6 is 4 and 2. Find the missing part.",
+      "prerequisiteIds": ["k-subitize-5", "k-read-write-numbers-20"]
+    },
+    {
+      "id": "k-add-sub-facts-5",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.11"],
+      "title": "Add and take away to 5",
+      "description": "Put groups together or take some away when the numbers stay 5 or less. Know answers like 2 and 3 make 5.",
+      "prerequisiteIds": ["k-make-numbers-to-10"]
+    },
+    {
+      "id": "k-add-sub-stories-10",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.12"],
+      "title": "Add and subtract stories to 10",
+      "description": "Solve story problems about joining, taking away, parts, and comparing, with answers up to 10. Use counters or fingers to help.",
+      "prerequisiteIds": ["k-add-sub-facts-5", "k-more-less-same"]
+    },
+    {
+      "id": "k-equal-share",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.9"],
+      "title": "Share equally",
+      "description": "Share things so every friend gets the same amount. Tell how many each friend gets.",
+      "prerequisiteIds": ["k-more-less-same"]
+    },
+    {
+      "id": "k-coins-and-bills",
+      "framework": "ontario-kindergarten-2026",
+      "grade": "K",
+      "strand": "A",
+      "expectationCodes": ["A6.13"],
+      "title": "Coins and bills",
+      "description": "Name Canadian coins and bills. Tell how much each is worth, up to 25 cents for coins and 10 dollars for bills.",
+      "prerequisiteIds": ["k-read-write-numbers-20"]
+    },
+    {
+      "id": "g1-read-numbers-50",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B1.1"],
+      "title": "Read and show numbers to 50",
+      "description": "Read numbers up to 50 as words and numerals, and show them with tens and ones. Tell how numbers are used, like on a clock or a house.",
+      "prerequisiteIds": ["k-read-write-numbers-20", "k-uses-of-numbers"]
+    },
+    {
+      "id": "g1-count-50",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B1.5"],
+      "title": "Count to 50 by 1s, 2s, 5s, 10s",
+      "description": "Count out loud to 50 by 1s, 2s, 5s, and 10s. Use a number line or hundred chart to skip count and find the next number.",
+      "prerequisiteIds": ["k-count-to-20"]
+    },
+    {
+      "id": "g1-compare-order-50",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B1.3"],
+      "title": "Compare and order to 50",
+      "description": "Tell which number is greater or less. Put numbers up to 50 in order from least to greatest, or greatest to least.",
+      "prerequisiteIds": ["g1-read-numbers-50", "k-compare-numbers-20", "g1-count-50"]
+    },
+    {
+      "id": "g1-estimate-50",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B1.4"],
+      "title": "Estimate up to 50, then count",
+      "description": "Make a smart guess about how many things are in a group of up to 50. Then count to check how close you were.",
+      "prerequisiteIds": ["k-estimate-and-count", "g1-count-50"]
+    },
+    {
+      "id": "g1-compose-decompose-50",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B1.2"],
+      "title": "Build and break apart numbers",
+      "description": "Put numbers together or break them into parts, like 28 is 20 and 8, or 10 and 10 and 8. The amount stays the same.",
+      "prerequisiteIds": ["g1-read-numbers-50", "k-make-numbers-to-10"]
+    },
+    {
+      "id": "g1-fair-share-drawings",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B1.6"],
+      "title": "Fair shares with 2 or 4 friends",
+      "description": "Draw a picture to share things equally between 2 or 4 friends. Show what each friend gets when there are some left over to cut.",
+      "prerequisiteIds": ["k-equal-share"]
+    },
+    {
+      "id": "g1-half-equals-two-fourths",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B1.7"],
+      "title": "Halves and fourths",
+      "description": "Learn that one half of a whole is the same as two fourths of that same whole. Two halves or four fourths make one whole.",
+      "prerequisiteIds": ["g1-fair-share-drawings"]
+    },
+    {
+      "id": "g1-compare-unit-fractions",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B1.8"],
+      "title": "Compare shares of a whole",
+      "description": "When a whole is shared with more friends, each piece gets smaller. Draw and order one half, one third, one fourth, and more.",
+      "prerequisiteIds": ["g1-half-equals-two-fourths"]
+    },
+    {
+      "id": "g1-add-sub-facts-10",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B2.2"],
+      "title": "Add and subtract facts to 10",
+      "description": "Know addition facts up to 10 and the take-away facts that go with them. For example, 4 and 6 make 10, so 10 take away 4 is 6.",
+      "prerequisiteIds": ["k-add-sub-facts-5"]
+    },
+    {
+      "id": "g1-add-sub-properties",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B2.1"],
+      "title": "Any order, zero, and checking",
+      "description": "Adding in any order gives the same answer, and adding or taking away zero changes nothing. Use adding to check a take-away answer.",
+      "prerequisiteIds": ["g1-add-sub-facts-10"]
+    },
+    {
+      "id": "g1-mental-math-20",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B2.3"],
+      "title": "Add and subtract in your head to 20",
+      "description": "Use tricks like counting on, making 10, and near doubles to add and subtract in your head. Your answers stay 20 or less.",
+      "prerequisiteIds": ["g1-add-sub-facts-10"]
+    },
+    {
+      "id": "g1-add-sub-problems-50",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B2.4"],
+      "title": "Add and subtract stories to 50",
+      "description": "Use pictures, number lines, and equations to solve stories about joining, taking away, and comparing, up to 50. Find the missing number too.",
+      "prerequisiteIds": [
+        "g1-add-sub-properties",
+        "g1-compose-decompose-50",
+        "k-add-sub-stories-10"
+      ]
+    },
+    {
+      "id": "g1-equal-groups",
+      "framework": "ontario-math-2020",
+      "grade": "1",
+      "strand": "B",
+      "expectationCodes": ["B2.5"],
+      "title": "Equal groups up to 10",
+      "description": "Draw or use counters to make equal groups, like 5 groups of 2, or 6 groups of one half. Find how many groups or how many in all.",
+      "prerequisiteIds": ["g1-count-50", "g1-half-equals-two-fourths"]
+    },
+    {
+      "id": "g2-whole-numbers-200",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B1.1"],
+      "title": "Read and build numbers to 200",
+      "description": "Read, write, and build numbers up to 200 with hundreds, tens, and ones. Break numbers apart in different ways, like 124 is 100 and 24, or 12 tens and 4 ones.",
+      "prerequisiteIds": ["g1-compose-decompose-50"]
+    },
+    {
+      "id": "g2-compare-order-200",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B1.2"],
+      "title": "Compare and order to 200",
+      "description": "Tell which number is greater or less, up to 200. Put numbers in order from least to greatest or greatest to least.",
+      "prerequisiteIds": ["g1-compare-order-50", "g2-whole-numbers-200"]
+    },
+    {
+      "id": "g2-count-200",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B1.4"],
+      "title": "Count to 200 by 20s, 25s, 50s",
+      "description": "Count out loud to 200 by 1s, 20s, 25s, and 50s. Start at any number, and use coins, bills, or a number line to help.",
+      "prerequisiteIds": ["g1-count-50"]
+    },
+    {
+      "id": "g2-estimate-200",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B1.3"],
+      "title": "Estimate up to 200, then count",
+      "description": "Make a smart guess about how many things are in a big group, up to 200. Count a small bunch first, then count to check.",
+      "prerequisiteIds": ["g1-estimate-50", "g2-count-200"]
+    },
+    {
+      "id": "g2-even-odd",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B1.5"],
+      "title": "Even and odd numbers",
+      "description": "An even number can be split into pairs with none left over. An odd number always has one left over.",
+      "prerequisiteIds": ["g1-equal-groups", "g2-whole-numbers-200"]
+    },
+    {
+      "id": "g2-fair-share-fractions",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B1.6"],
+      "title": "Fair shares with thirds and sixths",
+      "description": "Draw a picture to share up to 10 things equally with 2, 3, 4, or 6 friends. Say how much each friend gets, like 3 and one third.",
+      "prerequisiteIds": ["g1-compare-unit-fractions"]
+    },
+    {
+      "id": "g2-third-equals-two-sixths",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B1.7"],
+      "title": "One third equals two sixths",
+      "description": "Share the same whole in thirds or in sixths. See that one third is the same amount as two sixths.",
+      "prerequisiteIds": ["g2-fair-share-fractions"]
+    },
+    {
+      "id": "g2-add-sub-properties",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B2.1"],
+      "title": "Adding and subtracting rules and checks",
+      "description": "Adding in any order gives the same answer, and zero changes nothing. Use adding to check taking away, and use equal jumps to see how adding links to multiplying.",
+      "prerequisiteIds": ["g1-add-sub-properties", "g1-equal-groups"]
+    },
+    {
+      "id": "g2-add-sub-facts-20",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B2.2"],
+      "title": "Add and subtract facts to 20",
+      "description": "Know adding facts with totals up to 20, like 9 + 9 = 18, and the take-away facts that go with them. Use doubles and making 10 to help.",
+      "prerequisiteIds": ["g1-mental-math-20", "g1-add-sub-properties"]
+    },
+    {
+      "id": "g2-mental-math-50",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B2.3"],
+      "title": "Add and subtract in your head to 50",
+      "description": "Add and subtract in your head with answers up to 50. Try counting on, making 10s, or taking away in parts, and tell how you did it.",
+      "prerequisiteIds": ["g2-add-sub-facts-20", "g1-compose-decompose-50"]
+    },
+    {
+      "id": "g2-add-sub-problems-100",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B2.4"],
+      "title": "Add and subtract stories to 100",
+      "description": "Use objects, drawings, and equations to solve stories about joining, taking away, and comparing, up to 100. Find the missing number, wherever it hides.",
+      "prerequisiteIds": ["g1-add-sub-problems-50", "g2-whole-numbers-200"]
+    },
+    {
+      "id": "g2-equal-groups-multiply",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B2.5"],
+      "title": "Equal groups and repeated adding",
+      "description": "Find how many in all when there are equal groups, like 4 groups of 5. Groups of one half and one fourth count too.",
+      "prerequisiteIds": ["g1-equal-groups", "g2-count-200"]
+    },
+    {
+      "id": "g2-division-sharing",
+      "framework": "ontario-math-2020",
+      "grade": "2",
+      "strand": "B",
+      "expectationCodes": ["B2.6"],
+      "title": "Share up to 12 equally",
+      "description": "Share up to 12 things equally. Find how many in each group, or how many groups you can make.",
+      "prerequisiteIds": ["g2-equal-groups-multiply", "g2-fair-share-fractions"]
+    },
+    {
+      "id": "g3-whole-numbers-1000",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B1.1"],
+      "title": "Read and build numbers to 1000",
+      "description": "Read, write, and build numbers up to 1000 with hundreds, tens, and ones. Show them in words, in digits, and on a number line, like 638 is 600 + 30 + 8.",
+      "prerequisiteIds": ["g2-whole-numbers-200"]
+    },
+    {
+      "id": "g3-place-value",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B1.5"],
+      "title": "Place value of each digit",
+      "description": "Tell what each digit is worth in a number, like the 5 in 511 means 5 hundreds. See that a zero holds a place and that each place is ten times bigger than the one next to it.",
+      "prerequisiteIds": ["g3-whole-numbers-1000"]
+    },
+    {
+      "id": "g3-compare-order-1000",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B1.2"],
+      "title": "Compare and order to 1000",
+      "description": "Tell which of two numbers is greater or less, up to 1000. Put numbers in order from least to greatest or greatest to least.",
+      "prerequisiteIds": ["g2-compare-order-200", "g3-whole-numbers-1000"]
+    },
+    {
+      "id": "g3-round-numbers",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B1.3"],
+      "title": "Round to the nearest 10 or 100",
+      "description": "Find the closest ten or hundred to a number, like 237 is about 240 or about 200. Use rounding to make a quick guess.",
+      "prerequisiteIds": ["g3-place-value", "g3-compare-order-1000"]
+    },
+    {
+      "id": "g3-count-1000",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B1.4"],
+      "title": "Count to 1000 by 50s, 100s, 200s",
+      "description": "Count up to 1000 by 1s, 50s, 100s, and 200s. Start at any number and keep going, using a number line to help.",
+      "prerequisiteIds": ["g2-count-200", "g3-whole-numbers-1000"]
+    },
+    {
+      "id": "g3-fair-share-20",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B1.6"],
+      "title": "Fair shares of up to 20",
+      "description": "Draw a picture to share up to 20 things equally with 2, 3, 4, 5, 6, 8, or 10 friends. Tell what each friend gets, even when it is a whole and a part, like 2 and two thirds.",
+      "prerequisiteIds": ["g2-division-sharing"]
+    },
+    {
+      "id": "g3-equivalent-fair-shares",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B1.7"],
+      "title": "Same share, different fractions",
+      "description": "See that different fractions can name the same amount, like one half and two fourths, or one fifth and two tenths. Use fair-share pictures to show it.",
+      "prerequisiteIds": ["g3-fair-share-20", "g2-third-equals-two-sixths"]
+    },
+    {
+      "id": "g3-arrays-multiply-divide",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B2.6"],
+      "title": "Show times and divide with arrays",
+      "description": "Use rows and columns of dots, called arrays, to show multiplying up to 10 × 10 and dividing up to 100 ÷ 10. Tell how many rows, how many in each row, and how many in all.",
+      "prerequisiteIds": ["g2-division-sharing"]
+    },
+    {
+      "id": "g3-mult-div-facts-2-5-10",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B2.2"],
+      "title": "Facts for 2, 5, and 10",
+      "description": "Know the times facts for 2, 5, and 10, like 6 × 5 = 30. Know the matching share facts too, like 30 ÷ 5 = 6.",
+      "prerequisiteIds": ["g3-arrays-multiply-divide"]
+    },
+    {
+      "id": "g3-mult-div-properties",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B2.1"],
+      "title": "Times and divide rules",
+      "description": "Use rules to help you multiply, like 4 × 5 is the same as 5 × 4, and 4 × 6 is 4 × 5 plus 4 × 1. Use multiplying to check a divide answer.",
+      "prerequisiteIds": ["g3-arrays-multiply-divide"]
+    },
+    {
+      "id": "g3-mult-div-problems",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B2.7"],
+      "title": "Times and divide stories",
+      "description": "Solve stories about equal groups using hops on a number line or drawings. Some groups can be one half, one fourth, or one third, and you can find the total, the groups, or the size of each group.",
+      "prerequisiteIds": ["g3-arrays-multiply-divide"]
+    },
+    {
+      "id": "g3-fraction-repeated-addition",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B2.8"],
+      "title": "Fractions as adding unit pieces",
+      "description": "See that three fifths is one fifth added three times. Write fractions like 3/5, where the bottom number tells the size of the pieces and the top number counts them.",
+      "prerequisiteIds": ["g3-fair-share-20", "g3-mult-div-problems"]
+    },
+    {
+      "id": "g3-ratios-1-2-5-10",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B2.9"],
+      "title": "Scaling by 2, 5, and 10",
+      "description": "Use the pairs 1 to 2, 1 to 5, and 1 to 10 to make numbers bigger. If 1 smiley is 5 kids, then 3 smileys are 15 kids.",
+      "prerequisiteIds": ["g3-mult-div-facts-2-5-10"]
+    },
+    {
+      "id": "g3-mental-math-1000",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B2.3"],
+      "title": "Add and subtract in your head to 1000",
+      "description": "Add and subtract in your head with totals up to 1000, using tricks like making 10, adding in parts, or adjusting. Use rounding to guess first, then tell how you did it.",
+      "prerequisiteIds": ["g2-mental-math-50", "g3-round-numbers"]
+    },
+    {
+      "id": "g3-add-sub-algorithms",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B2.4"],
+      "title": "Column adding and subtracting",
+      "description": "Add and subtract bigger numbers by lining up hundreds, tens, and ones. Trade ten ones for a ten, or a ten for ones, when you need to, and tell how it matches base ten blocks.",
+      "prerequisiteIds": ["g3-place-value", "g2-mental-math-50"]
+    },
+    {
+      "id": "g3-add-sub-problems-1000",
+      "framework": "ontario-math-2020",
+      "grade": "3",
+      "strand": "B",
+      "expectationCodes": ["B2.5"],
+      "title": "Add and subtract stories to 1000",
+      "description": "Solve stories about joining, taking away, and comparing, with numbers up to 1000. Use number lines, drawings, or column adding, and find the missing number wherever it hides.",
+      "prerequisiteIds": ["g3-add-sub-algorithms", "g3-mental-math-1000"]
+    },
+    {
+      "id": "g4-whole-numbers-10000",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B1.1"],
+      "title": "Read and build numbers to 10 000",
+      "description": "Read, write, and build numbers up to 10 000 with thousands, hundreds, tens, and ones. Break them apart in different ways, like 8621 is 8000 + 600 + 20 + 1.",
+      "prerequisiteIds": ["g3-place-value"]
+    },
+    {
+      "id": "g4-compare-order-10000",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B1.2"],
+      "title": "Compare and order to 10 000",
+      "description": "Tell which of two numbers is greater or less, up to 10 000. Put numbers in order from least to greatest or greatest to least.",
+      "prerequisiteIds": ["g4-whole-numbers-10000", "g3-compare-order-1000"]
+    },
+    {
+      "id": "g4-round-whole-numbers",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B1.3"],
+      "title": "Round to 10, 100, or 1000",
+      "description": "Find the closest ten, hundred, or thousand to a number, like 1237 is about 1200. If it is exactly in the middle, round up.",
+      "prerequisiteIds": ["g3-round-numbers", "g4-compare-order-10000"]
+    },
+    {
+      "id": "g4-represent-fractions",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B1.4"],
+      "title": "Fractions from halves to tenths",
+      "description": "Draw and write fractions like 3/4 or 7/10. Tell what the bottom number and the top number mean.",
+      "prerequisiteIds": ["g3-fraction-repeated-addition"]
+    },
+    {
+      "id": "g4-compare-fair-shares",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B1.5"],
+      "title": "Compare and order fair shares",
+      "description": "Use drawings to compare how much each friend gets when a whole is shared by different numbers of friends. Put the shares in order from least to greatest.",
+      "prerequisiteIds": ["g4-represent-fractions"]
+    },
+    {
+      "id": "g4-count-unit-fractions",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B1.6", "B2.7"],
+      "title": "Count and add unit fractions",
+      "description": "Count by halves, thirds, fourths, and more, even past one whole, like 5 thirds. See that 4 one-thirds added up is 4 × 1/3, or 4/3.",
+      "prerequisiteIds": ["g4-represent-fractions"]
+    },
+    {
+      "id": "g4-decimal-tenths",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B1.7"],
+      "title": "Read and compare decimal tenths",
+      "description": "Read, show, compare, and order numbers like 0.6 and 24.7. The first digit after the dot counts tenths.",
+      "prerequisiteIds": ["g3-place-value", "g4-represent-fractions", "g3-compare-order-1000"]
+    },
+    {
+      "id": "g4-round-decimals",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B1.8"],
+      "title": "Round decimals to whole numbers",
+      "description": "Round a number like 1.7 to the closest whole number. If it is exactly halfway, like 2.5, round up.",
+      "prerequisiteIds": ["g4-decimal-tenths", "g4-round-whole-numbers"]
+    },
+    {
+      "id": "g4-fraction-decimal-equivalence",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B1.9"],
+      "title": "Fractions and decimal tenths match",
+      "description": "Show that fractions and decimals can name the same amount, like 1/2 and 0.5, or 15 tenths and 1.5.",
+      "prerequisiteIds": [
+        "g4-decimal-tenths",
+        "g4-count-unit-fractions",
+        "g3-equivalent-fair-shares"
+      ]
+    },
+    {
+      "id": "g4-operation-properties",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B2.1"],
+      "title": "Rules and checks for operations",
+      "description": "Use rules like order, grouping, and splitting numbers to help you solve problems. Use opposite operations to check your answers.",
+      "prerequisiteIds": ["g2-add-sub-properties", "g3-mult-div-properties"]
+    },
+    {
+      "id": "g4-mult-div-facts-100",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B2.2"],
+      "title": "Times and divide facts to 10 × 10",
+      "description": "Know all the times facts up to 10 × 10 and the divide facts that go with them, like 7 × 6 = 42 and 42 ÷ 6 = 7. Use facts you know to find new ones.",
+      "prerequisiteIds": ["g3-mult-div-facts-2-5-10", "g3-mult-div-properties"]
+    },
+    {
+      "id": "g4-mult-div-by-10s",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B2.3"],
+      "title": "Times 10, 100, 1000; divide by 10",
+      "description": "In your head, multiply a number by 10, 100, or 1000, or divide it by 10. Each digit moves to a new place.",
+      "prerequisiteIds": ["g4-whole-numbers-10000", "g3-mult-div-facts-2-5-10", "g4-decimal-tenths"]
+    },
+    {
+      "id": "g4-mental-decimal-tenths",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B2.3"],
+      "title": "Add and subtract tenths in your head",
+      "description": "Add and subtract decimals like 14.9 + 24.6 in your head. Try making a friendly number, then fix it after.",
+      "prerequisiteIds": ["g4-decimal-tenths", "g3-mental-math-1000"]
+    },
+    {
+      "id": "g4-add-sub-10000",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B2.4"],
+      "title": "Add and subtract to 10 000, tenths",
+      "description": "Solve stories and problems by adding and subtracting numbers up to 10 000 and decimal tenths. Use number lines, drawings, or column adding.",
+      "prerequisiteIds": ["g3-add-sub-problems-1000", "g4-whole-numbers-10000", "g4-decimal-tenths"]
+    },
+    {
+      "id": "g4-multiply-by-one-digit",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B2.5"],
+      "title": "Multiply bigger numbers",
+      "description": "Multiply two- or three-digit numbers by a one-digit number, or by 10, 100, or 1000. Use arrays and split the number into parts to help.",
+      "prerequisiteIds": ["g4-mult-div-facts-100", "g4-mult-div-by-10s", "g3-mental-math-1000"]
+    },
+    {
+      "id": "g4-divide-with-remainders",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B2.6"],
+      "title": "Divide bigger numbers, share leftovers",
+      "description": "Divide two- or three-digit numbers by a one-digit number. When there is something left over, share it too, like 33 ÷ 4 = 8 and 1/4.",
+      "prerequisiteIds": ["g4-mult-div-facts-100", "g4-represent-fractions"]
+    },
+    {
+      "id": "g4-whole-number-rates",
+      "framework": "ontario-math-2020",
+      "grade": "4",
+      "strand": "B",
+      "expectationCodes": ["B2.8"],
+      "title": "Rates: amounts per group",
+      "description": "Show rates like 2 trapezoids per hexagon or 5 stickers per strip. Use drawings and tools to find how many in all.",
+      "prerequisiteIds": ["g3-ratios-1-2-5-10"]
+    },
+    {
+      "id": "g5-whole-numbers-100000",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B1.1"],
+      "title": "Read and build numbers to 100 000",
+      "description": "Read, write, and build numbers up to 100 000 in words, digits, and expanded form. Break them apart by place value, like 24 336 is 2 ten thousands, 4 thousands, 3 hundreds, 3 tens, and 6 ones.",
+      "prerequisiteIds": ["g4-whole-numbers-10000"]
+    },
+    {
+      "id": "g5-compare-order-100000",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B1.2"],
+      "title": "Compare and order to 100 000",
+      "description": "Tell which of two big numbers is greater or less by checking the biggest place that is different. Put numbers up to 100 000 in order from least to greatest or greatest to least.",
+      "prerequisiteIds": ["g5-whole-numbers-100000", "g4-compare-order-10000"]
+    },
+    {
+      "id": "g5-equivalent-fractions",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B1.3"],
+      "title": "Equal fractions, improper and mixed",
+      "description": "Show that different fractions can be the same amount, like 2/3 and 4/6. Switch between improper fractions and mixed numbers, like 7/4 and 1 and 3/4.",
+      "prerequisiteIds": ["g4-count-unit-fractions", "g3-equivalent-fair-shares"]
+    },
+    {
+      "id": "g5-compare-order-fractions",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B1.4"],
+      "title": "Compare and order fractions",
+      "description": "Tell which fraction is bigger, even when they are more than one whole. Use pictures, number lines, or the benchmark of one half to put fractions in order.",
+      "prerequisiteIds": ["g5-equivalent-fractions", "g4-compare-fair-shares"]
+    },
+    {
+      "id": "g5-decimals-hundredths",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B1.5"],
+      "title": "Read and compare hundredths",
+      "description": "Read, show, compare, and order decimals like 3.25. The second digit after the dot counts hundredths, and 3.2 is the same as 3.20.",
+      "prerequisiteIds": ["g4-decimal-tenths", "g5-equivalent-fractions"]
+    },
+    {
+      "id": "g5-round-decimals-tenth",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B1.6"],
+      "title": "Round decimals to the tenth",
+      "description": "Round a number like 56.23 to the closest tenth, which is 56.2. If it is exactly halfway, like 56.25, round up.",
+      "prerequisiteIds": ["g5-decimals-hundredths", "g4-round-decimals"]
+    },
+    {
+      "id": "g5-fraction-decimal-percent",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B1.7"],
+      "title": "Fractions, decimals, and percents",
+      "description": "Show that a fraction, a decimal, and a percent can name the same amount, like 1/4, 0.25, and 25%. Percent means out of 100.",
+      "prerequisiteIds": ["g5-decimals-hundredths", "g4-fraction-decimal-equivalence"]
+    },
+    {
+      "id": "g5-operation-properties",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B2.1"],
+      "title": "Operation rules and checking answers",
+      "description": "Use rules like order, grouping, and splitting a number to make problems easier. Use opposite operations to check answers, even in problems with two steps.",
+      "prerequisiteIds": ["g4-operation-properties"]
+    },
+    {
+      "id": "g5-mult-div-facts-144",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B2.2"],
+      "title": "Times and divide facts to 12 × 12",
+      "description": "Know all the times facts up to 12 × 12 and the divide facts that go with them. Know that zero times anything is zero.",
+      "prerequisiteIds": ["g4-mult-div-facts-100"]
+    },
+    {
+      "id": "g5-mental-math-decimals",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B2.3"],
+      "title": "Times 0.1 and 0.01, estimate decimals",
+      "description": "In your head, multiply a whole number by 0.1 or 0.01, like 400 × 0.1 = 40. Round decimals to make a quick guess for adding and subtracting.",
+      "prerequisiteIds": [
+        "g4-mult-div-by-10s",
+        "g5-round-decimals-tenth",
+        "g4-mental-decimal-tenths"
+      ]
+    },
+    {
+      "id": "g5-add-sub-100000-decimals",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B2.4"],
+      "title": "Add and subtract big and decimal",
+      "description": "Solve problems by adding and subtracting whole numbers up to 100 000 and decimals to hundredths. Line up the places, and trade when you need to.",
+      "prerequisiteIds": ["g4-add-sub-10000", "g5-whole-numbers-100000", "g5-decimals-hundredths"]
+    },
+    {
+      "id": "g5-add-sub-like-fractions",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B2.5"],
+      "title": "Add and subtract same-size fractions",
+      "description": "Add and subtract fractions that have the same bottom number, like 3/8 + 12/8. You are just adding or taking away pieces of the same size.",
+      "prerequisiteIds": ["g5-equivalent-fractions"]
+    },
+    {
+      "id": "g5-multiply-two-by-two-digit",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B2.6"],
+      "title": "Multiply two-digit by two-digit",
+      "description": "Multiply numbers like 24 × 38 using a rectangle split into four parts. Then do it with the written method and see how the two match.",
+      "prerequisiteIds": ["g4-multiply-by-one-digit", "g5-operation-properties"]
+    },
+    {
+      "id": "g5-divide-by-two-digit",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B2.7"],
+      "title": "Divide by a two-digit number",
+      "description": "Divide a three-digit number by a two-digit number, like 234 ÷ 18. Use a rectangle or the written method, and decide what to do with any leftover.",
+      "prerequisiteIds": ["g5-multiply-two-by-two-digit", "g4-divide-with-remainders"]
+    },
+    {
+      "id": "g5-whole-by-unit-fraction",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B2.8"],
+      "title": "Multiply and divide by unit fractions",
+      "description": "Find 4 × 1/3 by adding four one-thirds. Find 4 ÷ 1/3 by asking how many thirds fit in 4 wholes.",
+      "prerequisiteIds": ["g4-count-unit-fractions", "g4-mult-div-facts-100"]
+    },
+    {
+      "id": "g5-equivalent-ratios-rates",
+      "framework": "ontario-math-2020",
+      "grade": "5",
+      "strand": "B",
+      "expectationCodes": ["B2.9"],
+      "title": "Equal ratios and rates",
+      "description": "Make ratios and rates that mean the same thing by scaling up or down, like 6 green to 1 yellow is 12 green to 2 yellow. Use tables and drawings to help.",
+      "prerequisiteIds": ["g4-whole-number-rates", "g4-mult-div-facts-100"]
+    },
+    {
+      "id": "g6-whole-numbers-million",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B1.1"],
+      "title": "Read and build numbers to 1 000 000",
+      "description": "Read, write, and build numbers up to one million in words, digits, and expanded form. Tell what each digit is worth, like the 5 in 527 910 is 500 000.",
+      "prerequisiteIds": ["g5-whole-numbers-100000"]
+    },
+    {
+      "id": "g6-integers",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B1.2"],
+      "title": "Positive and negative numbers",
+      "description": "Show numbers below zero, like -6, and numbers above zero, like 3, on a number line or with counters. Tell what -4 and 4 have in common.",
+      "prerequisiteIds": ["g5-compare-order-100000"]
+    },
+    {
+      "id": "g6-decimals-thousandths",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B1.4"],
+      "title": "Read and build decimals to thousandths",
+      "description": "Read, write, and show decimals like 7.635 in words, digits, and expanded form. Compare and order them by looking at the biggest place that is different.",
+      "prerequisiteIds": ["g5-decimals-hundredths"]
+    },
+    {
+      "id": "g6-compare-order-rationals",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B1.3"],
+      "title": "Compare integers, decimals, and fractions",
+      "description": "Put negative numbers, decimals, and fractions in order, even when they are mixed together. Use a number line and benchmarks like 0, one half, and 1.",
+      "prerequisiteIds": ["g6-integers", "g6-decimals-thousandths", "g5-compare-order-fractions"]
+    },
+    {
+      "id": "g6-round-decimals",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B1.5"],
+      "title": "Round decimals to tenth or hundredth",
+      "description": "Round decimals, even ones that go on forever like 3.555…, to the closest whole number, tenth, or hundredth. If it is exactly halfway, round up.",
+      "prerequisiteIds": ["g6-decimals-thousandths", "g5-round-decimals-tenth"]
+    },
+    {
+      "id": "g6-fraction-decimal-match",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B1.6"],
+      "title": "Fractions and decimals that match",
+      "description": "Change fractions into decimals and decimals into fractions, like 1/4 is 0.25 and 0.625 is 5/8. A fraction can also mean the top number divided by the bottom number.",
+      "prerequisiteIds": ["g6-decimals-thousandths", "g5-fraction-decimal-percent"]
+    },
+    {
+      "id": "g6-operation-properties",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.1"],
+      "title": "Rules and steps for solving problems",
+      "description": "Use rules like order, grouping, and splitting numbers to make problems easier. Solve problems with more than one step, using brackets and the right order of operations.",
+      "prerequisiteIds": ["g5-operation-properties"]
+    },
+    {
+      "id": "g6-divisibility-rules",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.2"],
+      "title": "Divisibility rules",
+      "description": "Use quick tricks to tell if a number can be shared evenly by 2, 3, 4, 5, 6, 8, 9, or 10. For example, add up the digits to check for 3 or 9.",
+      "prerequisiteIds": ["g5-mult-div-facts-144", "g5-whole-numbers-100000"]
+    },
+    {
+      "id": "g6-mental-percents",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.3"],
+      "title": "Percents of numbers in your head",
+      "description": "Find percents like 1%, 5%, 10%, 15%, 25%, and 50% of a number in your head. For example, 10% of 350 is 35, so 5% is half of that.",
+      "prerequisiteIds": ["g5-fraction-decimal-percent", "g5-mental-math-decimals"]
+    },
+    {
+      "id": "g6-add-sub-whole-decimals",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.4"],
+      "title": "Add and subtract whole and decimal numbers",
+      "description": "Solve stories by adding and subtracting whole numbers and decimals. Guess the answer first by rounding, then find the exact answer and check that it makes sense.",
+      "prerequisiteIds": ["g5-add-sub-100000-decimals", "g6-round-decimals"]
+    },
+    {
+      "id": "g6-add-sub-unlike-fractions",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.5"],
+      "title": "Add and subtract different-size fractions",
+      "description": "Add and subtract fractions with different bottom numbers, like 1/2 + 3/4. Use fraction strips or a number line to make the pieces the same size.",
+      "prerequisiteIds": ["g5-add-sub-like-fractions"]
+    },
+    {
+      "id": "g6-prime-factors",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.6"],
+      "title": "Prime factors and factor trees",
+      "description": "Tell if a number is prime or composite. Break a number into prime factors with a factor tree, like 56 = 2 × 2 × 2 × 7.",
+      "prerequisiteIds": ["g5-mult-div-facts-144"]
+    },
+    {
+      "id": "g6-multiply-by-tenths",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.7"],
+      "title": "Multiply by tenths",
+      "description": "Multiply a three-digit number by a decimal like 0.3, as in 235 × 0.3 = 70.5. Use an area model or multiply by 3 and then take one tenth.",
+      "prerequisiteIds": ["g5-multiply-two-by-two-digit", "g5-mental-math-decimals"]
+    },
+    {
+      "id": "g6-divide-by-tenths",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.8"],
+      "title": "Divide by tenths",
+      "description": "Divide a number by a decimal like 0.5. Make both numbers 10 times bigger so you can divide whole numbers, like 5 ÷ 0.5 = 50 ÷ 5 = 10.",
+      "prerequisiteIds": ["g5-divide-by-two-digit", "g5-mental-math-decimals"]
+    },
+    {
+      "id": "g6-multiply-whole-by-fraction",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.9"],
+      "title": "Multiply a whole number by a fraction",
+      "description": "Find 5 × 3/4 by thinking of 5 groups of three fourths. Use fraction strips or a number line, and write the answer as an improper fraction or mixed number.",
+      "prerequisiteIds": ["g5-whole-by-unit-fraction", "g5-equivalent-fractions"]
+    },
+    {
+      "id": "g6-divide-whole-by-fraction",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.10"],
+      "title": "Divide a whole number by a fraction",
+      "description": "Find how many pieces like 3/4 fit into a whole number, such as 6 ÷ 3/4 = 8. Use pictures or rods to see the groups.",
+      "prerequisiteIds": ["g6-multiply-whole-by-fraction"]
+    },
+    {
+      "id": "g6-divide-decimals-by-whole",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.11"],
+      "title": "Divide decimals by whole numbers",
+      "description": "Divide decimals like 0.8 or 3.24 by a whole number up to 10, as in 0.24 ÷ 6 = 0.04. Use rods, grids, or short division.",
+      "prerequisiteIds": ["g6-decimals-thousandths", "g4-divide-with-remainders"]
+    },
+    {
+      "id": "g6-ratios-rates-percents",
+      "framework": "ontario-math-2020",
+      "grade": "6",
+      "strand": "B",
+      "expectationCodes": ["B2.12"],
+      "title": "Ratios, rates, and percents",
+      "description": "Solve problems with ratios, rates, and percents by scaling up or down. Use ratio tables to find equal ratios, like 2 cups of sugar for 4 cups of fruit.",
+      "prerequisiteIds": ["g5-equivalent-ratios-rates", "g5-fraction-decimal-percent"]
+    }
+  ]
+}
