@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react-native';
+import { gridOf } from './FractionPicture';
 import { VisualView } from './VisualView';
 
 describe('VisualView', () => {
@@ -25,5 +26,57 @@ describe('VisualView', () => {
   it('draws an empty ten-frame', async () => {
     await render(<VisualView visual={{ kind: 'ten-frame', filled: 0 }} width={300} height={200} />);
     expect(screen.queryAllByTestId('ten-frame-dot')).toHaveLength(0);
+  });
+
+  it.each(['circle', 'rectangle', 'bar'] as const)(
+    'cuts a %s into equal parts and shades some',
+    async (shape) => {
+      await render(
+        <VisualView
+          visual={{ kind: 'fraction', shape, parts: 4, shaded: 3 }}
+          width={300}
+          height={300}
+        />,
+      );
+      expect(screen.getByLabelText(`a ${shape} cut into 4 equal parts, 3 shaded`)).toBeTruthy();
+      expect(screen.getAllByTestId('fraction-part-shaded')).toHaveLength(3);
+      expect(screen.getAllByTestId('fraction-part')).toHaveLength(1);
+    },
+  );
+
+  it('fills one whole before the next', async () => {
+    await render(
+      <VisualView
+        visual={{ kind: 'fraction', shape: 'circle', parts: 4, shaded: 7, wholes: 2 }}
+        width={300}
+        height={200}
+      />,
+    );
+    expect(screen.getAllByTestId('fraction-part-shaded')).toHaveLength(7);
+    expect(screen.getAllByTestId('fraction-part')).toHaveLength(1);
+  });
+
+  it('shows the label under the picture', async () => {
+    await render(
+      <VisualView
+        visual={{ kind: 'fraction', shape: 'bar', parts: 3, shaded: 0, label: '0/3' }}
+        width={300}
+        height={200}
+      />,
+    );
+    expect(screen.getByText('0/3')).toBeTruthy();
+    expect(screen.queryAllByTestId('fraction-part-shaded')).toHaveLength(0);
+  });
+});
+
+describe('gridOf', () => {
+  it.each([
+    [4, 2, 2],
+    [6, 2, 3],
+    [9, 3, 3],
+    [12, 3, 4],
+    [7, 1, 7],
+  ])('lays %i parts out in %i rows of %i', (parts, rows, cols) => {
+    expect(gridOf(parts)).toEqual({ rows, cols });
   });
 });
