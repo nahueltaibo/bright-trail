@@ -15,6 +15,7 @@
     "format:check": "prettier --check .",
     "test": "npm run test --workspaces --if-present",
     "typecheck": "npm run typecheck --workspaces --if-present",
+    "dev": "node scripts/dev.mjs",
     "app:start": "npm run start -w @bright-trail/app",
     "content:validate": "npm run validate -w @bright-trail/content",
     "content:graph": "npm run graph -w @bright-trail/content",
