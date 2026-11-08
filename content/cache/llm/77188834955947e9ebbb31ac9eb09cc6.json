@@ -1,0 +1,72 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-add-sub-properties-tap-2",
+        "fits": false,
+        "ask": "join",
+        "emoji": null,
+        "one": "hop",
+        "many": "hops",
+        "place": "pond",
+        "move": "hop",
+        "leave": null,
+        "start": 2,
+        "more": 2,
+        "take": null,
+        "target": null,
+        "note": "Three groups added (2+2+2); no ask handles three addends."
+      },
+      {
+        "itemId": "g2-add-sub-properties-keypad-4",
+        "fits": false,
+        "ask": "join",
+        "emoji": null,
+        "one": "hop",
+        "many": "hops",
+        "place": "tray",
+        "move": "hop",
+        "leave": null,
+        "start": 5,
+        "more": 5,
+        "take": null,
+        "target": null,
+        "note": "Three groups added (5+5+5); no ask handles three addends."
+      },
+      {
+        "itemId": "g2-add-sub-properties-keypad-5",
+        "fits": true,
+        "ask": "back",
+        "emoji": "⭐",
+        "one": "sticker",
+        "many": "stickers",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 9,
+        "more": 8,
+        "take": null,
+        "target": null,
+        "note": "Gave away 8, 9 left; start is 17."
+      },
+      {
+        "itemId": "g2-add-sub-properties-tap-5",
+        "fits": false,
+        "ask": "join",
+        "emoji": null,
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 6,
+        "more": 9,
+        "take": null,
+        "target": null,
+        "note": "Three addends (6+9+4); no ask handles it. Also the stated answer 19 is correct but the scene can't show it."
+      }
+    ]
+  }
+}

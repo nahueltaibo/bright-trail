@@ -1,0 +1,56 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-read-numbers-50-tap-1",
+        "fits": true,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 7,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "ten-frame picture with 7 counters"
+      },
+      {
+        "itemId": "g1-read-numbers-50-keypad-1",
+        "fits": true,
+        "ask": "count",
+        "emoji": "🍎",
+        "one": "apple",
+        "many": "apples",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 12,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "count 12 apples, tray holds more than 10"
+      },
+      {
+        "itemId": "g1-read-numbers-50-tap-3",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "ten",
+        "many": "tens",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 42,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "place value question, not a ten-frame story"
+      }
+    ]
+  }
+}

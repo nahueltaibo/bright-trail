@@ -10,7 +10,8 @@
     "typecheck": "tsc -p .",
     "generate": "tsx src/generate/build-content.ts",
     "scenes": "tsx src/scenes/tag-scenes.ts",
-    "slices": "tsx src/slices/tag-slices.ts"
+    "slices": "tsx src/slices/tag-slices.ts",
+    "join": "tsx src/join/tag-join.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.6.0",

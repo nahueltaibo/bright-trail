@@ -1,0 +1,72 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-equal-groups-multiply-keypad-1",
+        "fits": false,
+        "ask": "count",
+        "emoji": "🦆",
+        "one": "duck",
+        "many": "ducks",
+        "place": "pond",
+        "move": "swim",
+        "leave": null,
+        "start": 4,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Equal groups multiplication (4 x 2 legs); not a supported scene."
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-keypad-2",
+        "fits": false,
+        "ask": "count",
+        "emoji": "✋",
+        "one": "hand",
+        "many": "hands",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 3,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Equal groups multiplication (3 x 5 fingers); answer differs from scene."
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-tap-3",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "wheel",
+        "many": "wheels",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 3,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Equal groups multiplication (4 x 3 wheels); not supported."
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-tap-4",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "toe",
+        "many": "toes",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 4,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Equal groups multiplication (4 x 5 toes); not supported."
+      }
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-arrays-multiply-divide-keypad-1",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 10,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Array multiplication (rows x columns), not a ten-frame story."
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-tap-1",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 12,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Array multiplication (3 rows of 4); not a supported story."
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-tap-2",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "sticker",
+        "many": "stickers",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 10,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Division into equal rows; the answer 5 differs from any scene answer."
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-keypad-2",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 12,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Division: finding the number of rows; not a supported story."
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-tap-4",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 24,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Division into equal rows; also 24 is more than 20 spots."
+      }
+    ]
+  }
+}

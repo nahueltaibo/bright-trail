@@ -1,0 +1,88 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-add-sub-problems-50-tap-1",
+        "fits": true,
+        "ask": "join",
+        "emoji": "🚗",
+        "one": "car",
+        "many": "cars",
+        "place": "tray",
+        "move": "drive",
+        "leave": null,
+        "start": 8,
+        "more": 3,
+        "take": null,
+        "target": null,
+        "note": "8 + 3 cars"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-tap-3",
+        "fits": false,
+        "ask": "count",
+        "emoji": "🐚",
+        "one": "shell",
+        "many": "shells",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 1,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Compares two groups (how many more); 34 also exceeds 20 spots"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-tap-4",
+        "fits": false,
+        "ask": "count",
+        "emoji": "🐦",
+        "one": "bird",
+        "many": "birds",
+        "place": "wires",
+        "move": "fly",
+        "leave": null,
+        "start": 1,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Unknown start with more arriving; scene answer would be start+more, not 8"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-keypad-1",
+        "fits": true,
+        "ask": "join",
+        "emoji": "🐟",
+        "one": "fish",
+        "many": "fish",
+        "place": "pond",
+        "move": "swim",
+        "leave": null,
+        "start": 6,
+        "more": 4,
+        "take": null,
+        "target": null,
+        "note": "6 + 4 fish"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-keypad-2",
+        "fits": true,
+        "ask": "leave",
+        "emoji": "🪙",
+        "one": "coin",
+        "many": "coins",
+        "place": "tray",
+        "move": "slide",
+        "leave": "slide",
+        "start": 10,
+        "more": null,
+        "take": 3,
+        "target": null,
+        "note": "10 - 3 coins spent"
+      }
+    ]
+  }
+}

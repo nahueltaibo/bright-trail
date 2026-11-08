@@ -5,6 +5,7 @@ export * from './common';
 export * from './engine';
 export * from './grade';
 export * from './item';
+export * from './join';
 export * from './mastery';
 export * from './nugget';
 export * from './placement';

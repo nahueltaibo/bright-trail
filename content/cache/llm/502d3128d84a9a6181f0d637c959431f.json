@@ -1,0 +1,88 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-count-50-keypad-1",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Number sequence counting, not a ten-frame story."
+      },
+      {
+        "itemId": "g1-count-50-tap-1",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Skip counting by 2s."
+      },
+      {
+        "itemId": "g1-count-50-keypad-2",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Skip counting by 5s."
+      },
+      {
+        "itemId": "g1-count-50-keypad-3",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Skip counting by 2s."
+      },
+      {
+        "itemId": "g1-count-50-tap-4",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Skip counting by 5s."
+      }
+    ]
+  }
+}

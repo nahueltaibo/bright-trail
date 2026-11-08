@@ -68,6 +68,13 @@ export default function ProfilePickerScreen() {
             </Pressable>
           </Link>
         )}
+        {SHOW_DEV_TOOLS && (
+          <Link href="/dev/join" asChild>
+            <Pressable accessibilityRole="button" style={styles.devButton}>
+              <Text style={styles.devText}>Dev: join and leave minigame</Text>
+            </Pressable>
+          </Link>
+        )}
       </View>
     </SafeAreaView>
   );

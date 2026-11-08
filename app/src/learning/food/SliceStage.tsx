@@ -10,7 +10,9 @@ import {
   type LayoutChangeEvent,
 } from 'react-native';
 import Svg, { Circle, ClipPath, Defs, Ellipse, G, Line, Mask, Path, Rect } from 'react-native-svg';
+import { BubbleView, type Bubble } from '../minigames/Bubble';
 import { castFrom, type Kid } from '../minigames/cast';
+import { frames, wait } from '../minigames/motion';
 import { colors } from '../theme';
 import { CRUMB, edgeLook, FoodArt, PICKED_FILL, Underlay } from './FoodArt';
 import { Gaps } from '../FractionPicture';
@@ -51,7 +53,6 @@ type Model = {
 };
 type Anim = { xy: Animated.ValueXY; s: Animated.Value; o: Animated.Value };
 type Pos = { x: number; y: number; s: number };
-type Bubble = { id: number; x: number; y: number; text: string; big?: boolean };
 type Cut = { id: number; a: Pt; b: Pt; k: number };
 type Crumb = { id: number; x: number; y: number; color: string; fall: Animated.Value };
 type Bites = { rows: Bite[][]; n: number; k: number };
@@ -67,21 +68,6 @@ function timing(v: Animated.Value | Animated.ValueXY, to: number | Pt, ms: numbe
   );
 }
 
-/** Calls `step` with 0..1 on each frame, for things Animated can't drive, like bite sizes. */
-function frames(ms: number, step: (k: number) => void) {
-  return new Promise<void>((resolve) => {
-    const start = Date.now();
-    const tick = () => {
-      const k = Math.min(1, (Date.now() - start) / ms);
-      step(k);
-      if (k < 1) requestAnimationFrame(tick);
-      else resolve();
-    };
-    requestAnimationFrame(tick);
-  });
-}
-
-const wait = (ms: number) => new Promise((r) => setTimeout(r, ms));
 const fraction = (n: number, d: number) => `${n}/${d}`;
 
 type Props = {
@@ -715,26 +701,6 @@ function SliceView({
   );
 }
 
-function BubbleView({ bubble: b }: { bubble: Bubble }) {
-  const [pop] = useState(() => new Animated.Value(0.3));
-  useEffect(() => {
-    Animated.spring(pop, { toValue: 1, useNativeDriver: NATIVE, friction: 5 }).start();
-  }, [pop]);
-  const size = b.big ? 20 : 16;
-  return (
-    <Animated.View
-      pointerEvents="none"
-      style={[
-        styles.bubble,
-        b.big && styles.bigBubble,
-        { left: b.x - 120, top: b.y - size, transform: [{ scale: pop }] },
-      ]}
-    >
-      <Text style={[styles.bubbleText, b.big && styles.bigText, { fontSize: size }]}>{b.text}</Text>
-    </Animated.View>
-  );
-}
-
 function CrumbView({ crumb: c, onDone }: { crumb: Crumb; onDone: () => void }) {
   const done = useRef(onDone);
   useEffect(() => {
@@ -767,28 +733,5 @@ const styles = StyleSheet.create({
   kid: { position: 'absolute', width: 80, alignItems: 'center' },
   kidEmoji: { fontSize: 34, lineHeight: 40 },
   kidName: { fontSize: 14, fontWeight: '700', color: colors.softInk },
-  bubble: {
-    position: 'absolute',
-    width: 240,
-    alignItems: 'center',
-  },
-  bigBubble: {},
-  bubbleText: {
-    fontWeight: '800',
-    color: colors.ink,
-    backgroundColor: '#FFFFFF',
-    borderColor: colors.line,
-    borderWidth: 1.5,
-    borderRadius: 999,
-    overflow: 'hidden',
-    paddingHorizontal: 9,
-    paddingVertical: 3,
-  },
-  bigText: {
-    color: colors.background,
-    backgroundColor: colors.ink,
-    borderColor: colors.ink,
-    paddingHorizontal: 14,
-  },
   crumb: { position: 'absolute', width: 4, height: 4, borderRadius: 2 },
 });

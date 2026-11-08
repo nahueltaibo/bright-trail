@@ -1,0 +1,56 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-keypad-3",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "sock",
+        "many": "socks",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 16,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Multiplication with equal groups; not one of the scene asks."
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-keypad-4",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "puck",
+        "many": "pucks",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 1,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Division into equal groups, and 40 needs more than 20 spots."
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-tap-4",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "sticker",
+        "many": "stickers",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 1,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Equal sharing division; not one of the scene asks."
+      }
+    ]
+  }
+}
