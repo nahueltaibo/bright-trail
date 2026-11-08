@@ -6,13 +6,13 @@ Each device keeps its own data. If the kids use different tablets, check progres
 
 ## 1. Get the APK onto the Device
 
-The file looks like `bright-trail-1.0.0-2026.11.07-53.apk`. Upload it to Google Drive on the computer. On the device, open the Drive app, tap the file, and tap **Install**.
+On the device, open the browser and sign in to GitHub with an account that can see the repo. Go to the [Releases page](https://github.com/nahueltaibo/bright-trail/releases), open the latest release, and tap the file under **Assets** that looks like `bright-trail-1.0.0-2026.11.07-53.apk`. Open it from the download notification.
 
-Email works too: attach the APK, open the email on the device, and tap the attachment. If the mail app won't open it, use Drive.
+Drive works too: download the APK on the computer, upload it to Google Drive, then open it from the Drive app on the device.
 
 ## 2. Allow the Install
 
-The first time, Android asks for permission to install apps from wherever the file came from (Drive or Gmail):
+The first time, Android asks for permission to install apps from wherever the file came from (the browser or Drive):
 
 - Tap **Settings** on the prompt, turn on **Allow from this source**, then go back.
 - If you missed the prompt: **Settings → Apps → ⋮ → Special access → Install unknown apps**, pick the app, and turn it on.
@@ -34,7 +34,7 @@ Most updates (new lessons, fixes) arrive by themselves. Open the app, close it, 
 
 - To check right away, open the parent area and scroll to **About this app**. Tap **Check for updates**, then **Restart now**.
 - **About this app** also shows the app version, the update the device is running, and the content version. Handy when something looks off.
-- Now and then a bigger change needs a new APK. You'll get a new file. Install it from Drive right over the old one. Android says **Update** instead of Install, and children, progress, flags, and the PIN all stay.
+- Now and then a bigger change needs a new APK. It shows up as a new release whose first number went up, like `2.0.0`. Install it the same way, right over the old one. Android says **Update** instead of Install, and children, progress, flags, and the PIN all stay.
 - **Never uninstall.** Uninstalling deletes everything the app saved on that device.
 - If Android says **App not installed** or **package conflicts with an existing package**, the file was signed with a different key. Stop, export the data (below), and ask whoever built it.
 
@@ -44,7 +44,9 @@ Open the parent area (🔒 and your PIN), scroll to **Export**, and tap **Export
 
 ## For the Maintainer
 
-You need the Android setup from [e2e/README.md](../e2e/README.md#setup) (SDK, JDK 17, and CMake 3.31+ on Windows), and an Expo login for publishing (`npx -y eas-cli@latest login`). The app is the `@nahueltaibo/bright-trail` project on [expo.dev](https://expo.dev/accounts/nahueltaibo/projects/bright-trail).
+CI ships every change on `main`. A major version bump builds a new APK as a GitHub release, and anything else goes out as an OTA update. [AGENTS.md](../AGENTS.md#versions-and-releases) has the rules for bumping the version. The app is the `@nahueltaibo/bright-trail` project on [expo.dev](https://expo.dev/accounts/nahueltaibo/projects/bright-trail).
+
+The steps below are for doing it by hand. You need the Android setup from [e2e/README.md](../e2e/README.md#setup) (SDK, JDK 17, and CMake 3.31+ on Windows), an Expo login (`npx -y eas-cli@latest login`), and `gh` logged in.
 
 ### The Release Key
 
@@ -53,7 +55,7 @@ Family APKs are signed with a release key that lives outside the repo:
 - `%USERPROFILE%\.bright-trail\release.keystore` — the key itself.
 - `%USERPROFILE%\.bright-trail\release.properties` — its path, alias, and passwords. Set `BRIGHT_TRAIL_SIGNING` to use another location.
 
-**Back up both files** somewhere safe and private (a password manager or an encrypted drive, not the repo). Android only upgrades an app with an APK signed by the same key. Lose it, and the next APK can't install over the old one, so every device has to uninstall and lose its data. OTA updates keep working without the key, but only until a new APK is needed.
+CI gets the same key from repo secrets. **Back up both files** somewhere safe and private (a password manager or an encrypted drive, not the repo). Android only upgrades an app with an APK signed by the same key. Lose it, and the next APK can't install over the old one, so every device has to uninstall and lose its data. OTA updates keep working without the key, but only until a new APK is needed.
 
 The family build fails if the key is missing. The e2e build keeps Expo's debug key, so an e2e build and a family build can't upgrade each other. On a test device, uninstall one before installing the other.
 
@@ -65,17 +67,17 @@ From the repo root:
 npm run ota:publish -- --message "Add fractions stories"
 ```
 
-It checks the Expo login, runs lint, typecheck, and tests, then publishes the JS and content to the `production` channel for Android. Devices download it on their next launch and run it on the launch after that. Updates are off in the e2e build, so Maestro always tests the code it was built with.
+It checks the Expo login and the native fingerprint, runs lint, typecheck, and tests, then publishes the JS and content to the `production` channel for Android. Devices download it on their next launch and run it on the launch after that. Updates are off in the e2e build, so Maestro always tests the code it was built with.
 
 ### When to Build a New APK
 
-The runtime version is a fingerprint of the native side: native modules and their versions, `app.json`/`app.config.js`, and config plugins. An update only reaches devices whose APK has the same fingerprint, so a JS-only change ships as an update. Adding or upgrading a native package (anything installed with `npx expo install` that has native code), upgrading the Expo SDK, or changing app config needs a new APK:
+Whenever the major version goes up. An update only reaches APKs with the same major version, so after a native change older APKs keep running their last compatible update. To build one by hand:
 
 ```sh
 npm run android:build:family
 ```
 
-It writes `dist/bright-trail-<appVersion>-<bundleVersion>.apk`. Share it by Drive. Publishing an update after a native change does nothing for older APKs: they keep running their last compatible update. Check the runtime version in **About this app** against the one `ota:publish` prints if an update doesn't show up.
+It writes `dist/bright-trail-<appVersion>-<bundleVersion>.apk`. If an update doesn't show up on a device, compare the runtime version in **About this app** with the major version in `app/app.json`.
 
 To install over USB instead:
 

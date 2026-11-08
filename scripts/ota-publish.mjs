@@ -1,5 +1,5 @@
 // Publishes the current JS and content to family devices as an OTA update (Android only).
-// Usage: npm run ota:publish -- --message "What changed"
+// Usage: npm run ota:publish -- --message "What changed" [--no-checks]
 import { spawnSync } from 'node:child_process';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -48,7 +48,13 @@ if (who.status !== 0 || !account || /not logged in/i.test(`${who.stdout}${who.st
 }
 console.log(`Logged in as ${account}.`);
 
-for (const script of ['lint', 'typecheck', 'test']) {
+if (run('node', ['scripts/release.mjs', '--require-ota']).status !== 0) {
+  console.error('Nothing was published.');
+  process.exit(1);
+}
+
+// CI passes --no-checks because its earlier job already ran them.
+for (const script of args.includes('--no-checks') ? [] : ['lint', 'typecheck', 'test']) {
   if (run('npm', ['run', script]).status !== 0) {
     console.error(`npm run ${script} failed. Nothing was published.`);
     process.exit(1);
