@@ -71,6 +71,7 @@ export default function SessionScreen() {
         item={view.item}
         narrate={narrateItem}
         onFlag={onFlag}
+        measuring={view.phase !== 'check'}
         onAnswer={(result) => run((s) => s.answer(result))}
         onNext={() => run((s) => s.next())}
       />

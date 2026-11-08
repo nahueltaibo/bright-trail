@@ -1,0 +1,68 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-add-sub-properties-tap-2",
+        "fits": false,
+        "ask": "total",
+        "thing": "ball",
+        "one": "hop",
+        "many": "hops",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 6,
+        "groups": 3,
+        "each": 2,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Hop distance, not a sharing story; no matching thing."
+      },
+      {
+        "itemId": "g2-add-sub-properties-keypad-4",
+        "fits": false,
+        "ask": "total",
+        "thing": "ball",
+        "one": "hop",
+        "many": "hops",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 15,
+        "groups": 3,
+        "each": 5,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Hop distance, not a sharing story; no matching thing."
+      },
+      {
+        "itemId": "g2-add-sub-properties-keypad-5",
+        "fits": false,
+        "ask": "total",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 17,
+        "groups": 2,
+        "each": 8,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Missing-start subtraction, not one of the sharing stories."
+      }
+    ]
+  }
+}

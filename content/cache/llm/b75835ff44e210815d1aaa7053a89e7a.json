@@ -1,0 +1,68 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-mult-div-properties-keypad-2",
+        "fits": true,
+        "ask": "each",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "basket",
+        "receivers": "containers",
+        "total": 10,
+        "groups": 2,
+        "each": null,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": { "name": "Mia", "look": "kid" },
+        "named": null,
+        "otherSharer": null,
+        "note": "10 apples shared into 2 baskets"
+      },
+      {
+        "itemId": "g3-mult-div-properties-keypad-3",
+        "fits": false,
+        "ask": "total",
+        "thing": "ball",
+        "one": "ball",
+        "many": "balls",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 18,
+        "groups": 6,
+        "each": 3,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Abstract multiplication fact with no things; not a sharing story"
+      },
+      {
+        "itemId": "g3-mult-div-properties-keypad-4",
+        "fits": true,
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "containers",
+        "total": 24,
+        "groups": 4,
+        "each": null,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "24 cookies onto 4 trays (plates)"
+      }
+    ]
+  }
+}

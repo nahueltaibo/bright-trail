@@ -8,7 +8,8 @@
     "graph": "tsx src/graph/build-graph.ts",
     "test": "vitest run",
     "typecheck": "tsc -p .",
-    "generate": "tsx src/generate/build-content.ts"
+    "generate": "tsx src/generate/build-content.ts",
+    "scenes": "tsx src/scenes/tag-scenes.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.6.0",

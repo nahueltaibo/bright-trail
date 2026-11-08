@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { IdSchema, NonEmptyTextSchema } from './common';
+import { SceneSchema } from './scene';
 import { VisualSchema } from './visual';
 
 export const DifficultySchema = z.number().int().min(1).max(3);
@@ -14,6 +15,8 @@ const ItemBaseSchema = z.object({
   prompt: NonEmptyTextSchema,
   /** Shown, and read aloud, after a miss. */
   why: NonEmptyTextSchema,
+  /** When set, the item plays as the sharing minigame. Its answer must match the item's. */
+  scene: SceneSchema.optional(),
 });
 
 export const ChoiceSchema = z.discriminatedUnion('kind', [
