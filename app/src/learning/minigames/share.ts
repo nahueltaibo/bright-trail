@@ -2,12 +2,28 @@ import {
   THINGS,
   type Amount,
   type ContainerKind,
+  type FractionFood,
   type Scene,
   type SceneAsk,
+  type ThingId,
 } from '@bright-trail/shared';
 import { castFrom, kidFor, type Kid } from './cast';
 
-export type Thing = { emoji: string; one: string; many: string; cuttable: boolean };
+export type Thing = {
+  emoji: string;
+  one: string;
+  many: string;
+  cuttable: boolean;
+  /** Drawn as food art instead of its emoji. Round food cuts into wedges, bars into strips. */
+  food?: FractionFood;
+};
+
+/** Things the slices art can draw. A bar is granola unless the story calls it chocolate. */
+function foodOf(thing: ThingId, one: string): FractionFood | undefined {
+  if (thing === 'pie' || thing === 'pizza' || thing === 'cookie') return thing;
+  if (thing === 'bar') return /chocolate/i.test(one) ? 'chocolate' : 'granola';
+  return undefined;
+}
 
 /** Who gets a share. Kids have a name and picture, stores only a picture, containers neither. */
 export type Receiver = { name?: string; emoji?: string };
@@ -48,7 +64,13 @@ export function problemFromScene(scene: Scene, seed: string): ShareProblem {
   return {
     id: seed,
     ask: scene.ask,
-    thing: { emoji: thing.emoji, cuttable: thing.cuttable, one: scene.one, many: scene.many },
+    thing: {
+      emoji: thing.emoji,
+      cuttable: thing.cuttable,
+      one: scene.one,
+      many: scene.many,
+      ...(foodOf(scene.thing, scene.one) && { food: foodOf(scene.thing, scene.one) }),
+    },
     container: scene.container,
     total: scene.total,
     side: side(scene.groups),
