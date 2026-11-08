@@ -12,6 +12,7 @@ import { buildBundle, generateAll, MAX_RETRIES } from './pipeline';
 import { generateRequest, type SkillContext } from './prompts';
 import { loadScope, prerequisiteClosure } from './scope';
 import { renderContentReport, renderPilotReport } from './report';
+import { applyScenes } from '../scenes/scenes';
 
 /** Skills the testers will meet first: 2 Kindergarten, 2 Grade 1, 1 Grade 5, 1 Grade 6, across topics. */
 const PILOT_SKILLS = [
@@ -112,7 +113,15 @@ if (values.pilot) {
   await writeFormatted(file, renderPilotReport(run));
   console.log(`Wrote ${file}`);
 } else if (!values.skills) {
-  const bundle = buildBundle(bundleSkills, run.outcomes, new Date());
+  // Scenes from `npm run content:scenes` survive regeneration while their items still match.
+  const scenes = JSON.parse(
+    await readFile(join(contentDir, 'scenes.json'), 'utf8').catch(() => '{}'),
+  );
+  const { bundle, dropped } = applyScenes(
+    buildBundle(bundleSkills, run.outcomes, new Date()),
+    scenes,
+  );
+  for (const d of dropped) console.warn(`Scene dropped: ${d}`);
   const bundleFile = join(outDir, 'bundle.json');
   await writeFormatted(bundleFile, JSON.stringify(bundle));
   const bytes = (await readFile(bundleFile)).byteLength;
