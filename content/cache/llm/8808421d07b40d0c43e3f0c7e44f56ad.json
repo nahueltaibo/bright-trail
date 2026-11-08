@@ -1,0 +1,68 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-add-sub-stories-10-keypad-1",
+        "fits": false,
+        "ask": "each",
+        "thing": "fish",
+        "one": "fish",
+        "many": "fish",
+        "container": "bowl",
+        "receivers": "kids",
+        "total": 4,
+        "groups": 2,
+        "each": null,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Subtraction story (4-1), not a sharing story."
+      },
+      {
+        "itemId": "k-add-sub-stories-10-tap-2",
+        "fits": false,
+        "ask": "each",
+        "thing": "balloon",
+        "one": "balloon",
+        "many": "balloons",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 5,
+        "groups": 2,
+        "each": null,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Subtraction story (5-2), not a sharing story."
+      },
+      {
+        "itemId": "k-add-sub-stories-10-keypad-3",
+        "fits": false,
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 9,
+        "groups": 2,
+        "each": null,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Subtraction story (9-4), not a sharing story."
+      }
+    ]
+  }
+}

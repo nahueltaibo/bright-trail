@@ -20,6 +20,7 @@
     "content:validate": "npm run validate -w @bright-trail/content",
     "content:graph": "npm run graph -w @bright-trail/content",
     "content:generate": "npm run generate -w @bright-trail/content --",
+    "content:scenes": "npm run scenes -w @bright-trail/content --",
     "build": "npm run build --workspaces --if-present",
     "e2e:build:android": "node scripts/build-android.mjs --e2e",
     "android:build:family": "node scripts/build-android.mjs --family",

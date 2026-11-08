@@ -1,0 +1,68 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g4-mult-div-facts-100-keypad-2",
+        "fits": true,
+        "ask": "each",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 18,
+        "groups": 3,
+        "each": null,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": { "name": "Mia", "look": "kid" },
+        "named": null,
+        "otherSharer": null,
+        "note": "18 shared equally into 3 groups"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-keypad-4",
+        "fits": false,
+        "ask": "groups",
+        "thing": "ball",
+        "one": "bottle",
+        "many": "bottles",
+        "container": "box",
+        "receivers": "containers",
+        "total": 16,
+        "groups": 6,
+        "each": 8,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Water bottles have no close match in thing list; total 48 exceeds 20"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-number-line-3",
+        "fits": false,
+        "ask": "total",
+        "thing": "ball",
+        "one": "ball",
+        "many": "balls",
+        "container": "box",
+        "receivers": "containers",
+        "total": 20,
+        "groups": 2,
+        "each": 10,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Answer 72 exceeds total limit; number line picture, not a number answer scene"
+      }
+    ]
+  }
+}

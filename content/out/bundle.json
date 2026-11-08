@@ -4750,7 +4750,23 @@
         { "id": "a", "kind": "text", "text": "Yes" },
         { "id": "b", "kind": "text", "text": "No" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "scene": {
+        "kind": "share",
+        "ask": "fair",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 4,
+        "groups": 2,
+        "split": [2, 2],
+        "named": [
+          { "name": "Mia", "look": "kid" },
+          { "name": "Sam", "look": "kid" }
+        ]
+      }
     },
     {
       "id": "k-equal-share-keypad-1",
@@ -4761,7 +4777,18 @@
       "why": "Give one apple to each friend. Then no apples are left. Each friend gets 1.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 2 },
-      "answer": 1
+      "answer": 1,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 2,
+        "groups": 2
+      }
     },
     {
       "id": "k-equal-share-number-line-1",
@@ -4774,7 +4801,18 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 2
+      "target": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "duck",
+        "one": "duck",
+        "many": "ducks",
+        "container": "pond",
+        "receivers": "containers",
+        "total": 4,
+        "groups": 2
+      }
     },
     {
       "id": "k-equal-share-tap-2",
@@ -4790,7 +4828,18 @@
         { "id": "b", "kind": "number", "value": 2 },
         { "id": "c", "kind": "number", "value": 1 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 4,
+        "groups": 4
+      }
     },
     {
       "id": "k-equal-share-keypad-2",
@@ -4801,7 +4850,19 @@
       "why": "Hand out one cookie at a time to each friend. Each friend ends up with 3.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
-      "answer": 3
+      "answer": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 6,
+        "groups": 2,
+        "sharer": { "name": "Sam", "look": "boy" }
+      }
     },
     {
       "id": "k-equal-share-tap-3",
@@ -4817,7 +4878,19 @@
         { "id": "b", "kind": "number", "value": 4 },
         { "id": "c", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "berry",
+        "one": "berry",
+        "many": "berries",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 6,
+        "groups": 3,
+        "sharer": { "name": "Lily", "look": "girl" }
+      }
     },
     {
       "id": "k-equal-share-keypad-3",
@@ -4828,7 +4901,19 @@
       "why": "Give each friend one car at a time. Each friend gets 4.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🚗", "count": 8 },
-      "answer": 4
+      "answer": 4,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "car",
+        "one": "toy car",
+        "many": "toy cars",
+        "container": "box",
+        "receivers": "kids",
+        "total": 8,
+        "groups": 2,
+        "sharer": { "name": "Max", "look": "boy" }
+      }
     },
     {
       "id": "k-equal-share-number-line-2",
@@ -4841,7 +4926,18 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 3
+      "target": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "grape",
+        "one": "grape",
+        "many": "grapes",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 9,
+        "groups": 3
+      }
     },
     {
       "id": "k-equal-share-tap-4",
@@ -4855,7 +4951,23 @@
         { "id": "a", "kind": "text", "text": "No" },
         { "id": "b", "kind": "text", "text": "Yes" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "scene": {
+        "kind": "share",
+        "ask": "fair",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 6,
+        "groups": 2,
+        "split": [4, 2],
+        "named": [
+          { "name": "Ana", "look": "kid" },
+          { "name": "Ben", "look": "kid" }
+        ]
+      }
     },
     {
       "id": "k-equal-share-keypad-4",
@@ -4866,7 +4978,18 @@
       "why": "Give one star to each friend, again and again. Each friend gets 5.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "⭐", "count": 10 },
-      "answer": 5
+      "answer": 5,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "star",
+        "one": "star",
+        "many": "stars",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 2
+      }
     },
     {
       "id": "k-equal-share-tap-5",
@@ -4883,7 +5006,19 @@
         { "id": "c", "kind": "number", "value": 3 },
         { "id": "d", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "pencil",
+        "one": "pencil",
+        "many": "pencils",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 8,
+        "groups": 4,
+        "sharer": { "name": "Zoe", "look": "girl" }
+      }
     },
     {
       "id": "k-equal-share-keypad-5",
@@ -4894,7 +5029,18 @@
       "why": "Give each friend one apple, three times. All 9 are shared. Each friend gets 3.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
-      "answer": 3
+      "answer": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 9,
+        "groups": 3
+      }
     },
     {
       "id": "k-equal-share-number-line-3",
@@ -4907,7 +5053,18 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 2
+      "target": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "balloon",
+        "one": "balloon",
+        "many": "balloons",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 5
+      }
     },
     {
       "id": "k-equal-share-keypad-6",
@@ -4917,7 +5074,19 @@
       "prompt": "4 friends, 2 each",
       "why": "Count 2 for each friend. 2 and 2 and 2 and 2 is 8.",
       "type": "keypad",
-      "answer": 8
+      "answer": 8,
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 8,
+        "groups": 4,
+        "each": 2
+      }
     },
     {
       "id": "k-equal-share-tap-6",
@@ -5732,7 +5901,18 @@
         { "id": "c", "kind": "number", "value": 4 },
         { "id": "d", "kind": "number", "value": 6 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 8,
+        "groups": 2
+      }
     },
     {
       "id": "g1-fair-share-drawings-keypad-1",
@@ -5743,7 +5923,18 @@
       "why": "Share the apples one at a time. Each friend gets 3 apples.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
-      "answer": 3
+      "answer": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 6,
+        "groups": 2
+      }
     },
     {
       "id": "g1-fair-share-drawings-number-line-1",
@@ -5756,7 +5947,18 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 3
+      "target": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "grape",
+        "one": "grape",
+        "many": "grapes",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 12,
+        "groups": 4
+      }
     },
     {
       "id": "g1-fair-share-drawings-tap-2",
@@ -5797,7 +5999,18 @@
       "why": "Give each of the 4 friends one grape, then again. Each friend gets 2 grapes.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍇", "count": 8 },
-      "answer": 2
+      "answer": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "grape",
+        "one": "grape",
+        "many": "grapes",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 8,
+        "groups": 4
+      }
     },
     {
       "id": "g1-fair-share-drawings-tap-3",
@@ -5814,7 +6027,18 @@
         { "id": "c", "kind": "number", "value": 3 },
         { "id": "d", "kind": "number", "value": 1 }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "scene": {
+        "kind": "share",
+        "ask": "left",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 5,
+        "groups": 2
+      }
     },
     {
       "id": "g1-fair-share-drawings-number-line-2",
@@ -5843,7 +6067,18 @@
         { "id": "b", "kind": "text", "text": "1 1/2" },
         { "id": "c", "kind": "text", "text": "1" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 3,
+        "groups": 2
+      }
     },
     {
       "id": "g1-fair-share-drawings-keypad-3",
@@ -5887,7 +6122,18 @@
         { "id": "c", "kind": "text", "text": "2" },
         { "id": "d", "kind": "text", "text": "1 1/4" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 5,
+        "groups": 4
+      }
     },
     {
       "id": "g1-fair-share-drawings-keypad-4",
@@ -5898,7 +6144,18 @@
       "why": "Four friends get 3 each, so 12 sandwiches are given out. That leaves 2 sandwiches.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🥪", "count": 14 },
-      "answer": 2
+      "answer": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "left",
+        "thing": "sandwich",
+        "one": "sandwich",
+        "many": "sandwiches",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 14,
+        "groups": 4
+      }
     },
     {
       "id": "g1-fair-share-drawings-number-line-3",
@@ -5911,7 +6168,18 @@
       "min": 0,
       "max": 20,
       "step": 1,
-      "target": 9
+      "target": 9,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 18,
+        "groups": 2
+      }
     },
     {
       "id": "g1-fair-share-drawings-tap-7",
@@ -5955,7 +6223,20 @@
         { "id": "a", "kind": "text", "text": "4 friends" },
         { "id": "b", "kind": "text", "text": "2 friends" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "compare",
+        "thing": "pie",
+        "one": "pie",
+        "many": "pies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 1,
+        "groups": 2,
+        "otherGroups": 4,
+        "want": "more"
+      }
     },
     {
       "id": "g1-half-equals-two-fourths-tap-1",
@@ -6232,7 +6513,19 @@
       "why": "The pizza has 4 equal slices. Each kid gets one slice, so 4 kids share it.",
       "type": "keypad",
       "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
-      "answer": 4
+      "answer": 4,
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "pizza",
+        "one": "slice",
+        "many": "slices",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 4,
+        "groups": 4,
+        "each": 1
+      }
     },
     {
       "id": "g1-compare-unit-fractions-number-line-1",
@@ -6259,7 +6552,20 @@
         { "id": "a", "kind": "text", "text": "4 kids" },
         { "id": "b", "kind": "text", "text": "2 kids" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "compare",
+        "thing": "pizza",
+        "one": "pizza",
+        "many": "pizzas",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 1,
+        "groups": 2,
+        "otherGroups": 4,
+        "want": "more"
+      }
     },
     {
       "id": "g1-compare-unit-fractions-tap-4",
@@ -7202,7 +7508,19 @@
         { "id": "b", "kind": "number", "value": 4 },
         { "id": "c", "kind": "number", "value": 5 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "star",
+        "one": "star",
+        "many": "stars",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 4,
+        "groups": 2,
+        "each": 2
+      }
     },
     {
       "id": "g1-equal-groups-keypad-1",
@@ -7213,7 +7531,19 @@
       "why": "Count by 2s. 2, 4, 6. There are 6 fish.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
-      "answer": 6
+      "answer": 6,
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "fish",
+        "one": "fish",
+        "many": "fish",
+        "container": "bowl",
+        "receivers": "containers",
+        "total": 6,
+        "groups": 3,
+        "each": 2
+      }
     },
     {
       "id": "g1-equal-groups-number-line-1",
@@ -7258,7 +7588,19 @@
         { "id": "b", "kind": "number", "value": 2 },
         { "id": "c", "kind": "number", "value": 4 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "containers",
+        "total": 6,
+        "groups": 3,
+        "each": 2
+      }
     },
     {
       "id": "g1-equal-groups-keypad-2",
@@ -7269,7 +7611,19 @@
       "why": "Count by 2s. 2, 4, 6, 8. There are 8 bugs.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🐞", "count": 8 },
-      "answer": 8
+      "answer": 8,
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "bug",
+        "one": "bug",
+        "many": "bugs",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 8,
+        "groups": 4,
+        "each": 2
+      }
     },
     {
       "id": "g1-equal-groups-number-line-2",
@@ -7282,7 +7636,20 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 10
+      "target": 10,
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 10,
+        "groups": 5,
+        "each": 2,
+        "sharer": { "name": "Lena", "look": "kid" }
+      }
     },
     {
       "id": "g1-equal-groups-tap-4",
@@ -7298,7 +7665,19 @@
         { "id": "b", "kind": "number", "value": 6 },
         { "id": "c", "kind": "number", "value": 4 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "grape",
+        "one": "grape",
+        "many": "grapes",
+        "container": "cup",
+        "receivers": "containers",
+        "total": 8,
+        "groups": 4,
+        "each": 2
+      }
     },
     {
       "id": "g1-equal-groups-keypad-3",
@@ -7324,7 +7703,20 @@
         { "id": "b", "kind": "number", "value": 6 },
         { "id": "c", "kind": "number", "value": 8 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 9,
+        "groups": 3,
+        "each": 3,
+        "sharer": { "name": "Ben", "look": "kid" }
+      }
     },
     {
       "id": "g1-equal-groups-number-line-3",
@@ -7337,7 +7729,20 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 5
+      "target": 5,
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "cracker",
+        "one": "cracker",
+        "many": "crackers",
+        "container": "plate",
+        "receivers": "containers",
+        "total": 10,
+        "groups": 5,
+        "each": 2,
+        "sharer": { "name": "Tia", "look": "girl" }
+      }
     },
     {
       "id": "g1-equal-groups-keypad-4",
@@ -7348,7 +7753,19 @@
       "why": "Make groups of 3. 3, 6, 9. That is 3 groups, so 3 bags.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
-      "answer": 3
+      "answer": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 9,
+        "groups": 3,
+        "each": 3
+      }
     },
     {
       "id": "g1-equal-groups-tap-6",
@@ -7374,7 +7791,20 @@
       "why": "Count by 5s. 5, 10. That is 2 groups, so 2 plates.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍘", "count": 10 },
-      "answer": 2
+      "answer": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "cracker",
+        "one": "cracker",
+        "many": "crackers",
+        "container": "plate",
+        "receivers": "containers",
+        "total": 10,
+        "groups": 2,
+        "each": 5,
+        "sharer": { "name": "Kim", "look": "girl" }
+      }
     },
     {
       "id": "g1-equal-groups-tap-7",
@@ -7785,7 +8215,18 @@
         { "id": "c", "kind": "number", "value": 3 },
         { "id": "d", "kind": "number", "value": 6 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 6,
+        "groups": 2
+      }
     },
     {
       "id": "g2-fair-share-fractions-keypad-1",
@@ -7796,7 +8237,18 @@
       "why": "Hand out 1 apple to each of the 4 friends. Do it again. That uses all 8. Each gets 2.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 8 },
-      "answer": 2
+      "answer": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 8,
+        "groups": 4
+      }
     },
     {
       "id": "g2-fair-share-fractions-number-line-1",
@@ -7809,7 +8261,18 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 5
+      "target": 5,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 2
+      }
     },
     {
       "id": "g2-fair-share-fractions-tap-2",
@@ -7837,7 +8300,18 @@
       "why": "Make 3 equal groups from 9 pears. Each group has 3 pears.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍐", "count": 9 },
-      "answer": 3
+      "answer": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "pear",
+        "one": "pear",
+        "many": "pears",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 9,
+        "groups": 3
+      }
     },
     {
       "id": "g2-fair-share-fractions-tap-3",
@@ -7854,7 +8328,18 @@
         { "id": "c", "kind": "text", "text": "2" },
         { "id": "d", "kind": "text", "text": "1 2/3" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "sandwich",
+        "one": "sandwich",
+        "many": "sandwiches",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 4,
+        "groups": 3
+      }
     },
     {
       "id": "g2-fair-share-fractions-number-line-2",
@@ -7884,7 +8369,18 @@
         { "id": "c", "kind": "text", "text": "1/4" },
         { "id": "d", "kind": "text", "text": "2/3" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "pie",
+        "one": "pie",
+        "many": "pies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 1,
+        "groups": 4
+      }
     },
     {
       "id": "g2-fair-share-fractions-tap-5",
@@ -7901,7 +8397,18 @@
         { "id": "c", "kind": "text", "text": "3" },
         { "id": "d", "kind": "text", "text": "2 1/4" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 5,
+        "groups": 2
+      }
     },
     {
       "id": "g2-fair-share-fractions-keypad-3",
@@ -7912,7 +8419,18 @@
       "why": "3 friends each get 3 bars. That is 9 bars. 10 take away 9 leaves 1 bar.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍫", "count": 10 },
-      "answer": 1
+      "answer": 1,
+      "scene": {
+        "kind": "share",
+        "ask": "left",
+        "thing": "bar",
+        "one": "bar",
+        "many": "bars",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 3
+      }
     },
     {
       "id": "g2-fair-share-fractions-tap-6",
@@ -7929,7 +8447,18 @@
         { "id": "c", "kind": "text", "text": "2/3" },
         { "id": "d", "kind": "text", "text": "2" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "bar",
+        "one": "bar",
+        "many": "bars",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 2,
+        "groups": 3
+      }
     },
     {
       "id": "g2-fair-share-fractions-keypad-4",
@@ -7953,7 +8482,20 @@
         { "id": "a", "kind": "text", "text": "6 friends" },
         { "id": "b", "kind": "text", "text": "3 friends" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "compare",
+        "thing": "bar",
+        "one": "bar",
+        "many": "bars",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 3,
+        "otherGroups": 6,
+        "want": "more"
+      }
     },
     {
       "id": "g2-fair-share-fractions-tap-8",
@@ -7970,7 +8512,18 @@
         { "id": "c", "kind": "text", "text": "5" },
         { "id": "d", "kind": "text", "text": "3 1/3" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "bar",
+        "one": "granola bar",
+        "many": "granola bars",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 3
+      }
     },
     {
       "id": "g2-fair-share-fractions-number-line-3",
@@ -7983,7 +8536,18 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 4
+      "target": 4,
+      "scene": {
+        "kind": "share",
+        "ask": "left",
+        "thing": "bar",
+        "one": "bar",
+        "many": "bars",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 6
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-tap-1",
@@ -8655,7 +9219,20 @@
       "prompt": "6 groups of 3 = ?",
       "why": "Add 3 six times. 3 + 3 + 3 + 3 + 3 + 3 = 18. Leo has 18 apples.",
       "type": "keypad",
-      "answer": 18
+      "answer": 18,
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 18,
+        "groups": 6,
+        "each": 3,
+        "sharer": { "name": "Leo", "look": "kid" }
+      }
     },
     {
       "id": "g2-equal-groups-multiply-number-line-2",
@@ -8788,7 +9365,19 @@
         { "id": "b", "kind": "number", "value": 3 },
         { "id": "c", "kind": "number", "value": 4 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 6,
+        "groups": 2,
+        "sharer": { "name": "Mia", "look": "kid" }
+      }
     },
     {
       "id": "g2-division-sharing-keypad-1",
@@ -8799,7 +9388,19 @@
       "why": "Share the cookies one at a time to each plate. Each plate gets 5 cookies.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
-      "answer": 5
+      "answer": 5,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "containers",
+        "total": 10,
+        "groups": 2,
+        "sharer": { "name": "Ben", "look": "boy" }
+      }
     },
     {
       "id": "g2-division-sharing-number-line-1",
@@ -8812,7 +9413,18 @@
       "min": 0,
       "max": 12,
       "step": 1,
-      "target": 2
+      "target": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 8,
+        "groups": 4
+      }
     },
     {
       "id": "g2-division-sharing-keypad-2",
@@ -8823,7 +9435,20 @@
       "why": "Count by 2s. 2, 4, 6. That is 3 bowls.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
-      "answer": 3
+      "answer": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "fish",
+        "one": "fish",
+        "many": "fish",
+        "container": "bowl",
+        "receivers": "containers",
+        "total": 6,
+        "groups": 3,
+        "each": 2,
+        "sharer": { "name": "Sam", "look": "boy" }
+      }
     },
     {
       "id": "g2-division-sharing-tap-2",
@@ -8839,7 +9464,19 @@
         { "id": "b", "kind": "number", "value": 3 },
         { "id": "c", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "balloon",
+        "one": "balloon",
+        "many": "balloons",
+        "container": "box",
+        "receivers": "kids",
+        "total": 4,
+        "groups": 2,
+        "sharer": { "name": "Zoe", "look": "girl" }
+      }
     },
     {
       "id": "g2-division-sharing-tap-3",
@@ -8856,7 +9493,19 @@
         { "id": "c", "kind": "number", "value": 5 },
         { "id": "d", "kind": "number", "value": 6 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "peach",
+        "one": "peach",
+        "many": "peaches",
+        "container": "basket",
+        "receivers": "containers",
+        "total": 12,
+        "groups": 3,
+        "sharer": { "name": "Pat", "look": "boy" }
+      }
     },
     {
       "id": "g2-division-sharing-keypad-3",
@@ -8867,7 +9516,20 @@
       "why": "Count by 4s. 4, 8, 12. That is 3 baskets.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍑", "count": 12 },
-      "answer": 3
+      "answer": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "peach",
+        "one": "peach",
+        "many": "peaches",
+        "container": "basket",
+        "receivers": "containers",
+        "total": 12,
+        "groups": 3,
+        "each": 4,
+        "sharer": { "name": "Pat", "look": "boy" }
+      }
     },
     {
       "id": "g2-division-sharing-number-line-2",
@@ -8880,7 +9542,18 @@
       "min": 0,
       "max": 12,
       "step": 1,
-      "target": 3
+      "target": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "grape",
+        "one": "grape",
+        "many": "grapes",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 9,
+        "groups": 3
+      }
     },
     {
       "id": "g2-division-sharing-keypad-4",
@@ -8891,7 +9564,19 @@
       "why": "Give each of the 6 friends one cookie. Then give each friend one more. Each gets 2.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍪", "count": 12 },
-      "answer": 2
+      "answer": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 12,
+        "groups": 6,
+        "sharer": { "name": "Ella", "look": "girl" }
+      }
     },
     {
       "id": "g2-division-sharing-tap-4",
@@ -8922,7 +9607,21 @@
         { "id": "a", "kind": "text", "text": "4 friends" },
         { "id": "b", "kind": "text", "text": "2 friends" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "compare",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 12,
+        "groups": 2,
+        "otherGroups": 4,
+        "want": "more",
+        "sharer": { "name": "Nia", "look": "kid" }
+      }
     },
     {
       "id": "g2-division-sharing-keypad-5",
@@ -8933,7 +9632,20 @@
       "why": "Count by 2s up to 12. 2, 4, 6, 8, 10, 12. That is 6 groups.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "⭐", "count": 12 },
-      "answer": 6
+      "answer": 6,
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "star",
+        "one": "star",
+        "many": "stars",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 12,
+        "groups": 6,
+        "each": 2,
+        "sharer": { "name": "Leo", "look": "boy" }
+      }
     },
     {
       "id": "g2-division-sharing-number-line-3",
@@ -8946,7 +9658,20 @@
       "min": 0,
       "max": 12,
       "step": 1,
-      "target": 3
+      "target": 3,
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "muffin",
+        "one": "muffin",
+        "many": "muffins",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 12,
+        "groups": 3,
+        "each": 4,
+        "sharer": { "name": "Mia", "look": "kid" }
+      }
     },
     {
       "id": "g2-division-sharing-keypad-6",
@@ -9564,7 +10289,19 @@
       "why": "Hand out grapes one at a time to each friend. Both friends end up with 6 grapes.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍇", "count": 12 },
-      "answer": 6
+      "answer": 6,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "grape",
+        "one": "grape",
+        "many": "grapes",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 12,
+        "groups": 2,
+        "sharer": { "name": "Mia", "look": "girl" }
+      }
     },
     {
       "id": "g3-fair-share-20-tap-1",
@@ -9581,7 +10318,19 @@
         { "id": "c", "kind": "number", "value": 4 },
         { "id": "d", "kind": "number", "value": 6 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 9,
+        "groups": 3,
+        "sharer": { "name": "Leo", "look": "boy" }
+      }
     },
     {
       "id": "g3-fair-share-20-number-line-1",
@@ -9594,7 +10343,19 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 2
+      "target": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "marble",
+        "one": "marble",
+        "many": "marbles",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 5,
+        "sharer": { "name": "Ava", "look": "girl" }
+      }
     },
     {
       "id": "g3-fair-share-20-tap-2",
@@ -9622,7 +10383,19 @@
       "why": "Make 4 equal groups from 16 apples. Each group has 4 apples.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 16 },
-      "answer": 4
+      "answer": 4,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 16,
+        "groups": 4,
+        "sharer": { "name": "Zoe", "look": "girl" }
+      }
     },
     {
       "id": "g3-fair-share-20-number-line-2",
@@ -9662,7 +10435,19 @@
       "prompt": "5 friends, 4 cards each",
       "why": "Five groups of 4 cards make all the cards. 5 × 4 = 20.",
       "type": "keypad",
-      "answer": 20
+      "answer": 20,
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "card",
+        "one": "card",
+        "many": "cards",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 20,
+        "groups": 5,
+        "each": 4
+      }
     },
     {
       "id": "g3-fair-share-20-number-line-3",
@@ -9675,7 +10460,19 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 5
+      "target": 5,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cracker",
+        "one": "cracker",
+        "many": "crackers",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 20,
+        "groups": 4,
+        "sharer": { "name": "Noah", "look": "boy" }
+      }
     },
     {
       "id": "g3-fair-share-20-tap-4",
@@ -9689,7 +10486,21 @@
         { "id": "a", "kind": "text", "text": "3 friends" },
         { "id": "b", "kind": "text", "text": "4 friends" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "scene": {
+        "kind": "share",
+        "ask": "compare",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "kids",
+        "total": 12,
+        "groups": 3,
+        "otherGroups": 4,
+        "want": "more",
+        "sharer": { "name": "Lily", "look": "girl" }
+      }
     },
     {
       "id": "g3-fair-share-20-tap-5",
@@ -9706,7 +10517,19 @@
         { "id": "c", "kind": "text", "text": "2 2/3" },
         { "id": "d", "kind": "text", "text": "2 1/2" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 8,
+        "groups": 3,
+        "sharer": { "name": "Jay", "look": "boy" }
+      }
     },
     {
       "id": "g3-fair-share-20-keypad-4",
@@ -9716,7 +10539,19 @@
       "prompt": "17 cookies, 5 friends",
       "why": "Each of 5 friends gets 3, which uses 15 cookies. 17 take away 15 leaves 2.",
       "type": "keypad",
-      "answer": 2
+      "answer": 2,
+      "scene": {
+        "kind": "share",
+        "ask": "left",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 17,
+        "groups": 5,
+        "sharer": { "name": "Kai", "look": "boy" }
+      }
     },
     {
       "id": "g3-fair-share-20-number-line-4",
@@ -9729,7 +10564,18 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 9
+      "target": 9,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "muffin",
+        "one": "muffin",
+        "many": "muffins",
+        "container": "plate",
+        "receivers": "stores",
+        "total": 18,
+        "groups": 2
+      }
     },
     {
       "id": "g3-fair-share-20-tap-6",
@@ -9746,7 +10592,19 @@
         { "id": "c", "kind": "text", "text": "1 1/2" },
         { "id": "d", "kind": "text", "text": "1 2/3" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "sandwich",
+        "one": "sandwich",
+        "many": "sandwiches",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 5,
+        "groups": 3,
+        "sharer": { "name": "Ben", "look": "boy" }
+      }
     },
     {
       "id": "g3-fair-share-20-tap-7",
@@ -10045,7 +10903,20 @@
       "min": 0,
       "max": 20,
       "step": 1,
-      "target": 12
+      "target": 12,
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "plate",
+        "receivers": "containers",
+        "total": 12,
+        "groups": 2,
+        "each": 6,
+        "sharer": { "name": "Sam", "look": "kid" }
+      }
     },
     {
       "id": "g3-arrays-multiply-divide-tap-2",
@@ -10249,7 +11120,19 @@
       "why": "Think 2 times what is 10? 5 × 2 = 10, so each friend gets 5.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
-      "answer": 5
+      "answer": 5,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "cookie",
+        "one": "cookie",
+        "many": "cookies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 2,
+        "sharer": { "name": "Maya", "look": "kid" }
+      }
     },
     {
       "id": "g3-mult-div-facts-2-5-10-tap-2",
@@ -10455,7 +11338,19 @@
       "why": "Think 2 times what is 10. 2 × 5 = 10, so each basket gets 5.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 10 },
-      "answer": 5
+      "answer": 5,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "basket",
+        "receivers": "containers",
+        "total": 10,
+        "groups": 2,
+        "sharer": { "name": "Mia", "look": "kid" }
+      }
     },
     {
       "id": "g3-mult-div-properties-tap-3",
@@ -10597,7 +11492,20 @@
         { "id": "c", "kind": "number", "value": 12 },
         { "id": "d", "kind": "number", "value": 15 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "apple",
+        "one": "apple",
+        "many": "apples",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 12,
+        "groups": 4,
+        "each": 3,
+        "sharer": { "name": "Ana", "look": "girl" }
+      }
     },
     {
       "id": "g3-mult-div-problems-tap-2",
@@ -10645,7 +11553,20 @@
         { "id": "c", "kind": "number", "value": 5 },
         { "id": "d", "kind": "number", "value": 4 }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "scene": {
+        "kind": "share",
+        "ask": "groups",
+        "thing": "marble",
+        "one": "marble",
+        "many": "marbles",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 20,
+        "groups": 4,
+        "each": 5,
+        "sharer": { "name": "Tom", "look": "boy" }
+      }
     },
     {
       "id": "g3-mult-div-problems-tap-5",
@@ -10671,7 +11592,19 @@
       "prompt": "3 × 5 = ?",
       "why": "3 groups of 5 is 5, 10, 15. There are 15 pencils.",
       "type": "keypad",
-      "answer": 15
+      "answer": 15,
+      "scene": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "pencil",
+        "one": "pencil",
+        "many": "pencils",
+        "container": "box",
+        "receivers": "containers",
+        "total": 15,
+        "groups": 3,
+        "each": 5
+      }
     },
     {
       "id": "g3-mult-div-problems-keypad-2",
@@ -11198,7 +12131,18 @@
         { "id": "c", "kind": "text", "text": "1/4" },
         { "id": "d", "kind": "text", "text": "3/3" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "bar",
+        "one": "granola bar",
+        "many": "granola bars",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 3,
+        "groups": 4
+      }
     },
     {
       "id": "g4-represent-fractions-keypad-5",
@@ -11222,7 +12166,20 @@
         { "id": "a", "kind": "text", "text": "4 friends" },
         { "id": "b", "kind": "text", "text": "2 friends" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "scene": {
+        "kind": "share",
+        "ask": "compare",
+        "thing": "pizza",
+        "one": "pizza",
+        "many": "pizzas",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 1,
+        "groups": 4,
+        "otherGroups": 2,
+        "want": "more"
+      }
     },
     {
       "id": "g4-compare-fair-shares-keypad-1",
@@ -11338,7 +12295,18 @@
       "min": 0,
       "max": 12,
       "step": 1,
-      "target": 4
+      "target": 4,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "bar",
+        "one": "brownie",
+        "many": "brownies",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 12,
+        "groups": 3
+      }
     },
     {
       "id": "g4-compare-fair-shares-tap-6",
@@ -12100,7 +13068,19 @@
       "prompt": "18 ÷ 3 = ?",
       "why": "Think 3 times what is 18. 3 × 6 is 18, so 18 ÷ 3 is 6.",
       "type": "keypad",
-      "answer": 6
+      "answer": 6,
+      "scene": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "sticker",
+        "one": "sticker",
+        "many": "stickers",
+        "container": "bag",
+        "receivers": "containers",
+        "total": 18,
+        "groups": 3,
+        "sharer": { "name": "Mia", "look": "kid" }
+      }
     },
     {
       "id": "g4-mult-div-facts-100-keypad-3",

@@ -29,4 +29,9 @@ export type ItemViewProps<T extends Item = Item> = {
   onFlag?: (target: FlagTarget) => void;
   /** The child tapped "next" after the feedback. */
   onNext?: () => void;
+  /**
+   * The answer measures what the child knows: placement, probes, and reviews. Games then show why
+   * and move on instead of offering another try.
+   */
+  measuring?: boolean;
 };
