@@ -1,0 +1,56 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-whole-numbers-200-tap-1",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "ten",
+        "many": "tens",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 1,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Place value (tens in 100), not a ten-frame story."
+      },
+      {
+        "itemId": "g2-whole-numbers-200-keypad-3",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "bead",
+        "many": "beads",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 1,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Place value; 150 beads exceeds 20 spots."
+      },
+      {
+        "itemId": "g2-whole-numbers-200-keypad-6",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "one",
+        "many": "ones",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 1,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Place value decomposition, over 20 spots."
+      }
+    ]
+  }
+}

@@ -13,6 +13,7 @@ import { generateRequest, type SkillContext } from './prompts';
 import { loadScope, prerequisiteClosure } from './scope';
 import { renderContentReport, renderPilotReport } from './report';
 import { applyScenes } from '../scenes/scenes';
+import { applyJoins } from '../join/join';
 import { applySlices } from '../slices/slices';
 
 /** Skills the testers will meet first: 2 Kindergarten, 2 Grade 1, 1 Grade 5, 1 Grade 6, across topics. */
@@ -114,8 +115,8 @@ if (values.pilot) {
   await writeFormatted(file, renderPilotReport(run));
   console.log(`Wrote ${file}`);
 } else if (!values.skills) {
-  // Scenes from `npm run content:scenes` and `content:slices` survive regeneration while their
-  // items still match.
+  // Scenes from `npm run content:scenes`, `content:slices`, and `content:join` survive
+  // regeneration while their items still match.
   const stored = (file: string) =>
     readFile(join(contentDir, file), 'utf8')
       .catch(() => '{}')
@@ -124,9 +125,11 @@ if (values.pilot) {
     buildBundle(bundleSkills, run.outcomes, new Date()),
     await stored('scenes.json'),
   );
-  const { bundle, dropped } = applySlices(shared.bundle, await stored('slices.json'));
+  const sliced = applySlices(shared.bundle, await stored('slices.json'));
+  const { bundle, dropped } = applyJoins(sliced.bundle, await stored('join.json'));
   for (const d of shared.dropped) console.warn(`Scene dropped: ${d}`);
-  for (const d of dropped) console.warn(`Slices dropped: ${d}`);
+  for (const d of sliced.dropped) console.warn(`Slices dropped: ${d}`);
+  for (const d of dropped) console.warn(`Join dropped: ${d}`);
   const bundleFile = join(outDir, 'bundle.json');
   await writeFormatted(bundleFile, JSON.stringify(bundle));
   const bytes = (await readFile(bundleFile)).byteLength;

@@ -1,0 +1,56 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-more-less-same-keypad-1",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 4,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Compares two numbers; not a supported story."
+      },
+      {
+        "itemId": "k-more-less-same-keypad-2",
+        "fits": true,
+        "ask": "join",
+        "emoji": "🍎",
+        "one": "apple",
+        "many": "apples",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 6,
+        "more": 1,
+        "take": null,
+        "target": null,
+        "note": "1 more than 6 shown as 6 apples plus 1 more; answer 7."
+      },
+      {
+        "itemId": "k-more-less-same-keypad-4",
+        "fits": false,
+        "ask": "count",
+        "emoji": "🚗",
+        "one": "car",
+        "many": "cars",
+        "place": "tray",
+        "move": "drive",
+        "leave": null,
+        "start": 8,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Compares two groups (how many more does Tom have)."
+      }
+    ]
+  }
+}

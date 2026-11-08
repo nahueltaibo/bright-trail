@@ -1,0 +1,56 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-division-sharing-tap-4",
+        "fits": false,
+        "ask": "count",
+        "emoji": "🔵",
+        "one": "bead",
+        "many": "beads",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 10,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Division into groups; no matching ask."
+      },
+      {
+        "itemId": "g2-division-sharing-keypad-6",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "thing",
+        "many": "things",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 12,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Division sharing into equal groups; not a supported ask."
+      },
+      {
+        "itemId": "g2-division-sharing-tap-6",
+        "fits": false,
+        "ask": "count",
+        "emoji": "🍑",
+        "one": "plum",
+        "many": "plums",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 9,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Division into groups; no matching ask."
+      }
+    ]
+  }
+}

@@ -1,4 +1,9 @@
-import { ContentBundleSchema, sceneProblems, sliceProblems } from '@bright-trail/shared';
+import {
+  ContentBundleSchema,
+  joinProblems,
+  sceneProblems,
+  sliceProblems,
+} from '@bright-trail/shared';
 
 export type BundleCheck = { ok: true; summary: string } | { ok: false; problems: string[] };
 
@@ -16,6 +21,7 @@ export function checkBundle(data: unknown): BundleCheck {
   const sceneIssues = items.flatMap((item) => [
     ...(item.scene ? sceneProblems(item, item.scene).map((p) => `${item.id} scene: ${p}`) : []),
     ...(item.slices ? sliceProblems(item, item.slices).map((p) => `${item.id} slices: ${p}`) : []),
+    ...(item.join ? joinProblems(item, item.join).map((p) => `${item.id} join: ${p}`) : []),
   ]);
   if (sceneIssues.length > 0) return { ok: false, problems: sceneIssues };
   return {

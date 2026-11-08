@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { IdSchema, NonEmptyTextSchema } from './common';
+import { JoinSceneSchema } from './join';
 import { SceneSchema } from './scene';
 import { SliceSceneSchema } from './slices';
 import { VisualSchema } from './visual';
@@ -20,6 +21,8 @@ const ItemBaseSchema = z.object({
   scene: SceneSchema.optional(),
   /** When set, the item plays as the slices minigame. Its answer must be one the scene shows. */
   slices: SliceSceneSchema.optional(),
+  /** When set, the item plays as the join-and-leave minigame. Its answer must match the item's. */
+  join: JoinSceneSchema.optional(),
 });
 
 export const ChoiceSchema = z.discriminatedUnion('kind', [
