@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "version": "2026.11.07-53",
-  "generatedAt": "2026-11-07T15:47:45Z",
+  "version": "2026.11.08-53",
+  "generatedAt": "2026-11-08T19:50:21Z",
   "skills": [
     {
       "id": "k-count-to-20",
@@ -1122,8 +1122,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "cookie",
             "parts": 2,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/2"
           }
         },
@@ -1133,8 +1134,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "cookie",
             "parts": 2,
-            "shaded": 5,
+            "picked": 5,
             "wholes": 3,
             "label": "2 1/2"
           }
@@ -1145,8 +1147,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "rectangle",
+            "food": "brownies",
             "parts": 4,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/4"
           }
         },
@@ -1167,8 +1170,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 2,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/2"
           }
         },
@@ -1178,8 +1182,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 4,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/4"
           }
         },
@@ -1189,15 +1194,16 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 4,
-            "shaded": 2,
+            "picked": 2,
             "label": "2/4"
           }
         },
         {
           "narration": "Cut a half in two, and you get two fourths. One half is the same as two fourths.",
           "text": "1/2 = 2/4",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 4, "shaded": 2, "label": "2/4" }
+          "visual": { "kind": "fraction", "shape": "bar", "parts": 4, "picked": 2, "label": "2/4" }
         },
         {
           "narration": "Two halves make one whole pizza. Four fourths make one whole pizza too.",
@@ -1205,8 +1211,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 4,
-            "shaded": 4,
+            "picked": 4,
             "label": "4/4"
           }
         },
@@ -1231,7 +1238,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 2,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/2"
           }
         },
@@ -1242,7 +1249,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 4,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/4"
           }
         },
@@ -1253,7 +1260,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 8,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/8"
           }
         },
@@ -1263,8 +1270,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pie",
             "parts": 3,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/3"
           }
         },
@@ -1462,7 +1470,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 2,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/2"
           }
         },
@@ -1558,7 +1566,7 @@
         },
         {
           "narration": "One bar is left over. Mia cuts it into 3 equal parts. Each friend gets one part.",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 3, "shaded": 1 }
+          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 3, "picked": 1 }
         },
         {
           "narration": "So each friend gets 1 whole bar and one third of a bar. That is 1 and one third.",
@@ -1567,7 +1575,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 3,
-            "shaded": 4,
+            "picked": 4,
             "wholes": 2,
             "label": "1 1/3"
           }
@@ -1578,8 +1586,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pie",
             "parts": 2,
-            "shaded": 5,
+            "picked": 5,
             "wholes": 3,
             "label": "2 1/2"
           }
@@ -1601,8 +1610,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 3,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/3"
           }
         },
@@ -1612,8 +1622,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 6,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/6"
           }
         },
@@ -1623,8 +1634,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 6,
-            "shaded": 2,
+            "picked": 2,
             "label": "2/6"
           }
         },
@@ -1635,7 +1647,7 @@
             "kind": "fraction",
             "shape": "circle",
             "parts": 3,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/3"
           }
         },
@@ -1646,7 +1658,7 @@
             "kind": "fraction",
             "shape": "circle",
             "parts": 6,
-            "shaded": 4,
+            "picked": 4,
             "label": "4/6"
           }
         },
@@ -1746,15 +1758,22 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 4,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/4"
           }
         },
         {
           "narration": "4 groups of one fourth make 1 whole pizza.",
           "text": "4 groups of 1/4 = 1 whole",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 4 }
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 4,
+            "picked": 4
+          }
         },
         {
           "narration": "A sandwich is cut into 2 halves. 6 groups of one half make 3 whole sandwiches.",
@@ -1763,7 +1782,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 2,
-            "shaded": 6,
+            "picked": 6,
             "wholes": 3
           }
         },
@@ -1932,8 +1951,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "cookie",
             "parts": 3,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/3"
           }
         },
@@ -1956,8 +1976,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "rectangle",
+            "food": "brownies",
             "parts": 2,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/2"
           }
         },
@@ -1967,8 +1988,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "rectangle",
+            "food": "brownies",
             "parts": 4,
-            "shaded": 2,
+            "picked": 2,
             "label": "2/4"
           }
         },
@@ -1979,7 +2001,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 4,
-            "shaded": 2,
+            "picked": 2,
             "label": "1/2 = 2/4"
           }
         },
@@ -1989,8 +2011,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "rectangle",
+            "food": "brownies",
             "parts": 8,
-            "shaded": 4,
+            "picked": 4,
             "label": "4/8"
           }
         },
@@ -2001,7 +2024,7 @@
             "kind": "fraction",
             "shape": "circle",
             "parts": 5,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/5"
           }
         },
@@ -2012,7 +2035,7 @@
             "kind": "fraction",
             "shape": "circle",
             "parts": 10,
-            "shaded": 2,
+            "picked": 2,
             "label": "2/10"
           }
         },
@@ -2172,22 +2195,22 @@
       "cards": [
         {
           "narration": "Sam has a chocolate bar. It is cut into 5 equal pieces.",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "shaded": 0 }
+          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "picked": 0 }
         },
         {
           "narration": "Each piece is one fifth of the bar. The bottom number, 5, tells the size of each piece.",
           "text": "1/5",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "shaded": 1, "label": "1/5" }
+          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "picked": 1, "label": "1/5" }
         },
         {
           "narration": "Sam eats one piece. Then he eats one more. One fifth plus one fifth makes two fifths.",
           "text": "1/5 + 1/5 = 2/5",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "shaded": 2, "label": "2/5" }
+          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "picked": 2, "label": "2/5" }
         },
         {
           "narration": "He eats one more piece. Now he has eaten one fifth three times. That is three fifths.",
           "text": "1/5 + 1/5 + 1/5 = 3/5",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "shaded": 3, "label": "3/5" }
+          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "picked": 3, "label": "3/5" }
         },
         {
           "narration": "The top number counts the pieces. In 3/5, we count 3 pieces. Each piece is one fifth.",
@@ -2196,7 +2219,7 @@
         {
           "narration": "If Sam eats all 5 pieces, he has five fifths. That is the whole bar.",
           "text": "5/5 = 1 whole",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "shaded": 5, "label": "5/5" }
+          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "picked": 5, "label": "5/5" }
         },
         { "narration": "Now you try. Count the pieces and add up the unit fractions." }
       ]
@@ -2212,31 +2235,50 @@
         {
           "narration": "The pizza is cut into 8 equal slices. The bottom number of a fraction tells how many equal parts make one whole.",
           "text": "8 equal parts",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "shaded": 8 }
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 8,
+            "picked": 8
+          }
         },
         {
           "narration": "Mia eats 3 slices. The top number counts the parts we mean. She ate 3 of the 8 slices. That is 3/8 of the pizza.",
           "text": "3/8",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "shaded": 3 }
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 8,
+            "picked": 3
+          }
         },
         {
           "narration": "Dev has a chocolate bar with 5 equal pieces. He eats 2 of them. That is 2/5 of the bar.",
           "text": "2/5",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 5, "shaded": 2 }
+          "visual": {
+            "kind": "fraction",
+            "shape": "rectangle",
+            "food": "chocolate",
+            "parts": 5,
+            "picked": 2
+          }
         },
         {
           "narration": "Think of 2/5 as one fifth added two times. The bottom number sets the size of each piece. The top number counts the pieces.",
           "text": "1/5 + 1/5 = 2/5",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "shaded": 2 }
+          "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "picked": 2 }
         },
         {
-          "narration": "Sometimes the top number is bigger than the bottom number. Two pans are each cut into 4 pieces. Each piece is one fourth. Five pieces are shaded. That is 5/4.",
+          "narration": "Sometimes the top number is bigger than the bottom number. Two pans are each cut into 4 pieces. Each piece is one fourth. Five pieces are picked. That is 5/4.",
           "text": "5/4",
           "visual": {
             "kind": "fraction",
             "shape": "rectangle",
+            "food": "brownies",
             "parts": 4,
-            "shaded": 5,
+            "picked": 5,
             "wholes": 2
           }
         },
@@ -2256,8 +2298,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "rectangle",
+            "food": "chocolate",
             "parts": 2,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/2"
           }
         },
@@ -2268,22 +2311,23 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 4,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/4"
           }
         },
         {
           "narration": "Compare the two shares. One half is bigger than one fourth. When more people share, each share gets smaller.",
           "text": "More sharers, smaller share",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 2, "shaded": 1, "label": "1/2" }
+          "visual": { "kind": "fraction", "shape": "bar", "parts": 2, "picked": 1, "label": "1/2" }
         },
         {
           "narration": "The bottom number tells how many people share. A bigger bottom number means a smaller share. Here is 1/6 of a pizza.",
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 6,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/6"
           }
         },
@@ -2294,7 +2338,7 @@
         {
           "narration": "Now put shares in order. Sharing by 6 gives the least. Sharing by 3 is more. Sharing by 2 gives the most.",
           "text": "1/6, then 1/3, then 1/2",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 3, "shaded": 1, "label": "1/3" }
+          "visual": { "kind": "fraction", "shape": "bar", "parts": 3, "picked": 1, "label": "1/3" }
         },
         {
           "narration": "You know the secret now. More sharers means a smaller share. Let's practise comparing fair shares."
@@ -2311,8 +2355,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "rectangle",
+            "food": "chocolate",
             "parts": 4,
-            "shaded": 1,
+            "picked": 1,
             "label": "1/4"
           }
         },
@@ -2323,7 +2368,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 4,
-            "shaded": 2,
+            "picked": 2,
             "label": "2/4"
           }
         },
@@ -2334,7 +2379,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 4,
-            "shaded": 4,
+            "picked": 4,
             "label": "4/4"
           }
         },
@@ -2345,7 +2390,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 4,
-            "shaded": 5,
+            "picked": 5,
             "wholes": 2,
             "label": "5/4"
           }
@@ -2357,7 +2402,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 4,
-            "shaded": 3,
+            "picked": 3,
             "label": "3/4"
           }
         },
@@ -2367,8 +2412,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 3,
-            "shaded": 5,
+            "picked": 5,
             "wholes": 2,
             "label": "5/3"
           }
@@ -2630,8 +2676,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "rectangle",
+            "food": "brownies",
             "parts": 8,
-            "shaded": 3,
+            "picked": 3,
             "label": "3/8"
           }
         },
@@ -2642,7 +2689,7 @@
             "kind": "fraction",
             "shape": "rectangle",
             "parts": 8,
-            "shaded": 5,
+            "picked": 5,
             "label": "5/8"
           }
         },
@@ -2656,8 +2703,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "circle",
+            "food": "pizza",
             "parts": 4,
-            "shaded": 5,
+            "picked": 5,
             "wholes": 2,
             "label": "5/4"
           }
@@ -2668,8 +2716,9 @@
           "visual": {
             "kind": "fraction",
             "shape": "rectangle",
+            "food": "brownies",
             "parts": 8,
-            "shaded": 3,
+            "picked": 3,
             "label": "3/8"
           }
         },
@@ -4744,13 +4793,6 @@
       "narration": "Mia gets 2 cookies. Sam gets 2 cookies. Is it fair? Yes or no?",
       "prompt": "Is it fair?",
       "why": "Mia has 2 and Sam has 2. They have the same, so it is fair.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "Yes" },
-        { "id": "b", "kind": "text", "text": "No" }
-      ],
-      "answerChoiceId": "a",
       "scene": {
         "kind": "share",
         "ask": "fair",
@@ -4766,7 +4808,14 @@
           { "name": "Mia", "look": "kid" },
           { "name": "Sam", "look": "kid" }
         ]
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "Yes" },
+        { "id": "b", "kind": "text", "text": "No" }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "k-equal-share-keypad-1",
@@ -4775,9 +4824,6 @@
       "narration": "There are 2 apples and 2 friends. Each friend gets the same. How many apples does each get?",
       "prompt": "2 apples, 2 friends",
       "why": "Give one apple to each friend. Then no apples are left. Each friend gets 1.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 2 },
-      "answer": 1,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -4788,7 +4834,10 @@
         "receivers": "kids",
         "total": 2,
         "groups": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 2 },
+      "answer": 1
     },
     {
       "id": "k-equal-share-number-line-1",
@@ -4797,11 +4846,6 @@
       "narration": "4 ducks swim to 2 ponds. Each pond gets the same. Hop the frog to how many ducks each pond gets.",
       "prompt": "4 ducks, 2 ponds",
       "why": "Put one duck in each pond. Then one more each.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 2,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -4812,7 +4856,12 @@
         "receivers": "containers",
         "total": 4,
         "groups": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 2
     },
     {
       "id": "k-equal-share-tap-2",
@@ -4821,14 +4870,6 @@
       "narration": "There are 4 stickers and 4 friends. Each friend gets the same. How many stickers does each get? 1, 2, or 4?",
       "prompt": "4 stickers, 4 friends",
       "why": "There is one sticker for each friend. Each friend gets 1 sticker.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 4 },
-        { "id": "b", "kind": "number", "value": 2 },
-        { "id": "c", "kind": "number", "value": 1 }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -4839,7 +4880,15 @@
         "receivers": "kids",
         "total": 4,
         "groups": 4
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 4 },
+        { "id": "b", "kind": "number", "value": 2 },
+        { "id": "c", "kind": "number", "value": 1 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "k-equal-share-keypad-2",
@@ -4848,9 +4897,6 @@
       "narration": "Sam has 6 cookies. He shares them with 2 friends. How many cookies does each friend get?",
       "prompt": "6 cookies, 2 friends",
       "why": "Hand out one cookie at a time to each friend. Each friend ends up with 3.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
-      "answer": 3,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -4862,7 +4908,10 @@
         "total": 6,
         "groups": 2,
         "sharer": { "name": "Sam", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
+      "answer": 3
     },
     {
       "id": "k-equal-share-tap-3",
@@ -4871,14 +4920,6 @@
       "narration": "Lily has 6 berries. She shares them with 3 friends. How many berries does each friend get? 2, 3, or 4?",
       "prompt": "6 berries, 3 friends",
       "why": "Give each friend one berry. Then give another to each.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍓", "count": 6 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 2 }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -4890,7 +4931,15 @@
         "total": 6,
         "groups": 3,
         "sharer": { "name": "Lily", "look": "girl" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍓", "count": 6 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 2 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "k-equal-share-keypad-3",
@@ -4899,9 +4948,6 @@
       "narration": "Max has 8 toy cars. He shares them with 2 friends. How many cars does each friend get?",
       "prompt": "8 cars, 2 friends",
       "why": "Give each friend one car at a time. Each friend gets 4.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🚗", "count": 8 },
-      "answer": 4,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -4913,7 +4959,10 @@
         "total": 8,
         "groups": 2,
         "sharer": { "name": "Max", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🚗", "count": 8 },
+      "answer": 4
     },
     {
       "id": "k-equal-share-number-line-2",
@@ -4922,11 +4971,6 @@
       "narration": "9 grapes are shared by 3 friends. Hop the frog to how many grapes each friend gets.",
       "prompt": "9 grapes, 3 friends",
       "why": "Give 3 friends one grape each, three times. Each friend gets 3 grapes.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 3,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -4937,7 +4981,12 @@
         "receivers": "kids",
         "total": 9,
         "groups": 3
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 3
     },
     {
       "id": "k-equal-share-tap-4",
@@ -4946,12 +4995,6 @@
       "narration": "Ana gets 4 cookies. Ben gets 2 cookies. Is it fair? Yes or no?",
       "prompt": "Is it fair?",
       "why": "Ana has more than Ben. They need the same amount, so it is not fair.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "No" },
-        { "id": "b", "kind": "text", "text": "Yes" }
-      ],
-      "answerChoiceId": "a",
       "scene": {
         "kind": "share",
         "ask": "fair",
@@ -4967,7 +5010,13 @@
           { "name": "Ana", "look": "kid" },
           { "name": "Ben", "look": "kid" }
         ]
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "No" },
+        { "id": "b", "kind": "text", "text": "Yes" }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "k-equal-share-keypad-4",
@@ -4976,9 +5025,6 @@
       "narration": "There are 10 stars. 2 friends share them equally. How many stars does each friend get?",
       "prompt": "10 stars, 2 friends",
       "why": "Give one star to each friend, again and again. Each friend gets 5.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 10 },
-      "answer": 5,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -4989,7 +5035,10 @@
         "receivers": "kids",
         "total": 10,
         "groups": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 10 },
+      "answer": 5
     },
     {
       "id": "k-equal-share-tap-5",
@@ -4998,15 +5047,6 @@
       "narration": "Zoe has 8 pencils. She shares them with 4 friends. How many pencils does each friend get? 1, 2, 3, or 4?",
       "prompt": "8 pencils, 4 friends",
       "why": "Give 4 friends one pencil each. That uses 4. Give one more each. Each friend gets 2.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "✏️", "count": 8 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 1 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 3 },
-        { "id": "d", "kind": "number", "value": 2 }
-      ],
-      "answerChoiceId": "d",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -5018,7 +5058,16 @@
         "total": 8,
         "groups": 4,
         "sharer": { "name": "Zoe", "look": "girl" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "✏️", "count": 8 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 1 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 3 },
+        { "id": "d", "kind": "number", "value": 2 }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "k-equal-share-keypad-5",
@@ -5027,9 +5076,6 @@
       "narration": "There are 9 apples. 3 friends share them equally. How many apples does each friend get?",
       "prompt": "9 apples, 3 friends",
       "why": "Give each friend one apple, three times. All 9 are shared. Each friend gets 3.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
-      "answer": 3,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -5040,7 +5086,10 @@
         "receivers": "kids",
         "total": 9,
         "groups": 3
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
+      "answer": 3
     },
     {
       "id": "k-equal-share-number-line-3",
@@ -5049,11 +5098,6 @@
       "narration": "10 balloons are shared by 5 friends. Hop the frog to how many balloons each friend gets.",
       "prompt": "10 balloons, 5 friends",
       "why": "Give 5 friends one balloon each. Then give one more each. Each friend gets 2.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 2,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -5064,7 +5108,12 @@
         "receivers": "kids",
         "total": 10,
         "groups": 5
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 2
     },
     {
       "id": "k-equal-share-keypad-6",
@@ -5073,8 +5122,6 @@
       "narration": "4 friends each get 2 cookies. All the cookies were shared equally. How many cookies were there?",
       "prompt": "4 friends, 2 each",
       "why": "Count 2 for each friend. 2 and 2 and 2 and 2 is 8.",
-      "type": "keypad",
-      "answer": 8,
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -5086,7 +5133,9 @@
         "total": 8,
         "groups": 4,
         "each": 2
-      }
+      },
+      "type": "keypad",
+      "answer": 8
     },
     {
       "id": "k-equal-share-tap-6",
@@ -5893,15 +5942,6 @@
       "narration": "Eight cookies are shared by 2 friends. How many cookies does each friend get? Is it 3, 5, 4, or 6?",
       "prompt": "8 cookies, 2 friends",
       "why": "Give one cookie to each friend again and again. Each friend gets 4 cookies.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 8 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 5 },
-        { "id": "c", "kind": "number", "value": 4 },
-        { "id": "d", "kind": "number", "value": 6 }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -5912,7 +5952,16 @@
         "receivers": "kids",
         "total": 8,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 8 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 5 },
+        { "id": "c", "kind": "number", "value": 4 },
+        { "id": "d", "kind": "number", "value": 6 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g1-fair-share-drawings-keypad-1",
@@ -5921,9 +5970,6 @@
       "narration": "Two friends share these apples equally. How many apples does each friend get?",
       "prompt": "How many apples each?",
       "why": "Share the apples one at a time. Each friend gets 3 apples.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
-      "answer": 3,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -5934,7 +5980,10 @@
         "receivers": "kids",
         "total": 6,
         "groups": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
+      "answer": 3
     },
     {
       "id": "g1-fair-share-drawings-number-line-1",
@@ -5943,11 +5992,6 @@
       "narration": "Four friends share 12 grapes equally. Hop the frog to how many grapes each friend gets.",
       "prompt": "12 grapes, 4 friends",
       "why": "Share 12 grapes with 4 friends. Each friend gets 3 grapes.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 3,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -5958,7 +6002,12 @@
         "receivers": "kids",
         "total": 12,
         "groups": 4
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 3
     },
     {
       "id": "g1-fair-share-drawings-tap-2",
@@ -5972,19 +6021,37 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pie",
+            "parts": 2,
+            "picked": 1
+          },
           "narration": "1/2 of the circle"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pie",
+            "parts": 4,
+            "picked": 1
+          },
           "narration": "1/4 of the circle"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 3 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pie",
+            "parts": 4,
+            "picked": 3
+          },
           "narration": "3/4 of the circle"
         }
       ],
@@ -5997,9 +6064,6 @@
       "narration": "Four friends share these grapes equally. How many grapes does each friend get?",
       "prompt": "How many grapes each?",
       "why": "Give each of the 4 friends one grape, then again. Each friend gets 2 grapes.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍇", "count": 8 },
-      "answer": 2,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -6010,7 +6074,10 @@
         "receivers": "kids",
         "total": 8,
         "groups": 4
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍇", "count": 8 },
+      "answer": 2
     },
     {
       "id": "g1-fair-share-drawings-tap-3",
@@ -6019,15 +6086,6 @@
       "narration": "Two friends share 5 cookies. Each gets 2 whole cookies. How many cookies are left to cut? Is it 0, 2, 3, or 1?",
       "prompt": "How many are left?",
       "why": "Each friend gets 2, so 4 cookies are given out. That leaves 1 cookie to cut in half.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 0 },
-        { "id": "b", "kind": "number", "value": 2 },
-        { "id": "c", "kind": "number", "value": 3 },
-        { "id": "d", "kind": "number", "value": 1 }
-      ],
-      "answerChoiceId": "d",
       "scene": {
         "kind": "share",
         "ask": "left",
@@ -6038,7 +6096,16 @@
         "receivers": "kids",
         "total": 5,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 0 },
+        { "id": "b", "kind": "number", "value": 2 },
+        { "id": "c", "kind": "number", "value": 3 },
+        { "id": "d", "kind": "number", "value": 1 }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g1-fair-share-drawings-number-line-2",
@@ -6060,14 +6127,6 @@
       "narration": "Two friends share 3 cookies equally. How many cookies does each friend get? Is it 2, 1 1/2, or 1?",
       "prompt": "3 cookies, 2 friends",
       "why": "Each friend gets 1 whole cookie. The last cookie is cut in half. So each gets 1 and a half.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 3 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "2" },
-        { "id": "b", "kind": "text", "text": "1 1/2" },
-        { "id": "c", "kind": "text", "text": "1" }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -6078,7 +6137,15 @@
         "receivers": "kids",
         "total": 3,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 3 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "2" },
+        { "id": "b", "kind": "text", "text": "1 1/2" },
+        { "id": "c", "kind": "text", "text": "1" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-fair-share-drawings-keypad-3",
@@ -6088,24 +6155,48 @@
       "prompt": "How many parts each?",
       "why": "Share the 8 parts with 4 friends, one at a time. Each friend gets 2 parts.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 8, "shaded": 8 },
-      "answer": 2
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 8,
+        "picked": 8
+      },
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "each",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 8,
+        "picked": 8,
+        "friends": 4
+      }
     },
     {
       "id": "g1-fair-share-drawings-tap-5",
       "skillId": "g1-fair-share-drawings",
       "difficulty": 2,
-      "narration": "Four friends share this pizza. It has 4 equal slices. One slice is shaded. What part of the pizza does each friend get? Is it 1/4, 1/2, or 3/4?",
+      "narration": "Four friends share this pizza. It has 4 equal slices. One slice is picked. What part of the pizza does each friend get? Is it 1/4, 1/2, or 3/4?",
       "prompt": "What part for each friend?",
       "why": "The pizza has 4 equal slices for 4 friends. Each friend gets 1 slice, which is 1/4.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 1 },
       "choices": [
         { "id": "a", "kind": "text", "text": "1/4" },
         { "id": "b", "kind": "text", "text": "1/2" },
         { "id": "c", "kind": "text", "text": "3/4" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "slices": {
+        "kind": "slices",
+        "ask": "each",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 1,
+        "friends": 4
+      }
     },
     {
       "id": "g1-fair-share-drawings-tap-6",
@@ -6114,15 +6205,6 @@
       "narration": "Four friends share 5 cookies equally. Each gets 1 whole cookie. The last cookie is cut in 4 equal parts. How much does each friend get? Is it 1 1/2, 1, 2, or 1 1/4?",
       "prompt": "5 cookies, 4 friends",
       "why": "Each friend gets 1 whole cookie. The last cookie is cut in 4 parts. So each gets one fourth more.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1 1/2" },
-        { "id": "b", "kind": "text", "text": "1" },
-        { "id": "c", "kind": "text", "text": "2" },
-        { "id": "d", "kind": "text", "text": "1 1/4" }
-      ],
-      "answerChoiceId": "d",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -6133,7 +6215,16 @@
         "receivers": "kids",
         "total": 5,
         "groups": 4
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1 1/2" },
+        { "id": "b", "kind": "text", "text": "1" },
+        { "id": "c", "kind": "text", "text": "2" },
+        { "id": "d", "kind": "text", "text": "1 1/4" }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g1-fair-share-drawings-keypad-4",
@@ -6142,9 +6233,6 @@
       "narration": "Four friends share 14 sandwiches. Each friend gets 3 whole sandwiches. How many sandwiches are left over?",
       "prompt": "How many are left over?",
       "why": "Four friends get 3 each, so 12 sandwiches are given out. That leaves 2 sandwiches.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🥪", "count": 14 },
-      "answer": 2,
       "scene": {
         "kind": "share",
         "ask": "left",
@@ -6155,7 +6243,10 @@
         "receivers": "kids",
         "total": 14,
         "groups": 4
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🥪", "count": 14 },
+      "answer": 2
     },
     {
       "id": "g1-fair-share-drawings-number-line-3",
@@ -6164,11 +6255,6 @@
       "narration": "Two friends share 18 stickers equally. Hop the frog to how many stickers each friend gets.",
       "prompt": "18 stickers, 2 friends",
       "why": "Share the 18 stickers into 2 equal groups. Each friend gets 9 stickers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "target": 9,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -6179,7 +6265,12 @@
         "receivers": "kids",
         "total": 18,
         "groups": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "target": 9
     },
     {
       "id": "g1-fair-share-drawings-tap-7",
@@ -6193,19 +6284,37 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "cookie",
+            "parts": 2,
+            "picked": 1
+          },
           "narration": "1/2 of the circle"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 3 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "cookie",
+            "parts": 4,
+            "picked": 3
+          },
           "narration": "3/4 of the circle"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "cookie",
+            "parts": 4,
+            "picked": 1
+          },
           "narration": "1/4 of the circle"
         }
       ],
@@ -6218,12 +6327,6 @@
       "narration": "One pie is shared by 2 friends. A pie just like it is shared by 4 friends. Who gets bigger pieces, the 2 friends or the 4 friends?",
       "prompt": "Who gets more pie?",
       "why": "With fewer friends, each piece is bigger. Two friends get halves, and four friends get fourths. A half is bigger.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4 friends" },
-        { "id": "b", "kind": "text", "text": "2 friends" }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "compare",
@@ -6236,17 +6339,23 @@
         "groups": 2,
         "otherGroups": 4,
         "want": "more"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4 friends" },
+        { "id": "b", "kind": "text", "text": "2 friends" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-half-equals-two-fourths-tap-1",
       "skillId": "g1-half-equals-two-fourths",
       "difficulty": 1,
-      "narration": "A pizza is cut into 2 equal slices. One slice is shaded. What part is shaded? Is it one half, one fourth, or one whole?",
-      "prompt": "What part is shaded?",
+      "narration": "A pizza is cut into 2 equal slices. One slice is picked. What part is picked? Is it one half, one fourth, or one whole?",
+      "prompt": "What part is picked?",
       "why": "The pizza has 2 equal slices. One slice is one half.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 1 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 2, "picked": 1 },
       "choices": [
         { "id": "a", "kind": "text", "text": "one fourth" },
         { "id": "b", "kind": "text", "text": "one half" },
@@ -6262,8 +6371,9 @@
       "prompt": "How many slices?",
       "why": "Fourths means 4 equal parts. Count the slices to get 4.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
-      "answer": 4
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 1 },
+      "answer": 4,
+      "slices": { "kind": "slices", "ask": "parts", "shape": "circle", "food": "pizza", "parts": 4 }
     },
     {
       "id": "g1-half-equals-two-fourths-number-line-1",
@@ -6276,17 +6386,18 @@
       "min": 0,
       "max": 4,
       "step": 1,
-      "target": 2
+      "target": 2,
+      "slices": { "kind": "slices", "ask": "parts", "shape": "circle", "parts": 2 }
     },
     {
       "id": "g1-half-equals-two-fourths-tap-2",
       "skillId": "g1-half-equals-two-fourths",
       "difficulty": 1,
-      "narration": "All 4 fourths of a pizza are shaded. What do you have? Is it one fourth, one half, or one whole?",
+      "narration": "All 4 fourths of a pizza are picked. What do you have? Is it one fourth, one half, or one whole?",
       "prompt": "All 4 fourths",
       "why": "Four fourths fill the whole pizza. So you have one whole.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 4 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 4 },
       "choices": [
         { "id": "a", "kind": "text", "text": "one fourth" },
         { "id": "b", "kind": "text", "text": "one half" },
@@ -6298,22 +6409,30 @@
       "id": "g1-half-equals-two-fourths-keypad-2",
       "skillId": "g1-half-equals-two-fourths",
       "difficulty": 1,
-      "narration": "Two halves make one whole. How many halves are shaded here?",
+      "narration": "Two halves make one whole. How many halves are picked here?",
       "prompt": "How many halves?",
-      "why": "The pizza has 2 halves and both are shaded. So the answer is 2.",
+      "why": "The pizza has 2 halves and both are picked. So the answer is 2.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 2 },
-      "answer": 2
+      "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "picked": 2 },
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 2,
+        "picked": 2
+      }
     },
     {
       "id": "g1-half-equals-two-fourths-tap-3",
       "skillId": "g1-half-equals-two-fourths",
       "difficulty": 2,
-      "narration": "A pizza has 4 equal slices. 2 slices are shaded. Which is the same amount as the 2 shaded slices? Is it one half, one fourth, or one whole?",
+      "narration": "A pizza has 4 equal slices. 2 slices are picked. Which is the same amount as the 2 picked slices? Is it one half, one fourth, or one whole?",
       "prompt": "2 of 4 slices",
       "why": "Two fourths is the same as one half of the pizza.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 2 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 2 },
       "choices": [
         { "id": "a", "kind": "text", "text": "one fourth" },
         { "id": "b", "kind": "text", "text": "one whole" },
@@ -6332,7 +6451,8 @@
       "min": 0,
       "max": 8,
       "step": 1,
-      "target": 4
+      "target": 4,
+      "slices": { "kind": "slices", "ask": "parts", "shape": "circle", "parts": 4 }
     },
     {
       "id": "g1-half-equals-two-fourths-keypad-3",
@@ -6342,8 +6462,23 @@
       "prompt": "How many pieces?",
       "why": "One half is the same as two fourths. So Sam eats 2 pieces.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 2 },
-      "answer": 2
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 4,
+        "picked": 2
+      },
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 4,
+        "picked": 2,
+        "who": { "name": "Sam", "look": "kid" }
+      }
     },
     {
       "id": "g1-half-equals-two-fourths-tap-4",
@@ -6357,19 +6492,37 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "rectangle",
+            "food": "brownies",
+            "parts": 4,
+            "picked": 1
+          },
           "narration": "1/4 of the pan"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 3 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "rectangle",
+            "food": "brownies",
+            "parts": 4,
+            "picked": 3
+          },
           "narration": "3/4 of the pan"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 2 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "rectangle",
+            "food": "brownies",
+            "parts": 4,
+            "picked": 2
+          },
           "narration": "2/4 of the pan"
         }
       ],
@@ -6397,8 +6550,17 @@
       "prompt": "Fourths in one half",
       "why": "One half is the same as 2 fourths. So her friend eats 2 fourths.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 2 },
-      "answer": 2
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pie", "parts": 4, "picked": 2 },
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pie",
+        "parts": 4,
+        "picked": 2,
+        "who": { "name": "Ana", "look": "girl" }
+      }
     },
     {
       "id": "g1-half-equals-two-fourths-number-line-3",
@@ -6411,7 +6573,17 @@
       "min": 0,
       "max": 6,
       "step": 1,
-      "target": 2
+      "target": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 2,
+        "picked": 1,
+        "cutInto": 4,
+        "who": { "name": "Mia", "look": "girl" }
+      }
     },
     {
       "id": "g1-half-equals-two-fourths-tap-6",
@@ -6436,14 +6608,28 @@
       "prompt": "One half of the pan",
       "why": "One half is the same as two fourths. So take 2 pieces.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 0 },
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 4,
+        "picked": 0
+      },
       "choices": [
         { "id": "a", "kind": "number", "value": 1 },
         { "id": "b", "kind": "number", "value": 3 },
         { "id": "c", "kind": "number", "value": 4 },
         { "id": "d", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "slices": {
+        "kind": "slices",
+        "ask": "left",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 4,
+        "take": 2
+      }
     },
     {
       "id": "g1-half-equals-two-fourths-keypad-5",
@@ -6453,8 +6639,16 @@
       "prompt": "How many slices in all?",
       "why": "Each half makes 2 slices. 2 + 2 = 4, so there are 4 fourths.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 0 },
-      "answer": 4
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 0 },
+      "answer": 4,
+      "slices": {
+        "kind": "slices",
+        "ask": "parts",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "who": { "name": "Mia", "look": "kid" }
+      }
     },
     {
       "id": "g1-compare-unit-fractions-tap-1",
@@ -6468,13 +6662,13 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "picked": 1 },
           "narration": "1/4 of the circle"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "picked": 1 },
           "narration": "1/2 of the circle"
         }
       ],
@@ -6492,13 +6686,13 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "picked": 1 },
           "narration": "1/8 of the circle"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "picked": 1 },
           "narration": "1/2 of the circle"
         }
       ],
@@ -6511,9 +6705,6 @@
       "narration": "A pizza is cut into 4 equal slices. Each kid gets one slice. How many kids share this pizza?",
       "prompt": "How many kids?",
       "why": "The pizza has 4 equal slices. Each kid gets one slice, so 4 kids share it.",
-      "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
-      "answer": 4,
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -6525,7 +6716,10 @@
         "total": 4,
         "groups": 4,
         "each": 1
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 1 },
+      "answer": 4
     },
     {
       "id": "g1-compare-unit-fractions-number-line-1",
@@ -6538,7 +6732,8 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 6
+      "target": 6,
+      "slices": { "kind": "slices", "ask": "parts", "shape": "circle", "food": "pizza", "parts": 6 }
     },
     {
       "id": "g1-compare-unit-fractions-tap-3",
@@ -6547,12 +6742,6 @@
       "narration": "Two kids share a pizza, or four kids share the same pizza. Who gets the bigger piece: 2 kids or 4 kids?",
       "prompt": "Who gets the bigger piece?",
       "why": "Fewer kids means bigger pieces. When 2 kids share, each piece is a half.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4 kids" },
-        { "id": "b", "kind": "text", "text": "2 kids" }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "compare",
@@ -6565,7 +6754,13 @@
         "groups": 2,
         "otherGroups": 4,
         "want": "more"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4 kids" },
+        { "id": "b", "kind": "text", "text": "2 kids" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-compare-unit-fractions-tap-4",
@@ -6579,19 +6774,19 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "picked": 1 },
           "narration": "1/3 of the circle"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "picked": 1 },
           "narration": "1/6 of the circle"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "picked": 1 },
           "narration": "1/2 of the circle"
         }
       ],
@@ -6620,8 +6815,9 @@
       "prompt": "How many kids?",
       "why": "The bar has 10 equal parts. Each kid gets one part, so 10 kids share it.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "bar", "parts": 10, "shaded": 1 },
-      "answer": 10
+      "visual": { "kind": "fraction", "shape": "bar", "parts": 10, "picked": 1 },
+      "answer": 10,
+      "slices": { "kind": "slices", "ask": "parts", "shape": "bar", "parts": 10, "picked": 1 }
     },
     {
       "id": "g1-compare-unit-fractions-number-line-2",
@@ -6634,7 +6830,14 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 5
+      "target": 5,
+      "slices": {
+        "kind": "slices",
+        "ask": "parts",
+        "shape": "bar",
+        "parts": 5,
+        "who": { "name": "Sam", "look": "boy" }
+      }
     },
     {
       "id": "g1-compare-unit-fractions-tap-6",
@@ -6662,19 +6865,19 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "picked": 1 },
           "narration": "1/4 of the circle"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "picked": 1 },
           "narration": "1/6 of the circle"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 10, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 10, "picked": 1 },
           "narration": "1/10 of the circle"
         }
       ],
@@ -6688,7 +6891,7 @@
       "prompt": "How many kids now?",
       "why": "There were 8 kids. Two left, so 8 - 2 = 6 kids share the bar.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 8, "shaded": 1 },
+      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 8, "picked": 1 },
       "answer": 6
     },
     {
@@ -7501,14 +7704,6 @@
       "narration": "There are 2 groups of 2 stars. How many stars in all? Is it 3, 4, or 5?",
       "prompt": "How many stars?",
       "why": "Count by 2s. 2, 4. So there are 4 stars in all.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 5 }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -7520,7 +7715,15 @@
         "total": 4,
         "groups": 2,
         "each": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 5 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-equal-groups-keypad-1",
@@ -7529,9 +7732,6 @@
       "narration": "There are 3 bowls with 2 fish in each bowl. How many fish in all?",
       "prompt": "How many fish?",
       "why": "Count by 2s. 2, 4, 6. There are 6 fish.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
-      "answer": 6,
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -7543,7 +7743,10 @@
         "total": 6,
         "groups": 3,
         "each": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
+      "answer": 6
     },
     {
       "id": "g1-equal-groups-number-line-1",
@@ -7566,13 +7769,21 @@
       "prompt": "How many halves?",
       "why": "The pie has 2 equal parts. Each part is one half. So 2 halves make the whole pie.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 2 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pie", "parts": 2, "picked": 2 },
       "choices": [
         { "id": "a", "kind": "number", "value": 2 },
         { "id": "b", "kind": "number", "value": 1 },
         { "id": "c", "kind": "number", "value": 3 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pie",
+        "parts": 2,
+        "picked": 2
+      }
     },
     {
       "id": "g1-equal-groups-tap-3",
@@ -7581,14 +7792,6 @@
       "narration": "Here are 6 cookies. Each plate gets 2 cookies. How many plates? Is it 3, 2, or 4?",
       "prompt": "How many plates?",
       "why": "Make groups of 2. 2, 4, 6. That is 3 groups, so 3 plates.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 2 },
-        { "id": "c", "kind": "number", "value": 4 }
-      ],
-      "answerChoiceId": "a",
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -7600,7 +7803,15 @@
         "total": 6,
         "groups": 3,
         "each": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 2 },
+        { "id": "c", "kind": "number", "value": 4 }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g1-equal-groups-keypad-2",
@@ -7609,9 +7820,6 @@
       "narration": "There are 4 leaves. Each leaf has 2 bugs on it. How many bugs in all?",
       "prompt": "How many bugs?",
       "why": "Count by 2s. 2, 4, 6, 8. There are 8 bugs.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🐞", "count": 8 },
-      "answer": 8,
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -7623,7 +7831,10 @@
         "total": 8,
         "groups": 4,
         "each": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🐞", "count": 8 },
+      "answer": 8
     },
     {
       "id": "g1-equal-groups-number-line-2",
@@ -7632,11 +7843,6 @@
       "narration": "Lena has 5 bags. Each bag has 2 apples. Move the frog to how many apples in all.",
       "prompt": "5 groups of 2",
       "why": "Count by 2s. 2, 4, 6, 8, 10. Lena has 10 apples.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 10,
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -7649,7 +7855,12 @@
         "groups": 5,
         "each": 2,
         "sharer": { "name": "Lena", "look": "kid" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 10
     },
     {
       "id": "g1-equal-groups-tap-4",
@@ -7658,14 +7869,6 @@
       "narration": "Here are 8 grapes. Each cup gets 2 grapes. How many cups? Is it 2, 6, or 4?",
       "prompt": "How many cups?",
       "why": "Make groups of 2. 2, 4, 6, 8. That is 4 groups, so 4 cups.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍇", "count": 8 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 6 },
-        { "id": "c", "kind": "number", "value": 4 }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -7677,7 +7880,15 @@
         "total": 8,
         "groups": 4,
         "each": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍇", "count": 8 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 6 },
+        { "id": "c", "kind": "number", "value": 4 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g1-equal-groups-keypad-3",
@@ -7687,8 +7898,16 @@
       "prompt": "How many halves?",
       "why": "Each sandwich has 2 halves. Count by 2s. 2, 4, 6. There are 6 halves.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 2, "shaded": 6, "wholes": 3 },
-      "answer": 6
+      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 2, "picked": 6, "wholes": 3 },
+      "answer": 6,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "rectangle",
+        "parts": 2,
+        "wholes": 3,
+        "picked": 6
+      }
     },
     {
       "id": "g1-equal-groups-tap-5",
@@ -7697,13 +7916,6 @@
       "narration": "Ben has 3 groups of 3 stickers. How many stickers in all? Is it 9, 6, or 8?",
       "prompt": "3 groups of 3",
       "why": "Count by 3s. 3, 6, 9. Ben has 9 stickers.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 9 },
-        { "id": "b", "kind": "number", "value": 6 },
-        { "id": "c", "kind": "number", "value": 8 }
-      ],
-      "answerChoiceId": "a",
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -7716,7 +7928,14 @@
         "groups": 3,
         "each": 3,
         "sharer": { "name": "Ben", "look": "kid" }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 9 },
+        { "id": "b", "kind": "number", "value": 6 },
+        { "id": "c", "kind": "number", "value": 8 }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g1-equal-groups-number-line-3",
@@ -7725,11 +7944,6 @@
       "narration": "Tia has 10 crackers. She puts 2 crackers on each plate. Move the frog to how many plates.",
       "prompt": "How many plates?",
       "why": "Count by 2s. 2, 4, 6, 8, 10. That took 5 counts, so 5 plates.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 5,
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -7742,7 +7956,12 @@
         "groups": 5,
         "each": 2,
         "sharer": { "name": "Tia", "look": "girl" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 5
     },
     {
       "id": "g1-equal-groups-keypad-4",
@@ -7751,9 +7970,6 @@
       "narration": "Here are 9 apples. Each bag holds 3 apples. How many bags?",
       "prompt": "How many bags?",
       "why": "Make groups of 3. 3, 6, 9. That is 3 groups, so 3 bags.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
-      "answer": 3,
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -7765,7 +7981,10 @@
         "total": 9,
         "groups": 3,
         "each": 3
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
+      "answer": 3
     },
     {
       "id": "g1-equal-groups-tap-6",
@@ -7789,9 +8008,6 @@
       "narration": "Kim has 10 crackers. She puts 5 crackers on each plate. How many plates does she fill?",
       "prompt": "How many plates?",
       "why": "Count by 5s. 5, 10. That is 2 groups, so 2 plates.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍘", "count": 10 },
-      "answer": 2,
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -7804,23 +8020,35 @@
         "groups": 2,
         "each": 5,
         "sharer": { "name": "Kim", "look": "girl" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍘", "count": 10 },
+      "answer": 2
     },
     {
       "id": "g1-equal-groups-tap-7",
       "skillId": "g1-equal-groups",
       "difficulty": 3,
-      "narration": "Zed ate the shaded halves of toast. How many halves did Zed eat? Is it 10, 6, or 5?",
+      "narration": "Zed ate the picked halves of toast. How many halves did Zed eat? Is it 10, 6, or 5?",
       "prompt": "How many halves?",
       "why": "Each colored part is one half. Count them. 1, 2, 3, 4, 5. Zed ate 5 halves.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 2, "shaded": 5, "wholes": 3 },
+      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 2, "picked": 5, "wholes": 3 },
       "choices": [
         { "id": "a", "kind": "number", "value": 10 },
         { "id": "b", "kind": "number", "value": 6 },
         { "id": "c", "kind": "number", "value": 5 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "rectangle",
+        "parts": 2,
+        "wholes": 3,
+        "picked": 5,
+        "who": { "name": "Zed", "look": "kid" }
+      }
     },
     {
       "id": "g2-whole-numbers-200-keypad-1",
@@ -8207,15 +8435,6 @@
       "narration": "6 cookies are shared by 2 friends. How many cookies does each friend get? Is it 2, 4, 3, or 6?",
       "prompt": "6 ÷ 2 = ?",
       "why": "Give each friend one cookie at a time. After 3 rounds, all 6 cookies are gone. Each friend gets 3.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 3 },
-        { "id": "d", "kind": "number", "value": 6 }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -8226,7 +8445,16 @@
         "receivers": "kids",
         "total": 6,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 3 },
+        { "id": "d", "kind": "number", "value": 6 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-fair-share-fractions-keypad-1",
@@ -8235,9 +8463,6 @@
       "narration": "8 apples are shared by 4 friends. How many apples does each friend get?",
       "prompt": "8 ÷ 4 = ?",
       "why": "Hand out 1 apple to each of the 4 friends. Do it again. That uses all 8. Each gets 2.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 8 },
-      "answer": 2,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -8248,7 +8473,10 @@
         "receivers": "kids",
         "total": 8,
         "groups": 4
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 8 },
+      "answer": 2
     },
     {
       "id": "g2-fair-share-fractions-number-line-1",
@@ -8257,11 +8485,6 @@
       "narration": "10 stickers are shared by 2 friends. Drag the frog to how many stickers each friend gets.",
       "prompt": "10 ÷ 2 = ?",
       "why": "Split the 10 stickers into 2 equal groups. Each group has 5 stickers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 5,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -8272,7 +8495,12 @@
         "receivers": "kids",
         "total": 10,
         "groups": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 5
     },
     {
       "id": "g2-fair-share-fractions-tap-2",
@@ -8298,9 +8526,6 @@
       "narration": "9 pears are shared by 3 friends. How many pears does each friend get?",
       "prompt": "9 ÷ 3 = ?",
       "why": "Make 3 equal groups from 9 pears. Each group has 3 pears.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍐", "count": 9 },
-      "answer": 3,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -8311,7 +8536,10 @@
         "receivers": "kids",
         "total": 9,
         "groups": 3
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍐", "count": 9 },
+      "answer": 3
     },
     {
       "id": "g2-fair-share-fractions-tap-3",
@@ -8320,15 +8548,6 @@
       "narration": "4 sandwiches are shared by 3 friends. How much does each friend get? Is it 1 1/3, 1 1/2, 2, or 1 2/3?",
       "prompt": "4 ÷ 3 = ?",
       "why": "Each friend gets 1 whole sandwich. One is left. Cut it in 3 parts. Each friend gets 1 and one third.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🥪", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1 1/3" },
-        { "id": "b", "kind": "text", "text": "1 1/2" },
-        { "id": "c", "kind": "text", "text": "2" },
-        { "id": "d", "kind": "text", "text": "1 2/3" }
-      ],
-      "answerChoiceId": "a",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -8339,7 +8558,16 @@
         "receivers": "kids",
         "total": 4,
         "groups": 3
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🥪", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1 1/3" },
+        { "id": "b", "kind": "text", "text": "1 1/2" },
+        { "id": "c", "kind": "text", "text": "2" },
+        { "id": "d", "kind": "text", "text": "1 2/3" }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g2-fair-share-fractions-number-line-2",
@@ -8361,15 +8589,6 @@
       "narration": "One pie is cut into 4 equal parts. 4 friends share it. What part does each friend get? Is it 1/2, 1/3, 1/4, or 2/3?",
       "prompt": "What part of the pie?",
       "why": "The pie has 4 equal parts for 4 friends. Each friend gets 1 part. That is 1/4.",
-      "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1/2" },
-        { "id": "b", "kind": "text", "text": "1/3" },
-        { "id": "c", "kind": "text", "text": "1/4" },
-        { "id": "d", "kind": "text", "text": "2/3" }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -8380,7 +8599,16 @@
         "receivers": "kids",
         "total": 1,
         "groups": 4
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pie", "parts": 4, "picked": 1 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1/2" },
+        { "id": "b", "kind": "text", "text": "1/3" },
+        { "id": "c", "kind": "text", "text": "1/4" },
+        { "id": "d", "kind": "text", "text": "2/3" }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-fair-share-fractions-tap-5",
@@ -8389,15 +8617,6 @@
       "narration": "5 cookies are shared by 2 friends. How much does each friend get? Is it 2, 2 1/2, 3, or 2 1/4?",
       "prompt": "5 ÷ 2 = ?",
       "why": "Each friend gets 2 whole cookies. One is left. Cut it in halves. Each friend gets 2 and one half.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "2" },
-        { "id": "b", "kind": "text", "text": "2 1/2" },
-        { "id": "c", "kind": "text", "text": "3" },
-        { "id": "d", "kind": "text", "text": "2 1/4" }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -8408,7 +8627,16 @@
         "receivers": "kids",
         "total": 5,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "2" },
+        { "id": "b", "kind": "text", "text": "2 1/2" },
+        { "id": "c", "kind": "text", "text": "3" },
+        { "id": "d", "kind": "text", "text": "2 1/4" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-fair-share-fractions-keypad-3",
@@ -8417,9 +8645,6 @@
       "narration": "10 bars are shared by 3 friends. Each friend gets 3 whole bars. How many bars are left over?",
       "prompt": "How many bars are left?",
       "why": "3 friends each get 3 bars. That is 9 bars. 10 take away 9 leaves 1 bar.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍫", "count": 10 },
-      "answer": 1,
       "scene": {
         "kind": "share",
         "ask": "left",
@@ -8430,7 +8655,10 @@
         "receivers": "kids",
         "total": 10,
         "groups": 3
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍫", "count": 10 },
+      "answer": 1
     },
     {
       "id": "g2-fair-share-fractions-tap-6",
@@ -8439,15 +8667,6 @@
       "narration": "2 bars are shared by 3 friends. Each bar is cut into 3 equal parts. How much does each friend get? Is it 1/3, 1/2, 2/3, or 2?",
       "prompt": "2 ÷ 3 = ?",
       "why": "Cut each bar into thirds. Each friend takes one third from each bar. That is 2 thirds.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍫", "count": 2 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1/3" },
-        { "id": "b", "kind": "text", "text": "1/2" },
-        { "id": "c", "kind": "text", "text": "2/3" },
-        { "id": "d", "kind": "text", "text": "2" }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -8458,7 +8677,16 @@
         "receivers": "kids",
         "total": 2,
         "groups": 3
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍫", "count": 2 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1/3" },
+        { "id": "b", "kind": "text", "text": "1/2" },
+        { "id": "c", "kind": "text", "text": "2/3" },
+        { "id": "d", "kind": "text", "text": "2" }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-fair-share-fractions-keypad-4",
@@ -8477,12 +8705,6 @@
       "narration": "10 bars can be shared by 3 friends or by 6 friends. Who gets more each? 3 friends or 6 friends?",
       "prompt": "Who gets more each?",
       "why": "With fewer friends, each share is bigger. 10 bars shared by 3 friends gives more than by 6 friends.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "6 friends" },
-        { "id": "b", "kind": "text", "text": "3 friends" }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "compare",
@@ -8495,7 +8717,13 @@
         "groups": 3,
         "otherGroups": 6,
         "want": "more"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "6 friends" },
+        { "id": "b", "kind": "text", "text": "3 friends" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-fair-share-fractions-tap-8",
@@ -8504,15 +8732,6 @@
       "narration": "10 granola bars are shared by 3 friends. How much does each friend get? Is it 3, 3 2/3, 5, or 3 1/3?",
       "prompt": "10 ÷ 3 = ?",
       "why": "Each friend gets 3 whole bars. That uses 9. One bar is left. Cut it in thirds. Each gets 3 and one third.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍫", "count": 10 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "3" },
-        { "id": "b", "kind": "text", "text": "3 2/3" },
-        { "id": "c", "kind": "text", "text": "5" },
-        { "id": "d", "kind": "text", "text": "3 1/3" }
-      ],
-      "answerChoiceId": "d",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -8523,7 +8742,16 @@
         "receivers": "kids",
         "total": 10,
         "groups": 3
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍫", "count": 10 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "3" },
+        { "id": "b", "kind": "text", "text": "3 2/3" },
+        { "id": "c", "kind": "text", "text": "5" },
+        { "id": "d", "kind": "text", "text": "3 1/3" }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g2-fair-share-fractions-number-line-3",
@@ -8532,11 +8760,6 @@
       "narration": "10 bars are shared by 6 friends. Each friend gets 1 whole bar first. How many bars are left? Drag the frog to the number.",
       "prompt": "How many bars are left?",
       "why": "6 friends each get 1 bar. That uses 6 bars. 10 take away 6 leaves 4 bars to cut up.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 4,
       "scene": {
         "kind": "share",
         "ask": "left",
@@ -8547,23 +8770,36 @@
         "receivers": "kids",
         "total": 10,
         "groups": 6
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 4
     },
     {
       "id": "g2-third-equals-two-sixths-tap-1",
       "skillId": "g2-third-equals-two-sixths",
       "difficulty": 1,
-      "narration": "A pizza is cut into 3 equal slices. One slice is shaded. What fraction is shaded? Is it 1/6, 1/2, or 1/3?",
-      "prompt": "What fraction is shaded?",
-      "why": "The pizza has 3 equal slices and 1 is shaded. So one third is shaded.",
+      "narration": "A pizza is cut into 3 equal slices. One slice is picked. What fraction is picked? Is it 1/6, 1/2, or 1/3?",
+      "prompt": "What fraction is picked?",
+      "why": "The pizza has 3 equal slices and 1 is picked. So one third is picked.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "shaded": 1 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 3, "picked": 1 },
       "choices": [
         { "id": "a", "kind": "text", "text": "1/6" },
         { "id": "b", "kind": "text", "text": "1/2" },
         { "id": "c", "kind": "text", "text": "1/3" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 3,
+        "picked": 1
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-keypad-1",
@@ -8573,8 +8809,16 @@
       "prompt": "How many slices?",
       "why": "Sixths means 6 equal slices. You can count them in the picture too. There are 6.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 1 },
-      "answer": 6
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 6, "picked": 1 },
+      "answer": 6,
+      "slices": {
+        "kind": "slices",
+        "ask": "parts",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 6,
+        "who": { "name": "Mia", "look": "kid" }
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-number-line-1",
@@ -8587,34 +8831,53 @@
       "min": 0,
       "max": 6,
       "step": 1,
-      "target": 3
+      "target": 3,
+      "slices": { "kind": "slices", "ask": "parts", "shape": "circle", "food": "pizza", "parts": 3 }
     },
     {
       "id": "g2-third-equals-two-sixths-tap-2",
       "skillId": "g2-third-equals-two-sixths",
       "difficulty": 1,
-      "narration": "Which picture shows one third of a pizza? Is it 1 of 6 parts shaded, 1 of 3 parts shaded, or 1 of 2 parts shaded?",
+      "narration": "Which picture shows one third of a pizza? Is it 1 of 6 parts picked, 1 of 3 parts picked, or 1 of 2 parts picked?",
       "prompt": "Which shows 1/3?",
-      "why": "One third means 1 of 3 equal slices. The pizza cut into 3 slices with 1 shaded shows it.",
+      "why": "One third means 1 of 3 equal slices. The pizza cut into 3 slices with 1 picked shows it.",
       "type": "tap",
       "choices": [
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 1 },
-          "narration": "1 of 6 parts shaded"
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 6,
+            "picked": 1
+          },
+          "narration": "1 of 6 parts picked"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "shaded": 1 },
-          "narration": "1 of 3 parts shaded"
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 3,
+            "picked": 1
+          },
+          "narration": "1 of 3 parts picked"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 1 },
-          "narration": "1 of 2 parts shaded"
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 2,
+            "picked": 1
+          },
+          "narration": "1 of 2 parts picked"
         }
       ],
       "answerChoiceId": "b"
@@ -8623,12 +8886,20 @@
       "id": "g2-third-equals-two-sixths-keypad-2",
       "skillId": "g2-third-equals-two-sixths",
       "difficulty": 1,
-      "narration": "A pizza is cut into 6 equal slices. Two of the 6 slices are shaded. How many sixths are shaded?",
-      "prompt": "How many sixths shaded?",
-      "why": "Two slices are shaded. Each slice is one sixth, so two sixths are shaded.",
+      "narration": "A pizza is cut into 6 equal slices. Two of the 6 slices are picked. How many sixths are picked?",
+      "prompt": "How many sixths picked?",
+      "why": "Two slices are picked. Each slice is one sixth, so two sixths are picked.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 2 },
-      "answer": 2
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 6, "picked": 2 },
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 6,
+        "picked": 2
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-tap-3",
@@ -8643,7 +8914,17 @@
         { "id": "b", "kind": "text", "text": "3/6" },
         { "id": "c", "kind": "text", "text": "2/6" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 3,
+        "picked": 1,
+        "cutInto": 6,
+        "who": { "name": "Leo", "look": "kid" }
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-keypad-3",
@@ -8653,7 +8934,16 @@
       "prompt": "1/3 = ?/6",
       "why": "Each third can be cut into 2 sixths. So one third equals 2 sixths.",
       "type": "keypad",
-      "answer": 2
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 3,
+        "picked": 1,
+        "cutInto": 6
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-number-line-2",
@@ -8666,7 +8956,16 @@
       "min": 0,
       "max": 6,
       "step": 1,
-      "target": 4
+      "target": 4,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 3,
+        "picked": 2,
+        "cutInto": 6
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-tap-4",
@@ -8686,28 +8985,45 @@
       "id": "g2-third-equals-two-sixths-keypad-4",
       "skillId": "g2-third-equals-two-sixths",
       "difficulty": 2,
-      "narration": "Two sixths of this pizza are shaded. Cut the same pizza into 3 equal slices instead. How many thirds are shaded?",
+      "narration": "Two sixths of this pizza are picked. Cut the same pizza into 3 equal slices instead. How many thirds are picked?",
       "prompt": "How many thirds?",
-      "why": "Two sixths is the same amount as one third. So 1 slice is shaded.",
+      "why": "Two sixths is the same amount as one third. So 1 slice is picked.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 2 },
-      "answer": 1
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 6, "picked": 2 },
+      "answer": 1,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 6,
+        "picked": 2,
+        "cutInto": 3
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-tap-5",
       "skillId": "g2-third-equals-two-sixths",
       "difficulty": 3,
-      "narration": "This strip has 4 sixths shaded. Which fraction is the same amount? Is it 1/3, 1/2, or 2/3?",
+      "narration": "This strip has 4 sixths picked. Which fraction is the same amount? Is it 1/3, 1/2, or 2/3?",
       "prompt": "Same amount as 4/6?",
       "why": "Every 2 sixths make 1 third. So 4 sixths make 2 thirds.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "bar", "parts": 6, "shaded": 4 },
+      "visual": { "kind": "fraction", "shape": "bar", "parts": 6, "picked": 4 },
       "choices": [
         { "id": "a", "kind": "text", "text": "1/3" },
         { "id": "b", "kind": "text", "text": "1/2" },
         { "id": "c", "kind": "text", "text": "2/3" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "bar",
+        "parts": 6,
+        "picked": 4,
+        "cutInto": 3
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-number-line-3",
@@ -8720,7 +9036,17 @@
       "min": 0,
       "max": 6,
       "step": 1,
-      "target": 2
+      "target": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 6,
+        "picked": 4,
+        "cutInto": 3,
+        "who": { "name": "Ben", "look": "kid" }
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-keypad-5",
@@ -8730,7 +9056,15 @@
       "prompt": "How many sixths?",
       "why": "Each friend eats 2 sixths. Three friends eat 3 times 2, which is 6 sixths.",
       "type": "keypad",
-      "answer": 6
+      "answer": 6,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 6,
+        "picked": 6
+      }
     },
     {
       "id": "g2-third-equals-two-sixths-tap-6",
@@ -8758,7 +9092,16 @@
       "min": 0,
       "max": 6,
       "step": 1,
-      "target": 4
+      "target": 4,
+      "slices": {
+        "kind": "slices",
+        "ask": "left",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 6,
+        "take": 2,
+        "who": { "name": "Zoe", "look": "kid" }
+      }
     },
     {
       "id": "g2-add-sub-properties-tap-1",
@@ -9203,13 +9546,21 @@
       "prompt": "How many fourths in 1 whole?",
       "why": "The pizza has 4 equal slices. All 4 fourths together make 1 whole pizza.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 4 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 4 },
       "choices": [
         { "id": "a", "kind": "number", "value": 4 },
         { "id": "b", "kind": "number", "value": 8 },
         { "id": "c", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 4
+      }
     },
     {
       "id": "g2-equal-groups-multiply-keypad-3",
@@ -9218,8 +9569,6 @@
       "narration": "Leo has 6 bags. Each bag has 3 apples. How many apples in all?",
       "prompt": "6 groups of 3 = ?",
       "why": "Add 3 six times. 3 + 3 + 3 + 3 + 3 + 3 = 18. Leo has 18 apples.",
-      "type": "keypad",
-      "answer": 18,
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -9232,7 +9581,9 @@
         "groups": 6,
         "each": 3,
         "sharer": { "name": "Leo", "look": "kid" }
-      }
+      },
+      "type": "keypad",
+      "answer": 18
     },
     {
       "id": "g2-equal-groups-multiply-number-line-2",
@@ -9266,11 +9617,18 @@
       "id": "g2-equal-groups-multiply-keypad-4",
       "skillId": "g2-equal-groups-multiply",
       "difficulty": 2,
-      "narration": "Here are 2 pizzas. Each pizza is cut into 4 equal slices. Eight slices are shaded. That is 8 groups of one fourth. How many whole pizzas is that?",
+      "narration": "Here are 2 pizzas. Each pizza is cut into 4 equal slices. Eight slices are picked. That is 8 groups of one fourth. How many whole pizzas is that?",
       "prompt": "8 fourths = ? wholes",
       "why": "Every 4 fourths make 1 whole pizza. 8 fourths is 2 groups of 4. So it is 2 wholes.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 8, "wholes": 2 },
+      "visual": {
+        "kind": "fraction",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 8,
+        "wholes": 2
+      },
       "answer": 2
     },
     {
@@ -9335,8 +9693,24 @@
       "prompt": "3 pizzas of fourths",
       "why": "Each pizza has 4 fourths. Add 4 three times. 4 + 4 + 4 = 12 fourths.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 12, "wholes": 3 },
-      "answer": 12
+      "visual": {
+        "kind": "fraction",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 12,
+        "wholes": 3
+      },
+      "answer": 12,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "wholes": 3,
+        "picked": 12
+      }
     },
     {
       "id": "g2-equal-groups-multiply-number-line-4",
@@ -9358,14 +9732,6 @@
       "narration": "Mia shares 6 apples equally between 2 friends. How many apples does each friend get? Is it 2, 3, or 4?",
       "prompt": "6 ÷ 2 = ?",
       "why": "Give one apple to each friend again and again. Each friend gets 3 apples.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 3 },
-        { "id": "c", "kind": "number", "value": 4 }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -9377,7 +9743,15 @@
         "total": 6,
         "groups": 2,
         "sharer": { "name": "Mia", "look": "kid" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 3 },
+        { "id": "c", "kind": "number", "value": 4 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-division-sharing-keypad-1",
@@ -9386,9 +9760,6 @@
       "narration": "Ben has 10 cookies. He shares them equally on 2 plates. How many cookies are on each plate?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Share the cookies one at a time to each plate. Each plate gets 5 cookies.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
-      "answer": 5,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -9400,7 +9771,10 @@
         "total": 10,
         "groups": 2,
         "sharer": { "name": "Ben", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
+      "answer": 5
     },
     {
       "id": "g2-division-sharing-number-line-1",
@@ -9409,11 +9783,6 @@
       "narration": "Eight stickers are shared equally by 4 friends. Move the frog to how many stickers each friend gets.",
       "prompt": "8 ÷ 4 = ?",
       "why": "Share 8 stickers with 4 friends, one at a time. Each friend gets 2 stickers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "target": 2,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -9424,7 +9793,12 @@
         "receivers": "kids",
         "total": 8,
         "groups": 4
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "target": 2
     },
     {
       "id": "g2-division-sharing-keypad-2",
@@ -9433,9 +9807,6 @@
       "narration": "Sam has 6 fish. He puts 2 fish in each bowl. How many bowls does he fill?",
       "prompt": "6 ÷ 2 = ?",
       "why": "Count by 2s. 2, 4, 6. That is 3 bowls.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
-      "answer": 3,
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -9448,7 +9819,10 @@
         "groups": 3,
         "each": 2,
         "sharer": { "name": "Sam", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
+      "answer": 3
     },
     {
       "id": "g2-division-sharing-tap-2",
@@ -9457,14 +9831,6 @@
       "narration": "Zoe has 4 balloons. She shares them equally between 2 kids. How many balloons does each kid get? Is it 1, 3, or 2?",
       "prompt": "4 ÷ 2 = ?",
       "why": "Give one balloon to each kid, then one more to each. Each kid gets 2 balloons.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🎈", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 1 },
-        { "id": "b", "kind": "number", "value": 3 },
-        { "id": "c", "kind": "number", "value": 2 }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -9476,7 +9842,15 @@
         "total": 4,
         "groups": 2,
         "sharer": { "name": "Zoe", "look": "girl" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🎈", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 1 },
+        { "id": "b", "kind": "number", "value": 3 },
+        { "id": "c", "kind": "number", "value": 2 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-division-sharing-tap-3",
@@ -9485,15 +9859,6 @@
       "narration": "Pat has 12 peaches. He packs them equally in 3 baskets. How many peaches are in each basket? Is it 3, 4, 5, or 6?",
       "prompt": "12 ÷ 3 = ?",
       "why": "Share the peaches one at a time into 3 baskets. Each basket gets 4 peaches.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍑", "count": 12 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 5 },
-        { "id": "d", "kind": "number", "value": 6 }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -9505,7 +9870,16 @@
         "total": 12,
         "groups": 3,
         "sharer": { "name": "Pat", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍑", "count": 12 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 5 },
+        { "id": "d", "kind": "number", "value": 6 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-division-sharing-keypad-3",
@@ -9514,9 +9888,6 @@
       "narration": "Pat has 12 peaches. He puts 4 peaches in each basket. How many baskets does he fill?",
       "prompt": "12 ÷ 4 = ?",
       "why": "Count by 4s. 4, 8, 12. That is 3 baskets.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍑", "count": 12 },
-      "answer": 3,
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -9529,7 +9900,10 @@
         "groups": 3,
         "each": 4,
         "sharer": { "name": "Pat", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍑", "count": 12 },
+      "answer": 3
     },
     {
       "id": "g2-division-sharing-number-line-2",
@@ -9538,11 +9912,6 @@
       "narration": "Nine grapes are shared equally by 3 kids. Move the frog to how many grapes each kid gets.",
       "prompt": "9 ÷ 3 = ?",
       "why": "Share 9 grapes one at a time with 3 kids. Each kid gets 3 grapes.",
-      "type": "number-line",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "target": 3,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -9553,7 +9922,12 @@
         "receivers": "kids",
         "total": 9,
         "groups": 3
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "target": 3
     },
     {
       "id": "g2-division-sharing-keypad-4",
@@ -9562,9 +9936,6 @@
       "narration": "Ella has 12 cookies. She shares them equally with 6 friends. How many cookies does each friend get?",
       "prompt": "12 ÷ 6 = ?",
       "why": "Give each of the 6 friends one cookie. Then give each friend one more. Each gets 2.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 12 },
-      "answer": 2,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -9576,7 +9947,10 @@
         "total": 12,
         "groups": 6,
         "sharer": { "name": "Ella", "look": "girl" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 12 },
+      "answer": 2
     },
     {
       "id": "g2-division-sharing-tap-4",
@@ -9601,13 +9975,6 @@
       "narration": "Nia has 12 cookies. Who gets more cookies each: 2 friends sharing the 12, or 4 friends sharing the 12? Is it 2 friends or 4 friends?",
       "prompt": "Who gets more?",
       "why": "12 ÷ 2 = 6, but 12 ÷ 4 = 3. Fewer friends means bigger shares.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 12 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4 friends" },
-        { "id": "b", "kind": "text", "text": "2 friends" }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "compare",
@@ -9621,7 +9988,14 @@
         "otherGroups": 4,
         "want": "more",
         "sharer": { "name": "Nia", "look": "kid" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 12 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4 friends" },
+        { "id": "b", "kind": "text", "text": "2 friends" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-division-sharing-keypad-5",
@@ -9630,9 +10004,6 @@
       "narration": "Leo has 12 stars. He puts 2 stars in each group. How many groups does he make?",
       "prompt": "12 ÷ 2 = ?",
       "why": "Count by 2s up to 12. 2, 4, 6, 8, 10, 12. That is 6 groups.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 12 },
-      "answer": 6,
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -9645,7 +10016,10 @@
         "groups": 6,
         "each": 2,
         "sharer": { "name": "Leo", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 12 },
+      "answer": 6
     },
     {
       "id": "g2-division-sharing-number-line-3",
@@ -9654,11 +10028,6 @@
       "narration": "Twelve muffins go into bags. Each bag holds 4 muffins. Move the frog to how many bags Mia fills.",
       "prompt": "12 ÷ 4 = ?",
       "why": "Count by 4s. 4, 8, 12. That is 3 bags.",
-      "type": "number-line",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "target": 3,
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -9671,7 +10040,12 @@
         "groups": 3,
         "each": 4,
         "sharer": { "name": "Mia", "look": "kid" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "target": 3
     },
     {
       "id": "g2-division-sharing-keypad-6",
@@ -10287,9 +10661,6 @@
       "narration": "Mia has 12 grapes. She shares them fairly between 2 friends. How many grapes does each friend get?",
       "prompt": "12 ÷ 2 = ?",
       "why": "Hand out grapes one at a time to each friend. Both friends end up with 6 grapes.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍇", "count": 12 },
-      "answer": 6,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -10301,7 +10672,10 @@
         "total": 12,
         "groups": 2,
         "sharer": { "name": "Mia", "look": "girl" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍇", "count": 12 },
+      "answer": 6
     },
     {
       "id": "g3-fair-share-20-tap-1",
@@ -10310,15 +10684,6 @@
       "narration": "Leo has 9 stickers. He shares them fairly among 3 friends. How many stickers does each friend get? Is it 2, 3, 4, or 6?",
       "prompt": "9 stickers, 3 friends",
       "why": "Give each friend one sticker at a time. After 3 rounds, all 9 are gone. Each friend gets 3.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 9 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 3 },
-        { "id": "c", "kind": "number", "value": 4 },
-        { "id": "d", "kind": "number", "value": 6 }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -10330,7 +10695,16 @@
         "total": 9,
         "groups": 3,
         "sharer": { "name": "Leo", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 9 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 3 },
+        { "id": "c", "kind": "number", "value": 4 },
+        { "id": "d", "kind": "number", "value": 6 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g3-fair-share-20-number-line-1",
@@ -10339,11 +10713,6 @@
       "narration": "Ava has 10 marbles. She shares them fairly among 5 friends. Move the frog to how many marbles each friend gets.",
       "prompt": "10 marbles, 5 friends",
       "why": "Make 5 equal groups from 10 marbles. Each group has 2 marbles.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 2,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -10355,7 +10724,12 @@
         "total": 10,
         "groups": 5,
         "sharer": { "name": "Ava", "look": "girl" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 2
     },
     {
       "id": "g3-fair-share-20-tap-2",
@@ -10365,14 +10739,22 @@
       "prompt": "What fraction is one slice?",
       "why": "The pizza has 4 equal slices. One slice out of 4 is 1/4.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 1 },
       "choices": [
         { "id": "a", "kind": "text", "text": "1/2" },
         { "id": "b", "kind": "text", "text": "1/3" },
         { "id": "c", "kind": "text", "text": "1/4" },
         { "id": "d", "kind": "text", "text": "1/5" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 1
+      }
     },
     {
       "id": "g3-fair-share-20-keypad-2",
@@ -10381,9 +10763,6 @@
       "narration": "Zoe has 16 apples. She shares them fairly among 4 friends. How many apples does each friend get?",
       "prompt": "16 ÷ 4 = ?",
       "why": "Make 4 equal groups from 16 apples. Each group has 4 apples.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 16 },
-      "answer": 4,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -10395,7 +10774,10 @@
         "total": 16,
         "groups": 4,
         "sharer": { "name": "Zoe", "look": "girl" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 16 },
+      "answer": 4
     },
     {
       "id": "g3-fair-share-20-number-line-2",
@@ -10434,8 +10816,6 @@
       "narration": "5 friends each get 4 cards in a fair share. How many cards were there to share in all?",
       "prompt": "5 friends, 4 cards each",
       "why": "Five groups of 4 cards make all the cards. 5 × 4 = 20.",
-      "type": "keypad",
-      "answer": 20,
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -10447,7 +10827,9 @@
         "total": 20,
         "groups": 5,
         "each": 4
-      }
+      },
+      "type": "keypad",
+      "answer": 20
     },
     {
       "id": "g3-fair-share-20-number-line-3",
@@ -10456,11 +10838,6 @@
       "narration": "Noah has 20 crackers. He shares them fairly among 4 friends. Move the frog to how many crackers each friend gets.",
       "prompt": "20 crackers, 4 friends",
       "why": "Make 4 equal groups from 20 crackers. Each group has 5 crackers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 5,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -10472,7 +10849,12 @@
         "total": 20,
         "groups": 4,
         "sharer": { "name": "Noah", "look": "boy" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 5
     },
     {
       "id": "g3-fair-share-20-tap-4",
@@ -10481,12 +10863,6 @@
       "narration": "Lily has 12 stickers. She could share them among 3 friends, or among 4 friends. Which way gives each friend more? Is it 3 friends or 4 friends?",
       "prompt": "Which gives each friend more?",
       "why": "12 shared by 3 gives 4 each. 12 shared by 4 gives 3 each. Fewer friends means a bigger share.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "3 friends" },
-        { "id": "b", "kind": "text", "text": "4 friends" }
-      ],
-      "answerChoiceId": "a",
       "scene": {
         "kind": "share",
         "ask": "compare",
@@ -10500,7 +10876,13 @@
         "otherGroups": 4,
         "want": "more",
         "sharer": { "name": "Lily", "look": "girl" }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "3 friends" },
+        { "id": "b", "kind": "text", "text": "4 friends" }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g3-fair-share-20-tap-5",
@@ -10509,15 +10891,6 @@
       "narration": "Jay has 8 cookies. He shares them fairly among 3 friends. How much does each friend get? Is it 2 1/3, 2 2/3, 3, or 2 1/2?",
       "prompt": "8 cookies, 3 friends",
       "why": "Each friend gets 2 cookies, which uses 6. Two cookies are left. Cut each into thirds, so each friend gets 2 more thirds. That is 2 2/3.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 8 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "2 1/3" },
-        { "id": "b", "kind": "text", "text": "3" },
-        { "id": "c", "kind": "text", "text": "2 2/3" },
-        { "id": "d", "kind": "text", "text": "2 1/2" }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -10529,7 +10902,16 @@
         "total": 8,
         "groups": 3,
         "sharer": { "name": "Jay", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 8 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "2 1/3" },
+        { "id": "b", "kind": "text", "text": "3" },
+        { "id": "c", "kind": "text", "text": "2 2/3" },
+        { "id": "d", "kind": "text", "text": "2 1/2" }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-fair-share-20-keypad-4",
@@ -10538,8 +10920,6 @@
       "narration": "Kai has 17 cookies. He shares them fairly among 5 friends. Each friend gets 3 whole cookies. How many cookies are left over to cut?",
       "prompt": "17 cookies, 5 friends",
       "why": "Each of 5 friends gets 3, which uses 15 cookies. 17 take away 15 leaves 2.",
-      "type": "keypad",
-      "answer": 2,
       "scene": {
         "kind": "share",
         "ask": "left",
@@ -10551,7 +10931,9 @@
         "total": 17,
         "groups": 5,
         "sharer": { "name": "Kai", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "answer": 2
     },
     {
       "id": "g3-fair-share-20-number-line-4",
@@ -10560,11 +10942,6 @@
       "narration": "A bakery has 18 muffins. It shares them fairly between 2 stores. Move the frog to how many muffins each store gets.",
       "prompt": "18 muffins, 2 stores",
       "why": "Split 18 into 2 equal groups. Each group has 9 muffins.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 9,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -10575,7 +10952,12 @@
         "receivers": "stores",
         "total": 18,
         "groups": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 9
     },
     {
       "id": "g3-fair-share-20-tap-6",
@@ -10584,15 +10966,6 @@
       "narration": "Ben has 5 sandwiches. He shares them fairly among 3 friends. How much does each friend get? Is it 1 1/3, 1 2/3, 2, or 1 1/2?",
       "prompt": "5 sandwiches, 3 friends",
       "why": "Each friend gets 1 sandwich, which uses 3. Two are left. Cut each into thirds, so each friend gets 2 more thirds. That is 1 2/3.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🥪", "count": 5 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1 1/3" },
-        { "id": "b", "kind": "text", "text": "2" },
-        { "id": "c", "kind": "text", "text": "1 1/2" },
-        { "id": "d", "kind": "text", "text": "1 2/3" }
-      ],
-      "answerChoiceId": "d",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -10604,40 +10977,73 @@
         "total": 5,
         "groups": 3,
         "sharer": { "name": "Ben", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🥪", "count": 5 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1 1/3" },
+        { "id": "b", "kind": "text", "text": "2" },
+        { "id": "c", "kind": "text", "text": "1 1/2" },
+        { "id": "d", "kind": "text", "text": "1 2/3" }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-fair-share-20-tap-7",
       "skillId": "g3-fair-share-20",
       "difficulty": 3,
-      "narration": "3 granola bars are shared fairly among 4 friends. Which picture shows one friend's share? Is it 1 of 4 parts shaded, 2 of 3 parts shaded, 3 of 8 parts shaded, or 3 of 4 parts shaded?",
+      "narration": "3 granola bars are shared fairly among 4 friends. Which picture shows one friend's share? Is it 1 of 4 parts picked, 2 of 3 parts picked, 3 of 8 parts picked, or 3 of 4 parts picked?",
       "prompt": "One friend's share?",
-      "why": "A bar cut into 4 equal parts with 3 shaded is 3/4. The other pictures show different amounts.",
+      "why": "A bar cut into 4 equal parts with 3 picked is 3/4. The other pictures show different amounts.",
       "type": "tap",
       "choices": [
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 4, "shaded": 1 },
-          "narration": "1 of 4 parts shaded"
+          "visual": {
+            "kind": "fraction",
+            "shape": "bar",
+            "food": "granola",
+            "parts": 4,
+            "picked": 1
+          },
+          "narration": "1 of 4 parts picked"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 3, "shaded": 2 },
-          "narration": "2 of 3 parts shaded"
+          "visual": {
+            "kind": "fraction",
+            "shape": "bar",
+            "food": "granola",
+            "parts": 3,
+            "picked": 2
+          },
+          "narration": "2 of 3 parts picked"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 8, "shaded": 3 },
-          "narration": "3 of 8 parts shaded"
+          "visual": {
+            "kind": "fraction",
+            "shape": "bar",
+            "food": "granola",
+            "parts": 8,
+            "picked": 3
+          },
+          "narration": "3 of 8 parts picked"
         },
         {
           "id": "d",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "bar", "parts": 4, "shaded": 3 },
-          "narration": "3 of 4 parts shaded"
+          "visual": {
+            "kind": "fraction",
+            "shape": "bar",
+            "food": "granola",
+            "parts": 4,
+            "picked": 3
+          },
+          "narration": "3 of 4 parts picked"
         }
       ],
       "answerChoiceId": "d"
@@ -10646,17 +11052,32 @@
       "id": "g3-equivalent-fair-shares-tap-1",
       "skillId": "g3-equivalent-fair-shares",
       "difficulty": 1,
-      "narration": "A pan is cut into 4 equal parts. 2 parts are shaded. Which fraction is the same amount: 1/4, 3/4, or 1/2?",
+      "narration": "A pan is cut into 4 equal parts. 2 parts are picked. Which fraction is the same amount: 1/4, 3/4, or 1/2?",
       "prompt": "Same amount as 2/4?",
       "why": "2 of 4 equal parts is half of the pan. So 2/4 is the same amount as 1/2.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 2 },
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 4,
+        "picked": 2
+      },
       "choices": [
         { "id": "a", "kind": "text", "text": "1/4" },
         { "id": "b", "kind": "text", "text": "3/4" },
         { "id": "c", "kind": "text", "text": "1/2" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 4,
+        "picked": 2,
+        "cutInto": 2
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-keypad-1",
@@ -10666,8 +11087,18 @@
       "prompt": "1/2 = ?/4",
       "why": "Cutting each half in two makes 4 slices. Half of 4 slices is 2 slices.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 1 },
-      "answer": 2
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 2, "picked": 1 },
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 2,
+        "picked": 1,
+        "cutInto": 4,
+        "who": { "name": "Ana", "look": "kid" }
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-number-line-1",
@@ -10680,33 +11111,63 @@
       "min": 0,
       "max": 4,
       "step": 1,
-      "target": 2
+      "target": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 2,
+        "picked": 1,
+        "cutInto": 4
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-tap-2",
       "skillId": "g3-equivalent-fair-shares",
       "difficulty": 1,
-      "narration": "A pizza is cut into 10 equal slices. 2 slices are shaded. Is that the same as 1/10, 1/5, or 2/5?",
+      "narration": "A pizza is cut into 10 equal slices. 2 slices are picked. Is that the same as 1/10, 1/5, or 2/5?",
       "prompt": "Same as 2/10?",
       "why": "Cut into 5 big slices, each one covers 2 small slices. So 2/10 is the same as 1/5.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 10, "shaded": 2 },
+      "visual": {
+        "kind": "fraction",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 10,
+        "picked": 2
+      },
       "choices": [
         { "id": "a", "kind": "text", "text": "1/10" },
         { "id": "b", "kind": "text", "text": "1/5" },
         { "id": "c", "kind": "text", "text": "2/5" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 10,
+        "picked": 2,
+        "cutInto": 5
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-tap-3",
       "skillId": "g3-equivalent-fair-shares",
       "difficulty": 1,
-      "narration": "A pan has 4 equal parts. 2 parts are shaded. Is that the same amount as 1/2 of the pan? Yes or no?",
+      "narration": "A pan has 4 equal parts. 2 parts are picked. Is that the same amount as 1/2 of the pan? Yes or no?",
       "prompt": "Is 2/4 the same as 1/2?",
       "why": "2 out of 4 equal parts is half the pan. So yes, they are the same amount.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 2 },
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 4,
+        "picked": 2
+      },
       "choices": [
         { "id": "a", "kind": "text", "text": "yes" },
         { "id": "b", "kind": "text", "text": "no" }
@@ -10717,12 +11178,13 @@
       "id": "g3-equivalent-fair-shares-keypad-2",
       "skillId": "g3-equivalent-fair-shares",
       "difficulty": 2,
-      "narration": "A circle is cut into 8 equal parts. 4 parts are shaded. That is the same as 1/2. 1/2 equals how many eighths?",
+      "narration": "A circle is cut into 8 equal parts. 4 parts are picked. That is the same as 1/2. 1/2 equals how many eighths?",
       "prompt": "1/2 = ?/8",
       "why": "Eight parts split into two equal groups makes 4 in each group. So 1/2 is 4/8.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "shaded": 4 },
-      "answer": 4
+      "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "picked": 4 },
+      "answer": 4,
+      "slices": { "kind": "slices", "ask": "picked", "shape": "circle", "parts": 8, "picked": 4 }
     },
     {
       "id": "g3-equivalent-fair-shares-number-line-2",
@@ -10735,23 +11197,40 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 6
+      "target": 6,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "parts": 5,
+        "picked": 3,
+        "cutInto": 10,
+        "who": { "name": "Kai", "look": "kid" }
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-tap-4",
       "skillId": "g3-equivalent-fair-shares",
       "difficulty": 2,
-      "narration": "A circle is cut into 3 equal parts. 2 parts are shaded. Which is the same amount: 3/6, 2/6, or 4/6?",
+      "narration": "A circle is cut into 3 equal parts. 2 parts are picked. Which is the same amount: 3/6, 2/6, or 4/6?",
       "prompt": "2/3 = ?",
       "why": "Cut each third into 2 sixths. Two thirds become 4 sixths.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "shaded": 2 },
+      "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "picked": 2 },
       "choices": [
         { "id": "a", "kind": "text", "text": "3/6" },
         { "id": "b", "kind": "text", "text": "2/6" },
         { "id": "c", "kind": "text", "text": "4/6" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "parts": 3,
+        "picked": 2,
+        "cutInto": 6
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-tap-5",
@@ -10765,25 +11244,25 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "picked": 1 },
           "narration": "1/4 of the circle"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 2 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "picked": 2 },
           "narration": "2/4 of the circle"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "shaded": 3 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "picked": 3 },
           "narration": "3/8 of the circle"
         },
         {
           "id": "d",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 2 },
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "picked": 2 },
           "narration": "2/6 of the circle"
         }
       ],
@@ -10797,8 +11276,24 @@
       "prompt": "4/10 = ?/5",
       "why": "Two tenths make one fifth. Four tenths make 2 fifths.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 10, "shaded": 4 },
-      "answer": 2
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 10,
+        "picked": 4
+      },
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 10,
+        "picked": 4,
+        "cutInto": 5,
+        "who": { "name": "Zoe", "look": "kid" }
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-tap-6",
@@ -10824,8 +11319,18 @@
       "prompt": "4/6 = ?/3",
       "why": "Two sixths make one third. Four sixths make 2 thirds.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 4 },
-      "answer": 2
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 6, "picked": 4 },
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 6,
+        "picked": 4,
+        "cutInto": 3,
+        "who": { "name": "Mia", "look": "kid" }
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-number-line-3",
@@ -10838,7 +11343,17 @@
       "min": 0,
       "max": 8,
       "step": 1,
-      "target": 6
+      "target": 6,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 4,
+        "picked": 3,
+        "cutInto": 8,
+        "who": { "name": "Dev", "look": "boy" }
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-tap-7",
@@ -10854,7 +11369,15 @@
         { "id": "c", "kind": "number", "value": 10 },
         { "id": "d", "kind": "number", "value": 8 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "circle",
+        "parts": 2,
+        "picked": 1,
+        "cutInto": 10
+      }
     },
     {
       "id": "g3-equivalent-fair-shares-keypad-5",
@@ -10864,7 +11387,15 @@
       "prompt": "1/4 = ?/8",
       "why": "Share 8 pieces between 4 friends. Each friend gets 2 pieces, so 1/4 is 2/8.",
       "type": "keypad",
-      "answer": 2
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "each",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 8,
+        "friends": 4
+      }
     },
     {
       "id": "g3-arrays-multiply-divide-keypad-1",
@@ -10899,11 +11430,6 @@
       "narration": "Sam makes an array with 2 rows of 6 stickers. Move the frog to the number of stickers in all.",
       "prompt": "2 × 6 = ?",
       "why": "Two rows of 6 is 6 + 6. That makes 12 stickers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "target": 12,
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -10916,7 +11442,12 @@
         "groups": 2,
         "each": 6,
         "sharer": { "name": "Sam", "look": "kid" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "target": 12
     },
     {
       "id": "g3-arrays-multiply-divide-tap-2",
@@ -11118,9 +11649,6 @@
       "narration": "Maya shares these 10 cookies equally between 2 friends. How many cookies does each friend get?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Think 2 times what is 10? 5 × 2 = 10, so each friend gets 5.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
-      "answer": 5,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -11132,7 +11660,10 @@
         "total": 10,
         "groups": 2,
         "sharer": { "name": "Maya", "look": "kid" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
+      "answer": 5
     },
     {
       "id": "g3-mult-div-facts-2-5-10-tap-2",
@@ -11336,9 +11867,6 @@
       "narration": "Here are 10 apples. Mia shares them equally into 2 baskets. How many apples are in each basket?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Think 2 times what is 10. 2 × 5 = 10, so each basket gets 5.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 10 },
-      "answer": 5,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -11350,7 +11878,10 @@
         "total": 10,
         "groups": 2,
         "sharer": { "name": "Mia", "look": "kid" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 10 },
+      "answer": 5
     },
     {
       "id": "g3-mult-div-properties-tap-3",
@@ -11485,14 +12016,6 @@
       "narration": "Ana has 4 bags. Each bag has 3 apples. How many apples does she have in all? Is it 7, 9, 12, or 15?",
       "prompt": "4 × 3 = ?",
       "why": "4 bags with 3 apples each is 4 groups of 3. Count by threes: 3, 6, 9, 12.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 7 },
-        { "id": "b", "kind": "number", "value": 9 },
-        { "id": "c", "kind": "number", "value": 12 },
-        { "id": "d", "kind": "number", "value": 15 }
-      ],
-      "answerChoiceId": "c",
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -11505,7 +12028,15 @@
         "groups": 4,
         "each": 3,
         "sharer": { "name": "Ana", "look": "girl" }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 7 },
+        { "id": "b", "kind": "number", "value": 9 },
+        { "id": "c", "kind": "number", "value": 12 },
+        { "id": "d", "kind": "number", "value": 15 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-mult-div-problems-tap-2",
@@ -11546,14 +12077,6 @@
       "narration": "Tom has 20 marbles. He puts 5 marbles in each bag. How many bags does he fill? Is it 15, 25, 5, or 4?",
       "prompt": "20 ÷ 5 = ?",
       "why": "Make groups of 5 from 20. Hop back by 5 from 20 and count the hops. There are 4.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 15 },
-        { "id": "b", "kind": "number", "value": 25 },
-        { "id": "c", "kind": "number", "value": 5 },
-        { "id": "d", "kind": "number", "value": 4 }
-      ],
-      "answerChoiceId": "d",
       "scene": {
         "kind": "share",
         "ask": "groups",
@@ -11566,7 +12089,15 @@
         "groups": 4,
         "each": 5,
         "sharer": { "name": "Tom", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 15 },
+        { "id": "b", "kind": "number", "value": 25 },
+        { "id": "c", "kind": "number", "value": 5 },
+        { "id": "d", "kind": "number", "value": 4 }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-mult-div-problems-tap-5",
@@ -11591,8 +12122,6 @@
       "narration": "There are 3 boxes. Each box has 5 pencils. How many pencils are there in all?",
       "prompt": "3 × 5 = ?",
       "why": "3 groups of 5 is 5, 10, 15. There are 15 pencils.",
-      "type": "keypad",
-      "answer": 15,
       "scene": {
         "kind": "share",
         "ask": "total",
@@ -11604,7 +12133,9 @@
         "total": 15,
         "groups": 3,
         "each": 5
-      }
+      },
+      "type": "keypad",
+      "answer": 15
     },
     {
       "id": "g3-mult-div-problems-keypad-2",
@@ -11719,24 +12250,34 @@
       "prompt": "What fraction did Mia eat?",
       "why": "Each slice is one fourth. Mia ate 3 slices, so that is 3 fourths, or 3/4.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 3 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 3 },
       "choices": [
         { "id": "a", "kind": "text", "text": "1/4" },
         { "id": "b", "kind": "text", "text": "3/4" },
         { "id": "c", "kind": "text", "text": "4/4" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 3,
+        "who": { "name": "Mia", "look": "girl" }
+      }
     },
     {
       "id": "g3-fraction-repeated-addition-keypad-1",
       "skillId": "g3-fraction-repeated-addition",
       "difficulty": 1,
-      "narration": "This bar is cut into 5 equal pieces. 3 pieces are shaded. One fifth plus one fifth plus one fifth is how many fifths?",
+      "narration": "This bar is cut into 5 equal pieces. 3 pieces are picked. One fifth plus one fifth plus one fifth is how many fifths?",
       "prompt": "1/5 + 1/5 + 1/5 = ? fifths",
-      "why": "Count the shaded pieces. There are 3, so you have 3 fifths.",
+      "why": "Count the picked pieces. There are 3, so you have 3 fifths.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "shaded": 3 },
-      "answer": 3
+      "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "picked": 3 },
+      "answer": 3,
+      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 5, "picked": 3 }
     },
     {
       "id": "g3-fraction-repeated-addition-number-line-1",
@@ -11749,7 +12290,16 @@
       "min": 0,
       "max": 8,
       "step": 1,
-      "target": 5
+      "target": 5,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 8,
+        "picked": 5,
+        "who": { "name": "Jo", "look": "kid" }
+      }
     },
     {
       "id": "g3-fraction-repeated-addition-tap-2",
@@ -11770,12 +12320,13 @@
       "id": "g3-fraction-repeated-addition-keypad-2",
       "skillId": "g3-fraction-repeated-addition",
       "difficulty": 1,
-      "narration": "A circle is cut into 8 equal parts. 3 parts are shaded. That is 3/8. What is the bottom number?",
+      "narration": "A circle is cut into 8 equal parts. 3 parts are picked. That is 3/8. What is the bottom number?",
       "prompt": "3/8: the bottom number is ?",
       "why": "The bottom number tells how many equal parts make the whole. This circle has 8 parts.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "shaded": 3 },
-      "answer": 8
+      "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "picked": 3 },
+      "answer": 8,
+      "slices": { "kind": "slices", "ask": "parts", "shape": "circle", "parts": 8, "picked": 3 }
     },
     {
       "id": "g3-fraction-repeated-addition-tap-3",
@@ -11791,18 +12342,20 @@
         { "id": "c", "kind": "text", "text": "1/5" },
         { "id": "d", "kind": "text", "text": "3/3" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 5, "picked": 3 }
     },
     {
       "id": "g3-fraction-repeated-addition-keypad-3",
       "skillId": "g3-fraction-repeated-addition",
       "difficulty": 2,
-      "narration": "This strip has 8 equal parts. 5 parts are shaded. You add one eighth again and again to make 5/8. How many times do you add it?",
+      "narration": "This strip has 8 equal parts. 5 parts are picked. You add one eighth again and again to make 5/8. How many times do you add it?",
       "prompt": "How many times is 1/8 added?",
       "why": "The top number counts the pieces. In 5/8, there are 5 pieces of one eighth, so you add it 5 times.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "bar", "parts": 8, "shaded": 5 },
-      "answer": 5
+      "visual": { "kind": "fraction", "shape": "bar", "parts": 8, "picked": 5 },
+      "answer": 5,
+      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 8, "picked": 5 }
     },
     {
       "id": "g3-fraction-repeated-addition-number-line-2",
@@ -11815,17 +12368,18 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 7
+      "target": 7,
+      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 10, "picked": 7 }
     },
     {
       "id": "g3-fraction-repeated-addition-tap-4",
       "skillId": "g3-fraction-repeated-addition",
       "difficulty": 2,
-      "narration": "A pizza is cut into 6 equal slices. 4 slices are shaded. Which addition matches the shaded part? Is it 1/6 + 1/6, 1/6 + 1/6 + 1/6, 1/6 + 1/6 + 1/6 + 1/6, or 1/4 + 1/4 + 1/4 + 1/4?",
-      "prompt": "Which sum matches the shaded part?",
+      "narration": "A pizza is cut into 6 equal slices. 4 slices are picked. Which addition matches the picked part? Is it 1/6 + 1/6, 1/6 + 1/6 + 1/6, 1/6 + 1/6 + 1/6 + 1/6, or 1/4 + 1/4 + 1/4 + 1/4?",
+      "prompt": "Which sum matches the picked part?",
       "why": "Each slice is one sixth. 4 slices means adding one sixth four times, which is 4/6.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 4 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 6, "picked": 4 },
       "choices": [
         { "id": "a", "kind": "text", "text": "1/6 + 1/6" },
         { "id": "b", "kind": "text", "text": "1/6 + 1/6 + 1/6" },
@@ -11842,7 +12396,17 @@
       "prompt": "2 eighths + 3 eighths = ? eighths",
       "why": "Each piece is one eighth. Count all the pieces: 2 and 3 more make 5 eighths.",
       "type": "keypad",
-      "answer": 5
+      "answer": 5,
+      "slices": {
+        "kind": "slices",
+        "ask": "add",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 8,
+        "picked": 2,
+        "more": 3,
+        "who": { "name": "Kai", "look": "boy" }
+      }
     },
     {
       "id": "g3-fraction-repeated-addition-tap-5",
@@ -11863,12 +12427,28 @@
       "id": "g3-fraction-repeated-addition-keypad-5",
       "skillId": "g3-fraction-repeated-addition",
       "difficulty": 3,
-      "narration": "There are 2 chocolate bars, each cut into 4 equal pieces. 6 pieces are shaded. That is 6/4. One fourth is added how many times?",
+      "narration": "There are 2 chocolate bars, each cut into 4 equal pieces. 6 pieces are picked. That is 6/4. One fourth is added how many times?",
       "prompt": "6/4 is 1/4 added how many times?",
       "why": "The top number counts the pieces. In 6/4 there are 6 pieces of one fourth, so you add it 6 times.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 6, "wholes": 2 },
-      "answer": 6
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 4,
+        "picked": 6,
+        "wholes": 2
+      },
+      "answer": 6,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 4,
+        "wholes": 2,
+        "picked": 6
+      }
     },
     {
       "id": "g3-fraction-repeated-addition-number-line-3",
@@ -11881,7 +12461,15 @@
       "min": 0,
       "max": 12,
       "step": 1,
-      "target": 6
+      "target": 6,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "bar",
+        "parts": 3,
+        "wholes": 2,
+        "picked": 6
+      }
     },
     {
       "id": "g3-fraction-repeated-addition-tap-6",
@@ -11905,7 +12493,7 @@
       "prompt": "12 × 1/12 = ? whole",
       "why": "12 pieces of one twelfth is 12/12. That fills the bar once, so it is 1 whole.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "bar", "parts": 12, "shaded": 12 },
+      "visual": { "kind": "fraction", "shape": "bar", "parts": 12, "picked": 12 },
       "answer": 1
     },
     {
@@ -11913,27 +12501,44 @@
       "skillId": "g4-represent-fractions",
       "difficulty": 1,
       "narration": "A pizza is cut into 4 equal slices. Mia eats 3 of them. What fraction of the pizza did she eat? Is it 3/4, 1/4, or 4/4?",
-      "prompt": "What fraction is shaded?",
+      "prompt": "What fraction is picked?",
       "why": "The pizza has 4 equal slices, so the bottom number is 4. Mia ate 3 slices, so the top number is 3. That is 3/4.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 3 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 3 },
       "choices": [
         { "id": "a", "kind": "text", "text": "1/4" },
         { "id": "b", "kind": "text", "text": "4/4" },
         { "id": "c", "kind": "text", "text": "3/4" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 3,
+        "who": { "name": "Mia", "look": "girl" }
+      }
     },
     {
       "id": "g4-represent-fractions-keypad-1",
       "skillId": "g4-represent-fractions",
       "difficulty": 1,
-      "narration": "A pizza is cut into 6 equal slices. Two slices are shaded. How many equal slices make the whole pizza?",
+      "narration": "A pizza is cut into 6 equal slices. Two slices are picked. How many equal slices make the whole pizza?",
       "prompt": "How many equal slices in the whole?",
-      "why": "Count every slice, shaded or not. The whole pizza has 6 equal slices, and that is the bottom number.",
+      "why": "Count every slice, picked or not. The whole pizza has 6 equal slices, and that is the bottom number.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 2 },
-      "answer": 6
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 6, "picked": 2 },
+      "answer": 6,
+      "slices": {
+        "kind": "slices",
+        "ask": "parts",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 6,
+        "picked": 2
+      }
     },
     {
       "id": "g4-represent-fractions-number-line-1",
@@ -11952,28 +12557,28 @@
       "id": "g4-represent-fractions-tap-2",
       "skillId": "g4-represent-fractions",
       "difficulty": 1,
-      "narration": "Which circle has 1/3 shaded? Is it 2 of 3 parts shaded, 1 of 3 parts shaded, or 1 of 2 parts shaded?",
+      "narration": "Which circle has 1/3 picked? Is it 2 of 3 parts picked, 1 of 3 parts picked, or 1 of 2 parts picked?",
       "prompt": "Find 1/3",
-      "why": "Thirds mean 3 equal parts. One third has 1 of those 3 parts shaded.",
+      "why": "Thirds mean 3 equal parts. One third has 1 of those 3 parts picked.",
       "type": "tap",
       "choices": [
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "shaded": 2 },
-          "narration": "2 of 3 parts shaded"
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "picked": 2 },
+          "narration": "2 of 3 parts picked"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "shaded": 1 },
-          "narration": "1 of 3 parts shaded"
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "picked": 1 },
+          "narration": "1 of 3 parts picked"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "shaded": 1 },
-          "narration": "1 of 2 parts shaded"
+          "visual": { "kind": "fraction", "shape": "circle", "parts": 2, "picked": 1 },
+          "narration": "1 of 2 parts picked"
         }
       ],
       "answerChoiceId": "b"
@@ -11986,25 +12591,41 @@
       "prompt": "Top number of 2/5?",
       "why": "The top number counts the pieces we mean. Dev ate 2 pieces, so the top number is 2.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 5, "shaded": 2 },
-      "answer": 2
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 5,
+        "picked": 2
+      },
+      "answer": 2,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 5,
+        "picked": 2,
+        "who": { "name": "Dev", "look": "kid" }
+      }
     },
     {
       "id": "g4-represent-fractions-tap-3",
       "skillId": "g4-represent-fractions",
       "difficulty": 2,
-      "narration": "A fraction strip has 10 equal parts. Seven parts are shaded. What fraction is shaded? Is it 7/10, 3/10, 10/7, or 7/3?",
-      "prompt": "What fraction is shaded?",
-      "why": "The strip has 10 equal parts, so the bottom number is 10. Seven are shaded, so the top number is 7. That is 7/10.",
+      "narration": "A fraction strip has 10 equal parts. Seven parts are picked. What fraction is picked? Is it 7/10, 3/10, 10/7, or 7/3?",
+      "prompt": "What fraction is picked?",
+      "why": "The strip has 10 equal parts, so the bottom number is 10. Seven are picked, so the top number is 7. That is 7/10.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "bar", "parts": 10, "shaded": 7 },
+      "visual": { "kind": "fraction", "shape": "bar", "parts": 10, "picked": 7 },
       "choices": [
         { "id": "a", "kind": "text", "text": "3/10" },
         { "id": "b", "kind": "text", "text": "10/7" },
         { "id": "c", "kind": "text", "text": "7/10" },
         { "id": "d", "kind": "text", "text": "7/3" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 10, "picked": 7 }
     },
     {
       "id": "g4-represent-fractions-keypad-3",
@@ -12014,8 +12635,22 @@
       "prompt": "How many pieces are left?",
       "why": "The whole pan has 8 pieces and 3 were eaten. Take 3 away from 8 to get 5 pieces left.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 8, "shaded": 3 },
-      "answer": 5
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 8,
+        "picked": 3
+      },
+      "answer": 5,
+      "slices": {
+        "kind": "slices",
+        "ask": "left",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 8,
+        "take": 3
+      }
     },
     {
       "id": "g4-represent-fractions-number-line-2",
@@ -12049,28 +12684,28 @@
       "id": "g4-represent-fractions-tap-5",
       "skillId": "g4-represent-fractions",
       "difficulty": 2,
-      "narration": "Which rectangle shows 3/8? Is it 5 of 8 parts shaded, 3 of 5 parts shaded, or 3 of 8 parts shaded?",
+      "narration": "Which rectangle shows 3/8? Is it 5 of 8 parts picked, 3 of 5 parts picked, or 3 of 8 parts picked?",
       "prompt": "Find 3/8",
-      "why": "Eighths mean 8 equal parts in the whole. Three eighths has 3 of those 8 parts shaded.",
+      "why": "Eighths mean 8 equal parts in the whole. Three eighths has 3 of those 8 parts picked.",
       "type": "tap",
       "choices": [
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 8, "shaded": 5 },
-          "narration": "5 of 8 parts shaded"
+          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 8, "picked": 5 },
+          "narration": "5 of 8 parts picked"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 5, "shaded": 3 },
-          "narration": "3 of 5 parts shaded"
+          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 5, "picked": 3 },
+          "narration": "3 of 5 parts picked"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 8, "shaded": 3 },
-          "narration": "3 of 8 parts shaded"
+          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 8, "picked": 3 },
+          "narration": "3 of 8 parts picked"
         }
       ],
       "answerChoiceId": "c"
@@ -12079,29 +12714,61 @@
       "id": "g4-represent-fractions-keypad-4",
       "skillId": "g4-represent-fractions",
       "difficulty": 3,
-      "narration": "Two pizzas are each cut into 4 equal slices. Five slices are shaded. That makes a fraction with 4 on the bottom. What number is on top?",
+      "narration": "Two pizzas are each cut into 4 equal slices. Five slices are picked. That makes a fraction with 4 on the bottom. What number is on top?",
       "prompt": "Top number?",
-      "why": "The top number counts all the shaded fourths. There are 4 in the first pizza and 1 in the second, so 5 fourths.",
+      "why": "The top number counts all the picked fourths. There are 4 in the first pizza and 1 in the second, so 5 fourths.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 5, "wholes": 2 },
-      "answer": 5
+      "visual": {
+        "kind": "fraction",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 5,
+        "wholes": 2
+      },
+      "answer": 5,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "wholes": 2,
+        "picked": 5
+      }
     },
     {
       "id": "g4-represent-fractions-tap-6",
       "skillId": "g4-represent-fractions",
       "difficulty": 3,
-      "narration": "Two pans are each cut into 3 equal pieces. Each piece is one third. Four pieces are shaded. How many thirds are shaded? Is it 4/3, 3/4, 3/3, or 1/3?",
-      "prompt": "What fraction is shaded?",
-      "why": "Each piece is one third, so the bottom number is 3. Four pieces are shaded, so the top number is 4. That is 4/3.",
+      "narration": "Two pans are each cut into 3 equal pieces. Each piece is one third. Four pieces are picked. How many thirds are picked? Is it 4/3, 3/4, 3/3, or 1/3?",
+      "prompt": "What fraction is picked?",
+      "why": "Each piece is one third, so the bottom number is 3. Four pieces are picked, so the top number is 4. That is 4/3.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 3, "shaded": 4, "wholes": 2 },
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 3,
+        "picked": 4,
+        "wholes": 2
+      },
       "choices": [
         { "id": "a", "kind": "text", "text": "3/3" },
         { "id": "b", "kind": "text", "text": "3/4" },
         { "id": "c", "kind": "text", "text": "1/3" },
         { "id": "d", "kind": "text", "text": "4/3" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 3,
+        "wholes": 2,
+        "picked": 4
+      }
     },
     {
       "id": "g4-represent-fractions-number-line-3",
@@ -12123,15 +12790,6 @@
       "narration": "3 granola bars are shared equally by 4 people. How much does each person get? Is it 3/4, 4/3, 1/4, or 3/3?",
       "prompt": "Each person gets?",
       "why": "Cut each bar into 4 equal pieces. Each person takes one piece from each of the 3 bars. That is 3 fourths, or 3/4.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍫", "count": 3 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4/3" },
-        { "id": "b", "kind": "text", "text": "3/4" },
-        { "id": "c", "kind": "text", "text": "1/4" },
-        { "id": "d", "kind": "text", "text": "3/3" }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -12142,7 +12800,16 @@
         "receivers": "kids",
         "total": 3,
         "groups": 4
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍫", "count": 3 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4/3" },
+        { "id": "b", "kind": "text", "text": "3/4" },
+        { "id": "c", "kind": "text", "text": "1/4" },
+        { "id": "d", "kind": "text", "text": "3/3" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g4-represent-fractions-keypad-5",
@@ -12161,12 +12828,6 @@
       "narration": "Two pizzas are the same size. One is shared by 2 friends. The other is shared by 4 friends. Who gets more, 2 friends or 4 friends?",
       "prompt": "Who gets more pizza?",
       "why": "Fewer people sharing means bigger pieces. Each of 2 friends gets 1/2, which is more than 1/4.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4 friends" },
-        { "id": "b", "kind": "text", "text": "2 friends" }
-      ],
-      "answerChoiceId": "b",
       "scene": {
         "kind": "share",
         "ask": "compare",
@@ -12179,18 +12840,32 @@
         "groups": 4,
         "otherGroups": 2,
         "want": "more"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4 friends" },
+        { "id": "b", "kind": "text", "text": "2 friends" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g4-compare-fair-shares-keypad-1",
       "skillId": "g4-compare-fair-shares",
       "difficulty": 1,
-      "narration": "A pizza is cut into equal slices. One slice is shaded. That slice is one friend's share. How many friends share the pizza?",
+      "narration": "A pizza is cut into equal slices. One slice is picked. That slice is one friend's share. How many friends share the pizza?",
       "prompt": "How many friends?",
       "why": "Count all the equal slices. There are 4 slices, so 4 friends share the pizza.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
-      "answer": 4
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 1 },
+      "answer": 4,
+      "slices": {
+        "kind": "slices",
+        "ask": "parts",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 1
+      }
     },
     {
       "id": "g4-compare-fair-shares-number-line-1",
@@ -12203,7 +12878,14 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 5
+      "target": 5,
+      "slices": {
+        "kind": "slices",
+        "ask": "parts",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 5
+      }
     },
     {
       "id": "g4-compare-fair-shares-tap-2",
@@ -12217,13 +12899,25 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 3, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "rectangle",
+            "food": "chocolate",
+            "parts": 3,
+            "picked": 1
+          },
           "narration": "1/3 of the bar"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "rectangle", "parts": 8, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "rectangle",
+            "food": "chocolate",
+            "parts": 8,
+            "picked": 1
+          },
           "narration": "1/8 of the bar"
         }
       ],
@@ -12291,11 +12985,6 @@
       "narration": "A pan of 12 brownies is shared equally by 3 friends. Move the frog to how many brownies each friend gets.",
       "prompt": "Brownies for each friend",
       "why": "Share 12 brownies into 3 equal groups. 12 ÷ 3 = 4 brownies each.",
-      "type": "number-line",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "target": 4,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -12306,7 +12995,12 @@
         "receivers": "kids",
         "total": 12,
         "groups": 3
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "target": 4
     },
     {
       "id": "g4-compare-fair-shares-tap-6",
@@ -12373,7 +13067,15 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 5
+      "target": 5,
+      "slices": {
+        "kind": "slices",
+        "ask": "same",
+        "shape": "bar",
+        "parts": 2,
+        "picked": 1,
+        "cutInto": 10
+      }
     },
     {
       "id": "g4-compare-fair-shares-tap-9",
@@ -12387,25 +13089,49 @@
         {
           "id": "a",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 4,
+            "picked": 1
+          },
           "narration": "1/4 of the circle"
         },
         {
           "id": "b",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 6,
+            "picked": 1
+          },
           "narration": "1/6 of the circle"
         },
         {
           "id": "c",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 3,
+            "picked": 1
+          },
           "narration": "1/3 of the circle"
         },
         {
           "id": "d",
           "kind": "visual",
-          "visual": { "kind": "fraction", "shape": "circle", "parts": 10, "shaded": 1 },
+          "visual": {
+            "kind": "fraction",
+            "shape": "circle",
+            "food": "pizza",
+            "parts": 10,
+            "picked": 1
+          },
           "narration": "1/10 of the circle"
         }
       ],
@@ -12415,29 +13141,51 @@
       "id": "g4-count-unit-fractions-tap-1",
       "skillId": "g4-count-unit-fractions",
       "difficulty": 1,
-      "narration": "A pizza is cut into 4 equal slices. Three slices are shaded. How many one fourths are shaded? Is it 2, 3, 4, or 5?",
-      "prompt": "How many 1/4 are shaded?",
-      "why": "Count the shaded slices. There are 3 shaded, so that is 3 one fourths, or 3/4.",
+      "narration": "A pizza is cut into 4 equal slices. Three slices are picked. How many one fourths are picked? Is it 2, 3, 4, or 5?",
+      "prompt": "How many 1/4 are picked?",
+      "why": "Count the picked slices. There are 3 picked, so that is 3 one fourths, or 3/4.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 4, "shaded": 3 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 3 },
       "choices": [
         { "id": "a", "kind": "number", "value": 2 },
         { "id": "b", "kind": "number", "value": 3 },
         { "id": "c", "kind": "number", "value": 4 },
         { "id": "d", "kind": "number", "value": 5 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "picked": 3
+      }
     },
     {
       "id": "g4-count-unit-fractions-keypad-1",
       "skillId": "g4-count-unit-fractions",
       "difficulty": 1,
-      "narration": "A chocolate bar is cut into 6 equal pieces. Five pieces are shaded. How many one sixths are shaded?",
-      "prompt": "How many 1/6 are shaded?",
-      "why": "Count each shaded piece. There are 5 shaded pieces, so the answer is 5 one sixths.",
+      "narration": "A chocolate bar is cut into 6 equal pieces. Five pieces are picked. How many one sixths are picked?",
+      "prompt": "How many 1/6 are picked?",
+      "why": "Count each picked piece. There are 5 picked pieces, so the answer is 5 one sixths.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 6, "shaded": 5 },
-      "answer": 5
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 6,
+        "picked": 5
+      },
+      "answer": 5,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 6,
+        "picked": 5
+      }
     },
     {
       "id": "g4-count-unit-fractions-number-line-1",
@@ -12481,7 +13229,8 @@
         { "id": "c", "kind": "number", "value": 5 },
         { "id": "d", "kind": "number", "value": 10 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "slices": { "kind": "slices", "ask": "parts", "shape": "bar", "food": "granola", "parts": 5 }
     },
     {
       "id": "g4-count-unit-fractions-keypad-2",
@@ -12497,18 +13246,34 @@
       "id": "g4-count-unit-fractions-tap-4",
       "skillId": "g4-count-unit-fractions",
       "difficulty": 2,
-      "narration": "Two pizzas are each cut into 3 equal slices. Five slices are shaded. Count the shaded slices as one thirds. What fraction is that? Is it 3/5, 2/3, 5/3, or 6/5?",
-      "prompt": "Shaded one thirds make?",
-      "why": "Count the shaded slices: 5. Each slice is 1/3. So 5 one thirds is 5/3.",
+      "narration": "Two pizzas are each cut into 3 equal slices. Five slices are picked. Count the picked slices as one thirds. What fraction is that? Is it 3/5, 2/3, 5/3, or 6/5?",
+      "prompt": "Picked one thirds make?",
+      "why": "Count the picked slices: 5. Each slice is 1/3. So 5 one thirds is 5/3.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "shaded": 5, "wholes": 2 },
+      "visual": {
+        "kind": "fraction",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 3,
+        "picked": 5,
+        "wholes": 2
+      },
       "choices": [
         { "id": "a", "kind": "text", "text": "3/5" },
         { "id": "b", "kind": "text", "text": "2/3" },
         { "id": "c", "kind": "text", "text": "6/5" },
         { "id": "d", "kind": "text", "text": "5/3" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 3,
+        "wholes": 2,
+        "picked": 5
+      }
     },
     {
       "id": "g4-count-unit-fractions-number-line-2",
@@ -12527,12 +13292,20 @@
       "id": "g4-count-unit-fractions-keypad-3",
       "skillId": "g4-count-unit-fractions",
       "difficulty": 2,
-      "narration": "Two bars are each cut into fourths. All the pieces are shaded. How many one fourths are shaded in all?",
+      "narration": "Two bars are each cut into fourths. All the pieces are picked. How many one fourths are picked in all?",
       "prompt": "How many 1/4 in 2 wholes?",
       "why": "Each bar has 4 one fourths. Two bars have 4 + 4 = 8 one fourths.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 8, "wholes": 2 },
-      "answer": 8
+      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "picked": 8, "wholes": 2 },
+      "answer": 8,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "rectangle",
+        "parts": 4,
+        "wholes": 2,
+        "picked": 8
+      }
     },
     {
       "id": "g4-count-unit-fractions-tap-5",
@@ -12558,8 +13331,25 @@
       "prompt": "How many 1/3 in all?",
       "why": "Each pizza is 3 one thirds. Two pizzas make 6, and 1 more makes 7 one thirds.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 3, "shaded": 7, "wholes": 3 },
-      "answer": 7
+      "visual": {
+        "kind": "fraction",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 3,
+        "picked": 7,
+        "wholes": 3
+      },
+      "answer": 7,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 3,
+        "wholes": 3,
+        "picked": 7,
+        "who": { "name": "Mia", "look": "girl" }
+      }
     },
     {
       "id": "g4-count-unit-fractions-number-line-3",
@@ -12598,7 +13388,7 @@
       "prompt": "How many more 1/4?",
       "why": "3 whole bars is 3 × 4 = 12 one fourths. Leo has 9, so he needs 12 - 9 = 3 more.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "shaded": 9, "wholes": 3 },
+      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 4, "picked": 9, "wholes": 3 },
       "answer": 3
     },
     {
@@ -12872,7 +13662,8 @@
       "prompt": "? tenths = 1 whole",
       "why": "A whole fence has 10 boards, and each board is one tenth. So 10 tenths make 1 whole.",
       "type": "keypad",
-      "answer": 10
+      "answer": 10,
+      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 10, "picked": 10 }
     },
     {
       "id": "g4-fraction-decimal-equivalence-number-line-2",
@@ -12911,7 +13702,15 @@
       "prompt": "1.3 = ? tenths",
       "why": "1 whole is 10 tenths. Add 3 more tenths to get 13 tenths.",
       "type": "keypad",
-      "answer": 13
+      "answer": 13,
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "bar",
+        "parts": 10,
+        "wholes": 2,
+        "picked": 13
+      }
     },
     {
       "id": "g4-fraction-decimal-equivalence-tap-4",
@@ -13067,8 +13866,6 @@
       "narration": "Mia puts 18 stickers into 3 equal groups. How many stickers are in each group?",
       "prompt": "18 ÷ 3 = ?",
       "why": "Think 3 times what is 18. 3 × 6 is 18, so 18 ÷ 3 is 6.",
-      "type": "keypad",
-      "answer": 6,
       "scene": {
         "kind": "share",
         "ask": "each",
@@ -13080,7 +13877,9 @@
         "total": 18,
         "groups": 3,
         "sharer": { "name": "Mia", "look": "kid" }
-      }
+      },
+      "type": "keypad",
+      "answer": 6
     },
     {
       "id": "g4-mult-div-facts-100-keypad-3",
@@ -14005,14 +14804,24 @@
       "prompt": "5/6 - 2/6 = ?",
       "why": "Take away the pieces: 5 sixths minus 2 sixths is 3 sixths. The slices are the same size, so the denominator stays 6.",
       "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "parts": 6, "shaded": 5 },
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 6, "picked": 5 },
       "choices": [
         { "id": "a", "kind": "text", "text": "3/6" },
         { "id": "b", "kind": "text", "text": "7/6" },
         { "id": "c", "kind": "text", "text": "3/12" },
         { "id": "d", "kind": "text", "text": "2/6" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "slices": {
+        "kind": "slices",
+        "ask": "left",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 6,
+        "eaten": 1,
+        "take": 2,
+        "who": { "name": "Ben", "look": "kid" }
+      }
     },
     {
       "id": "g5-add-sub-like-fractions-keypad-1",
@@ -14022,7 +14831,15 @@
       "prompt": "1/5 + 3/5 = ? fifths",
       "why": "The units are both fifths. Add the counts: 1 + 3 = 4, so the answer is 4 fifths.",
       "type": "keypad",
-      "answer": 4
+      "answer": 4,
+      "slices": {
+        "kind": "slices",
+        "ask": "add",
+        "shape": "circle",
+        "parts": 5,
+        "picked": 1,
+        "more": 3
+      }
     },
     {
       "id": "g5-add-sub-like-fractions-keypad-2",
@@ -14032,8 +14849,24 @@
       "prompt": "7/10 - 4/10 = ? tenths",
       "why": "Start with 7 pieces and take away 4. That leaves 3 pieces, so 3 tenths are left.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "rectangle", "parts": 10, "shaded": 7 },
-      "answer": 3
+      "visual": {
+        "kind": "fraction",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 10,
+        "picked": 7
+      },
+      "answer": 3,
+      "slices": {
+        "kind": "slices",
+        "ask": "left",
+        "shape": "rectangle",
+        "food": "chocolate",
+        "parts": 10,
+        "eaten": 3,
+        "take": 4,
+        "who": { "name": "Lena", "look": "kid" }
+      }
     },
     {
       "id": "g5-add-sub-like-fractions-number-line-1",
@@ -14072,7 +14905,16 @@
       "prompt": "3/8 + 7/8 = ? eighths",
       "why": "Both amounts are counted in eighths. Add 3 + 7 = 10, so the total is 10 eighths of a cup.",
       "type": "keypad",
-      "answer": 10
+      "answer": 10,
+      "slices": {
+        "kind": "slices",
+        "ask": "add",
+        "shape": "circle",
+        "parts": 8,
+        "wholes": 2,
+        "picked": 3,
+        "more": 7
+      }
     },
     {
       "id": "g5-add-sub-like-fractions-number-line-2",
@@ -14128,7 +14970,17 @@
         { "id": "c", "kind": "text", "text": "1/12" },
         { "id": "d", "kind": "text", "text": "3/12" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "slices": {
+        "kind": "slices",
+        "ask": "left",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 12,
+        "eaten": 5,
+        "take": 4,
+        "who": { "name": "Maya", "look": "kid" }
+      }
     },
     {
       "id": "g5-add-sub-like-fractions-keypad-4",
@@ -14148,8 +15000,17 @@
       "prompt": "12/6 - 5/6 = ? sixths",
       "why": "Two cups is 12 sixths. Take away 5 sixths: 12 - 5 = 7, so 7 sixths of a cup are left.",
       "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "bar", "parts": 6, "shaded": 12, "wholes": 2 },
-      "answer": 7
+      "visual": { "kind": "fraction", "shape": "bar", "parts": 6, "picked": 12, "wholes": 2 },
+      "answer": 7,
+      "slices": {
+        "kind": "slices",
+        "ask": "left",
+        "shape": "bar",
+        "parts": 6,
+        "wholes": 2,
+        "take": 5,
+        "who": { "name": "Sam", "look": "kid" }
+      }
     },
     {
       "id": "g5-add-sub-like-fractions-number-line-4",
@@ -14223,7 +15084,8 @@
       "prompt": "2 × 1/5 = ?/5",
       "why": "2 × 1/5 is two one-fifths added together. That makes 2 fifths, or 2/5, so the numerator is 2.",
       "type": "keypad",
-      "answer": 2
+      "answer": 2,
+      "slices": { "kind": "slices", "ask": "picked", "shape": "circle", "parts": 5, "picked": 2 }
     },
     {
       "id": "g5-whole-by-unit-fraction-tap-2",
@@ -14239,7 +15101,15 @@
         { "id": "c", "kind": "number", "value": 2 },
         { "id": "d", "kind": "number", "value": 4 }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "slices": {
+        "kind": "slices",
+        "ask": "picked",
+        "shape": "circle",
+        "parts": 2,
+        "wholes": 2,
+        "picked": 4
+      }
     },
     {
       "id": "g5-whole-by-unit-fraction-keypad-3",

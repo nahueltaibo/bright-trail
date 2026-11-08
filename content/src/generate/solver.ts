@@ -27,20 +27,20 @@ function visualCount(visual: Visual | undefined): number | undefined {
   if (!visual) return undefined;
   if (visual.kind === 'objects') return visual.count;
   if (visual.kind === 'ten-frame') return visual.filled;
-  if (visual.kind === 'fraction') return visual.shaded;
+  if (visual.kind === 'fraction') return visual.picked;
   return undefined;
 }
 
-/** The amount a fraction picture shows, e.g. 3 of 4 parts shaded is 3/4. */
+/** The amount a fraction picture shows, e.g. 3 of 4 parts picked is 3/4. */
 function fractionOf(visual: Visual | undefined): Rational | undefined {
   if (visual?.kind !== 'fraction') return undefined;
-  return new Rational(BigInt(visual.shaded), BigInt(visual.parts));
+  return new Rational(BigInt(visual.picked), BigInt(visual.parts));
 }
 
 function pictureContext(visual: Visual | undefined): ExprContext {
   return {
     count: visualCount(visual),
-    ...(visual?.kind === 'fraction' ? { parts: visual.parts, shaded: visual.shaded } : {}),
+    ...(visual?.kind === 'fraction' ? { parts: visual.parts, shaded: visual.picked } : {}),
   };
 }
 
@@ -94,7 +94,7 @@ function pictureMismatch(item: Item, exprs: string[]): string[] {
   const missing = unmentioned(exprs, questionNumbers(item));
   if (missing.length === 0) return [];
   return [
-    `check uses ${missing.join(', ')}, which the question doesn't say and the picture doesn't show (${visual.shaded} of ${visual.parts} parts shaded). Read the picture with shaded and parts, or fix the picture`,
+    `check uses ${missing.join(', ')}, which the question doesn't say and the picture doesn't show (${visual.picked} of ${visual.parts} parts shaded). Read the picture with shaded and parts, or fix the picture`,
   ];
 }
 

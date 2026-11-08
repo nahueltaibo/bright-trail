@@ -329,11 +329,12 @@ describe('solveItem: greatest, least, true', () => {
 });
 
 describe('solveItem: fraction pictures', () => {
+  // Checks still read the picture as `shaded`, the generator's word for picked parts.
   const circle = (shaded: number, parts: number) => ({
     kind: 'fraction',
     shape: 'circle',
     parts,
-    shaded,
+    picked: shaded,
   });
   const keypadWith = (shaded: number, parts: number, answer: number) =>
     item({

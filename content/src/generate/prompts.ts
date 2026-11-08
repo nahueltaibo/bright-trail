@@ -1,10 +1,4 @@
-import {
-  describeVisual as describeShape,
-  type Item,
-  type Skill,
-  type StoryNugget,
-  type Visual,
-} from '@bright-trail/shared';
+import { type Item, type Skill, type StoryNugget, type Visual } from '@bright-trail/shared';
 import { z } from 'zod';
 import { GENERATOR_MODEL, REVIEWER_MODEL } from '../graph/prompts';
 import type { LlmRequest, ToolSpec } from '../graph/llm';
@@ -261,8 +255,13 @@ function describeVisual(v: Visual | undefined): string {
   if (!v) return 'none';
   if (v.kind === 'emoji') return v.emoji;
   if (v.kind === 'objects') return `${v.count} × ${v.emoji}`;
-  if (v.kind === 'fraction')
-    return `${describeShape(v)}${v.label ? `, labelled "${v.label}"` : ''}`;
+  if (v.kind === 'fraction') {
+    // The reviewer's prompt keeps the generator's word, so cached reviews stay valid.
+    const wholes = v.wholes ?? 1;
+    const shapes = wholes === 1 ? `a ${v.shape}` : `${wholes} ${v.shape}s, each`;
+    const shape = `${shapes} cut into ${v.parts} equal parts, ${v.picked} shaded`;
+    return `${shape}${v.label ? `, labelled "${v.label}"` : ''}`;
+  }
   return `ten-frame with ${v.filled} dots`;
 }
 

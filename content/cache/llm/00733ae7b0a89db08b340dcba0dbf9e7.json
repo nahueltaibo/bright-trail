@@ -1,0 +1,65 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_slices",
+  "output": {
+    "slices": [
+      {
+        "itemId": "g1-fair-share-drawings-tap-2",
+        "fits": false,
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pie",
+        "parts": 2,
+        "wholes": null,
+        "picked": 1,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "Choices are pictures."
+      },
+      {
+        "itemId": "g1-fair-share-drawings-keypad-3",
+        "fits": true,
+        "ask": "each",
+        "shape": "rectangle",
+        "food": "brownies",
+        "parts": 8,
+        "wholes": null,
+        "picked": 8,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": 4,
+        "who": null,
+        "note": "8 slices shared by 4 friends gives 2 each."
+      },
+      {
+        "itemId": "g1-fair-share-drawings-tap-5",
+        "fits": true,
+        "ask": "each",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "wholes": null,
+        "picked": 1,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": 4,
+        "who": null,
+        "note": "4 slices shared by 4 friends gives 1/4 each."
+      }
+    ]
+  }
+}
