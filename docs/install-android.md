@@ -41,7 +41,11 @@ Install the new APK the same way, right over the old one. Android says **Update*
 
 Open the parent area (🔒 and your PIN), scroll to **Export**, and tap **Export all data**. The share sheet opens with a file like `bright-trail-export-2026-11-07T15-30-00.json`. Save it to Drive or email it to yourself. It holds every answer, with the children and their mastery.
 
-## For Whoever Builds the APK
+## Where the APK Comes From
+
+CI builds it on every change merged to `main`. Open the repo's **Actions** tab, pick the latest **CI** run on `main`, and download **family-apk** under **Artifacts**. It's a zip with the APK inside, kept for 30 days. To build one without a merge, use **Run workflow** on the CI page.
+
+## Building It Yourself
 
 You need the Android setup from [e2e/README.md](../e2e/README.md#setup) (SDK, JDK 17, and CMake 3.31+ on Windows). From the repo root:
 
