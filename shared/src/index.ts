@@ -10,5 +10,6 @@ export * from './nugget';
 export * from './placement';
 export * from './scene';
 export * from './skill';
+export * from './slices';
 export * from './speech';
 export * from './visual';

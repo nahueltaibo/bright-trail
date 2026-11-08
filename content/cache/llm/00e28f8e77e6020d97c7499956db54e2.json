@@ -1,0 +1,65 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_slices",
+  "output": {
+    "slices": [
+      {
+        "itemId": "g5-compare-order-fractions-keypad-1",
+        "fits": false,
+        "ask": "picked",
+        "shape": "circle",
+        "food": null,
+        "parts": 4,
+        "wholes": null,
+        "picked": 1,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "Asks whole-number part of an improper fraction; not a supported scene answer."
+      },
+      {
+        "itemId": "g5-compare-order-fractions-keypad-3",
+        "fits": false,
+        "ask": "picked",
+        "shape": "circle",
+        "food": null,
+        "parts": 4,
+        "wholes": null,
+        "picked": 1,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "Distance subtraction story (km), not a slice scene."
+      },
+      {
+        "itemId": "g5-compare-order-fractions-keypad-4",
+        "fits": false,
+        "ask": "picked",
+        "shape": "circle",
+        "food": null,
+        "parts": 4,
+        "wholes": null,
+        "picked": 1,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "Orders fractions with different parts; not a supported scene."
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_slices",
+  "output": {
+    "slices": [
+      {
+        "itemId": "g3-fair-share-20-tap-2",
+        "fits": true,
+        "ask": "picked",
+        "shape": "circle",
+        "food": "pizza",
+        "parts": 4,
+        "wholes": null,
+        "picked": 1,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "One of 4 pizza slices, answer 1/4."
+      },
+      {
+        "itemId": "g3-fair-share-20-tap-3",
+        "fits": false,
+        "ask": "each",
+        "shape": "circle",
+        "food": null,
+        "parts": 2,
+        "wholes": null,
+        "picked": null,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "14 balls shared among 4 is a mixed-number answer, not a single whole's slices."
+      },
+      {
+        "itemId": "g3-fair-share-20-tap-7",
+        "fits": false,
+        "ask": "picked",
+        "shape": "bar",
+        "food": "granola",
+        "parts": 4,
+        "wholes": null,
+        "picked": null,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "Choices are pictures."
+      }
+    ]
+  }
+}

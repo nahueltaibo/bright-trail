@@ -61,6 +61,13 @@ export default function ProfilePickerScreen() {
             </Pressable>
           </Link>
         )}
+        {SHOW_DEV_TOOLS && (
+          <Link href="/dev/slices" asChild>
+            <Pressable accessibilityRole="button" style={styles.devButton}>
+              <Text style={styles.devText}>Dev: slices minigame</Text>
+            </Pressable>
+          </Link>
+        )}
       </View>
     </SafeAreaView>
   );

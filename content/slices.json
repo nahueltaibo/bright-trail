@@ -1,0 +1,670 @@
+{
+  "g1-compare-unit-fractions-keypad-2": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "bar",
+    "parts": 10,
+    "picked": 1
+  },
+  "g1-compare-unit-fractions-number-line-1": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 6
+  },
+  "g1-compare-unit-fractions-number-line-2": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "bar",
+    "parts": 5,
+    "who": { "name": "Sam", "look": "boy" }
+  },
+  "g1-equal-groups-keypad-3": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "rectangle",
+    "parts": 2,
+    "wholes": 3,
+    "picked": 6
+  },
+  "g1-equal-groups-tap-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pie",
+    "parts": 2,
+    "picked": 2
+  },
+  "g1-equal-groups-tap-7": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "rectangle",
+    "parts": 2,
+    "wholes": 3,
+    "picked": 5,
+    "who": { "name": "Zed", "look": "kid" }
+  },
+  "g1-fair-share-drawings-keypad-3": {
+    "kind": "slices",
+    "ask": "each",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 8,
+    "picked": 8,
+    "friends": 4
+  },
+  "g1-fair-share-drawings-tap-5": {
+    "kind": "slices",
+    "ask": "each",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "picked": 1,
+    "friends": 4
+  },
+  "g1-half-equals-two-fourths-keypad-1": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4
+  },
+  "g1-half-equals-two-fourths-keypad-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 2,
+    "picked": 2
+  },
+  "g1-half-equals-two-fourths-keypad-3": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 4,
+    "picked": 2,
+    "who": { "name": "Sam", "look": "kid" }
+  },
+  "g1-half-equals-two-fourths-keypad-4": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pie",
+    "parts": 4,
+    "picked": 2,
+    "who": { "name": "Ana", "look": "girl" }
+  },
+  "g1-half-equals-two-fourths-keypad-5": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "who": { "name": "Mia", "look": "kid" }
+  },
+  "g1-half-equals-two-fourths-number-line-1": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "parts": 2
+  },
+  "g1-half-equals-two-fourths-number-line-2": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "parts": 4
+  },
+  "g1-half-equals-two-fourths-number-line-3": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 2,
+    "picked": 1,
+    "cutInto": 4,
+    "who": { "name": "Mia", "look": "girl" }
+  },
+  "g1-half-equals-two-fourths-tap-7": {
+    "kind": "slices",
+    "ask": "left",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 4,
+    "take": 2
+  },
+  "g2-equal-groups-multiply-keypad-6": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "wholes": 3,
+    "picked": 12
+  },
+  "g2-equal-groups-multiply-tap-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "picked": 4
+  },
+  "g2-third-equals-two-sixths-keypad-1": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 6,
+    "who": { "name": "Mia", "look": "kid" }
+  },
+  "g2-third-equals-two-sixths-keypad-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 6,
+    "picked": 2
+  },
+  "g2-third-equals-two-sixths-keypad-3": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 3,
+    "picked": 1,
+    "cutInto": 6
+  },
+  "g2-third-equals-two-sixths-keypad-4": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 6,
+    "picked": 2,
+    "cutInto": 3
+  },
+  "g2-third-equals-two-sixths-keypad-5": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 6,
+    "picked": 6
+  },
+  "g2-third-equals-two-sixths-number-line-1": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 3
+  },
+  "g2-third-equals-two-sixths-number-line-2": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 3,
+    "picked": 2,
+    "cutInto": 6
+  },
+  "g2-third-equals-two-sixths-number-line-3": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 6,
+    "picked": 4,
+    "cutInto": 3,
+    "who": { "name": "Ben", "look": "kid" }
+  },
+  "g2-third-equals-two-sixths-number-line-4": {
+    "kind": "slices",
+    "ask": "left",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 6,
+    "take": 2,
+    "who": { "name": "Zoe", "look": "kid" }
+  },
+  "g2-third-equals-two-sixths-tap-1": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 3,
+    "picked": 1
+  },
+  "g2-third-equals-two-sixths-tap-3": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 3,
+    "picked": 1,
+    "cutInto": 6,
+    "who": { "name": "Leo", "look": "kid" }
+  },
+  "g2-third-equals-two-sixths-tap-5": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "bar",
+    "parts": 6,
+    "picked": 4,
+    "cutInto": 3
+  },
+  "g3-equivalent-fair-shares-keypad-1": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 2,
+    "picked": 1,
+    "cutInto": 4,
+    "who": { "name": "Ana", "look": "kid" }
+  },
+  "g3-equivalent-fair-shares-keypad-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "parts": 8,
+    "picked": 4
+  },
+  "g3-equivalent-fair-shares-keypad-3": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "rectangle",
+    "food": "chocolate",
+    "parts": 10,
+    "picked": 4,
+    "cutInto": 5,
+    "who": { "name": "Zoe", "look": "kid" }
+  },
+  "g3-equivalent-fair-shares-keypad-4": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 6,
+    "picked": 4,
+    "cutInto": 3,
+    "who": { "name": "Mia", "look": "kid" }
+  },
+  "g3-equivalent-fair-shares-keypad-5": {
+    "kind": "slices",
+    "ask": "each",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 8,
+    "friends": 4
+  },
+  "g3-equivalent-fair-shares-number-line-1": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 2,
+    "picked": 1,
+    "cutInto": 4
+  },
+  "g3-equivalent-fair-shares-number-line-2": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "parts": 5,
+    "picked": 3,
+    "cutInto": 10,
+    "who": { "name": "Kai", "look": "kid" }
+  },
+  "g3-equivalent-fair-shares-number-line-3": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 4,
+    "picked": 3,
+    "cutInto": 8,
+    "who": { "name": "Dev", "look": "boy" }
+  },
+  "g3-equivalent-fair-shares-tap-1": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 4,
+    "picked": 2,
+    "cutInto": 2
+  },
+  "g3-equivalent-fair-shares-tap-2": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 10,
+    "picked": 2,
+    "cutInto": 5
+  },
+  "g3-equivalent-fair-shares-tap-4": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "parts": 3,
+    "picked": 2,
+    "cutInto": 6
+  },
+  "g3-equivalent-fair-shares-tap-7": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "circle",
+    "parts": 2,
+    "picked": 1,
+    "cutInto": 10
+  },
+  "g3-fair-share-20-tap-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "picked": 1
+  },
+  "g3-fraction-repeated-addition-keypad-1": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "bar",
+    "parts": 5,
+    "picked": 3
+  },
+  "g3-fraction-repeated-addition-keypad-2": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "parts": 8,
+    "picked": 3
+  },
+  "g3-fraction-repeated-addition-keypad-3": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "bar",
+    "parts": 8,
+    "picked": 5
+  },
+  "g3-fraction-repeated-addition-keypad-4": {
+    "kind": "slices",
+    "ask": "add",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 8,
+    "picked": 2,
+    "more": 3,
+    "who": { "name": "Kai", "look": "boy" }
+  },
+  "g3-fraction-repeated-addition-keypad-5": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "rectangle",
+    "food": "chocolate",
+    "parts": 4,
+    "wholes": 2,
+    "picked": 6
+  },
+  "g3-fraction-repeated-addition-number-line-1": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 8,
+    "picked": 5,
+    "who": { "name": "Jo", "look": "kid" }
+  },
+  "g3-fraction-repeated-addition-number-line-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "bar",
+    "parts": 10,
+    "picked": 7
+  },
+  "g3-fraction-repeated-addition-number-line-3": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "bar",
+    "parts": 3,
+    "wholes": 2,
+    "picked": 6
+  },
+  "g3-fraction-repeated-addition-tap-1": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "picked": 3,
+    "who": { "name": "Mia", "look": "girl" }
+  },
+  "g3-fraction-repeated-addition-tap-3": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "bar",
+    "parts": 5,
+    "picked": 3
+  },
+  "g4-compare-fair-shares-keypad-1": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "picked": 1
+  },
+  "g4-compare-fair-shares-number-line-1": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "rectangle",
+    "food": "chocolate",
+    "parts": 5
+  },
+  "g4-compare-fair-shares-number-line-3": {
+    "kind": "slices",
+    "ask": "same",
+    "shape": "bar",
+    "parts": 2,
+    "picked": 1,
+    "cutInto": 10
+  },
+  "g4-count-unit-fractions-keypad-1": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "rectangle",
+    "food": "chocolate",
+    "parts": 6,
+    "picked": 5
+  },
+  "g4-count-unit-fractions-keypad-3": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "rectangle",
+    "parts": 4,
+    "wholes": 2,
+    "picked": 8
+  },
+  "g4-count-unit-fractions-keypad-4": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 3,
+    "wholes": 3,
+    "picked": 7,
+    "who": { "name": "Mia", "look": "girl" }
+  },
+  "g4-count-unit-fractions-tap-1": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "picked": 3
+  },
+  "g4-count-unit-fractions-tap-3": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "bar",
+    "food": "granola",
+    "parts": 5
+  },
+  "g4-count-unit-fractions-tap-4": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 3,
+    "wholes": 2,
+    "picked": 5
+  },
+  "g4-fraction-decimal-equivalence-keypad-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "bar",
+    "parts": 10,
+    "picked": 10
+  },
+  "g4-fraction-decimal-equivalence-keypad-3": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "bar",
+    "parts": 10,
+    "wholes": 2,
+    "picked": 13
+  },
+  "g4-represent-fractions-keypad-1": {
+    "kind": "slices",
+    "ask": "parts",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 6,
+    "picked": 2
+  },
+  "g4-represent-fractions-keypad-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "rectangle",
+    "food": "chocolate",
+    "parts": 5,
+    "picked": 2,
+    "who": { "name": "Dev", "look": "kid" }
+  },
+  "g4-represent-fractions-keypad-3": {
+    "kind": "slices",
+    "ask": "left",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 8,
+    "take": 3
+  },
+  "g4-represent-fractions-keypad-4": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "wholes": 2,
+    "picked": 5
+  },
+  "g4-represent-fractions-tap-1": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 4,
+    "picked": 3,
+    "who": { "name": "Mia", "look": "girl" }
+  },
+  "g4-represent-fractions-tap-3": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "bar",
+    "parts": 10,
+    "picked": 7
+  },
+  "g4-represent-fractions-tap-6": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 3,
+    "wholes": 2,
+    "picked": 4
+  },
+  "g5-add-sub-like-fractions-keypad-1": {
+    "kind": "slices",
+    "ask": "add",
+    "shape": "circle",
+    "parts": 5,
+    "picked": 1,
+    "more": 3
+  },
+  "g5-add-sub-like-fractions-keypad-2": {
+    "kind": "slices",
+    "ask": "left",
+    "shape": "rectangle",
+    "food": "chocolate",
+    "parts": 10,
+    "eaten": 3,
+    "take": 4,
+    "who": { "name": "Lena", "look": "kid" }
+  },
+  "g5-add-sub-like-fractions-keypad-3": {
+    "kind": "slices",
+    "ask": "add",
+    "shape": "circle",
+    "parts": 8,
+    "wholes": 2,
+    "picked": 3,
+    "more": 7
+  },
+  "g5-add-sub-like-fractions-keypad-5": {
+    "kind": "slices",
+    "ask": "left",
+    "shape": "bar",
+    "parts": 6,
+    "wholes": 2,
+    "take": 5,
+    "who": { "name": "Sam", "look": "kid" }
+  },
+  "g5-add-sub-like-fractions-tap-2": {
+    "kind": "slices",
+    "ask": "left",
+    "shape": "circle",
+    "food": "pizza",
+    "parts": 6,
+    "eaten": 1,
+    "take": 2,
+    "who": { "name": "Ben", "look": "kid" }
+  },
+  "g5-add-sub-like-fractions-tap-5": {
+    "kind": "slices",
+    "ask": "left",
+    "shape": "rectangle",
+    "food": "brownies",
+    "parts": 12,
+    "eaten": 5,
+    "take": 4,
+    "who": { "name": "Maya", "look": "kid" }
+  },
+  "g5-whole-by-unit-fraction-keypad-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "parts": 5,
+    "picked": 2
+  },
+  "g5-whole-by-unit-fraction-tap-2": {
+    "kind": "slices",
+    "ask": "picked",
+    "shape": "circle",
+    "parts": 2,
+    "wholes": 2,
+    "picked": 4
+  }
+}

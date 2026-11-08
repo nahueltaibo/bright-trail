@@ -9,7 +9,8 @@ function visualOf(v: GenVisual | null): Record<string, unknown> | undefined {
       kind: 'fraction',
       shape: v.shape,
       parts: v.parts,
-      shaded: v.shaded,
+      // The generator says "shaded". The app calls those parts picked.
+      picked: v.shaded,
       ...(v.wholes && v.wholes > 1 ? { wholes: v.wholes } : {}),
       ...(v.label?.trim() ? { label: v.label.trim() } : {}),
     };

@@ -15,6 +15,7 @@ import {
   type ReviewProblem,
 } from './schema';
 import type { CheckLevel } from './solver';
+import { itemForApp, nuggetForApp } from './app-words';
 import { applyEdits, type ContentEdit } from './edits';
 import { validateSkill } from './validate';
 
@@ -301,7 +302,7 @@ export function buildBundle(
     version: `${date}-${passed.length}`,
     generatedAt: now.toISOString().replace(/\.\d{3}Z$/, 'Z'),
     skills,
-    nuggets: passed.map((o) => o.nugget!),
-    items: passed.flatMap((o) => o.items),
+    nuggets: passed.map((o) => nuggetForApp(o.nugget!)),
+    items: passed.flatMap((o) => o.items.map(itemForApp)),
   });
 }

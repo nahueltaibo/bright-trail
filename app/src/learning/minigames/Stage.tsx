@@ -17,6 +17,8 @@ import {
   View,
   type LayoutChangeEvent,
 } from 'react-native';
+import { BarStrips, isRound, Wedge, WholeThing } from '../food/ThingArt';
+import { turnPoint } from '../food/geometry';
 import { colors } from '../theme';
 import { AmountText } from './AmountText';
 import { Container } from './Container';
@@ -159,11 +161,17 @@ export function Stage(props: StageProps) {
   const cutRef = useRef<number[]>([]);
   const run = useRef(0);
 
+  // Round food cuts into wedges that stack in one slot. Everything else cuts into strips.
+  const wedges = !!thing.food && isRound(thing.food);
   const slotAt = (s: Spot) => geo!.receivers[s.receiver].slots[s.slot];
-  const pieceWidth = (t: number) => geo!.size / (cutRef.current[t] || 1);
+  const pieceWidth = (t: number) => (wedges ? 0 : geo!.size / (cutRef.current[t] || 1));
   const pieceHome = (t: number, i: number, spread: boolean): Point => {
     const src = geo!.source[t];
     const den = cutRef.current[t] || 1;
+    if (wedges) {
+      const out = spread ? turnPoint(CUT_GAP * 1.5, (i + 0.5) / den) : { x: 0, y: 0 };
+      return { x: src.x + out.x, y: src.y + out.y };
+    }
     const gap = spread ? (i - (den - 1) / 2) * CUT_GAP : 0;
     return { x: src.x + (i * geo!.size) / den + gap, y: src.y };
   };
@@ -182,19 +190,17 @@ export function Stage(props: StageProps) {
       v.setValue(s ? spotPoint(s) : geo.source[t]);
     });
     pieces.forEach((row, t) => {
-      const den = cutRef.current[t] || 1;
-      const w = geo.size / den;
       row.forEach((v, i) => {
         const s = placed.current.get(`p${t}:${i}`);
-        const src = geo.source[t];
-        const gap = cutRef.current[t] ? (i - (den - 1) / 2) * CUT_GAP : 0;
         v.setValue(
           s
-            ? { x: spotPoint(s).x + s.at * w, y: spotPoint(s).y }
-            : { x: src.x + i * w + gap, y: src.y },
+            ? { x: spotPoint(s).x + s.at * pieceWidth(t), y: spotPoint(s).y }
+            : pieceHome(t, i, !!cutRef.current[t]),
         );
       });
     });
+    // Positions depend only on the stage size; the helpers read it from the same render.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [geo, wholes, pieces]);
 
   useEffect(() => {
@@ -452,12 +458,12 @@ export function Stage(props: StageProps) {
                   <View
                     style={[
                       styles.slot,
-                      styles.partSlot,
+                      !wedges && styles.partSlot,
                       hint?.emptySpots && has.pieces < outline.parts && styles.slotHint,
                       {
-                        left: part.x + 1,
+                        left: part.x + (wedges ? 3 : 1),
                         top: part.y + 3,
-                        width: (outline.parts * geo.size) / outline.den - 2,
+                        width: wedges ? geo.size - 6 : (outline.parts * geo.size) / outline.den - 2,
                         height: geo.size - 6,
                       },
                     ]}
@@ -490,7 +496,11 @@ export function Stage(props: StageProps) {
                   { transform: [...xy.getTranslateTransform(), { scale: pulses[t] }] },
                 ]}
               >
-                <Text style={[styles.objectText, objectText(geo.size)]}>{thing.emoji}</Text>
+                {thing.food ? (
+                  <WholeThing food={thing.food} size={geo.size} />
+                ) : (
+                  <Text style={[styles.objectText, objectText(geo.size)]}>{thing.emoji}</Text>
+                )}
                 {leftLabels[t] !== undefined && (
                   <Text style={[styles.leftLabel, { fontSize: geo.size * 0.4 }]}>
                     {leftLabels[t]}
@@ -503,6 +513,21 @@ export function Stage(props: StageProps) {
             cutInto[t]
               ? row.slice(0, cutInto[t]).map((xy, i) => {
                   const w = geo.size / cutInto[t];
+                  const strip = strips[`${t}:${i}`] ?? i;
+                  if (wedges) {
+                    return (
+                      <Animated.View
+                        key={`p${t}:${i}`}
+                        style={[
+                          styles.object,
+                          { width: geo.size, height: geo.size },
+                          { transform: xy.getTranslateTransform() },
+                        ]}
+                      >
+                        <Wedge food={thing.food!} size={geo.size} den={cutInto[t]} index={strip} />
+                      </Animated.View>
+                    );
+                  }
                   return (
                     <Animated.View
                       key={`p${t}:${i}`}
@@ -511,15 +536,17 @@ export function Stage(props: StageProps) {
                         { width: w, height: geo.size, transform: xy.getTranslateTransform() },
                       ]}
                     >
-                      <Text
-                        style={[
-                          styles.pieceText,
-                          objectText(geo.size),
-                          { left: -(strips[`${t}:${i}`] ?? i) * w },
-                        ]}
-                      >
-                        {thing.emoji}
-                      </Text>
+                      {thing.food ? (
+                        <View style={[styles.pieceText, { left: -strip * w }]}>
+                          <BarStrips food={thing.food} size={geo.size} den={cutInto[t]} />
+                        </View>
+                      ) : (
+                        <Text
+                          style={[styles.pieceText, objectText(geo.size), { left: -strip * w }]}
+                        >
+                          {thing.emoji}
+                        </Text>
+                      )}
                     </Animated.View>
                   );
                 })

@@ -59,11 +59,11 @@ function fractionNarrationProblems(visual: Visual, narration: string): string[] 
   if (visual.kind !== 'fraction') return [];
   const said = numbersMentioned(narration);
   const has = (value: Rational) => said.some((v) => v.eq(value));
-  const shaded = Rational.of(visual.shaded);
+  const shaded = Rational.of(visual.picked);
   const amount = shaded.div(Rational.of(visual.parts));
   if (has(amount) || (has(shaded) && has(Rational.of(visual.parts)))) return [];
   return [
-    `narration "${narration}" must name the picture's amount, like "${visual.shaded}/${visual.parts}" or "${visual.shaded} of ${visual.parts} parts"`,
+    `narration "${narration}" must name the picture's amount, like "${visual.picked}/${visual.parts}" or "${visual.picked} of ${visual.parts} parts"`,
   ];
 }
 

@@ -1,0 +1,65 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_slices",
+  "output": {
+    "slices": [
+      {
+        "itemId": "g1-compose-decompose-50-keypad-2",
+        "fits": false,
+        "ask": "picked",
+        "shape": "circle",
+        "food": null,
+        "parts": 2,
+        "wholes": null,
+        "picked": 1,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "Place value composing numbers, not a fraction scene"
+      },
+      {
+        "itemId": "g1-compose-decompose-50-keypad-4",
+        "fits": false,
+        "ask": "picked",
+        "shape": "circle",
+        "food": null,
+        "parts": 2,
+        "wholes": null,
+        "picked": 1,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "Place value decomposition of 36, not a fraction scene"
+      },
+      {
+        "itemId": "g1-compose-decompose-50-tap-6",
+        "fits": false,
+        "ask": "picked",
+        "shape": "circle",
+        "food": null,
+        "parts": 2,
+        "wholes": null,
+        "picked": 1,
+        "eaten": null,
+        "take": null,
+        "more": null,
+        "cutInto": null,
+        "other": null,
+        "want": null,
+        "friends": null,
+        "who": null,
+        "note": "Choices are number pairs, not a fraction scene"
+      }
+    ]
+  }
+}

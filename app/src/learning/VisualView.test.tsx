@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react-native';
-import { gridOf } from './FractionPicture';
+import { gridOf } from './food/geometry';
 import { VisualView } from './VisualView';
 
 describe('VisualView', () => {
@@ -29,17 +29,17 @@ describe('VisualView', () => {
   });
 
   it.each(['circle', 'rectangle', 'bar'] as const)(
-    'cuts a %s into equal parts and shades some',
+    'cuts a %s into equal parts and picks some',
     async (shape) => {
       await render(
         <VisualView
-          visual={{ kind: 'fraction', shape, parts: 4, shaded: 3 }}
+          visual={{ kind: 'fraction', shape, parts: 4, picked: 3 }}
           width={300}
           height={300}
         />,
       );
-      expect(screen.getByLabelText(`a ${shape} cut into 4 equal parts, 3 shaded`)).toBeTruthy();
-      expect(screen.getAllByTestId('fraction-part-shaded')).toHaveLength(3);
+      expect(screen.getByLabelText(`a ${shape} cut into 4 equal parts, 3 picked`)).toBeTruthy();
+      expect(screen.getAllByTestId('fraction-part-picked')).toHaveLength(3);
       expect(screen.getAllByTestId('fraction-part')).toHaveLength(1);
     },
   );
@@ -47,25 +47,39 @@ describe('VisualView', () => {
   it('fills one whole before the next', async () => {
     await render(
       <VisualView
-        visual={{ kind: 'fraction', shape: 'circle', parts: 4, shaded: 7, wholes: 2 }}
+        visual={{ kind: 'fraction', shape: 'circle', parts: 4, picked: 7, wholes: 2 }}
         width={300}
         height={200}
       />,
     );
-    expect(screen.getAllByTestId('fraction-part-shaded')).toHaveLength(7);
+    expect(screen.getAllByTestId('fraction-part-picked')).toHaveLength(7);
     expect(screen.getAllByTestId('fraction-part')).toHaveLength(1);
+  });
+
+  it('draws a food and leaves gaps where slices were eaten', async () => {
+    await render(
+      <VisualView
+        visual={{ kind: 'fraction', shape: 'circle', food: 'pizza', parts: 6, picked: 2, eaten: 1 }}
+        width={300}
+        height={300}
+      />,
+    );
+    expect(screen.getByLabelText('a pizza cut into 6 equal parts, 2 picked, 1 eaten')).toBeTruthy();
+    expect(screen.getAllByTestId('fraction-part-picked')).toHaveLength(2);
+    expect(screen.getAllByTestId('fraction-part')).toHaveLength(3);
+    expect(screen.getAllByTestId('fraction-part-eaten')).toHaveLength(1);
   });
 
   it('shows the label under the picture', async () => {
     await render(
       <VisualView
-        visual={{ kind: 'fraction', shape: 'bar', parts: 3, shaded: 0, label: '0/3' }}
+        visual={{ kind: 'fraction', shape: 'bar', parts: 3, picked: 0, label: '0/3' }}
         width={300}
         height={200}
       />,
     );
     expect(screen.getByText('0/3')).toBeTruthy();
-    expect(screen.queryAllByTestId('fraction-part-shaded')).toHaveLength(0);
+    expect(screen.queryAllByTestId('fraction-part-picked')).toHaveLength(0);
   });
 });
 

@@ -1,4 +1,4 @@
-import { ContentBundleSchema, sceneProblems } from '@bright-trail/shared';
+import { ContentBundleSchema, sceneProblems, sliceProblems } from '@bright-trail/shared';
 
 export type BundleCheck = { ok: true; summary: string } | { ok: false; problems: string[] };
 
@@ -13,9 +13,10 @@ export function checkBundle(data: unknown): BundleCheck {
     };
   }
   const { version, skills, nuggets, items } = result.data;
-  const sceneIssues = items.flatMap((item) =>
-    item.scene ? sceneProblems(item, item.scene).map((p) => `${item.id} scene: ${p}`) : [],
-  );
+  const sceneIssues = items.flatMap((item) => [
+    ...(item.scene ? sceneProblems(item, item.scene).map((p) => `${item.id} scene: ${p}`) : []),
+    ...(item.slices ? sliceProblems(item, item.slices).map((p) => `${item.id} slices: ${p}`) : []),
+  ]);
   if (sceneIssues.length > 0) return { ok: false, problems: sceneIssues };
   return {
     ok: true,
