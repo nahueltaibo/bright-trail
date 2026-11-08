@@ -43,4 +43,5 @@ Run these from the root:
 - `npm run lint` — ESLint across the repo.
 - `npm run format` — Prettier writes fixes. `npm run format:check` only reports.
 - `npm run android:build:family` and `npm run android:install` — build the APK the kids use and install it over USB without losing their data. See [docs/install-android.md](docs/install-android.md), which also covers installing with no computer.
+- `npm run ota:publish -- --message "..."` — send JS and content changes to installed devices as an over-the-air update. CI runs it on every push to `main` that keeps the major version.
 - `npm run e2e:build:android` and `npm run e2e:android` — build the e2e APK and run the Maestro flows on a device. See [e2e/README.md](e2e/README.md).

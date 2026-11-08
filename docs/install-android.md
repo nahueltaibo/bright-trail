@@ -1,24 +1,22 @@
 # Installing BrightTrail on a Phone or Tablet
 
-BrightTrail isn't on the Play Store yet, so you install it from a file (an APK). Once it's installed, it runs on its own: no computer, no internet, no Wi-Fi needed.
+BrightTrail isn't on the Play Store, so you install it once from a file (an APK). After that it updates itself: open the app with internet and it downloads the new version in the background, then the next time you open it, it runs the new one. No computer and no Play Store needed. Lessons work offline.
 
 Each device keeps its own data. If the kids use different tablets, check progress on each one.
 
 ## 1. Get the APK onto the Device
 
-The file looks like `bright-trail-1.0.0-2026.11.07-53.apk`. Pick whichever way is easiest:
+On the device, open the browser and sign in to GitHub with an account that can see the repo. Go to the [Releases page](https://github.com/nahueltaibo/bright-trail/releases), open the latest release, and tap the file under **Assets** that looks like `bright-trail-1.0.0-2026.11.07-53.apk`. Open it from the download notification.
 
-- **Google Drive.** Upload the APK to Drive on the computer. On the device, open the Drive app, tap the file, and tap **Install**.
-- **Email.** Attach the APK and send it to an account on the device. Open the email there and tap the attachment. If the mail app won't open it, use Drive instead.
-- **USB cable.** Plug the device in, pick **File transfer** on its screen, and copy the APK into its `Download` folder. Unplug, open **My Files** (Samsung) or **Files**, go to **Downloads**, and tap the APK.
+Drive works too: download the APK on the computer, upload it to Google Drive, then open it from the Drive app on the device.
 
 ## 2. Allow the Install
 
-The first time, Android asks for permission to install apps from wherever the file came from (Drive, Gmail, or My Files):
+The first time, Android asks for permission to install apps from wherever the file came from (the browser or Drive):
 
 - Tap **Settings** on the prompt, turn on **Allow from this source**, then go back.
 - If you missed the prompt: **Settings → Apps → ⋮ → Special access → Install unknown apps**, pick the app, and turn it on.
-- Play Protect may warn that it doesn't recognize the app. Tap **More details → Install anyway**. It's signed with a test key, not a store key, so that's expected.
+- Play Protect may warn that it doesn't recognize the app. Tap **More details → Install anyway**. It's expected for apps that aren't from the Play Store.
 
 You can turn the permission back off after installing.
 
@@ -30,35 +28,61 @@ Tap **Install**, then **Open**. On the kids' screen:
 - **Write the PIN down.** There's no "forgot PIN" yet, and getting back in means reinstalling, which wipes everything.
 - In the parent area, tap **Add a child** for each kid using this device.
 
-## Upgrading Without Losing Progress
+## Updates
 
-Install the new APK the same way, right over the old one. Android says **Update** instead of Install. Children, progress, flags, and the PIN all stay.
+Most updates (new lessons, fixes) arrive by themselves. Open the app, close it, and open it again to get the newest version. The kids never see a prompt.
 
-- **Never uninstall first.** Uninstalling deletes everything the app saved on that device.
-- If Android says **App not installed** or **package conflicts with an existing package**, the new file was built with a different key. Stop there, export the data (below), and ask whoever built it.
+- To check right away, open the parent area and scroll to **About this app**. Tap **Check for updates**, then **Restart now**.
+- **About this app** also shows the app version, the update the device is running, and the content version. Handy when something looks off.
+- Now and then a bigger change needs a new APK. It shows up as a new release whose first number went up, like `2.0.0`. Install it the same way, right over the old one. Android says **Update** instead of Install, and children, progress, flags, and the PIN all stay.
+- **Never uninstall.** Uninstalling deletes everything the app saved on that device.
+- If Android says **App not installed** or **package conflicts with an existing package**, the file was signed with a different key. Stop, export the data (below), and ask whoever built it.
 
 ## Exporting the Log
 
 Open the parent area (🔒 and your PIN), scroll to **Export**, and tap **Export all data**. The share sheet opens with a file like `bright-trail-export-2026-11-07T15-30-00.json`. Save it to Drive or email it to yourself. It holds every answer, with the children and their mastery.
 
-## Where the APK Comes From
+## For the Maintainer
 
-CI builds it on every change merged to `main`. Open the repo's **Actions** tab, pick the latest **CI** run on `main`, and download **family-apk** under **Artifacts**. It's a zip with the APK inside, kept for 30 days. To build one without a merge, use **Run workflow** on the CI page.
+CI ships every change on `main`. A major version bump builds a new APK as a GitHub release, and anything else goes out as an OTA update. [AGENTS.md](../AGENTS.md#versions-and-releases) has the rules for bumping the version. The app is the `@nahueltaibo/bright-trail` project on [expo.dev](https://expo.dev/accounts/nahueltaibo/projects/bright-trail).
 
-## Building It Yourself
+The steps below are for doing it by hand. You need the Android setup from [e2e/README.md](../e2e/README.md#setup) (SDK, JDK 17, and CMake 3.31+ on Windows), an Expo login (`npx -y eas-cli@latest login`), and `gh` logged in.
 
-You need the Android setup from [e2e/README.md](../e2e/README.md#setup) (SDK, JDK 17, and CMake 3.31+ on Windows). From the repo root:
+### The Release Key
+
+Family APKs are signed with a release key that lives outside the repo:
+
+- `%USERPROFILE%\.bright-trail\release.keystore` — the key itself.
+- `%USERPROFILE%\.bright-trail\release.properties` — its path, alias, and passwords. Set `BRIGHT_TRAIL_SIGNING` to use another location.
+
+CI gets the same key from repo secrets. **Back up both files** somewhere safe and private (a password manager or an encrypted drive, not the repo). Android only upgrades an app with an APK signed by the same key. Lose it, and the next APK can't install over the old one, so every device has to uninstall and lose its data. OTA updates keep working without the key, but only until a new APK is needed.
+
+The family build fails if the key is missing. The e2e build keeps Expo's debug key, so an e2e build and a family build can't upgrade each other. On a test device, uninstall one before installing the other.
+
+### Publishing an Update
+
+From the repo root:
+
+```sh
+npm run ota:publish -- --message "Add fractions stories"
+```
+
+It checks the Expo login and the native fingerprint, runs lint, typecheck, and tests, then publishes the JS and content to the `production` channel for Android. Devices download it on their next launch and run it on the launch after that. Updates are off in the e2e build, so Maestro always tests the code it was built with.
+
+### When to Build a New APK
+
+Whenever the major version goes up. An update only reaches APKs with the same major version, so after a native change older APKs keep running their last compatible update. To build one by hand:
 
 ```sh
 npm run android:build:family
 ```
 
-It writes `dist/bright-trail-<appVersion>-<bundleVersion>.apk`, with the content bundled and dev screens hidden. The bundle version comes from `content/out/bundle.json`, so rebuild after regenerating content. Then share the file as above, or install it over USB:
+It writes `dist/bright-trail-<appVersion>-<bundleVersion>.apk`. If an update doesn't show up on a device, compare the runtime version in **About this app** with the major version in `app/app.json`.
+
+To install over USB instead:
 
 ```sh
 npm run android:install -- --device <serial>
 ```
 
 That runs `adb install -r`, which keeps the child's data. Find the serial with `adb devices`. If the installed app was signed with another key, the script explains why it can't upgrade and asks before uninstalling, since that wipes the device's data.
-
-The APK is signed with the debug keystore from Expo's template, which is fine for sideloading during the POC. Every build made from this repo uses that same key, so any of them can upgrade any other, including the e2e build. A Play Store release needs a real upload key.

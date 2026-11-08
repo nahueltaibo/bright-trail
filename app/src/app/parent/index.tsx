@@ -5,13 +5,14 @@ import { Pressable, Text, View } from 'react-native';
 import { getAvatar } from '../../avatars';
 import { loadBundle } from '../../content/loadBundle';
 import { effectiveGrade } from '../../parent/children';
+import { AboutSection } from '../../parent/components/AboutSection';
 import { Button, ParentScreen, Section, styles as ui } from '../../parent/components/ui';
 import { buildExport, exportFileName } from '../../parent/exportData';
 import { gradeLabel } from '../../parent/grades';
 import { shareExport } from '../../parent/shareExport';
 import { useStorage } from '../../storage/StorageProvider';
 
-/** Parent home: children, flagged content, and the data export. */
+/** Parent home: children, flagged content, the data export, and app versions. */
 export default function ParentHomeScreen() {
   const repo = useStorage();
   const [profiles, setProfiles] = useState<ChildProfile[]>([]);
@@ -79,6 +80,8 @@ export default function ParentHomeScreen() {
         <Button label="Export all data" kind="secondary" onPress={exportAll} />
         {exportStatus && <Text style={ui.text}>{exportStatus}</Text>}
       </Section>
+
+      <AboutSection />
     </ParentScreen>
   );
 }

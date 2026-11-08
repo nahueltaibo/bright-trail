@@ -10,7 +10,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `content/scenes.json` maps item ids to sharing scenes, `content/slices.json` to slice scenes, and `content/join.json` to join scenes. `npm run content:scenes`, `content:slices`, and `content:join` write them with one cached LLM call per skill, then add them to the bundle. Code keeps a scene only when its answer matches the item's, so a regenerated item loses a stale scene.
 - Fraction pictures say `picked`, not `shaded`, and name a `food` when the story does. The generator's prompts and cache still say "shaded". `content/src/generate/app-words.ts` rewords and picks the food after review, so cached calls keep their keys.
 - The app plays `content/out/bundle.json` through `loadBundle()` in `app/src/content/loadBundle.ts`.
-- Family devices run a release APK from `npm run android:build:family`. See [docs/install-android.md](docs/install-android.md).
+- Family devices run a release-signed APK from a GitHub release and get JS and content changes over the air. CI does both. See [Versions and Releases](#versions-and-releases) and [docs/install-android.md](docs/install-android.md).
 
 ## Code Map
 
@@ -39,6 +39,29 @@ npm run lint && npm run format:check && npm run typecheck && npm test && npm run
 
 To see the app, run `npm run dev` and open `http://localhost:8081`. Drive it with Playwright MCP and save screenshots under `.playwright-mcp/` (gitignored). The web build keeps its SQLite data in the browser, so clear site data for `localhost:8081` to start from a fresh install.
 
+## Versions and Releases
+
+The app version is `expo.version` in [app/app.json](app/app.json). Its major number is the runtime version, and an OTA update only reaches APKs with the same runtime version.
+
+**Bump the major version in any PR that needs a reinstall.** That's any change to the native side:
+
+- Adding, removing, or upgrading a package with native code (`npx expo install`).
+- An Expo SDK or React Native upgrade.
+- Changes to `app.json`, `app.config.js`, or config plugins, other than the version.
+
+You don't have to spot these yourself. `scripts/release.mjs` compares the native fingerprint with the one saved in the latest release, and CI fails the PR if it changed without a major bump. Minor and patch bumps are optional. Use them to mark a change in **About this app**.
+
+```mermaid
+flowchart TD
+  A[Push to main] --> B{Major version above<br/>the latest release?}
+  B -- yes --> C[Build the signed APK<br/>and publish release vX.Y.Z]
+  B -- no --> D{Native fingerprint<br/>same as that release?}
+  D -- yes --> E[Publish an OTA update<br/>to the production channel]
+  D -- no --> F[Fail: bump the major version]
+```
+
+CI needs these repo secrets: `EXPO_TOKEN`, and the release key as `RELEASE_KEYSTORE` (base64), `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS`, and `RELEASE_KEY_PASSWORD`.
+
 ## Gotchas
 
 - **Stale `node_modules`.** Work often happens in `.claude/worktrees/`, which install their own deps. The main checkout can then miss packages a merged branch added, and Metro fails with `Unable to resolve "expo-crypto"`. `npm run dev` reinstalls when `package-lock.json` is newer than `node_modules/.package-lock.json`. Otherwise run `npm install`.
@@ -47,4 +70,5 @@ To see the app, run `npm run dev` and open `http://localhost:8081`. Drive it wit
 - **ESLint 10.** `eslint-plugin-react` can't auto-detect the React version, so `eslint.config.mjs` pins it. Bump it there when React changes.
 - **Curriculum text.** `content/sources/` stays byte-for-byte as fetched. Prettier ignores it. Don't reformat it.
 - **LLM calls.** `npm run content:graph` and `npm run content:generate` use the Claude Code CLI in headless mode by default. Responses cache in `content/cache/llm/`, which is committed, so reruns are free unless a prompt changed.
+- **OTA in e2e.** `app.config.js` turns updates off when `EXPO_PUBLIC_E2E=1`, so Maestro tests the JS the APK was built with.
 - **Android e2e.** Windows builds need CMake 3.31+ and long paths on. See [e2e/README.md](e2e/README.md).

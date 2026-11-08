@@ -10,6 +10,7 @@ import {
   statSync,
   writeFileSync,
 } from 'node:fs';
+import { homedir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -56,11 +57,66 @@ function run(command, args, cwd) {
   if (result.status !== 0) process.exit(result.status ?? 1);
 }
 
+// Family devices only accept upgrades signed with the same key, so the family build refuses to
+// fall back to the debug key. The e2e build keeps the template's debug key.
+function releaseSigning() {
+  const file =
+    process.env.BRIGHT_TRAIL_SIGNING ?? join(homedir(), '.bright-trail', 'release.properties');
+  if (!existsSync(file)) {
+    console.error(`No release signing properties at ${file}. See docs/install-android.md.`);
+    process.exit(1);
+  }
+  const props = Object.fromEntries(
+    readFileSync(file, 'utf8')
+      .split(/\r?\n/)
+      .filter((line) => line.includes('=') && !line.trimStart().startsWith('#'))
+      .map((line) => [line.slice(0, line.indexOf('=')).trim(), line.slice(line.indexOf('=') + 1)]),
+  );
+  for (const key of ['storeFile', 'storePassword', 'keyAlias', 'keyPassword']) {
+    if (!props[key]) {
+      console.error(`${file} is missing ${key}.`);
+      process.exit(1);
+    }
+  }
+  if (!existsSync(props.storeFile)) {
+    console.error(`Release keystore not found at ${props.storeFile}.`);
+    process.exit(1);
+  }
+  return props;
+}
+
+const signing = variant === 'family' ? releaseSigning() : null;
+
 // Prebuild repoints the `android` and `ios` scripts at native builds. Keep them on Expo Go.
 const pkgPath = join(app, 'package.json');
 const pkg = readFileSync(pkgPath, 'utf8');
 run('npx', ['expo', 'prebuild', '--platform', 'android', '--no-install'], app);
 writeFileSync(pkgPath, pkg);
+
+// Prebuild keeps an existing build.gradle, so set the signing both ways on every build.
+// Gradle reads the secrets from env vars, so they never land in android/ or the build log.
+const gradlePath = join(android, 'app', 'build.gradle');
+const releaseBlock = `
+        release {
+            storeFile file(System.getenv('BT_STORE_FILE'))
+            storePassword System.getenv('BT_STORE_PASSWORD')
+            keyAlias System.getenv('BT_KEY_ALIAS')
+            keyPassword System.getenv('BT_KEY_PASSWORD')
+        }`;
+const releaseType = /(release \{[^}]*?signingConfig signingConfigs\.)(debug|release)/;
+let gradle = readFileSync(gradlePath, 'utf8').replace(releaseBlock, '');
+if (!releaseType.test(gradle)) {
+  console.error(`Couldn't find the release signingConfig in ${gradlePath}. The template changed.`);
+  process.exit(1);
+}
+if (signing) {
+  env.BT_STORE_FILE = signing.storeFile;
+  env.BT_STORE_PASSWORD = signing.storePassword;
+  env.BT_KEY_ALIAS = signing.keyAlias;
+  env.BT_KEY_PASSWORD = signing.keyPassword;
+  gradle = gradle.replace('signingConfigs {', `signingConfigs {${releaseBlock}`);
+}
+writeFileSync(gradlePath, gradle.replace(releaseType, `$1${signing ? 'release' : 'debug'}`));
 
 // The default CMake 3.22 ships ninja 1.10, which can't create the 250+ character object
 // folders codegen needs on Windows. Ninja 1.12 (CMake 3.31+) can, with long paths enabled.
@@ -97,3 +153,4 @@ const out =
 mkdirSync(dirname(out), { recursive: true });
 copyFileSync(apk, out);
 console.log(`APK: ${out} (${(statSync(out).size / 1024 / 1024).toFixed(1)} MB)`);
+console.log(`Signed with the ${signing ? `release key in ${signing.storeFile}` : 'debug key'}.`);

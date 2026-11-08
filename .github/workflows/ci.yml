@@ -26,30 +26,70 @@ jobs:
       - run: npm run typecheck
       - run: npm test
       - run: npm run build
+      # Fails a pull request that changes the native side without bumping the major version.
+      - run: node scripts/release.mjs
+        env:
+          GH_TOKEN: ${{ github.token }}
 
-  # The APK for family devices, from every change that lands on main. A release Android build
-  # takes long, so pull requests skip it. Download it from the run's artifacts.
-  family-apk:
+  # Each change on main reaches family devices one of two ways. A major version bump builds a new
+  # APK as a GitHub release. Anything else ships as an OTA update to the APKs already installed.
+  ship:
     needs: build-and-test
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 60
+    permissions:
+      contents: write
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
-      - uses: actions/setup-java@v4
+      - run: npm ci
+      - id: plan
+        run: node scripts/release.mjs
+
+      - if: steps.plan.outputs.mode == 'ota'
+        run: npm run ota:publish -- --no-checks --message "$(git log -1 --format=%s)"
+        env:
+          EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+
+      - if: steps.plan.outputs.mode == 'apk'
+        uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: 17
-      - uses: gradle/actions/setup-gradle@v4
-      - run: npm ci
-      - run: npm run android:build:family
-      - uses: actions/upload-artifact@v4
-        with:
-          name: family-apk
-          path: dist/*.apk
-          if-no-files-found: error
-          retention-days: 30
+      - if: steps.plan.outputs.mode == 'apk'
+        uses: gradle/actions/setup-gradle@v4
+      - if: steps.plan.outputs.mode == 'apk'
+        name: Write the release key
+        run: |
+          echo "$RELEASE_KEYSTORE" | base64 --decode > "$RUNNER_TEMP/release.keystore"
+          {
+            echo "storeFile=$RUNNER_TEMP/release.keystore"
+            echo "storePassword=$RELEASE_STORE_PASSWORD"
+            echo "keyAlias=$RELEASE_KEY_ALIAS"
+            echo "keyPassword=$RELEASE_KEY_PASSWORD"
+          } > "$RUNNER_TEMP/release.properties"
+        env:
+          RELEASE_KEYSTORE: ${{ secrets.RELEASE_KEYSTORE }}
+          RELEASE_STORE_PASSWORD: ${{ secrets.RELEASE_STORE_PASSWORD }}
+          RELEASE_KEY_ALIAS: ${{ secrets.RELEASE_KEY_ALIAS }}
+          RELEASE_KEY_PASSWORD: ${{ secrets.RELEASE_KEY_PASSWORD }}
+      - if: steps.plan.outputs.mode == 'apk'
+        run: npm run android:build:family
+        env:
+          BRIGHT_TRAIL_SIGNING: ${{ runner.temp }}/release.properties
+      - if: steps.plan.outputs.mode == 'apk'
+        name: Publish the release
+        run: |
+          echo "$FINGERPRINT" > "$RUNNER_TEMP/fingerprint.txt"
+          gh release create "v$VERSION" dist/*.apk "$RUNNER_TEMP/fingerprint.txt" \
+            --target "$GITHUB_SHA" --title "BrightTrail $VERSION" \
+            --notes "Install over the old app, never uninstall first. Updates until the next major version arrive over the air."
+        env:
+          VERSION: ${{ steps.plan.outputs.version }}
+          FINGERPRINT: ${{ steps.plan.outputs.fingerprint }}
