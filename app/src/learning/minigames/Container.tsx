@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View, type ViewStyle } from 'react-native';
 import { colors } from '../theme';
-import { HANDLE_HEIGHT, type ContainerKind, type Rect } from './share';
+import type { ContainerKind } from '@bright-trail/shared';
+import { HANDLE_HEIGHT, type Rect } from './share';
+import type { Tone } from './Stage';
 
 type Look = {
   fill: string;
@@ -43,21 +45,40 @@ const LOOKS: Record<ContainerKind, Look> = {
     handle: true,
   },
   box: { fill: '#E9CFA3', edge: '#A07A45', shape: () => ({ borderRadius: 4 }), icon: '📦' },
+  bag: {
+    fill: '#EBD7B8',
+    edge: '#9C7A4E',
+    shape: (r) => ({
+      borderTopLeftRadius: 6,
+      borderTopRightRadius: 6,
+      borderBottomLeftRadius: r.h * 0.2,
+      borderBottomRightRadius: r.h * 0.2,
+    }),
+    icon: '🛍️',
+  },
+  cup: {
+    fill: '#FFF1F4',
+    edge: '#D98A9F',
+    shape: (r) => ({
+      borderTopLeftRadius: 4,
+      borderTopRightRadius: 4,
+      borderBottomLeftRadius: r.h * 0.45,
+      borderBottomRightRadius: r.h * 0.45,
+    }),
+    icon: '🥤',
+  },
+  pond: { fill: '#CFE9F7', edge: '#5FA8D3', shape: () => ({ borderRadius: 999 }), icon: '💧' },
 };
 
-/** Draws what the objects sit in. `hint` turns it blue to point at leftovers. */
-export function Container({
-  kind,
-  rect,
-  hint,
-}: {
-  kind: ContainerKind;
-  rect: Rect;
-  hint?: boolean;
-}) {
+const TONES: Record<Tone, { fill: string; edge: string }> = {
+  good: { fill: colors.good, edge: colors.goodInk },
+  gentle: { fill: colors.gentle, edge: colors.gentleInk },
+};
+
+/** Draws what the things sit in. A tone colors it to point at a result. */
+export function Container({ kind, rect, tone }: { kind: ContainerKind; rect: Rect; tone?: Tone }) {
   const look = LOOKS[kind];
-  const fill = hint ? colors.gentle : look.fill;
-  const edge = hint ? colors.gentleInk : look.edge;
+  const { fill, edge } = tone ? TONES[tone] : look;
   const handleH = Math.min(rect.h * 0.3, HANDLE_HEIGHT);
   const icon = Math.min(rect.h * 0.35, 26);
   return (
