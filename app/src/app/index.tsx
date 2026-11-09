@@ -39,10 +39,15 @@ export default function ProfilePickerScreen() {
 
       <View style={styles.body}>
         {profiles && profiles.length > 0 ? (
-          <ProfilePicker
-            profiles={profiles}
-            onPick={(p) => router.push({ pathname: '/child/[childId]', params: { childId: p.id } })}
-          />
+          <>
+            <Text style={styles.empty}>{PICK_MESSAGE}</Text>
+            <ProfilePicker
+              profiles={profiles}
+              onPick={(p) =>
+                router.push({ pathname: '/child/[childId]', params: { childId: p.id } })
+              }
+            />
+          </>
         ) : (
           profiles && <Text style={styles.empty}>{EMPTY_MESSAGE}</Text>
         )}

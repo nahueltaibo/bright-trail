@@ -41,6 +41,7 @@ describe('KeypadItemView', () => {
     const narrate = jest.fn();
     await render(<KeypadItemView item={afterFourteen} onAnswer={onAnswer} narrate={narrate} />);
     expect(narrate).toHaveBeenCalledWith([afterFourteen.narration]);
+    expect(screen.getByText(afterFourteen.narration)).toBeTruthy();
     expect(screen.getByLabelText('Check my answer')).toBeDisabled();
 
     await type('19');

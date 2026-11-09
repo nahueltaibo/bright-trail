@@ -35,11 +35,7 @@ export default function ChildHomeScreen() {
   );
 
   const greeting =
-    child === undefined
-      ? null
-      : child
-        ? `Hi, ${child.firstName}! Tap the big button to start.`
-        : 'This profile is gone. Tap the house to go back.';
+    child === undefined ? null : child ? `Hi, ${child.firstName}! ${START_HINT}` : GONE_MESSAGE;
   useAutoNarration(greeting);
 
   if (child === undefined) return null;
@@ -62,6 +58,7 @@ export default function ChildHomeScreen() {
           <>
             <Text style={styles.avatar}>{getAvatar(child.avatar).emoji}</Text>
             <Text style={styles.title}>Hi, {child.firstName}!</Text>
+            <Text style={styles.note}>{START_HINT}</Text>
             <TrailMap stars={stars} />
             <BigButton
               label="Start"
@@ -73,12 +70,15 @@ export default function ChildHomeScreen() {
             />
           </>
         ) : (
-          <Text style={styles.note}>This profile no longer exists.</Text>
+          <Text style={styles.note}>{GONE_MESSAGE}</Text>
         )}
       </View>
     </SafeAreaView>
   );
 }
+
+const START_HINT = 'Tap the big button to start.';
+const GONE_MESSAGE = 'This profile is gone. Tap the house to go back.';
 
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: '#FFFBF0' },
@@ -87,5 +87,5 @@ const styles = StyleSheet.create({
   body: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 24, padding: 24 },
   avatar: { fontSize: 100 },
   title: { fontSize: 32, color: '#5A4A1F' },
-  note: { fontSize: 18, color: '#7A6A3F', textAlign: 'center' },
+  note: { fontSize: 22, color: '#7A6A3F', textAlign: 'center' },
 });

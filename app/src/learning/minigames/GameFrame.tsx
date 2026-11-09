@@ -5,6 +5,7 @@ import { BigButton, FlagButton, ReplayButton } from '../controls';
 import { pressKey } from '../KeypadItemView';
 import { colors, CORRECT_TEXT, MIN_TAP, MISS_TEXT, useLayout } from '../theme';
 import type { Narrate } from '../types';
+import { ReadAlong } from '../ReadAlong';
 import { AmountText } from './AmountText';
 
 /** A choice's value. Text the story can't show as a number, like "Same", stays text. */
@@ -195,12 +196,16 @@ export function GameFrame(props: Props) {
   );
 
   const top = (
-    <View style={styles.promptRow}>
-      <ReplayButton onPress={replay} />
-      <Text style={[styles.prompt, { fontSize: (landscape ? 20 : 24) * scale }]}>
-        {props.prompt}
-      </Text>
-      <FlagButton onFlag={props.onFlag} />
+    <View>
+      <View style={styles.promptRow}>
+        <ReplayButton onPress={replay} />
+        <Text style={[styles.prompt, { fontSize: (landscape ? 20 : 24) * scale }]}>
+          {props.prompt}
+        </Text>
+        <FlagButton onFlag={props.onFlag} />
+      </View>
+      {/* The question as spoken, without picture labels the choices already show. */}
+      <ReadAlong text={props.question[0]} lines={landscape ? 4 : 2.5} />
     </View>
   );
 
