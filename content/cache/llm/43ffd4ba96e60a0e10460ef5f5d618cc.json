@@ -1,0 +1,43 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g4-decimal-tenths-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Placement task: move the frog to a spot, not a counting story."
+      },
+      {
+        "itemId": "g4-decimal-tenths-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Placement task: move the frog to a spot, not a counting story."
+      },
+      {
+        "itemId": "g4-decimal-tenths-number-line-3",
+        "fits": false,
+        "start": 4,
+        "legs": [],
+        "note": "Placement task: move the frog to a spot, not a counting story."
+      },
+      {
+        "itemId": "g4-decimal-tenths-number-line-4",
+        "fits": false,
+        "start": 10,
+        "legs": [],
+        "note": "Placement task: move the frog to a spot, not a counting story."
+      },
+      {
+        "itemId": "g4-decimal-tenths-number-line-5",
+        "fits": false,
+        "start": 24,
+        "legs": [],
+        "note": "Placement task: move the frog to a spot, not a counting story."
+      }
+    ]
+  }
+}

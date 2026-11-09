@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g4-count-unit-fractions-number-line-1",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 0.5, "times": 2 }],
+        "note": "2 hops of 1/2 land on 1."
+      },
+      {
+        "itemId": "g4-count-unit-fractions-number-line-2",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 0.5, "times": 5 }],
+        "note": "5 hops of 1/2 land on 2.5."
+      },
+      {
+        "itemId": "g4-count-unit-fractions-number-line-3",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 0.2, "times": 9 }],
+        "note": "9 hops of 1/5 land on 1.8."
+      }
+    ]
+  }
+}

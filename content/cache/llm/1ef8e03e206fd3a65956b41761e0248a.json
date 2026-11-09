@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g5-decimals-hundredths-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-to task, not a hop story; app hops there from the line's start."
+      },
+      {
+        "itemId": "g5-decimals-hundredths-number-line-2",
+        "fits": false,
+        "start": 3.2,
+        "legs": [],
+        "note": "Move-to task, not a hop story; app hops there from the line's start."
+      },
+      {
+        "itemId": "g5-decimals-hundredths-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-to task, not a hop story; app hops there from the line's start."
+      },
+      {
+        "itemId": "g5-decimals-hundredths-number-line-4",
+        "fits": false,
+        "start": 8,
+        "legs": [],
+        "note": "Move-to task, not a hop story; app hops there from the line's start."
+      }
+    ]
+  }
+}

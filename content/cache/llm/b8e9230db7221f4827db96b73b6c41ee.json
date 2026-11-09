@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g2-equal-groups-multiply-number-line-1",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 2, "times": 3 }],
+        "note": "3 hops of 2 lands on 6."
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-number-line-2",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 5, "times": 7 }],
+        "note": "7 hops of 5 lands on 35."
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-number-line-3",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 0.5, "times": 8 }],
+        "note": "8 hops of 0.5 lands on 4."
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-number-line-4",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 4, "times": 8 }],
+        "note": "8 hops of 4 lands on 32."
+      }
+    ]
+  }
+}

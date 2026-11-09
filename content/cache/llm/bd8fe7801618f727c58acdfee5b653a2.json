@@ -1,0 +1,22 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g1-compare-unit-fractions-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Asks to move the frog to a number (a comparison), not a counting or hop story."
+      },
+      {
+        "itemId": "g1-compare-unit-fractions-number-line-4",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Asks to move the frog to a number; it is not a hop story."
+      }
+    ]
+  }
+}

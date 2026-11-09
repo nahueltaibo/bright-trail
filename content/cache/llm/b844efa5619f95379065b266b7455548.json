@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g1-read-numbers-50-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-the-frog-to task, not an operation; app hops there itself."
+      },
+      {
+        "itemId": "g1-read-numbers-50-number-line-2",
+        "fits": false,
+        "start": 20,
+        "legs": [],
+        "note": "Move-the-frog-to task, not an operation; app hops there itself."
+      },
+      {
+        "itemId": "g1-read-numbers-50-number-line-3",
+        "fits": false,
+        "start": 30,
+        "legs": [],
+        "note": "Move-the-frog-to task, not an operation; app hops there itself."
+      }
+    ]
+  }
+}

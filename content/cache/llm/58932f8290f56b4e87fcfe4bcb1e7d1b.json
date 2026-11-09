@@ -1,0 +1,39 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "k-add-sub-stories-10-number-line-1",
+        "fits": true,
+        "start": 3,
+        "legs": [{ "by": 1, "times": 2 }],
+        "note": "3 + 2"
+      },
+      {
+        "itemId": "k-add-sub-stories-10-number-line-2",
+        "fits": true,
+        "start": 6,
+        "legs": [{ "by": 1, "times": 3 }],
+        "note": "6 + 3"
+      },
+      {
+        "itemId": "k-add-sub-stories-10-number-line-3",
+        "fits": true,
+        "start": 10,
+        "legs": [{ "by": -1, "times": 4 }],
+        "note": "10 - 4"
+      },
+      {
+        "itemId": "k-add-sub-stories-10-number-line-4",
+        "fits": true,
+        "start": 5,
+        "legs": [
+          { "by": 1, "times": 3 },
+          { "by": -1, "times": 2 }
+        ],
+        "note": "5 + 3 - 2"
+      }
+    ]
+  }
+}

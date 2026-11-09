@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g5-compare-order-fractions-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-the-frog placement, not a counting story; app hops there itself."
+      },
+      {
+        "itemId": "g5-compare-order-fractions-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-the-frog placement, not a counting story; app hops there itself."
+      },
+      {
+        "itemId": "g5-compare-order-fractions-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-the-frog placement, not a counting story; app hops there itself."
+      }
+    ]
+  }
+}

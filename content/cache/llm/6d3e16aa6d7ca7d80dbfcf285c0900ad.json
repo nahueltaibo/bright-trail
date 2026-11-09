@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "k-subitize-5-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 1; no operation to show."
+      },
+      {
+        "itemId": "k-subitize-5-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 4; no operation to show."
+      },
+      {
+        "itemId": "k-subitize-5-number-line-3",
+        "fits": true,
+        "start": 2,
+        "legs": [{ "by": 1, "times": 3 }],
+        "note": "2 + 3: start at 2, hop forward 3 ones."
+      }
+    ]
+  }
+}

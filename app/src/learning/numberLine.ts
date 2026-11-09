@@ -37,3 +37,21 @@ export function labelEvery(n: number): number {
   }
   return Math.ceil(n / 10);
 }
+
+/**
+ * The unit fraction a line counts in, e.g. 4 for a line of quarters. Undefined for whole and
+ * decimal steps, which read as written, and for parts past twelfths, whose labels would crowd.
+ */
+export function unitOf(line: Line): number | undefined {
+  const den = Math.round(1 / line.step);
+  if (den < 2 || den > 12 || Math.abs(1 / line.step - den) > 1e-6) return undefined;
+  return den === 10 ? undefined : den;
+}
+
+/** A value as the line reads it: 3/4 on a line of quarters, 0.3 on a line of tenths. */
+export function lineLabel(value: number, line: Line): string {
+  const den = unitOf(line);
+  if (!den) return String(Number(value.toFixed(6)));
+  const n = Math.round(value * den);
+  return n % den === 0 ? String(n / den) : `${n}/${den}`;
+}

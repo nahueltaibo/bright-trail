@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g3-mult-div-properties-number-line-1",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 2, "times": 4 }],
+        "note": "4 groups of 2, landing on 8."
+      },
+      {
+        "itemId": "g3-mult-div-properties-number-line-2",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 5, "times": 7 }],
+        "note": "7 hops of 5, landing on 35."
+      },
+      {
+        "itemId": "g3-mult-div-properties-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Division where the hops of 4 would pass the line's end at 10, so the app moves the frog to 9."
+      }
+    ]
+  }
+}

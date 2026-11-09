@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "k-more-less-same-number-line-1",
+        "fits": true,
+        "start": 4,
+        "legs": [{ "by": 1, "times": 1 }],
+        "note": "Start at 4, hop 1 forward to 5."
+      },
+      {
+        "itemId": "k-more-less-same-number-line-2",
+        "fits": true,
+        "start": 8,
+        "legs": [{ "by": -1, "times": 2 }],
+        "note": "Start at 8, hop back 2 to 6."
+      },
+      {
+        "itemId": "k-more-less-same-number-line-3",
+        "fits": true,
+        "start": 6,
+        "legs": [{ "by": 1, "times": 3 }],
+        "note": "Start at 6, hop forward 3 to 9."
+      },
+      {
+        "itemId": "k-more-less-same-number-line-4",
+        "fits": true,
+        "start": 10,
+        "legs": [{ "by": -1, "times": 3 }],
+        "note": "Mia has 3 fewer than 10: start at 10, hop back 3 to 7."
+      }
+    ]
+  }
+}

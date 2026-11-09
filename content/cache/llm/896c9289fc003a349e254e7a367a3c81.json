@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g4-represent-fractions-number-line-1",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 0.25, "times": 1 }],
+        "note": "1 hop of 1/4 from 0."
+      },
+      {
+        "itemId": "g4-represent-fractions-number-line-2",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 0.1, "times": 7 }],
+        "note": "7 hops of 1/10 from 0."
+      },
+      {
+        "itemId": "g4-represent-fractions-number-line-3",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 0.25, "times": 5 }],
+        "note": "5 hops of 1/4 from 0 lands on 5/4."
+      }
+    ]
+  }
+}

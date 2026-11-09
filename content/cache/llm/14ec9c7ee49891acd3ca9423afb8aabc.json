@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "k-compare-numbers-20-number-line-1",
+        "fits": true,
+        "start": 5,
+        "legs": [{ "by": 1, "times": 1 }],
+        "note": "Start at 5, hop 1 forward to 6."
+      },
+      {
+        "itemId": "k-compare-numbers-20-number-line-2",
+        "fits": true,
+        "start": 9,
+        "legs": [{ "by": -1, "times": 2 }],
+        "note": "Start at 9, hop back 2 to 7."
+      },
+      {
+        "itemId": "k-compare-numbers-20-number-line-3",
+        "fits": true,
+        "start": 15,
+        "legs": [{ "by": 1, "times": 2 }],
+        "note": "Start at 15, hop forward 2 to 17."
+      },
+      {
+        "itemId": "k-compare-numbers-20-number-line-4",
+        "fits": true,
+        "start": 17,
+        "legs": [{ "by": -1, "times": 1 }],
+        "note": "Start at 17, hop back 1 to 16."
+      }
+    ]
+  }
+}

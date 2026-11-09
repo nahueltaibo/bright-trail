@@ -1,0 +1,49 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-1",
+        "fits": true,
+        "start": 5,
+        "legs": [{ "by": 1, "times": 4 }],
+        "note": "5 + 4, hops of 1"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-2",
+        "fits": true,
+        "start": 20,
+        "legs": [{ "by": -1, "times": 6 }],
+        "note": "20 - 6, hops of 1 back"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-3",
+        "fits": true,
+        "start": 30,
+        "legs": [
+          { "by": 10, "times": 1 },
+          { "by": 5, "times": 1 }
+        ],
+        "note": "30 + 15: ten, then five (line steps by 5)"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-4",
+        "fits": true,
+        "start": 50,
+        "legs": [
+          { "by": -10, "times": 1 },
+          { "by": -2, "times": 4 }
+        ],
+        "note": "50 - 18: back ten, then 8 in hops of 2 (line steps by 2)"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-5",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Asks how many more from 27 to 35 (a difference); the answer 8 isn't where a hop path from 27 lands."
+      }
+    ]
+  }
+}

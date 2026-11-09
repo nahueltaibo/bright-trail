@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g1-count-50-number-line-1",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 10, "times": 3 }],
+        "note": "3 hops of 10 from 0 to 30"
+      },
+      {
+        "itemId": "g1-count-50-number-line-2",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 5, "times": 7 }],
+        "note": "7 hops of 5 from 0 to 35"
+      },
+      {
+        "itemId": "g1-count-50-number-line-3",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 2, "times": 19 }],
+        "note": "19 hops of 2 from 0 to 38"
+      },
+      {
+        "itemId": "g1-count-50-number-line-4",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 10, "times": 4 }],
+        "note": "4 hops of 10 from 0 to 40"
+      }
+    ]
+  }
+}

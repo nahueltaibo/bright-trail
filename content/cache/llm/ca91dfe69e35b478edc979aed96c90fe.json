@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g3-whole-numbers-1000-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move the frog to a number; not an operation or counting story."
+      },
+      {
+        "itemId": "g3-whole-numbers-1000-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move the frog to a number; not an operation or counting story."
+      },
+      {
+        "itemId": "g3-whole-numbers-1000-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move the frog to a number; not an operation or counting story."
+      },
+      {
+        "itemId": "g3-whole-numbers-1000-number-line-4",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move the frog to a number; not an operation or counting story."
+      }
+    ]
+  }
+}

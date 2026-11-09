@@ -1,0 +1,43 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "k-count-to-20-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move the frog to 3; not an operation, so the app hops from the start."
+      },
+      {
+        "itemId": "k-count-to-20-number-line-2",
+        "fits": true,
+        "start": 11,
+        "legs": [{ "by": 1, "times": 1 }],
+        "note": "Start at 11, hop 1 more to 12."
+      },
+      {
+        "itemId": "k-count-to-20-number-line-3",
+        "fits": true,
+        "start": 13,
+        "legs": [{ "by": 1, "times": 2 }],
+        "note": "Count 13, 14, then hop to next number 15."
+      },
+      {
+        "itemId": "k-count-to-20-number-line-4",
+        "fits": true,
+        "start": 17,
+        "legs": [{ "by": 1, "times": 3 }],
+        "note": "17 plus 3 hops of 1 lands on 20."
+      },
+      {
+        "itemId": "k-count-to-20-number-line-5",
+        "fits": true,
+        "start": 14,
+        "legs": [{ "by": 1, "times": 3 }],
+        "note": "Start at 14, hop 15, 16, 17."
+      }
+    ]
+  }
+}

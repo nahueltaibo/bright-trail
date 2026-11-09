@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g5-fraction-decimal-percent-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Converting a fraction to a percent and moving to it is not a counting or arithmetic hop pattern."
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Converting a fraction to a percent and moving to it is not a counting or arithmetic hop pattern."
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Converting a fraction to a decimal and moving to it is not a counting or arithmetic hop pattern."
+      }
+    ]
+  }
+}

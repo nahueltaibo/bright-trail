@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "k-read-write-numbers-20-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 6; no addition or skip counting."
+      },
+      {
+        "itemId": "k-read-write-numbers-20-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 12; no operation to show."
+      },
+      {
+        "itemId": "k-read-write-numbers-20-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 17; no operation to show."
+      }
+    ]
+  }
+}
