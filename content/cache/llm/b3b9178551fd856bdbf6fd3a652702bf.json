@@ -1,0 +1,15 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g2-fair-share-fractions-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Sharing 7 among 3 is division, not a hop pattern; the app will move the frog to the answer."
+      }
+    ]
+  }
+}

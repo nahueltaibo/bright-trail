@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g3-arrays-multiply-divide-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Division (35 ÷ 5): the line only goes to 10, so hops of 5 can't be shown."
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "10 hops of 7 would land off the line's steps of 10."
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-number-line-4",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Division (100 ÷ 10): the line only goes to 12, so hops of 10 to 100 can't be shown."
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-number-line-5",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 8, "times": 7 }],
+        "note": "7 rows of 8 seats: 7 hops of 8 land on 56."
+      }
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g1-equal-groups-number-line-1",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 2, "times": 3 }],
+        "note": "3 cups, 2 straws each: 3 hops of 2 from 0 lands on 6."
+      }
+    ]
+  }
+}

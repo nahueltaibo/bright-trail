@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g4-fraction-decimal-equivalence-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-to placement, not an operation; app hops there from the start."
+      },
+      {
+        "itemId": "g4-fraction-decimal-equivalence-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-to placement, not an operation; app hops there from the start."
+      },
+      {
+        "itemId": "g4-fraction-decimal-equivalence-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-to placement, not an operation; app hops there from the start."
+      },
+      {
+        "itemId": "g4-fraction-decimal-equivalence-number-line-4",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move-to placement with equivalent fraction; app hops there from the start."
+      }
+    ]
+  }
+}

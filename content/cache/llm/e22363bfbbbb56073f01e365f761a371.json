@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g3-compare-order-1000-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to a given number; no hop story."
+      },
+      {
+        "itemId": "g3-compare-order-1000-number-line-2",
+        "fits": false,
+        "start": 200,
+        "legs": [],
+        "note": "Just move the frog to a given number; no hop story."
+      },
+      {
+        "itemId": "g3-compare-order-1000-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Place value naming a point, not a hop story."
+      },
+      {
+        "itemId": "g3-compare-order-1000-number-line-4",
+        "fits": false,
+        "start": 600,
+        "legs": [],
+        "note": "Story starts at 875, which is off the line (max 800), so the frog can't start there."
+      }
+    ]
+  }
+}

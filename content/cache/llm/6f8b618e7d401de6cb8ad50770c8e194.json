@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g2-add-sub-facts-20-number-line-1",
+        "fits": true,
+        "start": 4,
+        "legs": [{ "by": 1, "times": 5 }],
+        "note": "Start at 4, hop forward 5."
+      },
+      {
+        "itemId": "g2-add-sub-facts-20-number-line-2",
+        "fits": true,
+        "start": 12,
+        "legs": [{ "by": -1, "times": 5 }],
+        "note": "Start at 12, hop back 5."
+      },
+      {
+        "itemId": "g2-add-sub-facts-20-number-line-3",
+        "fits": true,
+        "start": 16,
+        "legs": [{ "by": -1, "times": 7 }],
+        "note": "Start at 16, hop back 7."
+      }
+    ]
+  }
+}

@@ -1,6 +1,8 @@
-import type { NumberLineItem } from '@bright-trail/shared';
-import { useRef, useState } from 'react';
+import { defaultHops, type Hops, type NumberLineItem } from '@bright-trail/shared';
+import { useEffect, useRef, useState } from 'react';
 import {
+  AccessibilityInfo,
+  Animated,
   StyleSheet,
   Text,
   View,
@@ -8,17 +10,52 @@ import {
   type GestureResponderEvent,
   type LayoutChangeEvent,
 } from 'react-native';
+import Svg, { Path } from 'react-native-svg';
 import { BigButton } from './controls';
 import { ItemFrame, useItemAttempt } from './ItemFrame';
-import { indexAtFraction, indexOfValue, labelEvery, stepCount, valueAt } from './numberLine';
+import { BubbleView, type Bubble } from './minigames/Bubble';
+import { frames, wait } from './minigames/motion';
+import {
+  indexAtFraction,
+  indexOfValue,
+  labelEvery,
+  lineLabel,
+  stepCount,
+  valueAt,
+} from './numberLine';
 import { colors, formatNumber, useLayout } from './theme';
 import type { ItemViewProps } from './types';
 
 const MARKER = '🐸';
+const ARC = '#FF8A3D';
+const ARC_TEXT = '#C25E12';
+
+type Phase = 'ask' | 'playing' | 'done';
+type Arc = { id: number; x0: number; x1: number; top: number; k: number };
+type ArcLabel = { id: number; x: number; y: number; text: string };
+
+const ease = (k: number) => (k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
+const tidy = (v: number) => Number(v.toFixed(9));
+
+/** A dashed arc from x0 to x1, drawn up to `k`, as sample points so it can grow while the frog hops. */
+function arcPath(a: Arc, lineY: number): string {
+  const y0 = lineY - 10;
+  const cy = 2 * a.top - y0;
+  const n = Math.max(2, Math.ceil(24 * a.k));
+  const pts: string[] = [];
+  for (let i = 0; i <= n; i++) {
+    const t = (i / n) * a.k;
+    const x = (1 - t) * (1 - t) * a.x0 + 2 * t * (1 - t) * ((a.x0 + a.x1) / 2) + t * t * a.x1;
+    const y = (1 - t) * (1 - t) * y0 + 2 * t * (1 - t) * cy + t * t * y0;
+    pts.push(`${i === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)}`);
+  }
+  return pts.join(' ');
+}
 
 /**
  * Drag the frog along the line, or tap anywhere on it, and it snaps to the nearest step.
- * Arrow buttons nudge one step for kids who find dragging hard.
+ * Arrow buttons nudge one step for kids who find dragging hard. After a check, the frog hops the
+ * story out from its start, counting each landing, before the feedback shows.
  */
 export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
   const { item } = props;
@@ -26,8 +63,18 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
   const { outcome, answer, replay } = useItemAttempt(props);
   const [index, setIndex] = useState<number | null>(null);
   const [width, setWidth] = useState(0);
+  const [phase, setPhase] = useState<Phase>('ask');
+  const [arcs, setArcs] = useState<Arc[]>([]);
+  const [labels, setLabels] = useState<ArcLabel[]>([]);
+  const [bubbles, setBubbles] = useState<Bubble[]>([]);
+  const [reduceMotion, setReduceMotion] = useState(false);
+  const [frogX] = useState(() => new Animated.Value(0));
+  const [frogY] = useState(() => new Animated.Value(0));
+  const [frogTurn] = useState(() => new Animated.Value(0));
   // Page x of the track's left edge, so drag moves don't depend on which view is under the finger.
   const trackLeft = useRef(0);
+  const run = useRef(0);
+  const ids = useRef(0);
 
   const n = stepCount(item);
   const every = labelEvery(n);
@@ -36,9 +83,26 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
   const pad = markerSize / 2 + 8;
   const usable = Math.max(0, width - pad * 2);
   const xOf = (i: number) => pad + (i / n) * usable;
-  const lineY = markerSize + 16;
+  const xAt = (v: number) => pad + ((v - item.min) / (item.max - item.min)) * usable;
+  // Room above the frog for the hop arcs and the counting bubbles.
+  const arcRoom = 64 * scale;
+  const lineY = arcRoom + markerSize + 16;
+  const frogTop = lineY - markerSize - 6;
   const height = lineY + 96 * scale;
-  const locked = !!outcome;
+  const locked = phase !== 'ask';
+  const label = (v: number) => lineLabel(v, item);
+
+  useEffect(() => {
+    let live = true;
+    void AccessibilityInfo.isReduceMotionEnabled?.()
+      ?.then((on) => live && setReduceMotion(on))
+      .catch(() => {});
+    const runs = run;
+    return () => {
+      live = false;
+      runs.current += 1;
+    };
+  }, []);
 
   const placeAt = (x: number) => {
     if (usable <= 0 || locked) return;
@@ -51,13 +115,108 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
     if (e.nativeEvent.actionName === 'decrement') nudge(-1);
   };
 
+  /** The frog jumps to the path's start, then hops each leg, leaving arcs and counting landings. */
+  const playOut = async (from: number, path: Hops) => {
+    const t = ++run.current;
+    const live = () => run.current === t;
+    const ms = (v: number) => (reduceMotion ? 0 : v);
+    const bubble = (x: number, text: string, big = false) =>
+      setBubbles((b) => [...b, { id: ids.current++, x, y: 14 * scale + 6, text, big }]);
+    const setFrog = (x: number, lift: number, turn: number) => {
+      frogX.setValue(x - markerSize / 2);
+      frogY.setValue(frogTop - lift);
+      frogTurn.setValue(turn);
+    };
+
+    const x0 = xAt(from);
+    setFrog(x0, 0, 0);
+    const xs = xAt(path.start);
+    await frames(
+      ms(420),
+      (k) => setFrog(x0 + (xs - x0) * ease(k), Math.sin(k * Math.PI) * 30 * scale, 0),
+      live,
+    );
+    if (!live()) return;
+    bubble(xs, `Start at ${label(path.start)}`);
+    await wait(ms(650));
+    if (!live()) return;
+
+    let v = path.start;
+    for (const leg of path.legs) {
+      const legStart = v;
+      const sign = leg.by < 0 ? '−' : '+';
+      const hopText = `${sign}${label(Math.abs(leg.by))}`;
+      // A hop gets its own label only when the label fits over its arc.
+      const ownLabel = Math.abs(xAt(leg.by) - xAt(0)) >= (hopText.length * 9 + 10) * scale;
+      let highest = lineY;
+      for (let i = 0; i < leg.times; i++) {
+        const next = tidy(v + leg.by);
+        const a = xAt(v);
+        const b = xAt(next);
+        const dist = Math.abs(b - a);
+        const h = Math.min(58 * scale, 14 * scale + dist * 0.45);
+        const arc: Arc = { id: ids.current++, x0: a, x1: b, top: lineY - 14 - h, k: 0 };
+        highest = Math.min(highest, arc.top);
+        setArcs((all) => [...all, arc]);
+        await frames(
+          ms(Math.min(620, 300 + dist * 2.2)),
+          (k) => {
+            const e = ease(k);
+            const dir = b >= a ? 1 : -1;
+            setFrog(a + (b - a) * e, 4 * h * e * (1 - e), dir * Math.sin(k * Math.PI * 2) * 10);
+            setArcs((all) => all.map((x) => (x.id === arc.id ? { ...x, k: e } : x)));
+          },
+          live,
+        );
+        if (!live()) return;
+        if (ownLabel) {
+          setLabels((l) => [
+            ...l,
+            { id: ids.current++, x: (a + b) / 2, y: arc.top - 18, text: hopText },
+          ]);
+        }
+        setBubbles([]);
+        bubble(b, label(next));
+        v = next;
+        await wait(ms(path.legs.length > 1 ? 260 : 160));
+        if (!live()) return;
+      }
+      // Hops too short for their own label get one label for the whole run.
+      if (!ownLabel) {
+        setLabels((l) => [
+          ...l,
+          {
+            id: ids.current++,
+            x: (xAt(legStart) + xAt(v)) / 2,
+            // Short hops leave low arcs, so the label goes above the frog instead.
+            y: Math.min(highest, frogTop) - 20,
+            text: leg.times > 1 ? `${leg.times} hops of ${hopText}` : hopText,
+          },
+        ]);
+      }
+    }
+    await wait(ms(300));
+    if (!live()) return;
+    setBubbles([]);
+    bubble(width / 2, `It lands on ${label(item.target)}`, true);
+  };
+
   const submit = () => {
     if (index === null || locked) return;
-    answer(valueAt(index, item), index === targetIndex);
+    const value = valueAt(index, item);
+    setPhase('playing');
+    const played = usable > 0 ? playOut(value, item.hops ?? defaultHops(item)) : Promise.resolve();
+    answer(
+      value,
+      index === targetIndex,
+      [],
+      played.then(() => setPhase('done')),
+    );
   };
 
   const ticks = Array.from({ length: n + 1 }, (_, i) => i);
   const placedValue = index === null ? null : formatNumber(valueAt(index, item));
+  const missed = outcome ? !outcome.correct : index !== null && index !== targetIndex;
 
   return (
     <ItemFrame {...props} replay={replay} outcome={outcome}>
@@ -103,12 +262,37 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
                       { left: xOf(i) - 30, top: lineY + 16, fontSize: 18 * scale },
                     ]}
                   >
-                    {formatNumber(valueAt(i, item))}
+                    {label(valueAt(i, item))}
                   </Text>
                 )}
               </View>
             );
           })}
+          {width > 0 && arcs.length > 0 && (
+            <View style={StyleSheet.absoluteFill}>
+              <Svg width={width} height={height}>
+                {arcs.map((a) => (
+                  <Path
+                    key={a.id}
+                    d={arcPath(a, lineY)}
+                    fill="none"
+                    stroke={ARC}
+                    strokeWidth={2.5 * scale}
+                    strokeDasharray={[6 * scale, 5 * scale]}
+                    strokeLinecap="round"
+                  />
+                ))}
+              </Svg>
+            </View>
+          )}
+          {labels.map((l) => (
+            <Text
+              key={l.id}
+              style={[styles.arcLabel, { left: l.x - 70, top: l.y, fontSize: 14 * scale }]}
+            >
+              {l.text}
+            </Text>
+          ))}
           {outcome && !outcome.correct && (
             <View
               testID="number-line-target"
@@ -120,26 +304,62 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
               ]}
             >
               <Text style={[styles.targetText, { fontSize: 20 * scale }]}>
-                {formatNumber(item.target)}
+                {label(item.target)}
               </Text>
             </View>
           )}
-          <Text
-            testID="number-line-marker"
-            style={[
-              styles.marker,
-              {
-                fontSize: markerSize * 0.8,
-                lineHeight: markerSize,
-                width: markerSize,
-                left: xOf(index ?? 0) - markerSize / 2,
-                top: lineY - markerSize - 6,
-              },
-              index === null && styles.markerParked,
-            ]}
-          >
-            {MARKER}
-          </Text>
+          {locked && missed && index !== null && (
+            <Text
+              style={[
+                styles.marker,
+                styles.ghost,
+                markerStyle(markerSize),
+                { left: xOf(index) - markerSize / 2, top: frogTop },
+              ]}
+            >
+              {MARKER}
+            </Text>
+          )}
+          {locked ? (
+            <Animated.Text
+              testID="number-line-marker"
+              style={[
+                styles.marker,
+                markerStyle(markerSize),
+                {
+                  left: 0,
+                  top: 0,
+                  transform: [
+                    { translateX: frogX },
+                    { translateY: frogY },
+                    {
+                      rotate: frogTurn.interpolate({
+                        inputRange: [-90, 90],
+                        outputRange: ['-90deg', '90deg'],
+                      }),
+                    },
+                  ],
+                },
+              ]}
+            >
+              {MARKER}
+            </Animated.Text>
+          ) : (
+            <Text
+              testID="number-line-marker"
+              style={[
+                styles.marker,
+                markerStyle(markerSize),
+                { left: xOf(index ?? 0) - markerSize / 2, top: frogTop },
+                index === null && styles.markerParked,
+              ]}
+            >
+              {MARKER}
+            </Text>
+          )}
+          {bubbles.map((b) => (
+            <BubbleView key={b.id} bubble={b} />
+          ))}
         </View>
       </View>
       {!locked && (
@@ -153,6 +373,8 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
   );
 }
 
+const markerStyle = (size: number) => ({ fontSize: size * 0.8, lineHeight: size, width: size });
+
 const styles = StyleSheet.create({
   // No text selection on web while dragging.
   track: { alignSelf: 'stretch', userSelect: 'none' },
@@ -162,6 +384,13 @@ const styles = StyleSheet.create({
   tickMajor: { height: 28 },
   tickMinor: { height: 16, opacity: 0.6 },
   label: { position: 'absolute', width: 60, textAlign: 'center', color: colors.ink },
+  arcLabel: {
+    position: 'absolute',
+    width: 140,
+    textAlign: 'center',
+    color: ARC_TEXT,
+    fontWeight: '700',
+  },
   target: {
     position: 'absolute',
     alignItems: 'center',
@@ -174,6 +403,8 @@ const styles = StyleSheet.create({
   marker: { position: 'absolute', textAlign: 'center' },
   // Waiting at the start, faded, until the child places it.
   markerParked: { opacity: 0.45 },
+  // Where the child put the frog, after a miss.
+  ghost: { opacity: 0.38 },
   controls: {
     flexDirection: 'row',
     justifyContent: 'center',

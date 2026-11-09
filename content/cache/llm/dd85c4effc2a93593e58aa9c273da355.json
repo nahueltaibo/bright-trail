@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g4-mult-div-facts-100-number-line-1",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 4, "times": 6 }],
+        "note": "4 × 6 as 6 hops of 4 (line steps by 4), landing on 24."
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-number-line-2",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 6, "times": 9 }],
+        "note": "9 hops of 6 land on 54."
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-number-line-3",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 8, "times": 9 }],
+        "note": "9 boxes, one hop of 8 each, land on 72."
+      }
+    ]
+  }
+}

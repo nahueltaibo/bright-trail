@@ -1,5 +1,6 @@
 import {
   ContentBundleSchema,
+  hopsProblems,
   joinProblems,
   sceneProblems,
   sliceProblems,
@@ -22,6 +23,9 @@ export function checkBundle(data: unknown): BundleCheck {
     ...(item.scene ? sceneProblems(item, item.scene).map((p) => `${item.id} scene: ${p}`) : []),
     ...(item.slices ? sliceProblems(item, item.slices).map((p) => `${item.id} slices: ${p}`) : []),
     ...(item.join ? joinProblems(item, item.join).map((p) => `${item.id} join: ${p}`) : []),
+    ...(item.type === 'number-line' && item.hops
+      ? hopsProblems(item, item.hops).map((p) => `${item.id} hops: ${p}`)
+      : []),
   ]);
   if (sceneIssues.length > 0) return { ok: false, problems: sceneIssues };
   return {

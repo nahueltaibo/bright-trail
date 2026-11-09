@@ -50,14 +50,25 @@ export function useItemAttempt(
     narrateRef.current?.(lastSpoken.current, { replay: true });
   };
 
-  /** Locks the item, speaks the feedback, and reports the result. `lead` is said first. */
-  const answer = (value: string | number, correct: boolean, lead: string[] = []) => {
+  /**
+   * Locks the item, speaks the feedback, and reports the result. `lead` is said first. With
+   * `after`, the result is reported now and the feedback waits for it, e.g. for a play-out.
+   */
+  const answer = (
+    value: string | number,
+    correct: boolean,
+    lead: string[] = [],
+    after?: Promise<unknown>,
+  ) => {
     // A ref, not state: two fast taps land before the re-render.
     if (answered.current) return;
     answered.current = true;
-    setOutcome({ answer: value, correct });
-    lastSpoken.current = [...lead, ...(correct ? [CORRECT_TEXT] : [MISS_TEXT, item.why])];
-    narrateRef.current?.(lastSpoken.current);
+    const show = () => {
+      setOutcome({ answer: value, correct });
+      lastSpoken.current = [...lead, ...(correct ? [CORRECT_TEXT] : [MISS_TEXT, item.why])];
+      narrateRef.current?.(lastSpoken.current);
+    };
+    if (!after) show();
     const result: AnswerResult = {
       itemId: item.id,
       answer: value,
@@ -66,6 +77,7 @@ export function useItemAttempt(
       replays: replays.current,
     };
     onAnswerRef.current?.(result);
+    if (after) void after.then(show);
   };
 
   return { outcome, answer, replay };

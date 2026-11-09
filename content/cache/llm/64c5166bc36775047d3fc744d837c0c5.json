@@ -1,0 +1,43 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g5-add-sub-like-fractions-number-line-1",
+        "fits": true,
+        "start": 0.25,
+        "legs": [{ "by": 0.25, "times": 2 }],
+        "note": "Start at 1/4, hop 2 fourths forward."
+      },
+      {
+        "itemId": "g5-add-sub-like-fractions-number-line-2",
+        "fits": true,
+        "start": 1.75,
+        "legs": [{ "by": -0.25, "times": 3 }],
+        "note": "Start at 7/4, hop back 3 fourths."
+      },
+      {
+        "itemId": "g5-add-sub-like-fractions-number-line-3",
+        "fits": true,
+        "start": 0.25,
+        "legs": [{ "by": 0.25, "times": 5 }],
+        "note": "Start at 1/4, hop 5 fourths forward."
+      },
+      {
+        "itemId": "g5-add-sub-like-fractions-number-line-4",
+        "fits": true,
+        "start": 1.75,
+        "legs": [{ "by": 0.25, "times": 3 }],
+        "note": "Start at 1 3/4, hop 3 fourths forward."
+      },
+      {
+        "itemId": "g5-add-sub-like-fractions-number-line-5",
+        "fits": true,
+        "start": 2.25,
+        "legs": [{ "by": -0.25, "times": 6 }],
+        "note": "Start at 2 1/4, hop back 6 fourths."
+      }
+    ]
+  }
+}

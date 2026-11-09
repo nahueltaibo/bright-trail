@@ -75,6 +75,13 @@ export default function ProfilePickerScreen() {
             </Pressable>
           </Link>
         )}
+        {SHOW_DEV_TOOLS && (
+          <Link href="/dev/hops" asChild>
+            <Pressable accessibilityRole="button" style={styles.devButton}>
+              <Text style={styles.devText}>Dev: frog hops</Text>
+            </Pressable>
+          </Link>
+        )}
       </View>
     </SafeAreaView>
   );

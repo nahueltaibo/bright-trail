@@ -1,5 +1,6 @@
 import { z } from 'zod';
 import { IdSchema, NonEmptyTextSchema } from './common';
+import { HopsSchema } from './hops';
 import { JoinSceneSchema } from './join';
 import { SceneSchema } from './scene';
 import { SliceSceneSchema } from './slices';
@@ -77,6 +78,8 @@ export const NumberLineItemSchema = ItemBaseSchema.extend({
   max: z.number(),
   step: z.number().positive(),
   target: z.number(),
+  /** How the frog hops to the answer after a check. Without it the app hops from `min`. */
+  hops: HopsSchema.optional(),
 }).superRefine((item, ctx) => {
   if (item.max <= item.min) {
     ctx.addIssue({ code: 'custom', path: ['max'], message: 'max must be above min' });

@@ -1,0 +1,123 @@
+{
+  "g1-add-sub-facts-10-number-line-1": { "start": 5, "legs": [{ "by": 1, "times": 2 }] },
+  "g1-add-sub-facts-10-number-line-2": { "start": 8, "legs": [{ "by": -1, "times": 5 }] },
+  "g1-add-sub-facts-10-number-line-3": { "start": 10, "legs": [{ "by": -1, "times": 6 }] },
+  "g1-add-sub-problems-50-number-line-1": { "start": 5, "legs": [{ "by": 1, "times": 4 }] },
+  "g1-add-sub-problems-50-number-line-2": { "start": 20, "legs": [{ "by": -1, "times": 6 }] },
+  "g1-add-sub-problems-50-number-line-3": {
+    "start": 30,
+    "legs": [
+      { "by": 10, "times": 1 },
+      { "by": 5, "times": 1 }
+    ]
+  },
+  "g1-add-sub-problems-50-number-line-4": {
+    "start": 50,
+    "legs": [
+      { "by": -10, "times": 1 },
+      { "by": -2, "times": 4 }
+    ]
+  },
+  "g1-add-sub-properties-number-line-1": { "start": 8, "legs": [] },
+  "g1-add-sub-properties-number-line-2": { "start": 7, "legs": [{ "by": 1, "times": 6 }] },
+  "g1-add-sub-properties-number-line-3": { "start": 17, "legs": [] },
+  "g1-compose-decompose-50-number-line-1": { "start": 10, "legs": [{ "by": 1, "times": 6 }] },
+  "g1-compose-decompose-50-number-line-2": { "start": 20, "legs": [{ "by": 1, "times": 9 }] },
+  "g1-compose-decompose-50-number-line-3": { "start": 0, "legs": [{ "by": 5, "times": 9 }] },
+  "g1-compose-decompose-50-number-line-4": { "start": 40, "legs": [{ "by": 1, "times": 7 }] },
+  "g1-count-50-number-line-1": { "start": 0, "legs": [{ "by": 10, "times": 3 }] },
+  "g1-count-50-number-line-2": { "start": 0, "legs": [{ "by": 5, "times": 7 }] },
+  "g1-count-50-number-line-3": { "start": 0, "legs": [{ "by": 2, "times": 19 }] },
+  "g1-count-50-number-line-4": { "start": 0, "legs": [{ "by": 10, "times": 4 }] },
+  "g1-equal-groups-number-line-1": { "start": 0, "legs": [{ "by": 2, "times": 3 }] },
+  "g1-mental-math-20-number-line-1": { "start": 6, "legs": [{ "by": 1, "times": 4 }] },
+  "g1-mental-math-20-number-line-2": { "start": 15, "legs": [{ "by": -1, "times": 6 }] },
+  "g1-mental-math-20-number-line-3": { "start": 9, "legs": [{ "by": 1, "times": 8 }] },
+  "g2-add-sub-facts-20-number-line-1": { "start": 4, "legs": [{ "by": 1, "times": 5 }] },
+  "g2-add-sub-facts-20-number-line-2": { "start": 12, "legs": [{ "by": -1, "times": 5 }] },
+  "g2-add-sub-facts-20-number-line-3": { "start": 16, "legs": [{ "by": -1, "times": 7 }] },
+  "g2-add-sub-properties-number-line-1": { "start": 4, "legs": [{ "by": 1, "times": 3 }] },
+  "g2-add-sub-properties-number-line-2": { "start": 15, "legs": [] },
+  "g2-add-sub-properties-number-line-3": { "start": 0, "legs": [{ "by": 5, "times": 4 }] },
+  "g2-equal-groups-multiply-number-line-1": { "start": 0, "legs": [{ "by": 2, "times": 3 }] },
+  "g2-equal-groups-multiply-number-line-2": { "start": 0, "legs": [{ "by": 5, "times": 7 }] },
+  "g2-equal-groups-multiply-number-line-3": { "start": 0, "legs": [{ "by": 0.5, "times": 8 }] },
+  "g2-equal-groups-multiply-number-line-4": { "start": 0, "legs": [{ "by": 4, "times": 8 }] },
+  "g3-arrays-multiply-divide-number-line-5": { "start": 0, "legs": [{ "by": 8, "times": 7 }] },
+  "g3-mult-div-facts-2-5-10-number-line-1": { "start": 0, "legs": [{ "by": 2, "times": 4 }] },
+  "g3-mult-div-facts-2-5-10-number-line-2": { "start": 0, "legs": [{ "by": 5, "times": 7 }] },
+  "g3-mult-div-facts-2-5-10-number-line-4": { "start": 0, "legs": [{ "by": 10, "times": 6 }] },
+  "g3-mult-div-problems-number-line-1": { "start": 0, "legs": [{ "by": 3, "times": 4 }] },
+  "g3-mult-div-problems-number-line-2": { "start": 0, "legs": [{ "by": 2, "times": 5 }] },
+  "g3-mult-div-problems-number-line-3": { "start": 30, "legs": [{ "by": -5, "times": 4 }] },
+  "g3-mult-div-problems-number-line-4": { "start": 0, "legs": [{ "by": 0.5, "times": 6 }] },
+  "g3-mult-div-problems-number-line-5": { "start": 4, "legs": [{ "by": -0.5, "times": 4 }] },
+  "g3-mult-div-properties-number-line-1": { "start": 0, "legs": [{ "by": 2, "times": 4 }] },
+  "g3-mult-div-properties-number-line-2": { "start": 0, "legs": [{ "by": 5, "times": 7 }] },
+  "g4-count-unit-fractions-number-line-1": { "start": 0, "legs": [{ "by": 0.5, "times": 2 }] },
+  "g4-count-unit-fractions-number-line-2": { "start": 0, "legs": [{ "by": 0.5, "times": 5 }] },
+  "g4-count-unit-fractions-number-line-3": { "start": 0, "legs": [{ "by": 0.2, "times": 9 }] },
+  "g4-mult-div-facts-100-number-line-1": { "start": 0, "legs": [{ "by": 4, "times": 6 }] },
+  "g4-mult-div-facts-100-number-line-2": { "start": 0, "legs": [{ "by": 6, "times": 9 }] },
+  "g4-mult-div-facts-100-number-line-3": { "start": 0, "legs": [{ "by": 8, "times": 9 }] },
+  "g4-represent-fractions-number-line-1": { "start": 0, "legs": [{ "by": 0.25, "times": 1 }] },
+  "g4-represent-fractions-number-line-2": { "start": 0, "legs": [{ "by": 0.1, "times": 7 }] },
+  "g4-represent-fractions-number-line-3": { "start": 0, "legs": [{ "by": 0.25, "times": 5 }] },
+  "g5-add-sub-like-fractions-number-line-1": {
+    "start": 0.25,
+    "legs": [{ "by": 0.25, "times": 2 }]
+  },
+  "g5-add-sub-like-fractions-number-line-2": {
+    "start": 1.75,
+    "legs": [{ "by": -0.25, "times": 3 }]
+  },
+  "g5-add-sub-like-fractions-number-line-3": {
+    "start": 0.25,
+    "legs": [{ "by": 0.25, "times": 5 }]
+  },
+  "g5-add-sub-like-fractions-number-line-4": {
+    "start": 1.75,
+    "legs": [{ "by": 0.25, "times": 3 }]
+  },
+  "g5-add-sub-like-fractions-number-line-5": {
+    "start": 2.25,
+    "legs": [{ "by": -0.25, "times": 6 }]
+  },
+  "g5-whole-by-unit-fraction-number-line-1": { "start": 0, "legs": [{ "by": 0.5, "times": 3 }] },
+  "g5-whole-by-unit-fraction-number-line-3": { "start": 0, "legs": [{ "by": 0.25, "times": 7 }] },
+  "k-add-sub-facts-5-number-line-1": { "start": 2, "legs": [{ "by": 1, "times": 2 }] },
+  "k-add-sub-facts-5-number-line-2": { "start": 5, "legs": [{ "by": -1, "times": 3 }] },
+  "k-add-sub-facts-5-number-line-3": { "start": 3, "legs": [{ "by": 1, "times": 2 }] },
+  "k-add-sub-facts-5-number-line-4": { "start": 4, "legs": [{ "by": -1, "times": 3 }] },
+  "k-add-sub-stories-10-number-line-1": { "start": 3, "legs": [{ "by": 1, "times": 2 }] },
+  "k-add-sub-stories-10-number-line-2": { "start": 6, "legs": [{ "by": 1, "times": 3 }] },
+  "k-add-sub-stories-10-number-line-3": { "start": 10, "legs": [{ "by": -1, "times": 4 }] },
+  "k-add-sub-stories-10-number-line-4": {
+    "start": 5,
+    "legs": [
+      { "by": 1, "times": 3 },
+      { "by": -1, "times": 2 }
+    ]
+  },
+  "k-compare-numbers-20-number-line-1": { "start": 5, "legs": [{ "by": 1, "times": 1 }] },
+  "k-compare-numbers-20-number-line-2": { "start": 9, "legs": [{ "by": -1, "times": 2 }] },
+  "k-compare-numbers-20-number-line-3": { "start": 15, "legs": [{ "by": 1, "times": 2 }] },
+  "k-compare-numbers-20-number-line-4": { "start": 17, "legs": [{ "by": -1, "times": 1 }] },
+  "k-count-forward-back-number-line-1": { "start": 4, "legs": [{ "by": 1, "times": 1 }] },
+  "k-count-forward-back-number-line-2": { "start": 8, "legs": [{ "by": -1, "times": 1 }] },
+  "k-count-forward-back-number-line-3": { "start": 5, "legs": [{ "by": 1, "times": 2 }] },
+  "k-count-forward-back-number-line-4": { "start": 9, "legs": [{ "by": -1, "times": 3 }] },
+  "k-count-to-20-number-line-2": { "start": 11, "legs": [{ "by": 1, "times": 1 }] },
+  "k-count-to-20-number-line-3": { "start": 13, "legs": [{ "by": 1, "times": 2 }] },
+  "k-count-to-20-number-line-4": { "start": 17, "legs": [{ "by": 1, "times": 3 }] },
+  "k-count-to-20-number-line-5": { "start": 14, "legs": [{ "by": 1, "times": 3 }] },
+  "k-make-numbers-to-10-number-line-1": { "start": 4, "legs": [{ "by": -1, "times": 1 }] },
+  "k-make-numbers-to-10-number-line-2": { "start": 8, "legs": [{ "by": -1, "times": 5 }] },
+  "k-make-numbers-to-10-number-line-3": { "start": 9, "legs": [{ "by": -1, "times": 5 }] },
+  "k-make-numbers-to-10-number-line-4": { "start": 10, "legs": [{ "by": -1, "times": 7 }] },
+  "k-more-less-same-number-line-1": { "start": 4, "legs": [{ "by": 1, "times": 1 }] },
+  "k-more-less-same-number-line-2": { "start": 8, "legs": [{ "by": -1, "times": 2 }] },
+  "k-more-less-same-number-line-3": { "start": 6, "legs": [{ "by": 1, "times": 3 }] },
+  "k-more-less-same-number-line-4": { "start": 10, "legs": [{ "by": -1, "times": 3 }] },
+  "k-subitize-5-number-line-3": { "start": 2, "legs": [{ "by": 1, "times": 3 }] }
+}

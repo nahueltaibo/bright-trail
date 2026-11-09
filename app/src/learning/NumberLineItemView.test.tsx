@@ -1,5 +1,6 @@
-import type { NumberLineItem } from '@bright-trail/shared';
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { defaultHops, hopsProblems, type NumberLineItem } from '@bright-trail/shared';
+import { HOPS_DEMO_ITEMS } from './hopsDemo';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { NumberLineItemView } from './NumberLineItemView';
 import { indexAtFraction, indexOfValue, labelEvery, stepCount, valueAt } from './numberLine';
 import { findTwelve } from './testing';
@@ -52,36 +53,83 @@ describe('NumberLineItemView', () => {
   });
 
   it('places the frog where the child taps, snapped to a step', async () => {
-    const onAnswer = jest.fn();
-    const item: NumberLineItem = { ...findTwelve, target: 10 };
-    await render(<NumberLineItemView item={item} onAnswer={onAnswer} />);
-    await layOut();
+    // A laid-out line plays the hops, so keep its frames off the real clock.
+    jest.useFakeTimers();
+    try {
+      const onAnswer = jest.fn();
+      const item: NumberLineItem = { ...findTwelve, target: 10 };
+      await render(<NumberLineItemView item={item} onAnswer={onAnswer} />);
+      await layOut();
 
-    await fireEvent(screen.getByTestId('number-line-track'), 'responderGrant', touch(WIDTH / 2));
-    expect(screen.getByTestId('number-line-track')).toHaveAccessibilityValue({ text: '10' });
-    await fireEvent.press(screen.getByLabelText('Check my answer'));
+      await fireEvent(screen.getByTestId('number-line-track'), 'responderGrant', touch(WIDTH / 2));
+      expect(screen.getByTestId('number-line-track')).toHaveAccessibilityValue({ text: '10' });
+      await fireEvent.press(screen.getByLabelText('Check my answer'));
 
-    expect(onAnswer).toHaveBeenCalledWith(
-      expect.objectContaining({ itemId: item.id, answer: 10, correct: true }),
-    );
+      expect(onAnswer).toHaveBeenCalledWith(
+        expect.objectContaining({ itemId: item.id, answer: 10, correct: true }),
+      );
+      await act(() => jest.advanceTimersByTimeAsync(10_000));
+    } finally {
+      jest.useRealTimers();
+    }
   });
 
-  it('follows a drag and reports a miss with the target shown', async () => {
-    const onAnswer = jest.fn();
-    await render(<NumberLineItemView item={findTwelve} onAnswer={onAnswer} />);
-    await layOut();
-    const track = screen.getByTestId('number-line-track');
+  it('follows a drag, reports a miss at once, and shows why after the frog hops', async () => {
+    jest.useFakeTimers();
+    try {
+      const onAnswer = jest.fn();
+      await render(<NumberLineItemView item={findTwelve} onAnswer={onAnswer} />);
+      await layOut();
+      const track = screen.getByTestId('number-line-track');
 
-    await fireEvent(track, 'responderGrant', touch(0));
-    expect(track).toHaveAccessibilityValue({ text: '0' });
-    // Past the right end: clamps to max.
-    await fireEvent(track, 'responderMove', touch(WIDTH + 80));
-    expect(track).toHaveAccessibilityValue({ text: '20' });
-    await fireEvent.press(screen.getByLabelText('Check my answer'));
+      await fireEvent(track, 'responderGrant', touch(0));
+      expect(track).toHaveAccessibilityValue({ text: '0' });
+      // Past the right end: clamps to max.
+      await fireEvent(track, 'responderMove', touch(WIDTH + 80));
+      expect(track).toHaveAccessibilityValue({ text: '20' });
+      await fireEvent.press(screen.getByLabelText('Check my answer'));
 
-    expect(onAnswer).toHaveBeenCalledWith(expect.objectContaining({ answer: 20, correct: false }));
-    expect(screen.getByLabelText('The answer is 12')).toBeTruthy();
-    expect(screen.getByText(findTwelve.why)).toBeTruthy();
+      expect(onAnswer).toHaveBeenCalledWith(
+        expect.objectContaining({ answer: 20, correct: false }),
+      );
+      expect(screen.queryByText(findTwelve.why)).toBeNull();
+
+      // 12 on a line of 20 is a hop of 10, then 2 of 1.
+      await act(() => jest.advanceTimersByTimeAsync(10_000));
+      expect(screen.getByText('+10')).toBeTruthy();
+      expect(screen.getByText('It lands on 12')).toBeTruthy();
+      expect(screen.getByLabelText('The answer is 12')).toBeTruthy();
+      expect(screen.getByText(findTwelve.why)).toBeTruthy();
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('starts a planned path where the story starts', async () => {
+    jest.useFakeTimers();
+    try {
+      const item: NumberLineItem = {
+        ...findTwelve,
+        target: 14,
+        hops: { start: 20, legs: [{ by: -1, times: 6 }] },
+      };
+      await render(<NumberLineItemView item={item} />);
+      await layOut();
+      await fireEvent(screen.getByTestId('number-line-track'), 'responderGrant', touch(0));
+      await fireEvent.press(screen.getByLabelText('Check my answer'));
+      await act(() => jest.advanceTimersByTimeAsync(10_000));
+      expect(screen.getByText('6 hops of −1')).toBeTruthy();
+      expect(screen.getByText('It lands on 14')).toBeTruthy();
+    } finally {
+      jest.useRealTimers();
+    }
+  });
+
+  it('labels a line of quarters in fourths', async () => {
+    const item: NumberLineItem = { ...findTwelve, min: 0, max: 1, step: 0.25, target: 0.75 };
+    await render(<NumberLineItemView item={item} />);
+    expect(screen.getByText('3/4')).toBeTruthy();
+    expect(screen.getByText('1')).toBeTruthy();
   });
 
   it('nudges with the arrow buttons and screen-reader actions', async () => {
@@ -129,5 +177,12 @@ describe('NumberLineItemView', () => {
     await fireEvent(track, 'responderGrant', touch(0));
     expect(track).toHaveAccessibilityValue({ text: '10' });
     expect(onAnswer).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe('hops demo items', () => {
+  it.each(HOPS_DEMO_ITEMS.map((i) => [i.id, i] as const))('%s lands on its answer', (_, item) => {
+    if (item.type !== 'number-line') throw new Error('not a number line');
+    expect(hopsProblems(item, item.hops ?? defaultHops(item))).toEqual([]);
   });
 });

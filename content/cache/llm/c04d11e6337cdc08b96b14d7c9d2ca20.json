@@ -1,0 +1,43 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g3-mult-div-problems-number-line-1",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 3, "times": 4 }],
+        "note": "4 hops of 3 lands on 12."
+      },
+      {
+        "itemId": "g3-mult-div-problems-number-line-2",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 2, "times": 5 }],
+        "note": "5 hops of 2 lands on 10."
+      },
+      {
+        "itemId": "g3-mult-div-problems-number-line-3",
+        "fits": true,
+        "start": 30,
+        "legs": [{ "by": -5, "times": 4 }],
+        "note": "4 hops back of 5 from 30 lands on 10."
+      },
+      {
+        "itemId": "g3-mult-div-problems-number-line-4",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 0.5, "times": 6 }],
+        "note": "6 hops of 1/2 lands on 3."
+      },
+      {
+        "itemId": "g3-mult-div-problems-number-line-5",
+        "fits": true,
+        "start": 4,
+        "legs": [{ "by": -0.5, "times": 4 }],
+        "note": "4 hops back of 1/2 from 4 lands on 2."
+      }
+    ]
+  }
+}

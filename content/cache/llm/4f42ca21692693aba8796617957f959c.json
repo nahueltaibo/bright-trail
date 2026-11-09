@@ -1,0 +1,15 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g3-fair-share-20-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Sharing 18 among 6 is division/fair sharing, not a hop pattern; the app moves the frog to the answer 3."
+      }
+    ]
+  }
+}

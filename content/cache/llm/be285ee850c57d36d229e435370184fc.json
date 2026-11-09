@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "k-uses-of-numbers-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 5; no operation to show."
+      },
+      {
+        "itemId": "k-uses-of-numbers-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 8; counting a set, not an operation."
+      },
+      {
+        "itemId": "k-uses-of-numbers-number-line-3",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 3; ordinal position, not an operation."
+      },
+      {
+        "itemId": "k-uses-of-numbers-number-line-4",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 7; ordinal position, not an operation."
+      }
+    ]
+  }
+}

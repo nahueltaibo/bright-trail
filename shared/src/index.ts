@@ -4,6 +4,7 @@ export * from './child';
 export * from './common';
 export * from './engine';
 export * from './grade';
+export * from './hops';
 export * from './item';
 export * from './join';
 export * from './mastery';

@@ -1,0 +1,15 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g1-fair-share-drawings-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Sharing problem, not addition/subtraction or skip counting; app hops to the answer 3 itself."
+      }
+    ]
+  }
+}

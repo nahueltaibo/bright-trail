@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g3-place-value-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Move the frog to a number is a placement task, not a hop story."
+      },
+      {
+        "itemId": "g3-place-value-number-line-2",
+        "fits": false,
+        "start": 600,
+        "legs": [],
+        "note": "Move the frog to a number is a placement task, not a hop story."
+      },
+      {
+        "itemId": "g3-place-value-number-line-3",
+        "fits": false,
+        "start": 300,
+        "legs": [],
+        "note": "Move the frog to a number is a placement task, not a hop story."
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "k-count-forward-back-number-line-1",
+        "fits": true,
+        "start": 4,
+        "legs": [{ "by": 1, "times": 1 }],
+        "note": "Count up one from 4 to 5."
+      },
+      {
+        "itemId": "k-count-forward-back-number-line-2",
+        "fits": true,
+        "start": 8,
+        "legs": [{ "by": -1, "times": 1 }],
+        "note": "Count down one from 8 to 7."
+      },
+      {
+        "itemId": "k-count-forward-back-number-line-3",
+        "fits": true,
+        "start": 5,
+        "legs": [{ "by": 1, "times": 2 }],
+        "note": "Two hops up from 5 to 7."
+      },
+      {
+        "itemId": "k-count-forward-back-number-line-4",
+        "fits": true,
+        "start": 9,
+        "legs": [{ "by": -1, "times": 3 }],
+        "note": "Three hops back from 9 to 6."
+      }
+    ]
+  }
+}
