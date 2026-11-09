@@ -4,6 +4,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { BigButton, FlagButton, ReplayButton, TopBar } from './controls';
 import { colors, fontSizeFor, useLayout } from './theme';
 import type { FlagTarget, Narrate } from './types';
+import { ReadAlong } from './ReadAlong';
 import { FitVisual } from './VisualView';
 
 export type StoryCardViewerProps = {
@@ -60,6 +61,7 @@ export function StoryCardViewer({ nugget, narrate, onFlag, onDone }: StoryCardVi
       )}
     </View>
   );
+  const caption = <ReadAlong key={index} text={card.narration} lines={4} />;
 
   return (
     <View style={styles.screen}>
@@ -75,14 +77,18 @@ export function StoryCardViewer({ nugget, narrate, onFlag, onDone }: StoryCardVi
         }
       />
       {landscape ? (
-        <View style={styles.row}>
-          {back}
-          {body}
-          {next}
-        </View>
+        <>
+          <View style={styles.row}>
+            {back}
+            {body}
+            {next}
+          </View>
+          {caption}
+        </>
       ) : (
         <>
           {body}
+          {caption}
           <View style={styles.nav}>
             {back}
             {next}

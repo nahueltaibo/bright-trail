@@ -10,6 +10,7 @@ import {
   MISS_TEXT,
   useLayout,
 } from './theme';
+import { ReadAlong } from './ReadAlong';
 import { questionSpeech } from './speech';
 import type { AnswerResult, ItemViewProps } from './types';
 import { FitVisual } from './VisualView';
@@ -155,6 +156,7 @@ export function ItemFrame({
       <Text style={[styles.prompt, { fontSize: fontSizeFor(item.prompt, 56 * scale) }]}>
         {item.prompt}
       </Text>
+      <ReadAlong text={item.narration} />
       {visual && <FitVisual visual={visual} maxSize={360 * scale} />}
     </View>
   );

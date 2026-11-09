@@ -10,6 +10,7 @@ describe('StoryCardViewer', () => {
     await render(<StoryCardViewer nugget={nugget} narrate={narrate} />);
 
     expect(narrate).toHaveBeenLastCalledWith([nugget.cards[0].narration]);
+    expect(screen.getByText(nugget.cards[0].narration)).toBeTruthy();
     expect(screen.getByLabelText(`Card 1 of ${nugget.cards.length}`)).toBeTruthy();
     expect(screen.getByLabelText('Back')).toBeDisabled();
 
