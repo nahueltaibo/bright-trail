@@ -131,9 +131,11 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
     const x0 = xAt(from);
     setFrog(x0, 0, 0);
     const xs = xAt(path.start);
-    await frames(ms(420), (k) => {
-      if (live()) setFrog(x0 + (xs - x0) * ease(k), Math.sin(k * Math.PI) * 30 * scale, 0);
-    });
+    await frames(
+      ms(420),
+      (k) => setFrog(x0 + (xs - x0) * ease(k), Math.sin(k * Math.PI) * 30 * scale, 0),
+      live,
+    );
     if (!live()) return;
     bubble(xs, `Start at ${label(path.start)}`);
     await wait(ms(650));
@@ -156,13 +158,16 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
         const arc: Arc = { id: ids.current++, x0: a, x1: b, top: lineY - 14 - h, k: 0 };
         highest = Math.min(highest, arc.top);
         setArcs((all) => [...all, arc]);
-        await frames(ms(Math.min(620, 300 + dist * 2.2)), (k) => {
-          if (!live()) return;
-          const e = ease(k);
-          const dir = b >= a ? 1 : -1;
-          setFrog(a + (b - a) * e, 4 * h * e * (1 - e), dir * Math.sin(k * Math.PI * 2) * 10);
-          setArcs((all) => all.map((x) => (x.id === arc.id ? { ...x, k: e } : x)));
-        });
+        await frames(
+          ms(Math.min(620, 300 + dist * 2.2)),
+          (k) => {
+            const e = ease(k);
+            const dir = b >= a ? 1 : -1;
+            setFrog(a + (b - a) * e, 4 * h * e * (1 - e), dir * Math.sin(k * Math.PI * 2) * 10);
+            setArcs((all) => all.map((x) => (x.id === arc.id ? { ...x, k: e } : x)));
+          },
+          live,
+        );
         if (!live()) return;
         if (ownLabel) {
           setLabels((l) => [

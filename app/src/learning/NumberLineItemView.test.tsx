@@ -53,18 +53,25 @@ describe('NumberLineItemView', () => {
   });
 
   it('places the frog where the child taps, snapped to a step', async () => {
-    const onAnswer = jest.fn();
-    const item: NumberLineItem = { ...findTwelve, target: 10 };
-    await render(<NumberLineItemView item={item} onAnswer={onAnswer} />);
-    await layOut();
+    // A laid-out line plays the hops, so keep its frames off the real clock.
+    jest.useFakeTimers();
+    try {
+      const onAnswer = jest.fn();
+      const item: NumberLineItem = { ...findTwelve, target: 10 };
+      await render(<NumberLineItemView item={item} onAnswer={onAnswer} />);
+      await layOut();
 
-    await fireEvent(screen.getByTestId('number-line-track'), 'responderGrant', touch(WIDTH / 2));
-    expect(screen.getByTestId('number-line-track')).toHaveAccessibilityValue({ text: '10' });
-    await fireEvent.press(screen.getByLabelText('Check my answer'));
+      await fireEvent(screen.getByTestId('number-line-track'), 'responderGrant', touch(WIDTH / 2));
+      expect(screen.getByTestId('number-line-track')).toHaveAccessibilityValue({ text: '10' });
+      await fireEvent.press(screen.getByLabelText('Check my answer'));
 
-    expect(onAnswer).toHaveBeenCalledWith(
-      expect.objectContaining({ itemId: item.id, answer: 10, correct: true }),
-    );
+      expect(onAnswer).toHaveBeenCalledWith(
+        expect.objectContaining({ itemId: item.id, answer: 10, correct: true }),
+      );
+      await act(() => jest.advanceTimersByTimeAsync(10_000));
+    } finally {
+      jest.useRealTimers();
+    }
   });
 
   it('follows a drag, reports a miss at once, and shows why after the frog hops', async () => {
