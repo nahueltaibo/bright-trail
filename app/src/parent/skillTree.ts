@@ -132,3 +132,83 @@ export function placementResults(
       })),
   );
 }
+
+/** Node size and spacing for the skill graph, in layout pixels. */
+export const GRAPH = { nodeWidth: 184, nodeHeight: 60, layerGap: 56, rowGap: 16, top: 32 } as const;
+
+export type GraphNode = SkillRow & { x: number; y: number };
+export type SkillGraphLayout = {
+  nodes: GraphNode[];
+  /** Prerequisite id, then the id of the skill it unlocks. */
+  edges: [string, string][];
+  /** Where each grade's first layer starts. */
+  columns: { grade: SkillGrade; x: number }[];
+  width: number;
+  height: number;
+};
+
+/**
+ * Lays skills out left to right: one band per grade, split into layers so a prerequisite in the
+ * same grade sits left of what it unlocks. Each layer is ordered by where its prerequisites sit,
+ * to keep arrows short and crossings few.
+ */
+export function layoutSkillGraph(groups: readonly GradeGroup[]): SkillGraphLayout {
+  const rows = new Map(groups.flatMap((g) => g.rows.map((r) => [r.skill.id, r] as const)));
+  const depth = new Map<string, number>();
+  const depthOf = (row: SkillRow, seen: Set<string>): number => {
+    const known = depth.get(row.skill.id);
+    if (known !== undefined) return known;
+    seen.add(row.skill.id);
+    let d = 0;
+    for (const id of row.skill.prerequisiteIds) {
+      const pre = rows.get(id);
+      if (pre && pre.skill.grade === row.skill.grade && !seen.has(id))
+        d = Math.max(d, depthOf(pre, seen) + 1);
+    }
+    depth.set(row.skill.id, d);
+    return d;
+  };
+
+  const layers: SkillRow[][] = [];
+  const columns: SkillGraphLayout['columns'] = [];
+  for (const group of groups) {
+    const inGrade: SkillRow[][] = [];
+    for (const row of group.rows) (inGrade[depthOf(row, new Set())] ??= []).push(row);
+    columns.push({ grade: group.grade, x: layers.length * (GRAPH.nodeWidth + GRAPH.layerGap) });
+    layers.push(...inGrade.filter(Boolean));
+  }
+
+  const slot = new Map<string, number>();
+  const ordered = layers.map((layer) => {
+    const centre = (row: SkillRow) => {
+      const at = row.skill.prerequisiteIds.flatMap((id) => slot.get(id) ?? []);
+      return at.length ? at.reduce((a, b) => a + b, 0) / at.length : Infinity;
+    };
+    // Stable sort keeps bundle order for skills with no placed prerequisites.
+    const sorted = [...layer].sort((a, b) => centre(a) - centre(b));
+    sorted.forEach((row, i) => slot.set(row.skill.id, i - (sorted.length - 1) / 2));
+    return sorted;
+  });
+
+  const tallest = Math.max(0, ...ordered.map((l) => l.length));
+  const pitch = GRAPH.nodeHeight + GRAPH.rowGap;
+  const nodes = ordered.flatMap((layer, li) =>
+    layer.map((row, i) => ({
+      ...row,
+      x: li * (GRAPH.nodeWidth + GRAPH.layerGap),
+      y: GRAPH.top + ((tallest - layer.length) / 2 + i) * pitch,
+    })),
+  );
+  const edges = nodes.flatMap(({ skill }) =>
+    skill.prerequisiteIds
+      .filter((id) => rows.has(id))
+      .map((id): [string, string] => [id, skill.id]),
+  );
+  return {
+    nodes,
+    edges,
+    columns,
+    width: Math.max(0, ordered.length * (GRAPH.nodeWidth + GRAPH.layerGap) - GRAPH.layerGap),
+    height: GRAPH.top + Math.max(0, tallest * pitch - GRAPH.rowGap),
+  };
+}
