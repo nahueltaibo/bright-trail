@@ -8,6 +8,8 @@ export const AVATARS = [
   { key: 'unicorn', emoji: '🦄', label: 'Unicorn' },
   { key: 'octopus', emoji: '🐙', label: 'Octopus' },
   { key: 'dinosaur', emoji: '🦖', label: 'Dinosaur' },
+  { key: 'panda', emoji: '🐼', label: 'Panda' },
+  { key: 'cheetah', emoji: '🐆', label: 'Cheetah' },
 ] as const;
 
 export type Avatar = (typeof AVATARS)[number];

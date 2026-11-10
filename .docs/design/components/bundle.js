@@ -84,7 +84,8 @@
   /* ---------------- Avatars ---------------- */
   var ANIMALS = {
     fox: ['🦊', 'Fox', 'peach'], owl: ['🦉', 'Owl', 'sky'], penguin: ['🐧', 'Penguin', 'sky'], frog: ['🐸', 'Frog', 'mint'],
-    lion: ['🦁', 'Lion', 'peach'], unicorn: ['🦄', 'Unicorn', 'lilac'], octopus: ['🐙', 'Octopus', 'lilac'], dinosaur: ['🦕', 'Dinosaur', 'mint']
+    lion: ['🦁', 'Lion', 'peach'], unicorn: ['🦄', 'Unicorn', 'lilac'], octopus: ['🐙', 'Octopus', 'lilac'], dinosaur: ['🦕', 'Dinosaur', 'mint'],
+    panda: ['🐼', 'Panda', 'mint'], cheetah: ['🐆', 'Cheetah', 'peach']
   };
   function Avatar(p) {
     var a = ANIMALS[p.animal] || ANIMALS.fox;

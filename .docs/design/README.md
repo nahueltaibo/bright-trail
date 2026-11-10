@@ -85,7 +85,7 @@ Parent screens share `ParentFrame`: a back link that names where it goes, a titl
 
 ## Pictures and icons
 
-Pictures come from data through `EmojiVisual`: a single emoji, a row of N grouped in fives, or ten-frames. Its `slot` kind marks the 16:9 box where illustrations will go later. The eight avatars are fox, owl, penguin, frog, lion, unicorn, octopus and dinosaur, drawn as emoji on a tinted disc.
+Pictures come from data through `EmojiVisual`: a single emoji, a row of N grouped in fives, or ten-frames. Its `slot` kind marks the 16:9 box where illustrations will go later. The ten avatars are fox, owl, penguin, frog, lion, unicorn, octopus, dinosaur, panda and cheetah, drawn as emoji on a tinted disc.
 
 Icons are the bundle's own line set (`Icon`), 24px grid, round caps, `currentColor`. Kid icons stroke at 2.6 to 3.2. There's no logo yet. Set the name in `kid-hero` Baloo 2 until one exists.
 
