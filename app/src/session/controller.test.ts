@@ -27,6 +27,7 @@ const maya: ChildProfile = {
   birthdate: '2020-03-14',
   avatar: 'fox',
   readingMode: false,
+  dyslexicFont: false,
 };
 
 /** A clock tests move by hand. Midday UTC keeps every time zone on the same date. */
@@ -253,6 +254,20 @@ describe('Session', () => {
       ]);
     });
 
+    it('counts each check item out of 5, and gives placement no count', async () => {
+      const session = await start();
+      expect(session.current).toMatchObject({ kind: 'item', phase: 'placement' });
+      expect(session.current).not.toHaveProperty('progress');
+      await playPlacement(session, false);
+      await session.finishStory();
+      const seen = [];
+      for (let i = 0; i < 5; i++) {
+        seen.push((session.current as { progress?: unknown }).progress);
+        await play(session, true);
+      }
+      expect(seen).toEqual([0, 1, 2, 3, 4].map((current) => ({ current, total: 5 })));
+    });
+
     it('resumes a check in progress without the story', async () => {
       const first = await placeAtKindergarten();
       await first.finishStory();
@@ -264,6 +279,7 @@ describe('Session', () => {
         kind: 'item',
         phase: 'check',
         item: { skillId: 'k-count-to-20' },
+        progress: { current: 2, total: 5 },
       });
       expect((await repo.mastery.get('maya', 'k-count-to-20'))?.checkAnswered).toBe(2);
     });
@@ -424,7 +440,11 @@ describe('Session', () => {
         { skillId: 'k-count-to-20', status: 'mastered', nextReviewOn: '2026-11-06' },
       ]);
       const session = await start();
-      expect(session.current).toMatchObject({ kind: 'item', phase: 'review' });
+      expect(session.current).toMatchObject({
+        kind: 'item',
+        phase: 'review',
+        progress: { current: 0, total: 3 },
+      });
       for (let i = 0; i < 3; i++) await play(session, true);
       const reviews = (await repo.attempts.listForChild('maya')).filter(
         (a) => a.sessionId === 'session-2',
@@ -444,6 +464,7 @@ describe('Session', () => {
         kind: 'item',
         phase: 'probe',
         item: { skillId: 'k-count-to-20' },
+        progress: { current: 0, total: 3 },
       });
       await play(session, true);
       const last = (await repo.attempts.listForChild('maya')).at(-1);

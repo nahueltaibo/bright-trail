@@ -1,7 +1,7 @@
 import { localClock, type ChildProfile } from '@bright-trail/shared';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { TrailMap } from '../../../components/TrailMap';
 import { loadBundle } from '../../../content/loadBundle';
 import {
@@ -17,6 +17,7 @@ import { useLayout } from '../../../learning/theme';
 import { SpeakerButton, useAutoNarration } from '../../../narration';
 import { buildTrail, countStars, type Trail } from '../../../session';
 import { useStorage } from '../../../storage/StorageProvider';
+import { Text } from '../../../design/Text';
 
 type Home = { child: ChildProfile | null; stars: number; trail: Trail };
 

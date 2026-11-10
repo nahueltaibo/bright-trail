@@ -1,7 +1,7 @@
 import type { ChildProfile } from '@bright-trail/shared';
 import { Link, router, useFocusEffect, type Href } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { ProfilePicker } from '../components/ProfilePicker';
 import { Icon } from '../design/Icon';
 import { KidIconButton, KidScreen, useKidType } from '../design/kid';
@@ -10,6 +10,7 @@ import { SHOW_DEV_TOOLS } from '../devTools';
 import { useLayout } from '../learning/theme';
 import { SpeakerButton, useAutoNarration } from '../narration';
 import { useStorage } from '../storage/StorageProvider';
+import { Text } from '../design/Text';
 
 const EMPTY_MESSAGE = 'Ask a grown-up to add you.';
 const PICK_MESSAGE = 'Who’s playing? Tap your picture.';

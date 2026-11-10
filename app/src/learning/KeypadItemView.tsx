@@ -1,11 +1,12 @@
 import type { KeypadItem } from '@bright-trail/shared';
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { Icon } from '../design/Icon';
 import { color, font, pressDown, radius, shadow } from '../design/tokens';
 import { ItemFrame, useItemAttempt } from './ItemFrame';
 import { ANSWER_PANE_SHARE, colors, formatNumber, MIN_TAP, useLayout } from './theme';
 import type { ItemViewProps } from './types';
+import { Text } from '../design/Text';
 
 const MAX_LENGTH = 6;
 const GAP = 10;

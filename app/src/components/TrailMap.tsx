@@ -1,11 +1,12 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
+import { StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { Icon, Star } from '../design/Icon';
 import { AvatarDisc } from '../design/kid';
 import { color, font, radius, shadow, stateColor } from '../design/tokens';
 import { useLayout } from '../learning/theme';
 import type { StopState, TrailStop } from '../session/trail';
+import { Text } from '../design/Text';
 
 const STOP_WORDS: Record<StopState, string> = {
   mastered: 'done, it has a star',

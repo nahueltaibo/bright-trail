@@ -1,6 +1,6 @@
 import { parseMixed, type SceneAnswer } from '@bright-trail/shared';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { Icon } from '../../design/Icon';
 import { color, font, pressDown, radius, shadow } from '../../design/tokens';
 import { FlagButton, KidButton, ReplayButton } from '../controls';
@@ -8,9 +8,11 @@ import { Feedback } from '../ItemFrame';
 import { QuitButton } from '../quit';
 import { pressKey } from '../KeypadItemView';
 import { colors, CORRECT_TEXT, MIN_TAP, MISS_TEXT, useLayout } from '../theme';
-import type { Narrate } from '../types';
+import type { ItemProgress, Narrate } from '../types';
+import { ProgressDots } from '../../design/kid';
 import { ReadAlong } from '../ReadAlong';
 import { AmountText } from './AmountText';
+import { Text } from '../../design/Text';
 
 /** A choice's value. Text the story can't show as a number, like "Same", stays text. */
 export type GameValue = SceneAnswer | string;
@@ -41,6 +43,7 @@ export type GameFrameProps = {
   ) => void;
   onFlag?: () => void;
   onNext?: () => void;
+  progress?: ItemProgress;
 };
 
 type Props = GameFrameProps & {
@@ -190,6 +193,7 @@ export function GameFrame(props: Props) {
 
   const top = (
     <View>
+      {props.progress && <ProgressDots steps noun="Question" {...props.progress} />}
       <View style={styles.promptRow}>
         <ReplayButton onPress={replay} />
         <Text

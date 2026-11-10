@@ -22,6 +22,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `shared/src/hops.ts` — the frog's path along a number line after a check. `defaultHops` plans one from the line's start when an item has none.
 - `shared/src/join.ts` — join scenes: things that come into a ten-frame, leave it, or get counted, set aside, or moved to make 10. `joinProblems` checks a scene against its item and its picture.
 - `app/src/design/` — the design system in code: tokens, Baloo 2 and Atkinson Hyperlegible fonts, the line icons, and kid building blocks like `KidButton`, `KidScreen`, and `AvatarDisc`. Style new screens from here, not with raw colours.
+- Kid-zone code imports `Text` from `app/src/design/Text`, not `react-native`. It swaps in Lexend for a child with the dyslexia-friendly font on, and ESLint enforces it.
 - `app/src/session/` — the kid session controller: placement, then reviews, probes, and lessons. A finished check or review shows a `check-end` view before the next step. `buildTrail` picks the stops the child home draws.
 - `app/src/storage/` — expo-sqlite with migrations and a Zod-validated repository. Tests run it on Node's SQLite (`storage/testing/`).
 - `app/src/parent/` — PIN-gated parent area. `*.native.ts` files hold the phone versions. On web the PIN hash goes in the `settings` table, since expo-secure-store has no web support.

@@ -6,10 +6,10 @@ import {
   Platform,
   Pressable,
   StyleSheet,
-  Text,
   View,
 } from 'react-native';
 import { Star } from '../design/Icon';
+import { Text } from '../design/Text';
 import { ArtDisc, KidButton, KidScreen, useKidType } from '../design/kid';
 import { color, shadow } from '../design/tokens';
 import { SpeakerButton, useAutoNarration } from '../narration';

@@ -61,6 +61,7 @@ export function useGameProps(props: ItemViewProps & { shuffleSeed?: string }): G
     narrate: props.narrate,
     onFlag: () => props.onFlag?.({ contentKind: 'item', contentId: item.id, cardIndex: null }),
     onNext: props.onNext,
+    progress: props.progress,
     onAnswer: (picked, correct, replays) =>
       props.onAnswer?.({
         itemId: item.id,

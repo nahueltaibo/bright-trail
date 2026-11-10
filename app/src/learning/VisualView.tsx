@@ -1,9 +1,10 @@
 import { describeVisual, type Visual } from '@bright-trail/shared';
 import { useState } from 'react';
-import { StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
+import { StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import { FractionPicture } from './FractionPicture';
 import { radius } from '../design/tokens';
 import { colors } from './theme';
+import { Text } from '../design/Text';
 
 const FRAME_BORDER = 3;
 const GROUP_PAD = 6;

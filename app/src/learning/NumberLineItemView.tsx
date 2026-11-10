@@ -4,7 +4,6 @@ import {
   AccessibilityInfo,
   Animated,
   StyleSheet,
-  Text,
   View,
   type AccessibilityActionEvent,
   type GestureResponderEvent,
@@ -26,6 +25,7 @@ import {
 } from './numberLine';
 import { colors, formatNumber, useLayout } from './theme';
 import type { ItemViewProps } from './types';
+import { Text } from '../design/Text';
 
 const MARKER = '🐸';
 const ARC = '#FF8A3D';

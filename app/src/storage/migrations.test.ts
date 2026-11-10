@@ -90,6 +90,20 @@ describe('migrate', () => {
     expect(await userVersion(db)).toBe(SCHEMA_VERSION);
   });
 
+  it('upgrades a version 4 database with the dyslexia font off for existing children', async () => {
+    const db = openNodeSqliteDatabase(':memory:');
+    await migrate(db, MIGRATIONS.slice(0, 4));
+    await db.runAsync(
+      "INSERT INTO children VALUES ('maya', 'Maya', '2020-03-01', NULL, 'fox', 1, NULL)",
+      [],
+    );
+    await migrate(db);
+    expect(await db.getAllAsync('SELECT id, dyslexic_font FROM children', [])).toEqual([
+      { id: 'maya', dyslexic_font: 0 },
+    ]);
+    expect(await userVersion(db)).toBe(SCHEMA_VERSION);
+  });
+
   it('applies only the migrations a database is missing', async () => {
     const db = openNodeSqliteDatabase(':memory:');
     await migrate(db);

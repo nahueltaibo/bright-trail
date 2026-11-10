@@ -14,6 +14,16 @@ const INK: Record<MasteryStatus, { ink: string; bg: string }> = {
   'review-due': stateColor.review,
 };
 
+/** The border that marks a state, so badges and graph nodes read in greyscale. */
+export function stateBorder(state: MasteryStatus) {
+  const { border } = STATE_STYLES[state];
+  return {
+    borderColor: INK[state].ink,
+    borderStyle: border === 'thick' ? ('solid' as const) : border,
+    borderWidth: border === 'thick' ? 2.5 : border === 'dotted' ? 2 : 1.5,
+  };
+}
+
 /** A skill state as icon, word, and border. `compact` keeps the icon and speaks the word. */
 export function StateBadge({
   state,
@@ -31,12 +41,7 @@ export function StateBadge({
       style={[
         styles.badge,
         compact && styles.compact,
-        {
-          backgroundColor: bg,
-          borderColor: ink,
-          borderStyle: s.border === 'thick' ? 'solid' : s.border,
-          borderWidth: s.border === 'thick' ? 2.5 : s.border === 'dotted' ? 2 : 1.5,
-        },
+        { backgroundColor: bg, ...stateBorder(state) },
       ]}
     >
       <Icon name={s.icon} size={16} tint={ink} />

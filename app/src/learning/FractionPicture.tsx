@@ -1,11 +1,12 @@
 import type { FractionFood, FractionVisual } from '@bright-trail/shared';
 import { useId } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import Svg, { Circle, ClipPath, Defs, G, Path, Use } from 'react-native-svg';
 import { CRUMB, edgeLook, FoodArt, gapFill, PICKED_FILL, Underlay } from './food/FoodArt';
 import { pickOffset, seeded, wholeOf, type Whole } from './food/geometry';
 import { colors } from './theme';
 import { font } from '../design/tokens';
+import { Text } from '../design/Text';
 
 type Props = { visual: FractionVisual; width: number; height: number };
 
