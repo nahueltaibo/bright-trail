@@ -21,6 +21,7 @@ const DEV_LINKS: { href: Href; label: string }[] = [
   { href: '/dev/slices', label: 'Dev: slices minigame' },
   { href: '/dev/join', label: 'Dev: join and leave minigame' },
   { href: '/dev/hops', label: 'Dev: frog hops' },
+  { href: '/dev/check-end', label: 'Dev: check-end screens' },
 ];
 
 /** Kid home: pick who's playing. */

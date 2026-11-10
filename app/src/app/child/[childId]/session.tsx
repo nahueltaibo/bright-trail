@@ -4,7 +4,13 @@ import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { loadBundle } from '../../../content/loadBundle';
-import { ItemView, StoryCardViewer, type FlagTarget, type Narrate } from '../../../learning';
+import {
+  CheckEndView,
+  ItemView,
+  StoryCardViewer,
+  type FlagTarget,
+  type Narrate,
+} from '../../../learning';
 import { Star } from '../../../design/Icon';
 import { ArtDisc, KidButton, KidScreen, StarPill, useKidType } from '../../../design/kid';
 import { color } from '../../../design/tokens';
@@ -58,7 +64,11 @@ export default function SessionScreen() {
   else if (!view || !ready) body = <Loading />;
   else if (view.kind === 'end')
     body = <EndView reason={view.reason} stars={view.stars} onHome={quit} />;
-  else if (view.kind === 'story') {
+  else if (view.kind === 'check-end') {
+    body = (
+      <CheckEndView key={view.seq} end={view} onTrail={quit} onNext={() => run((s) => s.next())} />
+    );
+  } else if (view.kind === 'story') {
     body = (
       <StoryCardViewer
         key={view.seq}
