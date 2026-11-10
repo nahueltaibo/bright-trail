@@ -8,7 +8,8 @@ import { Feedback } from '../ItemFrame';
 import { QuitButton } from '../quit';
 import { pressKey } from '../KeypadItemView';
 import { colors, CORRECT_TEXT, MIN_TAP, MISS_TEXT, useLayout } from '../theme';
-import type { Narrate } from '../types';
+import type { ItemProgress, Narrate } from '../types';
+import { ProgressDots } from '../../design/kid';
 import { ReadAlong } from '../ReadAlong';
 import { AmountText } from './AmountText';
 
@@ -41,6 +42,7 @@ export type GameFrameProps = {
   ) => void;
   onFlag?: () => void;
   onNext?: () => void;
+  progress?: ItemProgress;
 };
 
 type Props = GameFrameProps & {
@@ -190,6 +192,7 @@ export function GameFrame(props: Props) {
 
   const top = (
     <View>
+      {props.progress && <ProgressDots steps noun="Question" {...props.progress} />}
       <View style={styles.promptRow}>
         <ReplayButton onPress={replay} />
         <Text

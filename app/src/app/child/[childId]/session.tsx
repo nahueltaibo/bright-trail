@@ -75,6 +75,7 @@ export default function SessionScreen() {
         narrate={narrateItem}
         onFlag={onFlag}
         measuring={view.phase !== 'check'}
+        progress={view.progress}
         onAnswer={(result) => run((s) => s.answer(result))}
         onNext={() => run((s) => s.next())}
       />
