@@ -10,6 +10,7 @@ const maya: ChildProfile = {
   birthdate: '2020-03-14',
   avatar: 'fox',
   readingMode: false,
+  dyslexicFont: false,
 };
 const leo: ChildProfile = {
   id: 'leo',
@@ -18,6 +19,7 @@ const leo: ChildProfile = {
   gradeOverride: '5',
   avatar: 'owl',
   readingMode: true,
+  dyslexicFont: true,
 };
 
 const masteryState: MasteryState = {

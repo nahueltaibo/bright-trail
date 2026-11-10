@@ -3,8 +3,22 @@ import type { ChildProfile } from '@bright-trail/shared';
 import { ProfilePicker } from './ProfilePicker';
 
 const SAMPLE_CHILDREN: ChildProfile[] = [
-  { id: 'maya', firstName: 'Maya', birthdate: '2020-03-14', avatar: 'fox', readingMode: false },
-  { id: 'leo', firstName: 'Leo', birthdate: '2016-07-02', avatar: 'owl', readingMode: true },
+  {
+    id: 'maya',
+    firstName: 'Maya',
+    birthdate: '2020-03-14',
+    avatar: 'fox',
+    readingMode: false,
+    dyslexicFont: false,
+  },
+  {
+    id: 'leo',
+    firstName: 'Leo',
+    birthdate: '2016-07-02',
+    avatar: 'owl',
+    readingMode: true,
+    dyslexicFont: false,
+  },
 ];
 
 describe('ProfilePicker', () => {

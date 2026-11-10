@@ -18,6 +18,7 @@ const draft = (overrides: Partial<ChildDraft> = {}): ChildDraft => ({
   avatar: 'fox',
   gradeOverride: null,
   readingMode: false,
+  dyslexicFont: false,
   ...overrides,
 });
 
@@ -42,6 +43,7 @@ describe('emptyDraft', () => {
       avatar: 'owl',
       gradeOverride: null,
       readingMode: false,
+      dyslexicFont: false,
     });
   });
 });
@@ -69,6 +71,7 @@ describe('saveChild', () => {
         birthdate: '2020-03-14',
         avatar: 'fox',
         readingMode: false,
+        dyslexicFont: false,
       },
     ]);
   });
@@ -94,6 +97,7 @@ describe('saveChild', () => {
         birthdate: '2020-03-14',
         avatar: 'owl',
         readingMode: false,
+        dyslexicFont: false,
       },
     ]);
     expect(effectiveGrade(edited, TODAY)).toBe('1');

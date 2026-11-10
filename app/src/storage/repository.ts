@@ -24,6 +24,7 @@ type ChildRow = {
   grade_override: string | null;
   avatar: string;
   reading_mode: number;
+  dyslexic_font: number;
 };
 
 type MasteryRow = {
@@ -90,6 +91,7 @@ const toChild = (r: ChildRow): ChildProfile =>
     gradeOverride: r.grade_override ?? undefined,
     avatar: r.avatar,
     readingMode: r.reading_mode === 1,
+    dyslexicFont: r.dyslexic_font === 1,
   });
 
 const toMastery = (r: MasteryRow): MasteryState =>
@@ -155,13 +157,22 @@ export function createRepository(db: SqlDatabase) {
     async save(profile: ChildProfile): Promise<void> {
       const c = ChildProfileSchema.parse(profile);
       await db.runAsync(
-        `INSERT INTO children (id, first_name, birthdate, grade_override, avatar, reading_mode)
-         VALUES (?, ?, ?, ?, ?, ?)
+        `INSERT INTO children (id, first_name, birthdate, grade_override, avatar, reading_mode,
+           dyslexic_font)
+         VALUES (?, ?, ?, ?, ?, ?, ?)
          ON CONFLICT (id) DO UPDATE SET
            first_name = excluded.first_name, birthdate = excluded.birthdate,
            grade_override = excluded.grade_override, avatar = excluded.avatar,
-           reading_mode = excluded.reading_mode`,
-        [c.id, c.firstName, c.birthdate, c.gradeOverride ?? null, c.avatar, c.readingMode ? 1 : 0],
+           reading_mode = excluded.reading_mode, dyslexic_font = excluded.dyslexic_font`,
+        [
+          c.id,
+          c.firstName,
+          c.birthdate,
+          c.gradeOverride ?? null,
+          c.avatar,
+          c.readingMode ? 1 : 0,
+          c.dyslexicFont ? 1 : 0,
+        ],
       );
     },
     /** Also deletes the child's mastery and attempts. Their flags stay, with no child. */

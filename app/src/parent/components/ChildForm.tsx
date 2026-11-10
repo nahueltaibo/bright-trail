@@ -119,26 +119,53 @@ export function ChildForm({
         </Text>
       </View>
 
-      <Pressable
-        accessibilityRole="switch"
-        accessibilityLabel="Reading mode"
-        accessibilityState={{ checked: draft.readingMode }}
+      <Toggle
+        label="Reading mode"
+        hint="Narration starts off. For kids who read on their own."
+        on={draft.readingMode}
         onPress={() => set({ readingMode: !draft.readingMode })}
-        style={styles.toggle}
-      >
-        <View style={styles.flex}>
-          <Text style={ui.label}>Reading mode</Text>
-          <Text style={ui.hint}>Narration starts off. For kids who read on their own.</Text>
-        </View>
-        <Text style={styles.toggleState}>{draft.readingMode ? 'On' : 'Off'}</Text>
-        <View style={[styles.track, draft.readingMode && styles.trackOn]}>
-          <View style={[styles.thumb, draft.readingMode && styles.thumbOn]} />
-        </View>
-      </Pressable>
+      />
+      <Toggle
+        label="Dyslexia-friendly font"
+        hint="Lexend, with wider letter spacing, on your child's screens."
+        on={draft.dyslexicFont}
+        onPress={() => set({ dyslexicFont: !draft.dyslexicFont })}
+      />
 
       {error && <Text style={ui.error}>{error}</Text>}
       <Button label={submitLabel} onPress={submit} disabled={!canSave} />
     </View>
+  );
+}
+
+function Toggle({
+  label,
+  hint,
+  on,
+  onPress,
+}: {
+  label: string;
+  hint: string;
+  on: boolean;
+  onPress: () => void;
+}) {
+  return (
+    <Pressable
+      accessibilityRole="switch"
+      accessibilityLabel={label}
+      accessibilityState={{ checked: on }}
+      onPress={onPress}
+      style={styles.toggle}
+    >
+      <View style={styles.flex}>
+        <Text style={ui.label}>{label}</Text>
+        <Text style={ui.hint}>{hint}</Text>
+      </View>
+      <Text style={styles.toggleState}>{on ? 'On' : 'Off'}</Text>
+      <View style={[styles.track, on && styles.trackOn]}>
+        <View style={[styles.thumb, on && styles.thumbOn]} />
+      </View>
+    </Pressable>
   );
 }
 

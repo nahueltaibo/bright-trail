@@ -74,6 +74,7 @@ export const MIGRATIONS: readonly string[] = [
     finished_at TEXT
   );
   `,
+  `ALTER TABLE children ADD COLUMN dyslexic_font INTEGER NOT NULL DEFAULT 0;`,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;
