@@ -1,7 +1,18 @@
-import { parseContentBundle, type Attempt, type MasteryState } from '@bright-trail/shared';
+import {
+  parseContentBundle,
+  type Attempt,
+  type MasteryState,
+  type Skill,
+} from '@bright-trail/shared';
 import sample from '@bright-trail/shared/fixtures/sample-bundle.json';
 import { describeFlag } from './flagText';
-import { displayState, groupSkillsByGrade, placementResults } from './skillTree';
+import {
+  GRAPH,
+  displayState,
+  groupSkillsByGrade,
+  layoutSkillGraph,
+  placementResults,
+} from './skillTree';
 
 const bundle = parseContentBundle(sample);
 const TODAY = '2026-11-06';
@@ -125,5 +136,63 @@ describe('describeFlag', () => {
     expect(
       describeFlag({ ...base, contentKind: 'item', contentId: 'gone', cardIndex: null }, bundle),
     ).toEqual({ kind: 'Item', text: null, skillTitle: null });
+  });
+});
+
+describe('layoutSkillGraph', () => {
+  const base = bundle.skills[1]!;
+  const skill = (id: string, grade: Skill['grade'], prerequisiteIds: string[] = []): Skill => ({
+    ...base,
+    id,
+    grade,
+    framework: grade === 'K' ? 'ontario-kindergarten-2026' : 'ontario-math-2020',
+    prerequisiteIds,
+  });
+  const lay = (skills: Skill[]) => layoutSkillGraph(groupSkillsByGrade(skills, [], TODAY));
+  const layer = (x: number) => x / (GRAPH.nodeWidth + GRAPH.layerGap);
+
+  it('puts each grade in its own columns, and same-grade prerequisites left of what they unlock', () => {
+    const layout = lay([
+      skill('k-a', 'K'),
+      skill('g1-b', '1', ['g1-a']),
+      skill('g1-a', '1', ['k-a']),
+      skill('g1-c', '1'),
+      skill('g2-a', '2', ['g1-b', 'k-a']),
+    ]);
+    const x = Object.fromEntries(layout.nodes.map((n) => [n.skill.id, layer(n.x)]));
+    expect(x).toEqual({ 'k-a': 0, 'g1-a': 1, 'g1-c': 1, 'g1-b': 2, 'g2-a': 3 });
+    expect(layout.columns.map((c) => [c.grade, layer(c.x)])).toEqual([
+      ['K', 0],
+      ['1', 1],
+      ['2', 3],
+    ]);
+    expect(layout.edges).toEqual(
+      expect.arrayContaining([
+        ['k-a', 'g1-a'],
+        ['g1-a', 'g1-b'],
+        ['g1-b', 'g2-a'],
+        ['k-a', 'g2-a'],
+      ]),
+    );
+    expect(layout.edges).toHaveLength(4);
+    expect(layout.width).toBe(4 * GRAPH.nodeWidth + 3 * GRAPH.layerGap);
+  });
+
+  it('orders a layer by where its prerequisites sit, and keeps nodes apart', () => {
+    const layout = lay([
+      skill('k-a', 'K'),
+      skill('k-b', 'K'),
+      skill('g1-from-b', '1', ['k-b']),
+      skill('g1-from-a', '1', ['k-a']),
+    ]);
+    const y = Object.fromEntries(layout.nodes.map((n) => [n.skill.id, n.y]));
+    expect(y['g1-from-a']).toBe(y['k-a']);
+    expect(y['g1-from-b']).toBe(y['k-b']);
+    expect(y['k-b']! - y['k-a']!).toBe(GRAPH.nodeHeight + GRAPH.rowGap);
+    expect(layout.height).toBe(GRAPH.top + 2 * GRAPH.nodeHeight + GRAPH.rowGap);
+  });
+
+  it('leaves out prerequisites that are not in the bundle', () => {
+    expect(lay([skill('g1-a', '1', ['k-missing'])]).edges).toEqual([]);
   });
 });
