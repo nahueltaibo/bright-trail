@@ -8,4 +8,4 @@ export {
 export { Session, type EndReason, type SessionOptions, type SessionView } from './controller';
 export { ItemHistory } from './items';
 export { END_MESSAGES } from './messages';
-export { countStars } from './trail';
+export { buildTrail, countStars, type Trail, type TrailStop } from './trail';

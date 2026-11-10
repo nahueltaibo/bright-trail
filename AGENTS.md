@@ -21,7 +21,8 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `shared/src/slices.ts` — slice scenes: one food cut into equal slices that get picked, eaten, cut, shared, or compared. `sliceProblems` checks a scene against its item.
 - `shared/src/hops.ts` — the frog's path along a number line after a check. `defaultHops` plans one from the line's start when an item has none.
 - `shared/src/join.ts` — join scenes: things that come into a ten-frame, leave it, or get counted, set aside, or moved to make 10. `joinProblems` checks a scene against its item and its picture.
-- `app/src/session/` — the kid session controller: placement, then reviews, probes, and lessons.
+- `app/src/design/` — the design system in code: tokens, Baloo 2 and Atkinson Hyperlegible fonts, the line icons, and kid building blocks like `KidButton`, `KidScreen`, and `AvatarDisc`. Style new screens from here, not with raw colours.
+- `app/src/session/` — the kid session controller: placement, then reviews, probes, and lessons. `buildTrail` picks the stops the child home draws.
 - `app/src/storage/` — expo-sqlite with migrations and a Zod-validated repository. Tests run it on Node's SQLite (`storage/testing/`).
 - `app/src/parent/` — PIN-gated parent area. `*.native.ts` files hold the phone versions. On web the PIN hash goes in the `settings` table, since expo-secure-store has no web support.
 - `app/src/learning/` and `app/src/narration/` — item screens and expo-speech narration. After a check, the number line plays the frog's path, then shows the feedback.

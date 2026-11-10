@@ -1,19 +1,32 @@
 import type { ChildProfile } from '@bright-trail/shared';
-import { Link, router, useFocusEffect } from 'expo-router';
+import { Link, router, useFocusEffect, type Href } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { ProfilePicker } from '../components/ProfilePicker';
+import { Icon } from '../design/Icon';
+import { KidIconButton, KidScreen, useKidType } from '../design/kid';
+import { color } from '../design/tokens';
 import { SHOW_DEV_TOOLS } from '../devTools';
+import { useLayout } from '../learning/theme';
 import { SpeakerButton, useAutoNarration } from '../narration';
 import { useStorage } from '../storage/StorageProvider';
 
 const EMPTY_MESSAGE = 'Ask a grown-up to add you.';
-const PICK_MESSAGE = "Who's playing? Tap your picture.";
+const PICK_MESSAGE = 'Who’s playing? Tap your picture.';
+
+const DEV_LINKS: { href: Href; label: string }[] = [
+  { href: '/dev/learning', label: 'Dev: learning preview' },
+  { href: '/dev/share', label: 'Dev: sharing minigame' },
+  { href: '/dev/slices', label: 'Dev: slices minigame' },
+  { href: '/dev/join', label: 'Dev: join and leave minigame' },
+  { href: '/dev/hops', label: 'Dev: frog hops' },
+];
 
 /** Kid home: pick who's playing. */
 export default function ProfilePickerScreen() {
   const repo = useStorage();
+  const type = useKidType();
+  const { scale: s } = useLayout();
   const [profiles, setProfiles] = useState<ChildProfile[] | null>(null);
 
   const reload = useCallback(() => {
@@ -26,90 +39,76 @@ export default function ProfilePickerScreen() {
   const message = profiles === null ? null : profiles.length > 0 ? PICK_MESSAGE : EMPTY_MESSAGE;
   useAutoNarration(message);
 
+  const empty = 128 * s;
   return (
-    <SafeAreaView style={styles.screen}>
-      <View style={styles.topBar}>
-        {message ? <SpeakerButton text={message} size={72} /> : <View />}
-        <Link href="/parent" asChild>
-          <Pressable accessibilityRole="button" accessibilityLabel="Parent area" hitSlop={12}>
-            <Text style={styles.lock}>🔒</Text>
-          </Pressable>
-        </Link>
-      </View>
-
-      <View style={styles.body}>
-        {profiles && profiles.length > 0 ? (
-          <>
-            <Text style={styles.empty}>{PICK_MESSAGE}</Text>
-            <ProfilePicker
-              profiles={profiles}
-              onPick={(p) =>
-                router.push({ pathname: '/child/[childId]', params: { childId: p.id } })
-              }
-            />
-          </>
-        ) : (
-          profiles && <Text style={styles.empty}>{EMPTY_MESSAGE}</Text>
-        )}
-
-        {SHOW_DEV_TOOLS && (
-          <Link href="/dev/learning" asChild>
-            <Pressable accessibilityRole="button" style={styles.devButton}>
-              <Text style={styles.devText}>Dev: learning preview</Text>
-            </Pressable>
-          </Link>
-        )}
-        {SHOW_DEV_TOOLS && (
-          <Link href="/dev/share" asChild>
-            <Pressable accessibilityRole="button" style={styles.devButton}>
-              <Text style={styles.devText}>Dev: sharing minigame</Text>
-            </Pressable>
-          </Link>
-        )}
-        {SHOW_DEV_TOOLS && (
-          <Link href="/dev/slices" asChild>
-            <Pressable accessibilityRole="button" style={styles.devButton}>
-              <Text style={styles.devText}>Dev: slices minigame</Text>
-            </Pressable>
-          </Link>
-        )}
-        {SHOW_DEV_TOOLS && (
-          <Link href="/dev/join" asChild>
-            <Pressable accessibilityRole="button" style={styles.devButton}>
-              <Text style={styles.devText}>Dev: join and leave minigame</Text>
-            </Pressable>
-          </Link>
-        )}
-        {SHOW_DEV_TOOLS && (
-          <Link href="/dev/hops" asChild>
-            <Pressable accessibilityRole="button" style={styles.devButton}>
-              <Text style={styles.devText}>Dev: frog hops</Text>
-            </Pressable>
-          </Link>
-        )}
-      </View>
-    </SafeAreaView>
+    <KidScreen
+      left={message && <SpeakerButton text={message} />}
+      right={
+        <KidIconButton
+          icon="lock"
+          label="Parent area"
+          variant="quiet"
+          onPress={() => router.push('/parent')}
+        />
+      }
+      bottom={
+        SHOW_DEV_TOOLS && (
+          <View style={styles.dev}>
+            {DEV_LINKS.map((d) => (
+              <Link key={d.label} href={d.href} asChild>
+                <Pressable accessibilityRole="button" style={styles.devButton}>
+                  <Text style={styles.devText}>{d.label}</Text>
+                </Pressable>
+              </Link>
+            ))}
+          </View>
+        )
+      }
+    >
+      {profiles && profiles.length > 0 && (
+        <>
+          <Text accessibilityRole="header" style={type.prompt}>
+            Who’s playing?
+          </Text>
+          <ProfilePicker
+            profiles={profiles}
+            onPick={(p) => router.push({ pathname: '/child/[childId]', params: { childId: p.id } })}
+          />
+        </>
+      )}
+      {profiles && profiles.length === 0 && (
+        <View style={[styles.empty, { gap: 16 * s }]}>
+          <View
+            style={[styles.emptyAvatar, { width: empty, height: empty, borderRadius: empty / 2 }]}
+          >
+            <Icon name="plus" size={empty * 0.4} tint={color.kidInkSoft} stroke={3} />
+          </View>
+          <Text style={[type.hero, { fontSize: 28 * s, lineHeight: 34 * s, maxWidth: 300 }]}>
+            {EMPTY_MESSAGE}
+          </Text>
+        </View>
+      )}
+    </KidScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: '#FFFBF0' },
-  topBar: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'flex-start',
-    padding: 16,
+  empty: { alignItems: 'center' },
+  emptyAvatar: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 3,
+    borderStyle: 'dashed',
+    borderColor: color.kidLineStrong,
   },
-  lock: { fontSize: 28, opacity: 0.6 },
-  body: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 32, padding: 24 },
-  empty: { fontSize: 22, color: '#5A4A1F', textAlign: 'center' },
+  dev: { flex: 1, flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', gap: 8 },
   devButton: {
-    paddingVertical: 10,
-    paddingHorizontal: 16,
+    paddingVertical: 6,
+    paddingHorizontal: 10,
     borderRadius: 8,
     borderWidth: 1,
     borderStyle: 'dashed',
-    borderColor: '#999',
+    borderColor: color.kidLineStrong,
   },
-  devText: { fontSize: 14, color: '#666' },
+  devText: { fontSize: 12, color: color.kidInkSoft },
 });

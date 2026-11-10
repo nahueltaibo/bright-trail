@@ -13,8 +13,7 @@ name: Session with placement
       AVATAR: Owl
 - tapOn: ‹ Kids
 - tapOn: Maya, Owl
-- assertVisible: 0 stars on your trail
-- tapOn: Start
+- tapOn: Let’s go
 
 # Placement, Grade 1: fair shares, a tap item then a keypad item.
 - extendedWaitUntil:
@@ -34,7 +33,7 @@ name: Session with placement
 - assertVisible: Thanks for telling us
 - tapOn: Stop for now
 - assertVisible: Hi, Maya!
-- tapOn: Start
+- tapOn: Let’s go
 - extendedWaitUntil:
     visible: 7 \+ 2 = \?
     timeout: 10000
