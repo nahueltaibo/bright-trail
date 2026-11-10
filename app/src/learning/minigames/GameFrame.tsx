@@ -1,7 +1,11 @@
 import { parseMixed, type SceneAnswer } from '@bright-trail/shared';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { BigButton, FlagButton, ReplayButton } from '../controls';
+import { Icon } from '../../design/Icon';
+import { color, font, pressDown, radius, shadow } from '../../design/tokens';
+import { FlagButton, KidButton, ReplayButton } from '../controls';
+import { Feedback } from '../ItemFrame';
+import { QuitButton } from '../quit';
 import { pressKey } from '../KeypadItemView';
 import { colors, CORRECT_TEXT, MIN_TAP, MISS_TEXT, useLayout } from '../theme';
 import type { Narrate } from '../types';
@@ -137,9 +141,9 @@ export function GameFrame(props: Props) {
               onPress={() => void choose(c.value, c.label, c.id)}
               style={({ pressed }) => [
                 styles.choice,
-                { height: tileHeight, borderRadius: 24 * scale },
+                { height: tileHeight, borderRadius: radius.lg },
                 landscape && styles.half,
-                pressed && styles.pressed,
+                pressed && pressDown,
                 chosen &&
                   (phase !== 'result'
                     ? styles.choiceActive
@@ -169,40 +173,37 @@ export function GameFrame(props: Props) {
     );
 
   const feedback = outcome && phase === 'result' && (
-    <View
-      accessibilityLiveRegion="polite"
-      style={[styles.feedback, outcome.correct ? styles.feedbackGood : styles.feedbackGentle]}
-    >
-      <Text style={[styles.feedbackIcon, { fontSize: 40 * scale }]}>
-        {outcome.correct ? '🌟' : '🤔'}
-      </Text>
-      <View style={styles.feedbackText}>
-        <Text
-          style={[
-            styles.feedbackTitle,
-            { fontSize: 24 * scale, color: outcome.correct ? colors.goodInk : colors.gentleInk },
-          ]}
-        >
-          {outcome.title}
-        </Text>
-        <Text style={[styles.why, { fontSize: 18 * scale }]}>{outcome.body}</Text>
-      </View>
-      {outcome.correct || !retry ? (
-        <BigButton label="Next" icon="▶" onPress={() => props.onNext?.()} />
-      ) : (
-        <BigButton label="Try again" icon="↺" onPress={() => void tryAgain()} />
-      )}
-    </View>
+    <Feedback
+      correct={outcome.correct}
+      title={outcome.title}
+      why={outcome.body}
+      showWhy
+      action={
+        outcome.correct || !retry ? (
+          <KidButton label="Next" icon="next" onPress={() => props.onNext?.()} />
+        ) : (
+          <KidButton label="Try again" icon="refresh" onPress={() => void tryAgain()} />
+        )
+      }
+    />
   );
 
   const top = (
     <View>
       <View style={styles.promptRow}>
         <ReplayButton onPress={replay} />
-        <Text style={[styles.prompt, { fontSize: (landscape ? 20 : 24) * scale }]}>
+        <Text
+          style={[
+            styles.prompt,
+            { fontSize: (landscape ? 20 : 24) * scale, lineHeight: (landscape ? 24 : 28) * scale },
+          ]}
+        >
           {props.prompt}
         </Text>
-        <FlagButton onFlag={props.onFlag} />
+        <View style={styles.topRight}>
+          <QuitButton />
+          <FlagButton onFlag={props.onFlag} />
+        </View>
       </View>
       {/* The question as spoken, without picture labels the choices already show. */}
       <ReadAlong text={props.question[0]} lines={landscape ? 4 : 2.5} />
@@ -260,7 +261,9 @@ function NumberPad({
         accessibilityLabel={entry ? `Your answer, ${entry}` : 'Your answer, empty'}
         style={[styles.display, { height: side * 0.9, minWidth: side * 2 }]}
       >
-        <Text style={[styles.text, { fontSize: side * 0.5 }]}>{entry || ' '}</Text>
+        <Text style={[styles.text, { fontSize: side * 0.5 }, !entry && styles.empty]}>
+          {entry || '?'}
+        </Text>
       </View>
       {PAD_KEYS.map((row, r) => (
         <View key={r} style={styles.padRow}>
@@ -277,13 +280,19 @@ function NumberPad({
                 onPress={() => (submit ? onSubmit() : onKey(k))}
                 style={({ pressed }) => [
                   styles.key,
-                  { width: side, height: side, borderRadius: side / 2.5 },
+                  { width: side, height: side, borderRadius: radius.md },
                   submit && styles.submit,
-                  pressed && styles.pressed,
+                  pressed && pressDown,
                   off && styles.faded,
                 ]}
               >
-                <Text style={[styles.text, { fontSize: side * 0.45 }]}>{k}</Text>
+                {submit ? (
+                  <Icon name="check" size={side * 0.55} tint={color.onTrail} stroke={3.2} />
+                ) : k === '⌫' ? (
+                  <Icon name="backspace" size={side * 0.5} tint={colors.ink} />
+                ) : (
+                  <Text style={[styles.text, { fontSize: side * 0.5 }]}>{k}</Text>
+                )}
               </Pressable>
             );
           })}
@@ -298,8 +307,9 @@ const styles = StyleSheet.create({
   row: { flexDirection: 'row' },
   side: { flex: 1, justifyContent: 'center', gap: 8, paddingVertical: 8 },
   stages: { flex: 1.4 },
+  topRight: { flexDirection: 'row' },
   promptRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 8 },
-  prompt: { flex: 1, color: colors.ink, fontWeight: '700', textAlign: 'center' },
+  prompt: { flex: 1, ...font.display(700), color: colors.ink, textAlign: 'center' },
   bottom: { justifyContent: 'center' },
   choices: { flexDirection: 'row', gap: 12, padding: 12 },
   wrap: { flexWrap: 'wrap' },
@@ -307,43 +317,35 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.surface,
-    borderWidth: 4,
-    borderColor: 'transparent',
+    backgroundColor: colors.raised,
+    borderWidth: 3,
+    borderColor: colors.line,
     paddingHorizontal: 4,
+    ...shadow.ledge,
   },
   half: { flexBasis: '40%' },
-  pressed: { transform: [{ scale: 0.96 }], backgroundColor: colors.pressed },
-  choiceActive: { borderColor: colors.accent },
-  choiceGood: { backgroundColor: colors.good, borderColor: colors.goodInk },
-  choiceMiss: { backgroundColor: colors.gentle, borderColor: colors.gentleInk },
-  faded: { opacity: 0.35 },
-  text: { color: colors.ink, fontWeight: '700', textAlign: 'center' },
-  feedback: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-    margin: 12,
-    padding: 12,
-    borderRadius: 24,
-  },
-  feedbackGood: { backgroundColor: colors.good },
-  feedbackGentle: { backgroundColor: colors.gentle },
-  feedbackIcon: { textAlign: 'center' },
-  feedbackText: { flex: 1, gap: 4 },
-  feedbackTitle: { fontWeight: '700' },
-  why: { color: colors.ink },
+  choiceActive: { borderColor: colors.accent, boxShadow: 'none' },
+  choiceGood: { backgroundColor: colors.good, borderColor: colors.goodInk, boxShadow: 'none' },
+  choiceMiss: { backgroundColor: colors.gentle, borderColor: colors.gentleInk, boxShadow: 'none' },
+  faded: { opacity: 0.35, boxShadow: 'none' },
+  text: { ...font.display(700), color: colors.ink, textAlign: 'center' },
   pad: { alignItems: 'center', gap: 6, padding: 6 },
   padRow: { flexDirection: 'row', gap: 6 },
   display: {
-    borderRadius: 16,
+    borderRadius: radius.lg,
     borderWidth: 3,
     borderColor: colors.line,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.raised,
     paddingHorizontal: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  key: { alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surface },
-  submit: { backgroundColor: colors.accent },
+  key: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.surface,
+    ...shadow.ledge,
+  },
+  submit: { backgroundColor: colors.accent, ...shadow.ledgeTrail },
+  empty: { color: colors.softInk },
 });

@@ -1,7 +1,10 @@
 import type { StoryNugget } from '@bright-trail/shared';
 import { useEffect, useRef, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { BigButton, FlagButton, ReplayButton, TopBar } from './controls';
+import { KidScreen, ProgressDots } from '../design/kid';
+import { font, radius, shadow } from '../design/tokens';
+import { FlagButton, KidButton, ReplayButton } from './controls';
+import { QuitButton } from './quit';
 import { colors, fontSizeFor, useLayout } from './theme';
 import type { FlagTarget, Narrate } from './types';
 import { ReadAlong } from './ReadAlong';
@@ -19,7 +22,7 @@ export type StoryCardViewerProps = {
 export function StoryCardViewer({ nugget, narrate, onFlag, onDone }: StoryCardViewerProps) {
   const { landscape, scale } = useLayout();
   const [index, setIndex] = useState(0);
-  const card = nugget.cards[index];
+  const current = nugget.cards[index];
   const last = index === nugget.cards.length - 1;
 
   const narrateRef = useRef(narrate);
@@ -31,109 +34,110 @@ export function StoryCardViewer({ nugget, narrate, onFlag, onDone }: StoryCardVi
   }, [nugget, index]);
 
   const back = (
-    <BigButton
+    <KidButton
       label="Back"
-      icon="◀"
-      tone="plain"
+      icon="back"
+      variant="plain"
       disabled={index === 0}
       onPress={() => setIndex((i) => Math.max(0, i - 1))}
     />
   );
   const next = last ? (
-    <BigButton label="Done" icon="✔" onPress={() => onDone?.()} />
+    <KidButton label="Done" icon="check" showLabel onPress={() => onDone?.()} />
   ) : (
-    <BigButton label="Next" icon="▶" onPress={() => setIndex((i) => i + 1)} />
+    <KidButton label="Next" icon="next" onPress={() => setIndex((i) => i + 1)} />
   );
 
-  const body = (
-    <View style={[styles.body, landscape && styles.bodyLandscape]}>
-      {card.visual && <FitVisual key={index} visual={card.visual} />}
-      {card.text && (
-        <Text
-          style={[
-            styles.text,
-            landscape && card.visual && styles.textLandscape,
-            { fontSize: fontSizeFor(card.text, 64 * scale) },
-          ]}
-        >
-          {card.text}
-        </Text>
-      )}
-    </View>
-  );
-  const caption = <ReadAlong key={index} text={card.narration} lines={4} />;
-
-  return (
-    <View style={styles.screen}>
-      <TopBar
-        left={
-          <ReplayButton onPress={() => narrateRef.current?.([card.narration], { replay: true })} />
-        }
-        right={
-          <FlagButton
-            key={index}
-            onFlag={() => onFlag?.({ contentKind: 'card', contentId: nugget.id, cardIndex: index })}
-          />
-        }
-      />
-      {landscape ? (
-        <>
-          <View style={styles.row}>
-            {back}
-            {body}
-            {next}
-          </View>
-          {caption}
-        </>
-      ) : (
-        <>
-          {body}
-          {caption}
-          <View style={styles.nav}>
-            {back}
-            {next}
-          </View>
-        </>
-      )}
-      <View
-        style={styles.dots}
-        accessible
-        accessibilityLabel={`Card ${index + 1} of ${nugget.cards.length}`}
-      >
-        {nugget.cards.map((_, i) => (
-          <View key={i} style={[styles.dot, i === index && styles.dotOn]} />
-        ))}
+  const card = (
+    <View
+      style={[
+        styles.card,
+        { padding: 24 * scale, gap: 18 * scale },
+        landscape ? styles.cardLandscape : styles.cardPortrait,
+      ]}
+    >
+      <View style={[styles.body, landscape && styles.bodyLandscape]}>
+        {current.visual && <FitVisual key={index} visual={current.visual} />}
+        {current.text && (
+          <Text
+            style={[
+              styles.text,
+              landscape && current.visual && styles.textLandscape,
+              { fontSize: fontSizeFor(current.text, 64 * scale) },
+            ]}
+          >
+            {current.text}
+          </Text>
+        )}
       </View>
+      <ReadAlong key={index} text={current.narration} lines={4} />
     </View>
+  );
+  const dots = <ProgressDots total={nugget.cards.length} current={index} />;
+  const replay = (
+    <ReplayButton onPress={() => narrateRef.current?.([current.narration], { replay: true })} />
+  );
+  const flag = (
+    <FlagButton
+      key={index}
+      onFlag={() => onFlag?.({ contentKind: 'card', contentId: nugget.id, cardIndex: index })}
+    />
+  );
+
+  if (landscape) {
+    return (
+      <KidScreen
+        safe={false}
+        left={replay}
+        mid={
+          <>
+            <QuitButton />
+            {dots}
+          </>
+        }
+        right={flag}
+        mainStyle={styles.row}
+      >
+        {back}
+        {card}
+        {next}
+      </KidScreen>
+    );
+  }
+  return (
+    <KidScreen
+      safe={false}
+      left={replay}
+      mid={<QuitButton />}
+      right={flag}
+      bottom={
+        <>
+          {back}
+          {next}
+        </>
+      }
+      spread
+    >
+      {card}
+      {dots}
+    </KidScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: colors.background },
-  row: {
-    flex: 1,
-    flexDirection: 'row',
+  row: { flexDirection: 'row', alignItems: 'center' },
+  card: {
+    backgroundColor: colors.raised,
+    borderRadius: radius.xl,
     alignItems: 'center',
-    paddingHorizontal: 16,
-    gap: 16,
-  },
-  body: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 16, gap: 16 },
-  bodyLandscape: { flexDirection: 'row' },
-  text: { color: colors.ink, fontWeight: '700', textAlign: 'center' },
-  textLandscape: { flex: 1 },
-  nav: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    paddingHorizontal: 24,
-    paddingBottom: 8,
-  },
-  dots: {
-    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    gap: 10,
-    paddingVertical: 12,
+    alignSelf: 'stretch',
+    ...shadow.lift,
   },
-  dot: { width: 12, height: 12, borderRadius: 6, backgroundColor: colors.line },
-  dotOn: { width: 18, height: 18, borderRadius: 9, backgroundColor: colors.accent },
+  cardPortrait: { flex: 1, maxHeight: 560 },
+  cardLandscape: { flex: 1, alignSelf: 'stretch' },
+  body: { flex: 1, alignSelf: 'stretch', alignItems: 'center', justifyContent: 'center', gap: 16 },
+  bodyLandscape: { flexDirection: 'row' },
+  text: { ...font.display(800), color: colors.ink, textAlign: 'center' },
+  textLandscape: { flex: 1 },
 });

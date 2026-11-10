@@ -11,10 +11,9 @@ name: Session with placement
     env:
       NAME: Maya
       AVATAR: Owl
-- tapOn: ‹ Kids
+- tapOn: Kids’ home
 - tapOn: Maya, Owl
-- assertVisible: 0 stars on your trail
-- tapOn: Start
+- tapOn: Let’s go
 
 # Placement, Grade 1: fair shares, a tap item then a keypad item.
 - extendedWaitUntil:
@@ -34,7 +33,7 @@ name: Session with placement
 - assertVisible: Thanks for telling us
 - tapOn: Stop for now
 - assertVisible: Hi, Maya!
-- tapOn: Start
+- tapOn: Let’s go
 - extendedWaitUntil:
     visible: 7 \+ 2 = \?
     timeout: 10000
@@ -81,7 +80,7 @@ name: Session with placement
 - assertVisible: Placed at Kindergarten\.
 - assertVisible: 4 placed skills
 - assertVisible: .*0 of 2 right
-- tapOn: ‹ Back
-- tapOn: ‹ Back
+- tapOn: Maya
+- tapOn: Grown-ups
 - tapOn: See flags
 - assertVisible: Open \(1\)

@@ -5,6 +5,7 @@ import Svg, { Circle, ClipPath, Defs, G, Path, Use } from 'react-native-svg';
 import { CRUMB, edgeLook, FoodArt, gapFill, PICKED_FILL, Underlay } from './food/FoodArt';
 import { pickOffset, seeded, wholeOf, type Whole } from './food/geometry';
 import { colors } from './theme';
+import { font } from '../design/tokens';
 
 type Props = { visual: FractionVisual; width: number; height: number };
 
@@ -179,5 +180,5 @@ export function FractionPicture({ visual, width, height }: Props) {
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center' },
   column: { alignItems: 'center' },
-  label: { color: colors.ink, fontWeight: '700', textAlign: 'center' },
+  label: { color: colors.ink, ...font.display(700), textAlign: 'center' },
 });

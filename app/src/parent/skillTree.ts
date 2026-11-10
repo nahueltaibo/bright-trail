@@ -8,24 +8,59 @@ import {
   type Skill,
   type SkillGrade,
 } from '@bright-trail/shared';
+import type { IconName } from '../design/Icon';
 
-export const STATE_STYLES: Record<MasteryStatus, { label: string; color: string; text: string }> = {
-  unknown: { label: 'Not started', color: '#E4E4E4', text: '#444' },
-  assumed: { label: 'Assumed', color: '#C9DDF7', text: '#1B3A66' },
-  gap: { label: 'Gap', color: '#F6C2C2', text: '#7A1414' },
-  learning: { label: 'Learning', color: '#FCE3A6', text: '#6B4A00' },
-  mastered: { label: 'Mastered', color: '#BFE6C4', text: '#14501E' },
-  'review-due': { label: 'Review due', color: '#E2CCF5', text: '#4A1D72' },
+/** How parents see each state. Icon, word, and border style each carry it, not colour alone. */
+export const STATE_STYLES: Record<
+  MasteryStatus,
+  {
+    label: string;
+    meaning: string;
+    icon: IconName;
+    border: 'dashed' | 'dotted' | 'solid' | 'thick';
+  }
+> = {
+  unknown: { label: 'Unknown', meaning: 'Not asked yet.', icon: 'question', border: 'dashed' },
+  assumed: {
+    label: 'Assumed',
+    meaning: 'Taken as known from grade, not asked.',
+    icon: 'half',
+    border: 'dotted',
+  },
+  gap: {
+    label: 'Gap',
+    meaning: 'Missed in placement or a check. Taught next.',
+    icon: 'gap',
+    border: 'solid',
+  },
+  learning: {
+    label: 'Learning',
+    meaning: 'Story seen, check not passed yet.',
+    icon: 'sprout',
+    border: 'solid',
+  },
+  mastered: {
+    label: 'Mastered',
+    meaning: 'Passed a check: 4 of 5 right.',
+    icon: 'star',
+    border: 'thick',
+  },
+  'review-due': {
+    label: 'Review due',
+    meaning: 'Mastered and due for a 3-question review.',
+    icon: 'refresh',
+    border: 'solid',
+  },
 };
 
-/** Legend order: the path a skill takes through the loop. */
+/** Legend order, as the design lists the states. */
 export const LEGEND_ORDER: readonly MasteryStatus[] = [
+  'unknown',
   'assumed',
   'gap',
   'learning',
   'mastered',
   'review-due',
-  'unknown',
 ];
 
 /** The state to show. A mastered skill whose review date has come shows as review due. */

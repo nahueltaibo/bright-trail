@@ -1,6 +1,8 @@
 import type { Choice, TapItem } from '@bright-trail/shared';
 import { useMemo, useState } from 'react';
 import { Pressable, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
+import { Icon } from '../design/Icon';
+import { font, pressDown, radius, shadow } from '../design/tokens';
 import { ItemFrame, useItemAttempt } from './ItemFrame';
 import { questionSpeech } from './speech';
 import { colors, fontSizeFor, formatNumber, MIN_TAP, useLayout } from './theme';
@@ -52,7 +54,7 @@ export function TapItemView(props: TapItemViewProps) {
 
   const twoUp = choices.length === 2;
   // A landscape phone has ~350pt of height for two rows of choices plus the feedback.
-  const baseHeight = landscape && !tablet ? (twoUp ? 120 : 88) : twoUp ? 160 : 120;
+  const baseHeight = landscape && !tablet ? (twoUp ? 120 : 88) : twoUp ? 160 : 104;
   const tileHeight = Math.max(MIN_TAP, baseHeight * scale);
 
   return (
@@ -62,6 +64,7 @@ export function TapItemView(props: TapItemViewProps) {
           const label = choiceLabel(choice);
           const chosen = outcome?.answer === choice.id;
           const isAnswer = choice.id === item.answerChoiceId;
+          const state = !outcome ? 'idle' : isAnswer ? 'right' : chosen ? 'missed' : 'rest';
           return (
             <Pressable
               key={choice.id}
@@ -73,23 +76,58 @@ export function TapItemView(props: TapItemViewProps) {
               onPress={() => answer(choice.id, isAnswer, [label])}
               style={({ pressed }) => [
                 styles.tile,
-                { height: tileHeight, borderRadius: 28 * scale },
-                pressed && styles.pressed,
-                outcome && isAnswer && styles.answerTile,
-                outcome && chosen && !isAnswer && styles.missTile,
-                outcome && !chosen && !isAnswer && styles.faded,
+                {
+                  height: tileHeight,
+                  borderRadius: radius.lg,
+                  flexBasis: choices.length === 3 ? '28%' : '45%',
+                },
+                pressed && pressDown,
+                state !== 'idle' && styles.settled,
+                state === 'right' && styles.answerTile,
+                state === 'missed' && styles.missTile,
+                state === 'rest' && styles.restTile,
               ]}
             >
-              {choice.kind === 'visual' ? (
-                <VisualView
-                  visual={choice.visual}
-                  width={Math.max(tileWidth - 24, 40)}
-                  height={tileHeight - 24}
-                />
-              ) : (
-                <Text style={[styles.choiceText, { fontSize: fontSizeFor(label, 56 * scale) }]}>
-                  {label}
-                </Text>
+              <View style={state === 'rest' && styles.faded}>
+                {choice.kind === 'visual' ? (
+                  <VisualView
+                    visual={choice.visual}
+                    width={Math.max(tileWidth - 24, 40)}
+                    height={tileHeight - 24}
+                  />
+                ) : (
+                  <Text
+                    style={[
+                      styles.choiceText,
+                      { fontSize: fontSizeFor(label, 48 * scale) },
+                      state === 'right' && { color: colors.goodInk },
+                      state === 'missed' && { color: colors.gentleInk },
+                    ]}
+                  >
+                    {label}
+                  </Text>
+                )}
+              </View>
+              {(state === 'right' || state === 'missed') && (
+                <View
+                  style={[
+                    styles.badge,
+                    {
+                      width: 36 * scale,
+                      height: 36 * scale,
+                      top: -12 * scale,
+                      right: -12 * scale,
+                      backgroundColor: state === 'right' ? colors.goodInk : colors.gentleInk,
+                    },
+                  ]}
+                >
+                  <Icon
+                    name={state === 'right' ? 'check' : 'sprout'}
+                    size={22 * scale}
+                    tint={state === 'right' ? colors.good : colors.gentle}
+                    stroke={3.2}
+                  />
+                </View>
               )}
             </Pressable>
           );
@@ -104,21 +142,28 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     justifyContent: 'center',
-    gap: 12,
+    gap: 16,
   },
   tile: {
-    flexBasis: '45%',
     flexGrow: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: colors.surface,
-    borderWidth: 4,
-    borderColor: 'transparent',
-    padding: 8,
+    backgroundColor: colors.raised,
+    borderWidth: 3,
+    borderColor: colors.line,
+    padding: 12,
+    ...shadow.ledge,
   },
-  pressed: { transform: [{ scale: 0.96 }], backgroundColor: colors.pressed },
+  settled: { boxShadow: 'none' },
   answerTile: { backgroundColor: colors.good, borderColor: colors.goodInk },
-  missTile: { backgroundColor: colors.gentle },
-  faded: { opacity: 0.45 },
-  choiceText: { color: colors.ink, fontWeight: '700', textAlign: 'center' },
+  missTile: { backgroundColor: colors.gentle, borderColor: colors.gentleInk },
+  restTile: { borderStyle: 'dashed' },
+  faded: { opacity: 0.55 },
+  choiceText: { ...font.display(700), color: colors.ink, textAlign: 'center' },
+  badge: {
+    position: 'absolute',
+    borderRadius: 999,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
 });

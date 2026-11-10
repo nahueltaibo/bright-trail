@@ -2,12 +2,12 @@
 appId: com.nahueltaibo.brighttrail
 ---
 - tapOn: Parent area
-- assertVisible: Set a parent PIN
+- assertVisible: Pick a parent PIN
 - tapOn: '1'
 - tapOn: '2'
 - tapOn: '3'
 - tapOn: '4'
-- assertVisible: Enter the PIN again
+- assertVisible: Confirm your PIN
 - tapOn: '1'
 - tapOn: '2'
 - tapOn: '3'

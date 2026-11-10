@@ -1,14 +1,17 @@
 import { randomUUID } from 'expo-crypto';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { TrailMap } from '../../../components/TrailMap';
 import { loadBundle } from '../../../content/loadBundle';
 import { ItemView, StoryCardViewer, type FlagTarget, type Narrate } from '../../../learning';
-import { BigButton } from '../../../learning/controls';
+import { Star } from '../../../design/Icon';
+import { ArtDisc, KidButton, KidScreen, StarPill, useKidType } from '../../../design/kid';
+import { color } from '../../../design/tokens';
+import { QuitContext } from '../../../learning/quit';
 import { SpeakerButton, useAutoNarration, useNarration } from '../../../narration';
 import { END_MESSAGES, Session, type SessionView } from '../../../session';
+import { useLayout } from '../../../learning/theme';
 import { useStorage } from '../../../storage/StorageProvider';
 
 /** The kid's session: placement first, then reviews, probes, lessons, and checks. */
@@ -51,7 +54,7 @@ export default function SessionScreen() {
 
   let body;
   if (error) body = <Text style={styles.error}>Something went wrong: {error}</Text>;
-  else if (!view || !ready) body = <ActivityIndicator size="large" style={styles.center} />;
+  else if (!view || !ready) body = <Loading />;
   else if (view.kind === 'end')
     body = <EndView reason={view.reason} stars={view.stars} onHome={quit} />;
   else if (view.kind === 'story') {
@@ -80,19 +83,7 @@ export default function SessionScreen() {
 
   return (
     <SafeAreaView style={styles.screen}>
-      {view?.kind !== 'end' && (
-        <View style={styles.topBar}>
-          <Pressable
-            accessibilityRole="button"
-            accessibilityLabel="Stop for now"
-            hitSlop={12}
-            onPress={quit}
-          >
-            <Text style={styles.home}>🏠</Text>
-          </Pressable>
-        </View>
-      )}
-      {body}
+      <QuitContext.Provider value={quit}>{body}</QuitContext.Provider>
     </SafeAreaView>
   );
 }
@@ -106,24 +97,63 @@ function EndView({
   stars: number;
   onHome: () => void;
 }) {
-  const message = END_MESSAGES[reason];
+  const { title, body } = END_MESSAGES[reason];
+  const type = useKidType();
+  const message = `${title} ${body}`;
   useAutoNarration(message);
+  const art =
+    reason === 'placement-break' ? (
+      <ArtDisc icon="bookmark" />
+    ) : reason === 'all-done' ? (
+      <Star size={140} />
+    ) : (
+      <ArtDisc icon="moon" background={color.avSky} />
+    );
   return (
-    <View style={styles.end}>
-      <SpeakerButton text={message} size={72} />
-      <Text style={styles.message}>{message}</Text>
-      <TrailMap stars={stars} />
-      <BigButton label="Back home" icon="🏠" onPress={onHome} />
-    </View>
+    <KidScreen
+      safe={false}
+      left={<SpeakerButton text={message} />}
+      bottom={<KidButton icon="home" label="Home" showLabel size="xl" onPress={onHome} />}
+    >
+      {art}
+      <Text accessibilityRole="header" style={type.hero}>
+        {title}
+      </Text>
+      {stars > 0 && <StarPill count={stars} />}
+      <Text style={type.lede}>{body}</Text>
+    </KidScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  screen: { flex: 1, backgroundColor: '#FFFBF0' },
-  topBar: { paddingHorizontal: 16, paddingTop: 4 },
-  home: { fontSize: 32 },
-  center: { flex: 1 },
-  error: { margin: 24, fontSize: 18, color: '#b00020', textAlign: 'center' },
-  end: { flex: 1, alignItems: 'center', justifyContent: 'center', gap: 24, padding: 24 },
-  message: { fontSize: 28, color: '#5A4A1F', textAlign: 'center', fontWeight: '700' },
+  screen: { flex: 1, backgroundColor: color.kidBg },
+  center: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  pebbles: { flexDirection: 'row', gap: 12 },
+  error: { margin: 24, fontSize: 18, color: color.kidInk, textAlign: 'center' },
 });
+
+/** Three amber pebbles: the only motion that loops on a kid screen. */
+function Loading() {
+  const { scale: s } = useLayout();
+  const d = 20 * s;
+  return (
+    <View
+      accessibilityRole="progressbar"
+      accessibilityLabel="Loading"
+      style={[styles.center, styles.pebbles]}
+    >
+      {[0.35, 0.7, 1].map((o) => (
+        <View
+          key={o}
+          style={{
+            width: d,
+            height: d,
+            borderRadius: d / 2,
+            backgroundColor: color.trail,
+            opacity: o,
+          }}
+        />
+      ))}
+    </View>
+  );
+}

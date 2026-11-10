@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Animated, Platform, StyleSheet, Text } from 'react-native';
 import { colors } from '../theme';
+import { font } from '../../design/tokens';
 
 const NATIVE = Platform.OS !== 'web';
 
@@ -26,7 +27,7 @@ export function BubbleView({ bubble: b }: { bubble: Bubble }) {
 const styles = StyleSheet.create({
   bubble: { position: 'absolute', width: 240, alignItems: 'center' },
   text: {
-    fontWeight: '800',
+    ...font.display(800),
     color: colors.ink,
     backgroundColor: '#FFFFFF',
     borderColor: colors.line,

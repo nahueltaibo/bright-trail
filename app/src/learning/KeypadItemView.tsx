@@ -1,12 +1,14 @@
 import type { KeypadItem } from '@bright-trail/shared';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Icon } from '../design/Icon';
+import { color, font, pressDown, radius, shadow } from '../design/tokens';
 import { ItemFrame, useItemAttempt } from './ItemFrame';
 import { ANSWER_PANE_SHARE, colors, formatNumber, MIN_TAP, useLayout } from './theme';
 import type { ItemViewProps } from './types';
 
 const MAX_LENGTH = 6;
-const GAP = 6;
+const GAP = 10;
 
 /** Keypad answers count as right within floating-point noise, so 0.1 + 0.2 still matches 0.3. */
 export function isKeypadCorrect(entry: string, answer: number): boolean {
@@ -55,108 +57,149 @@ export function KeypadItemView(props: ItemViewProps<KeypadItem>) {
     if (canSubmit) answer(Number(entry), isKeypadCorrect(entry, item.answer));
   };
 
-  return (
-    <ItemFrame {...props} replay={replay} outcome={outcome} visual={item.visual}>
-      <View style={[styles.pad, compact && !outcome && styles.padCompact]}>
-        <View style={[styles.displayRow, compact && !outcome && styles.displayColumn]}>
-          <View
-            accessible
-            accessibilityLabel={entry ? `Your answer, ${entry}` : 'Your answer, empty'}
+  const keyRadius = { borderRadius: radius.md };
+  const display = (
+    <View style={styles.displayRow}>
+      <View
+        accessible
+        accessibilityLabel={entry ? `Your answer, ${entry}` : 'Your answer, empty'}
+        style={[
+          styles.display,
+          { minHeight: keySize * 1.3, minWidth: keySize * 2 },
+          outcome && (outcome.correct ? styles.good : styles.gentle),
+        ]}
+      >
+        <Text
+          style={[
+            styles.displayText,
+            { fontSize: 56 * scale, lineHeight: 60 * scale },
+            !entry && styles.emptyText,
+            outcome && { color: outcome.correct ? colors.goodInk : colors.gentleInk },
+          ]}
+        >
+          {entry || '?'}
+        </Text>
+      </View>
+      {outcome && !outcome.correct && (
+        <View
+          accessible
+          accessibilityLabel={`The answer is ${formatNumber(item.answer)}`}
+          style={[styles.display, styles.good, { minHeight: keySize * 1.3, minWidth: keySize }]}
+        >
+          <Text
             style={[
-              styles.display,
-              { height: keySize, minWidth: keySize * 2 },
-              outcome && (outcome.correct ? styles.good : styles.gentle),
+              styles.displayText,
+              styles.goodText,
+              { fontSize: 56 * scale, lineHeight: 60 * scale },
             ]}
           >
-            <Text style={[styles.displayText, { fontSize: keySize * 0.55 }]}>{entry || ' '}</Text>
-          </View>
-          {outcome && !outcome.correct && (
-            <View
-              accessible
-              accessibilityLabel={`The answer is ${formatNumber(item.answer)}`}
-              style={[styles.display, styles.good, { height: keySize, minWidth: keySize }]}
-            >
-              <Text style={[styles.displayText, styles.goodText, { fontSize: keySize * 0.55 }]}>
-                {formatNumber(item.answer)}
-              </Text>
-            </View>
-          )}
-          {!outcome && (
-            <Pressable
-              accessibilityRole="button"
-              accessibilityLabel="Check my answer"
-              accessibilityState={{ disabled: !canSubmit }}
-              disabled={!canSubmit}
-              onPress={submit}
-              style={({ pressed }) => [
-                styles.key,
-                styles.submit,
-                { width: keySize, height: keySize, borderRadius: keySize / 2.5 },
-                pressed && styles.pressed,
-                !canSubmit && styles.disabled,
-              ]}
-            >
-              <Text style={[styles.keyText, { fontSize: keySize * 0.5 }]}>✔</Text>
-            </Pressable>
+            {formatNumber(item.answer)}
+          </Text>
+        </View>
+      )}
+    </View>
+  );
+  const submitKey = (
+    <Pressable
+      accessibilityRole="button"
+      accessibilityLabel="Check my answer"
+      accessibilityState={{ disabled: !canSubmit }}
+      disabled={!canSubmit}
+      onPress={submit}
+      style={({ pressed }) => [
+        styles.key,
+        styles.submit,
+        keyRadius,
+        { height: Math.max(MIN_TAP, keySize * 1.1) },
+        pressed && pressDown,
+        !canSubmit && styles.disabled,
+      ]}
+    >
+      <Icon name="check" size={40 * scale} tint={color.onTrail} stroke={3.2} />
+    </Pressable>
+  );
+  const keys = (
+    <View style={[styles.keys, { width: keySize * 3 + GAP * 2 }]}>
+      {rows.map((row, r) => (
+        <View key={r} style={styles.row}>
+          {row.map((key) =>
+            key === '' ? (
+              <View key="blank" style={{ width: keySize, height: keySize }} />
+            ) : (
+              <Pressable
+                key={key}
+                accessibilityRole="button"
+                accessibilityLabel={key === '⌫' ? 'Delete' : key === '.' ? 'Decimal point' : key}
+                onPress={() => setEntry((e) => pressKey(e, key))}
+                style={({ pressed }) => [
+                  styles.key,
+                  keyRadius,
+                  { width: keySize, height: keySize },
+                  pressed && pressDown,
+                ]}
+              >
+                {key === '⌫' ? (
+                  <Icon name="backspace" size={30 * scale} tint={colors.ink} />
+                ) : (
+                  <Text style={[styles.keyText, { fontSize: 32 * scale }]}>{key}</Text>
+                )}
+              </Pressable>
+            ),
           )}
         </View>
-        {!outcome && (
-          <View style={styles.keys}>
-            {rows.map((row, r) => (
-              <View key={r} style={styles.row}>
-                {row.map((key) =>
-                  key === '' ? (
-                    <View key="blank" style={{ width: keySize, height: keySize }} />
-                  ) : (
-                    <Pressable
-                      key={key}
-                      accessibilityRole="button"
-                      accessibilityLabel={
-                        key === '⌫' ? 'Delete' : key === '.' ? 'Decimal point' : key
-                      }
-                      onPress={() => setEntry((e) => pressKey(e, key))}
-                      style={({ pressed }) => [
-                        styles.key,
-                        { width: keySize, height: keySize, borderRadius: keySize / 2.5 },
-                        pressed && styles.pressed,
-                      ]}
-                    >
-                      <Text style={[styles.keyText, { fontSize: keySize * 0.5 }]}>{key}</Text>
-                    </Pressable>
-                  ),
-                )}
-              </View>
-            ))}
+      ))}
+      {!compact && submitKey}
+    </View>
+  );
+
+  return (
+    <ItemFrame {...props} replay={replay} outcome={outcome} visual={item.visual}>
+      {compact && !outcome ? (
+        <View style={styles.side}>
+          <View style={styles.sideCol}>
+            {display}
+            {submitKey}
           </View>
-        )}
-      </View>
+          {keys}
+        </View>
+      ) : (
+        <View style={styles.pad}>
+          {display}
+          {!outcome && keys}
+        </View>
+      )}
     </ItemFrame>
   );
 }
 
 const styles = StyleSheet.create({
-  pad: { alignItems: 'center', gap: GAP + 4 },
-  padCompact: { flexDirection: 'row', justifyContent: 'center' },
+  pad: { alignItems: 'center', gap: 12 },
+  side: { flexDirection: 'row', justifyContent: 'center', gap: 16 },
+  sideCol: { flex: 1, justifyContent: 'center', gap: 12, maxWidth: 260 },
   displayRow: { flexDirection: 'row', alignItems: 'center', gap: 12 },
-  displayColumn: { flexDirection: 'column' },
   keys: { gap: GAP },
   display: {
-    borderRadius: 20,
+    borderRadius: radius.lg,
     borderWidth: 3,
     borderColor: colors.line,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: colors.raised,
     paddingHorizontal: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  displayText: { color: colors.ink, fontWeight: '700' },
+  displayText: { ...font.display(800), color: colors.ink, letterSpacing: 2 },
+  emptyText: { color: colors.softInk },
   good: { backgroundColor: colors.good, borderColor: colors.goodInk },
   goodText: { color: colors.goodInk },
   gentle: { backgroundColor: colors.gentle, borderColor: colors.gentleInk },
   row: { flexDirection: 'row', gap: GAP },
-  key: { alignItems: 'center', justifyContent: 'center', backgroundColor: colors.surface },
-  submit: { backgroundColor: colors.accent },
-  pressed: { transform: [{ scale: 0.94 }], backgroundColor: colors.pressed },
-  disabled: { opacity: 0.35 },
-  keyText: { color: colors.ink, fontWeight: '700' },
+  key: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: colors.surface,
+    ...shadow.ledge,
+  },
+  submit: { alignSelf: 'stretch', backgroundColor: colors.accent, ...shadow.ledgeTrail },
+  disabled: { opacity: 0.45, boxShadow: 'none' },
+  keyText: { ...font.display(700), color: colors.ink },
 });

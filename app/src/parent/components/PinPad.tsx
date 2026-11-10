@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Icon } from '../../design/Icon';
+import { font, shadow } from '../../design/tokens';
 import { PIN_LENGTH } from '../pin';
 import { colors } from './ui';
 
@@ -39,12 +41,16 @@ export function PinPad({
         accessibilityLabel={`${pin.length} of ${PIN_LENGTH} digits entered`}
       >
         {Array.from({ length: PIN_LENGTH }, (_, i) => (
-          <View key={i} style={[styles.dot, i < pin.length && styles.dotFilled]} />
+          <View
+            key={i}
+            style={[styles.dot, error && styles.dotError, i < pin.length && styles.dotFilled]}
+          />
         ))}
       </View>
-      <Text style={styles.error} accessibilityLiveRegion="polite">
-        {error ?? ' '}
-      </Text>
+      <View style={styles.errorRow} accessibilityLiveRegion="polite">
+        {error && <Icon name="alert" size={16} tint={colors.danger} />}
+        <Text style={styles.error}>{error ?? ' '}</Text>
+      </View>
       <View style={styles.grid}>
         {KEYS.map((key, i) =>
           key === '' ? (
@@ -55,9 +61,17 @@ export function PinPad({
               accessibilityRole="button"
               accessibilityLabel={key === 'del' ? 'Delete digit' : key}
               onPress={() => press(key)}
-              style={({ pressed }) => [styles.key, styles.keyButton, pressed && styles.pressed]}
+              style={({ pressed }) => [
+                styles.key,
+                key === 'del' ? styles.ghost : styles.keyButton,
+                pressed && styles.pressed,
+              ]}
             >
-              <Text style={styles.keyText}>{key === 'del' ? '⌫' : key}</Text>
+              {key === 'del' ? (
+                <Icon name="backspace" size={26} tint={colors.text} />
+              ) : (
+                <Text style={styles.keyText}>{key}</Text>
+              )}
             </Pressable>
           ),
         )}
@@ -66,24 +80,51 @@ export function PinPad({
   );
 }
 
-const KEY_SIZE = 72;
+const KEY_SIZE = 76;
 
 const styles = StyleSheet.create({
-  box: { alignItems: 'center', gap: 12 },
-  title: { fontSize: 24, fontWeight: '600', color: colors.text, textAlign: 'center' },
-  message: { fontSize: 16, color: colors.muted, textAlign: 'center', maxWidth: 320 },
-  dots: { flexDirection: 'row', gap: 16, marginTop: 8 },
+  box: { alignItems: 'center', gap: 14, width: '100%', maxWidth: 340 },
+  title: {
+    ...font.body(700),
+    fontSize: 22,
+    lineHeight: 28,
+    color: colors.text,
+    textAlign: 'center',
+  },
+  message: {
+    ...font.body(),
+    fontSize: 15,
+    lineHeight: 22,
+    color: colors.muted,
+    textAlign: 'center',
+  },
+  dots: { flexDirection: 'row', gap: 18, paddingTop: 10, paddingBottom: 2 },
   dot: { width: 18, height: 18, borderRadius: 9, borderWidth: 2, borderColor: colors.text },
+  dotError: { borderColor: colors.danger },
   dotFilled: { backgroundColor: colors.text },
-  error: { fontSize: 15, color: colors.danger, minHeight: 20 },
-  grid: { width: KEY_SIZE * 3 + 32, flexDirection: 'row', flexWrap: 'wrap', gap: 16 },
-  key: { width: KEY_SIZE, height: KEY_SIZE },
-  keyButton: {
+  errorRow: { flexDirection: 'row', alignItems: 'center', gap: 6, minHeight: 20 },
+  error: { ...font.body(700), fontSize: 14, lineHeight: 20, color: colors.danger },
+  grid: {
+    width: KEY_SIZE * 3 + 44,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    columnGap: 22,
+    rowGap: 14,
+  },
+  key: {
+    width: KEY_SIZE,
+    height: KEY_SIZE,
     borderRadius: KEY_SIZE / 2,
-    backgroundColor: '#E9ECF2',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  pressed: { backgroundColor: '#CDD3DE' },
-  keyText: { fontSize: 28, color: colors.text },
+  keyButton: {
+    backgroundColor: colors.card,
+    borderWidth: 1,
+    borderColor: colors.border,
+    ...shadow.card,
+  },
+  ghost: { backgroundColor: 'transparent' },
+  pressed: { backgroundColor: colors.sunken },
+  keyText: { ...font.body(), fontSize: 28, color: colors.text },
 });

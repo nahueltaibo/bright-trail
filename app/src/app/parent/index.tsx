@@ -1,12 +1,23 @@
 import { localClock, type ChildProfile } from '@bright-trail/shared';
 import { router, useFocusEffect } from 'expo-router';
 import { useCallback, useState } from 'react';
-import { Pressable, Text, View } from 'react-native';
-import { getAvatar } from '../../avatars';
+import { Text } from 'react-native';
+import { Icon } from '../../design/Icon';
+import { AvatarDisc } from '../../design/kid';
 import { loadBundle } from '../../content/loadBundle';
 import { effectiveGrade } from '../../parent/children';
 import { AboutSection } from '../../parent/components/AboutSection';
-import { Button, ParentScreen, Section, styles as ui } from '../../parent/components/ui';
+import {
+  Button,
+  colors,
+  Columns,
+  EmptyState,
+  ParentRow,
+  ParentScreen,
+  Section,
+  Status,
+  styles as ui,
+} from '../../parent/components/ui';
 import { buildExport, exportFileName } from '../../parent/exportData';
 import { gradeLabel } from '../../parent/grades';
 import { shareExport } from '../../parent/shareExport';
@@ -17,7 +28,7 @@ export default function ParentHomeScreen() {
   const repo = useStorage();
   const [profiles, setProfiles] = useState<ChildProfile[]>([]);
   const [openFlags, setOpenFlags] = useState(0);
-  const [exportStatus, setExportStatus] = useState<string | null>(null);
+  const [exportStatus, setExportStatus] = useState<{ text: string; ok: boolean } | null>(null);
   const { today } = localClock();
 
   useFocusEffect(
@@ -28,60 +39,112 @@ export default function ParentHomeScreen() {
   );
 
   const exportAll = async () => {
-    setExportStatus('Preparing…');
+    setExportStatus({ text: 'Preparing…', ok: false });
     try {
       const { now, today: day } = localClock();
       const bundle = await loadBundle();
       const payload = await buildExport(repo, { now, today: day, bundleVersion: bundle.version });
       await shareExport(exportFileName(now), JSON.stringify(payload, null, 2));
-      setExportStatus(
-        `Exported ${payload.attempts.length} attempts for ${payload.children.length} children.`,
-      );
+      setExportStatus({
+        text: `Exported ${payload.attempts.length} attempts for ${payload.children.length} children.`,
+        ok: true,
+      });
     } catch (e) {
-      setExportStatus(`Export failed: ${e instanceof Error ? e.message : String(e)}`);
+      setExportStatus({
+        text: `Export failed: ${e instanceof Error ? e.message : String(e)}`,
+        ok: false,
+      });
     }
   };
 
+  const addChild = () => router.push('/parent/child/new');
+  const children = (
+    <Section title="Children" padded={false}>
+      {profiles.length === 0 ? (
+        <EmptyState
+          icon="plus"
+          title="No children yet. Add one to start."
+          body="Each child gets their own trail."
+          action={<Button label="Add a child" icon="plus" onPress={addChild} />}
+        />
+      ) : (
+        <>
+          {profiles.map((child, i) => {
+            const grade = gradeLabel(effectiveGrade(child, today));
+            return (
+              <ParentRow
+                key={child.id}
+                first={i === 0}
+                accessibilityLabel={`${child.firstName}, ${grade}`}
+                leading={<AvatarDisc animal={child.avatar} size={40} />}
+                title={child.firstName}
+                meta={child.gradeOverride ? `${grade} (set by parent)` : grade}
+                chevron
+                onPress={() =>
+                  router.push({
+                    pathname: '/parent/child/[childId]',
+                    params: { childId: child.id },
+                  })
+                }
+              />
+            );
+          })}
+          <ParentRow
+            title="Add a child"
+            action
+            leading={<Icon name="plus" size={22} tint={colors.primary} />}
+            onPress={addChild}
+          />
+        </>
+      )}
+    </Section>
+  );
+
+  const flags = (
+    <Section title="Flagged content" padded={false}>
+      <ParentRow
+        first
+        leading={<Icon name="flag" size={22} tint={colors.muted} />}
+        title={
+          openFlags === 0 ? 'No open flags' : `${openFlags} open flag${openFlags === 1 ? '' : 's'}`
+        }
+        meta={
+          openFlags === 0
+            ? 'Kids can tap the flag on any card.'
+            : 'Kids or grown-ups tapped “This looks wrong”.'
+        }
+        trailing={
+          <Button
+            label="See flags"
+            kind="secondary"
+            small
+            onPress={() => router.push('/parent/flags')}
+          />
+        }
+      />
+    </Section>
+  );
+
+  const exportSection = (
+    <Section title="Export">
+      <Text style={ui.text}>Every attempt, with children and mastery, as one JSON file.</Text>
+      <Button label="Export all data" kind="secondary" icon="share" onPress={exportAll} />
+      <Status text={exportStatus?.text ?? 'Not exported yet'} ok={exportStatus?.ok} />
+    </Section>
+  );
+
   return (
-    <ParentScreen title="Parent area" backTo="/" backLabel="Kids">
-      <Section title="Children">
-        {profiles.length === 0 && <Text style={ui.muted}>No children yet. Add one to start.</Text>}
-        {profiles.map((child) => (
-          <Pressable
-            key={child.id}
-            accessibilityRole="button"
-            accessibilityLabel={`${child.firstName}, ${gradeLabel(effectiveGrade(child, today))}`}
-            onPress={() =>
-              router.push({ pathname: '/parent/child/[childId]', params: { childId: child.id } })
-            }
-            style={ui.row}
-          >
-            <Text style={{ fontSize: 32 }}>{getAvatar(child.avatar).emoji}</Text>
-            <View style={{ flex: 1 }}>
-              <Text style={ui.text}>{child.firstName}</Text>
-              <Text style={ui.muted}>
-                {gradeLabel(effectiveGrade(child, today))}
-                {child.gradeOverride ? ' (set by parent)' : ''}
-              </Text>
-            </View>
-            <Text style={ui.muted}>›</Text>
-          </Pressable>
-        ))}
-        <Button label="Add a child" onPress={() => router.push('/parent/child/new')} />
-      </Section>
-
-      <Section title="Flagged content">
-        <Text style={ui.muted}>{openFlags === 0 ? 'Nothing flagged.' : `${openFlags} open`}</Text>
-        <Button label="See flags" kind="secondary" onPress={() => router.push('/parent/flags')} />
-      </Section>
-
-      <Section title="Export">
-        <Text style={ui.muted}>Every attempt, with children and mastery, as one JSON file.</Text>
-        <Button label="Export all data" kind="secondary" onPress={exportAll} />
-        {exportStatus && <Text style={ui.text}>{exportStatus}</Text>}
-      </Section>
-
-      <AboutSection />
+    <ParentScreen title="Grown-ups" backTo="/" backLabel="Kids’ home">
+      <Columns
+        left={children}
+        right={
+          <>
+            {flags}
+            {exportSection}
+            <AboutSection />
+          </>
+        }
+      />
     </ParentScreen>
   );
 }

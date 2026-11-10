@@ -13,7 +13,7 @@ name: Kid home and child home
     env:
       NAME: Leo
       AVATAR: Frog
-- tapOn: ‹ Kids
+- tapOn: Kids’ home
 
 - assertNotVisible: Ask a grown-up to add you\.
 - assertVisible: Maya, Owl
@@ -21,8 +21,8 @@ name: Kid home and child home
 
 - tapOn: Maya, Owl
 - assertVisible: Hi, Maya!
-- assertVisible: 0 stars on your trail
-- assertVisible: Start
+- assertVisible: Start here, your next stop
+- assertVisible: Let’s go
 - tapOn: Back to profiles
 - assertVisible: Maya, Owl
 

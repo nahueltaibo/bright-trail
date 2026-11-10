@@ -1,10 +1,16 @@
 import type { ChildProfile } from '@bright-trail/shared';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
+import { Text } from 'react-native';
 import { loadBundle } from '../../../../content/loadBundle';
 import { StateBadge } from '../../../../parent/components/StateBadge';
-import { ParentScreen, Section, styles as ui } from '../../../../parent/components/ui';
+import {
+  EmptyState,
+  ParentRow,
+  ParentScreen,
+  Section,
+  styles as ui,
+} from '../../../../parent/components/ui';
 import { gradeLabel } from '../../../../parent/grades';
 import { placementResults, type PlacementResultRow } from '../../../../parent/skillTree';
 import type { StoredPlacement } from '../../../../storage/repository';
@@ -41,25 +47,31 @@ export default function PlacementReviewScreen() {
   }, [repo, childId]);
 
   return (
-    <ParentScreen title={child ? `${child.firstName}'s placement` : 'Placement'}>
-      <Section>
-        <Text style={ui.muted}>
-          Pick 10 skills and check each against what you know of your child. The bar is agreeing on
-          8 of 10.
-        </Text>
-        {rows && <Text style={ui.text}>{placedLine(placement)}</Text>}
-      </Section>
-      <Section title={rows ? `${rows.length} placed skills` : 'Placed skills'}>
-        {rows?.map(({ skill, passed, answered, correct }) => (
-          <View key={skill.id} style={ui.row}>
-            <View style={{ flex: 1 }}>
-              <Text style={ui.text}>{skill.title}</Text>
-              <Text style={ui.muted}>
-                {gradeLabel(skill.grade)} · {correct} of {answered} right
-              </Text>
-            </View>
-            <StateBadge state={passed ? 'mastered' : 'gap'} />
-          </View>
+    <ParentScreen title="Placement review" backLabel={child?.firstName ?? 'Back'}>
+      <Text style={ui.text}>
+        Pick 10 skills and check each against what you know of your child. The bar is agreeing on 8
+        of 10.
+      </Text>
+      <Section
+        title={rows ? `${rows.length} placed skills` : 'Placed skills'}
+        description={rows && rows.length > 0 ? placedLine(placement) : undefined}
+        padded={false}
+      >
+        {rows && rows.length === 0 && (
+          <EmptyState
+            icon="list"
+            title={placedLine(placement)}
+            body={`It starts the first time ${child?.firstName ?? 'your child'} taps Let’s go on the trail.`}
+          />
+        )}
+        {rows?.map(({ skill, passed, answered, correct }, i) => (
+          <ParentRow
+            key={skill.id}
+            first={i === 0}
+            title={skill.title}
+            meta={`${gradeLabel(skill.grade)} · ${correct} of ${answered} right`}
+            trailing={<StateBadge state={passed ? 'mastered' : 'gap'} />}
+          />
         ))}
       </Section>
     </ParentScreen>
