@@ -1,3 +1,4 @@
+export { CheckEndView, checkEndText, DUR_STAR_MS } from './CheckEndView';
 export { ItemView } from './ItemView';
 export { KeypadItemView } from './KeypadItemView';
 export { NumberLineItemView } from './NumberLineItemView';
