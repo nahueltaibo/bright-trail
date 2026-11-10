@@ -11,7 +11,7 @@ name: Parent screens
 - tapOn: Maya, .*
 
 - tapOn: Skill tree
-- assertVisible: Maya's skills
+- assertVisible: What the badges mean
 - assertVisible: Kindergarten
 - scrollUntilVisible:
     element: Grade 5
@@ -19,20 +19,20 @@ name: Parent screens
     # 53 skill rows take more than the default 20 seconds to scroll past.
     timeout: 90000
 - assertNotVisible: Grade 6
-- tapOn: ‹ Back
+- tapOn: Maya
 
 - tapOn: Placement review
-- assertVisible: Maya's placement
+- assertVisible: Placement review
 - assertVisible: 0 placed skills
 - assertVisible: Placement hasn.t run yet\.
-- tapOn: ‹ Back
-- tapOn: ‹ Back
+- tapOn: Maya
+- tapOn: Grown-ups
 
 # No session has run, so there are no flags. 07-session checks a stored one.
 - tapOn: See flags
 - assertVisible: Open \(0\)
 - assertVisible: Nothing to look at\.
-- tapOn: ‹ Back
+- tapOn: Grown-ups
 
 # Export opens the system share sheet. Dismiss it and check the status line.
 - tapOn: Export all data
@@ -65,5 +65,5 @@ name: Parent screens
 - assertVisible: Delete Maya\? .*
 - tapOn: Delete
 - assertVisible: No children yet\. Add one to start\.
-- tapOn: ‹ Kids
+- tapOn: Kids’ home
 - assertVisible: Ask a grown-up to add you\.

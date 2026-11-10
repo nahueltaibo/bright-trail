@@ -1,10 +1,10 @@
 import { router } from 'expo-router';
 import { useEffect, useState, type ReactNode } from 'react';
-import { ActivityIndicator, Pressable, StyleSheet, Text, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import type { PinLock } from '../pin';
 import { PinPad } from './PinPad';
-import { colors } from './ui';
+import { BackLink, colors } from './ui';
 
 type Step =
   | { kind: 'loading' }
@@ -48,34 +48,33 @@ export function PinGate({ lock, children }: { lock: PinLock; children: ReactNode
   return (
     <SafeAreaView style={styles.screen}>
       <View style={styles.topBar}>
-        <Pressable
-          accessibilityRole="button"
-          hitSlop={12}
+        <BackLink
+          label="Kids’ home"
           onPress={() => (router.canGoBack() ? router.back() : router.replace('/'))}
-        >
-          <Text style={styles.back}>‹ Kids</Text>
-        </Pressable>
+        />
       </View>
       <View style={styles.body}>
         {step.kind === 'loading' ? (
           error ? (
             <Text style={styles.error}>{error}</Text>
           ) : (
-            <ActivityIndicator size="large" />
+            <ActivityIndicator size="large" color={colors.primary} />
           )
         ) : (
           <PinPad
             title={
               step.kind === 'create'
-                ? 'Set a parent PIN'
+                ? 'Pick a parent PIN'
                 : step.kind === 'confirm'
-                  ? 'Enter the PIN again'
+                  ? 'Confirm your PIN'
                   : 'Parent PIN'
             }
             message={
               step.kind === 'create'
-                ? 'Pick 4 digits your kids don’t know. You’ll need them to open this area.'
-                : undefined
+                ? 'Pick 4 digits your kids don’t know.'
+                : step.kind === 'confirm'
+                  ? 'Enter the PIN again.'
+                  : 'Grown-ups only past this point.'
             }
             error={error}
             onComplete={submit}
@@ -88,8 +87,7 @@ export function PinGate({ lock, children }: { lock: PinLock; children: ReactNode
 
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.background },
-  topBar: { padding: 16 },
-  back: { fontSize: 17, color: colors.primary },
+  topBar: { paddingHorizontal: 20, paddingTop: 8 },
   body: { flex: 1, alignItems: 'center', justifyContent: 'center', padding: 24 },
   error: { fontSize: 16, color: colors.danger, textAlign: 'center' },
 });

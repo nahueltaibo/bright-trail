@@ -4,6 +4,6 @@ name: First launch
 - runFlow: subflows/launch-clean.yaml
 - assertVisible: Ask a grown-up to add you\.
 - tapOn: Parent area
-- assertVisible: Set a parent PIN
-- tapOn: ‹ Kids
+- assertVisible: Pick a parent PIN
+- tapOn: Kids’ home
 - assertVisible: Ask a grown-up to add you\.

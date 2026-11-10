@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { Platform, Text, View } from 'react-native';
 import { loadBundle } from '../../content/loadBundle';
 import { buildInfoRows } from '../buildInfo';
-import { Button, Section, styles as ui } from './ui';
+import { Button, Section, Status, styles as ui } from './ui';
 
 // The web module claims updates are on, and dev builds throw on every check.
 const updatesEnabled = Updates.isEnabled && !__DEV__ && Platform.OS !== 'web';
@@ -56,7 +56,7 @@ export function AboutSection() {
     <Section title="About this app">
       {rows.map(([label, value]) => (
         <View key={label}>
-          <Text style={ui.muted}>{label}</Text>
+          <Text style={ui.hint}>{label}</Text>
           <Text style={ui.text} selectable>
             {value}
           </Text>
@@ -65,7 +65,7 @@ export function AboutSection() {
       {updatesEnabled && (
         <Button label="Check for updates" kind="secondary" disabled={busy} onPress={check} />
       )}
-      {status && <Text style={ui.text}>{status}</Text>}
+      {status && <Status text={status} />}
       {ready && <Button label="Restart now" onPress={() => Updates.reloadAsync()} />}
     </Section>
   );

@@ -1,10 +1,9 @@
 import { localClock, type ChildProfile } from '@bright-trail/shared';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
-import { Text, View } from 'react-native';
 import { loadBundle } from '../../../../content/loadBundle';
 import { StateBadge, StateLegend } from '../../../../parent/components/StateBadge';
-import { ParentScreen, Section, styles as ui } from '../../../../parent/components/ui';
+import { ParentRow, ParentScreen, Section } from '../../../../parent/components/ui';
 import { gradeLabel } from '../../../../parent/grades';
 import { groupSkillsByGrade, type GradeGroup } from '../../../../parent/skillTree';
 import { useStorage } from '../../../../storage/StorageProvider';
@@ -29,20 +28,20 @@ export default function SkillTreeScreen() {
   }, [repo, childId]);
 
   return (
-    <ParentScreen title={child ? `${child.firstName}'s skills` : 'Skills'}>
-      <Section>
+    <ParentScreen title="Skill tree" backLabel={child?.firstName ?? 'Back'}>
+      <Section title="What the badges mean">
         <StateLegend />
       </Section>
       {groups?.map((group) => (
-        <Section key={group.grade} title={gradeLabel(group.grade)}>
-          {group.rows.map(({ skill, state }) => (
-            <View key={skill.id} style={ui.row}>
-              <View style={{ flex: 1 }}>
-                <Text style={ui.text}>{skill.title}</Text>
-                <Text style={ui.muted}>{skill.expectationCodes.join(', ')}</Text>
-              </View>
-              <StateBadge state={state} />
-            </View>
+        <Section key={group.grade} title={gradeLabel(group.grade)} padded={false}>
+          {group.rows.map(({ skill, state }, i) => (
+            <ParentRow
+              key={skill.id}
+              first={i === 0}
+              title={skill.title}
+              meta={skill.expectationCodes.join(', ')}
+              trailing={<StateBadge state={state} />}
+            />
           ))}
         </Section>
       ))}

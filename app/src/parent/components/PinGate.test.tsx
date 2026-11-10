@@ -19,9 +19,9 @@ describe('PinGate', () => {
     const lock = testPinLock();
     await renderGate(lock);
 
-    expect(await screen.findByText('Set a parent PIN')).toBeTruthy();
+    expect(await screen.findByText('Pick a parent PIN')).toBeTruthy();
     await type('1234');
-    expect(screen.getByText('Enter the PIN again')).toBeTruthy();
+    expect(screen.getByText('Confirm your PIN')).toBeTruthy();
     await type('1234');
 
     expect(await screen.findByText('Parent tools')).toBeTruthy();
@@ -31,12 +31,12 @@ describe('PinGate', () => {
   it('starts over when the two new PINs differ', async () => {
     const lock = testPinLock();
     await renderGate(lock);
-    await screen.findByText('Set a parent PIN');
+    await screen.findByText('Pick a parent PIN');
     await type('1234');
     await type('4321');
 
     expect(await screen.findByText("Those PINs didn't match. Start again.")).toBeTruthy();
-    expect(screen.getByText('Set a parent PIN')).toBeTruthy();
+    expect(screen.getByText('Pick a parent PIN')).toBeTruthy();
     expect(await lock.hasPin()).toBe(false);
   });
 

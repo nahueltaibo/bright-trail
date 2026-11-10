@@ -11,7 +11,7 @@ name: Session with placement
     env:
       NAME: Maya
       AVATAR: Owl
-- tapOn: ‹ Kids
+- tapOn: Kids’ home
 - tapOn: Maya, Owl
 - tapOn: Let’s go
 
@@ -80,7 +80,7 @@ name: Session with placement
 - assertVisible: Placed at Kindergarten\.
 - assertVisible: 4 placed skills
 - assertVisible: .*0 of 2 right
-- tapOn: ‹ Back
-- tapOn: ‹ Back
+- tapOn: Maya
+- tapOn: Grown-ups
 - tapOn: See flags
 - assertVisible: Open \(1\)

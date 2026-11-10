@@ -1,5 +1,7 @@
 import { Pressable, StyleSheet, Text, View } from 'react-native';
-import { colors } from './ui';
+import { Icon } from '../../design/Icon';
+import { font, radius } from '../../design/tokens';
+import { colors, styles as ui } from './ui';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
@@ -51,13 +53,13 @@ export function DateField({
 
   return (
     <View style={styles.box}>
-      <Text style={styles.label}>{label}</Text>
+      <Text style={ui.label}>{label}</Text>
       <View style={styles.row}>
         {parts.map(({ part, name, shown }) => (
           <View key={part} style={styles.stepper}>
             <StepButton
               label={`Next ${name.toLowerCase()}`}
-              symbol="▲"
+              up
               onPress={() => onChange(stepDate(value, part, 1, minYear, maxYear))}
             />
             <Text style={styles.value} accessibilityLabel={`${name} ${shown}`}>
@@ -65,7 +67,7 @@ export function DateField({
             </Text>
             <StepButton
               label={`Previous ${name.toLowerCase()}`}
-              symbol="▼"
+              up={false}
               onPress={() => onChange(stepDate(value, part, -1, minYear, maxYear))}
             />
           </View>
@@ -77,11 +79,11 @@ export function DateField({
 
 function StepButton({
   label,
-  symbol,
+  up = true,
   onPress,
 }: {
   label: string;
-  symbol: string;
+  up?: boolean;
   onPress: () => void;
 }) {
   return (
@@ -91,25 +93,33 @@ function StepButton({
       onPress={onPress}
       style={({ pressed }) => [styles.step, pressed && styles.pressed]}
     >
-      <Text style={styles.stepText}>{symbol}</Text>
+      <View style={{ transform: [{ rotate: up ? '-90deg' : '90deg' }] }}>
+        <Icon name="chevron" size={20} tint={colors.primary} />
+      </View>
     </Pressable>
   );
 }
 
 const styles = StyleSheet.create({
-  box: { gap: 8 },
-  label: { fontSize: 16, fontWeight: '600', color: colors.text },
+  box: { gap: 6 },
   row: { flexDirection: 'row', gap: 12 },
   stepper: { flex: 1, alignItems: 'center', gap: 4 },
-  value: { fontSize: 22, color: colors.text, paddingVertical: 4 },
+  value: {
+    ...font.body(700),
+    fontSize: 20,
+    lineHeight: 28,
+    color: colors.text,
+    paddingVertical: 2,
+  },
   step: {
     width: '100%',
-    minHeight: 44,
-    borderRadius: 8,
-    backgroundColor: '#E9ECF2',
+    minHeight: 48,
+    borderRadius: radius.sm,
+    borderWidth: 1.5,
+    borderColor: colors.borderStrong,
+    backgroundColor: colors.card,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  pressed: { backgroundColor: '#CDD3DE' },
-  stepText: { fontSize: 16, color: colors.text },
+  pressed: { backgroundColor: colors.sunken },
 });

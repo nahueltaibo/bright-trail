@@ -60,7 +60,7 @@ name: Add and edit a child
     centerElement: true
 - tapOn: Save changes
 - assertVisible: Saved\.
-- tapOn: ‹ Back
+- tapOn: Grown-ups
 - assertVisible: Maya, Grade 5
 - assertVisible: Grade 5 \(set by parent\)
 
