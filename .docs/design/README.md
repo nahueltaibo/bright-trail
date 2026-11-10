@@ -83,11 +83,20 @@ Landscape splits the question (45%) and the answer (55%). Story Back and Next mo
 
 Parent screens share `ParentFrame`: a back link that names where it goes, a title, and a scrolling column of `Section`s. Tablets use two columns (`.bt-pcols`) or a 640px form column (`.bt-pnarrow`).
 
+## Logo
+
+The mark is a cream trail winding up to a star on `trail` amber. The wordmark is Baloo 2 ExtraBold, drawn as outlines: "Bright" in `kid-ink` and "Trail" in `trail-deep`.
+
+- Use `logo.svg` on light grounds and `logo-dark.svg` on dark ones. Use `mark.svg` alone in square spaces.
+- Keep clear space of a quarter of the mark's height on every side.
+- Don't recolour, outline, rotate or stretch it. Don't set the name in another face.
+- The app icon and Android's adaptive and themed layers use the same art, without the rounded corners.
+
 ## Pictures and icons
 
 Pictures come from data through `EmojiVisual`: a single emoji, a row of N grouped in fives, or ten-frames. Its `slot` kind marks the 16:9 box where illustrations will go later. The eight avatars are fox, owl, penguin, frog, lion, unicorn, octopus and dinosaur, drawn as emoji on a tinted disc.
 
-Icons are the bundle's own line set (`Icon`), 24px grid, round caps, `currentColor`. Kid icons stroke at 2.6 to 3.2. There's no logo yet. Set the name in `kid-hero` Baloo 2 until one exists.
+Icons are the bundle's own line set (`Icon`), 24px grid, round caps, `currentColor`. Kid icons stroke at 2.6 to 3.2.
 
 ## Rewards
 
