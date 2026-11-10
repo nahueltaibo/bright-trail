@@ -1,5 +1,6 @@
 import {
   answerPlacement,
+  CHECK_SIZE,
   applyEvent,
   createPlacementContent,
   createSkillGraph,
@@ -7,6 +8,8 @@ import {
   localClock,
   nextPlacementItem,
   nextStep,
+  PROBE_SIZE,
+  REVIEW_SIZE,
   startPlacement,
   type AttemptPhase,
   type ContentBundle,
@@ -18,7 +21,7 @@ import {
   type SkillGraph,
   type StoryNugget,
 } from '@bright-trail/shared';
-import type { AnswerResult, FlagTarget } from '../learning/types';
+import type { AnswerResult, FlagTarget, ItemProgress } from '../learning/types';
 import { effectiveGrade } from '../parent/children';
 import type { Repository, StoredPlacement } from '../storage/repository';
 import { DEFAULT_LIMITS, type SessionLimits } from './constants';
@@ -37,7 +40,14 @@ export type EndReason =
 
 /** What the screen shows. `seq` changes on every new screen, so it can key the view. */
 export type SessionView =
-  | { kind: 'item'; seq: number; item: Item; phase: AttemptPhase }
+  | {
+      kind: 'item';
+      seq: number;
+      item: Item;
+      phase: AttemptPhase;
+      /** Where the item sits in its check, review, or probe. Placement has no fixed length. */
+      progress?: ItemProgress;
+    }
   | { kind: 'story'; seq: number; nugget: StoryNugget }
   | { kind: 'end'; seq: number; reason: EndReason; stars: number };
 
@@ -315,7 +325,11 @@ export class Session {
 
   private showItem(phase: 'check' | 'review' | 'probe', skillId: string) {
     const item = this.history.pick(this.content.itemsBySkill.get(skillId) ?? [])!;
-    this.show({ kind: 'item', item, phase });
+    const progress = {
+      current: this.learner?.skills[skillId]?.checkAnswered ?? 0,
+      total: { check: CHECK_SIZE, review: REVIEW_SIZE, probe: PROBE_SIZE }[phase],
+    };
+    this.show({ kind: 'item', item, phase, progress });
   }
 
   private async finishPlacement() {

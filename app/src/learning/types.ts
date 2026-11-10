@@ -22,6 +22,9 @@ export type FlagTarget =
   | { contentKind: 'card'; contentId: string; cardIndex: number }
   | { contentKind: 'item'; contentId: string; cardIndex: null };
 
+/** The item's place in a fixed run of questions. `current` is 0-based. */
+export type ItemProgress = { current: number; total: number };
+
 export type ItemViewProps<T extends Item = Item> = {
   item: T;
   narrate?: Narrate;
@@ -29,6 +32,8 @@ export type ItemViewProps<T extends Item = Item> = {
   onFlag?: (target: FlagTarget) => void;
   /** The child tapped "next" after the feedback. */
   onNext?: () => void;
+  /** Draws step dots in the top bar. */
+  progress?: ItemProgress;
   /**
    * The answer measures what the child knows: placement, probes, and reviews. Games then show why
    * and move on instead of offering another try.

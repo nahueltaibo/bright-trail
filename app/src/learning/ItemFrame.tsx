@@ -4,6 +4,7 @@ import { StyleSheet, View } from 'react-native';
 import { Icon, Star } from '../design/Icon';
 import { font, radius } from '../design/tokens';
 import { FlagButton, KidButton, ReplayButton, TopBar } from './controls';
+import { ProgressDots } from '../design/kid';
 import { QuitButton } from './quit';
 import { ANSWER_PANE_SHARE, colors, CORRECT_TEXT, MISS_TEXT, useLayout } from './theme';
 import { ReadAlong } from './ReadAlong';
@@ -129,7 +130,7 @@ export function Feedback({
   );
 }
 
-type ItemFrameProps = Pick<ItemViewProps, 'item' | 'onFlag' | 'onNext'> & {
+type ItemFrameProps = Pick<ItemViewProps, 'item' | 'onFlag' | 'onNext' | 'progress'> & {
   replay: () => void;
   outcome: Outcome | null;
   visual?: Visual;
@@ -145,22 +146,32 @@ export function ItemFrame({
   item,
   onFlag,
   onNext,
+  progress,
   replay,
   outcome,
   visual,
   children,
 }: ItemFrameProps) {
   const { landscape, scale: s, tablet } = useLayout();
-  const top = (
+  const flag = (
+    <FlagButton
+      onFlag={() => onFlag?.({ contentKind: 'item', contentId: item.id, cardIndex: null })}
+    />
+  );
+  // The dots take the middle, so the break button moves beside the flag.
+  const top = progress ? (
     <TopBar
       left={<ReplayButton onPress={replay} />}
-      mid={<QuitButton />}
+      mid={<ProgressDots steps noun="Question" {...progress} />}
       right={
-        <FlagButton
-          onFlag={() => onFlag?.({ contentKind: 'item', contentId: item.id, cardIndex: null })}
-        />
+        <>
+          <QuitButton />
+          {flag}
+        </>
       }
     />
+  ) : (
+    <TopBar left={<ReplayButton onPress={replay} />} mid={<QuitButton />} right={flag} />
   );
   const question = (
     <View style={[styles.question, { gap: 12 * s }]}>
