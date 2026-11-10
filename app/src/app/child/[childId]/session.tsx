@@ -1,7 +1,7 @@
 import { randomUUID } from 'expo-crypto';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { loadBundle } from '../../../content/loadBundle';
 import { ItemView, StoryCardViewer, type FlagTarget, type Narrate } from '../../../learning';
@@ -13,6 +13,7 @@ import { SpeakerButton, useAutoNarration, useNarration } from '../../../narratio
 import { END_MESSAGES, Session, type SessionView } from '../../../session';
 import { useLayout } from '../../../learning/theme';
 import { useStorage } from '../../../storage/StorageProvider';
+import { Text } from '../../../design/Text';
 
 /** The kid's session: placement first, then reviews, probes, lessons, and checks. */
 export default function SessionScreen() {

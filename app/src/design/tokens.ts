@@ -90,3 +90,32 @@ export const font = {
   }),
   mono: Platform.select({ ios: 'Menlo', android: 'monospace', default: 'Consolas, monospace' }),
 };
+
+/**
+ * The dyslexia font's face for each design face. Baloo 2 drops a weight step, since Lexend is
+ * heavier: `dys-prompt` is 500 where `kid-prompt` is 700.
+ */
+const LEXEND: Readonly<Record<string, string>> = {
+  Baloo2_400Regular: 'Lexend_400Regular',
+  Baloo2_500Medium: 'Lexend_400Regular',
+  Baloo2_600SemiBold: 'Lexend_500Medium',
+  Baloo2_700Bold: 'Lexend_500Medium',
+  Baloo2_800ExtraBold: 'Lexend_700Bold',
+  AtkinsonHyperlegible_400Regular: 'Lexend_400Regular',
+  AtkinsonHyperlegible_700Bold: 'Lexend_600SemiBold',
+};
+
+/**
+ * What to lay over a `font.display` or `font.body` style when the dyslexia font is on: Lexend,
+ * 0.02em letter spacing, and taller lines. Null for any other face, so emoji and inherited
+ * nested text stay as they are. React Native has no word spacing.
+ */
+export function dyslexicFont(style: Readonly<TextStyle> | null | undefined): TextStyle | null {
+  const fontFamily = style?.fontFamily && LEXEND[style.fontFamily];
+  if (!fontFamily) return null;
+  return {
+    fontFamily,
+    letterSpacing: (style.fontSize ?? 14) * 0.02,
+    ...(style.lineHeight !== undefined && { lineHeight: style.lineHeight * 1.12 }),
+  };
+}

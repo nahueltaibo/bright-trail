@@ -1,6 +1,6 @@
 import type { Choice, TapItem } from '@bright-trail/shared';
 import { useMemo, useState } from 'react';
-import { Pressable, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
+import { Pressable, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import { Icon } from '../design/Icon';
 import { font, pressDown, radius, shadow } from '../design/tokens';
 import { ItemFrame, useItemAttempt } from './ItemFrame';
@@ -8,6 +8,7 @@ import { questionSpeech } from './speech';
 import { colors, fontSizeFor, formatNumber, MIN_TAP, useLayout } from './theme';
 import type { ItemViewProps } from './types';
 import { VisualView } from './VisualView';
+import { Text } from '../design/Text';
 
 // FNV-1a. Enough to scatter a handful of choice ids.
 function hash(text: string): number {

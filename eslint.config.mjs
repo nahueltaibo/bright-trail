@@ -16,6 +16,31 @@ export default [
     files: ['app/**/*.{js,jsx,ts,tsx}'],
     settings: { react: { version: '19.3' } },
   },
+  {
+    // Styles are built at import, so kid screens follow the dyslexia font only through this Text.
+    files: [
+      'app/src/app/child/**',
+      'app/src/components/**',
+      'app/src/design/kid.tsx',
+      'app/src/learning/**',
+      'app/src/narration/**',
+    ],
+    ignores: ['**/*.test.tsx'],
+    rules: {
+      'no-restricted-imports': [
+        'error',
+        {
+          paths: [
+            {
+              name: 'react-native',
+              importNames: ['Text'],
+              message: 'Use Text from app/src/design/Text, which follows the dyslexia font.',
+            },
+          ],
+        },
+      ],
+    },
+  },
   ...[js.configs.recommended, ...tseslint.configs.recommended].map((config) => ({
     ...config,
     files: nodePackages,

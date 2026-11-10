@@ -1,6 +1,6 @@
 import type { StoryNugget } from '@bright-trail/shared';
 import { useEffect, useRef, useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { KidScreen, ProgressDots } from '../design/kid';
 import { font, radius, shadow } from '../design/tokens';
 import { FlagButton, KidButton, ReplayButton } from './controls';
@@ -9,6 +9,7 @@ import { colors, fontSizeFor, useLayout } from './theme';
 import type { FlagTarget, Narrate } from './types';
 import { ReadAlong } from './ReadAlong';
 import { FitVisual } from './VisualView';
+import { Text } from '../design/Text';
 
 export type StoryCardViewerProps = {
   nugget: StoryNugget;

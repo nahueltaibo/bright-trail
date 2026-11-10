@@ -1,6 +1,7 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { colors } from '../theme';
 import { font } from '../../design/tokens';
+import { Text } from '../../design/Text';
 
 const MIXED = /^(?:(\d+)\s*)?(?:(\d+)\/(\d+))?$/;
 

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Animated, Platform, StyleSheet, Text } from 'react-native';
+import { Animated, Platform, StyleSheet } from 'react-native';
 import { colors } from '../theme';
 import { font } from '../../design/tokens';
+import { Text } from '../../design/Text';
 
 const NATIVE = Platform.OS !== 'web';
 

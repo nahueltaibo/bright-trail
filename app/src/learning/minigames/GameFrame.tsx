@@ -1,6 +1,6 @@
 import { parseMixed, type SceneAnswer } from '@bright-trail/shared';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { Icon } from '../../design/Icon';
 import { color, font, pressDown, radius, shadow } from '../../design/tokens';
 import { FlagButton, KidButton, ReplayButton } from '../controls';
@@ -11,6 +11,7 @@ import { colors, CORRECT_TEXT, MIN_TAP, MISS_TEXT, useLayout } from '../theme';
 import type { Narrate } from '../types';
 import { ReadAlong } from '../ReadAlong';
 import { AmountText } from './AmountText';
+import { Text } from '../../design/Text';
 
 /** A choice's value. Text the story can't show as a number, like "Same", stays text. */
 export type GameValue = SceneAnswer | string;

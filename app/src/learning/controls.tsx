@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Icon } from '../design/Icon';
 import { KidIconButton } from '../design/kid';
 import { color, font, TAP_KID } from '../design/tokens';
 import { useLayout } from './theme';
+import { Text } from '../design/Text';
 
 export { KidButton, TopRow as TopBar } from '../design/kid';
 

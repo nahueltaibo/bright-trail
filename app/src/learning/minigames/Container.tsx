@@ -1,8 +1,9 @@
-import { StyleSheet, Text, View, type ViewStyle } from 'react-native';
+import { StyleSheet, View, type ViewStyle } from 'react-native';
 import { colors } from '../theme';
 import type { ContainerKind } from '@bright-trail/shared';
 import { HANDLE_HEIGHT, type Rect } from './share';
 import type { Tone } from './Stage';
+import { Text } from '../../design/Text';
 
 type Look = {
   fill: string;
