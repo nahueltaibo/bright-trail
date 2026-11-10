@@ -53,11 +53,11 @@
 .bt-avtile-name { font: 700 calc(18px * var(--s))/calc(22px * var(--s)) var(--font-display); color: var(--kid-ink-soft); }
 .bt-avgrid { display: grid; gap: calc(16px * var(--s)); justify-content: center; }
 
-.bt-avpick { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.bt-avpick { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
 .bt-avpick-opt { all: unset; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 8px 4px; border-radius: var(--radius-md);
   border: 2px solid transparent; cursor: pointer; font: 400 13px/18px var(--font-body); color: var(--p-ink-muted); min-height: 48px; }
 .bt-avpick-opt[aria-checked="true"] { border-color: var(--p-primary); background: var(--p-primary-soft); color: var(--p-ink); font-weight: 700; }
-.bt-avpick-wide { grid-template-columns: repeat(8, 1fr); }
+.bt-avpick-wide { grid-template-columns: repeat(10, 1fr); }
 
 /* ---------- Emoji visuals ---------- */
 .bt-ev { display: flex; flex-wrap: wrap; gap: calc(12px * var(--s)); justify-content: center; align-items: center; line-height: 1; }

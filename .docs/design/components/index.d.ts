@@ -1,7 +1,7 @@
 import type * as React from 'react';
 
 export type IconName = 'speaker' | 'flag' | 'home' | 'lock' | 'back' | 'next' | 'check' | 'backspace' | 'pause' | 'play' | 'plus' | 'share' | 'chevron' | 'sprout' | 'refresh' | 'question' | 'half' | 'gap' | 'star' | 'moon' | 'book' | 'close' | 'alert' | 'tree' | 'list' | 'bookmark';
-export type Animal = 'fox' | 'owl' | 'penguin' | 'frog' | 'lion' | 'unicorn' | 'octopus' | 'dinosaur';
+export type Animal = 'fox' | 'owl' | 'penguin' | 'frog' | 'lion' | 'unicorn' | 'octopus' | 'dinosaur' | 'panda' | 'cheetah';
 export type SkillState = 'unknown' | 'assumed' | 'gap' | 'learning' | 'mastered' | 'review';
 
 export interface IconProps { name: IconName; size?: string; stroke?: number; className?: string }
