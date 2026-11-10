@@ -27,6 +27,7 @@ import {
   type Whole,
 } from './geometry';
 import { sliceLayout, slotOf, type SliceLayout, type WholeSpot } from './layout';
+import { font } from '../../design/tokens';
 
 const NATIVE = Platform.OS !== 'web';
 const PULL_MS = 450;
@@ -732,6 +733,6 @@ const styles = StyleSheet.create({
   slice: { position: 'absolute' },
   kid: { position: 'absolute', width: 80, alignItems: 'center' },
   kidEmoji: { fontSize: 34, lineHeight: 40 },
-  kidName: { fontSize: 14, fontWeight: '700', color: colors.softInk },
+  kidName: { fontSize: 14, ...font.display(700), color: colors.softInk },
   crumb: { position: 'absolute', width: 4, height: 4, borderRadius: 2 },
 });

@@ -1,19 +1,22 @@
 import { useWindowDimensions } from 'react-native';
+import { color } from '../design/tokens';
 
+/** Kid-zone names the item screens and minigames use, mapped onto the design tokens. */
 export const colors = {
-  background: '#FFFBF0',
-  ink: '#5A4A1F',
-  softInk: '#8A7A4F',
-  surface: '#FFF4D6',
-  pressed: '#FFE7A3',
-  accent: '#FFB347',
-  line: '#C9B98A',
-  good: '#DFF5E1',
-  goodInk: '#2E7D4F',
+  background: color.kidBg,
+  ink: color.kidInk,
+  softInk: color.kidInkSoft,
+  surface: color.kidSurface,
+  raised: color.kidSurfaceRaised,
+  pressed: color.kidPressed,
+  accent: color.trail,
+  line: color.kidLineStrong,
+  good: color.hitBg,
+  goodInk: color.hitInk,
   // Misses get a calm blue, never red.
-  gentle: '#E8EEFF',
-  gentleInk: '#3F51A3',
-  dot: '#FF8A65',
+  gentle: color.missBg,
+  gentleInk: color.missInk,
+  dot: color.counter,
 };
 
 /** Width share of the answer pane in landscape. The question side needs less. */

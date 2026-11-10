@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { colors } from '../theme';
+import { font } from '../../design/tokens';
 
 const MIXED = /^(?:(\d+)\s*)?(?:(\d+)\/(\d+))?$/;
 
@@ -33,7 +34,7 @@ export function AmountText({
 
 const styles = StyleSheet.create({
   row: { flexDirection: 'row', alignItems: 'center' },
-  text: { fontWeight: '700', textAlign: 'center' },
+  text: { ...font.display(700), textAlign: 'center' },
   fraction: { alignItems: 'center' },
   bar: { alignSelf: 'stretch', borderRadius: 2 },
 });

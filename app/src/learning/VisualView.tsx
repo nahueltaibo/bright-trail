@@ -2,9 +2,12 @@ import { describeVisual, type Visual } from '@bright-trail/shared';
 import { useState } from 'react';
 import { StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
 import { FractionPicture } from './FractionPicture';
+import { radius } from '../design/tokens';
 import { colors } from './theme';
 
-const FRAME_BORDER = 2;
+const FRAME_BORDER = 3;
+const GROUP_PAD = 6;
+const GROUP_GAP = 8;
 
 type Props = {
   visual: Visual;
@@ -37,22 +40,31 @@ export function VisualView({ visual, width, height }: Props) {
   }
 
   if (visual.kind === 'objects') {
+    // Rows of five on a soft pill, like a ten-frame, so a glance counts five at once.
     const cols = Math.min(visual.count, 5);
     const rows = Math.ceil(visual.count / 5);
-    const cell = Math.min(width / cols, height / rows, Math.min(width, height) / 2);
+    const cell = Math.min(
+      (width - GROUP_PAD * 2) / cols,
+      (height - (rows - 1) * GROUP_GAP - rows * GROUP_PAD) / rows,
+      Math.min(width, height) / 2,
+    );
     const fontSize = cell * 0.72;
     return (
       <View
         accessible
         accessibilityRole="image"
         accessibilityLabel={label}
-        style={[styles.grid, { width: cell * cols }]}
+        style={[styles.groups, { gap: GROUP_GAP }]}
       >
-        {Array.from({ length: visual.count }, (_, i) => (
-          <View key={i} style={[styles.cell, { width: cell, height: cell }]}>
-            <Text style={[styles.emoji, { fontSize, lineHeight: fontSize * 1.2 }]}>
-              {visual.emoji}
-            </Text>
+        {Array.from({ length: rows }, (_, r) => (
+          <View key={r} style={styles.group}>
+            {Array.from({ length: Math.min(5, visual.count - r * 5) }, (_, i) => (
+              <View key={i} style={[styles.cell, { width: cell, height: cell }]}>
+                <Text style={[styles.emoji, { fontSize, lineHeight: fontSize * 1.2 }]}>
+                  {visual.emoji}
+                </Text>
+              </View>
+            ))}
           </View>
         ))}
       </View>
@@ -74,7 +86,7 @@ export function VisualView({ visual, width, height }: Props) {
               testID="ten-frame-dot"
               style={[
                 styles.dot,
-                { width: cell * 0.7, height: cell * 0.7, borderRadius: cell * 0.35 },
+                { width: cell * 0.68, height: cell * 0.68, borderRadius: cell * 0.34 },
               ]}
             />
           )}
@@ -104,14 +116,22 @@ export function FitVisual({ visual, maxSize = 420 }: { visual: Visual; maxSize?:
 
 const styles = StyleSheet.create({
   emoji: { textAlign: 'center' },
-  grid: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center' },
+  groups: { alignItems: 'center' },
+  group: {
+    flexDirection: 'row',
+    padding: GROUP_PAD,
+    borderRadius: radius.pill,
+    backgroundColor: colors.surface,
+  },
   cell: { alignItems: 'center', justifyContent: 'center' },
   frame: {
     flexDirection: 'row',
     flexWrap: 'wrap',
     borderWidth: FRAME_BORDER,
     borderColor: colors.ink,
-    backgroundColor: '#FFFFFF',
+    borderRadius: radius.sm,
+    overflow: 'hidden',
+    backgroundColor: colors.raised,
   },
   frameCell: {
     alignItems: 'center',

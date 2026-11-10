@@ -11,7 +11,8 @@ import {
   type LayoutChangeEvent,
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
-import { BigButton } from './controls';
+import { font, radius } from '../design/tokens';
+import { KidButton } from './controls';
 import { ItemFrame, useItemAttempt } from './ItemFrame';
 import { BubbleView, type Bubble } from './minigames/Bubble';
 import { frames, wait } from './minigames/motion';
@@ -259,7 +260,7 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
                   <Text
                     style={[
                       styles.label,
-                      { left: xOf(i) - 30, top: lineY + 16, fontSize: 18 * scale },
+                      { left: xOf(i) - 30, top: lineY + 18, fontSize: 22 * scale },
                     ]}
                   >
                     {label(valueAt(i, item))}
@@ -364,9 +365,14 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
       </View>
       {!locked && (
         <View style={styles.controls}>
-          <BigButton label="Move left" icon="◀" tone="plain" onPress={() => nudge(-1)} />
-          <BigButton label="Check my answer" icon="✔" disabled={index === null} onPress={submit} />
-          <BigButton label="Move right" icon="▶" tone="plain" onPress={() => nudge(1)} />
+          <KidButton label="Move left" icon="back" variant="plain" onPress={() => nudge(-1)} />
+          <KidButton
+            label="Check my answer"
+            icon="check"
+            disabled={index === null}
+            onPress={submit}
+          />
+          <KidButton label="Move right" icon="next" variant="plain" onPress={() => nudge(1)} />
         </View>
       )}
     </ItemFrame>
@@ -380,26 +386,32 @@ const styles = StyleSheet.create({
   track: { alignSelf: 'stretch', userSelect: 'none' },
   noTouch: { pointerEvents: 'none' },
   line: { position: 'absolute', height: 6, borderRadius: 3, backgroundColor: colors.ink },
-  tick: { position: 'absolute', width: 3, backgroundColor: colors.ink },
+  tick: { position: 'absolute', width: 3, borderRadius: 2, backgroundColor: colors.ink },
   tickMajor: { height: 28 },
   tickMinor: { height: 16, opacity: 0.6 },
-  label: { position: 'absolute', width: 60, textAlign: 'center', color: colors.ink },
+  label: {
+    position: 'absolute',
+    width: 60,
+    textAlign: 'center',
+    color: colors.ink,
+    ...font.display(700),
+  },
   arcLabel: {
     position: 'absolute',
     width: 140,
     textAlign: 'center',
     color: ARC_TEXT,
-    fontWeight: '700',
+    ...font.body(700),
   },
   target: {
     position: 'absolute',
     alignItems: 'center',
-    borderRadius: 12,
+    borderRadius: radius.pill,
     backgroundColor: colors.good,
-    borderWidth: 2,
+    borderWidth: 3,
     borderColor: colors.goodInk,
   },
-  targetText: { color: colors.goodInk, fontWeight: '700' },
+  targetText: { color: colors.goodInk, ...font.display(800) },
   marker: { position: 'absolute', textAlign: 'center' },
   // Waiting at the start, faded, until the child places it.
   markerParked: { opacity: 0.45 },

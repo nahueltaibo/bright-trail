@@ -7,6 +7,7 @@ import { frames, wait } from '../minigames/motion';
 import { BoardArt } from './BoardArt';
 import { boardOf, STAGE_H, STAGE_W, type Board, type Pt } from './board';
 import { joinWords } from './words';
+import { font } from '../../design/tokens';
 
 const NATIVE = Platform.OS !== 'web';
 const COUNT_MS = 320;
@@ -693,5 +694,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  popWord: { position: 'absolute', fontWeight: '800', fontSize: 16, color: '#D9542B' },
+  popWord: { position: 'absolute', ...font.display(800), fontSize: 16, color: '#D9542B' },
 });

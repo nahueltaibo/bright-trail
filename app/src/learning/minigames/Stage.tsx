@@ -32,6 +32,7 @@ import {
   type Side,
   type Thing,
 } from './share';
+import { font } from '../../design/tokens';
 
 const NATIVE = Platform.OS !== 'web';
 const MOVE_MS = 420;
@@ -565,11 +566,11 @@ const styles = StyleSheet.create({
   stage: { flex: 1, margin: 8 },
   abs: { position: 'absolute', alignItems: 'center' },
   emoji: { textAlign: 'center' },
-  number: { fontSize: 22, fontWeight: '800', color: colors.softInk, textAlign: 'center' },
+  number: { fontSize: 22, ...font.display(800), color: colors.softInk, textAlign: 'center' },
   name: {
     height: LABEL_HEIGHT,
     fontSize: 16,
-    fontWeight: '700',
+    ...font.display(700),
     color: colors.ink,
     textAlign: 'center',
   },
@@ -589,7 +590,7 @@ const styles = StyleSheet.create({
     position: 'absolute',
     right: -2,
     top: -2,
-    fontWeight: '800',
+    ...font.display(800),
     color: colors.gentleInk,
   },
   piece: { position: 'absolute', left: 0, top: 0, overflow: 'hidden' },
@@ -604,5 +605,5 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: colors.accent,
   },
-  bubbleText: { fontWeight: '800', color: colors.ink },
+  bubbleText: { ...font.display(800), color: colors.ink },
 });
