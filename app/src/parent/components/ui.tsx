@@ -233,6 +233,39 @@ export function Button({
   );
 }
 
+/** A segmented control: one pressed choice out of a few. */
+export function Segmented<T extends string>({
+  label,
+  value,
+  options,
+  onChange,
+}: {
+  label: string;
+  value: T;
+  options: readonly { value: T; label: string; icon?: IconName }[];
+  onChange: (value: T) => void;
+}) {
+  return (
+    <View style={styles.seg} accessibilityRole="radiogroup" accessibilityLabel={label}>
+      {options.map((o) => {
+        const on = o.value === value;
+        return (
+          <Pressable
+            key={o.value}
+            accessibilityRole="radio"
+            accessibilityState={{ checked: on }}
+            onPress={() => onChange(o.value)}
+            style={[styles.segItem, on && styles.segOn]}
+          >
+            {o.icon && <Icon name={o.icon} size={18} tint={on ? colors.text : colors.muted} />}
+            <Text style={[styles.segText, on && { color: colors.text }]}>{o.label}</Text>
+          </Pressable>
+        );
+      })}
+    </View>
+  );
+}
+
 /** A one-line result under an action. `ok` adds the check and the success colour. */
 export function Status({ text, ok = false }: { text: string; ok?: boolean }) {
   return (
@@ -342,6 +375,23 @@ export const styles = StyleSheet.create({
   rowMain: { flex: 1, minWidth: 0 },
   rowTitle: { ...font.body(700), fontSize: 16, lineHeight: 22, color: colors.text },
   rowMeta: { ...font.body(), fontSize: 13, lineHeight: 18, color: colors.muted },
+  seg: {
+    flexDirection: 'row',
+    padding: 3,
+    gap: 2,
+    borderRadius: radius.sm,
+    backgroundColor: colors.sunken,
+  },
+  segItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 6,
+    minHeight: 40,
+    paddingHorizontal: 14,
+    borderRadius: 6,
+  },
+  segOn: { backgroundColor: colors.card, ...shadow.card },
+  segText: { ...font.body(700), fontSize: 14, lineHeight: 20, color: colors.muted },
   status: { flexDirection: 'row', alignItems: 'center', gap: 6 },
   statusText: { ...font.body(), fontSize: 14, lineHeight: 20, color: colors.muted, flexShrink: 1 },
   statusOk: { ...font.body(700), color: colors.ok },
