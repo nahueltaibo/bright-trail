@@ -5,7 +5,13 @@ export {
   SESSION_CAP_MS,
   type SessionLimits,
 } from './constants';
-export { Session, type EndReason, type SessionOptions, type SessionView } from './controller';
+export {
+  Session,
+  type CheckEnd,
+  type EndReason,
+  type SessionOptions,
+  type SessionView,
+} from './controller';
 export { ItemHistory } from './items';
 export { END_MESSAGES } from './messages';
 export { buildTrail, countStars, type Trail, type TrailStop } from './trail';

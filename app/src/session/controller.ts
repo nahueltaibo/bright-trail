@@ -35,10 +35,21 @@ export type EndReason =
   /** Nothing is unlocked and nothing is due. */
   | 'all-done';
 
+/** How a check or review ended. Probes end silently, so walk-back never shows. */
+export type CheckEnd = {
+  check: 'check' | 'review';
+  passed: boolean;
+  skillId: string;
+  skillTitle: string;
+  /** On a miss: `next()` tells the story again. False once walk-back starts or lessons run out. */
+  storyAgain: boolean;
+};
+
 /** What the screen shows. `seq` changes on every new screen, so it can key the view. */
 export type SessionView =
   | { kind: 'item'; seq: number; item: Item; phase: AttemptPhase }
   | { kind: 'story'; seq: number; nugget: StoryNugget }
+  | ({ kind: 'check-end'; seq: number } & CheckEnd)
   | { kind: 'end'; seq: number; reason: EndReason; stars: number };
 
 export type SessionOptions = {
@@ -60,6 +71,7 @@ type Content = {
   placement: PlacementContent<Item>;
   itemsBySkill: ReadonlyMap<string, readonly Item[]>;
   nuggetBySkill: ReadonlyMap<string, StoryNugget>;
+  titleBySkill: ReadonlyMap<string, string>;
 };
 
 const contentCache = new WeakMap<ContentBundle, Content>();
@@ -74,6 +86,7 @@ function indexContent(bundle: ContentBundle): Content {
       placement,
       itemsBySkill: placement.itemsBySkill,
       nuggetBySkill: new Map(bundle.nuggets.map((n) => [n.skillId, n])),
+      titleBySkill: new Map(bundle.skills.map((s) => [s.id, s.title])),
     };
     contentCache.set(bundle, content);
   }
@@ -90,6 +103,8 @@ export class Session {
   private seq = 0;
   private step: Step | null = null;
   private answered = false;
+  /** Set by the answer that ends a check or review, shown by the next `next()`. */
+  private ended: CheckEnd | null = null;
   private placementItems = 0;
   private readonly lessons = new Map<string, number>();
   /** Skills passed over for the rest of this session. */
@@ -190,15 +205,26 @@ export class Session {
           clock,
         );
         await saveLearner(repo, before, this.learner);
+        this.ended = this.checkEnd(view.phase, view.item.skillId);
       }
       return view;
     });
   }
 
-  /** Moves on after an answered item's feedback. */
+  /** Moves on after an answered item's feedback, or from the check-end screen. */
   next(): Promise<SessionView> {
     return this.enqueue(async () => {
-      if (this.view.kind === 'item' && this.answered) await this.advance();
+      const view = this.view;
+      if (view.kind === 'item' && this.answered) {
+        if (this.ended) {
+          this.step = null;
+          this.show({ kind: 'check-end', ...this.ended });
+          this.ended = null;
+        } else await this.advance();
+      } else if (view.kind === 'check-end') {
+        if (view.storyAgain && !this.timeIsUp()) await this.teach(view.skillId);
+        else await this.advance();
+      }
       return this.view;
     });
   }
@@ -288,25 +314,50 @@ export class Session {
         return this.showItem(next.kind, next.skillId);
       }
 
-      const taught = this.lessons.get(next.skillId) ?? 0;
-      if (taught >= this.limits.lessonsPerSkill) {
+      if (!this.canTeach(next.skillId)) {
         this.skip.add(next.skillId);
         continue;
       }
-      this.lessons.set(next.skillId, taught + 1);
-      this.learner = applyEvent(
-        learner,
-        this.content.graph,
-        { type: 'lesson-started', skillId: next.skillId },
-        localClock(this.now()),
-      );
-      await saveLearner(this.options.repo, learner, this.learner);
-      this.step = { kind: 'check', skillId: next.skillId };
-      const nugget = this.content.nuggetBySkill.get(next.skillId);
-      // Without a nugget the check still runs, so the skill can't stall the trail.
-      if (nugget) return this.show({ kind: 'story', nugget });
-      return this.showItem('check', next.skillId);
+      return this.teach(next.skillId);
     }
+  }
+
+  private canTeach(skillId: string): boolean {
+    return (this.lessons.get(skillId) ?? 0) < this.limits.lessonsPerSkill;
+  }
+
+  /** Starts a lesson: the story, then its check. */
+  private async teach(skillId: string): Promise<void> {
+    const learner = this.learner!;
+    this.lessons.set(skillId, (this.lessons.get(skillId) ?? 0) + 1);
+    this.learner = applyEvent(
+      learner,
+      this.content.graph,
+      { type: 'lesson-started', skillId },
+      localClock(this.now()),
+    );
+    await saveLearner(this.options.repo, learner, this.learner);
+    this.step = { kind: 'check', skillId };
+    const nugget = this.content.nuggetBySkill.get(skillId);
+    // Without a nugget the check still runs, so the skill can't stall the trail.
+    if (nugget) return this.show({ kind: 'story', nugget });
+    return this.showItem('check', skillId);
+  }
+
+  /** How the answer just saved ended a check or review, or null if it didn't end one. */
+  private checkEnd(phase: AttemptPhase, skillId: string): CheckEnd | null {
+    const mastery = this.learner!.skills[skillId];
+    if ((phase !== 'check' && phase !== 'review') || !mastery || mastery.checkAnswered > 0) {
+      return null;
+    }
+    const passed = mastery.status === 'mastered';
+    return {
+      check: phase,
+      passed,
+      skillId,
+      skillTitle: this.content.titleBySkill.get(skillId) ?? '',
+      storyAgain: mastery.status === 'learning' && this.canTeach(skillId),
+    };
   }
 
   private timeIsUp(): boolean {

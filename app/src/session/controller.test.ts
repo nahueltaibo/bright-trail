@@ -98,7 +98,7 @@ describe('Session', () => {
     return session.current;
   }
 
-  /** Reads the story, then answers every check item the same way. */
+  /** Reads the story, answers every check item the same way, then leaves the check-end screen. */
   async function playLesson(session: Session, correct: boolean): Promise<string[]> {
     const view = session.current;
     if (view.kind !== 'story') throw new Error(`Expected a story, got ${view.kind}`);
@@ -112,6 +112,7 @@ describe('Session', () => {
       items.push(session.current.item.id);
       await play(session, correct);
     }
+    if (session.current.kind === 'check-end') await session.next();
     return items;
   }
 
@@ -285,6 +286,89 @@ describe('Session', () => {
         kind: 'story',
         nugget: { skillId: 'k-count-to-20' },
       });
+    });
+  });
+
+  describe('check end', () => {
+    async function playCheck(session: Session, correct: boolean) {
+      await session.finishStory();
+      for (let i = 0; i < 5; i++) await play(session, correct);
+      return session.current;
+    }
+
+    it('shows a passed check, then moves on to the next lesson', async () => {
+      const session = await placeAtKindergarten();
+      expect(await playCheck(session, true)).toMatchObject({
+        kind: 'check-end',
+        check: 'check',
+        passed: true,
+        skillId: 'k-count-to-20',
+        skillTitle: 'Count to 20',
+        storyAgain: false,
+      });
+      expect(await session.next()).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'g1-numbers-to-50' },
+      });
+    });
+
+    it('offers the story again after a first miss', async () => {
+      const session = await placeAtKindergarten();
+      expect(await playCheck(session, false)).toMatchObject({
+        kind: 'check-end',
+        passed: false,
+        storyAgain: true,
+      });
+      expect(await session.next()).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'k-count-to-20' },
+      });
+    });
+
+    it('does not offer the story once a second miss starts walk-back', async () => {
+      const session = await placeAtKindergarten();
+      await playCheck(session, false);
+      await session.next();
+      expect(await playCheck(session, false)).toMatchObject({
+        kind: 'check-end',
+        passed: false,
+        storyAgain: false,
+      });
+      expect(await session.next()).toMatchObject({ kind: 'end', reason: 'done-for-today' });
+    });
+
+    it('shows a passed review', async () => {
+      await seedFinishedPlacement([
+        { skillId: 'k-count-to-20', status: 'mastered', nextReviewOn: '2026-11-06' },
+      ]);
+      const session = await start();
+      for (let i = 0; i < 3; i++) await play(session, true);
+      expect(session.current).toMatchObject({
+        kind: 'check-end',
+        check: 'review',
+        passed: true,
+        skillId: 'k-count-to-20',
+      });
+    });
+
+    it('ends quietly after a probe', async () => {
+      await seedFinishedPlacement([{ skillId: 'k-count-to-20', status: 'assumed' }]);
+      await repo.walkBack.save('maya', {
+        probes: ['k-count-to-20'],
+        targets: ['g1-numbers-to-50'],
+      });
+      const session = await start();
+      while (session.current.kind === 'item' && session.current.phase === 'probe') {
+        await play(session, true);
+      }
+      expect(session.current.kind).not.toBe('check-end');
+    });
+
+    it('ends the session instead of the story when time is up', async () => {
+      const session = await placeAtKindergarten();
+      await playCheck(session, false);
+      clock.advance(SESSION_CAP_MS);
+      expect(await session.next()).toMatchObject({ kind: 'end', reason: 'time-up' });
     });
   });
 
