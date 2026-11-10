@@ -13,6 +13,7 @@ export type ChildDraft = {
   avatar: string;
   gradeOverride: SchoolGrade | null;
   readingMode: boolean;
+  dyslexicFont: boolean;
 };
 
 export function emptyDraft(today: string, avatar: string): ChildDraft {
@@ -24,6 +25,7 @@ export function emptyDraft(today: string, avatar: string): ChildDraft {
     avatar,
     gradeOverride: null,
     readingMode: false,
+    dyslexicFont: false,
   };
 }
 
@@ -34,6 +36,7 @@ export function draftFromChild(child: ChildProfile): ChildDraft {
     avatar: child.avatar,
     gradeOverride: child.gradeOverride ?? null,
     readingMode: child.readingMode,
+    dyslexicFont: child.dyslexicFont,
   };
 }
 
@@ -45,6 +48,7 @@ export function childFromDraft(id: string, draft: ChildDraft): ChildProfile {
     gradeOverride: draft.gradeOverride ?? undefined,
     avatar: draft.avatar,
     readingMode: draft.readingMode,
+    dyslexicFont: draft.dyslexicFont,
   });
 }
 

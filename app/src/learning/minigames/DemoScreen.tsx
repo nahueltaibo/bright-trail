@@ -1,11 +1,12 @@
 import type { Item } from '@bright-trail/shared';
 import { Redirect, router } from 'expo-router';
 import { useState } from 'react';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { SHOW_DEV_TOOLS } from '../../devTools';
 import { useNarration } from '../../narration';
 import { ItemView } from '../ItemView';
+import { Text } from '../../design/Text';
 
 /** Dev only: plays demo items one by one. "Measuring" plays them as placement would. */
 export function DemoScreen({ items: DEMO_ITEMS }: { items: readonly Item[] }) {

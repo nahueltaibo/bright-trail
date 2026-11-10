@@ -2,7 +2,6 @@ import type { ReactNode } from 'react';
 import {
   Pressable,
   StyleSheet,
-  Text,
   View,
   type StyleProp,
   type TextStyle,
@@ -13,6 +12,7 @@ import { getAvatar } from '../avatars';
 import { useLayout } from '../learning/theme';
 import { Icon, Star, type IconName } from './Icon';
 import { color, font, pressDown, radius, shadow, TAP_KID } from './tokens';
+import { Text } from './Text';
 
 /** An animal on its tinted disc. Decorative unless given a label. */
 export function AvatarDisc({

@@ -27,6 +27,7 @@ const maya: ChildProfile = {
   birthdate: '2020-03-14',
   avatar: 'fox',
   readingMode: false,
+  dyslexicFont: false,
 };
 
 /** A clock tests move by hand. Midday UTC keeps every time zone on the same date. */

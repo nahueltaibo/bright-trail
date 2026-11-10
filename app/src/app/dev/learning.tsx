@@ -1,7 +1,7 @@
 import type { ContentBundle, Item, Skill, StoryNugget } from '@bright-trail/shared';
 import { Redirect, router } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { loadBundle } from '../../content/loadBundle';
 import { SHOW_DEV_TOOLS } from '../../devTools';
@@ -9,6 +9,7 @@ import { ItemView, StoryCardViewer, type FlagTarget } from '../../learning';
 import { formatNumber } from '../../learning/theme';
 import { choiceLabel } from '../../learning/TapItemView';
 import { gradeLabel } from '../../parent/grades';
+import { Text } from '../../design/Text';
 
 type Step = { kind: 'nugget'; nugget: StoryNugget } | { kind: 'item'; item: Item };
 

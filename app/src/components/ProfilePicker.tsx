@@ -1,9 +1,10 @@
 import type { ChildProfile } from '@bright-trail/shared';
-import { Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { getAvatar } from '../avatars';
 import { AvatarDisc } from '../design/kid';
 import { color, font, pressDown, radius, shadow } from '../design/tokens';
 import { useLayout } from '../learning/theme';
+import { Text } from '../design/Text';
 
 type Props = {
   profiles: readonly ChildProfile[];

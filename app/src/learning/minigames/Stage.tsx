@@ -8,15 +8,7 @@ import {
   useState,
   type Ref,
 } from 'react';
-import {
-  Animated,
-  Easing,
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  type LayoutChangeEvent,
-} from 'react-native';
+import { Animated, Easing, Platform, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import { BarStrips, isRound, Wedge, WholeThing } from '../food/ThingArt';
 import { turnPoint } from '../food/geometry';
 import { colors } from '../theme';
@@ -33,6 +25,7 @@ import {
   type Thing,
 } from './share';
 import { font } from '../../design/tokens';
+import { Text } from '../../design/Text';
 
 const NATIVE = Platform.OS !== 'web';
 const MOVE_MS = 420;

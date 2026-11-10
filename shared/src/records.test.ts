@@ -79,6 +79,7 @@ describe('ChildProfileSchema', () => {
       birthdate: '2020-03-15',
       avatar: 'fox',
       readingMode: false,
+      dyslexicFont: false,
     };
     expect(ChildProfileSchema.safeParse(child).success).toBe(true);
     expect(ChildProfileSchema.safeParse({ ...child, gradeOverride: 'SK' }).success).toBe(true);

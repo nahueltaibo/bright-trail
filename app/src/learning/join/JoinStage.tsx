@@ -1,6 +1,6 @@
 import { type JoinMove, type JoinScene } from '@bright-trail/shared';
 import { useEffect, useImperativeHandle, useRef, useState, type Ref } from 'react';
-import { Animated, Platform, StyleSheet, Text, View, type LayoutChangeEvent } from 'react-native';
+import { Animated, Platform, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import Svg, { Line } from 'react-native-svg';
 import { BubbleView, type Bubble } from '../minigames/Bubble';
 import { frames, wait } from '../minigames/motion';
@@ -8,6 +8,7 @@ import { BoardArt } from './BoardArt';
 import { boardOf, STAGE_H, STAGE_W, type Board, type Pt } from './board';
 import { joinWords } from './words';
 import { font } from '../../design/tokens';
+import { Text } from '../../design/Text';
 
 const NATIVE = Platform.OS !== 'web';
 const COUNT_MS = 320;

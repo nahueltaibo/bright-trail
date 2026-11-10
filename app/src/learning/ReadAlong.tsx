@@ -1,6 +1,7 @@
-import { ScrollView, StyleSheet, Text } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
 import { font } from '../design/tokens';
 import { colors, useLayout } from './theme';
+import { Text } from '../design/Text';
 
 /** What the narrator says, written out so kids can read along or re-read it. Scrolls if long. */
 export function ReadAlong({ text, lines = 3.5 }: { text: string; lines?: number }) {

@@ -11,6 +11,7 @@ const maya: ChildDraft = {
   avatar: 'fox',
   gradeOverride: null,
   readingMode: false,
+  dyslexicFont: false,
 };
 
 describe('ChildForm', () => {
@@ -60,6 +61,20 @@ describe('ChildForm', () => {
     await fireEvent.press(screen.getByLabelText('Auto (Grade 1)'));
     await fireEvent.press(screen.getByText('Save'));
     expect(onSubmit).toHaveBeenCalledWith(maya);
+  });
+
+  it('turns on reading mode and the dyslexia-friendly font', async () => {
+    const onSubmit = jest.fn().mockResolvedValue(undefined);
+    await render(<ChildForm initial={maya} today={TODAY} submitLabel="Save" onSubmit={onSubmit} />);
+
+    await fireEvent.press(screen.getByLabelText('Reading mode'));
+    await fireEvent.press(screen.getByLabelText('Dyslexia-friendly font'));
+    expect(screen.getByLabelText('Dyslexia-friendly font').props.accessibilityState).toMatchObject({
+      checked: true,
+    });
+    await fireEvent.press(screen.getByText('Save'));
+
+    expect(onSubmit).toHaveBeenCalledWith({ ...maya, readingMode: true, dyslexicFont: true });
   });
 
   it('will not save without a name', async () => {

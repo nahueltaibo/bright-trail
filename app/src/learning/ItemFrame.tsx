@@ -1,6 +1,6 @@
 import type { Visual } from '@bright-trail/shared';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { Icon, Star } from '../design/Icon';
 import { font, radius } from '../design/tokens';
 import { FlagButton, KidButton, ReplayButton, TopBar } from './controls';
@@ -10,6 +10,7 @@ import { ReadAlong } from './ReadAlong';
 import { questionSpeech } from './speech';
 import type { AnswerResult, ItemViewProps } from './types';
 import { FitVisual } from './VisualView';
+import { Text } from '../design/Text';
 
 export type Outcome = { answer: string | number; correct: boolean };
 

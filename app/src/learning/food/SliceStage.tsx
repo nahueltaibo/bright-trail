@@ -1,14 +1,6 @@
 import { sliceTotal, type SliceScene } from '@bright-trail/shared';
 import { useEffect, useId, useImperativeHandle, useRef, useState, type Ref } from 'react';
-import {
-  Animated,
-  Easing,
-  Platform,
-  StyleSheet,
-  Text,
-  View,
-  type LayoutChangeEvent,
-} from 'react-native';
+import { Animated, Easing, Platform, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import Svg, { Circle, ClipPath, Defs, Ellipse, G, Line, Mask, Path, Rect } from 'react-native-svg';
 import { BubbleView, type Bubble } from '../minigames/Bubble';
 import { castFrom, type Kid } from '../minigames/cast';
@@ -28,6 +20,7 @@ import {
 } from './geometry';
 import { sliceLayout, slotOf, type SliceLayout, type WholeSpot } from './layout';
 import { font } from '../../design/tokens';
+import { Text } from '../../design/Text';
 
 const NATIVE = Platform.OS !== 'web';
 const PULL_MS = 450;

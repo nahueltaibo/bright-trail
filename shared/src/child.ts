@@ -12,5 +12,7 @@ export const ChildProfileSchema = z.object({
   avatar: z.string().min(1),
   /** When true, narration starts off and the child reads on their own. */
   readingMode: z.boolean(),
+  /** When true, kid screens draw text in Lexend with wider letter spacing. */
+  dyslexicFont: z.boolean(),
 });
 export type ChildProfile = z.infer<typeof ChildProfileSchema>;

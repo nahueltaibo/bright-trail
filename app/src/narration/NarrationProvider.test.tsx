@@ -27,6 +27,7 @@ const mockChildren: Record<string, ChildProfile> = {
     birthdate: '2016-07-02',
     avatar: 'owl',
     readingMode: true,
+    dyslexicFont: false,
   },
   listener: {
     id: 'listener',
@@ -34,6 +35,7 @@ const mockChildren: Record<string, ChildProfile> = {
     birthdate: '2020-03-14',
     avatar: 'fox',
     readingMode: false,
+    dyslexicFont: false,
   },
 };
 jest.mock('../storage/StorageProvider', () => ({
