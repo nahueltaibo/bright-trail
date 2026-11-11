@@ -29,10 +29,11 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `app/src/storage/` — expo-sqlite with migrations and a Zod-validated repository. Tests run it on Node's SQLite (`storage/testing/`).
 - `app/src/parent/` — PIN-gated parent area. `*.native.ts` files hold the phone versions. On web the PIN hash goes in the `settings` table, since expo-secure-store has no web support.
 - `app/src/learning/` and `app/src/narration/` — item screens and expo-speech narration. After a check, the number line plays the frog's path, then shows the feedback.
-- `app/src/learning/minigames/` — the sharing minigame and `GameFrame`, the prompt, answers, and feedback every minigame shares. Any item whose `game.kind` is `share` plays there instead of its usual screen. It allows retries during a lesson's check, and plays out the first answer then moves on when `measuring`.
-- `app/src/learning/food/` — food art for fraction pictures, and the slices minigame. Any item whose `game.kind` is `slices` plays there.
-- `app/src/learning/join/` — the join-and-leave minigame on a pond, a bus, wires, or a tray. Any item whose `game.kind` is `join` plays there.
-- `/dev/learning` is a preview of every item type. `/dev/share`, `/dev/slices`, `/dev/join`, and `/dev/hops` play one item per kind of question. `/dev/check-end` shows each screen that ends a check or review. They show when `__DEV__` is true or the build sets `EXPO_PUBLIC_E2E=1`.
+- `app/src/learning/games.tsx` — `GAME_VIEWS`, the app's minigames by `kind`: each one's view, title, and demo items. `ItemView` plays an item's `game` from it instead of the item's usual screen.
+- `app/src/learning/minigames/` — the sharing minigame and `GameFrame`, the prompt, answers, and feedback every minigame shares. Its `game.kind` is `share`. It allows retries during a lesson's check, and plays out the first answer then moves on when `measuring`.
+- `app/src/learning/food/` — food art for fraction pictures, and the slices minigame (`slices`).
+- `app/src/learning/join/` — the join-and-leave minigame on a pond, a bus, wires, or a tray (`join`).
+- `/dev/learning` is a preview of every item type. `/dev/games/<kind>` plays a game's demo items, one per kind of question. `/dev/hops` does the same for frog paths. `/dev/check-end` shows each screen that ends a check or review. They show when `__DEV__` is true or the build sets `EXPO_PUBLIC_E2E=1`.
 
 ## Checking Your Work
 
