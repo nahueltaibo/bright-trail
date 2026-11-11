@@ -9,10 +9,11 @@
     "test": "vitest run",
     "typecheck": "tsc -p .",
     "generate": "tsx src/generate/build-content.ts",
-    "scenes": "tsx src/scenes/tag-scenes.ts",
-    "slices": "tsx src/slices/tag-slices.ts",
-    "join": "tsx src/join/tag-join.ts",
-    "hops": "tsx src/hops/tag-hops.ts"
+    "games": "tsx src/games/tag-games.ts",
+    "scenes": "tsx src/games/tag-games.ts --kind share",
+    "slices": "tsx src/games/tag-games.ts --kind slices",
+    "join": "tsx src/games/tag-games.ts --kind join",
+    "hops": "tsx src/games/tag-games.ts --kind hops"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.6.0",
