@@ -5,7 +5,7 @@ import { StoryNuggetSchema } from './nugget';
 import { SkillSchema, type Skill } from './skill';
 
 /** Bumped on breaking schema changes, so the app can reject a bundle it can't play. */
-export const CONTENT_SCHEMA_VERSION = 1;
+export const CONTENT_SCHEMA_VERSION = 2;
 
 /**
  * Returns one prerequisite cycle as a path of skill ids that starts and ends on the same id,

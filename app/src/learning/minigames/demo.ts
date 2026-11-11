@@ -17,7 +17,7 @@ export const DEMO_ITEMS: Item[] = [
     narration:
       'Maya has 8 cookies. She shares them equally with 2 friends. How many cookies does each friend get? 2, 3, 4, or 5?',
     ...tap('4', '2', '3', '5'),
-    scene: scene({
+    game: scene({
       ask: 'each',
       thing: 'cookie',
       one: 'cookie',
@@ -36,7 +36,7 @@ export const DEMO_ITEMS: Item[] = [
     narration:
       'Kofi has 4 sandwiches. He shares them equally with 3 friends. How much does each friend get? 1, 1 1/3, 1 1/2, or 2?',
     ...tap('1 1/3', '1', '1 1/2', '2'),
-    scene: scene({
+    game: scene({
       ask: 'each',
       thing: 'sandwich',
       one: 'sandwich',
@@ -54,7 +54,7 @@ export const DEMO_ITEMS: Item[] = [
     prompt: '3 pies, 4 friends',
     narration: '3 pies are shared equally by 4 friends. How much does each friend get?',
     ...tap('3/4', '1/4', '1/2', '1'),
-    scene: scene({
+    game: scene({
       ask: 'each',
       thing: 'pie',
       one: 'pie',
@@ -73,7 +73,7 @@ export const DEMO_ITEMS: Item[] = [
     narration:
       'Priya has 12 apples. She shares them equally with 3 friends. How many does each get?',
     answer: 4,
-    scene: scene({
+    game: scene({
       ask: 'each',
       thing: 'apple',
       one: 'apple',
@@ -92,7 +92,7 @@ export const DEMO_ITEMS: Item[] = [
     narration:
       '4 friends share 14 strawberries. Each friend gets whole strawberries. How many are left over? 1, 2, or 3?',
     ...tap('2', '1', '3'),
-    scene: scene({
+    game: scene({
       ask: 'left',
       thing: 'strawberry',
       one: 'strawberry',
@@ -110,7 +110,7 @@ export const DEMO_ITEMS: Item[] = [
     prompt: '12 balls, 3 in each bucket',
     narration: 'Wei has 12 balls. He puts 3 balls in each bucket. How many buckets does he fill?',
     answer: 4,
-    scene: scene({
+    game: scene({
       ask: 'groups',
       thing: 'ball',
       one: 'ball',
@@ -130,7 +130,7 @@ export const DEMO_ITEMS: Item[] = [
     narration:
       'There are 4 boxes. Each box has 3 toy cars. How many toy cars in all? 7, 10, or 12?',
     ...tap('12', '7', '10'),
-    scene: scene({
+    game: scene({
       ask: 'total',
       thing: 'car',
       one: 'toy car',
@@ -148,7 +148,7 @@ export const DEMO_ITEMS: Item[] = [
     prompt: 'Is it fair?',
     narration: 'Amara gets 4 cookies. Leo gets 2 cookies. Is it fair? Yes or no?',
     ...tap('No', 'Yes'),
-    scene: scene({
+    game: scene({
       ask: 'fair',
       thing: 'cookie',
       one: 'cookie',
@@ -171,7 +171,7 @@ export const DEMO_ITEMS: Item[] = [
     narration:
       'Nia shares 12 cookies with 2 friends. Omar shares 12 cookies with 4 friends. Whose friends get more each? 2 friends or 4 friends?',
     ...tap('2 friends', '4 friends'),
-    scene: scene({
+    game: scene({
       ask: 'compare',
       thing: 'cookie',
       one: 'cookie',

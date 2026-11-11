@@ -1,10 +1,4 @@
-import {
-  ContentBundleSchema,
-  hopsProblems,
-  joinProblems,
-  sceneProblems,
-  sliceProblems,
-} from '@bright-trail/shared';
+import { ContentBundleSchema, gameProblems, hopsProblems } from '@bright-trail/shared';
 
 export type BundleCheck = { ok: true; summary: string } | { ok: false; problems: string[] };
 
@@ -20,9 +14,9 @@ export function checkBundle(data: unknown): BundleCheck {
   }
   const { version, skills, nuggets, items } = result.data;
   const sceneIssues = items.flatMap((item) => [
-    ...(item.scene ? sceneProblems(item, item.scene).map((p) => `${item.id} scene: ${p}`) : []),
-    ...(item.slices ? sliceProblems(item, item.slices).map((p) => `${item.id} slices: ${p}`) : []),
-    ...(item.join ? joinProblems(item, item.join).map((p) => `${item.id} join: ${p}`) : []),
+    ...(item.game
+      ? gameProblems(item, item.game).map((p) => `${item.id} ${item.game?.kind}: ${p}`)
+      : []),
     ...(item.type === 'number-line' && item.hops
       ? hopsProblems(item, item.hops).map((p) => `${item.id} hops: ${p}`)
       : []),

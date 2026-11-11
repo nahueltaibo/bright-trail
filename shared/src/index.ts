@@ -3,6 +3,7 @@ export * from './bundle';
 export * from './child';
 export * from './common';
 export * from './engine';
+export * from './game';
 export * from './grade';
 export * from './hops';
 export * from './item';

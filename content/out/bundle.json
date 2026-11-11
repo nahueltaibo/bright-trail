@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "version": "2026.11.08-53",
   "generatedAt": "2026-11-08T19:50:21Z",
   "skills": [
@@ -2853,7 +2853,7 @@
       "narration": "Count the frogs. How many frogs are there?",
       "prompt": "How many frogs?",
       "why": "Touch each frog and count: 1, 2, 3, 4, 5. There are 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🐸",
@@ -2991,7 +2991,7 @@
       "narration": "Count the stars. How many stars are there?",
       "prompt": "How many stars?",
       "why": "Touch each star and count by ones. The last number is 14.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "⭐",
@@ -3055,7 +3055,7 @@
       "narration": "Count the stars. How many stars are there?",
       "prompt": "How many stars?",
       "why": "Touch each star and count. The last number you reach is how many.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "⭐",
@@ -3104,7 +3104,7 @@
       "narration": "Here are some fish. How many fish do you count?",
       "prompt": "How many fish?",
       "why": "Count each fish one time. The last number is how many fish.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🐟",
@@ -3208,7 +3208,7 @@
       "narration": "Jo has some apples. Count them. How many apples does Jo have?",
       "prompt": "How many apples?",
       "why": "Count each apple one time. The last number you reach is how many.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🍎",
@@ -3274,7 +3274,7 @@
       "narration": "Look fast! How many ladybugs do you see? Is it 1, 2, or 3?",
       "prompt": "How many?",
       "why": "There are 2 ladybugs. Look at them together. You can see 2 at once.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🐞",
@@ -3300,7 +3300,7 @@
       "narration": "Look fast! How many stars do you see?",
       "prompt": "How many stars?",
       "why": "There are 3 stars. Three is a small group. You can see it at once.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "⭐",
@@ -3334,7 +3334,7 @@
       "narration": "Look fast! How many dots are in the ten-frame? Is it 3, 4, or 5?",
       "prompt": "How many dots?",
       "why": "There are 3 dots. Look at them together. You do not need to count.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "one": "dot",
@@ -3359,7 +3359,7 @@
       "narration": "Look fast! How many apples do you see?",
       "prompt": "How many apples?",
       "why": "There are 2 apples. Two is a small group. You can see it at once.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🍎",
@@ -3380,7 +3380,7 @@
       "narration": "Look fast! How many fish do you see? Is it 3, 4, or 5?",
       "prompt": "How many fish?",
       "why": "There are 4 fish. Think of two and two. That makes 4.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🐟",
@@ -3406,7 +3406,7 @@
       "narration": "Look fast! How many dots are in the ten-frame?",
       "prompt": "How many dots?",
       "why": "There are 4 dots. Two and two make 4. You can see it at once.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "one": "dot",
@@ -3439,7 +3439,7 @@
       "narration": "Look fast! How many stars are there? Is it 4, 5, or 3?",
       "prompt": "How many stars?",
       "why": "There are 5 stars. Five is one full row of the ten-frame.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🌟",
@@ -3465,7 +3465,7 @@
       "narration": "Look fast! How many frogs do you see?",
       "prompt": "How many frogs?",
       "why": "There are 3 frogs. Look at them together. Three is quick to see.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🐸",
@@ -3486,7 +3486,7 @@
       "narration": "Look fast! How many dots are in the ten-frame? Is it 2, 4, or 5?",
       "prompt": "How many dots?",
       "why": "There are 5 dots. They fill one whole row. That row is 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "one": "dot",
@@ -3511,7 +3511,7 @@
       "narration": "Look fast! How many strawberries do you see?",
       "prompt": "How many strawberries?",
       "why": "There are 5 strawberries. Try seeing 3 and 2 together. That makes 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🍓",
@@ -3546,7 +3546,7 @@
       "narration": "Ben sees 2 dots, then 2 more dots. Look fast! How many dots in all? Is it 3, 4, or 5?",
       "prompt": "How many dots?",
       "why": "Two dots and two more dots make 4. You can see 4 at once.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "⚫",
@@ -3573,7 +3573,7 @@
       "narration": "Look very fast! How many butterflies do you see?",
       "prompt": "How many butterflies?",
       "why": "There are 4 butterflies. See two and two together. That makes 4.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🦋",
@@ -3594,7 +3594,7 @@
       "narration": "Count the fish. How many fish are there? Is it 3, 4, or 5?",
       "prompt": "How many fish?",
       "why": "Touch each fish and count. 1, 2, 3, 4. There are 4 fish.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🐟",
@@ -3620,7 +3620,7 @@
       "narration": "Pip has some apples. Count them. Type how many apples.",
       "prompt": "How many apples?",
       "why": "Count each apple one by one. 1, 2. There are 2 apples.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🍎",
@@ -3654,7 +3654,7 @@
       "narration": "Look at the dots in the box. How many dots? Is it 6, 5, or 4?",
       "prompt": "How many dots?",
       "why": "Count the dots one by one. 1, 2, 3, 4, 5. There are 5 dots.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "one": "dot",
@@ -3690,7 +3690,7 @@
       "narration": "Pip sees stars. How many stars are there? Is it 8, 9, or 10?",
       "prompt": "How many stars?",
       "why": "Count each star one time. You get to 9. There are 9 stars.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "⭐",
@@ -3716,7 +3716,7 @@
       "narration": "Count the dots in the box. Type how many dots.",
       "prompt": "How many dots?",
       "why": "Count the dots one by one. 1, 2, 3, 4, 5, 6, 7. There are 7.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "one": "dot",
@@ -3765,7 +3765,7 @@
       "narration": "Pip found ladybugs. Count them. Type how many ladybugs.",
       "prompt": "How many ladybugs?",
       "why": "Count each bug one time. You get to 11. There are 11 ladybugs.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🐞",
@@ -3786,7 +3786,7 @@
       "narration": "Pip has balloons. How many balloons are there? Is it 14, 15, or 16?",
       "prompt": "How many balloons?",
       "why": "Count the balloons one by one. After 14 comes 15. There are 15.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🎈",
@@ -3812,7 +3812,7 @@
       "narration": "Pip picked strawberries. Count them all. Type how many strawberries.",
       "prompt": "How many strawberries?",
       "why": "Count each one time. Go slowly up to 18. There are 18.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🍓",
@@ -3862,7 +3862,7 @@
       "narration": "Pip has lots of flowers. Count them all. Type how many flowers.",
       "prompt": "How many flowers?",
       "why": "Count each flower one time. Keep going to 20. There are 20 flowers.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🌼",
@@ -4050,7 +4050,7 @@
       "narration": "Here are 5 blocks. Pip takes 2 away. How many blocks are left?",
       "prompt": "5 take away 2",
       "why": "Count down from 5: 4, then 3. There are 3 blocks left.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🧱",
@@ -4215,7 +4215,7 @@
       "narration": "Pip has 6 apples. Mia has 1 more than Pip. How many does Mia have?",
       "prompt": "1 more than 6",
       "why": "Start at 6 and count one more. 7! Mia has 7.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🍎",
@@ -4360,7 +4360,7 @@
       "narration": "Pip has 4 apples. What is 1 more than 4?",
       "prompt": "1 more than 4 = ?",
       "why": "Count up one from 4. 4, then 5. So 1 more than 4 is 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🍎",
@@ -4434,7 +4434,7 @@
       "narration": "Pip has 6 apples and finds 2 more. What is 2 more than 6?",
       "prompt": "2 more than 6 = ?",
       "why": "Count up two from 6. 7, then 8. So 2 more than 6 is 8.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "one": "apple",
@@ -4522,7 +4522,7 @@
       "narration": "What is 2 more than 18?",
       "prompt": "2 more than 18 = ?",
       "why": "Count up two from 18. 19, then 20. So 2 more than 18 is 20.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "one": "counter",
@@ -4571,7 +4571,7 @@
       "narration": "Here are 5 apples. 3 are red and 2 are green. 3 and 2 make what? Is it 4, 5, or 6?",
       "prompt": "3 + 2 = ?",
       "why": "Put 3 and 2 together. Count on: 3, then 4, 5. It makes 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🍎",
@@ -4598,7 +4598,7 @@
       "narration": "Here are 5 bugs. 4 are on a leaf. How many are not on the leaf?",
       "prompt": "4 + ? = 5",
       "why": "5 bugs in all. 4 are on the leaf. Just 1 bug is left over.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "part",
         "emoji": "🐞",
@@ -4634,7 +4634,7 @@
       "narration": "Here are 4 berries. 2 and 2 make what? Is it 5, 3, or 4?",
       "prompt": "2 + 2 = ?",
       "why": "Put 2 and 2 together. Count on: 2, then 3, 4. It makes 4.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🍓",
@@ -4661,7 +4661,7 @@
       "narration": "Max has 3 red cars and 3 blue cars. How many cars in all?",
       "prompt": "3 + 3 = ?",
       "why": "Put the 3 red cars with the 3 blue cars. Count them all. There are 6.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🚗",
@@ -4683,7 +4683,7 @@
       "narration": "Here are 6 apples. 6 is 4 and what? Is it 2, 3, or 4?",
       "prompt": "4 + ? = 6",
       "why": "Start at 4. Count up to 6: 5, 6. That is 2 more.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "part",
         "emoji": "🍎",
@@ -4724,7 +4724,7 @@
       "narration": "Here is a ten frame with 7 dots. 7 is 5 and what? Type the missing part.",
       "prompt": "5 + ? = 7",
       "why": "A full row has 5 dots. Count the dots left in the next row. There are 2.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "part",
         "one": "dot",
@@ -4774,7 +4774,7 @@
       "narration": "Here is a ten frame with 6 dots. How many more dots make 10?",
       "prompt": "6 + ? = 10",
       "why": "A full ten frame has 10 dots. Count the empty spots. There are 4.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "fill",
         "one": "dot",
@@ -4824,7 +4824,7 @@
       "narration": "Here are 9 blocks. 9 is made of 2 and a missing part. What is the missing part?",
       "prompt": "2 + ? = 9",
       "why": "Start at 2. Count up to 9. That is 7 more.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "part",
         "emoji": "🧱",
@@ -4846,7 +4846,7 @@
       "narration": "Pip has 8 flies. 6 are on a rock. The rest are on a log. How many are on the log? Is it 3, 4, 1, or 2?",
       "prompt": "6 + ? = 8",
       "why": "8 flies in all. 6 are on the rock. Count up from 6 to 8. That is 2.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "part",
         "emoji": "🪰",
@@ -4874,7 +4874,7 @@
       "narration": "Pip has 2 apples. 1 more apple comes. How many apples now? Is it 3, 2, or 4?",
       "prompt": "2 + 1 = ?",
       "why": "Start with 2 apples. Add 1 more. Count on: 2, then 3. The answer is 3.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🍎",
@@ -4901,7 +4901,7 @@
       "narration": "Pip sees 2 bugs. 1 more bug comes. How many bugs in all?",
       "prompt": "2 + 1 = ?",
       "why": "Count the 2 bugs. Then count 1 more. That makes 3 bugs.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🐞",
@@ -4937,7 +4937,7 @@
       "narration": "Pip has 3 cookies. Pip eats 1. How many cookies are left? Is it 2, 1, or 3?",
       "prompt": "3 - 1 = ?",
       "why": "Start with 3 cookies. Take away 1. Count back: 3, then 2. So 2 are left.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🍪",
@@ -4965,7 +4965,7 @@
       "narration": "There are 3 birds. 1 bird flies away. How many birds are left?",
       "prompt": "3 - 1 = ?",
       "why": "Start with 3 birds. Take away 1. That leaves 2 birds.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🐦",
@@ -4988,7 +4988,7 @@
       "narration": "2 and 3 make how many? Is it 4, 6, or 5?",
       "prompt": "2 + 3 = ?",
       "why": "Start at 3. Count on 2 more: 4, 5. So 2 and 3 make 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "one": "counter",
@@ -5066,7 +5066,7 @@
       "narration": "Pip wants 5 bugs. Pip has 2 bugs. How many more bugs does Pip need?",
       "prompt": "2 + ? = 5",
       "why": "Start at 2. Count up to 5: 3, 4, 5. That is 3 more.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "fill",
         "emoji": "🐞",
@@ -5117,7 +5117,7 @@
       "narration": "Pip has 5 pears. Pip eats all 5. How many pears are left?",
       "prompt": "5 - 5 = ?",
       "why": "Take away all 5 pears. Nothing is left. The answer is 0.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🍐",
@@ -5140,7 +5140,7 @@
       "narration": "Here are 3 dots. Add 2 more dots. How many dots now? Is it 5, 4, or 3?",
       "prompt": "3 + 2 = ?",
       "why": "Start with 3 dots. Add 2 more: 4, 5. Now there are 5 dots.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "one": "dot",
@@ -5166,7 +5166,7 @@
       "narration": "Tom has 2 cats. 1 more cat comes. How many cats now? Is it 2, 3, or 4?",
       "prompt": "2 + 1 = ?",
       "why": "Start with 2 cats. Add 1 more. Count on: 3.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🐱",
@@ -5193,7 +5193,7 @@
       "narration": "Pip has 4 fish. 1 fish swims away. How many fish are left?",
       "prompt": "4 - 1 = ?",
       "why": "Start with 4 fish. Take away 1. Count back: 3.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🐟",
@@ -5230,7 +5230,7 @@
       "narration": "Sam has 5 balloons. 2 balloons pop. How many are left? Is it 4, 2, or 3?",
       "prompt": "5 - 2 = ?",
       "why": "Start with 5. Take away 2. Count back: 4, 3. Sam has 3.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🎈",
@@ -5258,7 +5258,7 @@
       "narration": "2 birds sit on a branch. 2 more birds come. How many birds now?",
       "prompt": "2 + 2 = ?",
       "why": "Hold up 2 fingers. Then 2 more. Count them all: 4.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🐦",
@@ -5293,7 +5293,7 @@
       "narration": "Max has 9 cookies. He eats 4. How many cookies are left?",
       "prompt": "9 - 4 = ?",
       "why": "Start at 9. Count back 4: 8, 7, 6, 5. Max has 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🍪",
@@ -5316,7 +5316,7 @@
       "narration": "Ana has 7 balloons. 5 are red. The rest are blue. How many are blue? Is it 2, 3, or 1?",
       "prompt": "7 - 5 = ?",
       "why": "Take the 5 red away from 7. Count what is left: 2 blue.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "part",
         "one": "balloon",
@@ -5371,7 +5371,7 @@
       "narration": "Kim has 6 shells. She finds 4 more. How many shells does she have?",
       "prompt": "6 + 4 = ?",
       "why": "Start at 6. Count on 4: 7, 8, 9, 10. Kim has 10.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🐚",
@@ -5393,7 +5393,7 @@
       "narration": "There are 10 ducks. 6 are in the pond. The rest are on the grass. How many are on the grass? Is it 3, 5, 6, or 4?",
       "prompt": "10 - 6 = ?",
       "why": "Take the 6 pond ducks away from 10. Count back: 4 ducks on the grass.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "part",
         "one": "duck",
@@ -5466,7 +5466,7 @@
       "narration": "Mia gets 2 cookies. Sam gets 2 cookies. Is it fair? Yes or no?",
       "prompt": "Is it fair?",
       "why": "Mia has 2 and Sam has 2. They have the same, so it is fair.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "fair",
         "thing": "cookie",
@@ -5497,7 +5497,7 @@
       "narration": "There are 2 apples and 2 friends. Each friend gets the same. How many apples does each get?",
       "prompt": "2 apples, 2 friends",
       "why": "Give one apple to each friend. Then no apples are left. Each friend gets 1.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "apple",
@@ -5519,7 +5519,7 @@
       "narration": "4 ducks swim to 2 ponds. Each pond gets the same. Hop the frog to how many ducks each pond gets.",
       "prompt": "4 ducks, 2 ponds",
       "why": "Put one duck in each pond. Then one more each.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "duck",
@@ -5543,7 +5543,7 @@
       "narration": "There are 4 stickers and 4 friends. Each friend gets the same. How many stickers does each get? 1, 2, or 4?",
       "prompt": "4 stickers, 4 friends",
       "why": "There is one sticker for each friend. Each friend gets 1 sticker.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "sticker",
@@ -5570,7 +5570,7 @@
       "narration": "Sam has 6 cookies. He shares them with 2 friends. How many cookies does each friend get?",
       "prompt": "6 cookies, 2 friends",
       "why": "Hand out one cookie at a time to each friend. Each friend ends up with 3.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -5593,7 +5593,7 @@
       "narration": "Lily has 6 berries. She shares them with 3 friends. How many berries does each friend get? 2, 3, or 4?",
       "prompt": "6 berries, 3 friends",
       "why": "Give each friend one berry. Then give another to each.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "berry",
@@ -5621,7 +5621,7 @@
       "narration": "Max has 8 toy cars. He shares them with 2 friends. How many cars does each friend get?",
       "prompt": "8 cars, 2 friends",
       "why": "Give each friend one car at a time. Each friend gets 4.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "car",
@@ -5644,7 +5644,7 @@
       "narration": "9 grapes are shared by 3 friends. Hop the frog to how many grapes each friend gets.",
       "prompt": "9 grapes, 3 friends",
       "why": "Give 3 friends one grape each, three times. Each friend gets 3 grapes.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "grape",
@@ -5668,7 +5668,7 @@
       "narration": "Ana gets 4 cookies. Ben gets 2 cookies. Is it fair? Yes or no?",
       "prompt": "Is it fair?",
       "why": "Ana has more than Ben. They need the same amount, so it is not fair.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "fair",
         "thing": "cookie",
@@ -5698,7 +5698,7 @@
       "narration": "There are 10 stars. 2 friends share them equally. How many stars does each friend get?",
       "prompt": "10 stars, 2 friends",
       "why": "Give one star to each friend, again and again. Each friend gets 5.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "star",
@@ -5720,7 +5720,7 @@
       "narration": "Zoe has 8 pencils. She shares them with 4 friends. How many pencils does each friend get? 1, 2, 3, or 4?",
       "prompt": "8 pencils, 4 friends",
       "why": "Give 4 friends one pencil each. That uses 4. Give one more each. Each friend gets 2.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "pencil",
@@ -5749,7 +5749,7 @@
       "narration": "There are 9 apples. 3 friends share them equally. How many apples does each friend get?",
       "prompt": "9 apples, 3 friends",
       "why": "Give each friend one apple, three times. All 9 are shared. Each friend gets 3.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "apple",
@@ -5771,7 +5771,7 @@
       "narration": "10 balloons are shared by 5 friends. Hop the frog to how many balloons each friend gets.",
       "prompt": "10 balloons, 5 friends",
       "why": "Give 5 friends one balloon each. Then give one more each. Each friend gets 2.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "balloon",
@@ -5795,7 +5795,7 @@
       "narration": "4 friends each get 2 cookies. All the cookies were shared equally. How many cookies were there?",
       "prompt": "4 friends, 2 each",
       "why": "Count 2 for each friend. 2 and 2 and 2 and 2 is 8.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "cookie",
@@ -5833,7 +5833,7 @@
       "narration": "How many dots are in the ten-frame? Is it 6, 7, or 8?",
       "prompt": "How many dots?",
       "why": "Count each dot one by one. There are 7 dots.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "one": "dot",
@@ -5858,7 +5858,7 @@
       "narration": "Count the apples. How many are there? Type the number.",
       "prompt": "How many apples?",
       "why": "Count each apple one time. There are 12 apples.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "count",
         "emoji": "🍎",
@@ -6642,7 +6642,7 @@
       "narration": "Eight cookies are shared by 2 friends. How many cookies does each friend get? Is it 3, 5, 4, or 6?",
       "prompt": "8 cookies, 2 friends",
       "why": "Give one cookie to each friend again and again. Each friend gets 4 cookies.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -6670,7 +6670,7 @@
       "narration": "Two friends share these apples equally. How many apples does each friend get?",
       "prompt": "How many apples each?",
       "why": "Share the apples one at a time. Each friend gets 3 apples.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "apple",
@@ -6692,7 +6692,7 @@
       "narration": "Four friends share 12 grapes equally. Hop the frog to how many grapes each friend gets.",
       "prompt": "12 grapes, 4 friends",
       "why": "Share 12 grapes with 4 friends. Each friend gets 3 grapes.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "grape",
@@ -6764,7 +6764,7 @@
       "narration": "Four friends share these grapes equally. How many grapes does each friend get?",
       "prompt": "How many grapes each?",
       "why": "Give each of the 4 friends one grape, then again. Each friend gets 2 grapes.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "grape",
@@ -6786,7 +6786,7 @@
       "narration": "Two friends share 5 cookies. Each gets 2 whole cookies. How many cookies are left to cut? Is it 0, 2, 3, or 1?",
       "prompt": "How many are left?",
       "why": "Each friend gets 2, so 4 cookies are given out. That leaves 1 cookie to cut in half.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "left",
         "thing": "cookie",
@@ -6827,7 +6827,7 @@
       "narration": "Two friends share 3 cookies equally. How many cookies does each friend get? Is it 2, 1 1/2, or 1?",
       "prompt": "3 cookies, 2 friends",
       "why": "Each friend gets 1 whole cookie. The last cookie is cut in half. So each gets 1 and a half.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -6854,7 +6854,7 @@
       "narration": "A pan is cut into 8 equal parts. Four friends share the whole pan. How many parts does each friend get?",
       "prompt": "How many parts each?",
       "why": "Share the 8 parts with 4 friends, one at a time. Each friend gets 2 parts.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "each",
         "shape": "rectangle",
@@ -6880,7 +6880,7 @@
       "narration": "Four friends share this pizza. It has 4 equal slices. One slice is picked. What part of the pizza does each friend get? Is it 1/4, 1/2, or 3/4?",
       "prompt": "What part for each friend?",
       "why": "The pizza has 4 equal slices for 4 friends. Each friend gets 1 slice, which is 1/4.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "each",
         "shape": "circle",
@@ -6905,7 +6905,7 @@
       "narration": "Four friends share 5 cookies equally. Each gets 1 whole cookie. The last cookie is cut in 4 equal parts. How much does each friend get? Is it 1 1/2, 1, 2, or 1 1/4?",
       "prompt": "5 cookies, 4 friends",
       "why": "Each friend gets 1 whole cookie. The last cookie is cut in 4 parts. So each gets one fourth more.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -6933,7 +6933,7 @@
       "narration": "Four friends share 14 sandwiches. Each friend gets 3 whole sandwiches. How many sandwiches are left over?",
       "prompt": "How many are left over?",
       "why": "Four friends get 3 each, so 12 sandwiches are given out. That leaves 2 sandwiches.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "left",
         "thing": "sandwich",
@@ -6955,7 +6955,7 @@
       "narration": "Two friends share 18 stickers equally. Hop the frog to how many stickers each friend gets.",
       "prompt": "18 stickers, 2 friends",
       "why": "Share the 18 stickers into 2 equal groups. Each friend gets 9 stickers.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "sticker",
@@ -7027,7 +7027,7 @@
       "narration": "One pie is shared by 2 friends. A pie just like it is shared by 4 friends. Who gets bigger pieces, the 2 friends or the 4 friends?",
       "prompt": "Who gets more pie?",
       "why": "With fewer friends, each piece is bigger. Two friends get halves, and four friends get fourths. A half is bigger.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "compare",
         "thing": "pie",
@@ -7070,13 +7070,7 @@
       "narration": "A pizza is cut into fourths. How many equal slices does it have?",
       "prompt": "How many slices?",
       "why": "Fourths means 4 equal parts. Count the slices to get 4.",
-      "slices": {
-        "kind": "slices",
-        "ask": "parts",
-        "shape": "circle",
-        "food": "pizza",
-        "parts": 4
-      },
+      "game": { "kind": "slices", "ask": "parts", "shape": "circle", "food": "pizza", "parts": 4 },
       "type": "keypad",
       "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 1 },
       "answer": 4
@@ -7088,7 +7082,7 @@
       "narration": "Two halves make one whole. Move the frog to how many halves make one whole.",
       "prompt": "Halves in one whole",
       "why": "One half and one half make a whole. So 2 halves make one whole.",
-      "slices": { "kind": "slices", "ask": "parts", "shape": "circle", "parts": 2 },
+      "game": { "kind": "slices", "ask": "parts", "shape": "circle", "parts": 2 },
       "type": "number-line",
       "min": 0,
       "max": 4,
@@ -7118,7 +7112,7 @@
       "narration": "Two halves make one whole. How many halves are picked here?",
       "prompt": "How many halves?",
       "why": "The pizza has 2 halves and both are picked. So the answer is 2.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -7153,7 +7147,7 @@
       "narration": "Four fourths make one whole. Move the frog to how many fourths make one whole.",
       "prompt": "Fourths in one whole",
       "why": "A whole cut in fourths has 4 equal parts. So 4 fourths make one whole.",
-      "slices": { "kind": "slices", "ask": "parts", "shape": "circle", "parts": 4 },
+      "game": { "kind": "slices", "ask": "parts", "shape": "circle", "parts": 4 },
       "type": "number-line",
       "min": 0,
       "max": 8,
@@ -7167,7 +7161,7 @@
       "narration": "Sam eats one half of a pan of brownies. The pan has 4 equal pieces. How many pieces does Sam eat?",
       "prompt": "How many pieces?",
       "why": "One half is the same as two fourths. So Sam eats 2 pieces.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "rectangle",
@@ -7255,7 +7249,7 @@
       "narration": "Ana eats 2 fourths of a pie. Her friend eats one half of the same pie. How many fourths does her friend eat?",
       "prompt": "Fourths in one half",
       "why": "One half is the same as 2 fourths. So her friend eats 2 fourths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -7275,7 +7269,7 @@
       "narration": "Mia keeps one half of a pizza. She cuts it into fourths. Move the frog to how many fourths she keeps.",
       "prompt": "One half is how many fourths?",
       "why": "One half is the same as 2 fourths. So Mia keeps 2 fourths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -7313,7 +7307,7 @@
       "narration": "A pan is cut into 4 equal pieces. You want one half of the pan. How many pieces do you take? Is it 1, 3, 4, or 2?",
       "prompt": "One half of the pan",
       "why": "One half is the same as two fourths. So take 2 pieces.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "left",
         "shape": "rectangle",
@@ -7344,7 +7338,7 @@
       "narration": "A pizza has 2 halves. Mia cuts each half into 2 equal slices. How many slices are there in all?",
       "prompt": "How many slices in all?",
       "why": "Each half makes 2 slices. 2 + 2 = 4, so there are 4 fourths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "parts",
         "shape": "circle",
@@ -7411,7 +7405,7 @@
       "narration": "A pizza is cut into 4 equal slices. Each kid gets one slice. How many kids share this pizza?",
       "prompt": "How many kids?",
       "why": "The pizza has 4 equal slices. Each kid gets one slice, so 4 kids share it.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "pizza",
@@ -7434,13 +7428,7 @@
       "narration": "A pizza is cut into 6 equal slices. Move the frog to the number of slices.",
       "prompt": "Move the frog to 6",
       "why": "The pizza has 6 slices, so the frog goes to 6.",
-      "slices": {
-        "kind": "slices",
-        "ask": "parts",
-        "shape": "circle",
-        "food": "pizza",
-        "parts": 6
-      },
+      "game": { "kind": "slices", "ask": "parts", "shape": "circle", "food": "pizza", "parts": 6 },
       "type": "number-line",
       "min": 0,
       "max": 10,
@@ -7454,7 +7442,7 @@
       "narration": "Two kids share a pizza, or four kids share the same pizza. Who gets the bigger piece: 2 kids or 4 kids?",
       "prompt": "Who gets the bigger piece?",
       "why": "Fewer kids means bigger pieces. When 2 kids share, each piece is a half.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "compare",
         "thing": "pizza",
@@ -7526,7 +7514,7 @@
       "narration": "This bar is cut into 10 equal parts. Each kid gets one part. How many kids share the bar?",
       "prompt": "How many kids?",
       "why": "The bar has 10 equal parts. Each kid gets one part, so 10 kids share it.",
-      "slices": { "kind": "slices", "ask": "parts", "shape": "bar", "parts": 10, "picked": 1 },
+      "game": { "kind": "slices", "ask": "parts", "shape": "bar", "parts": 10, "picked": 1 },
       "type": "keypad",
       "visual": { "kind": "fraction", "shape": "bar", "parts": 10, "picked": 1 },
       "answer": 10
@@ -7538,7 +7526,7 @@
       "narration": "Mia cuts her bar into 3 parts. Sam wants smaller parts. He cuts 2 more parts than Mia. Move the frog to Sam's parts.",
       "prompt": "How many parts for Sam?",
       "why": "Mia has 3 parts. Sam has 2 more, so 3 + 2 = 5 parts.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "parts",
         "shape": "bar",
@@ -7668,7 +7656,7 @@
       "narration": "Sam has 4 fish. 1 more fish swims in. How many fish are there now?",
       "prompt": "4 + 1 = ?",
       "why": "One more than 4 is 5. So 4 + 1 = 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🐟",
@@ -7704,7 +7692,7 @@
       "narration": "What is 5 - 2? That is 5 take away 2. Is it 2, 4, or 3?",
       "prompt": "5 - 2 = ?",
       "why": "Start with 5. Take away 2. 4, 3. You have 3 left.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "one": "counter",
@@ -7755,7 +7743,7 @@
       "narration": "What is 9 - 4? That is 9 take away 4.",
       "prompt": "9 - 4 = ?",
       "why": "4 and 5 make 9. So 9 take away 4 is 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "one": "counter",
@@ -7790,7 +7778,7 @@
       "narration": "4 and what number make 10? Is it 5, 7, 4, or 6?",
       "prompt": "4 + ? = 10",
       "why": "4 and 6 make 10. Count up from 4 to 10. That is 6 steps.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "fill",
         "one": "counter",
@@ -7816,7 +7804,7 @@
       "narration": "The ten frame has 7 dots. How many more dots make 10?",
       "prompt": "7 + ? = 10",
       "why": "The ten frame has 3 empty spots. 7 and 3 make 10.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "fill",
         "one": "dot",
@@ -7851,7 +7839,7 @@
       "narration": "What number and 3 make 10?",
       "prompt": "? + 3 = 10",
       "why": "Start at 10 and take away 3. That leaves 7. So 7 and 3 make 10.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "fill",
         "one": "counter",
@@ -8102,7 +8090,7 @@
       "narration": "Count on from 7. What is 7 + 2?",
       "prompt": "7 + 2 = ?",
       "why": "Start at 7 and count on 2. That is 8, then 9. The answer is 9.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "one": "counter",
@@ -8151,7 +8139,7 @@
       "narration": "Mia has 10 grapes and eats 4. How many are left? Is it 6, 4, or 5?",
       "prompt": "10 - 4 = ?",
       "why": "Count back 4 from 10. That is 9, 8, 7, 6. So 6 are left.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🍇",
@@ -8178,7 +8166,7 @@
       "narration": "Here are 8 apples. Mia gets 2 more. How many apples does she have now?",
       "prompt": "8 + 2 = ?",
       "why": "8 and 2 make 10. Count on from 8: 9, 10.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🍎",
@@ -8200,7 +8188,7 @@
       "narration": "Make 10 first. What is 8 + 5? Is it 12, 13, or 14?",
       "prompt": "8 + 5 = ?",
       "why": "Take 2 from the 5 to make 10 with 8. Then add the 3 left. 10 and 3 is 13.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "make-ten",
         "one": "counter",
@@ -8249,7 +8237,7 @@
       "narration": "Mia has 14 plums and eats 5. How many are left? Is it 8, 9, or 10?",
       "prompt": "14 - 5 = ?",
       "why": "Take 4 to get to 10. Then take 1 more. 10 take away 1 is 9.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🍑",
@@ -8286,7 +8274,7 @@
       "narration": "Use near doubles or make 10. What is 7 + 8?",
       "prompt": "7 + 8 = ?",
       "why": "Double 7 is 14. Eight is one more than 7. So 14 and 1 is 15.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "one": "counter",
@@ -8344,7 +8332,7 @@
       "narration": "Mia has 13 grapes and eats 8. How many are left? Is it 6, 4, or 5?",
       "prompt": "13 - 8 = ?",
       "why": "Think: 8 and 5 make 13. So 13 take away 8 is 5.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🍇",
@@ -8371,7 +8359,7 @@
       "narration": "Ben has 8 toy cars. He gets 3 more. How many cars does he have now? Is it 10, 11, 12, or 13?",
       "prompt": "8 + 3 = ?",
       "why": "Start at 8 and count on 3 more. 9, 10, 11. Ben has 11 cars.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🚗",
@@ -8460,7 +8448,7 @@
       "narration": "Here are 6 fish. 4 more fish swim in. How many fish are there now?",
       "prompt": "6 + 4 = ?",
       "why": "Start at 6 and count on 4. 7, 8, 9, 10. There are 10 fish.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "🐟",
@@ -8482,7 +8470,7 @@
       "narration": "Kai has 10 coins. He spends 3 coins. How many coins does he have left?",
       "prompt": "10 - 3 = ?",
       "why": "Take away 3 from 10. Count back: 9, 8, 7. Kai has 7 coins.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🪙",
@@ -8615,7 +8603,7 @@
       "narration": "There are 2 groups of 2 stars. How many stars in all? Is it 3, 4, or 5?",
       "prompt": "How many stars?",
       "why": "Count by 2s. 2, 4. So there are 4 stars in all.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "star",
@@ -8643,7 +8631,7 @@
       "narration": "There are 3 bowls with 2 fish in each bowl. How many fish in all?",
       "prompt": "How many fish?",
       "why": "Count by 2s. 2, 4, 6. There are 6 fish.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "fish",
@@ -8680,7 +8668,7 @@
       "narration": "A pie is cut into halves. How many halves make the whole pie? Is it 2, 1, or 3?",
       "prompt": "How many halves?",
       "why": "The pie has 2 equal parts. Each part is one half. So 2 halves make the whole pie.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -8704,7 +8692,7 @@
       "narration": "Here are 6 cookies. Each plate gets 2 cookies. How many plates? Is it 3, 2, or 4?",
       "prompt": "How many plates?",
       "why": "Make groups of 2. 2, 4, 6. That is 3 groups, so 3 plates.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "cookie",
@@ -8732,7 +8720,7 @@
       "narration": "There are 4 leaves. Each leaf has 2 bugs on it. How many bugs in all?",
       "prompt": "How many bugs?",
       "why": "Count by 2s. 2, 4, 6, 8. There are 8 bugs.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "bug",
@@ -8755,7 +8743,7 @@
       "narration": "Lena has 5 bags. Each bag has 2 apples. Move the frog to how many apples in all.",
       "prompt": "5 groups of 2",
       "why": "Count by 2s. 2, 4, 6, 8, 10. Lena has 10 apples.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "apple",
@@ -8781,7 +8769,7 @@
       "narration": "Here are 8 grapes. Each cup gets 2 grapes. How many cups? Is it 2, 6, or 4?",
       "prompt": "How many cups?",
       "why": "Make groups of 2. 2, 4, 6, 8. That is 4 groups, so 4 cups.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "grape",
@@ -8809,7 +8797,7 @@
       "narration": "Here are 3 sandwiches. Each one is cut into halves. All the halves are colored in. How many halves in all?",
       "prompt": "How many halves?",
       "why": "Each sandwich has 2 halves. Count by 2s. 2, 4, 6. There are 6 halves.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "rectangle",
@@ -8828,7 +8816,7 @@
       "narration": "Ben has 3 groups of 3 stickers. How many stickers in all? Is it 9, 6, or 8?",
       "prompt": "3 groups of 3",
       "why": "Count by 3s. 3, 6, 9. Ben has 9 stickers.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "sticker",
@@ -8856,7 +8844,7 @@
       "narration": "Tia has 10 crackers. She puts 2 crackers on each plate. Move the frog to how many plates.",
       "prompt": "How many plates?",
       "why": "Count by 2s. 2, 4, 6, 8, 10. That took 5 counts, so 5 plates.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "cracker",
@@ -8882,7 +8870,7 @@
       "narration": "Here are 9 apples. Each bag holds 3 apples. How many bags?",
       "prompt": "How many bags?",
       "why": "Make groups of 3. 3, 6, 9. That is 3 groups, so 3 bags.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "apple",
@@ -8920,7 +8908,7 @@
       "narration": "Kim has 10 crackers. She puts 5 crackers on each plate. How many plates does she fill?",
       "prompt": "How many plates?",
       "why": "Count by 5s. 5, 10. That is 2 groups, so 2 plates.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "cracker",
@@ -8944,7 +8932,7 @@
       "narration": "Zed ate the picked halves of toast. How many halves did Zed eat? Is it 10, 6, or 5?",
       "prompt": "How many halves?",
       "why": "Each colored part is one half. Count them. 1, 2, 3, 4, 5. Zed ate 5 halves.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "rectangle",
@@ -9347,7 +9335,7 @@
       "narration": "6 cookies are shared by 2 friends. How many cookies does each friend get? Is it 2, 4, 3, or 6?",
       "prompt": "6 ÷ 2 = ?",
       "why": "Give each friend one cookie at a time. After 3 rounds, all 6 cookies are gone. Each friend gets 3.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -9375,7 +9363,7 @@
       "narration": "8 apples are shared by 4 friends. How many apples does each friend get?",
       "prompt": "8 ÷ 4 = ?",
       "why": "Hand out 1 apple to each of the 4 friends. Do it again. That uses all 8. Each gets 2.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "apple",
@@ -9397,7 +9385,7 @@
       "narration": "10 stickers are shared by 2 friends. Drag the frog to how many stickers each friend gets.",
       "prompt": "10 ÷ 2 = ?",
       "why": "Split the 10 stickers into 2 equal groups. Each group has 5 stickers.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "sticker",
@@ -9438,7 +9426,7 @@
       "narration": "9 pears are shared by 3 friends. How many pears does each friend get?",
       "prompt": "9 ÷ 3 = ?",
       "why": "Make 3 equal groups from 9 pears. Each group has 3 pears.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "pear",
@@ -9460,7 +9448,7 @@
       "narration": "4 sandwiches are shared by 3 friends. How much does each friend get? Is it 1 1/3, 1 1/2, 2, or 1 2/3?",
       "prompt": "4 ÷ 3 = ?",
       "why": "Each friend gets 1 whole sandwich. One is left. Cut it in 3 parts. Each friend gets 1 and one third.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "sandwich",
@@ -9501,7 +9489,7 @@
       "narration": "One pie is cut into 4 equal parts. 4 friends share it. What part does each friend get? Is it 1/2, 1/3, 1/4, or 2/3?",
       "prompt": "What part of the pie?",
       "why": "The pie has 4 equal parts for 4 friends. Each friend gets 1 part. That is 1/4.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "pie",
@@ -9529,7 +9517,7 @@
       "narration": "5 cookies are shared by 2 friends. How much does each friend get? Is it 2, 2 1/2, 3, or 2 1/4?",
       "prompt": "5 ÷ 2 = ?",
       "why": "Each friend gets 2 whole cookies. One is left. Cut it in halves. Each friend gets 2 and one half.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -9557,7 +9545,7 @@
       "narration": "10 bars are shared by 3 friends. Each friend gets 3 whole bars. How many bars are left over?",
       "prompt": "How many bars are left?",
       "why": "3 friends each get 3 bars. That is 9 bars. 10 take away 9 leaves 1 bar.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "left",
         "thing": "bar",
@@ -9579,7 +9567,7 @@
       "narration": "2 bars are shared by 3 friends. Each bar is cut into 3 equal parts. How much does each friend get? Is it 1/3, 1/2, 2/3, or 2?",
       "prompt": "2 ÷ 3 = ?",
       "why": "Cut each bar into thirds. Each friend takes one third from each bar. That is 2 thirds.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "bar",
@@ -9617,7 +9605,7 @@
       "narration": "10 bars can be shared by 3 friends or by 6 friends. Who gets more each? 3 friends or 6 friends?",
       "prompt": "Who gets more each?",
       "why": "With fewer friends, each share is bigger. 10 bars shared by 3 friends gives more than by 6 friends.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "compare",
         "thing": "bar",
@@ -9644,7 +9632,7 @@
       "narration": "10 granola bars are shared by 3 friends. How much does each friend get? Is it 3, 3 2/3, 5, or 3 1/3?",
       "prompt": "10 ÷ 3 = ?",
       "why": "Each friend gets 3 whole bars. That uses 9. One bar is left. Cut it in thirds. Each gets 3 and one third.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "bar",
@@ -9672,7 +9660,7 @@
       "narration": "10 bars are shared by 6 friends. Each friend gets 1 whole bar first. How many bars are left? Drag the frog to the number.",
       "prompt": "How many bars are left?",
       "why": "6 friends each get 1 bar. That uses 6 bars. 10 take away 6 leaves 4 bars to cut up.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "left",
         "thing": "bar",
@@ -9696,7 +9684,7 @@
       "narration": "A pizza is cut into 3 equal slices. One slice is picked. What fraction is picked? Is it 1/6, 1/2, or 1/3?",
       "prompt": "What fraction is picked?",
       "why": "The pizza has 3 equal slices and 1 is picked. So one third is picked.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -9720,7 +9708,7 @@
       "narration": "Mia cuts a pizza into sixths. That means equal slices. How many slices does the pizza have?",
       "prompt": "How many slices?",
       "why": "Sixths means 6 equal slices. You can count them in the picture too. There are 6.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "parts",
         "shape": "circle",
@@ -9739,13 +9727,7 @@
       "narration": "Three thirds make one whole pizza. A pizza is cut into thirds. How many slices make the whole pizza?",
       "prompt": "Slices in a whole pizza",
       "why": "Thirds means 3 equal slices. All 3 slices make the whole pizza.",
-      "slices": {
-        "kind": "slices",
-        "ask": "parts",
-        "shape": "circle",
-        "food": "pizza",
-        "parts": 3
-      },
+      "game": { "kind": "slices", "ask": "parts", "shape": "circle", "food": "pizza", "parts": 3 },
       "type": "number-line",
       "min": 0,
       "max": 6,
@@ -9807,7 +9789,7 @@
       "narration": "A pizza is cut into 6 equal slices. Two of the 6 slices are picked. How many sixths are picked?",
       "prompt": "How many sixths picked?",
       "why": "Two slices are picked. Each slice is one sixth, so two sixths are picked.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -9826,7 +9808,7 @@
       "narration": "Leo eats one third of a pizza. Which is the same amount of that pizza? Is it 1/6, 3/6, or 2/6?",
       "prompt": "Same as 1/3?",
       "why": "Cut each third into 2 sixths. One third is 2 sixths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -9851,7 +9833,7 @@
       "narration": "One third of a pizza equals how many sixths of that pizza?",
       "prompt": "1/3 = ?/6",
       "why": "Each third can be cut into 2 sixths. So one third equals 2 sixths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -9870,7 +9852,7 @@
       "narration": "Two thirds of a pizza equals how many sixths of it?",
       "prompt": "2/3 = ?/6",
       "why": "Each third is 2 sixths. Two thirds is 2 and 2 more, which is 4 sixths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -9906,7 +9888,7 @@
       "narration": "Two sixths of this pizza are picked. Cut the same pizza into 3 equal slices instead. How many thirds are picked?",
       "prompt": "How many thirds?",
       "why": "Two sixths is the same amount as one third. So 1 slice is picked.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -9926,7 +9908,7 @@
       "narration": "This strip has 4 sixths picked. Which fraction is the same amount? Is it 1/3, 1/2, or 2/3?",
       "prompt": "Same amount as 4/6?",
       "why": "Every 2 sixths make 1 third. So 4 sixths make 2 thirds.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "bar",
@@ -9950,7 +9932,7 @@
       "narration": "Ben ate 4 sixths of a pan of brownies. That is the same as how many thirds of the pan?",
       "prompt": "4/6 = ?/3",
       "why": "Two sixths make one third. Four sixths make two groups, so 2 thirds.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "rectangle",
@@ -9973,7 +9955,7 @@
       "narration": "Three friends each eat one third of a pizza. The pizza is cut in sixths. How many sixths do they eat all together?",
       "prompt": "How many sixths?",
       "why": "Each friend eats 2 sixths. Three friends eat 3 times 2, which is 6 sixths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -10006,7 +9988,7 @@
       "narration": "A pizza is cut into 6 equal slices. Zoe eats one third of the pizza. How many sixths are left?",
       "prompt": "Sixths left?",
       "why": "One third is 2 sixths. Take 2 slices from 6 and 4 are left.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "left",
         "shape": "circle",
@@ -10158,7 +10140,7 @@
       "narration": "Ben gave away 8 stickers. He has 9 left. How many did he have at the start?",
       "prompt": "? - 8 = 9",
       "why": "Add the stickers back to check. 9 left plus 8 given away is 17.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "back",
         "emoji": "⭐",
@@ -10250,7 +10232,7 @@
       "narration": "Jo has 6 stars. Jo gets 3 more stars. How many stars now?",
       "prompt": "6 + 3 = ?",
       "why": "Start at 6. Count up 3 more: 7, 8, 9. The answer is 9.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "join",
         "emoji": "⭐",
@@ -10301,7 +10283,7 @@
       "narration": "There are 9 birds. 5 birds fly away. How many birds are left?",
       "prompt": "9 - 5 = ?",
       "why": "Think 5 + 4 = 9. So 9 - 5 = 4.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "emoji": "🐦",
@@ -10339,7 +10321,7 @@
       "narration": "What is 9 + 5? Make 10 first.",
       "prompt": "9 + 5 = ?",
       "why": "Take 1 from 5 to make 9 into 10. Then 10 + 4 = 14.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "make-ten",
         "one": "counter",
@@ -10414,7 +10396,7 @@
       "narration": "8 plus what number makes 15? Find the missing number.",
       "prompt": "8 + ? = 15",
       "why": "Count up from 8 to 10. That is 2. Then 5 more to reach 15. 2 + 5 = 7.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "fill",
         "one": "counter",
@@ -10463,7 +10445,7 @@
       "narration": "Sam has 20 stickers. Sam gives away 12 stickers. How many stickers are left?",
       "prompt": "20 - 12 = ?",
       "why": "Think 12 + 8 = 20. So Sam has 8 stickers left.",
-      "join": {
+      "game": {
         "kind": "join",
         "ask": "leave",
         "one": "sticker",
@@ -10535,7 +10517,7 @@
       "narration": "A pizza is cut into 4 equal slices. Each slice is one fourth. How many fourths make 1 whole pizza? Is it 4, 8, or 2?",
       "prompt": "How many fourths in 1 whole?",
       "why": "The pizza has 4 equal slices. All 4 fourths together make 1 whole pizza.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -10559,7 +10541,7 @@
       "narration": "Leo has 6 bags. Each bag has 3 apples. How many apples in all?",
       "prompt": "6 groups of 3 = ?",
       "why": "Add 3 six times. 3 + 3 + 3 + 3 + 3 + 3 = 18. Leo has 18 apples.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "apple",
@@ -10684,7 +10666,7 @@
       "narration": "Here are 3 pizzas. Each pizza is cut into 4 equal slices. Every slice is one fourth. How many fourths in all?",
       "prompt": "3 pizzas of fourths",
       "why": "Each pizza has 4 fourths. Add 4 three times. 4 + 4 + 4 = 12 fourths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -10725,7 +10707,7 @@
       "narration": "Mia shares 6 apples equally between 2 friends. How many apples does each friend get? Is it 2, 3, or 4?",
       "prompt": "6 ÷ 2 = ?",
       "why": "Give one apple to each friend again and again. Each friend gets 3 apples.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "apple",
@@ -10753,7 +10735,7 @@
       "narration": "Ben has 10 cookies. He shares them equally on 2 plates. How many cookies are on each plate?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Share the cookies one at a time to each plate. Each plate gets 5 cookies.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -10776,7 +10758,7 @@
       "narration": "Eight stickers are shared equally by 4 friends. Move the frog to how many stickers each friend gets.",
       "prompt": "8 ÷ 4 = ?",
       "why": "Share 8 stickers with 4 friends, one at a time. Each friend gets 2 stickers.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "sticker",
@@ -10800,7 +10782,7 @@
       "narration": "Sam has 6 fish. He puts 2 fish in each bowl. How many bowls does he fill?",
       "prompt": "6 ÷ 2 = ?",
       "why": "Count by 2s. 2, 4, 6. That is 3 bowls.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "fish",
@@ -10824,7 +10806,7 @@
       "narration": "Zoe has 4 balloons. She shares them equally between 2 kids. How many balloons does each kid get? Is it 1, 3, or 2?",
       "prompt": "4 ÷ 2 = ?",
       "why": "Give one balloon to each kid, then one more to each. Each kid gets 2 balloons.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "balloon",
@@ -10852,7 +10834,7 @@
       "narration": "Pat has 12 peaches. He packs them equally in 3 baskets. How many peaches are in each basket? Is it 3, 4, 5, or 6?",
       "prompt": "12 ÷ 3 = ?",
       "why": "Share the peaches one at a time into 3 baskets. Each basket gets 4 peaches.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "peach",
@@ -10881,7 +10863,7 @@
       "narration": "Pat has 12 peaches. He puts 4 peaches in each basket. How many baskets does he fill?",
       "prompt": "12 ÷ 4 = ?",
       "why": "Count by 4s. 4, 8, 12. That is 3 baskets.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "peach",
@@ -10905,7 +10887,7 @@
       "narration": "Nine grapes are shared equally by 3 kids. Move the frog to how many grapes each kid gets.",
       "prompt": "9 ÷ 3 = ?",
       "why": "Share 9 grapes one at a time with 3 kids. Each kid gets 3 grapes.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "grape",
@@ -10929,7 +10911,7 @@
       "narration": "Ella has 12 cookies. She shares them equally with 6 friends. How many cookies does each friend get?",
       "prompt": "12 ÷ 6 = ?",
       "why": "Give each of the 6 friends one cookie. Then give each friend one more. Each gets 2.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -10968,7 +10950,7 @@
       "narration": "Nia has 12 cookies. Who gets more cookies each: 2 friends sharing the 12, or 4 friends sharing the 12? Is it 2 friends or 4 friends?",
       "prompt": "Who gets more?",
       "why": "12 ÷ 2 = 6, but 12 ÷ 4 = 3. Fewer friends means bigger shares.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "compare",
         "thing": "cookie",
@@ -10997,7 +10979,7 @@
       "narration": "Leo has 12 stars. He puts 2 stars in each group. How many groups does he make?",
       "prompt": "12 ÷ 2 = ?",
       "why": "Count by 2s up to 12. 2, 4, 6, 8, 10, 12. That is 6 groups.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "star",
@@ -11021,7 +11003,7 @@
       "narration": "Twelve muffins go into bags. Each bag holds 4 muffins. Move the frog to how many bags Mia fills.",
       "prompt": "12 ÷ 4 = ?",
       "why": "Count by 4s. 4, 8, 12. That is 3 bags.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "muffin",
@@ -11654,7 +11636,7 @@
       "narration": "Mia has 12 grapes. She shares them fairly between 2 friends. How many grapes does each friend get?",
       "prompt": "12 ÷ 2 = ?",
       "why": "Hand out grapes one at a time to each friend. Both friends end up with 6 grapes.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "grape",
@@ -11677,7 +11659,7 @@
       "narration": "Leo has 9 stickers. He shares them fairly among 3 friends. How many stickers does each friend get? Is it 2, 3, 4, or 6?",
       "prompt": "9 stickers, 3 friends",
       "why": "Give each friend one sticker at a time. After 3 rounds, all 9 are gone. Each friend gets 3.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "sticker",
@@ -11706,7 +11688,7 @@
       "narration": "Ava has 10 marbles. She shares them fairly among 5 friends. Move the frog to how many marbles each friend gets.",
       "prompt": "10 marbles, 5 friends",
       "why": "Make 5 equal groups from 10 marbles. Each group has 2 marbles.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "marble",
@@ -11731,7 +11713,7 @@
       "narration": "A pizza is cut into 4 equal slices. The picture shows one slice. What fraction of the pizza is one slice? Is it 1/2, 1/3, 1/4, or 1/5?",
       "prompt": "What fraction is one slice?",
       "why": "The pizza has 4 equal slices. One slice out of 4 is 1/4.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -11756,7 +11738,7 @@
       "narration": "Zoe has 16 apples. She shares them fairly among 4 friends. How many apples does each friend get?",
       "prompt": "16 ÷ 4 = ?",
       "why": "Make 4 equal groups from 16 apples. Each group has 4 apples.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "apple",
@@ -11809,7 +11791,7 @@
       "narration": "5 friends each get 4 cards in a fair share. How many cards were there to share in all?",
       "prompt": "5 friends, 4 cards each",
       "why": "Five groups of 4 cards make all the cards. 5 × 4 = 20.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "card",
@@ -11831,7 +11813,7 @@
       "narration": "Noah has 20 crackers. He shares them fairly among 4 friends. Move the frog to how many crackers each friend gets.",
       "prompt": "20 crackers, 4 friends",
       "why": "Make 4 equal groups from 20 crackers. Each group has 5 crackers.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cracker",
@@ -11856,7 +11838,7 @@
       "narration": "Lily has 12 stickers. She could share them among 3 friends, or among 4 friends. Which way gives each friend more? Is it 3 friends or 4 friends?",
       "prompt": "Which gives each friend more?",
       "why": "12 shared by 3 gives 4 each. 12 shared by 4 gives 3 each. Fewer friends means a bigger share.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "compare",
         "thing": "sticker",
@@ -11884,7 +11866,7 @@
       "narration": "Jay has 8 cookies. He shares them fairly among 3 friends. How much does each friend get? Is it 2 1/3, 2 2/3, 3, or 2 1/2?",
       "prompt": "8 cookies, 3 friends",
       "why": "Each friend gets 2 cookies, which uses 6. Two cookies are left. Cut each into thirds, so each friend gets 2 more thirds. That is 2 2/3.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -11913,7 +11895,7 @@
       "narration": "Kai has 17 cookies. He shares them fairly among 5 friends. Each friend gets 3 whole cookies. How many cookies are left over to cut?",
       "prompt": "17 cookies, 5 friends",
       "why": "Each of 5 friends gets 3, which uses 15 cookies. 17 take away 15 leaves 2.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "left",
         "thing": "cookie",
@@ -11935,7 +11917,7 @@
       "narration": "A bakery has 18 muffins. It shares them fairly between 2 stores. Move the frog to how many muffins each store gets.",
       "prompt": "18 muffins, 2 stores",
       "why": "Split 18 into 2 equal groups. Each group has 9 muffins.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "muffin",
@@ -11959,7 +11941,7 @@
       "narration": "Ben has 5 sandwiches. He shares them fairly among 3 friends. How much does each friend get? Is it 1 1/3, 1 2/3, 2, or 1 1/2?",
       "prompt": "5 sandwiches, 3 friends",
       "why": "Each friend gets 1 sandwich, which uses 3. Two are left. Cut each into thirds, so each friend gets 2 more thirds. That is 1 2/3.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "sandwich",
@@ -12048,7 +12030,7 @@
       "narration": "A pan is cut into 4 equal parts. 2 parts are picked. Which fraction is the same amount: 1/4, 3/4, or 1/2?",
       "prompt": "Same amount as 2/4?",
       "why": "2 of 4 equal parts is half of the pan. So 2/4 is the same amount as 1/2.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "rectangle",
@@ -12079,7 +12061,7 @@
       "narration": "A pizza is cut into 2 equal slices. Ana eats 1 slice, which is 1/2. If the pizza was cut into 4 equal slices, how many slices is the same amount?",
       "prompt": "1/2 = ?/4",
       "why": "Cutting each half in two makes 4 slices. Half of 4 slices is 2 slices.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -12100,7 +12082,7 @@
       "narration": "A pan is cut into 4 equal pieces. How many pieces make 1/2 of the pan? Move the frog to that number.",
       "prompt": "Pieces for 1/2",
       "why": "Half of 4 pieces is 2 pieces. So 2/4 is the same as 1/2.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "rectangle",
@@ -12122,7 +12104,7 @@
       "narration": "A pizza is cut into 10 equal slices. 2 slices are picked. Is that the same as 1/10, 1/5, or 2/5?",
       "prompt": "Same as 2/10?",
       "why": "Cut into 5 big slices, each one covers 2 small slices. So 2/10 is the same as 1/5.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -12174,7 +12156,7 @@
       "narration": "A circle is cut into 8 equal parts. 4 parts are picked. That is the same as 1/2. 1/2 equals how many eighths?",
       "prompt": "1/2 = ?/8",
       "why": "Eight parts split into two equal groups makes 4 in each group. So 1/2 is 4/8.",
-      "slices": { "kind": "slices", "ask": "picked", "shape": "circle", "parts": 8, "picked": 4 },
+      "game": { "kind": "slices", "ask": "picked", "shape": "circle", "parts": 8, "picked": 4 },
       "type": "keypad",
       "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "picked": 4 },
       "answer": 4
@@ -12186,7 +12168,7 @@
       "narration": "1/5 of a flatbread is the same as 2/10. Now Kai eats 3/5 of the flatbread. How many tenths is that? Move the frog to that number.",
       "prompt": "3/5 = ?/10",
       "why": "Each fifth is 2 tenths. Three fifths is 3 groups of 2, which is 6 tenths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -12208,7 +12190,7 @@
       "narration": "A circle is cut into 3 equal parts. 2 parts are picked. Which is the same amount: 3/6, 2/6, or 4/6?",
       "prompt": "2/3 = ?",
       "why": "Cut each third into 2 sixths. Two thirds become 4 sixths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -12268,7 +12250,7 @@
       "narration": "A chocolate bar has 10 equal pieces. Zoe eats 4 pieces, which is 4/10. That is the same as how many fifths?",
       "prompt": "4/10 = ?/5",
       "why": "Two tenths make one fifth. Four tenths make 2 fifths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "rectangle",
@@ -12311,7 +12293,7 @@
       "narration": "A pizza is cut into 6 equal slices. Mia eats 4 slices. Another pizza of the same size is cut into thirds. Mia's amount is how many thirds?",
       "prompt": "4/6 = ?/3",
       "why": "Two sixths make one third. Four sixths make 2 thirds.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -12332,7 +12314,7 @@
       "narration": "Dev ate 3/4 of a pan. If the pan was cut into 8 equal pieces, how many pieces did he eat? Move the frog to that number.",
       "prompt": "3/4 = ?/8",
       "why": "Each fourth is 2 eighths. Three fourths is 3 groups of 2, which is 6 eighths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "rectangle",
@@ -12355,7 +12337,7 @@
       "narration": "2 friends share 1 flatbread fairly. It is cut into 10 equal slices. Each friend gets 1/2. How many tenths does each friend get: 2, 5, 10, or 8?",
       "prompt": "1/2 = ?/10",
       "why": "Share 10 slices between 2 friends. Each friend gets 5 slices, so 1/2 is 5/10.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "circle",
@@ -12379,7 +12361,7 @@
       "narration": "4 friends share 1 pan of brownies fairly. Each gets 1/4. The pan is cut into 8 equal pieces instead. How many pieces does each friend get?",
       "prompt": "1/4 = ?/8",
       "why": "Share 8 pieces between 4 friends. Each friend gets 2 pieces, so 1/4 is 2/8.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "each",
         "shape": "rectangle",
@@ -12423,7 +12405,7 @@
       "narration": "Sam makes an array with 2 rows of 6 stickers. Move the frog to the number of stickers in all.",
       "prompt": "2 × 6 = ?",
       "why": "Two rows of 6 is 6 + 6. That makes 12 stickers.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "sticker",
@@ -12644,7 +12626,7 @@
       "narration": "Maya shares these 10 cookies equally between 2 friends. How many cookies does each friend get?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Think 2 times what is 10? 5 × 2 = 10, so each friend gets 5.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "cookie",
@@ -12865,7 +12847,7 @@
       "narration": "Here are 10 apples. Mia shares them equally into 2 baskets. How many apples are in each basket?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Think 2 times what is 10. 2 × 5 = 10, so each basket gets 5.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "apple",
@@ -13015,7 +12997,7 @@
       "narration": "Ana has 4 bags. Each bag has 3 apples. How many apples does she have in all? Is it 7, 9, 12, or 15?",
       "prompt": "4 × 3 = ?",
       "why": "4 bags with 3 apples each is 4 groups of 3. Count by threes: 3, 6, 9, 12.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "apple",
@@ -13076,7 +13058,7 @@
       "narration": "Tom has 20 marbles. He puts 5 marbles in each bag. How many bags does he fill? Is it 15, 25, 5, or 4?",
       "prompt": "20 ÷ 5 = ?",
       "why": "Make groups of 5 from 20. Hop back by 5 from 20 and count the hops. There are 4.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "groups",
         "thing": "marble",
@@ -13121,7 +13103,7 @@
       "narration": "There are 3 boxes. Each box has 5 pencils. How many pencils are there in all?",
       "prompt": "3 × 5 = ?",
       "why": "3 groups of 5 is 5, 10, 15. There are 15 pencils.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "total",
         "thing": "pencil",
@@ -13253,7 +13235,7 @@
       "narration": "A pizza is cut into 4 equal slices. Mia eats 3 slices. What fraction of the pizza did she eat? Is it 1/4, 3/4, or 4/4?",
       "prompt": "What fraction did Mia eat?",
       "why": "Each slice is one fourth. Mia ate 3 slices, so that is 3 fourths, or 3/4.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -13278,7 +13260,7 @@
       "narration": "This bar is cut into 5 equal pieces. 3 pieces are picked. One fifth plus one fifth plus one fifth is how many fifths?",
       "prompt": "1/5 + 1/5 + 1/5 = ? fifths",
       "why": "Count the picked pieces. There are 3, so you have 3 fifths.",
-      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 5, "picked": 3 },
+      "game": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 5, "picked": 3 },
       "type": "keypad",
       "visual": { "kind": "fraction", "shape": "bar", "parts": 5, "picked": 3 },
       "answer": 3
@@ -13290,7 +13272,7 @@
       "narration": "Jo eats one eighth of a pan of brownies at each bite. Move the frog to how many eighths Jo has eaten after 5 bites.",
       "prompt": "How many eighths after 5 bites?",
       "why": "Each bite adds one eighth. After 5 bites, Jo has 5 eighths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "rectangle",
@@ -13327,7 +13309,7 @@
       "narration": "A circle is cut into 8 equal parts. 3 parts are picked. That is 3/8. What is the bottom number?",
       "prompt": "3/8: the bottom number is ?",
       "why": "The bottom number tells how many equal parts make the whole. This circle has 8 parts.",
-      "slices": { "kind": "slices", "ask": "parts", "shape": "circle", "parts": 8, "picked": 3 },
+      "game": { "kind": "slices", "ask": "parts", "shape": "circle", "parts": 8, "picked": 3 },
       "type": "keypad",
       "visual": { "kind": "fraction", "shape": "circle", "parts": 8, "picked": 3 },
       "answer": 8
@@ -13339,7 +13321,7 @@
       "narration": "Add one fifth three times. What fraction do you get? Is it 3/5, 5/3, 1/5, or 3/3?",
       "prompt": "1/5 + 1/5 + 1/5 = ?",
       "why": "Each piece is one fifth, so the bottom number is 5. You have 3 pieces, so the top number is 3. That makes 3/5.",
-      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 5, "picked": 3 },
+      "game": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 5, "picked": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/5" },
@@ -13356,7 +13338,7 @@
       "narration": "This strip has 8 equal parts. 5 parts are picked. You add one eighth again and again to make 5/8. How many times do you add it?",
       "prompt": "How many times is 1/8 added?",
       "why": "The top number counts the pieces. In 5/8, there are 5 pieces of one eighth, so you add it 5 times.",
-      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 8, "picked": 5 },
+      "game": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 8, "picked": 5 },
       "type": "keypad",
       "visual": { "kind": "fraction", "shape": "bar", "parts": 8, "picked": 5 },
       "answer": 5
@@ -13368,7 +13350,7 @@
       "narration": "The frog hops one tenth each time. How many hops does it take to reach 7/10? Move the frog to that number of hops.",
       "prompt": "Hops of 1/10 to reach 7/10",
       "why": "Each hop is one tenth. To get 7 tenths, the frog needs 7 hops.",
-      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 10, "picked": 7 },
+      "game": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 10, "picked": 7 },
       "type": "number-line",
       "min": 0,
       "max": 10,
@@ -13399,7 +13381,7 @@
       "narration": "Kai eats 2 eighths of a pan of brownies. Then he eats 3 more eighths. How many eighths has he eaten in all?",
       "prompt": "2 eighths + 3 eighths = ? eighths",
       "why": "Each piece is one eighth. Count all the pieces: 2 and 3 more make 5 eighths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "add",
         "shape": "rectangle",
@@ -13434,7 +13416,7 @@
       "narration": "There are 2 chocolate bars, each cut into 4 equal pieces. 6 pieces are picked. That is 6/4. One fourth is added how many times?",
       "prompt": "6/4 is 1/4 added how many times?",
       "why": "The top number counts the pieces. In 6/4 there are 6 pieces of one fourth, so you add it 6 times.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "rectangle",
@@ -13461,7 +13443,7 @@
       "narration": "One whole is 3 thirds. How many thirds make 2 wholes? Move the frog to that number.",
       "prompt": "2 wholes = ? thirds",
       "why": "One whole is 3 thirds. Two wholes is 3 + 3, which is 6 thirds.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "bar",
@@ -13507,7 +13489,7 @@
       "narration": "A pizza is cut into 4 equal slices. Mia eats 3 of them. What fraction of the pizza did she eat? Is it 3/4, 1/4, or 4/4?",
       "prompt": "What fraction is picked?",
       "why": "The pizza has 4 equal slices, so the bottom number is 4. Mia ate 3 slices, so the top number is 3. That is 3/4.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -13532,7 +13514,7 @@
       "narration": "A pizza is cut into 6 equal slices. Two slices are picked. How many equal slices make the whole pizza?",
       "prompt": "How many equal slices in the whole?",
       "why": "Count every slice, picked or not. The whole pizza has 6 equal slices, and that is the bottom number.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "parts",
         "shape": "circle",
@@ -13595,7 +13577,7 @@
       "narration": "A chocolate bar has 5 equal pieces. Dev eats 2 of them. What number goes on top of the fraction?",
       "prompt": "Top number of 2/5?",
       "why": "The top number counts the pieces we mean. Dev ate 2 pieces, so the top number is 2.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "rectangle",
@@ -13621,7 +13603,7 @@
       "narration": "A fraction strip has 10 equal parts. Seven parts are picked. What fraction is picked? Is it 7/10, 3/10, 10/7, or 7/3?",
       "prompt": "What fraction is picked?",
       "why": "The strip has 10 equal parts, so the bottom number is 10. Seven are picked, so the top number is 7. That is 7/10.",
-      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 10, "picked": 7 },
+      "game": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 10, "picked": 7 },
       "type": "tap",
       "visual": { "kind": "fraction", "shape": "bar", "parts": 10, "picked": 7 },
       "choices": [
@@ -13639,7 +13621,7 @@
       "narration": "A pan of brownies has 8 equal pieces. The team ate 3 of them. How many pieces are left?",
       "prompt": "How many pieces are left?",
       "why": "The whole pan has 8 pieces and 3 were eaten. Take 3 away from 8 to get 5 pieces left.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "left",
         "shape": "rectangle",
@@ -13723,7 +13705,7 @@
       "narration": "Two pizzas are each cut into 4 equal slices. Five slices are picked. That makes a fraction with 4 on the bottom. What number is on top?",
       "prompt": "Top number?",
       "why": "The top number counts all the picked fourths. There are 4 in the first pizza and 1 in the second, so 5 fourths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -13750,7 +13732,7 @@
       "narration": "Two pans are each cut into 3 equal pieces. Each piece is one third. Four pieces are picked. How many thirds are picked? Is it 4/3, 3/4, 3/3, or 1/3?",
       "prompt": "What fraction is picked?",
       "why": "Each piece is one third, so the bottom number is 3. Four pieces are picked, so the top number is 4. That is 4/3.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "rectangle",
@@ -13797,7 +13779,7 @@
       "narration": "3 granola bars are shared equally by 4 people. How much does each person get? Is it 3/4, 4/3, 1/4, or 3/3?",
       "prompt": "Each person gets?",
       "why": "Cut each bar into 4 equal pieces. Each person takes one piece from each of the 3 bars. That is 3 fourths, or 3/4.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "bar",
@@ -13835,7 +13817,7 @@
       "narration": "Two pizzas are the same size. One is shared by 2 friends. The other is shared by 4 friends. Who gets more, 2 friends or 4 friends?",
       "prompt": "Who gets more pizza?",
       "why": "Fewer people sharing means bigger pieces. Each of 2 friends gets 1/2, which is more than 1/4.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "compare",
         "thing": "pizza",
@@ -13862,7 +13844,7 @@
       "narration": "A pizza is cut into equal slices. One slice is picked. That slice is one friend's share. How many friends share the pizza?",
       "prompt": "How many friends?",
       "why": "Count all the equal slices. There are 4 slices, so 4 friends share the pizza.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "parts",
         "shape": "circle",
@@ -13881,7 +13863,7 @@
       "narration": "A chocolate bar is shared equally. Each friend gets 1/5 of the bar. Move the frog to the number of friends sharing.",
       "prompt": "How many friends share?",
       "why": "The bottom number of the share is the number of friends. The share 1/5 means 5 friends.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "parts",
         "shape": "rectangle",
@@ -13992,7 +13974,7 @@
       "narration": "A pan of 12 brownies is shared equally by 3 friends. Move the frog to how many brownies each friend gets.",
       "prompt": "Brownies for each friend",
       "why": "Share 12 brownies into 3 equal groups. 12 ÷ 3 = 4 brownies each.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "bar",
@@ -14070,7 +14052,7 @@
       "narration": "A bar is cut into 10 equal parts for 10 friends. Move the frog to how many tenths make half of the bar.",
       "prompt": "Tenths in one half",
       "why": "Half of 10 equal parts is 5 parts. So 5/10 is the same as 1/2.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "same",
         "shape": "bar",
@@ -14151,7 +14133,7 @@
       "narration": "A pizza is cut into 4 equal slices. Three slices are picked. How many one fourths are picked? Is it 2, 3, 4, or 5?",
       "prompt": "How many 1/4 are picked?",
       "why": "Count the picked slices. There are 3 picked, so that is 3 one fourths, or 3/4.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -14176,7 +14158,7 @@
       "narration": "A chocolate bar is cut into 6 equal pieces. Five pieces are picked. How many one sixths are picked?",
       "prompt": "How many 1/6 are picked?",
       "why": "Count each picked piece. There are 5 picked pieces, so the answer is 5 one sixths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "rectangle",
@@ -14230,7 +14212,7 @@
       "narration": "A strip is cut into fifths. How many one fifths make 1 whole? Is it 4, 6, 5, or 10?",
       "prompt": "1/5 pieces in 1 whole",
       "why": "Fifths mean 5 equal parts. So 5 one fifths make 1 whole.",
-      "slices": { "kind": "slices", "ask": "parts", "shape": "bar", "food": "granola", "parts": 5 },
+      "game": { "kind": "slices", "ask": "parts", "shape": "bar", "food": "granola", "parts": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 4 },
@@ -14257,7 +14239,7 @@
       "narration": "Two pizzas are each cut into 3 equal slices. Five slices are picked. Count the picked slices as one thirds. What fraction is that? Is it 3/5, 2/3, 5/3, or 6/5?",
       "prompt": "Picked one thirds make?",
       "why": "Count the picked slices: 5. Each slice is 1/3. So 5 one thirds is 5/3.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -14304,7 +14286,7 @@
       "narration": "Two bars are each cut into fourths. All the pieces are picked. How many one fourths are picked in all?",
       "prompt": "How many 1/4 in 2 wholes?",
       "why": "Each bar has 4 one fourths. Two bars have 4 + 4 = 8 one fourths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "rectangle",
@@ -14339,7 +14321,7 @@
       "narration": "Mia has 2 whole pizzas, each cut into 3 slices. She also has 1 more slice. How many one thirds does she have?",
       "prompt": "How many 1/3 in all?",
       "why": "Each pizza is 3 one thirds. Two pizzas make 6, and 1 more makes 7 one thirds.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",
@@ -14671,7 +14653,7 @@
       "narration": "How many tenths make 1 whole? Type the number.",
       "prompt": "? tenths = 1 whole",
       "why": "A whole fence has 10 boards, and each board is one tenth. So 10 tenths make 1 whole.",
-      "slices": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 10, "picked": 10 },
+      "game": { "kind": "slices", "ask": "picked", "shape": "bar", "parts": 10, "picked": 10 },
       "type": "keypad",
       "answer": 10
     },
@@ -14711,7 +14693,7 @@
       "narration": "How many tenths are in 1.3? Type the number of tenths.",
       "prompt": "1.3 = ? tenths",
       "why": "1 whole is 10 tenths. Add 3 more tenths to get 13 tenths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "bar",
@@ -14877,7 +14859,7 @@
       "narration": "Mia puts 18 stickers into 3 equal groups. How many stickers are in each group?",
       "prompt": "18 ÷ 3 = ?",
       "why": "Think 3 times what is 18. 3 × 6 is 18, so 18 ÷ 3 is 6.",
-      "scene": {
+      "game": {
         "kind": "share",
         "ask": "each",
         "thing": "sticker",
@@ -15816,7 +15798,7 @@
       "narration": "A pizza is cut into 6 equal slices. 5 sixths of it are still there. Ben eats 2 sixths. How much is left now? Is it 3/6, 7/6, 3/12, or 2/6?",
       "prompt": "5/6 - 2/6 = ?",
       "why": "Take away the pieces: 5 sixths minus 2 sixths is 3 sixths. The slices are the same size, so the denominator stays 6.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "left",
         "shape": "circle",
@@ -15843,7 +15825,7 @@
       "narration": "1 fifth plus 3 fifths equals how many fifths?",
       "prompt": "1/5 + 3/5 = ? fifths",
       "why": "The units are both fifths. Add the counts: 1 + 3 = 4, so the answer is 4 fifths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "add",
         "shape": "circle",
@@ -15861,7 +15843,7 @@
       "narration": "A chocolate bar is cut into 10 equal pieces. The picture shows 7 tenths left. Lena eats 4 tenths. How many tenths are left?",
       "prompt": "7/10 - 4/10 = ? tenths",
       "why": "Start with 7 pieces and take away 4. That leaves 3 pieces, so 3 tenths are left.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "left",
         "shape": "rectangle",
@@ -15918,7 +15900,7 @@
       "narration": "A recipe uses 3/8 cup of sugar in the batter and 7/8 cup in the icing. The total is how many eighths of a cup?",
       "prompt": "3/8 + 7/8 = ? eighths",
       "why": "Both amounts are counted in eighths. Add 3 + 7 = 10, so the total is 10 eighths of a cup.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "add",
         "shape": "circle",
@@ -15979,7 +15961,7 @@
       "narration": "Maya ate 5/12 of a pan of brownies on Friday and 4/12 on Saturday. What fraction of the whole pan is left? Is it 9/12, 9/24, 1/12, or 3/12?",
       "prompt": "1 - 5/12 - 4/12 = ?",
       "why": "She ate 5 + 4 = 9 twelfths. The whole pan is 12 twelfths, so 12 minus 9 leaves 3 twelfths.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "left",
         "shape": "rectangle",
@@ -16015,7 +15997,7 @@
       "narration": "Sam has 2 cups of flour. Cut into sixths, that is 12 sixths. He uses 5 sixths. How many sixths of a cup are left?",
       "prompt": "12/6 - 5/6 = ? sixths",
       "why": "Two cups is 12 sixths. Take away 5 sixths: 12 - 5 = 7, so 7 sixths of a cup are left.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "left",
         "shape": "bar",
@@ -16102,7 +16084,7 @@
       "narration": "2 × 1/5 equals how many fifths? Type the numerator.",
       "prompt": "2 × 1/5 = ?/5",
       "why": "2 × 1/5 is two one-fifths added together. That makes 2 fifths, or 2/5, so the numerator is 2.",
-      "slices": { "kind": "slices", "ask": "picked", "shape": "circle", "parts": 5, "picked": 2 },
+      "game": { "kind": "slices", "ask": "picked", "shape": "circle", "parts": 5, "picked": 2 },
       "type": "keypad",
       "answer": 2
     },
@@ -16113,7 +16095,7 @@
       "narration": "How many halves fit in 2 wholes? Is it 1, 2, 3, or 4?",
       "prompt": "2 ÷ 1/2 = ?",
       "why": "Each whole holds 2 halves. Two wholes hold 2 × 2, which is 4 halves.",
-      "slices": {
+      "game": {
         "kind": "slices",
         "ask": "picked",
         "shape": "circle",

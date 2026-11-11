@@ -1,8 +1,14 @@
-import { sliceProblems } from '@bright-trail/shared';
+import { gameProblems } from '@bright-trail/shared';
 import { SLICE_DEMO_ITEMS } from './demo';
 import { biteRows, outward, pickOffset, wholeOf } from './geometry';
 import { pointDown, sliceLayout, sliceUnit } from './layout';
 import { sliceSummary } from './SliceGame';
+
+const sliceDemo = (id: string) => {
+  const game = SLICE_DEMO_ITEMS.find((i) => i.id === id)!.game;
+  if (game?.kind !== 'slices') throw new Error(`${id} has no slices game`);
+  return game;
+};
 
 describe('pickOffset', () => {
   it('slides one round slice along its own center line', () => {
@@ -48,21 +54,13 @@ describe('eating', () => {
 
 describe('sliceLayout', () => {
   it('turns compared wholes so their first slice points down', () => {
-    const l = sliceLayout(
-      SLICE_DEMO_ITEMS.find((i) => i.id === 'demo-slices-bigger')!.slices!,
-      400,
-      500,
-    );
+    const l = sliceLayout(sliceDemo('demo-slices-bigger'), 400, 500);
     expect(l.wholes.map((w) => w.rot)).toEqual([pointDown(2), pointDown(4)]);
     expect(l.meet.y).toBeGreaterThan(l.wholes[0].y);
   });
 
   it('gives each friend a spot along the bottom', () => {
-    const l = sliceLayout(
-      SLICE_DEMO_ITEMS.find((i) => i.id === 'demo-slices-each')!.slices!,
-      400,
-      500,
-    );
+    const l = sliceLayout(sliceDemo('demo-slices-each'), 400, 500);
     expect(l.kids).toHaveLength(4);
     for (const k of l.kids) expect(k.y).toBeGreaterThan(l.wholes[0].y);
   });
@@ -70,12 +68,13 @@ describe('sliceLayout', () => {
 
 describe('demo items', () => {
   it.each(SLICE_DEMO_ITEMS.map((i) => [i.id, i] as const))('%s matches its scene', (_, item) => {
-    expect(sliceProblems(item, item.slices!)).toEqual([]);
+    expect(item.game?.kind).toBe('slices');
+    expect(gameProblems(item, item.game!)).toEqual([]);
   });
 });
 
 describe('sliceUnit and sliceSummary', () => {
-  const left = SLICE_DEMO_ITEMS.find((i) => i.id === 'demo-slices-take')!.slices!;
+  const left = sliceDemo('demo-slices-take');
 
   it('speaks the way the question asks', () => {
     expect(sliceUnit(left, 3)).toBe('count');

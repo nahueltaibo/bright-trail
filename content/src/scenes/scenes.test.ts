@@ -74,7 +74,7 @@ describe('applyScenes', () => {
   it('adds matching scenes', () => {
     const { scenes } = acceptScenes([share], { scenes: [tagged('share')] });
     const applied = applyScenes(bundle, scenes);
-    expect(applied.bundle.items[0].scene?.total).toBe(6);
+    expect(applied.bundle.items[0].game).toMatchObject({ kind: 'share', total: 6 });
     expect(applied.dropped).toEqual([]);
   });
 
@@ -82,7 +82,7 @@ describe('applyScenes', () => {
     const { scenes } = acceptScenes([share], { scenes: [tagged('share')] });
     const changed = { items: [{ ...share, answer: 4 }] } as unknown as ContentBundle;
     const applied = applyScenes(changed, scenes);
-    expect(applied.bundle.items[0].scene).toBeUndefined();
+    expect(applied.bundle.items[0].game).toBeUndefined();
     expect(applied.dropped).toEqual(['share: the scene answers 3 but the item answers 4']);
   });
 });

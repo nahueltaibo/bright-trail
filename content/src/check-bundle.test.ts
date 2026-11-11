@@ -18,4 +18,25 @@ describe('checkBundle', () => {
       problems: ['skills.1.prerequisiteIds.0: Unknown prerequisite k-missing'],
     });
   });
+
+  it("checks each item's game against its answer", () => {
+    const broken = structuredClone(sample) as { items: Record<string, unknown>[] };
+    const item = broken.items.find((i) => i.type === 'keypad')!;
+    item.answer = 4;
+    item.game = {
+      kind: 'join',
+      ask: 'join',
+      start: 3,
+      more: 2,
+      emoji: '🐟',
+      one: 'fish',
+      many: 'fish',
+      place: 'tray',
+      move: 'swim',
+    };
+    expect(checkBundle(broken)).toEqual({
+      ok: false,
+      problems: [`${String(item.id)} join: the scene shows 5 but the item answers 4`],
+    });
+  });
 });
