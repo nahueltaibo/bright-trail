@@ -20,6 +20,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `shared/src/scene.ts` — sharing scenes: what an item asks, its things and containers, and `sceneProblems`, which checks a scene against its item.
 - `shared/src/slices.ts` — slice scenes: one food cut into equal slices that get picked, eaten, cut, shared, or compared. `sliceProblems` checks a scene against its item.
 - `shared/src/hops.ts` — the frog's path along a number line after a check. `defaultHops` plans one from the line's start when an item has none.
+- `shared/src/game.ts` — `GAMES`, the registry of minigames by `kind`. Each has its scene schema and the check `check-bundle` runs. An item plays at most one, in its `game` field.
 - `shared/src/join.ts` — join scenes: things that come into a ten-frame, leave it, or get counted, set aside, or moved to make 10. `joinProblems` checks a scene against its item and its picture.
 - `app/src/design/` — the design system in code: tokens, Baloo 2 and Atkinson Hyperlegible fonts, the line icons, and kid building blocks like `KidButton`, `KidScreen`, and `AvatarDisc`. Style new screens from here, not with raw colours.
 - Kid-zone code imports `Text` from `app/src/design/Text`, not `react-native`. It swaps in Lexend for a child with the dyslexia-friendly font on, and ESLint enforces it.
@@ -27,9 +28,9 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `app/src/storage/` — expo-sqlite with migrations and a Zod-validated repository. Tests run it on Node's SQLite (`storage/testing/`).
 - `app/src/parent/` — PIN-gated parent area. `*.native.ts` files hold the phone versions. On web the PIN hash goes in the `settings` table, since expo-secure-store has no web support.
 - `app/src/learning/` and `app/src/narration/` — item screens and expo-speech narration. After a check, the number line plays the frog's path, then shows the feedback.
-- `app/src/learning/minigames/` — the sharing minigame and `GameFrame`, the prompt, answers, and feedback every minigame shares. Any item with a `scene` plays there instead of its usual screen. It allows retries during a lesson's check, and plays out the first answer then moves on when `measuring`.
-- `app/src/learning/food/` — food art for fraction pictures, and the slices minigame. Any item with `slices` plays there.
-- `app/src/learning/join/` — the join-and-leave minigame on a pond, a bus, wires, or a tray. Any item with `join` plays there.
+- `app/src/learning/minigames/` — the sharing minigame and `GameFrame`, the prompt, answers, and feedback every minigame shares. Any item whose `game.kind` is `share` plays there instead of its usual screen. It allows retries during a lesson's check, and plays out the first answer then moves on when `measuring`.
+- `app/src/learning/food/` — food art for fraction pictures, and the slices minigame. Any item whose `game.kind` is `slices` plays there.
+- `app/src/learning/join/` — the join-and-leave minigame on a pond, a bus, wires, or a tray. Any item whose `game.kind` is `join` plays there.
 - `/dev/learning` is a preview of every item type. `/dev/share`, `/dev/slices`, `/dev/join`, and `/dev/hops` play one item per kind of question. `/dev/check-end` shows each screen that ends a check or review. They show when `__DEV__` is true or the build sets `EXPO_PUBLIC_E2E=1`.
 
 ## Checking Your Work

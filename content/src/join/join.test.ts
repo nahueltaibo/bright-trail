@@ -71,7 +71,23 @@ describe('applyJoins', () => {
     const { scenes } = acceptJoins([fish], { scenes: [tagged('fish')] });
     const changed = { items: [{ ...fish, answer: 2 }] } as unknown as ContentBundle;
     const applied = applyJoins(changed, scenes);
-    expect(applied.bundle.items[0].join).toBeUndefined();
+    expect(applied.bundle.items[0].game).toBeUndefined();
     expect(applied.dropped).toEqual(['fish: the scene shows 3 but the item answers 2']);
+  });
+
+  it('replaces its own game and keeps another game', () => {
+    const { scenes } = acceptJoins([fish], { scenes: [tagged('fish')] });
+    const stale = { ...scenes.fish, start: 9 };
+    const own = applyJoins(
+      { items: [{ ...fish, game: stale }] } as unknown as ContentBundle,
+      scenes,
+    );
+    expect(own.bundle.items[0].game).toEqual(scenes.fish);
+
+    const share = { kind: 'share' } as unknown as Item['game'];
+    const other = { items: [{ ...fish, game: share }] } as unknown as ContentBundle;
+    const applied = applyJoins(other, scenes);
+    expect(applied.bundle.items[0].game).toBe(share);
+    expect(applied.dropped).toEqual(['fish: the item plays another minigame']);
   });
 });
