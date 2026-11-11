@@ -3,7 +3,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { loadContent, syncPacks } from '../../../content';
+import { loadContent, syncPacks, usePackStatus } from '../../../content';
 import {
   CheckEndView,
   ItemView,
@@ -43,6 +43,16 @@ export default function SessionScreen() {
       live = false;
     };
   }, [repo, childId]);
+
+  // Packs that land mid-session play from the next screen, or right away on an end screen.
+  // Each finished sync is a new status object, so this runs even if React batched the progress.
+  const packs = usePackStatus();
+  useEffect(() => {
+    if (!session || packs.state !== 'ready') return;
+    loadContent(repo)
+      .then((bundle) => session.reload(bundle))
+      .then(setView, (e: Error) => setError(e.message));
+  }, [session, packs, repo]);
 
   const narrateItem = useCallback<Narrate>(
     (texts, options) => (options?.replay ? speak : narrate)(texts),
