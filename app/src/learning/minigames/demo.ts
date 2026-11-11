@@ -8,7 +8,7 @@ const tap = (answer: string, ...others: string[]) => ({
   answerChoiceId: 'a',
 });
 
-/** One item per kind of question, for /dev/share. Each must pass `sceneProblems`. */
+/** One item per kind of question, for /dev/games/share. Each must pass `sceneProblems`. */
 export const DEMO_ITEMS: Item[] = [
   {
     ...base,
