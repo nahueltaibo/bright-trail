@@ -27,7 +27,7 @@ npm run dev -- android       # Android emulator or USB device
 npm run dev -- web --clear   # also wipe Metro's cache
 ```
 
-It's safe to rerun: it stops whatever holds port 8081 first, so it doubles as a restart. It runs `npm install` when the lockfile changed since the last install. Other arguments go to `expo start`, e.g. `--port 8082`.
+It also serves the content packs on port 8090. It's safe to rerun: it stops whatever holds ports 8081 and 8090 first, so it doubles as a restart. It runs `npm install` when the lockfile changed since the last install. Other arguments go to `expo start`, e.g. `--port 8082`.
 
 ## Scripts
 

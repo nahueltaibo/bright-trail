@@ -49,7 +49,7 @@ npm run e2e:android                          # the only connected device
 npm run e2e:android -- --device emulator-5554
 ```
 
-It installs the APK, then runs `maestro test e2e/`. Extra arguments go to `maestro test`. Reports, logs, and screenshots go to `e2e/output/`, which is gitignored.
+It installs the APK, serves `content/out/packs/` on port 8090, forwards that port to the device with `adb reverse`, then runs `maestro test e2e/`. The e2e APK downloads its packs from there. Extra arguments go to `maestro test`. Reports, logs, and screenshots go to `e2e/output/`, which is gitignored.
 
 One flow on its own:
 
