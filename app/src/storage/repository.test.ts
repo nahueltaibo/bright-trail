@@ -220,6 +220,7 @@ describe('repository', () => {
       usedItemIds: ['g1-numbers-to-50-keypad-1'],
       itemsAnswered: 0,
       placedRank: null,
+      waitingFor: null,
     };
 
     it('stores placement in progress, then the finished outcome', async () => {

@@ -9,6 +9,7 @@ import {
   nextPlacementItem,
   nextStep,
   PROBE_SIZE,
+  resumePlacement,
   REVIEW_SIZE,
   startPlacement,
   type AttemptPhase,
@@ -146,6 +147,11 @@ export class Session {
     let placement = await repo.placement.get(childId);
     if (placement && !placement.finishedAt && !fitsContent(placement.state, content.placement)) {
       placement = null;
+    }
+    if (placement && !placement.finishedAt && placement.state.waitingFor !== null) {
+      // The bundle holds every pack, so placement that waited for one can go on.
+      placement = { ...placement, state: resumePlacement(placement.state, content.placement) };
+      await repo.placement.save(childId, placement);
     }
     let learner: LearnerState | null = null;
     if (placement?.finishedAt) {

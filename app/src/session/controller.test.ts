@@ -1,5 +1,8 @@
 import {
+  createPlacementContent,
+  createSkillGraph,
   parseContentBundle,
+  startPlacement,
   type ChildProfile,
   type ContentBundle,
   type Item,
@@ -179,6 +182,22 @@ describe('Session', () => {
 
       const second = await start();
       expect(second.current.kind === 'item' && second.current.item.id).toBe(onScreen);
+    });
+
+    it('goes on with placement saved while it waited for a pack', async () => {
+      const graph = createSkillGraph(bundle.skills);
+      const noGrade1 = bundle.items.filter((i) => graph.byId.get(i.skillId)!.grade !== '1');
+      const state = startPlacement('maya', createPlacementContent(graph, noGrade1, ['1']), '1');
+      expect(state.waitingFor).toBe(1);
+      await repo.placement.save('maya', { state, placedGrade: null, finishedAt: null });
+
+      const session = await start();
+      expect(session.current).toMatchObject({
+        kind: 'item',
+        phase: 'placement',
+        item: { skillId: 'g1-numbers-to-50' },
+      });
+      expect((await repo.placement.get('maya'))!.state.waitingFor).toBeNull();
     });
 
     it('restarts placement saved against a bundle that dropped its item', async () => {
