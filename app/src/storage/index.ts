@@ -5,6 +5,7 @@ export { DATABASE_NAME, openAppStorage } from './open';
 export {
   createRepository,
   openRepository,
+  type InstalledPack,
   type Repository,
   type StoredPlacement,
 } from './repository';

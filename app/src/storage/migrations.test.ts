@@ -18,6 +18,7 @@ describe('migrate', () => {
     expect(tables.map((t) => t.name)).toEqual([
       'attempts',
       'children',
+      'content_packs',
       'flags',
       'mastery',
       'placement',
