@@ -3,6 +3,9 @@
 # Maestro runs: APK copy, reports, screenshots
 e2e/output/
 
+# Narration voice samples: npm run content:voices
+content/out/voices/
+
 # Dependencies
 node_modules/
 

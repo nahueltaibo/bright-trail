@@ -25,6 +25,7 @@
     "content:slices": "npm run slices -w @bright-trail/content --",
     "content:join": "npm run join -w @bright-trail/content --",
     "content:hops": "npm run hops -w @bright-trail/content --",
+    "content:voices": "npm run voices -w @bright-trail/content",
     "build": "npm run build --workspaces --if-present",
     "e2e:build:android": "node scripts/build-android.mjs --e2e",
     "android:build:family": "node scripts/build-android.mjs --family",
