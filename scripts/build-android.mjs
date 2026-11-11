@@ -31,8 +31,17 @@ if (!variant) {
 
 const env = { ...process.env, NODE_ENV: 'production' };
 // The e2e build turns on the dev-only learning preview. The family build must not inherit it.
-if (variant === 'e2e') env.EXPO_PUBLIC_E2E = '1';
-else delete env.EXPO_PUBLIC_E2E;
+// It reads packs from the e2e runner's local server, through `adb reverse`.
+if (variant === 'e2e') {
+  env.EXPO_PUBLIC_E2E = '1';
+  env.EXPO_PUBLIC_CONTENT_URL = 'http://localhost:8090';
+} else {
+  delete env.EXPO_PUBLIC_E2E;
+  if (!/^https:\/\//.test(env.EXPO_PUBLIC_CONTENT_URL ?? '')) {
+    console.error('Set EXPO_PUBLIC_CONTENT_URL to the content host’s https URL.');
+    process.exit(1);
+  }
+}
 
 function compareVersions(a, b) {
   const [x, y] = [a, b].map((v) => v.split('.').map(Number));
@@ -92,6 +101,19 @@ const pkgPath = join(app, 'package.json');
 const pkg = readFileSync(pkgPath, 'utf8');
 run('npx', ['expo', 'prebuild', '--platform', 'android', '--no-install'], app);
 writeFileSync(pkgPath, pkg);
+
+// Release builds block plain http, and the e2e build's pack server is http on localhost.
+if (variant === 'e2e') {
+  const manifestPath = join(android, 'app', 'src', 'main', 'AndroidManifest.xml');
+  const manifest = readFileSync(manifestPath, 'utf8').replace(
+    / android:usesCleartextTraffic="\w+"/,
+    '',
+  );
+  writeFileSync(
+    manifestPath,
+    manifest.replace('<application ', '<application android:usesCleartextTraffic="true" '),
+  );
+}
 
 // Prebuild keeps an existing build.gradle, so set the signing both ways on every build.
 // Gradle reads the secrets from env vars, so they never land in android/ or the build log.

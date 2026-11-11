@@ -25,6 +25,13 @@ const checkEnv = { ...process.env };
 delete checkEnv.NODE_ENV;
 const productionEnv = { ...process.env, NODE_ENV: 'production' };
 delete productionEnv.EXPO_PUBLIC_E2E;
+// The app downloads its content from here, so an update without it plays nothing.
+if (!/^https:\/\//.test(productionEnv.EXPO_PUBLIC_CONTENT_URL ?? '')) {
+  console.error(
+    'Set EXPO_PUBLIC_CONTENT_URL to the content host’s https URL. Nothing was published.',
+  );
+  process.exit(1);
+}
 
 // shell: true joins args with spaces, so quote each one for cmd.exe or sh.
 const quote = (a) => (/^[\w@./:=-]+$/.test(a) ? a : `"${a.replaceAll('"', '\\"')}"`);
