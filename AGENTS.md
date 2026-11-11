@@ -11,7 +11,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - Fraction pictures say `picked`, not `shaded`, and name a `food` when the story does. The generator's prompts and cache still say "shaded". `content/src/generate/app-words.ts` rewords and picks the food after review, so cached calls keep their keys.
 - `npm run content:voices` renders 12 bundle lines with each TTS provider that has its keys in `.env`, into `content/out/voices/` (gitignored). Its `index.html` plays them under shuffled letters for a blind pick. The keys are `GOOGLE_TTS_API_KEY`, `AZURE_SPEECH_KEY` and `AZURE_SPEECH_REGION`, `ELEVENLABS_API_KEY` (and optional `ELEVENLABS_VOICE_ID`), and `OPENAI_API_KEY`. Clips already on disk aren't rendered again.
 - Every bundle write also splits it into `content/out/packs/`: `core.json` with the skill graph, one pack per subject and grade, and `manifests/<coreHash>.json`. The files are minified because their hashes cover the exact bytes. Run `npm run content:packs` after editing `bundle.json` by hand, or a content test fails.
-- The app plays `content/out/bundle.json` through `loadBundle()` in `app/src/content/loadBundle.ts`.
+- The app ships `content/out/packs/core.json` and downloads the rest. `syncPacks()` in `app/src/content/` fetches the manifest for its core from `EXPO_PUBLIC_CONTENT_URL`, checks each pack's sha256, and saves it in the `content_packs` table. `loadContent(repo)` joins core with the downloaded packs. Each child gets their grade ±1, plus the grades placement or the trail reach next.
 - Family devices run a release-signed APK from a GitHub release and get JS and content changes over the air. CI does both. See [Versions and Releases](#versions-and-releases) and [docs/install-android.md](docs/install-android.md).
 
 ## Code Map
@@ -45,7 +45,7 @@ Run what CI runs, in this order, before calling a task done:
 npm run lint && npm run format:check && npm run typecheck && npm test && npm run build
 ```
 
-To see the app, run `npm run dev` and open `http://localhost:8081`. Drive it with Playwright MCP and save screenshots under `.playwright-mcp/` (gitignored). The web build keeps its SQLite data in the browser, so clear site data for `localhost:8081` to start from a fresh install.
+To see the app, run `npm run dev` and open `http://localhost:8081`. It also serves `content/out/packs/` at `http://localhost:8090` for the app to download. Drive it with Playwright MCP and save screenshots under `.playwright-mcp/` (gitignored). The web build keeps its SQLite data in the browser, so clear site data for `localhost:8081` to start from a fresh install.
 
 ## Versions and Releases
 
@@ -75,6 +75,8 @@ CI needs these repo secrets:
 - `EXPO_TOKEN`.
 - The release key as `RELEASE_KEYSTORE` (base64), `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS`, and `RELEASE_KEY_PASSWORD`.
 - An R2 API token with write access to the bucket, as `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, and `R2_BUCKET`. Until all four are set, CI skips the upload with a warning. Setting only some fails the run. [docs/setup-r2.md](docs/setup-r2.md) shows where each value comes from.
+
+The OTA publish and the family build also need the content host's https URL as the `EXPO_PUBLIC_CONTENT_URL` repo variable, and refuse to run without it.
 
 ## Gotchas
 

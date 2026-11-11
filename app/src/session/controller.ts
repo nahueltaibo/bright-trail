@@ -38,6 +38,9 @@ export type EndReason =
   /** Nothing is unlocked and nothing is due. */
   | 'all-done';
 
+/** Ends a newer bundle can lift: skills skipped for lack of items, or none unlocked yet. */
+const RESUMABLE: ReadonlySet<EndReason> = new Set(['done-for-today', 'all-done']);
+
 /** How a check or review ended. Probes end silently, so walk-back never shows. */
 export type CheckEnd = {
   check: 'check' | 'review';
@@ -122,10 +125,11 @@ export class Session {
   private queue: Promise<unknown> = Promise.resolve();
   private readonly startedAt: number;
   private readonly limits: SessionLimits;
+  private bundle: ContentBundle;
 
   private constructor(
     private readonly options: SessionOptions,
-    private readonly content: Content,
+    private content: Content,
     private readonly history: ItemHistory,
     private placement: StoredPlacement | null,
     private learner: LearnerState | null,
@@ -133,6 +137,7 @@ export class Session {
   ) {
     this.startedAt = now().getTime();
     this.limits = { ...DEFAULT_LIMITS, ...options.limits };
+    this.bundle = options.bundle;
   }
 
   /** Loads the child, starts or resumes placement if needed, and picks the first screen. */
@@ -249,13 +254,33 @@ export class Session {
     });
   }
 
+  /**
+   * Plays a newer bundle, such as one with packs downloaded mid-session, from the next screen on.
+   * The screen showing stays, unless it ended the session for lack of content and the new bundle
+   * has more to play. Ignored when unfinished placement doesn't fit the new bundle.
+   */
+  reload(bundle: ContentBundle): Promise<SessionView> {
+    return this.enqueue(async () => {
+      if (bundle === this.bundle) return this.view;
+      const content = indexContent(bundle);
+      const placing = this.placement && !this.placement.finishedAt;
+      if (placing && !fitsContent(this.placement!.state, content.placement)) return this.view;
+      this.bundle = bundle;
+      this.content = content;
+      // Skills passed over for lack of items get another look.
+      this.skip.clear();
+      await this.resumeEnded();
+      return this.view;
+    });
+  }
+
   /** Saves a "This looks wrong" tap with the bundle version it was raised on. */
   flag(target: FlagTarget): Promise<void> {
     return this.enqueue(async () => {
       await this.options.repo.flags.add({
         childId: this.options.childId,
         ...target,
-        bundleVersion: this.options.bundle.version,
+        bundleVersion: this.bundle.version,
         createdAt: localClock(this.now()).now,
       });
     });
@@ -277,6 +302,14 @@ export class Session {
     this.step = null;
     const stars = this.learner ? countStars(Object.values(this.learner.skills)) : 0;
     this.show({ kind: 'end', reason, stars });
+  }
+
+  /** Picks again after an end that more content could lift. Keeps that end if it would end anyway. */
+  private async resumeEnded() {
+    const ended = this.view;
+    if (ended.kind !== 'end' || !RESUMABLE.has(ended.reason)) return;
+    await this.advance();
+    if (this.view.kind === 'end') this.view = ended;
   }
 
   /** Picks the next screen. Runs at item boundaries only, so the cap never cuts an item short. */

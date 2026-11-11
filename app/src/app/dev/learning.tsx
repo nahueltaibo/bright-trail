@@ -3,13 +3,14 @@ import { Redirect, router } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { loadBundle } from '../../content/loadBundle';
+import { loadContent, syncPacks } from '../../content';
 import { SHOW_DEV_TOOLS } from '../../devTools';
 import { ItemView, StoryCardViewer, type FlagTarget } from '../../learning';
 import { formatNumber } from '../../learning/theme';
 import { choiceLabel } from '../../learning/TapItemView';
 import { gradeLabel } from '../../parent/grades';
 import { Text } from '../../design/Text';
+import { useStorage } from '../../storage/StorageProvider';
 
 type Step = { kind: 'nugget'; nugget: StoryNugget } | { kind: 'item'; item: Item };
 
@@ -45,15 +46,19 @@ function answerKey(item: Item): { answer: string; miss?: string } {
 
 /** Dev and e2e only: plays one skill's nugget and items. Narration shows as a caption. */
 export default function LearningPreviewScreen() {
+  const repo = useStorage();
   const [bundle, setBundle] = useState<ContentBundle | null>(null);
   const [skill, setSkill] = useState<Skill | null>(null);
   const [current, setCurrent] = useState<number | null>(null);
   const [caption, setCaption] = useState('');
   const [log, setLog] = useState('');
 
+  // The preview plays every skill, so it downloads every pack. The next sync deletes the extras.
   useEffect(() => {
-    loadBundle().then(setBundle);
-  }, []);
+    syncPacks(repo, { extra: 'all' })
+      .then(() => loadContent(repo))
+      .then(setBundle);
+  }, [repo]);
 
   const steps = useMemo(() => (bundle && skill ? playlist(bundle, skill.id) : []), [bundle, skill]);
   const narrate = useCallback((texts: string[]) => setCaption(texts.join(' ')), []);

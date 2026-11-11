@@ -3,7 +3,7 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { loadBundle } from '../../../content/loadBundle';
+import { loadContent, syncPacks, usePackStatus } from '../../../content';
 import {
   CheckEndView,
   ItemView,
@@ -33,7 +33,7 @@ export default function SessionScreen() {
   useEffect(() => {
     let live = true;
     (async () => {
-      const bundle = await loadBundle();
+      const bundle = await loadContent(repo);
       const started = await Session.start({ repo, bundle, childId, sessionId: randomUUID() });
       if (!live) return;
       setSession(started);
@@ -43,6 +43,16 @@ export default function SessionScreen() {
       live = false;
     };
   }, [repo, childId]);
+
+  // Packs that land mid-session play from the next screen, or right away on an end screen.
+  // Each finished sync is a new status object, so this runs even if React batched the progress.
+  const packs = usePackStatus();
+  useEffect(() => {
+    if (!session || packs.state !== 'ready') return;
+    loadContent(repo)
+      .then((bundle) => session.reload(bundle))
+      .then(setView, (e: Error) => setError(e.message));
+  }, [session, packs, repo]);
 
   const narrateItem = useCallback<Narrate>(
     (texts, options) => (options?.replay ? speak : narrate)(texts),
@@ -55,6 +65,16 @@ export default function SessionScreen() {
       step(session).then(setView, (e: Error) => setError(e.message));
     },
     [session],
+  );
+  // Placement saves after every answer, so a sync then picks up the grade it moved to.
+  const answer = useCallback(
+    (result: Parameters<Session['answer']>[0], placement: boolean) =>
+      run(async (s) => {
+        const next = await s.answer(result);
+        if (placement) void syncPacks(repo);
+        return next;
+      }),
+    [run, repo],
   );
 
   const quit = () => (router.canGoBack() ? router.back() : router.replace('/'));
@@ -87,7 +107,7 @@ export default function SessionScreen() {
         onFlag={onFlag}
         measuring={view.phase !== 'check'}
         progress={view.progress}
-        onAnswer={(result) => run((s) => s.answer(result))}
+        onAnswer={(result) => answer(result, view.phase === 'placement')}
         onNext={() => run((s) => s.next())}
       />
     );

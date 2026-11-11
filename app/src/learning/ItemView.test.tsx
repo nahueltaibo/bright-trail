@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react-native';
-import { loadBundle } from '../content/loadBundle';
+import { diskBundle } from '../content/testing/diskPacks';
 import { QuitContext } from './quit';
 import { ItemView } from './ItemView';
 import { afterFourteen, findTwelve, fishCount } from './testing';
@@ -30,7 +30,7 @@ describe('ItemView', () => {
   });
 
   it('shows question dots on a minigame', async () => {
-    const { items } = await loadBundle();
+    const { items } = diskBundle();
     const shared = items.find((i) => i.game)!;
     await render(<ItemView item={shared} progress={{ current: 0, total: 3 }} />);
     expect(screen.getByLabelText('Question 1 of 3')).toBeTruthy();

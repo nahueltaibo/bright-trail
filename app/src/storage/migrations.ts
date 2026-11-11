@@ -77,6 +77,17 @@ export const MIGRATIONS: readonly string[] = [
   `ALTER TABLE children ADD COLUMN dyslexic_font INTEGER NOT NULL DEFAULT 0;`,
   // A JSON array of subjects. Math was the only subject before this column.
   `ALTER TABLE children ADD COLUMN subjects TEXT NOT NULL DEFAULT '["math"]';`,
+  // Downloaded content packs, as the exact text their sha256 covers. `core_hash` is the shipped
+  // core the pack was downloaded for. A pack for another core waits to be replaced.
+  `
+  CREATE TABLE content_packs (
+    id TEXT PRIMARY KEY NOT NULL,
+    core_hash TEXT NOT NULL,
+    sha256 TEXT NOT NULL,
+    body TEXT NOT NULL,
+    installed_at TEXT NOT NULL
+  );
+  `,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;

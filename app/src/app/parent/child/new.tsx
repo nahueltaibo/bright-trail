@@ -1,6 +1,7 @@
 import { localClock } from '@bright-trail/shared';
 import { router } from 'expo-router';
 import { AVATARS } from '../../../avatars';
+import { syncPacks } from '../../../content';
 import { emptyDraft, saveChild } from '../../../parent/children';
 import { ChildForm } from '../../../parent/components/ChildForm';
 import { ParentScreen, Section } from '../../../parent/components/ui';
@@ -19,6 +20,8 @@ export default function AddChildScreen() {
           submitLabel="Add child"
           onSubmit={async (draft) => {
             await saveChild(repo, draft);
+            // The parent home shows the download's progress.
+            void syncPacks(repo);
             router.back();
           }}
         />

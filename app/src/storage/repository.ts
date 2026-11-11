@@ -1,6 +1,7 @@
 import {
   AttemptSchema,
   ChildProfileSchema,
+  ContentPackSchema,
   IsoDateTimeSchema,
   MasteryStateSchema,
   PlacementStateSchema,
@@ -8,6 +9,7 @@ import {
   WalkBackSchema,
   type Attempt,
   type ChildProfile,
+  type ContentPack,
   type MasteryState,
   type PlacementState,
   type SkillGrade,
@@ -69,6 +71,9 @@ type PlacementRow = {
   placed_grade: string | null;
   finished_at: string | null;
 };
+
+/** A downloaded pack, without its body. */
+export type InstalledPack = { id: string; coreHash: string; sha256: string; installedAt: string };
 
 /** A child's placement: in progress while `finishedAt` is null. */
 export type StoredPlacement = {
@@ -361,7 +366,45 @@ export function createRepository(db: SqlDatabase) {
     },
   };
 
-  return { children, mastery, walkBack, placement, attempts, flags, settings };
+  const packs = {
+    async list(): Promise<InstalledPack[]> {
+      const rows = await db.getAllAsync<{
+        id: string;
+        core_hash: string;
+        sha256: string;
+        installed_at: string;
+      }>('SELECT id, core_hash, sha256, installed_at FROM content_packs ORDER BY id', []);
+      return rows.map((r) => ({
+        id: r.id,
+        coreHash: r.core_hash,
+        sha256: r.sha256,
+        installedAt: r.installed_at,
+      }));
+    },
+    /** The packs downloaded for this core, parsed and checked. */
+    async forCore(coreHash: string): Promise<ContentPack[]> {
+      const rows = await db.getAllAsync<{ body: string }>(
+        'SELECT body FROM content_packs WHERE core_hash = ? ORDER BY id',
+        [coreHash],
+      );
+      return rows.map((r) => ContentPackSchema.parse(JSON.parse(r.body)));
+    },
+    /** Inserts or replaces the pack with the same id. Throws if `body` isn't that pack. */
+    async save(pack: InstalledPack & { body: string }): Promise<void> {
+      const parsed = ContentPackSchema.parse(JSON.parse(pack.body));
+      if (parsed.id !== pack.id) throw new Error(`Pack body is ${parsed.id}, not ${pack.id}`);
+      IsoDateTimeSchema.parse(pack.installedAt);
+      await db.runAsync(
+        'INSERT OR REPLACE INTO content_packs (id, core_hash, sha256, body, installed_at) VALUES (?, ?, ?, ?, ?)',
+        [pack.id, pack.coreHash, pack.sha256, pack.body, pack.installedAt],
+      );
+    },
+    async remove(id: string): Promise<void> {
+      await db.runAsync('DELETE FROM content_packs WHERE id = ?', [id]);
+    },
+  };
+
+  return { children, mastery, walkBack, placement, attempts, flags, settings, packs };
 }
 
 export type Repository = ReturnType<typeof createRepository>;

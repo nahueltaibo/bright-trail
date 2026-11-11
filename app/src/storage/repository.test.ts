@@ -1,3 +1,4 @@
+import { CONTENT_SCHEMA_VERSION } from '@bright-trail/shared';
 import type { Attempt, ChildProfile, MasteryState, PlacementState } from '@bright-trail/shared';
 import type { SqlDatabase } from './db';
 import type { ContentFlag } from './flag';
@@ -192,6 +193,39 @@ describe('repository', () => {
       await expect(repo.walkBack.save('nobody', { probes: [], targets: [] })).rejects.toThrow(
         /No child/,
       );
+    });
+  });
+
+  describe('packs', () => {
+    const body = JSON.stringify({
+      schemaVersion: CONTENT_SCHEMA_VERSION,
+      id: 'math-k',
+      subject: 'math',
+      grade: 'K',
+      nuggets: [],
+      items: [],
+    });
+    const pack = {
+      id: 'math-k',
+      coreHash: 'a'.repeat(64),
+      sha256: 'b'.repeat(64),
+      installedAt: '2026-11-11T12:00:00Z',
+    };
+
+    it('saves, replaces, lists, and removes packs', async () => {
+      await repo.packs.save({ ...pack, body });
+      await repo.packs.save({ ...pack, sha256: 'c'.repeat(64), body });
+      expect(await repo.packs.list()).toEqual([{ ...pack, sha256: 'c'.repeat(64) }]);
+      expect(await repo.packs.forCore('a'.repeat(64))).toEqual([JSON.parse(body)]);
+      expect(await repo.packs.forCore('d'.repeat(64))).toEqual([]);
+      await repo.packs.remove('math-k');
+      expect(await repo.packs.list()).toEqual([]);
+    });
+
+    it('rejects a body that isn’t the named pack', async () => {
+      await expect(repo.packs.save({ ...pack, id: 'math-1', body })).rejects.toThrow('math-k');
+      await expect(repo.packs.save({ ...pack, body: '{"id":"math-k"}' })).rejects.toThrow();
+      expect(await repo.packs.list()).toEqual([]);
     });
   });
 

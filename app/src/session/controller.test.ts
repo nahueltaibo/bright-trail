@@ -6,7 +6,7 @@ import {
   type MasteryState,
 } from '@bright-trail/shared';
 import sample from '@bright-trail/shared/fixtures/sample-bundle.json';
-import { loadBundle } from '../content/loadBundle';
+import { diskBundle } from '../content/testing/diskPacks';
 import { openRepository, type Repository } from '../storage/repository';
 import { openNodeSqliteDatabase } from '../storage/testing/nodeSqliteDatabase';
 import {
@@ -488,6 +488,112 @@ describe('Session', () => {
     });
   });
 
+  describe('reload', () => {
+    /** The sample without some skills' items and stories, as before their packs download. */
+    const without = (...skillIds: string[]): ContentBundle => ({
+      ...bundle,
+      version: 'sample-partial',
+      items: bundle.items.filter((i) => !skillIds.includes(i.skillId)),
+      nuggets: bundle.nuggets.filter((n) => !skillIds.includes(n.skillId)),
+    });
+    const startWith = (content: ContentBundle) =>
+      Session.start({
+        repo,
+        bundle: content,
+        childId: 'maya',
+        sessionId: `session-${++sessions}`,
+        now: clock.now,
+      });
+
+    it('lets placement step down to a grade whose pack arrived mid-session', async () => {
+      const session = await startWith(without('k-count-to-20'));
+      await play(session, false);
+      await session.reload(bundle);
+      expect(await playPlacement(session, false)).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'k-count-to-20' },
+      });
+      expect((await repo.placement.get('maya'))?.placedGrade).toBe('K');
+    });
+
+    it('teaches a skill whose items arrived during the lesson before it', async () => {
+      await placeAtKindergarten();
+      const session = await startWith(without('g1-numbers-to-50'));
+      expect(session.current).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'k-count-to-20' },
+      });
+      await session.reload(bundle);
+      await playLesson(session, true);
+      expect(session.current).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'g1-numbers-to-50' },
+      });
+    });
+
+    it('keeps the screen showing and flags against the new version', async () => {
+      const session = await startWith(without('k-count-to-20'));
+      const before = session.current;
+      await session.reload(bundle);
+      expect(session.current).toBe(before);
+      await session.flag({ contentKind: 'item', contentId: 'x', cardIndex: null });
+      expect((await repo.flags.list())[0].bundleVersion).toBe('sample-1');
+    });
+
+    it('resumes a session that ended for lack of items once their pack arrives', async () => {
+      await placeAtKindergarten();
+      const session = await startWith(
+        without('k-count-to-20', 'g1-numbers-to-50', 'g1-add-within-10'),
+      );
+      expect(session.current).toMatchObject({ kind: 'end', reason: 'done-for-today' });
+      expect(await session.reload(bundle)).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'k-count-to-20' },
+      });
+      expect(session.current.kind).toBe('story');
+    });
+
+    it('keeps an end screen that the new bundle would show again', async () => {
+      const session = await placeAtKindergarten();
+      await playLesson(session, false);
+      await playLesson(session, false);
+      const end = session.current;
+      expect(end).toMatchObject({ kind: 'end', reason: 'done-for-today' });
+      expect(await session.reload(without('g1-add-within-10'))).toBe(end);
+    });
+
+    it('does not resume a session that ended on time', async () => {
+      await placeAtKindergarten();
+      const session = await startWith(without('g1-add-within-10'));
+      await session.finishStory();
+      clock.advance(SESSION_CAP_MS);
+      await play(session, true);
+      const end = session.current;
+      expect(end).toMatchObject({ kind: 'end', reason: 'time-up' });
+      expect(await session.reload(bundle)).toBe(end);
+    });
+
+    it('keeps the end for lack of items once the time is up', async () => {
+      await placeAtKindergarten();
+      const session = await startWith(
+        without('k-count-to-20', 'g1-numbers-to-50', 'g1-add-within-10'),
+      );
+      const end = session.current;
+      clock.advance(SESSION_CAP_MS);
+      expect(await session.reload(bundle)).toBe(end);
+    });
+
+    it('keeps the old content when unfinished placement does not fit the new bundle', async () => {
+      const session = await start();
+      const onScreen = session.current.kind === 'item' && session.current.item.skillId;
+      await session.reload(without(onScreen as string));
+      await play(session, false);
+      expect(session.current).toMatchObject({ kind: 'item', phase: 'placement' });
+      await session.flag({ contentKind: 'item', contentId: 'x', cardIndex: null });
+      expect((await repo.flags.list())[0].bundleVersion).toBe('sample-1');
+    });
+  });
+
   it('saves flags with the child, bundle version, and time', async () => {
     const session = await start();
     await session.flag({
@@ -522,7 +628,7 @@ describe('Session', () => {
 describe('Session with the generated bundle', () => {
   // Grade 6 is above the bundle, so placement starts at its top grade and walks down from there.
   it('splits a long all-wrong placement over two sessions, then teaches Kindergarten', async () => {
-    const real = await loadBundle();
+    const real = diskBundle();
     const repo = await openRepository(openNodeSqliteDatabase(':memory:'));
     await repo.children.save({ ...maya, gradeOverride: '6' });
     const clock = fakeClock();

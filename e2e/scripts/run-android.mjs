@@ -3,6 +3,7 @@ import { spawnSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { PACKS_PORT, servePacks } from '../../scripts/serve-packs.mjs';
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
 const apk = join(root, 'e2e', 'output', 'bright-trail-e2e.apk');
@@ -30,15 +31,20 @@ if (!existsSync(apk)) {
 
 if (run(adb, [...(device ? ['-s', device] : []), 'install', '-r', apk]) !== 0) process.exit(1);
 
-process.exit(
-  run('maestro', [
-    ...(device ? ['--device', device] : []),
-    'test',
-    '--test-output-dir',
-    join(out, 'maestro'),
-    '--debug-output',
-    join(out, 'debug'),
-    ...extra,
-    join(root, 'e2e'),
-  ]),
-);
+// The e2e APK downloads packs from localhost:8090, which adb forwards to this machine.
+const server = await servePacks();
+const reverse = ['reverse', `tcp:${PACKS_PORT}`, `tcp:${PACKS_PORT}`];
+if (run(adb, [...(device ? ['-s', device] : []), ...reverse]) !== 0) process.exit(1);
+
+const status = run('maestro', [
+  ...(device ? ['--device', device] : []),
+  'test',
+  '--test-output-dir',
+  join(out, 'maestro'),
+  '--debug-output',
+  join(out, 'debug'),
+  ...extra,
+  join(root, 'e2e'),
+]);
+server.close();
+process.exit(status);

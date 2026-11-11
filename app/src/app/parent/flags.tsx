@@ -2,7 +2,7 @@ import { localClock, type ChildProfile, type ContentBundle } from '@bright-trail
 import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { font, radius } from '../../design/tokens';
-import { loadBundle } from '../../content/loadBundle';
+import { loadContent } from '../../content';
 import {
   Button,
   colors,
@@ -28,7 +28,7 @@ export default function FlagsScreen() {
   }, [repo]);
 
   useEffect(() => {
-    loadBundle().then(setBundle);
+    loadContent(repo).then(setBundle);
     repo.children
       .list()
       .then((c: ChildProfile[]) => setNames(new Map(c.map((p) => [p.id, p.firstName]))));
