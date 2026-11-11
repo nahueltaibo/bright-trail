@@ -19,6 +19,7 @@ const draft = (overrides: Partial<ChildDraft> = {}): ChildDraft => ({
   gradeOverride: null,
   readingMode: false,
   dyslexicFont: false,
+  subjects: ['math'],
   ...overrides,
 });
 
@@ -44,6 +45,7 @@ describe('emptyDraft', () => {
       gradeOverride: null,
       readingMode: false,
       dyslexicFont: false,
+      subjects: ['math'],
     });
   });
 });
@@ -72,6 +74,7 @@ describe('saveChild', () => {
         avatar: 'fox',
         readingMode: false,
         dyslexicFont: false,
+        subjects: ['math'],
       },
     ]);
   });
@@ -98,6 +101,7 @@ describe('saveChild', () => {
         avatar: 'owl',
         readingMode: false,
         dyslexicFont: false,
+        subjects: ['math'],
       },
     ]);
     expect(effectiveGrade(edited, TODAY)).toBe('1');

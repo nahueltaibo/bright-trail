@@ -75,6 +75,8 @@ export const MIGRATIONS: readonly string[] = [
   );
   `,
   `ALTER TABLE children ADD COLUMN dyslexic_font INTEGER NOT NULL DEFAULT 0;`,
+  // A JSON array of subjects. Math was the only subject before this column.
+  `ALTER TABLE children ADD COLUMN subjects TEXT NOT NULL DEFAULT '["math"]';`,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;
