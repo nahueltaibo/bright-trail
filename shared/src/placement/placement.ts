@@ -35,11 +35,18 @@ export interface PlacementContent<T extends PlacementItem = PlacementItem> {
   /** How many skills depend on each skill, directly or through others. */
   readonly dependents: ReadonlyMap<string, number>;
   readonly topRank: number;
+  /** Grade ranks whose packs exist but aren't installed. Placement waits for these instead of skipping them. */
+  readonly missingRanks: ReadonlySet<number>;
 }
 
+/**
+ * `missingGrades` are grades the manifest has packs for but the device doesn't. Grades with no pack
+ * at all have no items, so placement skips them.
+ */
 export function createPlacementContent<T extends PlacementItem>(
   graph: SkillGraph,
   items: readonly T[],
+  missingGrades: readonly SkillGrade[] = [],
 ): PlacementContent<T> {
   const itemsBySkill = new Map<string, T[]>();
   const itemsById = new Map<string, T>();
@@ -67,7 +74,8 @@ export function createPlacementContent<T extends PlacementItem>(
   }
 
   const topRank = Math.max(0, ...graph.skills.map((s) => gradeRank(s.grade)));
-  return { graph, itemsBySkill, itemsById, dependents, topRank };
+  const missingRanks = new Set(missingGrades.map(gradeRank));
+  return { graph, itemsBySkill, itemsById, dependents, topRank, missingRanks };
 }
 
 /** Plain JSON, so the app can persist it and resume placement in a later session. */
@@ -103,8 +111,14 @@ export const PlacementStateSchema = z.object({
   itemsAnswered: z.number().int().min(0),
   /** Set when `search` ends. */
   placedRank: z.number().int().min(0).nullable(),
+  /** Grade rank whose pack placement needs before it can go on. See `resumePlacement`. */
+  waitingFor: z.number().int().min(0).nullable().default(null),
 });
 export type PlacementState = z.infer<typeof PlacementStateSchema>;
+
+/** What placement needs next. `need-pack` asks the app to install `grade`'s packs, then call `resumePlacement`. */
+export type PlacementStep<T extends PlacementItem = PlacementItem> =
+  { kind: 'item'; item: T } | { kind: 'need-pack'; grade: SkillGrade } | { kind: 'done' };
 
 export interface PlacementResult {
   /** Ready for `nextStep`. Probed skills are mastered or gap, unprobed ones below the placed grade assumed. */
@@ -132,6 +146,23 @@ function canProbe(state: PlacementState, content: PlacementContent, skillId: str
   );
 }
 
+function rankOf(content: PlacementContent, skillId: string): number {
+  return gradeRank(content.graph.byId.get(skillId)!.grade);
+}
+
+/** Probeable now, or maybe once its missing pack is installed. */
+function canProbeLater(state: PlacementState, content: PlacementContent, skillId: string): boolean {
+  return content.missingRanks.has(rankOf(content, skillId))
+    ? !isProbed(state, skillId)
+    : canProbe(state, content, skillId);
+}
+
+/** True when the grade has skills to sample now, or may once its missing pack is installed. */
+function hasSample(state: PlacementState, content: PlacementContent, rank: number): boolean {
+  if (!content.missingRanks.has(rank)) return sampleGrade(state, content, rank).length > 0;
+  return content.graph.skills.some((s) => gradeRank(s.grade) === rank && !isProbed(state, s.id));
+}
+
 function sampleGrade(state: PlacementState, content: PlacementContent, rank: number): string[] {
   return content.graph.skills
     .filter((s) => gradeRank(s.grade) === rank && canProbe(state, content, s.id))
@@ -142,19 +173,42 @@ function sampleGrade(state: PlacementState, content: PlacementContent, rank: num
 
 function enterGrade(d: PlacementState, content: PlacementContent, rank: number) {
   d.grade = rank;
-  d.queue = sampleGrade(d, content, rank);
-  d.gradeSize = d.queue.length;
   d.gradePassed = 0;
   d.gradeFailed = 0;
+  if (content.missingRanks.has(rank)) {
+    d.waitingFor = rank;
+    d.queue = [];
+    d.gradeSize = 0;
+    return;
+  }
+  d.queue = sampleGrade(d, content, rank);
+  d.gradeSize = d.queue.length;
 }
 
-/** Nearest grade in `low..high-1` with skills to sample, moving the way the last outcome points. */
-function nextGrade(d: PlacementState, content: PlacementContent): number | null {
-  const step = d.direction === 'down' ? -1 : 1;
-  for (let r = d.grade! + step; r >= d.low && r < d.high; r += step) {
-    if (sampleGrade(d, content, r).length > 0) return r;
+/** Nearest grade in `low..high-1` past `from` with skills to sample, stepping by `step`. */
+function gradeFrom(
+  d: PlacementState,
+  content: PlacementContent,
+  from: number,
+  step: 1 | -1,
+): number | null {
+  for (let r = from + step; r >= d.low && r < d.high; r += step) {
+    if (hasSample(d, content, r)) return r;
   }
   return null;
+}
+
+/** Next grade to sample, moving the way the last outcome points. */
+function nextGrade(d: PlacementState, content: PlacementContent): number | null {
+  return gradeFrom(d, content, d.grade!, d.direction === 'down' ? -1 : 1);
+}
+
+/** Nearest grade to `target` with skills to sample, looking down first. */
+function firstGrade(d: PlacementState, content: PlacementContent, target: number): number | null {
+  const ranks = Array.from({ length: content.topRank + 1 }, (_, r) => r).sort(
+    (a, b) => Math.abs(a - target) - Math.abs(b - target) || a - b,
+  );
+  return ranks.find((r) => hasSample(d, content, r)) ?? null;
 }
 
 function pickItem<T extends PlacementItem>(
@@ -188,9 +242,9 @@ function queuePrerequisites(
     .get(skillId)!
     .prerequisiteIds.filter(
       (id) =>
-        gradeRank(content.graph.byId.get(id)!.grade) < d.placedRank! &&
+        rankOf(content, id) < d.placedRank! &&
         !d.queue.includes(id) &&
-        canProbe(d, content, id),
+        canProbeLater(d, content, id),
     );
   d.queue = end === 'front' ? [...fresh, ...d.queue] : [...d.queue, ...fresh];
 }
@@ -229,7 +283,7 @@ function settleGrade(d: PlacementState) {
 
 /** Moves to the next skill to probe, or to the end, once no skill is on screen. */
 function advance(d: PlacementState, content: PlacementContent) {
-  while (d.phase !== 'done' && !d.current) {
+  while (d.phase !== 'done' && !d.current && d.waitingFor === null) {
     const affordable = PLACEMENT_ITEM_BUDGET - d.itemsAnswered >= ITEMS_PER_SKILL;
     if (d.phase === 'search') {
       const settled =
@@ -250,7 +304,14 @@ function advance(d: PlacementState, content: PlacementContent) {
       d.queue = [];
       continue;
     }
-    const skillId = d.queue.shift()!;
+    const skillId = d.queue[0];
+    if (content.missingRanks.has(rankOf(content, skillId))) {
+      d.waitingFor = rankOf(content, skillId);
+      continue;
+    }
+    d.queue.shift();
+    // A pack installed while waiting may hold too few items for a traced skill.
+    if (!canProbe(d, content, skillId)) continue;
     const item = pickItem(d, content, skillId, START_DIFFICULTY);
     if (item) show(d, skillId, item);
   }
@@ -280,13 +341,10 @@ export function startPlacement(
     usedItemIds: [],
     itemsAnswered: 0,
     placedRank: null,
+    waitingFor: null,
   };
-  // Start at the nearest grade with items, looking down first.
-  const ranks = Array.from({ length: content.topRank + 1 }, (_, r) => r).sort(
-    (a, b) => Math.abs(a - startRank) - Math.abs(b - startRank) || a - b,
-  );
-  const first = ranks.find((r) => sampleGrade(d, content, r).length > 0);
-  if (first === undefined) {
+  const first = firstGrade(d, content, startRank);
+  if (first === null) {
     return { ...d, phase: 'done', placedRank: startRank };
   }
   enterGrade(d, content, first);
@@ -298,7 +356,63 @@ export function isPlacementDone(state: PlacementState): boolean {
   return state.phase === 'done';
 }
 
-/** The item to show now, or `null` when placement is done. Stable until it is answered. */
+/** The item to show, the pack to install, or the end. Stable until answered or resumed. */
+export function nextPlacementStep<T extends PlacementItem>(
+  state: PlacementState,
+  content: PlacementContent<T>,
+): PlacementStep<T> {
+  if (state.waitingFor !== null) {
+    return { kind: 'need-pack', grade: rankToGrade(state.waitingFor) as SkillGrade };
+  }
+  const item = nextPlacementItem(state, content);
+  return item ? { kind: 'item', item } : { kind: 'done' };
+}
+
+/**
+ * Goes on after a `need-pack` step, given content built with the newly installed packs. Returns the
+ * state unchanged while the pack is still missing.
+ */
+export function resumePlacement(state: PlacementState, content: PlacementContent): PlacementState {
+  const rank = state.waitingFor;
+  if (rank === null || content.missingRanks.has(rank)) return state;
+  const d: PlacementState = JSON.parse(JSON.stringify(state));
+  d.waitingFor = null;
+  if (d.phase === 'search' && d.queue.length === 0) {
+    // The pack may lack items for this grade's key skills. Then move on as if it had none.
+    const next =
+      sampleGrade(d, content, rank).length > 0
+        ? rank
+        : d.grades.length === 0
+          ? firstGrade(d, content, rank)
+          : nextGrade(d, content);
+    if (next === null) endSearch(d, content);
+    else enterGrade(d, content, next);
+  }
+  advance(d, content);
+  return d;
+}
+
+/**
+ * Grades placement may sample next, for `packsFor`'s `extraGrades` to download ahead. Traced
+ * prerequisites show up once search ends and their skills are queued.
+ */
+export function placementGradesAhead(
+  state: PlacementState,
+  content: PlacementContent,
+): SkillGrade[] {
+  const ranks = new Set<number>();
+  if (state.waitingFor !== null) ranks.add(state.waitingFor);
+  if (state.phase === 'search' && state.grade !== null) {
+    for (const step of [1, -1] as const) {
+      const r = gradeFrom(state, content, state.grade, step);
+      if (r !== null) ranks.add(r);
+    }
+  }
+  for (const id of state.queue) ranks.add(rankOf(content, id));
+  return [...ranks].sort((a, b) => a - b).map((r) => rankToGrade(r) as SkillGrade);
+}
+
+/** The item to show now, or `null` when placement is done or waiting for a pack. Stable until answered. */
 export function nextPlacementItem<T extends PlacementItem>(
   state: PlacementState,
   content: PlacementContent<T>,

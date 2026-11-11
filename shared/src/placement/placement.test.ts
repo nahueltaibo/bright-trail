@@ -5,6 +5,7 @@ import { createSkillGraph, type GraphSkill } from '../engine/graph';
 import { LearnerStateSchema } from '../engine/learner';
 import { nextStep } from '../engine/next-step';
 import { deriveGrade, type SchoolGrade } from '../grade';
+import { packId, packsFor } from '../packs';
 import type { SkillGrade } from '../skill';
 import {
   answerPlacement,
@@ -12,8 +13,11 @@ import {
   finishPlacement,
   isPlacementDone,
   nextPlacementItem,
+  nextPlacementStep,
   PLACEMENT_ITEM_BUDGET,
+  placementGradesAhead,
   PlacementStateSchema,
+  resumePlacement,
   startPlacement,
   type PlacementContent,
   type PlacementItem,
@@ -199,6 +203,128 @@ describe('placement over a K to Grade 6 graph', () => {
       correct: false,
     });
     expect(state).toEqual(copy);
+  });
+});
+
+describe('placement with packs not installed', () => {
+  const ladderGraph = createSkillGraph(ladder);
+  const installedOnly = (missing: readonly SkillGrade[]) =>
+    createPlacementContent(
+      ladderGraph,
+      fakeItems(ladder.filter((s) => !missing.includes(s.grade))),
+      missing,
+    );
+
+  /** Plays to the end, installing each pack placement asks for. */
+  function playInstalling(missing: SkillGrade[], grade: SkillGrade, kid: Kid) {
+    let content = installedOnly(missing);
+    let state = startPlacement('mia', content, grade);
+    const asked: SkillGrade[] = [];
+    const shown: PlacementItem[] = [];
+    for (;;) {
+      const step = nextPlacementStep(state, content);
+      if (step.kind === 'done') break;
+      if (step.kind === 'need-pack') {
+        asked.push(step.grade);
+        missing = missing.filter((g) => g !== step.grade);
+        content = installedOnly(missing);
+        state = resumePlacement(state, content);
+        continue;
+      }
+      shown.push(step.item);
+      state = answerPlacement(state, content, {
+        itemId: step.item.id,
+        correct: kid(step.item.skillId),
+      });
+    }
+    return { state, shown, asked };
+  }
+
+  const hiddenGap = new Set(['g3-b', 'g4-b', 'g5-b', 'g6-b']);
+  const kids: Record<string, Kid> = {
+    'a hidden Grade 3 gap': (s) => !hiddenGap.has(s),
+    'everything wrong': () => false,
+    'everything right': () => true,
+  };
+
+  it('asks for the pack of the grade it starts at instead of starting elsewhere', () => {
+    const content = installedOnly(['3']);
+    const state = startPlacement('mia', content, '3');
+    expect(nextPlacementStep(state, content)).toEqual({ kind: 'need-pack', grade: '3' });
+    expect(nextPlacementItem(state, content)).toBeNull();
+    const resumed = resumePlacement(state, ladderContent);
+    expect(nextPlacementStep(resumed, ladderContent)).toMatchObject({
+      kind: 'item',
+      item: { skillId: 'g3-a' },
+    });
+  });
+
+  it('asks for the next grade down when the child struggles', () => {
+    const { asked } = playInstalling(['4', '3'], '5', () => false);
+    expect(asked).toEqual(['4', '3']);
+  });
+
+  it('asks for a traced prerequisite below the placed grade', () => {
+    const { asked, state } = playInstalling(['3'], '5', kids['a hidden Grade 3 gap']);
+    expect(asked).toEqual(['3']);
+    expect(state.results).toContainEqual({ skillId: 'g3-b', passed: false });
+  });
+
+  for (const [name, kid] of Object.entries(kids)) {
+    it(`places a kid with ${name} as if every pack were installed`, () => {
+      const straight = play(ladderContent, startPlacement('mia', ladderContent, '5'), kid);
+      const installing = playInstalling(['K', '2', '3', '4', '6'], '5', kid);
+      expect(installing.shown).toEqual(straight.shown);
+      expect(finishPlacement(installing.state, ladderContent, NOW)).toEqual(
+        finishPlacement(straight.state, ladderContent, NOW),
+      );
+    });
+  }
+
+  it('keeps waiting while the pack is still missing', () => {
+    const content = installedOnly(['3']);
+    const state = startPlacement('mia', content, '3');
+    expect(resumePlacement(state, content)).toBe(state);
+    expect(() =>
+      answerPlacement(state, content, { itemId: 'g3-a-item-0', correct: true }),
+    ).toThrow();
+  });
+
+  it('moves on when the installed pack has nothing to probe', () => {
+    const state = startPlacement('mia', installedOnly(['3']), '3');
+    const empty = createPlacementContent(
+      ladderGraph,
+      fakeItems(ladder.filter((s) => s.grade !== '3')),
+    );
+    const resumed = resumePlacement(state, empty);
+    expect(nextPlacementStep(resumed, empty)).toMatchObject({
+      kind: 'item',
+      item: { skillId: 'g2-a' },
+    });
+  });
+
+  it('names the grades it may sample next, for packsFor to download ahead', () => {
+    const state = startPlacement('mia', ladderContent, '3');
+    const ahead = placementGradesAhead(state, ladderContent);
+    expect(ahead).toEqual(['2', '3', '4']);
+    const available = GRADES.map((g) => ({
+      id: packId('math', g),
+      subject: 'math' as const,
+      grade: g,
+    }));
+    expect(packsFor({ subjects: ['math'], grade: '1' }, available, ahead)).toEqual([
+      'math-k',
+      'math-1',
+      'math-2',
+      'math-3',
+      'math-4',
+    ]);
+  });
+
+  it('reads placement saved before packs as not waiting', () => {
+    const old: Partial<PlacementState> = startPlacement('mia', ladderContent, '1');
+    delete old.waitingFor;
+    expect(PlacementStateSchema.parse(old).waitingFor).toBeNull();
   });
 });
 
