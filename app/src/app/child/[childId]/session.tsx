@@ -44,14 +44,14 @@ export default function SessionScreen() {
     };
   }, [repo, childId]);
 
-  // Packs that land mid-session, such as a grade placement just moved to, play from the next screen.
+  // Packs that land mid-session play from the next screen, or right away on an end screen.
   // Each finished sync is a new status object, so this runs even if React batched the progress.
   const packs = usePackStatus();
   useEffect(() => {
     if (!session || packs.state !== 'ready') return;
     loadContent(repo)
       .then((bundle) => session.reload(bundle))
-      .catch((e: Error) => setError(e.message));
+      .then(setView, (e: Error) => setError(e.message));
   }, [session, packs, repo]);
 
   const narrateItem = useCallback<Narrate>(
