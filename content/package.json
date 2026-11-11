@@ -12,7 +12,8 @@
     "scenes": "tsx src/scenes/tag-scenes.ts",
     "slices": "tsx src/slices/tag-slices.ts",
     "join": "tsx src/join/tag-join.ts",
-    "hops": "tsx src/hops/tag-hops.ts"
+    "hops": "tsx src/hops/tag-hops.ts",
+    "packs": "tsx src/packs/build-packs.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.6.0",
