@@ -10,6 +10,7 @@ const maya: ChildProfile = {
   avatar: 'fox',
   readingMode: false,
   dyslexicFont: false,
+  subjects: ['math'],
 };
 const leo: ChildProfile = {
   id: 'leo',
@@ -19,6 +20,7 @@ const leo: ChildProfile = {
   avatar: 'owl',
   readingMode: true,
   dyslexicFont: false,
+  subjects: ['math'],
 };
 const mastery: MasteryState = {
   childId: 'maya',

@@ -104,6 +104,20 @@ describe('migrate', () => {
     expect(await userVersion(db)).toBe(SCHEMA_VERSION);
   });
 
+  it('upgrades a version 5 database with math for existing children', async () => {
+    const db = openNodeSqliteDatabase(':memory:');
+    await migrate(db, MIGRATIONS.slice(0, 5));
+    await db.runAsync(
+      "INSERT INTO children VALUES ('maya', 'Maya', '2020-03-01', NULL, 'fox', 1, NULL, 0)",
+      [],
+    );
+    await migrate(db);
+    expect(await db.getAllAsync('SELECT id, subjects FROM children', [])).toEqual([
+      { id: 'maya', subjects: '["math"]' },
+    ]);
+    expect(await userVersion(db)).toBe(SCHEMA_VERSION);
+  });
+
   it('applies only the migrations a database is missing', async () => {
     const db = openNodeSqliteDatabase(':memory:');
     await migrate(db);

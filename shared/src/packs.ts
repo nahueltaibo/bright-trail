@@ -1,6 +1,8 @@
 import { z } from 'zod';
 import { CONTENT_SCHEMA_VERSION, ContentBundleSchema, type ContentBundle } from './bundle';
 import { IdSchema, IsoDateTimeSchema, NonEmptyTextSchema } from './common';
+import { gradeRank } from './engine/graph';
+import type { SchoolGrade } from './grade';
 import { ItemSchema } from './item';
 import { StoryNuggetSchema } from './nugget';
 import {
@@ -83,4 +85,26 @@ export function assembleBundle(
     nuggets: packs.flatMap((p) => p.nuggets),
     items: packs.flatMap((p) => p.items),
   });
+}
+
+/** How many grades either side of the child's grade to keep, so near gaps and stretch skills play. */
+const GRADE_REACH = 1;
+
+/**
+ * Ids of the packs a child needs: each chosen subject at the child's grade and one either side,
+ * plus `extraGrades` such as the grade placement is about to probe. Only packs the manifest has.
+ */
+export function packsFor(
+  child: { subjects: readonly Subject[]; grade: SkillGrade | SchoolGrade },
+  available: readonly Pick<PackEntry, 'id' | 'subject' | 'grade'>[],
+  extraGrades: readonly SkillGrade[] = [],
+): string[] {
+  const rank = gradeRank(child.grade);
+  const extra = new Set(extraGrades.map(gradeRank));
+  return available
+    .filter((p) => child.subjects.includes(p.subject))
+    .filter(
+      (p) => Math.abs(gradeRank(p.grade) - rank) <= GRADE_REACH || extra.has(gradeRank(p.grade)),
+    )
+    .map((p) => p.id);
 }
