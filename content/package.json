@@ -13,7 +13,8 @@
     "slices": "tsx src/slices/tag-slices.ts",
     "join": "tsx src/join/tag-join.ts",
     "hops": "tsx src/hops/tag-hops.ts",
-    "packs": "tsx src/packs/build-packs.ts"
+    "packs": "tsx src/packs/build-packs.ts",
+    "publish-packs": "tsx src/packs/publish-packs.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.6.0",
