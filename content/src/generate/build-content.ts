@@ -7,6 +7,7 @@ import { ClaudeCliLlm } from '../graph/cli-llm';
 import { cacheKey, withDiskCache, type LlmClient } from '../graph/llm';
 import { loadSources } from '../graph/sources';
 import { writeFormatted } from '../graph/write';
+import { writeBundle } from '../packs/write-packs';
 import { loadEdits } from './edits';
 import { buildBundle, generateAll, MAX_RETRIES } from './pipeline';
 import { generateRequest, type SkillContext } from './prompts';
@@ -134,7 +135,7 @@ if (values.pilot) {
   for (const d of joined.dropped) console.warn(`Join dropped: ${d}`);
   for (const d of dropped) console.warn(`Hops dropped: ${d}`);
   const bundleFile = join(outDir, 'bundle.json');
-  await writeFormatted(bundleFile, JSON.stringify(bundle));
+  await writeBundle(bundleFile, bundle);
   const bytes = (await readFile(bundleFile)).byteLength;
   await writeFormatted(
     join(outDir, 'content-report.md'),

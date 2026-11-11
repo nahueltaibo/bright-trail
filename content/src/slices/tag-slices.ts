@@ -6,6 +6,7 @@ import { ContentBundleSchema, type Item, type SliceScene } from '@bright-trail/s
 import { ClaudeCliLlm } from '../graph/cli-llm';
 import { cacheKey, withDiskCache, type LlmClient } from '../graph/llm';
 import { writeFormatted } from '../graph/write';
+import { writeBundle } from '../packs/write-packs';
 import { acceptSlices, applySlices, sliceCandidates, sliceTagRequest } from './slices';
 
 /**
@@ -67,7 +68,7 @@ await Promise.all(Array.from({ length: Number(values.concurrency) }, worker));
 const sorted = Object.fromEntries(Object.entries(slices).sort(([a], [b]) => a.localeCompare(b)));
 await writeFormatted(slicesFile, JSON.stringify(sorted));
 const applied = applySlices(bundle, sorted);
-await writeFormatted(bundleFile, JSON.stringify(applied.bundle));
+await writeBundle(bundleFile, applied.bundle);
 
 console.log(`${liveCalls} live CLI calls, the rest came from the cache`);
 console.log(`${Object.keys(sorted).length} items play as slice scenes. Wrote ${slicesFile}`);

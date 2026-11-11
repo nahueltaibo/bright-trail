@@ -6,6 +6,7 @@ import { ContentBundleSchema, type Hops, type NumberLineItem } from '@bright-tra
 import { ClaudeCliLlm } from '../graph/cli-llm';
 import { cacheKey, withDiskCache, type LlmClient } from '../graph/llm';
 import { writeFormatted } from '../graph/write';
+import { writeBundle } from '../packs/write-packs';
 import { acceptHops, applyHops, hopsCandidates, hopsTagRequest } from './hops';
 
 /**
@@ -64,7 +65,7 @@ await Promise.all(Array.from({ length: Number(values.concurrency) }, worker));
 const sorted = Object.fromEntries(Object.entries(paths).sort(([a], [b]) => a.localeCompare(b)));
 await writeFormatted(hopsFile, JSON.stringify(sorted));
 const applied = applyHops(bundle, sorted);
-await writeFormatted(bundleFile, JSON.stringify(applied.bundle));
+await writeBundle(bundleFile, applied.bundle);
 
 console.log(`${liveCalls} live CLI calls, the rest came from the cache`);
 console.log(`${Object.keys(sorted).length} items hop a planned path. Wrote ${hopsFile}`);
