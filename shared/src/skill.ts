@@ -5,6 +5,11 @@ export const FRAMEWORKS = ['ontario-math-2020', 'ontario-kindergarten-2026'] as 
 export const FrameworkSchema = z.enum(FRAMEWORKS);
 export type Framework = z.infer<typeof FrameworkSchema>;
 
+/** Subjects the content covers. Packs and a child's choices are per subject. */
+export const SUBJECTS = ['math'] as const;
+export const SubjectSchema = z.enum(SUBJECTS);
+export type Subject = z.infer<typeof SubjectSchema>;
+
 /** Grades the curriculum covers. JK and SK share one Kindergarten curriculum. */
 export const SKILL_GRADES = ['K', '1', '2', '3', '4', '5', '6'] as const;
 export const SkillGradeSchema = z.enum(SKILL_GRADES);
@@ -16,6 +21,7 @@ export const ExpectationCodeSchema = z.string().regex(/^[A-Z]\d+(\.\d+)?$/);
 export const SkillSchema = z
   .object({
     id: IdSchema,
+    subject: SubjectSchema,
     framework: FrameworkSchema,
     grade: SkillGradeSchema,
     /** Strand letter, e.g. `B` for Number in Math 2020, `A` in Kindergarten 2026. */

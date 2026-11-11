@@ -7,6 +7,7 @@ import { SkillSchema } from './skill';
 describe('SkillSchema', () => {
   const skill = {
     id: 'g1-numbers-to-50',
+    subject: 'math',
     framework: 'ontario-math-2020',
     grade: '1',
     strand: 'B',

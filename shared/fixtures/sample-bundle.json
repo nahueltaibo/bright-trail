@@ -5,6 +5,7 @@
   "skills": [
     {
       "id": "k-count-to-20",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -15,6 +16,7 @@
     },
     {
       "id": "g1-numbers-to-50",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -25,6 +27,7 @@
     },
     {
       "id": "g1-add-within-10",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",

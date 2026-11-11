@@ -62,6 +62,7 @@ async function ask<T>(llm: LlmClient, request: LlmRequest, schema: z.ZodType<T>)
 function toSkills(generated: GeneratedSkills, source: GradeSource): Skill[] {
   return generated.skills.map((s) => ({
     id: s.id.trim(),
+    subject: source.subject,
     framework: source.framework,
     grade: source.grade,
     strand: source.strand,
