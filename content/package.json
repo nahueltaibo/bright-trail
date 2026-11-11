@@ -15,7 +15,8 @@
     "join": "tsx src/games/tag-games.ts --kind join",
     "hops": "tsx src/games/tag-games.ts --kind hops",
     "packs": "tsx src/packs/build-packs.ts",
-    "publish-packs": "tsx src/packs/publish-packs.ts"
+    "publish-packs": "tsx src/packs/publish-packs.ts",
+    "voices": "tsx src/voices/compare-voices.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.6.0",

@@ -25,6 +25,7 @@
     "content:slices": "npm run slices -w @bright-trail/content --",
     "content:join": "npm run join -w @bright-trail/content --",
     "content:hops": "npm run hops -w @bright-trail/content --",
+    "content:voices": "npm run voices -w @bright-trail/content",
     "content:packs": "npm run packs -w @bright-trail/content",
     "content:publish": "npm run publish-packs -w @bright-trail/content --",
     "build": "npm run build --workspaces --if-present",
