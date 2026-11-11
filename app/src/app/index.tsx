@@ -7,6 +7,7 @@ import { Icon } from '../design/Icon';
 import { KidIconButton, KidScreen, useKidType } from '../design/kid';
 import { color } from '../design/tokens';
 import { SHOW_DEV_TOOLS } from '../devTools';
+import { GAME_KINDS, GAME_VIEWS } from '../learning/games';
 import { useLayout } from '../learning/theme';
 import { SpeakerButton, useAutoNarration } from '../narration';
 import { useStorage } from '../storage/StorageProvider';
@@ -17,9 +18,10 @@ const PICK_MESSAGE = 'Who’s playing? Tap your picture.';
 
 const DEV_LINKS: { href: Href; label: string }[] = [
   { href: '/dev/learning', label: 'Dev: learning preview' },
-  { href: '/dev/share', label: 'Dev: sharing minigame' },
-  { href: '/dev/slices', label: 'Dev: slices minigame' },
-  { href: '/dev/join', label: 'Dev: join and leave minigame' },
+  ...GAME_KINDS.map((kind) => ({
+    href: `/dev/games/${kind}` as Href,
+    label: `Dev: ${GAME_VIEWS[kind].title.toLowerCase()} minigame`,
+  })),
   { href: '/dev/hops', label: 'Dev: frog hops' },
   { href: '/dev/check-end', label: 'Dev: check-end screens' },
 ];
