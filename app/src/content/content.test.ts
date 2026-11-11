@@ -191,4 +191,34 @@ describe('syncPacks', () => {
       'math-k',
     ]);
   });
+
+  it('keeps every queued call’s extra packs', async () => {
+    const repo = await freshRepo();
+    await repo.children.save(maya);
+    const first = syncPacks(repo, { source: diskSource(), now });
+    const all = syncPacks(repo, { source: diskSource(), extra: 'all', now });
+    const plain = syncPacks(repo, { source: diskSource(), now });
+    await Promise.all([first, all, plain]);
+    expect((await repo.packs.list()).map((p) => p.id).sort()).toEqual(
+      diskManifest()
+        .packs.map((p) => p.id)
+        .sort(),
+    );
+  });
+
+  it('joins queued lists of extra packs', async () => {
+    const repo = await freshRepo();
+    await repo.children.save(maya);
+    const first = syncPacks(repo, { source: diskSource(), now });
+    const four = syncPacks(repo, { source: diskSource(), extra: ['math-4'], now });
+    const five = syncPacks(repo, { source: diskSource(), extra: ['math-5'], now });
+    await Promise.all([first, four, five]);
+    expect((await repo.packs.list()).map((p) => p.id)).toEqual([
+      'math-1',
+      'math-2',
+      'math-4',
+      'math-5',
+      'math-k',
+    ]);
+  });
 });

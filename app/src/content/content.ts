@@ -103,7 +103,7 @@ let again: SyncOptions | null = null;
  */
 export function syncPacks(repo: Repository, options: SyncOptions = {}): Promise<void> {
   if (running) {
-    again = options;
+    again = again ? mergeOptions(again, options) : options;
     return running;
   }
   running = (async () => {
@@ -117,6 +117,17 @@ export function syncPacks(repo: Repository, options: SyncOptions = {}): Promise<
     if (next) await syncPacks(repo, next);
   })();
   return running;
+}
+
+/** Folds queued calls into one pass that keeps every pack any of them asked for. */
+function mergeOptions(a: SyncOptions, b: SyncOptions): SyncOptions {
+  const extra =
+    a.extra === 'all' || b.extra === 'all'
+      ? 'all'
+      : a.extra || b.extra
+        ? [...new Set([...(a.extra ?? []), ...(b.extra ?? [])])]
+        : undefined;
+  return { source: b.source ?? a.source, now: b.now ?? a.now, extra };
 }
 
 async function syncOnce(repo: Repository, options: SyncOptions) {
