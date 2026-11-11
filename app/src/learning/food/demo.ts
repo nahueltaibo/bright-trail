@@ -8,7 +8,7 @@ const tap = (answer: string, ...others: string[]) => ({
   answerChoiceId: 'a',
 });
 
-/** One item per kind of slice question, for /dev/slices. Each must pass `sliceProblems`. */
+/** One item per kind of slice question, for /dev/games/slices. Each must pass `sliceProblems`. */
 export const SLICE_DEMO_ITEMS: Item[] = [
   {
     ...base,
