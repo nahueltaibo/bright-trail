@@ -10,6 +10,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `content/scenes.json` maps item ids to sharing scenes, `content/slices.json` to slice scenes, `content/join.json` to join scenes, and `content/hops.json` to frog paths on number lines. `npm run content:games -- --kind share|slices|join|hops` writes one of them with one cached LLM call per skill, then adds it to the bundle. `content:scenes`, `content:slices`, `content:join`, and `content:hops` are aliases. Code keeps a scene only when its answer matches the item's, so a regenerated item loses a stale scene.
 - Fraction pictures say `picked`, not `shaded`, and name a `food` when the story does. The generator's prompts and cache still say "shaded". `content/src/generate/app-words.ts` rewords and picks the food after review, so cached calls keep their keys.
 - `npm run content:voices` renders 12 bundle lines with each TTS provider that has its keys in `.env`, into `content/out/voices/` (gitignored). Its `index.html` plays them under shuffled letters for a blind pick. The keys are `GOOGLE_TTS_API_KEY`, `AZURE_SPEECH_KEY` and `AZURE_SPEECH_REGION`, `ELEVENLABS_API_KEY` (and optional `ELEVENLABS_VOICE_ID`), and `OPENAI_API_KEY`. Clips already on disk aren't rendered again.
+- Every bundle write also splits it into `content/out/packs/`: `core.json` with the skill graph, one pack per subject and grade, and `manifests/<coreHash>.json`. The files are minified because their hashes cover the exact bytes. Run `npm run content:packs` after editing `bundle.json` by hand, or a content test fails.
 - The app plays `content/out/bundle.json` through `loadBundle()` in `app/src/content/loadBundle.ts`.
 - Family devices run a release-signed APK from a GitHub release and get JS and content changes over the air. CI does both. See [Versions and Releases](#versions-and-releases) and [docs/install-android.md](docs/install-android.md).
 
@@ -67,7 +68,13 @@ flowchart TD
   D -- no --> F[Fail: bump the major version]
 ```
 
-CI needs these repo secrets: `EXPO_TOKEN`, and the release key as `RELEASE_KEYSTORE` (base64), `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS`, and `RELEASE_KEY_PASSWORD`.
+Before either path, `npm run content:publish` uploads the content packs to Cloudflare R2. Packs go first and `manifests/<coreHash>.json` last, so a manifest never names a missing pack. Add `-- --dry-run` to list the files without uploading.
+
+CI needs these repo secrets:
+
+- `EXPO_TOKEN`.
+- The release key as `RELEASE_KEYSTORE` (base64), `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS`, and `RELEASE_KEY_PASSWORD`.
+- An R2 API token with write access to the bucket, as `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, and `R2_BUCKET`. Until all four are set, CI skips the upload with a warning. Setting only some fails the run. [docs/setup-r2.md](docs/setup-r2.md) shows where each value comes from.
 
 ## Gotchas
 
