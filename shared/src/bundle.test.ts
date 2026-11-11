@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import sample from '../fixtures/sample-bundle.json';
 import {
+  CONTENT_SCHEMA_VERSION,
   ContentBundleSchema,
   findPrerequisiteCycle,
   parseContentBundle,
@@ -75,7 +76,7 @@ describe('ContentBundleSchema', () => {
   });
 
   it('rejects an unknown schema version', () => {
-    expect(messages({ ...clone(), schemaVersion: 2 })).toHaveLength(1);
+    expect(messages({ ...clone(), schemaVersion: CONTENT_SCHEMA_VERSION - 1 })).toHaveLength(1);
   });
 });
 

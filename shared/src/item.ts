@@ -1,9 +1,7 @@
 import { z } from 'zod';
 import { IdSchema, NonEmptyTextSchema } from './common';
+import { GameSchema } from './game';
 import { HopsSchema } from './hops';
-import { JoinSceneSchema } from './join';
-import { SceneSchema } from './scene';
-import { SliceSceneSchema } from './slices';
 import { VisualSchema } from './visual';
 
 export const DifficultySchema = z.number().int().min(1).max(3);
@@ -18,12 +16,8 @@ const ItemBaseSchema = z.object({
   prompt: NonEmptyTextSchema,
   /** Shown, and read aloud, after a miss. */
   why: NonEmptyTextSchema,
-  /** When set, the item plays as the sharing minigame. Its answer must match the item's. */
-  scene: SceneSchema.optional(),
-  /** When set, the item plays as the slices minigame. Its answer must be one the scene shows. */
-  slices: SliceSceneSchema.optional(),
-  /** When set, the item plays as the join-and-leave minigame. Its answer must match the item's. */
-  join: JoinSceneSchema.optional(),
+  /** When set, the item plays as this minigame. The game's answer must match the item's. */
+  game: GameSchema.optional(),
 });
 
 export const ChoiceSchema = z.discriminatedUnion('kind', [

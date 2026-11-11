@@ -24,9 +24,7 @@ export type TaggedHops = z.infer<typeof TaggedHopsSchema>;
 
 /** Number-line items the frog plays out. Items another minigame plays keep that game. */
 export function hopsCandidates(items: readonly Item[]): NumberLineItem[] {
-  return items.filter(
-    (i): i is NumberLineItem => i.type === 'number-line' && !i.scene && !i.slices && !i.join,
-  );
+  return items.filter((i): i is NumberLineItem => i.type === 'number-line' && !i.game);
 }
 
 const SYSTEM = `You plan how a frog hops along a number line to show kids why an answer is right. The child places the frog, then the frog starts on "start" and makes each leg's hops in turn, counting out loud where it lands. The last landing must be the item's answer.

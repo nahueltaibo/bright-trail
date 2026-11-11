@@ -18,7 +18,7 @@ export const SLICE_DEMO_ITEMS: Item[] = [
       'A pizza is cut into 4 equal slices. Mia picks 3 of them. What part of the pizza did she pick? 1/4, 3/4, or 4/3?',
     why: 'Each slice is 1/4. Mia picked 3 slices, so she has 3/4.',
     ...tap('3/4', '1/4', '4/3'),
-    slices: scene({
+    game: scene({
       ask: 'picked',
       shape: 'circle',
       food: 'pizza',
@@ -36,7 +36,7 @@ export const SLICE_DEMO_ITEMS: Item[] = [
     why: '3 pieces are gone. Count what stays in the pan: 5 pieces.',
     type: 'keypad',
     answer: 5,
-    slices: scene({ ask: 'left', shape: 'rectangle', food: 'brownies', parts: 8, take: 3 }),
+    game: scene({ ask: 'left', shape: 'rectangle', food: 'brownies', parts: 8, take: 3 }),
   },
   {
     ...base,
@@ -45,7 +45,7 @@ export const SLICE_DEMO_ITEMS: Item[] = [
     narration: 'Leo cuts a pizza into sixths. How many equal slices does it have? 3, 6, or 8?',
     why: 'Sixths means 6 equal slices.',
     ...tap('6', '3', '8'),
-    slices: scene({ ask: 'parts', shape: 'circle', food: 'pizza', parts: 6 }),
+    game: scene({ ask: 'parts', shape: 'circle', food: 'pizza', parts: 6 }),
   },
   {
     ...base,
@@ -55,7 +55,7 @@ export const SLICE_DEMO_ITEMS: Item[] = [
       '4 friends share one pie fairly. What part of the pie does each friend get? 1/2, 1/4, or 4/4?',
     why: 'The pie is cut into 4 equal slices, one for each friend. That is 1/4 each.',
     ...tap('1/4', '1/2', '4/4'),
-    slices: scene({ ask: 'each', shape: 'circle', food: 'pie', parts: 4 }),
+    game: scene({ ask: 'each', shape: 'circle', food: 'pie', parts: 4 }),
   },
   {
     ...base,
@@ -66,7 +66,7 @@ export const SLICE_DEMO_ITEMS: Item[] = [
     why: 'Cut the half in two and you get 2 fourths.',
     type: 'keypad',
     answer: 2,
-    slices: scene({
+    game: scene({
       ask: 'same',
       shape: 'circle',
       food: 'pizza',
@@ -84,7 +84,7 @@ export const SLICE_DEMO_ITEMS: Item[] = [
       'Two pizzas are the same size. Which slice is bigger: 1/2 of a pizza or 1/4 of a pizza? Or are they the same?',
     why: 'Fewer slices means bigger slices.',
     ...tap('1/2', '1/4', 'Same'),
-    slices: scene({ ask: 'bigger', shape: 'circle', food: 'pizza', parts: 2, other: 4 }),
+    game: scene({ ask: 'bigger', shape: 'circle', food: 'pizza', parts: 2, other: 4 }),
   },
   {
     ...base,
@@ -94,7 +94,7 @@ export const SLICE_DEMO_ITEMS: Item[] = [
       'Two pizzas are each cut into 4 slices. Leo picks 7 slices. What fraction of a pizza is that? 7/4, 7/8, or 4/7?',
     why: 'Each slice is 1/4 of a pizza. 7 slices are 7/4.',
     ...tap('7/4', '7/8', '4/7'),
-    slices: scene({
+    game: scene({
       ask: 'picked',
       shape: 'circle',
       food: 'pizza',
@@ -112,7 +112,7 @@ export const SLICE_DEMO_ITEMS: Item[] = [
       'A pizza has 6 slices. One is already gone, so 5/6 is left. Ben eats 2/6. How much is left now? 2/6, 3/6, or 7/6?',
     why: "5 slices minus Ben's 2 slices leaves 3 slices, so 3/6.",
     ...tap('3/6', '2/6', '7/6'),
-    slices: scene({
+    game: scene({
       ask: 'left',
       shape: 'circle',
       food: 'pizza',
@@ -130,7 +130,7 @@ export const SLICE_DEMO_ITEMS: Item[] = [
       'Kai picks 2/8 of a chocolate bar. Then he picks 3/8 more. How much does he have? 5/8, 5/16, or 6/8?',
     why: 'The pieces stay eighths. 2 eighths and 3 eighths make 5 eighths.',
     ...tap('5/8', '5/16', '6/8'),
-    slices: scene({
+    game: scene({
       ask: 'add',
       shape: 'rectangle',
       food: 'chocolate',

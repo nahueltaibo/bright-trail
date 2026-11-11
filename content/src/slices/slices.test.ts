@@ -78,7 +78,7 @@ describe('applySlices', () => {
     const { slices } = acceptSlices([pizza], { slices: [tagged('pizza')] });
     const changed = { items: [{ ...pizza, answer: 4 }] } as unknown as ContentBundle;
     const applied = applySlices(changed, slices);
-    expect(applied.bundle.items[0].slices).toBeUndefined();
+    expect(applied.bundle.items[0].game).toBeUndefined();
     expect(applied.dropped).toEqual(['pizza: the scene shows 3 or 0.75 but the item answers 4']);
   });
 });

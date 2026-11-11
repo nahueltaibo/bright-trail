@@ -11,6 +11,7 @@ import {
   type SliceScene,
 } from '@bright-trail/shared';
 import { z } from 'zod';
+import { applyGame } from '../apply-game';
 import { GENERATOR_MODEL } from '../graph/prompts';
 import type { LlmRequest } from '../graph/llm';
 
@@ -47,7 +48,7 @@ const SLICE_WORDS =
 export function sliceCandidates(items: readonly Item[]): Item[] {
   return items.filter(
     (i) =>
-      !i.scene &&
+      i.game?.kind !== 'share' &&
       (SLICE_WORDS.test(i.narration) || ('visual' in i && i.visual?.kind === 'fraction')),
   );
 }
@@ -195,18 +196,5 @@ export function applySlices(
   bundle: ContentBundle,
   slices: Readonly<Record<string, SliceScene>>,
 ): { bundle: ContentBundle; dropped: string[] } {
-  const dropped: string[] = [];
-  const items = bundle.items.map((item) => {
-    const rest = { ...item };
-    delete rest.slices;
-    const scene = slices[item.id];
-    if (!scene) return rest as Item;
-    const problems = item.scene ? ['the item is a sharing scene'] : allProblems(item, scene);
-    if (problems.length > 0) {
-      dropped.push(`${item.id}: ${problems.join('; ')}`);
-      return rest as Item;
-    }
-    return { ...rest, slices: scene } as Item;
-  });
-  return { bundle: { ...bundle, items }, dropped };
+  return applyGame(bundle, 'slices', slices, allProblems);
 }

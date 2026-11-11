@@ -1,14 +1,19 @@
-import { joinProblems } from '@bright-trail/shared';
+import { gameProblems } from '@bright-trail/shared';
 import { boardOf } from './board';
 import { JOIN_DEMO_ITEMS } from './demo';
 import { joinWords } from './words';
 
-const demo = (id: string) => JOIN_DEMO_ITEMS.find((i) => i.id === `demo-join-${id}`)!.join!;
+const demo = (id: string) => {
+  const game = JOIN_DEMO_ITEMS.find((i) => i.id === `demo-join-${id}`)!.game;
+  if (game?.kind !== 'join') throw new Error(`demo-join-${id} has no join game`);
+  return game;
+};
 const lowest = (ys: { y: number }[]) => Math.max(...ys.map((c) => c.y));
 
 describe('demo items', () => {
   it.each(JOIN_DEMO_ITEMS.map((i) => [i.id, i] as const))('%s matches its scene', (_, item) => {
-    expect(joinProblems(item, item.join!)).toEqual([]);
+    expect(item.game?.kind).toBe('join');
+    expect(gameProblems(item, item.game!)).toEqual([]);
   });
 });
 

@@ -11,6 +11,7 @@ import {
   type Scene,
 } from '@bright-trail/shared';
 import { z } from 'zod';
+import { applyGame } from '../apply-game';
 import { GENERATOR_MODEL } from '../graph/prompts';
 import type { LlmRequest } from '../graph/llm';
 
@@ -153,18 +154,5 @@ export function applyScenes(
   bundle: ContentBundle,
   scenes: Readonly<Record<string, Scene>>,
 ): { bundle: ContentBundle; dropped: string[] } {
-  const dropped: string[] = [];
-  const items = bundle.items.map((item) => {
-    const rest = { ...item };
-    delete rest.scene;
-    const scene = scenes[item.id];
-    if (!scene) return rest as Item;
-    const problems = sceneProblems(item, scene);
-    if (problems.length > 0) {
-      dropped.push(`${item.id}: ${problems.join('; ')}`);
-      return rest as Item;
-    }
-    return { ...rest, scene } as Item;
-  });
-  return { bundle: { ...bundle, items }, dropped };
+  return applyGame(bundle, 'share', scenes, sceneProblems);
 }

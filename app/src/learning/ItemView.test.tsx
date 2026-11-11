@@ -31,7 +31,7 @@ describe('ItemView', () => {
 
   it('shows question dots on a minigame', async () => {
     const { items } = await loadBundle();
-    const shared = items.find((i) => i.scene)!;
+    const shared = items.find((i) => i.game)!;
     await render(<ItemView item={shared} progress={{ current: 0, total: 3 }} />);
     expect(screen.getByLabelText('Question 1 of 3')).toBeTruthy();
   });
