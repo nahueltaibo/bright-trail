@@ -6,6 +6,7 @@ import { ContentBundleSchema } from '@bright-trail/shared';
 import { ClaudeCliLlm } from '../graph/cli-llm';
 import { cacheKey, withDiskCache, type LlmClient } from '../graph/llm';
 import { writeFormatted } from '../graph/write';
+import { writeBundle } from '../packs/write-packs';
 import { isTaggerKind, TAGGERS } from './registry';
 import { tagItems, type Tagger } from './tagger';
 
@@ -49,7 +50,7 @@ if (run.failed.length > 0) process.exitCode = 1;
 
 await writeFormatted(tagsFile, JSON.stringify(run.tagged));
 const applied = tagger.apply(bundle, run.tagged);
-await writeFormatted(bundleFile, JSON.stringify(applied.bundle));
+await writeBundle(bundleFile, applied.bundle);
 
 console.log(`${liveCalls} live CLI calls, the rest came from the cache`);
 console.log(`${Object.keys(run.tagged).length} items ${tagger.outcome}. Wrote ${tagsFile}`);

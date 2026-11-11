@@ -13,7 +13,9 @@
     "scenes": "tsx src/games/tag-games.ts --kind share",
     "slices": "tsx src/games/tag-games.ts --kind slices",
     "join": "tsx src/games/tag-games.ts --kind join",
-    "hops": "tsx src/games/tag-games.ts --kind hops"
+    "hops": "tsx src/games/tag-games.ts --kind hops",
+    "packs": "tsx src/packs/build-packs.ts",
+    "publish-packs": "tsx src/packs/publish-packs.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^1.6.0",
