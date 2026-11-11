@@ -4,7 +4,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 
 ## Where Things Stand
 
-- Specs are HTML under [.docs/](.docs/): product requirements, POC requirements, and the POC task plan. Task IDs (T1, C2, A6, I1, …) come from [.docs/poc-tasks.html](.docs/poc-tasks.html), and branches are named after them (`a6-session-flow`).
+- Specs are HTML under [.docs/](.docs/): product requirements, POC requirements, and the POC task plan. Task IDs (T1, C2, A6, I1, …) come from [.docs/poc-tasks.html](.docs/poc-tasks.html), and branches are named after them (`a6-session-flow`). [.docs/minigames.html](.docs/minigames.html) shows which items have no minigame yet and the order to build the next ones.
 - The design system lives in [.docs/design/](.docs/design/). Each component has a `README.md` and a `preview.html`. Tokens are in `tokens.json`.
 - `content/out/skills.json` holds the generated K–6 skill graph. `content/out/bundle.json` holds the generated stories and items, scoped to the targets in `content/bundle-scope.json` plus their prerequisites. Generation and its checks live in `content/src/generate/`.
 - `content/scenes.json` maps item ids to sharing scenes, `content/slices.json` to slice scenes, `content/join.json` to join scenes, and `content/hops.json` to frog paths on number lines. `npm run content:scenes`, `content:slices`, `content:join`, and `content:hops` write them with one cached LLM call per skill, then add them to the bundle. Code keeps a scene only when its answer matches the item's, so a regenerated item loses a stale scene.
