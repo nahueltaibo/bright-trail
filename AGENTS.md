@@ -65,7 +65,13 @@ flowchart TD
   D -- no --> F[Fail: bump the major version]
 ```
 
-CI needs these repo secrets: `EXPO_TOKEN`, and the release key as `RELEASE_KEYSTORE` (base64), `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS`, and `RELEASE_KEY_PASSWORD`.
+Before either path, `npm run content:publish` uploads the content packs to Cloudflare R2. Packs go first and `manifests/<coreHash>.json` last, so a manifest never names a missing pack. Add `-- --dry-run` to list the files without uploading.
+
+CI needs these repo secrets:
+
+- `EXPO_TOKEN`.
+- The release key as `RELEASE_KEYSTORE` (base64), `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS`, and `RELEASE_KEY_PASSWORD`.
+- An R2 API token with write access to the bucket, as `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, and `R2_BUCKET`. Until all four are set, CI skips the upload with a warning. Setting only some fails the run.
 
 ## Gotchas
 
