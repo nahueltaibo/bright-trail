@@ -2,7 +2,7 @@ import { gameProblems, parseAmount, SceneSchema, type Scene } from '@bright-trai
 import { castFrom, kidFor } from './cast';
 import { DEMO_ITEMS } from './demo';
 import { layoutStage, planDeal, planFill, problemFromScene } from './share';
-import { keypadNarration } from './ShareItemView';
+import { keypadNarration } from './useGameProps';
 
 const kinds = (plan: ReturnType<typeof planDeal>) => plan.steps.map((s) => s.kind[0]).join('');
 const deal = (total: number, receivers: number, label: string) =>

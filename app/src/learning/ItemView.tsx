@@ -1,7 +1,5 @@
-import { SliceItemView } from './food/SliceItemView';
-import { JoinItemView } from './join/JoinItemView';
+import { GameView } from './games';
 import { KeypadItemView } from './KeypadItemView';
-import { ShareItemView } from './minigames/ShareItemView';
 import { NumberLineItemView } from './NumberLineItemView';
 import { TapItemView } from './TapItemView';
 import type { ItemViewProps } from './types';
@@ -11,15 +9,7 @@ import type { ItemViewProps } from './types';
  * each item starts fresh.
  */
 export function ItemView({ item, ...rest }: ItemViewProps & { shuffleSeed?: string }) {
-  const { game } = item;
-  switch (game?.kind) {
-    case 'share':
-      return <ShareItemView item={item} scene={game} {...rest} />;
-    case 'slices':
-      return <SliceItemView item={item} scene={game} {...rest} />;
-    case 'join':
-      return <JoinItemView item={item} scene={game} {...rest} />;
-  }
+  if (item.game) return <GameView item={item} game={item.game} {...rest} />;
   switch (item.type) {
     case 'tap':
       return <TapItemView item={item} {...rest} />;
