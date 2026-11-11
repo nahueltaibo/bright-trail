@@ -12,7 +12,7 @@ const tap = (answer: number, ...others: number[]) => ({
   answerChoiceId: 'a',
 });
 
-/** One item per kind of join question, for /dev/join. Each must pass `joinProblems`. */
+/** One item per kind of join question, for /dev/games/join. Each must pass `joinProblems`. */
 export const JOIN_DEMO_ITEMS: Item[] = [
   {
     ...base,

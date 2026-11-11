@@ -1,13 +1,17 @@
 import { describe, expect, it } from 'vitest';
 import sample from '../fixtures/sample-bundle.json';
-import { parseContentBundle } from './bundle';
+import { CONTENT_SCHEMA_VERSION, parseContentBundle } from './bundle';
 import { assembleBundle, ContentPackSchema, packId, packsFor, type ContentCore } from './packs';
 
 const bundle = parseContentBundle(sample);
-const core: ContentCore = { schemaVersion: 1, hash: '0'.repeat(64), skills: bundle.skills };
+const core: ContentCore = {
+  schemaVersion: CONTENT_SCHEMA_VERSION,
+  hash: '0'.repeat(64),
+  skills: bundle.skills,
+};
 const manifest = { version: bundle.version, generatedAt: bundle.generatedAt };
 const pack = (grade: '1' | 'k') => ({
-  schemaVersion: 1,
+  schemaVersion: CONTENT_SCHEMA_VERSION,
   id: `math-${grade}`,
   subject: 'math',
   grade: grade === 'k' ? 'K' : grade,

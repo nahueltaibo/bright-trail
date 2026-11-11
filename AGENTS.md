@@ -7,7 +7,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - Specs are HTML under [.docs/](.docs/): product requirements, POC requirements, and the POC task plan. Task IDs (T1, C2, A6, I1, …) come from [.docs/poc-tasks.html](.docs/poc-tasks.html), and branches are named after them (`a6-session-flow`). [.docs/minigames.html](.docs/minigames.html) shows which items have no minigame yet and the order to build the next ones.
 - The design system lives in [.docs/design/](.docs/design/). Each component has a `README.md` and a `preview.html`. Tokens are in `tokens.json`.
 - `content/out/skills.json` holds the generated K–6 skill graph. `content/out/bundle.json` holds the generated stories and items, scoped to the targets in `content/bundle-scope.json` plus their prerequisites. Generation and its checks live in `content/src/generate/`.
-- `content/scenes.json` maps item ids to sharing scenes, `content/slices.json` to slice scenes, `content/join.json` to join scenes, and `content/hops.json` to frog paths on number lines. `npm run content:scenes`, `content:slices`, `content:join`, and `content:hops` write them with one cached LLM call per skill, then add them to the bundle. Code keeps a scene only when its answer matches the item's, so a regenerated item loses a stale scene.
+- `content/scenes.json` maps item ids to sharing scenes, `content/slices.json` to slice scenes, `content/join.json` to join scenes, and `content/hops.json` to frog paths on number lines. `npm run content:games -- --kind share|slices|join|hops` writes one of them with one cached LLM call per skill, then adds it to the bundle. `content:scenes`, `content:slices`, `content:join`, and `content:hops` are aliases. Code keeps a scene only when its answer matches the item's, so a regenerated item loses a stale scene.
 - Fraction pictures say `picked`, not `shaded`, and name a `food` when the story does. The generator's prompts and cache still say "shaded". `content/src/generate/app-words.ts` rewords and picks the food after review, so cached calls keep their keys.
 - Every bundle write also splits it into `content/out/packs/`: `core.json` with the skill graph, one pack per subject and grade, and `manifests/<coreHash>.json`. The files are minified because their hashes cover the exact bytes. Run `npm run content:packs` after editing `bundle.json` by hand, or a content test fails.
 - The app plays `content/out/bundle.json` through `loadBundle()` in `app/src/content/loadBundle.ts`.
@@ -22,6 +22,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `shared/src/slices.ts` — slice scenes: one food cut into equal slices that get picked, eaten, cut, shared, or compared. `sliceProblems` checks a scene against its item.
 - `shared/src/hops.ts` — the frog's path along a number line after a check. `defaultHops` plans one from the line's start when an item has none.
 - `shared/src/game.ts` — `GAMES`, the registry of minigames by `kind`. Each has its scene schema and the check `check-bundle` runs. An item plays at most one, in its `game` field.
+- `content/src/games/` — the tagger runner and `TAGGERS`, one module per game: its candidates, LLM request, accept check, apply step, and reviewed file. A new game adds a module there.
 - `shared/src/join.ts` — join scenes: things that come into a ten-frame, leave it, or get counted, set aside, or moved to make 10. `joinProblems` checks a scene against its item and its picture.
 - `app/src/design/` — the design system in code: tokens, Baloo 2 and Atkinson Hyperlegible fonts, the line icons, and kid building blocks like `KidButton`, `KidScreen`, and `AvatarDisc`. Style new screens from here, not with raw colours.
 - Kid-zone code imports `Text` from `app/src/design/Text`, not `react-native`. It swaps in Lexend for a child with the dyslexia-friendly font on, and ESLint enforces it.
@@ -29,10 +30,11 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `app/src/storage/` — expo-sqlite with migrations and a Zod-validated repository. Tests run it on Node's SQLite (`storage/testing/`).
 - `app/src/parent/` — PIN-gated parent area. `*.native.ts` files hold the phone versions. On web the PIN hash goes in the `settings` table, since expo-secure-store has no web support.
 - `app/src/learning/` and `app/src/narration/` — item screens and expo-speech narration. After a check, the number line plays the frog's path, then shows the feedback.
-- `app/src/learning/minigames/` — the sharing minigame and `GameFrame`, the prompt, answers, and feedback every minigame shares. Any item whose `game.kind` is `share` plays there instead of its usual screen. It allows retries during a lesson's check, and plays out the first answer then moves on when `measuring`.
-- `app/src/learning/food/` — food art for fraction pictures, and the slices minigame. Any item whose `game.kind` is `slices` plays there.
-- `app/src/learning/join/` — the join-and-leave minigame on a pond, a bus, wires, or a tray. Any item whose `game.kind` is `join` plays there.
-- `/dev/learning` is a preview of every item type. `/dev/share`, `/dev/slices`, `/dev/join`, and `/dev/hops` play one item per kind of question. `/dev/check-end` shows each screen that ends a check or review. They show when `__DEV__` is true or the build sets `EXPO_PUBLIC_E2E=1`.
+- `app/src/learning/games.tsx` — `GAME_VIEWS`, the app's minigames by `kind`: each one's view, title, and demo items. `ItemView` plays an item's `game` from it instead of the item's usual screen.
+- `app/src/learning/minigames/` — the sharing minigame and `GameFrame`, the prompt, answers, and feedback every minigame shares. Its `game.kind` is `share`. It allows retries during a lesson's check, and plays out the first answer then moves on when `measuring`.
+- `app/src/learning/food/` — food art for fraction pictures, and the slices minigame (`slices`).
+- `app/src/learning/join/` — the join-and-leave minigame on a pond, a bus, wires, or a tray (`join`).
+- `/dev/learning` is a preview of every item type. `/dev/games/<kind>` plays a game's demo items, one per kind of question. `/dev/hops` does the same for frog paths. `/dev/check-end` shows each screen that ends a check or review. They show when `__DEV__` is true or the build sets `EXPO_PUBLIC_E2E=1`.
 
 ## Checking Your Work
 
