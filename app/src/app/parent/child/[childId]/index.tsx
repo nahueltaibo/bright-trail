@@ -7,6 +7,7 @@ import {
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
 import { useCallback, useState } from 'react';
 import { Text } from 'react-native';
+import { syncPacks } from '../../../../content';
 import { Icon } from '../../../../design/Icon';
 import { draftFromChild, saveChild } from '../../../../parent/children';
 import { ChildForm } from '../../../../parent/components/ChildForm';
@@ -99,6 +100,7 @@ export default function ChildDetailScreen() {
         onSubmit={async (draft) => {
           setChild(await saveChild(repo, draft, child.id));
           setStatus('Saved.');
+          void syncPacks(repo);
         }}
       />
       {status && <Status text={status} ok />}
@@ -115,6 +117,7 @@ export default function ChildDetailScreen() {
         confirmLabel="Reset"
         onConfirm={async () => {
           await repo.mastery.removeForChild(child.id);
+          void syncPacks(repo);
           setMastery([]);
           setStatus('Progress reset.');
         }}
@@ -127,6 +130,7 @@ export default function ChildDetailScreen() {
         confirmLabel="Delete"
         onConfirm={async () => {
           await repo.children.remove(child.id);
+          void syncPacks(repo);
           router.back();
         }}
       />

@@ -2,7 +2,7 @@ import { localClock, type ChildProfile } from '@bright-trail/shared';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useMemo, useState } from 'react';
 import { Text, View } from 'react-native';
-import { loadBundle } from '../../../../content/loadBundle';
+import { loadContent } from '../../../../content';
 import { SkillGraph } from '../../../../parent/components/SkillGraph';
 import { StateBadge, StateLegend } from '../../../../parent/components/StateBadge';
 import {
@@ -43,7 +43,7 @@ export default function SkillTreeScreen() {
     (async () => {
       const [profile, bundle, mastery] = await Promise.all([
         repo.children.get(childId),
-        loadBundle(),
+        loadContent(repo),
         repo.mastery.listForChild(childId),
       ]);
       setChild(profile);

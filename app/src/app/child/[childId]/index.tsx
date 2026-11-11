@@ -1,9 +1,9 @@
 import { localClock, type ChildProfile } from '@bright-trail/shared';
 import { router, useFocusEffect, useLocalSearchParams } from 'expo-router';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 import { TrailMap } from '../../../components/TrailMap';
-import { loadBundle } from '../../../content/loadBundle';
+import { childHasPacks, loadContent, syncPacks, usePackStatus } from '../../../content';
 import {
   AvatarDisc,
   KidButton,
@@ -19,7 +19,7 @@ import { buildTrail, countStars, type Trail } from '../../../session';
 import { useStorage } from '../../../storage/StorageProvider';
 import { Text } from '../../../design/Text';
 
-type Home = { child: ChildProfile | null; stars: number; trail: Trail };
+type Home = { child: ChildProfile | null; stars: number; trail: Trail; hasPacks: boolean };
 
 /** Per-child home: a greeting, the trail, and one big button that starts a session. */
 export default function ChildHomeScreen() {
@@ -28,36 +28,52 @@ export default function ChildHomeScreen() {
   const type = useKidType();
   const { scale: s, landscape } = useLayout();
   const [home, setHome] = useState<Home | undefined>(undefined);
+  const packs = usePackStatus();
 
-  // Reload on focus so stars earned in a session show on return.
+  // Downloads on focus, so packs for the grades ahead arrive between sessions.
   useFocusEffect(
     useCallback(() => {
-      let live = true;
-      Promise.all([
-        repo.children.get(childId),
-        repo.mastery.listForChild(childId),
-        repo.placement.get(childId),
-        loadBundle(),
-      ]).then(([child, mastery, placement, bundle]) => {
-        if (!live) return;
-        const placed = !!placement?.finishedAt;
-        const trail = buildTrail(bundle.skills, mastery, placed, localClock().today);
-        setHome({ child, stars: countStars(mastery), trail });
-      });
-      return () => {
-        live = false;
-      };
-    }, [repo, childId]),
+      void syncPacks(repo);
+    }, [repo]),
   );
+
+  // Reload on focus so stars earned in a session show on return, and when downloads move.
+  const load = useCallback(() => {
+    let live = true;
+    Promise.all([
+      repo.children.get(childId),
+      repo.mastery.listForChild(childId),
+      repo.placement.get(childId),
+      loadContent(repo),
+      childHasPacks(repo, childId),
+    ]).then(([child, mastery, placement, bundle, hasPacks]) => {
+      if (!live) return;
+      const placed = !!placement?.finishedAt;
+      const trail = buildTrail(bundle.skills, mastery, placed, localClock().today);
+      setHome({ child, stars: countStars(mastery), trail, hasPacks });
+    });
+    return () => {
+      live = false;
+    };
+  }, [repo, childId]);
+  useFocusEffect(load);
+  useEffect(load, [load, packs]);
 
   const child = home?.child;
   const mode = home?.trail.mode;
+  const waiting = home !== undefined && !!child && !home.hasPacks;
+  const offline = waiting && packs.state === 'failed';
+  const hint = offline
+    ? OFFLINE_HINT
+    : waiting
+      ? GETTING_READY_HINT
+      : mode === 'review'
+        ? REVIEW_HINT
+        : mode === 'new'
+          ? NEW_HINT
+          : START_HINT;
   const greeting =
-    home === undefined
-      ? null
-      : child
-        ? `Hi ${child.firstName}! ${mode === 'review' ? REVIEW_HINT : mode === 'new' ? NEW_HINT : START_HINT}`
-        : GONE_MESSAGE;
+    home === undefined ? null : child ? `Hi ${child.firstName}! ${hint}` : GONE_MESSAGE;
   useAutoNarration(greeting);
 
   if (home === undefined) return <KidScreen />;
@@ -75,15 +91,24 @@ export default function ChildHomeScreen() {
     );
   }
 
-  const cta =
-    mode === 'new' ? (
-      <KidButton icon="play" label="Let’s go" showLabel size="xl" onPress={start} />
-    ) : mode === 'review' ? (
-      <KidButton icon="refresh" label="Review" showLabel size="xl" onPress={start} />
-    ) : (
-      <KidButton icon="play" label="Start" showLabel size="xl" onPress={start} />
-    );
-  const showStars = mode !== 'new';
+  const cta = waiting ? (
+    offline ? (
+      <KidButton
+        icon="refresh"
+        label="Try again"
+        showLabel
+        size="xl"
+        onPress={() => void syncPacks(repo)}
+      />
+    ) : null
+  ) : mode === 'new' ? (
+    <KidButton icon="play" label="Let’s go" showLabel size="xl" onPress={start} />
+  ) : mode === 'review' ? (
+    <KidButton icon="refresh" label="Review" showLabel size="xl" onPress={start} />
+  ) : (
+    <KidButton icon="play" label="Start" showLabel size="xl" onPress={start} />
+  );
+  const showStars = mode !== 'new' && !waiting;
 
   return (
     <KidScreen
@@ -109,14 +134,20 @@ export default function ChildHomeScreen() {
       }
       spread={showStars && !landscape}
     >
-      <View style={[styles.panel, { paddingVertical: 28 * s, paddingHorizontal: 12 * s }]}>
-        <TrailMap stops={home.trail.stops} avatar={child.avatar} horizontal={landscape} />
-      </View>
+      {waiting ? (
+        <Text style={type.lede}>{hint}</Text>
+      ) : (
+        <View style={[styles.panel, { paddingVertical: 28 * s, paddingHorizontal: 12 * s }]}>
+          <TrailMap stops={home.trail.stops} avatar={child.avatar} horizontal={landscape} />
+        </View>
+      )}
     </KidScreen>
   );
 }
 
 const START_HINT = 'Tap start.';
+const GETTING_READY_HINT = 'Getting your trail ready…';
+const OFFLINE_HINT = 'Connect to the internet to get your trail ready.';
 const NEW_HINT = 'Tap let’s go to find your spot on the trail.';
 const REVIEW_HINT = 'Let’s do a quick review first.';
 const GONE_MESSAGE = 'This profile is gone. Tap the house to go back.';

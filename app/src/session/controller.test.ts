@@ -6,7 +6,7 @@ import {
   type MasteryState,
 } from '@bright-trail/shared';
 import sample from '@bright-trail/shared/fixtures/sample-bundle.json';
-import { loadBundle } from '../content/loadBundle';
+import { diskBundle } from '../content/testing/diskPacks';
 import { openRepository, type Repository } from '../storage/repository';
 import { openNodeSqliteDatabase } from '../storage/testing/nodeSqliteDatabase';
 import {
@@ -522,7 +522,7 @@ describe('Session', () => {
 describe('Session with the generated bundle', () => {
   // Grade 6 is above the bundle, so placement starts at its top grade and walks down from there.
   it('splits a long all-wrong placement over two sessions, then teaches Kindergarten', async () => {
-    const real = await loadBundle();
+    const real = diskBundle();
     const repo = await openRepository(openNodeSqliteDatabase(':memory:'));
     await repo.children.save({ ...maya, gradeOverride: '6' });
     const clock = fakeClock();

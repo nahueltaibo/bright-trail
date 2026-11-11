@@ -2,7 +2,7 @@ import type { ChildProfile } from '@bright-trail/shared';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Text } from 'react-native';
-import { loadBundle } from '../../../../content/loadBundle';
+import { loadContent } from '../../../../content';
 import { StateBadge } from '../../../../parent/components/StateBadge';
 import {
   EmptyState,
@@ -36,7 +36,7 @@ export default function PlacementReviewScreen() {
     (async () => {
       const [profile, bundle, saved, attempts] = await Promise.all([
         repo.children.get(childId),
-        loadBundle(),
+        loadContent(repo),
         repo.placement.get(childId),
         repo.attempts.listForChild(childId),
       ]);

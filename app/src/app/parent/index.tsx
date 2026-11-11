@@ -4,9 +4,10 @@ import { useCallback, useState } from 'react';
 import { Text } from 'react-native';
 import { Icon } from '../../design/Icon';
 import { AvatarDisc } from '../../design/kid';
-import { loadBundle } from '../../content/loadBundle';
+import { loadContent } from '../../content';
 import { effectiveGrade } from '../../parent/children';
 import { AboutSection } from '../../parent/components/AboutSection';
+import { ContentSection } from '../../parent/components/ContentSection';
 import {
   Button,
   colors,
@@ -42,7 +43,7 @@ export default function ParentHomeScreen() {
     setExportStatus({ text: 'Preparing…', ok: false });
     try {
       const { now, today: day } = localClock();
-      const bundle = await loadBundle();
+      const bundle = await loadContent(repo);
       const payload = await buildExport(repo, { now, today: day, bundleVersion: bundle.version });
       await shareExport(exportFileName(now), JSON.stringify(payload, null, 2));
       setExportStatus({
@@ -136,7 +137,12 @@ export default function ParentHomeScreen() {
   return (
     <ParentScreen title="Grown-ups" backTo="/" backLabel="Kids’ home">
       <Columns
-        left={children}
+        left={
+          <>
+            {children}
+            <ContentSection />
+          </>
+        }
         right={
           <>
             {flags}
