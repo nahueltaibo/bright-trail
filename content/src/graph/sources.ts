@@ -1,6 +1,6 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import type { Framework, SkillGrade } from '@bright-trail/shared';
+import type { Framework, SkillGrade, Subject } from '@bright-trail/shared';
 
 export interface Expectation {
   /** Official code, e.g. `B2.3`. Codes repeat across grades, so pair them with a grade. */
@@ -15,6 +15,7 @@ export interface Expectation {
 
 export interface GradeSource {
   grade: SkillGrade;
+  subject: Subject;
   framework: Framework;
   strand: string;
   file: string;
@@ -102,6 +103,7 @@ export function parseSource(file: string, markdown: string): GradeSource {
   if (strands.size !== 1) throw new Error(`${file}: expected one strand, got ${[...strands]}`);
   return {
     grade,
+    subject: 'math',
     framework: grade === 'K' ? 'ontario-kindergarten-2026' : 'ontario-math-2020',
     strand: [...strands][0],
     file,

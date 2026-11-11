@@ -240,6 +240,7 @@ describe('checkContent', () => {
 describe('findWarnings', () => {
   const grade2: GradeSource = {
     grade: '2',
+    subject: 'math',
     framework: 'ontario-math-2020',
     strand: 'B',
     file: 'grade-2.md',

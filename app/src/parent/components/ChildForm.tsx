@@ -1,4 +1,10 @@
-import { SCHOOL_GRADES, deriveGrade, type SchoolGrade } from '@bright-trail/shared';
+import {
+  SCHOOL_GRADES,
+  SUBJECTS,
+  deriveGrade,
+  type SchoolGrade,
+  type Subject,
+} from '@bright-trail/shared';
 import { useState } from 'react';
 import { Pressable, StyleSheet, Text, TextInput, View } from 'react-native';
 import { AVATARS } from '../../avatars';
@@ -7,6 +13,7 @@ import { AvatarDisc } from '../../design/kid';
 import { color, font, radius, TAP_PARENT } from '../../design/tokens';
 import type { ChildDraft } from '../children';
 import { gradeLabel } from '../grades';
+import { SUBJECT_LABELS } from '../subjects';
 import { DateField } from './DateField';
 import { Button, colors, styles as ui } from './ui';
 
@@ -29,7 +36,17 @@ export function ChildForm({
 
   const thisYear = Number(today.slice(0, 4));
   const derived = deriveGrade(draft.birthdate, today);
-  const canSave = draft.firstName.trim().length > 0 && draft.birthdate <= today && !busy;
+  const canSave =
+    draft.firstName.trim().length > 0 &&
+    draft.birthdate <= today &&
+    draft.subjects.length > 0 &&
+    !busy;
+  const toggleSubject = (subject: Subject) =>
+    set({
+      subjects: draft.subjects.includes(subject)
+        ? draft.subjects.filter((s) => s !== subject)
+        : SUBJECTS.filter((s) => s === subject || draft.subjects.includes(s)),
+    });
 
   const submit = async () => {
     setBusy(true);
@@ -99,13 +116,13 @@ export function ChildForm({
       <View style={styles.field}>
         <Text style={ui.label}>School grade</Text>
         <View style={styles.wrap}>
-          <GradeChip
+          <Chip
             label={`Auto (${gradeLabel(derived)})`}
             selected={draft.gradeOverride === null}
             onPress={() => set({ gradeOverride: null })}
           />
           {SCHOOL_GRADES.map((g: SchoolGrade) => (
-            <GradeChip
+            <Chip
               key={g}
               label={gradeLabel(g)}
               selected={draft.gradeOverride === g}
@@ -116,6 +133,25 @@ export function ChildForm({
         <Text style={ui.hint}>
           From the birthdate: {gradeLabel(derived)}. Change it if your child is in a different
           grade.
+        </Text>
+      </View>
+
+      <View style={styles.field}>
+        <Text style={ui.label}>Subjects</Text>
+        <View style={styles.wrap}>
+          {SUBJECTS.map((s) => (
+            <Chip
+              key={s}
+              label={SUBJECT_LABELS[s]}
+              selected={draft.subjects.includes(s)}
+              onPress={() => toggleSubject(s)}
+            />
+          ))}
+        </View>
+        <Text style={ui.hint}>
+          {draft.subjects.length > 0
+            ? 'The app downloads lessons for these subjects only.'
+            : 'Pick at least one subject.'}
         </Text>
       </View>
 
@@ -169,7 +205,7 @@ function Toggle({
   );
 }
 
-function GradeChip({
+function Chip({
   label,
   selected,
   onPress,

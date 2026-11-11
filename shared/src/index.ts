@@ -10,6 +10,7 @@ export * from './item';
 export * from './join';
 export * from './mastery';
 export * from './nugget';
+export * from './packs';
 export * from './placement';
 export * from './scene';
 export * from './skill';

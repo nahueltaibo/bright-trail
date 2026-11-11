@@ -68,6 +68,7 @@ describe('buildGraph', () => {
     expect(llm.requests[0].prompt).toContain('There are no earlier grades');
     expect(llm.requests[2].prompt).toContain('- k-add-to-5 [A6.2]');
     expect(build.skills.find((s) => s.id === 'g1-read-to-50')).toMatchObject({
+      subject: 'math',
       framework: 'ontario-math-2020',
       grade: '1',
       strand: 'B',

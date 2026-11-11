@@ -10,6 +10,7 @@ const SAMPLE_CHILDREN: ChildProfile[] = [
     avatar: 'fox',
     readingMode: false,
     dyslexicFont: false,
+    subjects: ['math'],
   },
   {
     id: 'leo',
@@ -18,6 +19,7 @@ const SAMPLE_CHILDREN: ChildProfile[] = [
     avatar: 'owl',
     readingMode: true,
     dyslexicFont: false,
+    subjects: ['math'],
   },
 ];
 
