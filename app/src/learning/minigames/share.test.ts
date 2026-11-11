@@ -1,4 +1,4 @@
-import { parseAmount, sceneProblems, SceneSchema, type Scene } from '@bright-trail/shared';
+import { gameProblems, parseAmount, SceneSchema, type Scene } from '@bright-trail/shared';
 import { castFrom, kidFor } from './cast';
 import { DEMO_ITEMS } from './demo';
 import { layoutStage, planDeal, planFill, problemFromScene } from './share';
@@ -112,7 +112,8 @@ describe('cast', () => {
 
 describe('demo items', () => {
   it.each(DEMO_ITEMS.map((i) => [i.id, i] as const))('%s matches its scene', (_, item) => {
-    expect(sceneProblems(item, item.scene!)).toEqual([]);
+    expect(item.game?.kind).toBe('share');
+    expect(gameProblems(item, item.game!)).toEqual([]);
   });
 });
 

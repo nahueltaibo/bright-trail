@@ -21,7 +21,7 @@ export const JOIN_DEMO_ITEMS: Item[] = [
     narration: 'Count the frogs. How many frogs are there? 4, 5, or 6?',
     why: 'Each frog hops onto one lily pad. 5 pads have a frog, so there are 5 frogs.',
     ...tap(5, 4, 6),
-    join: scene({
+    game: scene({
       ask: 'count',
       emoji: '🐸',
       one: 'frog',
@@ -39,7 +39,7 @@ export const JOIN_DEMO_ITEMS: Item[] = [
     why: 'Start at 4 and count on as each kid gets on: 5, 6, 7.',
     type: 'keypad',
     answer: 7,
-    join: scene({
+    game: scene({
       ask: 'join',
       emoji: '🧒',
       one: 'kid',
@@ -58,7 +58,7 @@ export const JOIN_DEMO_ITEMS: Item[] = [
       'There are 9 birds on the wires. 5 birds fly away. How many birds are left? 3, 4, or 5?',
     why: '5 birds fly off and leave empty spots. Count the birds still sitting: 4.',
     ...tap(4, 3, 5),
-    join: scene({
+    game: scene({
       ask: 'leave',
       emoji: '🐦',
       one: 'bird',
@@ -78,7 +78,7 @@ export const JOIN_DEMO_ITEMS: Item[] = [
     why: '2 balloons pop. 3 balloons are still in their spots.',
     type: 'keypad',
     answer: 3,
-    join: scene({
+    game: scene({
       ask: 'leave',
       emoji: '🎈',
       one: 'balloon',
@@ -97,7 +97,7 @@ export const JOIN_DEMO_ITEMS: Item[] = [
     narration: 'Pip has 6 cookies. Pip eats 2. How many cookies are left? 4, 3, or 8?',
     why: '2 cookies get eaten. 4 cookies are left.',
     ...tap(4, 3, 8),
-    join: scene({
+    game: scene({
       ask: 'leave',
       emoji: '🍪',
       one: 'cookie',
@@ -117,7 +117,7 @@ export const JOIN_DEMO_ITEMS: Item[] = [
     why: '5 is 4 and 1. 4 bugs are on the leaf, so 1 bug is not.',
     type: 'keypad',
     answer: 1,
-    join: scene({
+    game: scene({
       ask: 'part',
       emoji: '🐞',
       one: 'bug',
@@ -135,7 +135,7 @@ export const JOIN_DEMO_ITEMS: Item[] = [
     narration: 'There are 8 apples. How many more apples make 10? 2, 1, or 3?',
     why: 'A ten-frame holds 10. 2 spots are empty, so 2 more apples make 10.',
     ...tap(2, 1, 3),
-    join: scene({
+    game: scene({
       ask: 'fill',
       emoji: '🍎',
       one: 'apple',
@@ -154,7 +154,7 @@ export const JOIN_DEMO_ITEMS: Item[] = [
     why: 'One dot jumps up to fill the first ten-frame. That makes 10, and 4 are left: 10 + 4 = 14.',
     type: 'keypad',
     answer: 14,
-    join: scene({
+    game: scene({
       ask: 'make-ten',
       one: 'dot',
       many: 'dots',
@@ -172,7 +172,7 @@ export const JOIN_DEMO_ITEMS: Item[] = [
       'Ana gave away 8 stickers. Now she has 9 left. How many did she start with? 17, 16, or 18?',
     why: 'Bring the 8 stickers back and count on from 9: 10, 11, and on to 17.',
     ...tap(17, 16, 18),
-    join: scene({
+    game: scene({
       ask: 'back',
       emoji: '⭐',
       one: 'sticker',
