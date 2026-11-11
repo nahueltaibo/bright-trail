@@ -488,6 +488,69 @@ describe('Session', () => {
     });
   });
 
+  describe('reload', () => {
+    /** The sample without some skills' items and stories, as before their packs download. */
+    const without = (...skillIds: string[]): ContentBundle => ({
+      ...bundle,
+      version: 'sample-partial',
+      items: bundle.items.filter((i) => !skillIds.includes(i.skillId)),
+      nuggets: bundle.nuggets.filter((n) => !skillIds.includes(n.skillId)),
+    });
+    const startWith = (content: ContentBundle) =>
+      Session.start({
+        repo,
+        bundle: content,
+        childId: 'maya',
+        sessionId: `session-${++sessions}`,
+        now: clock.now,
+      });
+
+    it('lets placement step down to a grade whose pack arrived mid-session', async () => {
+      const session = await startWith(without('k-count-to-20'));
+      await play(session, false);
+      await session.reload(bundle);
+      expect(await playPlacement(session, false)).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'k-count-to-20' },
+      });
+      expect((await repo.placement.get('maya'))?.placedGrade).toBe('K');
+    });
+
+    it('teaches a skill whose items arrived during the lesson before it', async () => {
+      await placeAtKindergarten();
+      const session = await startWith(without('g1-numbers-to-50'));
+      expect(session.current).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'k-count-to-20' },
+      });
+      await session.reload(bundle);
+      await playLesson(session, true);
+      expect(session.current).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'g1-numbers-to-50' },
+      });
+    });
+
+    it('keeps the screen showing and flags against the new version', async () => {
+      const session = await startWith(without('k-count-to-20'));
+      const before = session.current;
+      await session.reload(bundle);
+      expect(session.current).toBe(before);
+      await session.flag({ contentKind: 'item', contentId: 'x', cardIndex: null });
+      expect((await repo.flags.list())[0].bundleVersion).toBe('sample-1');
+    });
+
+    it('keeps the old content when unfinished placement does not fit the new bundle', async () => {
+      const session = await start();
+      const onScreen = session.current.kind === 'item' && session.current.item.skillId;
+      await session.reload(without(onScreen as string));
+      await play(session, false);
+      expect(session.current).toMatchObject({ kind: 'item', phase: 'placement' });
+      await session.flag({ contentKind: 'item', contentId: 'x', cardIndex: null });
+      expect((await repo.flags.list())[0].bundleVersion).toBe('sample-1');
+    });
+  });
+
   it('saves flags with the child, bundle version, and time', async () => {
     const session = await start();
     await session.flag({

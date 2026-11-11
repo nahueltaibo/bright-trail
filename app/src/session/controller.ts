@@ -122,10 +122,11 @@ export class Session {
   private queue: Promise<unknown> = Promise.resolve();
   private readonly startedAt: number;
   private readonly limits: SessionLimits;
+  private bundle: ContentBundle;
 
   private constructor(
     private readonly options: SessionOptions,
-    private readonly content: Content,
+    private content: Content,
     private readonly history: ItemHistory,
     private placement: StoredPlacement | null,
     private learner: LearnerState | null,
@@ -133,6 +134,7 @@ export class Session {
   ) {
     this.startedAt = now().getTime();
     this.limits = { ...DEFAULT_LIMITS, ...options.limits };
+    this.bundle = options.bundle;
   }
 
   /** Loads the child, starts or resumes placement if needed, and picks the first screen. */
@@ -249,13 +251,30 @@ export class Session {
     });
   }
 
+  /**
+   * Plays a newer bundle, such as one with packs downloaded mid-session, from the next screen on.
+   * The screen showing stays. Ignored when unfinished placement doesn't fit the new bundle.
+   */
+  reload(bundle: ContentBundle): Promise<void> {
+    return this.enqueue(async () => {
+      if (bundle === this.bundle) return;
+      const content = indexContent(bundle);
+      const placing = this.placement && !this.placement.finishedAt;
+      if (placing && !fitsContent(this.placement!.state, content.placement)) return;
+      this.bundle = bundle;
+      this.content = content;
+      // Skills passed over for lack of items get another look.
+      this.skip.clear();
+    });
+  }
+
   /** Saves a "This looks wrong" tap with the bundle version it was raised on. */
   flag(target: FlagTarget): Promise<void> {
     return this.enqueue(async () => {
       await this.options.repo.flags.add({
         childId: this.options.childId,
         ...target,
-        bundleVersion: this.options.bundle.version,
+        bundleVersion: this.bundle.version,
         createdAt: localClock(this.now()).now,
       });
     });
