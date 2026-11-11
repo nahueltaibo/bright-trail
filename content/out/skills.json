@@ -3,6 +3,7 @@
   "skills": [
     {
       "id": "k-count-to-20",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -13,6 +14,7 @@
     },
     {
       "id": "k-uses-of-numbers",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -23,6 +25,7 @@
     },
     {
       "id": "k-subitize-5",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -33,6 +36,7 @@
     },
     {
       "id": "k-read-write-numbers-20",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -43,6 +47,7 @@
     },
     {
       "id": "k-count-forward-back",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -53,6 +58,7 @@
     },
     {
       "id": "k-more-less-same",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -63,6 +69,7 @@
     },
     {
       "id": "k-compare-numbers-20",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -73,6 +80,7 @@
     },
     {
       "id": "k-estimate-and-count",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -83,6 +91,7 @@
     },
     {
       "id": "k-make-numbers-to-10",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -93,6 +102,7 @@
     },
     {
       "id": "k-add-sub-facts-5",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -103,6 +113,7 @@
     },
     {
       "id": "k-add-sub-stories-10",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -113,6 +124,7 @@
     },
     {
       "id": "k-equal-share",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -123,6 +135,7 @@
     },
     {
       "id": "k-coins-and-bills",
+      "subject": "math",
       "framework": "ontario-kindergarten-2026",
       "grade": "K",
       "strand": "A",
@@ -133,6 +146,7 @@
     },
     {
       "id": "g1-read-numbers-50",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -143,6 +157,7 @@
     },
     {
       "id": "g1-count-50",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -153,6 +168,7 @@
     },
     {
       "id": "g1-compare-order-50",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -163,6 +179,7 @@
     },
     {
       "id": "g1-estimate-50",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -173,6 +190,7 @@
     },
     {
       "id": "g1-compose-decompose-50",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -183,6 +201,7 @@
     },
     {
       "id": "g1-fair-share-drawings",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -193,6 +212,7 @@
     },
     {
       "id": "g1-half-equals-two-fourths",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -203,6 +223,7 @@
     },
     {
       "id": "g1-compare-unit-fractions",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -213,6 +234,7 @@
     },
     {
       "id": "g1-add-sub-facts-10",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -223,6 +245,7 @@
     },
     {
       "id": "g1-add-sub-properties",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -233,6 +256,7 @@
     },
     {
       "id": "g1-mental-math-20",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -243,6 +267,7 @@
     },
     {
       "id": "g1-add-sub-problems-50",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -258,6 +283,7 @@
     },
     {
       "id": "g1-equal-groups",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "1",
       "strand": "B",
@@ -268,6 +294,7 @@
     },
     {
       "id": "g2-whole-numbers-200",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -278,6 +305,7 @@
     },
     {
       "id": "g2-compare-order-200",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -288,6 +316,7 @@
     },
     {
       "id": "g2-count-200",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -298,6 +327,7 @@
     },
     {
       "id": "g2-estimate-200",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -308,6 +338,7 @@
     },
     {
       "id": "g2-even-odd",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -318,6 +349,7 @@
     },
     {
       "id": "g2-fair-share-fractions",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -328,6 +360,7 @@
     },
     {
       "id": "g2-third-equals-two-sixths",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -338,6 +371,7 @@
     },
     {
       "id": "g2-add-sub-properties",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -348,6 +382,7 @@
     },
     {
       "id": "g2-add-sub-facts-20",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -358,6 +393,7 @@
     },
     {
       "id": "g2-mental-math-50",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -368,6 +404,7 @@
     },
     {
       "id": "g2-add-sub-problems-100",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -378,6 +415,7 @@
     },
     {
       "id": "g2-equal-groups-multiply",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -388,6 +426,7 @@
     },
     {
       "id": "g2-division-sharing",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "2",
       "strand": "B",
@@ -398,6 +437,7 @@
     },
     {
       "id": "g3-whole-numbers-1000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -408,6 +448,7 @@
     },
     {
       "id": "g3-place-value",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -418,6 +459,7 @@
     },
     {
       "id": "g3-compare-order-1000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -428,6 +470,7 @@
     },
     {
       "id": "g3-round-numbers",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -438,6 +481,7 @@
     },
     {
       "id": "g3-count-1000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -448,6 +492,7 @@
     },
     {
       "id": "g3-fair-share-20",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -458,6 +503,7 @@
     },
     {
       "id": "g3-equivalent-fair-shares",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -468,6 +514,7 @@
     },
     {
       "id": "g3-arrays-multiply-divide",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -478,6 +525,7 @@
     },
     {
       "id": "g3-mult-div-facts-2-5-10",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -488,6 +536,7 @@
     },
     {
       "id": "g3-mult-div-properties",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -498,6 +547,7 @@
     },
     {
       "id": "g3-mult-div-problems",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -508,6 +558,7 @@
     },
     {
       "id": "g3-fraction-repeated-addition",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -518,6 +569,7 @@
     },
     {
       "id": "g3-ratios-1-2-5-10",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -528,6 +580,7 @@
     },
     {
       "id": "g3-mental-math-1000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -538,6 +591,7 @@
     },
     {
       "id": "g3-add-sub-algorithms",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -548,6 +602,7 @@
     },
     {
       "id": "g3-add-sub-problems-1000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "3",
       "strand": "B",
@@ -558,6 +613,7 @@
     },
     {
       "id": "g4-whole-numbers-10000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -568,6 +624,7 @@
     },
     {
       "id": "g4-compare-order-10000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -578,6 +635,7 @@
     },
     {
       "id": "g4-round-whole-numbers",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -588,6 +646,7 @@
     },
     {
       "id": "g4-represent-fractions",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -598,6 +657,7 @@
     },
     {
       "id": "g4-compare-fair-shares",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -608,6 +668,7 @@
     },
     {
       "id": "g4-count-unit-fractions",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -618,6 +679,7 @@
     },
     {
       "id": "g4-decimal-tenths",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -628,6 +690,7 @@
     },
     {
       "id": "g4-round-decimals",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -638,6 +701,7 @@
     },
     {
       "id": "g4-fraction-decimal-equivalence",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -652,6 +716,7 @@
     },
     {
       "id": "g4-operation-properties",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -662,6 +727,7 @@
     },
     {
       "id": "g4-mult-div-facts-100",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -672,6 +738,7 @@
     },
     {
       "id": "g4-mult-div-by-10s",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -682,6 +749,7 @@
     },
     {
       "id": "g4-mental-decimal-tenths",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -692,6 +760,7 @@
     },
     {
       "id": "g4-add-sub-10000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -702,6 +771,7 @@
     },
     {
       "id": "g4-multiply-by-one-digit",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -712,6 +782,7 @@
     },
     {
       "id": "g4-divide-with-remainders",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -722,6 +793,7 @@
     },
     {
       "id": "g4-whole-number-rates",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "4",
       "strand": "B",
@@ -732,6 +804,7 @@
     },
     {
       "id": "g5-whole-numbers-100000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -742,6 +815,7 @@
     },
     {
       "id": "g5-compare-order-100000",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -752,6 +826,7 @@
     },
     {
       "id": "g5-equivalent-fractions",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -762,6 +837,7 @@
     },
     {
       "id": "g5-compare-order-fractions",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -772,6 +848,7 @@
     },
     {
       "id": "g5-decimals-hundredths",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -782,6 +859,7 @@
     },
     {
       "id": "g5-round-decimals-tenth",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -792,6 +870,7 @@
     },
     {
       "id": "g5-fraction-decimal-percent",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -802,6 +881,7 @@
     },
     {
       "id": "g5-operation-properties",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -812,6 +892,7 @@
     },
     {
       "id": "g5-mult-div-facts-144",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -822,6 +903,7 @@
     },
     {
       "id": "g5-mental-math-decimals",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -836,6 +918,7 @@
     },
     {
       "id": "g5-add-sub-100000-decimals",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -846,6 +929,7 @@
     },
     {
       "id": "g5-add-sub-like-fractions",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -856,6 +940,7 @@
     },
     {
       "id": "g5-multiply-two-by-two-digit",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -866,6 +951,7 @@
     },
     {
       "id": "g5-divide-by-two-digit",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -876,6 +962,7 @@
     },
     {
       "id": "g5-whole-by-unit-fraction",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -886,6 +973,7 @@
     },
     {
       "id": "g5-equivalent-ratios-rates",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "5",
       "strand": "B",
@@ -896,6 +984,7 @@
     },
     {
       "id": "g6-whole-numbers-million",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -906,6 +995,7 @@
     },
     {
       "id": "g6-integers",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -916,6 +1006,7 @@
     },
     {
       "id": "g6-decimals-thousandths",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -926,6 +1017,7 @@
     },
     {
       "id": "g6-compare-order-rationals",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -936,6 +1028,7 @@
     },
     {
       "id": "g6-round-decimals",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -946,6 +1039,7 @@
     },
     {
       "id": "g6-fraction-decimal-match",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -956,6 +1050,7 @@
     },
     {
       "id": "g6-operation-properties",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -966,6 +1061,7 @@
     },
     {
       "id": "g6-divisibility-rules",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -976,6 +1072,7 @@
     },
     {
       "id": "g6-mental-percents",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -986,6 +1083,7 @@
     },
     {
       "id": "g6-add-sub-whole-decimals",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -996,6 +1094,7 @@
     },
     {
       "id": "g6-add-sub-unlike-fractions",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -1006,6 +1105,7 @@
     },
     {
       "id": "g6-prime-factors",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -1016,6 +1116,7 @@
     },
     {
       "id": "g6-multiply-by-tenths",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -1026,6 +1127,7 @@
     },
     {
       "id": "g6-divide-by-tenths",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -1036,6 +1138,7 @@
     },
     {
       "id": "g6-multiply-whole-by-fraction",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -1046,6 +1149,7 @@
     },
     {
       "id": "g6-divide-whole-by-fraction",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -1056,6 +1160,7 @@
     },
     {
       "id": "g6-divide-decimals-by-whole",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",
@@ -1066,6 +1171,7 @@
     },
     {
       "id": "g6-ratios-rates-percents",
+      "subject": "math",
       "framework": "ontario-math-2020",
       "grade": "6",
       "strand": "B",

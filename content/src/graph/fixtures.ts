@@ -5,6 +5,7 @@ import type { GradeSource } from './sources';
 export const tinySources: GradeSource[] = [
   {
     grade: 'K',
+    subject: 'math',
     framework: 'ontario-kindergarten-2026',
     strand: 'A',
     file: 'kindergarten.md',
@@ -16,6 +17,7 @@ export const tinySources: GradeSource[] = [
   },
   {
     grade: '1',
+    subject: 'math',
     framework: 'ontario-math-2020',
     strand: 'B',
     file: 'grade-1.md',
@@ -38,6 +40,7 @@ export function skill(id: string, prerequisiteIds: string[] = [], codes?: string
   const grade = kindergarten ? 'K' : (id[1] as Skill['grade']);
   return {
     id,
+    subject: 'math',
     framework: kindergarten ? 'ontario-kindergarten-2026' : 'ontario-math-2020',
     grade,
     strand: kindergarten ? 'A' : 'B',

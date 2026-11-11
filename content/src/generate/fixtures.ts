@@ -4,6 +4,7 @@ import type { GenCheck, GenChoice, GeneratedContent, GenItem, GenVisual } from '
 
 export const g1Skill: Skill = {
   id: 'g1-add-within-10',
+  subject: 'math',
   framework: 'ontario-math-2020',
   grade: '1',
   strand: 'B',
