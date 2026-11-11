@@ -54,6 +54,14 @@ jobs:
       - id: plan
         run: node scripts/release.mjs
 
+      # Packs go up before the app that reads them. Skipped with a warning while R2_* are unset.
+      - run: npm run content:publish
+        env:
+          R2_ACCOUNT_ID: ${{ secrets.R2_ACCOUNT_ID }}
+          R2_ACCESS_KEY_ID: ${{ secrets.R2_ACCESS_KEY_ID }}
+          R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
+          R2_BUCKET: ${{ secrets.R2_BUCKET }}
+
       - if: steps.plan.outputs.mode == 'ota'
         run: npm run ota:publish -- --no-checks --message "$(git log -1 --format=%s)"
         env:

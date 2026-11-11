@@ -13,10 +13,8 @@ import { buildBundle, generateAll, MAX_RETRIES } from './pipeline';
 import { generateRequest, type SkillContext } from './prompts';
 import { loadScope, prerequisiteClosure } from './scope';
 import { renderContentReport, renderPilotReport } from './report';
-import { applyScenes } from '../scenes/scenes';
-import { applyHops } from '../hops/hops';
-import { applyJoins } from '../join/join';
-import { applySlices } from '../slices/slices';
+import { TAGGERS } from '../games/registry';
+import type { Tagger } from '../games/tagger';
 
 /** Skills the testers will meet first: 2 Kindergarten, 2 Grade 1, 1 Grade 5, 1 Grade 6, across topics. */
 const PILOT_SKILLS = [
@@ -117,23 +115,14 @@ if (values.pilot) {
   await writeFormatted(file, renderPilotReport(run));
   console.log(`Wrote ${file}`);
 } else if (!values.skills) {
-  // Scenes from `npm run content:scenes`, `content:slices`, `content:join`, and `content:hops`
-  // survive regeneration while their items still match.
-  const stored = (file: string) =>
-    readFile(join(contentDir, file), 'utf8')
-      .catch(() => '{}')
-      .then((text) => JSON.parse(text));
-  const shared = applyScenes(
-    buildBundle(bundleSkills, run.outcomes, new Date()),
-    await stored('scenes.json'),
-  );
-  const sliced = applySlices(shared.bundle, await stored('slices.json'));
-  const joined = applyJoins(sliced.bundle, await stored('join.json'));
-  const { bundle, dropped } = applyHops(joined.bundle, await stored('hops.json'));
-  for (const d of shared.dropped) console.warn(`Scene dropped: ${d}`);
-  for (const d of sliced.dropped) console.warn(`Slices dropped: ${d}`);
-  for (const d of joined.dropped) console.warn(`Join dropped: ${d}`);
-  for (const d of dropped) console.warn(`Hops dropped: ${d}`);
+  // Tags from `npm run content:games` survive regeneration while their items still match.
+  let bundle = buildBundle(bundleSkills, run.outcomes, new Date());
+  for (const tagger of Object.values(TAGGERS) as Tagger[]) {
+    const stored = await readFile(join(contentDir, tagger.file), 'utf8').catch(() => '{}');
+    const applied = tagger.apply(bundle, JSON.parse(stored));
+    for (const d of applied.dropped) console.warn(`${tagger.label} dropped: ${d}`);
+    bundle = applied.bundle;
+  }
   const bundleFile = join(outDir, 'bundle.json');
   await writeBundle(bundleFile, bundle);
   const bytes = (await readFile(bundleFile)).byteLength;
