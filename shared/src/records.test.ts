@@ -81,6 +81,7 @@ describe('ChildProfileSchema', () => {
       avatar: 'fox',
       readingMode: false,
       dyslexicFont: false,
+      subjects: ['math'],
     };
     expect(ChildProfileSchema.safeParse(child).success).toBe(true);
     expect(ChildProfileSchema.safeParse({ ...child, gradeOverride: 'SK' }).success).toBe(true);

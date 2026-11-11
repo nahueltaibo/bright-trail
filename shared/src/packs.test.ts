@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import sample from '../fixtures/sample-bundle.json';
 import { CONTENT_SCHEMA_VERSION, parseContentBundle } from './bundle';
-import { assembleBundle, ContentPackSchema, packId, type ContentCore } from './packs';
+import { assembleBundle, ContentPackSchema, packId, packsFor, type ContentCore } from './packs';
 
 const bundle = parseContentBundle(sample);
 const core: ContentCore = {
@@ -44,5 +44,43 @@ describe('assembleBundle', () => {
     expect(() => assembleBundle(smallCore, manifest, [ContentPackSchema.parse(pack('1'))])).toThrow(
       /Unknown skill/,
     );
+  });
+});
+
+describe('packsFor', () => {
+  const grades = ['K', '1', '2', '3', '4', '5'] as const;
+  const available = grades.map((grade) => ({
+    id: packId('math', grade),
+    subject: 'math' as const,
+    grade,
+  }));
+
+  it('takes the child grade and one either side', () => {
+    expect(packsFor({ subjects: ['math'], grade: '3' }, available)).toEqual([
+      'math-2',
+      'math-3',
+      'math-4',
+    ]);
+  });
+
+  it('starts JK and SK at Kindergarten', () => {
+    expect(packsFor({ subjects: ['math'], grade: 'JK' }, available)).toEqual(['math-k', 'math-1']);
+  });
+
+  it('keeps to the packs the manifest has', () => {
+    expect(packsFor({ subjects: ['math'], grade: '7' }, available)).toEqual([]);
+    expect(packsFor({ subjects: ['math'], grade: '6' }, available)).toEqual(['math-5']);
+  });
+
+  it('adds extra grades, like the one placement probes next', () => {
+    expect(packsFor({ subjects: ['math'], grade: '5' }, available, ['1'])).toEqual([
+      'math-1',
+      'math-4',
+      'math-5',
+    ]);
+  });
+
+  it('skips subjects the child does not learn', () => {
+    expect(packsFor({ subjects: [], grade: '3' }, available)).toEqual([]);
   });
 });

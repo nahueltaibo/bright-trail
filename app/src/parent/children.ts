@@ -1,8 +1,10 @@
 import {
   ChildProfileSchema,
   deriveGrade,
+  SUBJECTS,
   type ChildProfile,
   type SchoolGrade,
+  type Subject,
 } from '@bright-trail/shared';
 import type { Repository } from '../storage/repository';
 
@@ -14,6 +16,7 @@ export type ChildDraft = {
   gradeOverride: SchoolGrade | null;
   readingMode: boolean;
   dyslexicFont: boolean;
+  subjects: Subject[];
 };
 
 export function emptyDraft(today: string, avatar: string): ChildDraft {
@@ -26,6 +29,7 @@ export function emptyDraft(today: string, avatar: string): ChildDraft {
     gradeOverride: null,
     readingMode: false,
     dyslexicFont: false,
+    subjects: [...SUBJECTS],
   };
 }
 
@@ -37,6 +41,7 @@ export function draftFromChild(child: ChildProfile): ChildDraft {
     gradeOverride: child.gradeOverride ?? null,
     readingMode: child.readingMode,
     dyslexicFont: child.dyslexicFont,
+    subjects: child.subjects,
   };
 }
 
@@ -49,6 +54,7 @@ export function childFromDraft(id: string, draft: ChildDraft): ChildProfile {
     avatar: draft.avatar,
     readingMode: draft.readingMode,
     dyslexicFont: draft.dyslexicFont,
+    subjects: draft.subjects,
   });
 }
 

@@ -25,6 +25,7 @@ type ChildRow = {
   avatar: string;
   reading_mode: number;
   dyslexic_font: number;
+  subjects: string;
 };
 
 type MasteryRow = {
@@ -92,6 +93,7 @@ const toChild = (r: ChildRow): ChildProfile =>
     avatar: r.avatar,
     readingMode: r.reading_mode === 1,
     dyslexicFont: r.dyslexic_font === 1,
+    subjects: JSON.parse(r.subjects),
   });
 
 const toMastery = (r: MasteryRow): MasteryState =>
@@ -158,12 +160,13 @@ export function createRepository(db: SqlDatabase) {
       const c = ChildProfileSchema.parse(profile);
       await db.runAsync(
         `INSERT INTO children (id, first_name, birthdate, grade_override, avatar, reading_mode,
-           dyslexic_font)
-         VALUES (?, ?, ?, ?, ?, ?, ?)
+           dyslexic_font, subjects)
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?)
          ON CONFLICT (id) DO UPDATE SET
            first_name = excluded.first_name, birthdate = excluded.birthdate,
            grade_override = excluded.grade_override, avatar = excluded.avatar,
-           reading_mode = excluded.reading_mode, dyslexic_font = excluded.dyslexic_font`,
+           reading_mode = excluded.reading_mode, dyslexic_font = excluded.dyslexic_font,
+           subjects = excluded.subjects`,
         [
           c.id,
           c.firstName,
@@ -172,6 +175,7 @@ export function createRepository(db: SqlDatabase) {
           c.avatar,
           c.readingMode ? 1 : 0,
           c.dyslexicFont ? 1 : 0,
+          JSON.stringify(c.subjects),
         ],
       );
     },

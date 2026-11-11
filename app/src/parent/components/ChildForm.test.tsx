@@ -12,6 +12,7 @@ const maya: ChildDraft = {
   gradeOverride: null,
   readingMode: false,
   dyslexicFont: false,
+  subjects: ['math'],
 };
 
 describe('ChildForm', () => {
@@ -89,6 +90,20 @@ describe('ChildForm', () => {
     );
     await fireEvent.press(screen.getByText('Add child'));
     expect(onSubmit).not.toHaveBeenCalled();
+  });
+
+  it('will not save without a subject', async () => {
+    const onSubmit = jest.fn();
+    await render(<ChildForm initial={maya} today={TODAY} submitLabel="Save" onSubmit={onSubmit} />);
+
+    await fireEvent.press(screen.getByLabelText('Math'));
+    expect(screen.getByText('Pick at least one subject.')).toBeTruthy();
+    await fireEvent.press(screen.getByText('Save'));
+    expect(onSubmit).not.toHaveBeenCalled();
+
+    await fireEvent.press(screen.getByLabelText('Math'));
+    await fireEvent.press(screen.getByText('Save'));
+    expect(onSubmit).toHaveBeenCalledWith(maya);
   });
 
   it('shows the error when saving fails', async () => {

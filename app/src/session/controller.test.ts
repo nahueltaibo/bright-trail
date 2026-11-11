@@ -28,6 +28,7 @@ const maya: ChildProfile = {
   avatar: 'fox',
   readingMode: false,
   dyslexicFont: false,
+  subjects: ['math'],
 };
 
 /** A clock tests move by hand. Midday UTC keeps every time zone on the same date. */
