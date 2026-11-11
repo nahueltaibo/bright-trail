@@ -540,6 +540,49 @@ describe('Session', () => {
       expect((await repo.flags.list())[0].bundleVersion).toBe('sample-1');
     });
 
+    it('resumes a session that ended for lack of items once their pack arrives', async () => {
+      await placeAtKindergarten();
+      const session = await startWith(
+        without('k-count-to-20', 'g1-numbers-to-50', 'g1-add-within-10'),
+      );
+      expect(session.current).toMatchObject({ kind: 'end', reason: 'done-for-today' });
+      expect(await session.reload(bundle)).toMatchObject({
+        kind: 'story',
+        nugget: { skillId: 'k-count-to-20' },
+      });
+      expect(session.current.kind).toBe('story');
+    });
+
+    it('keeps an end screen that the new bundle would show again', async () => {
+      const session = await placeAtKindergarten();
+      await playLesson(session, false);
+      await playLesson(session, false);
+      const end = session.current;
+      expect(end).toMatchObject({ kind: 'end', reason: 'done-for-today' });
+      expect(await session.reload(without('g1-add-within-10'))).toBe(end);
+    });
+
+    it('does not resume a session that ended on time', async () => {
+      await placeAtKindergarten();
+      const session = await startWith(without('g1-add-within-10'));
+      await session.finishStory();
+      clock.advance(SESSION_CAP_MS);
+      await play(session, true);
+      const end = session.current;
+      expect(end).toMatchObject({ kind: 'end', reason: 'time-up' });
+      expect(await session.reload(bundle)).toBe(end);
+    });
+
+    it('keeps the end for lack of items once the time is up', async () => {
+      await placeAtKindergarten();
+      const session = await startWith(
+        without('k-count-to-20', 'g1-numbers-to-50', 'g1-add-within-10'),
+      );
+      const end = session.current;
+      clock.advance(SESSION_CAP_MS);
+      expect(await session.reload(bundle)).toBe(end);
+    });
+
     it('keeps the old content when unfinished placement does not fit the new bundle', async () => {
       const session = await start();
       const onScreen = session.current.kind === 'item' && session.current.item.skillId;
