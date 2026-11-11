@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrightTrail Minigames</title>
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #1f2328; --muted: #5b636d; --line: #e3e0d8;
+    --card: #ffffff; --accent: #2f6fd6; --accent-soft: #e8f0fc; --warn: #b4540a; --warn-soft: #fdf1e6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2c3036;
+      --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171a; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2c3036;
+    --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 80px; }
+  h1 { font-size: 2rem; margin: 0 0 4px; }
+  h2 { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .95rem; display: block; overflow-x: auto; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { background: var(--accent-soft); }
+  td:first-child { white-space: nowrap; font-weight: 600; }
+  .diagram { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 16px 0; overflow-x: auto; }
+  .note { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 6px; margin: 16px 0; }
+  code { background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .diagram { position: relative; cursor: zoom-in; }
+  .diagram .expand { position: absolute; top: 8px; right: 8px; font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--card); color: var(--fg); cursor: pointer; }
+  dialog.lightbox { width: 96vw; height: 92vh; max-width: none; max-height: none; padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--fg); }
+  dialog.lightbox::backdrop { background: rgba(0,0,0,.6); }
+  .lightbox .bar { position: sticky; top: 0; display: flex; gap: 6px; justify-content: flex-end; padding: 8px; background: var(--card); border-bottom: 1px solid var(--line); z-index: 1; }
+  .lightbox .bar button { font: inherit; min-width: 40px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+  .lightbox .stage { overflow: auto; height: calc(100% - 50px); padding: 16px; }
+  .lightbox .stage svg { display: block; margin: 0 auto; max-width: none !important; height: auto; }
+</style>
+</head>
+<body>
+<body>
+<main>
+<h1>BrightTrail — Minigames</h1>
+<p class="sub">Which items play as minigames, which don't, and the plan to cover them · Draft v0.1 · 2026-11-11</p>
+
+<p>553 of the 795 bundle items (70%) still play on the plain tap, keypad, or number-line screen. Six groups of them have no minigame that fits. The plan first makes adding a minigame a matter of one schema, one stage, and one tagger module, then builds the new games in order of how many items they cover.</p>
+
+<h2 id="today">1. Minigames today</h2>
+<table>
+<tr><th>Minigame</th><th>Item field</th><th>Tagger</th><th>Items</th><th>Skills it covers</th></tr>
+<tr><td>Sharing</td><td><code>scene</code></td><td><code>content:scenes</code></td><td>82</td><td>Fair shares, equal groups, division by sharing</td></tr>
+<tr><td>Slices</td><td><code>slices</code></td><td><code>content:slices</code></td><td>80</td><td>Fraction pictures, equal fractions, unit fractions</td></tr>
+<tr><td>Join and leave</td><td><code>join</code></td><td><code>content:join</code></td><td>80</td><td>Counting, add and subtract to 20, make ten</td></tr>
+<tr><td>Frog hops</td><td><code>hops</code></td><td><code>content:hops</code></td><td>88 of 191 number-line items</td><td>Plays the path after a number-line check. Not a game of its own.</td></tr>
+</table>
+<p>The app side is already shared. <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props. What isn't shared:</p>
+<ul>
+<li>Three optional item fields. <code>ItemView</code> picks scene, then slices, then join, so an item tagged twice plays one game without warning.</li>
+<li><code>check-bundle.ts</code> names each game's problem check by hand.</li>
+<li>The four <code>tag-*.ts</code> scripts are copies that differ only in names.</li>
+<li>One dev page per game: <code>/dev/share</code>, <code>/dev/slices</code>, <code>/dev/join</code>.</li>
+</ul>
+
+<h2 id="gaps">2. Items with no minigame</h2>
+<p>Counts come from matching prompt patterns, so they are close, not exact.</p>
+<table>
+<tr><th>Group</th><th>Items</th><th>Example prompts</th><th>Main skills</th></tr>
+<tr><td>Compare and order</td><td>~117</td><td>"Which is greater?", "190 is closer to?", "3/8 and 1/2"</td><td>k-compare-numbers-20, g1-compare-order-50, g2-compare-order-200, g3-compare-order-1000, g5-compare-order-fractions</td></tr>
+<tr><td>Place value</td><td>~94</td><td>"Tens in 42", "4 hundreds, 2 tens, 6 ones", "The 3 in 352 is worth?"</td><td>g1-read-numbers-50, g1-compose-decompose-50, g2-whole-numbers-200, g3-whole-numbers-1000, g3-place-value</td></tr>
+<tr><td>Multiply and divide</td><td>~94</td><td>"3 rows of 4", "6 × 7 = ?", "4 × 6 = 4 × 5 + 4 × ?"</td><td>g2-equal-groups-multiply, g3-arrays-multiply-divide, g3-mult-div-*, g4-mult-div-facts-100</td></tr>
+<tr><td>Fractions, decimals, percent</td><td>~80</td><td>"0.3 = ? hundredths", "1/2 = ?%", "Equivalent to 3/4?"</td><td>g4-decimal-tenths, g4-fraction-decimal-equivalence, g5-decimals-hundredths, g5-fraction-decimal-percent, g5-equivalent-fractions</td></tr>
+<tr><td>Add and subtract</td><td>~76</td><td>"15 - 6 = ?", "34 - 28 = ?"</td><td>g1-mental-math-20, g2-add-sub-facts-20, g1-add-sub-problems-50</td></tr>
+<tr><td>Sequences</td><td>~45</td><td>"2, 4, 6, ?", "1/3, 2/3, ..."</td><td>k-count-to-20, k-count-forward-back, g1-count-50, g4-count-unit-fractions</td></tr>
+<tr><td>Other</td><td>~47</td><td>"Seventh place", "1 more than 4"</td><td>k-uses-of-numbers, scattered K items</td></tr>
+</table>
+
+<h2 id="foundation">3. Foundation</h2>
+<p>Do these first, so each new game adds files instead of touching the item schema, <code>ItemView</code>, and the bundle check.</p>
+<table>
+<tr><th>Step</th><th>Change</th></tr>
+<tr><td>One game field</td><td>Replace <code>scene</code>, <code>slices</code>, and <code>join</code> with <code>item.game</code>, a union on <code>kind</code>. The scenes already carry <code>kind</code>. A shared registry of <code>{ schema, problems }</code> drives <code>check-bundle.ts</code>. Bump <code>schemaVersion</code>. No native change, so it ships over the air.</td></tr>
+<tr><td>App registry</td><td>One map from <code>kind</code> to Game component. <code>ItemView</code> looks it up. One dev route, <code>/dev/games/[kind]</code>, plays each game's <code>demo.ts</code>.</td></tr>
+<tr><td>One tagger</td><td><code>content:games -- --kind &lt;kind&gt;</code> runs a per-game module <code>{ candidates, request, accept, file }</code>. Each game keeps its own reviewed file, such as <code>content/join.json</code>. LLM cache keys stay the same, so reruns stay free. The old npm scripts stay as aliases.</td></tr>
+</table>
+
+<h2 id="games">4. New minigames</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+  U[One game field] --> R[App registry]
+  U --> T[One tagger]
+  T --> RT[Retag join and sharing]
+  R --> C[Compare and order]
+  T --> C
+  C --> B[Base-ten blocks]
+  C --> A[Arrays]
+  C --> G[Hundred grid]
+  C --> S[Stepping stones]
+</pre></div>
+<table>
+<tr><th>Order</th><th>Minigame</th><th>Items</th><th>Play</th></tr>
+<tr><td>0</td><td>Retag existing games</td><td>unknown</td><td>Join already goes to 20 but tags few items in g1-mental-math-20 and g2-add-sub-facts-20. Sharing has <code>groups</code> and <code>total</code> asks but barely tags multiplication skills.</td></tr>
+<tr><td>1</td><td>Compare and order</td><td>~117</td><td>Up to 20, cube towers stand side by side. Above 20, and for fractions and decimals, flags drop onto a number line and the rightmost wins. Sets the pattern the later games follow.</td></tr>
+<tr><td>2</td><td>Base-ten blocks</td><td>~94</td><td>Flats, rods, and cubes build a number. Asks: read it, a digit's worth, expanded form, trade 10 ones for a ten. Later carries regrouping for g1-add-sub-problems-50.</td></tr>
+<tr><td>3</td><td>Arrays</td><td>~94</td><td>Things fill rows and columns. Asks: total, rows, per row, turn the array, split it. Reuses <code>ThingArt</code>.</td></tr>
+<tr><td>4</td><td>Hundred grid</td><td>~80</td><td>A 10 × 10 grid or a tenths strip fills in. Asks: read it as a decimal, fraction, or percent, and find equal amounts.</td></tr>
+<tr><td>5</td><td>Stepping stones</td><td>~45</td><td>The frog hops stones by a fixed step, and one stone is missing. Builds on <code>hops.ts</code> and the number-line art.</td></tr>
+</table>
+<p class="note">The "Other" group stays on the plain screens for now. An ordinal line-up game could take the ~12 "Seventh place" items later.</p>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<dialog class="lightbox" aria-label="Diagram">
+  <div class="bar">
+    <button data-zoom="out" aria-label="Zoom out">−</button>
+    <button data-zoom="fit">Fit</button>
+    <button data-zoom="in" aria-label="Zoom in">+</button>
+    <button data-close aria-label="Close">✕</button>
+  </div>
+  <div class="stage"></div>
+</dialog>
+<script>
+  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'default', securityLevel: 'strict' });
+
+  const box = document.querySelector('dialog.lightbox');
+  const stage = box.querySelector('.stage');
+  let svg, fitWidth, scale = 1;
+
+  function applyScale() { svg.style.width = (fitWidth * scale) + 'px'; }
+
+  function open(diagram) {
+    svg = diagram.querySelector('svg').cloneNode(true);
+    svg.removeAttribute('height');
+    stage.replaceChildren(svg);
+    box.showModal();
+    const vb = svg.viewBox.baseVal;
+    const w = stage.clientWidth - 32, h = stage.clientHeight - 32;
+    fitWidth = Math.min(w, h * vb.width / vb.height);
+    scale = 1;
+    applyScale();
+  }
+
+  box.querySelector('.bar').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.hasAttribute('data-close')) return box.close();
+    scale = b.dataset.zoom === 'in' ? scale * 1.25 : b.dataset.zoom === 'out' ? scale / 1.25 : 1;
+    applyScale();
+  });
+  box.addEventListener('click', e => { if (e.target === box) box.close(); });
+
+  mermaid.run({ querySelector: '.mermaid' }).then(() => {
+    document.querySelectorAll('.diagram').forEach(d => {
+      const btn = document.createElement('button');
+      btn.className = 'expand';
+      btn.textContent = 'Expand';
+      d.append(btn);
+      d.addEventListener('click', () => open(d));
+    });
+  });
+</script>
+</body>
+</html>
