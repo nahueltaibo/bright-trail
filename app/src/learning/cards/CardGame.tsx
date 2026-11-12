@@ -6,16 +6,25 @@ export type CardStageHandle = {
   play(picked: string): Promise<void>;
   /** Back to the question, before any card moved. */
   reset(): Promise<void>;
+  /** Whether a screen point is over the spot a dragged choice should land on. */
+  hit?(x: number, y: number): Promise<boolean>;
 };
 
 type Props = GameFrameProps & {
   /** The item's why, shown after every answer, since the stage already shows what happened. */
   why: string;
-  stage: (handle: Ref<CardStageHandle>, cheer: boolean) => ReactNode;
+  /** `pick` answers with a choice's word. It's `undefined` once the child has answered. */
+  stage: (
+    handle: Ref<CardStageHandle>,
+    cheer: boolean,
+    pick: ((word: string) => void) | undefined,
+  ) => ReactNode;
+  /** Lets the child drag a choice onto the stage's spot, as well as tap it. */
+  dragChoices?: boolean;
 };
 
 /** Sort it, Put in order, and Label it: the child picks a word, and the stage moves its card. */
-export function CardGame({ why, stage, ...props }: Props) {
+export function CardGame({ why, stage, dragChoices, ...props }: Props) {
   const handle = useRef<CardStageHandle>(null);
   return (
     <GameFrame
@@ -27,7 +36,10 @@ export function CardGame({ why, stage, ...props }: Props) {
       reset={async () => {
         await handle.current?.reset();
       }}
-      stage={({ cheer }) => stage(handle, cheer)}
+      onDropChoice={
+        dragChoices ? (x, y) => handle.current?.hit?.(x, y) ?? Promise.resolve(false) : undefined
+      }
+      stage={({ cheer, pick }) => stage(handle, cheer, pick)}
     />
   );
 }

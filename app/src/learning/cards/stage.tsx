@@ -1,4 +1,13 @@
-import { useEffect, useRef, useState, type ReactNode } from 'react';
+import {
+  type ComponentRef,
+  createContext,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+  type ReactNode,
+  type RefObject,
+} from 'react';
 import { Animated, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import { font, radius } from '../../design/tokens';
 import { Text } from '../../design/Text';
@@ -11,6 +20,9 @@ export const STAGE_H = 300;
 
 /** A card's centre and size, in world points. */
 export type Box = { x: number; y: number; w: number; h: number };
+
+/** What a ref to a stage's root view holds. */
+export type ViewHandle = ComponentRef<typeof View>;
 
 export type Tone = 'plain' | 'ask' | 'good' | 'miss';
 
@@ -82,8 +94,44 @@ export function useCheer(cheer: boolean | undefined) {
   return hop.interpolate({ inputRange: [0, 1], outputRange: [0, -10] });
 }
 
+/** How many screen points one world point takes. Drags divide by it. */
+const StageScale = createContext(1);
+export const useStageScale = () => useContext(StageScale);
+
+/** A screen point as a world point, for a stage whose box on screen is `rect`. */
+export function toWorld(rect: Box, px: number, py: number) {
+  const scale = Math.min(rect.w / STAGE_W, rect.h / STAGE_H);
+  return {
+    x: (px - rect.x - (rect.w - STAGE_W * scale) / 2) / scale,
+    y: (py - rect.y - (rect.h - STAGE_H * scale) / 2) / scale,
+  };
+}
+
+/** Whether a point is over a box, with `slack` world points to spare on every side. */
+export const within = (b: Box, p: { x: number; y: number }, slack = 0) =>
+  Math.abs(p.x - b.x) <= b.w / 2 + slack && Math.abs(p.y - b.y) <= b.h / 2 + slack;
+
+/** Answers "is this screen point over `spot`?" for a stage drawn in `view`. */
+export function hitSpot(view: RefObject<ViewHandle | null>, spot: Box) {
+  return (px: number, py: number) =>
+    new Promise<boolean>((resolve) => {
+      if (!view.current) return resolve(false);
+      view.current.measureInWindow((x, y, w, h) =>
+        resolve(w > 0 && h > 0 && within(spot, toWorld({ x, y, w, h }, px, py), 14)),
+      );
+    });
+}
+
 /** The 360 × 300 world, centred and scaled into whatever box the stage gets. */
-export function StageWorld({ testID, children }: { testID: string; children: ReactNode }) {
+export function StageWorld({
+  testID,
+  children,
+  viewRef,
+}: {
+  testID: string;
+  children: ReactNode;
+  viewRef?: RefObject<ViewHandle | null>;
+}) {
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
   const onLayout = (e: LayoutChangeEvent) => {
     const { width, height } = e.nativeEvent.layout;
@@ -91,7 +139,7 @@ export function StageWorld({ testID, children }: { testID: string; children: Rea
   };
   const scale = box ? Math.min(box.w / STAGE_W, box.h / STAGE_H) : 0;
   return (
-    <View style={styles.stage} onLayout={onLayout} testID={testID}>
+    <View ref={viewRef} style={styles.stage} onLayout={onLayout} testID={testID}>
       {box && scale > 0 && (
         <View
           style={[
@@ -99,7 +147,7 @@ export function StageWorld({ testID, children }: { testID: string; children: Rea
             { left: (box.w - STAGE_W) / 2, top: (box.h - STAGE_H) / 2, transform: [{ scale }] },
           ]}
         >
-          {children}
+          <StageScale.Provider value={scale}>{children}</StageScale.Provider>
         </View>
       )}
     </View>
