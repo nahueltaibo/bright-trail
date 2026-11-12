@@ -17,7 +17,8 @@ export interface GradeSource {
   grade: SkillGrade;
   subject: Subject;
   framework: Framework;
-  strand: string;
+  /** Strand letters in the order the file lists them, e.g. `['B']` or `['B', 'C']`. */
+  strands: string[];
   file: string;
   expectations: Expectation[];
 }
@@ -33,6 +34,9 @@ export function idPrefix(grade: SkillGrade): string {
   return grade === 'K' ? 'k-' : `g${grade}-`;
 }
 
+/** Framework of each subject's Grade 1-6 files. Kindergarten files always use the 2026 program. */
+const GRADE_FRAMEWORKS: Record<Subject, Framework> = { math: 'ontario-math-2020' };
+
 function gradeOfFile(file: string): SkillGrade | null {
   if (file === 'kindergarten.md') return 'K';
   const match = /^grade-([1-6])\.md$/.exec(file);
@@ -44,7 +48,7 @@ const SPECIFIC_HEADING = /^#### ([A-Z]\d+\.\d+)\b\s*(.*)$/;
 const STATEMENT = /^\*\*([A-Z]\d+\.\d+)\*\*\s+(.+)$/;
 
 /** Parses one curriculum file in the layout `content/sources/README.md` describes. */
-export function parseSource(file: string, markdown: string): GradeSource {
+export function parseSource(file: string, markdown: string, subject: Subject): GradeSource {
   const grade = gradeOfFile(file);
   if (!grade) throw new Error(`Unexpected source file ${file}`);
   const expectations: Expectation[] = [];
@@ -99,23 +103,21 @@ export function parseSource(file: string, markdown: string): GradeSource {
 
   const specific = expectations.filter((e) => e.kind === 'specific');
   if (specific.length === 0) throw new Error(`${file}: no specific expectations found`);
-  const strands = new Set(expectations.map((e) => e.code[0]));
-  if (strands.size !== 1) throw new Error(`${file}: expected one strand, got ${[...strands]}`);
   return {
     grade,
-    subject: 'math',
-    framework: grade === 'K' ? 'ontario-kindergarten-2026' : 'ontario-math-2020',
-    strand: [...strands][0],
+    subject,
+    framework: grade === 'K' ? 'ontario-kindergarten-2026' : GRADE_FRAMEWORKS[subject],
+    strands: [...new Set(expectations.map((e) => e.code[0]))],
     file,
     expectations,
   };
 }
 
-/** Reads every grade file in `dir`, ordered K to 6. Ignores other files such as the README. */
-export async function loadSources(dir: string): Promise<GradeSource[]> {
+/** Reads every grade file of one subject in `dir`, ordered K to 6. Ignores other files such as the README. */
+export async function loadSources(dir: string, subject: Subject): Promise<GradeSource[]> {
   const files = (await readdir(dir)).filter((f) => gradeOfFile(f));
   const sources = await Promise.all(
-    files.map(async (f) => parseSource(f, await readFile(join(dir, f), 'utf8'))),
+    files.map(async (f) => parseSource(f, await readFile(join(dir, f), 'utf8'), subject)),
   );
   return sources.sort((a, b) => gradeRank(a.grade) - gradeRank(b.grade));
 }

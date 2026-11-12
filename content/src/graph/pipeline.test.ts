@@ -75,6 +75,52 @@ describe('buildGraph', () => {
     });
   });
 
+  it('gives each skill the strand of its codes', async () => {
+    const [k, g1] = tinySources;
+    const twoStrands = {
+      ...g1,
+      strands: ['B', 'C'],
+      expectations: [
+        ...g1.expectations,
+        { code: 'C1.1', kind: 'specific' as const, topic: '', statement: 'patterns', details: '' },
+      ],
+    };
+    const g1Patterns = gen('g1-patterns', ['C1.1'], ['k-count']);
+    const llm = new FakeLlm({
+      generate: { K: [kSkills], '1': [{ skills: [...g1Skills.skills, g1Patterns] }] },
+    });
+    const build = await buildGraph([k, twoStrands], llm);
+
+    expect(build.problems).toEqual([]);
+    expect(llm.requests[2].prompt).toContain('Grade 1 expectations (strands B, C)');
+    expect(build.skills.find((s) => s.id === 'g1-read-to-50')?.strand).toBe('B');
+    expect(build.skills.find((s) => s.id === 'g1-patterns')?.strand).toBe('C');
+  });
+
+  it('sends a skill citing two strands back for repair', async () => {
+    const [k, g1] = tinySources;
+    const twoStrands = {
+      ...g1,
+      strands: ['B', 'C'],
+      expectations: [
+        ...g1.expectations,
+        { code: 'C1.1', kind: 'specific' as const, topic: '', statement: 'patterns', details: '' },
+      ],
+    };
+    const mixed = gen('g1-patterns', ['B2.1', 'C1.1'], ['k-count']);
+    const fixed = gen('g1-patterns', ['C1.1'], ['k-count']);
+    const llm = new FakeLlm({
+      generate: {
+        K: [kSkills],
+        '1': [{ skills: [...g1Skills.skills, mixed] }, { skills: [...g1Skills.skills, fixed] }],
+      },
+    });
+    const build = await buildGraph([k, twoStrands], llm);
+
+    expect(build.problems).toEqual([]);
+    expect(build.grades.find((g) => g.grade === '1')?.repairs).toBe(1);
+  });
+
   it('drops transitive prerequisites', async () => {
     const llm = new FakeLlm({ generate: { K: [kSkills], '1': [g1Skills] } });
     const build = await buildGraph(tinySources, llm);

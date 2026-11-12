@@ -7,7 +7,7 @@ export const tinySources: GradeSource[] = [
     grade: 'K',
     subject: 'math',
     framework: 'ontario-kindergarten-2026',
-    strand: 'A',
+    strands: ['A'],
     file: 'kindergarten.md',
     expectations: [
       { code: 'A6', kind: 'overall', topic: '', statement: 'use numbers', details: '' },
@@ -19,7 +19,7 @@ export const tinySources: GradeSource[] = [
     grade: '1',
     subject: 'math',
     framework: 'ontario-math-2020',
-    strand: 'B',
+    strands: ['B'],
     file: 'grade-1.md',
     expectations: [
       { code: 'B1', kind: 'overall', topic: '', statement: 'number sense', details: '' },
