@@ -122,10 +122,23 @@ describe('arrayProblems', () => {
     ]);
   });
 
-  it('does not read 1 inside 10', () => {
+  it('reads number words, and does not read 1 inside 10', () => {
+    const row = keypad(
+      '6 × 8 = ?',
+      'Zoe knows 5 × 8 is 40. She adds one more row of 8. What is 6 × 8?',
+      48,
+    );
+    const cut = scene({
+      ask: 'split',
+      rows: 6,
+      columns: 8,
+      find: 'total',
+      split: { by: 'rows', at: 5 },
+    });
+    expect(arrayProblems(row, cut)).toEqual([]);
     const item = keypad('10 × 7 = ?', 'Ten rows of 7.', 70);
     expect(arrayProblems(item, scene({ ask: 'total', rows: 10, columns: 7 }))).toEqual([]);
-    const one = keypad('10 × 7 = ?', 'Ten rows of 7.', 7);
+    const one = keypad('10 × 7 = ?', 'Some rows of 7.', 7);
     expect(arrayProblems(one, scene({ ask: 'total', rows: 1, columns: 7 }))).toContain(
       'the item never says 1',
     );

@@ -1,0 +1,128 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-tap-1",
+        "fits": true,
+        "ask": "total",
+        "rows": 2,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "2 rows of 5"
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-keypad-1",
+        "fits": true,
+        "ask": "total",
+        "rows": 3,
+        "columns": 10,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "3 rows of 10"
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-tap-2",
+        "fits": true,
+        "ask": "columns",
+        "rows": 10,
+        "columns": 2,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "20 dealt into 10 rows"
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-tap-3",
+        "fits": true,
+        "ask": "total",
+        "rows": 7,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "7 rows of 5"
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-keypad-3",
+        "fits": true,
+        "ask": "total",
+        "rows": 8,
+        "columns": 2,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "8 pairs of 2 socks; no sock thing"
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-keypad-4",
+        "fits": true,
+        "ask": "rows",
+        "rows": 8,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "40 pucks, 5 per bucket, buckets are rows"
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-tap-4",
+        "fits": true,
+        "ask": "columns",
+        "rows": 2,
+        "columns": 9,
+        "thing": "sticker",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "18 stickers shared into 2 rows"
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-keypad-5",
+        "fits": true,
+        "ask": "total",
+        "rows": 9,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "9 kids times 5 points"
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-tap-5",
+        "fits": true,
+        "ask": "rows",
+        "rows": 7,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "35 in rows of 5, how many rows"
+      },
+      {
+        "itemId": "g3-mult-div-facts-2-5-10-keypad-6",
+        "fits": true,
+        "ask": "rows",
+        "rows": 8,
+        "columns": 10,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "80 in rows of 10, how many rows"
+      }
+    ]
+  }
+}

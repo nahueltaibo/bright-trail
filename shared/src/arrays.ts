@@ -22,6 +22,20 @@ export const SPLIT_FINDS = ['total', 'first', 'second'] as const;
 /** Most rows and columns. A 10 × 10 array still fits a phone at about 24 points a thing. */
 export const ARRAY_MAX = 10;
 
+const NUMBER_WORDS = [
+  'zero',
+  'one',
+  'two',
+  'three',
+  'four',
+  'five',
+  'six',
+  'seven',
+  'eight',
+  'nine',
+  'ten',
+];
+
 const Side = z.number().int().min(1).max(ARRAY_MAX);
 
 export const ArraySceneSchema = z
@@ -135,7 +149,9 @@ export function arrayProblems(item: Item, scene: ArrayScene): string[] {
     if (!numbers) problems.push('a choice is not a number');
   }
   const words = `${item.prompt} ${item.narration}`;
-  const said = (n: number) => new RegExp(`(^|[^\\d./])${n}(?![\\d/]|\\.\\d)`).test(words);
+  const said = (n: number) =>
+    new RegExp(`(^|[^\\d./])${n}(?![\\d/]|\\.\\d)`).test(words) ||
+    (n <= ARRAY_MAX && new RegExp(`\\b${NUMBER_WORDS[n]}\\b`, 'i').test(words));
   for (const n of new Set(given(scene))) if (!said(n)) problems.push(`the item never says ${n}`);
   return problems;
 }
