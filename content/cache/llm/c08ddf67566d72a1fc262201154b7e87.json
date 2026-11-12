@@ -1,0 +1,78 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g1-hlth-food-needs",
+        "title": "Why Our Bodies Need Food",
+        "description": "Food gives you energy and helps your teeth, skin, bones, muscles, and brain grow strong. Pick the reasons food helps your body and mind.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-hlth-safety-basics",
+        "title": "Knowing How to Stay Safe",
+        "description": "Know your phone number, when and how to call 9-1-1, and which trusted adults can help you. Learn the safe way to be picked up from school.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-hlth-mental-health",
+        "title": "Caring for Body and Mind",
+        "description": "Your mind is part of your health, just like your body. Find things you can do to take care of both.",
+        "expectationCodes": ["D1.5"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-hlth-food-guide",
+        "title": "Using Canada's Food Guide",
+        "description": "Canada's Food Guide shows which foods and drinks help you eat well. Sort foods into the groups the guide shows.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g1-hlth-food-needs"]
+      },
+      {
+        "id": "g1-hlth-body-cues",
+        "title": "Hunger, Thirst, and Full Cues",
+        "description": "Your body tells you when you are hungry, thirsty, or full. Match the body clues to what you should do.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g1-hlth-food-needs"]
+      },
+      {
+        "id": "g1-hlth-caring-harmful",
+        "title": "Caring and Harmful Behaviours",
+        "description": "Tell caring actions, like listening and asking first, from hurtful ones, like bullying or unwanted touching. Know how each feels and what to do, including telling a trusted adult.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g1-hlth-mental-health", "g1-hlth-safety-basics"]
+      },
+      {
+        "id": "g1-hlth-school-safety",
+        "title": "Staying Safe at School",
+        "description": "Pick safe choices at school, like telling your teacher about allergies, playing in safe areas, and using safe routes to and from school.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g1-hlth-safety-basics"]
+      },
+      {
+        "id": "g1-hlth-hazards",
+        "title": "Spotting Dangers and Injuries",
+        "description": "Spot things that can hurt you at home, outside, near water, on the road, and online. Choose how to stay safe from each one.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g1-hlth-safety-basics"]
+      },
+      {
+        "id": "g1-hlth-healthy-habits",
+        "title": "Habits That Hurt or Help",
+        "description": "Some habits, like too much screen time, smoking, or vaping, can hurt your health. Find healthier choices and ways to cheer people toward them.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g1-hlth-mental-health"]
+      },
+      {
+        "id": "g1-hlth-thoughts-feelings",
+        "title": "Thoughts, Feelings, and Actions",
+        "description": "What you think, feel, and do can change how your mind feels. Match helpful and unhelpful thoughts and actions to how they affect you.",
+        "expectationCodes": ["D3.3"],
+        "prerequisiteIds": ["g1-hlth-mental-health"]
+      }
+    ]
+  }
+}

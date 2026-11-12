@@ -1,0 +1,218 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g2-sci-animal-traits",
+        "title": "Animal Features: Same and Changing",
+        "description": "Animals look different from each other. Some features stay the same, like a bird's feathers, and some change as they grow. Can you compare animals and sort which features stay and which change?",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g1-sci-plant-animal-features"]
+      },
+      {
+        "id": "g2-sci-animal-movement",
+        "title": "How Animals Move",
+        "description": "Animals walk, run, hop, swim, fly, slither, and crawl. Can you match each animal to the way it moves?",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g1-sci-plant-animal-features"]
+      },
+      {
+        "id": "g2-sci-life-cycles",
+        "title": "Animal Life Cycles",
+        "description": "Insects, frogs, birds, and mammals each grow through stages, like egg, young, and adult. Can you put the stages of an animal's life in order?",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g1-sci-cycles", "g2-sci-animal-traits"]
+      },
+      {
+        "id": "g2-sci-life-cycle-changes",
+        "title": "Changes Through a Life Cycle",
+        "description": "As animals grow, how they look and act can change a lot, like a caterpillar becoming a butterfly. Can you match each stage to how the animal looks and acts?",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g2-sci-life-cycles"]
+      },
+      {
+        "id": "g2-sci-animal-adaptations",
+        "title": "How Animals Survive Where They Live",
+        "description": "Animals have body parts and behaviours, like thick fur or hiding, that help them live in their homes. Can you match each animal to what helps it survive?",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g1-sci-living-adapt", "g1-sci-plant-animal-features"]
+      },
+      {
+        "id": "g2-sci-animal-impact",
+        "title": "Animals Affect People and Nature",
+        "description": "Animals can help people and nature, like bees helping plants grow, or cause problems, like pests eating crops. Can you pick the effects and ways to reduce the problems?",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g1-sci-living-help-living", "g1-sci-env-loss"]
+      },
+      {
+        "id": "g2-sci-human-animal-impact",
+        "title": "People's Actions and Animal Homes",
+        "description": "Building, littering, and cutting trees can hurt animals and their homes. Can you pick which actions harm animals and which actions protect them?",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g1-sci-env-actions", "g1-sci-env-loss"]
+      },
+      {
+        "id": "g2-sci-solid-liquid-sort",
+        "title": "Solids and Liquids Around Us",
+        "description": "Things in nature and things people make are solids or liquids. Can you sort things like rocks, juice, milk, and wood into solids and liquids?",
+        "expectationCodes": ["C2.1"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g2-sci-solid-liquid-props",
+        "title": "Properties of Solids and Liquids",
+        "description": "Solids keep their shape, and liquids flow and take the shape of their container. Can you pick the right property for solids and liquids?",
+        "expectationCodes": ["C2.2"],
+        "prerequisiteIds": ["g2-sci-solid-liquid-sort"]
+      },
+      {
+        "id": "g2-sci-water-states",
+        "title": "Liquid Water and Ice",
+        "description": "Liquid water flows, and ice is solid water that keeps its shape. Heating melts ice and cooling freezes water. Can you tell what makes water change?",
+        "expectationCodes": ["C2.3"],
+        "prerequisiteIds": ["g2-sci-solid-liquid-props"]
+      },
+      {
+        "id": "g2-sci-state-change-conditions",
+        "title": "When Do States Change?",
+        "description": "Heating or cooling can change a solid or liquid, like melting chocolate. Without those changes, they stay the same. Can you pick when a state stays or changes?",
+        "expectationCodes": ["C2.4"],
+        "prerequisiteIds": ["g2-sci-water-states"]
+      },
+      {
+        "id": "g2-sci-mixtures",
+        "title": "Useful Mixtures",
+        "description": "We can mix solids and liquids to make useful things, like juice from powder or soup. Can you pick which things are mixtures and what they are for?",
+        "expectationCodes": ["C2.5"],
+        "prerequisiteIds": ["g2-sci-solid-liquid-props"]
+      },
+      {
+        "id": "g2-sci-float-absorb",
+        "title": "Float, Sink, Absorb, Repel",
+        "description": "Some solids float and some sink. Some soak up water and some push it away. Can you sort objects by floating, sinking, absorbing, and repelling?",
+        "expectationCodes": ["C2.6"],
+        "prerequisiteIds": ["g2-sci-solid-liquid-props", "g1-sci-material-properties"]
+      },
+      {
+        "id": "g2-sci-safety-symbols",
+        "title": "Safety Symbols",
+        "description": "Special symbols on bottles and boxes warn us if something is poisonous, flammable, or corrosive. Can you match each symbol to what it means?",
+        "expectationCodes": ["C2.7"],
+        "prerequisiteIds": ["g2-sci-solid-liquid-sort"]
+      },
+      {
+        "id": "g2-sci-home-liquids-safety",
+        "title": "Safe Use of Liquids and Solids",
+        "description": "At home we should store, use, and throw away things like cleaners and medicine safely. Can you pick the safe and earth-friendly choices?",
+        "expectationCodes": ["C1.1"],
+        "prerequisiteIds": ["g2-sci-safety-symbols", "g1-sci-waste-types"]
+      },
+      {
+        "id": "g2-sci-state-change-impact",
+        "title": "Melting and Freezing Effects",
+        "description": "Melting snow, freezing ponds, and icy roads change life for people and nature. Can you pick the effects of these changes?",
+        "expectationCodes": ["C1.2"],
+        "prerequisiteIds": ["g2-sci-state-change-conditions"]
+      },
+      {
+        "id": "g2-sci-how-things-move",
+        "title": "Ways Objects Move",
+        "description": "Objects can slide, roll, spin, bounce, swing, or fall, and we can change where they are by pushing, pulling, or lifting. Can you match each object to how it moves or how to move it?",
+        "expectationCodes": ["D2.1", "D2.2"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g2-sci-simple-machine-types",
+        "title": "Six Simple Machines",
+        "description": "The six simple machines are lever, inclined plane, wedge, pulley, wheel and axle, and screw. Can you name each one from its picture?",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g1-sci-object-purposes"]
+      },
+      {
+        "id": "g2-sci-machines-daily-use",
+        "title": "Simple Machines in Daily Life",
+        "description": "Simple machines make jobs easier, like a ramp for rolling things up or a screw to hold wood. Can you match each machine to a job it does?",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g2-sci-simple-machine-types"]
+      },
+      {
+        "id": "g2-sci-machines-force",
+        "title": "Machines and the Push You Need",
+        "description": "A simple machine can make it easier to move something, so you push or pull less. Can you tell which way needs less force?",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g2-sci-simple-machine-types", "g2-sci-how-things-move"]
+      },
+      {
+        "id": "g2-sci-machines-communities",
+        "title": "Machines Help Communities",
+        "description": "People in different places use simple machines, like wells with pulleys or ramps for wheelchairs. Can you pick how machines help people's lives?",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g2-sci-machines-daily-use"]
+      },
+      {
+        "id": "g2-sci-machines-environment",
+        "title": "Moving Machines and Nature",
+        "description": "Things like bikes, cars, and planes use simple machines to move, and some help nature more than others. Can you pick how they affect the environment?",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g2-sci-machines-daily-use", "g1-sci-healthy-environment"]
+      },
+      {
+        "id": "g2-sci-air-water-props",
+        "title": "Properties of Air and Water",
+        "description": "Air is all around us and takes up space. Water flows and takes the shape of its container. Can you pick true facts about air and water?",
+        "expectationCodes": ["E2.1"],
+        "prerequisiteIds": ["g1-sci-env-interconnected"]
+      },
+      {
+        "id": "g2-sci-water-sources",
+        "title": "Where Water Comes From",
+        "description": "Water is found in lakes, rivers, rain, and oceans, and in built places like wells and taps. Can you sort natural and built water sources?",
+        "expectationCodes": ["E2.2"],
+        "prerequisiteIds": ["g2-sci-air-water-props"]
+      },
+      {
+        "id": "g2-sci-water-cycle",
+        "title": "The Water Cycle",
+        "description": "Water goes up as evaporation, forms clouds by condensation, falls as precipitation, and collects in lakes and oceans. Can you put the stages in order?",
+        "expectationCodes": ["E2.3"],
+        "prerequisiteIds": ["g1-sci-cycles", "g2-sci-water-sources"]
+      },
+      {
+        "id": "g2-sci-water-states-env",
+        "title": "Water States and Temperature",
+        "description": "Water can be liquid, solid ice, or gas called vapour. Warming and cooling change it in the water cycle. Can you match each state to its temperature?",
+        "expectationCodes": ["E2.4"],
+        "prerequisiteIds": ["g2-sci-water-cycle", "g2-sci-water-states"]
+      },
+      {
+        "id": "g2-sci-living-need-air-water",
+        "title": "Living Things Need Air and Water",
+        "description": "People, animals, and plants all need air and water to live. Can you match how each living thing uses air and water?",
+        "expectationCodes": ["E2.5"],
+        "prerequisiteIds": ["g1-sci-basic-needs", "g2-sci-air-water-props"]
+      },
+      {
+        "id": "g2-sci-air-water-impact",
+        "title": "People's Impact on Air and Water",
+        "description": "Smoke, spills, and garbage can make air and water dirty. Many people, including First Nations, Métis, and Inuit, care for water and air. Can you pick actions that protect them?",
+        "expectationCodes": ["E1.1"],
+        "prerequisiteIds": ["g2-sci-living-need-air-water", "g1-sci-env-actions"]
+      },
+      {
+        "id": "g2-sci-water-use",
+        "title": "Using Water Wisely",
+        "description": "We use water to drink, wash, and cook, and we can save it by turning off taps. Can you pick the ways to use less water?",
+        "expectationCodes": ["E1.2"],
+        "prerequisiteIds": ["g2-sci-water-sources", "g1-sci-env-actions"]
+      },
+      {
+        "id": "g2-sci-fresh-water-world",
+        "title": "Fresh Water Around the World",
+        "description": "Some places have lots of clean drinking water and others have very little, which changes how people live. Can you pick how a lack of clean water affects a community?",
+        "expectationCodes": ["E1.3"],
+        "prerequisiteIds": ["g2-sci-water-sources", "g2-sci-living-need-air-water"]
+      }
+    ]
+  }
+}

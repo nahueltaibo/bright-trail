@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g1-hlth-healthy-habits",
+        "changePrerequisites": false,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "Some habits, like too much screen time, smoking, or vaping, can hurt your health. Find healthier choices and ways to encourage people to make them.",
+        "reason": "The expectation asks how people can be encouraged to adopt healthier alternatives. The current phrase 'cheer people toward them' is vague and does not clearly match that idea. The rewording keeps it simple enough to hear read aloud."
+      }
+    ],
+    "notes": "Reviewed all ten Grade 1 skills. Prerequisites are real, direct, and point only within Grade 1, with no self-references. The three root skills (food-needs, safety-basics, mental-health) have no prerequisites, which is correct for the first grade. Every D2 and D3 skill that depends on an earlier idea lists it: food-guide and body-cues need food-needs; caring-harmful needs mental-health and safety-basics (for the trusted-adult content); school-safety and hazards need safety-basics; thoughts-feelings needs mental-health. Healthy-habits needing mental-health is borderline but defensible, since the habits affect both body and mind. No prerequisites were removed or added. The only correction is the description wording for healthy-habits."
+  }
+}

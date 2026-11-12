@@ -1,0 +1,42 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g5-sci-protective-gear",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-sci-force-safety"],
+        "title": "",
+        "description": "",
+        "reason": "The skill is about protective equipment for people (helmets, pads, harnesses). g3-sci-force-safety already covers forces from crashes and falls and the devices that reduce them, which is the direct base for this skill. g5-sci-external-forces is about forces acting on structures, and a kid can learn protective gear without it, so it is not a needed prerequisite."
+      },
+      {
+        "skillId": "g5-sci-natural-hazard-structures",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g5-sci-external-forces",
+          "g3-sci-building-materials",
+          "g3-sci-strength",
+          "g3-sci-form-function"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The helpful features named in the skill are strong frames and sloped roofs. Strong frames depend on the Grade 3 idea of structural strength (g3-sci-strength), and sloped roofs depend on the Grade 3 idea that a structure's shape fits its job (g3-sci-form-function). Neither is currently listed, though both are needed to match hazards to these features. None of the added prerequisites is already implied by another listed prerequisite."
+      },
+      {
+        "skillId": "g5-sci-energy-forms",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g1-sci-energy-sources",
+          "g4-sci-light-sources",
+          "g4-sci-sound-properties"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The skill names light and sound as forms of energy. Light sources and sound properties are taught in Grade 4 (g4-sci-light-sources, g4-sci-sound-properties), and a kid needs them to recognise light and sound as energy forms and how they are used. The Grade 1 energy-source skill is kept. None of the listed prerequisites depends on another, so there is no redundancy."
+      }
+    ],
+    "notes": "Reviewed all 34 proposed Grade 5 skills against the rules for direct, needed, non-redundant prerequisites, grade ordering, and read-aloud wording. Titles and descriptions read clearly, and no prerequisite points to a later grade or to the skill itself. Three skills needed changes: g5-sci-protective-gear has an unneeded structures-focused prerequisite, and g5-sci-natural-hazard-structures and g5-sci-energy-forms are missing same-idea prerequisites from earlier grades. Several other borderline choices (for example g5-sci-health-tech on g5-sci-system-links, and g5-sci-indigenous-conservation on g5-sci-renewable-sources) were left as they are because they are defensible and not clearly wrong."
+  }
+}

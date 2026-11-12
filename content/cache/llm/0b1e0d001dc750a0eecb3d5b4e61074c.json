@@ -1,0 +1,232 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g5-sci-body-systems",
+        "title": "Body Systems and Their Jobs",
+        "description": "Your body has systems like digestive, respiratory, circulatory, nervous, and skeletal that each do a job. Can you match each system to what it does?",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g1-sci-body-parts"]
+      },
+      {
+        "id": "g5-sci-vital-organs",
+        "title": "Vital Organs",
+        "description": "Organs like the heart, lungs, brain, stomach, and intestines each have a shape and a job. Can you label each organ and pick what it does?",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g5-sci-body-systems"]
+      },
+      {
+        "id": "g5-sci-system-links",
+        "title": "Body Systems Work Together",
+        "description": "Body systems team up, like lungs and heart moving oxygen around your body. Can you pick how two systems help each other?",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g5-sci-vital-organs"]
+      },
+      {
+        "id": "g5-sci-diseases",
+        "title": "Diseases and Body Systems",
+        "description": "Some diseases and disorders, like asthma, diabetes, and heart disease, affect certain organs or systems. Can you match each one to the part it affects?",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g5-sci-vital-organs"]
+      },
+      {
+        "id": "g5-sci-health-factors",
+        "title": "What Affects Our Health",
+        "description": "Things like sleep, air quality, friends, and exercise can help or hurt your health. Can you pick which ones help and which ones harm?",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g5-sci-body-systems", "g1-sci-healthy-environment"]
+      },
+      {
+        "id": "g5-sci-health-tech",
+        "title": "Technology and Our Health",
+        "description": "Technologies like vaccines, screens, and fitness trackers can help or harm our bodies. Can you pick the good and bad effects?",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g5-sci-system-links"]
+      },
+      {
+        "id": "g5-sci-food-literacy",
+        "title": "Food Choices and Health",
+        "description": "Reading food labels and knowing what foods are made of helps us choose foods that are good for our bodies and minds. Can you pick the healthy choice?",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g5-sci-body-systems", "g1-sci-food-energy"]
+      },
+      {
+        "id": "g5-sci-matter-def",
+        "title": "Matter: Mass and Volume",
+        "description": "Matter is anything that has mass and takes up space. Can you pick which things are matter?",
+        "expectationCodes": ["C2.1"],
+        "prerequisiteIds": ["g2-sci-air-water-props"]
+      },
+      {
+        "id": "g5-sci-states-properties",
+        "title": "Solids, Liquids, and Gases",
+        "description": "Solids keep their shape, liquids take the shape of their container, and gases spread out to fill space. Can you sort matter and pick its properties?",
+        "expectationCodes": ["C2.2"],
+        "prerequisiteIds": ["g5-sci-matter-def", "g2-sci-solid-liquid-props"]
+      },
+      {
+        "id": "g5-sci-state-changes",
+        "title": "Changes of State",
+        "description": "Melting, freezing, evaporating, condensing, and boiling change matter from one state to another. Can you match each change to an example at home or outside?",
+        "expectationCodes": ["C2.3"],
+        "prerequisiteIds": ["g5-sci-states-properties", "g2-sci-water-states-env"]
+      },
+      {
+        "id": "g5-sci-thermal-energy-states",
+        "title": "Heat and Changes of State",
+        "description": "Matter changes state when it takes in or lets go of heat energy. Can you pick whether heat goes in or out?",
+        "expectationCodes": ["C2.6"],
+        "prerequisiteIds": ["g5-sci-state-changes"]
+      },
+      {
+        "id": "g5-sci-physical-change",
+        "title": "Physical Changes",
+        "description": "In a physical change, matter changes state, size, or shape but stays the same substance, like cutting paper or dissolving sugar. Can you spot physical changes?",
+        "expectationCodes": ["C2.4"],
+        "prerequisiteIds": ["g5-sci-state-changes"]
+      },
+      {
+        "id": "g5-sci-chemical-change",
+        "title": "Chemical Changes",
+        "description": "In a chemical change, a new substance forms. Signs are new colour, gas bubbles, heat or light, and a new smell. Can you spot chemical changes?",
+        "expectationCodes": ["C2.5"],
+        "prerequisiteIds": ["g5-sci-physical-change"]
+      },
+      {
+        "id": "g5-sci-property-uses",
+        "title": "Properties Make Matter Useful",
+        "description": "Properties like hardness, flexibility, and being able to flow make solids, liquids, and gases good for certain jobs. Can you match each material to its use?",
+        "expectationCodes": ["C2.7"],
+        "prerequisiteIds": ["g5-sci-states-properties", "g1-sci-material-properties"]
+      },
+      {
+        "id": "g5-sci-manufacture-processes",
+        "title": "Making Products: Impacts",
+        "description": "Factories use steps like heating, cutting, and mixing to make products, and these affect people and nature. Can you pick the good and bad effects?",
+        "expectationCodes": ["C1.1"],
+        "prerequisiteIds": ["g5-sci-chemical-change", "g1-sci-compare-objects"]
+      },
+      {
+        "id": "g5-sci-product-materials",
+        "title": "Materials and the Environment",
+        "description": "The materials used in products, like plastic, metal, and paper, affect nature in different ways. Can you pick actions that lessen the harm?",
+        "expectationCodes": ["C1.2"],
+        "prerequisiteIds": ["g5-sci-property-uses", "g1-sci-waste-types"]
+      },
+      {
+        "id": "g5-sci-internal-forces",
+        "title": "Forces Inside Structures",
+        "description": "Inside a structure, forces like compression, tension, torsion, and shear push, pull, twist, and slide its parts. Can you match each force to its effect?",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g3-sci-struts-ties"]
+      },
+      {
+        "id": "g5-sci-external-forces",
+        "title": "Forces Outside Structures",
+        "description": "Forces from outside, like loads, wind, and wave pushes, act on structures. Can you pick what each outside force does?",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g3-sci-forces-on-structures"]
+      },
+      {
+        "id": "g5-sci-natural-hazard-structures",
+        "title": "Structures Against Nature's Forces",
+        "description": "Earthquakes, floods, hurricanes, and snow loads can damage buildings. Features like strong frames and sloped roofs help them hold up. Can you match each hazard to a helpful feature?",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g5-sci-external-forces", "g3-sci-building-materials"]
+      },
+      {
+        "id": "g5-sci-natural-structures-protect",
+        "title": "Plants and Animals Handle Forces",
+        "description": "Turtle shells, bendy tree trunks, and strong bones help living things survive forces. Can you match each feature to how it protects?",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g5-sci-external-forces", "g4-sci-structural-adapt"]
+      },
+      {
+        "id": "g5-sci-protective-gear",
+        "title": "Protective Equipment",
+        "description": "Helmets, pads, and harnesses spread out or soak up forces to keep people safe. Can you match each gear to how it protects?",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g5-sci-external-forces", "g3-sci-force-safety"]
+      },
+      {
+        "id": "g5-sci-forces-natural-effects",
+        "title": "Nature's Forces and Structures",
+        "description": "Natural events like floods, erosion, and storms affect buildings, bridges, and animal homes. Can you pick the effects?",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g5-sci-natural-hazard-structures", "g3-sci-natural-forces"]
+      },
+      {
+        "id": "g5-sci-mitigate-forces",
+        "title": "Protecting Communities From Forces",
+        "description": "Towns use things like dikes, stilts, and strong building rules to protect structures. Can you pick the best way for a city, farm, or remote community?",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g5-sci-forces-natural-effects"]
+      },
+      {
+        "id": "g5-sci-energy-forms",
+        "title": "Forms of Energy",
+        "description": "Energy comes in forms like light, sound, heat, electrical, chemical, and motion. Can you match each form to how we use it?",
+        "expectationCodes": ["E2.1"],
+        "prerequisiteIds": ["g1-sci-energy-sources"]
+      },
+      {
+        "id": "g5-sci-energy-conservation-law",
+        "title": "Energy Is Never Lost",
+        "description": "Energy can't be made or destroyed. It only changes from one form to another. Can you pick the energy change in each example?",
+        "expectationCodes": ["E2.2"],
+        "prerequisiteIds": ["g5-sci-energy-forms"]
+      },
+      {
+        "id": "g5-sci-potential-energy",
+        "title": "Stored Energy in Devices",
+        "description": "Energy can be stored, like in a stretched spring or a battery, and then changed into motion or other forms. Can you follow the energy in a device?",
+        "expectationCodes": ["E2.3"],
+        "prerequisiteIds": ["g5-sci-energy-conservation-law"]
+      },
+      {
+        "id": "g5-sci-energy-dissipates",
+        "title": "Wasted Energy",
+        "description": "When energy changes form, some escapes as heat, light, or sound that we can't use. Can you pick where the extra energy goes?",
+        "expectationCodes": ["E2.4"],
+        "prerequisiteIds": ["g5-sci-energy-conservation-law"]
+      },
+      {
+        "id": "g5-sci-renewable-sources",
+        "title": "Renewable and Non-Renewable Energy",
+        "description": "Sun, wind, and water energy keep coming back, but coal, oil, and gas run out. Can you sort the energy sources?",
+        "expectationCodes": ["E2.5"],
+        "prerequisiteIds": ["g1-sci-limited-resources", "g5-sci-energy-forms"]
+      },
+      {
+        "id": "g5-sci-fossil-fuels-climate",
+        "title": "Fossil Fuels and Climate Change",
+        "description": "Burning fossil fuels puts extra carbon dioxide in the air, which traps heat and warms Earth. Can you put the steps in order?",
+        "expectationCodes": ["E2.6"],
+        "prerequisiteIds": ["g5-sci-renewable-sources", "g3-sci-photosynthesis"]
+      },
+      {
+        "id": "g5-sci-energy-impacts",
+        "title": "Using Energy and Resources Wisely",
+        "description": "How people use energy and resources affects climate, nature, and society for a long time. Can you pick the long-term effects and ways to lessen them?",
+        "expectationCodes": ["E1.1"],
+        "prerequisiteIds": ["g5-sci-fossil-fuels-climate"]
+      },
+      {
+        "id": "g5-sci-energy-tech-saving",
+        "title": "Technology That Saves Energy",
+        "description": "Tools like LED bulbs, smart thermostats, and timers can cut the energy we use. Can you pick which technology saves the most energy?",
+        "expectationCodes": ["E1.2"],
+        "prerequisiteIds": ["g5-sci-energy-dissipates", "g1-sci-energy-uses"]
+      },
+      {
+        "id": "g5-sci-indigenous-conservation",
+        "title": "Indigenous Ways of Conserving",
+        "description": "First Nations, Métis, and Inuit communities use traditional knowledge to take only what is needed and care for the land. Can you match each practice to how it saves resources?",
+        "expectationCodes": ["E1.3"],
+        "prerequisiteIds": ["g5-sci-renewable-sources"]
+      }
+    ]
+  }
+}

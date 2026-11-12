@@ -477,6 +477,72 @@
       "skillId": "g6-divide-whole-by-fraction",
       "title": "Divide a whole by a fraction",
       "reason": "Title had 7 words."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g2-hlth-consent-standing-up",
+      "token": "say",
+      "reason": "Saying no is the skill. Items ask which words to pick, not to speak."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g4-hlth-refusing-smoking",
+      "token": "say",
+      "reason": "Saying no is the skill. Items ask which refusal to pick."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g5-hlth-refusal-pressure",
+      "token": "say",
+      "reason": "Saying no is the skill. Items ask which refusal to pick."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g5-hlth-mental-stigma",
+      "token": "say",
+      "reason": "It means what people say about mental health. Items sort attitudes."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g6-hlth-drug-choices",
+      "token": "say",
+      "reason": "Saying no is one of the choices the child picks."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g5-soc-citizen-action",
+      "token": "write",
+      "reason": "Writing letters is an action citizens take. Items ask which action fits."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g5-soc-plans-action",
+      "token": "say",
+      "reason": "It means what a plan says. Items sort the steps."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g6-soc-holocaust-rights",
+      "token": "write",
+      "reason": "Canada helped write human rights laws. Items match events."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g6-hlth-inclusion",
+      "description": "Being inclusive, respectful, and accepting helps everyone, including you. Pick actions that make others feel welcome.",
+      "reason": "\"Tell how\" asked for a spoken answer."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g4-soc-visual-evidence",
+      "description": "Carvings, masks, beadwork, tools, and pottery are clues to how people lived long ago. Pick what each object tells about daily life.",
+      "reason": "\"Show how\" read as asking for a demonstration."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g2-soc-location-climate",
+      "title": "Location and Climate",
+      "reason": "The title had more than 6 words."
     }
   ]
 }

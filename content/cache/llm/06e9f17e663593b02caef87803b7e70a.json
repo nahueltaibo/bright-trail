@@ -1,0 +1,201 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g6-soc-features-identity",
+        "title": "Features That Shape Canada's Image",
+        "description": "Buildings, landscapes, wildlife, and traditions help make Canada's image, like mountains, prairies, beavers, and fishing towns. Match each feature to the identity or image it gives.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g4-soc-physical-regions", "g3-soc-canadian-identity"]
+      },
+      {
+        "id": "g6-soc-indigenous-contrib",
+        "title": "Indigenous Gifts to Canada",
+        "description": "First Nations, Métis, and Inuit people gave Canada art, canoes, kayaks, medicines, and democratic ideas. Match each gift to the people who made it.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g5-soc-mutual-benefits", "g3-soc-canadian-identity"]
+      },
+      {
+        "id": "g6-soc-settler-contrib",
+        "title": "Newcomer Gifts to Canada",
+        "description": "Newcomers helped build Canada, like Chinese workers on the railway and the British with Parliament. Match each group to what it gave.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g6-soc-community-types", "g3-soc-settler-places"]
+      },
+      {
+        "id": "g6-soc-inclusiveness",
+        "title": "Working Toward an Inclusive Canada",
+        "description": "Many groups have worked so everyone is treated fairly, and laws like the Charter help. Match each group or law to how it helps inclusion.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g6-soc-canadian-elements", "g5-soc-citizen-rights"]
+      },
+      {
+        "id": "g6-soc-territory-local",
+        "title": "Treaty Land Where I Live",
+        "description": "Every community in Ontario is on traditional Indigenous land and inside a treaty area. Match a place to its territory and treaty.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g3-soc-indigenous-places", "g1-soc-territory"]
+      },
+      {
+        "id": "g6-soc-migration-reasons",
+        "title": "Why People Came to Canada",
+        "description": "People came to Canada for freedom, land, jobs, family, or to escape hunger and war. Some were forced to come. Match each person to why they came.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g3-soc-settler-places"]
+      },
+      {
+        "id": "g6-soc-settler-life",
+        "title": "Life in Newcomer Communities",
+        "description": "Newcomers farmed, worked, dressed, ate, and worshipped in ways from their old homes. Match each way of life to where it came from and how it touched Indigenous communities.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g6-soc-migration-reasons", "g3-soc-daily-life-then"]
+      },
+      {
+        "id": "g6-soc-community-types",
+        "title": "Kinds of Communities in Canada",
+        "description": "Canada has Indigenous, French, British, immigrant, religious, resource-town, rural, and city communities. Match each kind to how it helped build the country.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g6-soc-migration-reasons", "g3-soc-employment-types"]
+      },
+      {
+        "id": "g6-soc-indigenous-history",
+        "title": "Big Events for Indigenous Peoples",
+        "description": "Treaties, the Indian Act, reserves, residential schools, and the creation of Nunavut changed Indigenous communities. Match each event to how it affected them.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g3-soc-colonial-policies", "g5-soc-past-present-issues"]
+      },
+      {
+        "id": "g6-soc-newcomer-history",
+        "title": "Big Events for Newcomer Groups",
+        "description": "Groups like Acadians, Japanese Canadians, Black Canadians, and Germans lived through big events. Match each event to the group and how it changed them.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g6-soc-migration-reasons", "g5-soc-european-conflicts"]
+      },
+      {
+        "id": "g6-soc-jewish-history",
+        "title": "Jewish Communities in Canada",
+        "description": "Jewish Canadians built synagogues, hospitals, and groups, and faced antisemitism. Match each event to the year or the way the community responded.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g6-soc-newcomer-history"]
+      },
+      {
+        "id": "g6-soc-community-interactions",
+        "title": "How Communities Met and Mixed",
+        "description": "Communities in Canada traded, made treaties, helped each other, and sometimes faced racism or conflict. Sort examples into helpful or hurtful interactions.",
+        "expectationCodes": ["A3.8"],
+        "prerequisiteIds": ["g5-soc-contact-interactions", "g6-soc-settler-life"]
+      },
+      {
+        "id": "g6-soc-community-differences",
+        "title": "How Communities Differ",
+        "description": "Communities can differ in roles, wealth, city or country life, religion, and beliefs about land. Match each difference to the communities it describes.",
+        "expectationCodes": ["A3.9"],
+        "prerequisiteIds": ["g5-soc-compare-communities", "g6-soc-settler-life"]
+      },
+      {
+        "id": "g6-soc-local-changes",
+        "title": "How My Community Has Changed",
+        "description": "Your own community, whether a town, a faith, or a culture, has changed over time. Pick the changes that happened and why.",
+        "expectationCodes": ["A3.10"],
+        "prerequisiteIds": ["g3-soc-roles-then-now", "g2-soc-past-present-traditions"]
+      },
+      {
+        "id": "g6-soc-canadian-elements",
+        "title": "What Makes Canada Canada",
+        "description": "Canada values human rights, diversity, two languages, parliamentary democracy, health care, and treaties. Match each idea to what it means.",
+        "expectationCodes": ["A3.11"],
+        "prerequisiteIds": ["g3-soc-canadian-identity", "g5-soc-govt-levels"]
+      },
+      {
+        "id": "g6-soc-govt-world",
+        "title": "Canada's Government and the World",
+        "description": "Canada's government works with other countries through trade deals, alliances, aid, and promises to protect nature. Match each way to an example.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g5-soc-govt-levels"]
+      },
+      {
+        "id": "g6-soc-accords-orgs",
+        "title": "Canada in World Agreements",
+        "description": "Canada joins groups like the UN, WHO, NATO, and NAFTA. Match each one to what it does and why Canada takes part.",
+        "expectationCodes": ["B1.1", "B3.2"],
+        "prerequisiteIds": ["g6-soc-govt-world"]
+      },
+      {
+        "id": "g6-soc-groups-global",
+        "title": "Groups Helping Around the World",
+        "description": "Groups like Doctors Without Borders, the UN, and la Francophonie work on world problems. Match each group to what it does.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g6-soc-govt-world"]
+      },
+      {
+        "id": "g6-soc-disaster-response",
+        "title": "Helping After Disasters Abroad",
+        "description": "Canada's government and helper groups sent aid after events like the Haiti earthquake and the tsunami. Match each disaster to how Canada helped.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g6-soc-groups-global"]
+      },
+      {
+        "id": "g6-soc-issue-responses",
+        "title": "Responses to World Issues",
+        "description": "Governments, NGOs, and everyday people respond to world problems like disease or child labour in different ways. Match each helper to its response.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g6-soc-disaster-response", "g5-soc-citizen-action"]
+      },
+      {
+        "id": "g6-soc-intl-environment",
+        "title": "Nature Problems That Cross Borders",
+        "description": "Problems like global warming, overfishing, and invasive species need many countries to help. Pick why one country can't fix them alone.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g4-soc-industry-impact", "g6-soc-accords-orgs"]
+      },
+      {
+        "id": "g6-soc-holocaust-rights",
+        "title": "Canada, the Holocaust, and Human Rights",
+        "description": "Canada turned away many Jewish refugees during the Holocaust, and later helped write human rights laws. Match each event or law to what it shows.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g6-soc-jewish-history", "g6-soc-accords-orgs"]
+      },
+      {
+        "id": "g6-soc-interaction-effects",
+        "title": "Canada's Effects on Other Regions",
+        "description": "Canada's peacekeeping, trade, and school projects change life in other places. Match each action to its effect.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g6-soc-govt-world"]
+      },
+      {
+        "id": "g6-soc-locate-countries",
+        "title": "Finding Canada's Partners on Maps",
+        "description": "Canada has close ties with countries like the United States, Japan, and Kenya. Find them on a map and use latitude and longitude to locate their cities.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": [
+          "g2-soc-continents-oceans",
+          "g4-soc-map-directions-grids",
+          "g6-soc-govt-world"
+        ]
+      },
+      {
+        "id": "g6-soc-economic-partners",
+        "title": "Canada's Trading Partners",
+        "description": "Canada trades most with close or stable countries that make or buy what it needs. Match each country to why it is a partner.",
+        "expectationCodes": ["B3.8"],
+        "prerequisiteIds": ["g6-soc-locate-countries", "g4-soc-economic-sectors"]
+      },
+      {
+        "id": "g6-soc-economic-effects",
+        "title": "Trade and Canadian Jobs",
+        "description": "Trade deals, disputes, and low labour costs overseas can change jobs and money in Canada. Match each cause to its economic effect.",
+        "expectationCodes": ["B3.9"],
+        "prerequisiteIds": ["g6-soc-economic-partners"]
+      },
+      {
+        "id": "g6-soc-environment-effects",
+        "title": "Global Links and Nature",
+        "description": "Trade and travel can bring invasive species or cause over-farming, and global projects can plant trees. Match each link to its effect on nature.",
+        "expectationCodes": ["B3.10"],
+        "prerequisiteIds": ["g6-soc-economic-partners", "g4-soc-industry-impact"]
+      }
+    ]
+  }
+}

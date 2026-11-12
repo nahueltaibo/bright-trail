@@ -1,0 +1,239 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g1-sci-env-interconnected",
+        "title": "Living and Non-Living Things Connect",
+        "description": "Nature is a place where living things like plants and animals and non-living things like rocks, water, and air depend on each other. Can you sort which things are living and which are not?",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-basic-needs",
+        "title": "Basic Needs of Living Things",
+        "description": "All living things need air, water, food, heat, shelter, and space. Can you pick which things a plant or animal needs to live?",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-body-parts",
+        "title": "Parts of the Human Body",
+        "description": "Your body has parts like eyes, ears, nose, tongue, and skin that help you sense the world. Can you match each part to where it is and what it does?",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-plant-animal-features",
+        "title": "How Body Features Meet Needs",
+        "description": "Plants and animals have parts like roots, leaves, fur, beaks, and legs that help them get what they need. Can you match each part to its job?",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g1-sci-basic-needs"]
+      },
+      {
+        "id": "g1-sci-healthy-environment",
+        "title": "A Healthy Environment",
+        "description": "A healthy place has clean air, clean water, and good food so living things can get what they need. Can you tell which places are healthy?",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g1-sci-basic-needs"]
+      },
+      {
+        "id": "g1-sci-living-help-living",
+        "title": "Living Things Help Each Other",
+        "description": "Plants and animals give each other things like food and shelter. Can you match who helps whom?",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g1-sci-basic-needs", "g1-sci-env-interconnected"]
+      },
+      {
+        "id": "g1-sci-env-actions",
+        "title": "Actions for a Healthy Environment",
+        "description": "We can help nature by picking up litter, saving water, and planting trees. Can you pick the actions that help?",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g1-sci-healthy-environment"]
+      },
+      {
+        "id": "g1-sci-env-loss",
+        "title": "What If Something Disappears?",
+        "description": "If a tree, pond, or other part of nature is lost, animals, plants, and people can be affected in different ways. Can you pick what might change?",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g1-sci-env-interconnected"]
+      },
+      {
+        "id": "g1-sci-energy-moves",
+        "title": "Energy Moves and Changes Things",
+        "description": "Energy is what lets something move or change. Can you pick the things that use energy to move or change?",
+        "expectationCodes": ["C2.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-energy-uses",
+        "title": "Using Energy at Home and School",
+        "description": "We use energy for lights, heating, cooking, and computers. Can you pick ways to use energy wisely, like turning off lights?",
+        "expectationCodes": ["C1.1"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g1-sci-energy-sources",
+        "title": "Sources of Energy",
+        "description": "Energy comes from sources like the Sun, wind, water, batteries, and fuel. Can you match each source to what it is used for?",
+        "expectationCodes": ["C2.4"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g1-sci-sun-energy",
+        "title": "The Sun Gives Us Energy",
+        "description": "The Sun warms the air, land, and water, gives us light, and helps plants grow. Can you pick what the Sun does for Earth?",
+        "expectationCodes": ["C2.2"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g1-sci-food-energy",
+        "title": "Food Is Energy",
+        "description": "Food gives people and animals the energy to move, grow, and play. Can you pick which things get energy from food?",
+        "expectationCodes": ["C2.3"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g1-sci-no-electricity",
+        "title": "Life Without Electricity",
+        "description": "Without electricity, lights, fridges, and screens would stop working. Can you pick what would change for people and animals?",
+        "expectationCodes": ["C1.2"],
+        "prerequisiteIds": ["g1-sci-energy-uses"]
+      },
+      {
+        "id": "g1-sci-limited-resources",
+        "title": "Energy Resources Can Run Out",
+        "description": "People get energy resources like wood, oil, and water from the world around us, and many can run out. Can you tell which ones are limited?",
+        "expectationCodes": ["C2.5"],
+        "prerequisiteIds": ["g1-sci-energy-sources"]
+      },
+      {
+        "id": "g1-sci-seasonal-energy",
+        "title": "Energy Through the Seasons",
+        "description": "In winter we use heaters, and in summer we use fans. Can you match the energy we use to each season?",
+        "expectationCodes": ["C2.6"],
+        "prerequisiteIds": ["g1-sci-energy-uses"]
+      },
+      {
+        "id": "g1-sci-objects-materials",
+        "title": "Objects and Their Materials",
+        "description": "Objects are made of one or more materials like wood, metal, plastic, glass, and fabric. Can you match objects to what they are made of?",
+        "expectationCodes": ["D2.1", "D2.3"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-object-senses",
+        "title": "Describing Objects With Senses",
+        "description": "We can describe objects by how they look, feel, sound, and smell, like soft, rough, shiny, or loud. Can you pick the best words for each object?",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-object-purposes",
+        "title": "What Objects Are For",
+        "description": "Every object has a job, like a cup to hold drinks or a chair to sit on. Can you match each object to its purpose?",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-structures-load",
+        "title": "Structures Support a Load",
+        "description": "A structure is made to hold up weight, like a bridge, a table, or a bed frame. Can you pick which things are structures and what they hold?",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g1-sci-object-purposes"]
+      },
+      {
+        "id": "g1-sci-material-properties",
+        "title": "Material Properties and Jobs",
+        "description": "Materials can be strong, soft, bendy, or waterproof, which makes them good for certain jobs. Can you pick the best material for each object?",
+        "expectationCodes": ["D2.6"],
+        "prerequisiteIds": ["g1-sci-object-senses", "g1-sci-object-purposes"]
+      },
+      {
+        "id": "g1-sci-fasteners",
+        "title": "Kinds of Fasteners",
+        "description": "Fasteners like buttons, zippers, nails, screws, and tape hold things together. Can you match each fastener to its use?",
+        "expectationCodes": ["D2.7"],
+        "prerequisiteIds": ["g1-sci-object-purposes"]
+      },
+      {
+        "id": "g1-sci-material-sources",
+        "title": "Where Materials Come From",
+        "description": "Materials come from nature, like wood from trees, wool from sheep, and metal from rocks. Can you match each material to its source?",
+        "expectationCodes": ["D2.8"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-waste-types",
+        "title": "Waste and How to Cut It",
+        "description": "People make waste like paper, food scraps, and plastic. Can you sort waste and pick ways to make less, like reusing and recycling?",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-compare-objects",
+        "title": "Comparing Similar Objects",
+        "description": "Objects with the same job can be made from different materials that come from different places and end up in different places when we are done. Can you compare them?",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g1-sci-material-sources", "g1-sci-waste-types"]
+      },
+      {
+        "id": "g1-sci-cycles",
+        "title": "Cycles Repeat",
+        "description": "A cycle is a set of events that happen again and again, like day and night. Can you put the events of a cycle in order?",
+        "expectationCodes": ["E2.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-earth-sun",
+        "title": "Earth and the Sun",
+        "description": "Earth spins to make day and night and travels around the Sun to make seasons. Can you pick what causes day, night, and seasons?",
+        "expectationCodes": ["E2.1"],
+        "prerequisiteIds": ["g1-sci-sun-energy"]
+      },
+      {
+        "id": "g1-sci-sun-light-heat",
+        "title": "Sunlight and Heat Change",
+        "description": "The Sun gives different amounts of light and heat during the day and in each season. Can you tell when it is brightest and warmest?",
+        "expectationCodes": ["E2.3"],
+        "prerequisiteIds": ["g1-sci-earth-sun", "g1-sci-cycles"]
+      },
+      {
+        "id": "g1-sci-season-weather",
+        "title": "Weather in the Four Seasons",
+        "description": "Winter, spring, summer, and fall have different weather, rain, snow, and temperatures. Can you match the weather to each season?",
+        "expectationCodes": ["E2.4"],
+        "prerequisiteIds": ["g1-sci-cycles"]
+      },
+      {
+        "id": "g1-sci-living-adapt",
+        "title": "Living Things and Seasons",
+        "description": "Animals and plants change with the seasons, like trees losing leaves, birds flying south, or bears sleeping. Can you match each change to its season?",
+        "expectationCodes": ["E2.5"],
+        "prerequisiteIds": ["g1-sci-season-weather", "g1-sci-basic-needs"]
+      },
+      {
+        "id": "g1-sci-humans-respond",
+        "title": "People Get Ready for Seasons",
+        "description": "People change clothes, homes, and food as the day and seasons change. Can you pick what people do for each kind of weather?",
+        "expectationCodes": ["E2.6"],
+        "prerequisiteIds": ["g1-sci-season-weather"]
+      },
+      {
+        "id": "g1-sci-outdoor-activities",
+        "title": "Seasons and Outdoor Fun",
+        "description": "Some outdoor fun, like skating or swimming, fits certain seasons, and inventions like indoor rinks let us play all year. Can you match activities to seasons and inventions?",
+        "expectationCodes": ["E1.1"],
+        "prerequisiteIds": ["g1-sci-humans-respond"]
+      },
+      {
+        "id": "g1-sci-change-impact",
+        "title": "How Changes Affect Our World",
+        "description": "Day and season changes affect towns, nature, and animals, like snow closing roads or ponds freezing. Can you pick the effects?",
+        "expectationCodes": ["E1.2"],
+        "prerequisiteIds": ["g1-sci-living-adapt", "g1-sci-humans-respond"]
+      }
+    ]
+  }
+}

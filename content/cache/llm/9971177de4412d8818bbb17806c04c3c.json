@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g2-soc-community-groups",
+        "changePrerequisites": true,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "",
+        "reason": "The skill is about identifying community groups (cultures, religions, First Nations, Métis, and Inuit people) and matching them to visible signs like foods, music, and languages. It does not depend on understanding family types, which is about families, not community groups. The listed prerequisite g2-soc-family-types is not needed, so it is removed. No Grade 1 skill covers community groups, so the list is empty."
+      }
+    ],
+    "notes": "Reviewed all 21 Grade 2 skills against the Grade 1 and Grade 2 expectations. Only one correction is needed: g2-soc-community-groups lists g2-soc-family-types, which a kid does not need to learn community groups. The other prerequisites are direct, point backward only, and match their expectations. The titles and descriptions read clearly aloud. Two links were judged acceptable but worth knowing: g2-soc-cardinal-directions uses g1-soc-map-elements (which includes map directions), and g2-soc-heritage-family uses g2-soc-celebrations (family celebrations are a close parallel to community ones)."
+  }
+}

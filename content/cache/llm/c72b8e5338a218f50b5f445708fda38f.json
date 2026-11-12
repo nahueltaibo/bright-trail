@@ -1,0 +1,29 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g3-sci-plant-adapt",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g3-sci-plant-needs",
+          "g1-sci-living-adapt",
+          "g2-sci-animal-adaptations"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "Plant adaptation builds on the grade 2 idea that body parts and behaviours help living things survive where they live (g2-sci-animal-adaptations). That same habitat-fit idea is missing here, so it is added as a prerequisite. None of the other listed prerequisites depend on it, so there is no redundancy."
+      },
+      {
+        "skillId": "g3-sci-force-ways",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-sci-how-things-move"],
+        "title": "",
+        "description": "",
+        "reason": "Naming the ways a force can be applied (push, pull, twist, stretch, squeeze, hit) depends on the grade 2 ideas of pushing, pulling and lifting (g2-sci-how-things-move). It does not depend on sorting forces into contact and non-contact (g3-sci-force-types), which is a separate classification (C2.1). A kid can learn the ways of applying a force without it, so g3-sci-force-types is removed and the grade 2 prerequisite is listed directly."
+      }
+    ],
+    "notes": "Reviewed all 27 proposed Grade 3 skills against the rules: needed, direct, no redundant prerequisites, no later-grade or self references, and no missing grade-before ideas. Prerequisites that point within Grade 3 (plant-parts, plant-needs, structure-def, soil-parts and others) form a valid acyclic order. Only two skills needed correction. Other skills were checked and left as they are, including g3-sci-plants-animals-depend, which does not need g3-sci-plant-parts added because g3-sci-photosynthesis already depends on it. Titles and descriptions match their expectations and read aloud clearly, so no wording changes were made."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g6-sci-four-forces",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g6-sci-air-flight", "g3-sci-force-effects", "g3-sci-force-types"],
+        "title": "",
+        "description": "",
+        "reason": "Weight is the pull of gravity, a non-contact force. A kid can't match weight to its downward direction without knowing gravity is a force, which is taught in g3-sci-force-types. g3-sci-force-effects does not depend on that skill, so it is a missing prerequisite rather than a redundant one."
+      },
+      {
+        "skillId": "g6-sci-mass-weight",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g5-sci-matter-def", "g3-sci-force-types"],
+        "title": "",
+        "description": "",
+        "reason": "The skill defines weight as how hard gravity pulls on something. Telling mass and weight apart requires knowing that gravity is a force, which is taught in g3-sci-force-types. That prerequisite is not covered by g5-sci-matter-def, so it is missing."
+      }
+    ],
+    "notes": "Reviewed all 34 proposed Grade 6 skills (B, C, D, E strands). Every prerequisite id exists, none points to a later grade or to the skill itself, and none is redundant with another listed prerequisite. Two skills, g6-sci-four-forces and g6-sci-mass-weight, are missing g3-sci-force-types, the gravity/non-contact force concept that weight depends on. Other possible gaps were judged too weak to correct, for example whether g6-sci-biodiversity-benefits needs g3-sci-plant-uses for the medicine example. Titles and descriptions read clearly for a kid hearing them aloud."
+  }
+}

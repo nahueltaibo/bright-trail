@@ -1,0 +1,166 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g3-soc-indigenous-places",
+        "title": "Indigenous Communities on the Map",
+        "description": "Long ago, First Nations and Métis communities lived in many places in Upper and Lower Canada, and some had to move. Find where they lived on a map.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g1-soc-territory", "g2-soc-cardinal-directions"]
+      },
+      {
+        "id": "g3-soc-settler-places",
+        "title": "Settler Communities on the Map",
+        "description": "Different settlers, like the French, Scots, Loyalists, and Black settlers, made new communities. Find where each group lived on a map.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g2-soc-cardinal-directions", "g2-soc-community-groups"]
+      },
+      {
+        "id": "g3-soc-settlement-factors",
+        "title": "Why Settlements Grew Where They Did",
+        "description": "Rivers, good soil, trade, mills, and roads helped towns and villages grow. Match each thing to how it helped a community.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g3-soc-indigenous-places", "g2-soc-adapting-environment"]
+      },
+      {
+        "id": "g3-soc-early-challenges",
+        "title": "Challenges for Early Communities",
+        "description": "Long ago, communities faced hard things like harsh weather, sickness, wars, and being far from others. Match each challenge to the community it hurt.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g3-soc-settlement-factors"]
+      },
+      {
+        "id": "g3-soc-settlement-impact",
+        "title": "How Settlements Changed the Land",
+        "description": "Trading posts, farms, and towns changed nature and the communities already there. Pick the changes each kind of settlement caused.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g3-soc-settlement-factors", "g2-soc-sustainability"]
+      },
+      {
+        "id": "g3-soc-daily-life-then",
+        "title": "Daily Life Long Ago",
+        "description": "Long ago, people ate, dressed, lived, and worked in different ways, and men, women, and children had different jobs. Match each way of life to its community.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g3-soc-indigenous-places", "g3-soc-settler-places"]
+      },
+      {
+        "id": "g3-soc-treaties",
+        "title": "Treaties and Wampum Belts",
+        "description": "Treaties and wampum belts, like the Two Row Wampum, were agreements between peoples. Match each agreement to who made it and what changed.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g3-soc-indigenous-places"]
+      },
+      {
+        "id": "g3-soc-conflict-cooperation",
+        "title": "Working Together or Clashing",
+        "description": "Communities sometimes shared medicines, farms, and families, and sometimes fought over land. Sort examples into cooperation or conflict.",
+        "expectationCodes": ["A3.8"],
+        "prerequisiteIds": ["g3-soc-daily-life-then", "g3-soc-treaties"]
+      },
+      {
+        "id": "g3-soc-life-compare-groups",
+        "title": "Comparing Ways of Life Long Ago",
+        "description": "Between 1780 and 1850, groups had homes, clothes, food, work, and play that were alike and different. Sort what is the same and what is different.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g3-soc-daily-life-then", "g2-soc-compare-communities"]
+      },
+      {
+        "id": "g3-soc-colonial-policies",
+        "title": "Life Before and After Colonial Policies",
+        "description": "First Nations, Métis, and Inuit communities lived on and learned from the land, until policies like residential schools took away children, land, and decisions. Match each change to what was lost.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g3-soc-treaties", "g2-soc-reclaiming-traditions"]
+      },
+      {
+        "id": "g3-soc-roles-then-now",
+        "title": "Roles and Challenges Then and Now",
+        "description": "The jobs people do and the problems they face are different today than long ago. Match each role or challenge to then or now.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g3-soc-life-compare-groups", "g3-soc-early-challenges"]
+      },
+      {
+        "id": "g3-soc-canadian-identity",
+        "title": "Identity in Canada Today",
+        "description": "Canada's identity includes two official languages, many cultures, and First Nations, Métis, and Inuit peoples. Match things like the canoe, lacrosse, and place names to the communities that gave them.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g3-soc-colonial-policies", "g3-soc-treaties"]
+      },
+      {
+        "id": "g3-soc-local-government",
+        "title": "Local Governments in Ontario",
+        "description": "Ontario has cities, towns, townships, First Nations, and Métis regions, each with leaders who run local services. Match each place to its kind of government.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g1-soc-gov-services"]
+      },
+      {
+        "id": "g3-soc-political-map-type",
+        "title": "Letter Styles on Political Maps",
+        "description": "On a map, countries, provinces, and cities are written in different letter styles. Pick which style shows which kind of place.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": ["g2-soc-globe-maps"]
+      },
+      {
+        "id": "g3-soc-landform-regions",
+        "title": "Ontario's Landform Regions",
+        "description": "Ontario has the Canadian Shield, the Great Lakes–St. Lawrence Lowlands, and the Hudson Bay Lowlands. Match each region to what it looks like.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g2-soc-photo-map-info"]
+      },
+      {
+        "id": "g3-soc-land-use-types",
+        "title": "Types of Land Use",
+        "description": "Land is used for farms, factories, stores, homes, play, roads, and protecting nature. Match each use to the need or want it meets.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g1-soc-community-areas", "g2-soc-basic-needs"]
+      },
+      {
+        "id": "g3-soc-environment-land-use",
+        "title": "Nature Shapes Land Use",
+        "description": "Ports grow by lakes, farms on flat rich soil, and resource towns near trees or ore. Match each natural feature to the land use or community it leads to.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g3-soc-landform-regions", "g3-soc-land-use-types"]
+      },
+      {
+        "id": "g3-soc-employment-types",
+        "title": "Jobs in Ontario Places",
+        "description": "People work in resource jobs, factories, tourism, schools, the arts, government, and caring for land. Match each job to its type in Ontario places.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g1-soc-services-jobs", "g3-soc-local-government"]
+      },
+      {
+        "id": "g3-soc-environment-jobs",
+        "title": "Nature and Available Jobs",
+        "description": "Lakes bring tourism jobs, forests bring paper jobs, and waterfalls bring visitor jobs. Match each natural feature to jobs found there.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g3-soc-employment-types", "g3-soc-environment-land-use"]
+      },
+      {
+        "id": "g3-soc-compare-land-use",
+        "title": "Comparing Land Use in Places",
+        "description": "Some places have more roads, parks, farms, or open space than others. Pick which place has more or less of each.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g3-soc-land-use-types"]
+      },
+      {
+        "id": "g3-soc-population-patterns",
+        "title": "Where People and Land Uses Cluster",
+        "description": "Maps show where many people live and how land is used. Read maps to pick patterns, like stores in busy areas and farms in open areas.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g3-soc-compare-land-use", "g3-soc-political-map-type"]
+      },
+      {
+        "id": "g3-soc-make-ontario-maps",
+        "title": "Making Ontario Maps",
+        "description": "A good map of Ontario has a title, legend, directions, and a scale in kilometres. Choose the right parts to show land uses, landforms, or communities.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": [
+          "g3-soc-political-map-type",
+          "g3-soc-landform-regions",
+          "g1-soc-build-maps"
+        ]
+      }
+    ]
+  }
+}

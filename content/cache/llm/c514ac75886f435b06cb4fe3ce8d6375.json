@@ -1,0 +1,73 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g5-soc-indigenous-nations",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-daily-life"],
+        "title": "",
+        "description": "",
+        "reason": "g4-soc-daily-life already depends on g4-soc-early-societies-map, so listing the map directly is redundant. The daily-life skill covers how each nation lived, and the map's where-they-lived content is reached through it."
+      },
+      {
+        "skillId": "g5-soc-first-nations-interactions",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g5-soc-indigenous-nations", "g3-soc-conflict-cooperation"],
+        "title": "",
+        "description": "",
+        "reason": "The skill is about sorting pre-contact examples into cooperation or competition. The Grade 3 skill g3-soc-conflict-cooperation teaches that same sort, so it is the needed prerequisite from the grade before. g3-soc-treaties is dropped because the description does not involve treaties, and g3-soc-conflict-cooperation already depends on it, making it redundant."
+      },
+      {
+        "skillId": "g5-soc-european-conflicts",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g5-soc-contact-interactions"],
+        "title": "",
+        "description": "",
+        "reason": "g5-soc-contact-interactions already depends on g5-soc-european-motives, which depends on g4-soc-coop-conflict-reasons. The Grade 4 prerequisite is therefore already covered and should not be listed directly."
+      },
+      {
+        "skillId": "g5-soc-compare-communities",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g5-soc-indigenous-nations",
+          "g5-soc-new-france",
+          "g4-soc-compare-organization"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The skill compares how Indigenous and European communities were governed, used land, and shared work. g4-soc-compare-organization is the Grade 4 skill for sorting how societies were organized, which is the same comparison skill from the grade before. It was missing."
+      },
+      {
+        "skillId": "g5-soc-past-present-issues",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g5-soc-contact-consequences",
+          "g3-soc-treaties",
+          "g4-soc-environment-compare"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The description includes caring for the land, which is a stewardship idea. g4-soc-environment-compare teaches how land and nature were cared for then and now, and it was missing from the list."
+      },
+      {
+        "skillId": "g5-soc-govt-levels",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-political-regions"],
+        "title": "",
+        "description": "",
+        "reason": "g4-soc-political-regions already depends on g3-soc-local-government, so listing it directly is redundant. g4-soc-political-regions covers municipalities and First Nations lands, which are the local levels this skill needs."
+      },
+      {
+        "skillId": "g5-soc-assess-government",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g5-soc-perspectives"],
+        "title": "",
+        "description": "",
+        "reason": "g5-soc-perspectives already depends on g5-soc-govt-actions, so listing govt-actions directly is redundant. The perspectives skill is the one that is needed for judging whether an action worked."
+      }
+    ],
+    "notes": "The skills that were not changed (citizen-rights, public-input, duty-consult, indigenous-governance, shared-responsibility, perspectives, citizen-action, plans-action, contact-consequences, mutual-benefits, metis-ethnogenesis, european-motives, new-france) all have needed, direct, earlier-grade prerequisites. For the corrections, I applied the redundancy rule to transitive dependencies, so a listed prerequisite that is already reached through another listed prerequisite was removed. Titles and descriptions read clearly, so no wording changes were made."
+  }
+}

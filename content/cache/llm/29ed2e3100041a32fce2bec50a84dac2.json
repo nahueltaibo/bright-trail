@@ -1,0 +1,155 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g2-soc-family-types",
+        "title": "Different Types of Families",
+        "description": "Families come in many kinds, like one parent, two parents, blended, foster, or many generations living together. Match each family to its type.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g1-soc-my-roles"]
+      },
+      {
+        "id": "g2-soc-family-compare",
+        "title": "Comparing Families and Traditions",
+        "description": "Families can be alike and different in who is in them, the foods they eat, and the celebrations they have. Sort what is the same and what is different.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g2-soc-family-types", "g1-soc-compare-events"]
+      },
+      {
+        "id": "g2-soc-family-tradition-change",
+        "title": "Family Traditions Over Time",
+        "description": "Traditions can stay the same or change as families grow. Pick reasons why, like moving to Canada or new technology.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g2-soc-family-compare"]
+      },
+      {
+        "id": "g2-soc-community-groups",
+        "title": "Groups in Our Community",
+        "description": "Our community has many groups, like different cultures, religions, and First Nations, Métis, and Inuit people. Match each group to ways our community shows this, like foods, music, and languages.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g1-soc-compare-events"]
+      },
+      {
+        "id": "g2-soc-celebrations",
+        "title": "Traditions and Celebrations",
+        "description": "Families and communities celebrate days like Diwali, Eid al-Fitr, Canada Day, and Remembrance Day. Match each celebration to who celebrates it and why.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g2-soc-community-groups"]
+      },
+      {
+        "id": "g2-soc-chronology",
+        "title": "Family Events in Order",
+        "description": "Family events like births, moves, and weddings happen across many generations. Put them in order on a timeline or family tree.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g1-soc-events-order"]
+      },
+      {
+        "id": "g2-soc-heritage-community",
+        "title": "Heritage in Community Events",
+        "description": "Festivals and community events pass on heritage through food, clothing, music, dance, and stories. Pick how each event shares its heritage.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g2-soc-celebrations"]
+      },
+      {
+        "id": "g2-soc-heritage-family",
+        "title": "Heritage in Family Practices",
+        "description": "Families pass on heritage through special meals, ceremonies, and growing-up traditions, including First Nations, Métis, and Inuit ones. Match each practice to how it shares heritage.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g2-soc-celebrations", "g2-soc-family-tradition-change"]
+      },
+      {
+        "id": "g2-soc-past-present-traditions",
+        "title": "Past and Present Traditions",
+        "description": "Some traditions in our community were once outlawed or given up, and some have changed. Pick how past and present traditions differ and why.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g2-soc-family-tradition-change", "g2-soc-community-groups"]
+      },
+      {
+        "id": "g2-soc-reclaiming-traditions",
+        "title": "Bringing Traditions Back",
+        "description": "Settlement and residential schools banned many First Nations, Métis, and Inuit traditions. Pick the ways people are bringing back songs, dances, ceremonies, and clothing.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g2-soc-past-present-traditions", "g1-soc-reclaiming-identity"]
+      },
+      {
+        "id": "g2-soc-globe-maps",
+        "title": "Globes and World Maps",
+        "description": "The world can be shown on a globe or on print and digital maps. Pick what countries, continents, and water look like on each.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g1-soc-map-elements"]
+      },
+      {
+        "id": "g2-soc-continents-oceans",
+        "title": "Continents, Oceans, Equator, Poles",
+        "description": "Label the seven continents, the oceans, the equator, the poles, and the hemispheres on a globe or map.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": ["g2-soc-globe-maps"]
+      },
+      {
+        "id": "g2-soc-cardinal-directions",
+        "title": "North, South, East, West",
+        "description": "Maps use N, S, E, and W to show direction. Pick where a place is from another place using these directions.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g1-soc-map-elements"]
+      },
+      {
+        "id": "g2-soc-special-places",
+        "title": "Places That Matter to Families",
+        "description": "Families have special places or countries, like where they came from. Find these places on a globe or map.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g2-soc-continents-oceans"]
+      },
+      {
+        "id": "g2-soc-location-climate",
+        "title": "Where a Place Is and Its Climate",
+        "description": "Places near the equator are warmer, and places farther north are colder. Match places, including a First Nation, Métis, or Inuit community, to their climate.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g2-soc-continents-oceans", "g2-soc-cardinal-directions"]
+      },
+      {
+        "id": "g2-soc-photo-map-info",
+        "title": "Reading Photos and Maps",
+        "description": "Photos and maps give clues about a place, like how warm it is and what the land looks like. Pick the facts you can tell from them.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g2-soc-location-climate"]
+      },
+      {
+        "id": "g2-soc-basic-needs",
+        "title": "Basic Human Needs",
+        "description": "People everywhere need food, water, clothing, shelter, and transportation. Match each need to the different ways people around the world meet it.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g1-soc-meeting-needs"]
+      },
+      {
+        "id": "g2-soc-community-profiles",
+        "title": "Communities Around the World",
+        "description": "Communities around the world have different land, animals, houses, and culture, including a First Nation, Métis, or Inuit community. Match each community to what it is like.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g2-soc-location-climate", "g2-soc-basic-needs"]
+      },
+      {
+        "id": "g2-soc-compare-communities",
+        "title": "Comparing Communities",
+        "description": "Our community and ones far away can be alike or different in homes, food, clothes, and fun. Sort what is the same and what is different.",
+        "expectationCodes": ["B1.1", "B3.8"],
+        "prerequisiteIds": ["g2-soc-community-profiles"]
+      },
+      {
+        "id": "g2-soc-adapting-environment",
+        "title": "Adapting to Climate and Land",
+        "description": "People change how they live to fit the weather and land where they are. Match each place to the clothes, homes, or schedules that fit it.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g2-soc-compare-communities", "g2-soc-photo-map-info"]
+      },
+      {
+        "id": "g2-soc-sustainability",
+        "title": "Using Nature Carefully",
+        "description": "If people use water, soil, and animals carefully, there is enough for the future. Pick what happens when people use them wisely and when they do not.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g2-soc-adapting-environment", "g1-soc-care-plan"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g5-soc-indigenous-nations",
+        "title": "Indigenous Nations Before 1713",
+        "description": "Many Indigenous nations, like the Wendat, Mi'kmaq, Cree, and Inuit, met Europeans long ago. Match each nation to where it lived and how it lived.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g4-soc-early-societies-map", "g4-soc-daily-life"]
+      },
+      {
+        "id": "g5-soc-first-nations-interactions",
+        "title": "First Nations Before Europeans Came",
+        "description": "Before Europeans arrived, First Nations and Inuit traded, made alliances, and sometimes competed for waterways. Sort examples into working together or competing.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g5-soc-indigenous-nations", "g3-soc-treaties"]
+      },
+      {
+        "id": "g5-soc-european-motives",
+        "title": "Why Europeans Came",
+        "description": "Explorers like Cabot, Cartier, and Champlain came for fur, fish, land, and to spread their religion. Match each person or group to why they came.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g4-soc-coop-conflict-reasons"]
+      },
+      {
+        "id": "g5-soc-new-france",
+        "title": "Who Mattered in New France",
+        "description": "New France had a king, a governor, a bishop, an intendant, priests, nuns, and the seigneurial system. Match each one to what it did for settlers.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g5-soc-european-motives", "g4-soc-governance"]
+      },
+      {
+        "id": "g5-soc-contact-interactions",
+        "title": "Meeting of Peoples",
+        "description": "Indigenous peoples and Europeans traded, shared skills, made alliances, and sometimes fought. Match each kind of interaction to an example.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g5-soc-indigenous-nations", "g5-soc-european-motives"]
+      },
+      {
+        "id": "g5-soc-metis-ethnogenesis",
+        "title": "How the Métis People Began",
+        "description": "The Métis people grew from fur traders and First Nations families in places like the Great Lakes and Mattawa. Pick the reasons that led to this.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g5-soc-contact-interactions"]
+      },
+      {
+        "id": "g5-soc-compare-communities",
+        "title": "Indigenous and European Differences",
+        "description": "Indigenous and European communities differed in how they were governed, used land, and shared work. Match each difference to its reason.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g5-soc-indigenous-nations", "g5-soc-new-france"]
+      },
+      {
+        "id": "g5-soc-european-conflicts",
+        "title": "European Wars and Indigenous Peoples",
+        "description": "When France and Britain fought, First Nations were pulled in and control of places like Acadia changed. Match each conflict to its effects.",
+        "expectationCodes": ["A3.8"],
+        "prerequisiteIds": ["g5-soc-contact-interactions", "g4-soc-coop-conflict-reasons"]
+      },
+      {
+        "id": "g5-soc-contact-consequences",
+        "title": "Good and Bad Results of Contact",
+        "description": "Contact brought alliances and new ideas, but also sickness, lost land, and alcohol. Sort the results into positive or negative.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g5-soc-contact-interactions"]
+      },
+      {
+        "id": "g5-soc-mutual-benefits",
+        "title": "Who Gained From Whom",
+        "description": "Europeans gained knowledge of the land, food, and trade routes, while First Nations gained new tools and materials. Match each gain to who got it.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g5-soc-contact-interactions"]
+      },
+      {
+        "id": "g5-soc-past-present-issues",
+        "title": "Early Contact and Canada Today",
+        "description": "Long-ago events link to today's land claims, treaty rights, and caring for the land. Match each past event to the issue it connects to.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g5-soc-contact-consequences", "g3-soc-treaties"]
+      },
+      {
+        "id": "g5-soc-citizen-rights",
+        "title": "Rights and Duties of Citizens",
+        "description": "Canadians have rights like voting and free speech, and duties like respecting others. Sort each one into a right or a responsibility.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g1-soc-respect-people-earth"]
+      },
+      {
+        "id": "g5-soc-govt-levels",
+        "title": "Levels of Government",
+        "description": "Federal, provincial, territorial, and municipal governments, band councils, and school boards each run different services. Match each to what it looks after.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": ["g3-soc-local-government", "g4-soc-political-regions"]
+      },
+      {
+        "id": "g5-soc-indigenous-governance",
+        "title": "Indigenous Governments Today",
+        "description": "First Nations, Métis, and Inuit have their own groups, like the Métis Nation of Ontario and the Haudenosaunee Confederacy. Match each group to who it speaks for.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g5-soc-govt-levels"]
+      },
+      {
+        "id": "g5-soc-shared-responsibility",
+        "title": "Governments Sharing the Job",
+        "description": "Some services, like health care and transportation, are shared by several levels of government. Match each job to the governments that share it.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g5-soc-govt-levels"]
+      },
+      {
+        "id": "g5-soc-public-input",
+        "title": "How Governments Ask the Public",
+        "description": "Governments ask people what they think through elections, town halls, and public hearings. Match each way to how it works and why asking matters.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g5-soc-govt-levels", "g5-soc-citizen-rights"]
+      },
+      {
+        "id": "g5-soc-duty-consult",
+        "title": "Duty to Consult Indigenous Peoples",
+        "description": "Governments must talk with First Nations, Métis, and Inuit before projects like pipelines or mines affect their land. Pick the times this duty applies.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g5-soc-indigenous-governance", "g5-soc-public-input"]
+      },
+      {
+        "id": "g5-soc-govt-actions",
+        "title": "What Governments Do About Problems",
+        "description": "Governments make laws and programs, like recycling programs and language projects, to fix problems. Match each action to the problem it solves.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g5-soc-shared-responsibility", "g4-soc-sustainable-actions"]
+      },
+      {
+        "id": "g5-soc-perspectives",
+        "title": "Why Views on Issues Differ",
+        "description": "Farmers, companies, governments, and environmentalists can see the same issue differently. Match each group to its likely view and why.",
+        "expectationCodes": ["B3.8"],
+        "prerequisiteIds": ["g5-soc-govt-actions"]
+      },
+      {
+        "id": "g5-soc-citizen-action",
+        "title": "How Citizens Take Action",
+        "description": "People can sign petitions, vote, volunteer, write letters, or boycott to help fix problems. Pick the action that fits each situation.",
+        "expectationCodes": ["B3.9"],
+        "prerequisiteIds": ["g5-soc-public-input"]
+      },
+      {
+        "id": "g5-soc-assess-government",
+        "title": "Did the Government Action Work?",
+        "description": "We can judge whether a government action helped solve a problem, like clean water or housing. Pick the signs that show it worked or did not.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g5-soc-govt-actions", "g5-soc-perspectives"]
+      },
+      {
+        "id": "g5-soc-plans-action",
+        "title": "Plans to Fix Problems",
+        "description": "A good plan for a social or environmental problem says what governments will do and what citizens will do. Sort the steps into government jobs and citizen jobs.",
+        "expectationCodes": ["B1.2", "B1.3"],
+        "prerequisiteIds": ["g5-soc-citizen-action", "g5-soc-govt-actions"]
+      }
+    ]
+  }
+}

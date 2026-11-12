@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g6-hlth-drug-choices",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g5-hlth-refusal-pressure",
+          "g5-hlth-alcohol-cannabis-factors",
+          "g4-hlth-safe-decisions"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The description asks kids to use decision steps to pick safe choices, but no listed prerequisite teaches those steps. g4-hlth-safe-decisions is the direct source of the decision process, and no other listed prerequisite depends on it, so it is a needed, direct addition."
+      }
+    ],
+    "notes": "Reviewed all ten Grade 6 skills. Only g6-hlth-drug-choices is missing a direct prerequisite (g4-hlth-safe-decisions for the decision steps). The other skills' prerequisites are real and direct, or their needed earlier ideas (for example g1-hlth-body-cues, g1-hlth-thoughts-feelings, g2-hlth-food-allergies, g3-hlth-cultural-foods) are already reached through listed prerequisites, so adding them would break the directness rule. Titles and descriptions are clear and read-aloud friendly, and no prerequisite points to a later grade or to the skill itself."
+  }
+}

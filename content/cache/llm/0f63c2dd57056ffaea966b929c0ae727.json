@@ -1,0 +1,78 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g6-hlth-inclusion",
+        "title": "Including and Respecting Everyone",
+        "description": "Being inclusive, respectful, and accepting helps everyone, including you. Pick actions that make others feel welcome and tell how they help.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g5-hlth-actions-feelings"]
+      },
+      {
+        "id": "g6-hlth-drug-effects",
+        "title": "Effects of Drugs and Substances",
+        "description": "Cannabis, opioids, other drugs, and things like glue or gas can harm the body and mind in many ways. Match each kind of substance to its effects.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g5-hlth-alcohol-effects"]
+      },
+      {
+        "id": "g6-hlth-support-services",
+        "title": "Finding Mental Health Support",
+        "description": "Many people and places can help with mental health or substance use, like counsellors, help lines, and public health units. Pick who can help and how to reach them.",
+        "expectationCodes": ["D1.4"],
+        "prerequisiteIds": ["g5-hlth-trusted-help"]
+      },
+      {
+        "id": "g6-hlth-thoughts-mental-health",
+        "title": "Thoughts, Feelings, and Actions Link",
+        "description": "Your thoughts, feelings, and actions are all connected. Positive thinking can help your mind, and negative thinking can hurt it.",
+        "expectationCodes": ["D1.5"],
+        "prerequisiteIds": ["g4-hlth-mental-health-choices"]
+      },
+      {
+        "id": "g6-hlth-eating-factors",
+        "title": "What Shapes Our Food Choices",
+        "description": "Allergies, likes, stress, cost, culture, media, and the Earth can all change what we eat. Match each factor to how it affects healthy eating choices.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g5-hlth-food-marketing", "g4-hlth-healthy-eating-places"]
+      },
+      {
+        "id": "g6-hlth-hunger-factors",
+        "title": "Hunger Cues and Growing Bodies",
+        "description": "Growth spurts, being active, and big portions change how hungry or thirsty you feel. Match each one to how it changes what your body needs.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g4-hlth-eating-goals"]
+      },
+      {
+        "id": "g6-hlth-conflict-skills",
+        "title": "Getting Along and Solving Conflict",
+        "description": "Listening, speaking up kindly, and calming your anger help you avoid or handle conflict, in person or online. Pick the best skill for each situation.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g5-hlth-actions-feelings", "g4-hlth-manage-stress"]
+      },
+      {
+        "id": "g6-hlth-drug-choices",
+        "title": "Making Safe Choices About Drugs",
+        "description": "Values, friends, media, curiosity, laws, and beliefs all shape choices about alcohol, tobacco, cannabis, and vaping. Use decision steps to pick safe choices, including saying no.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g5-hlth-refusal-pressure", "g5-hlth-alcohol-cannabis-factors"]
+      },
+      {
+        "id": "g6-hlth-eating-active-living",
+        "title": "Healthy Eating and Active Living",
+        "description": "Eating well and being active work together to give you energy, a strong body, and a good mood. Match the benefits to each and pick ways to encourage others.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g4-hlth-healthy-eating-places", "g4-hlth-mental-health-choices"]
+      },
+      {
+        "id": "g6-hlth-caring-safety",
+        "title": "Staying Safe When Caring for Others",
+        "description": "Babysitting, staying home alone, cooking, and caring for pets have risks. Pick safe practices and what to do in emergencies like fires, allergic reactions, or hurt people.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g5-hlth-threat-strategies", "g3-hlth-safety-guidelines"]
+      }
+    ]
+  }
+}

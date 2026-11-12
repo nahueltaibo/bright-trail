@@ -1,0 +1,78 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g5-hlth-trusted-help",
+        "title": "Trusted People and Support Services",
+        "description": "Know which trusted people and help services, like Kids Help Phone and 9-1-1, can help with emergencies, bullying, and feeling very upset. Pick who to go to for each problem.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g4-hlth-bullying-abuse", "g4-hlth-mental-health-choices"]
+      },
+      {
+        "id": "g5-hlth-alcohol-effects",
+        "title": "Alcohol's Effects and Intoxication",
+        "description": "Alcohol can hurt your body and mind right away and later in life. Learn what changes how strongly alcohol affects someone, like amount, speed, body size, and mixing with other drugs.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g4-hlth-smoke-effects"]
+      },
+      {
+        "id": "g5-hlth-food-labels",
+        "title": "Reading Food Labels",
+        "description": "Nutrition fact tables and ingredient lists tell you what is in a food. Use them to pick foods that are healthy and safe, including for allergies.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g4-hlth-nutrients", "g4-hlth-eating-goals"]
+      },
+      {
+        "id": "g5-hlth-threat-strategies",
+        "title": "Handling Threatening Situations",
+        "description": "When a situation feels unsafe, you can stay calm, notice your surroundings and body language, make a plan, and get help. Pick the smart steps to stay safe.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g4-hlth-safe-decisions", "g5-hlth-trusted-help"]
+      },
+      {
+        "id": "g5-hlth-refusal-pressure",
+        "title": "Saying No to Risky Pressure",
+        "description": "Friends or media may push you toward alcohol, smoking, vaping, gambling, or too much gaming. Pick strong ways to say no and make a smart choice.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g4-hlth-refusing-smoking", "g5-hlth-alcohol-effects"]
+      },
+      {
+        "id": "g5-hlth-helping-others",
+        "title": "Helping Friends With Mental Health",
+        "description": "You can listen, be kind, and tell a trusted adult when a friend needs support. Know what you can do and what is a job for adults.",
+        "expectationCodes": ["D2.6"],
+        "prerequisiteIds": ["g5-hlth-trusted-help"]
+      },
+      {
+        "id": "g5-hlth-food-marketing",
+        "title": "Ads and Food Choices",
+        "description": "Ads, packaging, celebrity posts, and unrealistic body images can change what we want to eat. Pick ways to check if a claim is true and make healthier choices.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g5-hlth-food-labels"]
+      },
+      {
+        "id": "g5-hlth-actions-feelings",
+        "title": "How Our Actions Affect Others",
+        "description": "Hurtful actions like name calling, excluding, or cyberbullying hurt feelings and reputations. Kind actions like including and supporting help. Match actions to their effects.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g4-hlth-bullying-abuse"]
+      },
+      {
+        "id": "g5-hlth-alcohol-cannabis-factors",
+        "title": "What Shapes Choices About Alcohol",
+        "description": "Feelings, family, culture, laws, media, and friends can all affect whether someone drinks alcohol or uses cannabis. These factors can change at different ages.",
+        "expectationCodes": ["D3.3"],
+        "prerequisiteIds": ["g5-hlth-alcohol-effects"]
+      },
+      {
+        "id": "g5-hlth-mental-stigma",
+        "title": "Attitudes and Mental Health Stigma",
+        "description": "What we say and think about mental health can make others feel safe or ashamed. Tell attitudes that create stigma from ones that prevent it.",
+        "expectationCodes": ["D3.4"],
+        "prerequisiteIds": ["g5-hlth-helping-others", "g5-hlth-actions-feelings"]
+      }
+    ]
+  }
+}

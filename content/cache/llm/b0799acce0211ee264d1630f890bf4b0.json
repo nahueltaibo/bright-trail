@@ -1,0 +1,155 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g1-soc-my-roles",
+        "title": "My Roles and Responsibilities",
+        "description": "You can be a student, a friend, a family member, and a pet owner. Pick the jobs and responsibilities that go with each of your roles.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-roles-change",
+        "title": "How Roles Change",
+        "description": "Your roles can change in different places and as you get older. Match what people do at home, at school, and at work.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g1-soc-my-roles"]
+      },
+      {
+        "id": "g1-soc-big-events",
+        "title": "Big Events Change Roles",
+        "description": "Starting school, a new baby, or a family tradition can change what you do. Match each event to how a role or responsibility changes.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g1-soc-my-roles"]
+      },
+      {
+        "id": "g1-soc-compare-events",
+        "title": "Comparing Life Events",
+        "description": "Kids and families have some of the same events and some different ones. Sort events into ones that are alike and ones that are different.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g1-soc-big-events"]
+      },
+      {
+        "id": "g1-soc-events-order",
+        "title": "Putting My Life in Order",
+        "description": "Things happen to you one after another, like crawling, walking, then riding a bike. Put events from your life in the right order.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-impact-on-others",
+        "title": "How We Affect Each Other",
+        "description": "What we do can make others feel happy, sad, proud, or safe. Pick how an action changes the way someone feels about themselves.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-reclaiming-identity",
+        "title": "Reviving Indigenous Identity",
+        "description": "First Nations, Métis, and Inuit people are bringing back languages, ceremonies, and family ties. Pick the ways they do this and why it makes them proud.",
+        "expectationCodes": ["A1.5"],
+        "prerequisiteIds": ["g1-soc-impact-on-others"]
+      },
+      {
+        "id": "g1-soc-important-people-places",
+        "title": "Important People, Places, Things",
+        "description": "Some people, places, and things matter a lot in your life. Match each one to its job or purpose.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g1-soc-my-roles"]
+      },
+      {
+        "id": "g1-soc-kind-behaviour",
+        "title": "Kind and Inclusive Actions",
+        "description": "Sharing, cooperating, being polite, and caring for Elders and nature are good actions. Sort the actions that are kind and welcoming.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g1-soc-impact-on-others"]
+      },
+      {
+        "id": "g1-soc-respect-people-earth",
+        "title": "Respecting People and Earth",
+        "description": "We should treat people and the environment with respect. Pick the ways to show respect, like taking turns or saving water.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g1-soc-kind-behaviour"]
+      },
+      {
+        "id": "g1-soc-community-features",
+        "title": "Natural and Built Features",
+        "description": "Communities have natural things like rivers and forests, and built things like roads and libraries. Sort them into natural or built.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-community-areas",
+        "title": "Areas in My Community",
+        "description": "Communities have homes areas, shopping areas, busy roads, and natural areas. Match each area to what it looks like.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g1-soc-community-features"]
+      },
+      {
+        "id": "g1-soc-territory",
+        "title": "Land My School Is On",
+        "description": "Every school sits on traditional Indigenous land and treaty territory. Pick the territory your school is on.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-services-jobs",
+        "title": "Community Services and Workers",
+        "description": "Post offices, clinics, and stores have workers who help people. Match each service or job to the need it meets.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-meeting-needs",
+        "title": "How Places Meet Our Needs",
+        "description": "People use nature, buildings, and services to get what they need. Pick what could happen if one of them was missing.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g1-soc-community-features", "g1-soc-services-jobs"]
+      },
+      {
+        "id": "g1-soc-gov-services",
+        "title": "Who Runs Community Services",
+        "description": "The government or community runs services like fire, police, and garbage pickup. Match each service to what people must do to help.",
+        "expectationCodes": ["B3.8"],
+        "prerequisiteIds": ["g1-soc-services-jobs"]
+      },
+      {
+        "id": "g1-soc-care-plan",
+        "title": "Caring for My Community",
+        "description": "We can put garbage in the right bins, plant gardens, and join clean-ups. Pick the actions that help the local environment and how they help.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g1-soc-meeting-needs"]
+      },
+      {
+        "id": "g1-soc-relative-position",
+        "title": "Near, Far, Left, Right",
+        "description": "We describe where places are with words like near, far, left, right, in front, and behind. Pick the words that tell where a place is.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g1-soc-community-features"]
+      },
+      {
+        "id": "g1-soc-map-elements",
+        "title": "Parts of a Map",
+        "description": "Maps have a title, symbols, a legend, directions, and colours. Label the parts of a simple map and tell what they show.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g1-soc-relative-position"]
+      },
+      {
+        "id": "g1-soc-nonstandard-units",
+        "title": "Measuring with Footsteps and Tiles",
+        "description": "We can measure distance with footsteps, tiles, or blocks. Pick which unit fits and which measure is longer.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-build-maps",
+        "title": "Making a Simple Map",
+        "description": "A map uses symbols and units like blocks to show places and distances. Choose the right symbols and put places in the right spots on a map.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g1-soc-map-elements", "g1-soc-nonstandard-units"]
+      }
+    ]
+  }
+}

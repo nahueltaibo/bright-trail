@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g1-sci-compare-objects",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g1-sci-material-sources",
+          "g1-sci-waste-types",
+          "g1-sci-object-purposes"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to compare objects that have the same job. Judging that requires understanding what objects are for (g1-sci-object-purposes), which is not covered by either listed prerequisite. g1-sci-material-sources depends only on g1-sci-objects-materials, and g1-sci-waste-types also depends only on g1-sci-objects-materials, so neither brings in the purpose idea. Adding g1-sci-object-purposes is not redundant because no other listed prerequisite depends on it."
+      }
+    ],
+    "notes": "Reviewed all 33 Grade 1 skills. Prerequisites are all Grade 1, none point to the skill itself, and I found no listed prerequisite that is already implied by another listed prerequisite. The one clear gap is g1-sci-compare-objects, which needs g1-sci-object-purposes. Two borderline cases were left unchanged: g1-sci-season-weather could arguably depend on g1-sci-earth-sun, since the idea of seasons comes from Earth's relationship to the Sun, and g1-sci-humans-respond could arguably depend on g1-sci-sun-light-heat for the daily-change part. I judged the existing prerequisites adequate for both, since g1-sci-cycles covers repeating seasons and daily changes. Titles and descriptions read clearly for listening."
+  }
+}

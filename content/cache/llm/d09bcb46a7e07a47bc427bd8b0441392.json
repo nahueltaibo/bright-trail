@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g2-sci-safety-symbols",
+        "changePrerequisites": true,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "",
+        "reason": "The prerequisite g1-sci-healthy-environment is not needed. Matching a warning symbol (poisonous, flammable, corrosive) to its meaning does not depend on knowing what a healthy place is, so a kid can learn this skill without it. The list should be empty."
+      }
+    ],
+    "notes": "Reviewed all 30 proposed Grade 2 skills against the rules. All prerequisites point to Grade 1 or earlier Grade 2 skills in the same graph, none point to a later grade, and none are self-referential. No listed prerequisite is an ancestor of another listed prerequisite on the same skill, so there are no redundant direct links. Titles and descriptions read clearly aloud and match their expectations. The one correction is g2-sci-safety-symbols, which has a prerequisite a kid does not need. Other links were judged plausible but are not certain, notably g2-sci-animal-adaptations linking to g1-sci-living-adapt (seasonal changes) and g2-sci-air-water-props linking to g1-sci-env-interconnected. I left those unchanged because the link is defensible."
+  }
+}

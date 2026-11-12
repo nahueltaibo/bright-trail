@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g3-hlth-substances",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g1-hlth-healthy-habits"],
+        "title": "",
+        "description": "",
+        "reason": "The skill covers nicotine, caffeine, sugar, and alcohol. It does not involve medicine, so g2-hlth-medicines is not needed directly. Medicine safety is still reached through g2-hlth-medicine-alternatives in g3-hlth-healthy-choices-substances, so removing it does not break the tree. g1-hlth-healthy-habits stays because it covers smoking and vaping, which are direct prerequisites for this skill."
+      }
+    ],
+    "notes": "Reviewed all ten Grade 3 skills. Nine are fine as written: each prerequisite is needed and direct, no prerequisite is redundant with another listed one, nothing points to a later grade or to itself, and the titles and descriptions read well aloud. The one problem is g3-hlth-substances, which lists g2-hlth-medicines even though its content (nicotine, caffeine, sugar, alcohol) does not involve medicine. Its other prerequisite, g1-hlth-healthy-habits, is needed for smoking and vaping."
+  }
+}

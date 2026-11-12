@@ -1,0 +1,25 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g4-hlth-bullying-abuse",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-hlth-consent-standing-up", "g2-hlth-relating-positively"],
+        "title": "",
+        "description": "Bullying and abuse can be social, emotional, physical, verbal, or online. Match each type to how it hurts and to a good way to respond.",
+        "reason": "Recognizing bullying types (name calling, ignoring, hitting) directly builds on g2-hlth-relating-positively, which is missing. g3-hlth-media-violence is not needed to tell bullying types apart, so it is removed. g2-hlth-consent-standing-up stays for the abuse and non-consensual behaviour part of the expectation. The description also mentions abuse, which the expectation and title cover but the old description left out."
+      },
+      {
+        "skillId": "g4-hlth-manage-stress",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-hlth-mental-health-choices"],
+        "title": "",
+        "description": "",
+        "reason": "g4-hlth-mental-health-choices already depends on g3-hlth-strong-feelings, which depends on g3-hlth-stress-response. g3-hlth-stress-response is therefore already covered through another listed prerequisite and should not be listed directly."
+      }
+    ],
+    "notes": "Reviewed all 12 Grade 4 skills. Two corrections: bullying-abuse (swap in the missing direct prerequisite g2-hlth-relating-positively, drop the unneeded media-violence, and mention abuse in the description) and manage-stress (drop stress-response, which is already reached through mental-health-choices). Other prerequisites were judged direct and not redundant. Two weaker cases were left unchanged: g4-hlth-nutrients depends on g3-hlth-food-origins, which a kid could arguably skip, and g4-hlth-eating-goals lists g3-hlth-cultural-foods, which is only loosely needed for setting Food Guide goals. Both are defensible as a progression, so I did not flag them."
+  }
+}

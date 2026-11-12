@@ -1,0 +1,49 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g4-soc-early-societies-map",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-soc-photo-map-info"],
+        "title": "",
+        "description": "",
+        "reason": "g2-soc-photo-map-info already depends on g2-soc-continents-oceans through g2-soc-location-climate, so listing continents-oceans directly is redundant under the direct-prerequisite rule. Keeping only g2-soc-photo-map-info still covers the continent and ocean knowledge transitively."
+      },
+      {
+        "skillId": "g4-soc-young-people",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-group-daily-lives", "g3-soc-life-compare-groups"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to compare young people from different backgrounds (wealthy, poor, slave, and so on), but nothing in the current list teaches those social groups. g4-soc-group-daily-lives covers how different groups in society lived, which is the missing direct prerequisite. g4-soc-daily-life already reaches the kid through g4-soc-group-daily-lives (via g4-soc-compare-organization and g4-soc-social-organization), so it is removed as redundant."
+      },
+      {
+        "skillId": "g4-soc-environment-compare",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-environment-needs", "g4-soc-physical-features"],
+        "title": "",
+        "description": "",
+        "reason": "The skill compares seasonal rhythms and land use, and the seasonal and natural-process knowledge comes from g4-soc-physical-features, which was missing. g2-soc-sustainability is already a dependency of g4-soc-physical-features, so listing it directly is redundant under the direct-prerequisite rule."
+      },
+      {
+        "skillId": "g4-soc-map-directions-grids",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-soc-make-ontario-maps"],
+        "title": "",
+        "description": "",
+        "reason": "g3-soc-make-ontario-maps already depends on g2-soc-cardinal-directions transitively (through g3-soc-landform-regions, g2-soc-photo-map-info, and g2-soc-location-climate), so listing cardinal directions directly is redundant. The map-making skill still covers the direct route to this one."
+      },
+      {
+        "skillId": "g4-soc-sustainable-actions",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-industry-impact", "g2-soc-sustainability"],
+        "title": "",
+        "description": "",
+        "reason": "This skill asks kids to pick responsible resource actions, which is the same idea as the grade 2 skill g2-soc-sustainability (Using Nature Carefully). None of the existing prerequisite chain reaches that skill, so it was missing."
+      }
+    ],
+    "notes": "Reviewed all 15 proposed Grade 4 skills against the prerequisite rules. Five skills need corrections. Several prerequisites were removed because another listed prerequisite already depends on them through the chain; the rule is applied literally. Two skills (g4-soc-young-people and g4-soc-environment-compare) gained a direct prerequisite that the kid needs for the expectation. The g4-soc-sustainable-actions skill was missing the grade 2 sustainability idea. The remaining skills look correct on prerequisites, titles, and descriptions, and their wording suits reading aloud."
+  }
+}

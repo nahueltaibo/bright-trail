@@ -1,0 +1,65 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g4-sci-habitat-needs",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g1-sci-healthy-environment"],
+        "title": "",
+        "description": "",
+        "reason": "g1-sci-basic-needs is already required by g1-sci-healthy-environment, so listing it directly is redundant."
+      },
+      {
+        "skillId": "g4-sci-diets",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g1-sci-food-energy", "g4-sci-food-chain"],
+        "title": "",
+        "description": "",
+        "reason": "g2-sci-animal-traits covers features that stay or change and is not needed to sort animals by diet. Diet categories (herbivore, carnivore, omnivore) build on the consumer roles taught in g4-sci-food-chain."
+      },
+      {
+        "skillId": "g4-sci-structural-adapt",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-sci-habitat-needs", "g3-sci-plant-adapt"],
+        "title": "",
+        "description": "",
+        "reason": "g2-sci-animal-adaptations is already required by g3-sci-plant-adapt, so listing it directly is redundant."
+      },
+      {
+        "skillId": "g4-sci-light-sound-environment",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-sci-material-interact", "g1-sci-env-actions"],
+        "title": "",
+        "description": "",
+        "reason": "Light pollution does not depend on knowing which light sources give off heat, so g4-sci-light-heat is not a needed prerequisite. Artificial light sources are already covered through g4-sci-material-interact."
+      },
+      {
+        "skillId": "g4-sci-mechanism-parts",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-sci-machines-purpose"],
+        "title": "",
+        "description": "",
+        "reason": "g2-sci-simple-machine-types is already required by g4-sci-machines-purpose (through g2-sci-machines-daily-use), so listing it directly is redundant."
+      },
+      {
+        "skillId": "g4-sci-transmit-motion",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-sci-mechanism-parts", "g2-sci-how-things-move"],
+        "title": "",
+        "description": "",
+        "reason": "Passing spinning motion from one part to another needs the idea of spinning objects from g2-sci-how-things-move, which is not covered by the current prerequisites."
+      },
+      {
+        "skillId": "g4-sci-geo-mining-impact",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-sci-rock-uses-fossils", "g1-sci-waste-types"],
+        "title": "",
+        "description": "",
+        "reason": "g4-sci-rock-cycle is already required by g4-sci-rock-uses-fossils (through g4-sci-rock-properties), so listing it directly is redundant. The skill also says recycling products helps, which needs the recycling idea from g1-sci-waste-types, so that prerequisite is added."
+      }
+    ],
+    "notes": "Reviewed all 26 proposed Grade 4 skills against the Grade 1 to 3 prerequisites and the rule against transitively redundant prerequisites. No prerequisite points to a later grade or to the skill itself. Several skills had listed prerequisites already covered by another listed prerequisite. Corrections were made for those, for one prerequisite that is not needed (g4-sci-light-heat), and for two missing ideas (spinning motion and recycling). Titles and descriptions were judged read-aloud friendly and accurate, so none were changed. Skills not listed in corrections were left as they are."
+  }
+}
