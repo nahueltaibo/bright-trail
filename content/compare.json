@@ -1,0 +1,137 @@
+{
+  "g1-compare-order-50-keypad-1": { "kind": "compare", "ask": "greatest", "values": ["6", "11"] },
+  "g1-compare-order-50-keypad-2": { "kind": "compare", "ask": "least", "values": ["41", "36"] },
+  "g1-compare-order-50-keypad-3": {
+    "kind": "compare",
+    "ask": "middle",
+    "values": ["18", "42", "27"]
+  },
+  "g1-compare-order-50-keypad-4": {
+    "kind": "compare",
+    "ask": "least",
+    "values": ["26", "19", "33"]
+  },
+  "g1-compare-order-50-tap-1": { "kind": "compare", "ask": "greatest", "values": ["7", "12"] },
+  "g1-compare-order-50-tap-2": { "kind": "compare", "ask": "least", "values": ["9", "15"] },
+  "g1-compare-order-50-tap-4": { "kind": "compare", "ask": "greatest", "values": ["28", "34"] },
+  "g1-compare-order-50-tap-5": { "kind": "compare", "ask": "least", "values": ["32", "23"] },
+  "g1-compare-order-50-tap-6": { "kind": "compare", "ask": "least", "values": ["25", "38", "14"] },
+  "g1-compare-order-50-tap-7": { "kind": "compare", "ask": "greatest", "values": ["38", "41"] },
+  "g2-compare-order-200-keypad-1": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["94", "149"]
+  },
+  "g2-compare-order-200-keypad-2": {
+    "kind": "compare",
+    "ask": "least",
+    "values": ["163", "136", "183"]
+  },
+  "g2-compare-order-200-keypad-3": {
+    "kind": "compare",
+    "ask": "middle",
+    "values": ["120", "87", "150"]
+  },
+  "g2-compare-order-200-keypad-4": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["175", "157", "171", "177"]
+  },
+  "g2-compare-order-200-tap-1": { "kind": "compare", "ask": "greatest", "values": ["87", "120"] },
+  "g2-compare-order-200-tap-2": { "kind": "compare", "ask": "least", "values": ["150", "105"] },
+  "g2-compare-order-200-tap-3": {
+    "kind": "compare",
+    "ask": "closer",
+    "values": ["100", "200"],
+    "target": "190"
+  },
+  "g2-compare-order-200-tap-4": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["138", "183", "118"]
+  },
+  "g2-compare-order-200-tap-5": {
+    "kind": "compare",
+    "ask": "least",
+    "values": ["150", "115", "105"]
+  },
+  "g3-compare-order-1000-keypad-1": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["275", "90", "410"]
+  },
+  "g3-compare-order-1000-keypad-2": {
+    "kind": "compare",
+    "ask": "middle",
+    "values": ["640", "604", "460"]
+  },
+  "g3-compare-order-1000-tap-1": { "kind": "compare", "ask": "greatest", "values": ["430", "340"] },
+  "g3-compare-order-1000-tap-2": { "kind": "compare", "ask": "least", "values": ["520", "250"] },
+  "g3-compare-order-1000-tap-3": { "kind": "compare", "ask": "greatest", "values": ["583", "538"] },
+  "g3-compare-order-1000-tap-5": {
+    "kind": "compare",
+    "ask": "least",
+    "values": ["705", "750", "570"]
+  },
+  "g3-compare-order-1000-tap-6": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["899", "989", "898", "998"]
+  },
+  "g4-compare-fair-shares-tap-5": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["1/5", "1/10", "1/2", "1/4"]
+  },
+  "g5-compare-order-fractions-tap-1": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["3/8", "5/8"]
+  },
+  "g5-compare-order-fractions-tap-2": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["2/3", "2/6"]
+  },
+  "g5-compare-order-fractions-tap-4": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["3/8", "5/6"]
+  },
+  "g5-compare-order-fractions-tap-5": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["1 1/2", "4/5", "7/4"]
+  },
+  "g5-compare-order-fractions-tap-6": {
+    "kind": "compare",
+    "ask": "least",
+    "values": ["5/2", "9/5", "9/4", "10/6"]
+  },
+  "g5-compare-order-fractions-tap-7": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["7/8", "5/6"]
+  },
+  "g5-decimals-hundredths-tap-2": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["0.6", "0.06"]
+  },
+  "g5-decimals-hundredths-tap-3": {
+    "kind": "compare",
+    "ask": "least",
+    "values": ["2.45", "2.54", "2.4"]
+  },
+  "g5-decimals-hundredths-tap-6": {
+    "kind": "compare",
+    "ask": "greatest",
+    "values": ["3.09", "3.9", "3.19", "3.1"]
+  },
+  "k-compare-numbers-20-tap-1": { "kind": "compare", "ask": "greatest", "values": ["3", "6"] },
+  "k-compare-numbers-20-tap-2": { "kind": "compare", "ask": "least", "values": ["8", "2"] },
+  "k-compare-numbers-20-tap-3": { "kind": "compare", "ask": "greatest", "values": ["12", "9"] },
+  "k-compare-numbers-20-tap-5": { "kind": "compare", "ask": "least", "values": ["16", "14"] },
+  "k-more-less-same-keypad-1": { "kind": "compare", "ask": "greatest", "values": ["4", "9"] },
+  "k-more-less-same-keypad-3": { "kind": "compare", "ask": "least", "values": ["7", "2"] }
+}

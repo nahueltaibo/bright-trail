@@ -1,0 +1,32 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-add-sub-stories-10-tap-4",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["8", "5"],
+        "target": null,
+        "note": "Subtraction: answer is the difference (3), not one of the compared numbers."
+      },
+      {
+        "itemId": "k-add-sub-stories-10-keypad-5",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["9", "4"],
+        "target": null,
+        "note": "Subtraction: answer 5 is the difference, not a listed number."
+      },
+      {
+        "itemId": "k-add-sub-stories-10-tap-6",
+        "fits": false,
+        "ask": "least",
+        "values": ["3", "4", "5", "10"],
+        "target": null,
+        "note": "Subtraction: how many fewer; answer 4 is the difference, scene pick would differ."
+      }
+    ]
+  }
+}

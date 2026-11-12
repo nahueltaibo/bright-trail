@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 3,
   "version": "2026.11.08-53",
   "generatedAt": "2026-11-08T19:50:21Z",
   "skills": [
@@ -4136,7 +4136,8 @@
       "prompt": "4 or 9: more?",
       "why": "9 comes after 4 when we count. So 9 is more than 4.",
       "type": "keypad",
-      "answer": 9
+      "answer": 9,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["4", "9"] }
     },
     {
       "id": "k-more-less-same-number-line-1",
@@ -4252,7 +4253,8 @@
       "prompt": "7 or 2: less?",
       "why": "2 comes before 7 when we count. So 2 is less than 7.",
       "type": "keypad",
-      "answer": 2
+      "answer": 2,
+      "game": { "kind": "compare", "ask": "least", "values": ["7", "2"] }
     },
     {
       "id": "k-more-less-same-tap-6",
@@ -4351,7 +4353,8 @@
         { "id": "a", "kind": "number", "value": 3 },
         { "id": "b", "kind": "number", "value": 6 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3", "6"] }
     },
     {
       "id": "k-compare-numbers-20-keypad-1",
@@ -4401,7 +4404,8 @@
         { "id": "a", "kind": "number", "value": 8 },
         { "id": "b", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["8", "2"] }
     },
     {
       "id": "k-compare-numbers-20-keypad-2",
@@ -4425,7 +4429,8 @@
         { "id": "a", "kind": "number", "value": 12 },
         { "id": "b", "kind": "number", "value": 9 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["12", "9"] }
     },
     {
       "id": "k-compare-numbers-20-keypad-3",
@@ -4499,7 +4504,8 @@
         { "id": "a", "kind": "number", "value": 16 },
         { "id": "b", "kind": "number", "value": 14 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["16", "14"] }
     },
     {
       "id": "k-compare-numbers-20-number-line-3",
@@ -6250,7 +6256,8 @@
         { "id": "a", "kind": "number", "value": 7 },
         { "id": "b", "kind": "number", "value": 12 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["7", "12"] }
     },
     {
       "id": "g1-compare-order-50-tap-2",
@@ -6264,7 +6271,8 @@
         { "id": "a", "kind": "number", "value": 9 },
         { "id": "b", "kind": "number", "value": 15 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "least", "values": ["9", "15"] }
     },
     {
       "id": "g1-compare-order-50-keypad-1",
@@ -6274,7 +6282,8 @@
       "prompt": "6 or 11: greater?",
       "why": "11 comes after 6 when we count. Numbers later in counting are greater. So 11 is greater.",
       "type": "keypad",
-      "answer": 11
+      "answer": 11,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["6", "11"] }
     },
     {
       "id": "g1-compare-order-50-number-line-1",
@@ -6325,7 +6334,8 @@
         { "id": "a", "kind": "number", "value": 28 },
         { "id": "b", "kind": "number", "value": 34 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["28", "34"] }
     },
     {
       "id": "g1-compare-order-50-keypad-2",
@@ -6335,7 +6345,8 @@
       "prompt": "Less: 41 or 36",
       "why": "36 has 3 tens. 41 has 4 tens. Fewer tens means less, so 36.",
       "type": "keypad",
-      "answer": 36
+      "answer": 36,
+      "game": { "kind": "compare", "ask": "least", "values": ["41", "36"] }
     },
     {
       "id": "g1-compare-order-50-number-line-2",
@@ -6362,7 +6373,8 @@
         { "id": "a", "kind": "number", "value": 32 },
         { "id": "b", "kind": "number", "value": 23 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["32", "23"] }
     },
     {
       "id": "g1-compare-order-50-tap-6",
@@ -6377,7 +6389,8 @@
         { "id": "b", "kind": "number", "value": 38 },
         { "id": "c", "kind": "number", "value": 14 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "least", "values": ["25", "38", "14"] }
     },
     {
       "id": "g1-compare-order-50-keypad-3",
@@ -6387,7 +6400,8 @@
       "prompt": "Greatest to least: middle?",
       "why": "The order is 42, 27, 18. The number in the middle is 27.",
       "type": "keypad",
-      "answer": 27
+      "answer": 27,
+      "game": { "kind": "compare", "ask": "middle", "values": ["18", "42", "27"] }
     },
     {
       "id": "g1-compare-order-50-tap-7",
@@ -6401,7 +6415,8 @@
         { "id": "a", "kind": "number", "value": 38 },
         { "id": "b", "kind": "number", "value": 41 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["38", "41"] }
     },
     {
       "id": "g1-compare-order-50-number-line-3",
@@ -6424,7 +6439,8 @@
       "prompt": "Fewest: 26, 19, 33",
       "why": "19 has just 1 ten. 26 and 33 have more tens. So 19 is the least.",
       "type": "keypad",
-      "answer": 19
+      "answer": 19,
+      "game": { "kind": "compare", "ask": "least", "values": ["26", "19", "33"] }
     },
     {
       "id": "g1-compare-order-50-tap-8",
@@ -9152,7 +9168,8 @@
         { "id": "a", "kind": "number", "value": 87 },
         { "id": "b", "kind": "number", "value": 120 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["87", "120"] }
     },
     {
       "id": "g2-compare-order-200-tap-2",
@@ -9166,7 +9183,8 @@
         { "id": "a", "kind": "number", "value": 150 },
         { "id": "b", "kind": "number", "value": 105 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["150", "105"] }
     },
     {
       "id": "g2-compare-order-200-tap-3",
@@ -9180,7 +9198,8 @@
         { "id": "a", "kind": "number", "value": 100 },
         { "id": "b", "kind": "number", "value": 200 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "closer", "values": ["100", "200"], "target": "190" }
     },
     {
       "id": "g2-compare-order-200-keypad-1",
@@ -9190,7 +9209,8 @@
       "prompt": "94 or 149?",
       "why": "149 has 1 hundred. 94 has none. So 149 is the greater number.",
       "type": "keypad",
-      "answer": 149
+      "answer": 149,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["94", "149"] }
     },
     {
       "id": "g2-compare-order-200-number-line-1",
@@ -9218,7 +9238,8 @@
         { "id": "b", "kind": "number", "value": 183 },
         { "id": "c", "kind": "number", "value": 118 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["138", "183", "118"] }
     },
     {
       "id": "g2-compare-order-200-tap-5",
@@ -9233,7 +9254,8 @@
         { "id": "b", "kind": "number", "value": 115 },
         { "id": "c", "kind": "number", "value": 105 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "least", "values": ["150", "115", "105"] }
     },
     {
       "id": "g2-compare-order-200-keypad-2",
@@ -9243,7 +9265,8 @@
       "prompt": "163, 136, 183",
       "why": "All have 1 hundred. 136 has 3 tens. The others have more tens. So 136 is least.",
       "type": "keypad",
-      "answer": 136
+      "answer": 136,
+      "game": { "kind": "compare", "ask": "least", "values": ["163", "136", "183"] }
     },
     {
       "id": "g2-compare-order-200-keypad-3",
@@ -9253,7 +9276,8 @@
       "prompt": "Middle number?",
       "why": "The order is 87, then 120, then 150. The middle number is 120.",
       "type": "keypad",
-      "answer": 120
+      "answer": 120,
+      "game": { "kind": "compare", "ask": "middle", "values": ["120", "87", "150"] }
     },
     {
       "id": "g2-compare-order-200-number-line-2",
@@ -9290,7 +9314,8 @@
       "prompt": "Greatest of four",
       "why": "All have 1 hundred and 7 or 5 tens. Compare the ones in 175, 171, and 177. 177 is greatest.",
       "type": "keypad",
-      "answer": 177
+      "answer": 177,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["175", "157", "171", "177"] }
     },
     {
       "id": "g2-compare-order-200-keypad-5",
@@ -11446,7 +11471,8 @@
         { "id": "a", "kind": "number", "value": 430 },
         { "id": "b", "kind": "number", "value": 340 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["430", "340"] }
     },
     {
       "id": "g3-compare-order-1000-tap-2",
@@ -11460,7 +11486,8 @@
         { "id": "a", "kind": "number", "value": 520 },
         { "id": "b", "kind": "number", "value": 250 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["520", "250"] }
     },
     {
       "id": "g3-compare-order-1000-keypad-1",
@@ -11470,7 +11497,8 @@
       "prompt": "Greatest: 275, 90, 410",
       "why": "410 has 4 hundreds. 275 has 2 hundreds and 90 has none. So 410 is the greatest.",
       "type": "keypad",
-      "answer": 410
+      "answer": 410,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["275", "90", "410"] }
     },
     {
       "id": "g3-compare-order-1000-number-line-1",
@@ -11510,7 +11538,8 @@
         { "id": "a", "kind": "number", "value": 583 },
         { "id": "b", "kind": "number", "value": 538 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["583", "538"] }
     },
     {
       "id": "g3-compare-order-1000-tap-4",
@@ -11534,7 +11563,8 @@
       "prompt": "Middle of 640, 604, 460",
       "why": "The order is 460, 604, 640. The number in the middle is 604.",
       "type": "keypad",
-      "answer": 604
+      "answer": 604,
+      "game": { "kind": "compare", "ask": "middle", "values": ["640", "604", "460"] }
     },
     {
       "id": "g3-compare-order-1000-number-line-3",
@@ -11562,7 +11592,8 @@
         { "id": "b", "kind": "number", "value": 750 },
         { "id": "c", "kind": "number", "value": 570 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "least", "values": ["705", "750", "570"] }
     },
     {
       "id": "g3-compare-order-1000-tap-6",
@@ -11578,7 +11609,8 @@
         { "id": "c", "kind": "number", "value": 898 },
         { "id": "d", "kind": "number", "value": 998 }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["899", "989", "898", "998"] }
     },
     {
       "id": "g3-compare-order-1000-keypad-3",
@@ -13955,7 +13987,8 @@
         { "id": "c", "kind": "text", "text": "1/2" },
         { "id": "d", "kind": "text", "text": "1/4" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["1/5", "1/10", "1/2", "1/4"] }
     },
     {
       "id": "g4-compare-fair-shares-keypad-2",
@@ -15209,7 +15242,8 @@
         { "id": "a", "kind": "text", "text": "3/8" },
         { "id": "b", "kind": "text", "text": "5/8" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/8"] }
     },
     {
       "id": "g5-compare-order-fractions-tap-2",
@@ -15223,7 +15257,8 @@
         { "id": "a", "kind": "text", "text": "2/3" },
         { "id": "b", "kind": "text", "text": "2/6" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["2/3", "2/6"] }
     },
     {
       "id": "g5-compare-order-fractions-number-line-1",
@@ -15274,7 +15309,8 @@
         { "id": "a", "kind": "text", "text": "3/8" },
         { "id": "b", "kind": "text", "text": "5/6" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/6"] }
     },
     {
       "id": "g5-compare-order-fractions-tap-5",
@@ -15289,7 +15325,8 @@
         { "id": "b", "kind": "text", "text": "4/5" },
         { "id": "c", "kind": "text", "text": "7/4" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["1 1/2", "4/5", "7/4"] }
     },
     {
       "id": "g5-compare-order-fractions-number-line-2",
@@ -15338,7 +15375,8 @@
         { "id": "c", "kind": "text", "text": "9/4" },
         { "id": "d", "kind": "text", "text": "10/6" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "game": { "kind": "compare", "ask": "least", "values": ["5/2", "9/5", "9/4", "10/6"] }
     },
     {
       "id": "g5-compare-order-fractions-number-line-3",
@@ -15365,7 +15403,8 @@
         { "id": "a", "kind": "text", "text": "7/8" },
         { "id": "b", "kind": "text", "text": "5/6" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["7/8", "5/6"] }
     },
     {
       "id": "g5-compare-order-fractions-keypad-4",
@@ -15441,7 +15480,8 @@
         { "id": "a", "kind": "number", "value": 0.6 },
         { "id": "b", "kind": "number", "value": 0.06 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["0.6", "0.06"] }
     },
     {
       "id": "g5-decimals-hundredths-keypad-2",
@@ -15466,7 +15506,8 @@
         { "id": "b", "kind": "number", "value": 2.54 },
         { "id": "c", "kind": "number", "value": 2.4 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "least", "values": ["2.45", "2.54", "2.4"] }
     },
     {
       "id": "g5-decimals-hundredths-number-line-2",
@@ -15557,7 +15598,8 @@
         { "id": "c", "kind": "number", "value": 3.19 },
         { "id": "d", "kind": "number", "value": 3.1 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3.09", "3.9", "3.19", "3.1"] }
     },
     {
       "id": "g5-decimals-hundredths-keypad-5",

@@ -1,0 +1,32 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g5-decimals-hundredths-tap-2",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["0.6", "0.06"],
+        "target": null,
+        "note": "greater of two decimals"
+      },
+      {
+        "itemId": "g5-decimals-hundredths-tap-3",
+        "fits": true,
+        "ask": "least",
+        "values": ["2.45", "2.54", "2.4"],
+        "target": null,
+        "note": "least of three decimals"
+      },
+      {
+        "itemId": "g5-decimals-hundredths-tap-6",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["3.09", "3.9", "3.19", "3.1"],
+        "target": null,
+        "note": "greatest of four decimals"
+      }
+    ]
+  }
+}
