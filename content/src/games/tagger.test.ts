@@ -7,6 +7,7 @@ import { hopsTagRequest } from '../hops/hops';
 import { joinTagRequest } from '../join/join';
 import { tagRequest } from '../scenes/scenes';
 import { sliceTagRequest } from '../slices/slices';
+import { stonesTagRequest } from '../stones/stones';
 import { isTaggerKind, TAGGERS } from './registry';
 import { tagItems, type Tagger } from './tagger';
 
@@ -90,6 +91,7 @@ describe('TAGGERS', () => {
     expect(TAGGERS.join.request).toBe(joinTagRequest);
     expect(TAGGERS.compare.request).toBe(compareTagRequest);
     expect(TAGGERS.arrays.request).toBe(arrayTagRequest);
+    expect(TAGGERS.stones.request).toBe(stonesTagRequest);
     expect(TAGGERS.hops.request).toBe(hopsTagRequest);
   });
 
@@ -100,6 +102,7 @@ describe('TAGGERS', () => {
       'join.json',
       'compare.json',
       'arrays.json',
+      'stones.json',
       'hops.json',
     ]);
   });
