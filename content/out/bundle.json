@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 4,
+  "schemaVersion": 5,
   "version": "2026.11.08-53",
   "generatedAt": "2026-11-08T19:50:21Z",
   "skills": [
@@ -5898,6 +5898,7 @@
       "narration": "Which number is twelve? Is it 21, 12, or 2?",
       "prompt": "Find twelve",
       "why": "Twelve is one ten and two ones. That is 12.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 12 },
@@ -5913,6 +5914,7 @@
       "narration": "Type the number thirty.",
       "prompt": "Type thirty",
       "why": "Thirty is 3 tens and 0 ones. We type 30.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 0 },
       "type": "keypad",
       "answer": 30
     },
@@ -5923,6 +5925,7 @@
       "narration": "Mia has 3 tens and 5 ones. What number is that? Type it.",
       "prompt": "3 tens 5 ones",
       "why": "3 tens is 30. Add 5 ones to get 35.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 },
       "type": "keypad",
       "answer": 35
     },
@@ -5933,6 +5936,14 @@
       "narration": "How many tens are in the number 42? Is it 2, 4, or 42?",
       "prompt": "Tens in 42",
       "why": "The first digit tells the tens. In 42, the 4 means 4 tens.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 2,
+        "place": "tens"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 2 },
@@ -5961,6 +5972,7 @@
       "narration": "Which number is forty-six? Is it 64, 36, 41, or 46?",
       "prompt": "Find forty-six",
       "why": "Forty is 4 tens. Six is 6 ones. So forty-six is 46.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 64 },
@@ -5991,6 +6003,7 @@
       "narration": "Type the number forty-eight.",
       "prompt": "Type forty-eight",
       "why": "Forty is 4 tens. Eight is 8 ones. Together that is 48.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 8 },
       "type": "keypad",
       "answer": 48
     },
@@ -6001,6 +6014,7 @@
       "narration": "A number has 2 tens and 7 ones. Is it 72, 27, or 29?",
       "prompt": "2 tens 7 ones",
       "why": "2 tens is 20. Add 7 ones to make 27.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 7 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 72 },
@@ -6464,6 +6478,7 @@
       "narration": "Which number is 10 and 3? Is it 30, 13, or 8?",
       "prompt": "10 and 3 = ?",
       "why": "10 and 3 more makes 13. Start at 10 and count up 3: 11, 12, 13.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 30 },
@@ -6479,6 +6494,7 @@
       "narration": "Mia has 10 stars in a box and 4 more. How many stars is that in all?",
       "prompt": "10 + 4 = ?",
       "why": "Start at 10 and count up 4 more: 11, 12, 13, 14. The answer is 14.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 4 },
       "type": "keypad",
       "answer": 14
     },
@@ -6542,6 +6558,7 @@
       "narration": "20 and 7 make what number?",
       "prompt": "20 + 7 = ?",
       "why": "20 is two tens. Add 7 ones to get 27.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 7 },
       "type": "keypad",
       "answer": 27
     },
@@ -6566,6 +6583,7 @@
       "narration": "Sam has 3 tens and 5 ones. What number is that? Is it 35, 53, or 8?",
       "prompt": "3 tens and 5 ones",
       "why": "3 tens is 30. Add 5 ones to make 35.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 53 },
@@ -6581,6 +6599,14 @@
       "narration": "Ben has 36 blocks. 36 is 30 and what? Type the missing part.",
       "prompt": "36 = 30 + ?",
       "why": "Take 30 away from 36. That leaves 6.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 6,
+        "place": "ones"
+      },
       "type": "keypad",
       "answer": 6
     },
@@ -6605,6 +6631,7 @@
       "narration": "10 and 10 and 10 and 5 make what number?",
       "prompt": "10 + 10 + 10 + 5 = ?",
       "why": "Three 10s make 30. Then 30 and 5 make 35.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 },
       "type": "keypad",
       "answer": 35
     },
@@ -8973,6 +9000,7 @@
       "narration": "Pia has 1 hundred, 4 tens, and 2 ones. What number is that?",
       "prompt": "100 + 40 + 2 = ?",
       "why": "1 hundred is 100. 4 tens is 40. 2 ones is 2. Put them together to get 142.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 4, "ones": 2 },
       "type": "keypad",
       "answer": 142
     },
@@ -8983,6 +9011,14 @@
       "narration": "How many tens make one hundred? Is it 5, 10, 20, or 100?",
       "prompt": "? tens = 100",
       "why": "Ten tens make one hundred. Count by tens ten times to reach 100.",
+      "game": {
+        "kind": "blocks",
+        "ask": "make",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 0,
+        "place": "tens"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 5 },
@@ -9012,6 +9048,7 @@
       "narration": "Which number is one hundred twenty-six? Is it 162, 126, or 106?",
       "prompt": "one hundred twenty-six",
       "why": "One hundred twenty-six is 1 hundred, 2 tens, and 6 ones. That is 126.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 2, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 162 },
@@ -9027,6 +9064,7 @@
       "narration": "What is 100 + 7?",
       "prompt": "100 + 7 = ?",
       "why": "There are no tens. So 1 hundred and 7 ones is 107.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 0, "ones": 7 },
       "type": "keypad",
       "answer": 107
     },
@@ -9037,6 +9075,14 @@
       "narration": "Sam has 150 beads. How many tens is that?",
       "prompt": "150 = ? tens",
       "why": "10 tens make 100. 5 more tens make 50. So 150 is 15 tens.",
+      "game": {
+        "kind": "blocks",
+        "ask": "make",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 0,
+        "place": "tens"
+      },
       "type": "keypad",
       "answer": 15
     },
@@ -9090,6 +9136,7 @@
       "narration": "A box holds 10 pencils. Sam has 14 boxes. How many pencils is that?",
       "prompt": "14 tens = ?",
       "why": "14 tens is 10 tens and 4 tens. That is 100 and 40, so 140.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 14, "ones": 0 },
       "type": "keypad",
       "answer": 140
     },
@@ -9100,6 +9147,7 @@
       "narration": "Mia has 9 tens and 15 ones. What number is that?",
       "prompt": "90 + 15 = ?",
       "why": "9 tens is 90. 15 ones is 10 and 5. So 90 and 10 make 100, and 5 more is 105.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 9, "ones": 15 },
       "type": "keypad",
       "answer": 105
     },
@@ -9110,6 +9158,7 @@
       "narration": "Which number is the same as 17 tens and 6 ones? Is it 167, 176, or 76?",
       "prompt": "17 tens 6 ones = ?",
       "why": "17 tens is 170. Add 6 ones to get 176.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 17, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 167 },
@@ -9138,6 +9187,14 @@
       "narration": "164 is 1 hundred, 5 tens, and how many ones?",
       "prompt": "164 = 100 + 50 + ?",
       "why": "100 and 50 make 150. From 150 to 164 is 14 more. So there are 14 ones.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 14,
+        "place": "ones"
+      },
       "type": "keypad",
       "answer": 14
     },
@@ -10603,14 +10660,14 @@
       "narration": "A tricycle has 3 wheels. There are 4 tricycles. How many wheels in all? Is it 7, 12, or 9?",
       "prompt": "4 groups of 3 wheels",
       "why": "Add 3 four times. 3 + 3 + 3 + 3 = 12. There are 12 wheels.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
         { "id": "b", "kind": "number", "value": 12 },
         { "id": "c", "kind": "number", "value": 9 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 3 }
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-equal-groups-multiply-keypad-4",
@@ -10637,6 +10694,7 @@
       "narration": "Ben has 4 feet. Each foot has 5 toes. How many toes in all? Is it 9, 15, 20, or 25?",
       "prompt": "4 groups of 5 toes",
       "why": "Add 5 four times. 5 + 5 + 5 + 5 = 20. Ben has 20 toes.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 9 },
@@ -10644,8 +10702,7 @@
         { "id": "c", "kind": "number", "value": 20 },
         { "id": "d", "kind": "number", "value": 25 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 5 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-equal-groups-multiply-number-line-3",
@@ -10668,9 +10725,9 @@
       "narration": "A half carton holds 6 eggs. Sam has 7 half cartons. How many eggs in all?",
       "prompt": "7 groups of 6 = ?",
       "why": "Add 6 seven times. 6 + 6 + 6 + 6 + 6 + 6 + 6 = 42. Sam has 42 eggs.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 6, "thing": "egg" },
       "type": "keypad",
-      "answer": 42,
-      "game": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 6, "thing": "egg" }
+      "answer": 42
     },
     {
       "id": "g2-equal-groups-multiply-tap-5",
@@ -11083,6 +11140,7 @@
       "narration": "What number is 4 hundreds, 5 tens, and 2 ones? Is it 452, 425, 542, or 245?",
       "prompt": "4 hundreds, 5 tens, 2 ones",
       "why": "Hundreds go first, then tens, then ones. 4 hundreds is 400, 5 tens is 50, and 2 ones is 2. That makes 452.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 4, "tens": 5, "ones": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 425 },
@@ -11099,6 +11157,7 @@
       "narration": "Maya has 300 + 40 + 6 stickers. What number is that?",
       "prompt": "300 + 40 + 6 = ?",
       "why": "Add the hundreds, tens, and ones. 300 plus 40 is 340, and 6 more makes 346.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 4, "ones": 6 },
       "type": "keypad",
       "answer": 346
     },
@@ -11122,6 +11181,7 @@
       "narration": "Which number is seven hundred twenty-one? Is it 721, 712, 127, or 701?",
       "prompt": "seven hundred twenty-one",
       "why": "Seven hundred is 700. Twenty-one is 20 and 1. Put them together to get 721.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 7, "tens": 2, "ones": 1 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 712 },
@@ -11149,6 +11209,7 @@
       "narration": "What is 800 + 6? Is it 86, 806, 860, or 8006?",
       "prompt": "800 + 6 = ?",
       "why": "There are no tens, so the tens place holds a 0. 8 hundreds and 6 ones make 806.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 8, "tens": 0, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 86 },
@@ -11165,6 +11226,7 @@
       "narration": "Type the number with 9 hundreds, 0 tens, and 4 ones.",
       "prompt": "9 hundreds, 0 tens, 4 ones",
       "why": "9 hundreds is 900. There are no tens, and 4 ones. So the number is 904.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 9, "tens": 0, "ones": 4 },
       "type": "keypad",
       "answer": 904
     },
@@ -11188,6 +11250,14 @@
       "narration": "In the number 583, what is the 8 worth? Is it 8, 80, or 800?",
       "prompt": "Value of the 8 in 583",
       "why": "The 8 is in the tens place. 8 tens is 80.",
+      "game": {
+        "kind": "blocks",
+        "ask": "worth",
+        "hundreds": 5,
+        "tens": 8,
+        "ones": 3,
+        "place": "tens"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 800 },
@@ -11203,6 +11273,14 @@
       "narration": "A number has 2 hundreds, 3 tens, and some ones. The number is 238. How many ones does it have?",
       "prompt": "238 = 200 + 30 + ?",
       "why": "200 plus 30 is 230. To reach 238, you need 8 more. So there are 8 ones.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 2,
+        "tens": 3,
+        "ones": 8,
+        "place": "ones"
+      },
       "type": "keypad",
       "answer": 8
     },
@@ -11213,6 +11291,7 @@
       "narration": "Jay has 3 sheets of 100 stickers and 14 strips of 10 stickers. How many stickers does he have?",
       "prompt": "3 hundreds + 14 tens = ?",
       "why": "14 strips of 10 is 140. Add the 3 sheets, which is 300. 300 plus 140 makes 440.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 14, "ones": 0 },
       "type": "keypad",
       "answer": 440
     },
@@ -11236,6 +11315,7 @@
       "narration": "Which number is 6 hundreds and 15 tens? Is it 750, 615, 651, or 156?",
       "prompt": "6 hundreds + 15 tens",
       "why": "15 tens is 150. Add 600 and 150 to get 750.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 6, "tens": 15, "ones": 0 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 615 },
@@ -11281,6 +11361,14 @@
       "narration": "In the number 352, what is the 3 worth? Is it 3, 30, or 300?",
       "prompt": "The 3 in 352 is worth?",
       "why": "The 3 is in the hundreds place. That means 3 hundreds, which is 300.",
+      "game": {
+        "kind": "blocks",
+        "ask": "worth",
+        "hundreds": 3,
+        "tens": 5,
+        "ones": 2,
+        "place": "hundreds"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
@@ -11296,6 +11384,7 @@
       "narration": "Maya has 4 hundreds, 2 tens, and 6 ones. What number is that?",
       "prompt": "4 hundreds, 2 tens, 6 ones",
       "why": "4 hundreds is 400. 2 tens is 20. 6 ones is 6. Put them together to get 426.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 4, "tens": 2, "ones": 6 },
       "type": "keypad",
       "answer": 426
     },
@@ -11319,6 +11408,14 @@
       "narration": "In the number 84, what is the 8 worth? Is it 8, 80, or 800?",
       "prompt": "The 8 in 84 is worth?",
       "why": "The 8 is in the tens place. That means 8 tens, which is 80.",
+      "game": {
+        "kind": "blocks",
+        "ask": "worth",
+        "hundreds": 0,
+        "tens": 8,
+        "ones": 4,
+        "place": "tens"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 800 },
@@ -11334,6 +11431,14 @@
       "narration": "What digit is in the tens place of 639?",
       "prompt": "Tens digit of 639?",
       "why": "The tens place is the middle digit. In 639, the middle digit is 3, so there are 3 tens.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 6,
+        "tens": 3,
+        "ones": 9,
+        "place": "tens"
+      },
       "type": "keypad",
       "answer": 3
     },
@@ -11359,6 +11464,14 @@
       "narration": "In the number 862, what is the 6 worth?",
       "prompt": "The 6 in 862 is worth?",
       "why": "The 6 is in the tens place. That means 6 tens, which is 60.",
+      "game": {
+        "kind": "blocks",
+        "ask": "worth",
+        "hundreds": 8,
+        "tens": 6,
+        "ones": 2,
+        "place": "tens"
+      },
       "type": "keypad",
       "answer": 60
     },
@@ -11397,6 +11510,7 @@
       "narration": "Tom has 8 hundreds, 0 tens, and 5 ones. What number is that?",
       "prompt": "8 hundreds, 0 tens, 5 ones",
       "why": "8 hundreds is 800. There are no tens. 5 ones is 5. The zero holds the tens place, so the number is 805.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 8, "tens": 0, "ones": 5 },
       "type": "keypad",
       "answer": 805
     },
@@ -11421,6 +11535,14 @@
       "narration": "10 tens make one hundred. How many tens are in 300?",
       "prompt": "How many tens in 300?",
       "why": "Each hundred is 10 tens. 300 is 3 hundreds, so it is 3 times 10 tens, which is 30 tens.",
+      "game": {
+        "kind": "blocks",
+        "ask": "make",
+        "hundreds": 3,
+        "tens": 0,
+        "ones": 0,
+        "place": "tens"
+      },
       "type": "keypad",
       "answer": 30
     },
@@ -11459,6 +11581,7 @@
       "narration": "A number has 2 hundreds, 14 tens, and 3 ones. What number is it?",
       "prompt": "2 hundreds, 14 tens, 3 ones",
       "why": "2 hundreds is 200. 14 tens is 140. 3 ones is 3. Add 200, 140, and 3 to get 343.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 2, "tens": 14, "ones": 3 },
       "type": "keypad",
       "answer": 343
     },
@@ -12414,9 +12537,9 @@
       "narration": "An array has 2 rows. Each row has 5 dots. How many dots are there in all?",
       "prompt": "2 × 5 = ?",
       "why": "Count by fives for 2 rows: 5, 10. So 2 × 5 = 10.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 2, "columns": 5 },
       "type": "keypad",
-      "answer": 10,
-      "game": { "kind": "arrays", "ask": "total", "rows": 2, "columns": 5 }
+      "answer": 10
     },
     {
       "id": "g3-arrays-multiply-divide-tap-1",
@@ -12425,6 +12548,7 @@
       "narration": "An array has 3 rows with 4 dots in each row. How many dots in all? Is it 7, 12, 10, or 15?",
       "prompt": "3 rows of 4",
       "why": "Count by fours 3 times: 4, 8, 12. So 3 × 4 = 12.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 3, "columns": 4 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
@@ -12432,8 +12556,7 @@
         { "id": "c", "kind": "number", "value": 10 },
         { "id": "d", "kind": "number", "value": 15 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "arrays", "ask": "total", "rows": 3, "columns": 4 }
+      "answerChoiceId": "b"
     },
     {
       "id": "g3-arrays-multiply-divide-number-line-1",
@@ -12468,6 +12591,7 @@
       "narration": "Ana puts 10 stickers in 2 equal rows. How many stickers are in each row? Is it 8, 12, 4, or 5?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Share 10 into 2 equal rows. Each row gets 5, because 2 × 5 = 10.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 2, "columns": 5, "thing": "sticker" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -12475,8 +12599,7 @@
         { "id": "c", "kind": "number", "value": 4 },
         { "id": "d", "kind": "number", "value": 5 }
       ],
-      "answerChoiceId": "d",
-      "game": { "kind": "arrays", "ask": "columns", "rows": 2, "columns": 5, "thing": "sticker" }
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-arrays-multiply-divide-keypad-2",
@@ -12485,9 +12608,9 @@
       "narration": "An array has 12 dots. There are 4 dots in each row. How many rows are there?",
       "prompt": "12 ÷ 4 = ?",
       "why": "Count by fours until you reach 12: 4, 8, 12. That took 3 rows.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 3, "columns": 4 },
       "type": "keypad",
-      "answer": 3,
-      "game": { "kind": "arrays", "ask": "rows", "rows": 3, "columns": 4 }
+      "answer": 3
     },
     {
       "id": "g3-arrays-multiply-divide-keypad-3",
@@ -12496,9 +12619,9 @@
       "narration": "A hockey team lines up in an array. There are 6 rows with 7 players in each row. How many players in all?",
       "prompt": "6 × 7 = ?",
       "why": "Count by sevens 6 times: 7, 14, 21, 28, 35, 42. So 6 × 7 = 42.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 6, "columns": 7 },
       "type": "keypad",
-      "answer": 42,
-      "game": { "kind": "arrays", "ask": "total", "rows": 6, "columns": 7 }
+      "answer": 42
     },
     {
       "id": "g3-arrays-multiply-divide-tap-3",
@@ -12535,6 +12658,7 @@
       "narration": "Leo lines up 24 counters in 6 equal rows. How many counters are in each row? Is it 3, 6, 4, or 18?",
       "prompt": "24 ÷ 6 = ?",
       "why": "Think 6 times what is 24. Since 6 × 4 = 24, each row has 4.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 4 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
@@ -12542,8 +12666,7 @@
         { "id": "c", "kind": "number", "value": 4 },
         { "id": "d", "kind": "number", "value": 18 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 4 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-arrays-multiply-divide-keypad-4",
@@ -12552,9 +12675,9 @@
       "narration": "A garden has 9 rows of plants. Each row has 5 plants. How many plants are in the garden?",
       "prompt": "9 × 5 = ?",
       "why": "Count by fives 9 times: 5, 10, 15, 20, 25, 30, 35, 40, 45. So 9 × 5 = 45.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 9, "columns": 5 },
       "type": "keypad",
-      "answer": 45,
-      "game": { "kind": "arrays", "ask": "total", "rows": 9, "columns": 5 }
+      "answer": 45
     },
     {
       "id": "g3-arrays-multiply-divide-keypad-5",
@@ -12563,9 +12686,9 @@
       "narration": "A game board is an array with 9 rows and 8 columns. How many squares are on the board?",
       "prompt": "9 × 8 = ?",
       "why": "Use 10 × 8 = 80, then take away one row of 8. 80 minus 8 is 72.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 9, "columns": 8 },
       "type": "keypad",
-      "answer": 72,
-      "game": { "kind": "arrays", "ask": "total", "rows": 9, "columns": 8 }
+      "answer": 72
     },
     {
       "id": "g3-arrays-multiply-divide-number-line-3",
@@ -12587,14 +12710,6 @@
       "narration": "Zoe knows 5 × 8 is 40. Now she adds one more row of 8 to make 6 rows. What is 6 × 8? Is it 48, 40, 45, or 56?",
       "prompt": "6 × 8 = ?",
       "why": "Start with 5 rows of 8, which is 40. One more row adds 8. So 40 + 8 = 48.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 48 },
-        { "id": "b", "kind": "number", "value": 40 },
-        { "id": "c", "kind": "number", "value": 45 },
-        { "id": "d", "kind": "number", "value": 56 }
-      ],
-      "answerChoiceId": "a",
       "game": {
         "kind": "arrays",
         "ask": "split",
@@ -12602,7 +12717,15 @@
         "columns": 8,
         "find": "total",
         "split": { "by": "rows", "at": 5 }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 48 },
+        { "id": "b", "kind": "number", "value": 40 },
+        { "id": "c", "kind": "number", "value": 45 },
+        { "id": "d", "kind": "number", "value": 56 }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g3-arrays-multiply-divide-number-line-4",
@@ -12638,14 +12761,14 @@
       "narration": "What is 2 × 5? Is it 7, 10, or 12?",
       "prompt": "2 × 5 = ?",
       "why": "2 groups of 5 is 5 and 5 more. 5 + 5 = 10.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 2, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
         { "id": "b", "kind": "number", "value": 12 },
         { "id": "c", "kind": "number", "value": 10 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "arrays", "ask": "total", "rows": 2, "columns": 5 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-mult-div-facts-2-5-10-keypad-1",
@@ -12654,9 +12777,9 @@
       "narration": "What is 3 × 10?",
       "prompt": "3 × 10 = ?",
       "why": "Count by 10s three times. 10, 20, 30. So 3 × 10 = 30.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 3, "columns": 10 },
       "type": "keypad",
-      "answer": 30,
-      "game": { "kind": "arrays", "ask": "total", "rows": 3, "columns": 10 }
+      "answer": 30
     },
     {
       "id": "g3-mult-div-facts-2-5-10-number-line-1",
@@ -12702,14 +12825,14 @@
       "narration": "What is 20 ÷ 10? Is it 2, 10, or 30?",
       "prompt": "20 ÷ 10 = ?",
       "why": "Count by 10s. 10, 20. That takes 2 jumps, so 20 ÷ 10 = 2.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 10, "columns": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 2 },
         { "id": "b", "kind": "number", "value": 10 },
         { "id": "c", "kind": "number", "value": 30 }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "arrays", "ask": "columns", "rows": 10, "columns": 2 }
+      "answerChoiceId": "a"
     },
     {
       "id": "g3-mult-div-facts-2-5-10-tap-3",
@@ -12718,6 +12841,7 @@
       "narration": "What is 7 × 5? Is it 30, 35, 40, or 45?",
       "prompt": "7 × 5 = ?",
       "why": "Count by 5s seven times. 5, 10, 15, 20, 25, 30, 35. So 7 × 5 = 35.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 30 },
@@ -12725,8 +12849,7 @@
         { "id": "c", "kind": "number", "value": 45 },
         { "id": "d", "kind": "number", "value": 35 }
       ],
-      "answerChoiceId": "d",
-      "game": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 5 }
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-mult-div-facts-2-5-10-keypad-3",
@@ -12735,9 +12858,9 @@
       "narration": "Jay has 8 pairs of socks. Each pair has 2 socks. How many socks is that in all?",
       "prompt": "8 × 2 = ?",
       "why": "Double 8. 8 + 8 = 16. So 8 × 2 = 16 socks.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 8, "columns": 2 },
       "type": "keypad",
-      "answer": 16,
-      "game": { "kind": "arrays", "ask": "total", "rows": 8, "columns": 2 }
+      "answer": 16
     },
     {
       "id": "g3-mult-div-facts-2-5-10-number-line-2",
@@ -12760,9 +12883,9 @@
       "narration": "A hockey coach has 40 pucks. She puts 5 pucks in each bucket. How many buckets does she fill?",
       "prompt": "40 ÷ 5 = ?",
       "why": "Think 5 times what is 40? Count by 5s to 40. That is 8 jumps, so 40 ÷ 5 = 8.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 8, "columns": 5 },
       "type": "keypad",
-      "answer": 8,
-      "game": { "kind": "arrays", "ask": "rows", "rows": 8, "columns": 5 }
+      "answer": 8
     },
     {
       "id": "g3-mult-div-facts-2-5-10-tap-4",
@@ -12771,6 +12894,7 @@
       "narration": "Leo shares 18 stickers equally between 2 friends. How many stickers does each friend get? Is it 8, 9, 16, or 20?",
       "prompt": "18 ÷ 2 = ?",
       "why": "Think 2 times what is 18? Double 9 is 18, so 9 × 2 = 18 and 18 ÷ 2 = 9.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 2, "columns": 9, "thing": "sticker" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -12778,8 +12902,7 @@
         { "id": "c", "kind": "number", "value": 20 },
         { "id": "d", "kind": "number", "value": 9 }
       ],
-      "answerChoiceId": "d",
-      "game": { "kind": "arrays", "ask": "columns", "rows": 2, "columns": 9, "thing": "sticker" }
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-mult-div-facts-2-5-10-keypad-5",
@@ -12788,9 +12911,9 @@
       "narration": "9 kids on a team each score 5 points. How many points did the team score in all?",
       "prompt": "9 × 5 = ?",
       "why": "Count by 5s nine times. 5, 10, 15, 20, 25, 30, 35, 40, 45. So 9 × 5 = 45.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 9, "columns": 5 },
       "type": "keypad",
-      "answer": 45,
-      "game": { "kind": "arrays", "ask": "total", "rows": 9, "columns": 5 }
+      "answer": 45
     },
     {
       "id": "g3-mult-div-facts-2-5-10-number-line-3",
@@ -12812,6 +12935,7 @@
       "narration": "What number times 5 makes 35? Is it 6, 7, 8, or 9?",
       "prompt": "? × 5 = 35",
       "why": "Count by 5s to 35. 5, 10, 15, 20, 25, 30, 35. That is 7 jumps, so 7 × 5 = 35.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 7, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 6 },
@@ -12819,8 +12943,7 @@
         { "id": "c", "kind": "number", "value": 7 },
         { "id": "d", "kind": "number", "value": 9 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "arrays", "ask": "rows", "rows": 7, "columns": 5 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-mult-div-facts-2-5-10-keypad-6",
@@ -12829,9 +12952,9 @@
       "narration": "What number times 10 makes 80?",
       "prompt": "? × 10 = 80",
       "why": "Count by 10s to 80. 10, 20, 30, 40, 50, 60, 70, 80. That is 8 jumps, so 8 × 10 = 80.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 8, "columns": 10 },
       "type": "keypad",
-      "answer": 8,
-      "game": { "kind": "arrays", "ask": "rows", "rows": 8, "columns": 10 }
+      "answer": 8
     },
     {
       "id": "g3-mult-div-facts-2-5-10-number-line-4",
@@ -12854,6 +12977,7 @@
       "narration": "3 × 5 is the same as 5 × what number? Is it 5, 8, 3, or 15?",
       "prompt": "3 × 5 = 5 × ?",
       "why": "You can multiply in any order. 3 × 5 and 5 × 3 both make 15.",
+      "game": { "kind": "arrays", "ask": "turn", "rows": 3, "columns": 5, "find": "rows" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 5 },
@@ -12861,8 +12985,7 @@
         { "id": "c", "kind": "number", "value": 3 },
         { "id": "d", "kind": "number", "value": 15 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "arrays", "ask": "turn", "rows": 3, "columns": 5, "find": "rows" }
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-mult-div-properties-keypad-1",
@@ -12871,9 +12994,9 @@
       "narration": "Mia knows 6 × 2 = 12. So what is 2 × 6?",
       "prompt": "2 × 6 = ?",
       "why": "Swapping the order does not change the answer. 2 × 6 is the same as 6 × 2, which is 12.",
+      "game": { "kind": "arrays", "ask": "turn", "rows": 6, "columns": 2, "find": "total" },
       "type": "keypad",
-      "answer": 12,
-      "game": { "kind": "arrays", "ask": "turn", "rows": 6, "columns": 2, "find": "total" }
+      "answer": 12
     },
     {
       "id": "g3-mult-div-properties-number-line-1",
@@ -12933,14 +13056,6 @@
       "narration": "4 × 6 is the same as 4 × 5 plus 4 times what number? Is it 2, 4, 6, or 1?",
       "prompt": "4 × 6 = 4 × 5 + 4 × ?",
       "why": "Split 6 into 5 and 1. So 4 × 6 is 4 × 5 plus 4 × 1.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 6 },
-        { "id": "d", "kind": "number", "value": 1 }
-      ],
-      "answerChoiceId": "d",
       "game": {
         "kind": "arrays",
         "ask": "split",
@@ -12948,7 +13063,15 @@
         "columns": 6,
         "find": "second",
         "split": { "by": "columns", "at": 5 }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 6 },
+        { "id": "d", "kind": "number", "value": 1 }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-mult-div-properties-keypad-3",
@@ -12957,8 +13080,6 @@
       "narration": "Sam knows 3 × 5 = 15. He adds one more group of 3. What is 3 × 6?",
       "prompt": "3 × 6 = ?",
       "why": "3 × 6 is 3 × 5 plus one more 3. 15 + 3 = 18.",
-      "type": "keypad",
-      "answer": 18,
       "game": {
         "kind": "arrays",
         "ask": "split",
@@ -12966,7 +13087,9 @@
         "columns": 6,
         "find": "total",
         "split": { "by": "columns", "at": 5 }
-      }
+      },
+      "type": "keypad",
+      "answer": 18
     },
     {
       "id": "g3-mult-div-properties-number-line-2",
@@ -12989,9 +13112,9 @@
       "narration": "24 cookies are shared equally onto 4 trays. Think 4 times what number is 24. How many cookies are on each tray?",
       "prompt": "24 ÷ 4 = ?",
       "why": "Use multiplying to divide. 4 × 6 = 24, so 24 ÷ 4 = 6.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 4, "columns": 6, "thing": "cookie" },
       "type": "keypad",
-      "answer": 6,
-      "game": { "kind": "arrays", "ask": "columns", "rows": 4, "columns": 6, "thing": "cookie" }
+      "answer": 6
     },
     {
       "id": "g3-mult-div-properties-tap-4",
@@ -13015,8 +13138,6 @@
       "narration": "Lena wants 8 × 7. She uses 8 × 5 = 40 and 8 × 2 = 16. Add the two parts. What is 8 × 7?",
       "prompt": "8 × 7 = ?",
       "why": "Split 7 into 5 and 2. Then 40 + 16 = 56.",
-      "type": "keypad",
-      "answer": 56,
       "game": {
         "kind": "arrays",
         "ask": "split",
@@ -13024,7 +13145,9 @@
         "columns": 7,
         "find": "total",
         "split": { "by": "columns", "at": 5 }
-      }
+      },
+      "type": "keypad",
+      "answer": 56
     },
     {
       "id": "g3-mult-div-properties-number-line-3",
@@ -13060,8 +13183,6 @@
       "narration": "Zoe wants 6 × 9. She splits 9 into 5 and 4. 6 × 5 = 30 and 6 × 4 = 24. What is 6 × 9?",
       "prompt": "6 × 9 = ?",
       "why": "Add the two parts: 30 + 24 = 54. So 6 × 9 = 54.",
-      "type": "keypad",
-      "answer": 54,
       "game": {
         "kind": "arrays",
         "ask": "split",
@@ -13069,7 +13190,9 @@
         "columns": 9,
         "find": "total",
         "split": { "by": "columns", "at": 5 }
-      }
+      },
+      "type": "keypad",
+      "answer": 54
     },
     {
       "id": "g3-mult-div-properties-tap-6",
@@ -13221,9 +13344,9 @@
       "narration": "Eli has 24 stickers. He shares them equally among 6 friends. How many stickers does each friend get?",
       "prompt": "24 ÷ 6 = ?",
       "why": "Think of 6 times what is 24. Since 6 × 4 = 24, each friend gets 4.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 4, "thing": "sticker" },
       "type": "keypad",
-      "answer": 4,
-      "game": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 4, "thing": "sticker" }
+      "answer": 4
     },
     {
       "id": "g3-mult-div-problems-keypad-3",
@@ -13232,9 +13355,9 @@
       "narration": "A team has 8 players. There are 56 players in all. How many teams are there?",
       "prompt": "56 ÷ 8 = ?",
       "why": "Count how many groups of 8 fit in 56. Since 8 × 7 = 56, there are 7 teams.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 7, "columns": 8 },
       "type": "keypad",
-      "answer": 7,
-      "game": { "kind": "arrays", "ask": "rows", "rows": 7, "columns": 8 }
+      "answer": 7
     },
     {
       "id": "g3-mult-div-problems-keypad-4",
@@ -14902,9 +15025,9 @@
       "narration": "What is 4 × 3?",
       "prompt": "4 × 3 = ?",
       "why": "Start with 2 × 3, which is 6. Double 6 is 12. So 4 × 3 is 12.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 3 },
       "type": "keypad",
-      "answer": 12,
-      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 3 }
+      "answer": 12
     },
     {
       "id": "g4-mult-div-facts-100-tap-1",
@@ -14913,6 +15036,7 @@
       "narration": "2 × 8 is 16. Double 16 to find 4 × 8. Is it 24, 32, 36, or 40?",
       "prompt": "4 × 8 = ?",
       "why": "4 × 8 is double 2 × 8. Double 16 is 32.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 8 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 24 },
@@ -14920,8 +15044,7 @@
         { "id": "c", "kind": "number", "value": 36 },
         { "id": "d", "kind": "number", "value": 40 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 8 }
+      "answerChoiceId": "b"
     },
     {
       "id": "g4-mult-div-facts-100-number-line-1",
@@ -14944,6 +15067,7 @@
       "narration": "What is 30 ÷ 6? Is it 3, 4, 5, or 6?",
       "prompt": "30 ÷ 6 = ?",
       "why": "Think of the partner fact. 5 × 6 is 30, so 30 ÷ 6 is 5.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
@@ -14951,8 +15075,7 @@
         { "id": "c", "kind": "number", "value": 5 },
         { "id": "d", "kind": "number", "value": 6 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 5 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g4-mult-div-facts-100-keypad-2",
@@ -14983,9 +15106,9 @@
       "narration": "What is 8 × 4?",
       "prompt": "8 × 4 = ?",
       "why": "4 × 8 is double double 8. Double 8 is 16, and double 16 is 32.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 8, "columns": 4 },
       "type": "keypad",
-      "answer": 32,
-      "game": { "kind": "arrays", "ask": "total", "rows": 8, "columns": 4 }
+      "answer": 32
     },
     {
       "id": "g4-mult-div-facts-100-tap-3",
@@ -14994,6 +15117,7 @@
       "narration": "Sam knows 5 × 8 is 40. Add one more 8. What is 6 × 8? Is it 42, 46, 48, or 54?",
       "prompt": "6 × 8 = ?",
       "why": "6 × 8 is 5 × 8 plus one more 8. 40 plus 8 is 48.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 6, "columns": 8 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 42 },
@@ -15001,8 +15125,7 @@
         { "id": "c", "kind": "number", "value": 48 },
         { "id": "d", "kind": "number", "value": 54 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "arrays", "ask": "total", "rows": 6, "columns": 8 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g4-mult-div-facts-100-number-line-2",
@@ -15025,6 +15148,7 @@
       "narration": "What is 56 ÷ 7? Is it 8, 7, 6, or 9?",
       "prompt": "56 ÷ 7 = ?",
       "why": "Use the partner fact. 8 × 7 is 56, so 56 ÷ 7 is 8.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 7, "columns": 8 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -15032,8 +15156,7 @@
         { "id": "c", "kind": "number", "value": 6 },
         { "id": "d", "kind": "number", "value": 9 }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "arrays", "ask": "columns", "rows": 7, "columns": 8 }
+      "answerChoiceId": "a"
     },
     {
       "id": "g4-mult-div-facts-100-keypad-4",
@@ -15042,9 +15165,9 @@
       "narration": "A coach has 48 water bottles. She puts 8 bottles in each box. How many boxes does she need?",
       "prompt": "48 ÷ 8 = ?",
       "why": "Think 8 times what is 48. 6 × 8 is 48, so she needs 6 boxes.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 6, "columns": 8 },
       "type": "keypad",
-      "answer": 6,
-      "game": { "kind": "arrays", "ask": "rows", "rows": 6, "columns": 8 }
+      "answer": 6
     },
     {
       "id": "g4-mult-div-facts-100-keypad-5",
@@ -15053,9 +15176,9 @@
       "narration": "What is 7 × 8?",
       "prompt": "7 × 8 = ?",
       "why": "Try 7 × 8 as 7 × 5 plus 7 × 3. That is 35 plus 21, which is 56.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 8 },
       "type": "keypad",
-      "answer": 56,
-      "game": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 8 }
+      "answer": 56
     },
     {
       "id": "g4-mult-div-facts-100-tap-5",
@@ -15064,6 +15187,7 @@
       "narration": "72 players make teams of 8. How many teams are there? Is it 8, 12, 7, or 9?",
       "prompt": "72 ÷ 8 = ?",
       "why": "Think 8 times what is 72. 9 × 8 is 72, so there are 9 teams.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 9, "columns": 8 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -15071,8 +15195,7 @@
         { "id": "c", "kind": "number", "value": 7 },
         { "id": "d", "kind": "number", "value": 9 }
       ],
-      "answerChoiceId": "d",
-      "game": { "kind": "arrays", "ask": "rows", "rows": 9, "columns": 8 }
+      "answerChoiceId": "d"
     },
     {
       "id": "g4-mult-div-facts-100-number-line-3",
@@ -15095,9 +15218,9 @@
       "narration": "What number times 6 makes 54?",
       "prompt": "? × 6 = 54",
       "why": "Use division. 54 ÷ 6 is 9, because 9 × 6 is 54.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 9, "columns": 6 },
       "type": "keypad",
-      "answer": 9,
-      "game": { "kind": "arrays", "ask": "rows", "rows": 9, "columns": 6 }
+      "answer": 9
     },
     {
       "id": "g4-mult-div-facts-100-tap-6",

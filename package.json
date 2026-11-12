@@ -26,6 +26,7 @@
     "content:join": "npm run join -w @bright-trail/content --",
     "content:compare": "npm run compare -w @bright-trail/content --",
     "content:arrays": "npm run arrays -w @bright-trail/content --",
+    "content:blocks": "npm run blocks -w @bright-trail/content --",
     "content:hops": "npm run hops -w @bright-trail/content --",
     "content:voices": "npm run voices -w @bright-trail/content",
     "content:packs": "npm run packs -w @bright-trail/content",

@@ -1,0 +1,287 @@
+{
+  "g1-compose-decompose-50-keypad-1": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 1,
+    "ones": 4
+  },
+  "g1-compose-decompose-50-keypad-3": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 2,
+    "ones": 7
+  },
+  "g1-compose-decompose-50-keypad-4": {
+    "kind": "blocks",
+    "ask": "count",
+    "hundreds": 0,
+    "tens": 3,
+    "ones": 6,
+    "place": "ones"
+  },
+  "g1-compose-decompose-50-keypad-5": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 3,
+    "ones": 5
+  },
+  "g1-compose-decompose-50-tap-1": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 1,
+    "ones": 3
+  },
+  "g1-compose-decompose-50-tap-4": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 3,
+    "ones": 5
+  },
+  "g1-read-numbers-50-keypad-2": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 3,
+    "ones": 0
+  },
+  "g1-read-numbers-50-keypad-3": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 3,
+    "ones": 5
+  },
+  "g1-read-numbers-50-keypad-4": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 4,
+    "ones": 8
+  },
+  "g1-read-numbers-50-tap-2": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 1,
+    "ones": 2
+  },
+  "g1-read-numbers-50-tap-3": {
+    "kind": "blocks",
+    "ask": "count",
+    "hundreds": 0,
+    "tens": 4,
+    "ones": 2,
+    "place": "tens"
+  },
+  "g1-read-numbers-50-tap-4": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 4,
+    "ones": 6
+  },
+  "g1-read-numbers-50-tap-6": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 2,
+    "ones": 7
+  },
+  "g2-whole-numbers-200-keypad-1": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 1,
+    "tens": 4,
+    "ones": 2
+  },
+  "g2-whole-numbers-200-keypad-2": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 1,
+    "tens": 0,
+    "ones": 7
+  },
+  "g2-whole-numbers-200-keypad-3": {
+    "kind": "blocks",
+    "ask": "make",
+    "hundreds": 1,
+    "tens": 5,
+    "ones": 0,
+    "place": "tens"
+  },
+  "g2-whole-numbers-200-keypad-4": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 14,
+    "ones": 0
+  },
+  "g2-whole-numbers-200-keypad-5": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 9,
+    "ones": 15
+  },
+  "g2-whole-numbers-200-keypad-6": {
+    "kind": "blocks",
+    "ask": "count",
+    "hundreds": 1,
+    "tens": 5,
+    "ones": 14,
+    "place": "ones"
+  },
+  "g2-whole-numbers-200-tap-1": {
+    "kind": "blocks",
+    "ask": "make",
+    "hundreds": 1,
+    "tens": 0,
+    "ones": 0,
+    "place": "tens"
+  },
+  "g2-whole-numbers-200-tap-2": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 1,
+    "tens": 2,
+    "ones": 6
+  },
+  "g2-whole-numbers-200-tap-5": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 17,
+    "ones": 6
+  },
+  "g3-place-value-keypad-1": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 4,
+    "tens": 2,
+    "ones": 6
+  },
+  "g3-place-value-keypad-2": {
+    "kind": "blocks",
+    "ask": "count",
+    "hundreds": 6,
+    "tens": 3,
+    "ones": 9,
+    "place": "tens"
+  },
+  "g3-place-value-keypad-3": {
+    "kind": "blocks",
+    "ask": "worth",
+    "hundreds": 8,
+    "tens": 6,
+    "ones": 2,
+    "place": "tens"
+  },
+  "g3-place-value-keypad-4": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 8,
+    "tens": 0,
+    "ones": 5
+  },
+  "g3-place-value-keypad-5": {
+    "kind": "blocks",
+    "ask": "make",
+    "hundreds": 3,
+    "tens": 0,
+    "ones": 0,
+    "place": "tens"
+  },
+  "g3-place-value-keypad-6": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 2,
+    "tens": 14,
+    "ones": 3
+  },
+  "g3-place-value-tap-1": {
+    "kind": "blocks",
+    "ask": "worth",
+    "hundreds": 3,
+    "tens": 5,
+    "ones": 2,
+    "place": "hundreds"
+  },
+  "g3-place-value-tap-2": {
+    "kind": "blocks",
+    "ask": "worth",
+    "hundreds": 0,
+    "tens": 8,
+    "ones": 4,
+    "place": "tens"
+  },
+  "g3-whole-numbers-1000-keypad-1": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 3,
+    "tens": 4,
+    "ones": 6
+  },
+  "g3-whole-numbers-1000-keypad-3": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 9,
+    "tens": 0,
+    "ones": 4
+  },
+  "g3-whole-numbers-1000-keypad-4": {
+    "kind": "blocks",
+    "ask": "count",
+    "hundreds": 2,
+    "tens": 3,
+    "ones": 8,
+    "place": "ones"
+  },
+  "g3-whole-numbers-1000-keypad-5": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 3,
+    "tens": 14,
+    "ones": 0
+  },
+  "g3-whole-numbers-1000-tap-1": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 4,
+    "tens": 5,
+    "ones": 2
+  },
+  "g3-whole-numbers-1000-tap-2": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 7,
+    "tens": 2,
+    "ones": 1
+  },
+  "g3-whole-numbers-1000-tap-3": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 8,
+    "tens": 0,
+    "ones": 6
+  },
+  "g3-whole-numbers-1000-tap-4": {
+    "kind": "blocks",
+    "ask": "worth",
+    "hundreds": 5,
+    "tens": 8,
+    "ones": 3,
+    "place": "tens"
+  },
+  "g3-whole-numbers-1000-tap-5": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 6,
+    "tens": 15,
+    "ones": 0
+  }
+}
