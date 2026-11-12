@@ -1,3 +1,4 @@
+export * from './arrays';
 export * from './attempt';
 export * from './bundle';
 export * from './child';
