@@ -33,7 +33,8 @@ export type GameFrameProps = {
   prompt: string;
   /** Spoken on start. */
   question: string[];
-  answer: SceneAnswer;
+  /** A number or yes-no, or the right choice's label when it's a word like "Liquid". */
+  answer: GameValue;
   input: GameInput;
   /** Practice lets the child try again after a miss. Measuring shows why, then moves on. */
   retry: boolean;
@@ -53,7 +54,7 @@ type Props = GameFrameProps & {
   /** The play area. `cheer` is true after a right answer. */
   stage: (state: { cheer: boolean }) => ReactNode;
   /** Plays the story out for the child's answer. Returns what to say about it. */
-  playOut: (value: GameValue, correct: boolean) => Promise<string>;
+  playOut: (value: GameValue, correct: boolean, label: string) => Promise<string>;
   /** Puts the stage back for another try. */
   reset: () => Promise<void>;
 };
@@ -105,7 +106,7 @@ export function GameFrame(props: Props) {
       onAnswerRef.current?.({ value, choiceId }, correct, replays.current);
     }
     say([`${label}? Let's see.`]);
-    const body = await props.playOut(value, correct);
+    const body = await props.playOut(value, correct, label);
     // The same titles as every other item, so feedback feels the same across the app.
     const result = { correct, title: correct ? CORRECT_TEXT : MISS_TEXT, body };
     setOutcome(result);

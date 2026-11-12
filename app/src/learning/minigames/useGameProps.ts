@@ -55,7 +55,11 @@ export function useGameProps(props: ItemViewProps & { shuffleSeed?: string }): G
   return {
     prompt: item.prompt,
     question,
-    answer: itemAnswer(item)!,
+    answer:
+      itemAnswer(item) ??
+      (input.kind === 'choices' && item.type === 'tap'
+        ? input.choices.find((c) => c.id === item.answerChoiceId)!.value
+        : NaN),
     input,
     retry: !props.measuring,
     narrate: props.narrate,
