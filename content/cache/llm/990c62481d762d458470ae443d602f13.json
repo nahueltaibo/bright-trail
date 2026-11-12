@@ -1,0 +1,64 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-count-to-20-tap-1",
+        "fits": true,
+        "stones": ["1", "2", "3", "4"],
+        "missing": 3,
+        "note": "next after 3"
+      },
+      {
+        "itemId": "k-count-to-20-tap-2",
+        "fits": true,
+        "stones": ["8", "9"],
+        "missing": 1,
+        "note": "next after 8"
+      },
+      {
+        "itemId": "k-count-to-20-keypad-2",
+        "fits": true,
+        "stones": ["4", "5", "6", "7"],
+        "missing": 3,
+        "note": "next after 6"
+      },
+      {
+        "itemId": "k-count-to-20-tap-3",
+        "fits": true,
+        "stones": ["11", "12", "13", "14"],
+        "missing": 3,
+        "note": "next after 13"
+      },
+      {
+        "itemId": "k-count-to-20-tap-4",
+        "fits": true,
+        "stones": ["16", "17"],
+        "missing": 1,
+        "note": "next after 16"
+      },
+      {
+        "itemId": "k-count-to-20-keypad-3",
+        "fits": true,
+        "stones": ["12", "13"],
+        "missing": 1,
+        "note": "next after 12"
+      },
+      {
+        "itemId": "k-count-to-20-tap-5",
+        "fits": true,
+        "stones": ["17", "18", "19", "20"],
+        "missing": 3,
+        "note": "next after 19"
+      },
+      {
+        "itemId": "k-count-to-20-keypad-4",
+        "fits": true,
+        "stones": ["18", "19", "20"],
+        "missing": 2,
+        "note": "next after 19"
+      }
+    ]
+  }
+}

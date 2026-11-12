@@ -1,0 +1,78 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-count-50-keypad-1",
+        "fits": true,
+        "stones": ["7", "8", "9", "10"],
+        "missing": 3,
+        "note": "count by 1s"
+      },
+      {
+        "itemId": "g1-count-50-tap-1",
+        "fits": true,
+        "stones": ["2", "4", "6", "8"],
+        "missing": 3,
+        "note": "count by 2s"
+      },
+      {
+        "itemId": "g1-count-50-keypad-2",
+        "fits": true,
+        "stones": ["5", "10", "15", "20"],
+        "missing": 3,
+        "note": "count by 5s"
+      },
+      {
+        "itemId": "g1-count-50-tap-2",
+        "fits": true,
+        "stones": ["10", "20", "30"],
+        "missing": 2,
+        "note": "count by 10s"
+      },
+      {
+        "itemId": "g1-count-50-keypad-3",
+        "fits": true,
+        "stones": ["12", "14", "16", "18"],
+        "missing": 3,
+        "note": "count by 2s"
+      },
+      {
+        "itemId": "g1-count-50-tap-3",
+        "fits": true,
+        "stones": ["25", "30", "35", "40"],
+        "missing": 3,
+        "note": "count by 5s"
+      },
+      {
+        "itemId": "g1-count-50-keypad-4",
+        "fits": true,
+        "stones": ["30", "40", "50"],
+        "missing": 2,
+        "note": "count by 10s"
+      },
+      {
+        "itemId": "g1-count-50-tap-4",
+        "fits": false,
+        "stones": ["0", "5"],
+        "missing": 1,
+        "note": "Asks which choice is landed on, not one missing number in a run"
+      },
+      {
+        "itemId": "g1-count-50-keypad-5",
+        "fits": true,
+        "stones": ["35", "40", "45", "50"],
+        "missing": 2,
+        "note": "missing in the middle"
+      },
+      {
+        "itemId": "g1-count-50-tap-5",
+        "fits": true,
+        "stones": ["48", "50"],
+        "missing": 0,
+        "note": "number just before 50 counting by 2s"
+      }
+    ]
+  }
+}

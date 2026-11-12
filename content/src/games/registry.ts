@@ -8,6 +8,7 @@ import type {
   NumberLineItem,
   Scene,
   SliceScene,
+  StonesScene,
 } from '@bright-trail/shared';
 import { acceptArrays, applyArrays, arrayCandidates, arrayTagRequest } from '../arrays/arrays';
 import { acceptBlocks, applyBlocks, blocksCandidates, blocksTagRequest } from '../blocks/blocks';
@@ -21,6 +22,7 @@ import { acceptHops, applyHops, hopsCandidates, hopsTagRequest } from '../hops/h
 import { acceptJoins, applyJoins, joinCandidates, joinTagRequest } from '../join/join';
 import { acceptScenes, applyScenes, candidateItems, tagRequest } from '../scenes/scenes';
 import { acceptSlices, applySlices, sliceCandidates, sliceTagRequest } from '../slices/slices';
+import { acceptStones, applyStones, stonesCandidates, stonesTagRequest } from '../stones/stones';
 import type { Tagger } from './tagger';
 
 const share: Tagger<Item, Scene> = {
@@ -107,6 +109,21 @@ const blocks: Tagger<Item, BlocksScene> = {
   apply: applyBlocks,
 };
 
+const stones: Tagger<Item, StonesScene> = {
+  file: 'stones.json',
+  outcome: 'play as stepping stones',
+  label: 'Stones',
+  // A skill's only counting run is still worth a call, like g4's one run of thirds.
+  minPerSkill: 1,
+  candidates: stonesCandidates,
+  request: stonesTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptStones(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyStones,
+};
+
 const hops: Tagger<NumberLineItem, Hops> = {
   file: 'hops.json',
   outcome: 'hop a planned path',
@@ -125,7 +142,7 @@ const hops: Tagger<NumberLineItem, Hops> = {
  * Every content tagger by the `--kind` that runs it, in the order the bundle applies them.
  * Hops come last because they skip number-line items that already play a minigame.
  */
-export const TAGGERS = { share, slices, join, compare, arrays, blocks, hops };
+export const TAGGERS = { share, slices, join, compare, arrays, blocks, stones, hops };
 export type TaggerKind = keyof typeof TAGGERS;
 
 export function isTaggerKind(kind: string): kind is TaggerKind {
