@@ -1,0 +1,75 @@
+import type { BlocksScene, Item } from '@bright-trail/shared';
+
+const scene = (s: Omit<BlocksScene, 'kind'>): BlocksScene => ({ kind: 'blocks', ...s });
+const base = { skillId: 'demo-blocks', difficulty: 1 } as const;
+const tap = (answer: number, ...others: number[]) => ({
+  type: 'tap' as const,
+  choices: [answer, ...others].map((value, i) => ({
+    id: 'abcd'[i],
+    kind: 'number' as const,
+    value,
+  })),
+  answerChoiceId: 'a',
+});
+
+/** One item per kind of blocks question, for /dev/games/blocks. Each must pass `blocksProblems`. */
+export const BLOCKS_DEMO_ITEMS: Item[] = [
+  {
+    ...base,
+    id: 'demo-blocks-total',
+    prompt: '3 tens 5 ones',
+    narration: 'Mia has 3 tens and 5 ones. What number is that? Is it 53, 8, or 35?',
+    why: '3 tens are 30 and 5 ones are 5. 30 and 5 make 35.',
+    ...tap(35, 53, 8),
+    game: scene({ ask: 'total', hundreds: 0, tens: 3, ones: 5 }),
+  },
+  {
+    ...base,
+    id: 'demo-blocks-trade',
+    prompt: '9 tens 15 ones',
+    narration: 'Mia has 9 tens and 15 ones. What number is that?',
+    why: '10 ones make a ten, so that is 10 tens and 5 ones. 10 tens make a hundred.',
+    type: 'keypad',
+    answer: 105,
+    game: scene({ ask: 'total', hundreds: 0, tens: 9, ones: 15 }),
+  },
+  {
+    ...base,
+    id: 'demo-blocks-hundreds',
+    prompt: '2 hundreds, 14 tens, 3 ones',
+    narration: 'A number has 2 hundreds, 14 tens, and 3 ones. What number is it?',
+    why: '14 tens are 1 hundred and 4 tens. So it is 3 hundreds, 4 tens, and 3 ones.',
+    type: 'keypad',
+    answer: 343,
+    game: scene({ ask: 'total', hundreds: 2, tens: 14, ones: 3 }),
+  },
+  {
+    ...base,
+    id: 'demo-blocks-count',
+    prompt: '164 = 100 + 50 + ?',
+    narration: '164 is 1 hundred, 5 tens, and how many ones?',
+    why: '1 hundred and 5 tens make 150. 150 and 14 make 164.',
+    type: 'keypad',
+    answer: 14,
+    game: scene({ ask: 'count', hundreds: 1, tens: 5, ones: 14, place: 'ones' }),
+  },
+  {
+    ...base,
+    id: 'demo-blocks-worth',
+    prompt: 'Value of the 8 in 583',
+    narration: 'In the number 583, what is the 8 worth? Is it 8, 80, or 800?',
+    why: 'The 8 is in the tens place. 8 tens are 80.',
+    ...tap(80, 8, 800),
+    game: scene({ ask: 'worth', hundreds: 5, tens: 8, ones: 3, place: 'tens' }),
+  },
+  {
+    ...base,
+    id: 'demo-blocks-make',
+    prompt: '150 = ? tens',
+    narration: 'Sam has 150 beads. How many tens is that?',
+    why: '1 hundred is 10 tens. 10 tens and 5 tens make 15 tens.',
+    type: 'keypad',
+    answer: 15,
+    game: scene({ ask: 'make', hundreds: 1, tens: 5, ones: 0, place: 'tens' }),
+  },
+];

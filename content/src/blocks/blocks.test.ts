@@ -1,0 +1,90 @@
+import type { BlocksScene, ContentBundle, Item } from '@bright-trail/shared';
+import { describe, expect, it } from 'vitest';
+import { acceptBlocks, applyBlocks, blocksCandidates, type TaggedBlocks } from './blocks';
+
+const base = { skillId: 's', difficulty: 1, prompt: 'p', why: 'w' } as const;
+const keypad = (id: string, narration: string, answer: number): Item => ({
+  ...base,
+  id,
+  narration,
+  type: 'keypad',
+  answer,
+});
+
+const tagged = (itemId: string, over: Partial<TaggedBlocks> = {}): TaggedBlocks => ({
+  itemId,
+  fits: true,
+  ask: 'total',
+  hundreds: 0,
+  tens: 3,
+  ones: 5,
+  place: null,
+  note: '',
+  ...over,
+});
+
+const build = keypad('build', 'Mia has 3 tens and 5 ones. What number is that?', 35);
+
+describe('blocksCandidates', () => {
+  it('keeps whole-number answers that talk about places, and skips text, pictures, and lines', () => {
+    const thirty = keypad('thirty', 'Type the number thirty.', 30);
+    const sum = keypad('sum', 'What is 100 + 7?', 107);
+    const fact = keypad('fact', 'What is 7 times 8?', 56);
+    const words: Item = {
+      ...base,
+      id: 'words',
+      narration: '12 tens and 5 ones is 152. True or false?',
+      type: 'tap',
+      choices: [
+        { id: 'a', kind: 'text', text: 'true' },
+        { id: 'b', kind: 'text', text: 'false' },
+      ],
+      answerChoiceId: 'b',
+    };
+    const picture = {
+      ...keypad('picture', 'Each star is 100. How many tens?', 6),
+      visual: { kind: 'objects', emoji: '⭐', count: 6 },
+    } as Item;
+    expect(blocksCandidates([build, thirty, sum, fact, words, picture]).map((i) => i.id)).toEqual([
+      'build',
+      'thirty',
+      'sum',
+    ]);
+  });
+});
+
+describe('acceptBlocks', () => {
+  it('keeps a matching scene and drops the place of a total', () => {
+    const { scenes, rejected } = acceptBlocks([build], {
+      scenes: [tagged('build', { place: 'ones' })],
+    });
+    expect(rejected).toEqual({});
+    expect(scenes.build).toEqual({ kind: 'blocks', ask: 'total', hundreds: 0, tens: 3, ones: 5 });
+  });
+
+  it('rejects misfits, bad mats, and wrong answers with a reason', () => {
+    const items = ['a', 'b', 'c'].map((id) => ({ ...build, id }));
+    const { scenes, rejected } = acceptBlocks(items, {
+      scenes: [
+        tagged('a', { fits: false, note: 'true or false' }),
+        tagged('b', { tens: 30 }),
+        tagged('c', { ones: 3 }),
+      ],
+    });
+    expect(scenes).toEqual({});
+    expect(rejected.a).toBe('does not fit: true or false');
+    expect(rejected.b).toMatch(/<=20/);
+    expect(rejected.c).toBe('the blocks come to 33 but the item answers 35');
+  });
+});
+
+describe('applyBlocks', () => {
+  it('sets matching scenes and drops stale ones', () => {
+    const bundle = { items: [build, { ...build, id: 'stale', answer: 53 }] } as ContentBundle;
+    const scene: BlocksScene = { kind: 'blocks', ask: 'total', hundreds: 0, tens: 3, ones: 5 };
+    const { bundle: out, dropped } = applyBlocks(bundle, { build: scene, stale: scene });
+    expect(out.items[0].game).toEqual(scene);
+    expect(out.items[1].game).toBeUndefined();
+    expect(dropped).toEqual(['stale: the blocks come to 35 but the item answers 53']);
+  });
+});

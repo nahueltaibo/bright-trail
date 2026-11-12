@@ -2,6 +2,8 @@ import type { GameKind, GameOf, Item } from '@bright-trail/shared';
 import { useMemo, type ReactElement } from 'react';
 import { ArraysGame } from './arrays/ArraysGame';
 import { ARRAYS_DEMO_ITEMS } from './arrays/demo';
+import { BlocksGame } from './blocks/BlocksGame';
+import { BLOCKS_DEMO_ITEMS } from './blocks/demo';
 import { CompareGame } from './compare/CompareGame';
 import { COMPARE_DEMO_ITEMS } from './compare/demo';
 import { sceneLabels } from './compare/layout';
@@ -58,6 +60,10 @@ function ArraysView({ game, ...props }: GameViewProps<'arrays'>) {
   return <ArraysGame {...useGameProps(props)} scene={game} />;
 }
 
+function BlocksView({ game, ...props }: GameViewProps<'blocks'>) {
+  return <BlocksGame {...useGameProps(props)} scene={game} />;
+}
+
 function StonesView({ game, ...props }: GameViewProps<'stones'>) {
   return <StonesGame {...useGameProps(props)} scene={game} />;
 }
@@ -69,6 +75,7 @@ export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   join: { title: 'Join and leave', View: JoinView, demo: JOIN_DEMO_ITEMS },
   compare: { title: 'Compare and order', View: CompareView, demo: COMPARE_DEMO_ITEMS },
   arrays: { title: 'Arrays', View: ArraysView, demo: ARRAYS_DEMO_ITEMS },
+  blocks: { title: 'Base-ten blocks', View: BlocksView, demo: BLOCKS_DEMO_ITEMS },
   stones: { title: 'Stepping stones', View: StonesView, demo: STONES_DEMO_ITEMS },
 };
 
