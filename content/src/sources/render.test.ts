@@ -1,6 +1,17 @@
+import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { CURRICULA } from './curricula';
-import { planCourses, renderGrade, type ApiItem, type ApiResponse } from './render';
+import { CURRICULA, KINDERGARTEN_MATH, KINDERGARTEN_SPLIT } from './curricula';
+import {
+  checkKindergartenSplit,
+  kindergartenStrands,
+  overallCodes,
+  planCourses,
+  renderGrade,
+  renderKindergarten,
+  type ApiItem,
+  type ApiResponse,
+} from './render';
 
 const science = CURRICULA.find((c) => c.subject === 'science')!;
 const french = CURRICULA.find((c) => c.subject === 'french')!;
@@ -181,4 +192,123 @@ describe('renderGrade', () => {
       ].join('\n'),
     );
   });
+});
+
+describe('kindergartenStrands', () => {
+  const course = (year: string) =>
+    response(
+      item('kindergarten', 'l2___course', { year_issued: year, sections: ['glance', 'ks'] }),
+      [parents('glance'), strandsSection('ks')],
+    );
+
+  it('finds the strands section', () => {
+    expect(kindergartenStrands(course('2026'))).toBe('ks');
+  });
+
+  it('stops when the Ministry publishes a newer curriculum', () => {
+    expect(() => kindergartenStrands(course('2030'))).toThrow(
+      'Kindergarten is now the 2030 curriculum, not 2026. Add a framework for it.',
+    );
+  });
+});
+
+describe('checkKindergartenSplit', () => {
+  const filed = [...Object.values(KINDERGARTEN_SPLIT).flat(), ...KINDERGARTEN_MATH];
+
+  it('accepts the codes the split files', () => {
+    expect(() => checkKindergartenSplit(filed)).not.toThrow();
+  });
+
+  it('stops on a code no subject files', () => {
+    expect(() => checkKindergartenSplit([...filed, 'D26'])).toThrow(
+      'Kindergarten has new overall expectations D26. File them in KINDERGARTEN_SPLIT.',
+    );
+  });
+
+  it('stops on a filed code the curriculum dropped', () => {
+    expect(() => checkKindergartenSplit(filed.filter((c) => c !== 'B12'))).toThrow(
+      'Kindergarten no longer has B12',
+    );
+  });
+});
+
+describe('renderKindergarten', () => {
+  const overall = (codename: string, code: string, specifics: string[]) =>
+    item(codename, 'l4___overall_expectation', {
+      title_index: code,
+      title: `Title ${code}`,
+      content: `<p>do ${code}</p>`,
+      specific_expectations: specifics,
+    });
+  const specific = (codename: string, code: string) =>
+    item(codename, 'l5___specific_expectation', {
+      title_index: code,
+      title: '',
+      content: `<p>do ${code}</p>`,
+      elaborations: [],
+    });
+  const strand = (codename: string, letter: string, overalls: string[]) =>
+    item(codename, 'l3___strand', {
+      title_index: letter,
+      title: `Strand ${letter} title`,
+      why_is_this_learning_important: [],
+      description: [],
+      overall_expectations: overalls,
+    });
+  const strands = response(item('ks', 'ui___content_collection', { sections: ['c', 'd'] }), [
+    strand('c', 'C', ['c14']),
+    overall('c14', 'C14', ['c14-1']),
+    specific('c14-1', 'C14.1'),
+    strand('d', 'D', ['d23', 'd24', 'd25']),
+    overall('d23', 'D23', ['d23-1']),
+    specific('d23-1', 'D23.1'),
+    overall('d24', 'D24', ['d24-1']),
+    specific('d24-1', 'D24.1'),
+    overall('d25', 'D25', []),
+  ]);
+
+  it("keeps only the subject's overall expectations and their strand", () => {
+    const md = renderKindergarten(strands, {
+      subject: 'arts',
+      strands: 'ks',
+      retrieved: '2026-11-12',
+    });
+    expect(md.split('\n')[0]).toBe('# Kindergarten: Arts Expectations');
+    expect(md).toContain('*Kindergarten Curriculum (2026)*, overall expectations D24–D25');
+    expect(md.slice(md.indexOf('## Strand'))).toBe(
+      [
+        '## Strand D: Strand D title',
+        '',
+        '### D24. Title D24',
+        '',
+        '**D24.** do D24',
+        '',
+        '#### D24.1',
+        '',
+        '**D24.1** do D24.1',
+        '',
+        '### D25. Title D25',
+        '',
+        '**D25.** do D25',
+        '',
+      ].join('\n'),
+    );
+  });
+
+  it('lists overall codes in page order', () => {
+    expect(overallCodes(strands)).toEqual(['C14', 'D23', 'D24', 'D25']);
+  });
+});
+
+describe('fetched Kindergarten files', () => {
+  const sources = join(import.meta.dirname, '../../sources');
+
+  it.each(Object.entries(KINDERGARTEN_SPLIT))(
+    '%s holds exactly its codes',
+    async (subject, codes) => {
+      const md = await readFile(join(sources, subject, 'kindergarten.md'), 'utf8');
+      const found = [...md.matchAll(/^### ([A-Z]\d+)\. /gm)].map((m) => m[1]);
+      expect(found).toEqual(codes);
+    },
+  );
 });

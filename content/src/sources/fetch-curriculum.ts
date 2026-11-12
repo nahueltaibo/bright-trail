@@ -2,8 +2,17 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
-import { API, CURRICULA } from './curricula';
-import { planCourses, renderGrade, strandsUrl, type ApiResponse } from './render';
+import { API, CURRICULA, KINDERGARTEN, KINDERGARTEN_SPLIT } from './curricula';
+import {
+  checkKindergartenSplit,
+  kindergartenStrands,
+  overallCodes,
+  planCourses,
+  renderGrade,
+  renderKindergarten,
+  strandsUrl,
+  type ApiResponse,
+} from './render';
 
 const { values } = parseArgs({ options: { subject: { type: 'string', multiple: true } } });
 const wanted = values.subject ?? CURRICULA.map((c) => c.subject);
@@ -35,5 +44,23 @@ for (const curriculum of CURRICULA.filter((c) => wanted.includes(c.subject))) {
     });
     await writeFile(join(dir, plan.file), markdown);
     console.log(`${curriculum.subject}/${plan.file}`);
+  }
+}
+
+const kindergartenSubjects = CURRICULA.map((c) => c.subject).filter(
+  (s) => wanted.includes(s) && KINDERGARTEN_SPLIT[s],
+);
+if (kindergartenSubjects.length) {
+  const strands = kindergartenStrands(
+    await get(`${API}${KINDERGARTEN.codename}?language=en-CA&depth=1`),
+  );
+  const res = await get(strandsUrl(strands));
+  checkKindergartenSplit(overallCodes(res));
+  for (const subject of kindergartenSubjects) {
+    await writeFile(
+      join(sourcesDir, subject, 'kindergarten.md'),
+      renderKindergarten(res, { subject, strands, retrieved }),
+    );
+    console.log(`${subject}/kindergarten.md`);
   }
 }

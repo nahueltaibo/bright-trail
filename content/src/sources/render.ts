@@ -1,5 +1,12 @@
 import { SUBJECT_FRAMEWORKS } from '@bright-trail/shared';
-import { API, FSL_PROGRAMS, type Curriculum } from './curricula';
+import {
+  API,
+  FSL_PROGRAMS,
+  KINDERGARTEN,
+  KINDERGARTEN_MATH,
+  KINDERGARTEN_SPLIT,
+  type Curriculum,
+} from './curricula';
 import { htmlToMarkdown } from './html';
 
 export interface ApiElement {
@@ -127,7 +134,6 @@ const PROGRAM_NAMES: Record<string, string> = {
 /** Writes one grade's strands, fetched with depth 6, in the layout `content/sources/README.md` describes. */
 export function renderGrade(res: ApiResponse, meta: GradeMeta): string {
   const { curriculum, plan } = meta;
-  const md = (html: string) => htmlToMarkdown(html, (c) => renderObject(res, c));
   const year = frameworkYear(curriculum.subject);
   const name = plan.program
     ? `French as a Second Language: ${PROGRAM_NAMES[plan.program]}`
@@ -143,11 +149,30 @@ export function renderGrade(res: ApiResponse, meta: GradeMeta): string {
     `- **Content kept:** each strand's overview, overall and specific expectations, and each specific expectation's Examples, Key concepts, and Knowledge and skills. Teacher prompts, instructional tips, sample questions, and student talk are omitted. Images appear as their official alt text.`,
   ];
 
+  return finish([...out, ...renderStrands(res, () => true)]);
+}
+
+function finish(lines: string[]): string {
+  return `${lines
+    .join('\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .trimEnd()}\n`;
+}
+
+/** Writes the strands `res.item` lists, keeping the overall expectations `keep` accepts. Strands left empty are dropped. */
+function renderStrands(res: ApiResponse, keep: (code: string) => boolean): string[] {
+  const md = (html: string) => htmlToMarkdown(html, (c) => renderObject(res, c));
+  const out: string[] = [];
   for (const code of refs(res.item, 'sections')) {
     const strand = lookup(res, code);
     if (strand.system.type !== 'l3___strand') continue;
     const letter = text(strand, 'title_index').trim();
     if (!/^[A-Z]$/.test(letter)) throw new Error(`${code}: strand letter "${letter}"`);
+    const overalls = refs(strand, 'overall_expectations')
+      .map((oc) => lookup(res, oc))
+      .filter((o) => o.system.type === 'l4___overall_expectation')
+      .filter((o) => keep(text(o, 'title_index').trim()));
+    if (overalls.length === 0) continue;
     out.push('', `## Strand ${letter}: ${text(strand, 'title').trim()}`);
 
     for (const c of refs(strand, 'why_is_this_learning_important')) {
@@ -163,9 +188,8 @@ export function renderGrade(res: ApiResponse, meta: GradeMeta): string {
       );
     }
 
-    for (const oc of refs(strand, 'overall_expectations')) {
-      const overall = lookup(res, oc);
-      if (overall.system.type !== 'l4___overall_expectation') continue;
+    for (const overall of overalls) {
+      const oc = overall.system.codename;
       const ocode = text(overall, 'title_index').trim();
       if (!ocode.startsWith(letter)) throw new Error(`${oc}: ${ocode} is not in strand ${letter}`);
       out.push('', `### ${ocode}. ${text(overall, 'title').trim()}`.trimEnd(), '');
@@ -193,8 +217,79 @@ export function renderGrade(res: ApiResponse, meta: GradeMeta): string {
       }
     }
   }
-  return `${out
-    .join('\n')
-    .replace(/\n{3,}/g, '\n\n')
-    .trimEnd()}\n`;
+  return out;
 }
+
+/** Strands section of the Kindergarten course, fetched with depth 2. Throws when the Ministry's year moved on. */
+export function kindergartenStrands(res: ApiResponse): string {
+  const year = text(res.item, 'year_issued').trim();
+  const expected = KINDERGARTEN.framework.slice(-4);
+  if (year !== expected) {
+    throw new Error(
+      `Kindergarten is now the ${year} curriculum, not ${expected}. Add a framework for it.`,
+    );
+  }
+  const strands = refs(res.item, 'sections').find(
+    (s) => text(lookup(res, s), 'url_slug') === 'strands',
+  );
+  if (!strands) throw new Error(`${res.item.system.codename} has no strands section`);
+  return strands;
+}
+
+/** Overall expectation codes in the strands collection, in page order. */
+export function overallCodes(res: ApiResponse): string[] {
+  return refs(res.item, 'sections')
+    .map((s) => lookup(res, s))
+    .filter((s) => s.system.type === 'l3___strand')
+    .flatMap((s) => refs(s, 'overall_expectations').map((o) => lookup(res, o)))
+    .filter((o) => o.system.type === 'l4___overall_expectation')
+    .map((o) => text(o, 'title_index').trim());
+}
+
+/** Throws unless every overall expectation is filed under exactly one subject or kept with math. */
+export function checkKindergartenSplit(codes: readonly string[]): void {
+  const filed = [...Object.values(KINDERGARTEN_SPLIT).flat(), ...KINDERGARTEN_MATH];
+  const twice = filed.filter((c, i) => filed.indexOf(c) !== i);
+  if (twice.length) throw new Error(`Kindergarten codes filed twice: ${twice.join(', ')}`);
+  const unfiled = codes.filter((c) => !filed.includes(c));
+  if (unfiled.length) {
+    throw new Error(
+      `Kindergarten has new overall expectations ${unfiled.join(', ')}. File them in KINDERGARTEN_SPLIT.`,
+    );
+  }
+  const gone = filed.filter((c) => !codes.includes(c));
+  if (gone.length) throw new Error(`Kindergarten no longer has ${gone.join(', ')}`);
+}
+
+export interface KindergartenMeta {
+  subject: Curriculum['subject'];
+  strands: string;
+  retrieved: string;
+}
+
+/** Writes one subject's share of the Kindergarten strands, fetched with depth 6. */
+export function renderKindergarten(res: ApiResponse, meta: KindergartenMeta): string {
+  const codes = KINDERGARTEN_SPLIT[meta.subject];
+  if (!codes?.length) throw new Error(`Kindergarten files nothing under ${meta.subject}`);
+  const range = codes.length > 1 ? `${codes[0]}–${codes[codes.length - 1]}` : codes[0];
+  const out = [
+    `# Kindergarten: ${KINDERGARTEN_NAMES[meta.subject]}`,
+    '',
+    `- **Source:** *${KINDERGARTEN.title}*, overall expectations ${range}`,
+    '- **Publisher:** Ontario Ministry of Education, Curriculum and Resources site',
+    '- **Version:** 2026 (in effect from the 2026–27 school year)',
+    `- **Captured via:** the site's public content API, item \`${meta.strands}\` (${strandsUrl(meta.strands)})`,
+    `- **Retrieved:** ${meta.retrieved}`,
+    `- **Content kept:** overall expectations ${range}, their strand's overview, each specific expectation, and its Examples and Knowledge and skills. Images appear as their official alt text.`,
+  ];
+  return finish([...out, ...renderStrands(res, (code) => codes.includes(code))]);
+}
+
+const KINDERGARTEN_NAMES: Record<Curriculum['subject'], string> = {
+  language: 'Language Expectations',
+  science: 'Science and Technology Expectations',
+  'social-studies': 'Social Studies Expectations',
+  french: 'French Expectations',
+  health: 'Health and Physical Education Expectations',
+  arts: 'Arts Expectations',
+};
