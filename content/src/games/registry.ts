@@ -1,4 +1,5 @@
 import type {
+  BlocksScene,
   CompareScene,
   Hops,
   Item,
@@ -7,6 +8,7 @@ import type {
   Scene,
   SliceScene,
 } from '@bright-trail/shared';
+import { acceptBlocks, applyBlocks, blocksCandidates, blocksTagRequest } from '../blocks/blocks';
 import {
   acceptCompares,
   applyCompares,
@@ -75,6 +77,20 @@ const compare: Tagger<Item, CompareScene> = {
   apply: applyCompares,
 };
 
+const blocks: Tagger<Item, BlocksScene> = {
+  file: 'blocks.json',
+  outcome: 'play as base-ten blocks',
+  label: 'Blocks',
+  minPerSkill: 3,
+  candidates: blocksCandidates,
+  request: blocksTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptBlocks(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyBlocks,
+};
+
 const hops: Tagger<NumberLineItem, Hops> = {
   file: 'hops.json',
   outcome: 'hop a planned path',
@@ -93,7 +109,7 @@ const hops: Tagger<NumberLineItem, Hops> = {
  * Every content tagger by the `--kind` that runs it, in the order the bundle applies them.
  * Hops come last because they skip number-line items that already play a minigame.
  */
-export const TAGGERS = { share, slices, join, compare, hops };
+export const TAGGERS = { share, slices, join, compare, blocks, hops };
 export type TaggerKind = keyof typeof TAGGERS;
 
 export function isTaggerKind(kind: string): kind is TaggerKind {
