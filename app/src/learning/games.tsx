@@ -1,5 +1,7 @@
 import type { GameKind, GameOf, Item } from '@bright-trail/shared';
 import { useMemo, type ReactElement } from 'react';
+import { ArraysGame } from './arrays/ArraysGame';
+import { ARRAYS_DEMO_ITEMS } from './arrays/demo';
 import { BlocksGame } from './blocks/BlocksGame';
 import { BLOCKS_DEMO_ITEMS } from './blocks/demo';
 import { CompareGame } from './compare/CompareGame';
@@ -52,6 +54,10 @@ function CompareView({ game, ...props }: GameViewProps<'compare'>) {
   return <CompareGame {...frame} input={input} scene={game} />;
 }
 
+function ArraysView({ game, ...props }: GameViewProps<'arrays'>) {
+  return <ArraysGame {...useGameProps(props)} scene={game} />;
+}
+
 function BlocksView({ game, ...props }: GameViewProps<'blocks'>) {
   return <BlocksGame {...useGameProps(props)} scene={game} />;
 }
@@ -62,6 +68,7 @@ export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   slices: { title: 'Slices', View: SlicesView, demo: SLICE_DEMO_ITEMS },
   join: { title: 'Join and leave', View: JoinView, demo: JOIN_DEMO_ITEMS },
   compare: { title: 'Compare and order', View: CompareView, demo: COMPARE_DEMO_ITEMS },
+  arrays: { title: 'Arrays', View: ArraysView, demo: ARRAYS_DEMO_ITEMS },
   blocks: { title: 'Base-ten blocks', View: BlocksView, demo: BLOCKS_DEMO_ITEMS },
 };
 

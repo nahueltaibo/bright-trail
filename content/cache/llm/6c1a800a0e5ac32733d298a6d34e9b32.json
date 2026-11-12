@@ -1,0 +1,44 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-equal-groups-multiply-tap-3",
+        "fits": true,
+        "ask": "total",
+        "rows": 4,
+        "columns": 3,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "4 groups of 3 wheels"
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-tap-4",
+        "fits": true,
+        "ask": "total",
+        "rows": 4,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "4 feet of 5 toes"
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-keypad-5",
+        "fits": true,
+        "ask": "total",
+        "rows": 7,
+        "columns": 6,
+        "thing": "egg",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "7 half cartons of 6 eggs"
+      }
+    ]
+  }
+}
