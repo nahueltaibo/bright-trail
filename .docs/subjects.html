@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrightTrail Subjects</title>
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #1f2328; --muted: #5b636d; --line: #e3e0d8;
+    --card: #ffffff; --accent: #2f6fd6; --accent-soft: #e8f0fc; --warn: #b4540a; --warn-soft: #fdf1e6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2c3036;
+      --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171a; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2c3036;
+    --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 80px; }
+  h1 { font-size: 2rem; margin: 0 0 4px; }
+  h2 { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .95rem; display: block; overflow-x: auto; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { background: var(--accent-soft); }
+  td:first-child { white-space: nowrap; font-weight: 600; }
+  .diagram { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 16px 0; overflow-x: auto; }
+  .note { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 6px; margin: 16px 0; }
+  code { background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  .diagram { position: relative; cursor: zoom-in; }
+  .diagram .expand { position: absolute; top: 8px; right: 8px; font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--card); color: var(--fg); cursor: pointer; }
+  dialog.lightbox { width: 96vw; height: 92vh; max-width: none; max-height: none; padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--fg); }
+  dialog.lightbox::backdrop { background: rgba(0,0,0,.6); }
+  .lightbox .bar { position: sticky; top: 0; display: flex; gap: 6px; justify-content: flex-end; padding: 8px; background: var(--card); border-bottom: 1px solid var(--line); z-index: 1; }
+  .lightbox .bar button { font: inherit; min-width: 40px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+  .lightbox .stage { overflow: auto; height: calc(100% - 50px); padding: 16px; }
+  .lightbox .stage svg { display: block; margin: 0 auto; max-width: none !important; height: auto; }
+</style>
+</head>
+<body>
+<main>
+<h1>BrightTrail — Subjects</h1>
+<p class="sub">What Ontario teaches from Kindergarten to Grade 6, where each program lives, and which minigames fit each subject · Draft v0.1 · 2026-11-12</p>
+
+<p>Today BrightTrail covers one strand of one subject: Math, Strand B (Number). The rest of Math and four more subjects fit the app well. Two subjects fit only in part, because most of their learning is done with the body or out loud. Six new minigames would cover most of what's left, since each one serves several subjects.</p>
+
+<h2 id="subjects">1. Subjects and How Well They Fit</h2>
+<p>Every subject below is mandatory in Ontario public elementary schools, except Native Languages. Fit means how much of the subject a child can learn and show on a phone, with a check the app can grade.</p>
+<table>
+<tr><th>Subject</th><th>Grades</th><th>Fit</th><th>Why</th></tr>
+<tr><td>Mathematics</td><td>1–8</td><td>High</td><td>Answers are exact. Strand B is live. Strands C–F use the same generator and checks.</td></tr>
+<tr><td>Language</td><td>1–8</td><td>High for reading, low for writing</td><td>Phonics, words, grammar, and reading questions have one right answer. Free writing and speaking need a human or a speech model.</td></tr>
+<tr><td>Science and Technology</td><td>1–8</td><td>High</td><td>Each grade has four fixed topics full of facts to sort, order, and label. Experiments can only be simulated.</td></tr>
+<tr><td>Social Studies</td><td>1–6</td><td>Medium</td><td>Maps, timelines, and vocabulary fit. Perspectives and inquiry don't have one answer. Grades 7–8 become History and Geography.</td></tr>
+<tr><td>French as a Second Language</td><td>Core 4–8, Immersion 1–8</td><td>Medium</td><td>Vocabulary and reading fit. Needs French narration and a French UI first.</td></tr>
+<tr><td>Health and Physical Education</td><td>1–8</td><td>Low</td><td>Only Healthy Living and the social-emotional skills fit. Movement can't be checked on a phone.</td></tr>
+<tr><td>The Arts</td><td>1–8</td><td>Low</td><td>Music and visual arts basics fit. Dance and drama are performance.</td></tr>
+<tr><td>Native Languages</td><td>1–8, optional</td><td>Out of scope</td><td>Each language needs its own community, speakers, and recordings.</td></tr>
+</table>
+<p class="note">Kindergarten has one program for every subject. Its four strands map onto the subjects above, so K content comes with each subject rather than as a separate one.</p>
+
+<h2 id="sources">2. Where the Programs Live</h2>
+<p>The Ministry of Education publishes every curriculum on the <a href="https://www.dcp.edu.gov.on.ca/en/curriculum">Curriculum and Resources site</a>. Each grade lists its strands, overall expectations (A1, B2, …), and specific expectations (B2.1, …). The site renders in the browser, so content comes from its public API, the same way <code>content/sources/</code> was built. The year is the one the API reports for each document.</p>
+<table>
+<tr><th>Subject</th><th>Current document</th><th>Year</th><th>Strands</th></tr>
+<tr><td>Mathematics</td><td>The Ontario Curriculum, Grades 1–8: Mathematics</td><td>2020</td><td>A SEL Skills and Math Processes · B Number · C Algebra · D Data · E Spatial Sense · F Financial Literacy</td></tr>
+<tr><td>Language</td><td>The Ontario Curriculum, Grades 1–8: Language</td><td>2023</td><td>A Literacy Connections and Applications · B Foundations of Language · C Comprehension · D Composition</td></tr>
+<tr><td>Science and Technology</td><td>The Ontario Curriculum, Grades 1–8: Science and Technology</td><td>2022</td><td>A STEM Skills and Connections · B Life Systems · C Matter and Energy · D Structures and Mechanisms · E Earth and Space Systems</td></tr>
+<tr><td>Social Studies</td><td>Social Studies, Grades 1 to 6; History and Geography, Grades 7 and 8</td><td>2026: the 2018 document, revised in 2023 and 2026</td><td>A Heritage and Identity · B People and Environments</td></tr>
+<tr><td>French as a Second Language</td><td>FSL: Core, Grades 4–8; Extended, Grades 4–8; Immersion, Grades 1–8</td><td>2013</td><td>A Listening · B Speaking · C Reading · D Writing</td></tr>
+<tr><td>Health and Physical Education</td><td>The Ontario Curriculum, Grades 1–8: Health and Physical Education</td><td>2019</td><td>A Social-Emotional Learning Skills · B Active Living · C Movement Competence · D Healthy Living</td></tr>
+<tr><td>The Arts</td><td>The Ontario Curriculum, Grades 1–8: The Arts</td><td>2009</td><td>A Dance · B Drama · C Music · D Visual Arts</td></tr>
+<tr><td>Kindergarten</td><td>Kindergarten (2026)</td><td>2026</td><td>A Foundations of Language and Mathematics · B Problem Solving and Innovating · C Self-Regulation and Well-Being · D Belonging and Contributing</td></tr>
+</table>
+<ul>
+<li>Ontario revises one subject at a time. The <a href="https://www.dcp.edu.gov.on.ca/en/curriculum-review/upcoming">Curriculum Review and Revision Guide</a> lists what's coming. A skill should record its framework and year, as <code>ontario-math-2020</code> does.</li>
+<li>French-language schools follow separate documents (Français, Mathématiques, …). The English-language FSL program above is the one for most families.</li>
+</ul>
+
+<h3 id="api">Fetching a Program</h3>
+<p>Each subject has a curriculum item. Its <code>specific_courses</code> list the grades, and each grade's <code>sections</code> point at a strands item. Fetch that with <code>depth=4</code> to get strands, overall expectations, and specific expectations:</p>
+<pre><code>curl -s "https://ws.api.dcp.edu.gov.on.ca/content/api/items/&lt;codename&gt;?language=en-CA&amp;depth=4"</code></pre>
+<table>
+<tr><th>Subject</th><th>Curriculum codename</th><th>Grade 3 strands codename</th></tr>
+<tr><td>Mathematics</td><td><code>elementary___math</code></td><td><code>ele___math___grade_3___strands</code></td></tr>
+<tr><td>Language</td><td><code>ele___lang___fra</code></td><td><code>lang___fra___grade_3___strands</code></td></tr>
+<tr><td>Science and Technology</td><td><code>elementary___the_arts__copy__9c55991</code></td><td><code>e___sci___tech___grade_3___strands</code></td></tr>
+<tr><td>Social Studies</td><td><code>ele___sshh_curriculum</code></td><td><code>sshg___grade_3___strands</code></td></tr>
+<tr><td>FSL</td><td><code>ele___fsl</code></td><td><code>fsl___core___grade_4___strands</code> (Core starts in Grade 4)</td></tr>
+<tr><td>Health and Physical Education</td><td><code>elementary___health_and_physical_education__2019_</code></td><td><code>hpe___grade_3___strands</code></td></tr>
+<tr><td>The Arts</td><td><code>elementary___the_arts_4877b9e</code></td><td><code>arts___grade_3___strands</code></td></tr>
+<tr><td>Kindergarten</td><td><code>elementary___health_and_physical_education__2019__</code></td><td><code>kinder___strands</code> (one for both years)</td></tr>
+</table>
+<p class="note">Codenames are copies of copies, so they don't follow a pattern. Grade 2 Arts is <code>arts___grade_1___strands__copy_</code>, and the Social Studies course codenames run one grade behind their strands. Read <code>specific_courses</code> each time instead of guessing.</p>
+
+<h2 id="games">3. Minigames Across Subjects</h2>
+<p>Math has eight minigames, plus the frog hops on the number line. Most other subjects need the same few moves: sort things into groups, put things in order, name parts of a picture, find a place on a map, and build a word or sentence from tiles. Each of these is one new minigame that many subjects share.</p>
+<table>
+<tr><th>Minigame</th><th>Math C–F</th><th>Language</th><th>Science</th><th>Social Studies</th><th>Health</th><th>French</th><th>Arts</th></tr>
+<tr><td>Sort it</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td><td>✓</td></tr>
+<tr><td>Put in order</td><td></td><td>✓</td><td>✓</td><td>✓</td><td></td><td></td><td></td></tr>
+<tr><td>Label it</td><td></td><td></td><td>✓</td><td>✓</td><td></td><td></td><td></td></tr>
+<tr><td>Map pin</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+<tr><td>Tile builder</td><td></td><td>✓</td><td></td><td></td><td></td><td>✓</td><td></td></tr>
+<tr><td>Robot path</td><td>✓</td><td></td><td>✓</td><td></td><td></td><td></td><td></td></tr>
+<tr><td>Story cards and tap</td><td></td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td></td></tr>
+<tr><td>Timeline (compare number line)</td><td></td><td></td><td></td><td>✓</td><td></td><td></td><td></td></tr>
+<tr><td>Stepping stones</td><td>✓</td><td>✓</td><td></td><td></td><td></td><td></td><td></td></tr>
+</table>
+<table>
+<tr><th>Minigame</th><th>Play</th><th>Examples</th></tr>
+<tr><td>Sort it</td><td>Cards drop into 2 to 4 bins. Narration reads each card.</td><td>Living or not, solid or liquid, needs or wants, nouns or verbs, healthy choices, shape attributes</td></tr>
+<tr><td>Put in order</td><td>Picture cards slide into a row.</td><td>Life cycles, seasons, water cycle, story events, steps of a routine</td></tr>
+<tr><td>Label it</td><td>Tags drag onto spots on a picture.</td><td>Plant parts, body systems, simple machines, planets, map features</td></tr>
+<tr><td>Map pin</td><td>A pin drops on a map, or the child taps a region.</td><td>Community maps, continents and oceans, Ontario regions, provinces and territories</td></tr>
+<tr><td>Tile builder</td><td>Letter or word tiles snap into slots after the word or sentence is read aloud.</td><td>Phonics, spelling, word order, French vocabulary</td></tr>
+<tr><td>Robot path</td><td>Arrow commands move a robot across a grid. The child plans, runs, and fixes the steps.</td><td>Math C coding, Science A2 coding, Kindergarten B11 coding</td></tr>
+</table>
+<p>Existing pieces that carry over:</p>
+<ul>
+<li><strong>Story cards, <code>ReadAlong</code>, and tap items</strong> already handle reading questions and scenario choices.</li>
+<li><strong>The compare number line</strong> becomes a timeline: years instead of numbers for "which came first".</li>
+<li><strong>Stepping stones</strong> holds sounds or syllables, and the frog hops one stone per sound.</li>
+<li><strong>Arrays and grid</strong> carry area and measurement in Math E.</li>
+</ul>
+
+<h2 id="per-subject">4. Per Subject</h2>
+
+<h3 id="math">Mathematics: Strands C–F</h3>
+<table>
+<tr><th>Strand</th><th>What kids learn by Grade 6</th><th>Minigames</th></tr>
+<tr><td>C Algebra</td><td>Repeating and growing patterns, equations and inequalities, coding, models</td><td>Reuse stepping stones for growing patterns. New: a balance scale for equality and missing values, a pattern train, Robot path.</td></tr>
+<tr><td>D Data</td><td>Sorting, tally and bar graphs, pictographs, mean and mode, probability</td><td>Sort it for attributes. New: build a graph and read a graph, and a spinner for likelihood.</td></tr>
+<tr><td>E Spatial Sense</td><td>2D shapes and 3D objects, location and movement, length, area, mass, time, angles</td><td>Reuse arrays for area. New: shape sorter, ruler, analog clock, coordinate grid.</td></tr>
+<tr><td>F Financial Literacy</td><td>Coins and bills, making change, saving and spending</td><td>New: coin shop, where coins drag into a tray to pay. Shares the join scene's counting.</td></tr>
+</table>
+
+<h3 id="language">Language</h3>
+<table>
+<tr><th>Strand</th><th>Fits</th><th>Minigames</th></tr>
+<tr><td>B2 Foundations for Reading and Writing</td><td>Sounds, phonics, spelling, vocabulary, sight words</td><td>Tile builder spells a narrated word. Stepping stones splits it into sounds. Tap matches a picture and a word.</td></tr>
+<tr><td>B3 Language Conventions</td><td>Sentence parts, capitals, punctuation</td><td>Tile builder orders words. Sort it groups parts of speech. Tap picks the fix.</td></tr>
+<tr><td>C Comprehension</td><td>Text features, main idea, inference</td><td>Story cards with tap questions. Put in order for story events.</td></tr>
+<tr><td>B1 Oral and D Composition</td><td>Speaking and free writing</td><td>Not in a check. A later speech or LLM grader could give feedback without scoring.</td></tr>
+<tr><td>A Literacy Connections</td><td>Digital safety, transferable skills</td><td>Tap scenarios.</td></tr>
+</table>
+<p class="note">Young readers can't read the prompt. Every Language item must be narrated, and items that check reading must not read the answer aloud.</p>
+
+<h3 id="science">Science and Technology</h3>
+<p>Strand A (STEM skills, coding) runs through every grade. Strands B–E each hold one topic per grade:</p>
+<table>
+<tr><th>Grade</th><th>B Life Systems</th><th>C Matter and Energy</th><th>D Structures and Mechanisms</th><th>E Earth and Space</th></tr>
+<tr><td>1</td><td>Needs of living things</td><td>Energy in our lives, the Sun</td><td>Materials and objects</td><td>Daily and seasonal changes</td></tr>
+<tr><td>2</td><td>Animals grow and change</td><td>Liquids and solids</td><td>Movement and simple machines</td><td>Air and water</td></tr>
+<tr><td>3</td><td>Plants</td><td>Forces and motion</td><td>Strength and stability of structures</td><td>Soils</td></tr>
+<tr><td>4</td><td>Habitats and communities</td><td>Light and sound</td><td>Machines and mechanisms</td><td>Rocks and minerals</td></tr>
+<tr><td>5</td><td>Human body systems</td><td>Properties and changes of matter</td><td>Forces on structures</td><td>Energy conservation and resources</td></tr>
+<tr><td>6</td><td>Biodiversity</td><td>Electricity</td><td>Flight</td><td>Space and the solar system</td></tr>
+</table>
+<ul>
+<li><strong>Sort it</strong> fits almost every topic: living or not, solid or liquid, natural or human-made, conductor or insulator, renewable or not.</li>
+<li><strong>Put in order</strong> fits life cycles, seasons, the water cycle, and food chains.</li>
+<li><strong>Label it</strong> fits plant parts, body systems, simple machines, and planets.</li>
+<li>Simulations, such as a ramp for forces or a circuit for electricity, teach best but cost the most. Leave them for after the shared games.</li>
+</ul>
+
+<h3 id="social">Social Studies</h3>
+<table>
+<tr><th>Grade</th><th>A Heritage and Identity</th><th>B People and Environments</th></tr>
+<tr><td>1</td><td>Our changing roles and responsibilities</td><td>The local community</td></tr>
+<tr><td>2</td><td>Changing family and community traditions</td><td>Global communities</td></tr>
+<tr><td>3</td><td>Communities in Canada, 1780–1850</td><td>Living and working in Ontario</td></tr>
+<tr><td>4</td><td>Early societies to 1500 CE</td><td>Political and physical regions of Canada</td></tr>
+<tr><td>5</td><td>Interactions of Indigenous peoples and Europeans before 1713</td><td>Government and responsible citizenship</td></tr>
+<tr><td>6</td><td>Communities in Canada, past and present</td><td>Canada's interactions with the global community</td></tr>
+</table>
+<ul>
+<li><strong>Map pin</strong> carries Strand B: community features, continents and oceans, Ontario landform regions, provinces and territories.</li>
+<li><strong>The timeline</strong> and <strong>Put in order</strong> carry Strand A's then-and-now and dates.</li>
+<li><strong>Sort it</strong> fits then or now, needs or wants, and which level of government does what.</li>
+<li>First Nations, Métis, and Inuit histories, and Grade 6's mandatory Holocaust learning, need a human review of every item before release.</li>
+</ul>
+
+<h3 id="fsl">French as a Second Language</h3>
+<p>Core French starts in Grade 4. Immersion starts in Grade 1, or earlier in some boards. The Language games carry over with French content: Tile builder for words, tap for listening, and story cards for reading. Two things come first:</p>
+<ul>
+<li>A French narration voice. <code>npm run content:voices</code> can compare French voices the same way.</li>
+<li>A French UI, which the product requirements already plan for launch.</li>
+</ul>
+
+<h3 id="hpe">Health and Physical Education</h3>
+<ul>
+<li><strong>D Healthy Living</strong> fits: food choices, safety, and substance awareness, with Sort it and tap scenarios.</li>
+<li><strong>A Social-Emotional Learning</strong> fits as story choices: "What could Maya do?".</li>
+<li><strong>B and C</strong> are movement. A short move break between items could nod to them, without a check.</li>
+<li>Parents can exempt a child from Human Development and Sexual Health in Strand D. Leave those expectations out, or behind a parent setting.</li>
+</ul>
+
+<h3 id="arts">The Arts</h3>
+<ul>
+<li><strong>C Music</strong> fits listening games: echo a rhythm, high or low pitch, name the instrument.</li>
+<li><strong>D Visual Arts</strong> fits the elements of design: a colour mixer, and Sort it for line, shape, and texture.</li>
+<li><strong>A Dance and B Drama</strong> are performance and stay out.</li>
+<li>The 2009 document is the oldest one in use, so expect a revision.</li>
+</ul>
+
+<h3 id="kindergarten">Kindergarten</h3>
+<p>Only A6, Number Sense, is live. The other overall expectations follow the subject they match:</p>
+<ul>
+<li>A1–A4 with Language.</li>
+<li>A7–A10 with Math C–E.</li>
+<li>B11–B13 with Science: Robot path and Sort it.</li>
+<li>C14–C18 with Health, and D24–D25 with the Arts.</li>
+<li>D19–D23 with Social Studies.</li>
+</ul>
+
+<h2 id="order">5. Suggested Order</h2>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+  M[Math C to F] --> L[Language K to 3]
+  TB[Tile builder] --> L
+  L --> S[Science]
+  G[Sort it, Put in order, Label it] --> S
+  S --> SS[Social Studies]
+  MP[Map pin and timeline] --> SS
+  L --> F[French]
+  V[French voice and UI] --> F
+  S --> H[Health, then Arts]
+</pre></div>
+<ol>
+<li><strong>Math Strands C–F.</strong> Same framework, generator, and checks. Turns the app from "Number" into "Math".</li>
+<li><strong>Language, Grades K–3, Strands B2, B3, and C.</strong> The product requirements put Language in the MVP. Needs Tile builder.</li>
+<li><strong>Science.</strong> Needs Sort it, Put in order, and Label it, which Social Studies and Health then reuse.</li>
+<li><strong>Social Studies.</strong> Adds Map pin and the timeline.</li>
+<li><strong>French.</strong> After a French voice and UI.</li>
+<li><strong>Health, then the Arts.</strong> Only the parts listed above.</li>
+</ol>
+<p>Adding a subject touches <code>SUBJECTS</code> and <code>FRAMEWORKS</code> in <code>shared/src/skill.ts</code>, a <code>content/sources/</code> folder per subject, and the skill graph build. Packs already split by subject and grade.</p>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<dialog class="lightbox" aria-label="Diagram">
+  <div class="bar">
+    <button data-zoom="out" aria-label="Zoom out">−</button>
+    <button data-zoom="fit">Fit</button>
+    <button data-zoom="in" aria-label="Zoom in">+</button>
+    <button data-close aria-label="Close">✕</button>
+  </div>
+  <div class="stage"></div>
+</dialog>
+<script>
+  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'default', securityLevel: 'strict' });
+
+  const box = document.querySelector('dialog.lightbox');
+  const stage = box.querySelector('.stage');
+  let svg, fitWidth, scale = 1;
+
+  function applyScale() { svg.style.width = (fitWidth * scale) + 'px'; }
+
+  function open(diagram) {
+    svg = diagram.querySelector('svg').cloneNode(true);
+    svg.removeAttribute('height');
+    stage.replaceChildren(svg);
+    box.showModal();
+    const vb = svg.viewBox.baseVal;
+    const w = stage.clientWidth - 32, h = stage.clientHeight - 32;
+    fitWidth = Math.min(w, h * vb.width / vb.height);
+    scale = 1;
+    applyScale();
+  }
+
+  box.querySelector('.bar').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.hasAttribute('data-close')) return box.close();
+    scale = b.dataset.zoom === 'in' ? scale * 1.25 : b.dataset.zoom === 'out' ? scale / 1.25 : 1;
+    applyScale();
+  });
+  box.addEventListener('click', e => { if (e.target === box) box.close(); });
+
+  mermaid.run({ querySelector: '.mermaid' }).then(() => {
+    document.querySelectorAll('.diagram').forEach(d => {
+      const btn = document.createElement('button');
+      btn.className = 'expand';
+      btn.textContent = 'Expand';
+      d.append(btn);
+      d.addEventListener('click', () => open(d));
+    });
+  });
+</script>
+</body>
+</html>
