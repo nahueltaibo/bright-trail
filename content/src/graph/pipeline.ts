@@ -65,7 +65,8 @@ function toSkills(generated: GeneratedSkills, source: GradeSource): Skill[] {
     subject: source.subject,
     framework: source.framework,
     grade: source.grade,
-    strand: source.strand,
+    // A skill citing codes from two strands fails the schema check and goes back for repair.
+    strand: s.expectationCodes[0]?.trim()[0] ?? source.strands[0],
     expectationCodes: [...new Set(s.expectationCodes.map((c) => c.trim()))],
     title: s.title.trim(),
     description: s.description.trim(),
