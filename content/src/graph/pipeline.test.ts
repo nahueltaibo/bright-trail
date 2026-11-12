@@ -92,7 +92,7 @@ describe('buildGraph', () => {
     const build = await buildGraph([k, twoStrands], llm);
 
     expect(build.problems).toEqual([]);
-    expect(llm.requests[2].prompt).toContain('Grade 1 expectations (strands B, C)');
+    expect(llm.requests[2].prompt).toContain('Grade 1 expectations (strand B, C)');
     expect(build.skills.find((s) => s.id === 'g1-read-to-50')?.strand).toBe('B');
     expect(build.skills.find((s) => s.id === 'g1-patterns')?.strand).toBe('C');
   });

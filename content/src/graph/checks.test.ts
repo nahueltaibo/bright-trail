@@ -269,3 +269,36 @@ describe('findWarnings', () => {
     ]);
   });
 });
+
+describe('checkGraph on a subject that starts at Grade 1', () => {
+  const sources: GradeSource[] = [1, 2].map((n) => ({
+    grade: String(n) as Skill['grade'],
+    subject: 'science',
+    framework: 'ontario-science-2022',
+    strands: ['B'],
+    file: `grade-${n}.md`,
+    expectations: [{ code: 'B1.1', kind: 'specific', topic: '', statement: 'plants', details: '' }],
+  }));
+  const sci = (id: string, prerequisiteIds: string[] = []): Skill => ({
+    ...skill(id, prerequisiteIds, ['B1.1']),
+    subject: 'science',
+    framework: 'ontario-science-2022',
+    grade: id[1] as Skill['grade'],
+  });
+
+  it('roots at Grade 1 and wants the subject tag', () => {
+    const skills = [sci('g1-sci-plants'), sci('g2-sci-plant-parts', ['g1-sci-plants'])];
+    expect(checkGraph(skills, sources).map((p) => p.message)).toEqual([]);
+    expect(findWarnings(skills, sources)).toEqual([]);
+  });
+
+  it('reports a Grade 2 orphan and a missing tag', () => {
+    const found = checkGraph([sci('g1-sci-plants'), sci('g2-plant-parts')], sources).map(
+      (p) => p.message,
+    );
+    expect(found).toContain('g2-plant-parts: id must start with g2-sci-');
+    expect(found).toContain(
+      'g2-plant-parts: orphan, only Grade 1 skills may have no prerequisites',
+    );
+  });
+});

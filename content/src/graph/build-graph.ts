@@ -4,16 +4,17 @@ import { fileURLToPath } from 'node:url';
 import { ClaudeCliLlm } from './cli-llm';
 import { AnthropicLlm, withDiskCache, type LlmClient } from './llm';
 import { loadOverrides } from './overrides';
-import { buildGraph, mergeBuilds, type GraphBuild } from './pipeline';
+import { buildGraph, mergeBuilds } from './pipeline';
 import { GENERATOR_MODEL, REVIEWER_MODEL } from './prompts';
 import { renderReport } from './report';
-import { loadAllSources } from './sources';
+import { loadAllSources, subjectOfId } from './sources';
 import { writeFormatted } from './write';
 
 const contentDir = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const outDir = join(contentDir, 'out');
 const skillsFile = join(outDir, 'skills.json');
-const reportFile = join(outDir, 'skills-report.md');
+const reportFile = (subject: string) =>
+  join(outDir, subject === 'math' ? 'skills-report.md' : `skills-report-${subject}.md`);
 
 try {
   process.loadEnvFile(join(contentDir, '..', '.env'));
@@ -36,39 +37,41 @@ const counted: LlmClient = {
   },
 };
 const llm = withDiskCache(counted, join(contentDir, 'cache', 'llm'));
-const builds: GraphBuild[] = [];
-for (const [subject, subjectSources] of sources) {
-  const build = await buildGraph(subjectSources, llm, {
-    // Overrides name no subject yet, so a second subject would report math's as stale.
-    overrides,
-    log: (message) => console.log(`${subject}: ${message}`),
-  }).catch((error: unknown) => {
-    console.error(error instanceof Error ? error.message : error);
-    console.error('Calls already answered are cached, so a rerun resumes where this one stopped.');
-    process.exit(1);
-  });
-  builds.push(build);
-}
-const build = mergeBuilds(builds);
+// Subjects don't share skills, so each builds on its own and they run side by side.
+const builds = await Promise.all(
+  [...sources].map(async ([subject, subjectSources]) => {
+    const build = await buildGraph(subjectSources, llm, {
+      overrides: overrides.filter((o) => subjectOfId(o.skillId) === subject),
+      log: (message) => console.log(`${subject}: ${message}`),
+    });
+    return { subject, build };
+  }),
+).catch((error: unknown) => {
+  console.error(error instanceof Error ? error.message : error);
+  console.error('Calls already answered are cached, so a rerun resumes where this one stopped.');
+  process.exit(1);
+});
+const graph = mergeBuilds(builds.map((b) => b.build));
 
 console.log(`${liveCalls} ${backend} calls, the rest came from the cache`);
-await writeFormatted(reportFile, renderReport(build));
-for (const warning of build.warnings) console.warn(`Warning: ${warning.message}`);
-if (build.problems.length > 0) {
+for (const { subject, build } of builds) {
+  const title = subject === 'math' ? undefined : `Skill Graph Report: ${subject}`;
+  await writeFormatted(reportFile(subject), renderReport(build, title));
+  for (const warning of build.warnings) console.warn(`Warning: ${subject}: ${warning.message}`);
+}
+if (graph.problems.length > 0) {
   // A stale skills.json would look valid to the next build step.
   await rm(skillsFile, { force: true });
-  console.error(`${build.problems.length} problems. See ${reportFile}`);
-  for (const problem of build.problems) console.error(`  ${problem.message}`);
+  console.error(`${graph.problems.length} problems. See the skills-report files in ${outDir}`);
+  for (const problem of graph.problems) console.error(`  ${problem.message}`);
   process.exitCode = 1;
 } else {
   await writeFormatted(
     skillsFile,
     JSON.stringify({
       models: { generator: GENERATOR_MODEL, reviewer: REVIEWER_MODEL },
-      skills: build.skills,
+      skills: graph.skills,
     }),
   );
-  console.log(
-    `Wrote ${build.skills.length} skills to ${skillsFile} and the report to ${reportFile}`,
-  );
+  console.log(`Wrote ${graph.skills.length} skills to ${skillsFile} and the reports to ${outDir}`);
 }

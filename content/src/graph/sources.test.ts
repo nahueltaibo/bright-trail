@@ -1,8 +1,16 @@
 import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
-import { OFFERED_SUBJECTS, SUBJECTS } from '@bright-trail/shared';
+import { SUBJECTS } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
-import { loadAllSources, loadSources, parseSource } from './sources';
+import {
+  GRAPH_SUBJECTS,
+  idPrefix,
+  loadAllSources,
+  loadSources,
+  MATH,
+  parseSource,
+  subjectOfId,
+} from './sources';
 
 describe('parseSource', () => {
   it('reads overall and specific expectations with their details', () => {
@@ -19,7 +27,7 @@ describe('parseSource', () => {
         '- 135',
         '## B2. Operations',
       ].join('\n'),
-      'math',
+      MATH,
     );
     expect(source).toMatchObject({
       grade: '2',
@@ -50,19 +58,19 @@ describe('parseSource', () => {
         '#### C1.2 Patterns',
         '**C1.2** extend patterns',
       ].join('\n'),
-      'math',
+      MATH,
     );
     expect(source.strands).toEqual(['C', 'B']);
     expect(source.expectations.map((e) => e.code)).toEqual(['C1.1', 'B1.1', 'C1.2']);
   });
 
   it('uses the Kindergarten framework for Kindergarten files', () => {
-    const source = parseSource('kindergarten.md', '#### A6.1\n**A6.1** count to 20', 'math');
+    const source = parseSource('kindergarten.md', '#### A6.1\n**A6.1** count to 20', MATH);
     expect(source).toMatchObject({ subject: 'math', framework: 'ontario-kindergarten-2026' });
   });
 
   it('rejects files it does not know', () => {
-    expect(() => parseSource('notes.md', '', 'math')).toThrow('Unexpected source file notes.md');
+    expect(() => parseSource('notes.md', '', MATH)).toThrow('Unexpected source file notes.md');
   });
 });
 
@@ -91,31 +99,76 @@ describe('loadSources', () => {
 });
 
 describe('loadAllSources', () => {
-  it('gives every subject its own folder and loads the offered ones, Kindergarten to Grade 6', async () => {
+  it('gives every subject its own folder and loads the graph subjects', async () => {
     const folders = (await readdir(root, { withFileTypes: true }))
       .filter((d) => d.isDirectory())
       .map((d) => d.name);
     expect(folders.sort()).toEqual([...SUBJECTS].sort());
 
     const sources = await loadAllSources(root);
-    expect([...sources.keys()]).toEqual([...OFFERED_SUBJECTS]);
-    for (const subject of OFFERED_SUBJECTS) {
-      expect(sources.get(subject)?.map((s) => s.grade)).toEqual([
-        'K',
-        '1',
-        '2',
-        '3',
-        '4',
-        '5',
-        '6',
-      ]);
-      expect(sources.get(subject)?.every((s) => s.subject === subject)).toBe(true);
+    expect([...sources.keys()]).toEqual(GRAPH_SUBJECTS.map((s) => s.subject));
+    for (const [subject, list] of sources) {
+      // Only math reads Kindergarten, so the other graphs start at Grade 1.
+      expect(list.map((s) => s.grade)).toEqual(
+        subject === 'math' ? ['K', '1', '2', '3', '4', '5', '6'] : ['1', '2', '3', '4', '5', '6'],
+      );
+      expect(list.every((s) => s.subject === subject)).toBe(true);
     }
+    expect(sources.get('science')?.every((s) => s.strands.join() === 'B,C,D,E')).toBe(true);
   });
 
   it('names the subject whose folder is missing', async () => {
     await expect(loadSources(root, 'art' as never)).rejects.toThrow(
       'No curriculum sources for art',
     );
+  });
+});
+
+describe('other subjects', () => {
+  const spec = (subject: string) => GRAPH_SUBJECTS.find((s) => s.subject === subject)!;
+  const file = [
+    '# Grade 2',
+    '## Strand A: Heritage and Identity',
+    '### A1. Application: Traditions',
+    '**A1.** compare traditions',
+    '#### A1.1',
+    '**A1.1** compare family traditions',
+    '### A2. Inquiry: Past and Present',
+    '**A2.** investigate traditions',
+    '#### A2.1',
+    '**A2.1** formulate questions',
+    '## Strand C: Not Kept',
+    '### C1. Something',
+    '#### C1.1',
+    '**C1.1** something else',
+  ].join('\n');
+
+  it('keeps the listed strands and skips Inquiry expectations', () => {
+    const source = parseSource('grade-2.md', file, {
+      ...spec('social-studies'),
+      strands: ['A'],
+    });
+    expect(source).toMatchObject({
+      subject: 'social-studies',
+      framework: 'ontario-social-studies-2026',
+      strands: ['A'],
+    });
+    expect(source.expectations.map((e) => e.code)).toEqual(['A1', 'A1.1', 'A2']);
+  });
+
+  it('skips Human Development and Sexual Health in health', async () => {
+    const sources = await loadSources(root, 'health');
+    const topics = sources.flatMap((s) => s.expectations.map((e) => e.topic));
+    expect(topics.some((t) => /sexual health/i.test(t))).toBe(false);
+    expect(sources.every((s) => s.strands.join() === 'D')).toBe(true);
+  });
+
+  it('tags ids by subject', () => {
+    expect(idPrefix('3')).toBe('g3-');
+    expect(idPrefix('K')).toBe('k-');
+    expect(idPrefix('3', 'science')).toBe('g3-sci-');
+    expect(subjectOfId('g3-sci-plant-needs')).toBe('science');
+    expect(subjectOfId('g4-hlth-food-groups')).toBe('health');
+    expect(subjectOfId('g3-add-within-100')).toBe('math');
   });
 });

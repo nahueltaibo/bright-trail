@@ -1,4 +1,4 @@
-import type { Skill } from '@bright-trail/shared';
+import type { Skill, Subject } from '@bright-trail/shared';
 import { z } from 'zod';
 import type { Problem } from './checks';
 import type { LlmRequest, ToolSpec } from './llm';
@@ -86,6 +86,50 @@ Check each skill:
 
 Return a correction only where something is wrong. An empty list is a fine answer. With changePrerequisites true, give the full new prerequisite list, using only ids that appear in the prompt. Leave title or description empty to keep it. Don't add, remove, or rename skills. Give your whole answer as the structured output.`;
 
+const SUBJECT_NAMES: Record<Subject, string> = {
+  math: 'math',
+  language: 'language',
+  science: 'science and technology',
+  'social-studies': 'social studies',
+  french: 'French',
+  health: 'health',
+  arts: 'the arts',
+};
+
+const ID_EXAMPLES: Partial<Record<Subject, string>> = {
+  science: 'g2-sci-animal-needs',
+  'social-studies': 'g2-soc-community-helpers',
+  health: 'g2-hlth-food-groups',
+};
+
+/**
+ * Math keeps its original prompts, so its cached calls stay valid. Other subjects start at Grade
+ * 1 and check facts and ideas by tapping, sorting, ordering, and labelling.
+ */
+function systemPrompts(subject: Subject): { generator: string; reviewer: string } {
+  if (subject === 'math') return { generator: GENERATOR_SYSTEM, reviewer: REVIEWER_SYSTEM };
+  const name = SUBJECT_NAMES[subject];
+  const context = GRAPH_CONTEXT.replace(
+    'BrightTrail is a math learning app for Ontario kids from Kindergarten to Grade 6.',
+    `BrightTrail is a learning app for Ontario kids from Kindergarten to Grade 6. This graph covers ${name}, from Grade 1 to Grade 6.`,
+  );
+  const generator = `${context}
+
+You turn official ${name} curriculum expectations into skills, one grade at a time.
+
+Rules:
+- Each skill is one body of knowledge a kid can show by answering short questions on a tablet: pick the right fact, sort things into groups, put steps or events in order, or label the parts of a picture. Hands-on investigations, discussions, and projects can't be checked this way, so build the skill around the facts and ideas the expectation teaches.
+- Keep an expectation as one skill when it's one idea. Split it only when it bundles ideas a kid could master separately. Don't split a skill into small steps.
+- Every specific expectation must be covered by at least one skill. A skill may list several codes from this grade when it genuinely combines them, but only codes from one strand (the code's first letter). Use the codes exactly as written.
+- Aim for about one skill per specific expectation. Stay within the skill budget the prompt gives for the grade.
+- Ids are kebab-case, start with the prefix you're given, and stay short, e.g. "${ID_EXAMPLES[subject] ?? 'g2-topic'}".
+- Titles have at most 6 words. Descriptions are one or two short sentences, spoken to the kid, that a 6-year-old understands when read aloud. Never ask the kid to say, draw, write, or explain anything.
+- Prerequisites come from this grade's skills or from earlier grades' skills. Never point to a later grade.
+- Grade 1 skills may have no prerequisites. Every skill from Grade 2 up has at least one, usually the same topic from the grade before, or the closest earlier skill it builds on.
+- Give your whole answer as the structured output, with every skill for this grade.`;
+  return { generator, reviewer: REVIEWER_SYSTEM.replace(GRAPH_CONTEXT, context) };
+}
+
 function gradeName(source: GradeSource): string {
   return source.grade === 'K' ? 'Kindergarten' : `Grade ${source.grade}`;
 }
@@ -108,13 +152,9 @@ function earlierSection(earlier: readonly Skill[]): string {
   return `Skills from earlier grades, which are valid prerequisites:\n\n${earlier.map(formatSkill).join('\n')}`;
 }
 
-// One strand keeps the original wording, so cached LLM calls keep their keys.
-function strandLabel(strands: readonly string[]): string {
-  return `${strands.length === 1 ? 'strand' : 'strands'} ${strands.join(', ')}`;
-}
-
+// Cached LLM calls key on this wording, "strand B, C" included, so keep it.
 function expectationsSection(source: GradeSource): string {
-  return `${gradeName(source)} expectations (${strandLabel(source.strands)}):\n\n${source.expectations
+  return `${gradeName(source)} expectations (strand ${source.strands.join(', ')}):\n\n${source.expectations
     .map(formatExpectation)
     .join('\n\n')}`;
 }
@@ -127,14 +167,14 @@ export function skillBudget(source: GradeSource): number {
 export function generateRequest(source: GradeSource, earlier: readonly Skill[]): LlmRequest {
   return {
     model: GENERATOR_MODEL,
-    system: GENERATOR_SYSTEM,
+    system: systemPrompts(source.subject).generator,
     tool: SUBMIT_SKILLS,
     maxTokens: 32000,
     prompt: `${earlierSection(earlier)}
 
 ${expectationsSection(source)}
 
-Write the skills for ${gradeName(source)}. Every id starts with "${idPrefix(source.grade)}". Budget: ${skillBudget(source)} skills at most.`,
+Write the skills for ${gradeName(source)}. Every id starts with "${idPrefix(source.grade, source.subject)}". Budget: ${skillBudget(source)} skills at most.`,
   };
 }
 
@@ -145,7 +185,7 @@ export function reviewRequest(
 ): LlmRequest {
   return {
     model: REVIEWER_MODEL,
-    system: REVIEWER_SYSTEM,
+    system: systemPrompts(source.subject).reviewer,
     tool: SUBMIT_REVIEW,
     maxTokens: 16000,
     prompt: `${earlierSection(earlier)}
