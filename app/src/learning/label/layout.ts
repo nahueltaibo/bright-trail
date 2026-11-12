@@ -29,6 +29,43 @@ export const SPOTS: { [P in Picture]: Record<(typeof PICTURES)[P][number], Spot>
     leg: { x: 194, y: 214, side: 'right' },
     foot: { x: 160, y: 262, side: 'left' },
   },
+  organs: {
+    brain: { x: 180, y: 34, side: 'right' },
+    lungs: { x: 156, y: 118, side: 'left' },
+    heart: { x: 188, y: 140, side: 'right' },
+    liver: { x: 160, y: 176, side: 'left' },
+    stomach: { x: 204, y: 180, side: 'right' },
+    intestines: { x: 172, y: 232, side: 'left' },
+  },
+  machines: {
+    lever: { x: 145, y: 62, side: 'left' },
+    pulley: { x: 215, y: 34, side: 'right' },
+    'inclined plane': { x: 156, y: 160, side: 'left' },
+    'wheel and axle': { x: 215, y: 150, side: 'right' },
+    wedge: { x: 145, y: 226, side: 'left' },
+    screw: { x: 215, y: 246, side: 'right' },
+  },
+  planets: {
+    sun: { x: 180, y: 10, side: 'right' },
+    mercury: { x: 162, y: 50, side: 'left' },
+    venus: { x: 201, y: 74, side: 'right' },
+    earth: { x: 159, y: 100, side: 'left' },
+    mars: { x: 199, y: 124, side: 'right' },
+    jupiter: { x: 153, y: 158, side: 'left' },
+    saturn: { x: 203, y: 202, side: 'right' },
+    uranus: { x: 159, y: 240, side: 'left' },
+    neptune: { x: 201, y: 272, side: 'right' },
+  },
+  map: {
+    title: { x: 180, y: 37, side: 'right' },
+    'compass rose': { x: 234, y: 76, side: 'right' },
+    mountains: { x: 140, y: 84, side: 'left' },
+    forest: { x: 222, y: 134, side: 'right' },
+    lake: { x: 144, y: 150, side: 'left' },
+    river: { x: 184, y: 206, side: 'left' },
+    legend: { x: 133, y: 250, side: 'left' },
+    scale: { x: 224, y: 261, side: 'right' },
+  },
 };
 
 const TAG_W = 88;
