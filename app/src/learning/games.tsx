@@ -2,6 +2,8 @@ import type { GameKind, GameOf, Item } from '@bright-trail/shared';
 import { useMemo, type ReactElement } from 'react';
 import { ArraysGame } from './arrays/ArraysGame';
 import { ARRAYS_DEMO_ITEMS } from './arrays/demo';
+import { BlocksGame } from './blocks/BlocksGame';
+import { BLOCKS_DEMO_ITEMS } from './blocks/demo';
 import { CompareGame } from './compare/CompareGame';
 import { COMPARE_DEMO_ITEMS } from './compare/demo';
 import { sceneLabels } from './compare/layout';
@@ -66,6 +68,10 @@ function GridView({ game, ...props }: GameViewProps<'grid'>) {
   return <GridGame {...frame} input={input} scene={game} />;
 }
 
+function BlocksView({ game, ...props }: GameViewProps<'blocks'>) {
+  return <BlocksGame {...useGameProps(props)} scene={game} />;
+}
+
 /** Every minigame the app plays, by `kind`. A new kind in `GAMES` fails the type check here. */
 export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   share: { title: 'Sharing', View: ShareView, demo: DEMO_ITEMS },
@@ -74,6 +80,7 @@ export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   compare: { title: 'Compare and order', View: CompareView, demo: COMPARE_DEMO_ITEMS },
   arrays: { title: 'Arrays', View: ArraysView, demo: ARRAYS_DEMO_ITEMS },
   grid: { title: 'Tenths and hundredths', View: GridView, demo: GRID_DEMO_ITEMS },
+  blocks: { title: 'Base-ten blocks', View: BlocksView, demo: BLOCKS_DEMO_ITEMS },
 };
 
 export const GAME_KINDS = Object.keys(GAME_VIEWS) as GameKind[];
