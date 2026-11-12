@@ -24,6 +24,20 @@
     "otherGroups": 4,
     "want": "more"
   },
+  "g1-compare-unit-fractions-tap-8": {
+    "kind": "share",
+    "ask": "compare",
+    "thing": "bar",
+    "one": "bar",
+    "many": "bars",
+    "container": "plate",
+    "receivers": "kids",
+    "total": 1,
+    "groups": 3,
+    "otherGroups": 6,
+    "want": "less",
+    "sharer": { "name": "Leo", "look": "boy" }
+  },
   "g1-equal-groups-keypad-1": {
     "kind": "share",
     "ask": "total",
@@ -323,6 +337,17 @@
     "each": 2,
     "sharer": { "name": "Leo", "look": "boy" }
   },
+  "g2-division-sharing-keypad-6": {
+    "kind": "share",
+    "ask": "each",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 12,
+    "groups": 4
+  },
   "g2-division-sharing-number-line-1": {
     "kind": "share",
     "ask": "each",
@@ -561,7 +586,7 @@
     "thing": "sticker",
     "one": "sticker",
     "many": "stickers",
-    "container": "plate",
+    "container": "bag",
     "receivers": "containers",
     "total": 12,
     "groups": 2,
@@ -675,7 +700,7 @@
     "groups": 3,
     "otherGroups": 4,
     "want": "more",
-    "sharer": { "name": "Lily", "look": "girl" }
+    "sharer": { "name": "Lily", "look": "kid" }
   },
   "g3-fair-share-20-tap-5": {
     "kind": "share",
@@ -712,6 +737,18 @@
     "total": 10,
     "groups": 2,
     "sharer": { "name": "Maya", "look": "kid" }
+  },
+  "g3-mult-div-facts-2-5-10-number-line-1": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 8,
+    "groups": 4,
+    "each": 2
   },
   "g3-mult-div-problems-keypad-1": {
     "kind": "share",
@@ -763,6 +800,18 @@
     "groups": 2,
     "sharer": { "name": "Mia", "look": "kid" }
   },
+  "g3-mult-div-properties-number-line-1": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 8,
+    "groups": 4,
+    "each": 2
+  },
   "g4-compare-fair-shares-number-line-2": {
     "kind": "share",
     "ask": "each",
@@ -783,8 +832,8 @@
     "container": "plate",
     "receivers": "kids",
     "total": 1,
-    "groups": 4,
-    "otherGroups": 2,
+    "groups": 2,
+    "otherGroups": 4,
     "want": "more"
   },
   "g4-mult-div-facts-100-keypad-2": {
@@ -907,7 +956,7 @@
     "thing": "balloon",
     "one": "balloon",
     "many": "balloons",
-    "container": "bag",
+    "container": "box",
     "receivers": "kids",
     "total": 10,
     "groups": 5

@@ -5009,8 +5009,8 @@
       "game": {
         "kind": "join",
         "ask": "join",
-        "one": "counter",
-        "many": "counters",
+        "one": "dot",
+        "many": "dots",
         "place": "tray",
         "move": "slide",
         "start": 2,
@@ -5045,6 +5045,16 @@
       "narration": "What is 4 + 1?",
       "prompt": "4 + 1 = ?",
       "why": "One more than 4 is 5. So 4 + 1 = 5.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "start": 4,
+        "more": 1
+      },
       "type": "keypad",
       "answer": 5
     },
@@ -5055,6 +5065,17 @@
       "narration": "What is 5 - 2? Is it 3, 2, or 4?",
       "prompt": "5 - 2 = ?",
       "why": "Start at 5. Count back 2: 4, 3. The answer is 3.",
+      "game": {
+        "kind": "join",
+        "ask": "leave",
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "leave": "slide",
+        "start": 5,
+        "take": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
@@ -5795,7 +5816,7 @@
         "thing": "balloon",
         "one": "balloon",
         "many": "balloons",
-        "container": "bag",
+        "container": "box",
         "receivers": "kids",
         "total": 10,
         "groups": 5
@@ -7678,6 +7699,20 @@
       "narration": "Mia gets 1/4 of a bar. Leo wants a smaller piece. Should his bar be shared by 3 kids or 6 kids?",
       "prompt": "Who shares for a smaller piece?",
       "why": "Sharing with 6 gives smaller pieces than sharing with 4. A sixth is smaller than a fourth.",
+      "game": {
+        "kind": "share",
+        "ask": "compare",
+        "thing": "bar",
+        "one": "bar",
+        "many": "bars",
+        "container": "plate",
+        "receivers": "kids",
+        "total": 1,
+        "groups": 3,
+        "otherGroups": 6,
+        "want": "less",
+        "sharer": { "name": "Leo", "look": "boy" }
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "6 kids" },
@@ -7705,6 +7740,16 @@
       "narration": "What is 3 + 2? Is it 4, 5, or 6?",
       "prompt": "3 + 2 = ?",
       "why": "Start at 3 and count up 2 more. 4, 5. The answer is 5.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "start": 3,
+        "more": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 4 },
@@ -7759,8 +7804,8 @@
       "game": {
         "kind": "join",
         "ask": "leave",
-        "one": "counter",
-        "many": "counters",
+        "one": "dot",
+        "many": "dots",
         "place": "tray",
         "move": "slide",
         "leave": "slide",
@@ -7782,6 +7827,16 @@
       "narration": "What is 5 + 5?",
       "prompt": "5 + 5 = ?",
       "why": "Two groups of 5 make 10. So 5 + 5 = 10.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "start": 5,
+        "more": 5
+      },
       "type": "keypad",
       "answer": 10
     },
@@ -7792,6 +7847,16 @@
       "narration": "What is 7 + 2? Is it 9, 8, or 10?",
       "prompt": "7 + 2 = ?",
       "why": "Start at 7. Count up 2. 8, 9. The answer is 9.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "dot",
+        "many": "dots",
+        "place": "tray",
+        "move": "slide",
+        "start": 7,
+        "more": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 9 },
@@ -7810,8 +7875,8 @@
       "game": {
         "kind": "join",
         "ask": "leave",
-        "one": "counter",
-        "many": "counters",
+        "one": "dot",
+        "many": "dots",
         "place": "tray",
         "move": "slide",
         "leave": "slide",
@@ -7845,8 +7910,8 @@
       "game": {
         "kind": "join",
         "ask": "fill",
-        "one": "counter",
-        "many": "counters",
+        "one": "dot",
+        "many": "dots",
         "place": "tray",
         "move": "slide",
         "start": 4,
@@ -7906,8 +7971,8 @@
       "game": {
         "kind": "join",
         "ask": "fill",
-        "one": "counter",
-        "many": "counters",
+        "one": "dot",
+        "many": "dots",
         "place": "tray",
         "move": "slide",
         "start": 3,
@@ -7972,6 +8037,16 @@
       "narration": "We know 2 + 5 = 7. What is 5 + 2? Is it 8, 7, or 6?",
       "prompt": "5 + 2 = ?",
       "why": "Adding in any order gives the same total. 5 + 2 is 7, just like 2 + 5.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 5,
+        "more": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -8042,6 +8117,16 @@
       "narration": "We know 8 + 7 = 15. So what is 7 + 8?",
       "prompt": "7 + 8 = ?",
       "why": "Order does not matter when adding. 7 + 8 is the same as 8 + 7, so it is 15.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 7,
+        "more": 8
+      },
       "type": "keypad",
       "answer": 15
     },
@@ -8066,6 +8151,16 @@
       "narration": "We know 12 - 5 = 7. To check, what is 7 + 5?",
       "prompt": "7 + 5 = ?",
       "why": "Add the answer back to the part you took away. 7 + 5 is 12, so the take-away was right.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 7,
+        "more": 5
+      },
       "type": "keypad",
       "answer": 12
     },
@@ -8129,6 +8224,17 @@
       "narration": "Ana gave away 8 stickers. Now she has 9 left. How many did she start with?",
       "prompt": "? - 8 = 9",
       "why": "Use adding to undo the take-away. Add the 9 left and the 8 given away to get 17.",
+      "game": {
+        "kind": "join",
+        "ask": "back",
+        "emoji": "⭐",
+        "one": "sticker",
+        "many": "stickers",
+        "place": "tray",
+        "move": "slide",
+        "start": 9,
+        "more": 8
+      },
       "type": "keypad",
       "answer": 17
     },
@@ -8174,6 +8280,16 @@
       "narration": "What is 9 + 1? Is it 8, 10, or 11?",
       "prompt": "9 + 1 = ?",
       "why": "9 and 1 more makes 10. Nine is just one away from 10.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 9,
+        "more": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -8277,6 +8393,16 @@
       "narration": "Double 6 is 12. Now use it. What is 6 + 7?",
       "prompt": "6 + 7 = ?",
       "why": "Double 6 is 12. Seven is one more than 6, so add 1 to get 13.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 6,
+        "more": 7
+      },
       "type": "keypad",
       "answer": 13
     },
@@ -8328,6 +8454,17 @@
       "narration": "Double 8 is 16. Use it. What is 16 - 8?",
       "prompt": "16 - 8 = ?",
       "why": "Two 8s make 16. So if you take away one 8, one 8 is left.",
+      "game": {
+        "kind": "join",
+        "ask": "leave",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "leave": "slide",
+        "start": 16,
+        "take": 8
+      },
       "type": "keypad",
       "answer": 8
     },
@@ -10113,6 +10250,16 @@
       "narration": "You know 5 + 3 = 8. What is 3 + 5? Is it 5, 3, 8, or 9?",
       "prompt": "3 + 5 = ?",
       "why": "Adding in any order gives the same answer. 5 + 3 and 3 + 5 are both 8.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 3,
+        "more": 5
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 5 },
@@ -10193,6 +10340,16 @@
       "narration": "You know 12 - 5 = 7. Add to check. What is 7 + 5?",
       "prompt": "7 + 5 = ?",
       "why": "Adding back what you took away gets you to the start. 7 + 5 is 12.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 7,
+        "more": 5
+      },
       "type": "keypad",
       "answer": 12
     },
@@ -10246,7 +10403,6 @@
       "game": {
         "kind": "join",
         "ask": "back",
-        "emoji": "⭐",
         "one": "sticker",
         "many": "stickers",
         "place": "tray",
@@ -10320,6 +10476,16 @@
       "narration": "What is 5 + 5? Is it 8, 10, or 12?",
       "prompt": "5 + 5 = ?",
       "why": "5 and 5 is a double. Count 5, then 5 more. You get 10.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 5,
+        "more": 5
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -10371,6 +10537,17 @@
       "narration": "What is 10 - 4? Is it 5, 6, or 7?",
       "prompt": "10 - 4 = ?",
       "why": "Think 4 + 6 = 10. So 10 - 4 = 6.",
+      "game": {
+        "kind": "join",
+        "ask": "leave",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "leave": "slide",
+        "start": 10,
+        "take": 4
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
@@ -10409,6 +10586,16 @@
       "narration": "What is 8 + 8? Is it 14, 18, or 16?",
       "prompt": "8 + 8 = ?",
       "why": "8 and 8 is a double. Double 8 is 16.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 8,
+        "more": 8
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 14 },
@@ -10458,6 +10645,17 @@
       "narration": "What is 14 - 6? Is it 7, 8, 9, or 10?",
       "prompt": "14 - 6 = ?",
       "why": "Go back to 10 first. 14 - 4 = 10. Then take away 2 more to get 8.",
+      "game": {
+        "kind": "join",
+        "ask": "leave",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "leave": "slide",
+        "start": 14,
+        "take": 6
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 9 },
@@ -10474,6 +10672,16 @@
       "narration": "What is 7 + 8? Use a double to help.",
       "prompt": "7 + 8 = ?",
       "why": "7 + 7 = 14. Then add 1 more. The answer is 15.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 7,
+        "more": 8
+      },
       "type": "keypad",
       "answer": 15
     },
@@ -10551,6 +10759,7 @@
       "game": {
         "kind": "join",
         "ask": "leave",
+        "emoji": "🏷️",
         "one": "sticker",
         "many": "stickers",
         "place": "tray",
@@ -11135,6 +11344,17 @@
       "narration": "We know 4 groups of 3 make 12. Now share 12 things equally into 4 groups. How many are in each group?",
       "prompt": "12 ÷ 4 = ?",
       "why": "4 groups of 3 make 12. So 12 shared into 4 groups gives 3 each.",
+      "game": {
+        "kind": "share",
+        "ask": "each",
+        "thing": "counter",
+        "one": "counter",
+        "many": "counters",
+        "container": "box",
+        "receivers": "containers",
+        "total": 12,
+        "groups": 4
+      },
       "type": "keypad",
       "answer": 3
     },
@@ -12029,7 +12249,7 @@
         "groups": 3,
         "otherGroups": 4,
         "want": "more",
-        "sharer": { "name": "Lily", "look": "girl" }
+        "sharer": { "name": "Lily", "look": "kid" }
       },
       "type": "tap",
       "choices": [
@@ -12592,7 +12812,7 @@
         "thing": "sticker",
         "one": "sticker",
         "many": "stickers",
-        "container": "plate",
+        "container": "bag",
         "receivers": "containers",
         "total": 12,
         "groups": 2,
@@ -12809,6 +13029,18 @@
       "narration": "Count by 2s to find 4 × 2. Move the frog to that number.",
       "prompt": "4 × 2 = ?",
       "why": "Skip count by 2s four times. 2, 4, 6, 8. So 4 × 2 = 8.",
+      "game": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "counter",
+        "one": "counter",
+        "many": "counters",
+        "container": "box",
+        "receivers": "containers",
+        "total": 8,
+        "groups": 4,
+        "each": 2
+      },
       "type": "number-line",
       "min": 0,
       "max": 20,
@@ -13026,6 +13258,18 @@
       "narration": "Move the frog to the answer of 4 × 2.",
       "prompt": "4 × 2 = ?",
       "why": "4 groups of 2 is 2 + 2 + 2 + 2. That makes 8.",
+      "game": {
+        "kind": "share",
+        "ask": "total",
+        "thing": "counter",
+        "one": "counter",
+        "many": "counters",
+        "container": "box",
+        "receivers": "containers",
+        "total": 8,
+        "groups": 4,
+        "each": 2
+      },
       "type": "number-line",
       "min": 0,
       "max": 10,
@@ -14068,8 +14312,8 @@
         "container": "plate",
         "receivers": "kids",
         "total": 1,
-        "groups": 4,
-        "otherGroups": 2,
+        "groups": 2,
+        "otherGroups": 4,
         "want": "more"
       },
       "type": "tap",

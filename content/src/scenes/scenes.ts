@@ -41,9 +41,12 @@ const TaggedSceneSchema = z.strictObject({
 export const TagOutputSchema = z.strictObject({ scenes: z.array(TaggedSceneSchema) });
 export type TaggedScene = z.infer<typeof TaggedSceneSchema>;
 
-/** Stories about sharing, groups, and leftovers. Other items never fit a sharing scene. */
+/**
+ * Stories about sharing, groups, leftovers, and arrays, plus bare times and divide facts. Other
+ * items never fit a sharing scene.
+ */
 const SHARING_WORDS =
-  /\bshar|\beach\b|\bgroups? of\b|\bleft\b|\bin all\b|\bfair|\bequally\b|\bper\b/i;
+  /\bshar|\beach\b|\bgroups? of\b|\bleft\b|\bin all\b|\bfair|\bequally\b|\bper\b|\brows?\b|\btimes\b|[×÷]/i;
 
 export function candidateItems(items: readonly Item[]): Item[] {
   return items.filter((i) => SHARING_WORDS.test(i.narration));
@@ -66,6 +69,8 @@ Rules:
 - container: what the things sit in. Use the item's word if it names one (plates, bags, baskets, bowls, cups, ponds), otherwise plate for food, basket for fruit, bucket for balls, box for toys, bag for small things.
 - receivers: kids for friends, kids, players, or people. containers when things go into bags, plates, bowls, cups, baskets, or ponds with no kids. stores for stores or shops.
 - sharer: the kid who shares or has the things, when the story names one. named: receivers the story names, in order (e.g. "Mia gets 2. Sam gets 2."), else null. otherSharer: for compare, the second sharer when the story names one. look is girl or boy only when the story says she/her or he/him for that kid, otherwise kid. Never guess from the name. Grown-ups like a coach or a bakery are not sharers: use null.
+- A bare fact with no story, like "What is 2 × 5?", plays with thing counter, one "counter", many "counters", container box, and receivers containers. a × b is total with groups a and each b. a ÷ b is groups with total a and each b.
+- An array plays the same way, one group per row. Rows of dots or counters use thing counter. Rows of a named thing use that thing.
 - note: one short reason, mainly when fits is false.
 
 Return one entry per item, in order.`;

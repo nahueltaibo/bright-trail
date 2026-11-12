@@ -35,6 +35,7 @@ export const THINGS = {
   card: { emoji: '🃏', cuttable: false },
   block: { emoji: '🧱', cuttable: false },
   flower: { emoji: '🌸', cuttable: false },
+  counter: { emoji: '🔵', cuttable: false },
 } as const satisfies Record<string, { emoji: string; cuttable: boolean }>;
 export type ThingId = keyof typeof THINGS;
 export const THING_IDS = Object.keys(THINGS) as [ThingId, ...ThingId[]];

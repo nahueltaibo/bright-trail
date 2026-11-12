@@ -40,6 +40,13 @@ describe('joinCandidates', () => {
     const fact = keypad('fact', 'What is 7 times 8?', 56);
     expect(joinCandidates([fish, big, fact]).map((i) => i.id)).toEqual(['fish']);
   });
+
+  it('keeps bare whole-number facts but not fraction sums', () => {
+    const plus = keypad('plus', 'What is 9 + 1? Is it 8, 10, or 11?', 10);
+    const minus = keypad('minus', 'Double 8 is 16. Use it. What is 16 - 8?', 8);
+    const fraction = keypad('fraction', 'What is 3/4 + 1/4?', 1);
+    expect(joinCandidates([plus, minus, fraction]).map((i) => i.id)).toEqual(['plus', 'minus']);
+  });
 });
 
 describe('acceptJoins', () => {

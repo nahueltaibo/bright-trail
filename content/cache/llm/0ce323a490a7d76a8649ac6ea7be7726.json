@@ -1,0 +1,68 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-mental-math-20-tap-2",
+        "fits": false,
+        "ask": "left",
+        "thing": "grape",
+        "one": "grape",
+        "many": "grapes",
+        "container": "bowl",
+        "receivers": "kids",
+        "total": 10,
+        "groups": 2,
+        "each": null,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Subtraction (eating), not a sharing story."
+      },
+      {
+        "itemId": "g1-mental-math-20-tap-4",
+        "fits": false,
+        "ask": "left",
+        "thing": "berry",
+        "one": "plum",
+        "many": "plums",
+        "container": "basket",
+        "receivers": "kids",
+        "total": 14,
+        "groups": 2,
+        "each": null,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Subtraction (eating), not a sharing story; plum has no close match."
+      },
+      {
+        "itemId": "g1-mental-math-20-tap-6",
+        "fits": false,
+        "ask": "left",
+        "thing": "grape",
+        "one": "grape",
+        "many": "grapes",
+        "container": "bowl",
+        "receivers": "kids",
+        "total": 13,
+        "groups": 2,
+        "each": null,
+        "split": null,
+        "otherGroups": null,
+        "want": null,
+        "sharer": null,
+        "named": null,
+        "otherSharer": null,
+        "note": "Subtraction (eating), not a sharing story."
+      }
+    ]
+  }
+}
