@@ -15,6 +15,7 @@
     "join": "tsx src/games/tag-games.ts --kind join",
     "compare": "tsx src/games/tag-games.ts --kind compare",
     "arrays": "tsx src/games/tag-games.ts --kind arrays",
+    "grid": "tsx src/games/tag-games.ts --kind grid",
     "hops": "tsx src/games/tag-games.ts --kind hops",
     "packs": "tsx src/packs/build-packs.ts",
     "publish-packs": "tsx src/packs/publish-packs.ts",

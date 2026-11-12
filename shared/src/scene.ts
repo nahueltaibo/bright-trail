@@ -160,8 +160,8 @@ export function parseMixed(text: string): number | null {
 }
 
 /**
- * What a choice text is worth to a scene: "yes"/"no", an amount like "1 1/2", or a group like
- * "2 friends". Null when it is none of these.
+ * What a choice text is worth to a scene: "yes"/"no", an amount like "1 1/2" or "0.50", a
+ * percent like "25%" as 0.25, or a group like "2 friends". Null when it is none of these.
  */
 export function choiceTextValue(text: string): SceneAnswer | null {
   const t = text.trim().toLowerCase();
@@ -169,6 +169,9 @@ export function choiceTextValue(text: string): SceneAnswer | null {
   if (t === 'no') return false;
   const amount = parseMixed(t);
   if (amount !== null) return amount;
+  if (/^\d*\.\d+$/.test(t)) return Number(t);
+  const percent = /^(\d+(?:\.\d+)?)\s?%$/.exec(t);
+  if (percent) return Number(percent[1]) / 100;
   const group = /^(\d+) [a-z]+$/.exec(t);
   return group ? Number(group[1]) : null;
 }

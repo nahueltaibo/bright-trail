@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { arrayTagRequest } from '../arrays/arrays';
 import { compareTagRequest } from '../compare/compare';
 import type { LlmClient, LlmRequest } from '../graph/llm';
+import { gridTagRequest } from '../grid/grid';
 import { hopsTagRequest } from '../hops/hops';
 import { joinTagRequest } from '../join/join';
 import { tagRequest } from '../scenes/scenes';
@@ -90,6 +91,7 @@ describe('TAGGERS', () => {
     expect(TAGGERS.join.request).toBe(joinTagRequest);
     expect(TAGGERS.compare.request).toBe(compareTagRequest);
     expect(TAGGERS.arrays.request).toBe(arrayTagRequest);
+    expect(TAGGERS.grid.request).toBe(gridTagRequest);
     expect(TAGGERS.hops.request).toBe(hopsTagRequest);
   });
 
@@ -100,6 +102,7 @@ describe('TAGGERS', () => {
       'join.json',
       'compare.json',
       'arrays.json',
+      'grid.json',
       'hops.json',
     ]);
   });

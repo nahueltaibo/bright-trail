@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import { ArraySceneSchema, arrayProblems } from './arrays';
 import { CompareSceneSchema, compareProblems } from './compare';
+import { GridSceneSchema, gridProblems } from './grid';
 import type { Item } from './item';
 import { JoinSceneSchema, joinProblems } from './join';
 import { SceneSchema, sceneProblems } from './scene';
@@ -13,6 +14,7 @@ export const GAMES = {
   join: { schema: JoinSceneSchema, problems: joinProblems },
   compare: { schema: CompareSceneSchema, problems: compareProblems },
   arrays: { schema: ArraySceneSchema, problems: arrayProblems },
+  grid: { schema: GridSceneSchema, problems: gridProblems },
 } as const;
 
 export const GameSchema = z.discriminatedUnion('kind', [
@@ -21,6 +23,7 @@ export const GameSchema = z.discriminatedUnion('kind', [
   GAMES.join.schema,
   GAMES.compare.schema,
   GAMES.arrays.schema,
+  GAMES.grid.schema,
 ]);
 export type Game = z.infer<typeof GameSchema>;
 export type GameKind = Game['kind'];
