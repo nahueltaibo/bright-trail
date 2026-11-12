@@ -40,7 +40,13 @@ export type TaggedJoin = z.infer<typeof TaggedJoinSchema>;
 const JOIN_WORDS =
   /\b(more|join|joins|come|comes|arrive|left|away|leave|leaves|gone|eat|eats|pop|pops|fly|flies|hop|hops|swim|swims|count|how many|in all|altogether|total|ten.frame|make 10|make ten|gave|give|gives|get|gets|finds?)\b/i;
 
-/** Items that might play on a ten-frame: a whole-number answer to 20, a story or counting picture. */
+/** A bare whole-number fact like `9 + 1` or `15 - 6`. Fractions such as `3/4 + 1/4` don't match. */
+const JOIN_FACT = /(?<![\d/.])\d+ ?[+-] ?\d+(?![\d/.])/;
+
+/**
+ * Items that might play on a ten-frame: a whole-number answer to 20, and a story, a counting
+ * picture, or a bare fact the frame can count out.
+ */
 export function joinCandidates(items: readonly Item[]): Item[] {
   return items.filter((i) => {
     if ((i.game && i.game.kind !== 'join') || i.type === 'number-line') return false;
@@ -49,7 +55,7 @@ export function joinCandidates(items: readonly Item[]): Item[] {
       return false;
     const v = i.visual;
     if (v && v.kind !== 'objects' && v.kind !== 'ten-frame') return false;
-    return v !== undefined || JOIN_WORDS.test(i.narration);
+    return v !== undefined || JOIN_WORDS.test(i.narration) || JOIN_FACT.test(i.narration);
   });
 }
 

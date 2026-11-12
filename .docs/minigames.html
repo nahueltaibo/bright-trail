@@ -49,14 +49,14 @@
 <h1>BrightTrail — Minigames</h1>
 <p class="sub">Which items play as minigames, which don't, and the plan to cover them · Draft v0.1 · 2026-11-11</p>
 
-<p>553 of the 795 bundle items (70%) still play on the plain tap, keypad, or number-line screen. Six groups of them have no minigame that fits. The plan first makes adding a minigame a matter of one schema, one stage, and one tagger module, then builds the new games in order of how many items they cover.</p>
+<p>522 of the 795 bundle items (66%) still play on the plain tap, keypad, or number-line screen. Six groups of them have no minigame that fits. The plan first makes adding a minigame a matter of one schema, one stage, and one tagger module, then builds the new games in order of how many items they cover.</p>
 
 <h2 id="today">1. Minigames today</h2>
 <table>
 <tr><th>Minigame</th><th>Item field</th><th>Tagger</th><th>Items</th><th>Skills it covers</th></tr>
-<tr><td>Sharing</td><td><code>scene</code></td><td><code>content:scenes</code></td><td>82</td><td>Fair shares, equal groups, division by sharing</td></tr>
+<tr><td>Sharing</td><td><code>scene</code></td><td><code>content:scenes</code></td><td>94</td><td>Fair shares, equal groups, division by sharing, times and divide facts to 20</td></tr>
 <tr><td>Slices</td><td><code>slices</code></td><td><code>content:slices</code></td><td>80</td><td>Fraction pictures, equal fractions, unit fractions</td></tr>
-<tr><td>Join and leave</td><td><code>join</code></td><td><code>content:join</code></td><td>80</td><td>Counting, add and subtract to 20, make ten</td></tr>
+<tr><td>Join and leave</td><td><code>join</code></td><td><code>content:join</code></td><td>99</td><td>Counting, add and subtract to 20, make ten</td></tr>
 <tr><td>Frog hops</td><td><code>hops</code></td><td><code>content:hops</code></td><td>88 of 191 number-line items</td><td>Plays the path after a number-line check. Not a game of its own.</td></tr>
 </table>
 <p>The app side is already shared. <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props. What isn't shared:</p>
@@ -103,7 +103,7 @@ flowchart LR
 </pre></div>
 <table>
 <tr><th>Order</th><th>Minigame</th><th>Items</th><th>Play</th></tr>
-<tr><td>0</td><td>Retag existing games</td><td>unknown</td><td>Join already goes to 20 but tags few items in g1-mental-math-20 and g2-add-sub-facts-20. Sharing has <code>groups</code> and <code>total</code> asks but barely tags multiplication skills.</td></tr>
+<tr><td>0</td><td>Retag existing games</td><td>31</td><td>Done. Join now takes bare facts like "15 - 6", and sharing takes "4 × 3" and arrays with plain counters. Products past 20, more than 6 groups, and things like legs and wheels stay for Arrays.</td></tr>
 <tr><td>1</td><td>Compare and order</td><td>~117</td><td>Up to 20, cube towers stand side by side. Above 20, and for fractions and decimals, flags drop onto a number line and the rightmost wins. Sets the pattern the later games follow.</td></tr>
 <tr><td>2</td><td>Base-ten blocks</td><td>~94</td><td>Flats, rods, and cubes build a number. Asks: read it, a digit's worth, expanded form, trade 10 ones for a ten. Later carries regrouping for g1-add-sub-problems-50.</td></tr>
 <tr><td>3</td><td>Arrays</td><td>~94</td><td>Things fill rows and columns. Asks: total, rows, per row, turn the array, split it. Reuses <code>ThingArt</code>.</td></tr>

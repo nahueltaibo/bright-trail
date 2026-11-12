@@ -24,6 +24,20 @@
     "otherGroups": 4,
     "want": "more"
   },
+  "g1-compare-unit-fractions-tap-8": {
+    "kind": "share",
+    "ask": "compare",
+    "thing": "bar",
+    "one": "bar",
+    "many": "bars",
+    "container": "plate",
+    "receivers": "kids",
+    "total": 1,
+    "groups": 3,
+    "otherGroups": 6,
+    "want": "less",
+    "sharer": { "name": "Leo", "look": "boy" }
+  },
   "g1-equal-groups-keypad-1": {
     "kind": "share",
     "ask": "total",
@@ -323,6 +337,17 @@
     "each": 2,
     "sharer": { "name": "Leo", "look": "boy" }
   },
+  "g2-division-sharing-keypad-6": {
+    "kind": "share",
+    "ask": "each",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 12,
+    "groups": 4
+  },
   "g2-division-sharing-number-line-1": {
     "kind": "share",
     "ask": "each",
@@ -555,18 +580,54 @@
     "total": 10,
     "groups": 3
   },
+  "g3-arrays-multiply-divide-keypad-1": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 10,
+    "groups": 2,
+    "each": 5
+  },
+  "g3-arrays-multiply-divide-keypad-2": {
+    "kind": "share",
+    "ask": "groups",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 12,
+    "groups": 3,
+    "each": 4
+  },
   "g3-arrays-multiply-divide-number-line-1": {
     "kind": "share",
     "ask": "total",
     "thing": "sticker",
     "one": "sticker",
     "many": "stickers",
-    "container": "plate",
+    "container": "bag",
     "receivers": "containers",
     "total": 12,
     "groups": 2,
     "each": 6,
     "sharer": { "name": "Sam", "look": "kid" }
+  },
+  "g3-arrays-multiply-divide-tap-1": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 12,
+    "groups": 3,
+    "each": 4
   },
   "g3-fair-share-20-keypad-1": {
     "kind": "share",
@@ -675,7 +736,7 @@
     "groups": 3,
     "otherGroups": 4,
     "want": "more",
-    "sharer": { "name": "Lily", "look": "girl" }
+    "sharer": { "name": "Lily", "look": "kid" }
   },
   "g3-fair-share-20-tap-5": {
     "kind": "share",
@@ -712,6 +773,42 @@
     "total": 10,
     "groups": 2,
     "sharer": { "name": "Maya", "look": "kid" }
+  },
+  "g3-mult-div-facts-2-5-10-number-line-1": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 8,
+    "groups": 4,
+    "each": 2
+  },
+  "g3-mult-div-facts-2-5-10-tap-1": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 10,
+    "groups": 2,
+    "each": 5
+  },
+  "g3-mult-div-facts-2-5-10-tap-2": {
+    "kind": "share",
+    "ask": "groups",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 20,
+    "groups": 2,
+    "each": 10
   },
   "g3-mult-div-problems-keypad-1": {
     "kind": "share",
@@ -751,6 +848,18 @@
     "each": 5,
     "sharer": { "name": "Tom", "look": "boy" }
   },
+  "g3-mult-div-properties-keypad-1": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 12,
+    "groups": 2,
+    "each": 6
+  },
   "g3-mult-div-properties-keypad-2": {
     "kind": "share",
     "ask": "each",
@@ -762,6 +871,30 @@
     "total": 10,
     "groups": 2,
     "sharer": { "name": "Mia", "look": "kid" }
+  },
+  "g3-mult-div-properties-keypad-3": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 18,
+    "groups": 3,
+    "each": 6
+  },
+  "g3-mult-div-properties-number-line-1": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 8,
+    "groups": 4,
+    "each": 2
   },
   "g4-compare-fair-shares-number-line-2": {
     "kind": "share",
@@ -783,9 +916,21 @@
     "container": "plate",
     "receivers": "kids",
     "total": 1,
-    "groups": 4,
-    "otherGroups": 2,
+    "groups": 2,
+    "otherGroups": 4,
     "want": "more"
+  },
+  "g4-mult-div-facts-100-keypad-1": {
+    "kind": "share",
+    "ask": "total",
+    "thing": "counter",
+    "one": "counter",
+    "many": "counters",
+    "container": "box",
+    "receivers": "containers",
+    "total": 12,
+    "groups": 4,
+    "each": 3
   },
   "g4-mult-div-facts-100-keypad-2": {
     "kind": "share",
@@ -907,7 +1052,7 @@
     "thing": "balloon",
     "one": "balloon",
     "many": "balloons",
-    "container": "bag",
+    "container": "box",
     "receivers": "kids",
     "total": 10,
     "groups": 5
