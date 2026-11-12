@@ -10,11 +10,21 @@
     "start": 4,
     "more": 1
   },
+  "g1-add-sub-facts-10-keypad-2": {
+    "kind": "join",
+    "ask": "join",
+    "one": "dot",
+    "many": "dots",
+    "place": "tray",
+    "move": "slide",
+    "start": 5,
+    "more": 5
+  },
   "g1-add-sub-facts-10-keypad-3": {
     "kind": "join",
     "ask": "leave",
-    "one": "counter",
-    "many": "counters",
+    "one": "dot",
+    "many": "dots",
     "place": "tray",
     "move": "slide",
     "leave": "slide",
@@ -34,29 +44,49 @@
   "g1-add-sub-facts-10-keypad-5": {
     "kind": "join",
     "ask": "fill",
-    "one": "counter",
-    "many": "counters",
+    "one": "dot",
+    "many": "dots",
     "place": "tray",
     "move": "slide",
     "start": 3,
     "target": 10
   },
+  "g1-add-sub-facts-10-tap-1": {
+    "kind": "join",
+    "ask": "join",
+    "one": "dot",
+    "many": "dots",
+    "place": "tray",
+    "move": "slide",
+    "start": 3,
+    "more": 2
+  },
   "g1-add-sub-facts-10-tap-2": {
     "kind": "join",
     "ask": "leave",
-    "one": "counter",
-    "many": "counters",
+    "one": "dot",
+    "many": "dots",
     "place": "tray",
     "move": "slide",
     "leave": "slide",
     "start": 5,
     "take": 2
   },
+  "g1-add-sub-facts-10-tap-3": {
+    "kind": "join",
+    "ask": "join",
+    "one": "dot",
+    "many": "dots",
+    "place": "tray",
+    "move": "slide",
+    "start": 7,
+    "more": 2
+  },
   "g1-add-sub-facts-10-tap-4": {
     "kind": "join",
     "ask": "fill",
-    "one": "counter",
-    "many": "counters",
+    "one": "dot",
+    "many": "dots",
     "place": "tray",
     "move": "slide",
     "start": 4,
@@ -96,6 +126,47 @@
     "start": 8,
     "more": 3
   },
+  "g1-add-sub-properties-keypad-3": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 7,
+    "more": 8
+  },
+  "g1-add-sub-properties-keypad-4": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 7,
+    "more": 5
+  },
+  "g1-add-sub-properties-keypad-6": {
+    "kind": "join",
+    "ask": "back",
+    "emoji": "⭐",
+    "one": "sticker",
+    "many": "stickers",
+    "place": "tray",
+    "move": "slide",
+    "start": 9,
+    "more": 8
+  },
+  "g1-add-sub-properties-tap-1": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 5,
+    "more": 2
+  },
   "g1-mental-math-20-keypad-1": {
     "kind": "join",
     "ask": "join",
@@ -117,6 +188,27 @@
     "start": 8,
     "more": 2
   },
+  "g1-mental-math-20-keypad-3": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 6,
+    "more": 7
+  },
+  "g1-mental-math-20-keypad-4": {
+    "kind": "join",
+    "ask": "leave",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "leave": "slide",
+    "start": 16,
+    "take": 8
+  },
   "g1-mental-math-20-keypad-5": {
     "kind": "join",
     "ask": "join",
@@ -126,6 +218,16 @@
     "move": "slide",
     "start": 7,
     "more": 8
+  },
+  "g1-mental-math-20-tap-1": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 9,
+    "more": 1
   },
   "g1-mental-math-20-tap-2": {
     "kind": "join",
@@ -225,6 +327,16 @@
     "start": 9,
     "more": 5
   },
+  "g2-add-sub-facts-20-keypad-4": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 7,
+    "more": 8
+  },
   "g2-add-sub-facts-20-keypad-5": {
     "kind": "join",
     "ask": "fill",
@@ -238,6 +350,7 @@
   "g2-add-sub-facts-20-keypad-6": {
     "kind": "join",
     "ask": "leave",
+    "emoji": "🏷️",
     "one": "sticker",
     "many": "stickers",
     "place": "tray",
@@ -246,16 +359,77 @@
     "start": 20,
     "take": 12
   },
+  "g2-add-sub-facts-20-tap-1": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 5,
+    "more": 5
+  },
+  "g2-add-sub-facts-20-tap-2": {
+    "kind": "join",
+    "ask": "leave",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "leave": "slide",
+    "start": 10,
+    "take": 4
+  },
+  "g2-add-sub-facts-20-tap-3": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 8,
+    "more": 8
+  },
+  "g2-add-sub-facts-20-tap-4": {
+    "kind": "join",
+    "ask": "leave",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "leave": "slide",
+    "start": 14,
+    "take": 6
+  },
+  "g2-add-sub-properties-keypad-3": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 7,
+    "more": 5
+  },
   "g2-add-sub-properties-keypad-5": {
     "kind": "join",
     "ask": "back",
-    "emoji": "⭐",
     "one": "sticker",
     "many": "stickers",
     "place": "tray",
     "move": "slide",
     "start": 9,
     "more": 8
+  },
+  "g2-add-sub-properties-tap-1": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 3,
+    "more": 5
   },
   "k-add-sub-facts-5-keypad-1": {
     "kind": "join",
@@ -279,6 +453,16 @@
     "leave": "fly",
     "start": 3,
     "take": 1
+  },
+  "k-add-sub-facts-5-keypad-3": {
+    "kind": "join",
+    "ask": "join",
+    "one": "dot",
+    "many": "dots",
+    "place": "tray",
+    "move": "slide",
+    "start": 4,
+    "more": 1
   },
   "k-add-sub-facts-5-keypad-4": {
     "kind": "join",
@@ -329,12 +513,23 @@
   "k-add-sub-facts-5-tap-3": {
     "kind": "join",
     "ask": "join",
-    "one": "counter",
-    "many": "counters",
+    "one": "dot",
+    "many": "dots",
     "place": "tray",
     "move": "slide",
     "start": 2,
     "more": 3
+  },
+  "k-add-sub-facts-5-tap-4": {
+    "kind": "join",
+    "ask": "leave",
+    "one": "dot",
+    "many": "dots",
+    "place": "tray",
+    "move": "slide",
+    "leave": "slide",
+    "start": 5,
+    "take": 2
   },
   "k-add-sub-facts-5-tap-6": {
     "kind": "join",

@@ -42,6 +42,18 @@ describe('candidateItems', () => {
     const count = keypad('count', 'Count the ducks.', 4);
     expect(candidateItems([share, count]).map((i) => i.id)).toEqual(['share']);
   });
+
+  it('keeps arrays and bare times and divide facts', () => {
+    const times = keypad('times', 'What is 4 × 3?', 12);
+    const divide = keypad('divide', 'What is 20 ÷ 10? Is it 2, 10, or 30?', 2);
+    const array = keypad('array', 'An array has 2 rows of 5 dots. How many dots?', 10);
+    const add = keypad('add', 'What is 9 + 1?', 10);
+    expect(candidateItems([times, divide, array, add]).map((i) => i.id)).toEqual([
+      'times',
+      'divide',
+      'array',
+    ]);
+  });
 });
 
 describe('acceptScenes', () => {
