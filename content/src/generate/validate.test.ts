@@ -1,6 +1,18 @@
 import { toSpeech } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
-import { emoji, g1Skill, goodContent, keypad, line, num, objects, tap, text } from './fixtures';
+import {
+  emoji,
+  factContent,
+  g1SciSkill,
+  g1Skill,
+  goodContent,
+  keypad,
+  line,
+  num,
+  objects,
+  tap,
+  text,
+} from './fixtures';
 import type { GeneratedContent } from './schema';
 import { validateSkill } from './validate';
 
@@ -237,6 +249,22 @@ describe('validateSkill', () => {
     expect(problemsOf(picture('3 of 4 parts'))).toEqual([]);
     expect(problemsOf(picture('most of the circle'))).toContain(
       'item 1 (tap) choice a: narration "most of the circle" must name the picture\'s amount, like "3/4" or "3 of 4 parts"',
+    );
+  });
+});
+
+describe('validateSkill on a fact skill', () => {
+  it('passes tap-only items the reviewer verifies', () => {
+    const result = validateSkill(g1SciSkill, factContent());
+    expect(result.problems).toEqual([]);
+    expect(new Set(result.levels.values())).toEqual(new Set(['unchecked']));
+  });
+
+  it('asks for tap items only', () => {
+    const content = factContent();
+    content.items[0] = keypad(1, 1, 2);
+    expect(validateSkill(g1SciSkill, content).problems).toContain(
+      'item 1 is keypad, use only tap items',
     );
   });
 });

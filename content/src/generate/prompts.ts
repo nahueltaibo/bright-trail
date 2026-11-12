@@ -139,6 +139,56 @@ export function withFractionPictures(system: string): string {
     .replace(BASIC_CHECK_WORDS, FRACTION_CHECK_WORDS);
 }
 
+/** The note a fact item's check carries, since only the reviewer can confirm a fact. */
+export const FACT_NOTE = 'fact';
+
+const FACT_CONTEXT = `BrightTrail is an audio-first learning app for Ontario kids from Kindergarten to Grade 6. Besides math it teaches science, social studies, and health. Device text-to-speech reads every story card, question, and answer choice aloud, so a child who can't read well yet must be able to play from sound alone. A child answers by tapping a choice. There are no images: pictures are drawn from data as one emoji or a row of up to 20 copies of one emoji.`;
+
+const FACT_GENERATOR_SYSTEM = `${FACT_CONTEXT}
+
+You write the content for one skill: a short narrated story that teaches it, then ${ITEMS_PER_SKILL} practice items.
+
+Story, 5 to 8 cards:
+- One small story with a named character and a concrete situation, building up to the idea step by step. The last card invites the child to practise.
+- narration is what the device says. text is optional short screen text, such as a key word (null for none). visual is optional.
+- If a card says "here is a seed", its visual shows a seed.
+
+Pictures (visual), the only kinds that exist:
+- {"kind":"emoji","emoji":"🌱","count":null,"filled":null}: one emoji.
+- {"kind":"objects","emoji":"🍎","count":6,"filled":null}: 1 to 20 copies of one emoji.
+There are no photos, diagrams, maps, charts, or drawings. Never refer to a picture that can't be drawn this way. Use null for no picture.
+
+Items, exactly ${ITEMS_PER_SKILL}, all tap items:
+- 5 at difficulty 1 (easy), 5 at difficulty 2 (on grade level), 5 at difficulty 3 (hardest, still this skill). Stay inside this skill and grade.
+- Every item asks something different. Mix the kinds of question: pick the right fact, pick which group a thing belongs to, pick what comes first or next in a process or in time, pick the name of a part, pick the odd one out, or true or false.
+- narration: the question as heard. It must make sense with eyes closed. Never "look at the choices" or "which of these".
+- prompt: short screen text, e.g. "What do plants need?".
+- why: one or two kind sentences, read after a miss, that teach the right answer.
+- 2 to 4 choices with ids a, b, c, d. A choice is {"kind":"text","text":"sunlight"} (at most ${CHOICE_MAX_CHARS} characters) or {"kind":"visual","visual":{...},"narration":"a frog"}. Exactly one choice is right, given in answerChoiceId. Vary where the right one sits. The narration must name every choice, written exactly as the choice shows it, e.g. "Which one is a mammal: a frog, a whale, or a snake?". The app shuffles choices, so never say "the first one".
+- The right answer must be a fact a teacher would agree with, as the Ontario curriculum teaches it. Wrong choices are clearly wrong for a child who learned the skill. No trick questions and no matters of opinion. When the skill is about feelings or choices, ask what a person could do or what helps, and make the right choice the one a caring adult would pick.
+- type is "tap". answer, min, max, step, and target are null.
+- check is always {"rule":"none","expr":"","choices":[],"note":"${FACT_NOTE}"}. A reviewer confirms every answer.
+
+Be accurate and respectful about people. Speak of First Nations, Métis, and Inuit peoples, and of every community, in the present as well as the past, without stereotypes. Health content never shames or scares: point to a trusted adult when a child might need help.
+
+Writing numbers. The app turns these into words before speaking, so write them exactly like this:
+- Digits as the screen shows them: 7, 24 336 (a space between thousands, never a comma), 0.25, $2.50, 25%.
+- Never: ordinals in digits (write "third"), colons or commas inside numbers, ranges like 1-10 (write "1 to 10"), years as ranges, brackets or parentheses in spoken text, symbols like < > ≈ ^ * or a lone /, emoji in any narration, why, or choice text, or " - " as a dash in a sentence (it is read as "minus").
+
+Never use these words in anything the child hears or sees: say, out loud, draw, write, tell how, explain, show how. The child can't speak, draw, or write answers.
+
+Give your whole answer as the structured output.`;
+
+const FACT_TONE: Record<Skill['grade'], string> = {
+  K: 'The child is 4 or 5 and cannot read. Use very short sentences of 3 to 8 words, everyday words, and a warm, playful voice. Every story card has a picture.',
+  '1': 'The child is 6 and just starting to read. Use short sentences and everyday words. Most story cards have a picture.',
+  '2': 'The child is 7. Use short, clear sentences and a friendly voice.',
+  '3': 'The child is 8. Friendly but not cute. Use everyday situations from home, school, and the neighbourhood.',
+  '4': 'The child is 9. Friendly but not cute. Use everyday situations and real places in Canada.',
+  '5': 'The child is 10 and reads well. Do not talk down: no baby talk, no "yay", no cutesy mascots. Use real situations and the correct subject words.',
+  '6': 'The child is 11 and reads well. Do not talk down: no baby talk, no "yay", no cutesy mascots. Use real situations and the correct subject words.',
+};
+
 const TONE: Record<Skill['grade'], string> = {
   K: 'The child is 4 or 5 and cannot read. Use very short sentences of 3 to 8 words, everyday words, and a warm, playful voice. Every story card has a picture. Keep numbers to 10 unless the skill needs up to 20.',
   '1': 'The child is 6 and just starting to read. Use short sentences and everyday words. Most story cards have a picture. Keep numbers inside the skill, mostly to 20 or 50.',
@@ -182,12 +232,18 @@ export interface SkillContext {
   prerequisites: readonly Skill[];
 }
 
+/** Science, social studies, and health skills: tap-only fact items the reviewer checks. */
+export function isFactSkill(skill: Skill): boolean {
+  return skill.subject !== 'math';
+}
+
 export function generateRequest({ skill, expectations, prerequisites }: SkillContext): LlmRequest {
   const limits = readingLimits(skill.grade);
+  const facts = isFactSkill(skill);
   const fractions = FRACTION_PICTURE_SKILLS.has(skill.id);
   const fractionNote = fractions
     ? `\n${FRACTION_PICTURE_NOTE}\n`
-    : isEarlyFractionSkill(skill)
+    : !facts && isEarlyFractionSkill(skill)
       ? `\n${FRACTION_NOTE}\n`
       : '';
   const needs = prerequisites.length
@@ -195,7 +251,11 @@ export function generateRequest({ skill, expectations, prerequisites }: SkillCon
     : 'None. This is a starting skill.';
   return {
     model: GENERATOR_MODEL,
-    system: fractions ? withFractionPictures(GENERATOR_SYSTEM) : GENERATOR_SYSTEM,
+    system: facts
+      ? FACT_GENERATOR_SYSTEM
+      : fractions
+        ? withFractionPictures(GENERATOR_SYSTEM)
+        : GENERATOR_SYSTEM,
     tool: fractions ? SUBMIT_FRACTION_CONTENT : SUBMIT_CONTENT,
     maxTokens: 32000,
     prompt: `Skill ${skill.id}, ${gradeName(skill.grade)}: ${skill.title}
@@ -208,7 +268,7 @@ ${expectations.map(formatExpectation).join('\n\n')}
 The child already knows:
 ${needs}
 
-Voice: ${TONE[skill.grade]} Sentences have at most ${limits.sentenceWords} words. A story card's narration has at most ${limits.cardWords} words, a question at most ${limits.questionWords}, a why at most ${limits.whyWords}. Keep long words (3+ syllables) under ${Math.round(limits.longWordShare * 100)}% of all words; number words don't count.
+Voice: ${(facts ? FACT_TONE : TONE)[skill.grade]} Sentences have at most ${limits.sentenceWords} words. A story card's narration has at most ${limits.cardWords} words, a question at most ${limits.questionWords}, a why at most ${limits.whyWords}. Keep long words (3+ syllables) under ${Math.round(limits.longWordShare * 100)}% of all words; number words don't count.
 ${ESTIMATION_SKILLS.has(skill.id) ? `\n${ESTIMATION_NOTE}\n` : ''}${fractionNote}
 Write the story and the ${ITEMS_PER_SKILL} items for ${skill.id}.`,
   };
@@ -250,6 +310,10 @@ Report it as a note for anything smaller: tone, wording, a too-easy or too-hard 
 Items marked VERIFY need extra care: code could not tie their answer to the question by itself. Work each one out and confirm the marked answer, and that each choice means what its value says.
 
 Use the item id as target, or "story" for the story cards. An empty list is a fine answer when nothing is wrong. Give your whole answer as the structured output.`;
+
+const FACT_REVIEWER_SYSTEM = `${REVIEWER_SYSTEM.replace(APP_CONTEXT, FACT_CONTEXT)}
+
+Every item here is marked VERIFY. Treat a fact that a teacher would dispute, or a wrong choice that is also partly right, as a blocker. Also block content that stereotypes a people or community, or that shames or scares a child.`;
 
 function describeVisual(v: Visual | undefined): string {
   if (!v) return 'none';
@@ -302,9 +366,11 @@ export function reviewRequest(
     .join('\n');
   return {
     model: REVIEWER_MODEL,
-    system: FRACTION_PICTURE_SKILLS.has(skill.id)
-      ? withFractionPictures(REVIEWER_SYSTEM)
-      : REVIEWER_SYSTEM,
+    system: isFactSkill(skill)
+      ? FACT_REVIEWER_SYSTEM
+      : FRACTION_PICTURE_SKILLS.has(skill.id)
+        ? withFractionPictures(REVIEWER_SYSTEM)
+        : REVIEWER_SYSTEM,
     tool: SUBMIT_CONTENT_REVIEW,
     maxTokens: 16000,
     prompt: `Skill ${skill.id}, ${gradeName(skill.grade)}: ${skill.title}
