@@ -31,7 +31,7 @@ export function useGameProps(props: ItemViewProps & { shuffleSeed?: string }): G
               value: c.kind === 'number' ? c.value : (choiceTextValue(label(c)) ?? label(c)),
             })),
           }
-        : { kind: 'keypad' },
+        : { kind: 'keypad', decimal: !Number.isInteger(itemAnswer(item)) },
     [item, seed],
   );
   const question = useMemo(

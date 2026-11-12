@@ -8,6 +8,9 @@ import { sceneLabels } from './compare/layout';
 import { SLICE_DEMO_ITEMS } from './food/demo';
 import { sliceUnit } from './food/layout';
 import { SliceGame } from './food/SliceGame';
+import { GRID_DEMO_ITEMS } from './grid/demo';
+import { GridGame } from './grid/GridGame';
+import { decimalLabels } from './grid/layout';
 import { JOIN_DEMO_ITEMS } from './join/demo';
 import { JoinGame } from './join/JoinGame';
 import { DEMO_ITEMS } from './minigames/demo';
@@ -56,6 +59,13 @@ function ArraysView({ game, ...props }: GameViewProps<'arrays'>) {
   return <ArraysGame {...useGameProps(props)} scene={game} />;
 }
 
+function GridView({ game, ...props }: GameViewProps<'grid'>) {
+  const frame = useGameProps(props);
+  const { item } = props;
+  const input = useMemo(() => decimalLabels(frame.input, item), [frame.input, item]);
+  return <GridGame {...frame} input={input} scene={game} />;
+}
+
 /** Every minigame the app plays, by `kind`. A new kind in `GAMES` fails the type check here. */
 export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   share: { title: 'Sharing', View: ShareView, demo: DEMO_ITEMS },
@@ -63,6 +73,7 @@ export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   join: { title: 'Join and leave', View: JoinView, demo: JOIN_DEMO_ITEMS },
   compare: { title: 'Compare and order', View: CompareView, demo: COMPARE_DEMO_ITEMS },
   arrays: { title: 'Arrays', View: ArraysView, demo: ARRAYS_DEMO_ITEMS },
+  grid: { title: 'Tenths and hundredths', View: GridView, demo: GRID_DEMO_ITEMS },
 };
 
 export const GAME_KINDS = Object.keys(GAME_VIEWS) as GameKind[];
