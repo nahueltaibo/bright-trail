@@ -1,4 +1,4 @@
-import { gameProblems } from '@bright-trail/shared';
+import { gameProblems, ItemSchema } from '@bright-trail/shared';
 import { render, screen } from '@testing-library/react-native';
 import { GAME_KINDS, GAME_VIEWS, isGameKind } from './games';
 import { ItemView } from './ItemView';
@@ -10,6 +10,12 @@ describe('GAME_VIEWS', () => {
     for (const item of demo) {
       expect(item.game?.kind).toBe(kind);
       expect(gameProblems(item, item.game!)).toEqual([]);
+    }
+  });
+
+  it.each(GAME_KINDS)('%s demo items pass the item schema', (kind) => {
+    for (const item of GAME_VIEWS[kind].demo) {
+      expect([item.id, ItemSchema.safeParse(item).error?.issues ?? []]).toEqual([item.id, []]);
     }
   });
 

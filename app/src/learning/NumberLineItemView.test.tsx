@@ -1,4 +1,4 @@
-import { defaultHops, hopsProblems, type NumberLineItem } from '@bright-trail/shared';
+import { defaultHops, hopsProblems, ItemSchema, type NumberLineItem } from '@bright-trail/shared';
 import { HOPS_DEMO_ITEMS } from './hopsDemo';
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { NumberLineItemView } from './NumberLineItemView';
@@ -184,5 +184,6 @@ describe('hops demo items', () => {
   it.each(HOPS_DEMO_ITEMS.map((i) => [i.id, i] as const))('%s lands on its answer', (_, item) => {
     if (item.type !== 'number-line') throw new Error('not a number line');
     expect(hopsProblems(item, item.hops ?? defaultHops(item))).toEqual([]);
+    expect(ItemSchema.safeParse(item).error?.issues ?? []).toEqual([]);
   });
 });
