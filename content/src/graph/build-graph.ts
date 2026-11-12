@@ -25,7 +25,7 @@ try {
 const backend = process.env.LLM_BACKEND ?? 'cli';
 if (backend !== 'cli' && backend !== 'sdk') throw new Error(`Unknown LLM_BACKEND ${backend}`);
 
-const sources = await loadSources(join(contentDir, 'sources'));
+const sources = await loadSources(join(contentDir, 'sources', 'math'));
 const overrides = await loadOverrides(join(contentDir, 'graph-overrides.json'));
 const live = backend === 'sdk' ? new AnthropicLlm() : new ClaudeCliLlm();
 let liveCalls = 0;
