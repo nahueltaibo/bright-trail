@@ -10,6 +10,9 @@ import { sceneLabels } from './compare/layout';
 import { SLICE_DEMO_ITEMS } from './food/demo';
 import { sliceUnit } from './food/layout';
 import { SliceGame } from './food/SliceGame';
+import { GRID_DEMO_ITEMS } from './grid/demo';
+import { GridGame } from './grid/GridGame';
+import { decimalLabels } from './grid/layout';
 import { JOIN_DEMO_ITEMS } from './join/demo';
 import { JoinGame } from './join/JoinGame';
 import { DEMO_ITEMS } from './minigames/demo';
@@ -60,6 +63,13 @@ function ArraysView({ game, ...props }: GameViewProps<'arrays'>) {
   return <ArraysGame {...useGameProps(props)} scene={game} />;
 }
 
+function GridView({ game, ...props }: GameViewProps<'grid'>) {
+  const frame = useGameProps(props);
+  const { item } = props;
+  const input = useMemo(() => decimalLabels(frame.input, item), [frame.input, item]);
+  return <GridGame {...frame} input={input} scene={game} />;
+}
+
 function BlocksView({ game, ...props }: GameViewProps<'blocks'>) {
   return <BlocksGame {...useGameProps(props)} scene={game} />;
 }
@@ -75,6 +85,7 @@ export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   join: { title: 'Join and leave', View: JoinView, demo: JOIN_DEMO_ITEMS },
   compare: { title: 'Compare and order', View: CompareView, demo: COMPARE_DEMO_ITEMS },
   arrays: { title: 'Arrays', View: ArraysView, demo: ARRAYS_DEMO_ITEMS },
+  grid: { title: 'Tenths and hundredths', View: GridView, demo: GRID_DEMO_ITEMS },
   blocks: { title: 'Base-ten blocks', View: BlocksView, demo: BLOCKS_DEMO_ITEMS },
   stones: { title: 'Stepping stones', View: StonesView, demo: STONES_DEMO_ITEMS },
 };

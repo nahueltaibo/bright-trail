@@ -8,6 +8,7 @@ export * from './compare';
 export * from './engine';
 export * from './game';
 export * from './grade';
+export * from './grid';
 export * from './hops';
 export * from './item';
 export * from './join';

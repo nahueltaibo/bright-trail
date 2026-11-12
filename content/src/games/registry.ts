@@ -2,6 +2,7 @@ import type {
   ArrayScene,
   BlocksScene,
   CompareScene,
+  GridScene,
   Hops,
   Item,
   JoinScene,
@@ -18,6 +19,7 @@ import {
   compareCandidates,
   compareTagRequest,
 } from '../compare/compare';
+import { acceptGrids, applyGrids, gridCandidates, gridTagRequest } from '../grid/grid';
 import { acceptHops, applyHops, hopsCandidates, hopsTagRequest } from '../hops/hops';
 import { acceptJoins, applyJoins, joinCandidates, joinTagRequest } from '../join/join';
 import { acceptScenes, applyScenes, candidateItems, tagRequest } from '../scenes/scenes';
@@ -95,6 +97,20 @@ const arrays: Tagger<Item, ArrayScene> = {
   apply: applyArrays,
 };
 
+const grid: Tagger<Item, GridScene> = {
+  file: 'grid.json',
+  outcome: 'play as grid scenes',
+  label: 'Grid',
+  minPerSkill: 3,
+  candidates: gridCandidates,
+  request: gridTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptGrids(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyGrids,
+};
+
 const blocks: Tagger<Item, BlocksScene> = {
   file: 'blocks.json',
   outcome: 'play as base-ten blocks',
@@ -142,7 +158,7 @@ const hops: Tagger<NumberLineItem, Hops> = {
  * Every content tagger by the `--kind` that runs it, in the order the bundle applies them.
  * Hops come last because they skip number-line items that already play a minigame.
  */
-export const TAGGERS = { share, slices, join, compare, arrays, blocks, stones, hops };
+export const TAGGERS = { share, slices, join, compare, arrays, grid, blocks, stones, hops };
 export type TaggerKind = keyof typeof TAGGERS;
 
 export function isTaggerKind(kind: string): kind is TaggerKind {
