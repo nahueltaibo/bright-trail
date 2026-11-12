@@ -1,5 +1,8 @@
 import type { GameKind, GameOf, Item } from '@bright-trail/shared';
 import { useMemo, type ReactElement } from 'react';
+import { CompareGame } from './compare/CompareGame';
+import { COMPARE_DEMO_ITEMS } from './compare/demo';
+import { sceneLabels } from './compare/layout';
 import { SLICE_DEMO_ITEMS } from './food/demo';
 import { sliceUnit } from './food/layout';
 import { SliceGame } from './food/SliceGame';
@@ -41,11 +44,18 @@ function JoinView({ game, ...props }: GameViewProps<'join'>) {
   return <JoinGame {...useGameProps(props)} scene={game} />;
 }
 
+function CompareView({ game, ...props }: GameViewProps<'compare'>) {
+  const frame = useGameProps(props);
+  const input = useMemo(() => sceneLabels(frame.input, game), [frame.input, game]);
+  return <CompareGame {...frame} input={input} scene={game} />;
+}
+
 /** Every minigame the app plays, by `kind`. A new kind in `GAMES` fails the type check here. */
 export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   share: { title: 'Sharing', View: ShareView, demo: DEMO_ITEMS },
   slices: { title: 'Slices', View: SlicesView, demo: SLICE_DEMO_ITEMS },
   join: { title: 'Join and leave', View: JoinView, demo: JOIN_DEMO_ITEMS },
+  compare: { title: 'Compare and order', View: CompareView, demo: COMPARE_DEMO_ITEMS },
 };
 
 export const GAME_KINDS = Object.keys(GAME_VIEWS) as GameKind[];
