@@ -1,0 +1,43 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-count-forward-back-keypad-1",
+        "fits": true,
+        "stones": ["6", "7"],
+        "missing": 1,
+        "note": "Count up from 6."
+      },
+      {
+        "itemId": "k-count-forward-back-keypad-2",
+        "fits": true,
+        "stones": ["5", "4"],
+        "missing": 1,
+        "note": "Count down from 5."
+      },
+      {
+        "itemId": "k-count-forward-back-keypad-3",
+        "fits": true,
+        "stones": ["9", "10"],
+        "missing": 1,
+        "note": "Count up from 9."
+      },
+      {
+        "itemId": "k-count-forward-back-tap-4",
+        "fits": true,
+        "stones": ["7", "6"],
+        "missing": 1,
+        "note": "Count down from 7; 8 and 9 are distractor choices, not stones."
+      },
+      {
+        "itemId": "k-count-forward-back-keypad-4",
+        "fits": false,
+        "stones": ["4", "7"],
+        "missing": 1,
+        "note": "Adds a start and a number of hops; not a fixed-step run with a missing stone."
+      }
+    ]
+  }
+}

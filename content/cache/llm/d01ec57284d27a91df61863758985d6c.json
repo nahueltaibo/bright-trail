@@ -1,0 +1,98 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-whole-numbers-200-keypad-1",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 1,
+        "tens": 4,
+        "ones": 2,
+        "place": null,
+        "note": "1 hundred 4 tens 2 ones"
+      },
+      {
+        "itemId": "g2-whole-numbers-200-tap-1",
+        "fits": true,
+        "ask": "make",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 0,
+        "place": "tens",
+        "note": "tens in one hundred"
+      },
+      {
+        "itemId": "g2-whole-numbers-200-tap-2",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 1,
+        "tens": 2,
+        "ones": 6,
+        "place": null,
+        "note": "number word one hundred twenty-six"
+      },
+      {
+        "itemId": "g2-whole-numbers-200-keypad-2",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 7,
+        "place": null,
+        "note": "100 + 7"
+      },
+      {
+        "itemId": "g2-whole-numbers-200-keypad-3",
+        "fits": true,
+        "ask": "make",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 0,
+        "place": "tens",
+        "note": "tens in 150"
+      },
+      {
+        "itemId": "g2-whole-numbers-200-keypad-4",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 14,
+        "ones": 0,
+        "place": null,
+        "note": "14 boxes of 10"
+      },
+      {
+        "itemId": "g2-whole-numbers-200-keypad-5",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 9,
+        "ones": 15,
+        "place": null,
+        "note": "9 tens and 15 ones"
+      },
+      {
+        "itemId": "g2-whole-numbers-200-tap-5",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 17,
+        "ones": 6,
+        "place": null,
+        "note": "17 tens 6 ones"
+      },
+      {
+        "itemId": "g2-whole-numbers-200-keypad-6",
+        "fits": true,
+        "ask": "count",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 14,
+        "place": "ones",
+        "note": "ones needed in 164"
+      }
+    ]
+  }
+}

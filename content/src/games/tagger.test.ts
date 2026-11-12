@@ -1,10 +1,15 @@
 import type { Item } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
+import { arrayTagRequest } from '../arrays/arrays';
+import { blocksTagRequest } from '../blocks/blocks';
+import { compareTagRequest } from '../compare/compare';
 import type { LlmClient, LlmRequest } from '../graph/llm';
+import { gridTagRequest } from '../grid/grid';
 import { hopsTagRequest } from '../hops/hops';
 import { joinTagRequest } from '../join/join';
 import { tagRequest } from '../scenes/scenes';
 import { sliceTagRequest } from '../slices/slices';
+import { stonesTagRequest } from '../stones/stones';
 import { isTaggerKind, TAGGERS } from './registry';
 import { tagItems, type Tagger } from './tagger';
 
@@ -86,6 +91,11 @@ describe('TAGGERS', () => {
     expect(TAGGERS.share.request).toBe(tagRequest);
     expect(TAGGERS.slices.request).toBe(sliceTagRequest);
     expect(TAGGERS.join.request).toBe(joinTagRequest);
+    expect(TAGGERS.compare.request).toBe(compareTagRequest);
+    expect(TAGGERS.arrays.request).toBe(arrayTagRequest);
+    expect(TAGGERS.grid.request).toBe(gridTagRequest);
+    expect(TAGGERS.blocks.request).toBe(blocksTagRequest);
+    expect(TAGGERS.stones.request).toBe(stonesTagRequest);
     expect(TAGGERS.hops.request).toBe(hopsTagRequest);
   });
 
@@ -94,6 +104,11 @@ describe('TAGGERS', () => {
       'scenes.json',
       'slices.json',
       'join.json',
+      'compare.json',
+      'arrays.json',
+      'grid.json',
+      'blocks.json',
+      'stones.json',
       'hops.json',
     ]);
   });

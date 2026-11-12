@@ -80,6 +80,8 @@ describe('choiceTextValue', () => {
     ['no', false],
     ['1 1/2', 1.5],
     ['3/4', 0.75],
+    ['0.50', 0.5],
+    ['25%', 0.25],
     ['2 friends', 2],
     ['Mia', null],
     ['3 and 3', null],

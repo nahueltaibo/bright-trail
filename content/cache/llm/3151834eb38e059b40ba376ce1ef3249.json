@@ -1,0 +1,32 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g4-compare-fair-shares-tap-5",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["1/5", "1/10", "1/2", "1/4"],
+        "target": null,
+        "note": "Greatest unit fraction is 1/2, matching answer 0.5."
+      },
+      {
+        "itemId": "g4-compare-fair-shares-keypad-2",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["2", "6"],
+        "target": null,
+        "note": "Asks for a difference (subtraction), not picking a value."
+      },
+      {
+        "itemId": "g4-compare-fair-shares-tap-6",
+        "fits": false,
+        "ask": "least",
+        "values": ["4", "5", "10"],
+        "target": null,
+        "note": "Choices are friend counts; the least count is 4, but the answer is 10 (smallest share), so the scene's pick would differ."
+      }
+    ]
+  }
+}

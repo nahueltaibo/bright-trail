@@ -1,0 +1,78 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-read-numbers-50-tap-2",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 1,
+        "ones": 2,
+        "place": null,
+        "note": "twelve = 1 ten 2 ones"
+      },
+      {
+        "itemId": "g1-read-numbers-50-keypad-2",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 0,
+        "place": null,
+        "note": "thirty = 3 tens"
+      },
+      {
+        "itemId": "g1-read-numbers-50-keypad-3",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 5,
+        "place": null,
+        "note": "3 tens 5 ones"
+      },
+      {
+        "itemId": "g1-read-numbers-50-tap-3",
+        "fits": true,
+        "ask": "count",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 2,
+        "place": "tens",
+        "note": "tens in 42"
+      },
+      {
+        "itemId": "g1-read-numbers-50-tap-4",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 6,
+        "place": null,
+        "note": "forty-six = 4 tens 6 ones"
+      },
+      {
+        "itemId": "g1-read-numbers-50-keypad-4",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 8,
+        "place": null,
+        "note": "forty-eight = 4 tens 8 ones"
+      },
+      {
+        "itemId": "g1-read-numbers-50-tap-6",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 2,
+        "ones": 7,
+        "place": null,
+        "note": "2 tens 7 ones"
+      }
+    ]
+  }
+}

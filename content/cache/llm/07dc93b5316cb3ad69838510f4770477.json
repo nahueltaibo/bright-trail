@@ -1,0 +1,48 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-add-sub-problems-50-tap-2",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["31", "29", "30", "32"],
+        "target": null,
+        "note": "Addition problem, not a size comparison."
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-tap-3",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["5", "7", "8", "6"],
+        "target": null,
+        "note": "Subtraction problem, not a size comparison."
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-tap-4",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["6", "9", "22", "8"],
+        "target": null,
+        "note": "Missing addend problem, not a size comparison."
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-keypad-3",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["23", "5"],
+        "target": null,
+        "note": "Addition problem, not a size comparison."
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-keypad-5",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["14", "40"],
+        "target": null,
+        "note": "Missing addend problem, not a size comparison."
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-mult-div-problems-tap-5",
+        "fits": false,
+        "ask": "total",
+        "rows": 8,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction factor (1/4); not a whole-number array."
+      },
+      {
+        "itemId": "g3-mult-div-problems-keypad-2",
+        "fits": true,
+        "ask": "columns",
+        "rows": 6,
+        "columns": 4,
+        "thing": "sticker",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "24 stickers shared among 6 friends; each gets columns."
+      },
+      {
+        "itemId": "g3-mult-div-problems-keypad-3",
+        "fits": true,
+        "ask": "rows",
+        "rows": 7,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "56 players, 8 per team; rows = number of teams."
+      },
+      {
+        "itemId": "g3-mult-div-problems-keypad-5",
+        "fits": false,
+        "ask": "total",
+        "rows": 10,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction factor (1/2); not a whole-number array."
+      }
+    ]
+  }
+}

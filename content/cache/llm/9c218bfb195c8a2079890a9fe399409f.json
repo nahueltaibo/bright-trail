@@ -1,0 +1,68 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-compose-decompose-50-tap-1",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 1,
+        "ones": 3,
+        "place": null,
+        "note": "10 and 3 make 13"
+      },
+      {
+        "itemId": "g1-compose-decompose-50-keypad-1",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 1,
+        "ones": 4,
+        "place": null,
+        "note": "10 + 4 = 14"
+      },
+      {
+        "itemId": "g1-compose-decompose-50-keypad-3",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 2,
+        "ones": 7,
+        "place": null,
+        "note": "20 + 7 = 27"
+      },
+      {
+        "itemId": "g1-compose-decompose-50-tap-4",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 5,
+        "place": null,
+        "note": "3 tens 5 ones = 35"
+      },
+      {
+        "itemId": "g1-compose-decompose-50-keypad-4",
+        "fits": true,
+        "ask": "count",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 6,
+        "place": "ones",
+        "note": "36 is 30 and 6 ones"
+      },
+      {
+        "itemId": "g1-compose-decompose-50-keypad-5",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 5,
+        "place": null,
+        "note": "three 10s and 5 = 35"
+      }
+    ]
+  }
+}

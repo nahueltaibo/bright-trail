@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 2,
+  "schemaVersion": 5,
   "version": "2026.11.08-53",
   "generatedAt": "2026-11-08T19:50:21Z",
   "skills": [
@@ -2823,6 +2823,7 @@
       "narration": "Count with Pip. 1, 2, 3. What comes next? Is it 4, 7, or 2?",
       "prompt": "1, 2, 3, ?",
       "why": "After 3 comes 4. We count by ones: 1, 2, 3, 4.",
+      "game": { "kind": "stones", "stones": ["1", "2", "3", "4"], "missing": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
@@ -2838,6 +2839,7 @@
       "narration": "Pip is on stone 8. What number comes next? Is it 9, 6, or 10?",
       "prompt": "8, ?",
       "why": "After 8 comes 9. Count one more: 8, 9.",
+      "game": { "kind": "stones", "stones": ["8", "9"], "missing": 1 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 9 },
@@ -2874,6 +2876,7 @@
       "narration": "Count with Pip. 4, 5, 6. What number comes next?",
       "prompt": "4, 5, 6, ?",
       "why": "After 6 comes 7. We count by ones: 4, 5, 6, 7.",
+      "game": { "kind": "stones", "stones": ["4", "5", "6", "7"], "missing": 3 },
       "type": "keypad",
       "answer": 7
     },
@@ -2897,6 +2900,7 @@
       "narration": "Count with Pip. 11, 12, 13. What comes next? Is it 14, 15, or 12?",
       "prompt": "11, 12, 13, ?",
       "why": "After 13 comes 14. Count one more each time.",
+      "game": { "kind": "stones", "stones": ["11", "12", "13", "14"], "missing": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 15 },
@@ -2912,6 +2916,7 @@
       "narration": "What number comes after 16? Is it 15, 18, 17, or 13?",
       "prompt": "16, ?",
       "why": "We count 16, 17. The number after 16 is 17.",
+      "game": { "kind": "stones", "stones": ["16", "17"], "missing": 1 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 15 },
@@ -2928,6 +2933,7 @@
       "narration": "Pip is on stone 12. Which number does he hop to next?",
       "prompt": "12, ?",
       "why": "After 12 comes 13. Count one more: 12, 13.",
+      "game": { "kind": "stones", "stones": ["12", "13"], "missing": 1 },
       "type": "keypad",
       "answer": 13
     },
@@ -2966,6 +2972,7 @@
       "narration": "Count with Pip. 17, 18, 19. What comes next? Is it 20, 16, or 19?",
       "prompt": "17, 18, 19, ?",
       "why": "After 19 comes 20. Pip counted all the way to 20!",
+      "game": { "kind": "stones", "stones": ["17", "18", "19", "20"], "missing": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 20 },
@@ -2981,6 +2988,7 @@
       "narration": "Count with Pip. 18, 19. What number comes next?",
       "prompt": "18, 19, ?",
       "why": "After 19 comes 20. Count one more: 18, 19, 20.",
+      "game": { "kind": "stones", "stones": ["18", "19", "20"], "missing": 2 },
       "type": "keypad",
       "answer": 20
     },
@@ -3897,6 +3905,7 @@
       "narration": "Count up from 6. What number comes next?",
       "prompt": "6, ?",
       "why": "When we count up, we go to the next number. After 6 comes 7.",
+      "game": { "kind": "stones", "stones": ["6", "7"], "missing": 1 },
       "type": "keypad",
       "answer": 7
     },
@@ -3935,6 +3944,7 @@
       "narration": "Count down from 5. What number comes next?",
       "prompt": "5, ?",
       "why": "When we count down, the number gets smaller. Just before 5 is 4.",
+      "game": { "kind": "stones", "stones": ["5", "4"], "missing": 1 },
       "type": "keypad",
       "answer": 4
     },
@@ -3973,6 +3983,7 @@
       "narration": "Count up from 9. What number comes next?",
       "prompt": "9, ?",
       "why": "Counting up gives a bigger number. After 9 comes 10.",
+      "game": { "kind": "stones", "stones": ["9", "10"], "missing": 1 },
       "type": "keypad",
       "answer": 10
     },
@@ -3983,6 +3994,7 @@
       "narration": "Count down from 7. Which number comes next, 8, 6, or 9?",
       "prompt": "7, down, ?",
       "why": "Counting down makes the number smaller. Just before 7 is 6.",
+      "game": { "kind": "stones", "stones": ["7", "6"], "missing": 1 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -4135,6 +4147,7 @@
       "narration": "Which number is more, 4 or 9? Type the bigger number.",
       "prompt": "4 or 9: more?",
       "why": "9 comes after 4 when we count. So 9 is more than 4.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["4", "9"] },
       "type": "keypad",
       "answer": 9
     },
@@ -4251,6 +4264,7 @@
       "narration": "Which number is less, 7 or 2? Type the smaller number.",
       "prompt": "7 or 2: less?",
       "why": "2 comes before 7 when we count. So 2 is less than 7.",
+      "game": { "kind": "compare", "ask": "least", "values": ["7", "2"] },
       "type": "keypad",
       "answer": 2
     },
@@ -4346,6 +4360,7 @@
       "narration": "Which number is greater, 3 or 6?",
       "prompt": "Which is greater?",
       "why": "6 is more than 3. Count up from 3 and you reach 6. So 6 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3", "6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
@@ -4396,6 +4411,7 @@
       "narration": "Which number is less, 8 or 2?",
       "prompt": "Which is less?",
       "why": "2 is fewer than 8. Count up from 2 and you reach 8 much later. So 2 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["8", "2"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -4420,6 +4436,7 @@
       "narration": "Which number is greater, 9 or 12?",
       "prompt": "Which is greater?",
       "why": "12 comes after 9 when we count. Numbers that come later are greater. So 12 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["12", "9"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 12 },
@@ -4494,6 +4511,7 @@
       "narration": "Which number is less, 14 or 16?",
       "prompt": "Which is less?",
       "why": "Count up: 14, 15, 16. 14 comes first, so 14 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["16", "14"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 16 },
@@ -5487,13 +5505,6 @@
       "narration": "Mia gets 2 cookies. Sam gets 2 cookies. Is it fair? Yes or no?",
       "prompt": "Is it fair?",
       "why": "Mia has 2 and Sam has 2. They have the same, so it is fair.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "Yes" },
-        { "id": "b", "kind": "text", "text": "No" }
-      ],
-      "answerChoiceId": "a",
       "game": {
         "kind": "share",
         "ask": "fair",
@@ -5509,7 +5520,14 @@
           { "name": "Mia", "look": "kid" },
           { "name": "Sam", "look": "kid" }
         ]
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "Yes" },
+        { "id": "b", "kind": "text", "text": "No" }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "k-equal-share-keypad-1",
@@ -5518,9 +5536,6 @@
       "narration": "There are 2 apples and 2 friends. Each friend gets the same. How many apples does each get?",
       "prompt": "2 apples, 2 friends",
       "why": "Give one apple to each friend. Then no apples are left. Each friend gets 1.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 2 },
-      "answer": 1,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5531,7 +5546,10 @@
         "receivers": "kids",
         "total": 2,
         "groups": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 2 },
+      "answer": 1
     },
     {
       "id": "k-equal-share-number-line-1",
@@ -5540,11 +5558,6 @@
       "narration": "4 ducks swim to 2 ponds. Each pond gets the same. Hop the frog to how many ducks each pond gets.",
       "prompt": "4 ducks, 2 ponds",
       "why": "Put one duck in each pond. Then one more each.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 2,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5555,7 +5568,12 @@
         "receivers": "containers",
         "total": 4,
         "groups": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 2
     },
     {
       "id": "k-equal-share-tap-2",
@@ -5564,14 +5582,6 @@
       "narration": "There are 4 stickers and 4 friends. Each friend gets the same. How many stickers does each get? 1, 2, or 4?",
       "prompt": "4 stickers, 4 friends",
       "why": "There is one sticker for each friend. Each friend gets 1 sticker.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 4 },
-        { "id": "b", "kind": "number", "value": 2 },
-        { "id": "c", "kind": "number", "value": 1 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5582,7 +5592,15 @@
         "receivers": "kids",
         "total": 4,
         "groups": 4
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 4 },
+        { "id": "b", "kind": "number", "value": 2 },
+        { "id": "c", "kind": "number", "value": 1 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "k-equal-share-keypad-2",
@@ -5591,9 +5609,6 @@
       "narration": "Sam has 6 cookies. He shares them with 2 friends. How many cookies does each friend get?",
       "prompt": "6 cookies, 2 friends",
       "why": "Hand out one cookie at a time to each friend. Each friend ends up with 3.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
-      "answer": 3,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5605,7 +5620,10 @@
         "total": 6,
         "groups": 2,
         "sharer": { "name": "Sam", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
+      "answer": 3
     },
     {
       "id": "k-equal-share-tap-3",
@@ -5614,14 +5632,6 @@
       "narration": "Lily has 6 berries. She shares them with 3 friends. How many berries does each friend get? 2, 3, or 4?",
       "prompt": "6 berries, 3 friends",
       "why": "Give each friend one berry. Then give another to each.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍓", "count": 6 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 2 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5633,7 +5643,15 @@
         "total": 6,
         "groups": 3,
         "sharer": { "name": "Lily", "look": "girl" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍓", "count": 6 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 2 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "k-equal-share-keypad-3",
@@ -5642,9 +5660,6 @@
       "narration": "Max has 8 toy cars. He shares them with 2 friends. How many cars does each friend get?",
       "prompt": "8 cars, 2 friends",
       "why": "Give each friend one car at a time. Each friend gets 4.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🚗", "count": 8 },
-      "answer": 4,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5656,7 +5671,10 @@
         "total": 8,
         "groups": 2,
         "sharer": { "name": "Max", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🚗", "count": 8 },
+      "answer": 4
     },
     {
       "id": "k-equal-share-number-line-2",
@@ -5665,11 +5683,6 @@
       "narration": "9 grapes are shared by 3 friends. Hop the frog to how many grapes each friend gets.",
       "prompt": "9 grapes, 3 friends",
       "why": "Give 3 friends one grape each, three times. Each friend gets 3 grapes.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 3,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5680,7 +5693,12 @@
         "receivers": "kids",
         "total": 9,
         "groups": 3
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 3
     },
     {
       "id": "k-equal-share-tap-4",
@@ -5689,12 +5707,6 @@
       "narration": "Ana gets 4 cookies. Ben gets 2 cookies. Is it fair? Yes or no?",
       "prompt": "Is it fair?",
       "why": "Ana has more than Ben. They need the same amount, so it is not fair.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "No" },
-        { "id": "b", "kind": "text", "text": "Yes" }
-      ],
-      "answerChoiceId": "a",
       "game": {
         "kind": "share",
         "ask": "fair",
@@ -5710,7 +5722,13 @@
           { "name": "Ana", "look": "kid" },
           { "name": "Ben", "look": "kid" }
         ]
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "No" },
+        { "id": "b", "kind": "text", "text": "Yes" }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "k-equal-share-keypad-4",
@@ -5719,9 +5737,6 @@
       "narration": "There are 10 stars. 2 friends share them equally. How many stars does each friend get?",
       "prompt": "10 stars, 2 friends",
       "why": "Give one star to each friend, again and again. Each friend gets 5.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 10 },
-      "answer": 5,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5732,7 +5747,10 @@
         "receivers": "kids",
         "total": 10,
         "groups": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 10 },
+      "answer": 5
     },
     {
       "id": "k-equal-share-tap-5",
@@ -5741,15 +5759,6 @@
       "narration": "Zoe has 8 pencils. She shares them with 4 friends. How many pencils does each friend get? 1, 2, 3, or 4?",
       "prompt": "8 pencils, 4 friends",
       "why": "Give 4 friends one pencil each. That uses 4. Give one more each. Each friend gets 2.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "✏️", "count": 8 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 1 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 3 },
-        { "id": "d", "kind": "number", "value": 2 }
-      ],
-      "answerChoiceId": "d",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5761,7 +5770,16 @@
         "total": 8,
         "groups": 4,
         "sharer": { "name": "Zoe", "look": "girl" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "✏️", "count": 8 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 1 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 3 },
+        { "id": "d", "kind": "number", "value": 2 }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "k-equal-share-keypad-5",
@@ -5770,9 +5788,6 @@
       "narration": "There are 9 apples. 3 friends share them equally. How many apples does each friend get?",
       "prompt": "9 apples, 3 friends",
       "why": "Give each friend one apple, three times. All 9 are shared. Each friend gets 3.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
-      "answer": 3,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5783,7 +5798,10 @@
         "receivers": "kids",
         "total": 9,
         "groups": 3
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
+      "answer": 3
     },
     {
       "id": "k-equal-share-number-line-3",
@@ -5792,11 +5810,6 @@
       "narration": "10 balloons are shared by 5 friends. Hop the frog to how many balloons each friend gets.",
       "prompt": "10 balloons, 5 friends",
       "why": "Give 5 friends one balloon each. Then give one more each. Each friend gets 2.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 2,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -5807,7 +5820,12 @@
         "receivers": "kids",
         "total": 10,
         "groups": 5
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 2
     },
     {
       "id": "k-equal-share-keypad-6",
@@ -5816,8 +5834,6 @@
       "narration": "4 friends each get 2 cookies. All the cookies were shared equally. How many cookies were there?",
       "prompt": "4 friends, 2 each",
       "why": "Count 2 for each friend. 2 and 2 and 2 and 2 is 8.",
-      "type": "keypad",
-      "answer": 8,
       "game": {
         "kind": "share",
         "ask": "total",
@@ -5829,7 +5845,9 @@
         "total": 8,
         "groups": 4,
         "each": 2
-      }
+      },
+      "type": "keypad",
+      "answer": 8
     },
     {
       "id": "k-equal-share-tap-6",
@@ -5913,6 +5931,7 @@
       "narration": "Which number is twelve? Is it 21, 12, or 2?",
       "prompt": "Find twelve",
       "why": "Twelve is one ten and two ones. That is 12.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 12 },
@@ -5928,6 +5947,7 @@
       "narration": "Type the number thirty.",
       "prompt": "Type thirty",
       "why": "Thirty is 3 tens and 0 ones. We type 30.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 0 },
       "type": "keypad",
       "answer": 30
     },
@@ -5938,6 +5958,7 @@
       "narration": "Mia has 3 tens and 5 ones. What number is that? Type it.",
       "prompt": "3 tens 5 ones",
       "why": "3 tens is 30. Add 5 ones to get 35.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 },
       "type": "keypad",
       "answer": 35
     },
@@ -5948,6 +5969,14 @@
       "narration": "How many tens are in the number 42? Is it 2, 4, or 42?",
       "prompt": "Tens in 42",
       "why": "The first digit tells the tens. In 42, the 4 means 4 tens.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 2,
+        "place": "tens"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 2 },
@@ -5976,6 +6005,7 @@
       "narration": "Which number is forty-six? Is it 64, 36, 41, or 46?",
       "prompt": "Find forty-six",
       "why": "Forty is 4 tens. Six is 6 ones. So forty-six is 46.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 64 },
@@ -6006,6 +6036,7 @@
       "narration": "Type the number forty-eight.",
       "prompt": "Type forty-eight",
       "why": "Forty is 4 tens. Eight is 8 ones. Together that is 48.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 8 },
       "type": "keypad",
       "answer": 48
     },
@@ -6016,6 +6047,7 @@
       "narration": "A number has 2 tens and 7 ones. Is it 72, 27, or 29?",
       "prompt": "2 tens 7 ones",
       "why": "2 tens is 20. Add 7 ones to make 27.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 7 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 72 },
@@ -6072,6 +6104,7 @@
       "narration": "Count by 1s. 7, 8, 9. What number comes next?",
       "prompt": "7, 8, 9, ?",
       "why": "When you count by 1s, you add 1 each time. 9 and 1 more is 10.",
+      "game": { "kind": "stones", "stones": ["7", "8", "9", "10"], "missing": 3 },
       "type": "keypad",
       "answer": 10
     },
@@ -6082,6 +6115,7 @@
       "narration": "Count by 2s. 2, 4, 6. What number comes next? Is it 7, 8, or 9?",
       "prompt": "2, 4, 6, ?",
       "why": "When you count by 2s, you add 2 each time. 6 and 2 more is 8.",
+      "game": { "kind": "stones", "stones": ["2", "4", "6", "8"], "missing": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
@@ -6111,6 +6145,7 @@
       "narration": "Count by 5s. 5, 10, 15. What number comes next?",
       "prompt": "5, 10, 15, ?",
       "why": "When you count by 5s, you add 5 each time. 15 and 5 more is 20.",
+      "game": { "kind": "stones", "stones": ["5", "10", "15", "20"], "missing": 3 },
       "type": "keypad",
       "answer": 20
     },
@@ -6121,6 +6156,7 @@
       "narration": "Count by 10s. 10, 20. What number comes next? Is it 21, 25, or 30?",
       "prompt": "10, 20, ?",
       "why": "When you count by 10s, you add 10 each time. 20 and 10 more is 30.",
+      "game": { "kind": "stones", "stones": ["10", "20", "30"], "missing": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 30 },
@@ -6150,6 +6186,7 @@
       "narration": "Count by 2s. 12, 14, 16. What number comes next?",
       "prompt": "12, 14, 16, ?",
       "why": "When you count by 2s, you add 2 each time. 16 and 2 more is 18.",
+      "game": { "kind": "stones", "stones": ["12", "14", "16", "18"], "missing": 3 },
       "type": "keypad",
       "answer": 18
     },
@@ -6160,6 +6197,7 @@
       "narration": "Count by 5s. 25, 30, 35. What number comes next? Is it 36, 40, or 45?",
       "prompt": "25, 30, 35, ?",
       "why": "When you count by 5s, you add 5 each time. 35 and 5 more is 40.",
+      "game": { "kind": "stones", "stones": ["25", "30", "35", "40"], "missing": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 36 },
@@ -6175,6 +6213,7 @@
       "narration": "Count by 10s. 30, 40. What number comes next?",
       "prompt": "30, 40, ?",
       "why": "When you count by 10s, you add 10 each time. 40 and 10 more is 50.",
+      "game": { "kind": "stones", "stones": ["30", "40", "50"], "missing": 2 },
       "type": "keypad",
       "answer": 50
     },
@@ -6215,6 +6254,7 @@
       "narration": "Count by 5s. 35, 40, then a missing number, then 50. What is the missing number?",
       "prompt": "35, 40, ?, 50",
       "why": "Add 5 to 40 to get 45. Then 45 and 5 more is 50. It fits!",
+      "game": { "kind": "stones", "stones": ["35", "40", "45", "50"], "missing": 2 },
       "type": "keypad",
       "answer": 45
     },
@@ -6225,6 +6265,7 @@
       "narration": "Mia counts by 2s and stops at 50. When she counts by 2s, what number is just before 50? Is it 40, 45, 48, or 49?",
       "prompt": "Count by 2s. Before 50?",
       "why": "Counting by 2s goes back 2 from 50. 50 take away 2 is 48.",
+      "game": { "kind": "stones", "stones": ["48", "50"], "missing": 0 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 45 },
@@ -6266,6 +6307,7 @@
       "narration": "Which number is greater, 7 or 12?",
       "prompt": "Which is greater?",
       "why": "12 has a ten and 7 does not. So 12 is greater than 7.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["7", "12"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
@@ -6280,6 +6322,7 @@
       "narration": "Which number is less, 15 or 9?",
       "prompt": "Which is less?",
       "why": "9 is only ones. 15 has a ten. So 9 is less than 15.",
+      "game": { "kind": "compare", "ask": "least", "values": ["9", "15"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 9 },
@@ -6294,6 +6337,7 @@
       "narration": "Type the greater number, 6 or 11.",
       "prompt": "6 or 11: greater?",
       "why": "11 comes after 6 when we count. Numbers later in counting are greater. So 11 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["6", "11"] },
       "type": "keypad",
       "answer": 11
     },
@@ -6341,6 +6385,7 @@
       "narration": "Which number is greater, 34 or 28?",
       "prompt": "Which is greater?",
       "why": "34 has 3 tens. 28 has 2 tens. More tens means greater, so 34.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["28", "34"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 28 },
@@ -6355,6 +6400,7 @@
       "narration": "Type the number that is less, 41 or 36.",
       "prompt": "Less: 41 or 36",
       "why": "36 has 3 tens. 41 has 4 tens. Fewer tens means less, so 36.",
+      "game": { "kind": "compare", "ask": "least", "values": ["41", "36"] },
       "type": "keypad",
       "answer": 36
     },
@@ -6378,6 +6424,7 @@
       "narration": "Sam has 23 stickers. Mia has 32 stickers. Which number is less, 23 or 32?",
       "prompt": "Which is less?",
       "why": "23 has 2 tens. 32 has 3 tens. So 23 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["32", "23"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 32 },
@@ -6392,6 +6439,7 @@
       "narration": "Put 25, 14, and 38 in order from least to greatest. Which number comes first?",
       "prompt": "Least to greatest: first?",
       "why": "Least to greatest starts with the smallest. 14 has just 1 ten. So 14 is first.",
+      "game": { "kind": "compare", "ask": "least", "values": ["25", "38", "14"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 25 },
@@ -6407,6 +6455,7 @@
       "narration": "Put 18, 42, and 27 in order from greatest to least. Type the number in the middle.",
       "prompt": "Greatest to least: middle?",
       "why": "The order is 42, 27, 18. The number in the middle is 27.",
+      "game": { "kind": "compare", "ask": "middle", "values": ["18", "42", "27"] },
       "type": "keypad",
       "answer": 27
     },
@@ -6417,6 +6466,7 @@
       "narration": "Which number is greater, 38 or 41?",
       "prompt": "Which is greater?",
       "why": "Look at the tens first. 41 has 4 tens and 38 has 3 tens. So 41 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["38", "41"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 38 },
@@ -6444,6 +6494,7 @@
       "narration": "Three kids have 26, 19, and 33 cards. Type the fewest number of cards.",
       "prompt": "Fewest: 26, 19, 33",
       "why": "19 has just 1 ten. 26 and 33 have more tens. So 19 is the least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["26", "19", "33"] },
       "type": "keypad",
       "answer": 19
     },
@@ -6469,6 +6520,7 @@
       "narration": "Which number is 10 and 3? Is it 30, 13, or 8?",
       "prompt": "10 and 3 = ?",
       "why": "10 and 3 more makes 13. Start at 10 and count up 3: 11, 12, 13.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 30 },
@@ -6484,6 +6536,7 @@
       "narration": "Mia has 10 stars in a box and 4 more. How many stars is that in all?",
       "prompt": "10 + 4 = ?",
       "why": "Start at 10 and count up 4 more: 11, 12, 13, 14. The answer is 14.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 4 },
       "type": "keypad",
       "answer": 14
     },
@@ -6547,6 +6600,7 @@
       "narration": "20 and 7 make what number?",
       "prompt": "20 + 7 = ?",
       "why": "20 is two tens. Add 7 ones to get 27.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 7 },
       "type": "keypad",
       "answer": 27
     },
@@ -6571,6 +6625,7 @@
       "narration": "Sam has 3 tens and 5 ones. What number is that? Is it 35, 53, or 8?",
       "prompt": "3 tens and 5 ones",
       "why": "3 tens is 30. Add 5 ones to make 35.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 53 },
@@ -6586,6 +6641,14 @@
       "narration": "Ben has 36 blocks. 36 is 30 and what? Type the missing part.",
       "prompt": "36 = 30 + ?",
       "why": "Take 30 away from 36. That leaves 6.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 6,
+        "place": "ones"
+      },
       "type": "keypad",
       "answer": 6
     },
@@ -6610,6 +6673,7 @@
       "narration": "10 and 10 and 10 and 5 make what number?",
       "prompt": "10 + 10 + 10 + 5 = ?",
       "why": "Three 10s make 30. Then 30 and 5 make 35.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 },
       "type": "keypad",
       "answer": 35
     },
@@ -6663,15 +6727,6 @@
       "narration": "Eight cookies are shared by 2 friends. How many cookies does each friend get? Is it 3, 5, 4, or 6?",
       "prompt": "8 cookies, 2 friends",
       "why": "Give one cookie to each friend again and again. Each friend gets 4 cookies.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 8 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 5 },
-        { "id": "c", "kind": "number", "value": 4 },
-        { "id": "d", "kind": "number", "value": 6 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -6682,7 +6737,16 @@
         "receivers": "kids",
         "total": 8,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 8 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 5 },
+        { "id": "c", "kind": "number", "value": 4 },
+        { "id": "d", "kind": "number", "value": 6 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g1-fair-share-drawings-keypad-1",
@@ -6691,9 +6755,6 @@
       "narration": "Two friends share these apples equally. How many apples does each friend get?",
       "prompt": "How many apples each?",
       "why": "Share the apples one at a time. Each friend gets 3 apples.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
-      "answer": 3,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -6704,7 +6765,10 @@
         "receivers": "kids",
         "total": 6,
         "groups": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
+      "answer": 3
     },
     {
       "id": "g1-fair-share-drawings-number-line-1",
@@ -6713,11 +6777,6 @@
       "narration": "Four friends share 12 grapes equally. Hop the frog to how many grapes each friend gets.",
       "prompt": "12 grapes, 4 friends",
       "why": "Share 12 grapes with 4 friends. Each friend gets 3 grapes.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 3,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -6728,7 +6787,12 @@
         "receivers": "kids",
         "total": 12,
         "groups": 4
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 3
     },
     {
       "id": "g1-fair-share-drawings-tap-2",
@@ -6785,9 +6849,6 @@
       "narration": "Four friends share these grapes equally. How many grapes does each friend get?",
       "prompt": "How many grapes each?",
       "why": "Give each of the 4 friends one grape, then again. Each friend gets 2 grapes.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍇", "count": 8 },
-      "answer": 2,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -6798,7 +6859,10 @@
         "receivers": "kids",
         "total": 8,
         "groups": 4
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍇", "count": 8 },
+      "answer": 2
     },
     {
       "id": "g1-fair-share-drawings-tap-3",
@@ -6807,15 +6871,6 @@
       "narration": "Two friends share 5 cookies. Each gets 2 whole cookies. How many cookies are left to cut? Is it 0, 2, 3, or 1?",
       "prompt": "How many are left?",
       "why": "Each friend gets 2, so 4 cookies are given out. That leaves 1 cookie to cut in half.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 0 },
-        { "id": "b", "kind": "number", "value": 2 },
-        { "id": "c", "kind": "number", "value": 3 },
-        { "id": "d", "kind": "number", "value": 1 }
-      ],
-      "answerChoiceId": "d",
       "game": {
         "kind": "share",
         "ask": "left",
@@ -6826,7 +6881,16 @@
         "receivers": "kids",
         "total": 5,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 0 },
+        { "id": "b", "kind": "number", "value": 2 },
+        { "id": "c", "kind": "number", "value": 3 },
+        { "id": "d", "kind": "number", "value": 1 }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g1-fair-share-drawings-number-line-2",
@@ -6848,14 +6912,6 @@
       "narration": "Two friends share 3 cookies equally. How many cookies does each friend get? Is it 2, 1 1/2, or 1?",
       "prompt": "3 cookies, 2 friends",
       "why": "Each friend gets 1 whole cookie. The last cookie is cut in half. So each gets 1 and a half.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 3 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "2" },
-        { "id": "b", "kind": "text", "text": "1 1/2" },
-        { "id": "c", "kind": "text", "text": "1" }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -6866,7 +6922,15 @@
         "receivers": "kids",
         "total": 3,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 3 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "2" },
+        { "id": "b", "kind": "text", "text": "1 1/2" },
+        { "id": "c", "kind": "text", "text": "1" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-fair-share-drawings-keypad-3",
@@ -6926,15 +6990,6 @@
       "narration": "Four friends share 5 cookies equally. Each gets 1 whole cookie. The last cookie is cut in 4 equal parts. How much does each friend get? Is it 1 1/2, 1, 2, or 1 1/4?",
       "prompt": "5 cookies, 4 friends",
       "why": "Each friend gets 1 whole cookie. The last cookie is cut in 4 parts. So each gets one fourth more.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1 1/2" },
-        { "id": "b", "kind": "text", "text": "1" },
-        { "id": "c", "kind": "text", "text": "2" },
-        { "id": "d", "kind": "text", "text": "1 1/4" }
-      ],
-      "answerChoiceId": "d",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -6945,7 +7000,16 @@
         "receivers": "kids",
         "total": 5,
         "groups": 4
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1 1/2" },
+        { "id": "b", "kind": "text", "text": "1" },
+        { "id": "c", "kind": "text", "text": "2" },
+        { "id": "d", "kind": "text", "text": "1 1/4" }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g1-fair-share-drawings-keypad-4",
@@ -6954,9 +7018,6 @@
       "narration": "Four friends share 14 sandwiches. Each friend gets 3 whole sandwiches. How many sandwiches are left over?",
       "prompt": "How many are left over?",
       "why": "Four friends get 3 each, so 12 sandwiches are given out. That leaves 2 sandwiches.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🥪", "count": 14 },
-      "answer": 2,
       "game": {
         "kind": "share",
         "ask": "left",
@@ -6967,7 +7028,10 @@
         "receivers": "kids",
         "total": 14,
         "groups": 4
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🥪", "count": 14 },
+      "answer": 2
     },
     {
       "id": "g1-fair-share-drawings-number-line-3",
@@ -6976,11 +7040,6 @@
       "narration": "Two friends share 18 stickers equally. Hop the frog to how many stickers each friend gets.",
       "prompt": "18 stickers, 2 friends",
       "why": "Share the 18 stickers into 2 equal groups. Each friend gets 9 stickers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "target": 9,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -6991,7 +7050,12 @@
         "receivers": "kids",
         "total": 18,
         "groups": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "target": 9
     },
     {
       "id": "g1-fair-share-drawings-tap-7",
@@ -7048,12 +7112,6 @@
       "narration": "One pie is shared by 2 friends. A pie just like it is shared by 4 friends. Who gets bigger pieces, the 2 friends or the 4 friends?",
       "prompt": "Who gets more pie?",
       "why": "With fewer friends, each piece is bigger. Two friends get halves, and four friends get fourths. A half is bigger.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4 friends" },
-        { "id": "b", "kind": "text", "text": "2 friends" }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "compare",
@@ -7066,7 +7124,13 @@
         "groups": 2,
         "otherGroups": 4,
         "want": "more"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4 friends" },
+        { "id": "b", "kind": "text", "text": "2 friends" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-half-equals-two-fourths-tap-1",
@@ -7426,9 +7490,6 @@
       "narration": "A pizza is cut into 4 equal slices. Each kid gets one slice. How many kids share this pizza?",
       "prompt": "How many kids?",
       "why": "The pizza has 4 equal slices. Each kid gets one slice, so 4 kids share it.",
-      "type": "keypad",
-      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 1 },
-      "answer": 4,
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -7440,7 +7501,10 @@
         "total": 4,
         "groups": 4,
         "each": 1
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pizza", "parts": 4, "picked": 1 },
+      "answer": 4
     },
     {
       "id": "g1-compare-unit-fractions-number-line-1",
@@ -7463,12 +7527,6 @@
       "narration": "Two kids share a pizza, or four kids share the same pizza. Who gets the bigger piece: 2 kids or 4 kids?",
       "prompt": "Who gets the bigger piece?",
       "why": "Fewer kids means bigger pieces. When 2 kids share, each piece is a half.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4 kids" },
-        { "id": "b", "kind": "text", "text": "2 kids" }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "compare",
@@ -7481,7 +7539,13 @@
         "groups": 2,
         "otherGroups": 4,
         "want": "more"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4 kids" },
+        { "id": "b", "kind": "text", "text": "2 kids" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-compare-unit-fractions-tap-4",
@@ -7635,12 +7699,6 @@
       "narration": "Mia gets 1/4 of a bar. Leo wants a smaller piece. Should his bar be shared by 3 kids or 6 kids?",
       "prompt": "Who shares for a smaller piece?",
       "why": "Sharing with 6 gives smaller pieces than sharing with 4. A sixth is smaller than a fourth.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "6 kids" },
-        { "id": "b", "kind": "text", "text": "3 kids" }
-      ],
-      "answerChoiceId": "a",
       "game": {
         "kind": "share",
         "ask": "compare",
@@ -7654,7 +7712,13 @@
         "otherGroups": 6,
         "want": "less",
         "sharer": { "name": "Leo", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "6 kids" },
+        { "id": "b", "kind": "text", "text": "3 kids" }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g1-compare-unit-fractions-number-line-4",
@@ -8740,14 +8804,6 @@
       "narration": "There are 2 groups of 2 stars. How many stars in all? Is it 3, 4, or 5?",
       "prompt": "How many stars?",
       "why": "Count by 2s. 2, 4. So there are 4 stars in all.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 5 }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "total",
@@ -8759,7 +8815,15 @@
         "total": 4,
         "groups": 2,
         "each": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 5 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-equal-groups-keypad-1",
@@ -8768,9 +8832,6 @@
       "narration": "There are 3 bowls with 2 fish in each bowl. How many fish in all?",
       "prompt": "How many fish?",
       "why": "Count by 2s. 2, 4, 6. There are 6 fish.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
-      "answer": 6,
       "game": {
         "kind": "share",
         "ask": "total",
@@ -8782,7 +8843,10 @@
         "total": 6,
         "groups": 3,
         "each": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
+      "answer": 6
     },
     {
       "id": "g1-equal-groups-number-line-1",
@@ -8829,14 +8893,6 @@
       "narration": "Here are 6 cookies. Each plate gets 2 cookies. How many plates? Is it 3, 2, or 4?",
       "prompt": "How many plates?",
       "why": "Make groups of 2. 2, 4, 6. That is 3 groups, so 3 plates.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 2 },
-        { "id": "c", "kind": "number", "value": 4 }
-      ],
-      "answerChoiceId": "a",
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -8848,7 +8904,15 @@
         "total": 6,
         "groups": 3,
         "each": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 2 },
+        { "id": "c", "kind": "number", "value": 4 }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g1-equal-groups-keypad-2",
@@ -8857,9 +8921,6 @@
       "narration": "There are 4 leaves. Each leaf has 2 bugs on it. How many bugs in all?",
       "prompt": "How many bugs?",
       "why": "Count by 2s. 2, 4, 6, 8. There are 8 bugs.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🐞", "count": 8 },
-      "answer": 8,
       "game": {
         "kind": "share",
         "ask": "total",
@@ -8871,7 +8932,10 @@
         "total": 8,
         "groups": 4,
         "each": 2
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🐞", "count": 8 },
+      "answer": 8
     },
     {
       "id": "g1-equal-groups-number-line-2",
@@ -8880,11 +8944,6 @@
       "narration": "Lena has 5 bags. Each bag has 2 apples. Move the frog to how many apples in all.",
       "prompt": "5 groups of 2",
       "why": "Count by 2s. 2, 4, 6, 8, 10. Lena has 10 apples.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 10,
       "game": {
         "kind": "share",
         "ask": "total",
@@ -8897,7 +8956,12 @@
         "groups": 5,
         "each": 2,
         "sharer": { "name": "Lena", "look": "kid" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 10
     },
     {
       "id": "g1-equal-groups-tap-4",
@@ -8906,14 +8970,6 @@
       "narration": "Here are 8 grapes. Each cup gets 2 grapes. How many cups? Is it 2, 6, or 4?",
       "prompt": "How many cups?",
       "why": "Make groups of 2. 2, 4, 6, 8. That is 4 groups, so 4 cups.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍇", "count": 8 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 6 },
-        { "id": "c", "kind": "number", "value": 4 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -8925,7 +8981,15 @@
         "total": 8,
         "groups": 4,
         "each": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍇", "count": 8 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 6 },
+        { "id": "c", "kind": "number", "value": 4 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g1-equal-groups-keypad-3",
@@ -8953,13 +9017,6 @@
       "narration": "Ben has 3 groups of 3 stickers. How many stickers in all? Is it 9, 6, or 8?",
       "prompt": "3 groups of 3",
       "why": "Count by 3s. 3, 6, 9. Ben has 9 stickers.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 9 },
-        { "id": "b", "kind": "number", "value": 6 },
-        { "id": "c", "kind": "number", "value": 8 }
-      ],
-      "answerChoiceId": "a",
       "game": {
         "kind": "share",
         "ask": "total",
@@ -8972,7 +9029,14 @@
         "groups": 3,
         "each": 3,
         "sharer": { "name": "Ben", "look": "kid" }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 9 },
+        { "id": "b", "kind": "number", "value": 6 },
+        { "id": "c", "kind": "number", "value": 8 }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g1-equal-groups-number-line-3",
@@ -8981,11 +9045,6 @@
       "narration": "Tia has 10 crackers. She puts 2 crackers on each plate. Move the frog to how many plates.",
       "prompt": "How many plates?",
       "why": "Count by 2s. 2, 4, 6, 8, 10. That took 5 counts, so 5 plates.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 5,
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -8998,7 +9057,12 @@
         "groups": 5,
         "each": 2,
         "sharer": { "name": "Tia", "look": "girl" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 5
     },
     {
       "id": "g1-equal-groups-keypad-4",
@@ -9007,9 +9071,6 @@
       "narration": "Here are 9 apples. Each bag holds 3 apples. How many bags?",
       "prompt": "How many bags?",
       "why": "Make groups of 3. 3, 6, 9. That is 3 groups, so 3 bags.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
-      "answer": 3,
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -9021,7 +9082,10 @@
         "total": 9,
         "groups": 3,
         "each": 3
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 9 },
+      "answer": 3
     },
     {
       "id": "g1-equal-groups-tap-6",
@@ -9045,9 +9109,6 @@
       "narration": "Kim has 10 crackers. She puts 5 crackers on each plate. How many plates does she fill?",
       "prompt": "How many plates?",
       "why": "Count by 5s. 5, 10. That is 2 groups, so 2 plates.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍘", "count": 10 },
-      "answer": 2,
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -9060,7 +9121,10 @@
         "groups": 2,
         "each": 5,
         "sharer": { "name": "Kim", "look": "girl" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍘", "count": 10 },
+      "answer": 2
     },
     {
       "id": "g1-equal-groups-tap-7",
@@ -9094,6 +9158,7 @@
       "narration": "Pia has 1 hundred, 4 tens, and 2 ones. What number is that?",
       "prompt": "100 + 40 + 2 = ?",
       "why": "1 hundred is 100. 4 tens is 40. 2 ones is 2. Put them together to get 142.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 4, "ones": 2 },
       "type": "keypad",
       "answer": 142
     },
@@ -9104,6 +9169,14 @@
       "narration": "How many tens make one hundred? Is it 5, 10, 20, or 100?",
       "prompt": "? tens = 100",
       "why": "Ten tens make one hundred. Count by tens ten times to reach 100.",
+      "game": {
+        "kind": "blocks",
+        "ask": "make",
+        "hundreds": 1,
+        "tens": 0,
+        "ones": 0,
+        "place": "tens"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 5 },
@@ -9133,6 +9206,7 @@
       "narration": "Which number is one hundred twenty-six? Is it 162, 126, or 106?",
       "prompt": "one hundred twenty-six",
       "why": "One hundred twenty-six is 1 hundred, 2 tens, and 6 ones. That is 126.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 2, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 162 },
@@ -9148,6 +9222,7 @@
       "narration": "What is 100 + 7?",
       "prompt": "100 + 7 = ?",
       "why": "There are no tens. So 1 hundred and 7 ones is 107.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 0, "ones": 7 },
       "type": "keypad",
       "answer": 107
     },
@@ -9158,6 +9233,14 @@
       "narration": "Sam has 150 beads. How many tens is that?",
       "prompt": "150 = ? tens",
       "why": "10 tens make 100. 5 more tens make 50. So 150 is 15 tens.",
+      "game": {
+        "kind": "blocks",
+        "ask": "make",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 0,
+        "place": "tens"
+      },
       "type": "keypad",
       "answer": 15
     },
@@ -9211,6 +9294,7 @@
       "narration": "A box holds 10 pencils. Sam has 14 boxes. How many pencils is that?",
       "prompt": "14 tens = ?",
       "why": "14 tens is 10 tens and 4 tens. That is 100 and 40, so 140.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 14, "ones": 0 },
       "type": "keypad",
       "answer": 140
     },
@@ -9221,6 +9305,7 @@
       "narration": "Mia has 9 tens and 15 ones. What number is that?",
       "prompt": "90 + 15 = ?",
       "why": "9 tens is 90. 15 ones is 10 and 5. So 90 and 10 make 100, and 5 more is 105.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 9, "ones": 15 },
       "type": "keypad",
       "answer": 105
     },
@@ -9231,6 +9316,7 @@
       "narration": "Which number is the same as 17 tens and 6 ones? Is it 167, 176, or 76?",
       "prompt": "17 tens 6 ones = ?",
       "why": "17 tens is 170. Add 6 ones to get 176.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 17, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 167 },
@@ -9259,6 +9345,14 @@
       "narration": "164 is 1 hundred, 5 tens, and how many ones?",
       "prompt": "164 = 100 + 50 + ?",
       "why": "100 and 50 make 150. From 150 to 164 is 14 more. So there are 14 ones.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 1,
+        "tens": 5,
+        "ones": 14,
+        "place": "ones"
+      },
       "type": "keypad",
       "answer": 14
     },
@@ -9284,6 +9378,7 @@
       "narration": "Which number is greater, 87 or 120?",
       "prompt": "Which is greater?",
       "why": "120 has 1 hundred. 87 has no hundreds. So 120 is greater than 87.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["87", "120"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 87 },
@@ -9298,6 +9393,7 @@
       "narration": "Which number is less, 150 or 105?",
       "prompt": "Which is less?",
       "why": "Both have 1 hundred. 105 has 0 tens and 150 has 5 tens. So 105 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["150", "105"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 150 },
@@ -9312,6 +9408,7 @@
       "narration": "Is 190 closer to 100 or closer to 200?",
       "prompt": "190 is closer to?",
       "why": "190 is only 10 away from 200. It is 90 away from 100. So it is closer to 200.",
+      "game": { "kind": "compare", "ask": "closer", "values": ["100", "200"], "target": "190" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 100 },
@@ -9326,6 +9423,7 @@
       "narration": "Which number is greater, 94 or 149? Type the greater number.",
       "prompt": "94 or 149?",
       "why": "149 has 1 hundred. 94 has none. So 149 is the greater number.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["94", "149"] },
       "type": "keypad",
       "answer": 149
     },
@@ -9349,6 +9447,7 @@
       "narration": "Which number is the greatest, 138, 183, or 118?",
       "prompt": "Greatest number?",
       "why": "All have 1 hundred. Now check the tens. 8 tens is more than 3 tens or 1 ten. So 183 is greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["138", "183", "118"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 138 },
@@ -9364,6 +9463,7 @@
       "narration": "Mia puts 150, 105, and 115 in order from least to greatest. Which number goes first?",
       "prompt": "Which goes first?",
       "why": "Least to greatest starts with the smallest. 105 has the fewest tens. So 105 goes first.",
+      "game": { "kind": "compare", "ask": "least", "values": ["150", "115", "105"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 150 },
@@ -9379,6 +9479,7 @@
       "narration": "Here are 163, 136, and 183. Type the least number.",
       "prompt": "163, 136, 183",
       "why": "All have 1 hundred. 136 has 3 tens. The others have more tens. So 136 is least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["163", "136", "183"] },
       "type": "keypad",
       "answer": 136
     },
@@ -9389,6 +9490,7 @@
       "narration": "Put 120, 87, and 150 in order from least to greatest. Type the middle number.",
       "prompt": "Middle number?",
       "why": "The order is 87, then 120, then 150. The middle number is 120.",
+      "game": { "kind": "compare", "ask": "middle", "values": ["120", "87", "150"] },
       "type": "keypad",
       "answer": 120
     },
@@ -9426,6 +9528,7 @@
       "narration": "Here are 175, 157, 171, and 177. Type the greatest number.",
       "prompt": "Greatest of four",
       "why": "All have 1 hundred and 7 or 5 tens. Compare the ones in 175, 171, and 177. 177 is greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["175", "157", "171", "177"] },
       "type": "keypad",
       "answer": 177
     },
@@ -9472,15 +9575,6 @@
       "narration": "6 cookies are shared by 2 friends. How many cookies does each friend get? Is it 2, 4, 3, or 6?",
       "prompt": "6 ÷ 2 = ?",
       "why": "Give each friend one cookie at a time. After 3 rounds, all 6 cookies are gone. Each friend gets 3.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 3 },
-        { "id": "d", "kind": "number", "value": 6 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -9491,7 +9585,16 @@
         "receivers": "kids",
         "total": 6,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 6 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 3 },
+        { "id": "d", "kind": "number", "value": 6 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-fair-share-fractions-keypad-1",
@@ -9500,9 +9603,6 @@
       "narration": "8 apples are shared by 4 friends. How many apples does each friend get?",
       "prompt": "8 ÷ 4 = ?",
       "why": "Hand out 1 apple to each of the 4 friends. Do it again. That uses all 8. Each gets 2.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 8 },
-      "answer": 2,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -9513,7 +9613,10 @@
         "receivers": "kids",
         "total": 8,
         "groups": 4
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 8 },
+      "answer": 2
     },
     {
       "id": "g2-fair-share-fractions-number-line-1",
@@ -9522,11 +9625,6 @@
       "narration": "10 stickers are shared by 2 friends. Drag the frog to how many stickers each friend gets.",
       "prompt": "10 ÷ 2 = ?",
       "why": "Split the 10 stickers into 2 equal groups. Each group has 5 stickers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 5,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -9537,7 +9635,12 @@
         "receivers": "kids",
         "total": 10,
         "groups": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 5
     },
     {
       "id": "g2-fair-share-fractions-tap-2",
@@ -9563,9 +9666,6 @@
       "narration": "9 pears are shared by 3 friends. How many pears does each friend get?",
       "prompt": "9 ÷ 3 = ?",
       "why": "Make 3 equal groups from 9 pears. Each group has 3 pears.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍐", "count": 9 },
-      "answer": 3,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -9576,7 +9676,10 @@
         "receivers": "kids",
         "total": 9,
         "groups": 3
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍐", "count": 9 },
+      "answer": 3
     },
     {
       "id": "g2-fair-share-fractions-tap-3",
@@ -9585,15 +9688,6 @@
       "narration": "4 sandwiches are shared by 3 friends. How much does each friend get? Is it 1 1/3, 1 1/2, 2, or 1 2/3?",
       "prompt": "4 ÷ 3 = ?",
       "why": "Each friend gets 1 whole sandwich. One is left. Cut it in 3 parts. Each friend gets 1 and one third.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🥪", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1 1/3" },
-        { "id": "b", "kind": "text", "text": "1 1/2" },
-        { "id": "c", "kind": "text", "text": "2" },
-        { "id": "d", "kind": "text", "text": "1 2/3" }
-      ],
-      "answerChoiceId": "a",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -9604,7 +9698,16 @@
         "receivers": "kids",
         "total": 4,
         "groups": 3
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🥪", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1 1/3" },
+        { "id": "b", "kind": "text", "text": "1 1/2" },
+        { "id": "c", "kind": "text", "text": "2" },
+        { "id": "d", "kind": "text", "text": "1 2/3" }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g2-fair-share-fractions-number-line-2",
@@ -9626,15 +9729,6 @@
       "narration": "One pie is cut into 4 equal parts. 4 friends share it. What part does each friend get? Is it 1/2, 1/3, 1/4, or 2/3?",
       "prompt": "What part of the pie?",
       "why": "The pie has 4 equal parts for 4 friends. Each friend gets 1 part. That is 1/4.",
-      "type": "tap",
-      "visual": { "kind": "fraction", "shape": "circle", "food": "pie", "parts": 4, "picked": 1 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1/2" },
-        { "id": "b", "kind": "text", "text": "1/3" },
-        { "id": "c", "kind": "text", "text": "1/4" },
-        { "id": "d", "kind": "text", "text": "2/3" }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -9645,7 +9739,16 @@
         "receivers": "kids",
         "total": 1,
         "groups": 4
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "fraction", "shape": "circle", "food": "pie", "parts": 4, "picked": 1 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1/2" },
+        { "id": "b", "kind": "text", "text": "1/3" },
+        { "id": "c", "kind": "text", "text": "1/4" },
+        { "id": "d", "kind": "text", "text": "2/3" }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-fair-share-fractions-tap-5",
@@ -9654,15 +9757,6 @@
       "narration": "5 cookies are shared by 2 friends. How much does each friend get? Is it 2, 2 1/2, 3, or 2 1/4?",
       "prompt": "5 ÷ 2 = ?",
       "why": "Each friend gets 2 whole cookies. One is left. Cut it in halves. Each friend gets 2 and one half.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "2" },
-        { "id": "b", "kind": "text", "text": "2 1/2" },
-        { "id": "c", "kind": "text", "text": "3" },
-        { "id": "d", "kind": "text", "text": "2 1/4" }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -9673,7 +9767,16 @@
         "receivers": "kids",
         "total": 5,
         "groups": 2
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 5 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "2" },
+        { "id": "b", "kind": "text", "text": "2 1/2" },
+        { "id": "c", "kind": "text", "text": "3" },
+        { "id": "d", "kind": "text", "text": "2 1/4" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-fair-share-fractions-keypad-3",
@@ -9682,9 +9785,6 @@
       "narration": "10 bars are shared by 3 friends. Each friend gets 3 whole bars. How many bars are left over?",
       "prompt": "How many bars are left?",
       "why": "3 friends each get 3 bars. That is 9 bars. 10 take away 9 leaves 1 bar.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍫", "count": 10 },
-      "answer": 1,
       "game": {
         "kind": "share",
         "ask": "left",
@@ -9695,7 +9795,10 @@
         "receivers": "kids",
         "total": 10,
         "groups": 3
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍫", "count": 10 },
+      "answer": 1
     },
     {
       "id": "g2-fair-share-fractions-tap-6",
@@ -9704,15 +9807,6 @@
       "narration": "2 bars are shared by 3 friends. Each bar is cut into 3 equal parts. How much does each friend get? Is it 1/3, 1/2, 2/3, or 2?",
       "prompt": "2 ÷ 3 = ?",
       "why": "Cut each bar into thirds. Each friend takes one third from each bar. That is 2 thirds.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍫", "count": 2 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1/3" },
-        { "id": "b", "kind": "text", "text": "1/2" },
-        { "id": "c", "kind": "text", "text": "2/3" },
-        { "id": "d", "kind": "text", "text": "2" }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -9723,7 +9817,16 @@
         "receivers": "kids",
         "total": 2,
         "groups": 3
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍫", "count": 2 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1/3" },
+        { "id": "b", "kind": "text", "text": "1/2" },
+        { "id": "c", "kind": "text", "text": "2/3" },
+        { "id": "d", "kind": "text", "text": "2" }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-fair-share-fractions-keypad-4",
@@ -9742,12 +9845,6 @@
       "narration": "10 bars can be shared by 3 friends or by 6 friends. Who gets more each? 3 friends or 6 friends?",
       "prompt": "Who gets more each?",
       "why": "With fewer friends, each share is bigger. 10 bars shared by 3 friends gives more than by 6 friends.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "6 friends" },
-        { "id": "b", "kind": "text", "text": "3 friends" }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "compare",
@@ -9760,7 +9857,13 @@
         "groups": 3,
         "otherGroups": 6,
         "want": "more"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "6 friends" },
+        { "id": "b", "kind": "text", "text": "3 friends" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-fair-share-fractions-tap-8",
@@ -9769,15 +9872,6 @@
       "narration": "10 granola bars are shared by 3 friends. How much does each friend get? Is it 3, 3 2/3, 5, or 3 1/3?",
       "prompt": "10 ÷ 3 = ?",
       "why": "Each friend gets 3 whole bars. That uses 9. One bar is left. Cut it in thirds. Each gets 3 and one third.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍫", "count": 10 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "3" },
-        { "id": "b", "kind": "text", "text": "3 2/3" },
-        { "id": "c", "kind": "text", "text": "5" },
-        { "id": "d", "kind": "text", "text": "3 1/3" }
-      ],
-      "answerChoiceId": "d",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -9788,7 +9882,16 @@
         "receivers": "kids",
         "total": 10,
         "groups": 3
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍫", "count": 10 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "3" },
+        { "id": "b", "kind": "text", "text": "3 2/3" },
+        { "id": "c", "kind": "text", "text": "5" },
+        { "id": "d", "kind": "text", "text": "3 1/3" }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g2-fair-share-fractions-number-line-3",
@@ -9797,11 +9900,6 @@
       "narration": "10 bars are shared by 6 friends. Each friend gets 1 whole bar first. How many bars are left? Drag the frog to the number.",
       "prompt": "How many bars are left?",
       "why": "6 friends each get 1 bar. That uses 6 bars. 10 take away 6 leaves 4 bars to cut up.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 4,
       "game": {
         "kind": "share",
         "ask": "left",
@@ -9812,7 +9910,12 @@
         "receivers": "kids",
         "total": 10,
         "groups": 6
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 4
     },
     {
       "id": "g2-third-equals-two-sixths-tap-1",
@@ -10750,8 +10853,6 @@
       "narration": "Leo has 6 bags. Each bag has 3 apples. How many apples in all?",
       "prompt": "6 groups of 3 = ?",
       "why": "Add 3 six times. 3 + 3 + 3 + 3 + 3 + 3 = 18. Leo has 18 apples.",
-      "type": "keypad",
-      "answer": 18,
       "game": {
         "kind": "share",
         "ask": "total",
@@ -10764,7 +10865,9 @@
         "groups": 6,
         "each": 3,
         "sharer": { "name": "Leo", "look": "kid" }
-      }
+      },
+      "type": "keypad",
+      "answer": 18
     },
     {
       "id": "g2-equal-groups-multiply-number-line-2",
@@ -10787,6 +10890,7 @@
       "narration": "A tricycle has 3 wheels. There are 4 tricycles. How many wheels in all? Is it 7, 12, or 9?",
       "prompt": "4 groups of 3 wheels",
       "why": "Add 3 four times. 3 + 3 + 3 + 3 = 12. There are 12 wheels.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
@@ -10820,6 +10924,7 @@
       "narration": "Ben has 4 feet. Each foot has 5 toes. How many toes in all? Is it 9, 15, 20, or 25?",
       "prompt": "4 groups of 5 toes",
       "why": "Add 5 four times. 5 + 5 + 5 + 5 = 20. Ben has 20 toes.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 9 },
@@ -10850,6 +10955,7 @@
       "narration": "A half carton holds 6 eggs. Sam has 7 half cartons. How many eggs in all?",
       "prompt": "7 groups of 6 = ?",
       "why": "Add 6 seven times. 6 + 6 + 6 + 6 + 6 + 6 + 6 = 42. Sam has 42 eggs.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 6, "thing": "egg" },
       "type": "keypad",
       "answer": 42
     },
@@ -10916,14 +11022,6 @@
       "narration": "Mia shares 6 apples equally between 2 friends. How many apples does each friend get? Is it 2, 3, or 4?",
       "prompt": "6 ÷ 2 = ?",
       "why": "Give one apple to each friend again and again. Each friend gets 3 apples.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 3 },
-        { "id": "c", "kind": "number", "value": 4 }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -10935,7 +11033,15 @@
         "total": 6,
         "groups": 2,
         "sharer": { "name": "Mia", "look": "kid" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 6 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 3 },
+        { "id": "c", "kind": "number", "value": 4 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-division-sharing-keypad-1",
@@ -10944,9 +11050,6 @@
       "narration": "Ben has 10 cookies. He shares them equally on 2 plates. How many cookies are on each plate?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Share the cookies one at a time to each plate. Each plate gets 5 cookies.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
-      "answer": 5,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -10958,7 +11061,10 @@
         "total": 10,
         "groups": 2,
         "sharer": { "name": "Ben", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
+      "answer": 5
     },
     {
       "id": "g2-division-sharing-number-line-1",
@@ -10967,11 +11073,6 @@
       "narration": "Eight stickers are shared equally by 4 friends. Move the frog to how many stickers each friend gets.",
       "prompt": "8 ÷ 4 = ?",
       "why": "Share 8 stickers with 4 friends, one at a time. Each friend gets 2 stickers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "target": 2,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -10982,7 +11083,12 @@
         "receivers": "kids",
         "total": 8,
         "groups": 4
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "target": 2
     },
     {
       "id": "g2-division-sharing-keypad-2",
@@ -10991,9 +11097,6 @@
       "narration": "Sam has 6 fish. He puts 2 fish in each bowl. How many bowls does he fill?",
       "prompt": "6 ÷ 2 = ?",
       "why": "Count by 2s. 2, 4, 6. That is 3 bowls.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
-      "answer": 3,
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -11006,7 +11109,10 @@
         "groups": 3,
         "each": 2,
         "sharer": { "name": "Sam", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🐟", "count": 6 },
+      "answer": 3
     },
     {
       "id": "g2-division-sharing-tap-2",
@@ -11015,14 +11121,6 @@
       "narration": "Zoe has 4 balloons. She shares them equally between 2 kids. How many balloons does each kid get? Is it 1, 3, or 2?",
       "prompt": "4 ÷ 2 = ?",
       "why": "Give one balloon to each kid, then one more to each. Each kid gets 2 balloons.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🎈", "count": 4 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 1 },
-        { "id": "b", "kind": "number", "value": 3 },
-        { "id": "c", "kind": "number", "value": 2 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -11034,7 +11132,15 @@
         "total": 4,
         "groups": 2,
         "sharer": { "name": "Zoe", "look": "girl" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🎈", "count": 4 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 1 },
+        { "id": "b", "kind": "number", "value": 3 },
+        { "id": "c", "kind": "number", "value": 2 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-division-sharing-tap-3",
@@ -11043,15 +11149,6 @@
       "narration": "Pat has 12 peaches. He packs them equally in 3 baskets. How many peaches are in each basket? Is it 3, 4, 5, or 6?",
       "prompt": "12 ÷ 3 = ?",
       "why": "Share the peaches one at a time into 3 baskets. Each basket gets 4 peaches.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍑", "count": 12 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 5 },
-        { "id": "d", "kind": "number", "value": 6 }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -11063,7 +11160,16 @@
         "total": 12,
         "groups": 3,
         "sharer": { "name": "Pat", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍑", "count": 12 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 5 },
+        { "id": "d", "kind": "number", "value": 6 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-division-sharing-keypad-3",
@@ -11072,9 +11178,6 @@
       "narration": "Pat has 12 peaches. He puts 4 peaches in each basket. How many baskets does he fill?",
       "prompt": "12 ÷ 4 = ?",
       "why": "Count by 4s. 4, 8, 12. That is 3 baskets.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍑", "count": 12 },
-      "answer": 3,
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -11087,7 +11190,10 @@
         "groups": 3,
         "each": 4,
         "sharer": { "name": "Pat", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍑", "count": 12 },
+      "answer": 3
     },
     {
       "id": "g2-division-sharing-number-line-2",
@@ -11096,11 +11202,6 @@
       "narration": "Nine grapes are shared equally by 3 kids. Move the frog to how many grapes each kid gets.",
       "prompt": "9 ÷ 3 = ?",
       "why": "Share 9 grapes one at a time with 3 kids. Each kid gets 3 grapes.",
-      "type": "number-line",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "target": 3,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -11111,7 +11212,12 @@
         "receivers": "kids",
         "total": 9,
         "groups": 3
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "target": 3
     },
     {
       "id": "g2-division-sharing-keypad-4",
@@ -11120,9 +11226,6 @@
       "narration": "Ella has 12 cookies. She shares them equally with 6 friends. How many cookies does each friend get?",
       "prompt": "12 ÷ 6 = ?",
       "why": "Give each of the 6 friends one cookie. Then give each friend one more. Each gets 2.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 12 },
-      "answer": 2,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -11134,7 +11237,10 @@
         "total": 12,
         "groups": 6,
         "sharer": { "name": "Ella", "look": "girl" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 12 },
+      "answer": 2
     },
     {
       "id": "g2-division-sharing-tap-4",
@@ -11159,13 +11265,6 @@
       "narration": "Nia has 12 cookies. Who gets more cookies each: 2 friends sharing the 12, or 4 friends sharing the 12? Is it 2 friends or 4 friends?",
       "prompt": "Who gets more?",
       "why": "12 ÷ 2 = 6, but 12 ÷ 4 = 3. Fewer friends means bigger shares.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 12 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4 friends" },
-        { "id": "b", "kind": "text", "text": "2 friends" }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "compare",
@@ -11179,7 +11278,14 @@
         "otherGroups": 4,
         "want": "more",
         "sharer": { "name": "Nia", "look": "kid" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 12 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4 friends" },
+        { "id": "b", "kind": "text", "text": "2 friends" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-division-sharing-keypad-5",
@@ -11188,9 +11294,6 @@
       "narration": "Leo has 12 stars. He puts 2 stars in each group. How many groups does he make?",
       "prompt": "12 ÷ 2 = ?",
       "why": "Count by 2s up to 12. 2, 4, 6, 8, 10, 12. That is 6 groups.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 12 },
-      "answer": 6,
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -11203,7 +11306,10 @@
         "groups": 6,
         "each": 2,
         "sharer": { "name": "Leo", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 12 },
+      "answer": 6
     },
     {
       "id": "g2-division-sharing-number-line-3",
@@ -11212,11 +11318,6 @@
       "narration": "Twelve muffins go into bags. Each bag holds 4 muffins. Move the frog to how many bags Mia fills.",
       "prompt": "12 ÷ 4 = ?",
       "why": "Count by 4s. 4, 8, 12. That is 3 bags.",
-      "type": "number-line",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "target": 3,
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -11229,7 +11330,12 @@
         "groups": 3,
         "each": 4,
         "sharer": { "name": "Mia", "look": "kid" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "target": 3
     },
     {
       "id": "g2-division-sharing-keypad-6",
@@ -11238,8 +11344,6 @@
       "narration": "We know 4 groups of 3 make 12. Now share 12 things equally into 4 groups. How many are in each group?",
       "prompt": "12 ÷ 4 = ?",
       "why": "4 groups of 3 make 12. So 12 shared into 4 groups gives 3 each.",
-      "type": "keypad",
-      "answer": 3,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -11250,7 +11354,9 @@
         "receivers": "containers",
         "total": 12,
         "groups": 4
-      }
+      },
+      "type": "keypad",
+      "answer": 3
     },
     {
       "id": "g2-division-sharing-tap-6",
@@ -11275,6 +11381,7 @@
       "narration": "What number is 4 hundreds, 5 tens, and 2 ones? Is it 452, 425, 542, or 245?",
       "prompt": "4 hundreds, 5 tens, 2 ones",
       "why": "Hundreds go first, then tens, then ones. 4 hundreds is 400, 5 tens is 50, and 2 ones is 2. That makes 452.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 4, "tens": 5, "ones": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 425 },
@@ -11291,6 +11398,7 @@
       "narration": "Maya has 300 + 40 + 6 stickers. What number is that?",
       "prompt": "300 + 40 + 6 = ?",
       "why": "Add the hundreds, tens, and ones. 300 plus 40 is 340, and 6 more makes 346.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 4, "ones": 6 },
       "type": "keypad",
       "answer": 346
     },
@@ -11314,6 +11422,7 @@
       "narration": "Which number is seven hundred twenty-one? Is it 721, 712, 127, or 701?",
       "prompt": "seven hundred twenty-one",
       "why": "Seven hundred is 700. Twenty-one is 20 and 1. Put them together to get 721.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 7, "tens": 2, "ones": 1 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 712 },
@@ -11341,6 +11450,7 @@
       "narration": "What is 800 + 6? Is it 86, 806, 860, or 8006?",
       "prompt": "800 + 6 = ?",
       "why": "There are no tens, so the tens place holds a 0. 8 hundreds and 6 ones make 806.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 8, "tens": 0, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 86 },
@@ -11357,6 +11467,7 @@
       "narration": "Type the number with 9 hundreds, 0 tens, and 4 ones.",
       "prompt": "9 hundreds, 0 tens, 4 ones",
       "why": "9 hundreds is 900. There are no tens, and 4 ones. So the number is 904.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 9, "tens": 0, "ones": 4 },
       "type": "keypad",
       "answer": 904
     },
@@ -11380,6 +11491,14 @@
       "narration": "In the number 583, what is the 8 worth? Is it 8, 80, or 800?",
       "prompt": "Value of the 8 in 583",
       "why": "The 8 is in the tens place. 8 tens is 80.",
+      "game": {
+        "kind": "blocks",
+        "ask": "worth",
+        "hundreds": 5,
+        "tens": 8,
+        "ones": 3,
+        "place": "tens"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 800 },
@@ -11395,6 +11514,14 @@
       "narration": "A number has 2 hundreds, 3 tens, and some ones. The number is 238. How many ones does it have?",
       "prompt": "238 = 200 + 30 + ?",
       "why": "200 plus 30 is 230. To reach 238, you need 8 more. So there are 8 ones.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 2,
+        "tens": 3,
+        "ones": 8,
+        "place": "ones"
+      },
       "type": "keypad",
       "answer": 8
     },
@@ -11405,6 +11532,7 @@
       "narration": "Jay has 3 sheets of 100 stickers and 14 strips of 10 stickers. How many stickers does he have?",
       "prompt": "3 hundreds + 14 tens = ?",
       "why": "14 strips of 10 is 140. Add the 3 sheets, which is 300. 300 plus 140 makes 440.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 14, "ones": 0 },
       "type": "keypad",
       "answer": 440
     },
@@ -11428,6 +11556,7 @@
       "narration": "Which number is 6 hundreds and 15 tens? Is it 750, 615, 651, or 156?",
       "prompt": "6 hundreds + 15 tens",
       "why": "15 tens is 150. Add 600 and 150 to get 750.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 6, "tens": 15, "ones": 0 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 615 },
@@ -11473,6 +11602,14 @@
       "narration": "In the number 352, what is the 3 worth? Is it 3, 30, or 300?",
       "prompt": "The 3 in 352 is worth?",
       "why": "The 3 is in the hundreds place. That means 3 hundreds, which is 300.",
+      "game": {
+        "kind": "blocks",
+        "ask": "worth",
+        "hundreds": 3,
+        "tens": 5,
+        "ones": 2,
+        "place": "hundreds"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
@@ -11488,6 +11625,7 @@
       "narration": "Maya has 4 hundreds, 2 tens, and 6 ones. What number is that?",
       "prompt": "4 hundreds, 2 tens, 6 ones",
       "why": "4 hundreds is 400. 2 tens is 20. 6 ones is 6. Put them together to get 426.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 4, "tens": 2, "ones": 6 },
       "type": "keypad",
       "answer": 426
     },
@@ -11511,6 +11649,14 @@
       "narration": "In the number 84, what is the 8 worth? Is it 8, 80, or 800?",
       "prompt": "The 8 in 84 is worth?",
       "why": "The 8 is in the tens place. That means 8 tens, which is 80.",
+      "game": {
+        "kind": "blocks",
+        "ask": "worth",
+        "hundreds": 0,
+        "tens": 8,
+        "ones": 4,
+        "place": "tens"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 800 },
@@ -11526,6 +11672,14 @@
       "narration": "What digit is in the tens place of 639?",
       "prompt": "Tens digit of 639?",
       "why": "The tens place is the middle digit. In 639, the middle digit is 3, so there are 3 tens.",
+      "game": {
+        "kind": "blocks",
+        "ask": "count",
+        "hundreds": 6,
+        "tens": 3,
+        "ones": 9,
+        "place": "tens"
+      },
       "type": "keypad",
       "answer": 3
     },
@@ -11551,6 +11705,14 @@
       "narration": "In the number 862, what is the 6 worth?",
       "prompt": "The 6 in 862 is worth?",
       "why": "The 6 is in the tens place. That means 6 tens, which is 60.",
+      "game": {
+        "kind": "blocks",
+        "ask": "worth",
+        "hundreds": 8,
+        "tens": 6,
+        "ones": 2,
+        "place": "tens"
+      },
       "type": "keypad",
       "answer": 60
     },
@@ -11589,6 +11751,7 @@
       "narration": "Tom has 8 hundreds, 0 tens, and 5 ones. What number is that?",
       "prompt": "8 hundreds, 0 tens, 5 ones",
       "why": "8 hundreds is 800. There are no tens. 5 ones is 5. The zero holds the tens place, so the number is 805.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 8, "tens": 0, "ones": 5 },
       "type": "keypad",
       "answer": 805
     },
@@ -11613,6 +11776,14 @@
       "narration": "10 tens make one hundred. How many tens are in 300?",
       "prompt": "How many tens in 300?",
       "why": "Each hundred is 10 tens. 300 is 3 hundreds, so it is 3 times 10 tens, which is 30 tens.",
+      "game": {
+        "kind": "blocks",
+        "ask": "make",
+        "hundreds": 3,
+        "tens": 0,
+        "ones": 0,
+        "place": "tens"
+      },
       "type": "keypad",
       "answer": 30
     },
@@ -11651,6 +11822,7 @@
       "narration": "A number has 2 hundreds, 14 tens, and 3 ones. What number is it?",
       "prompt": "2 hundreds, 14 tens, 3 ones",
       "why": "2 hundreds is 200. 14 tens is 140. 3 ones is 3. Add 200, 140, and 3 to get 343.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 2, "tens": 14, "ones": 3 },
       "type": "keypad",
       "answer": 343
     },
@@ -11661,6 +11833,7 @@
       "narration": "Which is greater, 430 or 340?",
       "prompt": "Which is greater?",
       "why": "Look at the hundreds first. 430 has 4 hundreds and 340 has 3 hundreds. So 430 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["430", "340"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 430 },
@@ -11675,6 +11848,7 @@
       "narration": "Which is less, 520 or 250?",
       "prompt": "Which is less?",
       "why": "Compare the hundreds. 250 has 2 hundreds and 520 has 5 hundreds. So 250 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["520", "250"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 520 },
@@ -11689,6 +11863,7 @@
       "narration": "Sam has 275 points, Maya has 90 points, and Lena has 410 points. What is the greatest number of points?",
       "prompt": "Greatest: 275, 90, 410",
       "why": "410 has 4 hundreds. 275 has 2 hundreds and 90 has none. So 410 is the greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["275", "90", "410"] },
       "type": "keypad",
       "answer": 410
     },
@@ -11725,6 +11900,7 @@
       "narration": "Which is greater, 583 or 538?",
       "prompt": "Which is greater?",
       "why": "Both have 5 hundreds. Compare the tens. 8 tens is more than 3 tens, so 583 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["583", "538"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 583 },
@@ -11753,6 +11929,7 @@
       "narration": "Put 640, 604, and 460 in order from least to greatest. What is the middle number?",
       "prompt": "Middle of 640, 604, 460",
       "why": "The order is 460, 604, 640. The number in the middle is 604.",
+      "game": { "kind": "compare", "ask": "middle", "values": ["640", "604", "460"] },
       "type": "keypad",
       "answer": 604
     },
@@ -11776,6 +11953,7 @@
       "narration": "Which number is least: 705, 750, or 570?",
       "prompt": "Which is least?",
       "why": "570 has 5 hundreds. The other two have 7 hundreds. So 570 is the least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["705", "750", "570"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 705 },
@@ -11791,6 +11969,7 @@
       "narration": "Which number is greatest: 899, 989, 898, or 998?",
       "prompt": "Which is greatest?",
       "why": "All have 8 or 9 hundreds. 989 and 998 have 9 hundreds. Then 9 tens beats 8 tens, so 998 is greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["899", "989", "898", "998"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 899 },
@@ -11856,9 +12035,6 @@
       "narration": "Mia has 12 grapes. She shares them fairly between 2 friends. How many grapes does each friend get?",
       "prompt": "12 ÷ 2 = ?",
       "why": "Hand out grapes one at a time to each friend. Both friends end up with 6 grapes.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍇", "count": 12 },
-      "answer": 6,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -11870,7 +12046,10 @@
         "total": 12,
         "groups": 2,
         "sharer": { "name": "Mia", "look": "girl" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍇", "count": 12 },
+      "answer": 6
     },
     {
       "id": "g3-fair-share-20-tap-1",
@@ -11879,15 +12058,6 @@
       "narration": "Leo has 9 stickers. He shares them fairly among 3 friends. How many stickers does each friend get? Is it 2, 3, 4, or 6?",
       "prompt": "9 stickers, 3 friends",
       "why": "Give each friend one sticker at a time. After 3 rounds, all 9 are gone. Each friend gets 3.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "⭐", "count": 9 },
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 3 },
-        { "id": "c", "kind": "number", "value": 4 },
-        { "id": "d", "kind": "number", "value": 6 }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -11899,7 +12069,16 @@
         "total": 9,
         "groups": 3,
         "sharer": { "name": "Leo", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "⭐", "count": 9 },
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 3 },
+        { "id": "c", "kind": "number", "value": 4 },
+        { "id": "d", "kind": "number", "value": 6 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g3-fair-share-20-number-line-1",
@@ -11908,11 +12087,6 @@
       "narration": "Ava has 10 marbles. She shares them fairly among 5 friends. Move the frog to how many marbles each friend gets.",
       "prompt": "10 marbles, 5 friends",
       "why": "Make 5 equal groups from 10 marbles. Each group has 2 marbles.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 2,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -11924,7 +12098,12 @@
         "total": 10,
         "groups": 5,
         "sharer": { "name": "Ava", "look": "girl" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 2
     },
     {
       "id": "g3-fair-share-20-tap-2",
@@ -11958,9 +12137,6 @@
       "narration": "Zoe has 16 apples. She shares them fairly among 4 friends. How many apples does each friend get?",
       "prompt": "16 ÷ 4 = ?",
       "why": "Make 4 equal groups from 16 apples. Each group has 4 apples.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 16 },
-      "answer": 4,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -11972,7 +12148,10 @@
         "total": 16,
         "groups": 4,
         "sharer": { "name": "Zoe", "look": "girl" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 16 },
+      "answer": 4
     },
     {
       "id": "g3-fair-share-20-number-line-2",
@@ -12011,8 +12190,6 @@
       "narration": "5 friends each get 4 cards in a fair share. How many cards were there to share in all?",
       "prompt": "5 friends, 4 cards each",
       "why": "Five groups of 4 cards make all the cards. 5 × 4 = 20.",
-      "type": "keypad",
-      "answer": 20,
       "game": {
         "kind": "share",
         "ask": "total",
@@ -12024,7 +12201,9 @@
         "total": 20,
         "groups": 5,
         "each": 4
-      }
+      },
+      "type": "keypad",
+      "answer": 20
     },
     {
       "id": "g3-fair-share-20-number-line-3",
@@ -12033,11 +12212,6 @@
       "narration": "Noah has 20 crackers. He shares them fairly among 4 friends. Move the frog to how many crackers each friend gets.",
       "prompt": "20 crackers, 4 friends",
       "why": "Make 4 equal groups from 20 crackers. Each group has 5 crackers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 5,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -12049,7 +12223,12 @@
         "total": 20,
         "groups": 4,
         "sharer": { "name": "Noah", "look": "boy" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 5
     },
     {
       "id": "g3-fair-share-20-tap-4",
@@ -12058,12 +12237,6 @@
       "narration": "Lily has 12 stickers. She could share them among 3 friends, or among 4 friends. Which way gives each friend more? Is it 3 friends or 4 friends?",
       "prompt": "Which gives each friend more?",
       "why": "12 shared by 3 gives 4 each. 12 shared by 4 gives 3 each. Fewer friends means a bigger share.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "3 friends" },
-        { "id": "b", "kind": "text", "text": "4 friends" }
-      ],
-      "answerChoiceId": "a",
       "game": {
         "kind": "share",
         "ask": "compare",
@@ -12077,7 +12250,13 @@
         "otherGroups": 4,
         "want": "more",
         "sharer": { "name": "Lily", "look": "kid" }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "3 friends" },
+        { "id": "b", "kind": "text", "text": "4 friends" }
+      ],
+      "answerChoiceId": "a"
     },
     {
       "id": "g3-fair-share-20-tap-5",
@@ -12086,15 +12265,6 @@
       "narration": "Jay has 8 cookies. He shares them fairly among 3 friends. How much does each friend get? Is it 2 1/3, 2 2/3, 3, or 2 1/2?",
       "prompt": "8 cookies, 3 friends",
       "why": "Each friend gets 2 cookies, which uses 6. Two cookies are left. Cut each into thirds, so each friend gets 2 more thirds. That is 2 2/3.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 8 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "2 1/3" },
-        { "id": "b", "kind": "text", "text": "3" },
-        { "id": "c", "kind": "text", "text": "2 2/3" },
-        { "id": "d", "kind": "text", "text": "2 1/2" }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -12106,7 +12276,16 @@
         "total": 8,
         "groups": 3,
         "sharer": { "name": "Jay", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 8 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "2 1/3" },
+        { "id": "b", "kind": "text", "text": "3" },
+        { "id": "c", "kind": "text", "text": "2 2/3" },
+        { "id": "d", "kind": "text", "text": "2 1/2" }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-fair-share-20-keypad-4",
@@ -12115,8 +12294,6 @@
       "narration": "Kai has 17 cookies. He shares them fairly among 5 friends. Each friend gets 3 whole cookies. How many cookies are left over to cut?",
       "prompt": "17 cookies, 5 friends",
       "why": "Each of 5 friends gets 3, which uses 15 cookies. 17 take away 15 leaves 2.",
-      "type": "keypad",
-      "answer": 2,
       "game": {
         "kind": "share",
         "ask": "left",
@@ -12128,7 +12305,9 @@
         "total": 17,
         "groups": 5,
         "sharer": { "name": "Kai", "look": "boy" }
-      }
+      },
+      "type": "keypad",
+      "answer": 2
     },
     {
       "id": "g3-fair-share-20-number-line-4",
@@ -12137,11 +12316,6 @@
       "narration": "A bakery has 18 muffins. It shares them fairly between 2 stores. Move the frog to how many muffins each store gets.",
       "prompt": "18 muffins, 2 stores",
       "why": "Split 18 into 2 equal groups. Each group has 9 muffins.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 9,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -12152,7 +12326,12 @@
         "receivers": "stores",
         "total": 18,
         "groups": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 9
     },
     {
       "id": "g3-fair-share-20-tap-6",
@@ -12161,15 +12340,6 @@
       "narration": "Ben has 5 sandwiches. He shares them fairly among 3 friends. How much does each friend get? Is it 1 1/3, 1 2/3, 2, or 1 1/2?",
       "prompt": "5 sandwiches, 3 friends",
       "why": "Each friend gets 1 sandwich, which uses 3. Two are left. Cut each into thirds, so each friend gets 2 more thirds. That is 1 2/3.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🥪", "count": 5 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "1 1/3" },
-        { "id": "b", "kind": "text", "text": "2" },
-        { "id": "c", "kind": "text", "text": "1 1/2" },
-        { "id": "d", "kind": "text", "text": "1 2/3" }
-      ],
-      "answerChoiceId": "d",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -12181,7 +12351,16 @@
         "total": 5,
         "groups": 3,
         "sharer": { "name": "Ben", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🥪", "count": 5 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "1 1/3" },
+        { "id": "b", "kind": "text", "text": "2" },
+        { "id": "c", "kind": "text", "text": "1 1/2" },
+        { "id": "d", "kind": "text", "text": "1 2/3" }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-fair-share-20-tap-7",
@@ -12599,20 +12778,9 @@
       "narration": "An array has 2 rows. Each row has 5 dots. How many dots are there in all?",
       "prompt": "2 × 5 = ?",
       "why": "Count by fives for 2 rows: 5, 10. So 2 × 5 = 10.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 2, "columns": 5 },
       "type": "keypad",
-      "answer": 10,
-      "game": {
-        "kind": "share",
-        "ask": "total",
-        "thing": "counter",
-        "one": "counter",
-        "many": "counters",
-        "container": "box",
-        "receivers": "containers",
-        "total": 10,
-        "groups": 2,
-        "each": 5
-      }
+      "answer": 10
     },
     {
       "id": "g3-arrays-multiply-divide-tap-1",
@@ -12621,6 +12789,7 @@
       "narration": "An array has 3 rows with 4 dots in each row. How many dots in all? Is it 7, 12, 10, or 15?",
       "prompt": "3 rows of 4",
       "why": "Count by fours 3 times: 4, 8, 12. So 3 × 4 = 12.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 3, "columns": 4 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
@@ -12628,19 +12797,7 @@
         { "id": "c", "kind": "number", "value": 10 },
         { "id": "d", "kind": "number", "value": 15 }
       ],
-      "answerChoiceId": "b",
-      "game": {
-        "kind": "share",
-        "ask": "total",
-        "thing": "counter",
-        "one": "counter",
-        "many": "counters",
-        "container": "box",
-        "receivers": "containers",
-        "total": 12,
-        "groups": 3,
-        "each": 4
-      }
+      "answerChoiceId": "b"
     },
     {
       "id": "g3-arrays-multiply-divide-number-line-1",
@@ -12649,11 +12806,6 @@
       "narration": "Sam makes an array with 2 rows of 6 stickers. Move the frog to the number of stickers in all.",
       "prompt": "2 × 6 = ?",
       "why": "Two rows of 6 is 6 + 6. That makes 12 stickers.",
-      "type": "number-line",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "target": 12,
       "game": {
         "kind": "share",
         "ask": "total",
@@ -12666,7 +12818,12 @@
         "groups": 2,
         "each": 6,
         "sharer": { "name": "Sam", "look": "kid" }
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "target": 12
     },
     {
       "id": "g3-arrays-multiply-divide-tap-2",
@@ -12675,6 +12832,7 @@
       "narration": "Ana puts 10 stickers in 2 equal rows. How many stickers are in each row? Is it 8, 12, 4, or 5?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Share 10 into 2 equal rows. Each row gets 5, because 2 × 5 = 10.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 2, "columns": 5, "thing": "sticker" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -12691,20 +12849,9 @@
       "narration": "An array has 12 dots. There are 4 dots in each row. How many rows are there?",
       "prompt": "12 ÷ 4 = ?",
       "why": "Count by fours until you reach 12: 4, 8, 12. That took 3 rows.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 3, "columns": 4 },
       "type": "keypad",
-      "answer": 3,
-      "game": {
-        "kind": "share",
-        "ask": "groups",
-        "thing": "counter",
-        "one": "counter",
-        "many": "counters",
-        "container": "box",
-        "receivers": "containers",
-        "total": 12,
-        "groups": 3,
-        "each": 4
-      }
+      "answer": 3
     },
     {
       "id": "g3-arrays-multiply-divide-keypad-3",
@@ -12713,6 +12860,7 @@
       "narration": "A hockey team lines up in an array. There are 6 rows with 7 players in each row. How many players in all?",
       "prompt": "6 × 7 = ?",
       "why": "Count by sevens 6 times: 7, 14, 21, 28, 35, 42. So 6 × 7 = 42.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 6, "columns": 7 },
       "type": "keypad",
       "answer": 42
     },
@@ -12751,6 +12899,7 @@
       "narration": "Leo lines up 24 counters in 6 equal rows. How many counters are in each row? Is it 3, 6, 4, or 18?",
       "prompt": "24 ÷ 6 = ?",
       "why": "Think 6 times what is 24. Since 6 × 4 = 24, each row has 4.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 4 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
@@ -12767,6 +12916,7 @@
       "narration": "A garden has 9 rows of plants. Each row has 5 plants. How many plants are in the garden?",
       "prompt": "9 × 5 = ?",
       "why": "Count by fives 9 times: 5, 10, 15, 20, 25, 30, 35, 40, 45. So 9 × 5 = 45.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 9, "columns": 5 },
       "type": "keypad",
       "answer": 45
     },
@@ -12777,6 +12927,7 @@
       "narration": "A game board is an array with 9 rows and 8 columns. How many squares are on the board?",
       "prompt": "9 × 8 = ?",
       "why": "Use 10 × 8 = 80, then take away one row of 8. 80 minus 8 is 72.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 9, "columns": 8 },
       "type": "keypad",
       "answer": 72
     },
@@ -12800,6 +12951,14 @@
       "narration": "Zoe knows 5 × 8 is 40. Now she adds one more row of 8 to make 6 rows. What is 6 × 8? Is it 48, 40, 45, or 56?",
       "prompt": "6 × 8 = ?",
       "why": "Start with 5 rows of 8, which is 40. One more row adds 8. So 40 + 8 = 48.",
+      "game": {
+        "kind": "arrays",
+        "ask": "split",
+        "rows": 6,
+        "columns": 8,
+        "find": "total",
+        "split": { "by": "rows", "at": 5 }
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 48 },
@@ -12843,25 +13002,14 @@
       "narration": "What is 2 × 5? Is it 7, 10, or 12?",
       "prompt": "2 × 5 = ?",
       "why": "2 groups of 5 is 5 and 5 more. 5 + 5 = 10.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 2, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
         { "id": "b", "kind": "number", "value": 12 },
         { "id": "c", "kind": "number", "value": 10 }
       ],
-      "answerChoiceId": "c",
-      "game": {
-        "kind": "share",
-        "ask": "total",
-        "thing": "counter",
-        "one": "counter",
-        "many": "counters",
-        "container": "box",
-        "receivers": "containers",
-        "total": 10,
-        "groups": 2,
-        "each": 5
-      }
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-mult-div-facts-2-5-10-keypad-1",
@@ -12870,6 +13018,7 @@
       "narration": "What is 3 × 10?",
       "prompt": "3 × 10 = ?",
       "why": "Count by 10s three times. 10, 20, 30. So 3 × 10 = 30.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 3, "columns": 10 },
       "type": "keypad",
       "answer": 30
     },
@@ -12880,12 +13029,6 @@
       "narration": "Count by 2s to find 4 × 2. Move the frog to that number.",
       "prompt": "4 × 2 = ?",
       "why": "Skip count by 2s four times. 2, 4, 6, 8. So 4 × 2 = 8.",
-      "type": "number-line",
-      "min": 0,
-      "max": 20,
-      "step": 2,
-      "target": 8,
-      "hops": { "start": 0, "legs": [{ "by": 2, "times": 4 }] },
       "game": {
         "kind": "share",
         "ask": "total",
@@ -12897,7 +13040,13 @@
         "total": 8,
         "groups": 4,
         "each": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "target": 8,
+      "hops": { "start": 0, "legs": [{ "by": 2, "times": 4 }] }
     },
     {
       "id": "g3-mult-div-facts-2-5-10-keypad-2",
@@ -12906,9 +13055,6 @@
       "narration": "Maya shares these 10 cookies equally between 2 friends. How many cookies does each friend get?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Think 2 times what is 10? 5 × 2 = 10, so each friend gets 5.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
-      "answer": 5,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -12920,7 +13066,10 @@
         "total": 10,
         "groups": 2,
         "sharer": { "name": "Maya", "look": "kid" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍪", "count": 10 },
+      "answer": 5
     },
     {
       "id": "g3-mult-div-facts-2-5-10-tap-2",
@@ -12929,25 +13078,14 @@
       "narration": "What is 20 ÷ 10? Is it 2, 10, or 30?",
       "prompt": "20 ÷ 10 = ?",
       "why": "Count by 10s. 10, 20. That takes 2 jumps, so 20 ÷ 10 = 2.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 10, "columns": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 2 },
         { "id": "b", "kind": "number", "value": 10 },
         { "id": "c", "kind": "number", "value": 30 }
       ],
-      "answerChoiceId": "a",
-      "game": {
-        "kind": "share",
-        "ask": "groups",
-        "thing": "counter",
-        "one": "counter",
-        "many": "counters",
-        "container": "box",
-        "receivers": "containers",
-        "total": 20,
-        "groups": 2,
-        "each": 10
-      }
+      "answerChoiceId": "a"
     },
     {
       "id": "g3-mult-div-facts-2-5-10-tap-3",
@@ -12956,6 +13094,7 @@
       "narration": "What is 7 × 5? Is it 30, 35, 40, or 45?",
       "prompt": "7 × 5 = ?",
       "why": "Count by 5s seven times. 5, 10, 15, 20, 25, 30, 35. So 7 × 5 = 35.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 30 },
@@ -12972,6 +13111,7 @@
       "narration": "Jay has 8 pairs of socks. Each pair has 2 socks. How many socks is that in all?",
       "prompt": "8 × 2 = ?",
       "why": "Double 8. 8 + 8 = 16. So 8 × 2 = 16 socks.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 8, "columns": 2 },
       "type": "keypad",
       "answer": 16
     },
@@ -12996,6 +13136,7 @@
       "narration": "A hockey coach has 40 pucks. She puts 5 pucks in each bucket. How many buckets does she fill?",
       "prompt": "40 ÷ 5 = ?",
       "why": "Think 5 times what is 40? Count by 5s to 40. That is 8 jumps, so 40 ÷ 5 = 8.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 8, "columns": 5 },
       "type": "keypad",
       "answer": 8
     },
@@ -13006,6 +13147,7 @@
       "narration": "Leo shares 18 stickers equally between 2 friends. How many stickers does each friend get? Is it 8, 9, 16, or 20?",
       "prompt": "18 ÷ 2 = ?",
       "why": "Think 2 times what is 18? Double 9 is 18, so 9 × 2 = 18 and 18 ÷ 2 = 9.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 2, "columns": 9, "thing": "sticker" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -13022,6 +13164,7 @@
       "narration": "9 kids on a team each score 5 points. How many points did the team score in all?",
       "prompt": "9 × 5 = ?",
       "why": "Count by 5s nine times. 5, 10, 15, 20, 25, 30, 35, 40, 45. So 9 × 5 = 45.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 9, "columns": 5 },
       "type": "keypad",
       "answer": 45
     },
@@ -13045,6 +13188,7 @@
       "narration": "What number times 5 makes 35? Is it 6, 7, 8, or 9?",
       "prompt": "? × 5 = 35",
       "why": "Count by 5s to 35. 5, 10, 15, 20, 25, 30, 35. That is 7 jumps, so 7 × 5 = 35.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 7, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 6 },
@@ -13061,6 +13205,7 @@
       "narration": "What number times 10 makes 80?",
       "prompt": "? × 10 = 80",
       "why": "Count by 10s to 80. 10, 20, 30, 40, 50, 60, 70, 80. That is 8 jumps, so 8 × 10 = 80.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 8, "columns": 10 },
       "type": "keypad",
       "answer": 8
     },
@@ -13085,6 +13230,7 @@
       "narration": "3 × 5 is the same as 5 × what number? Is it 5, 8, 3, or 15?",
       "prompt": "3 × 5 = 5 × ?",
       "why": "You can multiply in any order. 3 × 5 and 5 × 3 both make 15.",
+      "game": { "kind": "arrays", "ask": "turn", "rows": 3, "columns": 5, "find": "rows" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 5 },
@@ -13101,20 +13247,9 @@
       "narration": "Mia knows 6 × 2 = 12. So what is 2 × 6?",
       "prompt": "2 × 6 = ?",
       "why": "Swapping the order does not change the answer. 2 × 6 is the same as 6 × 2, which is 12.",
+      "game": { "kind": "arrays", "ask": "turn", "rows": 6, "columns": 2, "find": "total" },
       "type": "keypad",
-      "answer": 12,
-      "game": {
-        "kind": "share",
-        "ask": "total",
-        "thing": "counter",
-        "one": "counter",
-        "many": "counters",
-        "container": "box",
-        "receivers": "containers",
-        "total": 12,
-        "groups": 2,
-        "each": 6
-      }
+      "answer": 12
     },
     {
       "id": "g3-mult-div-properties-number-line-1",
@@ -13123,12 +13258,6 @@
       "narration": "Move the frog to the answer of 4 × 2.",
       "prompt": "4 × 2 = ?",
       "why": "4 groups of 2 is 2 + 2 + 2 + 2. That makes 8.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 8,
-      "hops": { "start": 0, "legs": [{ "by": 2, "times": 4 }] },
       "game": {
         "kind": "share",
         "ask": "total",
@@ -13140,7 +13269,13 @@
         "total": 8,
         "groups": 4,
         "each": 2
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 8,
+      "hops": { "start": 0, "legs": [{ "by": 2, "times": 4 }] }
     },
     {
       "id": "g3-mult-div-properties-tap-2",
@@ -13163,9 +13298,6 @@
       "narration": "Here are 10 apples. Mia shares them equally into 2 baskets. How many apples are in each basket?",
       "prompt": "10 ÷ 2 = ?",
       "why": "Think 2 times what is 10. 2 × 5 = 10, so each basket gets 5.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🍎", "count": 10 },
-      "answer": 5,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -13177,7 +13309,10 @@
         "total": 10,
         "groups": 2,
         "sharer": { "name": "Mia", "look": "kid" }
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🍎", "count": 10 },
+      "answer": 5
     },
     {
       "id": "g3-mult-div-properties-tap-3",
@@ -13186,6 +13321,14 @@
       "narration": "4 × 6 is the same as 4 × 5 plus 4 times what number? Is it 2, 4, 6, or 1?",
       "prompt": "4 × 6 = 4 × 5 + 4 × ?",
       "why": "Split 6 into 5 and 1. So 4 × 6 is 4 × 5 plus 4 × 1.",
+      "game": {
+        "kind": "arrays",
+        "ask": "split",
+        "rows": 4,
+        "columns": 6,
+        "find": "second",
+        "split": { "by": "columns", "at": 5 }
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 2 },
@@ -13202,20 +13345,16 @@
       "narration": "Sam knows 3 × 5 = 15. He adds one more group of 3. What is 3 × 6?",
       "prompt": "3 × 6 = ?",
       "why": "3 × 6 is 3 × 5 plus one more 3. 15 + 3 = 18.",
-      "type": "keypad",
-      "answer": 18,
       "game": {
-        "kind": "share",
-        "ask": "total",
-        "thing": "counter",
-        "one": "counter",
-        "many": "counters",
-        "container": "box",
-        "receivers": "containers",
-        "total": 18,
-        "groups": 3,
-        "each": 6
-      }
+        "kind": "arrays",
+        "ask": "split",
+        "rows": 3,
+        "columns": 6,
+        "find": "total",
+        "split": { "by": "columns", "at": 5 }
+      },
+      "type": "keypad",
+      "answer": 18
     },
     {
       "id": "g3-mult-div-properties-number-line-2",
@@ -13238,6 +13377,7 @@
       "narration": "24 cookies are shared equally onto 4 trays. Think 4 times what number is 24. How many cookies are on each tray?",
       "prompt": "24 ÷ 4 = ?",
       "why": "Use multiplying to divide. 4 × 6 = 24, so 24 ÷ 4 = 6.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 4, "columns": 6, "thing": "cookie" },
       "type": "keypad",
       "answer": 6
     },
@@ -13263,6 +13403,14 @@
       "narration": "Lena wants 8 × 7. She uses 8 × 5 = 40 and 8 × 2 = 16. Add the two parts. What is 8 × 7?",
       "prompt": "8 × 7 = ?",
       "why": "Split 7 into 5 and 2. Then 40 + 16 = 56.",
+      "game": {
+        "kind": "arrays",
+        "ask": "split",
+        "rows": 8,
+        "columns": 7,
+        "find": "total",
+        "split": { "by": "columns", "at": 5 }
+      },
       "type": "keypad",
       "answer": 56
     },
@@ -13300,6 +13448,14 @@
       "narration": "Zoe wants 6 × 9. She splits 9 into 5 and 4. 6 × 5 = 30 and 6 × 4 = 24. What is 6 × 9?",
       "prompt": "6 × 9 = ?",
       "why": "Add the two parts: 30 + 24 = 54. So 6 × 9 = 54.",
+      "game": {
+        "kind": "arrays",
+        "ask": "split",
+        "rows": 6,
+        "columns": 9,
+        "find": "total",
+        "split": { "by": "columns", "at": 5 }
+      },
       "type": "keypad",
       "answer": 54
     },
@@ -13325,14 +13481,6 @@
       "narration": "Ana has 4 bags. Each bag has 3 apples. How many apples does she have in all? Is it 7, 9, 12, or 15?",
       "prompt": "4 × 3 = ?",
       "why": "4 bags with 3 apples each is 4 groups of 3. Count by threes: 3, 6, 9, 12.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 7 },
-        { "id": "b", "kind": "number", "value": 9 },
-        { "id": "c", "kind": "number", "value": 12 },
-        { "id": "d", "kind": "number", "value": 15 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "share",
         "ask": "total",
@@ -13345,7 +13493,15 @@
         "groups": 4,
         "each": 3,
         "sharer": { "name": "Ana", "look": "girl" }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 7 },
+        { "id": "b", "kind": "number", "value": 9 },
+        { "id": "c", "kind": "number", "value": 12 },
+        { "id": "d", "kind": "number", "value": 15 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-mult-div-problems-tap-2",
@@ -13386,14 +13542,6 @@
       "narration": "Tom has 20 marbles. He puts 5 marbles in each bag. How many bags does he fill? Is it 15, 25, 5, or 4?",
       "prompt": "20 ÷ 5 = ?",
       "why": "Make groups of 5 from 20. Hop back by 5 from 20 and count the hops. There are 4.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 15 },
-        { "id": "b", "kind": "number", "value": 25 },
-        { "id": "c", "kind": "number", "value": 5 },
-        { "id": "d", "kind": "number", "value": 4 }
-      ],
-      "answerChoiceId": "d",
       "game": {
         "kind": "share",
         "ask": "groups",
@@ -13406,7 +13554,15 @@
         "groups": 4,
         "each": 5,
         "sharer": { "name": "Tom", "look": "boy" }
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 15 },
+        { "id": "b", "kind": "number", "value": 25 },
+        { "id": "c", "kind": "number", "value": 5 },
+        { "id": "d", "kind": "number", "value": 4 }
+      ],
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-mult-div-problems-tap-5",
@@ -13431,8 +13587,6 @@
       "narration": "There are 3 boxes. Each box has 5 pencils. How many pencils are there in all?",
       "prompt": "3 × 5 = ?",
       "why": "3 groups of 5 is 5, 10, 15. There are 15 pencils.",
-      "type": "keypad",
-      "answer": 15,
       "game": {
         "kind": "share",
         "ask": "total",
@@ -13444,7 +13598,9 @@
         "total": 15,
         "groups": 3,
         "each": 5
-      }
+      },
+      "type": "keypad",
+      "answer": 15
     },
     {
       "id": "g3-mult-div-problems-keypad-2",
@@ -13453,6 +13609,7 @@
       "narration": "Eli has 24 stickers. He shares them equally among 6 friends. How many stickers does each friend get?",
       "prompt": "24 ÷ 6 = ?",
       "why": "Think of 6 times what is 24. Since 6 × 4 = 24, each friend gets 4.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 4, "thing": "sticker" },
       "type": "keypad",
       "answer": 4
     },
@@ -13463,6 +13620,7 @@
       "narration": "A team has 8 players. There are 56 players in all. How many teams are there?",
       "prompt": "56 ÷ 8 = ?",
       "why": "Count how many groups of 8 fit in 56. Since 8 × 7 = 56, there are 7 teams.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 7, "columns": 8 },
       "type": "keypad",
       "answer": 7
     },
@@ -14107,15 +14265,6 @@
       "narration": "3 granola bars are shared equally by 4 people. How much does each person get? Is it 3/4, 4/3, 1/4, or 3/3?",
       "prompt": "Each person gets?",
       "why": "Cut each bar into 4 equal pieces. Each person takes one piece from each of the 3 bars. That is 3 fourths, or 3/4.",
-      "type": "tap",
-      "visual": { "kind": "objects", "emoji": "🍫", "count": 3 },
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4/3" },
-        { "id": "b", "kind": "text", "text": "3/4" },
-        { "id": "c", "kind": "text", "text": "1/4" },
-        { "id": "d", "kind": "text", "text": "3/3" }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "each",
@@ -14126,7 +14275,16 @@
         "receivers": "kids",
         "total": 3,
         "groups": 4
-      }
+      },
+      "type": "tap",
+      "visual": { "kind": "objects", "emoji": "🍫", "count": 3 },
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4/3" },
+        { "id": "b", "kind": "text", "text": "3/4" },
+        { "id": "c", "kind": "text", "text": "1/4" },
+        { "id": "d", "kind": "text", "text": "3/3" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g4-represent-fractions-keypad-5",
@@ -14145,12 +14303,6 @@
       "narration": "Two pizzas are the same size. One is shared by 2 friends. The other is shared by 4 friends. Who gets more, 2 friends or 4 friends?",
       "prompt": "Who gets more pizza?",
       "why": "Fewer people sharing means bigger pieces. Each of 2 friends gets 1/2, which is more than 1/4.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "4 friends" },
-        { "id": "b", "kind": "text", "text": "2 friends" }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "share",
         "ask": "compare",
@@ -14163,7 +14315,13 @@
         "groups": 2,
         "otherGroups": 4,
         "want": "more"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "4 friends" },
+        { "id": "b", "kind": "text", "text": "2 friends" }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g4-compare-fair-shares-keypad-1",
@@ -14276,6 +14434,7 @@
       "narration": "Four pans of brownies are the same size. Which share is the biggest: 1/5, 1/10, 1/2, or 1/4?",
       "prompt": "Which share is biggest?",
       "why": "The smallest number of sharers gives the biggest share. Sharing by 2 gives 1/2, the biggest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["1/5", "1/10", "1/2", "1/4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "1/5" },
@@ -14302,11 +14461,6 @@
       "narration": "A pan of 12 brownies is shared equally by 3 friends. Move the frog to how many brownies each friend gets.",
       "prompt": "Brownies for each friend",
       "why": "Share 12 brownies into 3 equal groups. 12 ÷ 3 = 4 brownies each.",
-      "type": "number-line",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "target": 4,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -14317,7 +14471,12 @@
         "receivers": "kids",
         "total": 12,
         "groups": 3
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "target": 4
     },
     {
       "id": "g4-compare-fair-shares-tap-6",
@@ -14525,6 +14684,7 @@
       "narration": "Count by thirds: 1/3, 2/3. What comes next? Is it 3/3, 4/3, or 2/4?",
       "prompt": "1/3, 2/3, ...",
       "why": "Each count adds one more third. After 2/3 comes 3/3, and 3/3 is one whole.",
+      "game": { "kind": "stones", "stones": ["1/3", "2/3", "3/3"], "missing": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "4/3" },
@@ -14774,6 +14934,7 @@
       "narration": "Type the decimal for 9 tenths.",
       "prompt": "9 tenths = ?",
       "why": "Tenths go right after the decimal point. No wholes means we start with 0. So 9 tenths is 0.9.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "9/10" },
       "type": "keypad",
       "answer": 0.9
     },
@@ -14813,6 +14974,7 @@
       "narration": "Mia ran 3 whole laps and 5 tenths of another lap. Type her distance as a decimal.",
       "prompt": "3 wholes and 5 tenths",
       "why": "The 3 wholes go before the dot. The 5 tenths go after it. So the number is 3.5.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "3.5" },
       "type": "keypad",
       "answer": 3.5
     },
@@ -14875,6 +15037,7 @@
       "narration": "Is 2.0 the same as 2? Yes or no?",
       "prompt": "Is 2.0 the same as 2?",
       "why": "The 0 in the tenths place means no tenths. So 2.0 is 2 wholes and nothing more. It is the same as 2.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "same", "amount": "2.0", "other": "2" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "No" },
@@ -14889,6 +15052,7 @@
       "narration": "A tank holds 12 tenths of a litre. Type that amount as a decimal.",
       "prompt": "12 tenths = ?",
       "why": "10 tenths make 1 whole. 12 tenths is 1 whole and 2 more tenths. So it is 1.2.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "12/10" },
       "type": "keypad",
       "answer": 1.2
     },
@@ -14925,6 +15089,7 @@
       "narration": "Sam painted 1/2 of a fence. Which decimal is the same amount: 0.2, 0.5, 1.5, or 0.1?",
       "prompt": "1/2 = ?",
       "why": "One half is 5 out of 10 equal parts. Five tenths is written as 0.5.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "1/2" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 0.2 },
@@ -14965,6 +15130,7 @@
       "narration": "Which fraction is the same as 0.4: 1/10, 4/10, 6/10, or 10/4?",
       "prompt": "0.4 = ?",
       "why": "The digit after the dot counts tenths. The 4 means 4 tenths, so 0.4 is 4/10.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "fraction", "amount": "0.4" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "1/10" },
@@ -15005,6 +15171,7 @@
       "narration": "Maya ran 6/10 of a kilometre. Which decimal is the same: 0.6, 6, 1.6, or 0.4?",
       "prompt": "6/10 = ?",
       "why": "Six tenths means 6 in the tenths place. So 6/10 is 0.6.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "6/10" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 6 },
@@ -15039,6 +15206,13 @@
       "narration": "Is 7/10 the same amount as 0.07? Yes or no?",
       "prompt": "7/10 = 0.07?",
       "why": "The first digit after the dot is tenths. So 7 tenths is 0.7, not 0.07.",
+      "game": {
+        "kind": "grid",
+        "unit": "hundredths",
+        "ask": "same",
+        "amount": "7/10",
+        "other": "0.07"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "Yes" },
@@ -15053,6 +15227,7 @@
       "narration": "A dime is 1/10 of a dollar. Zoe has 3 dimes. Type that part of a dollar as a decimal.",
       "prompt": "3 dimes = ? dollar",
       "why": "Each dime is one tenth of a dollar. Three dimes are 3 tenths, which is 0.3.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "3/10" },
       "type": "keypad",
       "answer": 0.3
     },
@@ -15063,6 +15238,7 @@
       "narration": "Which fraction is the same as 1.3: 3/10, 13/10, 1/3, or 31/10?",
       "prompt": "1.3 = ?",
       "why": "1.3 is 1 whole and 3 tenths. One whole is 10 tenths, so that is 13 tenths.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "fraction", "amount": "1.3" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/10" },
@@ -15092,6 +15268,7 @@
       "narration": "A rope is 2 and 7 tenths metres long. Type its length as a decimal.",
       "prompt": "2 7/10 = ?",
       "why": "The 2 wholes go before the dot. The 7 tenths go after the dot. That makes 2.7.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "2 7/10" },
       "type": "keypad",
       "answer": 2.7
     },
@@ -15131,20 +15308,9 @@
       "narration": "What is 4 × 3?",
       "prompt": "4 × 3 = ?",
       "why": "Start with 2 × 3, which is 6. Double 6 is 12. So 4 × 3 is 12.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 3 },
       "type": "keypad",
-      "answer": 12,
-      "game": {
-        "kind": "share",
-        "ask": "total",
-        "thing": "counter",
-        "one": "counter",
-        "many": "counters",
-        "container": "box",
-        "receivers": "containers",
-        "total": 12,
-        "groups": 4,
-        "each": 3
-      }
+      "answer": 12
     },
     {
       "id": "g4-mult-div-facts-100-tap-1",
@@ -15153,6 +15319,7 @@
       "narration": "2 × 8 is 16. Double 16 to find 4 × 8. Is it 24, 32, 36, or 40?",
       "prompt": "4 × 8 = ?",
       "why": "4 × 8 is double 2 × 8. Double 16 is 32.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 8 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 24 },
@@ -15183,6 +15350,7 @@
       "narration": "What is 30 ÷ 6? Is it 3, 4, 5, or 6?",
       "prompt": "30 ÷ 6 = ?",
       "why": "Think of the partner fact. 5 × 6 is 30, so 30 ÷ 6 is 5.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
@@ -15199,8 +15367,6 @@
       "narration": "Mia puts 18 stickers into 3 equal groups. How many stickers are in each group?",
       "prompt": "18 ÷ 3 = ?",
       "why": "Think 3 times what is 18. 3 × 6 is 18, so 18 ÷ 3 is 6.",
-      "type": "keypad",
-      "answer": 6,
       "game": {
         "kind": "share",
         "ask": "each",
@@ -15212,7 +15378,9 @@
         "total": 18,
         "groups": 3,
         "sharer": { "name": "Mia", "look": "kid" }
-      }
+      },
+      "type": "keypad",
+      "answer": 6
     },
     {
       "id": "g4-mult-div-facts-100-keypad-3",
@@ -15221,6 +15389,7 @@
       "narration": "What is 8 × 4?",
       "prompt": "8 × 4 = ?",
       "why": "4 × 8 is double double 8. Double 8 is 16, and double 16 is 32.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 8, "columns": 4 },
       "type": "keypad",
       "answer": 32
     },
@@ -15231,6 +15400,7 @@
       "narration": "Sam knows 5 × 8 is 40. Add one more 8. What is 6 × 8? Is it 42, 46, 48, or 54?",
       "prompt": "6 × 8 = ?",
       "why": "6 × 8 is 5 × 8 plus one more 8. 40 plus 8 is 48.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 6, "columns": 8 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 42 },
@@ -15261,6 +15431,7 @@
       "narration": "What is 56 ÷ 7? Is it 8, 7, 6, or 9?",
       "prompt": "56 ÷ 7 = ?",
       "why": "Use the partner fact. 8 × 7 is 56, so 56 ÷ 7 is 8.",
+      "game": { "kind": "arrays", "ask": "columns", "rows": 7, "columns": 8 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -15277,6 +15448,7 @@
       "narration": "A coach has 48 water bottles. She puts 8 bottles in each box. How many boxes does she need?",
       "prompt": "48 ÷ 8 = ?",
       "why": "Think 8 times what is 48. 6 × 8 is 48, so she needs 6 boxes.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 6, "columns": 8 },
       "type": "keypad",
       "answer": 6
     },
@@ -15287,6 +15459,7 @@
       "narration": "What is 7 × 8?",
       "prompt": "7 × 8 = ?",
       "why": "Try 7 × 8 as 7 × 5 plus 7 × 3. That is 35 plus 21, which is 56.",
+      "game": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 8 },
       "type": "keypad",
       "answer": 56
     },
@@ -15297,6 +15470,7 @@
       "narration": "72 players make teams of 8. How many teams are there? Is it 8, 12, 7, or 9?",
       "prompt": "72 ÷ 8 = ?",
       "why": "Think 8 times what is 72. 9 × 8 is 72, so there are 9 teams.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 9, "columns": 8 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
@@ -15327,6 +15501,7 @@
       "narration": "What number times 6 makes 54?",
       "prompt": "? × 6 = 54",
       "why": "Use division. 54 ÷ 6 is 9, because 9 × 6 is 54.",
+      "game": { "kind": "arrays", "ask": "rows", "rows": 9, "columns": 6 },
       "type": "keypad",
       "answer": 9
     },
@@ -15353,6 +15528,7 @@
       "narration": "Which fraction is equivalent to 1/2: 2/4, 2/3, 1/3, or 3/4?",
       "prompt": "Equivalent to 1/2?",
       "why": "Multiply the numerator and denominator of 1/2 by 2. You get 2/4, which is the same amount.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "fraction", "amount": "1/2" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "2/3" },
@@ -15418,6 +15594,7 @@
       "narration": "A player made 3/4 of her free throws. Which fraction is equivalent to 3/4: 6/8, 6/9, 4/6, or 3/8?",
       "prompt": "Equivalent to 3/4?",
       "why": "Multiply 3 and 4 by 2. You get 6/8. The other fractions name different amounts.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "fraction", "amount": "3/4" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "6/9" },
@@ -15484,6 +15661,13 @@
       "narration": "One player made 6 of 8 shots. Another made 9 of 12 shots. Are the fractions 6/8 and 9/12 equivalent? Yes or No?",
       "prompt": "Is 6/8 equivalent to 9/12?",
       "why": "Divide 6 and 8 by 2 to get 3/4. Divide 9 and 12 by 3 to get 3/4. Both are the same amount.",
+      "game": {
+        "kind": "grid",
+        "unit": "hundredths",
+        "ask": "same",
+        "amount": "6/8",
+        "other": "9/12"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "Yes" },
@@ -15544,6 +15728,7 @@
       "narration": "Which is greater, 3/8 or 5/8?",
       "prompt": "Which is greater?",
       "why": "The denominators match, so compare the numerators. 5 is more than 3, so 5/8 is greater than 3/8.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/8"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/8" },
@@ -15558,6 +15743,7 @@
       "narration": "Which is greater, 2/3 or 2/6?",
       "prompt": "Which is greater?",
       "why": "The numerators match, so look at the denominators. Thirds are bigger pieces than sixths, so 2/3 is greater than 2/6.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["2/3", "2/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "2/3" },
@@ -15609,6 +15795,7 @@
       "narration": "Which is greater, 5/6 or 3/8?",
       "prompt": "Which is greater?",
       "why": "Half of 6 is 3, so 5/6 is more than 1/2. Half of 8 is 4, so 3/8 is less than 1/2. That makes 5/6 greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/8" },
@@ -15623,6 +15810,7 @@
       "narration": "Which is greatest, 1 1/2, 4/5, or 7/4?",
       "prompt": "Which is greatest?",
       "why": "4/5 is less than 1 whole. 7/4 is 1 3/4. Since 1 3/4 is more than 1 1/2, 7/4 is the greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["1 1/2", "4/5", "7/4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "1 1/2" },
@@ -15671,6 +15859,7 @@
       "narration": "Which is least, 5/2, 9/5, 9/4, or 10/6?",
       "prompt": "Which is least?",
       "why": "Change to mixed numbers: 5/2 is 2 1/2, 9/5 is 1 4/5, 9/4 is 2 1/4, and 10/6 is 1 4/6. 4/6 is less than 4/5, so 10/6 is least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["5/2", "9/5", "9/4", "10/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "5/2" },
@@ -15700,6 +15889,7 @@
       "narration": "Which is greater, 5/6 or 7/8?",
       "prompt": "Which is greater?",
       "why": "Each is one piece short of a whole. A missing eighth is smaller than a missing sixth, so 7/8 is closer to 1 and greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["7/8", "5/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "7/8" },
@@ -15738,6 +15928,7 @@
       "narration": "Which number equals 0.5: 0.05, 0.50, or 5.00?",
       "prompt": "Equal to 0.5?",
       "why": "5 tenths is the same as 50 hundredths. Adding a zero after the 5 gives 0.50 and does not change the value.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "0.5" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "0.05" },
@@ -15776,6 +15967,7 @@
       "narration": "Which is greater, 0.6 or 0.06?",
       "prompt": "Which is greater?",
       "why": "0.6 is 60 hundredths, and 0.06 is only 6 hundredths. Since 60 is more than 6, 0.6 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["0.6", "0.06"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 0.6 },
@@ -15790,6 +15982,7 @@
       "narration": "The decimal 0.3 is the same as how many hundredths? Type the number.",
       "prompt": "0.3 = ? hundredths",
       "why": "One tenth is 10 hundredths. So 3 tenths is 3 × 10, which is 30 hundredths, or 0.30.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "parts", "amount": "0.3" },
       "type": "keypad",
       "answer": 30
     },
@@ -15800,6 +15993,7 @@
       "narration": "Which is least: 2.45, 2.54, or 2.4?",
       "prompt": "Which is least?",
       "why": "Think of 2.4 as 2.40. Then compare 240, 245, and 254 hundredths. The smallest is 2.40, so 2.4 is least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["2.45", "2.54", "2.4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 2.45 },
@@ -15828,6 +16022,7 @@
       "narration": "Type the decimal for 75 hundredths.",
       "prompt": "75 hundredths = ?",
       "why": "Hundredths sit in the second place after the dot. 75 hundredths is 75 out of 100, so it is 0.75.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "75/100" },
       "type": "keypad",
       "answer": 0.75
     },
@@ -15890,6 +16085,7 @@
       "narration": "Which is greatest: 3.09, 3.9, 3.19, or 3.1?",
       "prompt": "Which is greatest?",
       "why": "All have 3 ones. Rename them as 3.09, 3.90, 3.19, and 3.10. Now 90 hundredths is the most, so 3.9 is greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3.09", "3.9", "3.19", "3.1"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3.09 },
@@ -15929,6 +16125,7 @@
       "narration": "What percent is equal to 1/2? Is it 25%, 50%, 75%, or 100%?",
       "prompt": "1/2 = ?%",
       "why": "Multiply the numerator and denominator of 1/2 by 50. That gives 50/100, which is 50%.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "1/2" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "25%" },
@@ -15945,6 +16142,7 @@
       "narration": "The decimal 0.25 is equal to what percent? Type the number.",
       "prompt": "0.25 = ?%",
       "why": "0.25 means 25 hundredths, or 25/100. Out of 100 is percent, so it is 25%.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "0.25" },
       "type": "keypad",
       "answer": 25
     },
@@ -15968,6 +16166,7 @@
       "narration": "A fraction out of 100 is equal to 30%. Is it 3/100, 30/100, 13/100, or 300/100?",
       "prompt": "30% = ?/100",
       "why": "Percent means out of 100. So 30% is 30 out of 100, or 30/100.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "fraction", "amount": "30%" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/100" },
@@ -15984,6 +16183,7 @@
       "narration": "What decimal is equal to 9/100? Type the number.",
       "prompt": "9/100 = ?",
       "why": "9/100 is 9 hundredths. The second digit after the dot is hundredths, so it is 0.09.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "9/100" },
       "type": "keypad",
       "answer": 0.09
     },
@@ -15994,6 +16194,7 @@
       "narration": "What percent is equal to 3/5? Type the number. Hint: make the denominator 100.",
       "prompt": "3/5 = ?%",
       "why": "Multiply 5 by 20 to get 100. Multiply 3 by 20 too. That gives 60/100, which is 60%.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "3/5" },
       "type": "keypad",
       "answer": 60
     },
@@ -16004,6 +16205,7 @@
       "narration": "Which decimal is equal to 3/4? Is it 0.34, 0.25, 0.75, or 0.7?",
       "prompt": "3/4 = ?",
       "why": "Multiply 4 by 25 to get 100. Multiply 3 by 25 too. That gives 75/100, which is 0.75.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "3/4" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 0.34 },
@@ -16033,6 +16235,7 @@
       "narration": "The decimal 0.8 is equal to a fraction with denominator 100. What is the numerator? Type the number.",
       "prompt": "0.8 = ?/100",
       "why": "0.8 is the same as 0.80, which is 80 hundredths. So it equals 80/100.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "parts", "amount": "0.8" },
       "type": "keypad",
       "answer": 80
     },
@@ -16043,6 +16246,7 @@
       "narration": "Dani got 18 out of 20 on a science quiz. What percent is that? Is it 80%, 85%, 90%, or 95%?",
       "prompt": "18/20 = ?%",
       "why": "Multiply 20 by 5 to get 100. Multiply 18 by 5 too. That gives 90/100, which is 90%.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "18/20" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "80%" },
@@ -16075,6 +16279,13 @@
       "narration": "Ana thinks 4/25 is equal to 14%. Is she right? Choose yes or no.",
       "prompt": "Is 4/25 = 14%?",
       "why": "Multiply 25 by 4 to get 100. Multiply 4 by 4 too. That gives 16/100, which is 16%, not 14%.",
+      "game": {
+        "kind": "grid",
+        "unit": "hundredths",
+        "ask": "same",
+        "amount": "4/25",
+        "other": "14%"
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "yes" },
@@ -16089,6 +16300,7 @@
       "narration": "What decimal is equal to 9/25? Type the number.",
       "prompt": "9/25 = ?",
       "why": "Multiply 25 by 4 to get 100. Multiply 9 by 4 too. That gives 36/100, which is 0.36.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "9/25" },
       "type": "keypad",
       "answer": 0.36
     },
@@ -16112,6 +16324,7 @@
       "narration": "Mia made 33 of her 50 shots in soccer practice. What percent of her shots went in? Type the number.",
       "prompt": "33/50 = ?%",
       "why": "Multiply 50 by 2 to get 100. Multiply 33 by 2 too. That gives 66/100, which is 66%.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "33/50" },
       "type": "keypad",
       "answer": 66
     },

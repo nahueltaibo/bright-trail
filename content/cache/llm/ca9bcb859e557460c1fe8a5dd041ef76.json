@@ -1,0 +1,32 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-more-less-same-keypad-1",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["4", "9"],
+        "target": null,
+        "note": "Pick the greater of 4 and 9."
+      },
+      {
+        "itemId": "k-more-less-same-keypad-3",
+        "fits": true,
+        "ask": "least",
+        "values": ["7", "2"],
+        "target": null,
+        "note": "Pick the lesser of 7 and 2."
+      },
+      {
+        "itemId": "k-more-less-same-keypad-4",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["8", "5"],
+        "target": null,
+        "note": "Asks for the difference (how many more), not to pick a listed number; answer 3 is not one of the values."
+      }
+    ]
+  }
+}

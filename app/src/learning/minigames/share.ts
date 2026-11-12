@@ -19,7 +19,7 @@ export type Thing = {
 };
 
 /** Things the slices art can draw. A bar is granola unless the story calls it chocolate. */
-function foodOf(thing: ThingId, one: string): FractionFood | undefined {
+export function foodOf(thing: ThingId, one: string): FractionFood | undefined {
   if (thing === 'pie' || thing === 'pizza' || thing === 'cookie') return thing;
   if (thing === 'bar') return /chocolate/i.test(one) ? 'chocolate' : 'granola';
   return undefined;

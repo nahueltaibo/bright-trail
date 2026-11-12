@@ -17,7 +17,10 @@ import { Text } from '../../design/Text';
 /** A choice's value. Text the story can't show as a number, like "Same", stays text. */
 export type GameValue = SceneAnswer | string;
 export type GameChoice = { id: string; label: string; value: GameValue };
-export type GameInput = { kind: 'choices'; choices: GameChoice[] } | { kind: 'keypad' };
+export type GameInput =
+  | { kind: 'choices'; choices: GameChoice[] }
+  /** `decimal` adds a decimal point key, for decimal answers only. */
+  | { kind: 'keypad'; decimal?: boolean };
 
 type Phase = 'ask' | 'playing' | 'result' | 'resetting';
 type Outcome = { correct: boolean; title: string; body: string };
@@ -169,6 +172,7 @@ export function GameFrame(props: Props) {
       <NumberPad
         entry={entry}
         scale={scale}
+        decimal={input.decimal ?? false}
         disabled={phase !== 'ask'}
         onKey={(k) => setEntry((e) => pressKey(e, k))}
         onSubmit={() => void choose(Number(entry), entry)}
@@ -242,64 +246,78 @@ const PAD_KEYS = [
   ['1', '2', '3', '4', '5', '⌫'],
   ['6', '7', '8', '9', '0', '✔'],
 ];
+// Six keys a row still fit a small phone, so the check key moves up beside the answer.
+const DECIMAL_KEYS = [
+  ['1', '2', '3', '4', '5', '.'],
+  ['6', '7', '8', '9', '0', '⌫'],
+];
 
-/** Whole numbers on two rows of keys, short enough to sit under the stage. */
+const keyLabel = (k: string) =>
+  k === '✔' ? 'Check my answer' : k === '⌫' ? 'Delete' : k === '.' ? 'Decimal point' : k;
+
+/** Whole numbers, or decimals, on two rows of keys, short enough to sit under the stage. */
 function NumberPad({
   entry,
   scale,
+  decimal,
   disabled,
   onKey,
   onSubmit,
 }: {
   entry: string;
   scale: number;
+  decimal: boolean;
   disabled: boolean;
   onKey: (key: string) => void;
   onSubmit: () => void;
 }) {
   const side = Math.max(MIN_TAP * 0.85, 52 * scale);
+  const key = (k: string) => {
+    const submit = k === '✔';
+    const off = disabled || (submit && entry === '');
+    return (
+      <Pressable
+        key={k}
+        accessibilityRole="button"
+        accessibilityLabel={keyLabel(k)}
+        accessibilityState={{ disabled: off }}
+        disabled={off}
+        onPress={() => (submit ? onSubmit() : onKey(k))}
+        style={({ pressed }) => [
+          styles.key,
+          { width: side, height: side, borderRadius: radius.md },
+          submit && styles.submit,
+          pressed && pressDown,
+          off && styles.faded,
+        ]}
+      >
+        {submit ? (
+          <Icon name="check" size={side * 0.55} tint={color.onTrail} stroke={3.2} />
+        ) : k === '⌫' ? (
+          <Icon name="backspace" size={side * 0.5} tint={colors.ink} />
+        ) : (
+          <Text style={[styles.text, { fontSize: side * 0.5 }]}>{k}</Text>
+        )}
+      </Pressable>
+    );
+  };
   return (
     <View style={styles.pad}>
-      <View
-        accessible
-        accessibilityLabel={entry ? `Your answer, ${entry}` : 'Your answer, empty'}
-        style={[styles.display, { height: side * 0.9, minWidth: side * 2 }]}
-      >
-        <Text style={[styles.text, { fontSize: side * 0.5 }, !entry && styles.empty]}>
-          {entry || '?'}
-        </Text>
+      <View style={styles.padRow}>
+        <View
+          accessible
+          accessibilityLabel={entry ? `Your answer, ${entry}` : 'Your answer, empty'}
+          style={[styles.display, { height: side * 0.9, minWidth: side * 2 }]}
+        >
+          <Text style={[styles.text, { fontSize: side * 0.5 }, !entry && styles.empty]}>
+            {entry || '?'}
+          </Text>
+        </View>
+        {decimal && key('✔')}
       </View>
-      {PAD_KEYS.map((row, r) => (
+      {(decimal ? DECIMAL_KEYS : PAD_KEYS).map((row, r) => (
         <View key={r} style={styles.padRow}>
-          {row.map((k) => {
-            const submit = k === '✔';
-            const off = disabled || (submit && entry === '');
-            return (
-              <Pressable
-                key={k}
-                accessibilityRole="button"
-                accessibilityLabel={submit ? 'Check my answer' : k === '⌫' ? 'Delete' : k}
-                accessibilityState={{ disabled: off }}
-                disabled={off}
-                onPress={() => (submit ? onSubmit() : onKey(k))}
-                style={({ pressed }) => [
-                  styles.key,
-                  { width: side, height: side, borderRadius: radius.md },
-                  submit && styles.submit,
-                  pressed && pressDown,
-                  off && styles.faded,
-                ]}
-              >
-                {submit ? (
-                  <Icon name="check" size={side * 0.55} tint={color.onTrail} stroke={3.2} />
-                ) : k === '⌫' ? (
-                  <Icon name="backspace" size={side * 0.5} tint={colors.ink} />
-                ) : (
-                  <Text style={[styles.text, { fontSize: side * 0.5 }]}>{k}</Text>
-                )}
-              </Pressable>
-            );
-          })}
+          {row.map(key)}
         </View>
       ))}
     </View>

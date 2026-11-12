@@ -1,15 +1,30 @@
 import type {
+  ArrayScene,
+  BlocksScene,
+  CompareScene,
+  GridScene,
   Hops,
   Item,
   JoinScene,
   NumberLineItem,
   Scene,
   SliceScene,
+  StonesScene,
 } from '@bright-trail/shared';
+import { acceptArrays, applyArrays, arrayCandidates, arrayTagRequest } from '../arrays/arrays';
+import { acceptBlocks, applyBlocks, blocksCandidates, blocksTagRequest } from '../blocks/blocks';
+import {
+  acceptCompares,
+  applyCompares,
+  compareCandidates,
+  compareTagRequest,
+} from '../compare/compare';
+import { acceptGrids, applyGrids, gridCandidates, gridTagRequest } from '../grid/grid';
 import { acceptHops, applyHops, hopsCandidates, hopsTagRequest } from '../hops/hops';
 import { acceptJoins, applyJoins, joinCandidates, joinTagRequest } from '../join/join';
 import { acceptScenes, applyScenes, candidateItems, tagRequest } from '../scenes/scenes';
 import { acceptSlices, applySlices, sliceCandidates, sliceTagRequest } from '../slices/slices';
+import { acceptStones, applyStones, stonesCandidates, stonesTagRequest } from '../stones/stones';
 import type { Tagger } from './tagger';
 
 const share: Tagger<Item, Scene> = {
@@ -54,6 +69,77 @@ const join: Tagger<Item, JoinScene> = {
   apply: applyJoins,
 };
 
+const compare: Tagger<Item, CompareScene> = {
+  file: 'compare.json',
+  outcome: 'play as compare scenes',
+  label: 'Compare',
+  minPerSkill: 3,
+  candidates: compareCandidates,
+  request: compareTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptCompares(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyCompares,
+};
+
+const arrays: Tagger<Item, ArrayScene> = {
+  file: 'arrays.json',
+  outcome: 'play as array scenes',
+  label: 'Arrays',
+  minPerSkill: 3,
+  candidates: arrayCandidates,
+  request: arrayTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptArrays(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyArrays,
+};
+
+const grid: Tagger<Item, GridScene> = {
+  file: 'grid.json',
+  outcome: 'play as grid scenes',
+  label: 'Grid',
+  minPerSkill: 3,
+  candidates: gridCandidates,
+  request: gridTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptGrids(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyGrids,
+};
+
+const blocks: Tagger<Item, BlocksScene> = {
+  file: 'blocks.json',
+  outcome: 'play as base-ten blocks',
+  label: 'Blocks',
+  minPerSkill: 3,
+  candidates: blocksCandidates,
+  request: blocksTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptBlocks(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyBlocks,
+};
+
+const stones: Tagger<Item, StonesScene> = {
+  file: 'stones.json',
+  outcome: 'play as stepping stones',
+  label: 'Stones',
+  // A skill's only counting run is still worth a call, like g4's one run of thirds.
+  minPerSkill: 1,
+  candidates: stonesCandidates,
+  request: stonesTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptStones(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyStones,
+};
+
 const hops: Tagger<NumberLineItem, Hops> = {
   file: 'hops.json',
   outcome: 'hop a planned path',
@@ -72,7 +158,7 @@ const hops: Tagger<NumberLineItem, Hops> = {
  * Every content tagger by the `--kind` that runs it, in the order the bundle applies them.
  * Hops come last because they skip number-line items that already play a minigame.
  */
-export const TAGGERS = { share, slices, join, hops };
+export const TAGGERS = { share, slices, join, compare, arrays, grid, blocks, stones, hops };
 export type TaggerKind = keyof typeof TAGGERS;
 
 export function isTaggerKind(kind: string): kind is TaggerKind {

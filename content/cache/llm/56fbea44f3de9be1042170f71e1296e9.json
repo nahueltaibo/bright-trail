@@ -1,0 +1,72 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-compare-numbers-20-tap-1",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["3", "6"],
+        "target": null,
+        "note": "Greater of 3 and 6"
+      },
+      {
+        "itemId": "k-compare-numbers-20-tap-2",
+        "fits": true,
+        "ask": "least",
+        "values": ["8", "2"],
+        "target": null,
+        "note": "Less of 8 and 2"
+      },
+      {
+        "itemId": "k-compare-numbers-20-keypad-2",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["3"],
+        "target": null,
+        "note": "Subtraction: 1 less than 3, not picking from listed numbers"
+      },
+      {
+        "itemId": "k-compare-numbers-20-tap-3",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["12", "9"],
+        "target": null,
+        "note": "Greater of 12 and 9"
+      },
+      {
+        "itemId": "k-compare-numbers-20-tap-4",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["11", "8", "9"],
+        "target": null,
+        "note": "1 less than 10 is arithmetic, not a size comparison"
+      },
+      {
+        "itemId": "k-compare-numbers-20-keypad-4",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["11"],
+        "target": null,
+        "note": "Subtraction: 2 less than 11"
+      },
+      {
+        "itemId": "k-compare-numbers-20-tap-5",
+        "fits": true,
+        "ask": "least",
+        "values": ["16", "14"],
+        "target": null,
+        "note": "Less of 14 and 16"
+      },
+      {
+        "itemId": "k-compare-numbers-20-tap-6",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["12", "14", "11"],
+        "target": null,
+        "note": "2 less than 13 is arithmetic, not a size comparison"
+      }
+    ]
+  }
+}
