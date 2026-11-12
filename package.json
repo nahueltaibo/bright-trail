@@ -28,6 +28,7 @@
     "content:arrays": "npm run arrays -w @bright-trail/content --",
     "content:grid": "npm run grid -w @bright-trail/content --",
     "content:blocks": "npm run blocks -w @bright-trail/content --",
+    "content:stones": "npm run stones -w @bright-trail/content --",
     "content:hops": "npm run hops -w @bright-trail/content --",
     "content:voices": "npm run voices -w @bright-trail/content",
     "content:packs": "npm run packs -w @bright-trail/content",

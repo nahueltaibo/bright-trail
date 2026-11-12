@@ -20,4 +20,5 @@ export * from './scene';
 export * from './skill';
 export * from './slices';
 export * from './speech';
+export * from './stones';
 export * from './visual';

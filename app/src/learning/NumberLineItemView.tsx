@@ -13,6 +13,7 @@ import Svg, { Path } from 'react-native-svg';
 import { font, radius } from '../design/tokens';
 import { KidButton } from './controls';
 import { ItemFrame, useItemAttempt } from './ItemFrame';
+import { ARC, ARC_TEXT, arcPath, FROG, type Arc } from './hopArc';
 import { BubbleView, type Bubble } from './minigames/Bubble';
 import { frames, wait } from './minigames/motion';
 import {
@@ -27,31 +28,11 @@ import { colors, formatNumber, useLayout } from './theme';
 import type { ItemViewProps } from './types';
 import { Text } from '../design/Text';
 
-const MARKER = '🐸';
-const ARC = '#FF8A3D';
-const ARC_TEXT = '#C25E12';
-
 type Phase = 'ask' | 'playing' | 'done';
-type Arc = { id: number; x0: number; x1: number; top: number; k: number };
 type ArcLabel = { id: number; x: number; y: number; text: string };
 
 const ease = (k: number) => (k < 0.5 ? 2 * k * k : 1 - Math.pow(-2 * k + 2, 2) / 2);
 const tidy = (v: number) => Number(v.toFixed(9));
-
-/** A dashed arc from x0 to x1, drawn up to `k`, as sample points so it can grow while the frog hops. */
-function arcPath(a: Arc, lineY: number): string {
-  const y0 = lineY - 10;
-  const cy = 2 * a.top - y0;
-  const n = Math.max(2, Math.ceil(24 * a.k));
-  const pts: string[] = [];
-  for (let i = 0; i <= n; i++) {
-    const t = (i / n) * a.k;
-    const x = (1 - t) * (1 - t) * a.x0 + 2 * t * (1 - t) * ((a.x0 + a.x1) / 2) + t * t * a.x1;
-    const y = (1 - t) * (1 - t) * y0 + 2 * t * (1 - t) * cy + t * t * y0;
-    pts.push(`${i === 0 ? 'M' : 'L'} ${x.toFixed(1)} ${y.toFixed(1)}`);
-  }
-  return pts.join(' ');
-}
 
 /**
  * Drag the frog along the line, or tap anywhere on it, and it snaps to the nearest step.
@@ -318,7 +299,7 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
                 { left: xOf(index) - markerSize / 2, top: frogTop },
               ]}
             >
-              {MARKER}
+              {FROG}
             </Text>
           )}
           {locked ? (
@@ -343,7 +324,7 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
                 },
               ]}
             >
-              {MARKER}
+              {FROG}
             </Animated.Text>
           ) : (
             <Text
@@ -355,7 +336,7 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
                 index === null && styles.markerParked,
               ]}
             >
-              {MARKER}
+              {FROG}
             </Text>
           )}
           {bubbles.map((b) => (

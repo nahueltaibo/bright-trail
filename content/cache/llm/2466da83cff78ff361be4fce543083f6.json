@@ -1,0 +1,15 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-add-sub-properties-keypad-5",
+        "fits": false,
+        "stones": ["11"],
+        "missing": 0,
+        "note": "Commutative property equation, not a run with a fixed step."
+      }
+    ]
+  }
+}

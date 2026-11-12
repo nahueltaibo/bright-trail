@@ -19,6 +19,8 @@ import { DEMO_ITEMS } from './minigames/demo';
 import { problemFromScene } from './minigames/share';
 import { ShareGame } from './minigames/ShareGame';
 import { useGameProps } from './minigames/useGameProps';
+import { STONES_DEMO_ITEMS } from './stones/demo';
+import { StonesGame } from './stones/StonesGame';
 import type { ItemViewProps } from './types';
 
 export type GameViewProps<K extends GameKind = GameKind> = ItemViewProps & {
@@ -72,6 +74,10 @@ function BlocksView({ game, ...props }: GameViewProps<'blocks'>) {
   return <BlocksGame {...useGameProps(props)} scene={game} />;
 }
 
+function StonesView({ game, ...props }: GameViewProps<'stones'>) {
+  return <StonesGame {...useGameProps(props)} scene={game} />;
+}
+
 /** Every minigame the app plays, by `kind`. A new kind in `GAMES` fails the type check here. */
 export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   share: { title: 'Sharing', View: ShareView, demo: DEMO_ITEMS },
@@ -81,6 +87,7 @@ export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   arrays: { title: 'Arrays', View: ArraysView, demo: ARRAYS_DEMO_ITEMS },
   grid: { title: 'Tenths and hundredths', View: GridView, demo: GRID_DEMO_ITEMS },
   blocks: { title: 'Base-ten blocks', View: BlocksView, demo: BLOCKS_DEMO_ITEMS },
+  stones: { title: 'Stepping stones', View: StonesView, demo: STONES_DEMO_ITEMS },
 };
 
 export const GAME_KINDS = Object.keys(GAME_VIEWS) as GameKind[];
