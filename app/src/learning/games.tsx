@@ -1,5 +1,7 @@
 import type { GameKind, GameOf, Item } from '@bright-trail/shared';
 import { useMemo, type ReactElement } from 'react';
+import { ArraysGame } from './arrays/ArraysGame';
+import { ARRAYS_DEMO_ITEMS } from './arrays/demo';
 import { CompareGame } from './compare/CompareGame';
 import { COMPARE_DEMO_ITEMS } from './compare/demo';
 import { sceneLabels } from './compare/layout';
@@ -50,12 +52,17 @@ function CompareView({ game, ...props }: GameViewProps<'compare'>) {
   return <CompareGame {...frame} input={input} scene={game} />;
 }
 
+function ArraysView({ game, ...props }: GameViewProps<'arrays'>) {
+  return <ArraysGame {...useGameProps(props)} scene={game} />;
+}
+
 /** Every minigame the app plays, by `kind`. A new kind in `GAMES` fails the type check here. */
 export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   share: { title: 'Sharing', View: ShareView, demo: DEMO_ITEMS },
   slices: { title: 'Slices', View: SlicesView, demo: SLICE_DEMO_ITEMS },
   join: { title: 'Join and leave', View: JoinView, demo: JOIN_DEMO_ITEMS },
   compare: { title: 'Compare and order', View: CompareView, demo: COMPARE_DEMO_ITEMS },
+  arrays: { title: 'Arrays', View: ArraysView, demo: ARRAYS_DEMO_ITEMS },
 };
 
 export const GAME_KINDS = Object.keys(GAME_VIEWS) as GameKind[];

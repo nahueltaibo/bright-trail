@@ -1,0 +1,128 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g4-mult-div-facts-100-keypad-1",
+        "fits": true,
+        "ask": "total",
+        "rows": 4,
+        "columns": 3,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "4 rows of 3"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-tap-1",
+        "fits": true,
+        "ask": "total",
+        "rows": 4,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "4 × 8 total"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-tap-2",
+        "fits": true,
+        "ask": "columns",
+        "rows": 6,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "30 deal into 6 rows"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-keypad-3",
+        "fits": true,
+        "ask": "total",
+        "rows": 8,
+        "columns": 4,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "8 × 4 total"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-tap-3",
+        "fits": true,
+        "ask": "total",
+        "rows": 6,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "6 × 8 total"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-tap-4",
+        "fits": true,
+        "ask": "columns",
+        "rows": 7,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "56 into 7 rows"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-keypad-4",
+        "fits": true,
+        "ask": "rows",
+        "rows": 6,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "48 bottles, 8 per box, boxes = rows"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-keypad-5",
+        "fits": true,
+        "ask": "total",
+        "rows": 7,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "7 × 8 total"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-tap-5",
+        "fits": true,
+        "ask": "rows",
+        "rows": 9,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "72 players, teams of 8, teams = rows"
+      },
+      {
+        "itemId": "g4-mult-div-facts-100-keypad-6",
+        "fits": true,
+        "ask": "rows",
+        "rows": 9,
+        "columns": 6,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "missing first factor, total 54 in rows of 6"
+      }
+    ]
+  }
+}
