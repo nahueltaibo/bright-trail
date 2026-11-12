@@ -1,0 +1,80 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g4-decimal-tenths-tap-2",
+        "fits": false,
+        "unit": "tenths",
+        "ask": "decimal",
+        "amount": "8/10",
+        "other": null,
+        "note": "comparing two amounts"
+      },
+      {
+        "itemId": "g4-decimal-tenths-keypad-2",
+        "fits": true,
+        "unit": "tenths",
+        "ask": "decimal",
+        "amount": "9/10",
+        "other": null,
+        "note": "9 tenths as decimal"
+      },
+      {
+        "itemId": "g4-decimal-tenths-tap-3",
+        "fits": false,
+        "unit": "tenths",
+        "ask": "decimal",
+        "amount": "7/10",
+        "other": null,
+        "note": "place value meaning, not an amount match"
+      },
+      {
+        "itemId": "g4-decimal-tenths-keypad-3",
+        "fits": true,
+        "unit": "tenths",
+        "ask": "decimal",
+        "amount": "3.5",
+        "other": null,
+        "note": "3 wholes and 5 tenths"
+      },
+      {
+        "itemId": "g4-decimal-tenths-keypad-4",
+        "fits": false,
+        "unit": "tenths",
+        "ask": "decimal",
+        "amount": "6/10",
+        "other": null,
+        "note": "place value digit; answer 6 differs from scene's 0.6"
+      },
+      {
+        "itemId": "g4-decimal-tenths-tap-4",
+        "fits": false,
+        "unit": "tenths",
+        "ask": "decimal",
+        "amount": "7.5",
+        "other": null,
+        "note": "ordering amounts"
+      },
+      {
+        "itemId": "g4-decimal-tenths-tap-5",
+        "fits": true,
+        "unit": "tenths",
+        "ask": "same",
+        "amount": "2.0",
+        "other": "2",
+        "note": "2.0 equals 2"
+      },
+      {
+        "itemId": "g4-decimal-tenths-keypad-5",
+        "fits": true,
+        "unit": "tenths",
+        "ask": "decimal",
+        "amount": "12/10",
+        "other": null,
+        "note": "12 tenths as decimal 1.2"
+      }
+    ]
+  }
+}
