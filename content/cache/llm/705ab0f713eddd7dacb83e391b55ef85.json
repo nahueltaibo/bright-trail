@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-hlth-food-needs-tap-11",
+        "severity": "note",
+        "category": "other",
+        "note": "Sam 'skipped breakfast' and then feels tired and cranky. Read by ear, this could make a child who skips breakfast feel blamed. Consider a neutral framing such as 'Sam is hungry and tired.'"
+      },
+      {
+        "target": "g1-hlth-food-needs-tap-13",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'Which food helps most' offers only one food (milk) among non-food choices. It is still answerable and correct, but the 'most' comparison is thin. Consider 'Which one is a food that helps strong bones?' for clarity."
+      },
+      {
+        "target": "g1-hlth-food-needs-tap-14",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration 'Why: food feeds his brain, his shoes are new, or the bell rang?' is awkward when heard aloud. Consider 'Jo eats lunch and then thinks well in class. Why? Because food feeds his brain, because his shoes are new, or because the bell rang?'"
+      },
+      {
+        "target": "g1-hlth-food-needs-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says Mia is 'hungry and tired' but the story card only mentions hunger and tiredness after skipping food. The Why line adds 'ask a grown-up to help', which is not among the choices. Acceptable, but the link between the story and the item could be tighter."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 tap items for g1-hlth-food-needs. Every marked answer is correct, and no wrong choice is partly right: each distractor (hat, toy, to make toys, to be loud, knee, nose, backpack, bike, spoon, staying hungry, loud noise, sky-blue reason, shoes, bell, and so on) is clearly not a way food helps the body or mind. The facts are accurate for Grade 1: food gives energy; it supports bones, muscles, teeth, skin, and brain; milk helps bones and teeth. Nothing shames or scares a child, and nothing stereotypes a group. The items are answerable by ear alone. The notes above are wording and clarity suggestions only, not blockers."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 2 says the pencil 'is made of wood', but tap-1 says 'mostly' wood and tap-15 says a pencil with an eraser has two materials (wood and rubber). Consider 'mostly made of wood, with a rubber eraser' so the story matches the later items."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-3",
+        "severity": "note",
+        "category": "other",
+        "note": "Marked answer True is correct, but the item is nearly trivial because 'wooden' already means 'made of wood'. It is too easy to check any understanding. Consider replacing it with a question about a material the chair might have, or drop it."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-10",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'Often made of plastic' is a fair hedge, and the distractors (scarf = fabric, nail = metal) are clearly wrong. Still, wooden toy blocks are a common classic, so a sharper item would use a clearly plastic object, such as a plastic cup, or say 'a toy block made of plastic' in the question."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Story step 4 and tap-9 say 'you can see through glass'. Accurate for this grade, but some glass is frosted or opaque. Consider 'Many windows are see-through glass' or similar so no child learns that all glass is clear."
+      }
+    ],
+    "notes": "I checked all 15 items and the story against the stated answers. Every marked answer is correct, each item has exactly one right choice, and no distractor is also partly right (pencil eraser in tap-15 is handled as a two-material object, and tap-12's 'only one material' is correctly False). The picture references (tap-5 choice emoji, tap-11 🪣) match their narration. The content is within Grade 1 scope and has no stereotyping or frightening material. Blockers: none. The items I flagged are wording and difficulty suggestions only."
+  }
+}

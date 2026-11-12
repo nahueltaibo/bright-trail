@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Card 3 narration says 'Day, night, day, night', but its picture is 4 × ☀️, four suns with no moons. The picture shows day four times and contradicts the night part of the narration. Show alternating ☀️ and 🌙 (or change the picture to match the narration)."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Cards 2, 3 and item tap-5 say the sun 'goes down' and 'comes up'. This describes what we see, which is fine for Grade 1, but the story could add a short line such as 'the sun looks like it moves across the sky' so children don't take it as the sun actually moving."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 uses 🌱 for the seed, while item tap-11 uses 🌰 for the seed. Use one seed picture so children see the same image in the story and in the practice."
+      },
+      {
+        "target": "g1-sci-cycles-tap-8",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The question asks about the season after summer, but the picture is ☀️, which suggests summer again. A leaf or fall picture (🍂) would fit the answer better."
+      },
+      {
+        "target": "g1-sci-cycles-tap-14",
+        "severity": "note",
+        "category": "other",
+        "note": "Afternoon is never introduced in the story. The item asks children to order morning, afternoon, and night, so add a line about afternoon to the story, or the item may be too hard for this skill."
+      }
+    ],
+    "notes": "I checked all 15 items against the marked answers and the 'Why' explanations. Each marked answer is correct and has no partly-right distractor. Season order (spring, summer, fall, winter) and the plant sequence (seed, sprout, plant, new seeds) are accurate for Ontario Grade 1. The only blocker is the story card 3 picture, which shows four suns where the narration describes day, night, day, night. The rest are wording or consistency notes. Every item is answerable by ear: the narration gives the full question and the choices are spoken words."
+  }
+}

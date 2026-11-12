@@ -1,0 +1,51 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Story card 3 shows 6 trees (6 × 🌲), but item tap-4 shows 5 (5 × 🌲) for the same kind of forest. The tree count is not in the narration, so the answer is unaffected, but the two pictures should match."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 3 says 'No one planted these trees.' This is accurate for the natural forest in the story, but a child could take it as a rule that forests are never planted. Consider 'No one planted these trees on purpose' or a similar wording."
+      },
+      {
+        "target": "g1-soc-community-features-tap-7",
+        "severity": "note",
+        "category": "other",
+        "note": "'Arena' is unfamiliar vocabulary for Grade 1 and is asked by ear only. Consider a more familiar built place, such as a school or a store, or add a short definition in the story."
+      },
+      {
+        "target": "g1-soc-community-features-tap-12",
+        "severity": "note",
+        "category": "other",
+        "note": "'Arena' is again unfamiliar vocabulary for a child listening by ear. The hockey clue helps, but the word may still be hard to follow."
+      },
+      {
+        "target": "g1-soc-community-features-tap-15",
+        "severity": "note",
+        "category": "other",
+        "note": "'Place of worship' is abstract, multi-word vocabulary that is hard to follow by ear at Grade 1. Consider a more concrete example, or a simpler phrase such as 'a church' only if the content team agrees it suits all families."
+      },
+      {
+        "target": "g1-soc-community-features-tap-13",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration gives three pairs of two items with 'or' between them. A child listening by sound alone has to hold six words in memory, which is too hard for Grade 1 at difficulty 3. Consider asking about one pair at a time."
+      },
+      {
+        "target": "g1-soc-community-features-tap-14",
+        "severity": "note",
+        "category": "other",
+        "note": "Same issue as tap-13: three pairs are read aloud, which is heavy listening load for a child who cannot yet read. Consider simplifying the question."
+      }
+    ],
+    "notes": "No blockers found. I checked every marked answer against its question and choices: river (natural), library and school and road and house and store and arena and place of worship (built), forest (natural). Each odd-one-out, true/false, and two-choice item has exactly one correct choice, and the marked answers are right. No fact is false, and nothing stereotypes a people or scares or shames a child. The notes are about the picture count mismatch, some Grade 1 vocabulary, and the length of the multi-part narrations for the audio-only format."
+  }
+}

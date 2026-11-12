@@ -8,9 +8,18 @@
     "g5-compare-order-fractions",
     "g5-add-sub-like-fractions",
     "g5-whole-by-unit-fraction",
-    "g5-fraction-decimal-percent"
+    "g5-fraction-decimal-percent",
+    "g3-sci-plant-parts",
+    "g1-sci-body-parts",
+    "g2-sci-solid-liquid-sort",
+    "g2-sci-life-cycles",
+    "g1-soc-community-features",
+    "g2-soc-chronology",
+    "g1-hlth-food-guide"
   ],
   "extraRetries": {
-    "g4-count-unit-fractions": 1
+    "g4-count-unit-fractions": 1,
+    "g3-sci-plant-parts": 2,
+    "g1-soc-community-features": 2
   }
 }

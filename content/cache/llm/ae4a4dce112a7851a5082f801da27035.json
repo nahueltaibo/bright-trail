@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "Card 3 says 'Trees grow on their own' and 'A forest is natural' with no qualification. Many forests in Ontario are planted and managed by people (tree plantations, forestry plots), so a forest is not always natural. This teaches an absolute that a teacher would dispute. Reword to say most forests are natural and grow without people planting them, or drop the 'built' contrast for forests."
+      },
+      {
+        "target": "g1-soc-community-features-tap-4",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The marked answer 'natural' and the 'Why' ('Trees in a forest grow on their own. People did not build it.') state a categorical fact that is false for planted or managed forests. Either change the item to a clearly natural forest (for example, a forest with no mention of planting) or qualify the explanation. The answer should not be marked as a rule for all forests."
+      },
+      {
+        "target": "g1-soc-community-features-tap-4",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Picture shows 5 trees, but story card 3 shows 6 trees. The counts don't match. Use the same count or drop the number so the narration and picture agree."
+      },
+      {
+        "target": "g1-soc-community-features-tap-13",
+        "severity": "note",
+        "category": "other",
+        "note": "Audio-only, the child must hold three pairs of items in memory before answering. This is heavy for Grade 1 and for a child who cannot read yet. Consider two options instead of three, or shorter phrasing."
+      },
+      {
+        "target": "g1-soc-community-features-tap-14",
+        "severity": "note",
+        "category": "other",
+        "note": "Same as tap-13: three pairs read aloud is a heavy listening load for ages 6 to 7. Consider shortening the list to two options."
+      }
+    ],
+    "notes": "I checked the answers for tap-1 through tap-15. The marked answers are correct, and no other choice is also right. For the two-answer items (tap-13, tap-14), only the marked pair fits. For the odd-one-out and built/natural items, the marked answer is the only correct one. The main issue is the claim that a forest is always natural and that trees always grow on their own. That is the same error in the story card and tap-4, so both are flagged as blockers. The other items are fine, but the audio-only lists in tap-13 and tap-14 are long for Grade 1."
+  }
+}

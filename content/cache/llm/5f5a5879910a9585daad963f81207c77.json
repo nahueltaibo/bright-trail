@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-animal-traits-tap-2",
+        "severity": "blocker",
+        "category": "wrong-answer",
+        "note": "The distractor 'its nose' is partly right. A puppy's nose gets bigger as the puppy grows, so it does change. The 'Why' line 'It keeps its nose' is false and teaches that the nose stays the same. Replace the distractor with a feature that truly stays the same, such as 'its nose is wet' is not safe either. Use something like 'its name' or 'having four legs', or change the question so only size clearly changes."
+      },
+      {
+        "target": "g2-sci-animal-traits-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration describes a tadpole, but the picture shown is a frog (🐸). The question asks what the tadpole grows, so a tadpole picture (or no picture) would match the narration better. Not a wrong answer."
+      }
+    ],
+    "notes": "Checked the story cards and all 15 items. The marked answers are correct, and no other choice is fully right, except for the 'its nose' distractor in tap-2, which is partly right and was flagged as a blocker. The story facts are accurate for kittens, tadpoles, and chicks. Arctic hare summer fur is grey-brown rather than plain brown, which is close enough and not flagged. Fish scales grow with the fish, but 'keeps its scales' is a fair simplification at this grade level, so tap-3 was not flagged."
+  }
+}

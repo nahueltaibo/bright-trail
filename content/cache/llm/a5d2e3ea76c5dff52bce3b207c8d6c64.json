@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-sci-plant-parts-tap-3",
+        "severity": "blocker",
+        "category": "wrong-answer",
+        "note": "The question asks which part can grow into a new plant, but a stem cutting (for example, pothos or coleus) and some leaves (for example, kalanchoe or African violet) can root and grow into new plants. The distractors 'a stem' and 'a leaf' are therefore partly right, so the item has more than one defensible answer. Reword to something like 'Which part holds a tiny new plant inside it?' or 'Which part is the start of a new plant that grows from a seed?'"
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Step 6 says 'Pine trees have no flowers.' This is the standard simplification and is accurate for conifers, but it could be clearer, for example 'Pine trees do not make flowers like the bean plant. They make their seeds inside cones.' This would avoid the child thinking cones are flowers."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says Ana finds a pine cone, but the picture is the 🌲 tree emoji. The picture does not show a cone. Consider using a cone-like picture or no picture, so the audio and visual match."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-10",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "The answer is correct, but a leaf is so clearly not a fruit that the item is too easy for difficulty 2. A more useful distractor would be a seed or a vegetable-like plant part, though that would need careful wording."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-14",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The choices 'the pot' and 'the soil' are not plant parts, and the question asks 'Which part of the plant'. A child might be confused about why these are options. Consider changing the question to 'Which part of a plant cannot make food without light?' with plant-part distractors such as roots, flowers, or seeds."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-15",
+        "severity": "note",
+        "category": "other",
+        "note": "The answer 'True' is correct because spruce trees are conifers that make seeds in cones. The screen text, 'spruce seeds grow in cones', is clear. The item is fine, but the 'False' option is listed first and the marked answer is second. That is acceptable but worth checking that the audio reads both choices clearly."
+      }
+    ],
+    "notes": "Checked all 15 items and the story cards. Facts about roots, stems, leaves, stamens, pistils, fruit and seeds, pollination, and pine and spruce cones are accurate for Grade 3. Each marked answer is the only correct choice, apart from the tap-3 issue above. No stereotyping, no scary content, and the material stays within the plant-parts skill. Ear-only comprehension is generally good, since the questions use short sentences and clear choice labels. The only blocker is tap-3, where a stem or leaf can sometimes grow into a new plant."
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "Card 3 says \"Trees grow by themselves. A forest is natural too,\" and card 6 gives the rule \"Did people make it? If yes, it is built.\" A teacher would dispute this. Many forests are planted or managed by people (tree plantations, planted woodlots, city tree plantings), so a forest can be built by people. The card should say most forests grow naturally, or that people can plant forests too, so the sorting rule isn't taught as absolute."
+      },
+      {
+        "target": "g1-soc-community-features-tap-10",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The marked answer \"false\" depends on the claim that a forest is never built by people, and the explanation \"Trees grow by themselves, so a forest is natural\" is an overgeneralization. Planted forests exist. The item teaches an absolute that teachers would dispute. Reword it to a clearly natural example, or change the explanation to say most forests grow naturally."
+      },
+      {
+        "target": "g1-soc-community-features-tap-4",
+        "severity": "note",
+        "category": "factual",
+        "note": "Some lakes in Ontario are reservoirs or ponds made by people, so \"a lake is natural\" is true for most lakes but not all. Consider \"a big lake like Lake Ontario\" or a similar clearly natural example. The same caveat applies to tap-6, tap-11, tap-13 and tap-14, which all rely on lakes being natural."
+      },
+      {
+        "target": "g1-soc-community-features-tap-10",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The story card 3 picture shows 6 trees, while this item's picture shows 5 trees. Use the same count, or make the mismatch deliberate."
+      },
+      {
+        "target": "g1-soc-community-features-tap-15",
+        "severity": "note",
+        "category": "other",
+        "note": "\"Place of worship\" is abstract vocabulary for Grade 1 listeners, and the phrase is long to hear. Consider \"a church, a mosque, or a temple\" or a simpler term like \"a temple\", or make sure the screen and story introduce the term first. The answer itself is correct and does not stereotype anyone."
+      },
+      {
+        "target": "g1-soc-community-features-tap-7",
+        "severity": "note",
+        "category": "other",
+        "note": "\"Arena\" may be unfamiliar to Grade 1 children who hear it by ear only. Introduce it in the story or use a more familiar word such as \"a rink\"."
+      },
+      {
+        "target": "g1-soc-community-features-tap-13",
+        "severity": "note",
+        "category": "other",
+        "note": "This item and tap-14 put three pairs of two words in one spoken sentence, which is a lot to hold by ear for Grade 1 and difficulty 3. Consider shortening the choices or splitting the question into two steps."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 tap items. The marked answers for tap-1 to tap-9 and tap-11 to tap-15 are correct, and each wrong choice is clearly wrong. The main risk is the claim that a forest is always natural (story card 3, tap-10), which is not safe for a sorting rule taught to Grade 1 children. The sort rule on card 6 has the same issue. Lakes raise a smaller version of the same caveat. Both should be fixed before children see them. Nothing I reviewed stereotypes a people or community or frightens a child."
+  }
+}

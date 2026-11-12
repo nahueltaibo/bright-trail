@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Step 3 says Mia picks carrots and an apple, but the picture shows only 4 carrots. No apple is pictured, so the narration and picture disagree. Show an apple, or change the narration to match the picture."
+      },
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Step 5 says Mia picks an egg, but the picture shows 3 eggs. Show one egg for Mia's pick, or reword so the 3 eggs are clearly the protein group and not her single choice."
+      },
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "Step 4 says 'Bread and brown rice are whole grain foods.' Bread is only whole grain when it is whole grain bread. White bread is not. Change to 'whole grain bread and brown rice' so children do not learn that all bread is whole grain."
+      },
+      {
+        "target": "g1-hlth-food-guide-tap-5",
+        "severity": "blocker",
+        "category": "wrong-answer",
+        "note": "The marked right answer is 'bread', but plain bread is not always a whole grain food. Only whole grain bread is. Change the choice to 'whole grain bread' or 'brown rice' so the marked answer is correct without qualification. The 'why' line should match."
+      },
+      {
+        "target": "g1-hlth-food-guide-tap-10",
+        "severity": "note",
+        "category": "factual",
+        "note": "The 'why' line says 'Bread and oatmeal are whole grain foods.' Same issue as the story: plain bread is not always whole grain. Use 'whole grain bread and oatmeal' or 'oatmeal and brown rice'."
+      },
+      {
+        "target": "g1-hlth-food-guide-tap-9",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The rice in 'carrots, rice, and egg' is not specified as whole grain, but the guide's grain group is mainly whole grains. Consider 'brown rice' for consistency with the story. Also, the spoken list 'carrots, rice, and egg, or only cookies, or only chips' is hard to follow by ear. Consider a shorter sentence, such as 'Which plate fits the guide: carrots, rice, and egg; only cookies; or only chips?'"
+      }
+    ],
+    "notes": "I checked every item's marked answer against Canada's Food Guide. The other items are correct and clear by ear: tap-1 to tap-4, tap-6 to tap-8, tap-11 to tap-15. The main issue is the whole-grain claim about bread, which appears in the story and in tap-5. The story also has two narration and picture mismatches (apple missing in step 3, and 3 eggs shown for one egg picked in step 5). Those are blockers. The story's core facts are correct: half vegetables and fruits, a quarter whole grains, a quarter protein, and water as the best drink. No content stereotypes or frightens children."
+  }
+}

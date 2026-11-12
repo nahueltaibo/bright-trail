@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-life-cycles-tap-6",
+        "severity": "note",
+        "category": "other",
+        "note": "The word 'froglet' is never introduced in the story cards, so a child listening by ear may not know it. Either add a short line to story card 3 (for example, 'Now it is a little frog called a froglet') or use wording the story already supports."
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-10",
+        "severity": "note",
+        "category": "factual",
+        "note": "The explanation says a tadpole 'has a tail and no legs.' That is true for young tadpoles, but later tadpoles grow back legs before they change into frogs, as story card 3 describes. Consider 'A tadpole has a tail and looks very different from an adult frog' so the rationale does not conflict with the story."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 3 says the tadpole grows legs and gets bigger, but it does not mention that the tail shrinks and is absorbed as the frog develops. This is not false, but it leaves out the main visible change. Adding one short clause would make the change clearer by ear."
+      }
+    ],
+    "notes": "I checked all 15 items and the story cards against the marked answers. Each marked answer is correct, and no wrong choice is also partly right. The answers are: tap-1 egg; tap-2 chick; tap-3 true; tap-4 frog; tap-5 puppy; tap-6 froglet; tap-7 chrysalis; tap-8 tadpole (the odd one out in a bird's life); tap-9 born alive; tap-10 false; tap-11 caterpillar; tap-12 butterfly; tap-13 lays eggs; tap-14 calf; tap-15 egg, tadpole, frog. The story's life-cycle sequences are accurate, and the story correctly says \"most mammals\" are born alive, which leaves room for exceptions such as the platypus. There are no stereotypes and nothing frightening. The items are workable by ear. The only problems are the three small notes above, and none of them blocks release."
+  }
+}

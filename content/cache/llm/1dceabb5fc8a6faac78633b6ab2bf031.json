@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-sci-plant-parts-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration asks about a pine cone on the ground, but the picture is a pine tree (🌲). The tree is not a cone, so the picture only loosely matches the question. Consider a cone-focused picture or a sentence that links the tree to its cones."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-12",
+        "severity": "note",
+        "category": "other",
+        "note": "The 'Why' line says 'They carry pollen from flower to flower' right after 'Bright petals bring bees and butterflies'. Read by ear, 'They' can sound like the petals, but the insects carry the pollen. Rewording to 'The insects carry pollen...' would be clearer."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 6 says pine trees have no flowers and make seeds in cones. That is a fair grade 3 simplification, but it could say 'pine trees do not make flowers like the bean plant does' so children don't think all plants without showy flowers lack reproductive parts. Also, the story introduces roots, stems, and leaves before flowers, which is fine."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "The skill is titled 'label each part and match it to its job', but no item asks a child to label or match parts. Every item is a single-choice question about one part or job. Consider adding a matching item (for example, paired job choices) so the skill is fully covered."
+      }
+    ],
+    "notes": "I checked the marked answer and the wrong choices for all 15 items. Every marked answer is correct and no wrong choice is partly right, so I found no blockers. The story facts match standard grade 3 science: roots anchor and absorb water, stems carry water, leaves make food with sunlight, stamens make pollen, pistils make seeds, fruit protects seeds, and pine and spruce make seeds in cones. Nothing in the content stereotypes a group or frightens a child. The notes above cover wording, one picture that only loosely matches its question, and a skill-coverage gap."
+  }
+}

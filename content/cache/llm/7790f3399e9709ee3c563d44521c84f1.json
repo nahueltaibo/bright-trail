@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-sci-plant-animal-features-tap-8",
+        "severity": "note",
+        "category": "audio",
+        "note": "Negative question (\"Which one is not a plant part\") is harder to follow by ear than a positive question. Consider \"Which one is an animal part?\" or \"Which one grows on an animal?\" The answer key is correct: fur is the only non-plant choice."
+      },
+      {
+        "target": "g1-sci-plant-animal-features-tap-14",
+        "severity": "note",
+        "category": "audio",
+        "note": "The answer is correct (fish swim with fins, not legs). The false-statement format is harder for Grade 1 listeners who rely on sound alone. The option order (false listed first here, true first in tap-3) is inconsistent, so consider aligning it. Not a blocker."
+      }
+    ],
+    "notes": "I checked every story card and all 15 items. Each marked answer is correct, and no wrong choice is partly right. The facts hold for a Grade 1 level: roots hold the plant and take in water, leaves catch sunlight, fur keeps animals warm, beaks help birds eat, legs help frogs and deer move, fins help fish swim, teeth chew grass, thick fur keeps polar bears warm, cactus stems store water, and hawks tear food with their beaks. Nothing stereotypes a people, and nothing shames or frightens a child. The only issues are two minor audio-comprehension notes about negative and false-statement phrasing. No blockers."
+  }
+}

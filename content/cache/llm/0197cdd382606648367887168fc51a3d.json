@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-sci-body-parts-tap-12",
+        "severity": "note",
+        "category": "other",
+        "note": "Screen text 'What helps loud ears?' is awkward when read aloud. Consider 'What can help when a sound is too loud?' The narration's 'It hurts Mia's ears' is also a little alarming for this age. 'It is very loud' alone would be gentler."
+      },
+      {
+        "target": "g1-sci-body-parts-tap-13",
+        "severity": "note",
+        "category": "other",
+        "note": "Sunglasses protecting eyes from bright sun is a health-and-safety idea rather than a body-part fact. It is reasonable for Grade 1 health content, but it sits a little outside this skill's focus on what each body part does. Keep it or swap for an item about eyes, ears, nose, tongue, or skin."
+      },
+      {
+        "target": "g1-sci-body-parts-tap-1",
+        "severity": "note",
+        "category": "other",
+        "note": "Tap-1 and tap-14 both test eyes-see and nose-smell with near-identical structure, and tap-1 is very easy. Acceptable for a difficulty-1 opener, but the variety of item types could be broader."
+      }
+    ],
+    "notes": "I checked every item by working out its answer. Each marked answer is correct, and no wrong choice is also partly right. Choices are unambiguous when heard by ear. The story cards are accurate and suitable for Grade 1. The skin facts (hot, cold, soft, rough, covers the whole body), the tongue-taste fact, and the ears-hear fact are all correct. No item stereotypes a group or shames or frightens a child. No blockers found; the three notes are wording and scope suggestions only."
+  }
+}

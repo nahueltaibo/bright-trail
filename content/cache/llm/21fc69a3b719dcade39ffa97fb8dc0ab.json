@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-solid-liquid-sort-tap-12",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration asks 'Is it a solid or a liquid?' but the screen asks 'What flows out of the jug?'. Consider changing the screen to 'What flows out of the jug: a solid or a liquid?' so screen and narration agree. The marked answer (liquid) is correct."
+      },
+      {
+        "target": "g2-sci-solid-liquid-sort-tap-14",
+        "severity": "note",
+        "category": "other",
+        "note": "The distractor 'stay cup shaped' is hard to parse by ear and may confuse a child who is still learning the concept. Consider 'keep its own shape' as the contrast, which matches the story wording."
+      },
+      {
+        "target": "g2-sci-solid-liquid-sort-tap-1",
+        "severity": "note",
+        "category": "other",
+        "note": "Very easy warm-up at difficulty 1 that repeats story card 2 almost word for word. Acceptable as an opener, but it adds no new practice."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Story cards 2 and 3 say a solid keeps its own shape, and the liquid card says a liquid takes the shape of its cup. This is accurate. Consider stating the contrast once on the liquid card so the items build on it clearly."
+      }
+    ],
+    "notes": "I checked every item and the story against the marked answers. All marked answers are correct, each item has exactly one right choice, and the facts are accurate for Grade 2: rock, wood, brick, spoon, chair, and glass are solids; milk, juice, water, rain, puddle, and melted ice are liquids. No item teaches a misconception, stereotypes anyone, or frightens a child, and none is outside the skill. The items can be understood by ear and the narration matches the pictures. The notes are minor wording and consistency points, not blockers."
+  }
+}

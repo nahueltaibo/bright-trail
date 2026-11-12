@@ -1,0 +1,51 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-life-cycles-tap-4",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The question asks which animal 'starts life as a tadpole' and marks 'a frog'. A frog does not start as a tadpole. The story (card 1) and tap-1 say frog life starts as an egg, and the tadpole hatches later. The keyed answer is the only animal with a tadpole stage, but the question's premise is false and teaches that tadpoles are the first stage. Reword, e.g. 'Which animal has a tadpole stage: a frog, a bird, or a dog?'"
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-9",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The 'Why' says 'Mammals are born alive. They do not hatch from eggs.' This is false as a universal rule. The platypus and echidna are mammals that lay eggs. The keyed answer for a kitten is still correct, but the explanation teaches a misconception. Change it to something like 'Most mammals, including kittens, are born alive.'"
+      },
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "Card 6 says 'Mammals are different. A puppy is born alive, not in an egg.' This presents live birth as a rule for all mammals, which is wrong: the platypus and echidna lay eggs. Qualify it, e.g. 'Most mammals, like puppies, are born alive.'"
+      },
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Card 1 narration says the frog eggs are 'tiny' and 'look like jelly', but the picture is 6 × 🥚, which shows large, hard-shelled hen-style eggs. The narration and picture disagree. Use a picture that fits tiny jelly clusters, or drop the picture for this card."
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-14",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration asks which baby is born alive and drinks milk, but the screen text asks 'Which baby looks like its parent?'. The screen and audio ask different questions. Align the screen text with the narration, or add the 'looks like its parent' idea to the narration."
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-15",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration lists the correct sequence (egg, tadpole, frog) first, and the answer is choice c. Children who listen to the whole narration can pick it from position alone. Read the options in a different order from the choices, or reorder the narration so the right answer is not heard first."
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-6",
+        "severity": "note",
+        "category": "other",
+        "note": "'Froglet' is a term the story never introduces. The story says only 'grows legs... then bigger... adult frog'. Either add the word to story card 3 or use a plainer choice such as 'a young frog', so a child can pick it by ear."
+      }
+    ],
+    "notes": "I checked every item's keyed answer against its narration and the story. The keyed answers for tap-1, 2, 3, 5, 6, 7, 8, 10, 11, 12, 13, and 15 are correct, and the wrong choices are wrong. The blockers are the false premise in tap-4, the universal 'mammals are born alive' claim (story card 6 and tap-9), and the story card 1 picture, which does not match 'tiny jelly eggs'. Tap-14's keyed answer (calf) is correct, but its screen text differs from its narration. The remaining items are wording or ordering issues rather than errors."
+  }
+}
