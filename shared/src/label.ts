@@ -7,6 +7,10 @@ export const PICTURES = {
   plant: ['flower', 'leaf', 'stem', 'roots', 'seed'],
   insect: ['head', 'thorax', 'abdomen', 'legs', 'antennae', 'wings'],
   body: ['head', 'arm', 'hand', 'chest', 'leg', 'foot'],
+  organs: ['brain', 'lungs', 'heart', 'liver', 'stomach', 'intestines'],
+  machines: ['lever', 'pulley', 'inclined plane', 'wheel and axle', 'wedge', 'screw'],
+  planets: ['sun', 'mercury', 'venus', 'earth', 'mars', 'jupiter', 'saturn', 'uranus', 'neptune'],
+  map: ['title', 'compass rose', 'mountains', 'forest', 'lake', 'river', 'legend', 'scale'],
 } as const;
 export type Picture = keyof typeof PICTURES;
 
