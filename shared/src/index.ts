@@ -2,6 +2,7 @@ export * from './attempt';
 export * from './bundle';
 export * from './child';
 export * from './common';
+export * from './compare';
 export * from './engine';
 export * from './game';
 export * from './grade';

@@ -13,6 +13,7 @@
     "scenes": "tsx src/games/tag-games.ts --kind share",
     "slices": "tsx src/games/tag-games.ts --kind slices",
     "join": "tsx src/games/tag-games.ts --kind join",
+    "compare": "tsx src/games/tag-games.ts --kind compare",
     "hops": "tsx src/games/tag-games.ts --kind hops",
     "packs": "tsx src/packs/build-packs.ts",
     "publish-packs": "tsx src/packs/publish-packs.ts",

@@ -1,5 +1,6 @@
 import type { Item } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
+import { compareTagRequest } from '../compare/compare';
 import type { LlmClient, LlmRequest } from '../graph/llm';
 import { hopsTagRequest } from '../hops/hops';
 import { joinTagRequest } from '../join/join';
@@ -86,6 +87,7 @@ describe('TAGGERS', () => {
     expect(TAGGERS.share.request).toBe(tagRequest);
     expect(TAGGERS.slices.request).toBe(sliceTagRequest);
     expect(TAGGERS.join.request).toBe(joinTagRequest);
+    expect(TAGGERS.compare.request).toBe(compareTagRequest);
     expect(TAGGERS.hops.request).toBe(hopsTagRequest);
   });
 
@@ -94,6 +96,7 @@ describe('TAGGERS', () => {
       'scenes.json',
       'slices.json',
       'join.json',
+      'compare.json',
       'hops.json',
     ]);
   });

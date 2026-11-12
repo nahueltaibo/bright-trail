@@ -24,6 +24,7 @@
     "content:scenes": "npm run scenes -w @bright-trail/content --",
     "content:slices": "npm run slices -w @bright-trail/content --",
     "content:join": "npm run join -w @bright-trail/content --",
+    "content:compare": "npm run compare -w @bright-trail/content --",
     "content:hops": "npm run hops -w @bright-trail/content --",
     "content:voices": "npm run voices -w @bright-trail/content",
     "content:packs": "npm run packs -w @bright-trail/content",
