@@ -1,0 +1,38 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-mult-div-properties-keypad-3",
+        "fits": false,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 0,
+        "ones": 0,
+        "place": null,
+        "note": "Multiplication property, not place value."
+      },
+      {
+        "itemId": "g3-mult-div-properties-keypad-5",
+        "fits": false,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 0,
+        "ones": 0,
+        "place": null,
+        "note": "Multiplication via distributive property, not place value."
+      },
+      {
+        "itemId": "g3-mult-div-properties-keypad-6",
+        "fits": false,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 0,
+        "ones": 0,
+        "place": null,
+        "note": "Multiplication via splitting a factor, not place value."
+      }
+    ]
+  }
+}

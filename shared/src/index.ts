@@ -1,4 +1,6 @@
+export * from './arrays';
 export * from './attempt';
+export * from './blocks';
 export * from './bundle';
 export * from './child';
 export * from './common';

@@ -1,0 +1,104 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g5-whole-by-unit-fraction-tap-1",
+        "fits": false,
+        "ask": "total",
+        "rows": 4,
+        "columns": 3,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction multiplication with text choices; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-1",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 4,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a unit fraction; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-3",
+        "fits": false,
+        "ask": "total",
+        "rows": 4,
+        "columns": 3,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a unit fraction; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-tap-3",
+        "fits": false,
+        "ask": "total",
+        "rows": 5,
+        "columns": 4,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction product (5/4); scene answer would differ."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-4",
+        "fits": false,
+        "ask": "total",
+        "rows": 3,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a unit fraction; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-5",
+        "fits": false,
+        "ask": "total",
+        "rows": 8,
+        "columns": 4,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a unit fraction; total 32 would be an unrelated array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-tap-5",
+        "fits": false,
+        "ask": "total",
+        "rows": 6,
+        "columns": 4,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a unit fraction; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-6",
+        "fits": false,
+        "ask": "total",
+        "rows": 9,
+        "columns": 2,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction product (4.5); scene answer would differ."
+      }
+    ]
+  }
+}

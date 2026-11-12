@@ -580,30 +580,6 @@
     "total": 10,
     "groups": 3
   },
-  "g3-arrays-multiply-divide-keypad-1": {
-    "kind": "share",
-    "ask": "total",
-    "thing": "counter",
-    "one": "counter",
-    "many": "counters",
-    "container": "box",
-    "receivers": "containers",
-    "total": 10,
-    "groups": 2,
-    "each": 5
-  },
-  "g3-arrays-multiply-divide-keypad-2": {
-    "kind": "share",
-    "ask": "groups",
-    "thing": "counter",
-    "one": "counter",
-    "many": "counters",
-    "container": "box",
-    "receivers": "containers",
-    "total": 12,
-    "groups": 3,
-    "each": 4
-  },
   "g3-arrays-multiply-divide-number-line-1": {
     "kind": "share",
     "ask": "total",
@@ -616,18 +592,6 @@
     "groups": 2,
     "each": 6,
     "sharer": { "name": "Sam", "look": "kid" }
-  },
-  "g3-arrays-multiply-divide-tap-1": {
-    "kind": "share",
-    "ask": "total",
-    "thing": "counter",
-    "one": "counter",
-    "many": "counters",
-    "container": "box",
-    "receivers": "containers",
-    "total": 12,
-    "groups": 3,
-    "each": 4
   },
   "g3-fair-share-20-keypad-1": {
     "kind": "share",
@@ -786,30 +750,6 @@
     "groups": 4,
     "each": 2
   },
-  "g3-mult-div-facts-2-5-10-tap-1": {
-    "kind": "share",
-    "ask": "total",
-    "thing": "counter",
-    "one": "counter",
-    "many": "counters",
-    "container": "box",
-    "receivers": "containers",
-    "total": 10,
-    "groups": 2,
-    "each": 5
-  },
-  "g3-mult-div-facts-2-5-10-tap-2": {
-    "kind": "share",
-    "ask": "groups",
-    "thing": "counter",
-    "one": "counter",
-    "many": "counters",
-    "container": "box",
-    "receivers": "containers",
-    "total": 20,
-    "groups": 2,
-    "each": 10
-  },
   "g3-mult-div-problems-keypad-1": {
     "kind": "share",
     "ask": "total",
@@ -848,18 +788,6 @@
     "each": 5,
     "sharer": { "name": "Tom", "look": "boy" }
   },
-  "g3-mult-div-properties-keypad-1": {
-    "kind": "share",
-    "ask": "total",
-    "thing": "counter",
-    "one": "counter",
-    "many": "counters",
-    "container": "box",
-    "receivers": "containers",
-    "total": 12,
-    "groups": 2,
-    "each": 6
-  },
   "g3-mult-div-properties-keypad-2": {
     "kind": "share",
     "ask": "each",
@@ -871,18 +799,6 @@
     "total": 10,
     "groups": 2,
     "sharer": { "name": "Mia", "look": "kid" }
-  },
-  "g3-mult-div-properties-keypad-3": {
-    "kind": "share",
-    "ask": "total",
-    "thing": "counter",
-    "one": "counter",
-    "many": "counters",
-    "container": "box",
-    "receivers": "containers",
-    "total": 18,
-    "groups": 3,
-    "each": 6
   },
   "g3-mult-div-properties-number-line-1": {
     "kind": "share",
@@ -919,18 +835,6 @@
     "groups": 2,
     "otherGroups": 4,
     "want": "more"
-  },
-  "g4-mult-div-facts-100-keypad-1": {
-    "kind": "share",
-    "ask": "total",
-    "thing": "counter",
-    "one": "counter",
-    "many": "counters",
-    "container": "box",
-    "receivers": "containers",
-    "total": 12,
-    "groups": 4,
-    "each": 3
   },
   "g4-mult-div-facts-100-keypad-2": {
     "kind": "share",
