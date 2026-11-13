@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-depend-air-water-tap-12",
+        "severity": "blocker",
+        "category": "wrong-answer",
+        "note": "The distractor \"its soil breathes\" is partly true. Soil holds air spaces and exchanges gases, and a teacher could dispute calling that wrong. A child could reasonably pick it. Replace it with a clearly wrong choice, such as \"its shoes grow bigger\" or \"it starts to sing.\""
+      }
+    ],
+    "notes": "I checked every story card and all 15 items. The marked answers are correct, the facts are accurate for Grade 2, and the story cards match their pictures. Nothing stereotypes or frightens a child. The \"glue and soap\" safety item is fine. Only tap-12 needs a fix. Optional tone note: \"its leaves fall off\" in tap-12 is also a weak distractor, since a child could reasonably wonder whether watering causes leaf loss."
+  }
+}

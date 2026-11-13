@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-soc-community-features-tap-10",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Stated as a general fact, 'A place of worship is where people gather to pray. Is it natural or built?' Almost all are built, but some sacred sites are natural (a grove, a hill, a cave). Consider wording like 'a church or a mosque' to avoid a teacher disputing the generalization. Marked answer 'built' is right for the typical case."
+      },
+      {
+        "target": "g1-soc-community-features-tap-8",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The picture is a stack of books (📚), but the question is about a library. A child hearing 'library' may not connect it to the picture. A library emoji such as 🏛️ or 🏢 would match the narration better, or the picture could be dropped."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 2 says 'Nobody planted these trees. They grow by themselves. A forest is a natural feature.' Many Ontario forests are planted or managed by people after logging, so 'nobody planted' overstates the rule. Consider 'Forests grow mostly by themselves, with nature doing the work' so the lesson is about who first made the feature, not whether people ever touch it."
+      },
+      {
+        "target": "g1-soc-community-features-tap-14",
+        "severity": "note",
+        "category": "factual",
+        "note": "The reason 'trees grow by themselves' is offered as the test for natural. That reinforces the same oversimplification as story card 2, since planted forests exist. The marked answer is still the best one among the choices, so this is a wording suggestion only."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Picture counts differ: card 2 shows 5 trees (5 × 🌲) and item tap-3 shows 4 trees (4 × 🌲). This is harmless, but matching the counts would be tidier."
+      }
+    ],
+    "notes": "I checked all 15 items against the story. Each marked answer is correct and no wrong choice is also partly right. Each item has exactly one correct answer, and the answers match the narration. Sorting rules are consistent: nature made the river, forest, lake, and hill; people made the school, road, house, store, library, arena, and place of worship. No stereotyping, no scary or shaming content, and the content fits Grade 1 natural and built features. The notes above are wording and clarity suggestions, not blockers."
+  }
+}

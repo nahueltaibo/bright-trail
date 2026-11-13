@@ -1,0 +1,644 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia loves animals. She sees that animals grow and change. A life cycle is the steps in an animal's life, in order.",
+        "text": "Life cycle",
+        "visual": { "kind": "emoji", "emoji": "🌱", "count": null, "filled": null }
+      },
+      {
+        "narration": "Here is a butterfly. It is an insect. It starts as a tiny egg. Then a caterpillar hatches and eats leaves.",
+        "text": "Insect: egg, caterpillar",
+        "visual": { "kind": "emoji", "emoji": "🐛", "count": null, "filled": null }
+      },
+      {
+        "narration": "The caterpillar makes a hard shell. Inside, it is a pupa. Then out comes an adult butterfly. The butterfly lays new eggs.",
+        "text": "pupa, adult",
+        "visual": { "kind": "emoji", "emoji": "🦋", "count": null, "filled": null }
+      },
+      {
+        "narration": "A frog starts as an egg in water. A tadpole hatches. It grows legs and becomes a froglet. Then it is an adult frog.",
+        "text": "Frog: egg, tadpole, froglet, frog",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "A bird starts as an egg too. A chick hatches. The chick grows big and becomes an adult bird. Adult birds lay eggs.",
+        "text": "Bird: egg, chick, adult",
+        "visual": { "kind": "emoji", "emoji": "🐦", "count": null, "filled": null }
+      },
+      {
+        "narration": "A puppy is a mammal. It is born alive, not in an egg. It drinks its mother's milk. Then it grows into an adult dog.",
+        "text": "Mammal: born alive",
+        "visual": { "kind": "emoji", "emoji": "🐶", "count": null, "filled": null }
+      },
+      {
+        "narration": "Each adult can have babies, and the cycle starts again. Now let's practise putting life cycles in order!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A butterfly grows in steps. What is the first stage of a butterfly's life: an egg, a caterpillar, or an adult butterfly?",
+        "prompt": "What comes first?",
+        "why": "A butterfly starts as a tiny egg. The caterpillar hatches from it next.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "an egg",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a caterpillar",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "an adult butterfly",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A baby frog lives in water and has a tail. What is it called: a tadpole, a chick, or a caterpillar?",
+        "prompt": "What is a baby frog called?",
+        "why": "A baby frog is a tadpole. A chick is a baby bird. A caterpillar is a baby butterfly.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a chick",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a caterpillar",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a tadpole",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A bird begins its life in one place. Where does a bird begin: in an egg, in a pond, or in a leaf?",
+        "prompt": "Where does a bird begin?",
+        "why": "Every bird starts inside an egg. The chick hatches out when it is ready.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "in a pond",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "in an egg",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "in a leaf",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: a puppy is a baby mammal that drinks its mother's milk.",
+        "prompt": "True or false?",
+        "why": "A puppy is a mammal. It is born alive and drinks milk from its mother.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Some babies drink their mother's milk. Which baby drinks milk: a kitten, a chick, or a tadpole?",
+        "prompt": "Which baby drinks milk?",
+        "why": "A kitten is a baby mammal, and mammals drink milk. Chicks and tadpoles hatch from eggs.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a chick",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a tadpole",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a kitten",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A caterpillar eats and grows. Then it makes a hard shell. What stage is inside the shell: an egg, a pupa, or a tadpole?",
+        "prompt": "What stage is inside the shell?",
+        "why": "After the caterpillar stage comes the pupa. The change into a butterfly happens inside the shell.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a pupa",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "an egg",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a tadpole",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A tadpole grows back legs and front legs. What stage comes next: an egg, a froglet, or a pupa?",
+        "prompt": "What comes after the tadpole?",
+        "why": "A tadpole grows legs and becomes a froglet. Later the froglet is an adult frog.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "an egg",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a pupa",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a froglet",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A pupa is a stage inside a hard shell. Which animal has a pupa stage in its life: a frog, a robin, or a butterfly?",
+        "prompt": "Which animal has a pupa stage?",
+        "why": "A butterfly is an insect, and it has a pupa stage. Frogs and robins do not.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a frog",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a butterfly",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a robin",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Find the odd one out. Which animal does not hatch from an egg: a robin, a frog, or a horse?",
+        "prompt": "Which is the odd one out?",
+        "why": "A horse is a mammal. It is born alive. Robins and frogs hatch from eggs.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a robin",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a frog",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a horse",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A bird's life cycle starts again when eggs are laid. Which stage lays the eggs: an egg, a chick, or an adult bird?",
+        "prompt": "Which stage lays eggs?",
+        "why": "Only an adult bird can lay eggs. Then new chicks hatch and the cycle starts again.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "an adult bird",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a chick",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "an egg",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is the right order for a bird's life? Is it: egg, chick, adult bird; or chick, egg, adult bird; or adult bird, egg, chick?",
+        "prompt": "Pick the right order for a bird.",
+        "why": "A bird starts as an egg. A chick hatches and grows into an adult bird.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "chick, egg, adult bird",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "adult bird, egg, chick",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "egg, chick, adult bird",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A butterfly and a frog have something the same in their life cycles. What is it: They both start as eggs, Both have a pupa, or Both drink milk?",
+        "prompt": "What is the same?",
+        "why": "Butterflies and frogs both start as eggs. A butterfly has a pupa stage, but a frog does not. Mammal babies drink milk.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Both have a pupa",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Both drink milk",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "They both start as eggs",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "True or false: a kitten hatches from an egg.",
+        "prompt": "True or false?",
+        "why": "A kitten is a mammal. It is born alive and drinks milk. It does not hatch from an egg.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "One baby looks like a small adult when it is born. Which one: a puppy, a caterpillar, or a tadpole?",
+        "prompt": "Which baby looks like a small adult?",
+        "why": "A puppy looks like a small dog. A caterpillar and a tadpole look very different from the adults.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a caterpillar",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a puppy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a tadpole",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia wants to see the cycle start again. Which stage can lay eggs to begin it: a tadpole, a frog, or a caterpillar?",
+        "prompt": "Which stage can lay eggs?",
+        "why": "Only an adult can lay eggs. A tadpole and a caterpillar are still growing, so the adult frog lays them.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a tadpole",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a caterpillar",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a frog",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-animal-characteristics-tap-7",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The explanation 'A caterpillar grows wings as a butterfly' teaches a misconception. In complete metamorphosis the wings form inside the chrysalis during the pupa stage. The caterpillar does not gradually grow wings while it crawls. This is also a life-cycle change, not the gradual growth the skill describes. Reword the explanation to something like 'A caterpillar changes into a butterfly, which has wings', or replace the item with a plain growth example."
+      },
+      {
+        "target": "g2-sci-animal-characteristics-tap-13",
+        "severity": "note",
+        "category": "other",
+        "note": "'Fluffy down' is unfamiliar vocabulary for a child who learns by ear only. Consider 'soft fluff' to match story card 4. The answer is correct."
+      },
+      {
+        "target": "g2-sci-animal-characteristics-tap-15",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The claim that a hen and a rabbit are 'about the same size' is loosely true but varies by breed. A clearer example would avoid breed-dependent comparisons. The True answer and the general principle are correct."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 says 'Its fluff turns into feathers. Those things change.' It would be clearer to name the changing features directly, such as 'The fluff and the size change. The beak and legs stay the same.' Audio-only children need the changing and unchanging features named explicitly."
+      }
+    ],
+    "notes": "Checked every item against its marked answer. All other marked answers are correct and each wrong choice is clearly wrong: tap-1 horse, tap-2 bird, tap-3 True, tap-4 rabbit, tap-5 cat, tap-6 four legs, tap-8 fish, tap-9 False, tap-10 size, tap-11 hen and duck, tap-12 whiskers, tap-14 beak. The only blocker is tap-7, which rests on a misleading explanation of metamorphosis. Nothing stereotypes a group or frightens a child. Story facts on coverings, body parts and growth are accurate."
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g3-hlth-safety-guidelines",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-hlth-safety-places", "g2-hlth-food-allergies"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to choose safe ways to act with allergies, but no listed prerequisite covers allergies. g2-hlth-food-allergies teaches the common food allergies and their reactions, which a kid needs before they can pick allergy safety rules. It does not depend on anything listed here, so adding it is not redundant."
+      },
+      {
+        "skillId": "g3-hlth-healthy-choices",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-hlth-substances", "g1-hlth-healthy-habits"],
+        "title": "",
+        "description": "",
+        "reason": "The skill covers screen use as well as substances, but the only listed prerequisite is g3-hlth-substances, which does not cover screen time. g1-hlth-healthy-habits teaches how screen time and other habits harm or help. g2-hlth-medicines is left out on purpose: g3-hlth-substances already depends on it, so listing it directly would be redundant under the direct-prerequisite rule."
+      }
+    ],
+    "notes": "Reviewed all 14 Grade 3 skills against the prerequisite rules. Two need corrections: g3-hlth-safety-guidelines is missing the allergy prerequisite, and g3-hlth-healthy-choices is missing the screen-time habits prerequisite. The other skills have real, direct, non-redundant prerequisites that point only to earlier grades. Titles and descriptions are clear and suitable to read aloud, so no wording changes are needed."
+  }
+}

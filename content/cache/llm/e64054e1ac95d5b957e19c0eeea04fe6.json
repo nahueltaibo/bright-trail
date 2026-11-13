@@ -1,0 +1,99 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g1-hlth-food-needs",
+        "title": "Why Our Bodies Need Food",
+        "description": "Food gives you energy and helps your teeth, skin, bones, muscles, and brain grow strong. Pick the reasons why we need food.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-hlth-safety-basics",
+        "title": "Staying Safe: Phones and Helpers",
+        "description": "Know your phone number, when and how to call 9-1-1, and which trusted adults can help you. Learn safe pickup routines too.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-hlth-body-parts",
+        "title": "Body Parts and Correct Names",
+        "description": "Match the right names to parts of the body, using respectful, body-positive words.",
+        "expectationCodes": ["D1.3"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-hlth-five-senses",
+        "title": "The Five Senses",
+        "description": "Name our five senses and match each one to the body part that does the job. Find out what each sense tells our brain.",
+        "expectationCodes": ["D1.4"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-hlth-mental-health",
+        "title": "Caring for Body and Mind",
+        "description": "Your mind is part of your health, just like your body. Pick things you can do to take care of both.",
+        "expectationCodes": ["D1.5"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-hlth-food-guide",
+        "title": "Using Canada's Food Guide",
+        "description": "Canada's Food Guide shows foods that help us eat well. Sort foods and pick healthy choices for a plate.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g1-hlth-food-needs"]
+      },
+      {
+        "id": "g1-hlth-hunger-cues",
+        "title": "Hunger, Thirst, and Fullness",
+        "description": "Tell what your body feels when you are hungry, thirsty, or full. Pick what to do when you notice each one.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g1-hlth-food-needs"]
+      },
+      {
+        "id": "g1-hlth-caring-behaviours",
+        "title": "Caring and Harmful Behaviours",
+        "description": "Sort kind, caring things from hurtful ones, like bullying or unsafe touching. Pick how they feel and what to do, including asking for consent.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g1-hlth-safety-basics"]
+      },
+      {
+        "id": "g1-hlth-school-safety",
+        "title": "Being Safe at School",
+        "description": "Pick the safe things to do at school, like telling your teacher about allergies and playing in safe places. Choose safe ways to get to and from school.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g1-hlth-safety-basics"]
+      },
+      {
+        "id": "g1-hlth-hygiene",
+        "title": "Germs and Clean Habits",
+        "description": "Put hand washing steps in order and pick ways to stop germs from spreading. Think about tissues, sleeve sneezes, brushing teeth, and not sharing hats.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-hlth-injury-risks",
+        "title": "Spotting Dangers and Risks",
+        "description": "Find things that could hurt you at home, outside, near water, on the road, or online. Pick the safe choice.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g1-hlth-safety-basics"]
+      },
+      {
+        "id": "g1-hlth-healthy-habits",
+        "title": "Habits That Harm or Help",
+        "description": "Sort habits like too much screen time, smoking, and vaping from healthier choices. Pick ways to help someone choose healthier habits.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g1-hlth-mental-health"]
+      },
+      {
+        "id": "g1-hlth-thoughts-feelings",
+        "title": "Thoughts, Feelings, and Actions",
+        "description": "What we think, feel, and do can change how our mind feels. Match thoughts and actions to good or poor mental health.",
+        "expectationCodes": ["D3.3"],
+        "prerequisiteIds": ["g1-hlth-mental-health"]
+      }
+    ]
+  }
+}

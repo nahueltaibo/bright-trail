@@ -1,0 +1,37 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g5-soc-nations",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g3-soc-indigenous-communities",
+          "g4-soc-early-locations",
+          "g4-soc-daily-life"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to match each nation to where it lived and how it lived (food, homes, clothing, roles). The Grade 4 skills on early Indigenous and Inuit societies' locations and daily life teach exactly this, so they are direct, needed prerequisites that are missing. Neither is a prerequisite of the other or of g3-soc-indigenous-communities, so there is no redundancy."
+      },
+      {
+        "skillId": "g5-soc-jurisdiction",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-political-regions"],
+        "title": "",
+        "description": "",
+        "reason": "g3-soc-local-government is already a prerequisite of g4-soc-political-regions, which is listed here, so it is redundant. Keeping only the direct, more recent prerequisite follows the rule that a listed prerequisite must not be one another listed prerequisite already depends on."
+      },
+      {
+        "skillId": "g5-soc-differences",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g5-soc-nations", "g5-soc-explorer-motives", "g4-soc-governance"],
+        "title": "",
+        "description": "",
+        "reason": "The skill compares Indigenous and European ways of governing, and the reasons include political systems in the mother country. Kids need the Grade 4 idea of how kings, chiefs, and councils governed to make these comparisons, and this is not covered by the listed prerequisites. g4-soc-governance does not depend on either of the other listed prerequisites, so it is direct."
+      }
+    ],
+    "notes": "I checked every Grade 5 skill for prerequisite existence, grade order, self-reference, redundancy among listed prerequisites, and title/description clarity. The three corrections above are the only clear problems. g5-soc-explorer-motives lists g3-soc-settlement-factors, which is a weak link because explorer motives do not really depend on what makes a town grow. I left it unchanged because the fur-trade concept overlaps, but it could be reviewed. The titles and descriptions read well aloud, and the prerequisite chains otherwise have no later-grade or self-references."
+  }
+}

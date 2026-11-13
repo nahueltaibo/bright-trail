@@ -1,0 +1,636 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia walks to the park after the rain. She sees many things. Today she will sort them into liquids and solids.",
+        "text": "Liquid or solid?",
+        "visual": { "kind": "emoji", "emoji": "🌧️", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia sees a puddle. Water is a liquid. A liquid can flow and pour. It takes the shape of what holds it.",
+        "text": "liquid",
+        "visual": { "kind": "emoji", "emoji": "💧", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia picks up a rock. A rock is a solid. A solid keeps its own shape. It does not pour.",
+        "text": "solid",
+        "visual": { "kind": "emoji", "emoji": "🪨", "count": null, "filled": null }
+      },
+      {
+        "narration": "At school, Mia sees a brick wall. Bricks are solids. The window is glass. Glass is a solid too.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🧱", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia drinks juice from a metal bottle. The juice is a liquid. The bottle is a solid.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🥤", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia finds ice in a bucket. Ice is a solid. If it melts, it turns into liquid water.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🧊", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now you try. Ask yourself two things. Can it pour? Does it keep its own shape? Let's sort!",
+        "text": "Can it pour?",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one is a liquid: a puddle, a rock, or a brick?",
+        "prompt": "Which is a liquid?",
+        "why": "A puddle is water, and water is a liquid. It can flow. Rocks and bricks are solids.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a puddle",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a rock",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a brick",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one is a solid: milk, a chair, or juice?",
+        "prompt": "Which is a solid?",
+        "why": "A chair keeps its own shape, so it is a solid. Milk and juice are liquids.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "milk",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "juice",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a chair",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: a rock is a solid.",
+        "prompt": "A rock is a solid.",
+        "why": "It is true. A rock keeps its own shape, and it does not pour.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What can a liquid do: pour, or stay hard?",
+        "prompt": "What can a liquid do?",
+        "why": "A liquid can pour and flow. It takes the shape of its container. A solid keeps its own shape.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "stay hard",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "pour",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A brick is used to build walls. Is a brick a liquid or a solid?",
+        "prompt": "A brick is a...",
+        "why": "A brick keeps its own shape and does not pour. That makes it a solid.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "liquid",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "solid",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one is the odd one out: water, milk, a spoon, or juice?",
+        "prompt": "Odd one out",
+        "why": "Water, milk, and juice are liquids. A spoon is a solid, so it does not belong.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "milk",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a spoon",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "juice",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one in a town is a solid: a brick wall, rain, or a puddle?",
+        "prompt": "Which is a solid?",
+        "why": "A brick wall keeps its shape, so it is a solid. Rain and puddles are liquid water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "rain",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a puddle",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a brick wall",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one in nature is a liquid: a tree, a lake, or a stone?",
+        "prompt": "Which is a liquid?",
+        "why": "A lake is full of water, and water is a liquid. Trees and stones are solids.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a lake",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a tree",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a stone",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "True or false: a solid keeps its own shape.",
+        "prompt": "A solid keeps its shape.",
+        "why": "It is true. A solid, like a block or a key, keeps its shape. A liquid does not.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one is a liquid: a rock, a leaf, or rain?",
+        "prompt": "Which is a liquid?",
+        "why": "Rain is water that falls from the sky. Water is a liquid. A rock and a leaf are solids.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🪨", "count": null, "filled": null },
+            "narration": "a rock"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🍃", "count": null, "filled": null },
+            "narration": "a leaf"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🌧️", "count": null, "filled": null },
+            "narration": "rain"
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Ice sits in the warm sun. What does it become: liquid water, a rock, or a brick?",
+        "prompt": "Ice melts into...",
+        "why": "Ice is frozen water. When it melts in the warm sun, it turns into liquid water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a rock",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a brick",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "liquid water",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia fills a cup. Which one can she pour into the cup: soup, a toy block, or a stick?",
+        "prompt": "What can you pour?",
+        "why": "Soup is a liquid, so it can pour into a cup. A toy block and a stick are solids.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a toy block",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "soup",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a stick",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one is the odd one out: wood, glass, brick, or juice?",
+        "prompt": "Odd one out",
+        "why": "Wood, glass, and brick are solids used to build things. Juice is a liquid, so it is the odd one.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "wood",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "glass",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "brick",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "juice",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A bottle is full of juice. Which part is the liquid: the bottle, the juice, or the cap?",
+        "prompt": "Which part is a liquid?",
+        "why": "The juice pours, so it is the liquid. The bottle and the cap keep their shape, so they are solids.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the bottle",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the cap",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the juice",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "True or false: when you pour a liquid into a bowl, it keeps its old shape.",
+        "prompt": "A liquid keeps its shape.",
+        "why": "It is false. A liquid takes the shape of the bowl that holds it. A solid keeps its own shape.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

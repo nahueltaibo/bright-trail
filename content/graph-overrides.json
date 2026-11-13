@@ -486,24 +486,6 @@
     },
     {
       "op": "allowToken",
-      "skillId": "g4-hlth-refusing-smoking",
-      "token": "say",
-      "reason": "Saying no is the skill. Items ask which refusal to pick."
-    },
-    {
-      "op": "allowToken",
-      "skillId": "g5-hlth-refusal-pressure",
-      "token": "say",
-      "reason": "Saying no is the skill. Items ask which refusal to pick."
-    },
-    {
-      "op": "allowToken",
-      "skillId": "g5-hlth-mental-stigma",
-      "token": "say",
-      "reason": "It means what people say about mental health. Items sort attitudes."
-    },
-    {
-      "op": "allowToken",
       "skillId": "g6-hlth-drug-choices",
       "token": "say",
       "reason": "Saying no is one of the choices the child picks."
@@ -513,12 +495,6 @@
       "skillId": "g5-soc-citizen-action",
       "token": "write",
       "reason": "Writing letters is an action citizens take. Items ask which action fits."
-    },
-    {
-      "op": "allowToken",
-      "skillId": "g5-soc-plans-action",
-      "token": "say",
-      "reason": "It means what a plan says. Items sort the steps."
     },
     {
       "op": "allowToken",
@@ -539,9 +515,45 @@
       "reason": "\"Show how\" read as asking for a demonstration."
     },
     {
+      "op": "allowToken",
+      "skillId": "g4-hlth-smoke-vape-choices",
+      "token": "say",
+      "reason": "Saying no is the skill. Items ask which refusal to pick, not to speak."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g5-hlth-refusal-skills",
+      "token": "say",
+      "reason": "Saying no is the skill. Items ask which refusal to pick, not to speak."
+    },
+    {
+      "op": "allowToken",
+      "skillId": "g5-hlth-threat-response",
+      "token": "say",
+      "reason": "Saying no firmly is one of the steps the child picks or orders."
+    },
+    {
+      "op": "setDescription",
+      "skillId": "g6-soc-interactions",
+      "description": "Communities traded, made treaties, helped each other, or treated each other unfairly. Sort each story into cooperation or conflict.",
+      "reason": "\"Say who was involved\" asked for a spoken answer."
+    },
+    {
       "op": "setTitle",
-      "skillId": "g2-soc-location-climate",
-      "title": "Location and Climate",
+      "skillId": "g2-sci-home-practices",
+      "title": "Using Things Safely at Home",
+      "reason": "The title had more than 6 words."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g3-soc-indigenous-communities",
+      "title": "First Nations and Métis Long Ago",
+      "reason": "The title had more than 6 words."
+    },
+    {
+      "op": "setTitle",
+      "skillId": "g4-soc-compare-environment",
+      "title": "Caring for the Land Over Time",
       "reason": "The title had more than 6 words."
     }
   ]

@@ -1,0 +1,636 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She has a garden, a puppy, and a goldfish. A plant, a puppy, and a fish are all living things.",
+        "text": "Living things",
+        "visual": { "kind": "emoji", "emoji": "🌱", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia pours water on her plant. The roots drink the water from the soil. Plants need water to live.",
+        "text": "Plants need water",
+        "visual": { "kind": "emoji", "emoji": "💧", "count": null, "filled": null }
+      },
+      {
+        "narration": "Plants need air too. The leaves take in air from outside. Air and water help the plant grow.",
+        "text": "Plants need air",
+        "visual": { "kind": "emoji", "emoji": "🍃", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia's puppy breathes air in and out. His lungs use the air. He drinks water too, when he is thirsty.",
+        "text": "Animals need air and water",
+        "visual": { "kind": "emoji", "emoji": "🐶", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia's goldfish lives in water. A fish gets the oxygen it needs from the water. It breathes with gills.",
+        "text": "Fish live in water",
+        "visual": { "kind": "emoji", "emoji": "🐟", "count": null, "filled": null }
+      },
+      {
+        "narration": "People need air and water too. We breathe air all day. We drink water to stay healthy.",
+        "text": "People need them too",
+        "visual": { "kind": "emoji", "emoji": "💧", "count": null, "filled": null }
+      },
+      {
+        "narration": "All living things need air and water. Now let's practise what Mia learned!",
+        "text": "Let's practise!",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What do people breathe in to live: air, rocks, or sand?",
+        "prompt": "What do we breathe?",
+        "why": "People breathe in air to live. Rocks and sand are not for breathing.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "rocks",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "air",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "sand",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia's puppy is thirsty. What should he drink: sand, water, or paper?",
+        "prompt": "What does a puppy drink?",
+        "why": "Animals drink water when they are thirsty. Sand and paper are not for drinking.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "sand",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "paper",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: Plants need water to live.",
+        "prompt": "Plants need water.",
+        "why": "This is true. Plants drink water through their roots. Without water, they cannot live.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Where does a goldfish live: in water, in a tree, or in a shoe?",
+        "prompt": "Where does a goldfish live?",
+        "why": "A goldfish lives in water. It gets the oxygen it needs from the water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "in a tree",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "in a shoe",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "in water",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia is thirsty. What should she drink: glue, water, or soap?",
+        "prompt": "What should Mia drink?",
+        "why": "People drink water to stay healthy. Glue and soap are not safe to drink.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "glue",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "soap",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "water",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "What do plant leaves take in from the outside: air, juice, or sand?",
+        "prompt": "What do leaves take in?",
+        "why": "Plant leaves take in air. Plants need air as well as water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "air",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "juice",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "sand",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which part of a plant drinks water from the soil: the roots, the petals, or the fruit?",
+        "prompt": "Which part drinks water?",
+        "why": "Roots grow in the soil. They drink water and send it up the plant.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the petals",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the roots",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the fruit",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one breathes air with lungs: a whale, a goldfish, or a clam?",
+        "prompt": "Which one has lungs?",
+        "why": "A whale has lungs. It comes up to the top of the water to breathe air.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a goldfish",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a clam",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a whale",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "True or false: A fish gets the oxygen it needs from the water.",
+        "prompt": "Fish get oxygen from water.",
+        "why": "This is true. A fish takes in oxygen from the water with its gills.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia forgets to water her plant for many days. What happens: it droops and dries out, it grows taller fast, or it turns into a rock?",
+        "prompt": "No water for a plant",
+        "why": "Plants need water to live. Without it, they droop and dry out.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "it grows taller fast",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "it turns into a rock",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "it droops and dries out",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one does not need air and water to live: a tree, a rock, or a cat?",
+        "prompt": "Odd one out",
+        "why": "A rock is not alive. Trees and cats are living things, so they need air and water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a tree",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a cat",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a rock",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia pours water on the soil. What does the plant do next: its roots take in water, its leaves fall off, or it starts to sing?",
+        "prompt": "What happens next?",
+        "why": "After Mia waters the soil, the roots take in the water. Then the plant can use it.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "its leaves fall off",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "its roots take in water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "it starts to sing",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which is a way people use water to live: drinking it, breathing it in, or wearing it?",
+        "prompt": "How do people use water?",
+        "why": "People drink water to stay healthy. We breathe in air, not water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "drinking it",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "breathing it in",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "wearing it",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which group needs air and water to live: only animals, only plants, or all living things?",
+        "prompt": "Who needs air and water?",
+        "why": "Plants, animals, and people are all living things. All of them need air and water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "only animals",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "only plants",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "all living things",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "True or false: A goldfish can live out of water for many days.",
+        "prompt": "Fish out of water",
+        "why": "This is false. A fish gets oxygen from water with its gills. It cannot live long without water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

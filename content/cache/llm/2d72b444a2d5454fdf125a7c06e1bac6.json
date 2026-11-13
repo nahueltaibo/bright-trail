@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-life-cycles-tap-8",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The narration says only one animal has a pupa stage, and the question is built on that. This is false. Many insects have a pupa stage, including moths, beetles, bees, flies and ants. The item teaches a misconception. Rewrite it so it asks which of these animals has a pupa stage, with the butterfly as the answer, without claiming it is the only one."
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-12",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The 'Why' text says 'Only butterflies have a pupa.' This is false, since many other insects have pupae. The 'only mammals drink milk' claim is also disputable, because some birds such as pigeons produce crop milk. Correct the explanation to something like: butterflies have a pupa stage, and frogs do not; mammal babies drink milk."
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-11",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration reads out all three possible orders, and then the three choices are read aloud as well. Listening alone, a child has to hold several sequences in memory. Consider narrating only the question and letting the choices carry the orders."
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-12",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration has no clear pauses between the three options ('They both start as eggs, Both have a pupa, or Both drink milk?'). Read by a voice it may be hard to follow. Add pauses or rephrase it as a plain question."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 tap items. The story cards are accurate and at the right level for Grade 2. The items below carry the marked answers, and the marked answers check out. Tap-8 and tap-12 each contain a false claim that a teacher would dispute, so both are blockers. The remaining points are audio clarity notes. The only fix needed for the story cards is none. No content stereotypes a people or community, and nothing shames or frightens a child."
+  }
+}

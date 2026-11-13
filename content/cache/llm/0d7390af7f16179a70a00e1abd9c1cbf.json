@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g6-hlth-drug-choices",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g5-hlth-refusal-skills",
+          "g5-hlth-alcohol-cannabis-factors",
+          "g4-hlth-safe-decisions"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to use decision steps to pick a safe choice, but no listed prerequisite teaches those steps. g4-hlth-safe-decisions is the direct source of that skill. It is not already a dependency of either listed prerequisite, so it is not redundant."
+      },
+      {
+        "skillId": "g6-hlth-explicit-media",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g5-hlth-self-concept",
+          "g5-hlth-reproductive-puberty",
+          "g3-hlth-healthy-relationships"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to see how explicit media gives a wrong idea about relationships. Kids need the Grade 3 picture of what a healthy relationship looks like to spot that distortion. This prerequisite is not already covered by the other two, which do not depend on it."
+      }
+    ],
+    "notes": "Reviewed all 14 proposed Grade 6 skills against the prerequisite rules. Most prerequisite lists are direct, needed, and point backward in the graph. Two skills needed a change: g6-hlth-drug-choices is missing the decision-steps skill it asks kids to use, and g6-hlth-explicit-media is missing the healthy-relationships baseline it depends on for the \"wrong idea about relationships\" outcome. Titles and descriptions read clearly aloud and need no edits. Some judgment calls were left as-is, such as whether g6-hlth-support-services needs g5-hlth-trusted-help directly; it is covered through g5-hlth-helping-others, which is the mental-health-specific prerequisite."
+  }
+}

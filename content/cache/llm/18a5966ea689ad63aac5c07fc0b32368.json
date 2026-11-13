@@ -1,0 +1,257 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g5-soc-nations",
+        "title": "Indigenous Nations Before 1713",
+        "description": "Many Indigenous nations met Europeans long ago, like the Wendat, Mi'kmaq, Cree, and Inuit. Match each nation to where it lived and how it lived.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g3-soc-indigenous-communities"]
+      },
+      {
+        "id": "g5-soc-first-nations-links",
+        "title": "Nations Trading and Allying",
+        "description": "Before Europeans came, First Nations and Inuit traded, made alliances, and sometimes competed for waterways. Pick which one each story shows.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g5-soc-nations"]
+      },
+      {
+        "id": "g5-soc-explorer-motives",
+        "title": "Why Europeans Came",
+        "description": "Explorers and settlers came for fur, fish, land, and to spread their religion. Match people like Cabot, Cartier, and Champlain to why they came.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g3-soc-settlement-factors"]
+      },
+      {
+        "id": "g5-soc-new-france",
+        "title": "Who Mattered in New France",
+        "description": "New France had a king, governor, bishop, intendant, seigneurs, and priests and nuns. Match each one to what it did for settlers.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g5-soc-explorer-motives", "g4-soc-governance"]
+      },
+      {
+        "id": "g5-soc-contact",
+        "title": "Indigenous and European Meetings",
+        "description": "When Indigenous peoples and Europeans met, they traded, shared skills, fought, and spread disease. Match each event to what happened.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g5-soc-nations", "g5-soc-explorer-motives"]
+      },
+      {
+        "id": "g5-soc-metis-origins",
+        "title": "How the Métis People Began",
+        "description": "The Métis nation began when fur traders and First Nations women married and built families. Pick the reasons it began in the Great Lakes and Mattawa areas.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g5-soc-contact"]
+      },
+      {
+        "id": "g5-soc-differences",
+        "title": "How Ways of Life Differed",
+        "description": "Indigenous and European communities had different ways of governing, using land, and living. Match each difference to its reason, like climate or old customs.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g5-soc-nations", "g5-soc-explorer-motives"]
+      },
+      {
+        "id": "g5-soc-european-conflicts",
+        "title": "European Fights Reach Canada",
+        "description": "Wars between France and Britain pulled in First Nations and changed who controlled places like Acadia. Match each conflict to its effect.",
+        "expectationCodes": ["A3.8"],
+        "prerequisiteIds": ["g5-soc-contact"]
+      },
+      {
+        "id": "g5-soc-consequences",
+        "title": "Good and Bad Results of Contact",
+        "description": "Contact brought alliances and new ideas, but also disease, lost land, and conflict. Sort each result into positive or negative.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g5-soc-contact"]
+      },
+      {
+        "id": "g5-soc-benefits",
+        "title": "Who Gained From Whom",
+        "description": "Europeans gained from Indigenous knowledge of land, medicines, and routes. First Nations gained new tools. Match each group to what it gained.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g5-soc-contact"]
+      },
+      {
+        "id": "g5-soc-past-to-present",
+        "title": "Past Contact and Canada Today",
+        "description": "Old treaties and land use still link to land claims and treaty rights today. Match each past event to the issue it connects to now.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g5-soc-consequences", "g3-soc-treaties"]
+      },
+      {
+        "id": "g5-soc-a-questions",
+        "title": "Questions About Early Contact",
+        "description": "Pick a good question about how a group, like coureurs de bois or First Nations women, saw early contact.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g4-soc-a-questions", "g5-soc-contact"]
+      },
+      {
+        "id": "g5-soc-a-sources",
+        "title": "Sources With Different Views",
+        "description": "Treaties, journals, petroglyphs, and oral histories are sources. Sort which ones give which group's view.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g4-soc-a-sources", "g5-soc-a-questions"]
+      },
+      {
+        "id": "g5-soc-a-maps",
+        "title": "Maps of Contact and Trade",
+        "description": "Read maps of trade routes, First Nations territory, and Métis communities. Pick what each map shows.",
+        "expectationCodes": ["A2.3"],
+        "prerequisiteIds": ["g4-soc-a-maps", "g5-soc-nations"]
+      },
+      {
+        "id": "g5-soc-a-tools",
+        "title": "Checking Evidence and Comparing Views",
+        "description": "Pick whether evidence is accurate and has an authentic voice. Use a comparison chart to compare views on the fur trade.",
+        "expectationCodes": ["A2.4"],
+        "prerequisiteIds": ["g4-soc-a-tools", "g5-soc-a-sources"]
+      },
+      {
+        "id": "g5-soc-a-conclusions",
+        "title": "Conclusions About Early Contact",
+        "description": "Look at the evidence and pick the conclusion it supports about how different groups saw contact.",
+        "expectationCodes": ["A2.5"],
+        "prerequisiteIds": ["g4-soc-a-conclusions", "g5-soc-a-tools"]
+      },
+      {
+        "id": "g5-soc-a-communicate",
+        "title": "Sharing Early Contact Findings",
+        "description": "Pick the best way to share what you learned, and words like treaty, missionary, settler, and wampum belt.",
+        "expectationCodes": ["A2.6"],
+        "prerequisiteIds": ["g4-soc-a-communicate", "g5-soc-a-conclusions"]
+      },
+      {
+        "id": "g5-soc-citizen-rights",
+        "title": "Rights and Responsibilities in Canada",
+        "description": "Citizens have rights like voting and free speech, and duties like respecting others. Sort each into a right or a responsibility.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g1-soc-respect-all"]
+      },
+      {
+        "id": "g5-soc-jurisdiction",
+        "title": "Levels of Government and Services",
+        "description": "Federal, provincial, municipal, band councils, and school boards each run different services. Match each service, like police or garbage pickup, to who provides it.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": ["g4-soc-political-regions", "g3-soc-local-government"]
+      },
+      {
+        "id": "g5-soc-indigenous-governance",
+        "title": "First Nations, Métis, Inuit Governments",
+        "description": "Groups like the Métis Nation of Ontario and the Haudenosaunee Confederacy govern today. Match each to who it represents.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g5-soc-jurisdiction"]
+      },
+      {
+        "id": "g5-soc-shared-responsibility",
+        "title": "Governments Sharing the Work",
+        "description": "Some jobs, like health care and the environment, are shared by several levels of government. Match each to the levels that share it.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g5-soc-jurisdiction"]
+      },
+      {
+        "id": "g5-soc-public-input",
+        "title": "How Governments Ask the Public",
+        "description": "Elections, town halls, and referendums let people share their views. Match each way to how it works, and pick why asking people matters.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g5-soc-jurisdiction", "g5-soc-citizen-rights"]
+      },
+      {
+        "id": "g5-soc-duty-consult",
+        "title": "The Duty to Consult",
+        "description": "Governments must talk with and make room for Indigenous communities about things like pipelines or mines on their land. Pick when this duty applies.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g5-soc-public-input", "g5-soc-indigenous-governance"]
+      },
+      {
+        "id": "g5-soc-gov-actions",
+        "title": "What Governments Do About Issues",
+        "description": "Governments make recycling programs, laws, and language projects to solve problems. Match each action to the issue it helps with.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g5-soc-shared-responsibility"]
+      },
+      {
+        "id": "g5-soc-perspectives",
+        "title": "Why Views on Issues Differ",
+        "description": "Farmers, companies, governments, and Indigenous groups may see an issue differently. Match each group to why it feels that way.",
+        "expectationCodes": ["B3.8"],
+        "prerequisiteIds": ["g5-soc-gov-actions"]
+      },
+      {
+        "id": "g5-soc-citizen-action",
+        "title": "How Citizens Take Action",
+        "description": "People can sign petitions, vote, volunteer, or write to leaders. Pick the best action for each problem.",
+        "expectationCodes": ["B3.9"],
+        "prerequisiteIds": ["g5-soc-citizen-rights", "g5-soc-gov-actions"]
+      },
+      {
+        "id": "g5-soc-assess-actions",
+        "title": "Did the Government Action Work?",
+        "description": "Look at what a government did about an issue and pick whether it worked well and why.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g5-soc-gov-actions"]
+      },
+      {
+        "id": "g5-soc-social-plan",
+        "title": "Plan for a Social Issue",
+        "description": "Put the steps of a plan about an issue like homelessness in order, and pick what governments and citizens should each do.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g5-soc-assess-actions", "g5-soc-citizen-action"]
+      },
+      {
+        "id": "g5-soc-environment-plan",
+        "title": "Plan for an Environmental Issue",
+        "description": "Put the steps of a plan about an issue like waste or clean water in order, and pick what governments and citizens should each do.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": [
+          "g5-soc-assess-actions",
+          "g5-soc-citizen-action",
+          "g4-soc-sustainable-actions"
+        ]
+      },
+      {
+        "id": "g5-soc-b-questions",
+        "title": "Questions About Canadian Issues",
+        "description": "Pick a good question to investigate an issue, like climate change in the Arctic, from the view of a government or Indigenous group.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g4-soc-b-questions", "g5-soc-perspectives"]
+      },
+      {
+        "id": "g5-soc-b-gather",
+        "title": "Gathering Facts on Issues",
+        "description": "Sort sources, like Elder interviews, graphs, and government statements, by the view they show about an issue.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g4-soc-b-gather", "g5-soc-b-questions"]
+      },
+      {
+        "id": "g5-soc-b-maps",
+        "title": "Maps of Issues",
+        "description": "Read maps that show things like areas hit by climate change or poverty across provinces. Pick what each map shows.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g4-soc-b-maps", "g5-soc-b-gather"]
+      },
+      {
+        "id": "g5-soc-b-tools",
+        "title": "Graphs and Idea Webs on Issues",
+        "description": "Read line graphs, double bar graphs, and idea webs about an issue like recycling. Pick what they show.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g4-soc-b-tools", "g5-soc-b-gather"]
+      },
+      {
+        "id": "g5-soc-b-conclusions",
+        "title": "Conclusions About Issues",
+        "description": "Use the evidence to pick a conclusion about an issue, and pick the strengths and weaknesses of different views.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g4-soc-b-conclusions", "g5-soc-b-tools", "g5-soc-b-maps"]
+      },
+      {
+        "id": "g5-soc-b-communicate",
+        "title": "Sharing Issue Findings",
+        "description": "Pick the best way to share what you learned, and words like municipal, federal, MP, band council, and stakeholder.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g4-soc-b-communicate", "g5-soc-b-conclusions"]
+      }
+    ]
+  }
+}

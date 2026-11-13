@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 6 says 'Living things need heat' and 'Living things need heat to stay warm and grow.' This oversimplifies. Plants do not 'stay warm'; what living things need is a suitable temperature range, and plants' main need from the sun is light, which the needs list never mentions. The skill spec names heat, so this is not a blocker, but consider 'a not-too-cold, not-too-hot place' or adding light to make the claim accurate."
+      },
+      {
+        "target": "g1-sci-basic-needs-tap-7",
+        "severity": "note",
+        "category": "factual",
+        "note": "The answer 'heat' is correct, but the 'Why' says living things 'need heat to stay warm and grow'. Same oversimplification as the story card. A plant on a sunny window gets its key benefit from light, and a teacher could question the explanation. Consider rewording the 'Why' to 'The sun gives heat and light. Living things need a warm enough place to grow.'"
+      },
+      {
+        "target": "g1-sci-basic-needs-tap-6",
+        "severity": "note",
+        "category": "other",
+        "note": "By ear, 'Which one is not a need' inside a four-item list is easy to mishear. Consider a shorter prompt, such as 'Which one is NOT a need?' with the list as separate choices only."
+      },
+      {
+        "target": "g1-sci-basic-needs-tap-15",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration reads three long lists joined by 'or' and semicolons, and the choices repeat the same lists. A child who cannot read well may lose track. Consider shortening the groups to two or three words each."
+      }
+    ],
+    "notes": "I checked every item against its marked answer. All 15 tap items have exactly one correct choice, and every marked answer is right: water for the puppy, air as a need, a dog as the only living thing, water for the plant, food, a bike as the non-need, heat from the sun, false for 'only animals need water', grass as food for the cow, a den as shelter, space for the crowded seeds, water still missing for Biscuit, false for the rock, heat for the freezer plant, and air/water/food as the needs-only group. No wrong choice is partly right. Picture emojis match their narration (10 seeds, cow, bear, rock, cold face). No content stereotypes a group or frightens a child. The only issues are the 'heat' wording in the story and tap-7 (notes, not blockers), plus two items that are harder to follow by ear."
+  }
+}

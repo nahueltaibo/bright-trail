@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g1-hlth-healthy-habits",
+        "changePrerequisites": true,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to sort habits such as too much screen time, smoking, and vaping, and to pick ways to encourage healthier choices. A kid can learn these without first learning that mind is part of health (g1-hlth-mental-health). The link to mental health is indirect, so the prerequisite is not truly needed and should be removed."
+      }
+    ],
+    "notes": "Checked all 14 Grade 1 skills for needed, direct, non-circular prerequisites, and for missing same-grade prerequisites. Every other skill's prerequisites are needed and direct, and no skill lists a redundant transitive prerequisite. Titles and descriptions are appropriate for read-aloud. One judgment call was left unchanged: g1-hlth-caring-behaviours mentions unsafe touching and consent but does not require g1-hlth-body-parts, since a kid can recognize harmful behaviour without using correct anatomical terms. The reviewer may want to reconsider this if the curriculum intends naming body parts as groundwork for discussing inappropriate touching."
+  }
+}

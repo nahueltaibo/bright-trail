@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Story card 3 says 'The leaves take in air from outside.' This is a simplification. Plants take in carbon dioxide through their leaves and release oxygen. It is accepted at Grade 2 level, but a teacher could ask for more precision. Consider 'The leaves take in air from outside' as is, or add a note that air includes what plants need to make food."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 ('People need them too') narrates both air and water but shows only the 💧 picture. Consider pairing it with a picture that covers both, or accepting it as is, since the card can be played by sound alone."
+      },
+      {
+        "target": "g2-sci-depend-air-water-tap-6",
+        "severity": "note",
+        "category": "factual",
+        "note": "The correct choice 'air' is the same simplification as story card 3: leaves take in carbon dioxide from the air. Acceptable for Grade 2, but the wording could be 'air' with a short explanation that plants use air to make food."
+      },
+      {
+        "target": "g2-sci-depend-air-water-tap-13",
+        "severity": "note",
+        "category": "other",
+        "note": "The distractor 'wearing it' is a clear wrong answer, which is fine. But the Why line 'We breathe in air, not water' does not explain why wearing water is wrong. Consider 'Water is not something we wear to stay alive.'"
+      }
+    ],
+    "notes": "I checked every story card and all 15 tap items. Each marked answer is correct, and no wrong choice is partly right. The facts are accurate for Grade 2: plants drink water through roots, fish use gills to get oxygen from water, whales have lungs, rocks are not alive, and people need air and water. All items can be understood by ear, and no content stereotypes a group or scares a child. Nothing rises to a blocker. The four notes are about simplification and wording, and none of them change an answer."
+  }
+}

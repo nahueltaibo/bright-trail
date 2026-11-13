@@ -1,0 +1,591 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "This is Mia. Every morning, Mia sees the sun come up. It is a new day.",
+        "text": "morning",
+        "visual": { "kind": "emoji", "emoji": "🌅", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia plays all day. Then the sun goes down. The sky gets dark. Night comes.",
+        "text": "night",
+        "visual": { "kind": "emoji", "emoji": "🌙", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia sleeps. Then the sun comes up again. Day, night, day, night. It happens again and again.",
+        "text": "day, night, day, night",
+        "visual": { "kind": "emoji", "emoji": "☀️", "count": null, "filled": null }
+      },
+      {
+        "narration": "A cycle is a set of events that repeat. They happen in the same order again and again.",
+        "text": "cycle",
+        "visual": { "kind": "emoji", "emoji": "🔄", "count": null, "filled": null }
+      },
+      {
+        "narration": "Seasons are a cycle too. Spring, summer, fall, winter. Then spring comes back again.",
+        "text": "spring, summer, fall, winter",
+        "visual": { "kind": "emoji", "emoji": "🌱", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia sees cycles all around her. Now you can find cycles too. Let's practise!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🍂", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia sees night. What comes after night: day, or winter?",
+        "prompt": "What comes after night?",
+        "why": "After night, the sun comes up and a new day starts. Day and night repeat.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "day",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "winter",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: after night, the day comes back again.",
+        "prompt": "Day comes back again.",
+        "why": "It is true. The sun comes up after every night. Day and night repeat.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one is a cycle: day and night, or a rock sitting still?",
+        "prompt": "Which one is a cycle?",
+        "why": "Day and night happen again and again. A rock sitting still does not repeat.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a rock sitting still",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "day and night",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "How many seasons are in a year: two, four, or six?",
+        "prompt": "How many seasons?",
+        "why": "There are four seasons: spring, summer, fall, and winter. Then they start again.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "two",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "six",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "four",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which season is often cold and snowy: winter, or summer?",
+        "prompt": "Which season is cold and snowy?",
+        "why": "Winter is the cold season with snow. Summer is warm.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "winter",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "summer",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one happens every day: the sun comes up, or the first snowfall?",
+        "prompt": "What happens every day?",
+        "why": "The sun comes up every morning. Snow only comes in the cold season.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the first snowfall",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the sun comes up",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "The seasons go spring, summer, fall. What season comes next: winter, spring, or summer?",
+        "prompt": "Spring, summer, fall, then?",
+        "why": "Winter comes after fall. Then spring comes back and the cycle starts again.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "spring",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "summer",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "winter",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one is the odd one out, because it is not a cycle: four seasons, day and night, or a cup that breaks?",
+        "prompt": "Which is not a cycle?",
+        "why": "Seasons and day and night repeat. A cup breaks once. It does not come back.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "four seasons",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "day and night",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a cup that breaks",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "After winter, what season comes next: spring, fall, or summer?",
+        "prompt": "What comes after winter?",
+        "why": "Spring comes after winter. The seasons go around and around.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "fall",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "spring",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "summer",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "True or false: after winter, the seasons stop.",
+        "prompt": "The seasons stop after winter.",
+        "why": "It is false. After winter, spring comes. The seasons keep repeating.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Day, night, day. What comes next: night, or day?",
+        "prompt": "Day, night, day, then?",
+        "why": "The pattern goes day, night, day, night. After day, night comes next.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "night",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "day",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Leaves fall off many trees in fall. What season comes just before winter: summer, fall, or spring?",
+        "prompt": "What comes just before winter?",
+        "why": "Fall comes just before winter. The order is spring, summer, fall, winter.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "summer",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "spring",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "fall",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "In which season do many trees grow new leaves: spring, winter, or fall?",
+        "prompt": "When do trees grow new leaves?",
+        "why": "Many trees grow new leaves in spring. In fall, their leaves drop off.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "winter",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "spring",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "fall",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which happens in the morning: the sun comes up, or the sun goes down?",
+        "prompt": "What happens in the morning?",
+        "why": "The sun comes up in the morning. It goes down at the end of the day.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the sun comes up",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the sun goes down",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "What do we call events that repeat in the same order again and again: a cycle, a game, or a plant?",
+        "prompt": "What is this called?",
+        "why": "Events that repeat in the same order are called a cycle. Seasons are a cycle.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a game",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a plant",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a cycle",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

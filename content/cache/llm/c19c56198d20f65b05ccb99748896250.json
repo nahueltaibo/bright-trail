@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "Story cards 3 and 4 say leaves use light and air to make food, and card 4 says the plant makes its food 'with light and air'. Water is left out of the food-making step. Plants make food from light, water, and carbon dioxide taken in from the air. A child could come away thinking air and light alone feed a plant. Fix: say plants use light, water, and air (carbon dioxide) to make food, and keep water in that sentence."
+      },
+      {
+        "target": "g3-sci-plant-needs-tap-3",
+        "severity": "note",
+        "category": "factual",
+        "note": "The marked answer True is correct, but the explanation says plants 'use it [air] to make food' with no mention of water. Align it with the story fix, e.g. 'Plants take in air through their leaves and use it, with light and water, to make food.'"
+      }
+    ],
+    "notes": "Checked all 15 tap items. Each marked answer is correct and is the only correct choice. Each distractor is clearly wrong, with no partly-right choice. Narration matches the picture and the screen text, and every item can be understood by ear. Difficulty levels look reasonable and the content stays within the Grade 3 plant-needs skill. No stereotyping, shaming, or scaring content found. The one substantive issue is the food-making explanation in the story, which omits water. Tap-3's explanation repeats that gap. The other items are fine."
+  }
+}

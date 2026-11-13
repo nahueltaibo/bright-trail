@@ -1,0 +1,628 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia visits her grandpa's farm. She sees a tiny chick and a big hen. Mia wants to compare them.",
+        "text": "Compare",
+        "visual": { "kind": "emoji", "emoji": "🐥", "count": null, "filled": null }
+      },
+      {
+        "narration": "To compare means to see how things are the same and different. We can compare size, covering, and body parts.",
+        "text": "Size, covering, body parts",
+        "visual": null
+      },
+      {
+        "narration": "The chick is small. The hen is big. Size is one way to compare animals.",
+        "text": "Size",
+        "visual": { "kind": "emoji", "emoji": "🐔", "count": null, "filled": null }
+      },
+      {
+        "narration": "The chick has soft fluff. The hen has feathers. A covering is what is on an animal's skin. Fur, feathers, and scales are coverings.",
+        "text": "Covering",
+        "visual": null
+      },
+      {
+        "narration": "Both birds have a beak. Both have two legs and two wings. These body parts are the same on both.",
+        "text": "Body parts",
+        "visual": { "kind": "objects", "emoji": "🐦", "count": 2, "filled": null }
+      },
+      {
+        "narration": "Soon the chick grows. It gets bigger. Its fluff turns into feathers. Those things change. Its beak and two legs stay the same.",
+        "text": "Changes or stays the same",
+        "visual": null
+      },
+      {
+        "narration": "Some features change as an animal grows. Some stay the same. Now let's practise comparing animals.",
+        "text": "Let's practise!",
+        "visual": { "kind": "emoji", "emoji": "🐣", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which animal is bigger: a mouse, or a horse?",
+        "prompt": "Which is bigger?",
+        "why": "A horse is much bigger than a mouse. Size is one way to compare animals.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a mouse",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a horse",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which animal has feathers: a fish, a bird, or a dog?",
+        "prompt": "Which has feathers?",
+        "why": "Birds have feathers. Fish have scales, and dogs have fur.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a fish",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a dog",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a bird",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: A kitten gets bigger as it grows. True, or false?",
+        "prompt": "Kittens get bigger.",
+        "why": "This is true. Size changes as an animal grows. A kitten becomes a bigger cat.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which animal has fur: a snake, a rabbit, or a frog?",
+        "prompt": "Which has fur?",
+        "why": "A rabbit has soft fur. A snake has scales, and a frog has smooth skin.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a snake",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a frog",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a rabbit",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which is the odd one out: a robin, a sparrow, a cat, or an owl?",
+        "prompt": "Odd one out",
+        "why": "A robin, a sparrow, and an owl are birds with feathers. A cat has fur.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a robin",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a cat",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a sparrow",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "an owl",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A puppy grows into a dog. What stays the same: its size, its four legs, or its weight?",
+        "prompt": "What stays the same?",
+        "why": "A puppy and a dog both have four legs. Size and weight change as it grows.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "its size",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "its weight",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "its four legs",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A caterpillar grows up into a butterfly. What changes: it grows wings, or it is an insect?",
+        "prompt": "What changes?",
+        "why": "A caterpillar grows wings as a butterfly. It is an insect the whole time.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "it grows wings",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "it is an insect",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which animal has scales for a covering: a rabbit, a duck, or a fish?",
+        "prompt": "Which has scales?",
+        "why": "A fish has scales. A rabbit has fur, and a duck has feathers.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a rabbit",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a duck",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a fish",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "True or false: A chick's soft fluff stays the same its whole life. True, or false?",
+        "prompt": "Fluff stays the same.",
+        "why": "This is false. A chick's fluff changes into feathers as it grows up.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia sees that a giraffe is tall and a mouse is tiny. What is she comparing: size, covering, or sound?",
+        "prompt": "What is she comparing?",
+        "why": "Tall and tiny are about how big an animal is. That is size.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "covering",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "size",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "sound",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which two animals have the same kind of covering: a hen and a duck, a fish and a bear, a frog and a cat, or a snake and a rabbit?",
+        "prompt": "Same covering",
+        "why": "A hen and a duck are both birds with feathers. The other pairs have different coverings.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a fish and a bear",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a frog and a cat",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a snake and a rabbit",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "a hen and a duck",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A kitten grows into a cat. What does not change: its whiskers, its size, or its weight?",
+        "prompt": "What does not change?",
+        "why": "A kitten has whiskers and a cat has whiskers too. Size and weight change as it grows.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "its whiskers",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "its size",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "its weight",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "What comes first as a duckling grows: fluffy down, or adult feathers?",
+        "prompt": "What comes first?",
+        "why": "A duckling starts with fluffy down. Adult feathers grow in later.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "adult feathers",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "fluffy down",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "What is the hard, pointed part on a bird's face called: a fin, a beak, or a tail?",
+        "prompt": "Name the body part.",
+        "why": "A bird's hard, pointed mouth is called a beak. Fins are on fish.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a fin",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a tail",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a beak",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "True or false: Two animals can be the same size but have different coverings. True, or false?",
+        "prompt": "Same size, different covering?",
+        "why": "This is true. A hen and a rabbit can be about the same size. One has feathers and one has fur.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

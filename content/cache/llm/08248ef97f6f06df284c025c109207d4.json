@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-life-cycles-tap-14",
+        "severity": "note",
+        "category": "other",
+        "note": "\"Looks like a small adult when it is born\" is loose. Newborn puppies have closed eyes and are quite helpless, so a teacher may say they don't look like small adult dogs. Consider \"A puppy is born looking like a small dog\" or \"Which baby is born as a small version of its parent?\" The marked answer (puppy) is still the only correct choice."
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-3",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration \"A bird begins its life in one place\" is vague for a Grade 2 listener. Consider \"Every bird starts its life inside something. Where does a bird begin: in an egg, in a pond, or in a leaf?\""
+      },
+      {
+        "target": "g2-sci-life-cycles-tap-11",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration reads the three orders in a different sequence from the button order (the marked answer is the third button, but the first order read aloud). This is not wrong, but a child listening by ear may find it harder to match. Consider reading the choices in the same order as the buttons."
+      }
+    ],
+    "notes": "Reviewed the 7 story cards and 15 tap items for g2-sci-life-cycles. I checked each marked answer against the biology: butterfly (egg, caterpillar, pupa, adult), frog (egg, tadpole, froglet, adult), bird (egg, chick, adult), and mammal (born alive, drinks milk). Every marked answer is correct, and every wrong choice is clearly wrong, so there are no blockers. No item overgeneralizes (for example, it never says all mammals are born alive, which would be false for the platypus and echidna). The content is within Grade 2 scope, does not stereotype, and does not scare or shame. The notes are optional wording and audio polish."
+  }
+}

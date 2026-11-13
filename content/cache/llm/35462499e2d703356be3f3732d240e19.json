@@ -1,0 +1,660 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia is helping in her class garden. Today she looks at a sunflower. Every part of a plant has a job. Let's find out what each part does.",
+        "text": "Parts of a plant",
+        "visual": { "kind": "emoji", "emoji": "🌻", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia pulls up a carrot. The carrot is a root. Roots grow down into the soil. They hold the plant in place and take in water.",
+        "text": "root",
+        "visual": { "kind": "emoji", "emoji": "🥕", "count": null, "filled": null }
+      },
+      {
+        "narration": "The stem is next. It holds the plant up toward the light. It also carries water from the roots up to the leaves.",
+        "text": "stem",
+        "visual": { "kind": "emoji", "emoji": "🌱", "count": null, "filled": null }
+      },
+      {
+        "narration": "Leaves are the plant's food makers. They use sunlight, air, and water to make food. Mia sees that the leaves face the light.",
+        "text": "leaf",
+        "visual": { "kind": "emoji", "emoji": "🍃", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now the flower. The stamen makes a yellow dust called pollen. The pistil is in the middle. When pollen reaches the pistil, seeds can start to form.",
+        "text": "stamen and pistil",
+        "visual": { "kind": "emoji", "emoji": "🌷", "count": null, "filled": null }
+      },
+      {
+        "narration": "Seeds can grow into new plants. Many seeds are inside a fruit, like an apple. The fruit protects them. A pine tree has no flowers. Its seeds grow inside cones.",
+        "text": "seed, fruit, cone",
+        "visual": { "kind": "emoji", "emoji": "🍎", "count": null, "filled": null }
+      },
+      {
+        "narration": "Root, stem, leaf, flower, fruit, seed, and cone each help a plant live. Are you ready to practise? Let's go!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🌻", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which part of a plant holds it in the soil: the roots, the flower, or the cone?",
+        "prompt": "What holds the plant in the soil?",
+        "why": "Roots grow down into the soil. They hold the plant in place and take in water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the roots",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the flower",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the cone",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which part of a plant uses sunlight to make food: the root, the leaf, or the seed?",
+        "prompt": "Which part makes food?",
+        "why": "Leaves use sunlight, air, and water to make food for the plant.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the root",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the seed",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the leaf",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia plants a seed in a pot and gives it water and light. What can the seed grow into: a stone, a new plant, or a toy?",
+        "prompt": "What can a seed grow into?",
+        "why": "A seed holds a tiny new plant. With water and light, it can grow into a plant.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a stone",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a new plant",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a toy",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: Roots usually grow down in the soil.",
+        "prompt": "True or false: roots grow in soil.",
+        "why": "That is true. Roots grow down into the soil, where they find water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A pine tree grows its seeds inside a special part. Is it a cone, a root, or a stem?",
+        "prompt": "Where do pine seeds grow?",
+        "why": "Pine trees make seeds inside cones. They do not have flowers or fruit.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a root",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a stem",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a cone",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which part carries water from the roots up to the leaves: the stem, the flower, or the seed?",
+        "prompt": "What carries water up?",
+        "why": "The stem works like a straw. It carries water from the roots up to the leaves.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the stem",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the flower",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the seed",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Inside a flower, the stamen makes a yellow dust. What is that dust called: water, pollen, or fruit?",
+        "prompt": "What does the stamen make?",
+        "why": "The stamen makes pollen. Pollen must reach the pistil so seeds can form.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "fruit",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "pollen",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "The middle part of a flower is where seeds begin to form. What is its name: the pistil, the stamen, or the root?",
+        "prompt": "Name the part where seeds begin.",
+        "why": "The pistil is in the middle of the flower. Seeds begin to form there after pollen arrives.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the stamen",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the pistil",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the root",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one is not a part of a plant: a root, a seed, a cone, or a pebble?",
+        "prompt": "Which is not a plant part?",
+        "why": "Roots, seeds, and cones are all plant parts. A pebble is a small stone, not a part of a plant.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a root",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a seed",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a cone",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "a pebble",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "An apple tree grows apples. What does the fruit do for the plant: it makes pollen, it drinks water, or it protects the seeds?",
+        "prompt": "What does fruit do for a plant?",
+        "why": "Fruit holds and protects the seeds inside it. Roots drink water, and stamens make pollen.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "it makes pollen",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "it drinks water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "it protects the seeds",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A big wind blows through the park. Why do roots help a tree stay up: they hold it in the soil, they make pollen, or they make seeds?",
+        "prompt": "How do roots help in the wind?",
+        "why": "Roots spread out in the soil and hold the plant in place. Wind does not easily knock it over.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "they make pollen",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "they hold it in the soil",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "they make seeds",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia plants a bean seed. What happens first as it starts to grow: roots grow down, a flower opens, or fruit forms?",
+        "prompt": "What happens first?",
+        "why": "A seed sprouts roots first. They take in water. Flowers and fruit come much later.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a flower opens",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "fruit forms",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "roots grow down",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A tomato plant loses all its leaves. What problem will it have: it cannot make food, it cannot grow roots, or it cannot hold seeds?",
+        "prompt": "What if a plant loses its leaves?",
+        "why": "Leaves make the plant's food from sunlight, air, and water. Without leaves, the plant cannot make enough food.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "it cannot make food",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "it cannot grow roots",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "it cannot hold seeds",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "For seeds to form, pollen from the stamen must land on another flower part. Which part is it: the pistil, the root, or the leaf?",
+        "prompt": "Where must pollen land?",
+        "why": "Pollen from the stamen lands on the pistil. Then seeds can begin to form.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the root",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the leaf",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the pistil",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia eats a crunchy celery stalk for a snack. Which plant part is a celery stalk: a stem, a root, or a seed?",
+        "prompt": "Which plant part is celery?",
+        "why": "A celery stalk is a stem. It holds up the leaves and carries water to them.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a root",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a stem",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a seed",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

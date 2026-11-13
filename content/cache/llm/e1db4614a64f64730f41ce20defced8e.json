@@ -1,0 +1,309 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g3-sci-research-process",
+        "title": "Researching Plants and Soil",
+        "description": "Put the steps of a research in order. Pick a good question about plants or soil and the best place to find the answer.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g2-sci-research-process"]
+      },
+      {
+        "id": "g3-sci-experiment-process",
+        "title": "Fair Tests With Forces",
+        "description": "Pick the fair test that changes only one thing, like testing how far a ball rolls. Put the steps of an experiment in order.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g2-sci-experiment-process"]
+      },
+      {
+        "id": "g3-sci-design-process",
+        "title": "Design, Build, Test Structures",
+        "description": "Put the steps for designing and building a structure in order. Pick what to change to make it stronger.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g2-sci-design-process"]
+      },
+      {
+        "id": "g3-sci-safety-procedures",
+        "title": "Safe Investigating",
+        "description": "Pick the safe way to use tools and materials. Choose the right gear to wear, like gloves for soil.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g2-sci-safety-procedures"]
+      },
+      {
+        "id": "g3-sci-communicate",
+        "title": "Sharing What We Learned",
+        "description": "Pick the best way to share your findings with different people. Match science words to what they mean.",
+        "expectationCodes": ["A1.5"],
+        "prerequisiteIds": ["g2-sci-communicate"]
+      },
+      {
+        "id": "g3-sci-code-debug",
+        "title": "Test and Fix Code",
+        "description": "Look at code and pick what it will do. Find the mistake in a program and pick how to fix it.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g2-sci-code-steps"]
+      },
+      {
+        "id": "g3-sci-coding-impacts",
+        "title": "New Technology in Our Lives",
+        "description": "Pick how coding and new technology change everyday life. Tell the helpful changes from the tricky ones.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g2-sci-coding-impacts"]
+      },
+      {
+        "id": "g3-sci-applications",
+        "title": "Science Solves Real Problems",
+        "description": "Match science and technology at home and in town to the problems they fix. Pick how science works with other subjects to help.",
+        "expectationCodes": ["A3.1", "A3.2"],
+        "prerequisiteIds": ["g2-sci-applications"]
+      },
+      {
+        "id": "g3-sci-contributions",
+        "title": "Science Ideas From Many People",
+        "description": "Match science and technology ideas to the communities that gave them to us. Pick how those ideas help.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g2-sci-contributions"]
+      },
+      {
+        "id": "g3-sci-plant-needs",
+        "title": "What Plants Need",
+        "description": "Pick what plants need: air, water, light, heat, nutrients, and space. Pick conditions that can hurt a plant.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g2-sci-depend-air-water"]
+      },
+      {
+        "id": "g3-sci-plant-parts",
+        "title": "Parts of a Plant",
+        "description": "Label the root, stem, leaf, flower, stamen, pistil, seed, cone, and fruit. Pick what each part does for the plant.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g3-sci-plant-needs", "g1-sci-plant-animal-features"]
+      },
+      {
+        "id": "g3-sci-plant-life-cycles",
+        "title": "Plant Life Cycles",
+        "description": "Put the stages of a plant's life in order, from seed to grown plant. Compare how different plants change.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g3-sci-plant-parts", "g2-sci-life-cycles"]
+      },
+      {
+        "id": "g3-sci-plant-adaptations",
+        "title": "How Plants React and Adapt",
+        "description": "Match plants to how they react to their home, like leaves turning to the light or dropping in fall.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g3-sci-plant-needs", "g1-sci-seasonal-adaptations"]
+      },
+      {
+        "id": "g3-sci-photosynthesis",
+        "title": "Plants Make Food From Sunlight",
+        "description": "Pick how plants use sunlight to get energy. They take in carbon dioxide and let out oxygen.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g3-sci-plant-parts", "g1-sci-sun-energy"]
+      },
+      {
+        "id": "g3-sci-plant-uses",
+        "title": "How People Use Plants",
+        "description": "Match plants to how people around the world use them for food, shelter, medicine, and clothing.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g3-sci-plant-parts", "g1-sci-material-sources"]
+      },
+      {
+        "id": "g3-sci-food-plants",
+        "title": "Plants We Eat",
+        "description": "Match food plants, including ones grown by First Nations, Métis, and Inuit, to the places they grow or are found.",
+        "expectationCodes": ["B2.7"],
+        "prerequisiteIds": ["g3-sci-plant-parts", "g1-sci-food-energy"]
+      },
+      {
+        "id": "g3-sci-plant-animal-depend",
+        "title": "Plants and Animals Need Each Other",
+        "description": "Pick how plants, animals, and people depend on each other, like plants giving food and animals spreading seeds.",
+        "expectationCodes": ["B2.8"],
+        "prerequisiteIds": ["g3-sci-plant-needs", "g1-sci-living-things-help"]
+      },
+      {
+        "id": "g3-sci-plants-important",
+        "title": "Why Plants Matter",
+        "description": "Pick how plants are important to people and other living things. Pick ways to protect native plants and their homes.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g3-sci-plant-animal-depend", "g3-sci-plant-uses"]
+      },
+      {
+        "id": "g3-sci-human-impact-plants",
+        "title": "People's Actions and Plants",
+        "description": "Pick how things people do help or hurt plants and their homes. Choose actions you could take to help.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g3-sci-plant-needs", "g1-sci-healthy-actions"]
+      },
+      {
+        "id": "g3-sci-local-food",
+        "title": "Good and Not-So-Good of Local Food",
+        "description": "Pick the good points and the limits of food grown close to home, like fresher food but a shorter growing season.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g3-sci-food-plants"]
+      },
+      {
+        "id": "g3-sci-force-types",
+        "title": "Contact and Non-Contact Forces",
+        "description": "Sort forces into ones that touch an object, like pushes and friction, and ones that don't, like gravity and magnets.",
+        "expectationCodes": ["C2.1"],
+        "prerequisiteIds": ["g2-sci-change-position"]
+      },
+      {
+        "id": "g3-sci-force-ways",
+        "title": "Ways to Apply a Force",
+        "description": "Pick how a force is used on an object, like pushing, pulling, twisting, or squeezing.",
+        "expectationCodes": ["C2.2"],
+        "prerequisiteIds": ["g3-sci-force-types"]
+      },
+      {
+        "id": "g3-sci-force-effects",
+        "title": "What Forces Do to Objects",
+        "description": "Pick how forces make an object start, stop, turn, speed up, slow down, or change shape. Compare a big force and a small force.",
+        "expectationCodes": ["C2.3"],
+        "prerequisiteIds": ["g3-sci-force-ways"]
+      },
+      {
+        "id": "g3-sci-forces-daily",
+        "title": "Forces in Daily Life",
+        "description": "Match everyday jobs, like opening a door or kicking a ball, to the force being used.",
+        "expectationCodes": ["C2.4"],
+        "prerequisiteIds": ["g3-sci-force-types"]
+      },
+      {
+        "id": "g3-sci-natural-forces",
+        "title": "Forces in Nature and Buildings",
+        "description": "Pick how wind, water, and gravity affect land and buildings. Pick ways people can lessen or increase these effects.",
+        "expectationCodes": ["C1.1"],
+        "prerequisiteIds": ["g3-sci-force-effects"]
+      },
+      {
+        "id": "g3-sci-harmful-forces",
+        "title": "Staying Safe From Forces",
+        "description": "Pick how forces from things people do can cause harm. Match safety devices, like helmets and seat belts, to how they help.",
+        "expectationCodes": ["C1.2"],
+        "prerequisiteIds": ["g3-sci-force-effects"]
+      },
+      {
+        "id": "g3-sci-structure-defined",
+        "title": "What Is a Structure?",
+        "description": "Pick what makes a structure: a frame that holds a load and has a size, shape, and job. Sort natural and built structures.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g1-sci-structures-load"]
+      },
+      {
+        "id": "g3-sci-form-function",
+        "title": "Shape Fits the Job",
+        "description": "Match the shape of a structure to what it is used for, like a wide base on a tower.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g3-sci-structure-defined", "g1-sci-object-purposes"]
+      },
+      {
+        "id": "g3-sci-strength",
+        "title": "Strong Structures",
+        "description": "Pick that strength means holding a load. Pick ways to make a structure or material stronger, like folding or layering.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g3-sci-structure-defined"]
+      },
+      {
+        "id": "g3-sci-stability",
+        "title": "Stable Structures",
+        "description": "Pick that stability means keeping shape, balance, and staying in place. Pick ways to make a structure steadier, like a wide base.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g3-sci-structure-defined"]
+      },
+      {
+        "id": "g3-sci-building-materials",
+        "title": "Choosing Building Materials",
+        "description": "Pick the material properties, like strong, stiff, or waterproof, to think about when building a structure.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g3-sci-structure-defined", "g1-sci-material-properties"]
+      },
+      {
+        "id": "g3-sci-forces-structures",
+        "title": "Forces on Structures",
+        "description": "Pick how forces like wind, weight, and pushes can change a structure's shape, balance, or place.",
+        "expectationCodes": ["D2.6"],
+        "prerequisiteIds": ["g3-sci-stability", "g3-sci-force-effects"]
+      },
+      {
+        "id": "g3-sci-struts-ties",
+        "title": "Struts and Ties",
+        "description": "Pick which parts of a structure are struts that get pushed together and which are ties that get pulled.",
+        "expectationCodes": ["D2.7"],
+        "prerequisiteIds": ["g3-sci-strength", "g3-sci-forces-structures"]
+      },
+      {
+        "id": "g3-sci-structures-impact",
+        "title": "Strong Structures and Our World",
+        "description": "Pick how strong, stable structures, like bridges and dams, help people and affect nature.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g3-sci-strength", "g3-sci-stability"]
+      },
+      {
+        "id": "g3-sci-animal-structures",
+        "title": "Animal-Built Structures",
+        "description": "Compare nests, dams, and hives to human-built structures. Pick how each one affects the environment.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g3-sci-structure-defined", "g1-sci-compare-objects-impact"]
+      },
+      {
+        "id": "g3-sci-soil-components",
+        "title": "What Is in Soil?",
+        "description": "Sort the living and non-living parts of soil, like worms, roots, sand, and water. Pick what healthy soil is like.",
+        "expectationCodes": ["E2.1"],
+        "prerequisiteIds": ["g1-sci-linked-nature"]
+      },
+      {
+        "id": "g3-sci-soil-additions",
+        "title": "What Gets Added to Soil",
+        "description": "Pick things added to soil, like fertilizer, compost, salt, and pollution. Pick how each one affects soil health.",
+        "expectationCodes": ["E2.2"],
+        "prerequisiteIds": ["g3-sci-soil-components"]
+      },
+      {
+        "id": "g3-sci-soil-types",
+        "title": "Soil Types in Ontario",
+        "description": "Match Ontario soils, like sandy, clay, and loam, to the crops and foods they grow well.",
+        "expectationCodes": ["E2.3"],
+        "prerequisiteIds": ["g3-sci-soil-components", "g3-sci-plant-needs"]
+      },
+      {
+        "id": "g3-sci-erosion",
+        "title": "Erosion",
+        "description": "Put the steps of erosion in order. Pick what causes it, like wind and water, and how it harms soil.",
+        "expectationCodes": ["E2.4"],
+        "prerequisiteIds": ["g3-sci-soil-components", "g2-sci-air-water-properties"]
+      },
+      {
+        "id": "g3-sci-soil-health",
+        "title": "Keeping Soil Healthy",
+        "description": "Pick ways farmers and gardeners in Ontario keep soil healthy, like cover crops and rotating crops.",
+        "expectationCodes": ["E2.5"],
+        "prerequisiteIds": ["g3-sci-soil-additions", "g3-sci-erosion"]
+      },
+      {
+        "id": "g3-sci-composting",
+        "title": "Composting",
+        "description": "Put the steps of composting in order. Sort what can be composted and pick how compost helps soil.",
+        "expectationCodes": ["E2.6"],
+        "prerequisiteIds": ["g3-sci-soil-additions", "g1-sci-waste-reduce"]
+      },
+      {
+        "id": "g3-sci-soil-importance",
+        "title": "Why Soil Matters",
+        "description": "Pick how soil helps people, plants, and animals, like growing food and giving homes to animals.",
+        "expectationCodes": ["E1.1"],
+        "prerequisiteIds": ["g3-sci-soil-types"]
+      },
+      {
+        "id": "g3-sci-soil-human-impact",
+        "title": "People's Actions and Soil",
+        "description": "Pick how things people do, like building and farming, hurt or help soil. Pick ways to protect it.",
+        "expectationCodes": ["E1.2"],
+        "prerequisiteIds": ["g3-sci-soil-health", "g3-sci-soil-importance"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,647 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Maya plants a bean seed in a cup at school. She wants to know what it needs to grow. Let's find out together.",
+        "text": "What plants need",
+        "visual": { "kind": "emoji", "emoji": "🌱", "count": null, "filled": null }
+      },
+      {
+        "narration": "Maya gives the seed some water. Plants need water to grow. Roots take it in from the soil. Without water, a plant droops and dries out.",
+        "text": "Water",
+        "visual": { "kind": "emoji", "emoji": "💧", "count": null, "filled": null }
+      },
+      {
+        "narration": "Maya puts the cup on a sunny windowsill. Plants need light and air. Leaves use light and air to make food. The sun also gives heat, and plants need to stay warm.",
+        "text": "Light, air, and heat",
+        "visual": { "kind": "emoji", "emoji": "☀️", "count": null, "filled": null }
+      },
+      {
+        "narration": "Soil holds nutrients. Nutrients are minerals in soil that help a plant grow strong. Roots take them in with water. The plant makes its own food with light and air. Plain sand has fewer nutrients.",
+        "text": "Nutrients",
+        "visual": { "kind": "emoji", "emoji": "🌱", "count": null, "filled": null }
+      },
+      {
+        "narration": "Soon Maya's beans grow bigger. Plants also need space. Roots and leaves need room to spread out. When plants are packed too close, they have to share, and they grow poorly.",
+        "text": "Space",
+        "visual": { "kind": "objects", "emoji": "🌱", "count": 5, "filled": null }
+      },
+      {
+        "narration": "A plant can be hurt by no water, too much cold, too little light, or a crowded pot. Maya checks her plant every day. Now it's your turn to practise.",
+        "text": "Let's practise!",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one does a plant need to grow: water, a toy, or a hat?",
+        "prompt": "What does a plant need?",
+        "why": "Plants need water to grow. Roots take it in from the soil. A toy or a hat does nothing for a plant.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a toy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a hat",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Outside, plants get light and heat from something in the sky. Is it the sun, a shoe, or a spoon?",
+        "prompt": "Where does light come from?",
+        "why": "The sun gives plants light and heat. Plants use the light to make their food.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a shoe",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a spoon",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the sun",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: plants need air. Is that true, or false?",
+        "prompt": "True or false: plants need air.",
+        "why": "This is true. Plants take in air through their leaves and use it to make food.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Maya forgot to water her bean plant for two weeks. What will happen to it: it will wilt, or it will grow fast?",
+        "prompt": "No water for two weeks?",
+        "why": "Without water, a plant droops and wilts. Water helps it stand tall and grow.",
+        "visual": { "kind": "emoji", "emoji": "🌱", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "it will grow fast",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "it will wilt",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one is not something plants need: air, light, a phone, or water?",
+        "prompt": "Pick the odd one out.",
+        "why": "Plants need air, light, and water. A phone is not a need for plants.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "air",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "light",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "a phone",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "d",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Soil gives plants water and one more thing. Is it nutrients, music, or toys?",
+        "prompt": "What else is in soil?",
+        "why": "Soil holds nutrients, which are minerals plants need to grow strong. Roots take them in with water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "music",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "toys",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "nutrients",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "The sun gives plants two of the things they need. Which two: light and heat, music and toys, or a shoe and a spoon?",
+        "prompt": "What does the sun give?",
+        "why": "The sun gives plants light and heat. Music, toys, shoes, and spoons are not what plants need.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "light and heat",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "music and toys",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a shoe and a spoon",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ben's bean plants are packed so close that their leaves touch. What would help them most: more space, a dark closet, or less water?",
+        "prompt": "Plants too close. What helps?",
+        "why": "Plants need space for roots and leaves to spread out. Moving some apart gives each plant room.",
+        "visual": { "kind": "objects", "emoji": "🌱", "count": 6, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a dark closet",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "less water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "more space",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "True or false: a plant kept in a dark closet for weeks stays healthy. Is that true, or false?",
+        "prompt": "True or false: no light is fine.",
+        "why": "This is false. Plants need light to make food. In the dark, a plant turns pale and weak.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one can hurt a tomato plant: a freezing cold night, a sunny window, or a drink of water?",
+        "prompt": "What can hurt a plant?",
+        "why": "A freezing night can kill a tomato plant. Plants need heat. Sun and water help them grow.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a sunny window",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a drink of water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a freezing cold night",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sam's plant grows in plain sand. Its leaves turn pale and it grows slowly. What is it most likely missing: nutrients, snow, or a cage?",
+        "prompt": "What is the plant missing?",
+        "why": "Plain sand has very few nutrients. Plants need nutrients to grow strong and green.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "snow",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "nutrients",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a cage",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A pot has no holes, so water stays in the soil for weeks. What could happen to the plant: the roots get harmed, it gets more light, or it gets more heat?",
+        "prompt": "Water that never drains",
+        "why": "Too much water can harm roots. Roots need air too, and soaked soil leaves little room for it.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "it gets more light",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "it gets more heat",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the roots get harmed",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one would not hurt a plant: a long dry spell, a hard frost, a sunny watered spot, or a crowded pot?",
+        "prompt": "Pick the odd one out.",
+        "why": "A sunny spot with water gives a plant what it needs. A dry spell, a hard frost, and a crowded pot can all hurt it.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a sunny watered spot",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a long dry spell",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a hard frost",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "d",
+            "kind": "text",
+            "value": null,
+            "text": "a crowded pot",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A small tree grows in the shade of tall trees in a forest. Which need is hard for it to get: light, music, or sand?",
+        "prompt": "What is hard to get in shade?",
+        "why": "Tall trees block the sun, so a small tree in their shade gets less light. Plants need light to make food.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "music",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "sand",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "light",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Lena's plant sits in a dark corner. It looks weak and leans toward the room. What helps most: move it to a window, cover it with a box, or take away its water?",
+        "prompt": "A weak plant in a dark corner",
+        "why": "The plant needs light. Moving it to a window gives it light. A box makes it darker, and it still needs water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "cover it with a box",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "take away its water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "move it to a window",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

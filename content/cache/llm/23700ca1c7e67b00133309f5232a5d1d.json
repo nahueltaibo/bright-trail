@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Story card 4 says 'The window is glass. Glass is a solid too.' Glass is generally taught as a solid at this grade, but some teachers dispute this because glass is an amorphous solid and the 'glass flows over centuries' myth is common. Consider a short clarifier, such as 'Glass keeps its shape, so it is a solid,' or swap in a clearer solid such as a window frame or a door, so the card doesn't invite that debate."
+      },
+      {
+        "target": "g2-sci-liquid-or-solid-tap-10",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Only this item shows emoji on its choices (🪨, 🍃, 🌧️). The other items have no pictures. Choice pictures are allowed, but the item is still audio-first, so check that each choice's narration names the object and that the emoji adds no extra meaning a child who can't see the picture would miss."
+      }
+    ],
+    "notes": "I checked the story cards and all 15 items against the marked answers. Every marked answer is correct, and no item has a second right choice or a missing right answer. The facts are accurate for Grade 2: water, milk, juice, and soup are liquids; rocks, bricks, chairs, spoons, wood, and glass are solids; ice melts into liquid water. The items are audio-friendly, with no visual-only cues, and none stereotype a group or frighten a child. The two notes above are optional polish, not blockers."
+  }
+}

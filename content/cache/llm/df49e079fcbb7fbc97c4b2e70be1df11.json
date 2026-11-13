@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-soc-chronology-tap-11",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "This is a three-part 'between' question that a Grade 2 child must hold in memory while listening. The narration names the move, Dad's birth, and Omar's birth, and the choices add Omar's school and Grandpa's birth. Consider shortening the narration or stating the order more plainly. The marked answer (Dad was born) is correct."
+      },
+      {
+        "target": "g2-soc-chronology-tap-13",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'Right after the summer camp' depends on seasons repeating each year. The explanation is correct, but a child could reasonably read the spring picnic as coming after the summer camp in a different year. Consider saying 'the same year' or 'next season'."
+      },
+      {
+        "target": "g2-soc-chronology-tap-15",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The answer is correct because a bigger age means a later move. The ages are listed out of order (3, 9, 6), which may confuse a child by ear. The 'Why' line 'Jo was oldest, age 9' is also awkward. Consider 'Jo was oldest at the Ottawa move' or a simpler wording."
+      }
+    ],
+    "notes": "I checked every item's marked answer and each distractor. Each marked answer is correct and no wrong choice is also partly right. I found no factual errors, no misconceptions, and no content that stereotypes a people or community or that shames or scares a child. The story cards are accurate and clear for a Grade 2 child listening by ear. The three notes above are wording and difficulty points, not blockers."
+  }
+}

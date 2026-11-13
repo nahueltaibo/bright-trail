@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-sci-body-parts-tap-14",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Too easy for difficulty 3. The child only has to match the word 'nose' to one of three choices, and the emoji labels make it trivial. Consider a harder variant or a lower difficulty tag."
+      },
+      {
+        "target": "g1-sci-body-parts-tap-6",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Screen text 'What smells cookies?' reads like a question about the smell itself, not the body part. Consider 'Which body part smells the cookies?' so the sound-only question is clear."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The skill description says 'Label the parts of the body', but no item asks the child to name or label a body part on a picture (there are no images). Items only ask which part does a job or where it is. Consider rewording the skill goal to match what is actually tested."
+      }
+    ],
+    "notes": "I checked every story card and all 15 items against the marked answers and the Why text. The marked answers are correct, no distractor is partly right, and the facts are accurate for Grade 1 (eyes see, ears hear, nose smells, tongue tastes, skin feels and covers the body, a knee is not a sense organ, and so on). The content has no stereotyping, shaming, or frightening material, and the narration works by ear alone. I found no blockers. The three notes are about difficulty, one screen-text phrasing, and the skill description's wording."
+  }
+}

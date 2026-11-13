@@ -1,0 +1,106 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g5-hlth-trusted-help",
+        "title": "Trusted People and Help Services",
+        "description": "Pick the trusted people and services, like Kids Help Phone, 9-1-1, and Telehealth, that can help with emergencies, bullying, and photo sharing without consent. Match each problem to who can help.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g1-hlth-safety-basics", "g4-hlth-bullying-abuse"]
+      },
+      {
+        "id": "g5-hlth-alcohol-effects",
+        "title": "Alcohol: Effects and Intoxication",
+        "description": "Sort the short- and long-term effects of alcohol on the body and mind. Pick what changes how strongly alcohol affects a person, like amount, speed, body size, or mixing with other drugs.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g3-hlth-substances"]
+      },
+      {
+        "id": "g5-hlth-reproductive-puberty",
+        "title": "Reproductive Parts and Puberty",
+        "description": "Label the parts of the reproductive system. Sort the body changes that happen during puberty.",
+        "expectationCodes": ["D1.3"],
+        "prerequisiteIds": ["g4-hlth-puberty-changes"]
+      },
+      {
+        "id": "g5-hlth-menstruation-sperm",
+        "title": "Menstruation and Sperm Making",
+        "description": "Put the steps of the menstrual cycle and of sperm making in order. Pick how each one connects to making a baby and to growing up.",
+        "expectationCodes": ["D1.4"],
+        "prerequisiteIds": ["g5-hlth-reproductive-puberty"]
+      },
+      {
+        "id": "g5-hlth-food-labels",
+        "title": "Reading Food Labels",
+        "description": "Read a nutrition fact table and an ingredient list. Pick the food that is the healthier and safer choice, for example for allergies, sugar, or sodium.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g4-hlth-nutrients", "g2-hlth-food-allergies"]
+      },
+      {
+        "id": "g5-hlth-threat-response",
+        "title": "Handling Threatening Situations",
+        "description": "Pick the smart way to act when something feels unsafe: stay calm, notice your surroundings, say no firmly, and get help. Put the steps of a safety plan in order.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g4-hlth-safe-decisions", "g5-hlth-trusted-help"]
+      },
+      {
+        "id": "g5-hlth-refusal-skills",
+        "title": "Saying No to Risky Pressure",
+        "description": "Pick strong ways to say no to pressure about alcohol, vaping, gambling, or too much gaming. Choose the best decision after thinking it through.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g4-hlth-smoke-vape-choices", "g5-hlth-alcohol-effects"]
+      },
+      {
+        "id": "g5-hlth-self-concept",
+        "title": "What Shapes How You See Yourself",
+        "description": "Sort the things that shape how a person sees themselves, like strengths, culture, body image, friends, and stereotypes. Pick how these can help a person feel good about who they are.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g3-hlth-respecting-differences", "g3-hlth-growth-factors"]
+      },
+      {
+        "id": "g5-hlth-puberty-stress",
+        "title": "Puberty Stress and Feeling Well",
+        "description": "Match the worries that can come with puberty, like crushes and changing friendships, to ways to cope. Pick signs that someone may need extra help and who to talk to.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g5-hlth-reproductive-puberty", "g4-hlth-managing-stress"]
+      },
+      {
+        "id": "g5-hlth-helping-others",
+        "title": "Helping Friends With Mental Health",
+        "description": "Pick what you can do to support a friend who is struggling, like listening and being kind. Know when it is time to bring in a trusted adult.",
+        "expectationCodes": ["D2.6"],
+        "prerequisiteIds": ["g5-hlth-trusted-help", "g4-hlth-mental-health-choices"]
+      },
+      {
+        "id": "g5-hlth-food-ads",
+        "title": "Ads and Food Choices",
+        "description": "Spot how ads, packaging, celebrities, and social media try to change what we eat. Pick good questions to check if a claim or body image is true.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g4-hlth-eating-goals"]
+      },
+      {
+        "id": "g5-hlth-hurtful-actions",
+        "title": "How Our Actions Affect Others",
+        "description": "Sort hurtful actions, like name calling, exclusion, and sharing pictures online, from kind ones. Pick how each can change feelings, self-esteem, and reputation.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g4-hlth-bullying-abuse"]
+      },
+      {
+        "id": "g5-hlth-alcohol-cannabis-factors",
+        "title": "Why People Choose Alcohol or Cannabis",
+        "description": "Sort the things that can affect a choice to drink alcohol or use cannabis, like friends, media, laws, culture, and feelings. Pick how they can change at different ages.",
+        "expectationCodes": ["D3.3"],
+        "prerequisiteIds": ["g5-hlth-alcohol-effects"]
+      },
+      {
+        "id": "g5-hlth-mental-health-stigma",
+        "title": "Attitudes and Mental Health Stigma",
+        "description": "Pick attitudes and words that hurt people with mental health problems and ones that help. Choose how to stop stigma.",
+        "expectationCodes": ["D3.4"],
+        "prerequisiteIds": ["g4-hlth-mental-health-choices"]
+      }
+    ]
+  }
+}

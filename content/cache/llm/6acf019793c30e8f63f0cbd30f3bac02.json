@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "Card 5 says a fish 'can use the air that is in the water.' Water does not contain air. Fish take in oxygen dissolved in the water through their gills. Teachers would dispute this wording, and it could teach children that water holds air bubbles. Reword to something like 'A fish gets the oxygen it needs from the water. It breathes with gills.'"
+      },
+      {
+        "target": "g2-sci-depend-air-water-tap-9",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The marked answer 'True' rests on the claim that a fish uses 'the air that is in water.' Water does not contain air. Fish use oxygen dissolved in water, taken in through gills. The question and explanation should say 'oxygen in the water' (or 'the oxygen that is in water'), not 'air.' As written, the item teaches a misconception."
+      },
+      {
+        "target": "g2-sci-depend-air-water-tap-12",
+        "severity": "note",
+        "category": "other",
+        "note": "The distractor 'its soil breathes' is a poetic phrase, not a plant action, and it is not clearly wrong to a young child. Consider 'its leaves turn green' or 'its flowers close' to make the distractor clearly unrelated."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 6 says 'People need air and water too' but the picture is a water drop only. Consider a picture that shows both, or make sure the picture and narration match."
+      }
+    ],
+    "notes": "Reviewed all 7 story cards and 15 tap items. Most answers are correct and each marked choice is the only right one. The main issue is the repeated claim that fish use 'air in water,' which appears in story card 5 and item tap-9. I marked both as blockers. The other items are sound and fit the Grade 2 skill. Item tap-15 is also correct: a goldfish cannot live long out of water."
+  }
+}

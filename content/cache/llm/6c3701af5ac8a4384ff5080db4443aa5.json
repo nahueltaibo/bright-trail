@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 3 says Mia tapes a foam tray to a stick and that makes a boat. A stick is an odd base for a floating boat. Consider naming a hull piece (for example, a foam tray as the boat body) so the build step is physically believable."
+      },
+      {
+        "target": "g1-sci-design-steps-tap-9",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The item asks which step comes 'last', but the lesson loops: after make it better, the child tests again (see tap-10 and tap-11). A teacher could dispute 'last'. Consider 'What step comes after the test?' or 'Which step is the fourth step in the list?' to avoid the loop issue."
+      },
+      {
+        "target": "g1-sci-design-steps-tap-12",
+        "severity": "note",
+        "category": "other",
+        "note": "The choices are long comma-separated lists such as 'test, plan, build'. By ear these are hard to tell apart for a child who cannot read well. Consider a shorter form, such as 'First plan, then build, then test' spoken as three choices, or a simpler item."
+      },
+      {
+        "target": "g1-sci-design-steps-tap-14",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration says the cup holder tipped over but does not say a test happened. The answer 'make it better' still holds, but the item would be clearer if it said 'In a test, Kai's cup holder tipped over.'"
+      }
+    ],
+    "notes": "I checked every item against the story and found no wrong marked answers, no choice that is also partly right, and no false facts. Each item's marked answer matches the plan, build, test, make-it-better sequence used in the story. No content stereotypes a group or shames or scares a child. The four notes are about clarity and tone, not correctness. Nothing here needs to block publication."
+  }
+}

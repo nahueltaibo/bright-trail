@@ -1,0 +1,260 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g4-soc-early-locations",
+        "title": "Where Early Societies Lived",
+        "description": "Find early societies, like a First Nation and an Inuit society, on a globe or map. Read climate and land maps to see how the land shaped life.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g3-soc-a-maps", "g2-soc-world-features"]
+      },
+      {
+        "id": "g4-soc-visual-evidence",
+        "title": "Clues From Art and Artefacts",
+        "description": "Carvings, masks, beadwork, pottery, and tools show how people lived. Pick what each clue tells about daily life.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g3-soc-a-sources"]
+      },
+      {
+        "id": "g4-soc-daily-life",
+        "title": "Daily Life in Early Societies",
+        "description": "Match food, homes, clothing, school, and ceremonies to the early society they belong to, including First Nation and Inuit ones.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g3-soc-daily-life-roles"]
+      },
+      {
+        "id": "g4-soc-physical-features",
+        "title": "Land, Weather, and Early Food",
+        "description": "Rivers, floods, volcanoes, soil, and seasons changed how early people grew or found food. Match each feature or event to what it did.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g4-soc-early-locations", "g2-soc-adapt"]
+      },
+      {
+        "id": "g4-soc-environment-needs",
+        "title": "Meeting Needs From the Land",
+        "description": "Early people got food, shelter, and clothing from where they lived. Match each place to how people met their needs.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g4-soc-physical-features", "g2-soc-needs"]
+      },
+      {
+        "id": "g4-soc-tech",
+        "title": "Early Inventions and Discoveries",
+        "description": "Calendars, the printing press, farming tools, and boats were big ideas long ago. Match each invention to the people who made it and what it did.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g4-soc-daily-life"]
+      },
+      {
+        "id": "g4-soc-governance",
+        "title": "How Early Societies Were Governed",
+        "description": "Some societies had kings, emperors, chiefs, or voting councils. Match each way of governing to its society.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g3-soc-treaties", "g3-soc-local-government"]
+      },
+      {
+        "id": "g4-soc-social-org",
+        "title": "Classes and Groups Long Ago",
+        "description": "Societies had groups like nobles, peasants, slaves, priests, and merchants. Match each group to its role and how much power it had.",
+        "expectationCodes": ["A3.8"],
+        "prerequisiteIds": ["g4-soc-governance", "g4-soc-daily-life"]
+      },
+      {
+        "id": "g4-soc-coop-conflict",
+        "title": "Why Groups Cooperated or Fought",
+        "description": "Groups worked together or fought over trade, land, power, and beliefs. Sort each reason into cooperation or conflict.",
+        "expectationCodes": ["A3.9"],
+        "prerequisiteIds": ["g3-soc-conflict-cooperation", "g4-soc-social-org"]
+      },
+      {
+        "id": "g4-soc-resolve-conflict",
+        "title": "Making Peace Long Ago",
+        "description": "The Great Law of Peace, treaties, guilds, and sharing food helped people get along. Match each to how it helped.",
+        "expectationCodes": ["A3.10"],
+        "prerequisiteIds": ["g4-soc-coop-conflict"]
+      },
+      {
+        "id": "g4-soc-compare-org",
+        "title": "Comparing Early Societies' Structure",
+        "description": "Compare how two early societies were organized, like classes and the status of women. Sort what is the same and different, and compare with Canada today.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g4-soc-social-org"]
+      },
+      {
+        "id": "g4-soc-compare-groups",
+        "title": "Lives of Different Groups",
+        "description": "A slave and a senator, or a serf and a lord, lived very differently. Pick how their lives were different because of how their society was organized.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g4-soc-compare-org", "g4-soc-daily-life"]
+      },
+      {
+        "id": "g4-soc-young-people",
+        "title": "Young People Then and Now",
+        "description": "Children long ago had different chores, schooling, and play depending on their family. Sort what is like your life and what is different.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g4-soc-daily-life", "g3-soc-life-compare"]
+      },
+      {
+        "id": "g4-soc-compare-environment",
+        "title": "Caring for the Land Then and Now",
+        "description": "Compare how early societies used land, seasons, and animals with how Canada does today. Sort what is the same and different.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g4-soc-environment-needs", "g2-soc-sustainability"]
+      },
+      {
+        "id": "g4-soc-a-questions",
+        "title": "Questions About Early Societies",
+        "description": "Pick a good question to investigate about how the land and weather shaped life in an early society.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g3-soc-a-questions", "g4-soc-environment-needs"]
+      },
+      {
+        "id": "g4-soc-a-sources",
+        "title": "Sources About Early Societies",
+        "description": "Elders' stories, artefacts, images, and websites are sources. Sort which ones help answer a question about an early society.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g4-soc-a-questions", "g3-soc-a-sources"]
+      },
+      {
+        "id": "g4-soc-a-maps",
+        "title": "Maps of Early Societies",
+        "description": "Read thematic maps of rivers, soil, climate, and trade routes. Pick what a map shows about where early people lived.",
+        "expectationCodes": ["A2.3"],
+        "prerequisiteIds": ["g4-soc-early-locations", "g3-soc-a-maps"]
+      },
+      {
+        "id": "g4-soc-a-tools",
+        "title": "Organizers and Artefact Clues",
+        "description": "Use a Venn diagram, T-chart, or organizer to compare societies or study an artefact. Pick what the tool shows.",
+        "expectationCodes": ["A2.4"],
+        "prerequisiteIds": ["g4-soc-a-sources", "g3-soc-a-tools"]
+      },
+      {
+        "id": "g4-soc-a-conclusions",
+        "title": "Conclusions About Early Societies",
+        "description": "Look at the evidence about how an early society and its land were connected. Pick the conclusion the evidence supports.",
+        "expectationCodes": ["A2.5"],
+        "prerequisiteIds": ["g4-soc-a-tools", "g3-soc-a-conclusions"]
+      },
+      {
+        "id": "g4-soc-a-communicate",
+        "title": "Sharing Early Society Findings",
+        "description": "Pick the best way to share what you learned and the right words like serf, noble, Elder, hierarchy, and civilization.",
+        "expectationCodes": ["A2.6"],
+        "prerequisiteIds": ["g4-soc-a-conclusions", "g3-soc-a-communicate"]
+      },
+      {
+        "id": "g4-soc-physical-regions",
+        "title": "Canada's Physical Regions",
+        "description": "Canada has mountains, plains, forests, and tundra. Match each region to where it is and what it is like.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g3-soc-landforms"]
+      },
+      {
+        "id": "g4-soc-human-activities",
+        "title": "What People Do in Each Region",
+        "description": "Match activities like farming, mining, fishing, skiing, and hiking to the region where they happen.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": ["g4-soc-physical-regions", "g3-soc-nature-jobs"]
+      },
+      {
+        "id": "g4-soc-sectors",
+        "title": "Four Economic Sectors",
+        "description": "Sort industries like logging, car making, banks, and research into the resource, making, service, and information sectors.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g3-soc-employment"]
+      },
+      {
+        "id": "g4-soc-political-regions",
+        "title": "Types of Political Regions",
+        "description": "Provinces, territories, towns, and First Nations are different kinds of regions. Match each to how it is the same or different.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g3-soc-local-government"]
+      },
+      {
+        "id": "g4-soc-directions",
+        "title": "Directions and Map Grids",
+        "description": "Use NE, NW, SE, SW and number-letter grids to find regions of Canada on a map.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g2-soc-cardinal", "g4-soc-physical-regions"]
+      },
+      {
+        "id": "g4-soc-provinces",
+        "title": "Provinces, Territories, and Capitals",
+        "description": "Match each province and territory to its capital, where it is, and some of the people who live there.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g4-soc-political-regions", "g4-soc-directions"]
+      },
+      {
+        "id": "g4-soc-quality-life",
+        "title": "Opportunities and Challenges in Regions",
+        "description": "Jobs, pollution, and housing can be good or hard for people in different parts of Canada. Sort each one into an opportunity or a challenge.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g4-soc-provinces", "g4-soc-sectors"]
+      },
+      {
+        "id": "g4-soc-nature-industry",
+        "title": "How Nature Shapes Industry",
+        "description": "The Shield has mines, the Prairies have big farms, and the Maritimes have fishing. Match each region to the industry its land allows.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g4-soc-human-activities", "g4-soc-sectors"]
+      },
+      {
+        "id": "g4-soc-industry-impact",
+        "title": "How Industries Affect Nature",
+        "description": "Oil sands, dams, smelters, and fishing can harm land, air, and water. Match each industry to its effect on the environment.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g4-soc-nature-industry"]
+      },
+      {
+        "id": "g4-soc-sustainable-actions",
+        "title": "Using Resources More Sustainably",
+        "description": "Solar panels, safe fishing rules, and talking with Indigenous communities can help. Pick which actions work well and why.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g4-soc-industry-impact"]
+      },
+      {
+        "id": "g4-soc-b-questions",
+        "title": "Questions About Needs and Nature",
+        "description": "Pick a good question to investigate about balancing what people want with taking care of the environment.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g3-soc-b-questions", "g4-soc-sustainable-actions"]
+      },
+      {
+        "id": "g4-soc-b-gather",
+        "title": "Gathering Region Information",
+        "description": "Satellite images, thematic maps, climate graphs, and Elder interviews are sources. Sort which ones help with a Canadian region question.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g4-soc-b-questions", "g3-soc-b-gather"]
+      },
+      {
+        "id": "g4-soc-b-maps",
+        "title": "Reading and Making Canada Maps",
+        "description": "Read population and resource maps and pick symbols or shading to make a map of Canadian resources or land height.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g4-soc-b-gather", "g3-soc-b-maps"]
+      },
+      {
+        "id": "g4-soc-b-tools",
+        "title": "Graphs and Charts About Regions",
+        "description": "Read a double bar graph, population graph, or decision chart. Pick what it shows about people and the environment.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g4-soc-b-gather", "g3-soc-b-tools"]
+      },
+      {
+        "id": "g4-soc-b-conclusions",
+        "title": "Conclusions About Needs and Nature",
+        "description": "Look at the evidence about an issue, like a new dam. Pick the conclusion it supports.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g4-soc-b-tools", "g4-soc-b-maps", "g3-soc-b-conclusions"]
+      },
+      {
+        "id": "g4-soc-b-communicate",
+        "title": "Sharing Stewardship Findings",
+        "description": "Pick the best way to share what you learned and the right words like tundra, forestry, tourism, and hydroelectricity.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g4-soc-b-conclusions", "g3-soc-b-communicate"]
+      }
+    ]
+  }
+}

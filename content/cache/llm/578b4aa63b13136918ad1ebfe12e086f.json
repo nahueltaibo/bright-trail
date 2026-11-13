@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-liquid-or-solid-tap-4",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The explanation says 'A solid is the one that stays hard.' That teaches a misconception. Many solids are not hard (a sponge, a pillow, a rubber band, a towel), and what makes a solid a solid is that it keeps its own shape. Rewrite the explanation to say a liquid can pour and flow and takes the shape of its container, and a solid keeps its own shape. The marked answer 'pour' is correct."
+      },
+      {
+        "target": "g2-sci-liquid-or-solid-tap-10",
+        "severity": "note",
+        "category": "audio",
+        "note": "Choice text 'a rock (picture: emoji)' and 'rain (picture: emoji)' includes a picture annotation in the spoken label. Text-to-speech may read the annotation aloud awkwardly, and it is inconsistent with the other items, which have no picture annotations. Keep the label to the item name and move the emoji to a separate picture field."
+      },
+      {
+        "target": "g2-sci-liquid-or-solid-tap-6",
+        "severity": "note",
+        "category": "other",
+        "note": "'Odd one out' is an abstract phrase that may be hard to follow by ear for a Grade 2 child who cannot yet read well. Consider 'Which one does NOT belong?' with a short spoken cue."
+      },
+      {
+        "target": "g2-sci-liquid-or-solid-tap-13",
+        "severity": "note",
+        "category": "other",
+        "note": "Glass is grouped as a solid, which is correct at this level. The 'Why' text says wood, glass, and brick are 'used to build things,' which is not accurate for glass in every case. Consider 'used to build and make things' or simply 'solids.'"
+      },
+      {
+        "target": "g2-sci-liquid-or-solid-tap-12",
+        "severity": "note",
+        "category": "other",
+        "note": "Soup can contain solid pieces, so 'soup is a liquid' is a simplification a teacher could question. It is acceptable for this level, but 'a soup you can pour' or 'soup is mostly liquid' would be more precise."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 tap items. Each marked answer is correct and each item has exactly one right choice. The only blocker is the explanation in tap-4, which teaches that solids are hard. Story cards 1-7 are accurate for the grade level and need no changes. Nothing in the content stereotypes a community or frightens a child. The notes are optional polish, not required fixes."
+  }
+}

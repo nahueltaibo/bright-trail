@@ -1,0 +1,572 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Maya. She is 6. This morning, her tummy rumbled. Maya was hungry.",
+        "text": "Hungry",
+        "visual": { "kind": "emoji", "emoji": "😋", "count": null, "filled": null }
+      },
+      {
+        "narration": "Food gives your body energy. Energy helps you run, jump, and play.",
+        "text": "Energy",
+        "visual": { "kind": "emoji", "emoji": "🏃", "count": null, "filled": null }
+      },
+      {
+        "narration": "Food helps your bones and muscles grow strong. Maya drinks milk. Milk helps her bones.",
+        "text": "Strong bones",
+        "visual": { "kind": "emoji", "emoji": "🥛", "count": null, "filled": null }
+      },
+      {
+        "narration": "Food helps your teeth and skin stay healthy too. Maya crunches a carrot.",
+        "text": "Teeth and skin",
+        "visual": { "kind": "emoji", "emoji": "🥕", "count": null, "filled": null }
+      },
+      {
+        "narration": "Food helps your brain. Your brain helps you think and learn at school.",
+        "text": "Brain",
+        "visual": { "kind": "emoji", "emoji": "🧠", "count": null, "filled": null }
+      },
+      {
+        "narration": "Maya eats her lunch. Now she has energy to play. Her body can grow strong!",
+        "text": null,
+        "visual": { "kind": "objects", "emoji": "🍎", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Food helps us in so many ways. Now it is your turn to practise!",
+        "text": "Your turn!",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Maya is hungry. Why do our bodies need food: for energy, or to feel bored?",
+        "prompt": "Why do we need food?",
+        "why": "Food gives our bodies energy. Energy helps us run, play, and learn.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "for energy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "to feel bored",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: Food helps our bodies grow.",
+        "prompt": "Food helps us grow.",
+        "why": "That is true. Food helps your bones, muscles, skin, and teeth grow.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What gives your body energy to run and play: food, a toy, or a blanket?",
+        "prompt": "What gives us energy?",
+        "why": "Food gives your body energy. A toy or a blanket cannot do that.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a toy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a blanket",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "food",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which part of you helps you think and learn: your brain, your knee, or your nose?",
+        "prompt": "What helps you think?",
+        "why": "Your brain helps you think and learn. Food helps your brain grow and work well.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "your knee",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "your nose",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "your brain",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Milk helps your bones grow strong. What else do our bodies get from food: energy, or a loud noise?",
+        "prompt": "What do we get from food?",
+        "why": "Food gives us energy. It does not make noise.",
+        "visual": { "kind": "emoji", "emoji": "🥛", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a loud noise",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "energy",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam feels tired, and his tummy is empty. What can he do to get energy: eat a snack, or look at clouds?",
+        "prompt": "How can Sam get energy?",
+        "why": "Food gives us energy. A healthy snack can help Sam feel better.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "look at clouds",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "eat a snack",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which is a reason we eat food: to help our bones grow, or to make our shoes fit?",
+        "prompt": "Why do we eat food?",
+        "why": "Food helps our bones grow strong. Shoes are not changed by what we eat.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "to help our bones grow",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "to make our shoes fit",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one does food NOT give us: energy, strong muscles, or a new bike?",
+        "prompt": "Food does NOT give us...",
+        "why": "Food gives us energy and strong muscles. It cannot give us a new bike.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "energy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "strong muscles",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a new bike",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Food helps the part of you that covers your body stay healthy. Is it your skin, a shoe, or a hat?",
+        "prompt": "Food helps this part.",
+        "why": "Your skin covers your body. Food helps your skin stay healthy.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a shoe",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a hat",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "your skin",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "True or false: Only our muscles need food.",
+        "prompt": "Only muscles need food.",
+        "why": "That is false. Our teeth, skin, bones, muscles, and brain all need food.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Leo did not eat lunch. Now he feels weak and cannot think well. Why: his body needs energy, or it is too sunny?",
+        "prompt": "Why does Leo feel weak?",
+        "why": "Our bodies need food for energy. Without it, we can feel weak and find it hard to think.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "his body needs energy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "it is too sunny",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sometimes a child is often hungry and has no food. Who can help: a trusted adult, or no one?",
+        "prompt": "Who can help if you are hungry?",
+        "why": "A trusted adult, like a parent or teacher, can help you get food. It is okay to ask.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "no one",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a trusted adult",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Muscles help you move. Eggs and beans help muscles grow. What do muscles help you do: move, or hear?",
+        "prompt": "What do muscles do?",
+        "why": "Muscles help you move, like when you run or jump. Food helps them grow strong.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "move",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "hear",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Our bodies use energy even when we sit still. Why do we eat when we rest: our body still needs energy, or food only matters when we run?",
+        "prompt": "Why eat when we rest?",
+        "why": "Your body works all day, even when you rest. It always needs energy from food.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "body still needs energy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "only when we run",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Mia has a big race today. What should she do first to have energy: eat a healthy meal, or skip her meal?",
+        "prompt": "What should Mia do first?",
+        "why": "Eating a healthy meal gives Mia energy for her race. Skipping food would leave her tired.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "skip her meal",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "eat a healthy meal",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

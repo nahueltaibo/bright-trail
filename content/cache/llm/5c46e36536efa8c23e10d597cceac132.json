@@ -1,0 +1,302 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g1-sci-research-steps",
+        "title": "Steps to Find Out Answers",
+        "description": "Put the steps for finding out about something in order. Pick a good question to look into and a good place to find the answer.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-fair-test",
+        "title": "Fair Tests and Experiments",
+        "description": "Pick the test that changes only one thing. Put the steps of a simple experiment in order.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-design-steps",
+        "title": "Design, Build, and Test",
+        "description": "Put the steps for making something in order: plan it, build it, test it, and make it better.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-safety",
+        "title": "Staying Safe Like a Scientist",
+        "description": "Pick the safe way to use tools and materials. Choose the right gear to wear, like goggles or gloves.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-share-findings",
+        "title": "Sharing What We Find Out",
+        "description": "Pick the best way to share what you learned, like a chart, a picture, or a talk. Match the science words to what they mean.",
+        "expectationCodes": ["A1.5"],
+        "prerequisiteIds": ["g1-sci-research-steps"]
+      },
+      {
+        "id": "g1-sci-code-algorithms",
+        "title": "Clear Coding Steps",
+        "description": "Look at a few lines of code and pick what they will do. Put the instructions in the right order so they are clear.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-coding-impact",
+        "title": "Coding and New Technology Today",
+        "description": "Pick how coding and new technology change things we do every day, like at home or in a store.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g1-sci-code-algorithms"]
+      },
+      {
+        "id": "g1-sci-science-solves-problems",
+        "title": "Science Helps Solve Problems",
+        "description": "Match science and technology tools at home and in town to the problems they fix. Pick how science can team up with subjects like math or art.",
+        "expectationCodes": ["A3.1", "A3.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-diverse-contributions",
+        "title": "People Who Help Science",
+        "description": "Match inventions and ideas to the different communities of people who gave them to us.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-linked-nature",
+        "title": "Everything in Nature Is Connected",
+        "description": "Sort living and non-living things in nature. Pick how they depend on each other, like a plant and soil.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-basic-needs",
+        "title": "What Living Things Need",
+        "description": "Pick the things all living things need: air, water, food, heat, shelter, and space.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-plant-animal-features",
+        "title": "Body Parts That Help Survive",
+        "description": "Match a plant or animal part, like roots, fur, or wings, to the need it helps meet.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g1-sci-basic-needs"]
+      },
+      {
+        "id": "g1-sci-body-parts",
+        "title": "Parts of the Human Body",
+        "description": "Label the parts of the body, like eyes, ears, nose, tongue, and skin. Pick what each part does.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-healthy-environment",
+        "title": "A Healthy Place to Live",
+        "description": "Pick what makes a healthy environment, like clean air, clean water, and good food. Pick how it helps living things get what they need.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g1-sci-basic-needs"]
+      },
+      {
+        "id": "g1-sci-living-things-help",
+        "title": "How Living Things Help Each Other",
+        "description": "Match living things to how they help others, like bees helping flowers or trees giving shelter.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g1-sci-basic-needs"]
+      },
+      {
+        "id": "g1-sci-loss-effects",
+        "title": "What If Something Disappeared?",
+        "description": "Pick what could happen if a tree, a pond, or clean water went away. Think about how different people and animals would feel.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g1-sci-linked-nature"]
+      },
+      {
+        "id": "g1-sci-healthy-actions",
+        "title": "Ways to Help the Environment",
+        "description": "Pick actions that keep our air, water, and land healthy, like picking up litter.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g1-sci-healthy-environment"]
+      },
+      {
+        "id": "g1-sci-energy-moves",
+        "title": "Energy Moves and Changes Things",
+        "description": "Pick examples where energy makes something move or change, like a push, a wind, or heat melting ice.",
+        "expectationCodes": ["C2.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-sun-energy",
+        "title": "The Sun Gives Us Energy",
+        "description": "Pick how the Sun warms air, land, and water, gives us light, and helps plants grow.",
+        "expectationCodes": ["C2.2"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g1-sci-food-energy",
+        "title": "Food Gives Energy",
+        "description": "Pick which things give living things energy. Match foods to animals and people that use them.",
+        "expectationCodes": ["C2.3"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g1-sci-energy-sources",
+        "title": "Where Our Energy Comes From",
+        "description": "Match everyday things, like lamps, cars, and stoves, to their energy source, like electricity, gas, wind, or sunlight.",
+        "expectationCodes": ["C2.4"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g1-sci-limited-energy",
+        "title": "Energy Resources Can Run Out",
+        "description": "Sort energy resources we get from the world around us. Pick which ones can run out.",
+        "expectationCodes": ["C2.5"],
+        "prerequisiteIds": ["g1-sci-energy-sources"]
+      },
+      {
+        "id": "g1-sci-energy-use-home",
+        "title": "Using Energy Wisely",
+        "description": "Pick ways we use energy at home and school. Choose ways to save it, like turning off lights.",
+        "expectationCodes": ["C1.1"],
+        "prerequisiteIds": ["g1-sci-energy-sources"]
+      },
+      {
+        "id": "g1-sci-no-electricity",
+        "title": "Life Without Electricity",
+        "description": "Pick what would change for people and animals if there were no electricity.",
+        "expectationCodes": ["C1.2"],
+        "prerequisiteIds": ["g1-sci-energy-sources"]
+      },
+      {
+        "id": "g1-sci-seasonal-energy",
+        "title": "Energy Through the Seasons",
+        "description": "Sort which energy we use in each season, like heaters in winter and fans in summer.",
+        "expectationCodes": ["C2.6"],
+        "prerequisiteIds": ["g1-sci-energy-sources", "g1-sci-season-weather"]
+      },
+      {
+        "id": "g1-sci-objects-materials",
+        "title": "Objects and What They're Made Of",
+        "description": "Pick the materials, like wood, metal, plastic, or glass, that things are made from. Some objects use more than one material.",
+        "expectationCodes": ["D2.1", "D2.3"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-structures-load",
+        "title": "Structures That Hold Loads",
+        "description": "Pick which objects are built to hold weight. Find the frames that hold things up.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-object-senses",
+        "title": "Describing Objects With Senses",
+        "description": "Pick words for how things look, feel, sound, and smell, like smooth, rough, or loud.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-object-purposes",
+        "title": "What Objects Are For",
+        "description": "Match everyday objects and structures to what they are used for.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-material-properties",
+        "title": "Right Material for the Job",
+        "description": "Pick the material property, like strong, soft, or waterproof, that helps an object do its job.",
+        "expectationCodes": ["D2.6"],
+        "prerequisiteIds": ["g1-sci-object-purposes"]
+      },
+      {
+        "id": "g1-sci-fasteners",
+        "title": "Fasteners and Their Uses",
+        "description": "Name fasteners like tape, glue, nails, screws, zippers, and buttons. Match each one to a job.",
+        "expectationCodes": ["D2.7"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-material-sources",
+        "title": "Where Materials Come From",
+        "description": "Match materials like wood, cotton, wool, and clay to the plant, animal, or earth they come from.",
+        "expectationCodes": ["D2.8"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-waste-reduce",
+        "title": "Waste and How to Make Less",
+        "description": "Sort kinds of waste, like paper, food, and plastic. Pick actions that make less waste and why they help.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g1-sci-compare-objects-impact",
+        "title": "Comparing Objects and Their Impact",
+        "description": "Compare objects with the same job, like a paper bag and a plastic bag. Pick what they are made of, where it comes from, and what happens when they wear out.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g1-sci-material-sources", "g1-sci-waste-reduce"]
+      },
+      {
+        "id": "g1-sci-earth-sun",
+        "title": "Earth and the Sun",
+        "description": "Pick how Earth turns and moves around the Sun to make day and night and the seasons.",
+        "expectationCodes": ["E2.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-cycles",
+        "title": "Cycles That Repeat",
+        "description": "Put repeating events in order, like day and night or the four seasons. Pick which things are cycles.",
+        "expectationCodes": ["E2.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-sci-sun-light-heat",
+        "title": "Sun Light and Heat Changes",
+        "description": "Pick when the Sun gives the most light and heat in a day. Compare the amounts in each of the four seasons.",
+        "expectationCodes": ["E2.3"],
+        "prerequisiteIds": ["g1-sci-earth-sun", "g1-sci-cycles"]
+      },
+      {
+        "id": "g1-sci-season-weather",
+        "title": "Weather in the Four Seasons",
+        "description": "Sort weather, rain, snow, and temperature into spring, summer, fall, and winter where we live.",
+        "expectationCodes": ["E2.4"],
+        "prerequisiteIds": ["g1-sci-cycles"]
+      },
+      {
+        "id": "g1-sci-seasonal-adaptations",
+        "title": "How Living Things Handle Seasons",
+        "description": "Match plants and animals to what they do in each season, like leaves changing, birds flying south, or bears sleeping.",
+        "expectationCodes": ["E2.5"],
+        "prerequisiteIds": ["g1-sci-season-weather"]
+      },
+      {
+        "id": "g1-sci-people-prepare",
+        "title": "How People Get Ready for Seasons",
+        "description": "Pick how people get ready for weather and seasons, like the clothes we wear, the homes we heat, and the food we store.",
+        "expectationCodes": ["E2.6"],
+        "prerequisiteIds": ["g1-sci-season-weather"]
+      },
+      {
+        "id": "g1-sci-outdoor-activities",
+        "title": "Outdoor Fun All Year",
+        "description": "Match outdoor activities to seasons. Pick inventions, like snow tires or indoor rinks, that let us play all year.",
+        "expectationCodes": ["E1.1"],
+        "prerequisiteIds": ["g1-sci-people-prepare"]
+      },
+      {
+        "id": "g1-sci-seasonal-impacts",
+        "title": "How Seasons Affect Our World",
+        "description": "Pick how day and season changes affect towns, nature, and animals, like snow closing roads or ponds freezing.",
+        "expectationCodes": ["E1.2"],
+        "prerequisiteIds": ["g1-sci-seasonal-adaptations", "g1-sci-people-prepare"]
+      }
+    ]
+  }
+}

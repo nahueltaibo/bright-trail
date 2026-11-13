@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "Card 4 says nutrients are 'tiny bits of food that help a plant grow strong.' This teaches the common misconception that soil is a plant's food. Plants make their own food from light, air, and water. Nutrients are minerals taken up from soil. Reword to something like: 'Nutrients are minerals in soil that help a plant grow strong. The plant makes its own food with light and air.'"
+      },
+      {
+        "target": "g3-sci-plant-needs-tap-6",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The 'Why' says nutrients are 'tiny bits of food for plants.' This repeats the misconception that nutrients are food. Change it to: 'Soil holds nutrients, which are minerals plants need to grow strong. Roots take them in with water.'"
+      },
+      {
+        "target": "g3-sci-plant-needs-tap-10",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "The distractor 'a sunny window' is not fully wrong. Intense sun through glass can scorch leaves or overheat a pot. The marked answer (freezing night) is still clearly the best one. Consider changing the distractor to something clearly harmless, such as 'a cool breeze' or 'a gentle song', or noting that sun is usually helpful."
+      },
+      {
+        "target": "g3-sci-plant-needs-tap-13",
+        "severity": "note",
+        "category": "other",
+        "note": "'a sunny watered spot' is awkward for listening. 'a sunny spot with water' is clearer by ear."
+      },
+      {
+        "target": "g3-sci-plant-needs-tap-15",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'leans toward the room' is vague by ear. Plants lean toward light, so say 'leans toward the light in the room' or 'leans toward a gap of light' to make the clue clear."
+      },
+      {
+        "target": "g3-sci-plant-needs-tap-1",
+        "severity": "note",
+        "category": "other",
+        "note": "Very easy for a difficulty-1 item. Acceptable, but it is a near-guess among three obviously silly options."
+      }
+    ],
+    "notes": "Two blockers, both about one misconception: nutrients are described as food. This appears in story card 4 and tap-6 and should be fixed before release. Everything else checks out: each marked answer is correct, each distractor is clearly wrong, and the narration and pictures agree. The items cover only the skill's six needs and the ways a plant can be harmed. Several items are easy by ear. Distractors are obviously silly in some places, such as \"a toy\" and \"a phone,\" so consider raising difficulty in later revisions. No content stereotypes a group, and nothing is likely to shame or frighten a child."
+  }
+}

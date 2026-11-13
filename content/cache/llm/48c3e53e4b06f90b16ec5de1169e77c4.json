@@ -1,0 +1,49 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g2-soc-past-present",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-soc-family-change"],
+        "title": "",
+        "description": "",
+        "reason": "g2-soc-groups is already reached through g2-soc-family-change, which depends on g2-soc-traditions, which depends on g2-soc-groups. Listing it directly is redundant."
+      },
+      {
+        "skillId": "g2-soc-a-maps",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-soc-special-places"],
+        "title": "",
+        "description": "",
+        "reason": "g1-soc-a-maps is already reached through g2-soc-special-places, which lists it as a prerequisite. Listing it directly is redundant."
+      },
+      {
+        "skillId": "g2-soc-cardinal",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-soc-world-features"],
+        "title": "",
+        "description": "",
+        "reason": "g1-soc-map-elements is already reached through g2-soc-world-features, which depends on g2-soc-represent, then g1-soc-b-maps, which depends on g1-soc-map-elements. Listing it directly is redundant."
+      },
+      {
+        "skillId": "g2-soc-adapt",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-soc-compare-lifestyles"],
+        "title": "",
+        "description": "",
+        "reason": "g2-soc-location-climate is already reached through g2-soc-compare-lifestyles, which depends on g2-soc-describe-communities, which depends on g2-soc-location-climate. Listing it directly is redundant."
+      },
+      {
+        "skillId": "g2-soc-b-maps",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-soc-b-gather"],
+        "title": "",
+        "description": "",
+        "reason": "g2-soc-location-climate is already reached through g2-soc-b-gather, which depends on g2-soc-photos-maps, which depends on g2-soc-location-climate. Listing it directly is redundant."
+      }
+    ],
+    "notes": "Most corrections are redundant direct prerequisites: each removed skill is already reached through another listed prerequisite, so the kid's path still requires it. The list is a direct-prerequisite graph, so I removed only those. I checked each remaining prerequisite for a real need and for an existing chain through another listed prerequisite, and I found no missing same-idea prerequisites from Grade 1 that were not already covered transitively. Titles and descriptions read clearly aloud and match their expectations, so no changes there. One judgment call I left alone: g2-soc-groups lists g1-soc-respect-all, which is a weak fit for identifying community groups, but it is not clearly wrong, so I did not change it."
+  }
+}

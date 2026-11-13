@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-sci-plant-needs-tap-7",
+        "severity": "blocker",
+        "category": "wrong-answer",
+        "note": "The question asks which two things the sun gives a plant. The marked answer, light and heat, is correct, but the distractors are partly right. 'Space' is one of the plant needs taught in this skill, and 'water' is a plant need too. A child who knows the lesson can reasonably argue for 'space and rocks' or 'water and soil', so the item has more than one defensible answer. Reword it, for example by asking which two things the sun gives, with distractors that are plainly not sun-given, such as 'music and toys' or 'a shoe and a spoon'."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Cards 3 and 4 say leaves use light and air to make food, and card 4 says the plant makes its food 'with light and air'. Water is left out of the food-making step, which is incomplete. Plants make food from light, water, and air (carbon dioxide). Consider adding 'and water' so a teacher does not dispute it."
+      },
+      {
+        "target": "g3-sci-plant-needs-tap-6",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "The distractors 'music' and 'toys' are silly enough that the item is too easy for difficulty 2. It is correct as written, but it tests little."
+      }
+    ],
+    "notes": "I checked every item's marked answer against its choices and reasoning. The other items (tap-1 to tap-6, tap-8 to tap-15) have one correct answer each, the marked answer is right, and the wrong choices are clearly wrong. The explanations are accurate for Grade 3. None of the content stereotypes a group or frightens a child, and the narration matches the pictures. The main fix is tap-7. The story wording on food-making should be tightened as a note."
+  }
+}

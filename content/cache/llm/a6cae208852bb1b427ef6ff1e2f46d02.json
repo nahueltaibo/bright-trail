@@ -1,0 +1,103 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g4-hlth-nutrients",
+        "title": "Key Nutrients in Food",
+        "description": "Match nutrients like carbohydrates, protein, fat, vitamins, and minerals to foods that have them. Pick why your body, brain, and muscles need each one.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g3-hlth-food-origins"]
+      },
+      {
+        "id": "g4-hlth-tech-risks",
+        "title": "Risks and Safety Online",
+        "description": "Pick the risks of too much screen time, texting, gaming, and the Internet, like losing sleep or meeting online strangers. Choose smart ways to stay safe.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g3-hlth-safety-guidelines", "g3-hlth-healthy-choices"]
+      },
+      {
+        "id": "g4-hlth-bullying-abuse",
+        "title": "Bullying and Unsafe Behaviour",
+        "description": "Sort kinds of bullying, including cyberbullying, and other behaviour that is not okay. Pick how it can make someone feel and the best way to respond.",
+        "expectationCodes": ["D1.3"],
+        "prerequisiteIds": ["g3-hlth-healthy-relationships"]
+      },
+      {
+        "id": "g4-hlth-tobacco-substances",
+        "title": "What Is in Tobacco and Vapes",
+        "description": "Match substances like nicotine, tar, and carbon monoxide to tobacco and vaping products and smoke. Pick how each one can hurt your health.",
+        "expectationCodes": ["D1.4"],
+        "prerequisiteIds": ["g3-hlth-substances"]
+      },
+      {
+        "id": "g4-hlth-puberty-changes",
+        "title": "Changes at Puberty",
+        "description": "Sort the body changes that happen at puberty, like growing taller and body odour. Pick feelings and social changes that can come with them.",
+        "expectationCodes": ["D1.5"],
+        "prerequisiteIds": ["g3-hlth-growth-factors"]
+      },
+      {
+        "id": "g4-hlth-eating-goals",
+        "title": "Tracking Eating Habits and Goals",
+        "description": "Read a simple food log and pick a healthy eating goal that fits Canada's Food Guide, like choosing water or eating more vegetables.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g4-hlth-nutrients", "g3-hlth-cultural-foods"]
+      },
+      {
+        "id": "g4-hlth-safe-decisions",
+        "title": "Steps for Safe Decisions",
+        "description": "Put the steps of making a safe choice in order. Use them to pick the safest option when cycling, cooking, or going online.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g3-hlth-safety-guidelines"]
+      },
+      {
+        "id": "g4-hlth-smoke-vape-choices",
+        "title": "Choosing Not to Smoke or Vape",
+        "description": "Pick strong ways to say no to smoking and vaping, like giving a reason or changing the topic. Sort what can push a choice, like peer pressure.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": [
+          "g4-hlth-tobacco-substances",
+          "g3-hlth-healthy-choices",
+          "g2-hlth-consent-standing-up"
+        ]
+      },
+      {
+        "id": "g4-hlth-puberty-hygiene",
+        "title": "Hygiene as You Grow",
+        "description": "Pick the hygiene habits that matter more at puberty, like showering, clean clothes, and using hygiene products. Remember hand washing and tooth care too.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g4-hlth-puberty-changes"]
+      },
+      {
+        "id": "g4-hlth-mental-health-choices",
+        "title": "Daily Choices for Mind Health",
+        "description": "Pick everyday choices that help your mind, like sleep, being active, mindfulness, feeling check-ins, and helping others.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g3-hlth-strong-feelings"]
+      },
+      {
+        "id": "g4-hlth-healthy-eating-places",
+        "title": "Healthy Eating Everywhere",
+        "description": "Pick ways to help people eat healthier at school, arenas, stores, camping, or a friend's house.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g4-hlth-eating-goals"]
+      },
+      {
+        "id": "g4-hlth-smoke-effects",
+        "title": "Effects of Smoke and Vaping",
+        "description": "Sort short- and long-term effects of smoking and vaping on smokers. Pick how second-hand smoke can hurt people nearby.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g4-hlth-tobacco-substances"]
+      },
+      {
+        "id": "g4-hlth-managing-stress",
+        "title": "Managing Stress",
+        "description": "Pick strategies for stress you can control, and ways to cope with changes you can't, like moving or family stress.",
+        "expectationCodes": ["D3.3"],
+        "prerequisiteIds": ["g4-hlth-mental-health-choices", "g3-hlth-stress-response"]
+      }
+    ]
+  }
+}

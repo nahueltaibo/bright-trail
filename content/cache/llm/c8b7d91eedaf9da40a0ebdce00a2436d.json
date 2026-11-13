@@ -1,0 +1,620 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Mia is making a family timeline. A timeline puts events in order. Events are things that happen, like a birth or a move.",
+        "text": "Timeline",
+        "visual": { "kind": "emoji", "emoji": "📅", "count": null, "filled": null }
+      },
+      {
+        "narration": "We go from oldest to newest. Oldest means it happened first, long ago. Newest means it happened last, most recently.",
+        "text": "Oldest to newest",
+        "visual": null
+      },
+      {
+        "narration": "Mia's grandpa was born first. Next, Mia's mom was born. Mia was born last. That is three generations in order.",
+        "text": "Born in order",
+        "visual": { "kind": "emoji", "emoji": "🌳", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia adds moves too. Mom's family moved to a new town when Mom was 8. Later, Mia's family moved to a new home.",
+        "text": "Moves are events",
+        "visual": { "kind": "emoji", "emoji": "🏠", "count": null, "filled": null }
+      },
+      {
+        "narration": "Some words help us. First, next, then, and last. Before and after help too. Ask yourself, what happened first?",
+        "text": "first, next, then, last",
+        "visual": null
+      },
+      {
+        "narration": "Mia puts the oldest event at the start. She puts the newest at the end. Now her family timeline is done!",
+        "text": "Oldest first, newest last",
+        "visual": null
+      },
+      {
+        "narration": "You can put family events in order too. Let's practise with some timelines!",
+        "text": null,
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What does a timeline do: puts events in order, makes a snack, or paints a wall?",
+        "prompt": "What does a timeline do?",
+        "why": "A timeline puts events in order. It shows what happened first and what happened last.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "makes a snack",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "puts events in order",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "paints a wall",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Grandma, Mom, and baby Sam are in a family. Who is the oldest: Grandma, Mom, or baby Sam?",
+        "prompt": "Who is the oldest?",
+        "why": "Grandma was born the longest time ago. So she is the oldest and goes first.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Grandma",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Mom",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "baby Sam",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which word helps put events in order: first, purple, or loud?",
+        "prompt": "Which word helps with order?",
+        "why": "The word first tells us what happened at the start. Words like next and last help too.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "purple",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "loud",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "first",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "What does newest mean: happened most recently, or happened long ago?",
+        "prompt": "What does newest mean?",
+        "why": "Newest means it happened most recently. It goes last on a timeline.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "happened long ago",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "happened most recently",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: The oldest event goes first on a timeline.",
+        "prompt": "Oldest event goes first.",
+        "why": "That is true. A timeline goes from oldest to newest, so the oldest event is first.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Dad's life has three events. Which happened first: Dad was born, Dad started Grade 1, or Dad got his first job?",
+        "prompt": "What happened first?",
+        "why": "Dad had to be born before anything else. So being born is the first event.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Dad started Grade 1",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Dad got his first job",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Dad was born",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Nana was born first. Then her son Raj was born. Then Raj's daughter Priya was born. Who was born right after Nana: Raj or Priya?",
+        "prompt": "Who was born right after Nana?",
+        "why": "The story says Raj was born next, after Nana. Priya was born last.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Raj",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Priya",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Lin's family lived in Winnipeg first. Next they moved to Regina. Last they moved to Calgary. Which was their second home: Winnipeg, Regina, or Calgary?",
+        "prompt": "Which home was second?",
+        "why": "Winnipeg was first. Regina came next, so it was the second home. Calgary was last.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Winnipeg",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Calgary",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Regina",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which does not belong on a family timeline: a baby was born, we moved to a new town, or my shoe is blue?",
+        "prompt": "Which does not belong?",
+        "why": "A birth and a move are family events. A blue shoe is not an event, so it does not belong.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a baby was born",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "we moved to a new town",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "my shoe is blue",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia's mom was born before Mia. True or false: Mia goes before her mom on the timeline.",
+        "prompt": "Does Mia go before her mom?",
+        "why": "That is false. Mom was born first, so she goes first. Mia was born later, so she goes after.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Omar's grandpa moved to Canada. Then Omar's dad was born. Then Omar was born. Which came between the move and Omar's birth: Dad was born, Omar started school, or Grandpa was born?",
+        "prompt": "What came in the middle?",
+        "why": "Dad was born after the move and before Omar. Omar's school came later. Grandpa was born before the move.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Omar started school",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Grandpa was born",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Dad was born",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Grandma was born. Then Mom was born. Then Mom had baby Sam. Which event goes last on the timeline: Grandma was born, Mom was born, or Mom had baby Sam?",
+        "prompt": "Which event goes last?",
+        "why": "Baby Sam is the newest person. Mom having Sam happened last, so it goes at the end.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Mom had baby Sam",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Grandma was born",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Mom was born",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A family has a spring picnic, a summer camp, and a fall harvest feast. Which comes right after the summer camp: the spring picnic or the fall harvest feast?",
+        "prompt": "What comes after summer camp?",
+        "why": "The seasons go spring, summer, fall, winter. Fall comes right after summer, so the harvest feast is next.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the spring picnic",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the fall harvest feast",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Grandparents, parents, and children are three generations. Which generation was born most recently: the grandparents, the parents, or the children?",
+        "prompt": "Which group is the newest?",
+        "why": "Children are born after their parents. Parents are born after the grandparents. So the children are the newest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "the grandparents",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "the parents",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "the children",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Jo's family moved three times. They moved to Barrie at age 3, to Ottawa at age 9, and to Kingston at age 6. Which move was last: Barrie, Ottawa, or Kingston?",
+        "prompt": "Which move was last?",
+        "why": "Jo was oldest, age 9, for the Ottawa move. A bigger age means it happened later. So Ottawa was last.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Barrie",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Ottawa",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Kingston",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}
