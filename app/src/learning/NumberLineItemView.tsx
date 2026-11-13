@@ -6,13 +6,13 @@ import {
   StyleSheet,
   View,
   type AccessibilityActionEvent,
-  type GestureResponderEvent,
   type LayoutChangeEvent,
 } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
 import { font, radius } from '../design/tokens';
 import { KidButton } from './controls';
 import { ItemFrame, useItemAttempt } from './ItemFrame';
+import { useDrag } from './drag';
 import { ARC, ARC_TEXT, arcPath, FROG, type Arc } from './hopArc';
 import { BubbleView, type Bubble } from './minigames/Bubble';
 import { frames, wait } from './minigames/motion';
@@ -90,6 +90,15 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
     if (usable <= 0 || locked) return;
     setIndex(indexAtFraction((x - pad) / usable, item));
   };
+  const drag = useDrag({
+    enabled: !locked,
+    grab: 'press',
+    onGrab: (e) => {
+      trackLeft.current = e.nativeEvent.pageX - e.nativeEvent.locationX;
+      placeAt(e.nativeEvent.locationX);
+    },
+    onMove: (p) => placeAt(p.pageX - trackLeft.current),
+  });
   const nudge = (delta: number) =>
     setIndex((i) => (i === null ? 0 : Math.min(n, Math.max(0, i + delta))));
   const onAccessibilityAction = (e: AccessibilityActionEvent) => {
@@ -211,17 +220,7 @@ export function NumberLineItemView(props: ItemViewProps<NumberLineItem>) {
         accessibilityActions={[{ name: 'increment' }, { name: 'decrement' }]}
         onAccessibilityAction={onAccessibilityAction}
         onLayout={(e: LayoutChangeEvent) => setWidth(e.nativeEvent.layout.width)}
-        onStartShouldSetResponder={() => !locked}
-        onMoveShouldSetResponder={() => !locked}
-        // Keep the drag even if a parent scroll view asks for it.
-        onResponderTerminationRequest={() => false}
-        onResponderGrant={(e: GestureResponderEvent) => {
-          trackLeft.current = e.nativeEvent.pageX - e.nativeEvent.locationX;
-          placeAt(e.nativeEvent.locationX);
-        }}
-        onResponderMove={(e: GestureResponderEvent) =>
-          placeAt(e.nativeEvent.pageX - trackLeft.current)
-        }
+        {...drag}
         style={[styles.track, { height }]}
       >
         <View style={[StyleSheet.absoluteFill, styles.noTouch]}>

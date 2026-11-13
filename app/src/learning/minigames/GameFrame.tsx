@@ -1,6 +1,6 @@
 import { parseMixed, type SceneAnswer } from '@bright-trail/shared';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { Animated, PanResponder, Pressable, StyleSheet, View } from 'react-native';
+import { Animated, Pressable, StyleSheet, View } from 'react-native';
 import type { StyleProp, ViewStyle } from 'react-native';
 import { Icon } from '../../design/Icon';
 import { color, font, pressDown, radius, shadow } from '../../design/tokens';
@@ -13,6 +13,7 @@ import type { ItemProgress, Narrate } from '../types';
 import { ProgressDots } from '../../design/kid';
 import { ReadAlong } from '../ReadAlong';
 import { AmountText } from './AmountText';
+import { useDrag } from '../drag';
 import { Text } from '../../design/Text';
 
 /** A choice's value. Text the story can't show as a number, like "Same", stays text. */
@@ -280,39 +281,27 @@ type DragTileProps = {
   children: ReactNode;
 };
 
-/** Wraps a choice so a drag past a few points carries it. A tap still reaches the button. */
+/** Wraps a choice so a drag past `DRAG_SLOP` carries it. A tap still reaches the button. */
 function DragTile({ enabled, onDrop, onLanded, style, children }: DragTileProps) {
   const [pan] = useState(() => new Animated.ValueXY());
-  const [live] = useState({ enabled, onDrop, onLanded });
-  useEffect(() => {
-    Object.assign(live, { enabled, onDrop, onLanded });
-  });
   const back = () =>
     Animated.spring(pan, { toValue: { x: 0, y: 0 }, useNativeDriver: false }).start();
-  const [responder] = useState(() =>
-    PanResponder.create({
-      onMoveShouldSetPanResponder: (_e, g) => live.enabled && Math.abs(g.dx) + Math.abs(g.dy) > 10,
-      onPanResponderTerminationRequest: () => false,
-      onPanResponderMove: Animated.event([null, { dx: pan.x, dy: pan.y }], {
-        useNativeDriver: false,
-      }),
-      onPanResponderRelease: (_e, g) => {
-        const { onDrop: hit, onLanded: land } = live;
-        void (hit ? hit(g.moveX, g.moveY) : Promise.resolve(false)).then((ok) => {
-          if (ok) {
-            pan.setValue({ x: 0, y: 0 });
-            land();
-          } else back();
-        });
-      },
-      onPanResponderTerminate: back,
-    }),
-  );
+  const drag = useDrag({
+    enabled,
+    grab: 'move',
+    onMove: (p) => pan.setValue({ x: p.dx, y: p.dy }),
+    onDrop: (p) => {
+      void (onDrop ? onDrop(p.pageX, p.pageY) : Promise.resolve(false)).then((ok) => {
+        if (ok) {
+          pan.setValue({ x: 0, y: 0 });
+          onLanded();
+        } else back();
+      });
+    },
+    onCancel: back,
+  });
   return (
-    <Animated.View
-      {...responder.panHandlers}
-      style={[style, { transform: pan.getTranslateTransform(), zIndex: 1 }]}
-    >
+    <Animated.View {...drag} style={[style, { transform: pan.getTranslateTransform(), zIndex: 1 }]}>
       {children}
     </Animated.View>
   );

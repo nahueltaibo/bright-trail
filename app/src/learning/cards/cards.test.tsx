@@ -11,7 +11,7 @@ import { ORDER_DEMO_ITEMS } from '../order/demo';
 import { layoutOf as orderLayout } from '../order/layout';
 import { OrderStage } from '../order/OrderStage';
 import { SORT_DEMO_ITEMS } from '../sort/demo';
-import { binOf, layoutOf as sortLayout } from '../sort/layout';
+import { binOf, layoutOf as sortLayout, START } from '../sort/layout';
 import { SortStage } from '../sort/SortStage';
 import type { CardStageHandle } from './CardGame';
 import { STAGE_H, STAGE_W, toWorld, within, type Box } from './stage';
@@ -175,6 +175,25 @@ describe('drops', () => {
     expect(screen.getByTestId('sort-drag')).toBeTruthy();
     await rerender(<SortStage scene={s} />);
     expect(screen.queryByTestId('sort-drag')).toBeNull();
+  });
+
+  it('sort: dropping the card on a bin answers with its name', async () => {
+    const s = game(SORT_DEMO_ITEMS, 'sort', 'demo-sort-matter');
+    const onPick = jest.fn();
+    await render(<SortStage scene={s} onPick={onPick} />);
+    await act(async () => {
+      screen
+        .getByTestId('sort-stage')
+        .props.onLayout({ nativeEvent: { layout: { width: STAGE_W, height: STAGE_H } } });
+    });
+    const bin = sortLayout(s).bins[s.bin];
+    const page = (x: number, y: number) => ({ nativeEvent: { pageX: x, pageY: y } });
+    const drag = screen.getByTestId('sort-drag');
+    drag.props.onStartShouldSetResponderCapture(page(START.x, START.y));
+    expect(drag.props.onMoveShouldSetResponder(page(START.x + 4, START.y + 4))).toBe(false);
+    expect(drag.props.onMoveShouldSetResponder(page(START.x, bin.y))).toBe(true);
+    await act(async () => drag.props.onResponderRelease(page(bin.x, bin.y)));
+    expect(onPick).toHaveBeenCalledWith(s.bins[s.bin].text);
   });
 });
 
