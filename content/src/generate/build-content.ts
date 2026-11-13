@@ -46,7 +46,7 @@ const graph = JSON.parse(await readFile(join(outDir, 'skills.json'), 'utf8')) as
 };
 const skills: Skill[] = graph.skills.map((s) => SkillSchema.parse(s));
 const byId = new Map(skills.map((s) => [s.id, s]));
-const sources = await loadSources(join(contentDir, 'sources'));
+const sources = await loadSources(join(contentDir, 'sources', 'math'));
 
 const scope = await loadScope(join(contentDir, 'bundle-scope.json'));
 const bundleSkills = values.all ? skills : prerequisiteClosure(skills, scope.targets);
