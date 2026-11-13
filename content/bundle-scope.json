@@ -11,7 +11,8 @@
     "g5-fraction-decimal-percent",
     "g3-sci-plant-parts",
     "g1-sci-body-parts",
-    "g2-sci-solid-liquid-sort",
+    "g2-sci-liquid-or-solid",
+    "g1-sci-design-steps",
     "g2-sci-life-cycles",
     "g1-soc-community-features",
     "g2-soc-chronology",
@@ -20,6 +21,9 @@
   "extraRetries": {
     "g4-count-unit-fractions": 1,
     "g3-sci-plant-parts": 2,
-    "g1-soc-community-features": 2
+    "g1-soc-community-features": 2,
+    "g1-sci-objects-materials": 2,
+    "g3-sci-plant-needs": 2,
+    "g1-hlth-food-guide": 2
   }
 }
