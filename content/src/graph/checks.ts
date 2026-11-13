@@ -89,6 +89,17 @@ export function checkStructure(
         at(`${skill.id}: prerequisite ${id} is in a higher grade (${grade})`);
       }
     }
+    const optIns = new Set(
+      skill.expectationCodes.map(
+        (c) => source?.expectations.find((e) => e.code === c)?.parentOptIn ?? 'none',
+      ),
+    );
+    if (optIns.size > 1) at(`${skill.id}: mixes parent opt-in expectations with others`);
+    for (const id of skill.prerequisiteIds) {
+      if (!skill.parentOptIn && byId.get(id)?.parentOptIn) {
+        at(`${skill.id}: needs ${id}, which a parent must turn on, so it can stay locked`);
+      }
+    }
     const first = gradeName(firstGrade(sources, skill.subject));
     if (skill.grade !== firstGrade(sources, skill.subject) && skill.prerequisiteIds.length === 0) {
       at(`${skill.id}: orphan, only ${first} skills may have no prerequisites`);

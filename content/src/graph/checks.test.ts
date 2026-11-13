@@ -301,4 +301,33 @@ describe('checkGraph on a subject that starts at Grade 1', () => {
       'g2-plant-parts: orphan, only Grade 1 skills may have no prerequisites',
     );
   });
+
+  it('keeps parent opt-in skills apart from the rest', () => {
+    const optInSources: GradeSource[] = sources.map((source) => ({
+      ...source,
+      expectations: [
+        ...source.expectations,
+        {
+          code: 'B1.2',
+          kind: 'specific',
+          topic: 'Human Development and Sexual Health',
+          statement: 'body parts',
+          details: '',
+          parentOptIn: 'human-development',
+        },
+      ],
+    }));
+    const body: Skill = {
+      ...sci('g1-sci-body', [], ['B1.2']),
+      expectationCodes: ['B1.2'],
+      parentOptIn: 'human-development',
+    };
+    const mixed = { ...sci('g1-sci-plants'), expectationCodes: ['B1.1', 'B1.2'] };
+    const later = sci('g2-sci-plant-parts', ['g1-sci-plants', 'g1-sci-body']);
+    const found = checkGraph([body, mixed, later], optInSources).map((p) => p.message);
+    expect(found).toContain('g1-sci-plants: mixes parent opt-in expectations with others');
+    expect(found).toContain(
+      'g2-sci-plant-parts: needs g1-sci-body, which a parent must turn on, so it can stay locked',
+    );
+  });
 });

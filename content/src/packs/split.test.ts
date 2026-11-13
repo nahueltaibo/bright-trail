@@ -67,6 +67,18 @@ describe('splitBundle', () => {
     expect(manifest.packs.map((p) => p.id)).toEqual(['math-k', 'math-1']);
   });
 
+  it('leaves parent opt-in skills out until the app can turn them on', () => {
+    const skill = sampleBundle.skills.find((s) => s.grade === '1')!;
+    const optIn = {
+      ...skill,
+      id: 'g1-body-parts',
+      prerequisiteIds: [],
+      parentOptIn: 'human-development' as const,
+    };
+    const { core } = splitBundle({ ...sampleBundle, skills: [...sampleBundle.skills, optIn] });
+    expect(core).toEqual(splitBundle(sampleBundle).core);
+  });
+
   it('records each pack file hash and size', () => {
     const { manifest, files } = splitBundle(sampleBundle);
     for (const entry of manifest.packs) {

@@ -119,6 +119,8 @@ You turn official ${name} curriculum expectations into skills, one grade at a ti
 
 Rules:
 - Each skill is one body of knowledge a kid can show by answering short questions on a tablet: pick the right fact, sort things into groups, put steps or events in order, or label the parts of a picture. Hands-on investigations, discussions, and projects can't be checked this way, so build the skill around the facts and ideas the expectation teaches.
+- Some expectations teach a process instead of facts: investigating, designing, coding, or researching. Make each one a quiz on the process, using the grade's topics: put the steps in order, pick a question you could investigate, pick the fair test, pick what a few lines of code do, sort sources, or read a simple chart or map.
+- Expectations marked "parent opt-in" only reach kids whose parent turns them on. Never mix one with other expectations in a skill, and never make a skill without the mark depend on one.
 - Keep an expectation as one skill when it's one idea. Split it only when it bundles ideas a kid could master separately. Don't split a skill into small steps.
 - Every specific expectation must be covered by at least one skill. A skill may list several codes from this grade when it genuinely combines them, but only codes from one strand (the code's first letter). Use the codes exactly as written.
 - Aim for about one skill per specific expectation. Stay within the skill budget the prompt gives for the grade.
@@ -137,7 +139,8 @@ function gradeName(source: GradeSource): string {
 function formatExpectation(e: Expectation): string {
   if (e.kind === 'overall') return `### ${e.code} (overall)\n\n${e.statement}`;
   const topic = e.topic ? ` ${e.topic}` : '';
-  return `### ${e.code}${topic}\n\n${e.statement}\n\n${e.details}`.trim();
+  const optIn = e.parentOptIn ? ' (parent opt-in)' : '';
+  return `### ${e.code}${topic}${optIn}\n\n${e.statement}\n\n${e.details}`.trim();
 }
 
 function formatSkill(

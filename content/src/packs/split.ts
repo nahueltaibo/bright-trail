@@ -23,6 +23,7 @@ const sha256 = (text: string) => createHash('sha256').update(text).digest('hex')
  * Splits a bundle into core, one pack per subject and grade with content, and a manifest named
  * by the schema version and the core's hash. Output is minified and deterministic, so hashes match the served bytes.
  * Only offered subjects ship: the engine would unlock any skill in core, even one with no pack.
+ * Parent opt-in skills wait for the app's opt-in switch. No other skill depends on them.
  */
 export function splitBundle(bundle: ContentBundle): {
   core: ContentCore;
@@ -31,7 +32,7 @@ export function splitBundle(bundle: ContentBundle): {
 } {
   const files: PackFiles = new Map();
   const offered = new Set<string>(OFFERED_SUBJECTS);
-  const skills = bundle.skills.filter((s) => offered.has(s.subject));
+  const skills = bundle.skills.filter((s) => offered.has(s.subject) && !s.parentOptIn);
   const core = ContentCoreSchema.parse({
     schemaVersion: CONTENT_SCHEMA_VERSION,
     hash: sha256(JSON.stringify(skills)),

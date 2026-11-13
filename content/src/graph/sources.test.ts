@@ -114,7 +114,7 @@ describe('loadAllSources', () => {
       );
       expect(list.every((s) => s.subject === subject)).toBe(true);
     }
-    expect(sources.get('science')?.every((s) => s.strands.join() === 'B,C,D,E')).toBe(true);
+    expect(sources.get('science')?.every((s) => s.strands.join() === 'A,B,C,D,E')).toBe(true);
   });
 
   it('names the subject whose folder is missing', async () => {
@@ -143,7 +143,7 @@ describe('other subjects', () => {
     '**C1.1** something else',
   ].join('\n');
 
-  it('keeps the listed strands and skips Inquiry expectations', () => {
+  it('keeps the listed strands, Inquiry expectations included', () => {
     const source = parseSource('grade-2.md', file, {
       ...spec('social-studies'),
       strands: ['A'],
@@ -153,13 +153,16 @@ describe('other subjects', () => {
       framework: 'ontario-social-studies-2026',
       strands: ['A'],
     });
-    expect(source.expectations.map((e) => e.code)).toEqual(['A1', 'A1.1', 'A2']);
+    expect(source.expectations.map((e) => e.code)).toEqual(['A1', 'A1.1', 'A2', 'A2.1']);
   });
 
-  it('skips Human Development and Sexual Health in health', async () => {
+  it('marks Human Development and Sexual Health for a parent opt-in', async () => {
     const sources = await loadSources(root, 'health');
-    const topics = sources.flatMap((s) => s.expectations.map((e) => e.topic));
-    expect(topics.some((t) => /sexual health/i.test(t))).toBe(false);
+    const specific = sources.flatMap((s) => s.expectations.filter((e) => e.kind === 'specific'));
+    const optIn = specific.filter((e) => e.parentOptIn === 'human-development');
+    expect(optIn.length).toBeGreaterThan(0);
+    expect(optIn.every((e) => /sexual health/i.test(e.topic))).toBe(true);
+    expect(specific.some((e) => !e.parentOptIn && /sexual health/i.test(e.topic))).toBe(false);
     expect(sources.every((s) => s.strands.join() === 'D')).toBe(true);
   });
 

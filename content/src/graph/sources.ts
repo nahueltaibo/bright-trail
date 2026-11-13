@@ -3,6 +3,7 @@ import { join } from 'node:path';
 import {
   SUBJECT_FRAMEWORKS,
   type Framework,
+  type ParentOptIn,
   type SkillGrade,
   type Subject,
 } from '@bright-trail/shared';
@@ -16,6 +17,8 @@ export interface Expectation {
   statement: string;
   /** Examples and Key concepts as written in the source. */
   details: string;
+  /** Set on expectations a parent must turn on. Their skills carry it. */
+  parentOptIn?: ParentOptIn;
 }
 
 export interface GradeSource {
@@ -43,25 +46,23 @@ export interface SubjectSpec {
   strands?: readonly string[];
   /** Reads `kindergarten.md` too. Without it, the subject's graph starts at Grade 1. */
   kindergarten?: boolean;
-  /** Topic headings left out on purpose. */
-  skipTopics?: RegExp;
-  /** Overall expectation headings, such as `A2. Inquiry: …`, whose specifics are left out. */
-  skipOveralls?: RegExp;
+  /** Specific expectations under a matching topic heading need a parent's opt-in. */
+  optInTopic?: { topic: RegExp; optIn: ParentOptIn };
 }
 
 export const MATH: SubjectSpec = { subject: 'math', tag: '', kindergarten: true };
 
-/**
- * Subjects the skill graph covers.
- * Science skips Strand A, its investigation and coding skills.
- * Social studies skips its Inquiry expectations, which practise a research process.
- * Health keeps only Strand D, Healthy Living, without Human Development and Sexual Health.
- */
+/** Subjects the skill graph covers. Health keeps only Strand D, Healthy Living. */
 export const GRAPH_SUBJECTS: readonly SubjectSpec[] = [
   MATH,
-  { subject: 'science', tag: 'sci', strands: ['B', 'C', 'D', 'E'] },
-  { subject: 'social-studies', tag: 'soc', strands: ['A', 'B'], skipOveralls: /^Inquiry\b/ },
-  { subject: 'health', tag: 'hlth', strands: ['D'], skipTopics: /sexual health/i },
+  { subject: 'science', tag: 'sci', strands: ['A', 'B', 'C', 'D', 'E'] },
+  { subject: 'social-studies', tag: 'soc', strands: ['A', 'B'] },
+  {
+    subject: 'health',
+    tag: 'hlth',
+    strands: ['D'],
+    optInTopic: { topic: /human development and sexual health/i, optIn: 'human-development' },
+  },
 ];
 
 function specOf(subject: Subject): SubjectSpec {
@@ -86,7 +87,6 @@ function gradeOfFile(file: string): SkillGrade | null {
   return match ? (match[1] as SkillGrade) : null;
 }
 
-const OVERALL_HEADING = /^### ([A-Z]\d+)\. (.+)$/;
 const OVERALL = /^\*\*([A-Z]\d+)\.\*\*\s+(.+)$/;
 const SPECIFIC_HEADING = /^#### ([A-Z]\d+\.\d+)\b\s*(.*)$/;
 const STATEMENT = /^\*\*([A-Z]\d+\.\d+)\*\*\s+(.+)$/;
@@ -96,7 +96,6 @@ export function parseSource(file: string, markdown: string, spec: SubjectSpec): 
   const grade = gradeOfFile(file);
   if (!grade) throw new Error(`Unexpected source file ${file}`);
   const expectations: Expectation[] = [];
-  const overallTitles = new Map<string, string>();
   let current: (Expectation & { lines: string[] }) | null = null;
 
   const flush = () => {
@@ -121,8 +120,6 @@ export function parseSource(file: string, markdown: string, spec: SubjectSpec): 
       };
       continue;
     }
-    const overallHeading = OVERALL_HEADING.exec(line);
-    if (overallHeading) overallTitles.set(overallHeading[1], overallHeading[2]);
     if (/^#{1,3} /.test(line)) {
       flush();
       continue;
@@ -148,13 +145,13 @@ export function parseSource(file: string, markdown: string, spec: SubjectSpec): 
   }
   flush();
 
-  const skipped = (e: Expectation) =>
-    (spec.skipTopics?.test(e.topic) ?? false) ||
-    (spec.skipOveralls?.test(overallTitles.get(e.code.split('.')[0]) ?? '') ?? false);
-  const kept = expectations.filter(
-    (e) =>
-      (!spec.strands || spec.strands.includes(e.code[0])) && !(e.kind === 'specific' && skipped(e)),
-  );
+  const kept = expectations
+    .filter((e) => !spec.strands || spec.strands.includes(e.code[0]))
+    .map((e) =>
+      e.kind === 'specific' && spec.optInTopic?.topic.test(e.topic)
+        ? { ...e, parentOptIn: spec.optInTopic.optIn }
+        : e,
+    );
   const specific = kept.filter((e) => e.kind === 'specific');
   if (specific.length === 0) throw new Error(`${file}: no specific expectations found`);
   return {

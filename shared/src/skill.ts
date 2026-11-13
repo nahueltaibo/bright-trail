@@ -31,6 +31,11 @@ export type Subject = z.infer<typeof SubjectSchema>;
 /** Subjects with content, so the only ones a parent can pick. */
 export const OFFERED_SUBJECTS = ['math'] as const satisfies readonly Subject[];
 
+/** Topics a parent turns on for a child before the trail shows them. */
+export const PARENT_OPT_INS = ['human-development'] as const;
+export const ParentOptInSchema = z.enum(PARENT_OPT_INS);
+export type ParentOptIn = z.infer<typeof ParentOptInSchema>;
+
 /** Each subject's framework for Grades 1–6. Kindergarten skills use `ontario-kindergarten-2026`. */
 export const SUBJECT_FRAMEWORKS: Record<Subject, Framework> = {
   math: 'ontario-math-2020',
@@ -63,6 +68,8 @@ export const SkillSchema = z
     /** Kid-facing, so it may be read aloud. */
     description: NonEmptyTextSchema,
     prerequisiteIds: z.array(IdSchema),
+    /** Set when a parent must turn the skill on first, such as Human Development and Sexual Health. */
+    parentOptIn: ParentOptInSchema.optional(),
   })
   .superRefine((skill, ctx) => {
     const kindergarten = skill.framework === 'ontario-kindergarten-2026';
