@@ -5,7 +5,7 @@ import { parseArgs } from 'node:util';
 import { SkillSchema, type Skill } from '@bright-trail/shared';
 import { ClaudeCliLlm } from '../graph/cli-llm';
 import { cacheKey, withDiskCache, type LlmClient } from '../graph/llm';
-import { loadSources } from '../graph/sources';
+import { loadAllSources } from '../graph/sources';
 import { writeFormatted } from '../graph/write';
 import { writeBundle } from '../packs/write-packs';
 import { loadEdits } from './edits';
@@ -46,7 +46,7 @@ const graph = JSON.parse(await readFile(join(outDir, 'skills.json'), 'utf8')) as
 };
 const skills: Skill[] = graph.skills.map((s) => SkillSchema.parse(s));
 const byId = new Map(skills.map((s) => [s.id, s]));
-const sources = await loadSources(join(contentDir, 'sources', 'math'), 'math');
+const sources = await loadAllSources(join(contentDir, 'sources'));
 
 const scope = await loadScope(join(contentDir, 'bundle-scope.json'));
 const bundleSkills = values.all ? skills : prerequisiteClosure(skills, scope.targets);
@@ -58,7 +58,7 @@ const wanted = values.pilot
 const contextOf = (id: string): SkillContext => {
   const skill = byId.get(id.trim());
   if (!skill) throw new Error(`Unknown skill ${id}`);
-  const source = sources.find((s) => s.grade === skill.grade)!;
+  const source = sources.get(skill.subject)!.find((s) => s.grade === skill.grade)!;
   return {
     skill,
     expectations: source.expectations.filter((e) => skill.expectationCodes.includes(e.code)),

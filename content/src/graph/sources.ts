@@ -1,6 +1,12 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
-import type { Framework, SkillGrade, Subject } from '@bright-trail/shared';
+import {
+  OFFERED_SUBJECTS,
+  SUBJECT_FRAMEWORKS,
+  type Framework,
+  type SkillGrade,
+  type Subject,
+} from '@bright-trail/shared';
 
 export interface Expectation {
   /** Official code, e.g. `B2.3`. Codes repeat across grades, so pair them with a grade. */
@@ -34,9 +40,6 @@ export function idPrefix(grade: SkillGrade): string {
   return grade === 'K' ? 'k-' : `g${grade}-`;
 }
 
-/** Framework of each subject's Grade 1-6 files. Kindergarten files always use the 2026 program. */
-const GRADE_FRAMEWORKS: Record<Subject, Framework> = { math: 'ontario-math-2020' };
-
 function gradeOfFile(file: string): SkillGrade | null {
   if (file === 'kindergarten.md') return 'K';
   const match = /^grade-([1-6])\.md$/.exec(file);
@@ -47,7 +50,7 @@ const OVERALL = /^\*\*([A-Z]\d+)\.\*\*\s+(.+)$/;
 const SPECIFIC_HEADING = /^#### ([A-Z]\d+\.\d+)\b\s*(.*)$/;
 const STATEMENT = /^\*\*([A-Z]\d+\.\d+)\*\*\s+(.+)$/;
 
-/** Parses one curriculum file in the layout `content/sources/README.md` describes. */
+/** Parses one curriculum file in the layout `content/sources/math/README.md` describes. */
 export function parseSource(file: string, markdown: string, subject: Subject): GradeSource {
   const grade = gradeOfFile(file);
   if (!grade) throw new Error(`Unexpected source file ${file}`);
@@ -106,18 +109,40 @@ export function parseSource(file: string, markdown: string, subject: Subject): G
   return {
     grade,
     subject,
-    framework: grade === 'K' ? 'ontario-kindergarten-2026' : GRADE_FRAMEWORKS[subject],
+    framework: grade === 'K' ? 'ontario-kindergarten-2026' : SUBJECT_FRAMEWORKS[subject],
     strands: [...new Set(expectations.map((e) => e.code[0]))],
     file,
     expectations,
   };
 }
 
-/** Reads every grade file of one subject in `dir`, ordered K to 6. Ignores other files such as the README. */
-export async function loadSources(dir: string, subject: Subject): Promise<GradeSource[]> {
-  const files = (await readdir(dir)).filter((f) => gradeOfFile(f));
+/**
+ * Reads every grade file in `<root>/<subject>/`, ordered K to 6. Ignores other files such as the
+ * README.
+ */
+export async function loadSources(root: string, subject: Subject): Promise<GradeSource[]> {
+  const dir = join(root, subject);
+  const files = (
+    await readdir(dir).catch(() => {
+      throw new Error(`No curriculum sources for ${subject}: ${dir} is missing`);
+    })
+  ).filter((f) => gradeOfFile(f));
   const sources = await Promise.all(
     files.map(async (f) => parseSource(f, await readFile(join(dir, f), 'utf8'), subject)),
   );
   return sources.sort((a, b) => gradeRank(a.grade) - gradeRank(b.grade));
+}
+
+/**
+ * Reads the sources of the given subjects, each ordered K to 6. Defaults to `OFFERED_SUBJECTS`:
+ * the other folders hold text the graph build can't read yet.
+ */
+export async function loadAllSources(
+  root: string,
+  subjects: readonly Subject[] = OFFERED_SUBJECTS,
+): Promise<Map<Subject, GradeSource[]>> {
+  const entries = await Promise.all(
+    subjects.map(async (subject) => [subject, await loadSources(root, subject)] as const),
+  );
+  return new Map(entries);
 }

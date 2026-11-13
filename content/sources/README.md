@@ -14,7 +14,7 @@ Official Ontario curriculum text, one folder per subject. Each file keeps the of
 | `health/` | *Health and Physical Education, 2019*, and *Kindergarten (2026)*, C14–C18 | `kindergarten.md`, `grade-1.md` … `grade-6.md` |
 | `arts/` | *The Arts, 2009*, and *Kindergarten (2026)*, D24–D25 | `kindergarten.md`, `grade-1.md` … `grade-6.md` |
 
-- The skill graph build only reads `math/` so far.
+- The skill graph build reads every folder in `SUBJECTS` that has files.
 - Math files keep each specific expectation's Examples and Key concepts. Sample tasks are left out.
 - Other subjects keep every strand, its "Why is this learning important?" and overview, and each specific expectation's Examples, Key concepts, and Knowledge and skills. Teacher prompts, instructional tips, sample questions, and student talk are left out.
 - Images appear as their official alt text.

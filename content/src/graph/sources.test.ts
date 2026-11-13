@@ -1,6 +1,8 @@
+import { readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { OFFERED_SUBJECTS, SUBJECTS } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
-import { loadSources, parseSource } from './sources';
+import { loadAllSources, loadSources, parseSource } from './sources';
 
 describe('parseSource', () => {
   it('reads overall and specific expectations with their details', () => {
@@ -64,9 +66,11 @@ describe('parseSource', () => {
   });
 });
 
+const root = join(import.meta.dirname, '../../sources');
+
 describe('loadSources', () => {
   it('reads every official expectation, K to Grade 6', async () => {
-    const sources = await loadSources(join(import.meta.dirname, '../../sources/math'), 'math');
+    const sources = await loadSources(root, 'math');
     expect(sources.map((s) => [s.grade, s.strands])).toEqual([
       ['K', ['A']],
       ['1', ['B']],
@@ -83,5 +87,35 @@ describe('loadSources', () => {
       expect(list.every((e) => e.statement.length > 0)).toBe(true);
     }
     expect(sources[0].expectations[0]).toMatchObject({ code: 'A6', kind: 'overall' });
+  });
+});
+
+describe('loadAllSources', () => {
+  it('gives every subject its own folder and loads the offered ones, Kindergarten to Grade 6', async () => {
+    const folders = (await readdir(root, { withFileTypes: true }))
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
+    expect(folders.sort()).toEqual([...SUBJECTS].sort());
+
+    const sources = await loadAllSources(root);
+    expect([...sources.keys()]).toEqual([...OFFERED_SUBJECTS]);
+    for (const subject of OFFERED_SUBJECTS) {
+      expect(sources.get(subject)?.map((s) => s.grade)).toEqual([
+        'K',
+        '1',
+        '2',
+        '3',
+        '4',
+        '5',
+        '6',
+      ]);
+      expect(sources.get(subject)?.every((s) => s.subject === subject)).toBe(true);
+    }
+  });
+
+  it('names the subject whose folder is missing', async () => {
+    await expect(loadSources(root, 'art' as never)).rejects.toThrow(
+      'No curriculum sources for art',
+    );
   });
 });
