@@ -318,7 +318,7 @@ describe('checkGraph on a subject that starts at Grade 1', () => {
       ],
     }));
     const body: Skill = {
-      ...sci('g1-sci-body', [], ['B1.2']),
+      ...sci('g1-sci-body'),
       expectationCodes: ['B1.2'],
       parentOptIn: 'human-development',
     };
