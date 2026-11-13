@@ -1,7 +1,7 @@
 import {
   ChildProfileSchema,
   deriveGrade,
-  SUBJECTS,
+  OFFERED_SUBJECTS,
   type ChildProfile,
   type SchoolGrade,
   type Subject,
@@ -29,7 +29,7 @@ export function emptyDraft(today: string, avatar: string): ChildDraft {
     gradeOverride: null,
     readingMode: false,
     dyslexicFont: false,
-    subjects: [...SUBJECTS],
+    subjects: [...OFFERED_SUBJECTS],
   };
 }
 

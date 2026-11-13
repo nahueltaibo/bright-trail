@@ -1,0 +1,425 @@
+# Grade 4 Language
+
+- **Source:** *The Ontario Curriculum, Grades 1–8: Language, 2023*, Grade 4
+- **Publisher:** Ontario Ministry of Education, Curriculum and Resources site
+- **Version:** 2023 (current at retrieval)
+- **Captured via:** the site's public content API, item `lang___fra___grade_4___strands` (https://ws.api.dcp.edu.gov.on.ca/content/api/items/lang___fra___grade_4___strands?language=en-CA&depth=6)
+- **Retrieved:** 2026-11-12
+- **Content kept:** each strand's overview, overall and specific expectations, and each specific expectation's Examples, Key concepts, and Knowledge and skills. Teacher prompts, instructional tips, sample questions, and student talk are omitted. Images appear as their official alt text.
+
+## Strand A: Literacy Connections and Applications
+
+### Why is this learning important?
+
+Students explain how transferable skills can help them express their unique voice. They gather, evaluate, and use information, considering its credibility and the perspectives found in different sources of information. They also explain themes explored in a diversity of First Nations, Métis and Inuit cultures.
+
+This learning is applied to learning related to the other three areas of the curriculum.
+
+### A1. Transferable Skills
+
+**A1.** demonstrate an understanding of how the seven transferable skills (critical thinking and problem solving; innovation, creativity, and entrepreneurship; self-directed learning; collaboration; communication; global citizenship and sustainability; and digital literacy) are used in various language and literacy contexts
+
+#### A1.1 Receptive and Expressive Communication
+
+**A1.1** explain how transferable skills can be used to support communication in various cultural, social, linguistic, and domain-specific contexts, and apply them when reading, listening to, viewing, and creating texts of various forms
+
+#### A1.2 Student Agency and Engagement
+
+**A1.2** explain how transferable skills help them to express their voice, be engaged in their learning, and plan the next steps to develop their capabilities and potential
+
+### A2. Digital Media Literacy
+
+**A2.** demonstrate and apply the knowledge and skills needed to interact safely and responsibly in online environments, use digital and media tools to construct knowledge, and demonstrate learning as critical consumers and creators of media
+
+#### A2.1 Digital Citizenship
+
+**A2.1** explain their rights and responsibilities when interacting online with appropriate permission, and make decisions that contribute positively to the development of their digital identity and those of their communities
+
+#### A2.2 Online Safety, Well-Being, and Etiquette
+
+**A2.2** demonstrate an understanding of how to navigate online environments safely, manage their privacy and personal data, and interact in a way that supports their well-being and that of others, including seeking appropriate permission
+
+#### A2.3 Research and Information Literacy
+
+**A2.3** gather, evaluate, and use information, considering validity, credibility, accuracy, and perspectives, to construct knowledge, create texts, and demonstrate learning
+
+#### A2.4 Forms, Conventions, and Techniques
+
+**A2.4** demonstrate an understanding of the forms, conventions, and techniques of digital and media texts, consider the impact on the audience, and apply this understanding when analyzing and creating texts
+
+#### A2.5 Media, Audience, and Production
+
+**A2.5** demonstrate an understanding of the interrelationships between the form, message, and context of texts, the intended audience, and the purpose for production
+
+#### A2.6 Innovation and Design
+
+**A2.6** select and use appropriate digital and media tools to support the design process and address authentic, relevant, real-world problems by developing innovative solutions
+
+#### A2.7 Community and Cultural Awareness
+
+**A2.7** communicate and collaborate with various communities in a safe, respectful, responsible, and inclusive manner when using online platforms and environments, including digital and media tools, and demonstrate cultural awareness with members of the community
+
+### A3. Applications, Connections, and Contributions
+
+**A3.** apply language and literacy skills in cross-curricular and integrated learning, and demonstrate an understanding of, and make connections to, diverse voices, experiences, perspectives, histories, and contributions, including those of First Nations, Métis, and Inuit individuals, communities, groups, and nations
+
+#### A3.1 Cross-Curricular and Integrated Learning
+
+**A3.1** explain how the knowledge and skills developed in this grade support learning in various subject areas and in everyday life, and describe how they enhance understanding and communication
+
+#### A3.2 Identity and Community
+
+**A3.2** demonstrate an understanding of the historical contexts, contributions, lived experiences, and perspectives of a diversity of individuals and communities, including those in Canada, by exploring the concepts of identity, self, and sense of belonging in a variety of culturally responsive and relevant texts
+
+#### A3.3 First Nations, Métis, and Inuit Perspectives and Ways of Knowing
+
+**A3.3** explain themes explored in First Nations, Métis, and Inuit cultures to demonstrate an understanding of the varied identities, perspectives, relationships, legacies, truths, and ways of knowing, being, and doing
+
+## Strand B: Foundations of Language
+
+### Why is this learning important?
+
+Students use effective listening skills and strategies to respond to others and identify the purpose and audience for speaking in formal and informal contexts. They identify and use oral and non-verbal communication strategies, such as expression and gestures, and use a variety of sentence types to support audience comprehension. They demonstrate an understanding of a variety of words and read and spell fluently. Students also demonstrate an understanding of the functions of parts of speech in sentences.
+
+### B1. Oral and Non-Verbal Communication
+
+**B1.** apply listening, speaking, and non-verbal communication skills and strategies to understand and communicate meaning in formal and informal contexts and for various purposes and audiences
+
+#### B1.1 Effective Listening Skills
+
+**B1.1** use effective listening skills, including asking questions to encourage a speaker to elaborate, and responding to the contributions of others in group discussions, in formal and informal contexts and for various purposes
+
+#### B1.2 Listening Strategies for Comprehension
+
+**B1.2** select and use a variety of listening strategies before, during, and after listening to comprehend information and messages communicated orally and non-verbally, express interest in what is being said at appropriate times, seek clarification, and develop an appropriate response
+
+#### B1.3 Speaking Purposes and Strategies
+
+**B1.3** identify the purpose and audience for speaking in formal and informal contexts, and use appropriate speaking strategies, including paraphrasing and restating, to communicate clearly and coherently
+
+#### B1.4 Oral and Non-Verbal Communication Strategies
+
+**B1.4** identify and use oral and non-verbal communication strategies, including expression, gestures, and body language, and explain how these strategies help them understand or communicate ideas and meaning
+
+#### B1.5 Word Choice, Syntax, and Grammar in Oral Communication
+
+**B1.5** use appropriate word choice, including new vocabulary, varied adjectives and adverbs to elaborate, a variety of sentence types, and cohesive sentences during formal and informal communication, to support audience comprehension
+
+### B2. Language Foundations for Reading and Writing
+
+**B2.** demonstrate an understanding of foundational language knowledge and skills, and apply this understanding when reading and writing
+
+#### B2.1 Word-Level Reading and Spelling: Using Morphological Knowledge
+
+**B2.1** use knowledge of the meanings of words and morphemes (i.e., bases, prefixes, and suffixes) to read and spell words
+
+**Knowledge and skills**
+
+The English writing system is based not only on sound but also on meaning. *Orthographic knowledge* refers to the understanding of the English spelling system and its patterns, including grapheme positions and combinations in a word. *Morphological knowledge* refers to the understanding of how morphemes can be used to form words. A morpheme is the smallest unit of meaning within words, including prefixes, suffixes, and bases. All words are made up of one or more morphemes. Students apply their consolidated phonological awareness and phonics knowledge, as well as their developing orthographic and morphological knowledge, to read and spell words in isolation and in various text contexts.
+
+**Knowledge and skills: applying morphological knowledge in reading and spelling**
+
+- Understanding that words consist of bases that convey meaning and that can be modified with affixes (prefixes and suffixes) to change the meaning of the word. Adding prefixes and/or suffixes may have three other impacts on the resulting words:
+  - changing the word’s function or role in a sentence (e.g., changing a verb to a noun);
+  - changing the word’s pronunciation (e.g., medic vs. medicine); and/or
+  - uncommonly, changing the word’s spelling (e.g., hop vs. hopping, divide vs. division)
+- Developing the ability to segment words into recognizable morphemes and to apply their morphological knowledge to spell and read longer and more complex words
+
+**Looks like…**
+
+- using prefixes, including: fore–, super–, semi–, en–/em–
+- using suffixes, including: –ant, –ent, –ate, –ism
+- understanding how words move across grammatical boundaries depending on their use and context (e.g., *The students enjoyed their success* (noun). → *The student* was *successful* (adjective) *and passed the test*. → *We are successful* (adjective). → *She successfully* (adverb) *climbed the mountain.*)
+- using derivational families to support spelling words with a schwa sound (e.g., students can use *define* to choose a grapheme for the schwa in *definition*)
+
+**Knowledge and skills**
+
+**Knowledge and skills: words with irregularities**
+
+- Applying developing phonological, grapheme-phoneme correspondence, orthographic, and morphological knowledge to decode and spell words with irregularities
+- Memorizing irregular grapheme-phoneme correspondences for instances where phonological, orthographic, and morphological information cannot be used through meaningful practice, multiple exposures to the word, and explicit instruction, instead of memorizing words as whole units
+
+**Looks like…**
+
+- applying phonological, orthographic, and morphological knowledge to decode and encode the parts of irregular words that are regular
+- learning the unexpected portions of these words to support word reading and spelling. For example, students could use orthographic knowledge to decode and encode the first and last sound of the word *what*, but they would memorize the vowel pattern. For the word *should*, students could use grapheme-phoneme correspondence to spell the /sh/ and apply the < -ould> spelling pattern found in common words such as *could* and *would*.
+
+#### B2.2 Vocabulary
+
+**B2.2** demonstrate an understanding of a variety of words, acquire and use explicitly taught vocabulary in various contexts, including other subject areas, and use morphological knowledge to analyze and understand new words in context
+
+**Knowledge and skills**
+
+The process of developing vocabulary involves acquiring new words and understanding their meanings when reading and listening and writing and speaking. In learning new words, students learn the meaning, usage, form, and relationship to other words, and build the breadth and depth of their vocabulary.
+
+Some words have different meanings in different contexts. In learning words, students should link the meanings and features of the words, such as their semantic features. The semantic features identify similarities and differences between words, which helps link new words to students’ existing word schemas.
+
+Words have different roles and utilities in spoken and written language. *Tier 2* words are found in written language as well as in oral language in the classroom and are useful across many different content areas. These words have high utility for students and should be the focus of explicit vocabulary instruction. Tier 1 words are those that frequently occur in spoken language, while Tier 3 words are generally specific to a particular content area and have less broad utility for students.
+
+Vocabulary is developed through both explicit instruction of words and implicit learning from working with oral language and written texts in various contexts.
+
+**Knowledge and skills: networks and features of words**
+
+Linking the meanings and features of new words, such as linking semantic features to their existing word schemas
+
+**Looks like…**
+
+- learning the meaning of new words and deepening understanding of somewhat familiar words by relating these to known words and concepts (knowledge networks)
+- demonstrating an understanding of the meaning of words by sorting, categorizing, and classifying them based on semantic features
+- linking new words to previously learned words based on their semantic features
+- recognizing that certain words have multiple meanings, which may cross over various parts of speech or grammatical functions. For example, *I tripped on some rocks* (noun). *This movie rocks* (verb).
+- using words flexibly, adding new meanings to previously learned words, enhancing the depth of their vocabulary
+- demonstrating an understanding that words can have a literal as well as a figurative meaning and using context to distinguish between the meanings (e.g., *My finger was cut by a sharp blade of grass.*)
+- shifting between the multiple meanings of words depending on context
+- recognizing, and continuing to acquire the meanings of, various metaphors, similes, idioms, and other figures of speech
+- explaining words with figurative meanings, such as metaphors
+- distinguishing between synonyms that have similar but not exactly the same meanings (e.g., say, speak, tell, state)
+
+**Knowledge and skills**
+
+**Knowledge and skills: independent word-learning strategies**
+
+Developing strategies to determine the meaning of words in oral language and text
+
+**Looks like…**
+
+- learning the meaning of unfamiliar words through looking **outside** the word (i.e., using context, including examples, synonyms, and antonyms) and looking **inside** the word (i.e., using morphological and structural analysis)
+- applying their developing morphological knowledge to support their understanding of the meaning of new words (e.g., take the sentence *Ted’s backyard was too small, so he wanted to look for one that was more spacious.* Students can use the sentence context, as well as morphological information about the base *space,* to determine the meaning of the unknown word)
+- independently seeking clarification of the meanings of unfamiliar words and phrases by accessing resources such as a dictionary, a thesaurus, or a glossary (printed or digital)
+
+**Knowledge and skills**
+
+**Knowledge and skills: Tier 2 words**
+
+Developing and integrating their understanding of Tier 2 words (those used in written language as well as in oral language) in the classroom across different content areas
+
+**Looks like…**
+
+- using Tier 2 words (e.g., analyze, compare) that have been explicitly taught in various subject areas (e.g., science, social studies) across multiple contexts
+- using Tier 2 words when engaging in conversations, asking and answering questions, and using new vocabulary in different contexts
+
+**Knowledge and skills**
+
+**Knowledge and skills: applying morphological knowledge to vocabulary**
+
+Applying an understanding that words are composed of morphemes, which are units of meaning within a word, and using knowledge of morphemes to support learning of the meaning of words
+
+**Looks like…**
+
+- using morphological knowledge, as well as understanding of grammar and sentence structure, to determine the meaning of unfamiliar content words (e.g., evaporate-evaporation-vapour)
+
+#### B2.3 Reading Fluency: Accuracy, Rate, and Prosody
+
+**B2.3** read a variety of texts fluently, with accuracy and appropriate pacing to support comprehension, and when reading aloud, adjust expression and intonation according to the purpose of reading
+
+**Knowledge and skills**
+
+Fluency is the ability to read text accurately, at an appropriate pace, with expression. It is the bridge between word recognition and comprehension. As decoding is automatized, students increase their ability to read texts fluently, freeing cognitive resources to focus on the meaning of the texts. First and foremost, reading fluency relies on accuracy. Students must integrate subskills such as fluent word recognition to read words accurately, which, in turn, supports their reading of sentences and paragraphs with accuracy and fluency. Additionally, students should be able to read texts with appropriate pacing, and with expression and intonation that facilitate comprehension and convey meaning.
+
+**Knowledge and skills: accuracy, rate, and prosody**
+
+- Integrating fluent word recognition to read words accurately and to support their reading of texts with accuracy and fluency
+- Reading texts with appropriate pacing, with expression and intonation that facilitate comprehension and convey meaning
+
+**Looks like…**
+
+- reading a variety of texts with automaticity and accuracy, with appropriate pacing for the grade, and using expression and intonation to support comprehension and in accordance with the purpose of reading
+- using decoding strategies to work through new words and demonstrating automaticity when reading all other words
+- recoding (rereading) words that were newly decoded to increase word reading fluency
+- using knowledge of sentence structure to parse sentences and to pause appropriately when punctuation is not provided
+
+### B3. Language Conventions for Reading and Writing
+
+**B3.** demonstrate an understanding of sentence structure, grammar, cohesive ties, and capitalization and punctuation, and apply this knowledge when reading and writing sentences, paragraphs, and a variety of texts
+
+#### B3.1 Syntax and Sentence Structure
+
+**B3.1** identify and construct various sentence types and forms, including simple and compound sentences formed with prepositional phrases and/or independent and dependent clauses
+
+#### B3.2 Grammar
+
+**B3.2** demonstrate an understanding of the functions of parts of speech in sentences, including relative pronouns, the perfect verb tense and interrogative and imperative verbs, and the use of pronouns as adjectives, and use this knowledge to support comprehension and communicate meaning clearly
+
+#### B3.3 Capitalization and Punctuation
+
+**B3.3** use their understanding of the meaning and function of capitalization and punctuation to communicate meaning clearly and coherently, including the use of capital letters for proper adjectives, commas to set off nouns of direct address, and quotation marks to indicate the title of a short work
+
+## Strand C: Comprehension: Understanding and Responding to Texts
+
+### Why is this learning important?
+
+Students analyze different literary and informational texts and explain how their characteristics help communicate meaning. They explore how visuals such as images and graphics help to create, communicate, and contribute to meaning. They begin to draw conclusions from texts and understand different perspectives and cultural elements represented in texts.
+
+### C1. Knowledge about Texts
+
+**C1.** apply foundational knowledge and skills to understand a variety of texts, including digital and media texts, by creators with diverse identities, perspectives, and experience, and demonstrate an understanding of the patterns, features, and elements of style associated with various text forms and genres
+
+#### C1.1 Using Foundational Knowledge and Skills to Comprehend Texts
+
+**C1.1** read and comprehend various texts, using knowledge of words, grammar, cohesive ties, sentence structures, and background knowledge
+
+#### C1.2 Text Forms and Genres
+
+**C1.2** describe some characteristics of various text forms and genres, including cultural text forms, and explain how they help communicate meaning
+
+#### C1.3 Text Patterns and Features
+
+**C1.3** identify text patterns, such as spatial order in a graphic text, and text features, such as type styles and hyperlinks, associated with various text forms, including cultural texts, and explain how they help readers, listeners, and viewers understand the meaning
+
+#### C1.4 Visual Elements of Texts
+
+**C1.4** explain how images, graphics, and visual design create, communicate, and contribute to meaning in a variety of texts
+
+#### C1.5 Elements of Style
+
+**C1.5** identify various elements of style in texts, including voice, word choice, word patterns, and sentence structure, and analyze how each element helps create meaning and is appropriate for the text form and genre
+
+#### C1.6 Point of View
+
+**C1.6** identify the narrator’s point of view, including first, second, or third person, in a variety of texts, and describe the advantages and disadvantages of the approach used in each story
+
+#### C1.7 Indigenous Context of Various Text Forms
+
+**C1.7** read, listen to, and view various forms of texts by diverse First Nations, Métis, and Inuit creators to make meaning through Indigenous Storywork about First Nations, Métis, and Inuit histories, cultures, relationships, communities, groups, nations, and lived experiences
+
+### C2. Comprehension Strategies
+
+**C2.** apply comprehension strategies before, during, and after reading, listening to, and viewing a variety of texts, including digital and media texts, by creators with diverse identities, perspectives, and experience, in order to understand and clarify the meaning of texts
+
+#### C2.1 Prereading: Activating Prior Knowledge
+
+**C2.1** identify and explain prior knowledge from various sources, including personal experiences, that they can use to make connections and understand new texts
+
+#### C2.2 Prereading: Identifying the Purpose for Reading, Listening, and Viewing
+
+**C2.2** identify a variety of purposes for engaging with texts, and select texts from diverse creators that are suitable for the purposes
+
+#### C2.3 Monitoring of Understanding: Making and Confirming Predictions
+
+**C2.3** make predictions using background knowledge, text features, and evidence from the text, and pose questions to check whether their predictions were correct
+
+#### C2.4 Monitoring of Understanding: Ongoing Comprehension Check
+
+**C2.4** use strategies such as adjusting reading rate, visualizing, reading ahead, asking questions, and consulting references and other texts or sources of information, to monitor and confirm their understanding of various texts
+
+#### C2.5 Monitoring of Understanding: Making Connections
+
+**C2.5** describe how the ideas expressed in texts connect to their knowledges and lived experiences, the ideas in other texts, and the world around them
+
+#### C2.6 Summarizing: Identifying Relevant information and Drawing Conclusions
+
+**C2.6** summarize the main idea of a text and the supporting details in sequence, and draw a simple conclusion
+
+#### C2.7 Reflecting on Learning
+
+**C2.7** explain how strategies, such as visualizing, making predictions, summarizing, and connecting to their experiences, have helped them comprehend various texts
+
+### C3. Critical Thinking in Literacy
+
+**C3.** apply critical thinking skills to deepen understanding of texts, and analyze how various perspectives and topics are communicated and addressed in a variety of texts, including digital, media, and cultural texts
+
+#### C3.1 Literary Devices
+
+**C3.1** describe literary devices, including personification and anthropomorphism, in a variety of texts, and explain how they help create meaning and are appropriate for the intended purpose and audience
+
+#### C3.2 Making Inferences
+
+**C3.2** make local and global inferences, using explicit and implicit evidence, to extend their understanding of various texts
+
+#### C3.3 Analyzing Texts
+
+**C3.3** analyze various texts, including literary and informational texts, by identifying main and supporting ideas, sequencing the events of multiple plots, and explaining cause and effect
+
+#### C3.4 Analyzing Cultural Elements of Texts
+
+**C3.4** identify cultural elements that are represented in various texts, including norms, values, artifacts, sports, and music, investigate the meanings of these elements, and make connections to their lived experience and culture
+
+#### C3.5 Perspectives within Texts
+
+**C3.5** identify explicit and implicit perspectives communicated in various texts, explain how these perspectives are conveyed, give some evidence of any biases the texts may contain, and suggest how such biases could influence an audience
+
+#### C3.6 Analysis and Response
+
+**C3.6** explain how various topics, such as diversity, inclusion, and accessibility, are addressed in texts, and describe what insights or messages are conveyed
+
+#### C3.7 Indigenous Contexts
+
+**C3.7** explain how texts created by First Nations, Métis, and Inuit individuals, communities, groups, or nations are influenced by historical periods, cultural experiences, and events, and how they relate to current lived experiences
+
+#### C3.8 Reflecting on Learning
+
+**C3.8** identify the critical thinking skills they used to analyze and evaluate various texts, and explain how these skills have helped them better understand the texts
+
+## Strand D: Composition: Expressing Ideas and Creating Texts
+
+### Why is this learning important?
+
+Students write in cursive. They generate and develop ideas about various topics and create texts of various forms and genres, establishing a personal voice and using varied language and elements of style. They revise and edit their work to improve accuracy and style and produce final texts and present them using appropriate strategies.
+
+### D1. Developing Ideas and Organizing Content
+
+**D1.** plan, develop ideas, gather information, and organize content for creating texts of various forms, including digital and media texts, on a variety of topics
+
+#### D1.1 Purpose and Audience
+
+**D1.1** identify the topic, purpose, and audience for various texts they plan to create, and explain why the chosen text form, genre, and medium suit the purpose and audience and how they will help communicate the intended meaning
+
+#### D1.2 Developing Ideas
+
+**D1.2** generate and develop ideas about various topics, such as topics related to diversity, equity, and inclusion and to other subject areas, using a variety of strategies, and drawing on various resources, including their own lived experiences
+
+#### D1.3 Research
+
+**D1.3** gather information and content relevant to a topic, using a variety of sources and strategies, and record the sources of information
+
+#### D1.4 Organizing Content
+
+**D1.4** select and classify ideas and collected information, using appropriate strategies and tools, and sequence content, taking into account the chosen text form, genre, and medium
+
+#### D1.5 Reflecting on Learning
+
+**D1.5** describe the strategies and tools that helped them develop ideas and organize content for texts of the chosen forms, genres, and media, and explain how they helped them improve as a text creator
+
+### D2. Creating Texts
+
+**D2.** apply knowledge and understanding of various text forms and genres to create, revise, edit, and proofread their own texts, using a variety of media, tools, and strategies, and reflect critically on created texts
+
+#### D2.1 Producing Drafts
+
+**D2.1** draft texts of various forms and genres, including narrative, persuasive, and informational texts, using a variety of media, tools, and strategies
+
+#### D2.2 Printing, Handwriting, and Word Processing
+
+**D2.2** write in cursive, forming letters of appropriate shape, size, proportion, and slant to improve the legibility of texts, and begin to develop fluent keyboarding skills using touch-typing techniques
+
+#### D2.3 Voice
+
+**D2.3** establish a personal voice in their texts, using varied language and elements of style to express their thoughts, feelings, and opinions about a topic, and using a tone appropriate to the form and genre
+
+#### D2.4 Point of View and Perspective
+
+**D2.4** identify the point of view used in their texts, and the perspectives and bias conveyed in their texts
+
+#### D2.5 Revision
+
+**D2.5** make revisions to the content of draft texts and to elements of style, such as word choice and adding or deleting sentences, to improve clarity, focus, and coherence, seeking feedback
+
+#### D2.6 Editing and Proofreading
+
+**D2.6** edit draft texts to improve accuracy and style, checking for errors in spelling, punctuation, grammar, and format; use a word processor to edit texts
+
+### D3. Publishing, Presenting, and Reflecting
+
+**D3.** select suitable and effective media, techniques, and tools to publish and present final texts, and critically analyze how well the texts address various topics
+
+#### D3.1 Producing Final Texts
+
+**D3.1** produce final texts using a variety of techniques and tools, including simple digital design and production tools, to achieve the intended effect
+
+#### D3.2 Publishing and Presenting Texts
+
+**D3.2** publish and present texts they have created, using selected media and tools, and explain how each helped them communicate their intended message
+
+#### D3.3 Reflecting on Learning
+
+**D3.3** describe various strategies that helped them present and communicate their message when publishing and presenting texts, and explain how they helped them improve as a text creator

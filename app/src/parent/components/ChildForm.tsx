@@ -1,6 +1,6 @@
 import {
   SCHOOL_GRADES,
-  SUBJECTS,
+  OFFERED_SUBJECTS,
   deriveGrade,
   type SchoolGrade,
   type Subject,
@@ -45,7 +45,7 @@ export function ChildForm({
     set({
       subjects: draft.subjects.includes(subject)
         ? draft.subjects.filter((s) => s !== subject)
-        : SUBJECTS.filter((s) => s === subject || draft.subjects.includes(s)),
+        : OFFERED_SUBJECTS.filter((s) => s === subject || draft.subjects.includes(s)),
     });
 
   const submit = async () => {
@@ -139,7 +139,7 @@ export function ChildForm({
       <View style={styles.field}>
         <Text style={ui.label}>Subjects</Text>
         <View style={styles.wrap}>
-          {SUBJECTS.map((s) => (
+          {OFFERED_SUBJECTS.map((s) => (
             <Chip
               key={s}
               label={SUBJECT_LABELS[s]}
