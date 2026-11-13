@@ -30,6 +30,29 @@ describe('SkillSchema', () => {
       SkillSchema.safeParse({ ...skill, framework: 'ontario-kindergarten-2026' }).success,
     ).toBe(false);
   });
+
+  it("rejects another subject's framework", () => {
+    expect(SkillSchema.safeParse({ ...skill, framework: 'ontario-science-2022' }).success).toBe(
+      false,
+    );
+  });
+
+  it('accepts a Grade 3 science skill', () => {
+    const science = {
+      ...skill,
+      subject: 'science',
+      framework: 'ontario-science-2022',
+      strand: 'C',
+    };
+    expect(SkillSchema.safeParse({ ...science, expectationCodes: ['C2.1'] }).success).toBe(true);
+  });
+
+  it('accepts a Kindergarten skill in any subject', () => {
+    const k = { ...skill, subject: 'language', framework: 'ontario-kindergarten-2026', grade: 'K' };
+    expect(SkillSchema.safeParse({ ...k, strand: 'A', expectationCodes: ['A2.1'] }).success).toBe(
+      true,
+    );
+  });
 });
 
 describe('MasteryStateSchema', () => {

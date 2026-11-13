@@ -19,6 +19,7 @@
     "app:start": "npm run start -w @bright-trail/app",
     "content:validate": "npm run validate -w @bright-trail/content",
     "content:graph": "npm run graph -w @bright-trail/content",
+    "content:sources": "npm run sources -w @bright-trail/content --",
     "content:generate": "npm run generate -w @bright-trail/content --",
     "content:games": "npm run games -w @bright-trail/content --",
     "content:scenes": "npm run scenes -w @bright-trail/content --",

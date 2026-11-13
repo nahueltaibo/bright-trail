@@ -38,7 +38,7 @@ describe('parseSource', () => {
 
 describe('loadSources', () => {
   it('reads every official expectation, K to Grade 6', async () => {
-    const sources = await loadSources(join(import.meta.dirname, '../../sources'));
+    const sources = await loadSources(join(import.meta.dirname, '../../sources/math'));
     expect(sources.map((s) => [s.grade, s.strand])).toEqual([
       ['K', 'A'],
       ['1', 'B'],
