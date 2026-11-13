@@ -106,6 +106,14 @@ describe('ChildForm', () => {
     expect(onSubmit).toHaveBeenCalledWith(maya);
   });
 
+  it('offers only subjects that have content', async () => {
+    await render(
+      <ChildForm initial={maya} today={TODAY} submitLabel="Save" onSubmit={jest.fn()} />,
+    );
+    expect(screen.getByLabelText('Math')).toBeTruthy();
+    expect(screen.queryByLabelText('Science')).toBeNull();
+  });
+
   it('shows the error when saving fails', async () => {
     await render(
       <ChildForm

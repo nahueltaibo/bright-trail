@@ -4,10 +4,10 @@ import { fileURLToPath } from 'node:url';
 import { ClaudeCliLlm } from './cli-llm';
 import { AnthropicLlm, withDiskCache, type LlmClient } from './llm';
 import { loadOverrides } from './overrides';
-import { buildGraph } from './pipeline';
+import { buildGraph, mergeBuilds, type GraphBuild } from './pipeline';
 import { GENERATOR_MODEL, REVIEWER_MODEL } from './prompts';
 import { renderReport } from './report';
-import { loadSources } from './sources';
+import { loadAllSources } from './sources';
 import { writeFormatted } from './write';
 
 const contentDir = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -25,7 +25,7 @@ try {
 const backend = process.env.LLM_BACKEND ?? 'cli';
 if (backend !== 'cli' && backend !== 'sdk') throw new Error(`Unknown LLM_BACKEND ${backend}`);
 
-const sources = await loadSources(join(contentDir, 'sources'), 'math');
+const sources = await loadAllSources(join(contentDir, 'sources'));
 const overrides = await loadOverrides(join(contentDir, 'graph-overrides.json'));
 const live = backend === 'sdk' ? new AnthropicLlm() : new ClaudeCliLlm();
 let liveCalls = 0;
@@ -36,14 +36,20 @@ const counted: LlmClient = {
   },
 };
 const llm = withDiskCache(counted, join(contentDir, 'cache', 'llm'));
-const build = await buildGraph(sources, llm, {
-  overrides,
-  log: (message) => console.log(message),
-}).catch((error: unknown) => {
-  console.error(error instanceof Error ? error.message : error);
-  console.error('Calls already answered are cached, so a rerun resumes where this one stopped.');
-  process.exit(1);
-});
+const builds: GraphBuild[] = [];
+for (const [subject, subjectSources] of sources) {
+  const build = await buildGraph(subjectSources, llm, {
+    // Overrides name no subject yet, so a second subject would report math's as stale.
+    overrides,
+    log: (message) => console.log(`${subject}: ${message}`),
+  }).catch((error: unknown) => {
+    console.error(error instanceof Error ? error.message : error);
+    console.error('Calls already answered are cached, so a rerun resumes where this one stopped.');
+    process.exit(1);
+  });
+  builds.push(build);
+}
+const build = mergeBuilds(builds);
 
 console.log(`${liveCalls} ${backend} calls, the rest came from the cache`);
 await writeFormatted(reportFile, renderReport(build));
