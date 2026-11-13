@@ -4,7 +4,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 
 ## Where Things Stand
 
-- Specs are HTML under [.docs/](.docs/): product requirements, POC requirements, and the POC task plan. Task IDs (T1, C2, A6, I1, …) come from [.docs/poc-tasks.html](.docs/poc-tasks.html), and branches are named after them (`a6-session-flow`). [.docs/minigames.html](.docs/minigames.html) shows which items have no minigame yet and the order to build the next ones.
+- Specs are HTML under [.docs/](.docs/): product requirements, POC requirements, and the POC task plan. Task IDs (T1, C2, A6, I1, …) come from [.docs/poc-tasks.html](.docs/poc-tasks.html), and branches are named after them (`a6-session-flow`). [.docs/minigames.html](.docs/minigames.html) shows which items have no minigame yet and the order to build the next ones. [.docs/subjects.html](.docs/subjects.html) covers the subjects beyond Math: where each Ontario program lives, how to fetch it, and which minigames fit.
 - The design system lives in [.docs/design/](.docs/design/). Each component has a `README.md` and a `preview.html`. Tokens are in `tokens.json`.
 - `SUBJECTS` and `FRAMEWORKS` in `shared/src/skill.ts` list every subject and its Ontario curriculum document. Parents only see `OFFERED_SUBJECTS`, the ones with content. Add a subject there once its packs ship.
 - `content/sources/<subject>/` holds each subject's curriculum text. `npm run content:sources` fetches all but math, which the skill graph reads. See [content/sources/README.md](content/sources/README.md).
