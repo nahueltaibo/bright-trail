@@ -108,8 +108,13 @@ function earlierSection(earlier: readonly Skill[]): string {
   return `Skills from earlier grades, which are valid prerequisites:\n\n${earlier.map(formatSkill).join('\n')}`;
 }
 
+// One strand keeps the original wording, so cached LLM calls keep their keys.
+function strandLabel(strands: readonly string[]): string {
+  return `${strands.length === 1 ? 'strand' : 'strands'} ${strands.join(', ')}`;
+}
+
 function expectationsSection(source: GradeSource): string {
-  return `${gradeName(source)} expectations (strand ${source.strand}):\n\n${source.expectations
+  return `${gradeName(source)} expectations (${strandLabel(source.strands)}):\n\n${source.expectations
     .map(formatExpectation)
     .join('\n\n')}`;
 }

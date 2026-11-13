@@ -242,7 +242,7 @@ describe('findWarnings', () => {
     grade: '2',
     subject: 'math',
     framework: 'ontario-math-2020',
-    strand: 'B',
+    strands: ['B'],
     file: 'grade-2.md',
     expectations: [
       {

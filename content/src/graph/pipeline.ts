@@ -65,7 +65,8 @@ function toSkills(generated: GeneratedSkills, source: GradeSource): Skill[] {
     subject: source.subject,
     framework: source.framework,
     grade: source.grade,
-    strand: source.strand,
+    // A skill citing codes from two strands fails the schema check and goes back for repair.
+    strand: s.expectationCodes[0]?.trim()[0] ?? source.strands[0],
     expectationCodes: [...new Set(s.expectationCodes.map((c) => c.trim()))],
     title: s.title.trim(),
     description: s.description.trim(),
@@ -171,5 +172,27 @@ export async function buildGraph(
     removedTransitive: removed,
     overrides,
     grades,
+  };
+}
+
+/** Joins one build per subject into one graph. Skill ids must stay unique across subjects. */
+export function mergeBuilds(builds: readonly GraphBuild[]): GraphBuild {
+  const skills = builds.flatMap((b) => b.skills);
+  const seen = new Set<string>();
+  const duplicates = new Set<string>();
+  for (const skill of skills) (seen.has(skill.id) ? duplicates : seen).add(skill.id);
+  return {
+    skills,
+    problems: [
+      ...builds.flatMap((b) => b.problems),
+      ...[...duplicates].map((id): Problem => ({
+        grade: null,
+        message: `${id} is in two subjects`,
+      })),
+    ],
+    warnings: builds.flatMap((b) => b.warnings),
+    removedTransitive: builds.flatMap((b) => b.removedTransitive),
+    overrides: builds[0]?.overrides ?? [],
+    grades: builds.flatMap((b) => b.grades),
   };
 }

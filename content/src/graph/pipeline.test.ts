@@ -5,7 +5,7 @@ import { afterEach, describe, expect, it } from 'vitest';
 import { tinySources } from './fixtures';
 import { withDiskCache, type LlmClient, type LlmRequest } from './llm';
 import type { Override } from './overrides';
-import { buildGraph } from './pipeline';
+import { buildGraph, mergeBuilds } from './pipeline';
 import { GENERATOR_MODEL, REVIEWER_MODEL, type GeneratedSkills, type Review } from './prompts';
 import { renderReport } from './report';
 
@@ -73,6 +73,52 @@ describe('buildGraph', () => {
       grade: '1',
       strand: 'B',
     });
+  });
+
+  it('gives each skill the strand of its codes', async () => {
+    const [k, g1] = tinySources;
+    const twoStrands = {
+      ...g1,
+      strands: ['B', 'C'],
+      expectations: [
+        ...g1.expectations,
+        { code: 'C1.1', kind: 'specific' as const, topic: '', statement: 'patterns', details: '' },
+      ],
+    };
+    const g1Patterns = gen('g1-patterns', ['C1.1'], ['k-count']);
+    const llm = new FakeLlm({
+      generate: { K: [kSkills], '1': [{ skills: [...g1Skills.skills, g1Patterns] }] },
+    });
+    const build = await buildGraph([k, twoStrands], llm);
+
+    expect(build.problems).toEqual([]);
+    expect(llm.requests[2].prompt).toContain('Grade 1 expectations (strands B, C)');
+    expect(build.skills.find((s) => s.id === 'g1-read-to-50')?.strand).toBe('B');
+    expect(build.skills.find((s) => s.id === 'g1-patterns')?.strand).toBe('C');
+  });
+
+  it('sends a skill citing two strands back for repair', async () => {
+    const [k, g1] = tinySources;
+    const twoStrands = {
+      ...g1,
+      strands: ['B', 'C'],
+      expectations: [
+        ...g1.expectations,
+        { code: 'C1.1', kind: 'specific' as const, topic: '', statement: 'patterns', details: '' },
+      ],
+    };
+    const mixed = gen('g1-patterns', ['B2.1', 'C1.1'], ['k-count']);
+    const fixed = gen('g1-patterns', ['C1.1'], ['k-count']);
+    const llm = new FakeLlm({
+      generate: {
+        K: [kSkills],
+        '1': [{ skills: [...g1Skills.skills, mixed] }, { skills: [...g1Skills.skills, fixed] }],
+      },
+    });
+    const build = await buildGraph([k, twoStrands], llm);
+
+    expect(build.problems).toEqual([]);
+    expect(build.grades.find((g) => g.grade === '1')?.repairs).toBe(1);
   });
 
   it('drops transitive prerequisites', async () => {
@@ -213,6 +259,23 @@ describe('buildGraph', () => {
   it('rejects malformed model output', async () => {
     const llm: LlmClient = { call: async () => ({ skills: [{ id: 'k-count' }] }) };
     await expect(buildGraph(tinySources, llm)).rejects.toThrow(/bad submit_skills input/);
+  });
+});
+
+describe('mergeBuilds', () => {
+  it('joins builds and flags a skill id two subjects share', async () => {
+    const build = await buildGraph(
+      tinySources,
+      new FakeLlm({ generate: { K: [kSkills], '1': [g1Skills] } }),
+    );
+    expect(mergeBuilds([build])).toEqual(build);
+
+    const merged = mergeBuilds([build, build]);
+    expect(merged.skills).toHaveLength(build.skills.length * 2);
+    expect(merged.grades).toHaveLength(4);
+    expect(merged.problems.map((p) => p.message)).toEqual(
+      build.skills.map((s) => `${s.id} is in two subjects`),
+    );
   });
 });
 
