@@ -1,6 +1,6 @@
 import type { SortScene } from '@bright-trail/shared';
-import { useEffect, useImperativeHandle, useMemo, useRef, useState, type Ref } from 'react';
-import { Animated, PanResponder, StyleSheet, View } from 'react-native';
+import { useImperativeHandle, useMemo, useRef, useState, type Ref } from 'react';
+import { Animated, StyleSheet, View } from 'react-native';
 import { font, radius } from '../../design/tokens';
 import { Text } from '../../design/Text';
 import type { CardStageHandle } from '../cards/CardGame';
@@ -16,6 +16,7 @@ import {
   type Box,
   type Tone,
 } from '../cards/stage';
+import { useDrag, type DragPoint } from '../drag';
 import { BubbleView, type Bubble } from '../minigames/Bubble';
 import { wait } from '../minigames/motion';
 import { colors } from '../theme';
@@ -56,30 +57,22 @@ function SortWorld({ scene: s, cheer, handle, onPick }: Props) {
     at.current = b;
     setCardState(b);
   }).current;
-  const [latest] = useState({ onPick, layout, s, scale });
-  useEffect(() => {
-    Object.assign(latest, { onPick, layout, s, scale });
-  });
 
-  // eslint-disable-next-line react-hooks/refs -- the handlers read `latest` only during a drag.
-  const [drag] = useState(() =>
-    PanResponder.create({
-      onStartShouldSetPanResponder: () => true,
-      onPanResponderMove: (_e, g) => {
-        const k = latest.scale || 1;
-        setCard({ ...START, x: START.x + g.dx / k, y: START.y + g.dy / k });
-      },
-      onPanResponderRelease: (_e, g) => {
-        const { onPick: pick, layout: l, s: scene, scale: k } = latest;
-        const p = { x: START.x + g.dx / (k || 1), y: START.y + g.dy / (k || 1) };
-        const bin = l.bins.findIndex((b) => within(b, p));
-        if (bin < 0 || !pick) return setCard(START);
-        setCard({ ...START, ...p });
-        pick(scene.bins[bin].text);
-      },
-      onPanResponderTerminate: () => setCard(START),
-    }),
-  );
+  const k = scale || 1;
+  const dropAt = (p: DragPoint) => ({ x: START.x + p.dx / k, y: START.y + p.dy / k });
+  const drag = useDrag({
+    enabled: onPick !== undefined,
+    grab: 'move',
+    onMove: (p) => setCard({ ...START, ...dropAt(p) }),
+    onDrop: (p) => {
+      const to = dropAt(p);
+      const bin = layout.bins.findIndex((b) => within(b, to));
+      if (bin < 0 || !onPick) return setCard(START);
+      setCard({ ...START, ...to });
+      onPick(s.bins[bin].text);
+    },
+    onCancel: () => setCard(START),
+  });
 
   useImperativeHandle(handle, () => ({
     async play(picked) {
@@ -156,7 +149,7 @@ function SortWorld({ scene: s, cheer, handle, onPick }: Props) {
       {onPick && (
         <View
           testID="sort-drag"
-          {...drag.panHandlers}
+          {...drag}
           style={{
             position: 'absolute',
             left: card.x - card.w / 2,
