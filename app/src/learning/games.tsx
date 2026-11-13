@@ -4,6 +4,7 @@ import { ArraysGame } from './arrays/ArraysGame';
 import { ARRAYS_DEMO_ITEMS } from './arrays/demo';
 import { BlocksGame } from './blocks/BlocksGame';
 import { BLOCKS_DEMO_ITEMS } from './blocks/demo';
+import { CardGame } from './cards/CardGame';
 import { CompareGame } from './compare/CompareGame';
 import { COMPARE_DEMO_ITEMS } from './compare/demo';
 import { sceneLabels } from './compare/layout';
@@ -15,10 +16,16 @@ import { GridGame } from './grid/GridGame';
 import { decimalLabels } from './grid/layout';
 import { JOIN_DEMO_ITEMS } from './join/demo';
 import { JoinGame } from './join/JoinGame';
+import { LABEL_DEMO_ITEMS } from './label/demo';
+import { LabelStage } from './label/LabelStage';
 import { DEMO_ITEMS } from './minigames/demo';
 import { problemFromScene } from './minigames/share';
 import { ShareGame } from './minigames/ShareGame';
 import { useGameProps } from './minigames/useGameProps';
+import { ORDER_DEMO_ITEMS } from './order/demo';
+import { OrderStage } from './order/OrderStage';
+import { SORT_DEMO_ITEMS } from './sort/demo';
+import { SortStage } from './sort/SortStage';
 import { STONES_DEMO_ITEMS } from './stones/demo';
 import { StonesGame } from './stones/StonesGame';
 import type { ItemViewProps } from './types';
@@ -78,6 +85,40 @@ function StonesView({ game, ...props }: GameViewProps<'stones'>) {
   return <StonesGame {...useGameProps(props)} scene={game} />;
 }
 
+function SortView({ game, ...props }: GameViewProps<'sort'>) {
+  return (
+    <CardGame
+      {...useGameProps(props)}
+      why={props.item.why}
+      stage={(handle, cheer, pick) => (
+        <SortStage scene={game} handle={handle} cheer={cheer} onPick={pick} />
+      )}
+    />
+  );
+}
+
+function OrderView({ game, ...props }: GameViewProps<'order'>) {
+  return (
+    <CardGame
+      {...useGameProps(props)}
+      why={props.item.why}
+      dragChoices
+      stage={(handle, cheer) => <OrderStage scene={game} handle={handle} cheer={cheer} />}
+    />
+  );
+}
+
+function LabelView({ game, ...props }: GameViewProps<'label'>) {
+  return (
+    <CardGame
+      {...useGameProps(props)}
+      why={props.item.why}
+      dragChoices
+      stage={(handle, cheer) => <LabelStage scene={game} handle={handle} cheer={cheer} />}
+    />
+  );
+}
+
 /** Every minigame the app plays, by `kind`. A new kind in `GAMES` fails the type check here. */
 export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   share: { title: 'Sharing', View: ShareView, demo: DEMO_ITEMS },
@@ -88,6 +129,9 @@ export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   grid: { title: 'Tenths and hundredths', View: GridView, demo: GRID_DEMO_ITEMS },
   blocks: { title: 'Base-ten blocks', View: BlocksView, demo: BLOCKS_DEMO_ITEMS },
   stones: { title: 'Stepping stones', View: StonesView, demo: STONES_DEMO_ITEMS },
+  sort: { title: 'Sort it', View: SortView, demo: SORT_DEMO_ITEMS },
+  order: { title: 'Put in order', View: OrderView, demo: ORDER_DEMO_ITEMS },
+  label: { title: 'Label it', View: LabelView, demo: LABEL_DEMO_ITEMS },
 };
 
 export const GAME_KINDS = Object.keys(GAME_VIEWS) as GameKind[];

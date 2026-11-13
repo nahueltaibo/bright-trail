@@ -1,6 +1,7 @@
 import { parseMixed, type SceneAnswer } from '@bright-trail/shared';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
-import { Pressable, StyleSheet, View } from 'react-native';
+import { Animated, Pressable, StyleSheet, View } from 'react-native';
+import type { StyleProp, ViewStyle } from 'react-native';
 import { Icon } from '../../design/Icon';
 import { color, font, pressDown, radius, shadow } from '../../design/tokens';
 import { FlagButton, KidButton, ReplayButton } from '../controls';
@@ -12,6 +13,7 @@ import type { ItemProgress, Narrate } from '../types';
 import { ProgressDots } from '../../design/kid';
 import { ReadAlong } from '../ReadAlong';
 import { AmountText } from './AmountText';
+import { useDrag } from '../drag';
 import { Text } from '../../design/Text';
 
 /** A choice's value. Text the story can't show as a number, like "Same", stays text. */
@@ -33,7 +35,8 @@ export type GameFrameProps = {
   prompt: string;
   /** Spoken on start. */
   question: string[];
-  answer: SceneAnswer;
+  /** A number or yes-no, or the right choice's label when it's a word like "Liquid". */
+  answer: GameValue;
   input: GameInput;
   /** Practice lets the child try again after a miss. Measuring shows why, then moves on. */
   retry: boolean;
@@ -51,9 +54,15 @@ export type GameFrameProps = {
 
 type Props = GameFrameProps & {
   /** The play area. `cheer` is true after a right answer. */
-  stage: (state: { cheer: boolean }) => ReactNode;
+  stage: (state: {
+    cheer: boolean;
+    /** Answers with a choice's label, for a stage that takes drops. `undefined` once answered. */
+    pick: ((label: string) => void) | undefined;
+  }) => ReactNode;
+  /** Lets a choice be dragged as well as tapped. Says whether a screen point is a drop spot. */
+  onDropChoice?: (pageX: number, pageY: number) => Promise<boolean>;
   /** Plays the story out for the child's answer. Returns what to say about it. */
-  playOut: (value: GameValue, correct: boolean) => Promise<string>;
+  playOut: (value: GameValue, correct: boolean, label: string) => Promise<string>;
   /** Puts the stage back for another try. */
   reset: () => Promise<void>;
 };
@@ -105,7 +114,7 @@ export function GameFrame(props: Props) {
       onAnswerRef.current?.({ value, choiceId }, correct, replays.current);
     }
     say([`${label}? Let's see.`]);
-    const body = await props.playOut(value, correct);
+    const body = await props.playOut(value, correct, label);
     // The same titles as every other item, so feedback feels the same across the app.
     const result = { correct, title: correct ? CORRECT_TEXT : MISS_TEXT, body };
     setOutcome(result);
@@ -113,6 +122,19 @@ export function GameFrame(props: Props) {
     setPhase('result');
     say([result.title, result.body]);
   };
+
+  // The stage calls this from a drop, so it reads the latest `choose` through a holder.
+  const chooseRef = useRef(choose);
+  useEffect(() => {
+    chooseRef.current = choose;
+  });
+  const pick =
+    phase === 'ask' && input.kind === 'choices'
+      ? (label: string) => {
+          const c = input.choices.find((x) => x.label === label);
+          if (c && !tried.includes(c.label)) void chooseRef.current(c.value, c.label, c.id);
+        }
+      : undefined;
 
   const tryAgain = async () => {
     setPhase('resetting');
@@ -138,33 +160,40 @@ export function GameFrame(props: Props) {
           const chosen = c.label === picked;
           const done = tried.includes(c.label) && !chosen;
           return (
-            <Pressable
+            <DragTile
               key={c.id}
-              accessibilityRole="button"
-              accessibilityLabel={c.label}
-              accessibilityState={{ disabled: phase !== 'ask' || done, selected: chosen }}
-              disabled={phase !== 'ask' || done}
-              onPress={() => void choose(c.value, c.label, c.id)}
-              style={({ pressed }) => [
-                styles.choice,
-                { height: tileHeight, borderRadius: radius.lg },
-                landscape && styles.half,
-                pressed && pressDown,
-                chosen &&
-                  (phase !== 'result'
-                    ? styles.choiceActive
-                    : outcome?.correct
-                      ? styles.choiceGood
-                      : styles.choiceMiss),
-                done && styles.faded,
-              ]}
+              enabled={phase === 'ask' && !done && props.onDropChoice !== undefined}
+              onDrop={props.onDropChoice}
+              onLanded={() => void choose(c.value, c.label, c.id)}
+              style={[styles.tile, landscape && styles.half]}
             >
-              {parseMixed(c.label) !== null ? (
-                <AmountText label={c.label} size={(c.label.length > 4 ? 32 : 40) * scale} />
-              ) : (
-                <Text style={[styles.text, { fontSize: 22 * scale }]}>{c.label}</Text>
-              )}
-            </Pressable>
+              <Pressable
+                accessibilityRole="button"
+                accessibilityLabel={c.label}
+                accessibilityState={{ disabled: phase !== 'ask' || done, selected: chosen }}
+                disabled={phase !== 'ask' || done}
+                onPress={() => void choose(c.value, c.label, c.id)}
+                style={({ pressed }) => [
+                  styles.choice,
+                  { height: tileHeight, borderRadius: radius.lg },
+                  landscape && styles.half,
+                  pressed && pressDown,
+                  chosen &&
+                    (phase !== 'result'
+                      ? styles.choiceActive
+                      : outcome?.correct
+                        ? styles.choiceGood
+                        : styles.choiceMiss),
+                  done && styles.faded,
+                ]}
+              >
+                {parseMixed(c.label) !== null ? (
+                  <AmountText label={c.label} size={(c.label.length > 4 ? 32 : 40) * scale} />
+                ) : (
+                  <Text style={[styles.text, { fontSize: 22 * scale }]}>{c.label}</Text>
+                )}
+              </Pressable>
+            </DragTile>
           );
         })}
       </View>
@@ -218,7 +247,9 @@ export function GameFrame(props: Props) {
     </View>
   );
 
-  const stage = <View style={styles.stages}>{props.stage({ cheer })}</View>;
+  // eslint-disable-next-line react-hooks/refs -- `pick` reads refs only when called.
+  const stageView = props.stage({ cheer, pick });
+  const stage = <View style={styles.stages}>{stageView}</View>;
   const bottom = feedback || inputView;
 
   if (landscape) {
@@ -239,6 +270,40 @@ export function GameFrame(props: Props) {
       {/* Fixed height: the stage must not jump when feedback replaces the input. */}
       <View style={[styles.bottom, { height: (typed ? 200 : 150) * scale }]}>{bottom}</View>
     </View>
+  );
+}
+
+type DragTileProps = {
+  enabled: boolean;
+  onDrop?: (pageX: number, pageY: number) => Promise<boolean>;
+  onLanded: () => void;
+  style: StyleProp<ViewStyle>;
+  children: ReactNode;
+};
+
+/** Wraps a choice so a drag past `DRAG_SLOP` carries it. A tap still reaches the button. */
+function DragTile({ enabled, onDrop, onLanded, style, children }: DragTileProps) {
+  const [pan] = useState(() => new Animated.ValueXY());
+  const back = () =>
+    Animated.spring(pan, { toValue: { x: 0, y: 0 }, useNativeDriver: false }).start();
+  const drag = useDrag({
+    enabled,
+    grab: 'move',
+    onMove: (p) => pan.setValue({ x: p.dx, y: p.dy }),
+    onDrop: (p) => {
+      void (onDrop ? onDrop(p.pageX, p.pageY) : Promise.resolve(false)).then((ok) => {
+        if (ok) {
+          pan.setValue({ x: 0, y: 0 });
+          onLanded();
+        } else back();
+      });
+    },
+    onCancel: back,
+  });
+  return (
+    <Animated.View {...drag} style={[style, { transform: pan.getTranslateTransform(), zIndex: 1 }]}>
+      {children}
+    </Animated.View>
   );
 }
 
@@ -333,6 +398,7 @@ const styles = StyleSheet.create({
   promptRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 8 },
   prompt: { flex: 1, ...font.display(700), color: colors.ink, textAlign: 'center' },
   bottom: { justifyContent: 'center' },
+  tile: { flex: 1 },
   choices: { flexDirection: 'row', gap: 12, padding: 12 },
   wrap: { flexWrap: 'wrap' },
   choice: {

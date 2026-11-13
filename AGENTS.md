@@ -31,6 +31,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `shared/src/grid.ts` — grid scenes: tenths strips or hundred grids that fill an amount, read as a decimal, fraction, percent, or count of parts, or checked against a second amount. `gridProblems` checks a scene against its item.
 - `shared/src/blocks.ts` — base-ten blocks scenes: flats, rods, and cubes that make a number up to 999, asking for the total, one place's count, a digit's worth, or how many of a place it makes. `blocksProblems` checks a scene against its item.
 - `shared/src/stones.ts` — stepping-stone scenes: a run of 2 to 8 numbers or fractions with a fixed step and one missing. `stonesProblems` checks a scene against its item.
+- `shared/src/sort.ts`, `order.ts`, and `label.ts` — card scenes for Science, Social Studies, and Health. Each asks one tap question with text choices: which bin a card goes in, which card fills a gap in a row, or which tag names a marked part of a picture. `shared/src/cards.ts` holds their shared card and checks. `PICTURES` in `label.ts` lists the pictures and their parts. No content tags them yet, so they have no tagger.
 - `shared/src/join.ts` — join scenes: things that come into a ten-frame, leave it, or get counted, set aside, or moved to make 10. `joinProblems` checks a scene against its item and its picture.
 - `app/src/design/` — the design system in code: tokens, Baloo 2 and Atkinson Hyperlegible fonts, the line icons, and kid building blocks like `KidButton`, `KidScreen`, and `AvatarDisc`. Style new screens from here, not with raw colours.
 - Kid-zone code imports `Text` from `app/src/design/Text`, not `react-native`. It swaps in Lexend for a child with the dyslexia-friendly font on, and ESLint enforces it.
@@ -48,6 +49,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 - `GameFrame`'s keypad gets a decimal point key when the item's answer is a decimal.
 - `app/src/learning/blocks/` — the base-ten blocks minigame (`blocks`). After the answer, ten of a kind trade up, bigger blocks break down, and the asked place gets counted.
 - `app/src/learning/stones/` — the stepping-stones minigame (`stones`). The frog hops the row from the bank, and the missing stone rises when it gets there. It shares its hop arcs with the number line through `app/src/learning/hopArc.ts`.
+- `app/src/learning/cards/` — `CardGame` and the card stage pieces that `sort/`, `order/`, and `label/` share. A child taps a choice or drags it: the sort card goes into a bin, and an order or label choice goes onto its gap. After the answer, the picked card moves to its place. On a miss it shakes, then the right card takes the place. Label it's drawings and their part spots live in `label/pictures.tsx` and `label/layout.ts`.
 - `/dev/learning` is a preview of every item type. `/dev/games/<kind>` plays a game's demo items, one per kind of question. `/dev/hops` does the same for frog paths. `/dev/check-end` shows each screen that ends a check or review. They show when `__DEV__` is true or the build sets `EXPO_PUBLIC_E2E=1`.
 
 ## Checking Your Work
