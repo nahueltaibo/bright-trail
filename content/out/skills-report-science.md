@@ -32,7 +32,6 @@ These don't fail the build. Check each one is intended.
 - g4-sci-mechanism-parts: reaches no Grade 3 skill
 - g4-sci-transmit-motion: reaches no Grade 3 skill
 - g4-sci-transform-motion: reaches no Grade 3 skill
-- g4-sci-machine-forces: reaches no Grade 3 skill
 - g4-sci-machines-lives: reaches no Grade 3 skill
 - g4-sci-machines-compare-env: reaches no Grade 3 skill
 - g5-sci-body-systems: reaches no Grade 4 skill
@@ -52,17 +51,7 @@ These don't fail the build. Check each one is intended.
 - g5-sci-manufacturing-processes: reaches no Grade 4 skill
 - g5-sci-internal-forces: reaches no Grade 4 skill
 - g5-sci-external-forces: reaches no Grade 4 skill
-- g5-sci-severe-forces: reaches no Grade 4 skill
 - g5-sci-protective-equipment: reaches no Grade 4 skill
-- g5-sci-energy-forms: reaches no Grade 4 skill
-- g5-sci-energy-conservation-law: reaches no Grade 4 skill
-- g5-sci-potential-energy: reaches no Grade 4 skill
-- g5-sci-energy-dissipation: reaches no Grade 4 skill
-- g5-sci-renewable-sources: reaches no Grade 4 skill
-- g5-sci-fossil-fuels-climate: reaches no Grade 4 skill
-- g5-sci-energy-impacts: reaches no Grade 4 skill
-- g5-sci-tech-energy-use: reaches no Grade 4 skill
-- g5-sci-fnmi-conservation: reaches no Grade 4 skill
 - g6-sci-classify-organisms: reaches no Grade 5 skill
 - g6-sci-biodiversity-defined: reaches no Grade 5 skill
 - g6-sci-species-variety: reaches no Grade 5 skill
@@ -72,11 +61,6 @@ These don't fail the build. Check each one is intended.
 - g6-sci-agriculture-biodiversity: reaches no Grade 5 skill
 - g6-sci-biodiversity-benefits: reaches no Grade 5 skill
 - g6-sci-biodiversity-action: reaches no Grade 5 skill
-- g6-sci-air-flight: reaches no Grade 5 skill
-- g6-sci-four-forces: reaches no Grade 5 skill
-- g6-sci-flight-control: reaches no Grade 5 skill
-- g6-sci-alter-forces: reaches no Grade 5 skill
-- g6-sci-flying-organisms: reaches no Grade 5 skill
 - g6-sci-solar-system: reaches no Grade 5 skill
 - g6-sci-space-light: reaches no Grade 5 skill
 - g6-sci-earth-moon-sun: reaches no Grade 5 skill
@@ -99,13 +83,18 @@ These don't fail the build. Check each one is intended.
 - **Roots:** `g1-sci-research-steps`, `g1-sci-fair-test`, `g1-sci-design-steps`, `g1-sci-safety`, `g1-sci-code-algorithms`, `g1-sci-science-solves-problems`, `g1-sci-diverse-contributions`, `g1-sci-linked-nature`, `g1-sci-basic-needs`, `g1-sci-body-parts`, `g1-sci-energy-moves`, `g1-sci-objects-materials`, `g1-sci-earth-sun`, `g1-sci-cycles`
 - **Longest chain (12 skills):** `g1-sci-basic-needs` → `g1-sci-healthy-environment` → `g2-sci-air-water-properties` → `g2-sci-depend-air-water` → `g3-sci-plant-needs` → `g3-sci-plant-parts` → `g3-sci-photosynthesis` → `g4-sci-food-chain` → `g4-sci-food-web` → `g6-sci-community-resilience` → `g6-sci-biodiversity-benefits` → `g6-sci-biodiversity-action`
 - **Dead ends below Grade 6 (51):** `g1-sci-loss-effects`, `g1-sci-no-electricity`, `g1-sci-seasonal-energy`, `g1-sci-object-senses`, `g1-sci-fasteners`, `g1-sci-sun-light-heat`, `g1-sci-outdoor-activities`, `g1-sci-seasonal-impacts`, `g2-sci-locomotion`, `g2-sci-life-cycle-changes`, `g2-sci-animal-impacts`, `g2-sci-mixtures`, `g2-sci-buoyancy-absorb`, `g2-sci-home-practices`, `g2-sci-state-change-impacts`, `g2-sci-water-cycle`, `g2-sci-protect-air-water`, `g2-sci-water-use-plan`, `g2-sci-world-fresh-water`, `g3-sci-plant-life-cycles`, `g3-sci-plants-important`, `g3-sci-local-food`, `g3-sci-forces-daily`, `g3-sci-form-function`, `g3-sci-building-materials`, `g3-sci-structures-impact`, `g3-sci-animal-structures`, `g3-sci-composting`, `g3-sci-soil-human-impact`, `g4-sci-diet-groups`, `g4-sci-extinction`, `g4-sci-light-sound-devices`, `g4-sci-light-sound-environment`, `g4-sci-transform-motion`, `g4-sci-machine-forces`, `g4-sci-machines-lives`, `g4-sci-machines-compare-env`, `g4-sci-fossils`, `g4-sci-fnmi-rocks`, `g5-sci-diseases`, `g5-sci-health-factors`, `g5-sci-tech-health`, `g5-sci-food-literacy`, `g5-sci-thermal-energy`, `g5-sci-manufacturing-processes`, `g5-sci-internal-forces`, `g5-sci-natural-protection`, `g5-sci-protective-equipment`, `g5-sci-mitigate-forces`, `g5-sci-potential-energy`, `g5-sci-fnmi-conservation`. Nothing builds on these, so check that's intended.
-- **Transitive prerequisites removed (1):** `g2-sci-depend-air-water` no longer lists `g1-sci-basic-needs` (via `g2-sci-air-water-properties`)
+- **Transitive prerequisites removed (4):** `g2-sci-depend-air-water` no longer lists `g1-sci-basic-needs` (via `g2-sci-air-water-properties`); `g5-sci-severe-forces` no longer lists `g3-sci-natural-forces` (via `g4-sci-geological-impacts`); `g5-sci-natural-effects-structures` no longer lists `g4-sci-geological-impacts` (via `g5-sci-severe-forces`); `g6-sci-air-flight` no longer lists `g2-sci-air-water-properties` (via `g5-sci-states-properties`)
 
 ## Overrides Applied
 
-1 hand fixes from `content/graph-overrides.json`, applied after the reviewer and before pruning and checks.
+6 hand fixes from `content/graph-overrides.json`, applied after the reviewer and before pruning and checks.
 
 - `g2-sci-home-practices` title: "Using Things Safely at Home". The title had more than 6 words.
+- `g4-sci-machine-forces` adds `g3-sci-force-effects`. Machines change forces, so kids need to know what a force does to an object.
+- `g5-sci-energy-forms` adds `g4-sci-light-sources`. Light is one of the forms of energy. Grade 4 taught where it comes from.
+- `g5-sci-energy-forms` adds `g4-sci-sound-properties`. Sound is one of the forms of energy. Grade 4 taught how it behaves.
+- `g5-sci-severe-forces` adds `g4-sci-geological-impacts`. Earthquakes and volcanoes are among the severe natural forces structures must withstand. Grade 4 taught their effects.
+- `g6-sci-air-flight` adds `g5-sci-states-properties`. Flight uses the properties of air, a gas. Grade 5 taught the properties of gases.
 
 ## Reviewer Changes
 
@@ -323,7 +312,7 @@ Reviewed all 60-ish proposed Grade 6 skills against the prerequisite rules. All 
 - `g4-sci-mechanism-parts` Parts of a Mechanism (D2.2). Needs: g4-sci-machines-purpose.
 - `g4-sci-transmit-motion` Passing Motion Along (D2.3). Needs: g4-sci-mechanism-parts.
 - `g4-sci-transform-motion` Changing Motion (D2.4). Needs: g4-sci-transmit-motion.
-- `g4-sci-machine-forces` How Machines Change Forces (D2.5). Needs: g4-sci-mechanism-parts, g2-sci-machine-force.
+- `g4-sci-machine-forces` How Machines Change Forces (D2.5). Needs: g4-sci-mechanism-parts, g2-sci-machine-force, g3-sci-force-effects.
 - `g4-sci-machines-lives` Machines in People's Lives (D1.1). Needs: g4-sci-machines-purpose, g2-sci-machines-communities.
 - `g4-sci-machines-compare-env` Comparing Machines and Nature (D1.2). Needs: g4-sci-machines-purpose, g2-sci-machines-environment.
 - `g4-sci-rock-cycle` The Rock Cycle (E2.1). Needs: g3-sci-erosion, g2-sci-state-conditions.
@@ -364,12 +353,12 @@ Reviewed all 60-ish proposed Grade 6 skills against the prerequisite rules. All 
 - `g5-sci-material-impacts` Materials and the Environment (C1.2). Needs: g5-sci-useful-properties, g4-sci-mining-impacts.
 - `g5-sci-internal-forces` Forces Inside Structures (D2.1). Needs: g3-sci-struts-ties.
 - `g5-sci-external-forces` Forces Acting on Structures (D2.2). Needs: g3-sci-forces-structures.
-- `g5-sci-severe-forces` Structures Standing Up to Nature (D2.3). Needs: g5-sci-external-forces, g3-sci-natural-forces.
+- `g5-sci-severe-forces` Structures Standing Up to Nature (D2.3). Needs: g5-sci-external-forces, g4-sci-geological-impacts.
 - `g5-sci-natural-protection` Plant and Animal Protection (D2.4). Needs: g3-sci-force-effects, g4-sci-structural-adaptations.
 - `g5-sci-protective-equipment` Protective Gear and Forces (D2.5). Needs: g3-sci-harmful-forces.
-- `g5-sci-natural-effects-structures` Nature's Forces and Structures (D1.1). Needs: g5-sci-severe-forces, g4-sci-geological-impacts.
+- `g5-sci-natural-effects-structures` Nature's Forces and Structures (D1.1). Needs: g5-sci-severe-forces.
 - `g5-sci-mitigate-forces` Protecting Communities From Forces (D1.2). Needs: g5-sci-natural-effects-structures.
-- `g5-sci-energy-forms` Forms of Energy (E2.1). Needs: g1-sci-energy-sources.
+- `g5-sci-energy-forms` Forms of Energy (E2.1). Needs: g1-sci-energy-sources, g4-sci-light-sources, g4-sci-sound-properties.
 - `g5-sci-energy-conservation-law` Energy Is Never Lost (E2.2). Needs: g5-sci-energy-forms.
 - `g5-sci-potential-energy` Stored Energy and Transformations (E2.3). Needs: g5-sci-energy-conservation-law.
 - `g5-sci-energy-dissipation` Energy Escaping as Heat, Light, Sound (E2.4). Needs: g5-sci-energy-conservation-law.
@@ -409,7 +398,7 @@ Reviewed all 60-ish proposed Grade 6 skills against the prerequisite rules. All 
 - `g6-sci-series-parallel` Series and Parallel Circuits (C2.7). Needs: g6-sci-circuit-parts.
 - `g6-sci-generation-impacts` Making Electricity in Canada (C1.1). Needs: g6-sci-make-electricity, g5-sci-energy-impacts.
 - `g6-sci-save-electricity` Using Less Electricity (C1.2). Needs: g6-sci-use-electricity, g5-sci-tech-energy-use.
-- `g6-sci-air-flight` Air and Flight (D2.1). Needs: g2-sci-air-water-properties.
+- `g6-sci-air-flight` Air and Flight (D2.1). Needs: g5-sci-states-properties.
 - `g6-sci-four-forces` The Four Forces of Flight (D2.2). Needs: g6-sci-air-flight, g3-sci-force-effects.
 - `g6-sci-flight-control` Controlling Flight (D2.3). Needs: g6-sci-four-forces.
 - `g6-sci-alter-forces` Changing the Forces of Flight (D2.4). Needs: g6-sci-four-forces.

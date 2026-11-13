@@ -12,14 +12,6 @@ These don't fail the build. Check each one is intended.
 - g3-soc-employment: reaches no Grade 2 skill
 - g5-soc-explorer-motives: reaches no Grade 4 skill
 - g5-soc-citizen-rights: reaches no Grade 4 skill
-- g6-soc-territory: reaches no Grade 5 skill
-- g6-soc-migration-reasons: reaches no Grade 5 skill
-- g6-soc-settler-life: reaches no Grade 5 skill
-- g6-soc-community-types: reaches no Grade 5 skill
-- g6-soc-jewish-history: reaches no Grade 5 skill
-- g6-soc-own-community-change: reaches no Grade 5 skill
-- g6-soc-features-identity: reaches no Grade 5 skill
-- g6-soc-settler-contrib: reaches no Grade 5 skill
 
 ## Counts
 
@@ -38,11 +30,11 @@ These don't fail the build. Check each one is intended.
 - **Roots:** `g1-soc-my-roles`, `g1-soc-important-people-places`, `g1-soc-events-in-order`, `g1-soc-kind-behaviour`, `g1-soc-reclaiming-identity`, `g1-soc-community-features`, `g1-soc-territory`, `g1-soc-nonstandard-units`, `g1-soc-services-occupations`
 - **Longest chain (21 skills):** `g1-soc-community-features` → `g1-soc-relative-location` → `g1-soc-map-elements` → `g1-soc-b-maps` → `g2-soc-represent` → `g2-soc-world-features` → `g2-soc-cardinal` → `g2-soc-location-climate` → `g2-soc-describe-communities` → `g2-soc-compare-lifestyles` → `g2-soc-adapt` → `g2-soc-b-questions` → `g2-soc-b-gather` → `g2-soc-b-maps` → `g3-soc-population-patterns` → `g3-soc-b-maps` → `g3-soc-b-conclusions` → `g3-soc-b-communicate` → `g4-soc-b-communicate` → `g5-soc-b-communicate` → `g6-soc-b-communicate`
 - **Dead ends below Grade 6 (25):** `g1-soc-important-people-places`, `g1-soc-compare-events`, `g1-soc-impact-on-others`, `g1-soc-responsible-plan`, `g2-soc-community-heritage`, `g2-soc-family-heritage`, `g2-soc-compare-families`, `g2-soc-compare-community`, `g3-soc-settlement-impact`, `g3-soc-then-now`, `g3-soc-compare-land-use`, `g4-soc-visual-evidence`, `g4-soc-tech`, `g4-soc-resolve-conflict`, `g4-soc-compare-groups`, `g4-soc-young-people`, `g4-soc-compare-environment`, `g4-soc-quality-life`, `g5-soc-first-nations-links`, `g5-soc-new-france`, `g5-soc-metis-origins`, `g5-soc-past-to-present`, `g5-soc-duty-consult`, `g5-soc-social-plan`, `g5-soc-environment-plan`. Nothing builds on these, so check that's intended.
-- **Transitive prerequisites removed (6):** `g1-soc-b-maps` no longer lists `g1-soc-community-features` (via `g1-soc-map-elements`); `g3-soc-a-maps` no longer lists `g2-soc-a-maps` (via `g3-soc-indigenous-communities`); `g4-soc-compare-groups` no longer lists `g4-soc-daily-life` (via `g4-soc-compare-org`); `g4-soc-a-maps` no longer lists `g3-soc-a-maps` (via `g4-soc-early-locations`); `g5-soc-nations` no longer lists `g3-soc-indigenous-communities` (via `g4-soc-early-locations`); `g6-soc-locate-regions` no longer lists `g2-soc-world-features` (via `g4-soc-directions`)
+- **Transitive prerequisites removed (8):** `g1-soc-b-maps` no longer lists `g1-soc-community-features` (via `g1-soc-map-elements`); `g3-soc-a-maps` no longer lists `g2-soc-a-maps` (via `g3-soc-indigenous-communities`); `g4-soc-compare-groups` no longer lists `g4-soc-daily-life` (via `g4-soc-compare-org`); `g4-soc-a-maps` no longer lists `g3-soc-a-maps` (via `g4-soc-early-locations`); `g5-soc-nations` no longer lists `g3-soc-indigenous-communities` (via `g4-soc-early-locations`); `g6-soc-territory` no longer lists `g1-soc-territory` (via `g5-soc-nations`); `g6-soc-migration-reasons` no longer lists `g3-soc-settler-communities` (via `g5-soc-explorer-motives`); `g6-soc-locate-regions` no longer lists `g2-soc-world-features` (via `g4-soc-directions`)
 
 ## Overrides Applied
 
-6 hand fixes from `content/graph-overrides.json`, applied after the reviewer and before pruning and checks.
+8 hand fixes from `content/graph-overrides.json`, applied after the reviewer and before pruning and checks.
 
 - `g5-soc-citizen-action` may say "write". Writing letters is an action citizens take. Items ask which action fits.
 - `g6-soc-holocaust-rights` may say "write". Canada helped write human rights laws. Items match events.
@@ -50,6 +42,8 @@ These don't fail the build. Check each one is intended.
 - `g6-soc-interactions` new description. "Say who was involved" asked for a spoken answer.
 - `g3-soc-indigenous-communities` title: "First Nations and Métis Long Ago". The title had more than 6 words.
 - `g4-soc-compare-environment` title: "Caring for the Land Over Time". The title had more than 6 words.
+- `g6-soc-migration-reasons` adds `g5-soc-explorer-motives`. Same question one era later: Grade 5 asked why Europeans came.
+- `g6-soc-territory` adds `g5-soc-nations`. Finding whose traditional territory you live on builds on knowing the nations and where they lived.
 
 ## Reviewer Changes
 
@@ -294,8 +288,8 @@ Reviewed all 40 proposed Grade 6 skills for prerequisite necessity, directness, 
 
 ### Grade 6
 
-- `g6-soc-territory` Our Treaty and Traditional Territory (A3.1). Needs: g1-soc-territory.
-- `g6-soc-migration-reasons` Why People Came to Canada (A3.2). Needs: g3-soc-settler-communities.
+- `g6-soc-territory` Our Treaty and Traditional Territory (A3.1). Needs: g5-soc-nations.
+- `g6-soc-migration-reasons` Why People Came to Canada (A3.2). Needs: g5-soc-explorer-motives.
 - `g6-soc-settler-life` Life in Newcomer Communities (A3.3). Needs: g6-soc-migration-reasons, g3-soc-daily-life-roles.
 - `g6-soc-community-types` Kinds of Communities in Canada (A3.4). Needs: g6-soc-migration-reasons, g3-soc-indigenous-communities.
 - `g6-soc-indigenous-history` Big Events for Indigenous Communities (A3.5). Needs: g3-soc-colonial-policies, g5-soc-contact, g3-soc-treaties.

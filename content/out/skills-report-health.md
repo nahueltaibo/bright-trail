@@ -16,12 +16,9 @@ These don't fail the build. Check each one is intended.
 - g4-hlth-bullying-abuse: reaches no Grade 3 skill in the same topic
 - g4-hlth-eating-goals: reaches no Grade 3 skill in the same topic
 - g4-hlth-healthy-eating-places: reaches no Grade 3 skill in the same topic
-- g5-hlth-alcohol-effects: reaches no Grade 4 skill in the same topic
 - g5-hlth-self-concept: reaches no Grade 4 skill in the same topic
-- g5-hlth-alcohol-cannabis-factors: reaches no Grade 4 skill in the same topic
 - g6-hlth-thoughts-emotions: reaches no Grade 5 skill
 - g6-hlth-hunger-guidelines: reaches no Grade 5 skill in the same topic
-- g6-hlth-conflict-skills: reaches no Grade 5 skill in the same topic
 - g6-hlth-eating-active: reaches no Grade 5 skill in the same topic
 
 ## Counts
@@ -39,13 +36,13 @@ These don't fail the build. Check each one is intended.
 ## Shape
 
 - **Roots:** `g1-hlth-food-needs`, `g1-hlth-safety-basics`, `g1-hlth-body-parts`, `g1-hlth-five-senses`, `g1-hlth-mental-health`, `g1-hlth-hygiene`, `g1-hlth-healthy-habits`
-- **Longest chain (8 skills):** `g1-hlth-mental-health` → `g1-hlth-thoughts-feelings` → `g2-hlth-naming-feelings` → `g3-hlth-strong-feelings` → `g4-hlth-mental-health-choices` → `g4-hlth-managing-stress` → `g5-hlth-puberty-stress` → `g6-hlth-adolescent-changes`
-- **Dead ends below Grade 6 (14):** `g1-hlth-five-senses`, `g1-hlth-school-safety`, `g2-hlth-life-stages`, `g2-hlth-health-without-medicine`, `g3-hlth-food-origins`, `g3-hlth-concussions`, `g3-hlth-oral-food`, `g3-hlth-cultural-foods`, `g3-hlth-media-violence`, `g4-hlth-tech-risks`, `g4-hlth-puberty-hygiene`, `g4-hlth-healthy-eating-places`, `g4-hlth-smoke-effects`, `g5-hlth-menstruation-sperm`. Nothing builds on these, so check that's intended.
-- **Transitive prerequisites removed (1):** `g6-hlth-caring-safety` no longer lists `g2-hlth-food-allergies` (via `g5-hlth-threat-response`)
+- **Longest chain (9 skills):** `g1-hlth-safety-basics` → `g1-hlth-injury-risks` → `g2-hlth-medicines` → `g3-hlth-substances` → `g4-hlth-tobacco-substances` → `g4-hlth-smoke-effects` → `g5-hlth-alcohol-effects` → `g5-hlth-alcohol-cannabis-factors` → `g6-hlth-drug-choices`
+- **Dead ends below Grade 6 (13):** `g1-hlth-five-senses`, `g1-hlth-school-safety`, `g2-hlth-life-stages`, `g2-hlth-health-without-medicine`, `g3-hlth-food-origins`, `g3-hlth-concussions`, `g3-hlth-oral-food`, `g3-hlth-cultural-foods`, `g3-hlth-media-violence`, `g4-hlth-tech-risks`, `g4-hlth-puberty-hygiene`, `g4-hlth-healthy-eating-places`, `g5-hlth-menstruation-sperm`. Nothing builds on these, so check that's intended.
+- **Transitive prerequisites removed (2):** `g5-hlth-alcohol-effects` no longer lists `g3-hlth-substances` (via `g4-hlth-smoke-effects`); `g6-hlth-caring-safety` no longer lists `g2-hlth-food-allergies` (via `g5-hlth-threat-response`)
 
 ## Overrides Applied
 
-6 hand fixes from `content/graph-overrides.json`, applied after the reviewer and before pruning and checks.
+8 hand fixes from `content/graph-overrides.json`, applied after the reviewer and before pruning and checks.
 
 - `g2-hlth-consent-standing-up` may say "say". Saying no is the skill. Items ask which words to pick, not to speak.
 - `g6-hlth-drug-choices` may say "say". Saying no is one of the choices the child picks.
@@ -53,6 +50,8 @@ These don't fail the build. Check each one is intended.
 - `g4-hlth-smoke-vape-choices` may say "say". Saying no is the skill. Items ask which refusal to pick, not to speak.
 - `g5-hlth-refusal-skills` may say "say". Saying no is the skill. Items ask which refusal to pick, not to speak.
 - `g5-hlth-threat-response` may say "say". Saying no firmly is one of the steps the child picks or orders.
+- `g5-hlth-alcohol-effects` adds `g4-hlth-smoke-effects`. Same question for the next substance: Grade 4 taught the effects of smoking and vaping.
+- `g6-hlth-conflict-skills` adds `g5-hlth-hurtful-actions`. Handling conflict well builds on knowing how your actions affect others.
 
 ## Reviewer Changes
 
@@ -167,7 +166,7 @@ Reviewed all 14 proposed Grade 6 skills against the prerequisite rules. Most pre
 ### Grade 5
 
 - `g5-hlth-trusted-help` Trusted People and Help Services (D1.1). Needs: g4-hlth-bullying-abuse.
-- `g5-hlth-alcohol-effects` Alcohol: Effects and Intoxication (D1.2). Needs: g3-hlth-substances.
+- `g5-hlth-alcohol-effects` Alcohol: Effects and Intoxication (D1.2). Needs: g4-hlth-smoke-effects.
 - `g5-hlth-reproductive-puberty` Reproductive Parts and Puberty (D1.3). Needs: g4-hlth-puberty-changes.
 - `g5-hlth-menstruation-sperm` Menstruation and Sperm Making (D1.4). Needs: g5-hlth-reproductive-puberty.
 - `g5-hlth-food-labels` Reading Food Labels (D2.1). Needs: g4-hlth-nutrients, g2-hlth-food-allergies.
@@ -190,7 +189,7 @@ Reviewed all 14 proposed Grade 6 skills against the prerequisite rules. Most pre
 - `g6-hlth-thoughts-emotions` Thoughts, Emotions, and Actions (D1.5). Needs: g4-hlth-mental-health-choices.
 - `g6-hlth-eating-factors` What Shapes Our Food Choices (D2.1). Needs: g5-hlth-food-labels, g5-hlth-food-ads.
 - `g6-hlth-hunger-guidelines` Hunger Cues and Growing Bodies (D2.2). Needs: g1-hlth-hunger-cues, g4-hlth-eating-goals.
-- `g6-hlth-conflict-skills` Handling Conflict Positively (D2.3). Needs: g4-hlth-managing-stress.
+- `g6-hlth-conflict-skills` Handling Conflict Positively (D2.3). Needs: g4-hlth-managing-stress, g5-hlth-hurtful-actions.
 - `g6-hlth-drug-choices` Safe Choices About Drugs (D2.4). Needs: g5-hlth-refusal-skills, g5-hlth-alcohol-cannabis-factors, g4-hlth-safe-decisions.
 - `g6-hlth-adolescent-changes` Growing Up: Body, Friends, Feelings (D2.5). Needs: g5-hlth-puberty-stress.
 - `g6-hlth-consent-respect` Respect and Consent in Relationships (D2.6). Needs: g3-hlth-healthy-relationships, g5-hlth-self-concept.

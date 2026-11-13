@@ -2924,7 +2924,7 @@
       "expectationCodes": ["D2.5"],
       "title": "How Machines Change Forces",
       "description": "Pick how machines make a force bigger, smaller, or point a different way, like a lever or a gear set.",
-      "prerequisiteIds": ["g4-sci-mechanism-parts", "g2-sci-machine-force"]
+      "prerequisiteIds": ["g4-sci-mechanism-parts", "g2-sci-machine-force", "g3-sci-force-effects"]
     },
     {
       "id": "g4-sci-machines-lives",
@@ -3342,7 +3342,7 @@
       "expectationCodes": ["D2.3"],
       "title": "Structures Standing Up to Nature",
       "description": "Pick how earthquakes, floods, and storms can harm buildings. Pick features and materials that help structures hold up.",
-      "prerequisiteIds": ["g5-sci-external-forces", "g3-sci-natural-forces"]
+      "prerequisiteIds": ["g5-sci-external-forces", "g4-sci-geological-impacts"]
     },
     {
       "id": "g5-sci-natural-protection",
@@ -3375,7 +3375,7 @@
       "expectationCodes": ["D1.1"],
       "title": "Nature's Forces and Structures",
       "description": "Pick how forces like wind, water, and quakes affect natural and built structures.",
-      "prerequisiteIds": ["g5-sci-severe-forces", "g4-sci-geological-impacts"]
+      "prerequisiteIds": ["g5-sci-severe-forces"]
     },
     {
       "id": "g5-sci-mitigate-forces",
@@ -3397,7 +3397,11 @@
       "expectationCodes": ["E2.1"],
       "title": "Forms of Energy",
       "description": "Pick forms of energy like light, heat, sound, motion, and electrical. Match each to how we use it every day.",
-      "prerequisiteIds": ["g1-sci-energy-sources"]
+      "prerequisiteIds": [
+        "g1-sci-energy-sources",
+        "g4-sci-light-sources",
+        "g4-sci-sound-properties"
+      ]
     },
     {
       "id": "g5-sci-energy-conservation-law",
@@ -3812,7 +3816,7 @@
       "expectationCodes": ["D2.1"],
       "title": "Air and Flight",
       "description": "Pick how properties of air, like pressure and air pushing back, are used in flying things like kites, wings, and parachutes.",
-      "prerequisiteIds": ["g2-sci-air-water-properties"]
+      "prerequisiteIds": ["g5-sci-states-properties"]
     },
     {
       "id": "g6-sci-four-forces",
@@ -5873,7 +5877,7 @@
       "expectationCodes": ["A3.1"],
       "title": "Our Treaty and Traditional Territory",
       "description": "Your community sits on traditional Indigenous land and inside a treaty area. Pick the territory and treaty names for your community.",
-      "prerequisiteIds": ["g1-soc-territory"]
+      "prerequisiteIds": ["g5-soc-nations"]
     },
     {
       "id": "g6-soc-migration-reasons",
@@ -5884,7 +5888,7 @@
       "expectationCodes": ["A3.2"],
       "title": "Why People Came to Canada",
       "description": "People moved to Canada for freedom, land, work, family, or to escape famine and war. Some were forced to come. Match each person's story to the reason.",
-      "prerequisiteIds": ["g3-soc-settler-communities"]
+      "prerequisiteIds": ["g5-soc-explorer-motives"]
     },
     {
       "id": "g6-soc-settler-life",
@@ -6911,7 +6915,7 @@
       "expectationCodes": ["D1.2"],
       "title": "Alcohol: Effects and Intoxication",
       "description": "Sort the short- and long-term effects of alcohol on the body and mind. Pick what changes how strongly alcohol affects a person, like amount, speed, body size, or mixing with other drugs.",
-      "prerequisiteIds": ["g3-hlth-substances"]
+      "prerequisiteIds": ["g4-hlth-smoke-effects"]
     },
     {
       "id": "g5-hlth-reproductive-puberty",
@@ -7140,7 +7144,7 @@
       "expectationCodes": ["D2.3"],
       "title": "Handling Conflict Positively",
       "description": "Pick ways to stay calm, listen, and speak up kindly in a conflict, in person or online.",
-      "prerequisiteIds": ["g4-hlth-managing-stress"]
+      "prerequisiteIds": ["g4-hlth-managing-stress", "g5-hlth-hurtful-actions"]
     },
     {
       "id": "g6-hlth-drug-choices",

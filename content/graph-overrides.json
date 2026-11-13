@@ -555,6 +555,60 @@
       "skillId": "g4-soc-compare-environment",
       "title": "Caring for the Land Over Time",
       "reason": "The title had more than 6 words."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g4-sci-machine-forces",
+      "prerequisiteId": "g3-sci-force-effects",
+      "reason": "Machines change forces, so kids need to know what a force does to an object."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g5-sci-energy-forms",
+      "prerequisiteId": "g4-sci-light-sources",
+      "reason": "Light is one of the forms of energy. Grade 4 taught where it comes from."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g5-sci-energy-forms",
+      "prerequisiteId": "g4-sci-sound-properties",
+      "reason": "Sound is one of the forms of energy. Grade 4 taught how it behaves."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g5-sci-severe-forces",
+      "prerequisiteId": "g4-sci-geological-impacts",
+      "reason": "Earthquakes and volcanoes are among the severe natural forces structures must withstand. Grade 4 taught their effects."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g6-sci-air-flight",
+      "prerequisiteId": "g5-sci-states-properties",
+      "reason": "Flight uses the properties of air, a gas. Grade 5 taught the properties of gases."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g6-soc-migration-reasons",
+      "prerequisiteId": "g5-soc-explorer-motives",
+      "reason": "Same question one era later: Grade 5 asked why Europeans came."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g6-soc-territory",
+      "prerequisiteId": "g5-soc-nations",
+      "reason": "Finding whose traditional territory you live on builds on knowing the nations and where they lived."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g5-hlth-alcohol-effects",
+      "prerequisiteId": "g4-hlth-smoke-effects",
+      "reason": "Same question for the next substance: Grade 4 taught the effects of smoking and vaping."
+    },
+    {
+      "op": "addPrerequisite",
+      "skillId": "g6-hlth-conflict-skills",
+      "prerequisiteId": "g5-hlth-hurtful-actions",
+      "reason": "Handling conflict well builds on knowing how your actions affect others."
     }
   ]
 }
