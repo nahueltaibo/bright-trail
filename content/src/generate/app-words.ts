@@ -46,12 +46,57 @@ function withFood<V extends Visual | undefined>(visual: V, ...texts: string[]): 
   return (food ? { ...visual, food } : visual) as V;
 }
 
+const DOTS = 'dots';
+const THING_WORDS: [RegExp, string][] = [
+  [/\bdots?\b/i, DOTS],
+  [/\bstars?\b/i, '⭐'],
+  [/\bapples?\b/i, '🍎'],
+  [/\bpears?\b/i, '🍐'],
+  [/\bcookies?\b/i, '🍪'],
+  [/\bballoons?\b/i, '🎈'],
+  [/\bducks?\b/i, '🦆'],
+  [/\bladybugs?\b/i, '🐞'],
+  [/\bcards?\b/i, '🃏'],
+  [/\bboards?\b/i, '🪵'],
+];
+
+/**
+ * The emoji the first text naming a thing names first, or the story's `fallback` when none does.
+ * Undefined when the words say dots, so the ten-frame keeps them.
+ */
+export function thingFor(texts: string[], fallback?: string): string | undefined {
+  for (const text of texts) {
+    let best: { at: number; thing: string } | undefined;
+    for (const [word, thing] of THING_WORDS) {
+      const at = text.search(word);
+      if (at >= 0 && (!best || at < best.at)) best = { at, thing };
+    }
+    if (best) return best.thing === DOTS ? undefined : best.thing;
+  }
+  return fallback;
+}
+
+/** Fills a ten-frame with the thing its words count instead of dots. */
+function withThing<V extends Visual | undefined>(visual: V, texts: string[], fallback?: string): V {
+  if (visual?.kind !== 'ten-frame' || visual.emoji) return visual;
+  const emoji = thingFor(texts, fallback);
+  return (emoji ? { ...visual, emoji } : visual) as V;
+}
+
+/** The emoji a story's object pictures show, when they all show the same one. */
+function storyThing(nugget: StoryNugget): string | undefined {
+  const emojis = new Set(
+    nugget.cards.flatMap((c) => (c.visual?.kind === 'objects' ? [c.visual.emoji] : [])),
+  );
+  return emojis.size === 1 ? [...emojis][0] : undefined;
+}
+
 function choiceForApp(c: Choice, story: string): Choice {
   if (c.kind === 'number') return c;
   if (c.kind === 'text') return { ...c, text: pickedWords(c.text) };
   return {
     ...c,
-    visual: withFood(c.visual, c.narration, story),
+    visual: withThing(withFood(c.visual, c.narration, story), [c.narration, story]),
     narration: pickedWords(c.narration),
   };
 }
@@ -63,7 +108,10 @@ export function itemForApp(item: Item): Item {
     why: pickedWords(item.why),
   };
   if (item.type === 'number-line') return { ...item, ...words };
-  const visual = withFood(item.visual, item.narration, item.prompt);
+  const visual = withThing(withFood(item.visual, item.narration, item.prompt), [
+    item.narration,
+    item.prompt,
+  ]);
   if (item.type === 'keypad') return { ...item, ...words, ...(visual && { visual }) };
   return {
     ...item,
@@ -74,13 +122,20 @@ export function itemForApp(item: Item): Item {
 }
 
 export function nuggetForApp(nugget: StoryNugget): StoryNugget {
+  const thing = storyThing(nugget);
   return {
     ...nugget,
     cards: nugget.cards.map((card) => ({
       ...card,
       narration: pickedWords(card.narration),
       ...(card.text && { text: pickedWords(card.text) }),
-      ...(card.visual && { visual: withFood(card.visual, card.narration, card.text ?? '') }),
+      ...(card.visual && {
+        visual: withThing(
+          withFood(card.visual, card.narration, card.text ?? ''),
+          [card.narration, card.text ?? ''],
+          thing,
+        ),
+      }),
     })),
   };
 }

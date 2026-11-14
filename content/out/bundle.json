@@ -841,7 +841,7 @@
         {
           "narration": "3 is less than 5. Less means fewer. Pip has fewer apples.",
           "text": "3",
-          "visual": { "kind": "ten-frame", "filled": 3 }
+          "visual": { "kind": "ten-frame", "filled": 3, "emoji": "🍎" }
         },
         {
           "narration": "Pip finds 1 more apple. Now Pip has 4. 1 more than 3 is 4.",
@@ -851,7 +851,7 @@
         {
           "narration": "Pip finds 2 more. 2 more than 5 is 7. Count up two.",
           "text": "5 + 2 = 7",
-          "visual": { "kind": "ten-frame", "filled": 7 }
+          "visual": { "kind": "ten-frame", "filled": 7, "emoji": "🍎" }
         },
         {
           "narration": "Pip eats 1 apple. 1 less than 4 is 3. Count down one.",
@@ -920,7 +920,7 @@
         {
           "narration": "2 and 3 make 5. Putting groups together is adding.",
           "text": "2 + 3 = 5",
-          "visual": { "kind": "ten-frame", "filled": 5 }
+          "visual": { "kind": "ten-frame", "filled": 5, "emoji": "🐞" }
         },
         {
           "narration": "Now 2 bugs fly away. That is taking away. 3 bugs are left.",
@@ -955,7 +955,7 @@
         {
           "narration": "Here are 7 apples. 5 are red. The rest are green. 2 are green.",
           "text": "7 - 5 = 2",
-          "visual": { "kind": "ten-frame", "filled": 7 }
+          "visual": { "kind": "ten-frame", "filled": 7, "emoji": "🍎" }
         },
         {
           "narration": "Ben has 4 apples. Mia has 8. Mia has 4 more than Ben.",
@@ -1007,7 +1007,7 @@
         {
           "narration": "Mia has a sticker sheet. It holds 10 stars. A full sheet is one ten.",
           "text": "10 = 1 ten",
-          "visual": { "kind": "ten-frame", "filled": 10 }
+          "visual": { "kind": "ten-frame", "filled": 10, "emoji": "⭐" }
         },
         {
           "narration": "Mia gets 3 more stars. Now she has 13. That is 1 ten and 3 ones.",
@@ -1130,7 +1130,7 @@
         {
           "narration": "Mia fills a box with 10 stars. That is one full ten. Then 2 stars are left over.",
           "text": "10 and 2",
-          "visual": { "kind": "ten-frame", "filled": 10 }
+          "visual": { "kind": "ten-frame", "filled": 10, "emoji": "⭐" }
         },
         {
           "narration": "10 and 2 make 12. So 12 is 10 and 2. Put them back, and it is 12 again.",
@@ -1770,7 +1770,7 @@
         {
           "narration": "Now 9 + 4. Take 1 from the 4 and give it to the 9. That makes 10. Then 10 + 3 = 13.",
           "text": "9 + 4 = 13",
-          "visual": { "kind": "ten-frame", "filled": 9 }
+          "visual": { "kind": "ten-frame", "filled": 9, "emoji": "🍎" }
         },
         {
           "narration": "Try 7 + 8. Use a double. 7 + 7 = 14. Then add 1 more. 7 + 8 = 15.",
@@ -1896,7 +1896,7 @@
         {
           "narration": "Next day, Maya has 4 sheets, no strips, and 5 singles. No tens means a 0 in the tens place. The number is 405.",
           "text": "400 + 0 + 5 = 405",
-          "visual": { "kind": "ten-frame", "filled": 5 }
+          "visual": { "kind": "ten-frame", "filled": 5, "emoji": "⭐" }
         },
         {
           "narration": "Numbers have a spot on a number line too. The line goes from 0 to 1000. 500 is halfway. 638 is a bit past halfway.",
@@ -1914,7 +1914,7 @@
         {
           "narration": "Maya collects hockey cards. She puts 10 cards in a bundle. One bundle is called a ten. Ten loose cards make one ten.",
           "text": "10 ones = 1 ten",
-          "visual": { "kind": "ten-frame", "filled": 10 }
+          "visual": { "kind": "ten-frame", "filled": 10, "emoji": "🃏" }
         },
         {
           "narration": "Maya has 352 cards. Every digit has a place. The 3 is in the hundreds place. So the 3 means 3 hundreds, or 300.",
@@ -2156,7 +2156,7 @@
         {
           "narration": "Her coach has boxes with 10 stars each. This is one box. Count by 10s. 10, 20, 30. So 3 boxes make 3 × 10 = 30.",
           "text": "3 × 10 = 30",
-          "visual": { "kind": "ten-frame", "filled": 10 }
+          "visual": { "kind": "ten-frame", "filled": 10, "emoji": "⭐" }
         },
         {
           "narration": "Socks come in pairs. Count by 2s. 2, 4, 6, 8, 10, 12. So 6 pairs is 6 × 2 = 12 socks.",
@@ -2526,17 +2526,17 @@
         {
           "narration": "Sam paints 1 board. That is 1 out of 10. We call it one tenth. As a fraction it is 1/10. As a decimal it is 0.1.",
           "text": "1/10 = 0.1",
-          "visual": { "kind": "ten-frame", "filled": 1 }
+          "visual": { "kind": "ten-frame", "filled": 1, "emoji": "🪵" }
         },
         {
           "narration": "Now Sam has painted 5 boards. That is 5 tenths. It is 5/10, or 0.5. It is also one half of the fence!",
           "text": "5/10 = 0.5 = 1/2",
-          "visual": { "kind": "ten-frame", "filled": 5 }
+          "visual": { "kind": "ten-frame", "filled": 5, "emoji": "🪵" }
         },
         {
           "narration": "Sam paints all 10 boards. That is 10 tenths. It makes 1 whole fence. As a decimal, it is 1.0.",
           "text": "10/10 = 1.0",
-          "visual": { "kind": "ten-frame", "filled": 10 }
+          "visual": { "kind": "ten-frame", "filled": 10, "emoji": "🪵" }
         },
         {
           "narration": "Next, Sam paints 15 boards across two fences. That is 15 tenths. It is 1 whole fence and 5 tenths more. As a decimal, it is 1.5.",
@@ -4462,7 +4462,7 @@
         "more": 2
       },
       "type": "keypad",
-      "visual": { "kind": "ten-frame", "filled": 6 },
+      "visual": { "kind": "ten-frame", "filled": 6, "emoji": "🍎" },
       "answer": 8
     },
     {
@@ -5366,7 +5366,7 @@
         "take": 5
       },
       "type": "tap",
-      "visual": { "kind": "ten-frame", "filled": 7 },
+      "visual": { "kind": "ten-frame", "filled": 7, "emoji": "🎈" },
       "choices": [
         { "id": "a", "kind": "number", "value": 2 },
         { "id": "b", "kind": "number", "value": 3 },
@@ -5443,7 +5443,7 @@
         "take": 6
       },
       "type": "tap",
-      "visual": { "kind": "ten-frame", "filled": 10 },
+      "visual": { "kind": "ten-frame", "filled": 10, "emoji": "🦆" },
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
         { "id": "b", "kind": "number", "value": 5 },
