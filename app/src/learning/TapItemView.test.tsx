@@ -32,6 +32,23 @@ describe('shuffleChoices', () => {
 });
 
 describe('TapItemView', () => {
+  const withLabels = (texts: string[]) => ({
+    ...fishCount,
+    choices: texts.map((text, i) => ({ id: String(i), kind: 'text' as const, text })),
+    answerChoiceId: '0',
+  });
+
+  it('puts three short choices in one row', async () => {
+    await render(<TapItemView item={withLabels(['ones', 'tens', 'hundreds'])} shuffleSeed="x" />);
+    expect(screen.getByLabelText('tens')).toHaveStyle({ flexBasis: '28%' });
+  });
+
+  it('wraps three long choices to two columns', async () => {
+    const labels = ['the number of parts in the whole', 'how big each piece is', 'tens'];
+    await render(<TapItemView item={withLabels(labels)} shuffleSeed="x" />);
+    expect(screen.getByLabelText('tens')).toHaveStyle({ flexBasis: '45%' });
+  });
+
   it('narrates the question and reports a right answer by choice id', async () => {
     const narrate = jest.fn();
     const onAnswer = jest.fn();
