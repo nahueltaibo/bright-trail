@@ -215,3 +215,33 @@ describe('card games', () => {
     );
   });
 });
+
+describe('choice fitting', () => {
+  const frog = ORDER_DEMO_ITEMS.find((i) => i.id === 'demo-order-frog')!;
+  const layOut = async (width: number) => {
+    await render(<ItemView item={frog} shuffleSeed="test" />);
+    const button = screen.getByRole('button', { name: 'Caterpillar' });
+    const tile = button.parent!;
+    await act(() =>
+      fireEvent(tile.parent!, 'layout', { nativeEvent: { layout: { width, height: 100 } } }),
+    );
+    return {
+      tile: StyleSheet.flatten(
+        screen.getByRole('button', { name: 'Caterpillar' }).parent!.props.style,
+      ),
+      button: StyleSheet.flatten(screen.getByRole('button', { name: 'Caterpillar' }).props.style),
+    };
+  };
+
+  it('keeps three choices in one row when they fit', async () => {
+    expect((await layOut(750)).tile.flexBasis).toBeUndefined();
+  });
+
+  it('wraps to two columns on a narrow phone, keeping the full tap height', async () => {
+    const { tile, button } = await layOut(360);
+    expect(tile.flexBasis).toBe('40%');
+    // A flex share on the button would let its column squash this height.
+    expect(button.flex).toBeUndefined();
+    expect(button.height).toBeGreaterThanOrEqual(64);
+  });
+});

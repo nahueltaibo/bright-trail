@@ -1,14 +1,22 @@
 import { parseMixed, type SceneAnswer } from '@bright-trail/shared';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { Animated, Pressable, StyleSheet, View } from 'react-native';
-import type { StyleProp, ViewStyle } from 'react-native';
+import type { LayoutChangeEvent, StyleProp, ViewStyle } from 'react-native';
 import { Icon } from '../../design/Icon';
 import { color, font, pressDown, radius, shadow } from '../../design/tokens';
 import { FlagButton, KidButton, ReplayButton } from '../controls';
 import { Feedback } from '../ItemFrame';
 import { QuitButton } from '../quit';
 import { pressKey } from '../KeypadItemView';
-import { colors, CORRECT_TEXT, MIN_TAP, MISS_TEXT, useLayout } from '../theme';
+import {
+  colors,
+  CORRECT_TEXT,
+  fitFontSize,
+  LINE_HEIGHT,
+  MIN_TAP,
+  MISS_TEXT,
+  useLayout,
+} from '../theme';
 import type { ItemProgress, Narrate } from '../types';
 import { ProgressDots } from '../../design/kid';
 import { ReadAlong } from '../ReadAlong';
@@ -73,7 +81,7 @@ type Props = GameFrameProps & {
  */
 export function GameFrame(props: Props) {
   const { input, answer, retry } = props;
-  const { landscape, scale } = useLayout();
+  const { landscape, scale, width } = useLayout();
   const typed = input.kind === 'keypad';
 
   const [phase, setPhase] = useState<Phase>('ask');
@@ -82,6 +90,7 @@ export function GameFrame(props: Props) {
   const [outcome, setOutcome] = useState<Outcome | null>(null);
   const [cheer, setCheer] = useState(false);
   const [entry, setEntry] = useState('');
+  const [rowWidth, setRowWidth] = useState(0);
 
   const answered = useRef(false);
   const replays = useRef(0);
@@ -152,10 +161,40 @@ export function GameFrame(props: Props) {
     narrateRef.current?.(lastSpoken.current, { replay: true });
   };
 
-  const tileHeight = Math.max(MIN_TAP, (landscape ? 72 : 88) * scale);
+  const choices = input.kind === 'choices' ? input.choices : [];
+  // Until the row lays out, guess from the window. The guess only sets the first frame's text.
+  const across = (rowWidth || (landscape ? width / 2.4 : width)) - 2 * ROW_PAD;
+  const textBox = (columns: number, height: number) => ({
+    width: (across - ROW_PAD * (columns - 1)) / columns - CHOICE_INSET,
+    height: height - CHOICE_INSET,
+  });
+  const words = choices.filter((c) => parseMixed(c.label) === null).map((c) => c.label);
+  const fitsOneRow = words.every(
+    (l) =>
+      fitFontSize(l, textBox(choices.length, 88 * scale), { base: 22 * scale, min: 0 }) >=
+      MIN_FONT * scale,
+  );
+  // Landscape always wraps. Portrait wraps only when one row would shrink a label too far.
+  const wrap = landscape || (choices.length > 2 && !fitsOneRow);
+  const tileHeight = Math.max(MIN_TAP, (wrap ? 72 : 88) * scale);
+  const rows = wrap ? Math.ceil(choices.length / 2) : 1;
+  // One size for every choice, so a short label doesn't look like the favourite.
+  const textSize = Math.min(
+    22 * scale,
+    ...words.map((l) =>
+      fitFontSize(l, textBox(wrap ? 2 : choices.length, tileHeight), {
+        base: 22 * scale,
+        min: 12 * scale,
+        maxLines: 2,
+      }),
+    ),
+  );
   const inputView =
     input.kind === 'choices' ? (
-      <View style={[styles.choices, landscape && styles.wrap]}>
+      <View
+        style={[styles.choices, wrap && styles.wrap]}
+        onLayout={(e: LayoutChangeEvent) => setRowWidth(e.nativeEvent.layout.width)}
+      >
         {input.choices.map((c) => {
           const chosen = c.label === picked;
           const done = tried.includes(c.label) && !chosen;
@@ -165,7 +204,7 @@ export function GameFrame(props: Props) {
               enabled={phase === 'ask' && !done && props.onDropChoice !== undefined}
               onDrop={props.onDropChoice}
               onLanded={() => void choose(c.value, c.label, c.id)}
-              style={[styles.tile, landscape && styles.half]}
+              style={[styles.tile, wrap && styles.half]}
             >
               <Pressable
                 accessibilityRole="button"
@@ -176,7 +215,6 @@ export function GameFrame(props: Props) {
                 style={({ pressed }) => [
                   styles.choice,
                   { height: tileHeight, borderRadius: radius.lg },
-                  landscape && styles.half,
                   pressed && pressDown,
                   chosen &&
                     (phase !== 'result'
@@ -190,7 +228,16 @@ export function GameFrame(props: Props) {
                 {parseMixed(c.label) !== null ? (
                   <AmountText label={c.label} size={(c.label.length > 4 ? 32 : 40) * scale} />
                 ) : (
-                  <Text style={[styles.text, { fontSize: 22 * scale }]}>{c.label}</Text>
+                  <Text
+                    numberOfLines={2}
+                    adjustsFontSizeToFit
+                    style={[
+                      styles.text,
+                      { fontSize: textSize, lineHeight: textSize * LINE_HEIGHT },
+                    ]}
+                  >
+                    {c.label}
+                  </Text>
                 )}
               </Pressable>
             </DragTile>
@@ -268,7 +315,18 @@ export function GameFrame(props: Props) {
       {top}
       {stage}
       {/* Fixed height: the stage must not jump when feedback replaces the input. */}
-      <View style={[styles.bottom, { height: (typed ? 200 : 150) * scale }]}>{bottom}</View>
+      <View
+        style={[
+          styles.bottom,
+          {
+            height: typed
+              ? 200 * scale
+              : Math.max(150 * scale, rows * (tileHeight + ROW_PAD) + ROW_PAD),
+          },
+        ]}
+      >
+        {bottom}
+      </View>
     </View>
   );
 }
@@ -389,6 +447,12 @@ function NumberPad({
   );
 }
 
+const ROW_PAD = 12;
+// Border plus horizontal padding on each side of a choice.
+const CHOICE_INSET = 2 * (3 + 4);
+// Below this, a portrait row of choices wraps to two columns.
+const MIN_FONT = 18;
+
 const styles = StyleSheet.create({
   screen: { flex: 1, backgroundColor: colors.background },
   row: { flexDirection: 'row' },
@@ -399,10 +463,9 @@ const styles = StyleSheet.create({
   prompt: { flex: 1, ...font.display(700), color: colors.ink, textAlign: 'center' },
   bottom: { justifyContent: 'center' },
   tile: { flex: 1 },
-  choices: { flexDirection: 'row', gap: 12, padding: 12 },
+  choices: { flexDirection: 'row', gap: ROW_PAD, padding: ROW_PAD },
   wrap: { flexWrap: 'wrap' },
   choice: {
-    flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.raised,
