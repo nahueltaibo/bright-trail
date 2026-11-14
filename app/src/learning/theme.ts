@@ -42,6 +42,44 @@ export function fontSizeFor(text: string, base: number): number {
   return base * 0.45;
 }
 
+// Average advance of a lowercase or digit glyph, as a share of font size. Measured in the browser:
+// Baloo 2 bold runs 0.43–0.56, Lexend bold (the dyslexia font) 0.50–0.62.
+const GLYPH_WIDTH = 0.62;
+/** Line height, as a share of font size, that `fitFontSize` assumes. Set it on fitted text. */
+export const LINE_HEIGHT = 1.2;
+
+/** Lines `text` wraps to at `perLine` characters, or `Infinity` when a word can't fit a line. */
+function wrapLines(text: string, perLine: number): number {
+  let lines = 0;
+  let used = 0;
+  for (const word of text.split(/\s+/).filter(Boolean)) {
+    if (word.length > perLine) return Infinity;
+    if (lines > 0 && used + 1 + word.length <= perLine) used += 1 + word.length;
+    else {
+      lines += 1;
+      used = word.length;
+    }
+  }
+  return lines;
+}
+
+/**
+ * The biggest font size, from `base` down to `min`, at which `text` fits a box without breaking a
+ * word. Returns `min` when nothing fits, so callers can pick a roomier layout instead.
+ */
+export function fitFontSize(
+  text: string,
+  box: { width: number; height: number },
+  { base, min, maxLines = 3 }: { base: number; min: number; maxLines?: number },
+): number {
+  for (let size = Math.floor(base); size > min; size--) {
+    const lines = wrapLines(text, Math.floor(box.width / (size * GLYPH_WIDTH)));
+    // The dyslexia font's lines run 12% taller, so every child's text gets that room.
+    if (lines <= maxLines && lines * size * LINE_HEIGHT * 1.12 <= box.height) return size;
+  }
+  return min;
+}
+
 export function formatNumber(value: number): string {
   return String(Number(value.toFixed(6)));
 }
