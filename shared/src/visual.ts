@@ -67,7 +67,12 @@ export const VisualSchema = z.discriminatedUnion('kind', [
     emoji: EmojiSchema,
     count: z.number().int().min(1).max(20),
   }),
-  z.object({ kind: z.literal('ten-frame'), filled: z.number().int().min(0).max(10) }),
+  /** Without `emoji` the filled cells hold dots. */
+  z.object({
+    kind: z.literal('ten-frame'),
+    filled: z.number().int().min(0).max(10),
+    emoji: EmojiSchema.optional(),
+  }),
   FractionVisualSchema,
 ]);
 export type Visual = z.infer<typeof VisualSchema>;
@@ -92,7 +97,9 @@ export function describeVisual(visual: Visual): string {
     case 'objects':
       return `${visual.count} ${visual.emoji}`;
     case 'ten-frame':
-      return `Ten frame with ${visual.filled} filled`;
+      return visual.emoji
+        ? `Ten frame with ${visual.filled} ${visual.emoji}`
+        : `Ten frame with ${visual.filled} filled`;
     case 'fraction': {
       const wholes = visual.wholes ?? 1;
       const word = visual.food ? FOOD_WORDS[visual.food] : visual.shape;

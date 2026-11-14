@@ -1,6 +1,6 @@
-import type { Item } from '@bright-trail/shared';
+import type { Item, StoryNugget } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
-import { foodFor, itemForApp, pickedWords } from './app-words';
+import { foodFor, itemForApp, nuggetForApp, pickedWords, thingFor } from './app-words';
 
 describe('pickedWords', () => {
   it('says picked where the generator said shaded', () => {
@@ -22,6 +22,43 @@ describe('foodFor', () => {
     expect(foodFor('circle', '1/2 of the circle', 'Two friends share a pie.')).toBe('pie');
     expect(foodFor('circle', 'A circle is cut into 8 parts.')).toBeUndefined();
     expect(foodFor('bar', 'A chocolate bar')).toBeUndefined();
+  });
+});
+
+describe('thingFor', () => {
+  it('takes the first thing the words name', () => {
+    expect(thingFor(['Mia has a sticker sheet. It holds 10 stars.'])).toBe('⭐');
+    expect(thingFor(['Ana has 7 balloons and 2 apples.'])).toBe('🎈');
+  });
+
+  it('keeps dots when the words say dots, even in a story about stars', () => {
+    expect(thingFor(['A full ten-frame is 10 dots. 10 stars.'], '⭐')).toBeUndefined();
+  });
+
+  it("falls back to later texts, then to the story's thing", () => {
+    expect(thingFor(['2 and 3 make 5.', '5 apples'], '🐞')).toBe('🍎');
+    expect(thingFor(['2 and 3 make 5.'], '🐞')).toBe('🐞');
+    expect(thingFor(['2 and 3 make 5.'])).toBeUndefined();
+  });
+});
+
+describe('nuggetForApp', () => {
+  it("fills a story's ten-frame with the thing it counts", () => {
+    const nugget: StoryNugget = {
+      id: 'n',
+      skillId: 's',
+      cards: [
+        {
+          narration: 'Mia has a sticker sheet. It holds 10 stars.',
+          visual: { kind: 'ten-frame', filled: 10 },
+        },
+        { narration: 'Here are 6 dots.', visual: { kind: 'ten-frame', filled: 6 } },
+        { narration: 'Then 3 more.', visual: { kind: 'objects', emoji: '⭐', count: 3 } },
+      ],
+    };
+    const cards = nuggetForApp(nugget).cards;
+    expect(cards[0].visual).toEqual({ kind: 'ten-frame', filled: 10, emoji: '⭐' });
+    expect(cards[1].visual).toEqual({ kind: 'ten-frame', filled: 6 });
   });
 });
 

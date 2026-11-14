@@ -23,6 +23,19 @@ describe('VisualView', () => {
     expect(screen.getAllByTestId('ten-frame-dot')).toHaveLength(3);
   });
 
+  it('fills the ten-frame with the thing it counts', async () => {
+    await render(
+      <VisualView
+        visual={{ kind: 'ten-frame', filled: 10, emoji: '⭐' }}
+        width={300}
+        height={200}
+      />,
+    );
+    expect(screen.getByLabelText('Ten frame with 10 ⭐')).toBeTruthy();
+    expect(screen.getAllByText('⭐')).toHaveLength(10);
+    expect(screen.queryAllByTestId('ten-frame-dot')).toHaveLength(0);
+  });
+
   it('draws an empty ten-frame', async () => {
     await render(<VisualView visual={{ kind: 'ten-frame', filled: 0 }} width={300} height={200} />);
     expect(screen.queryAllByTestId('ten-frame-dot')).toHaveLength(0);

@@ -82,14 +82,23 @@ export function VisualView({ visual, width, height }: Props) {
     >
       {Array.from({ length: 10 }, (_, i) => (
         <View key={i} style={[styles.frameCell, { width: cell, height: cell }]}>
-          {i < visual.filled && (
-            <View
-              testID="ten-frame-dot"
-              style={[
-                styles.dot,
-                { width: cell * 0.68, height: cell * 0.68, borderRadius: cell * 0.34 },
-              ]}
-            />
+          {i < visual.filled && visual.emoji ? (
+            <Text
+              testID="ten-frame-thing"
+              style={[styles.emoji, { fontSize: cell * 0.6, lineHeight: cell * 0.72 }]}
+            >
+              {visual.emoji}
+            </Text>
+          ) : (
+            i < visual.filled && (
+              <View
+                testID="ten-frame-dot"
+                style={[
+                  styles.dot,
+                  { width: cell * 0.68, height: cell * 0.68, borderRadius: cell * 0.34 },
+                ]}
+              />
+            )
           )}
         </View>
       ))}
