@@ -53,6 +53,13 @@ describe('fraction visual', () => {
     });
   });
 
+  it('fills a ten-frame with an emoji or dots', () => {
+    expect(describeVisual({ kind: 'ten-frame', filled: 4, emoji: '⭐' })).toBe(
+      'Ten frame with 4 ⭐',
+    );
+    expect(describeVisual({ kind: 'ten-frame', filled: 4 })).toBe('Ten frame with 4 filled');
+  });
+
   it('describes itself in words toSpeech can read', () => {
     expect(
       toSpeech(
