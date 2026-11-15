@@ -49,6 +49,8 @@ describe('BlocksSceneSchema', () => {
     expect(() => scene({ ask: 'add', hundreds: 9, second: { ...second, hundreds: 1 } })).toThrow(
       /999 or less/,
     );
+    const zero = { hundreds: 0, tens: 0, ones: 0 };
+    expect(() => scene({ ask: 'take', tens: 2, second: zero })).toThrow(/at least 1/);
   });
 });
 
