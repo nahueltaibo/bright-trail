@@ -99,12 +99,33 @@ export function gridAnswer(s: GridScene, item: Pick<Item, 'type'>): SceneAnswer 
   }
 }
 
+const escape = (t: string) => t.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&');
+/** Whether `words` say `amount` as its own number, so "0.4" is not found in "10.45". */
+const says = (words: string, amount: string) =>
+  new RegExp(`(^|[^\\d./])${escape(amount)}(?![\\d/]|\\.\\d)`).test(words);
+
+/**
+ * Whether a number-line item writes its target as the number it lands on, like "Go to 0.5".
+ * The frog's hops play those placements. A grid would only ask to type what the item says.
+ */
+export function namesTarget(item: Item): boolean {
+  return (
+    item.type === 'number-line' && says(`${item.prompt} ${item.narration}`, String(item.target))
+  );
+}
+
 /** Why the scene can't play this item. Empty when it can. */
 export function gridProblems(item: Item, scene: GridScene): string[] {
   const problems: string[] = [];
-  if (item.type === 'number-line') return ['number-line items keep their own screen'];
-  // The stage replaces the item's picture, which would then go unseen.
-  if (item.visual) problems.push(`the item has a ${item.visual.kind} picture`);
+  if (namesTarget(item)) problems.push('the item names the point it lands on');
+  // The stage replaces the item's picture. Only a ten-frame, which is one tenths strip, survives.
+  const visual = 'visual' in item ? item.visual : undefined;
+  if (visual?.kind === 'ten-frame') {
+    const [fill] = gridFills(scene);
+    if (scene.unit !== 'tenths' || scene.ask === 'same' || fill !== visual.filled) {
+      problems.push(`the scene does not fill ${visual.filled} tenths like the ten-frame`);
+    }
+  } else if (visual) problems.push(`the item has a ${visual.kind} picture`);
 
   const answer = itemAnswer(item);
   const expected = gridAnswer(scene, item);
@@ -126,11 +147,8 @@ export function gridProblems(item: Item, scene: GridScene): string[] {
     if (!named.test(words)) problems.push(`the item never counts ${scene.unit}`);
   }
   if (scene.ask === 'same') {
-    const escape = (t: string) => t.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&');
     for (const v of [scene.amount, scene.other!]) {
-      if (!new RegExp(`(^|[^\\d./])${escape(v)}(?![\\d/]|\\.\\d)`).test(words)) {
-        problems.push(`the item never says ${v}`);
-      }
+      if (!says(words, v)) problems.push(`the item never says ${v}`);
     }
   }
   return problems;

@@ -14,6 +14,7 @@ import { SliceGame } from './food/SliceGame';
 import { GRID_DEMO_ITEMS } from './grid/demo';
 import { GridGame } from './grid/GridGame';
 import { decimalLabels } from './grid/layout';
+import { lineQuestion } from './grid/words';
 import { JOIN_DEMO_ITEMS } from './join/demo';
 import { JoinGame } from './join/JoinGame';
 import { LABEL_DEMO_ITEMS } from './label/demo';
@@ -77,7 +78,18 @@ function GridView({ game, ...props }: GameViewProps<'grid'>) {
   const frame = useGameProps(props);
   const { item } = props;
   const input = useMemo(() => decimalLabels(frame.input, item), [frame.input, item]);
-  return <GridGame {...frame} input={input} scene={game} />;
+  const line = item.type === 'number-line' ? lineQuestion(game) : null;
+  // A ten-frame's picture is the question, so the strip shows it filled before the answer.
+  const filled = 'visual' in item && item.visual?.kind === 'ten-frame' ? item.visual.filled : 0;
+  return (
+    <GridGame
+      {...frame}
+      {...(line && { prompt: line.prompt, question: [line.question] })}
+      input={input}
+      scene={game}
+      filled={filled}
+    />
+  );
 }
 
 function BlocksView({ game, ...props }: GameViewProps<'blocks'>) {

@@ -9,7 +9,7 @@ import {
   STAGE_H,
   STAGE_W,
 } from './layout';
-import { gridShout, gridWords } from './words';
+import { gridShout, gridWords, lineQuestion } from './words';
 
 const demo = (id: string) => {
   const game = GRID_DEMO_ITEMS.find((i) => i.id === `demo-grid-${id}`)!.game;
@@ -103,5 +103,18 @@ describe('decimalLabels', () => {
       item,
     );
     expect(input.kind === 'choices' && input.choices.map((c) => c.label)).toEqual(['0.5', '0.2']);
+  });
+});
+
+describe('lineQuestion', () => {
+  it('asks a number-line item on the keypad, without the frog', () => {
+    expect(lineQuestion(demo('line'))).toEqual({
+      prompt: '3/10 = ?',
+      question: 'What is 3/10 as a decimal? Type it.',
+    });
+    expect(lineQuestion(scene({ unit: 'hundredths', ask: 'percent', amount: '7/20' }))).toEqual({
+      prompt: '7/20 = ?%',
+      question: 'What is 7/20 as a percent? Type it.',
+    });
   });
 });

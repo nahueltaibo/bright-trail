@@ -57,3 +57,21 @@ export function gridWords(s: GridScene): string {
         : `${s.amount} fills ${partsText(a, s.unit)}, but ${s.other} fills ${partsText(b, s.unit)}. They are not the same.`;
   }
 }
+
+/**
+ * A number-line item's question for the keypad, since its own talks about the frog: "Find 3/10"
+ * becomes "3/10 = ?", asked as "What is 3/10 as a decimal?".
+ */
+export function lineQuestion(s: GridScene): { prompt: string; question: string } {
+  if (s.ask === 'parts') {
+    return {
+      prompt: `${s.amount} = ? ${s.unit}`,
+      question: `How many ${s.unit} is ${s.amount}? Type it.`,
+    };
+  }
+  const as = s.ask === 'percent' || s.ask === 'fraction' ? s.ask : 'decimal';
+  return {
+    prompt: `${s.amount} = ?${s.ask === 'percent' ? '%' : ''}`,
+    question: `What is ${s.amount} as a ${as}? Type it.`,
+  };
+}
