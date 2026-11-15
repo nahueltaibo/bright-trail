@@ -33,6 +33,27 @@ export type TagRun<G> = {
 };
 
 /**
+ * The tagger's candidates by skill, one LLM call each. `few` holds the candidates of skills
+ * below `minPerSkill`, which get no call.
+ */
+export function groupCandidates<I extends Item>(
+  tagger: Pick<Tagger<I>, 'candidates' | 'minPerSkill'>,
+  items: readonly Item[],
+): { bySkill: Map<string, I[]>; few: I[] } {
+  const bySkill = new Map<string, I[]>();
+  for (const item of tagger.candidates(items)) {
+    bySkill.set(item.skillId, [...(bySkill.get(item.skillId) ?? []), item]);
+  }
+  const few: I[] = [];
+  for (const [id, group] of bySkill) {
+    if (group.length >= tagger.minPerSkill) continue;
+    few.push(...group);
+    bySkill.delete(id);
+  }
+  return { bySkill, few };
+}
+
+/**
  * Groups the tagger's candidates by skill, then makes one LLM call per skill. Reports
  * `skillId: n of m tagged` or the failure as each call finishes.
  */
@@ -43,12 +64,7 @@ export async function tagItems<I extends Item, G>(
   concurrency: number,
   report: (line: string) => void = () => {},
 ): Promise<TagRun<G>> {
-  const bySkill = new Map<string, I[]>();
-  for (const item of tagger.candidates(items)) {
-    bySkill.set(item.skillId, [...(bySkill.get(item.skillId) ?? []), item]);
-  }
-  for (const [id, group] of bySkill) if (group.length < tagger.minPerSkill) bySkill.delete(id);
-
+  const { bySkill } = groupCandidates(tagger, items);
   const tagged: Record<string, G> = {};
   const rejected: string[] = [];
   const failed: string[] = [];

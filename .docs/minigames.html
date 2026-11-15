@@ -46,7 +46,7 @@
 <body>
 <main>
 <h1>BrightTrail — Minigames</h1>
-<p class="sub">Which items play as minigames, which don't, and what is left to build · Draft v0.2 · 2026-11-14</p>
+<p class="sub">Which items play as minigames, which don't, and what is left to build · Draft v0.3 · 2026-11-14</p>
 
 <p>437 of the 795 bundle items (55%) play as a minigame. The other 358 (45%) use the plain tap, keypad, or number-line screen. The foundation and all five planned games are built. What remains is tagging more items, and content for the three card games.</p>
 
@@ -80,6 +80,54 @@
 <tr><td>Other</td><td>15</td><td>k-uses-of-numbers, k-subitize-5</td></tr>
 </table>
 <p>155 of the 358 are number-line items, and 86 of those already play the frog's path.</p>
+
+<h3 id="why">Why they have no game</h3>
+<p>The candidate filters, not the LLM, leave out most items. 311 of the 358 never reached their group's tagger. Only 47 reached it and got turned down. <code>npm run content:coverage</code> replays every tagger from the LLM cache and prints the counts per skill. Add <code>--why</code> to list each turned-down item with its reason, or <code>--kind &lt;kind&gt;</code> for one tagger.</p>
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+  A[358 items<br/>with no game] --> NL[155 number-line items<br/>no new tagger takes them]
+  A --> W[98 word or picture answers<br/>like more, true, or 3 tens and 9 ones]
+  A --> V[21 with a picture<br/>the tagger skips pictures]
+  A --> O[37 other misses<br/>no keyword, or too few<br/>candidates in the skill]
+  A --> D[42 declined by the LLM]
+  A --> R[5 refused by the check]
+</pre></div>
+<p>Each row counts a group's untagged items by what its own tagger did with them. The Other group goes by <code>join</code>.</p>
+<table>
+<tr><th>Group</th><th>Tagger</th><th>Number line</th><th>Word or picture answer</th><th>Has a picture</th><th>Other misses</th><th>Declined</th><th>Refused</th></tr>
+<tr><td>Fractions, decimals, percent</td><td><code>grid</code></td><td>33</td><td>17</td><td>5</td><td>19</td><td>12</td><td>0</td></tr>
+<tr><td>Compare and order</td><td><code>compare</code></td><td>24</td><td>24</td><td>1</td><td>5</td><td>12</td><td>0</td></tr>
+<tr><td>Add and subtract</td><td><code>join</code></td><td>28</td><td>14</td><td>0</td><td>6</td><td>10</td><td>5</td></tr>
+<tr><td>Multiply and divide</td><td><code>arrays</code></td><td>23</td><td>18</td><td>8</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>Place value</td><td><code>blocks</code></td><td>24</td><td>13</td><td>4</td><td>3</td><td>2</td><td>0</td></tr>
+<tr><td>Sequences</td><td><code>stones</code></td><td>16</td><td>7</td><td>2</td><td>2</td><td>2</td><td>0</td></tr>
+<tr><td>Other</td><td><code>join</code></td><td>7</td><td>5</td><td>1</td><td>0</td><td>2</td><td>0</td></tr>
+</table>
+<p>The earlier estimates counted these items as fits, so each game tagged far fewer than its estimate.</p>
+<p>The LLM's declines hold up on a sample. "How many more does Ben have", "6.3 needs more than 2 grids", "thirds can't be shown on a grid", and "second greatest" are all outside what the scene can show. The 5 refusals come from a check too strict: the ten-frame refuses <code>+ 0</code>, <code>- 0</code>, and a part set aside from two frames.</p>
+<p>Some cached calls no longer match today's bundle or prompts:</p>
+<ul>
+<li>Each game was first tagged before the later games existed, so the replay runs the taggers in bundle order. On today's bundle, <code>join</code>'s candidates differ in 10 skills, so rerunning <code>content:join</code> makes new calls.</li>
+<li>Arrays' 7 calls predate <code>counter</code> in <code>THING_IDS</code>. The replay matches them by tool, answer fields, and item ids, and rerunning <code>content:arrays</code> makes 7 live calls.</li>
+<li>The slices call for <code>g1-compare-unit-fractions</code> misses, so 9 of its candidates have no answer.</li>
+<li>The hops calls for <code>g3-mult-div-facts-2-5-10</code> and <code>g3-mult-div-properties</code> miss, so 2 candidates have no path.</li>
+</ul>
+
+<h3 id="fixes">One fix per game</h3>
+<p>A game replaces a number-line item's line, as it already does for 36 share and slices items.</p>
+<table>
+<tr><th>Game</th><th>Fix</th><th>What it changes</th><th>Issue</th></tr>
+<tr><td><code>compare</code></td><td>Widen the candidates</td><td>Take number-line items like "Least: 44, 31, 38", and word answers like "the same" and "true", with a new two-value ask that answers more, less, or same. About 20 items. Leave picture choices to Line them up.</td><td>#50</td></tr>
+<tr><td><code>blocks</code></td><td>Widen the candidates</td><td>Fix <code>PLACE_WORDS</code> so "15 = 10 + ?" matches, and take number-line items like "4 tens and 7 ones". About 11 items. Sums past 20 from add and subtract need regrouping here.</td><td>#48, #98</td></tr>
+<tr><td><code>arrays</code></td><td>Widen the candidates</td><td>Take items with an objects picture, like "4 groups of 2", and × and ÷ facts on a number line. About 18 items. Leave fact-family choices on their screen.</td><td>#49</td></tr>
+<tr><td><code>grid</code></td><td>Widen the candidates</td><td>Take items with a ten-frame picture, like "What decimal is filled?", and number-line items like "Find 3/10". About 14 items. Leave mixed numbers and thirds to the fraction wall.</td><td>#51, #52</td></tr>
+<tr><td><code>stones</code></td><td>Leave the items for another game</td><td>Only 3 number-line runs, like "13, 14, ?", fit. The rest are placements like "Go to 30" that hops already plays, or "counting up or down" word answers no game shows.</td><td>#97</td></tr>
+<tr><td><code>join</code></td><td>Loosen the check</td><td>Let <code>join</code> and <code>leave</code> take 0, and let <code>part</code> set things aside from two frames. 5 items. The 28 number-line facts already hop, and sums past 20 go to blocks.</td><td>#98</td></tr>
+<tr><td><code>share</code></td><td>Widen the prompt</td><td>Play things with no close match, like beads, plums, and bottles, as counters instead of declining. About 6 items.</td><td>None</td></tr>
+<tr><td><code>slices</code></td><td>Loosen the check</td><td>Read choices like "one half" as fractions. 3 items. Then rerun <code>g1-compare-unit-fractions</code>.</td><td>None</td></tr>
+<tr><td><code>hops</code></td><td>Leave as is</td><td>56 of the 67 declines are placements like "Go to 27", and <code>defaultHops</code> already plays those from the line's start. The other 11 are sharing and division stories, often on a line too short for the path, like "35 ÷ 5" on a line to 10.</td><td>#99</td></tr>
+</table>
+<p class="note">Ordinal items number 7, not 12: six in <code>k-uses-of-numbers</code>, like "Seventh place", plus "Second greatest". The rest of the Other group asks how a number is used, so a line-up game doesn't fit it (#101).</p>
 
 <h2 id="foundation">3. Foundation</h2>
 <p>Done. A new game now adds files instead of touching the item schema, <code>ItemView</code>, and the bundle check.</p>

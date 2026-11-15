@@ -11,7 +11,7 @@ import { tagRequest } from '../scenes/scenes';
 import { sliceTagRequest } from '../slices/slices';
 import { stonesTagRequest } from '../stones/stones';
 import { isTaggerKind, TAGGERS } from './registry';
-import { tagItems, type Tagger } from './tagger';
+import { groupCandidates, tagItems, type Tagger } from './tagger';
 
 const item = (id: string, skillId: string): Item =>
   ({ id, skillId, narration: id, type: 'keypad', answer: 1 }) as unknown as Item;
@@ -116,5 +116,14 @@ describe('TAGGERS', () => {
   it('knows its kinds', () => {
     expect(isTaggerKind('join')).toBe(true);
     expect(isTaggerKind('toString')).toBe(false);
+  });
+});
+
+describe('groupCandidates', () => {
+  it('groups candidates by skill and sets aside skills below minPerSkill', () => {
+    const items = [item('a1', 'a'), item('b1', 'b'), item('a2', 'a'), item('skip', 'b')];
+    const { bySkill, few } = groupCandidates(fake, items);
+    expect([...bySkill].map(([s, g]) => [s, g.map((i) => i.id)])).toEqual([['a', ['a1', 'a2']]]);
+    expect(few.map((i) => i.id)).toEqual(['b1']);
   });
 });
