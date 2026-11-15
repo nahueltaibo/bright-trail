@@ -3,6 +3,7 @@ import {
   GridSceneSchema,
   gridProblems,
   itemAnswer,
+  namesTarget,
   type ContentBundle,
   type GridScene,
   type Item,
@@ -28,10 +29,26 @@ export type TaggedGrid = z.infer<typeof TaggedGridSchema>;
 const GRID_WORDS =
   /\b(tenths?|hundredths?|decimals?|percent|dimes?|equivalent)\b|%|\d\/(10|100)\b|\d?\.\d/i;
 
-/** Items that might read a filled strip or grid: a number or yes-no answer, no picture, decimal words. */
+/** A sum or product like "1/4 + 2/4" or "3 × 1/2". A grid shows one amount, not the steps. */
+const OPERATION = /\d\s*[+\-−×÷]\s*\d/;
+
+/** Whether every fraction in `text` has parts a grid shows, so 4/5 but not 9/12 or 2/3. */
+const inHundredths = (text: string) =>
+  [...text.matchAll(/\d+\/(\d+)/g)].every(([, den]) => 100 % Number(den) === 0);
+
+/**
+ * Items that might read a filled strip or grid: a number or yes-no answer, decimal words, and no
+ * picture but a ten-frame. Number-line items count when they convert an amount, like "Find 3/10",
+ * but not placements like "Go to 0.5" or operations like "3 × 1/2".
+ */
 export function gridCandidates(items: readonly Item[]): Item[] {
   return items.filter((i) => {
-    if ((i.game && i.game.kind !== 'grid') || i.type === 'number-line' || i.visual) return false;
+    if (i.game && i.game.kind !== 'grid') return false;
+    const visual = 'visual' in i ? i.visual : undefined;
+    if ((visual && visual.kind !== 'ten-frame') || namesTarget(i)) return false;
+    if (i.type === 'number-line' && (OPERATION.test(i.prompt) || !inHundredths(i.prompt))) {
+      return false;
+    }
     if (itemAnswer(i) === null) return false;
     return GRID_WORDS.test(`${i.prompt} ${i.narration}`);
   });
@@ -64,6 +81,10 @@ function describe(item: Item) {
     type: item.type,
     prompt: item.prompt,
     narration: item.narration,
+    ...('visual' in item &&
+      item.visual?.kind === 'ten-frame' && {
+        picture: `a ten-frame, one whole, with ${item.visual.filled} of 10 filled`,
+      }),
     ...(item.type === 'tap'
       ? {
           choices: item.choices.map((c) =>
