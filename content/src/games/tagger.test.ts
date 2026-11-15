@@ -13,6 +13,7 @@ import { lineupTagRequest } from '../lineup/lineup';
 import { orderTagRequest } from '../order/order';
 import { tagRequest } from '../scenes/scenes';
 import { sliceTagRequest } from '../slices/slices';
+import { sortTagRequest } from '../sort/sort';
 import { stonesTagRequest } from '../stones/stones';
 import { isTaggerKind, TAGGERS } from './registry';
 import { groupCandidates, tagItems, type Tagger } from './tagger';
@@ -108,6 +109,7 @@ describe('TAGGERS', () => {
     expect(TAGGERS.wall.request).toBe(wallTagRequest);
     expect(TAGGERS.label.request).toBe(labelTagRequest);
     expect(TAGGERS.order.request).toBe(orderTagRequest);
+    expect(TAGGERS.sort.request).toBe(sortTagRequest);
     expect(TAGGERS.hops.request).toBe(hopsTagRequest);
   });
 
@@ -125,15 +127,17 @@ describe('TAGGERS', () => {
       'wall.json',
       'label.json',
       'order.json',
+      'sort.json',
       'hops.json',
     ]);
   });
 
-  it('keeps math games on math items', () => {
-    const subjects = Object.fromEntries(Object.entries(TAGGERS).map(([k, t]) => [k, t.subjects]));
-    const math = ['share', 'slices', 'join', 'compare', 'arrays', 'grid', 'blocks', 'stones'];
-    for (const kind of [...math, 'lineup', 'wall', 'hops'])
-      expect(subjects[kind]).toEqual(['math']);
+  it('keeps math games on math items and card games off them', () => {
+    const cards = ['label', 'order', 'sort'];
+    for (const [kind, t] of Object.entries(TAGGERS)) {
+      const subjects = cards.includes(kind) ? ['science', 'social-studies', 'health'] : ['math'];
+      expect(t.subjects).toEqual(subjects);
+    }
   });
 
   it('knows its kinds', () => {

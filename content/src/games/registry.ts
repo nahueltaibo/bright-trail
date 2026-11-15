@@ -12,6 +12,7 @@ import type {
   OrderScene,
   Scene,
   SliceScene,
+  SortScene,
   StonesScene,
   WallScene,
 } from '@bright-trail/shared';
@@ -31,6 +32,7 @@ import { acceptLineups, applyLineups, lineupCandidates, lineupTagRequest } from 
 import { acceptOrders, applyOrders, orderCandidates, orderTagRequest } from '../order/order';
 import { acceptScenes, applyScenes, candidateItems, tagRequest } from '../scenes/scenes';
 import { acceptSlices, applySlices, sliceCandidates, sliceTagRequest } from '../slices/slices';
+import { acceptSorts, applySorts, sortCandidates, sortTagRequest } from '../sort/sort';
 import { acceptStones, applyStones, stonesCandidates, stonesTagRequest } from '../stones/stones';
 import { acceptWalls, applyWalls, wallCandidates, wallTagRequest } from '../wall/wall';
 import type { Tagger } from './tagger';
@@ -222,6 +224,21 @@ const order: Tagger<Item, OrderScene> = {
   apply: applyOrders,
 };
 
+const sort: Tagger<Item, SortScene> = {
+  file: 'sort.json',
+  outcome: 'play as sorts into bins',
+  label: 'Sort',
+  minPerSkill: 1,
+  subjects: CARD_SUBJECTS,
+  candidates: sortCandidates,
+  request: sortTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptSorts(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applySorts,
+};
+
 const hops: Tagger<NumberLineItem, Hops> = {
   file: 'hops.json',
   outcome: 'hop a planned path',
@@ -254,6 +271,7 @@ export const TAGGERS = {
   wall,
   label,
   order,
+  sort,
   hops,
 };
 export type TaggerKind = keyof typeof TAGGERS;

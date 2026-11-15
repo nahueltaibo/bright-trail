@@ -11,8 +11,9 @@ import { isTaggerKind, TAGGERS } from './registry';
 import { groupCandidates, tagItems, type Tagger } from './tagger';
 
 /**
- * Tags bundle items for one minigame, `--kind share|slices|join|compare|arrays|grid|blocks|stones|lineup|wall|label|order|hops`, with one cached LLM
- * call per skill. Writes the game's reviewed file under content/ and adds the tags to the bundle.
+ * Tags bundle items for one minigame, with one cached LLM call per skill. `--kind` is one of
+ * share|slices|join|compare|arrays|grid|blocks|stones|lineup|wall|label|order|sort|hops. Writes
+ * the game's reviewed file under content/ and adds the tags to the bundle.
  */
 const contentDir = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const bundleFile = join(contentDir, 'out', 'bundle.json');
