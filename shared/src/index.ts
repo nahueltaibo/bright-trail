@@ -27,3 +27,4 @@ export * from './sort';
 export * from './speech';
 export * from './stones';
 export * from './visual';
+export * from './wall';

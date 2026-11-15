@@ -1,0 +1,570 @@
+<title>Fraction Wall</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Baloo+2:wght@600;700;800&display=swap">
+<style>
+/* One kid screen: progress dots, prompt, the wall under one whole, then answers and feedback. */
+:root {
+  --kid-bg: #fffbf0;
+  --kid-surface: #fff4d6;
+  --kid-raised: #ffffff;
+  --kid-pressed: #ffe7a3;
+  --kid-ink: #5a4a1f;
+  --kid-ink-soft: #6b5a2c;
+  --kid-line: #eadbb0;
+  --kid-line-strong: #9a844a;
+  --trail: #ffb347;
+  --on-trail: #3d2e06;
+  --trail-deep: #9a5300;
+  --star: #ffc21a;
+  --star-ink: #8a5a00;
+  --strip-a: #d35f26;
+  --on-strip-a: #ffffff;
+  --strip-b: #1f6294;
+  --on-strip-b: #ffffff;
+  --hit-bg: #dff5e1;
+  --hit-ink: #2a7349;
+  --miss-bg: #e8eeff;
+  --miss-ink: #3f51a3;
+  --focus: #1a5dd6;
+  --ledge: #e6d3a3;
+  --ledge-trail: #d98a1f;
+  --display: "Baloo 2", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-quick: 160ms;
+  --dur-base: 240ms;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --kid-bg: #1c1710; --kid-surface: #2a2217; --kid-raised: #362c1e; --kid-pressed: #4a3b22;
+    --kid-ink: #fbefd5; --kid-ink-soft: #d8c79f; --kid-line: #4a3e2a; --kid-line-strong: #a08e66;
+    --trail: #ffb347; --on-trail: #2a1e05; --trail-deep: #ffc778; --star: #ffc94a; --star-ink: #fff0c4;
+    --strip-a: #ff9a66; --on-strip-a: #2a1405; --strip-b: #8cc4ee; --on-strip-b: #0c1f30;
+    --hit-bg: #163826; --hit-ink: #8ee3ae; --miss-bg: #1c2547; --miss-ink: #b3c2ff;
+    --focus: #9cc0ff; --ledge: #0e0b07; --ledge-trail: #a8640f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --kid-bg: #1c1710; --kid-surface: #2a2217; --kid-raised: #362c1e; --kid-pressed: #4a3b22;
+  --kid-ink: #fbefd5; --kid-ink-soft: #d8c79f; --kid-line: #4a3e2a; --kid-line-strong: #a08e66;
+  --trail: #ffb347; --on-trail: #2a1e05; --trail-deep: #ffc778; --star: #ffc94a; --star-ink: #fff0c4;
+  --strip-a: #ff9a66; --on-strip-a: #2a1405; --strip-b: #8cc4ee; --on-strip-b: #0c1f30;
+  --hit-bg: #163826; --hit-ink: #8ee3ae; --miss-bg: #1c2547; --miss-ink: #b3c2ff;
+  --focus: #9cc0ff; --ledge: #0e0b07; --ledge-trail: #a8640f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  background: var(--kid-bg);
+  color: var(--kid-ink);
+  font-family: var(--body);
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+.screen {
+  max-width: 560px;
+  margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.tag { font: 700 14px/20px var(--body); color: var(--kid-ink-soft); letter-spacing: 0.04em; text-transform: uppercase; }
+.dots { display: flex; gap: 8px; }
+.dot { width: 14px; height: 14px; border-radius: 999px; border: 2px solid var(--kid-line-strong); background: var(--kid-raised); }
+.dot.done { background: var(--star); border-color: var(--star-ink); }
+.dot.now { background: var(--trail); border-color: var(--trail-deep); transform: scale(1.2); }
+.ask { display: flex; flex-direction: column; gap: 6px; }
+.prompt { margin: 0; font: 700 28px/34px var(--display); text-wrap: balance; }
+.narration { margin: 0; font: 400 18px/26px var(--body); color: var(--kid-ink-soft); }
+
+/* The wall */
+.wall {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 12px;
+  border-radius: 22px;
+  background: var(--kid-surface);
+}
+.row { position: relative; display: flex; height: 52px; border-radius: 10px; overflow: hidden; }
+.row.whole { height: 44px; }
+.piece {
+  flex: 1 1 0;
+  min-width: 0;
+  display: grid;
+  place-items: center;
+  background: var(--kid-raised);
+  box-shadow: inset 0 0 0 1px var(--kid-line-strong);
+  font: 700 13px/1 var(--body);
+  color: var(--kid-ink-soft);
+  transition: background var(--dur-quick) var(--ease);
+}
+.whole .piece { background: var(--trail); color: var(--on-trail); font: 800 20px/1 var(--display); box-shadow: inset 0 0 0 1px var(--ledge-trail); }
+.row.a .piece.on { background: var(--strip-a); color: var(--on-strip-a); }
+.row.b .piece.on { background: var(--strip-b); color: var(--on-strip-b); }
+.row .piece.on { box-shadow: inset 0 0 0 1px var(--kid-bg); }
+.wall .row .piece.tagged { color: transparent; }
+.amount {
+  position: absolute;
+  top: 50%;
+  transform: translate(-100%, -50%);
+  padding: 2px 8px;
+  margin-left: -4px;
+  border-radius: 999px;
+  font: 800 18px/24px var(--display);
+  pointer-events: none;
+  white-space: nowrap;
+}
+.row.a .amount { background: var(--on-strip-a); color: var(--strip-a); }
+.row.b .amount { background: var(--on-strip-b); color: var(--strip-b); }
+.row.build { cursor: pointer; touch-action: none; outline-offset: 3px; }
+.row.build:focus-visible { outline: 3px solid var(--focus); }
+.row.build::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 10px;
+  border: 3px dashed var(--strip-b);
+  pointer-events: none;
+}
+.row.build.locked { cursor: default; }
+.row.build.locked::after { border-style: solid; border-color: transparent; }
+
+/* Edges start under the whole row: 12px wall padding + 44px row + 6px gap. */
+.edges { position: absolute; inset: 62px 12px 12px; pointer-events: none; }
+.edge {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  width: 0;
+  border-left: 3px dashed var(--kid-ink);
+  transform: translateX(-1.5px);
+  transition: left var(--dur-base) var(--ease), border-color var(--dur-quick);
+}
+.edge.a { border-left-color: var(--strip-a); border-left-style: solid; }
+.edge.b { border-left-color: var(--strip-b); border-left-style: solid; }
+.edge.same { border-left: 4px solid var(--hit-ink); transform: translateX(-2px); }
+.gap {
+  position: absolute;
+  top: -6px;
+  bottom: -6px;
+  background: repeating-linear-gradient(135deg, transparent 0 6px, color-mix(in srgb, var(--star) 55%, transparent) 6px 10px);
+  border-radius: 4px;
+}
+.wall-note { margin: 0; min-height: 26px; font: 700 18px/26px var(--body); text-align: center; text-wrap: balance; }
+.hint { margin: 0; font: 400 16px/22px var(--body); color: var(--kid-ink-soft); text-align: center; }
+
+/* Answers */
+.choices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.tile {
+  position: relative;
+  min-height: 88px;
+  padding: 8px 12px;
+  border: 2px solid var(--kid-line-strong);
+  border-radius: 22px;
+  background: var(--kid-raised);
+  color: var(--kid-ink);
+  font: 700 24px/28px var(--display);
+  box-shadow: 0 4px 0 var(--ledge);
+  cursor: pointer;
+  transition: transform 90ms, box-shadow 90ms, background var(--dur-quick);
+}
+.tile:active:not(:disabled) { transform: translateY(4px); box-shadow: none; }
+.tile:focus-visible, .btn:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.tile:disabled { cursor: default; box-shadow: none; transform: translateY(4px); }
+.tile.right { background: var(--hit-bg); border-color: var(--hit-ink); color: var(--hit-ink); }
+.tile.missed { background: var(--miss-bg); border-color: var(--miss-ink); color: var(--miss-ink); }
+.tile.rest { border-style: dashed; opacity: 0.55; }
+.badge { position: absolute; top: -10px; right: -6px; width: 30px; height: 30px; border-radius: 999px; display: grid; place-items: center; }
+.tile.right .badge { background: var(--hit-ink); color: var(--hit-bg); }
+.tile.missed .badge { background: var(--miss-ink); color: var(--miss-bg); }
+
+.build-bar { display: flex; align-items: center; gap: 12px; }
+.counter {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  min-height: 64px;
+  border-radius: 22px;
+  border: 2px solid var(--kid-line-strong);
+  background: var(--kid-raised);
+  font: 800 32px/1 var(--display);
+  font-variant-numeric: tabular-nums;
+}
+.btn {
+  min-height: 64px;
+  padding: 0 28px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--trail);
+  color: var(--on-trail);
+  font: 800 22px/1 var(--display);
+  box-shadow: 0 4px 0 var(--ledge-trail);
+  cursor: pointer;
+  transition: transform 90ms, box-shadow 90ms;
+}
+.btn:active:not(:disabled) { transform: translateY(4px); box-shadow: none; }
+.btn:disabled { opacity: 0.45; cursor: default; }
+.btn.wide { width: 100%; }
+
+/* Feedback */
+.feedback {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 32px;
+  animation: rise var(--dur-base) var(--ease);
+}
+.feedback.hit { background: var(--hit-bg); color: var(--hit-ink); }
+.feedback.miss { background: var(--miss-bg); color: var(--miss-ink); }
+.fb-head { display: flex; align-items: center; gap: 12px; }
+.fb-title { margin: 0; font: 800 26px/30px var(--display); }
+.fb-why { margin: 0; font: 400 18px/26px var(--body); color: var(--kid-ink); }
+@keyframes rise { from { transform: translateY(16px); opacity: 0.4; } to { transform: none; opacity: 1; } }
+
+.end { display: flex; flex-direction: column; align-items: center; gap: 20px; padding-block: 40px; text-align: center; }
+.end h1 { margin: 0; font: 800 40px/44px var(--display); }
+.end p { margin: 0; font: 400 20px/28px var(--body); color: var(--kid-ink-soft); }
+.stars { display: flex; gap: 6px; flex-wrap: wrap; justify-content: center; }
+.demo-note { margin: 0; font: 400 13px/18px var(--body); color: var(--kid-ink-soft); text-align: center; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+
+<main class="screen" id="app" aria-live="polite"></main>
+
+<script>
+// Prompts, narration, why and answers are quoted from content/out/bundle.json.
+const ITEMS = [
+  {
+    id: 'g5-equivalent-fractions-keypad-1', mode: 'build', wholes: 1,
+    prompt: '1/2 = ?/4',
+    narration: 'The fraction 1/2 is equivalent to a fraction with 4 as the denominator. Type the missing numerator.',
+    why: 'To change 2 into 4, multiply by 2. Do the same to the numerator: 1 × 2 = 2.',
+    ref: { parts: 2, picked: 1 }, target: { parts: 4 }, answer: 2, rule: 'same',
+  },
+  {
+    id: 'g5-compare-order-fractions-tap-3', mode: 'pick', wholes: 1,
+    prompt: '3/8 and 1/2',
+    narration: 'Is 3/8 less than 1/2 or more than 1/2?',
+    why: 'Half of 8 is 4, so 4/8 equals 1/2. Since 3 is less than 4, 3/8 is less than 1/2.',
+    rows: [{ parts: 2, picked: 1 }, { parts: 8, picked: 3 }],
+    choices: [{ id: 'a', text: 'less than 1/2' }, { id: 'b', text: 'more than 1/2' }], answerChoiceId: 'a',
+  },
+  {
+    id: 'g5-equivalent-fractions-keypad-3', mode: 'build', wholes: 1,
+    prompt: '2/3 = ?/12',
+    narration: 'The fraction 2/3 is equivalent to a fraction with 12 as the denominator. Type the missing numerator.',
+    why: 'To change 3 into 12, multiply by 4. Do the same to the numerator: 2 × 4 = 8.',
+    ref: { parts: 3, picked: 2 }, target: { parts: 12 }, answer: 8, rule: 'same',
+  },
+  {
+    id: 'g5-compare-order-fractions-keypad-2', mode: 'build', wholes: 1,
+    prompt: '?/6 is greater than 1/2',
+    narration: 'A fraction has a denominator of 6. What is the smallest whole number numerator that makes it greater than 1/2?',
+    why: 'Half of 6 is 3, so 3/6 equals 1/2. The next numerator, 4, makes 4/6 greater than 1/2.',
+    ref: { parts: 2, picked: 1 }, target: { parts: 6 }, answer: 4, rule: 'past',
+  },
+  {
+    id: 'g5-compare-order-fractions-tap-8', mode: 'pick', wholes: 2,
+    prompt: '11/8 greater than 3/2?',
+    narration: 'Is 11/8 greater than 3/2? Yes or no.',
+    why: '3/2 is 1 1/2, which is 1 4/8. 11/8 is 1 3/8. Since 3/8 is less than 4/8, 11/8 is not greater.',
+    rows: [{ parts: 2, picked: 3 }, { parts: 8, picked: 11 }],
+    choices: [{ id: 'a', text: 'No' }, { id: 'b', text: 'Yes' }], answerChoiceId: 'a',
+  },
+];
+
+const ICON = {
+  star: '<svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.8l2.8 5.7 6.3.9-4.6 4.4 1.1 6.2L12 17l-5.6 3 1.1-6.2L2.9 9.4l6.3-.9z" fill="var(--star)" stroke="var(--star-ink)" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+  sprout: '<svg width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9"/><path d="M12 12C12 8 9 5.5 4.5 5.5 4.5 10 7.5 12 12 12z" fill="currentColor" fill-opacity=".2"/><path d="M12 14c0-3.5 2.5-6 7-6 0 4-2.8 6-7 6z" fill="currentColor" fill-opacity=".2"/></svg>',
+  check: '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+  small: '<svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M12 20v-7M12 13c0-3-2-5-6-5 0 3.5 2.5 5 6 5zM12 14c0-2.5 2-4.5 6-4.5 0 3-2.3 4.5-6 4.5z"/></svg>',
+};
+
+const app = document.getElementById('app');
+let state = { index: 0, stars: 0, fill: 0, done: false, result: null, picked: null };
+
+const fr = (n, d) => `${n}/${d}`;
+const pct = (n, d, wholes) => (n / d / wholes) * 100;
+
+function el(tag, cls, html) {
+  const e = document.createElement(tag);
+  if (cls) e.className = cls;
+  if (html !== undefined) e.innerHTML = html;
+  return e;
+}
+
+// pieces: [{ parts, picked, role }] -> one row of the wall; returns the row element.
+function stripRow({ parts, picked, role, showAmount }, wholes) {
+  const row = el('div', `row ${role}`);
+  const total = parts * wholes;
+  // A piece label fits when the piece is roughly 34px wide or more.
+  const labelled = total <= 8;
+  for (let i = 0; i < total; i++) {
+    const tagged = showAmount && i === picked - 1;
+    const p = el('div', 'piece' + (i < picked ? ' on' : '') + (tagged ? ' tagged' : ''), labelled ? fr(1, parts) : '');
+    row.append(p);
+  }
+  if (showAmount && picked > 0) {
+    const tag = el('span', 'amount', fr(picked, parts));
+    tag.style.left = pct(picked, parts, wholes) + '%';
+    if (picked / total < 0.18) { tag.style.transform = 'translate(4px, -50%)'; tag.style.marginLeft = '0'; }
+    row.append(tag);
+  }
+  row.setAttribute('role', 'img');
+  row.setAttribute('aria-label', `${fr(picked, parts)}: ${picked} of the ${parts > 1 ? '1/' + parts : 'whole'} pieces`);
+  return row;
+}
+
+function wholeRow(wholes) {
+  const row = el('div', 'row whole');
+  for (let i = 0; i < wholes; i++) row.append(el('div', 'piece', '1'));
+  row.setAttribute('role', 'img');
+  row.setAttribute('aria-label', wholes === 1 ? 'One whole' : `${wholes} wholes`);
+  return row;
+}
+
+function render() {
+  app.innerHTML = '';
+  if (state.done) return renderEnd();
+  const item = ITEMS[state.index];
+
+  const top = el('div', 'top');
+  top.append(el('span', 'tag', item.mode === 'build' ? 'Build it' : 'Compare'));
+  const dots = el('div', 'dots');
+  dots.setAttribute('aria-label', `Item ${state.index + 1} of ${ITEMS.length}`);
+  ITEMS.forEach((_, i) => dots.append(el('span', 'dot' + (i < state.index ? ' done' : i === state.index ? ' now' : ''))));
+  top.append(dots);
+
+  const ask = el('div', 'ask');
+  ask.append(el('h1', 'prompt', item.prompt), el('p', 'narration', item.narration));
+
+  app.append(top, ask);
+  item.mode === 'build' ? renderBuild(item) : renderPick(item);
+  if (state.result) renderFeedback(item);
+}
+
+/* Compare: the child taps an answer, then the strips fill and their edges show why. */
+function renderPick(item) {
+  const answered = !!state.result;
+  const wall = el('div', 'wall');
+  wall.append(wholeRow(item.wholes));
+  const [a, b] = item.rows;
+  wall.append(
+    stripRow({ ...a, picked: answered ? a.picked : 0, role: 'a', showAmount: answered }, item.wholes),
+    stripRow({ ...b, picked: answered ? b.picked : 0, role: 'b', showAmount: answered }, item.wholes),
+  );
+  if (answered) wall.append(edgeLayer(item.wholes, [{ ...a, role: 'a' }, { ...b, role: 'b' }]));
+  app.append(wall);
+  if (answered) app.append(el('p', 'wall-note', compareNote(a, b)));
+
+  const choices = el('div', 'choices');
+  item.choices.forEach((c) => {
+    const t = el('button', 'tile', c.text);
+    t.type = 'button';
+    t.id = `choice-${c.id}`;
+    if (answered) {
+      t.disabled = true;
+      if (c.id === item.answerChoiceId) { t.classList.add('right'); t.append(el('span', 'badge', ICON.check)); }
+      else if (c.id === state.picked) { t.classList.add('missed'); t.append(el('span', 'badge', ICON.small)); }
+      else t.classList.add('rest');
+    }
+    t.addEventListener('click', () => {
+      if (state.result) return;
+      state.picked = c.id;
+      state.result = c.id === item.answerChoiceId ? 'hit' : 'miss';
+      if (state.result === 'hit') state.stars++;
+      render();
+    });
+    choices.append(t);
+  });
+  app.append(choices);
+}
+
+function compareNote(a, b) {
+  const va = a.picked / a.parts, vb = b.picked / b.parts;
+  if (va === vb) return `${fr(a.picked, a.parts)} and ${fr(b.picked, b.parts)} end at the same edge.`;
+  const [big, small] = va > vb ? [a, b] : [b, a];
+  return `${fr(big.picked, big.parts)} reaches further than ${fr(small.picked, small.parts)}.`;
+}
+
+/* Edge lines run through the whole wall, so equal fractions share one line. */
+function edgeLayer(wholes, rows, guide) {
+  const layer = el('div', 'edges');
+  const pos = rows.map((r) => pct(r.picked, r.parts, wholes));
+  const same = rows.length === 2 && Math.abs(pos[0] - pos[1]) < 0.01;
+  if (rows.length === 2 && !same && rows.every((r) => r.picked > 0)) {
+    const g = el('div', 'gap');
+    g.style.left = Math.min(...pos) + '%';
+    g.style.width = Math.abs(pos[0] - pos[1]) + '%';
+    layer.append(g);
+  }
+  if (same) {
+    const e = el('div', 'edge same');
+    e.style.left = pos[0] + '%';
+    layer.append(e);
+  } else {
+    rows.forEach((r, i) => {
+      if (!r.picked) return;
+      const e = el('div', 'edge ' + r.role);
+      e.style.left = pos[i] + '%';
+      layer.append(e);
+    });
+  }
+  if (guide !== undefined) {
+    const e = el('div', 'edge');
+    e.style.left = guide + '%';
+    layer.append(e);
+  }
+  return layer;
+}
+
+/* Build: the child fills the lower strip by tap or drag until it ends where they want. */
+function renderBuild(item) {
+  const answered = !!state.result;
+  const fill = answered && state.result === 'miss' ? item.answer : state.fill;
+  const wall = el('div', 'wall');
+  wall.append(wholeRow(item.wholes));
+  const ref = { ...item.ref, role: 'a', showAmount: true };
+  wall.append(stripRow(ref, item.wholes));
+
+  const target = { parts: item.target.parts, picked: fill, role: 'b', showAmount: true };
+  const row = stripRow(target, item.wholes);
+  row.classList.add('build');
+  row.id = 'build-row';
+  if (answered) row.classList.add('locked');
+  else wireBuild(row, item);
+  wall.append(row);
+
+  const guide = answered ? undefined : pct(item.ref.picked, item.ref.parts, item.wholes);
+  wall.append(edgeLayer(item.wholes, answered ? [ref, target] : [], guide));
+  app.append(wall);
+
+  if (answered) {
+    app.append(el('p', 'wall-note', compareNote(item.ref, target)));
+    if (state.result === 'miss') app.append(el('p', 'hint', `You made ${fr(state.fill, item.target.parts)}. The wall shows ${fr(item.answer, item.target.parts)}.`));
+    return;
+  }
+
+  app.append(el('p', 'hint', item.rule === 'same'
+    ? `Tap or slide along the 1/${item.target.parts} strip. Fill it to the dashed line.`
+    : `Tap or slide along the 1/${item.target.parts} strip. Make it just pass the dashed line.`));
+
+  const bar = el('div', 'build-bar');
+  const counter = el('div', 'counter', `<span id="count">${state.fill}</span><span>/${item.target.parts}</span>`);
+  counter.setAttribute('aria-hidden', 'true');
+  const check = el('button', 'btn', 'Check');
+  check.type = 'button';
+  check.id = 'check';
+  check.disabled = state.fill === 0;
+  check.addEventListener('click', () => {
+    state.result = state.fill === item.answer ? 'hit' : 'miss';
+    if (state.result === 'hit') state.stars++;
+    render();
+  });
+  bar.append(counter, check);
+  app.append(bar);
+}
+
+function wireBuild(row, item) {
+  const total = item.target.parts * item.wholes;
+  const parts = item.target.parts;
+  let dragging = false;
+  row.tabIndex = 0;
+  row.setAttribute('role', 'slider');
+  row.setAttribute('aria-valuemin', '0');
+  row.setAttribute('aria-valuemax', String(total));
+  row.setAttribute('aria-valuenow', String(state.fill));
+  row.setAttribute('aria-label', `Pieces of 1/${parts}`);
+  const at = (x) => {
+    const r = row.getBoundingClientRect();
+    return Math.max(0, Math.min(total, Math.ceil(((x - r.left) / r.width) * total)));
+  };
+  // Updates the strip in place, so a drag keeps its pointer capture.
+  const set = (n) => {
+    if (n === state.fill) return;
+    state.fill = n;
+    row.querySelectorAll('.piece').forEach((p, i) => { p.classList.toggle('on', i < n); p.classList.toggle('tagged', i === n - 1); });
+    row.querySelector('.amount')?.remove();
+    if (n > 0) {
+      const tag = el('span', 'amount', fr(n, parts));
+      tag.style.left = pct(n, parts, item.wholes) + '%';
+      if (n / total < 0.18) { tag.style.transform = 'translate(4px, -50%)'; tag.style.marginLeft = '0'; }
+      row.append(tag);
+    }
+    row.setAttribute('aria-valuenow', String(n));
+    row.setAttribute('aria-valuetext', fr(n, parts));
+    document.getElementById('count').textContent = n;
+    document.getElementById('check').disabled = n === 0;
+  };
+  row.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    row.setPointerCapture?.(e.pointerId);
+    dragging = true;
+    const n = at(e.clientX);
+    // Tapping the last filled piece takes it away again.
+    set(n === state.fill ? n - 1 : n);
+  });
+  row.addEventListener('pointermove', (e) => { if (dragging) set(at(e.clientX)); });
+  row.addEventListener('pointerup', () => { dragging = false; });
+  row.addEventListener('pointercancel', () => { dragging = false; });
+  row.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { e.preventDefault(); set(Math.min(total, state.fill + 1)); }
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { e.preventDefault(); set(Math.max(0, state.fill - 1)); }
+  });
+}
+
+function renderFeedback(item) {
+  const hit = state.result === 'hit';
+  const fb = el('section', 'feedback ' + (hit ? 'hit' : 'miss'));
+  fb.id = 'feedback';
+  const head = el('div', 'fb-head', hit ? ICON.star : ICON.sprout);
+  head.append(el('h2', 'fb-title', hit ? 'Yes! Great job!' : 'Good try!'));
+  fb.append(head);
+  if (!hit) fb.append(el('p', 'fb-why', item.why));
+  const next = el('button', 'btn wide', state.index === ITEMS.length - 1 ? 'Done' : 'Next');
+  next.type = 'button';
+  next.id = 'next';
+  next.addEventListener('click', () => {
+    if (state.index === ITEMS.length - 1) state.done = true;
+    else state.index++;
+    state.fill = 0; state.result = null; state.picked = null;
+    render();
+    window.scrollTo(0, 0);
+  });
+  fb.append(next);
+  app.append(fb);
+  fb.scrollIntoView?.({ block: 'nearest', behavior: 'smooth' });
+}
+
+function renderEnd() {
+  const end = el('section', 'end');
+  end.append(el('h1', '', 'Wall built!'));
+  const stars = el('div', 'stars');
+  for (let i = 0; i < state.stars; i++) stars.append(el('span', '', ICON.star));
+  end.append(stars, el('p', '', `You got ${state.stars} of ${ITEMS.length} stars.`));
+  const again = el('button', 'btn', 'Play again');
+  again.type = 'button';
+  again.id = 'again';
+  again.addEventListener('click', () => { state = { index: 0, stars: 0, fill: 0, done: false, result: null, picked: null }; render(); });
+  end.append(again, el('p', 'demo-note', 'Demo of the fraction wall minigame. Five grade 5 items from the Bright Trail bundle.'));
+  app.append(end);
+}
+
+render();
+</script>

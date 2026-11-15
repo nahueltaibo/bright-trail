@@ -33,6 +33,10 @@ import { SortStage } from './sort/SortStage';
 import { STONES_DEMO_ITEMS } from './stones/demo';
 import { StonesGame } from './stones/StonesGame';
 import type { ItemViewProps } from './types';
+import { WALL_DEMO_ITEMS } from './wall/demo';
+import { buildInput, isBuild, wallWholesFor } from './wall/layout';
+import { WallGame } from './wall/WallGame';
+import { wallNarration } from './wall/words';
 
 export type GameViewProps<K extends GameKind = GameKind> = ItemViewProps & {
   game: GameOf<K>;
@@ -152,6 +156,21 @@ function LineupView({ game, ...props }: GameViewProps<'lineup'>) {
   return <LineupGame {...frame} scene={game} />;
 }
 
+function WallView({ game, ...props }: GameViewProps<'wall'>) {
+  const item = useMemo(
+    () => ({ ...props.item, narration: wallNarration(props.item.narration, game) }),
+    [props.item, game],
+  );
+  const frame = useGameProps({ ...props, item });
+  const labels = frame.input.kind === 'choices' ? frame.input.choices.map((c) => c.label) : [];
+  const wholes = wallWholesFor(game, labels);
+  const input = useMemo(
+    () => (isBuild(game) ? buildInput(game, wholes) : frame.input),
+    [game, wholes, frame.input],
+  );
+  return <WallGame {...frame} input={input} scene={game} wholes={wholes} why={item.why} />;
+}
+
 /** Every minigame the app plays, by `kind`. A new kind in `GAMES` fails the type check here. */
 export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   share: { title: 'Sharing', View: ShareView, demo: DEMO_ITEMS },
@@ -166,6 +185,7 @@ export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   order: { title: 'Put in order', View: OrderView, demo: ORDER_DEMO_ITEMS },
   label: { title: 'Label it', View: LabelView, demo: LABEL_DEMO_ITEMS },
   lineup: { title: 'Line up', View: LineupView, demo: LINEUP_DEMO_ITEMS },
+  wall: { title: 'Fraction wall', View: WallView, demo: WALL_DEMO_ITEMS },
 };
 
 export const GAME_KINDS = Object.keys(GAME_VIEWS) as GameKind[];

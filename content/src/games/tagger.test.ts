@@ -5,6 +5,7 @@ import { blocksTagRequest } from '../blocks/blocks';
 import { compareTagRequest } from '../compare/compare';
 import type { LlmClient, LlmRequest } from '../graph/llm';
 import { gridTagRequest } from '../grid/grid';
+import { wallTagRequest } from '../wall/wall';
 import { hopsTagRequest } from '../hops/hops';
 import { joinTagRequest } from '../join/join';
 import { lineupTagRequest } from '../lineup/lineup';
@@ -98,6 +99,7 @@ describe('TAGGERS', () => {
     expect(TAGGERS.blocks.request).toBe(blocksTagRequest);
     expect(TAGGERS.stones.request).toBe(stonesTagRequest);
     expect(TAGGERS.lineup.request).toBe(lineupTagRequest);
+    expect(TAGGERS.wall.request).toBe(wallTagRequest);
     expect(TAGGERS.hops.request).toBe(hopsTagRequest);
   });
 
@@ -112,6 +114,7 @@ describe('TAGGERS', () => {
       'blocks.json',
       'stones.json',
       'lineup.json',
+      'wall.json',
       'hops.json',
     ]);
   });

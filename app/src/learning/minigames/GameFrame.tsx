@@ -32,7 +32,12 @@ export type GameInput =
   /** `decimal` adds a decimal point key, for decimal answers only. */
   | { kind: 'keypad'; decimal?: boolean }
   /** The child answers on the stage itself, through `answer`. `hint` says where to tap. */
-  | { kind: 'stage'; hint: string };
+  | { kind: 'stage'; hint: string }
+  /** The child builds a count of 0 to `max` on the stage, then checks it. `label` names a count. */
+  | { kind: 'build'; max: number; label: (count: number) => string };
+
+/** A stage's built count, and a way to change it while the child can still answer. */
+export type GameBuild = { count: number; set: (count: number) => void };
 
 type Phase = 'intro' | 'ask' | 'playing' | 'result' | 'resetting';
 type Outcome = { correct: boolean; title: string; body: string };
@@ -72,6 +77,8 @@ type Props = GameFrameProps & {
     answer: ((value: GameValue, label: string) => void) | undefined;
     /** Labels already answered wrong, so a stage can fade them for another try. */
     tried: string[];
+    /** For a `build` input. `set` does nothing once the child has answered. */
+    build: GameBuild | undefined;
   }) => ReactNode;
   /** Plays before the question is asked, like a line walking in. Answers wait for it. */
   intro?: () => Promise<void>;
@@ -98,6 +105,7 @@ export function GameFrame(props: Props) {
   const [outcome, setOutcome] = useState<Outcome | null>(null);
   const [cheer, setCheer] = useState(false);
   const [entry, setEntry] = useState('');
+  const [built, setBuilt] = useState(0);
   const [rowWidth, setRowWidth] = useState(0);
 
   const answered = useRef(false);
@@ -171,6 +179,7 @@ export function GameFrame(props: Props) {
     await props.reset();
     setPicked(null);
     setEntry('');
+    setBuilt(0);
     setPhase('ask');
     say(questionRef.current);
   };
@@ -275,6 +284,16 @@ export function GameFrame(props: Props) {
           );
         })}
       </View>
+    ) : input.kind === 'build' ? (
+      <BuildBar
+        count={built}
+        max={input.max}
+        label={input.label(built)}
+        scale={scale}
+        disabled={phase !== 'ask'}
+        onSet={setBuilt}
+        onSubmit={() => void choose(built, input.label(built))}
+      />
     ) : (
       <NumberPad
         entry={entry}
@@ -325,8 +344,16 @@ export function GameFrame(props: Props) {
     </View>
   );
 
-  // eslint-disable-next-line react-hooks/refs -- `pick` reads refs only when called.
-  const stageView = props.stage({ cheer, pick, answer: answerOnStage, tried });
+  const build: GameBuild | undefined =
+    input.kind === 'build'
+      ? {
+          count: built,
+          set: (n) => {
+            if (phase === 'ask') setBuilt(Math.max(0, Math.min(input.max, n)));
+          },
+        }
+      : undefined;
+  const stageView = props.stage({ cheer, pick, answer: answerOnStage, tried, build });
   const stage = <View style={styles.stages}>{stageView}</View>;
   const bottom = feedback || inputView;
 
@@ -478,6 +505,66 @@ function NumberPad({
   );
 }
 
+/** Steps the stage's built count one at a time, shows it, and checks it. */
+function BuildBar({
+  count,
+  max,
+  label,
+  scale,
+  disabled,
+  onSet,
+  onSubmit,
+}: {
+  count: number;
+  max: number;
+  label: string;
+  scale: number;
+  disabled: boolean;
+  onSet: (count: number) => void;
+  onSubmit: () => void;
+}) {
+  const side = MIN_TAP * scale;
+  const step = (by: -1 | 1) => {
+    const off = disabled || count + by < 0 || count + by > max;
+    return (
+      <Pressable
+        accessibilityRole="button"
+        accessibilityLabel={by < 0 ? 'One piece less' : 'One piece more'}
+        accessibilityState={{ disabled: off }}
+        disabled={off}
+        onPress={() => onSet(count + by)}
+        style={({ pressed }) => [
+          styles.key,
+          { width: side, height: side, borderRadius: radius.pill },
+          pressed && pressDown,
+          off && styles.faded,
+        ]}
+      >
+        <Icon name={by < 0 ? 'minus' : 'plus'} size={side * 0.45} tint={colors.ink} stroke={3} />
+      </Pressable>
+    );
+  };
+  return (
+    <View style={styles.buildBar}>
+      {step(-1)}
+      <View
+        accessible
+        accessibilityLabel={`You made ${label}`}
+        style={[styles.display, styles.built, { height: side }]}
+      >
+        <Text style={[styles.text, { fontSize: 30 * scale }]}>{label}</Text>
+      </View>
+      {step(1)}
+      <KidButton
+        label="Check my answer"
+        icon="check"
+        disabled={disabled || count === 0}
+        onPress={onSubmit}
+      />
+    </View>
+  );
+}
+
 const ROW_PAD = 12;
 // Border plus horizontal padding on each side of a choice.
 const CHOICE_INSET = 2 * (3 + 4);
@@ -532,4 +619,6 @@ const styles = StyleSheet.create({
   empty: { color: colors.softInk },
   hintRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 },
   hint: { color: colors.softInk },
+  buildBar: { flexDirection: 'row', alignItems: 'center', gap: 8, padding: ROW_PAD },
+  built: { flex: 1, paddingHorizontal: 8 },
 });

@@ -1,0 +1,53 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g5-compare-order-fractions-keypad-1",
+        "fits": false,
+        "ask": "fill",
+        "than": "9/4",
+        "amount": null,
+        "parts": 4,
+        "note": "Asks for whole number part of a mixed number, not a size comparison."
+      },
+      {
+        "itemId": "g5-compare-order-fractions-tap-3",
+        "fits": true,
+        "ask": "relation",
+        "than": "1/2",
+        "amount": "3/8",
+        "parts": null,
+        "note": "3/8 is less than 1/2."
+      },
+      {
+        "itemId": "g5-compare-order-fractions-keypad-2",
+        "fits": true,
+        "ask": "pass",
+        "than": "1/2",
+        "amount": null,
+        "parts": 6,
+        "note": "Smallest numerator over 6 above 1/2 is 4."
+      },
+      {
+        "itemId": "g5-compare-order-fractions-keypad-4",
+        "fits": false,
+        "ask": "fill",
+        "than": "3/4",
+        "amount": null,
+        "parts": 4,
+        "note": "Orders four fractions and asks for a numerator."
+      },
+      {
+        "itemId": "g5-compare-order-fractions-tap-8",
+        "fits": true,
+        "ask": "more",
+        "than": "3/2",
+        "amount": "11/8",
+        "parts": null,
+        "note": "11/8 is less than 12/8, so No."
+      }
+    ]
+  }
+}

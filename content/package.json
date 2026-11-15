@@ -20,6 +20,7 @@
     "blocks": "tsx src/games/tag-games.ts --kind blocks",
     "stones": "tsx src/games/tag-games.ts --kind stones",
     "lineup": "tsx src/games/tag-games.ts --kind lineup",
+    "wall": "tsx src/games/tag-games.ts --kind wall",
     "hops": "tsx src/games/tag-games.ts --kind hops",
     "coverage": "tsx src/games/coverage-report.ts",
     "packs": "tsx src/packs/build-packs.ts",
