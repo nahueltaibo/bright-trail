@@ -1,7 +1,7 @@
 {
   "schemaVersion": 5,
-  "version": "2026.11.08-53",
-  "generatedAt": "2026-11-08T19:50:21Z",
+  "version": "2026.11.15-53",
+  "generatedAt": "2026-11-15T16:23:52Z",
   "skills": [
     {
       "id": "k-count-to-20",
@@ -3916,13 +3916,13 @@
       "narration": "Pip counts up from 4 to 5. Is the number bigger or smaller?",
       "prompt": "4 to 5",
       "why": "Counting up makes the number bigger. 5 is bigger than 4.",
+      "game": { "kind": "compare", "ask": "relation", "values": ["5", "4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "bigger" },
         { "id": "b", "kind": "text", "text": "smaller" }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "relation", "values": ["5", "4"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "k-count-forward-back-keypad-1",
@@ -4173,9 +4173,9 @@
       "narration": "Which number is more, 4 or 9? Type the bigger number.",
       "prompt": "4 or 9: more?",
       "why": "9 comes after 4 when we count. So 9 is more than 4.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["4", "9"] },
       "type": "keypad",
-      "answer": 9,
-      "game": { "kind": "compare", "ask": "greatest", "values": ["4", "9"] }
+      "answer": 9
     },
     {
       "id": "k-more-less-same-number-line-1",
@@ -4198,6 +4198,7 @@
       "narration": "Pip has 4 apples. Mia has 4 apples. Is it more, less, or the same?",
       "prompt": "4 and 4",
       "why": "Both have 4. When two groups match, they are the same.",
+      "game": { "kind": "compare", "ask": "relation", "values": ["4", "4"] },
       "type": "tap",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 4 },
       "choices": [
@@ -4205,8 +4206,7 @@
         { "id": "b", "kind": "text", "text": "the same" },
         { "id": "c", "kind": "text", "text": "more" }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "relation", "values": ["4", "4"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "k-more-less-same-tap-4",
@@ -4239,6 +4239,7 @@
       "narration": "Pip has 7 apples. Mia has 5 apples. Does Pip have more, less, or the same?",
       "prompt": "Pip has 7. Mia has 5.",
       "why": "7 is a bigger group than 5. So Pip has more.",
+      "game": { "kind": "compare", "ask": "relation", "values": ["7", "5"] },
       "type": "tap",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 7 },
       "choices": [
@@ -4246,8 +4247,7 @@
         { "id": "b", "kind": "text", "text": "less" },
         { "id": "c", "kind": "text", "text": "the same" }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "relation", "values": ["7", "5"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "k-more-less-same-keypad-2",
@@ -4292,9 +4292,9 @@
       "narration": "Which number is less, 7 or 2? Type the smaller number.",
       "prompt": "7 or 2: less?",
       "why": "2 comes before 7 when we count. So 2 is less than 7.",
+      "game": { "kind": "compare", "ask": "least", "values": ["7", "2"] },
       "type": "keypad",
-      "answer": 2,
-      "game": { "kind": "compare", "ask": "least", "values": ["7", "2"] }
+      "answer": 2
     },
     {
       "id": "k-more-less-same-tap-6",
@@ -4388,13 +4388,13 @@
       "narration": "Which number is greater, 3 or 6?",
       "prompt": "Which is greater?",
       "why": "6 is more than 3. Count up from 3 and you reach 6. So 6 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3", "6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
         { "id": "b", "kind": "number", "value": 6 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["3", "6"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "k-compare-numbers-20-keypad-1",
@@ -4439,13 +4439,13 @@
       "narration": "Which number is less, 8 or 2?",
       "prompt": "Which is less?",
       "why": "2 is fewer than 8. Count up from 2 and you reach 8 much later. So 2 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["8", "2"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
         { "id": "b", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "least", "values": ["8", "2"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "k-compare-numbers-20-keypad-2",
@@ -4464,13 +4464,13 @@
       "narration": "Which number is greater, 9 or 12?",
       "prompt": "Which is greater?",
       "why": "12 comes after 9 when we count. Numbers that come later are greater. So 12 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["12", "9"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 12 },
         { "id": "b", "kind": "number", "value": 9 }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["12", "9"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "k-compare-numbers-20-keypad-3",
@@ -4539,13 +4539,13 @@
       "narration": "Which number is less, 14 or 16?",
       "prompt": "Which is less?",
       "why": "Count up: 14, 15, 16. 14 comes first, so 14 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["16", "14"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 16 },
         { "id": "b", "kind": "number", "value": 14 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "least", "values": ["16", "14"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "k-compare-numbers-20-number-line-3",
@@ -5959,14 +5959,14 @@
       "narration": "Which number is twelve? Is it 21, 12, or 2?",
       "prompt": "Find twelve",
       "why": "Twelve is one ten and two ones. That is 12.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 12 },
         { "id": "b", "kind": "number", "value": 21 },
         { "id": "c", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 2 }
+      "answerChoiceId": "a"
     },
     {
       "id": "g1-read-numbers-50-keypad-2",
@@ -5975,9 +5975,9 @@
       "narration": "Type the number thirty.",
       "prompt": "Type thirty",
       "why": "Thirty is 3 tens and 0 ones. We type 30.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 0 },
       "type": "keypad",
-      "answer": 30,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 0 }
+      "answer": 30
     },
     {
       "id": "g1-read-numbers-50-keypad-3",
@@ -5986,9 +5986,9 @@
       "narration": "Mia has 3 tens and 5 ones. What number is that? Type it.",
       "prompt": "3 tens 5 ones",
       "why": "3 tens is 30. Add 5 ones to get 35.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 },
       "type": "keypad",
-      "answer": 35,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 }
+      "answer": 35
     },
     {
       "id": "g1-read-numbers-50-tap-3",
@@ -5997,13 +5997,6 @@
       "narration": "How many tens are in the number 42? Is it 2, 4, or 42?",
       "prompt": "Tens in 42",
       "why": "The first digit tells the tens. In 42, the 4 means 4 tens.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 2 },
-        { "id": "b", "kind": "number", "value": 4 },
-        { "id": "c", "kind": "number", "value": 42 }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "blocks",
         "ask": "count",
@@ -6011,7 +6004,14 @@
         "tens": 4,
         "ones": 2,
         "place": "tens"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 2 },
+        { "id": "b", "kind": "number", "value": 4 },
+        { "id": "c", "kind": "number", "value": 42 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-read-numbers-50-number-line-2",
@@ -6033,6 +6033,7 @@
       "narration": "Which number is forty-six? Is it 64, 36, 41, or 46?",
       "prompt": "Find forty-six",
       "why": "Forty is 4 tens. Six is 6 ones. So forty-six is 46.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 64 },
@@ -6040,8 +6041,7 @@
         { "id": "c", "kind": "number", "value": 41 },
         { "id": "d", "kind": "number", "value": 46 }
       ],
-      "answerChoiceId": "d",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 6 }
+      "answerChoiceId": "d"
     },
     {
       "id": "g1-read-numbers-50-tap-5",
@@ -6064,9 +6064,9 @@
       "narration": "Type the number forty-eight.",
       "prompt": "Type forty-eight",
       "why": "Forty is 4 tens. Eight is 8 ones. Together that is 48.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 8 },
       "type": "keypad",
-      "answer": 48,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 8 }
+      "answer": 48
     },
     {
       "id": "g1-read-numbers-50-tap-6",
@@ -6075,14 +6075,14 @@
       "narration": "A number has 2 tens and 7 ones. Is it 72, 27, or 29?",
       "prompt": "2 tens 7 ones",
       "why": "2 tens is 20. Add 7 ones to make 27.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 7 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 72 },
         { "id": "b", "kind": "number", "value": 29 },
         { "id": "c", "kind": "number", "value": 27 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 7 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g1-read-numbers-50-number-line-3",
@@ -6335,13 +6335,13 @@
       "narration": "Which number is greater, 7 or 12?",
       "prompt": "Which is greater?",
       "why": "12 has a ten and 7 does not. So 12 is greater than 7.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["7", "12"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
         { "id": "b", "kind": "number", "value": 12 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["7", "12"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-compare-order-50-tap-2",
@@ -6350,13 +6350,13 @@
       "narration": "Which number is less, 15 or 9?",
       "prompt": "Which is less?",
       "why": "9 is only ones. 15 has a ten. So 9 is less than 15.",
+      "game": { "kind": "compare", "ask": "least", "values": ["9", "15"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 9 },
         { "id": "b", "kind": "number", "value": 15 }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "least", "values": ["9", "15"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "g1-compare-order-50-keypad-1",
@@ -6365,9 +6365,9 @@
       "narration": "Type the greater number, 6 or 11.",
       "prompt": "6 or 11: greater?",
       "why": "11 comes after 6 when we count. Numbers later in counting are greater. So 11 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["6", "11"] },
       "type": "keypad",
-      "answer": 11,
-      "game": { "kind": "compare", "ask": "greatest", "values": ["6", "11"] }
+      "answer": 11
     },
     {
       "id": "g1-compare-order-50-number-line-1",
@@ -6376,12 +6376,12 @@
       "narration": "Move the frog to the greater number, 5 or 13.",
       "prompt": "Greater: 5 or 13",
       "why": "13 is farther along the line than 5. The number farther along is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["5", "13"] },
       "type": "number-line",
       "min": 0,
       "max": 20,
       "step": 1,
-      "target": 13,
-      "game": { "kind": "compare", "ask": "greatest", "values": ["5", "13"] }
+      "target": 13
     },
     {
       "id": "g1-compare-order-50-tap-3",
@@ -6414,13 +6414,13 @@
       "narration": "Which number is greater, 34 or 28?",
       "prompt": "Which is greater?",
       "why": "34 has 3 tens. 28 has 2 tens. More tens means greater, so 34.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["28", "34"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 28 },
         { "id": "b", "kind": "number", "value": 34 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["28", "34"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-compare-order-50-keypad-2",
@@ -6429,9 +6429,9 @@
       "narration": "Type the number that is less, 41 or 36.",
       "prompt": "Less: 41 or 36",
       "why": "36 has 3 tens. 41 has 4 tens. Fewer tens means less, so 36.",
+      "game": { "kind": "compare", "ask": "least", "values": ["41", "36"] },
       "type": "keypad",
-      "answer": 36,
-      "game": { "kind": "compare", "ask": "least", "values": ["41", "36"] }
+      "answer": 36
     },
     {
       "id": "g1-compare-order-50-number-line-2",
@@ -6440,12 +6440,12 @@
       "narration": "Move the frog to the least number, 44, 31, or 38.",
       "prompt": "Least: 44, 31, 38",
       "why": "Look at the tens. 31 has the fewest tens. So 31 is the least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["44", "31", "38"] },
       "type": "number-line",
       "min": 20,
       "max": 50,
       "step": 1,
-      "target": 31,
-      "game": { "kind": "compare", "ask": "least", "values": ["44", "31", "38"] }
+      "target": 31
     },
     {
       "id": "g1-compare-order-50-tap-5",
@@ -6454,13 +6454,13 @@
       "narration": "Sam has 23 stickers. Mia has 32 stickers. Which number is less, 23 or 32?",
       "prompt": "Which is less?",
       "why": "23 has 2 tens. 32 has 3 tens. So 23 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["32", "23"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 32 },
         { "id": "b", "kind": "number", "value": 23 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "least", "values": ["32", "23"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-compare-order-50-tap-6",
@@ -6469,14 +6469,14 @@
       "narration": "Put 25, 14, and 38 in order from least to greatest. Which number comes first?",
       "prompt": "Least to greatest: first?",
       "why": "Least to greatest starts with the smallest. 14 has just 1 ten. So 14 is first.",
+      "game": { "kind": "compare", "ask": "least", "values": ["25", "38", "14"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 25 },
         { "id": "b", "kind": "number", "value": 38 },
         { "id": "c", "kind": "number", "value": 14 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "compare", "ask": "least", "values": ["25", "38", "14"] }
+      "answerChoiceId": "c"
     },
     {
       "id": "g1-compare-order-50-keypad-3",
@@ -6485,9 +6485,9 @@
       "narration": "Put 18, 42, and 27 in order from greatest to least. Type the number in the middle.",
       "prompt": "Greatest to least: middle?",
       "why": "The order is 42, 27, 18. The number in the middle is 27.",
+      "game": { "kind": "compare", "ask": "middle", "values": ["18", "42", "27"] },
       "type": "keypad",
-      "answer": 27,
-      "game": { "kind": "compare", "ask": "middle", "values": ["18", "42", "27"] }
+      "answer": 27
     },
     {
       "id": "g1-compare-order-50-tap-7",
@@ -6496,13 +6496,13 @@
       "narration": "Which number is greater, 38 or 41?",
       "prompt": "Which is greater?",
       "why": "Look at the tens first. 41 has 4 tens and 38 has 3 tens. So 41 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["38", "41"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 38 },
         { "id": "b", "kind": "number", "value": 41 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["38", "41"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-compare-order-50-number-line-3",
@@ -6524,9 +6524,9 @@
       "narration": "Three kids have 26, 19, and 33 cards. Type the fewest number of cards.",
       "prompt": "Fewest: 26, 19, 33",
       "why": "19 has just 1 ten. 26 and 33 have more tens. So 19 is the least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["26", "19", "33"] },
       "type": "keypad",
-      "answer": 19,
-      "game": { "kind": "compare", "ask": "least", "values": ["26", "19", "33"] }
+      "answer": 19
     },
     {
       "id": "g1-compare-order-50-tap-8",
@@ -6550,14 +6550,14 @@
       "narration": "Which number is 10 and 3? Is it 30, 13, or 8?",
       "prompt": "10 and 3 = ?",
       "why": "10 and 3 more makes 13. Start at 10 and count up 3: 11, 12, 13.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 3 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 30 },
         { "id": "b", "kind": "number", "value": 13 },
         { "id": "c", "kind": "number", "value": 8 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 3 }
+      "answerChoiceId": "b"
     },
     {
       "id": "g1-compose-decompose-50-keypad-1",
@@ -6566,9 +6566,9 @@
       "narration": "Mia has 10 stars in a box and 4 more. How many stars is that in all?",
       "prompt": "10 + 4 = ?",
       "why": "Start at 10 and count up 4 more: 11, 12, 13, 14. The answer is 14.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 4 },
       "type": "keypad",
-      "answer": 14,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 4 }
+      "answer": 14
     },
     {
       "id": "g1-compose-decompose-50-number-line-1",
@@ -6577,13 +6577,13 @@
       "narration": "Leo has 10 and 6 shells. Move the frog to the total number of shells.",
       "prompt": "10 and 6 make?",
       "why": "10 and 6 make 16. Start at 10 and hop 6 more.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 6 },
       "type": "number-line",
       "min": 0,
       "max": 20,
       "step": 1,
       "target": 16,
-      "hops": { "start": 10, "legs": [{ "by": 1, "times": 6 }] },
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 1, "ones": 6 }
+      "hops": { "start": 10, "legs": [{ "by": 1, "times": 6 }] }
     },
     {
       "id": "g1-compose-decompose-50-tap-2",
@@ -6606,8 +6606,6 @@
       "narration": "15 is 10 and what? Type the missing part.",
       "prompt": "15 = 10 + ?",
       "why": "Take 10 away from 15. What is left is 5.",
-      "type": "keypad",
-      "answer": 5,
       "game": {
         "kind": "blocks",
         "ask": "count",
@@ -6615,7 +6613,9 @@
         "tens": 1,
         "ones": 5,
         "place": "ones"
-      }
+      },
+      "type": "keypad",
+      "answer": 5
     },
     {
       "id": "g1-compose-decompose-50-tap-3",
@@ -6624,13 +6624,6 @@
       "narration": "24 is 20 and what? Is it 14, 4, or 2?",
       "prompt": "24 = 20 + ?",
       "why": "Take 20 away from 24. That leaves 4.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 14 },
-        { "id": "b", "kind": "number", "value": 2 },
-        { "id": "c", "kind": "number", "value": 4 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "blocks",
         "ask": "count",
@@ -6638,7 +6631,14 @@
         "tens": 2,
         "ones": 4,
         "place": "ones"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 14 },
+        { "id": "b", "kind": "number", "value": 2 },
+        { "id": "c", "kind": "number", "value": 4 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g1-compose-decompose-50-keypad-3",
@@ -6647,9 +6647,9 @@
       "narration": "20 and 7 make what number?",
       "prompt": "20 + 7 = ?",
       "why": "20 is two tens. Add 7 ones to get 27.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 7 },
       "type": "keypad",
-      "answer": 27,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 7 }
+      "answer": 27
     },
     {
       "id": "g1-compose-decompose-50-number-line-2",
@@ -6658,13 +6658,13 @@
       "narration": "Lia has 20 and 9 shells. Move the frog to the total number of shells.",
       "prompt": "20 and 9 make?",
       "why": "20 and 9 make 29. Start at 20 and hop 9 more.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 9 },
       "type": "number-line",
       "min": 20,
       "max": 40,
       "step": 1,
       "target": 29,
-      "hops": { "start": 20, "legs": [{ "by": 1, "times": 9 }] },
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 2, "ones": 9 }
+      "hops": { "start": 20, "legs": [{ "by": 1, "times": 9 }] }
     },
     {
       "id": "g1-compose-decompose-50-tap-4",
@@ -6673,14 +6673,14 @@
       "narration": "Sam has 3 tens and 5 ones. What number is that? Is it 35, 53, or 8?",
       "prompt": "3 tens and 5 ones",
       "why": "3 tens is 30. Add 5 ones to make 35.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 53 },
         { "id": "b", "kind": "number", "value": 8 },
         { "id": "c", "kind": "number", "value": 35 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g1-compose-decompose-50-keypad-4",
@@ -6689,8 +6689,6 @@
       "narration": "Ben has 36 blocks. 36 is 30 and what? Type the missing part.",
       "prompt": "36 = 30 + ?",
       "why": "Take 30 away from 36. That leaves 6.",
-      "type": "keypad",
-      "answer": 6,
       "game": {
         "kind": "blocks",
         "ask": "count",
@@ -6698,7 +6696,9 @@
         "tens": 3,
         "ones": 6,
         "place": "ones"
-      }
+      },
+      "type": "keypad",
+      "answer": 6
     },
     {
       "id": "g1-compose-decompose-50-tap-5",
@@ -6721,9 +6721,9 @@
       "narration": "10 and 10 and 10 and 5 make what number?",
       "prompt": "10 + 10 + 10 + 5 = ?",
       "why": "Three 10s make 30. Then 30 and 5 make 35.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 },
       "type": "keypad",
-      "answer": 35,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 3, "ones": 5 }
+      "answer": 35
     },
     {
       "id": "g1-compose-decompose-50-number-line-3",
@@ -6761,13 +6761,13 @@
       "narration": "Max has 4 tens and 7 ones. Move the frog to his number.",
       "prompt": "4 tens and 7 ones",
       "why": "4 tens is 40. Then add 7 ones to land on 47.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 7 },
       "type": "number-line",
       "min": 30,
       "max": 50,
       "step": 1,
       "target": 47,
-      "hops": { "start": 40, "legs": [{ "by": 1, "times": 7 }] },
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 4, "ones": 7 }
+      "hops": { "start": 40, "legs": [{ "by": 1, "times": 7 }] }
     },
     {
       "id": "g1-fair-share-drawings-tap-1",
@@ -9207,9 +9207,9 @@
       "narration": "Pia has 1 hundred, 4 tens, and 2 ones. What number is that?",
       "prompt": "100 + 40 + 2 = ?",
       "why": "1 hundred is 100. 4 tens is 40. 2 ones is 2. Put them together to get 142.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 4, "ones": 2 },
       "type": "keypad",
-      "answer": 142,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 4, "ones": 2 }
+      "answer": 142
     },
     {
       "id": "g2-whole-numbers-200-tap-1",
@@ -9218,14 +9218,6 @@
       "narration": "How many tens make one hundred? Is it 5, 10, 20, or 100?",
       "prompt": "? tens = 100",
       "why": "Ten tens make one hundred. Count by tens ten times to reach 100.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 5 },
-        { "id": "b", "kind": "number", "value": 20 },
-        { "id": "c", "kind": "number", "value": 10 },
-        { "id": "d", "kind": "number", "value": 100 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "blocks",
         "ask": "make",
@@ -9233,7 +9225,15 @@
         "tens": 0,
         "ones": 0,
         "place": "tens"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 5 },
+        { "id": "b", "kind": "number", "value": 20 },
+        { "id": "c", "kind": "number", "value": 10 },
+        { "id": "d", "kind": "number", "value": 100 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-whole-numbers-200-number-line-1",
@@ -9255,14 +9255,14 @@
       "narration": "Which number is one hundred twenty-six? Is it 162, 126, or 106?",
       "prompt": "one hundred twenty-six",
       "why": "One hundred twenty-six is 1 hundred, 2 tens, and 6 ones. That is 126.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 2, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 162 },
         { "id": "b", "kind": "number", "value": 126 },
         { "id": "c", "kind": "number", "value": 106 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 2, "ones": 6 }
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-whole-numbers-200-keypad-2",
@@ -9271,9 +9271,9 @@
       "narration": "What is 100 + 7?",
       "prompt": "100 + 7 = ?",
       "why": "There are no tens. So 1 hundred and 7 ones is 107.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 0, "ones": 7 },
       "type": "keypad",
-      "answer": 107,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 1, "tens": 0, "ones": 7 }
+      "answer": 107
     },
     {
       "id": "g2-whole-numbers-200-keypad-3",
@@ -9282,8 +9282,6 @@
       "narration": "Sam has 150 beads. How many tens is that?",
       "prompt": "150 = ? tens",
       "why": "10 tens make 100. 5 more tens make 50. So 150 is 15 tens.",
-      "type": "keypad",
-      "answer": 15,
       "game": {
         "kind": "blocks",
         "ask": "make",
@@ -9291,7 +9289,9 @@
         "tens": 5,
         "ones": 0,
         "place": "tens"
-      }
+      },
+      "type": "keypad",
+      "answer": 15
     },
     {
       "id": "g2-whole-numbers-200-tap-3",
@@ -9343,9 +9343,9 @@
       "narration": "A box holds 10 pencils. Sam has 14 boxes. How many pencils is that?",
       "prompt": "14 tens = ?",
       "why": "14 tens is 10 tens and 4 tens. That is 100 and 40, so 140.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 14, "ones": 0 },
       "type": "keypad",
-      "answer": 140,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 14, "ones": 0 }
+      "answer": 140
     },
     {
       "id": "g2-whole-numbers-200-keypad-5",
@@ -9354,9 +9354,9 @@
       "narration": "Mia has 9 tens and 15 ones. What number is that?",
       "prompt": "90 + 15 = ?",
       "why": "9 tens is 90. 15 ones is 10 and 5. So 90 and 10 make 100, and 5 more is 105.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 9, "ones": 15 },
       "type": "keypad",
-      "answer": 105,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 9, "ones": 15 }
+      "answer": 105
     },
     {
       "id": "g2-whole-numbers-200-tap-5",
@@ -9365,14 +9365,14 @@
       "narration": "Which number is the same as 17 tens and 6 ones? Is it 167, 176, or 76?",
       "prompt": "17 tens 6 ones = ?",
       "why": "17 tens is 170. Add 6 ones to get 176.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 17, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 167 },
         { "id": "b", "kind": "number", "value": 76 },
         { "id": "c", "kind": "number", "value": 176 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 17, "ones": 6 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-whole-numbers-200-number-line-3",
@@ -9381,12 +9381,12 @@
       "narration": "Move the frog to the number with 17 tens and 5 ones.",
       "prompt": "17 tens 5 ones",
       "why": "17 tens is 170. Add 5 ones to land on 175.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 17, "ones": 5 },
       "type": "number-line",
       "min": 0,
       "max": 200,
       "step": 5,
-      "target": 175,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 0, "tens": 17, "ones": 5 }
+      "target": 175
     },
     {
       "id": "g2-whole-numbers-200-keypad-6",
@@ -9395,8 +9395,6 @@
       "narration": "164 is 1 hundred, 5 tens, and how many ones?",
       "prompt": "164 = 100 + 50 + ?",
       "why": "100 and 50 make 150. From 150 to 164 is 14 more. So there are 14 ones.",
-      "type": "keypad",
-      "answer": 14,
       "game": {
         "kind": "blocks",
         "ask": "count",
@@ -9404,7 +9402,9 @@
         "tens": 5,
         "ones": 14,
         "place": "ones"
-      }
+      },
+      "type": "keypad",
+      "answer": 14
     },
     {
       "id": "g2-whole-numbers-200-tap-6",
@@ -9428,13 +9428,13 @@
       "narration": "Which number is greater, 87 or 120?",
       "prompt": "Which is greater?",
       "why": "120 has 1 hundred. 87 has no hundreds. So 120 is greater than 87.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["87", "120"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 87 },
         { "id": "b", "kind": "number", "value": 120 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["87", "120"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-compare-order-200-tap-2",
@@ -9443,13 +9443,13 @@
       "narration": "Which number is less, 150 or 105?",
       "prompt": "Which is less?",
       "why": "Both have 1 hundred. 105 has 0 tens and 150 has 5 tens. So 105 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["150", "105"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 150 },
         { "id": "b", "kind": "number", "value": 105 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "least", "values": ["150", "105"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-compare-order-200-tap-3",
@@ -9458,13 +9458,13 @@
       "narration": "Is 190 closer to 100 or closer to 200?",
       "prompt": "190 is closer to?",
       "why": "190 is only 10 away from 200. It is 90 away from 100. So it is closer to 200.",
+      "game": { "kind": "compare", "ask": "closer", "values": ["100", "200"], "target": "190" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 100 },
         { "id": "b", "kind": "number", "value": 200 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "closer", "values": ["100", "200"], "target": "190" }
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-compare-order-200-keypad-1",
@@ -9473,9 +9473,9 @@
       "narration": "Which number is greater, 94 or 149? Type the greater number.",
       "prompt": "94 or 149?",
       "why": "149 has 1 hundred. 94 has none. So 149 is the greater number.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["94", "149"] },
       "type": "keypad",
-      "answer": 149,
-      "game": { "kind": "compare", "ask": "greatest", "values": ["94", "149"] }
+      "answer": 149
     },
     {
       "id": "g2-compare-order-200-number-line-1",
@@ -9497,14 +9497,14 @@
       "narration": "Which number is the greatest, 138, 183, or 118?",
       "prompt": "Greatest number?",
       "why": "All have 1 hundred. Now check the tens. 8 tens is more than 3 tens or 1 ten. So 183 is greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["138", "183", "118"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 138 },
         { "id": "b", "kind": "number", "value": 183 },
         { "id": "c", "kind": "number", "value": 118 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["138", "183", "118"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-compare-order-200-tap-5",
@@ -9513,14 +9513,14 @@
       "narration": "Mia puts 150, 105, and 115 in order from least to greatest. Which number goes first?",
       "prompt": "Which goes first?",
       "why": "Least to greatest starts with the smallest. 105 has the fewest tens. So 105 goes first.",
+      "game": { "kind": "compare", "ask": "least", "values": ["150", "115", "105"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 150 },
         { "id": "b", "kind": "number", "value": 115 },
         { "id": "c", "kind": "number", "value": 105 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "compare", "ask": "least", "values": ["150", "115", "105"] }
+      "answerChoiceId": "c"
     },
     {
       "id": "g2-compare-order-200-keypad-2",
@@ -9529,9 +9529,9 @@
       "narration": "Here are 163, 136, and 183. Type the least number.",
       "prompt": "163, 136, 183",
       "why": "All have 1 hundred. 136 has 3 tens. The others have more tens. So 136 is least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["163", "136", "183"] },
       "type": "keypad",
-      "answer": 136,
-      "game": { "kind": "compare", "ask": "least", "values": ["163", "136", "183"] }
+      "answer": 136
     },
     {
       "id": "g2-compare-order-200-keypad-3",
@@ -9540,9 +9540,9 @@
       "narration": "Put 120, 87, and 150 in order from least to greatest. Type the middle number.",
       "prompt": "Middle number?",
       "why": "The order is 87, then 120, then 150. The middle number is 120.",
+      "game": { "kind": "compare", "ask": "middle", "values": ["120", "87", "150"] },
       "type": "keypad",
-      "answer": 120,
-      "game": { "kind": "compare", "ask": "middle", "values": ["120", "87", "150"] }
+      "answer": 120
     },
     {
       "id": "g2-compare-order-200-number-line-2",
@@ -9551,12 +9551,12 @@
       "narration": "Here are 140, 90, and 120. Move the frog to the least number.",
       "prompt": "Go to the least",
       "why": "90 has no hundreds. 140 and 120 each have 1 hundred. So 90 is the least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["140", "90", "120"] },
       "type": "number-line",
       "min": 0,
       "max": 200,
       "step": 10,
-      "target": 90,
-      "game": { "kind": "compare", "ask": "least", "values": ["140", "90", "120"] }
+      "target": 90
     },
     {
       "id": "g2-compare-order-200-tap-6",
@@ -9565,13 +9565,13 @@
       "narration": "True or false? 99 is greater than 101.",
       "prompt": "99 is greater than 101",
       "why": "101 has 1 hundred. 99 has none. So 101 is greater, and the sentence is false.",
+      "game": { "kind": "compare", "ask": "relation", "values": ["99", "101"], "claim": "more" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "True" },
         { "id": "b", "kind": "text", "text": "False" }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "relation", "values": ["99", "101"], "claim": "more" }
+      "answerChoiceId": "b"
     },
     {
       "id": "g2-compare-order-200-keypad-4",
@@ -9580,9 +9580,9 @@
       "narration": "Here are 175, 157, 171, and 177. Type the greatest number.",
       "prompt": "Greatest of four",
       "why": "All have 1 hundred and 7 or 5 tens. Compare the ones in 175, 171, and 177. 177 is greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["175", "157", "171", "177"] },
       "type": "keypad",
-      "answer": 177,
-      "game": { "kind": "compare", "ask": "greatest", "values": ["175", "157", "171", "177"] }
+      "answer": 177
     },
     {
       "id": "g2-compare-order-200-keypad-5",
@@ -9601,12 +9601,12 @@
       "narration": "Here are 165, 156, and 175. Move the frog to the greatest number.",
       "prompt": "Go to the greatest",
       "why": "All have 1 hundred. 175 has 7 tens. The others have 6 tens or 5 tens. So 175 is greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["165", "156", "175"] },
       "type": "number-line",
       "min": 150,
       "max": 190,
       "step": 5,
-      "target": 175,
-      "game": { "kind": "compare", "ask": "greatest", "values": ["165", "156", "175"] }
+      "target": 175
     },
     {
       "id": "g2-compare-order-200-number-line-4",
@@ -9615,12 +9615,12 @@
       "narration": "Here are 60, 180, and 120. Move the frog to the middle number when they go from least to greatest.",
       "prompt": "Go to the middle",
       "why": "The order is 60, then 120, then 180. The middle number is 120.",
+      "game": { "kind": "compare", "ask": "middle", "values": ["60", "180", "120"] },
       "type": "number-line",
       "min": 0,
       "max": 200,
       "step": 20,
-      "target": 120,
-      "game": { "kind": "compare", "ask": "middle", "values": ["60", "180", "120"] }
+      "target": 120
     },
     {
       "id": "g2-fair-share-fractions-tap-1",
@@ -11435,6 +11435,7 @@
       "narration": "What number is 4 hundreds, 5 tens, and 2 ones? Is it 452, 425, 542, or 245?",
       "prompt": "4 hundreds, 5 tens, 2 ones",
       "why": "Hundreds go first, then tens, then ones. 4 hundreds is 400, 5 tens is 50, and 2 ones is 2. That makes 452.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 4, "tens": 5, "ones": 2 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 425 },
@@ -11442,8 +11443,7 @@
         { "id": "c", "kind": "number", "value": 542 },
         { "id": "d", "kind": "number", "value": 245 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 4, "tens": 5, "ones": 2 }
+      "answerChoiceId": "b"
     },
     {
       "id": "g3-whole-numbers-1000-keypad-1",
@@ -11452,9 +11452,9 @@
       "narration": "Maya has 300 + 40 + 6 stickers. What number is that?",
       "prompt": "300 + 40 + 6 = ?",
       "why": "Add the hundreds, tens, and ones. 300 plus 40 is 340, and 6 more makes 346.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 4, "ones": 6 },
       "type": "keypad",
-      "answer": 346,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 4, "ones": 6 }
+      "answer": 346
     },
     {
       "id": "g3-whole-numbers-1000-number-line-1",
@@ -11476,6 +11476,7 @@
       "narration": "Which number is seven hundred twenty-one? Is it 721, 712, 127, or 701?",
       "prompt": "seven hundred twenty-one",
       "why": "Seven hundred is 700. Twenty-one is 20 and 1. Put them together to get 721.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 7, "tens": 2, "ones": 1 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 712 },
@@ -11483,8 +11484,7 @@
         { "id": "c", "kind": "number", "value": 701 },
         { "id": "d", "kind": "number", "value": 721 }
       ],
-      "answerChoiceId": "d",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 7, "tens": 2, "ones": 1 }
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-whole-numbers-1000-keypad-2",
@@ -11504,6 +11504,7 @@
       "narration": "What is 800 + 6? Is it 86, 806, 860, or 8006?",
       "prompt": "800 + 6 = ?",
       "why": "There are no tens, so the tens place holds a 0. 8 hundreds and 6 ones make 806.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 8, "tens": 0, "ones": 6 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 86 },
@@ -11511,8 +11512,7 @@
         { "id": "c", "kind": "number", "value": 8006 },
         { "id": "d", "kind": "number", "value": 806 }
       ],
-      "answerChoiceId": "d",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 8, "tens": 0, "ones": 6 }
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-whole-numbers-1000-keypad-3",
@@ -11521,9 +11521,9 @@
       "narration": "Type the number with 9 hundreds, 0 tens, and 4 ones.",
       "prompt": "9 hundreds, 0 tens, 4 ones",
       "why": "9 hundreds is 900. There are no tens, and 4 ones. So the number is 904.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 9, "tens": 0, "ones": 4 },
       "type": "keypad",
-      "answer": 904,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 9, "tens": 0, "ones": 4 }
+      "answer": 904
     },
     {
       "id": "g3-whole-numbers-1000-number-line-2",
@@ -11545,13 +11545,6 @@
       "narration": "In the number 583, what is the 8 worth? Is it 8, 80, or 800?",
       "prompt": "Value of the 8 in 583",
       "why": "The 8 is in the tens place. 8 tens is 80.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 800 },
-        { "id": "b", "kind": "number", "value": 80 },
-        { "id": "c", "kind": "number", "value": 8 }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "blocks",
         "ask": "worth",
@@ -11559,7 +11552,14 @@
         "tens": 8,
         "ones": 3,
         "place": "tens"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 800 },
+        { "id": "b", "kind": "number", "value": 80 },
+        { "id": "c", "kind": "number", "value": 8 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g3-whole-numbers-1000-keypad-4",
@@ -11568,8 +11568,6 @@
       "narration": "A number has 2 hundreds, 3 tens, and some ones. The number is 238. How many ones does it have?",
       "prompt": "238 = 200 + 30 + ?",
       "why": "200 plus 30 is 230. To reach 238, you need 8 more. So there are 8 ones.",
-      "type": "keypad",
-      "answer": 8,
       "game": {
         "kind": "blocks",
         "ask": "count",
@@ -11577,7 +11575,9 @@
         "tens": 3,
         "ones": 8,
         "place": "ones"
-      }
+      },
+      "type": "keypad",
+      "answer": 8
     },
     {
       "id": "g3-whole-numbers-1000-keypad-5",
@@ -11586,9 +11586,9 @@
       "narration": "Jay has 3 sheets of 100 stickers and 14 strips of 10 stickers. How many stickers does he have?",
       "prompt": "3 hundreds + 14 tens = ?",
       "why": "14 strips of 10 is 140. Add the 3 sheets, which is 300. 300 plus 140 makes 440.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 14, "ones": 0 },
       "type": "keypad",
-      "answer": 440,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 14, "ones": 0 }
+      "answer": 440
     },
     {
       "id": "g3-whole-numbers-1000-number-line-3",
@@ -11610,6 +11610,7 @@
       "narration": "Which number is 6 hundreds and 15 tens? Is it 750, 615, 651, or 156?",
       "prompt": "6 hundreds + 15 tens",
       "why": "15 tens is 150. Add 600 and 150 to get 750.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 6, "tens": 15, "ones": 0 },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 615 },
@@ -11617,8 +11618,7 @@
         { "id": "c", "kind": "number", "value": 750 },
         { "id": "d", "kind": "number", "value": 156 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 6, "tens": 15, "ones": 0 }
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-whole-numbers-1000-tap-6",
@@ -11656,13 +11656,6 @@
       "narration": "In the number 352, what is the 3 worth? Is it 3, 30, or 300?",
       "prompt": "The 3 in 352 is worth?",
       "why": "The 3 is in the hundreds place. That means 3 hundreds, which is 300.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 3 },
-        { "id": "b", "kind": "number", "value": 30 },
-        { "id": "c", "kind": "number", "value": 300 }
-      ],
-      "answerChoiceId": "c",
       "game": {
         "kind": "blocks",
         "ask": "worth",
@@ -11670,7 +11663,14 @@
         "tens": 5,
         "ones": 2,
         "place": "hundreds"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 3 },
+        { "id": "b", "kind": "number", "value": 30 },
+        { "id": "c", "kind": "number", "value": 300 }
+      ],
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-place-value-keypad-1",
@@ -11679,9 +11679,9 @@
       "narration": "Maya has 4 hundreds, 2 tens, and 6 ones. What number is that?",
       "prompt": "4 hundreds, 2 tens, 6 ones",
       "why": "4 hundreds is 400. 2 tens is 20. 6 ones is 6. Put them together to get 426.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 4, "tens": 2, "ones": 6 },
       "type": "keypad",
-      "answer": 426,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 4, "tens": 2, "ones": 6 }
+      "answer": 426
     },
     {
       "id": "g3-place-value-number-line-1",
@@ -11690,12 +11690,12 @@
       "narration": "Move the frog to 5 hundreds.",
       "prompt": "5 hundreds",
       "why": "One hundred is 100. Five hundreds is 100 five times, which is 500.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 5, "tens": 0, "ones": 0 },
       "type": "number-line",
       "min": 0,
       "max": 1000,
       "step": 100,
-      "target": 500,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 5, "tens": 0, "ones": 0 }
+      "target": 500
     },
     {
       "id": "g3-place-value-tap-2",
@@ -11704,13 +11704,6 @@
       "narration": "In the number 84, what is the 8 worth? Is it 8, 80, or 800?",
       "prompt": "The 8 in 84 is worth?",
       "why": "The 8 is in the tens place. That means 8 tens, which is 80.",
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "number", "value": 800 },
-        { "id": "b", "kind": "number", "value": 80 },
-        { "id": "c", "kind": "number", "value": 8 }
-      ],
-      "answerChoiceId": "b",
       "game": {
         "kind": "blocks",
         "ask": "worth",
@@ -11718,7 +11711,14 @@
         "tens": 8,
         "ones": 4,
         "place": "tens"
-      }
+      },
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "number", "value": 800 },
+        { "id": "b", "kind": "number", "value": 80 },
+        { "id": "c", "kind": "number", "value": 8 }
+      ],
+      "answerChoiceId": "b"
     },
     {
       "id": "g3-place-value-keypad-2",
@@ -11727,8 +11727,6 @@
       "narration": "What digit is in the tens place of 639?",
       "prompt": "Tens digit of 639?",
       "why": "The tens place is the middle digit. In 639, the middle digit is 3, so there are 3 tens.",
-      "type": "keypad",
-      "answer": 3,
       "game": {
         "kind": "blocks",
         "ask": "count",
@@ -11736,7 +11734,9 @@
         "tens": 3,
         "ones": 9,
         "place": "tens"
-      }
+      },
+      "type": "keypad",
+      "answer": 3
     },
     {
       "id": "g3-place-value-tap-3",
@@ -11760,8 +11760,6 @@
       "narration": "In the number 862, what is the 6 worth?",
       "prompt": "The 6 in 862 is worth?",
       "why": "The 6 is in the tens place. That means 6 tens, which is 60.",
-      "type": "keypad",
-      "answer": 60,
       "game": {
         "kind": "blocks",
         "ask": "worth",
@@ -11769,7 +11767,9 @@
         "tens": 6,
         "ones": 2,
         "place": "tens"
-      }
+      },
+      "type": "keypad",
+      "answer": 60
     },
     {
       "id": "g3-place-value-number-line-2",
@@ -11778,12 +11778,12 @@
       "narration": "Move the frog to the number with 6 hundreds and 5 tens.",
       "prompt": "6 hundreds, 5 tens",
       "why": "6 hundreds is 600. 5 tens is 50. Together that makes 650.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 6, "tens": 5, "ones": 0 },
       "type": "number-line",
       "min": 600,
       "max": 700,
       "step": 10,
-      "target": 650,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 6, "tens": 5, "ones": 0 }
+      "target": 650
     },
     {
       "id": "g3-place-value-tap-4",
@@ -11807,9 +11807,9 @@
       "narration": "Tom has 8 hundreds, 0 tens, and 5 ones. What number is that?",
       "prompt": "8 hundreds, 0 tens, 5 ones",
       "why": "8 hundreds is 800. There are no tens. 5 ones is 5. The zero holds the tens place, so the number is 805.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 8, "tens": 0, "ones": 5 },
       "type": "keypad",
-      "answer": 805,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 8, "tens": 0, "ones": 5 }
+      "answer": 805
     },
     {
       "id": "g3-place-value-tap-5",
@@ -11832,8 +11832,6 @@
       "narration": "10 tens make one hundred. How many tens are in 300?",
       "prompt": "How many tens in 300?",
       "why": "Each hundred is 10 tens. 300 is 3 hundreds, so it is 3 times 10 tens, which is 30 tens.",
-      "type": "keypad",
-      "answer": 30,
       "game": {
         "kind": "blocks",
         "ask": "make",
@@ -11841,7 +11839,9 @@
         "tens": 0,
         "ones": 0,
         "place": "tens"
-      }
+      },
+      "type": "keypad",
+      "answer": 30
     },
     {
       "id": "g3-place-value-number-line-3",
@@ -11850,12 +11850,12 @@
       "narration": "Move the frog to the number with 3 hundreds, 7 tens, and 0 ones.",
       "prompt": "3 hundreds, 7 tens, 0 ones",
       "why": "3 hundreds is 300. 7 tens is 70. The zero ones add nothing. So the number is 370.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 7, "ones": 0 },
       "type": "number-line",
       "min": 300,
       "max": 400,
       "step": 10,
-      "target": 370,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 3, "tens": 7, "ones": 0 }
+      "target": 370
     },
     {
       "id": "g3-place-value-tap-6",
@@ -11879,9 +11879,9 @@
       "narration": "A number has 2 hundreds, 14 tens, and 3 ones. What number is it?",
       "prompt": "2 hundreds, 14 tens, 3 ones",
       "why": "2 hundreds is 200. 14 tens is 140. 3 ones is 3. Add 200, 140, and 3 to get 343.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 2, "tens": 14, "ones": 3 },
       "type": "keypad",
-      "answer": 343,
-      "game": { "kind": "blocks", "ask": "total", "hundreds": 2, "tens": 14, "ones": 3 }
+      "answer": 343
     },
     {
       "id": "g3-compare-order-1000-tap-1",
@@ -11890,13 +11890,13 @@
       "narration": "Which is greater, 430 or 340?",
       "prompt": "Which is greater?",
       "why": "Look at the hundreds first. 430 has 4 hundreds and 340 has 3 hundreds. So 430 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["430", "340"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 430 },
         { "id": "b", "kind": "number", "value": 340 }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["430", "340"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "g3-compare-order-1000-tap-2",
@@ -11905,13 +11905,13 @@
       "narration": "Which is less, 520 or 250?",
       "prompt": "Which is less?",
       "why": "Compare the hundreds. 250 has 2 hundreds and 520 has 5 hundreds. So 250 is less.",
+      "game": { "kind": "compare", "ask": "least", "values": ["520", "250"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 520 },
         { "id": "b", "kind": "number", "value": 250 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "least", "values": ["520", "250"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g3-compare-order-1000-keypad-1",
@@ -11920,9 +11920,9 @@
       "narration": "Sam has 275 points, Maya has 90 points, and Lena has 410 points. What is the greatest number of points?",
       "prompt": "Greatest: 275, 90, 410",
       "why": "410 has 4 hundreds. 275 has 2 hundreds and 90 has none. So 410 is the greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["275", "90", "410"] },
       "type": "keypad",
-      "answer": 410,
-      "game": { "kind": "compare", "ask": "greatest", "values": ["275", "90", "410"] }
+      "answer": 410
     },
     {
       "id": "g3-compare-order-1000-number-line-1",
@@ -11957,13 +11957,13 @@
       "narration": "Which is greater, 583 or 538?",
       "prompt": "Which is greater?",
       "why": "Both have 5 hundreds. Compare the tens. 8 tens is more than 3 tens, so 583 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["583", "538"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 583 },
         { "id": "b", "kind": "number", "value": 538 }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["583", "538"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "g3-compare-order-1000-tap-4",
@@ -11972,13 +11972,13 @@
       "narration": "Maya has 462 stickers. Is 462 greater than 500 or less than 500?",
       "prompt": "462 and 500",
       "why": "462 has 4 hundreds. 500 has 5 hundreds. So 462 is less than 500.",
+      "game": { "kind": "compare", "ask": "relation", "values": ["462", "500"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "greater than 500" },
         { "id": "b", "kind": "text", "text": "less than 500" }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "relation", "values": ["462", "500"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g3-compare-order-1000-keypad-2",
@@ -11987,9 +11987,9 @@
       "narration": "Put 640, 604, and 460 in order from least to greatest. What is the middle number?",
       "prompt": "Middle of 640, 604, 460",
       "why": "The order is 460, 604, 640. The number in the middle is 604.",
+      "game": { "kind": "compare", "ask": "middle", "values": ["640", "604", "460"] },
       "type": "keypad",
-      "answer": 604,
-      "game": { "kind": "compare", "ask": "middle", "values": ["640", "604", "460"] }
+      "answer": 604
     },
     {
       "id": "g3-compare-order-1000-number-line-3",
@@ -12011,14 +12011,14 @@
       "narration": "Which number is least: 705, 750, or 570?",
       "prompt": "Which is least?",
       "why": "570 has 5 hundreds. The other two have 7 hundreds. So 570 is the least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["705", "750", "570"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 705 },
         { "id": "b", "kind": "number", "value": 750 },
         { "id": "c", "kind": "number", "value": 570 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "compare", "ask": "least", "values": ["705", "750", "570"] }
+      "answerChoiceId": "c"
     },
     {
       "id": "g3-compare-order-1000-tap-6",
@@ -12027,6 +12027,7 @@
       "narration": "Which number is greatest: 899, 989, 898, or 998?",
       "prompt": "Which is greatest?",
       "why": "All have 8 or 9 hundreds. 989 and 998 have 9 hundreds. Then 9 tens beats 8 tens, so 998 is greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["899", "989", "898", "998"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 899 },
@@ -12034,8 +12035,7 @@
         { "id": "c", "kind": "number", "value": 898 },
         { "id": "d", "kind": "number", "value": 998 }
       ],
-      "answerChoiceId": "d",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["899", "989", "898", "998"] }
+      "answerChoiceId": "d"
     },
     {
       "id": "g3-compare-order-1000-keypad-3",
@@ -14492,6 +14492,7 @@
       "narration": "Four pans of brownies are the same size. Which share is the biggest: 1/5, 1/10, 1/2, or 1/4?",
       "prompt": "Which share is biggest?",
       "why": "The smallest number of sharers gives the biggest share. Sharing by 2 gives 1/2, the biggest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["1/5", "1/10", "1/2", "1/4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "1/5" },
@@ -14499,8 +14500,7 @@
         { "id": "c", "kind": "text", "text": "1/2" },
         { "id": "d", "kind": "text", "text": "1/4" }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["1/5", "1/10", "1/2", "1/4"] }
+      "answerChoiceId": "c"
     },
     {
       "id": "g4-compare-fair-shares-keypad-2",
@@ -15786,13 +15786,13 @@
       "narration": "Which is greater, 3/8 or 5/8?",
       "prompt": "Which is greater?",
       "why": "The denominators match, so compare the numerators. 5 is more than 3, so 5/8 is greater than 3/8.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/8"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/8" },
         { "id": "b", "kind": "text", "text": "5/8" }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/8"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g5-compare-order-fractions-tap-2",
@@ -15801,13 +15801,13 @@
       "narration": "Which is greater, 2/3 or 2/6?",
       "prompt": "Which is greater?",
       "why": "The numerators match, so look at the denominators. Thirds are bigger pieces than sixths, so 2/3 is greater than 2/6.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["2/3", "2/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "2/3" },
         { "id": "b", "kind": "text", "text": "2/6" }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["2/3", "2/6"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "g5-compare-order-fractions-number-line-1",
@@ -15839,13 +15839,13 @@
       "narration": "Is 3/8 less than 1/2 or more than 1/2?",
       "prompt": "3/8 and 1/2",
       "why": "Half of 8 is 4, so 4/8 equals 1/2. Since 3 is less than 4, 3/8 is less than 1/2.",
+      "game": { "kind": "compare", "ask": "relation", "values": ["3/8", "1/2"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "less than 1/2" },
         { "id": "b", "kind": "text", "text": "more than 1/2" }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "relation", "values": ["3/8", "1/2"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "g5-compare-order-fractions-tap-4",
@@ -15854,13 +15854,13 @@
       "narration": "Which is greater, 5/6 or 3/8?",
       "prompt": "Which is greater?",
       "why": "Half of 6 is 3, so 5/6 is more than 1/2. Half of 8 is 4, so 3/8 is less than 1/2. That makes 5/6 greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/8" },
         { "id": "b", "kind": "text", "text": "5/6" }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/6"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g5-compare-order-fractions-tap-5",
@@ -15869,14 +15869,14 @@
       "narration": "Which is greatest, 1 1/2, 4/5, or 7/4?",
       "prompt": "Which is greatest?",
       "why": "4/5 is less than 1 whole. 7/4 is 1 3/4. Since 1 3/4 is more than 1 1/2, 7/4 is the greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["1 1/2", "4/5", "7/4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "1 1/2" },
         { "id": "b", "kind": "text", "text": "4/5" },
         { "id": "c", "kind": "text", "text": "7/4" }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["1 1/2", "4/5", "7/4"] }
+      "answerChoiceId": "c"
     },
     {
       "id": "g5-compare-order-fractions-number-line-2",
@@ -15918,6 +15918,7 @@
       "narration": "Which is least, 5/2, 9/5, 9/4, or 10/6?",
       "prompt": "Which is least?",
       "why": "Change to mixed numbers: 5/2 is 2 1/2, 9/5 is 1 4/5, 9/4 is 2 1/4, and 10/6 is 1 4/6. 4/6 is less than 4/5, so 10/6 is least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["5/2", "9/5", "9/4", "10/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "5/2" },
@@ -15925,8 +15926,7 @@
         { "id": "c", "kind": "text", "text": "9/4" },
         { "id": "d", "kind": "text", "text": "10/6" }
       ],
-      "answerChoiceId": "d",
-      "game": { "kind": "compare", "ask": "least", "values": ["5/2", "9/5", "9/4", "10/6"] }
+      "answerChoiceId": "d"
     },
     {
       "id": "g5-compare-order-fractions-number-line-3",
@@ -15948,13 +15948,13 @@
       "narration": "Which is greater, 5/6 or 7/8?",
       "prompt": "Which is greater?",
       "why": "Each is one piece short of a whole. A missing eighth is smaller than a missing sixth, so 7/8 is closer to 1 and greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["7/8", "5/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "7/8" },
         { "id": "b", "kind": "text", "text": "5/6" }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["7/8", "5/6"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "g5-compare-order-fractions-keypad-4",
@@ -15973,13 +15973,13 @@
       "narration": "Is 11/8 greater than 3/2? Yes or no.",
       "prompt": "11/8 greater than 3/2?",
       "why": "3/2 is 1 1/2, which is 1 4/8. 11/8 is 1 3/8. Since 3/8 is less than 4/8, 11/8 is not greater.",
+      "game": { "kind": "compare", "ask": "relation", "values": ["11/8", "3/2"], "claim": "more" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "No" },
         { "id": "b", "kind": "text", "text": "Yes" }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "relation", "values": ["11/8", "3/2"], "claim": "more" }
+      "answerChoiceId": "a"
     },
     {
       "id": "g5-decimals-hundredths-tap-1",
@@ -16027,13 +16027,13 @@
       "narration": "Which is greater, 0.6 or 0.06?",
       "prompt": "Which is greater?",
       "why": "0.6 is 60 hundredths, and 0.06 is only 6 hundredths. Since 60 is more than 6, 0.6 is greater.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["0.6", "0.06"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 0.6 },
         { "id": "b", "kind": "number", "value": 0.06 }
       ],
-      "answerChoiceId": "a",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["0.6", "0.06"] }
+      "answerChoiceId": "a"
     },
     {
       "id": "g5-decimals-hundredths-keypad-2",
@@ -16053,14 +16053,14 @@
       "narration": "Which is least: 2.45, 2.54, or 2.4?",
       "prompt": "Which is least?",
       "why": "Think of 2.4 as 2.40. Then compare 240, 245, and 254 hundredths. The smallest is 2.40, so 2.4 is least.",
+      "game": { "kind": "compare", "ask": "least", "values": ["2.45", "2.54", "2.4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 2.45 },
         { "id": "b", "kind": "number", "value": 2.54 },
         { "id": "c", "kind": "number", "value": 2.4 }
       ],
-      "answerChoiceId": "c",
-      "game": { "kind": "compare", "ask": "least", "values": ["2.45", "2.54", "2.4"] }
+      "answerChoiceId": "c"
     },
     {
       "id": "g5-decimals-hundredths-number-line-2",
@@ -16093,13 +16093,13 @@
       "narration": "Is 6.3 equal to 6.30? Yes or no?",
       "prompt": "6.3 = 6.30?",
       "why": "3 tenths is the same as 30 hundredths. Adding a zero in the hundredths place does not change the value, so they are equal.",
+      "game": { "kind": "compare", "ask": "relation", "values": ["6.3", "6.30"], "claim": "same" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "No" },
         { "id": "b", "kind": "text", "text": "Yes" }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "relation", "values": ["6.3", "6.30"], "claim": "same" }
+      "answerChoiceId": "b"
     },
     {
       "id": "g5-decimals-hundredths-number-line-3",
@@ -16146,6 +16146,7 @@
       "narration": "Which is greatest: 3.09, 3.9, 3.19, or 3.1?",
       "prompt": "Which is greatest?",
       "why": "All have 3 ones. Rename them as 3.09, 3.90, 3.19, and 3.10. Now 90 hundredths is the most, so 3.9 is greatest.",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3.09", "3.9", "3.19", "3.1"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3.09 },
@@ -16153,8 +16154,7 @@
         { "id": "c", "kind": "number", "value": 3.19 },
         { "id": "d", "kind": "number", "value": 3.1 }
       ],
-      "answerChoiceId": "b",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["3.09", "3.9", "3.19", "3.1"] }
+      "answerChoiceId": "b"
     },
     {
       "id": "g5-decimals-hundredths-keypad-5",
