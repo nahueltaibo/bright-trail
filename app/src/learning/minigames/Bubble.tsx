@@ -6,19 +6,37 @@ import { Text } from '../../design/Text';
 
 const NATIVE = Platform.OS !== 'web';
 
-export type Bubble = { id: number; x: number; y: number; text: string; big?: boolean };
+export type Bubble = {
+  id: number;
+  x: number;
+  y: number;
+  text: string;
+  big?: boolean;
+  /** Fades the bubble out. */
+  out?: boolean;
+};
 
 /** A count or a sum that pops up over the stage, centered on (x, y). */
 export function BubbleView({ bubble: b }: { bubble: Bubble }) {
   const [pop] = useState(() => new Animated.Value(0.3));
+  const [shown] = useState(() => new Animated.Value(1));
   useEffect(() => {
     Animated.spring(pop, { toValue: 1, useNativeDriver: NATIVE, friction: 5 }).start();
   }, [pop]);
+  useEffect(() => {
+    if (!b.out) return;
+    const fade = Animated.timing(shown, { toValue: 0, duration: 300, useNativeDriver: NATIVE });
+    fade.start();
+    return () => fade.stop();
+  }, [b.out, shown]);
   const size = b.big ? 20 : 16;
   return (
     <Animated.View
       pointerEvents="none"
-      style={[styles.bubble, { left: b.x - 120, top: b.y - size, transform: [{ scale: pop }] }]}
+      style={[
+        styles.bubble,
+        { left: b.x - 120, top: b.y - size, transform: [{ scale: pop }], opacity: shown },
+      ]}
     >
       <Text style={[styles.text, b.big && styles.bigText, { fontSize: size }]}>{b.text}</Text>
     </Animated.View>
