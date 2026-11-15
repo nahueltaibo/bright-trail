@@ -44,6 +44,27 @@ export function partsNamed(words: string): { picture: Picture; part: string }[] 
   );
 }
 
+/** Words that name what each picture shows. An item about its part says one of them. */
+export const PICTURE_WORDS: Record<Picture, RegExp> = {
+  plant: /\b(plants?|flowers?|trees?|seedlings?|beans?|sunflowers?)\b/i,
+  insect: /\b(insects?|bugs?|ants?|bees?|butterfly|butterflies|beetles?|ladybugs?)\b/i,
+  body: /\b(body|bodies|you|your)\b/i,
+  organs: /\b(organs?|body|you|your)\b/i,
+  machines: /\b(machines?)\b/i,
+  planets: /\b(planets?|solar system|space|orbits?)\b/i,
+  map: /\b(maps?)\b/i,
+};
+
+/**
+ * Why the item isn't about the scene's picture. A choice that only shares a part's name, like
+ * "a river" in "Which is natural?", would pass every other check.
+ */
+export function pictureProblems(item: Item, scene: Pick<LabelScene, 'picture'>): string[] {
+  return PICTURE_WORDS[scene.picture].test(`${item.prompt} ${item.narration}`)
+    ? []
+    : [`the item never says what the ${scene.picture} picture shows`];
+}
+
 /** Items whose answer names a part of a picture the app can draw. */
 export function labelCandidates(items: readonly Item[]): Item[] {
   return cardItems(items, 'label').filter((i) => partsNamed(textChoices(i)!.answer).length > 0);
@@ -78,7 +99,7 @@ export type LabelTagResult = {
 /** The scene for a tagged item: the asked tag says the item's answer, the others their part. */
 function sceneFor(item: Item, t: TaggedLabel): { scene?: LabelScene; problems: string[] } {
   const { texts, answer } = textChoices(item)!;
-  const problems: string[] = [];
+  const problems = pictureProblems(item, t);
   if (!namesPart(answer, t.part)) problems.push(`the answer ${answer} does not name ${t.part}`);
   for (const p of t.others) {
     const named = texts.find((c) => namesPart(c, p));
@@ -121,5 +142,8 @@ export function applyLabels(
   bundle: ContentBundle,
   scenes: Readonly<Record<string, LabelScene>>,
 ): { bundle: ContentBundle; dropped: string[] } {
-  return applyGame(bundle, 'label', scenes, labelProblems);
+  return applyGame(bundle, 'label', scenes, (item, scene) => [
+    ...pictureProblems(item, scene),
+    ...labelProblems(item, scene),
+  ]);
 }

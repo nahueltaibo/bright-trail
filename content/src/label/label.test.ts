@@ -136,6 +136,53 @@ describe('acceptLabels', () => {
   });
 });
 
+describe('acceptLabels picture guard', () => {
+  // Real items whose answer only shares a part's name with a picture.
+  const river = tap(
+    'g1-soc-community-features-tap-1',
+    'Which is natural?',
+    'Which one is natural: a river, a school, or a road?',
+    ['a school', 'a river', 'a road'],
+    1,
+  );
+  const brain = tap(
+    'g1-hlth-food-needs-tap-4',
+    'What helps you think?',
+    'Which part of you helps you think and learn: your brain, your knee, or your nose?',
+    ['your knee', 'your nose', 'your brain'],
+    2,
+  );
+
+  it('rejects an item that never says what the picture shows, even when the LLM says it fits', () => {
+    const { scenes, rejected } = acceptLabels([river, wings], {
+      scenes: [
+        tagged(river.id, { picture: 'map', part: 'river', others: ['lake', 'forest'] }),
+        tagged(wings.id, { picture: 'insect', part: 'wings', others: ['head', 'legs'] }),
+      ],
+    });
+    expect(scenes).toEqual({});
+    expect(rejected).toEqual({
+      [river.id]: 'the item never says what the map picture shows',
+      [wings.id]: 'the item never says what the insect picture shows',
+    });
+  });
+
+  it('keeps real fits', () => {
+    const { scenes, rejected } = acceptLabels([roots, brain], {
+      scenes: [
+        tagged(roots.id),
+        tagged(brain.id, { picture: 'organs', part: 'brain', others: ['heart', 'lungs'] }),
+      ],
+    });
+    expect(rejected).toEqual({});
+    expect(Object.keys(scenes)).toEqual([roots.id, brain.id]);
+    expect(scenes[brain.id]?.tags[scenes[brain.id]!.asked]).toEqual({
+      part: 'brain',
+      text: 'your brain',
+    });
+  });
+});
+
 describe('applyLabels', () => {
   it('sets the scene on its item and drops one that no longer fits', () => {
     const { scenes } = acceptLabels([roots], { scenes: [tagged(roots.id)] });
