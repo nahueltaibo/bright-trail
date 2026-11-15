@@ -1,6 +1,6 @@
 import { blocksProblems, type BlocksScene } from '@bright-trail/shared';
 import { BLOCKS_DEMO_ITEMS } from './demo';
-import { blocksPlan, layoutMat, sceneFrame, STAGE_W, startMat, tenParts } from './layout';
+import { blocksPlan, layoutMat, sceneFrame, STAGE_H, STAGE_W, startMat, tenParts } from './layout';
 import { blocksWords, matWords } from './words';
 
 const scene = (s: Omit<BlocksScene, 'kind'>): BlocksScene => ({ kind: 'blocks', ...s });
@@ -73,6 +73,19 @@ describe('blocksPlan', () => {
     ]);
   });
 
+  it('joins or takes with no trade when no place passes 9 or runs short', () => {
+    expect(steps(demo('add-plain'))).toEqual([
+      'join 0/2/8',
+      'count tens 0/2/8',
+      'count ones 0/2/8',
+    ]);
+    expect(steps(demo('take-plain'))).toEqual([
+      'take 0/2/4',
+      'count tens 0/2/4',
+      'count ones 0/2/4',
+    ]);
+  });
+
   it('counts a total on from the bigger places', () => {
     const plan = blocksPlan(demo('hundreds'));
     expect(plan.filter((p) => p.kind === 'count').map((p) => [p.place, p.from])).toEqual([
@@ -87,13 +100,24 @@ describe('layout', () => {
   it('fits every mat of the play-out on the stage, with no blocks overlapping', () => {
     const big = scene({ ask: 'total', hundreds: 9, tens: 9, ones: 9 });
     const many = scene({ ask: 'make', hundreds: 3, tens: 0, ones: 0, place: 'tens' });
-    for (const s of [big, many, ...BLOCKS_DEMO_ITEMS.map((i) => i.game as BlocksScene)]) {
+    const widest = scene({
+      ask: 'add',
+      hundreds: 0,
+      tens: 9,
+      ones: 9,
+      second: { hundreds: 0, tens: 9, ones: 9 },
+    });
+    expect(startMat(widest)).toEqual({ hundreds: 0, tens: 18, ones: 18 });
+    const scenes = [big, many, widest, ...BLOCKS_DEMO_ITEMS.map((i) => i.game as BlocksScene)];
+    for (const s of scenes) {
       const { plan, frame } = sceneFrame(s);
-      for (const m of [s, ...plan.map((p) => p.mat)]) {
+      for (const m of [s, startMat(s), ...plan.map((p) => p.mat)]) {
         const rects = Object.values(layoutMat(m, frame).slots).flat();
         for (const r of rects) {
           expect(r.x).toBeGreaterThanOrEqual(0);
           expect(r.x + r.w).toBeLessThanOrEqual(STAGE_W);
+          expect(r.y).toBeGreaterThanOrEqual(0);
+          expect(r.y + r.h).toBeLessThanOrEqual(STAGE_H);
         }
         for (const a of rects) {
           for (const b of rects) {
@@ -135,6 +159,10 @@ describe('blocksWords', () => {
     expect(blocksWords(demo('make'))).toBe('Each hundred breaks into 10 tens. 150 makes 15 tens.');
     expect(blocksWords(demo('add'))).toBe(
       '25 and 6 make 2 tens and 11 ones. 10 ones trade for 1 ten. 3 tens and 1 one make 31.',
+    );
+    expect(blocksWords(demo('add-plain'))).toBe('23 and 5 make 2 tens and 8 ones, which is 28.');
+    expect(blocksWords(demo('take-plain'))).toBe(
+      '36 take away 12 leaves 2 tens and 4 ones, which is 24.',
     );
     expect(blocksWords(demo('take'))).toBe(
       '1 ten breaks into 10 ones. 34 take away 28 leaves 6 ones, which is 6.',
