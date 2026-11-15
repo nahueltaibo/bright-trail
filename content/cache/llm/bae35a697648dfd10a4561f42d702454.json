@@ -1,0 +1,164 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-arrays-multiply-divide-keypad-1",
+        "fits": true,
+        "ask": "total",
+        "rows": 2,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "2 rows of 5"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-tap-1",
+        "fits": true,
+        "ask": "total",
+        "rows": 3,
+        "columns": 4,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "3 rows of 4"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-tap-2",
+        "fits": true,
+        "ask": "columns",
+        "rows": 2,
+        "columns": 5,
+        "thing": "sticker",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "10 stickers in 2 rows"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-keypad-2",
+        "fits": true,
+        "ask": "rows",
+        "rows": 3,
+        "columns": 4,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "12 dots, 4 per row"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-keypad-3",
+        "fits": true,
+        "ask": "total",
+        "rows": 6,
+        "columns": 7,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "6 rows of 7 players"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-number-line-2",
+        "fits": true,
+        "ask": "rows",
+        "rows": 7,
+        "columns": 5,
+        "thing": "card",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "35 cards, 5 per row"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-tap-4",
+        "fits": true,
+        "ask": "columns",
+        "rows": 6,
+        "columns": 4,
+        "thing": "counter",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "24 counters in 6 rows"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-keypad-4",
+        "fits": true,
+        "ask": "total",
+        "rows": 9,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "9 rows of 5"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-keypad-5",
+        "fits": true,
+        "ask": "total",
+        "rows": 9,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "9 rows, 8 columns"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-number-line-3",
+        "fits": true,
+        "ask": "total",
+        "rows": 10,
+        "columns": 7,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "10 rows of 7"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-tap-5",
+        "fits": true,
+        "ask": "split",
+        "rows": 6,
+        "columns": 8,
+        "thing": null,
+        "find": "total",
+        "splitBy": "rows",
+        "splitAt": 5,
+        "note": "5 rows of 8 plus one more row"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-number-line-4",
+        "fits": true,
+        "ask": "rows",
+        "rows": 10,
+        "columns": 10,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "100 dots, 10 per row"
+      },
+      {
+        "itemId": "g3-arrays-multiply-divide-number-line-5",
+        "fits": true,
+        "ask": "total",
+        "rows": 7,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "7 rows of 8 seats"
+      }
+    ]
+  }
+}

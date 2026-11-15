@@ -1,0 +1,68 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-equal-groups-multiply-keypad-1",
+        "fits": true,
+        "ask": "total",
+        "rows": 4,
+        "columns": 2,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "4 groups of 2 legs; picture shows ducks as groups, so legs as dots"
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-keypad-2",
+        "fits": true,
+        "ask": "total",
+        "rows": 3,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "3 hands of 5 fingers"
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-tap-3",
+        "fits": true,
+        "ask": "total",
+        "rows": 4,
+        "columns": 3,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "4 tricycles, 3 wheels each"
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-tap-4",
+        "fits": true,
+        "ask": "total",
+        "rows": 4,
+        "columns": 5,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "4 feet, 5 toes each"
+      },
+      {
+        "itemId": "g2-equal-groups-multiply-keypad-5",
+        "fits": true,
+        "ask": "total",
+        "rows": 7,
+        "columns": 6,
+        "thing": "egg",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "7 half cartons of 6 eggs"
+      }
+    ]
+  }
+}

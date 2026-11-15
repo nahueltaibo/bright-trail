@@ -1,0 +1,116 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-mult-div-properties-tap-1",
+        "fits": true,
+        "ask": "turn",
+        "rows": 3,
+        "columns": 5,
+        "thing": null,
+        "find": "rows",
+        "splitBy": null,
+        "splitAt": null,
+        "note": "3×5 turned is 5×3; missing factor equals start rows"
+      },
+      {
+        "itemId": "g3-mult-div-properties-keypad-1",
+        "fits": true,
+        "ask": "turn",
+        "rows": 6,
+        "columns": 2,
+        "thing": null,
+        "find": "total",
+        "splitBy": null,
+        "splitAt": null,
+        "note": "start 6×2, turned 2×6, product"
+      },
+      {
+        "itemId": "g3-mult-div-properties-tap-3",
+        "fits": true,
+        "ask": "split",
+        "rows": 4,
+        "columns": 6,
+        "thing": null,
+        "find": "second",
+        "splitBy": "columns",
+        "splitAt": 5,
+        "note": "missing part is 1"
+      },
+      {
+        "itemId": "g3-mult-div-properties-keypad-3",
+        "fits": true,
+        "ask": "split",
+        "rows": 3,
+        "columns": 6,
+        "thing": null,
+        "find": "total",
+        "splitBy": "columns",
+        "splitAt": 5,
+        "note": "3×5 plus one more of 3"
+      },
+      {
+        "itemId": "g3-mult-div-properties-number-line-2",
+        "fits": true,
+        "ask": "total",
+        "rows": 5,
+        "columns": 7,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "number line played as array"
+      },
+      {
+        "itemId": "g3-mult-div-properties-keypad-4",
+        "fits": true,
+        "ask": "columns",
+        "rows": 4,
+        "columns": 6,
+        "thing": "cookie",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "24 cookies on 4 trays"
+      },
+      {
+        "itemId": "g3-mult-div-properties-keypad-5",
+        "fits": true,
+        "ask": "split",
+        "rows": 8,
+        "columns": 7,
+        "thing": null,
+        "find": "total",
+        "splitBy": "columns",
+        "splitAt": 5,
+        "note": "7 split into 5 and 2"
+      },
+      {
+        "itemId": "g3-mult-div-properties-number-line-3",
+        "fits": true,
+        "ask": "columns",
+        "rows": 4,
+        "columns": 9,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "36 ÷ 4 as array"
+      },
+      {
+        "itemId": "g3-mult-div-properties-keypad-6",
+        "fits": true,
+        "ask": "split",
+        "rows": 6,
+        "columns": 9,
+        "thing": null,
+        "find": "total",
+        "splitBy": "columns",
+        "splitAt": 5,
+        "note": "9 split into 5 and 4"
+      }
+    ]
+  }
+}

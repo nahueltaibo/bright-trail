@@ -1,0 +1,104 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g5-whole-by-unit-fraction-tap-1",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction factor; arrays need whole numbers."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-1",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a fraction; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-3",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a fraction; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-tap-3",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction factor; arrays need whole numbers."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-4",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a fraction; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-5",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a fraction; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-tap-5",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Division by a fraction; not a whole-number array."
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-6",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction factor; arrays need whole numbers."
+      }
+    ]
+  }
+}
