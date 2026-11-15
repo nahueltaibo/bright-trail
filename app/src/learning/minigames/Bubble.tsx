@@ -12,7 +12,7 @@ export type Bubble = {
   y: number;
   text: string;
   big?: boolean;
-  /** Fades the bubble out. */
+  /** Fades the bubble out while it stays mounted, so a stage can drop it without a jump. */
   out?: boolean;
 };
 

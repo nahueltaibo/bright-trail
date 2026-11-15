@@ -142,16 +142,25 @@ describe('blocksPlan', () => {
 });
 
 describe('countOnTo', () => {
-  it('fades the counters of the columns already counted, keeping the one counting now', () => {
-    const at = (text: string): Bubble => ({ id: 0, x: 0, y: 0, text });
+  const at = (text: string): Bubble => ({ id: 0, x: 0, y: 0, text });
+
+  it('fades the counted column when the count moves on', () => {
+    expect(countOnTo({ hundreds: at('100') }, 'tens')).toEqual({
+      hundreds: { ...at('100'), out: true },
+    });
+  });
+
+  it('fades every counted column and keeps an already faded counter as it is', () => {
     const tens = countOnTo({ hundreds: at('100') }, 'tens');
-    expect(tens).toEqual({ hundreds: { ...at('100'), out: true } });
     const ones = countOnTo({ ...tens, tens: at('130') }, 'ones');
     expect(ones).toEqual({
       hundreds: { ...at('100'), out: true },
       tens: { ...at('130'), out: true },
     });
     expect(ones.hundreds).toBe(tens.hundreds);
+  });
+
+  it('keeps the counter of the column counting now', () => {
     expect(countOnTo({ ones: at('3') }, 'ones')).toEqual({ ones: at('3') });
   });
 });
