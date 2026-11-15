@@ -1,0 +1,15 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g2-compare-order-200-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Placing the frog at a number is not an add, take-away, or skip-count story, so the app hops there itself."
+      }
+    ]
+  }
+}

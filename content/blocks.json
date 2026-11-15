@@ -1,4 +1,52 @@
 {
+  "g1-add-sub-problems-50-keypad-3": {
+    "kind": "blocks",
+    "ask": "add",
+    "hundreds": 0,
+    "tens": 2,
+    "ones": 3,
+    "second": { "hundreds": 0, "tens": 0, "ones": 5 }
+  },
+  "g1-add-sub-problems-50-keypad-4": {
+    "kind": "blocks",
+    "ask": "take",
+    "hundreds": 0,
+    "tens": 3,
+    "ones": 6,
+    "second": { "hundreds": 0, "tens": 1, "ones": 2 }
+  },
+  "g1-add-sub-problems-50-keypad-5": {
+    "kind": "blocks",
+    "ask": "take",
+    "hundreds": 0,
+    "tens": 4,
+    "ones": 0,
+    "second": { "hundreds": 0, "tens": 1, "ones": 4 }
+  },
+  "g1-add-sub-problems-50-number-line-5": {
+    "kind": "blocks",
+    "ask": "take",
+    "hundreds": 0,
+    "tens": 3,
+    "ones": 5,
+    "second": { "hundreds": 0, "tens": 2, "ones": 7 }
+  },
+  "g1-add-sub-problems-50-tap-2": {
+    "kind": "blocks",
+    "ask": "add",
+    "hundreds": 0,
+    "tens": 2,
+    "ones": 5,
+    "second": { "hundreds": 0, "tens": 0, "ones": 6 }
+  },
+  "g1-add-sub-problems-50-tap-3": {
+    "kind": "blocks",
+    "ask": "take",
+    "hundreds": 0,
+    "tens": 3,
+    "ones": 4,
+    "second": { "hundreds": 0, "tens": 2, "ones": 8 }
+  },
   "g1-compose-decompose-50-keypad-1": {
     "kind": "blocks",
     "ask": "total",
@@ -129,6 +177,14 @@
     "tens": 2,
     "ones": 7
   },
+  "g2-add-sub-properties-keypad-6": {
+    "kind": "blocks",
+    "ask": "add",
+    "hundreds": 0,
+    "tens": 1,
+    "ones": 6,
+    "second": { "hundreds": 0, "tens": 0, "ones": 9 }
+  },
   "g2-whole-numbers-200-keypad-1": {
     "kind": "blocks",
     "ask": "total",
@@ -195,12 +251,27 @@
     "tens": 2,
     "ones": 6
   },
+  "g2-whole-numbers-200-tap-3": {
+    "kind": "blocks",
+    "ask": "take",
+    "hundreds": 1,
+    "tens": 2,
+    "ones": 4,
+    "second": { "hundreds": 1, "tens": 0, "ones": 0 }
+  },
   "g2-whole-numbers-200-tap-5": {
     "kind": "blocks",
     "ask": "total",
     "hundreds": 0,
     "tens": 17,
     "ones": 6
+  },
+  "g3-compare-order-1000-number-line-3": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 6,
+    "tens": 5,
+    "ones": 0
   },
   "g3-place-value-keypad-1": {
     "kind": "blocks",

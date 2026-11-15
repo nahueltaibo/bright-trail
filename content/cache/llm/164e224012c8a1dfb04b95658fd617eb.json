@@ -1,0 +1,15 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g1-compare-order-50-number-line-3",
+        "fits": false,
+        "start": 30,
+        "legs": [],
+        "note": "Move the frog to a number: not an add/subtract or skip-count story, so the app hops there itself."
+      }
+    ]
+  }
+}

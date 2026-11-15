@@ -1,0 +1,42 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-1",
+        "fits": true,
+        "start": 5,
+        "legs": [{ "by": 1, "times": 4 }],
+        "note": "5 + 4 in hops of 1"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-2",
+        "fits": true,
+        "start": 20,
+        "legs": [{ "by": -1, "times": 6 }],
+        "note": "20 - 6 in hops of 1"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-3",
+        "fits": true,
+        "start": 30,
+        "legs": [
+          { "by": 10, "times": 1 },
+          { "by": 5, "times": 1 }
+        ],
+        "note": "30 + 10 + 5; ones leg uses 5 to stay on the line's steps"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-4",
+        "fits": true,
+        "start": 50,
+        "legs": [
+          { "by": -10, "times": 1 },
+          { "by": -2, "times": 4 }
+        ],
+        "note": "50 - 10 - 8; ones as hops of 2 to stay on the line's steps"
+      }
+    ]
+  }
+}

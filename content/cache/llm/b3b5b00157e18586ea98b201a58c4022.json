@@ -1,0 +1,99 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-read-numbers-50-tap-2",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 1,
+        "ones": 2,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Which number is twelve"
+      },
+      {
+        "itemId": "g1-read-numbers-50-keypad-2",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 0,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Type thirty"
+      },
+      {
+        "itemId": "g1-read-numbers-50-keypad-3",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 5,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "3 tens 5 ones"
+      },
+      {
+        "itemId": "g1-read-numbers-50-tap-3",
+        "fits": true,
+        "ask": "count",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 2,
+        "place": "tens",
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Tens in 42"
+      },
+      {
+        "itemId": "g1-read-numbers-50-tap-4",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 6,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Which number is forty-six"
+      },
+      {
+        "itemId": "g1-read-numbers-50-keypad-4",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 8,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Type forty-eight"
+      },
+      {
+        "itemId": "g1-read-numbers-50-tap-6",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 2,
+        "ones": 7,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "2 tens 7 ones"
+      }
+    ]
+  }
+}

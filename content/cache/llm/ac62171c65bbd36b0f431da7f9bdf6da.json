@@ -1,0 +1,22 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "k-uses-of-numbers-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 5; no operation to show."
+      },
+      {
+        "itemId": "k-uses-of-numbers-number-line-2",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Just move the frog to 8 to tell how many; no operation to show."
+      }
+    ]
+  }
+}

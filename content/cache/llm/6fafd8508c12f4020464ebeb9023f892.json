@@ -1,0 +1,15 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g1-compose-decompose-50-number-line-3",
+        "fits": true,
+        "start": 0,
+        "legs": [{ "by": 5, "times": 9 }],
+        "note": "9 groups of 5: nine hops of 5 from 0 lands on 45."
+      }
+    ]
+  }
+}

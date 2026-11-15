@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g4-represent-fractions-keypad-5",
+        "fits": false,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 0,
+        "ones": 9,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Repeated addition of a fraction (1/10 nine times); not a whole-number place-value question."
+      }
+    ]
+  }
+}
