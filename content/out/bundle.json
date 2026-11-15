@@ -1,7 +1,7 @@
 {
   "schemaVersion": 5,
   "version": "2026.11.15-53",
-  "generatedAt": "2026-11-15T16:42:38Z",
+  "generatedAt": "2026-11-15T17:33:38Z",
   "skills": [
     {
       "id": "k-count-to-20",
@@ -6582,8 +6582,7 @@
       "min": 0,
       "max": 20,
       "step": 1,
-      "target": 16,
-      "hops": { "start": 10, "legs": [{ "by": 1, "times": 6 }] }
+      "target": 16
     },
     {
       "id": "g1-compose-decompose-50-tap-2",
@@ -6663,8 +6662,7 @@
       "min": 20,
       "max": 40,
       "step": 1,
-      "target": 29,
-      "hops": { "start": 20, "legs": [{ "by": 1, "times": 9 }] }
+      "target": 29
     },
     {
       "id": "g1-compose-decompose-50-tap-4",
@@ -6766,8 +6764,7 @@
       "min": 30,
       "max": 50,
       "step": 1,
-      "target": 47,
-      "hops": { "start": 40, "legs": [{ "by": 1, "times": 7 }] }
+      "target": 47
     },
     {
       "id": "g1-fair-share-drawings-tap-1",
@@ -8636,6 +8633,14 @@
       "narration": "Ana has 25 stickers. She gets 6 more. How many stickers does she have now? Is it 29, 30, 31, or 32?",
       "prompt": "25 + 6 = ?",
       "why": "Add 5 to make 30. Then add 1 more. 25 + 6 is 31.",
+      "game": {
+        "kind": "blocks",
+        "ask": "add",
+        "hundreds": 0,
+        "tens": 2,
+        "ones": 5,
+        "second": { "hundreds": 0, "tens": 0, "ones": 6 }
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 31 },
@@ -8652,6 +8657,14 @@
       "narration": "Leo has 34 shells. Zoe has 28 shells. How many more shells does Leo have? Is it 5, 6, 7, or 8?",
       "prompt": "34 - 28 = ?",
       "why": "Count up from 28 to 30 is 2. Then 30 to 34 is 4. That is 6 more.",
+      "game": {
+        "kind": "blocks",
+        "ask": "take",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 4,
+        "second": { "hundreds": 0, "tens": 2, "ones": 8 }
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 5 },
@@ -8742,6 +8755,14 @@
       "narration": "There are 23 kids on a bus. 5 more kids get on. How many kids are on the bus now?",
       "prompt": "23 + 5 = ?",
       "why": "3 + 5 = 8. So 23 + 5 is 28 kids.",
+      "game": {
+        "kind": "blocks",
+        "ask": "add",
+        "hundreds": 0,
+        "tens": 2,
+        "ones": 3,
+        "second": { "hundreds": 0, "tens": 0, "ones": 5 }
+      },
       "type": "keypad",
       "answer": 28
     },
@@ -8752,6 +8773,14 @@
       "narration": "Mia has 36 beads. She uses 12 beads for a bracelet. How many beads are left?",
       "prompt": "36 - 12 = ?",
       "why": "Take away 10 first to get 26. Then take away 2 more. 24 beads are left.",
+      "game": {
+        "kind": "blocks",
+        "ask": "take",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 6,
+        "second": { "hundreds": 0, "tens": 1, "ones": 2 }
+      },
       "type": "keypad",
       "answer": 24
     },
@@ -8762,6 +8791,14 @@
       "narration": "Dan had some cards. He got 14 more. Now he has 40 cards. How many cards did he have at first?",
       "prompt": "? + 14 = 40",
       "why": "Go back from 40 by taking away 14. 40 - 14 = 26 cards.",
+      "game": {
+        "kind": "blocks",
+        "ask": "take",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 0,
+        "second": { "hundreds": 0, "tens": 1, "ones": 4 }
+      },
       "type": "keypad",
       "answer": 26
     },
@@ -8840,6 +8877,14 @@
       "narration": "Zed has 27 marbles. He wants 35 marbles. How many more does he need? Drag the frog to the answer.",
       "prompt": "27 + ? = 35",
       "why": "Count up from 27 to 30 is 3. Then 30 to 35 is 5. That is 8 more.",
+      "game": {
+        "kind": "blocks",
+        "ask": "take",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 5,
+        "second": { "hundreds": 0, "tens": 2, "ones": 7 }
+      },
       "type": "number-line",
       "min": 0,
       "max": 40,
@@ -9300,6 +9345,14 @@
       "narration": "124 is 100 and how many more? Is it 24, 42, 4, or 12?",
       "prompt": "124 = 100 + ?",
       "why": "Take away the 100 from 124. What is left is 24.",
+      "game": {
+        "kind": "blocks",
+        "ask": "take",
+        "hundreds": 1,
+        "tens": 2,
+        "ones": 4,
+        "second": { "hundreds": 1, "tens": 0, "ones": 0 }
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 42 },
@@ -10520,6 +10573,14 @@
       "narration": "Lia found that 25 - 9 = 16. Add to check it. What is 16 + 9?",
       "prompt": "16 + 9 = ?",
       "why": "Add the answer to the part taken away. 16 + 9 is 25, so Lia is right.",
+      "game": {
+        "kind": "blocks",
+        "ask": "add",
+        "hundreds": 0,
+        "tens": 1,
+        "ones": 6,
+        "second": { "hundreds": 0, "tens": 0, "ones": 9 }
+      },
       "type": "keypad",
       "answer": 25
     },
@@ -12000,6 +12061,7 @@
       "narration": "Move the frog to the number with 6 hundreds, 5 tens, and 0 ones.",
       "prompt": "6 hundreds, 5 tens",
       "why": "6 hundreds is 600. 5 tens is 50. Put them together to get 650.",
+      "game": { "kind": "blocks", "ask": "total", "hundreds": 6, "tens": 5, "ones": 0 },
       "type": "number-line",
       "min": 0,
       "max": 1000,
@@ -13056,8 +13118,7 @@
       "min": 0,
       "max": 80,
       "step": 4,
-      "target": 56,
-      "hops": { "start": 0, "legs": [{ "by": 8, "times": 7 }] }
+      "target": 56
     },
     {
       "id": "g3-mult-div-facts-2-5-10-tap-1",
@@ -13109,8 +13170,7 @@
       "min": 0,
       "max": 20,
       "step": 2,
-      "target": 8,
-      "hops": { "start": 0, "legs": [{ "by": 2, "times": 4 }] }
+      "target": 8
     },
     {
       "id": "g3-mult-div-facts-2-5-10-keypad-2",
@@ -13191,8 +13251,7 @@
       "min": 0,
       "max": 50,
       "step": 5,
-      "target": 35,
-      "hops": { "start": 0, "legs": [{ "by": 5, "times": 7 }] }
+      "target": 35
     },
     {
       "id": "g3-mult-div-facts-2-5-10-keypad-4",
@@ -13287,8 +13346,7 @@
       "min": 0,
       "max": 100,
       "step": 10,
-      "target": 60,
-      "hops": { "start": 0, "legs": [{ "by": 10, "times": 6 }] }
+      "target": 60
     },
     {
       "id": "g3-mult-div-properties-tap-1",
@@ -13341,8 +13399,7 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 8,
-      "hops": { "start": 0, "legs": [{ "by": 2, "times": 4 }] }
+      "target": 8
     },
     {
       "id": "g3-mult-div-properties-tap-2",
@@ -13435,8 +13492,7 @@
       "min": 0,
       "max": 40,
       "step": 5,
-      "target": 35,
-      "hops": { "start": 0, "legs": [{ "by": 5, "times": 7 }] }
+      "target": 35
     },
     {
       "id": "g3-mult-div-properties-keypad-4",
@@ -15418,8 +15474,7 @@
       "min": 0,
       "max": 40,
       "step": 4,
-      "target": 24,
-      "hops": { "start": 0, "legs": [{ "by": 4, "times": 6 }] }
+      "target": 24
     },
     {
       "id": "g4-mult-div-facts-100-tap-2",
@@ -15500,8 +15555,7 @@
       "min": 0,
       "max": 60,
       "step": 6,
-      "target": 54,
-      "hops": { "start": 0, "legs": [{ "by": 6, "times": 9 }] }
+      "target": 54
     },
     {
       "id": "g4-mult-div-facts-100-tap-4",
@@ -15571,8 +15625,7 @@
       "min": 0,
       "max": 80,
       "step": 8,
-      "target": 72,
-      "hops": { "start": 0, "legs": [{ "by": 8, "times": 9 }] }
+      "target": 72
     },
     {
       "id": "g4-mult-div-facts-100-keypad-6",

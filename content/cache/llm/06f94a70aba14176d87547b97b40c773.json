@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-fair-share-fractions-keypad-4",
+        "fits": false,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 1,
+        "ones": 0,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Fair-share fractions problem, not about place value of one number."
+      }
+    ]
+  }
+}

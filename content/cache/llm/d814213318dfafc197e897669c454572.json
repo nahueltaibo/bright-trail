@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-compare-order-1000-number-line-3",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 6,
+        "tens": 5,
+        "ones": 0,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Number line item describing number by place values; plays as total 650."
+      }
+    ]
+  }
+}

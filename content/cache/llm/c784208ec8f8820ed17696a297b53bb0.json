@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-add-sub-properties-keypad-6",
+        "fits": true,
+        "ask": "add",
+        "hundreds": 0,
+        "tens": 1,
+        "ones": 6,
+        "place": null,
+        "secondHundreds": 0,
+        "secondTens": 0,
+        "secondOnes": 9,
+        "note": "16 + 9 = 25"
+      }
+    ]
+  }
+}

@@ -119,7 +119,8 @@ const blocks: Tagger<Item, BlocksScene> = {
   file: 'blocks.json',
   outcome: 'play as base-ten blocks',
   label: 'Blocks',
-  minPerSkill: 3,
+  // A skill's lone sum past 20, like 16 + 9, is still worth a call.
+  minPerSkill: 1,
   candidates: blocksCandidates,
   request: blocksTagRequest,
   accept: (items, output) => {

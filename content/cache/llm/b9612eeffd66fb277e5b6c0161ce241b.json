@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g4-decimal-tenths-keypad-4",
+        "fits": false,
+        "ask": "count",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 8,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Decimal 48.6 with a tenths place; the mat only holds whole-number places (hundreds, tens, ones)."
+      }
+    ]
+  }
+}

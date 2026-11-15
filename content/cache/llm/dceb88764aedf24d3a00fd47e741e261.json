@@ -1,0 +1,29 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_paths",
+  "output": {
+    "paths": [
+      {
+        "itemId": "g3-compare-order-1000-number-line-1",
+        "fits": false,
+        "start": 0,
+        "legs": [],
+        "note": "Placing the frog at a number, not an operation."
+      },
+      {
+        "itemId": "g3-compare-order-1000-number-line-2",
+        "fits": false,
+        "start": 200,
+        "legs": [],
+        "note": "Placing the frog at a number, not an operation."
+      },
+      {
+        "itemId": "g3-compare-order-1000-number-line-4",
+        "fits": false,
+        "start": 600,
+        "legs": [],
+        "note": "Story starts at 875, which is off the 600-800 line."
+      }
+    ]
+  }
+}

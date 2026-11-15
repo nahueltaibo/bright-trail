@@ -1,0 +1,34 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-count-forward-back-number-line-1",
+        "fits": false,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 0,
+        "ones": 5,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Counting up one from a start is a step count, not a place-value question."
+      },
+      {
+        "itemId": "k-count-forward-back-number-line-2",
+        "fits": false,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 0,
+        "ones": 7,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Counting down one from a start is a step count, not a place-value question."
+      }
+    ]
+  }
+}

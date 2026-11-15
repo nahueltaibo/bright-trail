@@ -1,0 +1,86 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-add-sub-problems-50-tap-2",
+        "fits": true,
+        "ask": "add",
+        "hundreds": 0,
+        "tens": 2,
+        "ones": 5,
+        "place": null,
+        "secondHundreds": 0,
+        "secondTens": 0,
+        "secondOnes": 6,
+        "note": "25 + 6 = 31"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-tap-3",
+        "fits": true,
+        "ask": "take",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 4,
+        "place": null,
+        "secondHundreds": 0,
+        "secondTens": 2,
+        "secondOnes": 8,
+        "note": "34 - 28 = 6"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-keypad-3",
+        "fits": true,
+        "ask": "add",
+        "hundreds": 0,
+        "tens": 2,
+        "ones": 3,
+        "place": null,
+        "secondHundreds": 0,
+        "secondTens": 0,
+        "secondOnes": 5,
+        "note": "23 + 5 = 28"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-keypad-4",
+        "fits": true,
+        "ask": "take",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 6,
+        "place": null,
+        "secondHundreds": 0,
+        "secondTens": 1,
+        "secondOnes": 2,
+        "note": "36 - 12 = 24"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-keypad-5",
+        "fits": true,
+        "ask": "take",
+        "hundreds": 0,
+        "tens": 4,
+        "ones": 0,
+        "place": null,
+        "secondHundreds": 0,
+        "secondTens": 1,
+        "secondOnes": 4,
+        "note": "missing part: 40 - 14 = 26"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-number-line-5",
+        "fits": true,
+        "ask": "take",
+        "hundreds": 0,
+        "tens": 3,
+        "ones": 5,
+        "place": null,
+        "secondHundreds": 0,
+        "secondTens": 2,
+        "secondOnes": 7,
+        "note": "missing part: 35 - 27 = 8"
+      }
+    ]
+  }
+}

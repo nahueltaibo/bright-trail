@@ -5,7 +5,7 @@ import {
   type BlocksScene,
   type Place,
 } from '@bright-trail/shared';
-import { blocksPlan, type Mat } from './layout';
+import { blocksPlan, startMat, type Mat } from './layout';
 
 const ONE: Record<Place, string> = { hundreds: 'hundred', tens: 'ten', ones: 'one' };
 
@@ -33,11 +33,13 @@ export function blocksWords(s: BlocksScene): string {
   const answer = blocksAnswer(s);
   const did = (kind: 'trade' | 'break', place: Place) =>
     plan.some((p) => p.kind === kind && p.place === place);
+  // A take breaks one block at most, so it says "1 hundred", not "each hundred".
+  const each = s.ask === 'take' ? '1' : 'each';
   const moves = [
     did('trade', 'ones') && '10 ones trade for 1 ten',
     did('trade', 'tens') && '10 tens trade for 1 hundred',
-    did('break', 'hundreds') && 'each hundred breaks into 10 tens',
-    did('break', 'tens') && 'each ten breaks into 10 ones',
+    did('break', 'hundreds') && `${each} hundred breaks into 10 tens`,
+    did('break', 'tens') && `${each} ten breaks into 10 ones`,
   ].filter((m): m is string => typeof m === 'string');
   const first = moves.length > 0 ? `${cap(moves.join(', and '))}. ` : '';
   const end = plan.at(-1)?.mat ?? s;
@@ -52,6 +54,17 @@ export function blocksWords(s: BlocksScene): string {
     }
     case 'make':
       return `${first}${value} makes ${placeCount(answer, s.place!)}.`;
+    case 'add': {
+      const sum = `${value} and ${blocksValue(s.second!)} make`;
+      if (moves.length === 0) return `${sum} ${matWords(end)}, which is ${answer}.`;
+      return `${sum} ${matWords(startMat(s))}. ${first}${cap(matWords(end))} make ${answer}.`;
+    }
+    case 'take': {
+      const left = `${value} take away ${blocksValue(s.second!)} leaves`;
+      if (answer === 0) return `${first}${left} 0.`;
+      if (answer < 10) return `${first}${left} ${matWords(end)}.`;
+      return `${first}${left} ${matWords(end)}, which is ${answer}.`;
+    }
   }
 }
 

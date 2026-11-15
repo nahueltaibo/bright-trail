@@ -59,4 +59,13 @@ describe('applyHops', () => {
     expect((applied.bundle.items[0] as NumberLineItem).hops).toBeUndefined();
     expect(applied.dropped).toEqual(['back: the frog lands on 14 but the answer is 15']);
   });
+
+  it('drops a path once its item plays a minigame', () => {
+    const { paths } = acceptHops([back], { paths: [tagged('back')] });
+    const game = { kind: 'blocks', ask: 'total', hundreds: 0, tens: 1, ones: 4 };
+    const played = { items: [{ ...back, game }] } as unknown as ContentBundle;
+    const applied = applyHops(played, paths);
+    expect((applied.bundle.items[0] as NumberLineItem).hops).toBeUndefined();
+    expect(applied.dropped).toEqual(['back: the item plays a minigame']);
+  });
 });

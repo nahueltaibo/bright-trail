@@ -39,6 +39,19 @@ describe('BlocksSceneSchema', () => {
     expect(() => scene({ ask: 'worth', tens: 12, place: 'tens' })).toThrow(/9 or fewer/);
     expect(() => scene({ ask: 'make', hundreds: 5, place: 'tens' })).toThrow(/more than 40/);
   });
+
+  it('needs a second number for add and take, and no bigger one to take', () => {
+    const second = { hundreds: 0, tens: 2, ones: 8 };
+    expect(() => scene({ ask: 'add', tens: 2 })).toThrow(/needs a second number/);
+    expect(() => scene({ ask: 'total', tens: 2, second })).toThrow(/no second number/);
+    expect(() => scene({ ask: 'add', tens: 12, second })).toThrow(/9 or fewer/);
+    expect(() => scene({ ask: 'take', tens: 2, second })).toThrow(/no bigger/);
+    expect(() => scene({ ask: 'add', hundreds: 9, second: { ...second, hundreds: 1 } })).toThrow(
+      /999 or less/,
+    );
+    const zero = { hundreds: 0, tens: 0, ones: 0 };
+    expect(() => scene({ ask: 'take', tens: 2, second: zero })).toThrow(/at least 1/);
+  });
 });
 
 describe('blocksAnswer', () => {
@@ -51,6 +64,9 @@ describe('blocksAnswer', () => {
       blocksAnswer(scene({ ask: 'worth', hundreds: 5, tens: 8, ones: 3, place: 'tens' })),
     ).toBe(80);
     expect(blocksAnswer(scene({ ask: 'make', hundreds: 1, tens: 5, place: 'tens' }))).toBe(15);
+    const second = { hundreds: 0, tens: 2, ones: 8 };
+    expect(blocksAnswer(scene({ ask: 'add', tens: 3, ones: 4, second }))).toBe(62);
+    expect(blocksAnswer(scene({ ask: 'take', tens: 3, ones: 4, second }))).toBe(6);
   });
 
   it('trades ten of a kind up for the standard digits', () => {
@@ -93,7 +109,15 @@ describe('blocksProblems', () => {
     ]);
   });
 
-  it('plays a number-line item in place of its line', () => {
+  it('needs a sum item to name both numbers', () => {
+    const words = 'Leo has 34 cards. He gives away 28. How many are left?';
+    const take = (ones: number) =>
+      scene({ ask: 'take', tens: 3, ones: 4, second: { hundreds: 0, tens: 2, ones } });
+    expect(blocksProblems(keypad(words, 6), take(8))).toEqual([]);
+    expect(blocksProblems(keypad(words, 7), take(7))).toEqual(['the item never says 27']);
+  });
+
+  it('plays a number-line item in place of its line, but not an item with a picture', () => {
     const line = {
       ...base,
       narration: 'Move the frog to 3 tens and 5 ones.',
@@ -104,5 +128,12 @@ describe('blocksProblems', () => {
       target: 35,
     } as Item;
     expect(blocksProblems(line, scene({ ask: 'total', tens: 3, ones: 5 }))).toEqual([]);
+    const picture = {
+      ...keypad('How many tens?', 3),
+      visual: { kind: 'objects', emoji: '⭐', count: 3 },
+    } as Item;
+    expect(blocksProblems(picture, scene({ ask: 'total', ones: 3 }))).toEqual([
+      'the item has a objects picture',
+    ]);
   });
 });

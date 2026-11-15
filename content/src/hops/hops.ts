@@ -93,7 +93,10 @@ export function acceptHops(items: readonly NumberLineItem[], output: unknown): H
   return result;
 }
 
-/** Adds stored paths to the bundle's number-line items. A path that no longer fits is dropped. */
+/**
+ * Adds stored paths to the bundle's number-line items. A path that no longer fits, or meets an
+ * item that now plays a minigame instead of its line, is dropped.
+ */
 export function applyHops(
   bundle: ContentBundle,
   paths: Readonly<Record<string, Hops>>,
@@ -105,7 +108,7 @@ export function applyHops(
     delete rest.hops;
     const path = paths[item.id];
     if (!path) return rest;
-    const problems = hopsProblems(item, path);
+    const problems = rest.game ? ['the item plays a minigame'] : hopsProblems(item, path);
     if (problems.length > 0) {
       dropped.push(`${item.id}: ${problems.join('; ')}`);
       return rest;

@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g5-decimals-hundredths-keypad-1",
+        "fits": false,
+        "ask": "count",
+        "hundreds": 0,
+        "tens": 0,
+        "ones": 0,
+        "place": null,
+        "secondHundreds": null,
+        "secondTens": null,
+        "secondOnes": null,
+        "note": "Decimal 4.36; base-ten blocks here only show whole numbers, so hundredths place can't be laid out."
+      }
+    ]
+  }
+}

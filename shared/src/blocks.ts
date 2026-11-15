@@ -9,8 +9,10 @@ import { integerToWords } from './speech';
  * - `count`: how many blocks of `place` there are, like the tens digit or a missing part.
  * - `worth`: what the digit in `place` is worth, like the 8 in 583.
  * - `make`: how many of `place` the number makes in all, so 150 makes 15 tens.
+ * - `add`: the `second` number's blocks join the mat, so 25 + 6 trades 11 ones for a ten.
+ * - `take`: the `second` number's blocks leave, breaking a bigger block when a place runs short.
  */
-export const BLOCKS_ASKS = ['total', 'count', 'worth', 'make'] as const;
+export const BLOCKS_ASKS = ['total', 'count', 'worth', 'make', 'add', 'take'] as const;
 export type BlocksAsk = (typeof BLOCKS_ASKS)[number];
 
 export const PLACES = ['hundreds', 'tens', 'ones'] as const;
@@ -21,6 +23,9 @@ export const PLACE_VALUE: Record<Place, number> = { hundreds: 100, tens: 10, one
 export const MAX_LOOSE = 20;
 export const MAX_MADE = 40;
 
+const DIGIT = z.number().int().min(0).max(9);
+const SecondSchema = z.object({ hundreds: DIGIT, tens: DIGIT, ones: DIGIT });
+
 export const BlocksSceneSchema = z
   .object({
     kind: z.literal('blocks'),
@@ -30,12 +35,29 @@ export const BlocksSceneSchema = z
     ones: z.number().int().min(0).max(MAX_LOOSE),
     /** The place a count, worth, or make ask is about. */
     place: z.enum(PLACES).optional(),
+    /** The number an add or take ask joins to the mat or takes from it, as its digits. */
+    second: SecondSchema.optional(),
   })
   .superRefine((s, ctx) => {
     const issue = (path: string, message: string) =>
       ctx.addIssue({ code: 'custom', path: [path], message });
     const value = blocksValue(s);
     if (value < 1 || value > 999) issue('ones', 'the blocks must make 1 to 999');
+    if (s.ask === 'add' || s.ask === 'take') {
+      if (s.place !== undefined) issue('place', `${s.ask} takes no place`);
+      if (!isStandard(s)) issue('tens', `${s.ask} needs 9 or fewer of each block`);
+      if (s.second === undefined) {
+        issue('second', `${s.ask} needs a second number`);
+        return;
+      }
+      const other = blocksValue(s.second);
+      if (other < 1) issue('second', 'the second number must be at least 1');
+      if (s.ask === 'add' && value + other > 999) issue('second', 'the sum must be 999 or less');
+      if (s.ask === 'take' && other > value)
+        issue('second', 'take needs a second number no bigger');
+      return;
+    }
+    if (s.second !== undefined) issue('second', `${s.ask} takes no second number`);
     if (s.ask === 'total') {
       if (s.place !== undefined) issue('place', 'total takes no place');
       return;
@@ -79,6 +101,10 @@ export function blocksAnswer(s: BlocksScene): number {
       return s[s.place!] * pv;
     case 'make':
       return Math.floor(blocksValue(s) / pv);
+    case 'add':
+      return blocksValue(s) + blocksValue(s.second!);
+    case 'take':
+      return blocksValue(s) - blocksValue(s.second!);
   }
 }
 
@@ -99,16 +125,21 @@ export function blocksProblems(item: Item, scene: BlocksScene): string[] {
   // The stage replaces the item's picture, which would then go unseen.
   if ('visual' in item && item.visual) problems.push(`the item has a ${item.visual.kind} picture`);
 
-  // A total ask shows the number as its answer. The others ask about a number the item names.
-  if (scene.ask !== 'total') {
-    const value = blocksValue(scene);
-    const words = `${item.prompt} ${item.narration}`.toLowerCase();
-    const digits = new RegExp(`(^|[^\\d.])${value}(?![\\d]|\\.\\d)`).test(words);
-    // "twenty" must not match inside "twenty-four", nor "one hundred" inside "one hundred six".
-    const spelled = new RegExp(
-      `(?<![-\\w])${integerToWords(String(value))}(?![-\\w]| (and )?${NUMBER_WORD})`,
-    ).test(words);
-    if (!digits && !spelled) problems.push(`the item never says ${value}`);
+  // A total ask shows the number as its answer. The others ask about numbers the item names.
+  const words = `${item.prompt} ${item.narration}`.toLowerCase();
+  const named = scene.ask === 'total' ? [] : [blocksValue(scene)];
+  if (scene.second) named.push(blocksValue(scene.second));
+  for (const value of named) {
+    if (!says(words, value)) problems.push(`the item never says ${value}`);
   }
   return problems;
+}
+
+function says(words: string, value: number): boolean {
+  const digits = new RegExp(`(^|[^\\d.])${value}(?![\\d]|\\.\\d)`).test(words);
+  // "twenty" must not match inside "twenty-four", nor "one hundred" inside "one hundred six".
+  const spelled = new RegExp(
+    `(?<![-\\w])${integerToWords(String(value))}(?![-\\w]| (and )?${NUMBER_WORD})`,
+  ).test(words);
+  return digits || spelled;
 }
