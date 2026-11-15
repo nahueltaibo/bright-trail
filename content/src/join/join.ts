@@ -63,9 +63,9 @@ const SYSTEM = `You map math practice items for young kids to an animated ten-fr
 
 Asks (the app checks the item's answer against the scene):
 - count: "start" things sit in a pile, then hop into the frame one by one. Answers start. For "count the frogs" or "how many dots".
-- join: "start" things are there, then "more" arrive. Answers start + more.
-- leave: "start" things are there, then "take" leave. Answers start - take. "leave" says how they go.
-- part: "start" things are there, "take" of them move aside (onto a leaf, into a box, a different color). Answers start - take, the ones that stay. For "5 bugs, 4 on a leaf, how many not" or "7 is 5 and what".
+- join: "start" things are there, then "more" arrive. Answers start + more. more may be 0, for "6 + 0".
+- leave: "start" things are there, then "take" leave. Answers start - take. "leave" says how they go. take may be 0, for "8 - 0".
+- part: "start" things are there, "take" of them move aside (onto a leaf, into a box, a different color). Answers start - take, the ones that stay. For "5 bugs, 4 on a leaf, how many not", "7 is 5 and what", or a bare "17 - 9". take may be 0, and at most 10. Past 10, start fills two frames, so use tray, sky, or grass.
 - fill: "start" things are there. Answers target - start, the empty spots up to target. For "how many more make 10".
 - make-ten: "start" (under 10) in the top frame, "more" in a second frame below, with start + more past 10. Some move up to make 10. Answers start + more. Only when the item says to make 10 first.
 - back: "start" things are left now, the "more" given away or eaten come back. Answers start + more. For "gave away 8, has 9 left, how many at the start".
