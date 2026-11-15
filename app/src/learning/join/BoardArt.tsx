@@ -1,6 +1,16 @@
 import { Fragment, type ReactNode } from 'react';
 import Svg, { Circle, Ellipse, G, Path, Rect } from 'react-native-svg';
-import { STAGE_H, STAGE_W, WIRE_POLES, WIRE_ROWS, WIRE_SAG, wireY, type Board } from './board';
+import {
+  STAGE_H,
+  STAGE_W,
+  TWO_FRAME_CELL,
+  WIRE_POLES,
+  WIRE_ROWS,
+  WIRE_SAG,
+  trayOf,
+  wireY,
+  type Board,
+} from './board';
 
 const INK = '#5A4A1F';
 const LINE = '#C9B98A';
@@ -39,16 +49,14 @@ function Grass({ top }: { top: number }) {
 }
 
 function Tray({ cells, cell }: { cells: Board['cells']; cell: number }) {
-  const xs = cells.map((c) => c.x);
-  const ys = cells.map((c) => c.y);
-  const pad = 8 + cell / 2;
+  const tray = trayOf(cells, cell);
   return (
     <>
       <Rect
-        x={Math.min(...xs) - pad}
-        y={Math.min(...ys) - pad}
-        width={Math.max(...xs) - Math.min(...xs) + pad * 2}
-        height={Math.max(...ys) - Math.min(...ys) + pad * 2}
+        x={tray.x}
+        y={tray.y}
+        width={tray.w}
+        height={tray.h}
         rx={16}
         fill="#FFFFFF"
         stroke={LINE}
@@ -87,11 +95,14 @@ function Pad({ x, y }: { x: number; y: number }) {
 
 /** Somewhere to set things aside in a part story: a leaf on grass, a mat elsewhere. */
 function Aside({ board }: { board: Board }) {
-  if (board.aside.length === 0) return null;
-  const y = board.aside[0].y;
+  const m = board.mat;
+  if (!m) return null;
   if (board.place === 'grass' || board.place === 'pond') {
+    // The leaf is drawn for a 260 × 52 mat, then stretched to this one.
+    const sx = m.w / 260;
+    const sy = m.h / 52;
     return (
-      <G x={180} y={y + 6}>
+      <G transform={`translate(${m.x + m.w / 2} ${m.y + m.h / 2 + 6 * sy}) scale(${sx} ${sy})`}>
         <Path
           d="M -120 0 Q -40 -42 110 -6 Q 126 0 110 6 Q -40 42 -120 0 Z"
           fill="#7CC36E"
@@ -104,11 +115,11 @@ function Aside({ board }: { board: Board }) {
   }
   return (
     <Rect
-      x={50}
-      y={y - 26}
-      width={260}
-      height={52}
-      rx={26}
+      x={m.x}
+      y={m.y}
+      width={m.w}
+      height={m.h}
+      rx={m.h / 2}
       fill="#FFFFFF"
       stroke={LINE}
       strokeWidth={2}
@@ -125,8 +136,8 @@ export function BoardArt({ board }: { board: Board }) {
       <>
         {place === 'sky' ? <Sky /> : <Table />}
         {place === 'grass' && <Grass top={250} />}
-        <Tray cells={cells.slice(0, 10)} cell={42} />
-        <Tray cells={cells.slice(10)} cell={42} />
+        <Tray cells={cells.slice(0, 10)} cell={TWO_FRAME_CELL} />
+        <Tray cells={cells.slice(10)} cell={TWO_FRAME_CELL} />
       </>
     );
   } else if (place === 'pond') {

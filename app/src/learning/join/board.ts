@@ -5,6 +5,7 @@ export const STAGE_W = 360;
 export const STAGE_H = 290;
 
 export type Pt = { x: number; y: number };
+export type Box = { x: number; y: number; w: number; h: number };
 
 export type Board = {
   place: JoinPlace;
@@ -22,6 +23,12 @@ export type Board = {
   pile: Pt[];
   /** Where things go aside in a part story. */
   aside: Pt[];
+  /** How big a thing set aside is drawn. */
+  asideSize: number;
+  /** How far above a thing set aside its counting bubble goes. */
+  asideLift: number;
+  /** The leaf or mat things go aside onto, in a part story. */
+  mat: Box | null;
   /** Where the summary bubble goes. */
   sum: Pt;
 };
@@ -52,6 +59,18 @@ function jitter(i: number, amount: number): number {
   return (v - Math.floor(v) - 0.5) * 2 * amount;
 }
 
+/** The tray behind ten spots of a ten-frame. */
+export function trayOf(cells: Pt[], cell: number): Box {
+  const xs = cells.map((c) => c.x);
+  const ys = cells.map((c) => c.y);
+  const pad = 8 + cell / 2;
+  const x = Math.min(...xs) - pad;
+  const y = Math.min(...ys) - pad;
+  return { x, y, w: Math.max(...xs) + pad - x, h: Math.max(...ys) + pad - y };
+}
+
+export const TWO_FRAME_CELL = 42;
+
 /** Spots in one or two rows along the bottom band, centered. */
 function band(n: number, rows: number[], spread: number): Pt[] {
   const perRow = Math.ceil(n / rows.length);
@@ -67,9 +86,14 @@ function band(n: number, rows: number[], spread: number): Pt[] {
 export function boardOf(s: JoinScene): Board {
   const two = joinSpots(s) > 10 || s.ask === 'make-ten';
   const n = s.start;
-  const aside = s.ask === 'part' ? band(s.take!, [240], 220) : [];
+  const part = s.ask === 'part';
   if (two) {
-    const cells = [...grid(180, 72, 42, 5), ...grid(180, 180, 42, 5)];
+    // A part lifts the frames a little to make room for its aside row and counts below them.
+    const top = part ? 66 : 72;
+    const cells = [
+      ...grid(180, top, TWO_FRAME_CELL, 5),
+      ...grid(180, top + 108, TWO_FRAME_CELL, 5),
+    ];
     // Past 10 there's no room below, so the pile is a toss over the frames.
     const pile = cells.slice(0, n).map((c, i) => ({
       x: c.x + jitter(i, 16),
@@ -84,7 +108,11 @@ export function boardOf(s: JoinScene): Board {
       ground: 260,
       spot: '#FBF6EA',
       pile,
-      aside,
+      // Only one row of small things fits below the frames, with its counting bubbles above it.
+      aside: part ? band(s.take!, [272], 320) : [],
+      asideSize: 24,
+      asideLift: 25,
+      mat: part ? { x: 4, y: 256, w: 352, h: 32 } : null,
       sum: { x: 180, y: 266 },
     };
   }
@@ -92,12 +120,35 @@ export function boardOf(s: JoinScene): Board {
     x: p.x + jitter(i, 6),
     y: p.y + jitter(i + 9, 5),
   }));
-  const base = { place: s.place, frames: 1 as const, pile, aside, sum: { x: 180, y: 264 } };
+  const base = {
+    place: s.place,
+    frames: 1 as const,
+    pile,
+    aside: part ? band(s.take!, [240], 220) : [],
+    mat: part ? { x: 50, y: 214, w: 260, h: 52 } : null,
+    sum: { x: 180, y: 264 },
+  };
   switch (s.place) {
     case 'pond':
-      return { ...base, cells: grid(180, 121, 54, 8), size: 38, ground: 250, spot: '#8BCB72' };
+      return {
+        ...base,
+        cells: grid(180, 121, 54, 8),
+        size: 38,
+        asideSize: 38,
+        asideLift: 38 * 0.62,
+        ground: 250,
+        spot: '#8BCB72',
+      };
     case 'bus':
-      return { ...base, cells: grid(170, 118, 48, 8), size: 36, ground: 258, spot: '#DDF1FF' };
+      return {
+        ...base,
+        cells: grid(170, 118, 48, 8),
+        size: 36,
+        asideSize: 36,
+        asideLift: 36 * 0.62,
+        ground: 258,
+        spot: '#DDF1FF',
+      };
     case 'wires': {
       const cells = WIRE_ROWS.flatMap((row) =>
         [0, 1, 2, 3, 4].map((c) => {
@@ -105,14 +156,24 @@ export function boardOf(s: JoinScene): Board {
           return { x, y: wireY(row, x) - 17 };
         }),
       );
-      return { ...base, cells, size: 36, ground: 260, spot: '#E3F3FF' };
+      return {
+        ...base,
+        cells,
+        size: 36,
+        asideSize: 36,
+        asideLift: 36 * 0.62,
+        ground: 260,
+        spot: '#E3F3FF',
+      };
     }
     default: {
-      const up = s.place === 'grass' || s.ask === 'part';
+      const up = s.place === 'grass' || part;
       return {
         ...base,
         cells: grid(180, up ? 104 : 118, 54, 6),
         size: 40,
+        asideSize: 40,
+        asideLift: 40 * 0.62,
         ground: 260,
         spot: '#FBF6EA',
       };
