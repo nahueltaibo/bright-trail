@@ -126,6 +126,27 @@
     "start": 8,
     "more": 3
   },
+  "g1-add-sub-problems-50-tap-4": {
+    "kind": "join",
+    "ask": "part",
+    "emoji": "🐦",
+    "one": "bird",
+    "many": "birds",
+    "place": "tray",
+    "move": "fly",
+    "start": 15,
+    "take": 7
+  },
+  "g1-add-sub-properties-keypad-1": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 6,
+    "more": 0
+  },
   "g1-add-sub-properties-keypad-3": {
     "kind": "join",
     "ask": "join",
@@ -166,6 +187,17 @@
     "move": "slide",
     "start": 5,
     "more": 2
+  },
+  "g1-add-sub-properties-tap-2": {
+    "kind": "join",
+    "ask": "join",
+    "emoji": "🍎",
+    "one": "apple",
+    "many": "apples",
+    "place": "tray",
+    "move": "slide",
+    "start": 4,
+    "more": 0
   },
   "g1-mental-math-20-keypad-1": {
     "kind": "join",
@@ -218,6 +250,16 @@
     "move": "slide",
     "start": 7,
     "more": 8
+  },
+  "g1-mental-math-20-keypad-6": {
+    "kind": "join",
+    "ask": "part",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 17,
+    "take": 9
   },
   "g1-mental-math-20-tap-1": {
     "kind": "join",
@@ -400,6 +442,27 @@
     "leave": "slide",
     "start": 14,
     "take": 6
+  },
+  "g2-add-sub-properties-keypad-1": {
+    "kind": "join",
+    "ask": "join",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "start": 6,
+    "more": 0
+  },
+  "g2-add-sub-properties-keypad-2": {
+    "kind": "join",
+    "ask": "leave",
+    "one": "counter",
+    "many": "counters",
+    "place": "tray",
+    "move": "slide",
+    "leave": "slide",
+    "start": 8,
+    "take": 0
   },
   "g2-add-sub-properties-keypad-3": {
     "kind": "join",

@@ -260,11 +260,14 @@ export function JoinStage({ scene: s, cheer, handle }: Props) {
   useImperativeHandle(handle, () => {
     const live = (t: number) => run.current === t;
 
-    const moveTo = (t: number, id: number, to: Pt, style: Style, ms?: number) => {
+    /** Moves a thing along its path, growing or shrinking it to `scale` on the way. */
+    const moveTo = (t: number, id: number, to: Pt, style: Style, ms?: number, scale = 1) => {
       const from = pos.current.get(id)!;
       const path = pathOf(style, from, to);
       return frames(ms ?? path.ms, (k) => {
-        if (live(t)) put(id, path.at(k));
+        if (!live(t)) return;
+        const p = path.at(k);
+        put(id, { ...p, s: p.s * lerp(from.s, scale, k) });
       });
     };
 
@@ -366,8 +369,7 @@ export function JoinStage({ scene: s, cheer, handle }: Props) {
       setBubbles([]);
       setRings([]);
     };
-    const sum = (text: string) =>
-      bubble(s.ask === 'part' ? { x: 180, y: 22 } : board.sum, text, true);
+    const sum = (text: string) => bubble(board.sum, text, true);
     const startText = () => {
       if (s.start > 0) bubble({ x: 180, y: 22 }, `${s.start} ${s.start === 1 ? s.one : s.many}`);
     };
@@ -442,9 +444,11 @@ export function JoinStage({ scene: s, cheer, handle }: Props) {
         for (let i = 0; i < aside.length; i++) {
           const id = aside[i];
           spots.current.delete(id);
-          await moveTo(t, id, board.aside[i], shortMove(s.move), 650);
+          const small = board.asideSize / board.size;
+          await moveTo(t, id, board.aside[i], shortMove(s.move), 650, small);
           if (!live(t)) return;
-          bubble(above(id), `${i + 1}`);
+          const p = board.aside[i];
+          bubble({ x: p.x, y: p.y - board.asideLift }, `${i + 1}`);
         }
         await wait(400);
         if (!live(t)) return;
@@ -459,6 +463,8 @@ export function JoinStage({ scene: s, cheer, handle }: Props) {
         }
         await wait(300);
         if (!live(t)) return;
+        // On two frames the sum would cover the top row's counts.
+        if (board.frames === 2) setBubbles([]);
         sum(words.equation);
       },
 

@@ -1,0 +1,56 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-compare-numbers-20-keypad-1",
+        "fits": true,
+        "ask": "join",
+        "emoji": "🍎",
+        "one": "apple",
+        "many": "apples",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 4,
+        "more": 1,
+        "take": null,
+        "target": null,
+        "note": "1 more than 4 is 4 + 1"
+      },
+      {
+        "itemId": "k-compare-numbers-20-keypad-3",
+        "fits": true,
+        "ask": "join",
+        "emoji": null,
+        "one": "apple",
+        "many": "apples",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 6,
+        "more": 2,
+        "take": null,
+        "target": null,
+        "note": "2 more than 6 is 6 + 2; ten-frame picture so counters"
+      },
+      {
+        "itemId": "k-compare-numbers-20-keypad-5",
+        "fits": true,
+        "ask": "join",
+        "emoji": null,
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 18,
+        "more": 2,
+        "take": null,
+        "target": null,
+        "note": "2 more than 18 is 18 + 2 = 20 spots"
+      }
+    ]
+  }
+}

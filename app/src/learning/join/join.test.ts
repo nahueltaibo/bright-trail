@@ -1,5 +1,5 @@
-import { gameProblems } from '@bright-trail/shared';
-import { boardOf } from './board';
+import { gameProblems, JoinSceneSchema } from '@bright-trail/shared';
+import { boardOf, STAGE_H, STAGE_W, trayOf, type Box, type Pt } from './board';
 import { JOIN_DEMO_ITEMS } from './demo';
 import { joinWords } from './words';
 
@@ -9,6 +9,21 @@ const demo = (id: string) => {
   return game;
 };
 const lowest = (ys: { y: number }[]) => Math.max(...ys.map((c) => c.y));
+const square = (p: Pt, size: number): Box => ({
+  x: p.x - size / 2,
+  y: p.y - size / 2,
+  w: size,
+  h: size,
+});
+// A counting bubble as BubbleView draws it on web: its top 16 above the anchor, 33 high, and
+// 26 to 30 wide for one digit.
+const countBubble = (at: Pt, n: number): Box => {
+  const w = n < 10 ? 30 : 40;
+  return { x: at.x - w / 2, y: at.y - 16, w, h: 34 };
+};
+const overlap = (a: Box, b: Box) =>
+  a.x < b.x + b.w && b.x < a.x + a.w && a.y < b.y + b.h && b.y < a.y + a.h;
+const inside = (a: Box) => a.x >= 0 && a.y >= 0 && a.x + a.w <= STAGE_W && a.y + a.h <= STAGE_H;
 
 describe('demo items', () => {
   it.each(JOIN_DEMO_ITEMS.map((i) => [i.id, i] as const))('%s matches its scene', (_, item) => {
@@ -43,11 +58,86 @@ describe('boardOf', () => {
   });
 });
 
+describe('a part in one frame', () => {
+  it('keeps its board as before two-frame parts', () => {
+    const b = boardOf(demo('part'));
+    expect(b.frames).toBe(1);
+    expect(b.cells[0]).toEqual({ x: 60, y: 74 });
+    expect(b.size).toBe(40);
+    expect(b.asideSize).toBe(b.size);
+    expect(b.asideLift).toBeCloseTo(b.size * 0.62);
+    expect(b.aside).toEqual([84, 148, 212, 276].map((x) => ({ x, y: 240 })));
+    expect(b.mat).toEqual({ x: 50, y: 214, w: 260, h: 52 });
+    expect(b.sum).toEqual({ x: 180, y: 22 });
+  });
+});
+
+describe('a part past 10', () => {
+  const cases: [number, number][] = [];
+  for (let start = 11; start <= 20; start++)
+    for (let take = 1; take <= 10; take++) cases.push([start, take]);
+
+  it.each(cases)('%i with %i set aside keeps things, frames, and counts apart', (start, take) => {
+    const b = boardOf(
+      JoinSceneSchema.parse({
+        kind: 'join',
+        ask: 'part',
+        one: 'dot',
+        many: 'dots',
+        place: 'tray',
+        move: 'slide',
+        start,
+        take,
+      }),
+    );
+    expect(b.frames).toBe(2);
+    // The tray's 2px stroke reaches 1 past its box.
+    const trays = [b.cells.slice(0, 10), b.cells.slice(10)]
+      .map((c) => trayOf(c, b.cell))
+      .map((t) => ({ x: t.x - 1, y: t.y - 1, w: t.w + 2, h: t.h + 2 }));
+    const things = b.aside.map((p) => square(p, b.asideSize));
+    const stay = b.cells.slice(0, start - take).map((p) => square(p, b.size));
+    // The sum bubble: 20 above its anchor, 40 high, and wide enough for "20 = 10 + 10".
+    const sum = { x: b.sum.x - 75, y: b.sum.y - 20, w: 150, h: 40 };
+    for (const box of [...stay, ...things]) expect(overlap(sum, box)).toBe(false);
+    const counts = b.aside.map((p, i) => countBubble({ x: p.x, y: p.y - b.asideLift }, i + 1));
+    expect(things).toHaveLength(take);
+    for (const box of [...trays, ...things, ...counts, sum, b.mat!]) expect(inside(box)).toBe(true);
+    things.forEach((thing, i) => {
+      for (const tray of trays) {
+        expect(overlap(thing, tray)).toBe(false);
+        expect(overlap(counts[i], tray)).toBe(false);
+      }
+      for (let j = 0; j < take; j++) {
+        if (j === i) continue;
+        expect(overlap(thing, things[j])).toBe(false);
+        expect(overlap(counts[i], things[j])).toBe(false);
+        expect(overlap(counts[i], counts[j])).toBe(false);
+      }
+      // A count may touch the top of its own thing, but not hide it.
+      expect(counts[i].y + counts[i].h).toBeLessThanOrEqual(thing.y + thing.h / 4);
+    });
+  });
+});
+
 describe('joinWords', () => {
   it('says what the play-out showed', () => {
     expect(joinWords(demo('fly')).equation).toBe('9 − 5 = 4');
     expect(joinWords(demo('part')).summary).toBe('5 is 4 and 1.');
     expect(joinWords(demo('make-ten')).summary).toBe('Move 1 up to make 10. 10 and 4 make 14.');
     expect(joinWords(demo('count')).summary).toBe('There are 5 frogs.');
+  });
+
+  it('says when nothing came or went', () => {
+    expect(joinWords(demo('add-zero'))).toEqual({
+      equation: '6 + 0 = 6',
+      summary: 'No more came, so there are still 6.',
+    });
+    expect(joinWords(demo('take-zero')).equation).toBe('8 − 0 = 8');
+    expect(joinWords({ ...demo('part'), take: 0 })).toEqual({
+      equation: '5 = 5 + 0',
+      summary: 'None moved, so all 5 stay.',
+    });
+    expect(joinWords(demo('part-two')).equation).toBe('17 = 9 + 8');
   });
 });

@@ -37,6 +37,21 @@ describe('JoinSceneSchema', () => {
     expect(scene({ ask: 'join', start: 8, more: 4 }).more).toBe(4);
   });
 
+  it('takes 0 arrivals and 0 taken', () => {
+    expect(joinValue(scene({ ask: 'join', start: 6, more: 0 }))).toBe(6);
+    expect(joinValue(scene({ ask: 'leave', start: 8, take: 0, leave: 'slide' }))).toBe(8);
+    expect(joinValue(scene({ ask: 'part', start: 8, take: 0 }))).toBe(8);
+    expect(() => scene({ ask: 'back', start: 6, more: 0 })).toThrow(/at least one more/);
+  });
+
+  it('sets aside up to 10 from a part past 10 on two frames', () => {
+    expect(joinValue(scene({ ask: 'part', start: 17, take: 9 }))).toBe(8);
+    expect(joinValue(scene({ ask: 'part', start: 20, take: 10 }))).toBe(10);
+    expect(() => scene({ ask: 'part', start: 17, take: 9, place: 'pond' })).toThrow(/holds 10/);
+    expect(() => scene({ ask: 'part', start: 17, take: 11 })).toThrow(/at most 10/);
+    expect(() => scene({ ask: 'part', start: 5, take: 6 })).toThrow(/take must be/);
+  });
+
   it('makes ten only across two frames', () => {
     expect(() => scene({ ask: 'make-ten', start: 6, more: 3 })).toThrow(/sum past 10/);
     expect(joinValue(scene({ ask: 'make-ten', start: 9, more: 5 }))).toBe(14);

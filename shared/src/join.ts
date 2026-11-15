@@ -5,9 +5,9 @@ import { choiceTextValue, itemAnswer } from './scene';
 /**
  * What a join scene asks, and how the app plays it out on a ten-frame:
  * - `count`: `start` things sit in a pile, then hop into the frame one by one, counted.
- * - `join`: `start` things sit in the frame. `more` arrive, counted on.
- * - `leave`: `start` things sit in the frame. `take` leave the way the story says.
- * - `part`: `start` things sit in the frame. `take` move aside, and the rest get counted.
+ * - `join`: `start` things sit in the frame. `more` arrive, counted on. `more` may be 0.
+ * - `leave`: `start` things sit in the frame. `take` leave the way the story says. `take` may be 0.
+ * - `part`: `start` things sit in the frame. `take`, 0 to 10, move aside, and the rest get counted.
  * - `fill`: `start` things sit in the frame. The empty spots up to `target` get counted, then fill.
  * - `make-ten`: `start` sit in the top frame, `more` in the bottom one. Some move up to make 10.
  * - `back`: `start` things are left. The `more` given away come back, counted on.
@@ -68,14 +68,15 @@ export const JoinSceneSchema = z
       issue('place', `a ${s.place} holds 10, the story needs ${most}`);
     }
     if (s.ask === 'count' && s.start < 1) issue('start', 'count needs something to count');
-    if ((s.ask === 'join' || s.ask === 'back' || s.ask === 'make-ten') && (s.more ?? 0) < 1) {
+    if ((s.ask === 'back' || s.ask === 'make-ten') && (s.more ?? 0) < 1) {
       issue('more', `ask ${s.ask} needs at least one more`);
     }
-    if ((s.ask === 'leave' || s.ask === 'part') && ((s.take ?? 0) < 1 || s.take! > s.start)) {
-      issue('take', `take must be 1 to ${s.start}`);
+    if ((s.ask === 'leave' || s.ask === 'part') && s.take !== undefined && s.take > s.start) {
+      issue('take', `take must be 0 to ${s.start}`);
     }
     if (s.ask === 'leave' && !s.leave) issue('leave', 'ask leave needs leave');
-    if (s.ask === 'part' && s.start > 10) issue('start', 'part sets things aside below one frame');
+    // The aside row below the frames has room for one ten.
+    if (s.ask === 'part' && (s.take ?? 0) > 10) issue('take', 'part sets aside at most 10');
     if (s.ask === 'fill' && s.target !== undefined && s.target <= s.start) {
       issue('target', 'target must be above start');
     }
