@@ -48,7 +48,7 @@
 <h1>BrightTrail — Minigames</h1>
 <p class="sub">Which items play as minigames, which don't, and what is left to build · Draft v0.5 · 2026-11-15</p>
 
-<p>488 of the 795 bundle items (61%) play as a minigame. The other 307 (39%) use the plain tap, keypad, or number-line screen. The foundation, the five planned games, and the ordinal line-up are built. What remains is tagging more items, and content for the three card games.</p>
+<p>488 of the 795 bundle items (61%) play as a minigame. The other 307 (39%) use the plain tap, keypad, or number-line screen. The foundation, the five planned games, the ordinal line-up, and the fraction wall are built. What remains is tagging more items, and content for the three card games.</p>
 
 <h2 id="today">1. Minigames today</h2>
 <p>Every game is a <code>kind</code> of <code>item.game</code>. <code>GAMES</code> in <code>shared/src/game.ts</code> lists them.</p>
@@ -63,6 +63,7 @@
 <tr><td>Tenths and hundredths</td><td><code>grid</code></td><td><code>content:grid</code></td><td>38</td><td>Decimals, fractions, and percent on a grid or strip</td></tr>
 <tr><td>Stepping stones</td><td><code>stones</code></td><td><code>content:stones</code></td><td>22</td><td>Counting and skip counting</td></tr>
 <tr><td>Line up</td><td><code>lineup</code></td><td><code>content:lineup</code></td><td>4</td><td>Places in a line: first, second, last</td></tr>
+<tr><td>Fraction wall</td><td><code>wall</code></td><td><code>content:wall</code></td><td>12</td><td>Equal fractions, mixed and improper fractions, comparing unlike parts, wholes in unit fractions</td></tr>
 <tr><td>Sort it, Put in order, Label it</td><td><code>sort</code>, <code>order</code>, <code>label</code></td><td>None yet</td><td>0</td><td>Built for the other subjects in <a href="subjects.html">subjects.html</a>. The math bundle has no items for them.</td></tr>
 <tr><td>Frog hops</td><td>Not a game. Item field <code>hops</code>.</td><td><code>content:hops</code></td><td>88 of 191 number-line items</td><td>Plays the path after a number-line check. 76 of the 88 sit on items with no game.</td></tr>
 </table>
@@ -150,6 +151,7 @@ flowchart LR
   C --> A[Arrays]:::done
   C --> G[Hundred grid]:::done
   C --> S[Stepping stones]:::done
+  G --> FW[Fraction wall]:::done
   T --> L[Line up]:::done
   T -.-> M[Tag the 307 left]
   R --> K[Sort, order, label]:::done
@@ -167,6 +169,7 @@ flowchart LR
 <tr><td>5</td><td>Stepping stones</td><td>Done</td><td>22 of ~45</td><td>The frog hops stones by a fixed step, and one stone is missing. Builds on <code>hops.ts</code> and the number-line art.</td></tr>
 <tr><td>6</td><td>Sort it, Put in order, Label it</td><td>Built, no items</td><td>0</td><td>Card games for the other subjects. No tagger or content exists yet.</td></tr>
 <tr><td>7</td><td>Line up</td><td>Done</td><td>4 of 7</td><td>Animals or kids walk into a line while the narrator counts the places. The child taps the one in a place, or says which place one is in. A wrong answer counts up to the right one.</td></tr>
+<tr><td>8</td><td>Fraction wall</td><td>Done</td><td>12 of ~30</td><td>Strips of halves to twelfths stack under one whole. The child fills a strip to a dashed guide, or picks an answer and the strips fill to show why. Equal fractions end at the same edge.</td></tr>
 </table>
 <p>Each "of" figure is the earlier estimate of how many items the game fits. The tagged count is what the tagger accepted.</p>
 <p class="note">Remaining work: tag more of the 307 items, and write items and a tagger for the card games.</p>
