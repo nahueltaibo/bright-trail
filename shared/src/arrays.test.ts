@@ -94,7 +94,7 @@ describe('arrayProblems', () => {
     expect(arrayProblems(split, cut)).toEqual([]);
   });
 
-  it('reports a wrong answer, a missing number, text choices, and a number line', () => {
+  it('reports a wrong answer, a missing number, text choices, and a number line that hops', () => {
     const item = keypad('What is 4 × 3?', 'What is 4 × 3?', 12);
     expect(arrayProblems(item, scene({ ask: 'total', rows: 4, columns: 4 }))).toEqual([
       'the scene finds 16 but the item answers 12',
@@ -109,8 +109,8 @@ describe('arrayProblems', () => {
     );
     const line: Item = {
       ...base,
-      prompt: '4 × 2 = ?',
-      narration: 'Move the frog to 4 × 2.',
+      prompt: '4 hops of 2',
+      narration: 'The frog makes 4 hops of 2. Move the frog to the end.',
       type: 'number-line',
       min: 0,
       max: 10,
@@ -118,7 +118,33 @@ describe('arrayProblems', () => {
       target: 8,
     };
     expect(arrayProblems(line, scene({ ask: 'total', rows: 4, columns: 2 }))).toEqual([
-      'number-line items keep their own screen',
+      'number-line items without a × or ÷ fact keep their frog',
+    ]);
+    const times = { ...line, prompt: '4 × 2 = ?', narration: 'Move the frog to 4 × 2.' };
+    expect(arrayProblems(times, scene({ ask: 'total', rows: 4, columns: 2 }))).toEqual([]);
+  });
+
+  it('draws the pictured things when the picture shows the total, and not when it shows groups', () => {
+    const ducks = {
+      ...keypad('4 groups of 2 = ?', 'There are 4 groups of 2 ducks.', 8),
+      visual: { kind: 'objects', emoji: '🦆', count: 8 },
+    } as Item;
+    const four = { ask: 'total', rows: 4, columns: 2 } as const;
+    expect(arrayProblems(ducks, scene({ ...four, thing: 'duck' }))).toEqual([]);
+    expect(arrayProblems(ducks, scene(four))).toEqual(['the picture shows 8 ducks, not counters']);
+    const legs = {
+      ...keypad('4 groups of 2 = ?', 'Here are 4 ducks. Each duck has 2 legs.', 8),
+      visual: { kind: 'objects', emoji: '🦆', count: 4 },
+    } as Item;
+    expect(arrayProblems(legs, scene(four))).toEqual([]);
+    expect(arrayProblems(legs, scene({ ...four, thing: 'duck' }))).toEqual([
+      "the picture shows 4 ducks, not the array's things",
+    ]);
+    const hands = { ...ducks, visual: { kind: 'objects', emoji: '✋', count: 4 } } as Item;
+    expect(arrayProblems(hands, scene(four))).toEqual([]);
+    const frame = { ...ducks, visual: { kind: 'ten-frame', filled: 8 } } as Item;
+    expect(arrayProblems(frame, scene({ ...four, thing: 'duck' }))).toEqual([
+      'the item has a ten-frame picture',
     ]);
   });
 

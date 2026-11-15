@@ -3,6 +3,7 @@ import {
   ArraySceneSchema,
   arrayProblems,
   choiceTextValue,
+  isArrayFact,
   itemAnswer,
   THING_IDS,
   type ArrayScene,
@@ -32,10 +33,15 @@ export type TaggedArray = z.infer<typeof TaggedArraySchema>;
 
 const ARRAY_WORDS = /[×÷]|\b(rows?|columns?|arrays?|groups of|times)\b/i;
 
-/** Items that might be an array: a number answer, no picture, number choices, times words. */
+/**
+ * Items that might be an array: a number answer, number choices, and times words. A picture must
+ * be of objects, and a number line must hold a whole-number × or ÷ fact.
+ */
 export function arrayCandidates(items: readonly Item[]): Item[] {
   return items.filter((i) => {
-    if ((i.game && i.game.kind !== 'arrays') || i.type === 'number-line' || i.visual) return false;
+    if (i.game && i.game.kind !== 'arrays') return false;
+    if (i.type === 'number-line' && !isArrayFact(i.prompt)) return false;
+    if ('visual' in i && i.visual && i.visual.kind !== 'objects') return false;
     if (typeof itemAnswer(i) !== 'number') return false;
     if (i.type === 'tap') {
       const numbers = i.choices.every(
@@ -61,6 +67,8 @@ Rules:
 - rows is the first factor and columns the second, as the item writes them: "3 × 4" or "3 rows of 4" is rows 3, columns 4. For a division "a ÷ b", the total is a and b is the given rows (ask columns) or the given row size (ask rows). Pick rows when the item counts rows, buckets, teams, or boxes it fills, and columns when it asks how many go in each.
 - rows and columns are 1 to 10. Set fits to false when either would be bigger.
 - thing: the item's things when one of these fits, else null for plain dots or counters: ${THING_IDS.join(', ')}.
+- picture: some items show count copies of one emoji. When count is the array's total, the picture shows the array's things, so use that thing. Any other count shows the groups, like 4 ducks with 2 legs each, so pick another thing or null.
+- A number-line item plays as the array instead, and the child types the answer. Map the fact in its prompt.
 - find, splitBy, splitAt: null unless the ask uses them.
 - Set fits to false when the item doesn't ask for the total, a factor, or a part of one multiplication: comparing products, checking a fact with yes or no, picking a fact, adding or subtracting, fact families with text choices, or a part's product like "8 × 2 = ?" inside a split. Also when the scene's answer would differ from the item's answer. Fill the other fields with any valid value then.
 - note: one short reason, mainly when fits is false.
@@ -80,6 +88,10 @@ function describe(item: Item) {
           ),
         }
       : {}),
+    ...(item.type !== 'number-line' &&
+      item.visual?.kind === 'objects' && {
+        picture: `${item.visual.count} ${item.visual.emoji}`,
+      }),
     answer: itemAnswer(item),
   };
 }

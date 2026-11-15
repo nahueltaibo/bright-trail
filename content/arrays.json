@@ -1,4 +1,16 @@
 {
+  "g2-equal-groups-multiply-keypad-1": {
+    "kind": "arrays",
+    "ask": "total",
+    "rows": 4,
+    "columns": 2
+  },
+  "g2-equal-groups-multiply-keypad-2": {
+    "kind": "arrays",
+    "ask": "total",
+    "rows": 3,
+    "columns": 5
+  },
   "g2-equal-groups-multiply-keypad-5": {
     "kind": "arrays",
     "ask": "total",
@@ -38,6 +50,31 @@
     "rows": 9,
     "columns": 8
   },
+  "g3-arrays-multiply-divide-number-line-2": {
+    "kind": "arrays",
+    "ask": "rows",
+    "rows": 7,
+    "columns": 5,
+    "thing": "card"
+  },
+  "g3-arrays-multiply-divide-number-line-3": {
+    "kind": "arrays",
+    "ask": "total",
+    "rows": 10,
+    "columns": 7
+  },
+  "g3-arrays-multiply-divide-number-line-4": {
+    "kind": "arrays",
+    "ask": "rows",
+    "rows": 10,
+    "columns": 10
+  },
+  "g3-arrays-multiply-divide-number-line-5": {
+    "kind": "arrays",
+    "ask": "total",
+    "rows": 7,
+    "columns": 8
+  },
   "g3-arrays-multiply-divide-tap-1": { "kind": "arrays", "ask": "total", "rows": 3, "columns": 4 },
   "g3-arrays-multiply-divide-tap-2": {
     "kind": "arrays",
@@ -50,7 +87,8 @@
     "kind": "arrays",
     "ask": "columns",
     "rows": 6,
-    "columns": 4
+    "columns": 4,
+    "thing": "counter"
   },
   "g3-arrays-multiply-divide-tap-5": {
     "kind": "arrays",
@@ -85,13 +123,27 @@
     "rows": 8,
     "columns": 10
   },
-  "g3-mult-div-facts-2-5-10-tap-1": { "kind": "arrays", "ask": "total", "rows": 2, "columns": 5 },
-  "g3-mult-div-facts-2-5-10-tap-2": {
+  "g3-mult-div-facts-2-5-10-number-line-2": {
     "kind": "arrays",
-    "ask": "columns",
-    "rows": 10,
-    "columns": 2
+    "ask": "total",
+    "rows": 7,
+    "columns": 5
   },
+  "g3-mult-div-facts-2-5-10-number-line-3": {
+    "kind": "arrays",
+    "ask": "rows",
+    "rows": 9,
+    "columns": 5
+  },
+  "g3-mult-div-facts-2-5-10-number-line-4": {
+    "kind": "arrays",
+    "ask": "total",
+    "rows": 6,
+    "columns": 10,
+    "thing": "star"
+  },
+  "g3-mult-div-facts-2-5-10-tap-1": { "kind": "arrays", "ask": "total", "rows": 2, "columns": 5 },
+  "g3-mult-div-facts-2-5-10-tap-2": { "kind": "arrays", "ask": "rows", "rows": 2, "columns": 10 },
   "g3-mult-div-facts-2-5-10-tap-3": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 5 },
   "g3-mult-div-facts-2-5-10-tap-4": {
     "kind": "arrays",
@@ -109,6 +161,13 @@
     "thing": "sticker"
   },
   "g3-mult-div-problems-keypad-3": { "kind": "arrays", "ask": "rows", "rows": 7, "columns": 8 },
+  "g3-mult-div-problems-tap-2": {
+    "kind": "arrays",
+    "ask": "columns",
+    "rows": 3,
+    "columns": 4,
+    "thing": "cookie"
+  },
   "g3-mult-div-properties-keypad-1": {
     "kind": "arrays",
     "ask": "turn",
@@ -147,6 +206,18 @@
     "find": "total",
     "split": { "by": "columns", "at": 5 }
   },
+  "g3-mult-div-properties-number-line-2": {
+    "kind": "arrays",
+    "ask": "total",
+    "rows": 5,
+    "columns": 7
+  },
+  "g3-mult-div-properties-number-line-3": {
+    "kind": "arrays",
+    "ask": "columns",
+    "rows": 4,
+    "columns": 9
+  },
   "g3-mult-div-properties-tap-1": {
     "kind": "arrays",
     "ask": "turn",
@@ -167,9 +238,28 @@
   "g4-mult-div-facts-100-keypad-4": { "kind": "arrays", "ask": "rows", "rows": 6, "columns": 8 },
   "g4-mult-div-facts-100-keypad-5": { "kind": "arrays", "ask": "total", "rows": 7, "columns": 8 },
   "g4-mult-div-facts-100-keypad-6": { "kind": "arrays", "ask": "rows", "rows": 9, "columns": 6 },
+  "g4-mult-div-facts-100-number-line-1": {
+    "kind": "arrays",
+    "ask": "total",
+    "rows": 4,
+    "columns": 6
+  },
+  "g4-mult-div-facts-100-number-line-2": {
+    "kind": "arrays",
+    "ask": "total",
+    "rows": 9,
+    "columns": 6
+  },
+  "g4-mult-div-facts-100-number-line-3": {
+    "kind": "arrays",
+    "ask": "total",
+    "rows": 9,
+    "columns": 8,
+    "thing": "ball"
+  },
   "g4-mult-div-facts-100-tap-1": { "kind": "arrays", "ask": "total", "rows": 4, "columns": 8 },
-  "g4-mult-div-facts-100-tap-2": { "kind": "arrays", "ask": "columns", "rows": 6, "columns": 5 },
+  "g4-mult-div-facts-100-tap-2": { "kind": "arrays", "ask": "rows", "rows": 5, "columns": 6 },
   "g4-mult-div-facts-100-tap-3": { "kind": "arrays", "ask": "total", "rows": 6, "columns": 8 },
-  "g4-mult-div-facts-100-tap-4": { "kind": "arrays", "ask": "columns", "rows": 7, "columns": 8 },
+  "g4-mult-div-facts-100-tap-4": { "kind": "arrays", "ask": "rows", "rows": 8, "columns": 7 },
   "g4-mult-div-facts-100-tap-5": { "kind": "arrays", "ask": "rows", "rows": 9, "columns": 8 }
 }

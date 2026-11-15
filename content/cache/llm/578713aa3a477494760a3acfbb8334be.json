@@ -1,0 +1,68 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-mult-div-problems-tap-2",
+        "fits": true,
+        "ask": "columns",
+        "rows": 3,
+        "columns": 4,
+        "thing": "cookie",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "12 ÷ 3, 3 friends rows, answer 4 each"
+      },
+      {
+        "itemId": "g3-mult-div-problems-tap-5",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction multiplication, not a whole-number array"
+      },
+      {
+        "itemId": "g3-mult-div-problems-keypad-2",
+        "fits": true,
+        "ask": "columns",
+        "rows": 6,
+        "columns": 4,
+        "thing": "sticker",
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "24 ÷ 6, 6 friends rows, answer 4"
+      },
+      {
+        "itemId": "g3-mult-div-problems-keypad-3",
+        "fits": true,
+        "ask": "rows",
+        "rows": 7,
+        "columns": 8,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "56 ÷ 8, 8 per team, answer 7 teams"
+      },
+      {
+        "itemId": "g3-mult-div-problems-keypad-5",
+        "fits": false,
+        "ask": "total",
+        "rows": 1,
+        "columns": 1,
+        "thing": null,
+        "find": null,
+        "splitBy": null,
+        "splitAt": null,
+        "note": "Fraction multiplication, not a whole-number array"
+      }
+    ]
+  }
+}
