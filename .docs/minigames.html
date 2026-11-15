@@ -48,7 +48,7 @@
 <h1>BrightTrail — Minigames</h1>
 <p class="sub">Which items play as minigames, which don't, and what is left to build · Draft v0.4 · 2026-11-15</p>
 
-<p>463 of the 795 bundle items (58%) play as a minigame. The other 332 (42%) use the plain tap, keypad, or number-line screen. The foundation, the five planned games, and the ordinal line-up are built. What remains is tagging more items, and content for the three card games.</p>
+<p>473 of the 795 bundle items (59%) play as a minigame. The other 322 (41%) use the plain tap, keypad, or number-line screen. The foundation, the five planned games, and the ordinal line-up are built. What remains is tagging more items, and content for the three card games.</p>
 
 <h2 id="today">1. Minigames today</h2>
 <p>Every game is a <code>kind</code> of <code>item.game</code>. <code>GAMES</code> in <code>shared/src/game.ts</code> lists them.</p>
@@ -66,10 +66,10 @@
 <tr><td>Sort it, Put in order, Label it</td><td><code>sort</code>, <code>order</code>, <code>label</code></td><td>None yet</td><td>0</td><td>Built for the other subjects in <a href="subjects.html">subjects.html</a>. The math bundle has no items for them.</td></tr>
 <tr><td>Frog hops</td><td>Not a game. Item field <code>hops</code>.</td><td><code>content:hops</code></td><td>88 of 191 number-line items</td><td>Plays the path after a number-line check. 83 of the 88 sit on items with no game.</td></tr>
 </table>
-<p>The 463 split as 86 + 80 + 99 + 55 + 41 + 48 + 28 + 22 + 4. The app shares its frame across games: <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props.</p>
+<p>The 473 split as 86 + 80 + 99 + 55 + 41 + 48 + 38 + 22 + 4. The app shares its frame across games: <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props.</p>
 
 <h2 id="gaps">2. Items with no minigame</h2>
-<p>332 items. Counts group them by skill, so anyone can reproduce them from <code>content/out/bundle.json</code>.</p>
+<p>322 items. Counts group them by skill, so anyone can reproduce them from <code>content/out/bundle.json</code>.</p>
 <table>
 <tr><th>Group</th><th>Items</th><th>Skills</th></tr>
 <tr><td>Fractions, decimals, percent</td><td>76</td><td>g1-fair-share-drawings, g1-half-equals-two-fourths, g2-fair-share-fractions, g2-third-equals-two-sixths, g4-represent-fractions, g4-decimal-tenths, g4-fraction-decimal-equivalence, g5-equivalent-fractions, g5-decimals-hundredths, g5-fraction-decimal-percent, g5-add-sub-like-fractions, g5-whole-by-unit-fraction</td></tr>
@@ -80,7 +80,7 @@
 <tr><td>Sequences</td><td>29</td><td>k-count-to-20, k-count-forward-back, g1-count-50, g4-count-unit-fractions</td></tr>
 <tr><td>Other</td><td>11</td><td>k-uses-of-numbers, k-subitize-5</td></tr>
 </table>
-<p>141 of the 332 are number-line items, and 83 of those already play the frog's path.</p>
+<p>134 of the 322 are number-line items, and 83 of those already play the frog's path.</p>
 
 <h3 id="why">Why they have no game</h3>
 <p>The candidate filters, not the LLM, leave out most items. 311 of the 358 never reached their group's tagger. Only 47 reached it and got turned down. <code>npm run content:coverage</code> replays every tagger from the LLM cache and prints the counts per skill. Add <code>--why</code> to list each turned-down item with its reason, or <code>--kind &lt;kind&gt;</code> for one tagger.</p>
@@ -152,7 +152,7 @@ flowchart LR
   C --> G[Hundred grid]:::done
   C --> S[Stepping stones]:::done
   T --> L[Line up]:::done
-  T -.-> M[Tag the 332 left]
+  T -.-> M[Tag the 322 left]
   R --> K[Sort, order, label]:::done
   K -.-> N[Items for other subjects]
   classDef done fill:#d9f2e0,stroke:#2e8b57,color:#1f2328
@@ -170,7 +170,7 @@ flowchart LR
 <tr><td>7</td><td>Line up</td><td>Done</td><td>4 of 7</td><td>Animals or kids walk into a line while the narrator counts the places. The child taps the one in a place, or says which place one is in. A wrong answer counts up to the right one.</td></tr>
 </table>
 <p>Each "of" figure is the earlier estimate of how many items the game fits. The tagged count is what the tagger accepted.</p>
-<p class="note">Remaining work: tag more of the 332 items, and write items and a tagger for the card games.</p>
+<p class="note">Remaining work: tag more of the 322 items, and write items and a tagger for the card games.</p>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
