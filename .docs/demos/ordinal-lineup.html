@@ -1,0 +1,704 @@
+<meta charset="utf-8">
+<title>Ordinal Line-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Baloo+2:wght@600;700;800&display=swap">
+<style>
+/* Layout: one kid screen, prompt on top, the line in the middle, answers below. Tokens from .docs/design/tokens.json. */
+:root {
+  --kid-bg: #fffbf0;
+  --kid-surface: #fff4d6;
+  --kid-raised: #ffffff;
+  --kid-pressed: #ffe7a3;
+  --kid-ink: #5a4a1f;
+  --kid-ink-soft: #6b5a2c;
+  --kid-line: #eadbb0;
+  --kid-line-strong: #9a844a;
+  --trail: #ffb347;
+  --on-trail: #3d2e06;
+  --trail-deep: #9a5300;
+  --sun: #ffe08a;
+  --meadow: #eaf4dc;
+  --star: #ffc21a;
+  --star-ink: #8a5a00;
+  --hit-bg: #dff5e1;
+  --hit-ink: #2a7349;
+  --miss-bg: #e8eeff;
+  --miss-ink: #3f51a3;
+  --focus: #1a5dd6;
+  --ledge: 0 4px 0 #e6d3a3;
+  --ledge-trail: 0 4px 0 #d98a1f;
+  --lift: 0 8px 24px rgba(90, 74, 31, 0.14);
+  --display: "Baloo 2", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", system-ui, sans-serif;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --kid-bg: #1c1710; --kid-surface: #2a2217; --kid-raised: #362c1e; --kid-pressed: #4a3b22;
+    --kid-ink: #fbefd5; --kid-ink-soft: #d8c79f; --kid-line: #4a3e2a; --kid-line-strong: #a08e66;
+    --on-trail: #2a1e05; --trail-deep: #ffc778; --sun: #6b5214; --meadow: #1f2a19;
+    --star: #ffc94a; --star-ink: #fff0c4; --hit-bg: #163826; --hit-ink: #8ee3ae;
+    --miss-bg: #1c2547; --miss-ink: #b3c2ff; --focus: #9cc0ff;
+    --ledge: 0 4px 0 #0e0b07; --ledge-trail: 0 4px 0 #a8640f; --lift: 0 8px 24px rgba(0, 0, 0, 0.5);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --kid-bg: #1c1710; --kid-surface: #2a2217; --kid-raised: #362c1e; --kid-pressed: #4a3b22;
+  --kid-ink: #fbefd5; --kid-ink-soft: #d8c79f; --kid-line: #4a3e2a; --kid-line-strong: #a08e66;
+  --on-trail: #2a1e05; --trail-deep: #ffc778; --sun: #6b5214; --meadow: #1f2a19;
+  --star: #ffc94a; --star-ink: #fff0c4; --hit-bg: #163826; --hit-ink: #8ee3ae;
+  --miss-bg: #1c2547; --miss-ink: #b3c2ff; --focus: #9cc0ff;
+  --ledge: 0 4px 0 #0e0b07; --ledge-trail: 0 4px 0 #a8640f; --lift: 0 8px 24px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--kid-bg);
+  color: var(--kid-ink);
+  font-family: var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 12px 24px;
+  -webkit-tap-highlight-color: transparent;
+}
+button { font: inherit; color: inherit; touch-action: manipulation; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+.app { max-width: 520px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+
+/* Top: progress dots, replay, prompt, sound. */
+.dots { display: flex; justify-content: center; gap: 8px; padding-top: 4px; }
+.dot { width: 12px; height: 12px; border-radius: 999px; border: 2px solid var(--kid-line-strong); background: transparent; }
+.dot.done { background: var(--trail); border-color: var(--trail); }
+.dot.now { background: var(--trail-deep); border-color: var(--trail-deep); transform: scale(1.25); }
+.prompt-row { display: flex; align-items: center; gap: 8px; }
+.prompt {
+  flex: 1; min-width: 0; margin: 0; text-align: center;
+  font-family: var(--display); font-weight: 700; font-size: 26px; line-height: 30px;
+  text-wrap: balance;
+}
+.round {
+  flex: none; width: 52px; height: 52px; border-radius: 999px; border: 0;
+  background: var(--kid-surface); box-shadow: var(--ledge); cursor: pointer;
+  display: grid; place-items: center;
+  transition: transform 90ms, box-shadow 90ms;
+}
+.round:active { transform: translateY(4px); box-shadow: none; }
+.round svg { width: 28px; height: 28px; }
+.round[aria-pressed="true"] { background: var(--kid-pressed); }
+.read {
+  margin: 0; min-height: 56px; text-align: center; color: var(--kid-ink-soft);
+  font-size: 19px; line-height: 27px; text-wrap: balance;
+}
+.read .ord { color: var(--trail-deep); font-weight: 700; }
+
+/* Stage: the line runs right to left, front at the flag. */
+.stage {
+  position: relative; height: 168px; border-radius: 32px; overflow: hidden;
+  background: var(--meadow); border: 2px solid var(--kid-line);
+}
+.ground {
+  position: absolute; left: 0; right: 0; bottom: 0; height: 46px;
+  background: var(--kid-surface); border-top: 2px dashed var(--kid-line-strong);
+}
+.front {
+  position: absolute; left: 6px; bottom: 46px; width: 26px; height: 92px;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+}
+.front svg { width: 26px; height: 64px; }
+.front-label {
+  position: absolute; left: 4px; top: 8px; font-family: var(--display); font-weight: 700;
+  font-size: 14px; letter-spacing: 0.04em; color: var(--kid-ink-soft); text-transform: uppercase;
+}
+.walker {
+  position: absolute; bottom: 10px; height: 140px; padding: 0; border: 0; background: none;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 6px;
+  cursor: default; transition: left 460ms var(--ease);
+}
+.walker.tappable { cursor: pointer; }
+.walker .who {
+  display: grid; place-items: center; line-height: 1; border-radius: 18px;
+  padding: 4px 2px; border: 3px solid transparent; transition: background 160ms, border-color 160ms;
+}
+.walker.walking .who { animation: bob 230ms ease-in-out infinite alternate; }
+@keyframes bob { from { transform: translateY(0); } to { transform: translateY(-7px); } }
+.walker.tappable .who { background: var(--kid-raised); border-color: var(--kid-line-strong); box-shadow: var(--ledge); }
+.walker.tappable:active .who { transform: translateY(4px); box-shadow: none; }
+.walker.lit .who { background: var(--sun); border-color: var(--trail); box-shadow: none; }
+.walker.hit .who { background: var(--hit-bg); border-color: var(--hit-ink); box-shadow: none; animation: cheer 600ms var(--ease) 2; }
+.walker.miss .who { background: var(--miss-bg); border-color: var(--miss-ink); box-shadow: none; }
+@keyframes cheer { 50% { transform: translateY(-12px); } }
+.walker .tag {
+  position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+  font-family: var(--display); font-weight: 700; font-size: 15px; line-height: 20px;
+  padding: 0 7px; border-radius: 999px; background: var(--kid-raised); border: 2px solid var(--kid-line-strong);
+  white-space: nowrap;
+}
+.badge {
+  min-width: 34px; height: 26px; padding: 0 5px; border-radius: 999px;
+  display: grid; place-items: center;
+  font-family: var(--display); font-weight: 800; font-size: 15px; line-height: 1;
+  background: var(--kid-raised); border: 2px solid var(--kid-line); color: transparent;
+  transition: background 160ms, color 160ms, border-color 160ms, transform 160ms var(--ease);
+}
+.badge.on { background: var(--trail); border-color: var(--trail); color: var(--on-trail); transform: scale(1.12); }
+/* Eight in a row at phone width leave about 35px a place. */
+.stage.tight .walker .who { padding: 3px 1px; border-width: 2px; border-radius: 12px; }
+.stage.tight .badge { min-width: 0; width: calc(100% - 3px); padding: 0; font-size: 13px; }
+.walker .card {
+  font-family: var(--display); font-weight: 800; color: var(--kid-ink);
+  background: var(--kid-raised); border-color: var(--kid-line-strong);
+}
+
+/* Bottom: answers or feedback. Fixed height so the line never jumps. */
+.bottom { min-height: 212px; display: flex; flex-direction: column; justify-content: center; gap: 12px; }
+.hint { margin: 0; text-align: center; font-family: var(--display); font-weight: 700; font-size: 20px; color: var(--kid-ink-soft); display: flex; align-items: center; justify-content: center; gap: 8px; }
+.hint svg { width: 32px; height: 32px; }
+.choices { display: grid; gap: 12px; grid-template-columns: repeat(var(--cols), minmax(0, 1fr)); }
+.tile {
+  min-height: 88px; border-radius: 22px; border: 3px solid var(--kid-line-strong);
+  background: var(--kid-raised); box-shadow: var(--ledge); cursor: pointer; padding: 6px 4px;
+  font-family: var(--display); font-weight: 700; font-size: 21px; line-height: 24px;
+  position: relative; transition: background 160ms, border-color 160ms;
+}
+.tile.num { font-size: 44px; line-height: 48px; }
+.tile:active:not(:disabled) { transform: translateY(4px); box-shadow: none; }
+.tile:disabled { cursor: default; }
+.tile.active { border-color: var(--trail); box-shadow: none; }
+.tile.right { background: var(--hit-bg); border-color: var(--hit-ink); color: var(--hit-ink); box-shadow: none; }
+.tile.missed { background: var(--miss-bg); border-color: var(--miss-ink); color: var(--miss-ink); box-shadow: none; }
+.tile.rest { border-style: dashed; opacity: 0.45; box-shadow: none; }
+.tile .mark { position: absolute; top: -10px; right: -8px; width: 28px; height: 28px; border-radius: 999px; display: grid; place-items: center; }
+.tile.right .mark { background: var(--hit-ink); color: var(--hit-bg); }
+.tile.missed .mark { background: var(--miss-ink); color: var(--miss-bg); }
+.tile .mark svg { width: 18px; height: 18px; }
+
+.pad { display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.pad-row { display: flex; gap: 6px; }
+.display {
+  min-width: 104px; height: 50px; padding: 0 16px; border-radius: 22px; border: 3px solid var(--kid-line-strong);
+  background: var(--kid-raised); display: grid; place-items: center;
+  font-family: var(--display); font-weight: 800; font-size: 30px;
+}
+.display.empty { color: var(--kid-ink-soft); }
+.display.right { background: var(--hit-bg); border-color: var(--hit-ink); color: var(--hit-ink); }
+.display.missed { background: var(--miss-bg); border-color: var(--miss-ink); color: var(--miss-ink); }
+.key {
+  width: 48px; height: 52px; border-radius: 14px; border: 0; cursor: pointer;
+  background: var(--kid-surface); box-shadow: var(--ledge);
+  font-family: var(--display); font-weight: 700; font-size: 26px; display: grid; place-items: center;
+}
+.key:active:not(:disabled) { transform: translateY(4px); box-shadow: none; }
+.key:disabled { opacity: 0.35; box-shadow: none; cursor: default; }
+.key.go { background: var(--trail); color: var(--on-trail); box-shadow: var(--ledge-trail); }
+.key svg { width: 26px; height: 26px; }
+
+.feedback {
+  border-radius: 32px; padding: 16px; display: grid; grid-template-columns: auto 1fr; gap: 6px 12px; align-items: center;
+  animation: up 240ms var(--ease);
+}
+@keyframes up { from { transform: translateY(16px); opacity: 0; } }
+.feedback.hit { background: var(--hit-bg); color: var(--hit-ink); }
+.feedback.miss { background: var(--miss-bg); color: var(--miss-ink); }
+.feedback .icon svg { width: 44px; height: 44px; display: block; }
+.feedback h2 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 28px; line-height: 32px; }
+.feedback p { grid-column: 1 / -1; margin: 0; font-size: 19px; line-height: 26px; color: var(--kid-ink); }
+.feedback .kid-button { grid-column: 1 / -1; justify-self: end; }
+
+.kid-button {
+  min-height: 64px; padding: 0 28px; border-radius: 999px; border: 0; cursor: pointer;
+  background: var(--trail); color: var(--on-trail); box-shadow: var(--ledge-trail);
+  font-family: var(--display); font-weight: 800; font-size: 24px;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.kid-button:active { transform: translateY(4px); box-shadow: none; }
+.kid-button svg { width: 30px; height: 30px; }
+.center { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; }
+.center h2 { margin: 0; font-family: var(--display); font-weight: 800; font-size: 36px; line-height: 40px; }
+.center p { margin: 0; font-size: 19px; line-height: 26px; color: var(--kid-ink-soft); }
+.stars { display: flex; gap: 4px; justify-content: center; flex-wrap: wrap; }
+.stars svg { width: 34px; height: 34px; }
+
+/* Grown-up notes: not part of the game. */
+.about { border-top: 2px solid var(--kid-line); padding-top: 12px; font-size: 15px; line-height: 22px; color: var(--kid-ink-soft); }
+.about summary { cursor: pointer; font-weight: 700; color: var(--kid-ink); min-height: 32px; }
+.about dl { display: grid; grid-template-columns: auto 1fr; gap: 4px 12px; margin: 8px 0 0; }
+.about dt { font-weight: 700; }
+.about dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.about code { font-size: 13px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+</style>
+
+<main class="app" id="app">
+  <div class="dots" id="dots" aria-label="Progress"></div>
+  <div class="prompt-row">
+    <button class="round" id="replay" aria-label="Hear it again" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path d="M15.5 9a4.5 4.5 0 0 1 0 6M18 6.5a8 8 0 0 1 0 11"/></svg>
+    </button>
+    <h1 class="prompt" id="prompt"></h1>
+    <button class="round" id="mute" aria-label="Sound off" aria-pressed="false" type="button">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z" fill="currentColor"/><path id="mute-x" d="M16 9.5l5 5M21 9.5l-5 5" opacity="0"/></svg>
+    </button>
+  </div>
+  <p class="read" id="read" aria-live="polite"></p>
+  <section class="stage" id="stage" aria-label="The line">
+    <div class="ground"></div>
+    <span class="front-label">Front</span>
+    <div class="front" aria-hidden="true">
+      <svg viewBox="0 0 26 64"><rect x="4" y="4" width="3" height="58" rx="1.5" fill="var(--kid-ink-soft)"/><path d="M7 6h15l-4 7 4 7H7z" fill="var(--trail)" stroke="var(--trail-deep)" stroke-width="1.5" stroke-linejoin="round"/></svg>
+    </div>
+  </section>
+  <section class="bottom" id="bottom"></section>
+  <details class="about" id="about">
+    <summary>About this item</summary>
+    <dl id="about-list"></dl>
+  </details>
+</main>
+
+<script>
+(() => {
+  const ORD = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth'];
+  const SHORT = ['1st', '2nd', '3rd', '4th', '5th', '6th', '7th', '8th'];
+  const CORRECT_TEXT = 'Yes! Great job!';
+  const MISS_TEXT = 'Good try!';
+
+  // The 7 ordinal items from content/out/bundle.json. `prompt`, `answer` and `choices` are quoted as they are.
+  // `ask` and `why` keep the item's words, except where it says to hop the frog.
+  const ITEMS = [
+    {
+      id: 'k-uses-of-numbers-tap-3', prompt: 'Sam is first', mode: 'word',
+      cast: ['🧒', '👧', '👦', '🧑'], tags: { 0: 'Sam' },
+      ask: 'Sam is first in line. Does first mean how many, which one, or a name?',
+      choices: [{ id: 'a', label: 'how many' }, { id: 'b', label: 'a name' }, { id: 'c', label: 'which one' }],
+      answer: 'which one', target: 0,
+      why: 'First tells the place in line. It tells which one Sam is.',
+      original: 'tap · answer "which one"',
+    },
+    {
+      id: 'k-uses-of-numbers-number-line-3', prompt: 'Third is 3', mode: 'tap',
+      cast: ['🐸', '🐸', '🐸', '🐸', '🐸'],
+      ask: 'A frog is third in line. Tap the third frog.',
+      answer: 3, target: 2,
+      why: 'First is 1, second is 2, and third is 3.',
+      original: 'number-line · target 3 · narration "A frog is third in line. Hop the frog to 3."',
+    },
+    {
+      id: 'k-uses-of-numbers-keypad-3', prompt: "Last duck's place?", mode: 'keypad',
+      cast: ['🦆', '🦆', '🦆', '🦆', '🦆'],
+      ask: 'Five ducks stand in a line. The first duck is in place 1. What place is the last duck in? Type its place number.',
+      answer: 5, target: 4,
+      why: 'Count the ducks in line. The last duck matches that count.',
+      original: 'keypad · answer 5',
+    },
+    {
+      id: 'k-uses-of-numbers-tap-7', prompt: 'Second place', mode: 'place',
+      cast: ['🐶', '🐱', '🐰', '🐻'],
+      ask: "The cat is second in line. Is the cat's place 4, 1, 3, or 2?",
+      choices: [{ id: 'a', label: '4' }, { id: 'b', label: '1' }, { id: 'c', label: '3' }, { id: 'd', label: '2' }],
+      answer: '2', target: 1,
+      why: 'First is 1. Second comes next, so second is 2.',
+      original: 'tap · answer 2',
+    },
+    {
+      id: 'k-uses-of-numbers-number-line-4', prompt: 'Seventh place', mode: 'tap',
+      cast: ['👦', '👧', '🧒', '👦🏽', '👧🏾', '🧒🏻', '👧🏼', '👦🏿'],
+      ask: 'Ana is seventh in line. Tap Ana.',
+      answer: 7, target: 6,
+      why: 'Seventh means the place after sixth.',
+      original: 'number-line · target 7 · narration "Ana is seventh in line. Hop the frog to the number for her place."',
+    },
+    {
+      id: 'k-uses-of-numbers-tap-6', prompt: 'Which is a name?', mode: 'word',
+      cast: ['🐶', '🐶', '🐶', '🐶', '🐶', '🐶', '🐶', '🐶'],
+      ask: 'Which one uses a number as a name? Is it shirt number 8, 8 dogs, or eighth in line?',
+      choices: [{ id: 'a', label: '8 dogs' }, { id: 'b', label: 'eighth in line' }, { id: 'c', label: 'shirt number 8' }],
+      answer: 'shirt number 8', target: null,
+      why: 'Shirt number 8 names a player. 8 dogs counts, and eighth gives a place.',
+      original: 'tap · answer "shirt number 8"',
+    },
+    {
+      id: 'g3-compare-order-1000-keypad-3', prompt: 'Second greatest', mode: 'tap', cards: true,
+      cast: ['372', '327', '732', '237'], sorted: ['732', '372', '327', '237'],
+      before: 'Put 372, 327, 732, and 237 in order from greatest to least.',
+      ask: 'What number is second? Tap it.',
+      answer: 372, target: 1,
+      why: 'The order from greatest is 732, 372, 327, 237. The second number is 372.',
+      original: 'keypad · answer 372 · narration "Put 372, 327, 732, and 237 in order from greatest to least. What number is second?"',
+    },
+  ];
+
+  const $ = (id) => document.getElementById(id);
+  const stage = $('stage'), bottom = $('bottom'), read = $('read');
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const ICON = {
+    hand: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11V5a1.5 1.5 0 0 1 3 0v5m0-1a1.5 1.5 0 0 1 3 0v2m0-1a1.5 1.5 0 0 1 3 0v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-4.6-2.2L4 15.5a1.5 1.5 0 0 1 2.3-1.9L9 16"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
+    sprout: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-9M12 12c0-4-3-6-7-6 0 4 3 6 7 6zM12 14c0-3.5 2.5-6 7-6 0 3.5-2.5 6-7 6z"/></svg>',
+    back: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6h10a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H9l-6-6z"/><path d="M12 10l4 4M16 10l-4 4"/></svg>',
+    next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>',
+    play: '<svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg>',
+    star: '<svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="var(--star)" stroke="var(--star-ink)" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+    dim: '<svg viewBox="0 0 24 24"><path d="M12 2.8l2.8 5.8 6.3.9-4.6 4.4 1.1 6.3L12 17.2l-5.6 3 1.1-6.3L2.9 9.5l6.3-.9z" fill="none" stroke="var(--kid-line-strong)" stroke-width="1.6" stroke-linejoin="round"/></svg>',
+  };
+
+  let idx = 0, run = 0, muted = false, score = [], walkers = [], spoken = '', phase = 'idle';
+  try { idx = Math.min(Number(window.claude?.hot?.data?.idx) || 0, ITEMS.length - 1); } catch (e) { idx = 0; }
+  window.claude?.hot?.snapshot?.(() => ({ idx }));
+
+  // Speech: browser voices for the demo. Resolves on end, or on a timer when speech is off or silent.
+  const synth = 'speechSynthesis' in window ? window.speechSynthesis : null;
+  let voice = null;
+  const pickVoice = () => {
+    if (!synth) return;
+    const vs = synth.getVoices();
+    voice = vs.find((v) => /^en[-_]US/i.test(v.lang) && /samantha|google us|aria|jenny|zira/i.test(v.name))
+      || vs.find((v) => /^en[-_]US/i.test(v.lang)) || vs.find((v) => /^en/i.test(v.lang)) || null;
+  };
+  if (synth) { pickVoice(); synth.onvoiceschanged = pickVoice; }
+  const wait = (ms) => new Promise((r) => setTimeout(r, reduced ? Math.min(ms, 150) : ms));
+  function say(text) {
+    spoken = text;
+    return new Promise((resolve) => {
+      let done = false;
+      const finish = () => { if (!done) { done = true; resolve(); } };
+      if (muted || !synth) { setTimeout(finish, 350 + text.length * 45); return; }
+      try {
+        const u = new SpeechSynthesisUtterance(text);
+        if (voice) u.voice = voice;
+        u.lang = voice ? voice.lang : 'en-US';
+        u.rate = 0.92; u.pitch = 1.1;
+        u.onend = finish; u.onerror = finish;
+        synth.speak(u);
+      } catch (e) { finish(); }
+      setTimeout(finish, 1500 + text.length * 95);
+    });
+  }
+  const hush = () => { try { synth && synth.cancel(); } catch (e) { /* no speech */ } };
+
+  // Line geometry: the front is at the flag, so place 1 sits on the left.
+  function geometry(n) {
+    const w = stage.clientWidth;
+    const front = 36, end = 6;
+    const slot = Math.min(76, (w - front - end) / n);
+    return { w, slot, x: (i) => front + i * slot };
+  }
+
+  function buildLine(item, placed) {
+    walkers.forEach((el) => el.remove());
+    const g = geometry(item.cast.length);
+    const tight = g.slot < 44;
+    stage.classList.toggle('tight', tight);
+    const emoji = Math.min(46, Math.floor(g.slot * (tight ? 0.74 : 0.64)));
+    walkers = item.cast.map((who, i) => {
+      const el = document.createElement('button');
+      el.type = 'button';
+      el.className = 'walker';
+      el.style.width = g.slot + 'px';
+      el.style.left = (placed ? g.x(i) : g.w + 8 + i * 12) + 'px';
+      el.setAttribute('aria-label', item.cards ? who : `${item.tags?.[i] ? item.tags[i] + ', ' : ''}${ORD[i]} in line`);
+      el.disabled = true;
+      const card = item.cards ? ' card' : '';
+      const size = item.cards ? Math.min(26, Math.floor(g.slot * 0.34)) : emoji;
+      const pad = item.cards ? 'padding:14px 4px;width:' + (g.slot - 6) + 'px;' : '';
+      el.innerHTML = (item.tags?.[i] ? `<span class="tag">${item.tags[i]}</span>` : '')
+        + `<span class="who${card}" style="font-size:${size}px;${pad}">${who}</span>`
+        + `<span class="badge">${SHORT[i]}</span>`;
+      el.addEventListener('click', () => onTapWalker(i));
+      stage.appendChild(el);
+      return el;
+    });
+  }
+
+  function placeAt(order) {
+    const g = geometry(walkers.length);
+    order.forEach((walkerIndex, slotIndex) => { walkers[walkerIndex].style.left = g.x(slotIndex) + 'px'; });
+  }
+
+  // Which walker stands at each place. Cards re-sort; everyone else keeps cast order.
+  let lineOrder = [];
+
+  async function walkIn(item, r) {
+    const ords = [];
+    for (let i = 0; i < walkers.length; i++) {
+      if (r !== run) return;
+      const el = walkers[i];
+      el.classList.add('walking');
+      el.style.left = geometry(walkers.length).x(i) + 'px';
+      await wait(470);
+      el.classList.remove('walking');
+      if (!item.cards) {
+        el.querySelector('.badge').classList.add('on');
+        ords.push(ORD[i]);
+        showRead(ords);
+        await say(ORD[i]);
+      }
+    }
+  }
+
+  async function sortCards(item, r) {
+    const order = item.sorted.map((v) => item.cast.indexOf(v));
+    walkers.forEach((el) => { el.style.transition = 'left 700ms var(--ease)'; el.classList.add('walking'); });
+    placeAt(order);
+    await wait(760);
+    walkers.forEach((el) => el.classList.remove('walking'));
+    lineOrder = order;
+    const ords = [];
+    for (let p = 0; p < order.length; p++) {
+      if (r !== run) return;
+      const badge = walkers[order[p]].querySelector('.badge');
+      badge.textContent = SHORT[p];
+      badge.classList.add('on');
+      ords.push(ORD[p]);
+      showRead(ords);
+      await say(ORD[p]);
+    }
+  }
+
+  function showRead(parts) {
+    if (Array.isArray(parts)) {
+      read.innerHTML = parts.map((p) => `<span class="ord">${p}</span>`).join(', ') + (parts.length ? '…' : '');
+    } else read.textContent = parts;
+  }
+
+  const badgesOff = () => walkers.forEach((el) => el.querySelector('.badge').classList.remove('on'));
+
+  function renderDots() {
+    $('dots').innerHTML = ITEMS.map((_, i) =>
+      `<span class="dot${i < idx ? ' done' : ''}${i === idx ? ' now' : ''}"></span>`).join('');
+    $('dots').setAttribute('aria-label', `Question ${idx + 1} of ${ITEMS.length}`);
+  }
+
+  function renderAbout(item) {
+    const answer = item.choices ? `"${item.answer}"` : String(item.answer);
+    $('about-list').innerHTML =
+      `<dt>Item</dt><dd><code>${item.id}</code></dd>`
+      + `<dt>Prompt</dt><dd>${item.prompt}</dd>`
+      + `<dt>Answer</dt><dd>${answer}</dd>`
+      + `<dt>In the bundle</dt><dd>${item.original}</dd>`
+      + `<dt>Here</dt><dd>${({ tap: 'Tap the one in a place', keypad: 'Say the place, on the keypad', place: 'Say the place, from choices', word: 'What the number tells, from choices' })[item.mode]}</dd>`;
+  }
+
+  // Start screen: the first item's line stands still, so the page reads at rest.
+  function showStart() {
+    const item = ITEMS[idx];
+    $('prompt').textContent = item.prompt;
+    renderDots(); renderAbout(item);
+    buildLine(item, true);
+    lineOrder = item.cast.map((_, i) => i);
+    showRead('Watch the line. Pip counts each place.');
+    bottom.innerHTML = `<div class="center"><h2>Line up!</h2><p>${ITEMS.length} questions. Turn the sound on.</p>`
+      + `<button class="kid-button" id="start" type="button">${ICON.play}Start</button></div>`;
+    $('start').addEventListener('click', () => {
+      // Speaking inside the tap unlocks speech on phones.
+      if (synth && !muted) { try { synth.speak(new SpeechSynthesisUtterance('')); } catch (e) { /* ignore */ } }
+      playItem();
+    });
+  }
+
+  async function playItem() {
+    const r = ++run;
+    hush();
+    phase = 'lineup';
+    const item = ITEMS[idx];
+    $('prompt').textContent = item.prompt;
+    renderDots(); renderAbout(item);
+    bottom.innerHTML = '';
+    buildLine(item, !!item.cards);
+    lineOrder = item.cast.map((_, i) => i);
+    if (item.cards) {
+      walkers.forEach((el, i) => { el.style.left = geometry(walkers.length).x(i) + 'px'; });
+      showRead(item.before);
+      await say(item.before);
+      if (r !== run) return;
+      await sortCards(item, r);
+    } else {
+      showRead('');
+      await wait(200);
+      await walkIn(item, r);
+    }
+    if (r !== run) return;
+    await wait(450);
+    badgesOff();
+    ask(item, r);
+  }
+
+  function ask(item, r) {
+    phase = 'ask';
+    showRead(item.ask);
+    say(item.ask);
+    if (item.mode === 'tap') {
+      bottom.innerHTML = `<p class="hint">${ICON.hand}Tap one in the line</p>`;
+      walkers.forEach((el) => { el.disabled = false; el.classList.add('tappable'); });
+    } else if (item.mode === 'keypad') {
+      renderPad('');
+    } else {
+      const cols = item.choices.length === 4 ? 4 : 3;
+      const num = item.mode === 'place';
+      bottom.innerHTML = `<div class="choices" style="--cols:${cols}">`
+        + item.choices.map((c) => `<button type="button" class="tile${num ? ' num' : ''}" data-label="${c.label}">${c.label}<span class="mark" hidden></span></button>`).join('')
+        + '</div>';
+      bottom.querySelectorAll('.tile').forEach((t) => t.addEventListener('click', () => onChoice(t.dataset.label)));
+    }
+  }
+
+  let entry = '';
+  function renderPad(value) {
+    entry = value;
+    const keys = [['1', '2', '3', '4', '5', 'del'], ['6', '7', '8', '9', '0', 'go']];
+    bottom.innerHTML = `<div class="pad"><div class="display${entry ? '' : ' empty'}" id="display" aria-live="polite">${entry || '?'}</div>`
+      + keys.map((row) => '<div class="pad-row">' + row.map((k) => {
+        if (k === 'del') return `<button type="button" class="key" data-k="del" aria-label="Delete">${ICON.back}</button>`;
+        if (k === 'go') return `<button type="button" class="key go" data-k="go" aria-label="Check my answer"${entry ? '' : ' disabled'}>${ICON.check}</button>`;
+        return `<button type="button" class="key" data-k="${k}">${k}</button>`;
+      }).join('') + '</div>').join('') + '</div>';
+    bottom.querySelectorAll('.key').forEach((b) => b.addEventListener('click', () => {
+      if (phase !== 'ask') return;
+      const k = b.dataset.k;
+      if (k === 'go') { onTyped(); return; }
+      renderPad(k === 'del' ? entry.slice(0, -1) : (entry + k).replace(/^0+(?=\d)/, '').slice(0, 3));
+    }));
+  }
+
+  // Play-out: count up the line to the right place, then show feedback.
+  async function countTo(place, r, outcome) {
+    const ords = [];
+    for (let p = 0; p <= place; p++) {
+      if (r !== run) return;
+      const el = walkers[lineOrder[p]];
+      el.classList.add('lit');
+      const badge = el.querySelector('.badge');
+      badge.textContent = SHORT[p];
+      badge.classList.add('on');
+      ords.push(ORD[p]);
+      showRead(ords);
+      await say(ORD[p]);
+      if (p < place) el.classList.remove('lit');
+    }
+    const el = walkers[lineOrder[place]];
+    el.classList.remove('lit');
+    el.classList.add(outcome);
+  }
+
+  function lockLine() { walkers.forEach((el) => { el.disabled = true; el.classList.remove('tappable'); }); }
+
+  async function onTapWalker(i) {
+    const item = ITEMS[idx];
+    if (phase !== 'ask' || item.mode !== 'tap') return;
+    phase = 'playing';
+    const r = run;
+    hush();
+    lockLine();
+    const place = lineOrder.indexOf(i);
+    const correct = place === item.target;
+    if (!correct) walkers[i].classList.add('miss');
+    else walkers[i].classList.add('lit');
+    bottom.innerHTML = '<p class="hint">Let’s count.</p>';
+    await say("Let's count.");
+    await countTo(item.target, r, 'hit');
+    if (r !== run) return;
+    finish(item, correct, r);
+  }
+
+  async function onChoice(label) {
+    const item = ITEMS[idx];
+    if (phase !== 'ask') return;
+    phase = 'playing';
+    const r = run;
+    hush();
+    const correct = label === item.answer;
+    const tiles = [...bottom.querySelectorAll('.tile')];
+    tiles.forEach((t) => {
+      t.disabled = true;
+      if (t.dataset.label === label) t.classList.add('active');
+    });
+    await say(`${label}? Let's see.`);
+    if (r !== run) return;
+    tiles.forEach((t) => {
+      const mark = t.querySelector('.mark');
+      t.classList.remove('active');
+      if (t.dataset.label === item.answer) { t.classList.add('right'); mark.hidden = false; mark.innerHTML = ICON.check; }
+      else if (t.dataset.label === label) { t.classList.add('missed'); mark.hidden = false; mark.innerHTML = ICON.sprout; }
+      else t.classList.add('rest');
+    });
+    if (item.target !== null) await countTo(item.target, r, 'hit');
+    else await wait(700);
+    if (r !== run) return;
+    finish(item, correct, r);
+  }
+
+  async function onTyped() {
+    const item = ITEMS[idx];
+    if (phase !== 'ask' || !entry) return;
+    phase = 'playing';
+    const r = run;
+    hush();
+    const correct = Number(entry) === item.answer;
+    bottom.querySelectorAll('.key').forEach((k) => { k.disabled = true; });
+    await say(`${entry}? Let's see.`);
+    await countTo(item.target, r, 'hit');
+    if (r !== run) return;
+    const d = $('display');
+    d.classList.add(correct ? 'right' : 'missed');
+    await wait(400);
+    finish(item, correct, r);
+  }
+
+  async function finish(item, correct, r) {
+    phase = 'result';
+    score[idx] = correct;
+    const title = correct ? CORRECT_TEXT : MISS_TEXT;
+    const last = idx === ITEMS.length - 1;
+    bottom.innerHTML = `<div class="feedback ${correct ? 'hit' : 'miss'}" role="status">`
+      + `<span class="icon">${correct ? ICON.star : ICON.sprout}</span><h2>${title}</h2>`
+      + `<p>${item.why}</p>`
+      + `<button class="kid-button" id="next" type="button">${last ? 'Finish' : 'Next'}${ICON.next}</button></div>`;
+    $('next').addEventListener('click', () => {
+      hush();
+      if (last) showEnd(); else { idx += 1; playItem(); }
+    });
+    showRead(item.ask);
+    await say(title);
+    if (r === run) await say(item.why);
+  }
+
+  function showEnd() {
+    run++;
+    phase = 'done';
+    const got = score.filter(Boolean).length;
+    $('prompt').textContent = 'All done!';
+    $('dots').innerHTML = ITEMS.map(() => '<span class="dot done"></span>').join('');
+    walkers.forEach((el) => el.remove());
+    walkers = [];
+    showRead(`You got ${got} of ${ITEMS.length}.`);
+    bottom.innerHTML = `<div class="center"><div class="stars">${ITEMS.map((_, i) => (score[i] ? ICON.star : ICON.dim)).join('')}</div>`
+      + `<h2>${got} of ${ITEMS.length}</h2><button class="kid-button" id="again" type="button">${ICON.play}Play again</button></div>`;
+    say(`All done! You got ${got} of ${ITEMS.length}.`);
+    $('again').addEventListener('click', () => { idx = 0; score = []; playItem(); });
+  }
+
+  $('replay').addEventListener('click', () => { hush(); if (spoken) say(spoken); });
+  $('mute').addEventListener('click', () => {
+    muted = !muted;
+    if (muted) hush();
+    $('mute').setAttribute('aria-pressed', String(muted));
+    $('mute').setAttribute('aria-label', muted ? 'Sound on' : 'Sound off');
+    $('mute-x').setAttribute('opacity', muted ? '1' : '0');
+  });
+  addEventListener('resize', () => {
+    if (!walkers.length) return;
+    const g = geometry(walkers.length);
+    walkers.forEach((el, i) => { el.style.width = g.slot + 'px'; });
+    lineOrder.forEach((w, p) => { walkers[w].style.left = g.x(p) + 'px'; });
+  });
+
+  const start = () => showStart();
+  window.claude?.hot?.ready ? window.claude.hot.ready(start) : start();
+})();
+</script>
