@@ -1,6 +1,6 @@
 import type { ContentBundle, Item } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
-import { acceptOrders, applyOrders, orderCandidates, type TaggedOrder } from './order';
+import { acceptOrders, applyOrders, gapAsk, orderCandidates, type TaggedOrder } from './order';
 
 const tap = (
   id: string,
@@ -61,6 +61,63 @@ describe('orderCandidates', () => {
       after.id,
       last.id,
     ]);
+  });
+
+  it('hears then, second, and third, and skips true or false items', () => {
+    const then = tap('then', 'Egg, then what?', 'Egg, then what?', ['chick', 'hen']);
+    const second = tap('second', 'What is the second step?', 'Which step?', ['soap', 'dry']);
+    const yesNo = tap('yes-no', 'Spring comes after winter.', 'True or false?', ['true', 'false']);
+    expect(orderCandidates([then, second, yesNo]).map((i) => i.id)).toEqual(['then', 'second']);
+  });
+});
+
+describe('gapAsk', () => {
+  it('reads the prompt first, then the narration', () => {
+    expect(gapAsk(after)).toEqual({ at: 'after', card: 'build' });
+    expect(gapAsk(last)).toEqual({ at: 'last' });
+    expect(gapAsk(tap('f', 'Which step?', 'What does Mia do first?', ['plan']))).toEqual({
+      at: 'first',
+    });
+    expect(gapAsk(tap('b', 'What comes before the frog?', 'n', ['egg']))).toEqual({
+      at: 'before',
+      card: 'frog',
+    });
+    expect(gapAsk(tap('n', 'What comes next?', 'Then what?', ['egg']))).toBeUndefined();
+  });
+});
+
+describe('acceptOrders gap', () => {
+  const seasons = ['winter', 'spring', 'summer', 'fall'].map((t) => card(t));
+  const row = (prompt: string, answer: string, missing: number, cycle = false) => {
+    const item = tap('i', prompt, 'n', [answer, 'night']);
+    return acceptOrders([item], { scenes: [tagged('i', { cards: seasons, missing, cycle })] })
+      .rejected.i;
+  };
+
+  it('puts the gap first for "first"', () => {
+    expect(row('Which season comes first?', 'winter', 0)).toBeUndefined();
+    expect(row('Which season comes first?', 'spring', 1)).toBe('the item asks for the first card');
+  });
+
+  it('puts the gap last for "last", unless the row is a cycle', () => {
+    expect(row('Which comes last?', 'fall', 3)).toBeUndefined();
+    expect(row('Which comes last?', 'summer', 2)).toBe('the item asks for the last card');
+    expect(row('Which comes last?', 'summer', 2, true)).toBeUndefined();
+  });
+
+  it('puts the gap right after the card "after" names, wrapping in a cycle', () => {
+    expect(row('What comes after spring?', 'summer', 2)).toBeUndefined();
+    expect(row('What comes after the summer season?', 'fall', 3)).toBeUndefined();
+    expect(row('What comes after winter?', 'summer', 2)).toBe(
+      'the card before the gap is not winter',
+    );
+    expect(row('What comes after fall?', 'winter', 0)).toBe('the card before the gap is not fall');
+    expect(row('What comes after fall?', 'winter', 0, true)).toBeUndefined();
+  });
+
+  it('puts the gap right before the card "before" names', () => {
+    expect(row('What comes before summer?', 'spring', 1)).toBeUndefined();
+    expect(row('What comes before fall?', 'spring', 1)).toBe('the card after the gap is not fall');
   });
 });
 
