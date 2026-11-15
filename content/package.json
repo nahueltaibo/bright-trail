@@ -22,6 +22,7 @@
     "lineup": "tsx src/games/tag-games.ts --kind lineup",
     "wall": "tsx src/games/tag-games.ts --kind wall",
     "label": "tsx src/games/tag-games.ts --kind label",
+    "order": "tsx src/games/tag-games.ts --kind order",
     "hops": "tsx src/games/tag-games.ts --kind hops",
     "coverage": "tsx src/games/coverage-report.ts",
     "packs": "tsx src/packs/build-packs.ts",

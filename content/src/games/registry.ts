@@ -9,6 +9,7 @@ import type {
   LabelScene,
   LineupScene,
   NumberLineItem,
+  OrderScene,
   Scene,
   SliceScene,
   StonesScene,
@@ -27,6 +28,7 @@ import { acceptHops, applyHops, hopsCandidates, hopsTagRequest } from '../hops/h
 import { acceptJoins, applyJoins, joinCandidates, joinTagRequest } from '../join/join';
 import { acceptLabels, applyLabels, labelCandidates, labelTagRequest } from '../label/label';
 import { acceptLineups, applyLineups, lineupCandidates, lineupTagRequest } from '../lineup/lineup';
+import { acceptOrders, applyOrders, orderCandidates, orderTagRequest } from '../order/order';
 import { acceptScenes, applyScenes, candidateItems, tagRequest } from '../scenes/scenes';
 import { acceptSlices, applySlices, sliceCandidates, sliceTagRequest } from '../slices/slices';
 import { acceptStones, applyStones, stonesCandidates, stonesTagRequest } from '../stones/stones';
@@ -205,6 +207,21 @@ const label: Tagger<Item, LabelScene> = {
   apply: applyLabels,
 };
 
+const order: Tagger<Item, OrderScene> = {
+  file: 'order.json',
+  outcome: 'play as rows in order',
+  label: 'Order',
+  minPerSkill: 1,
+  subjects: CARD_SUBJECTS,
+  candidates: orderCandidates,
+  request: orderTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptOrders(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyOrders,
+};
+
 const hops: Tagger<NumberLineItem, Hops> = {
   file: 'hops.json',
   outcome: 'hop a planned path',
@@ -236,6 +253,7 @@ export const TAGGERS = {
   lineup,
   wall,
   label,
+  order,
   hops,
 };
 export type TaggerKind = keyof typeof TAGGERS;
