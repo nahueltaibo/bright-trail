@@ -1,0 +1,56 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-mult-div-problems-tap-5",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "cup",
+        "many": "cups",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Fraction multiplication; not a whole-number ten-frame story."
+      },
+      {
+        "itemId": "g3-mult-div-problems-keypad-4",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "hop",
+        "many": "hops",
+        "place": "pond",
+        "move": "hop",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Fraction hops on a number line; not a ten-frame story."
+      },
+      {
+        "itemId": "g3-mult-div-problems-keypad-5",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "glass",
+        "many": "glasses",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Fraction multiplication (10 × 1/2); not a ten-frame ask."
+      }
+    ]
+  }
+}

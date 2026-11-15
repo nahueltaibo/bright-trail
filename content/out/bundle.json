@@ -1,7 +1,7 @@
 {
   "schemaVersion": 5,
   "version": "2026.11.15-53",
-  "generatedAt": "2026-11-15T17:33:38Z",
+  "generatedAt": "2026-11-15T22:10:49Z",
   "skills": [
     {
       "id": "k-count-to-20",
@@ -8073,6 +8073,16 @@
       "narration": "What is 6 + 0?",
       "prompt": "6 + 0 = ?",
       "why": "Adding 0 adds nothing. So 6 + 0 stays 6.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 6,
+        "more": 0
+      },
       "type": "keypad",
       "answer": 6
     },
@@ -8122,6 +8132,17 @@
       "narration": "Mia has 4 apples. She adds 0 more. How many apples does she have now? Is it 0, 5, or 4?",
       "prompt": "How many apples?",
       "why": "Adding 0 means no more apples. She still has 4.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "emoji": "🍎",
+        "one": "apple",
+        "many": "apples",
+        "place": "tray",
+        "move": "slide",
+        "start": 4,
+        "more": 0
+      },
       "type": "tap",
       "visual": { "kind": "objects", "emoji": "🍎", "count": 4 },
       "choices": [
@@ -8569,6 +8590,16 @@
       "narration": "Think: 9 and what make 17? Use it to find 17 - 9.",
       "prompt": "17 - 9 = ?",
       "why": "Nine and 8 make 17. So 17 take away 9 is 8.",
+      "game": {
+        "kind": "join",
+        "ask": "part",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 17,
+        "take": 9
+      },
       "type": "keypad",
       "answer": 8
     },
@@ -8681,6 +8712,17 @@
       "narration": "Some birds sat on a fence. Then 7 more came. Now there are 15 birds. How many were there at first? Is it 6, 8, 9, or 22?",
       "prompt": "? + 7 = 15",
       "why": "Take 7 from 15 to go back to the start. 15 - 7 = 8 birds.",
+      "game": {
+        "kind": "join",
+        "ask": "part",
+        "emoji": "🐦",
+        "one": "bird",
+        "many": "birds",
+        "place": "tray",
+        "move": "fly",
+        "start": 15,
+        "take": 7
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 6 },
@@ -10383,6 +10425,16 @@
       "narration": "What is 6 + 0?",
       "prompt": "6 + 0 = ?",
       "why": "Adding zero changes nothing. 6 plus 0 is still 6.",
+      "game": {
+        "kind": "join",
+        "ask": "join",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "start": 6,
+        "more": 0
+      },
       "type": "keypad",
       "answer": 6
     },
@@ -10423,6 +10475,17 @@
       "narration": "What is 8 - 0?",
       "prompt": "8 - 0 = ?",
       "why": "Taking away zero changes nothing. 8 take away 0 is still 8.",
+      "game": {
+        "kind": "join",
+        "ask": "leave",
+        "one": "counter",
+        "many": "counters",
+        "place": "tray",
+        "move": "slide",
+        "leave": "slide",
+        "start": 8,
+        "take": 0
+      },
       "type": "keypad",
       "answer": 8
     },

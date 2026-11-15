@@ -1,0 +1,72 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-add-sub-problems-50-tap-1",
+        "fits": true,
+        "ask": "join",
+        "emoji": "🚗",
+        "one": "car",
+        "many": "cars",
+        "place": "tray",
+        "move": "drive",
+        "leave": null,
+        "start": 8,
+        "more": 3,
+        "take": null,
+        "target": null,
+        "note": "8 + 3 cars"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-tap-4",
+        "fits": true,
+        "ask": "part",
+        "emoji": "🐦",
+        "one": "bird",
+        "many": "birds",
+        "place": "tray",
+        "move": "fly",
+        "leave": null,
+        "start": 15,
+        "more": null,
+        "take": 7,
+        "target": null,
+        "note": "7 and what make 15; 15 spots so tray"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-keypad-1",
+        "fits": true,
+        "ask": "join",
+        "emoji": "🐟",
+        "one": "fish",
+        "many": "fish",
+        "place": "pond",
+        "move": "swim",
+        "leave": null,
+        "start": 6,
+        "more": 4,
+        "take": null,
+        "target": null,
+        "note": "6 + 4 fish"
+      },
+      {
+        "itemId": "g1-add-sub-problems-50-keypad-2",
+        "fits": true,
+        "ask": "leave",
+        "emoji": "🪙",
+        "one": "coin",
+        "many": "coins",
+        "place": "tray",
+        "move": "slide",
+        "leave": "slide",
+        "start": 10,
+        "more": null,
+        "take": 3,
+        "target": null,
+        "note": "10 - 3 coins spent"
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g4-compare-fair-shares-keypad-2",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "friend",
+        "many": "friends",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Compares two groups of friends sharing pizzas (how many more); not a ten-frame story."
+      },
+      {
+        "itemId": "g4-compare-fair-shares-tap-6",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "friend",
+        "many": "friends",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Choices are not numbers; asks which fair share is smallest."
+      },
+      {
+        "itemId": "g4-compare-fair-shares-keypad-3",
+        "fits": false,
+        "ask": "count",
+        "emoji": null,
+        "one": "share",
+        "many": "shares",
+        "place": "tray",
+        "move": "slide",
+        "leave": null,
+        "start": 0,
+        "more": null,
+        "take": null,
+        "target": null,
+        "note": "Fraction comparison (1/2 vs 1/8), not a ten-frame count story."
+      }
+    ]
+  }
+}
