@@ -14958,7 +14958,8 @@
         { "id": "c", "kind": "number", "value": 0.7 },
         { "id": "d", "kind": "number", "value": 7 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "7/10" }
     },
     {
       "id": "g4-decimal-tenths-tap-2",
@@ -14983,7 +14984,8 @@
       "why": "The frame has 10 parts and 4 are filled. That is 4 tenths. As a decimal, it is 0.4.",
       "type": "keypad",
       "visual": { "kind": "ten-frame", "filled": 4 },
-      "answer": 0.4
+      "answer": 0.4,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "4/10" }
     },
     {
       "id": "g4-decimal-tenths-keypad-2",
@@ -14992,9 +14994,9 @@
       "narration": "Type the decimal for 9 tenths.",
       "prompt": "9 tenths = ?",
       "why": "Tenths go right after the decimal point. No wholes means we start with 0. So 9 tenths is 0.9.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "9/10" },
       "type": "keypad",
-      "answer": 0.9
+      "answer": 0.9,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "9/10" }
     },
     {
       "id": "g4-decimal-tenths-number-line-1",
@@ -15032,9 +15034,9 @@
       "narration": "Mia ran 3 whole laps and 5 tenths of another lap. Type her distance as a decimal.",
       "prompt": "3 wholes and 5 tenths",
       "why": "The 3 wholes go before the dot. The 5 tenths go after it. So the number is 3.5.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "3.5" },
       "type": "keypad",
-      "answer": 3.5
+      "answer": 3.5,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "3.5" }
     },
     {
       "id": "g4-decimal-tenths-keypad-4",
@@ -15095,13 +15097,13 @@
       "narration": "Is 2.0 the same as 2? Yes or no?",
       "prompt": "Is 2.0 the same as 2?",
       "why": "The 0 in the tenths place means no tenths. So 2.0 is 2 wholes and nothing more. It is the same as 2.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "same", "amount": "2.0", "other": "2" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "No" },
         { "id": "b", "kind": "text", "text": "Yes" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "same", "amount": "2.0", "other": "2" }
     },
     {
       "id": "g4-decimal-tenths-keypad-5",
@@ -15110,9 +15112,9 @@
       "narration": "A tank holds 12 tenths of a litre. Type that amount as a decimal.",
       "prompt": "12 tenths = ?",
       "why": "10 tenths make 1 whole. 12 tenths is 1 whole and 2 more tenths. So it is 1.2.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "12/10" },
       "type": "keypad",
-      "answer": 1.2
+      "answer": 1.2,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "12/10" }
     },
     {
       "id": "g4-decimal-tenths-number-line-4",
@@ -15147,7 +15149,6 @@
       "narration": "Sam painted 1/2 of a fence. Which decimal is the same amount: 0.2, 0.5, 1.5, or 0.1?",
       "prompt": "1/2 = ?",
       "why": "One half is 5 out of 10 equal parts. Five tenths is written as 0.5.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "1/2" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 0.2 },
@@ -15155,7 +15156,8 @@
         { "id": "c", "kind": "number", "value": 1.5 },
         { "id": "d", "kind": "number", "value": 0.1 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "1/2" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-keypad-1",
@@ -15166,7 +15168,8 @@
       "why": "Each dot is one tenth. Seven dots make 7 tenths, and the decimal is 0.7.",
       "type": "keypad",
       "visual": { "kind": "ten-frame", "filled": 7 },
-      "answer": 0.7
+      "answer": 0.7,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "7/10" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-number-line-1",
@@ -15179,7 +15182,8 @@
       "min": 0,
       "max": 1,
       "step": 0.1,
-      "target": 0.3
+      "target": 0.3,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "3/10" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-tap-2",
@@ -15188,7 +15192,6 @@
       "narration": "Which fraction is the same as 0.4: 1/10, 4/10, 6/10, or 10/4?",
       "prompt": "0.4 = ?",
       "why": "The digit after the dot counts tenths. The 4 means 4 tenths, so 0.4 is 4/10.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "fraction", "amount": "0.4" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "1/10" },
@@ -15196,7 +15199,8 @@
         { "id": "c", "kind": "text", "text": "10/4" },
         { "id": "d", "kind": "text", "text": "4/10" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "fraction", "amount": "0.4" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-keypad-2",
@@ -15220,7 +15224,8 @@
       "min": 0,
       "max": 2,
       "step": 0.1,
-      "target": 1.5
+      "target": 1.5,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "15/10" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-tap-3",
@@ -15229,7 +15234,6 @@
       "narration": "Maya ran 6/10 of a kilometre. Which decimal is the same: 0.6, 6, 1.6, or 0.4?",
       "prompt": "6/10 = ?",
       "why": "Six tenths means 6 in the tenths place. So 6/10 is 0.6.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "6/10" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 6 },
@@ -15237,7 +15241,8 @@
         { "id": "c", "kind": "number", "value": 0.6 },
         { "id": "d", "kind": "number", "value": 0.4 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "6/10" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-keypad-3",
@@ -15264,19 +15269,19 @@
       "narration": "Is 7/10 the same amount as 0.07? Yes or no?",
       "prompt": "7/10 = 0.07?",
       "why": "The first digit after the dot is tenths. So 7 tenths is 0.7, not 0.07.",
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "Yes" },
+        { "id": "b", "kind": "text", "text": "No" }
+      ],
+      "answerChoiceId": "b",
       "game": {
         "kind": "grid",
         "unit": "hundredths",
         "ask": "same",
         "amount": "7/10",
         "other": "0.07"
-      },
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "Yes" },
-        { "id": "b", "kind": "text", "text": "No" }
-      ],
-      "answerChoiceId": "b"
+      }
     },
     {
       "id": "g4-fraction-decimal-equivalence-keypad-4",
@@ -15285,9 +15290,9 @@
       "narration": "A dime is 1/10 of a dollar. Zoe has 3 dimes. Type that part of a dollar as a decimal.",
       "prompt": "3 dimes = ? dollar",
       "why": "Each dime is one tenth of a dollar. Three dimes are 3 tenths, which is 0.3.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "3/10" },
       "type": "keypad",
-      "answer": 0.3
+      "answer": 0.3,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "3/10" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-tap-5",
@@ -15296,7 +15301,6 @@
       "narration": "Which fraction is the same as 1.3: 3/10, 13/10, 1/3, or 31/10?",
       "prompt": "1.3 = ?",
       "why": "1.3 is 1 whole and 3 tenths. One whole is 10 tenths, so that is 13 tenths.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "fraction", "amount": "1.3" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/10" },
@@ -15304,7 +15308,8 @@
         { "id": "c", "kind": "text", "text": "31/10" },
         { "id": "d", "kind": "text", "text": "13/10" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "fraction", "amount": "1.3" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-number-line-3",
@@ -15317,7 +15322,8 @@
       "min": 0,
       "max": 3,
       "step": 0.1,
-      "target": 2.4
+      "target": 2.4,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "24/10" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-keypad-5",
@@ -15326,9 +15332,9 @@
       "narration": "A rope is 2 and 7 tenths metres long. Type its length as a decimal.",
       "prompt": "2 7/10 = ?",
       "why": "The 2 wholes go before the dot. The 7 tenths go after the dot. That makes 2.7.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "2 7/10" },
       "type": "keypad",
-      "answer": 2.7
+      "answer": 2.7,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "2 7/10" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-number-line-4",
@@ -15341,7 +15347,8 @@
       "min": 0,
       "max": 1,
       "step": 0.1,
-      "target": 0.8
+      "target": 0.8,
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "4/5" }
     },
     {
       "id": "g4-fraction-decimal-equivalence-tap-6",
@@ -15586,7 +15593,6 @@
       "narration": "Which fraction is equivalent to 1/2: 2/4, 2/3, 1/3, or 3/4?",
       "prompt": "Equivalent to 1/2?",
       "why": "Multiply the numerator and denominator of 1/2 by 2. You get 2/4, which is the same amount.",
-      "game": { "kind": "grid", "unit": "tenths", "ask": "fraction", "amount": "1/2" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "2/3" },
@@ -15594,7 +15600,8 @@
         { "id": "c", "kind": "text", "text": "1/3" },
         { "id": "d", "kind": "text", "text": "3/4" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "fraction", "amount": "1/2" }
     },
     {
       "id": "g5-equivalent-fractions-keypad-1",
@@ -15652,7 +15659,6 @@
       "narration": "A player made 3/4 of her free throws. Which fraction is equivalent to 3/4: 6/8, 6/9, 4/6, or 3/8?",
       "prompt": "Equivalent to 3/4?",
       "why": "Multiply 3 and 4 by 2. You get 6/8. The other fractions name different amounts.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "fraction", "amount": "3/4" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "6/9" },
@@ -15660,7 +15666,8 @@
         { "id": "c", "kind": "text", "text": "3/8" },
         { "id": "d", "kind": "text", "text": "6/8" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "fraction", "amount": "3/4" }
     },
     {
       "id": "g5-equivalent-fractions-keypad-3",
@@ -15719,19 +15726,19 @@
       "narration": "One player made 6 of 8 shots. Another made 9 of 12 shots. Are the fractions 6/8 and 9/12 equivalent? Yes or No?",
       "prompt": "Is 6/8 equivalent to 9/12?",
       "why": "Divide 6 and 8 by 2 to get 3/4. Divide 9 and 12 by 3 to get 3/4. Both are the same amount.",
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "Yes" },
+        { "id": "b", "kind": "text", "text": "No" }
+      ],
+      "answerChoiceId": "a",
       "game": {
         "kind": "grid",
         "unit": "hundredths",
         "ask": "same",
         "amount": "6/8",
         "other": "9/12"
-      },
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "Yes" },
-        { "id": "b", "kind": "text", "text": "No" }
-      ],
-      "answerChoiceId": "a"
+      }
     },
     {
       "id": "g5-equivalent-fractions-keypad-5",
@@ -15988,14 +15995,14 @@
       "narration": "Which number equals 0.5: 0.05, 0.50, or 5.00?",
       "prompt": "Equal to 0.5?",
       "why": "5 tenths is the same as 50 hundredths. Adding a zero after the 5 gives 0.50 and does not change the value.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "0.5" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "0.05" },
         { "id": "b", "kind": "text", "text": "0.50" },
         { "id": "c", "kind": "text", "text": "5.00" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "0.5" }
     },
     {
       "id": "g5-decimals-hundredths-keypad-1",
@@ -16042,9 +16049,9 @@
       "narration": "The decimal 0.3 is the same as how many hundredths? Type the number.",
       "prompt": "0.3 = ? hundredths",
       "why": "One tenth is 10 hundredths. So 3 tenths is 3 × 10, which is 30 hundredths, or 0.30.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "parts", "amount": "0.3" },
       "type": "keypad",
-      "answer": 30
+      "answer": 30,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "parts", "amount": "0.3" }
     },
     {
       "id": "g5-decimals-hundredths-tap-3",
@@ -16082,9 +16089,9 @@
       "narration": "Type the decimal for 75 hundredths.",
       "prompt": "75 hundredths = ?",
       "why": "Hundredths sit in the second place after the dot. 75 hundredths is 75 out of 100, so it is 0.75.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "75/100" },
       "type": "keypad",
-      "answer": 0.75
+      "answer": 0.75,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "75/100" }
     },
     {
       "id": "g5-decimals-hundredths-tap-4",
@@ -16186,7 +16193,6 @@
       "narration": "What percent is equal to 1/2? Is it 25%, 50%, 75%, or 100%?",
       "prompt": "1/2 = ?%",
       "why": "Multiply the numerator and denominator of 1/2 by 50. That gives 50/100, which is 50%.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "1/2" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "25%" },
@@ -16194,7 +16200,8 @@
         { "id": "c", "kind": "text", "text": "75%" },
         { "id": "d", "kind": "text", "text": "100%" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "1/2" }
     },
     {
       "id": "g5-fraction-decimal-percent-keypad-1",
@@ -16203,9 +16210,9 @@
       "narration": "The decimal 0.25 is equal to what percent? Type the number.",
       "prompt": "0.25 = ?%",
       "why": "0.25 means 25 hundredths, or 25/100. Out of 100 is percent, so it is 25%.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "0.25" },
       "type": "keypad",
-      "answer": 25
+      "answer": 25,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "0.25" }
     },
     {
       "id": "g5-fraction-decimal-percent-number-line-1",
@@ -16218,7 +16225,8 @@
       "min": 0,
       "max": 100,
       "step": 10,
-      "target": 70
+      "target": 70,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "7/10" }
     },
     {
       "id": "g5-fraction-decimal-percent-tap-2",
@@ -16227,7 +16235,6 @@
       "narration": "A fraction out of 100 is equal to 30%. Is it 3/100, 30/100, 13/100, or 300/100?",
       "prompt": "30% = ?/100",
       "why": "Percent means out of 100. So 30% is 30 out of 100, or 30/100.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "fraction", "amount": "30%" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/100" },
@@ -16235,7 +16242,8 @@
         { "id": "c", "kind": "text", "text": "13/100" },
         { "id": "d", "kind": "text", "text": "300/100" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "fraction", "amount": "30%" }
     },
     {
       "id": "g5-fraction-decimal-percent-keypad-2",
@@ -16244,9 +16252,9 @@
       "narration": "What decimal is equal to 9/100? Type the number.",
       "prompt": "9/100 = ?",
       "why": "9/100 is 9 hundredths. The second digit after the dot is hundredths, so it is 0.09.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "9/100" },
       "type": "keypad",
-      "answer": 0.09
+      "answer": 0.09,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "9/100" }
     },
     {
       "id": "g5-fraction-decimal-percent-keypad-3",
@@ -16255,9 +16263,9 @@
       "narration": "What percent is equal to 3/5? Type the number. Hint: make the denominator 100.",
       "prompt": "3/5 = ?%",
       "why": "Multiply 5 by 20 to get 100. Multiply 3 by 20 too. That gives 60/100, which is 60%.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "3/5" },
       "type": "keypad",
-      "answer": 60
+      "answer": 60,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "3/5" }
     },
     {
       "id": "g5-fraction-decimal-percent-tap-3",
@@ -16266,7 +16274,6 @@
       "narration": "Which decimal is equal to 3/4? Is it 0.34, 0.25, 0.75, or 0.7?",
       "prompt": "3/4 = ?",
       "why": "Multiply 4 by 25 to get 100. Multiply 3 by 25 too. That gives 75/100, which is 0.75.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "3/4" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 0.34 },
@@ -16274,7 +16281,8 @@
         { "id": "c", "kind": "number", "value": 0.75 },
         { "id": "d", "kind": "number", "value": 0.7 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "3/4" }
     },
     {
       "id": "g5-fraction-decimal-percent-number-line-2",
@@ -16287,7 +16295,8 @@
       "min": 0,
       "max": 100,
       "step": 5,
-      "target": 35
+      "target": 35,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "7/20" }
     },
     {
       "id": "g5-fraction-decimal-percent-keypad-4",
@@ -16296,9 +16305,9 @@
       "narration": "The decimal 0.8 is equal to a fraction with denominator 100. What is the numerator? Type the number.",
       "prompt": "0.8 = ?/100",
       "why": "0.8 is the same as 0.80, which is 80 hundredths. So it equals 80/100.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "parts", "amount": "0.8" },
       "type": "keypad",
-      "answer": 80
+      "answer": 80,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "parts", "amount": "0.8" }
     },
     {
       "id": "g5-fraction-decimal-percent-tap-4",
@@ -16307,7 +16316,6 @@
       "narration": "Dani got 18 out of 20 on a science quiz. What percent is that? Is it 80%, 85%, 90%, or 95%?",
       "prompt": "18/20 = ?%",
       "why": "Multiply 20 by 5 to get 100. Multiply 18 by 5 too. That gives 90/100, which is 90%.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "18/20" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "80%" },
@@ -16315,7 +16323,8 @@
         { "id": "c", "kind": "text", "text": "90%" },
         { "id": "d", "kind": "text", "text": "95%" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "18/20" }
     },
     {
       "id": "g5-fraction-decimal-percent-tap-5",
@@ -16340,19 +16349,19 @@
       "narration": "Ana thinks 4/25 is equal to 14%. Is she right? Choose yes or no.",
       "prompt": "Is 4/25 = 14%?",
       "why": "Multiply 25 by 4 to get 100. Multiply 4 by 4 too. That gives 16/100, which is 16%, not 14%.",
+      "type": "tap",
+      "choices": [
+        { "id": "a", "kind": "text", "text": "yes" },
+        { "id": "b", "kind": "text", "text": "no" }
+      ],
+      "answerChoiceId": "b",
       "game": {
         "kind": "grid",
         "unit": "hundredths",
         "ask": "same",
         "amount": "4/25",
         "other": "14%"
-      },
-      "type": "tap",
-      "choices": [
-        { "id": "a", "kind": "text", "text": "yes" },
-        { "id": "b", "kind": "text", "text": "no" }
-      ],
-      "answerChoiceId": "b"
+      }
     },
     {
       "id": "g5-fraction-decimal-percent-keypad-5",
@@ -16361,9 +16370,9 @@
       "narration": "What decimal is equal to 9/25? Type the number.",
       "prompt": "9/25 = ?",
       "why": "Multiply 25 by 4 to get 100. Multiply 9 by 4 too. That gives 36/100, which is 0.36.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "9/25" },
       "type": "keypad",
-      "answer": 0.36
+      "answer": 0.36,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "9/25" }
     },
     {
       "id": "g5-fraction-decimal-percent-number-line-3",
@@ -16376,7 +16385,8 @@
       "min": 0,
       "max": 1,
       "step": 0.05,
-      "target": 0.65
+      "target": 0.65,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "13/20" }
     },
     {
       "id": "g5-fraction-decimal-percent-keypad-6",
@@ -16385,9 +16395,9 @@
       "narration": "Mia made 33 of her 50 shots in soccer practice. What percent of her shots went in? Type the number.",
       "prompt": "33/50 = ?%",
       "why": "Multiply 50 by 2 to get 100. Multiply 33 by 2 too. That gives 66/100, which is 66%.",
-      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "33/50" },
       "type": "keypad",
-      "answer": 66
+      "answer": 66,
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "33/50" }
     },
     {
       "id": "g5-add-sub-like-fractions-tap-1",
