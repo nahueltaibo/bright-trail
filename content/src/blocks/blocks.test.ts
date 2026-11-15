@@ -25,6 +25,9 @@ const tagged = (itemId: string, over: Partial<TaggedBlocks> = {}): TaggedBlocks 
   tens: 3,
   ones: 5,
   place: null,
+  secondHundreds: null,
+  secondTens: null,
+  secondOnes: null,
   note: '',
   ...over,
 });
@@ -78,6 +81,31 @@ describe('blocksCandidates', () => {
     ];
     expect(blocksCandidates(items).map((i) => i.id)).toEqual(['places', 'many', 'parts']);
   });
+
+  it('takes sums past 20, and a number line only when its sum has a missing part', () => {
+    const sum = { ...keypad('sum', 'Ana has 25 and gets 6 more.', 31), prompt: '25 + 6 = ?' };
+    const small = { ...keypad('small', 'Ana has 5 and gets 6 more.', 11), prompt: '5 + 6 = ?' };
+    const times = { ...keypad('times', 'Three rows of 8.', 24), prompt: '3 × 8 = ?' };
+    const line = (id: string, prompt: string, target: number): Item => ({
+      ...base,
+      id,
+      prompt,
+      narration: `Move the frog. ${prompt}`,
+      type: 'number-line',
+      min: 0,
+      max: 50,
+      step: 1,
+      target,
+    });
+    const items = [
+      sum,
+      small,
+      times,
+      line('fact', '27 + 8 = ?', 35),
+      line('missing', '27 + ? = 35', 8),
+    ];
+    expect(blocksCandidates(items).map((i) => i.id)).toEqual(['sum', 'missing']);
+  });
 });
 
 describe('PLACE_WORDS', () => {
@@ -112,6 +140,33 @@ describe('acceptBlocks', () => {
     expect(rejected.a).toBe('does not fit: true or false');
     expect(rejected.b).toMatch(/<=20/);
     expect(rejected.c).toBe('the blocks come to 33 but the item answers 35');
+  });
+});
+
+describe('acceptBlocks for sums', () => {
+  it('builds the second number from its digits and drops the place', () => {
+    const item = keypad('take', 'Leo has 34 cards and gives away 28. How many are left?', 6);
+    const { scenes, rejected } = acceptBlocks([item], {
+      scenes: [
+        tagged('take', {
+          ask: 'take',
+          tens: 3,
+          ones: 4,
+          place: 'ones',
+          secondTens: 2,
+          secondOnes: 8,
+        }),
+      ],
+    });
+    expect(rejected).toEqual({});
+    expect(scenes.take).toEqual({
+      kind: 'blocks',
+      ask: 'take',
+      hundreds: 0,
+      tens: 3,
+      ones: 4,
+      second: { hundreds: 0, tens: 2, ones: 8 },
+    });
   });
 });
 
