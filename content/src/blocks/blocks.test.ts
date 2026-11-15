@@ -104,8 +104,15 @@ describe('blocksCandidates', () => {
       line('fact', '27 + 8 = ?', 35),
       line('tens', '30 + 15 = ?', 45),
       line('missing', '27 + ? = 35', 8),
+      line('compose', 'Go to 30 + 4', 34),
+      line('hundred', 'Find 100 + 20', 120),
     ];
-    expect(blocksCandidates(items).map((i) => i.id)).toEqual(['sum', 'missing']);
+    expect(blocksCandidates(items).map((i) => i.id)).toEqual([
+      'sum',
+      'missing',
+      'compose',
+      'hundred',
+    ]);
   });
 });
 
@@ -168,6 +175,20 @@ describe('acceptBlocks for sums', () => {
       ones: 4,
       second: { hundreds: 0, tens: 2, ones: 8 },
     });
+  });
+
+  it('rejects a sum with a missing or zero second number', () => {
+    const item = keypad('add', 'Ana has 25 stickers and gets 6 more. How many now?', 31);
+    const add = { ask: 'add', tens: 2, ones: 5 } as const;
+    const { scenes, rejected } = acceptBlocks([item], {
+      scenes: [tagged('add', add)],
+    });
+    expect(scenes).toEqual({});
+    expect(rejected.add).toMatch(/the second number must be at least 1/);
+    const zero = acceptBlocks([item], {
+      scenes: [tagged('add', { ...add, secondHundreds: 0, secondTens: 0, secondOnes: 0 })],
+    });
+    expect(zero.rejected.add).toMatch(/the second number must be at least 1/);
   });
 });
 

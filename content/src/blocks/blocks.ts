@@ -43,6 +43,9 @@ const pastTwenty = (i: Item, answer: number) =>
 /** Lines keep their frog for facts like `30 + 15`. A missing part like `27 + ? = 35` takes blocks. */
 const MISSING_PART = /\? ?[+-]|[+-] ?\?/;
 
+/** A fact like `30 + 15`, as opposed to tens and ones put together, like `30 + 4` or `100 + 20`. */
+const FACT = /\d ?[+-] ?(?![1-9]0{1,2}\b)\d{2,}/;
+
 /**
  * Items that might play on blocks: a whole-number answer, no picture, and place words or a sum
  * past 20. A number line counts only when its prompt names the places or a missing part, since
@@ -56,8 +59,8 @@ export function blocksCandidates(items: readonly Item[]): Item[] {
     if (i.type === 'tap' && !i.choices.every((c) => c.kind === 'number')) return false;
     const sum = SUM.test(i.prompt) && !/[×÷*/]/.test(i.prompt) && pastTwenty(i, answer);
     if (i.type !== 'number-line') return sum || PLACE_WORDS.test(`${i.prompt} ${i.narration}`);
-    if (SUM.test(i.prompt)) return sum && MISSING_PART.test(i.prompt);
-    return PLACE_WORDS.test(i.prompt);
+    if (sum && MISSING_PART.test(i.prompt)) return true;
+    return PLACE_WORDS.test(i.prompt) && !FACT.test(i.prompt);
   });
 }
 
