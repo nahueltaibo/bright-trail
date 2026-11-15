@@ -6,6 +6,7 @@ import { GridSceneSchema, gridProblems } from './grid';
 import type { Item } from './item';
 import { JoinSceneSchema, joinProblems } from './join';
 import { LabelSceneSchema, labelProblems } from './label';
+import { LineupSceneSchema, lineupProblems } from './lineup';
 import { OrderSceneSchema, orderProblems } from './order';
 import { SceneSchema, sceneProblems } from './scene';
 import { SliceSceneSchema, sliceProblems } from './slices';
@@ -25,6 +26,7 @@ export const GAMES = {
   sort: { schema: SortSceneSchema, problems: sortProblems },
   order: { schema: OrderSceneSchema, problems: orderProblems },
   label: { schema: LabelSceneSchema, problems: labelProblems },
+  lineup: { schema: LineupSceneSchema, problems: lineupProblems },
 } as const;
 
 export const GameSchema = z.discriminatedUnion('kind', [
@@ -39,6 +41,7 @@ export const GameSchema = z.discriminatedUnion('kind', [
   GAMES.sort.schema,
   GAMES.order.schema,
   GAMES.label.schema,
+  GAMES.lineup.schema,
 ]);
 export type Game = z.infer<typeof GameSchema>;
 export type GameKind = Game['kind'];
