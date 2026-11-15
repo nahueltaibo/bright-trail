@@ -93,7 +93,7 @@ describe('blocksProblems', () => {
     ]);
   });
 
-  it('leaves number-line items and pictures to their own screens', () => {
+  it('plays a number-line item in place of its line', () => {
     const line = {
       ...base,
       narration: 'Move the frog to 3 tens and 5 ones.',
@@ -103,8 +103,6 @@ describe('blocksProblems', () => {
       step: 1,
       target: 35,
     } as Item;
-    expect(blocksProblems(line, scene({ ask: 'total', tens: 3, ones: 5 }))).toEqual([
-      'number-line items keep their own screen',
-    ]);
+    expect(blocksProblems(line, scene({ ask: 'total', tens: 3, ones: 5 }))).toEqual([]);
   });
 });
