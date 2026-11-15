@@ -62,6 +62,7 @@ export function blocksWords(s: BlocksScene): string {
     case 'take': {
       const left = `${value} take away ${blocksValue(s.second!)} leaves`;
       if (answer === 0) return `${first}${left} 0.`;
+      if (answer < 10) return `${first}${left} ${matWords(end)}.`;
       return `${first}${left} ${matWords(end)}, which is ${answer}.`;
     }
   }

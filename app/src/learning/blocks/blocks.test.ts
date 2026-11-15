@@ -17,6 +17,21 @@ const steps = (s: BlocksScene) =>
     ].join(' '),
   );
 
+const twoTrades = scene({
+  ask: 'add',
+  hundreds: 0,
+  tens: 9,
+  ones: 5,
+  second: { hundreds: 0, tens: 0, ones: 7 },
+});
+const twoBreaks = scene({
+  ask: 'take',
+  hundreds: 1,
+  tens: 2,
+  ones: 0,
+  second: { hundreds: 0, tens: 5, ones: 5 },
+});
+
 describe('BLOCKS_DEMO_ITEMS', () => {
   it('each pass the shared check', () => {
     for (const item of BLOCKS_DEMO_ITEMS) {
@@ -70,6 +85,26 @@ describe('blocksPlan', () => {
       'break hundreds 2/10/0',
       'break tens 2/9/10',
       'take 2/9/9',
+    ]);
+  });
+
+  it('breaks a hundred when a broken ten still leaves too few tens', () => {
+    expect(steps(twoBreaks)).toEqual([
+      'break tens 1/1/10',
+      'break hundreds 0/11/10',
+      'take 0/6/5',
+      'count tens 0/6/5',
+      'count ones 0/6/5',
+    ]);
+  });
+
+  it('trades ones, then tens, when a sum passes 99', () => {
+    expect(steps(twoTrades)).toEqual([
+      'join 0/9/12',
+      'trade ones 0/10/2',
+      'trade tens 1/0/2',
+      'count hundreds 1/0/2',
+      'count ones 1/0/2',
     ]);
   });
 
@@ -165,7 +200,25 @@ describe('blocksWords', () => {
       '36 take away 12 leaves 2 tens and 4 ones, which is 24.',
     );
     expect(blocksWords(demo('take'))).toBe(
-      '1 ten breaks into 10 ones. 34 take away 28 leaves 6 ones, which is 6.',
+      '1 ten breaks into 10 ones. 34 take away 28 leaves 6 ones.',
     );
+  });
+
+  it('says each trade and break of a sum, and a take that leaves nothing', () => {
+    expect(blocksWords(twoTrades)).toBe(
+      '95 and 7 make 9 tens and 12 ones. 10 ones trade for 1 ten, and 10 tens trade for 1 hundred. 1 hundred, 0 tens, and 2 ones make 102.',
+    );
+    expect(blocksWords(twoBreaks)).toBe(
+      '1 hundred breaks into 10 tens, and 1 ten breaks into 10 ones. 120 take away 55 leaves 6 tens and 5 ones, which is 65.',
+    );
+    const all = scene({
+      ask: 'take',
+      hundreds: 0,
+      tens: 3,
+      ones: 4,
+      second: { hundreds: 0, tens: 3, ones: 4 },
+    });
+    expect(blocksWords(all)).toBe('34 take away 34 leaves 0.');
+    expect(steps(all)).toEqual(['take 0/0/0']);
   });
 });
