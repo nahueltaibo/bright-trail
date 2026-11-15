@@ -7,6 +7,7 @@ import type { LlmClient, LlmRequest } from '../graph/llm';
 import { gridTagRequest } from '../grid/grid';
 import { hopsTagRequest } from '../hops/hops';
 import { joinTagRequest } from '../join/join';
+import { lineupTagRequest } from '../lineup/lineup';
 import { tagRequest } from '../scenes/scenes';
 import { sliceTagRequest } from '../slices/slices';
 import { stonesTagRequest } from '../stones/stones';
@@ -96,6 +97,7 @@ describe('TAGGERS', () => {
     expect(TAGGERS.grid.request).toBe(gridTagRequest);
     expect(TAGGERS.blocks.request).toBe(blocksTagRequest);
     expect(TAGGERS.stones.request).toBe(stonesTagRequest);
+    expect(TAGGERS.lineup.request).toBe(lineupTagRequest);
     expect(TAGGERS.hops.request).toBe(hopsTagRequest);
   });
 
@@ -109,6 +111,7 @@ describe('TAGGERS', () => {
       'grid.json',
       'blocks.json',
       'stones.json',
+      'lineup.json',
       'hops.json',
     ]);
   });

@@ -6,6 +6,7 @@ import type {
   Hops,
   Item,
   JoinScene,
+  LineupScene,
   NumberLineItem,
   Scene,
   SliceScene,
@@ -22,6 +23,7 @@ import {
 import { acceptGrids, applyGrids, gridCandidates, gridTagRequest } from '../grid/grid';
 import { acceptHops, applyHops, hopsCandidates, hopsTagRequest } from '../hops/hops';
 import { acceptJoins, applyJoins, joinCandidates, joinTagRequest } from '../join/join';
+import { acceptLineups, applyLineups, lineupCandidates, lineupTagRequest } from '../lineup/lineup';
 import { acceptScenes, applyScenes, candidateItems, tagRequest } from '../scenes/scenes';
 import { acceptSlices, applySlices, sliceCandidates, sliceTagRequest } from '../slices/slices';
 import { acceptStones, applyStones, stonesCandidates, stonesTagRequest } from '../stones/stones';
@@ -140,6 +142,21 @@ const stones: Tagger<Item, StonesScene> = {
   apply: applyStones,
 };
 
+const lineup: Tagger<Item, LineupScene> = {
+  file: 'lineup.json',
+  outcome: 'play as line-ups',
+  label: 'Lineup',
+  // Place-in-line items are few, often one or two in a skill.
+  minPerSkill: 1,
+  candidates: lineupCandidates,
+  request: lineupTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptLineups(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyLineups,
+};
+
 const hops: Tagger<NumberLineItem, Hops> = {
   file: 'hops.json',
   outcome: 'hop a planned path',
@@ -158,7 +175,18 @@ const hops: Tagger<NumberLineItem, Hops> = {
  * Every content tagger by the `--kind` that runs it, in the order the bundle applies them.
  * Hops come last because they skip number-line items that already play a minigame.
  */
-export const TAGGERS = { share, slices, join, compare, arrays, grid, blocks, stones, hops };
+export const TAGGERS = {
+  share,
+  slices,
+  join,
+  compare,
+  arrays,
+  grid,
+  blocks,
+  stones,
+  lineup,
+  hops,
+};
 export type TaggerKind = keyof typeof TAGGERS;
 
 export function isTaggerKind(kind: string): kind is TaggerKind {
