@@ -12,6 +12,7 @@ import { SceneSchema, sceneProblems } from './scene';
 import { SliceSceneSchema, sliceProblems } from './slices';
 import { SortSceneSchema, sortProblems } from './sort';
 import { StonesSceneSchema, stonesProblems } from './stones';
+import { WallSceneSchema, wallProblems } from './wall';
 
 /** Every minigame an item can play, by its `kind`: the scene it needs and how to check it. */
 export const GAMES = {
@@ -27,6 +28,7 @@ export const GAMES = {
   order: { schema: OrderSceneSchema, problems: orderProblems },
   label: { schema: LabelSceneSchema, problems: labelProblems },
   lineup: { schema: LineupSceneSchema, problems: lineupProblems },
+  wall: { schema: WallSceneSchema, problems: wallProblems },
 } as const;
 
 export const GameSchema = z.discriminatedUnion('kind', [
@@ -42,6 +44,7 @@ export const GameSchema = z.discriminatedUnion('kind', [
   GAMES.order.schema,
   GAMES.label.schema,
   GAMES.lineup.schema,
+  GAMES.wall.schema,
 ]);
 export type Game = z.infer<typeof GameSchema>;
 export type GameKind = Game['kind'];
