@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import type { Item } from './item';
-import { choiceTextValue, itemAnswer, THING_IDS } from './scene';
+import { choiceTextValue, itemAnswer, THING_IDS, THINGS } from './scene';
 
 /**
  * What an array scene asks about `rows` rows of `columns` things:
@@ -35,6 +35,12 @@ const NUMBER_WORDS = [
   'nine',
   'ten',
 ];
+
+/**
+ * Whether a number-line prompt holds a whole-number × or ÷ fact, which an array can show.
+ * "3 hops of 2" keeps its frog, and "5 × 1/2" has no whole rows.
+ */
+export const isArrayFact = (prompt: string) => /[×÷]/.test(prompt) && !/\d\/\d/.test(prompt);
 
 const Side = z.number().int().min(1).max(ARRAY_MAX);
 
@@ -138,9 +144,24 @@ export function arrayProblems(item: Item, scene: ArrayScene): string[] {
   if (typeof answer !== 'number') problems.push('the item answer is not a number');
   else if (answer !== shown)
     problems.push(`the scene finds ${shown} but the item answers ${answer}`);
-  if (item.type === 'number-line') problems.push('number-line items keep their own screen');
-  // The stage replaces the item's picture, which would then go unseen.
-  if ('visual' in item && item.visual) problems.push(`the item has a ${item.visual.kind} picture`);
+  if (item.type === 'number-line' && !isArrayFact(item.prompt))
+    problems.push('number-line items without a × or ÷ fact keep their frog');
+  // The stage replaces the item's picture. Only a picture of things it can draw again is safe.
+  const visual = 'visual' in item ? item.visual : undefined;
+  if (visual && visual.kind !== 'objects') problems.push(`the item has a ${visual.kind} picture`);
+  // A picture of the whole total shows the array's things. Any other count shows its groups,
+  // like 4 ducks for "4 ducks with 2 legs each", so the array must not draw those.
+  const pictured =
+    visual?.kind === 'objects' && THING_IDS.find((t) => THINGS[t].emoji === visual.emoji);
+  if (visual?.kind === 'objects' && pictured) {
+    const total = visual.count === scene.rows * scene.columns;
+    if (total && scene.thing !== pictured)
+      problems.push(
+        `the picture shows ${visual.count} ${pictured}s, not ${scene.thing ?? 'counter'}s`,
+      );
+    if (!total && scene.thing === pictured)
+      problems.push(`the picture shows ${visual.count} ${pictured}s, not the array's things`);
+  }
   if (item.type === 'tap') {
     const numbers = item.choices.every(
       (c) =>

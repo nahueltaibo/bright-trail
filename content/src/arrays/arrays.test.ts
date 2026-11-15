@@ -48,17 +48,44 @@ const rows = keypad('rows', '3 rows of 4', 'An array has 3 rows of 4 dots. How m
 const split = tap('split', '4 × 6 = 4 × 5 + 4 × ?', '4 × 6 is 4 × 5 plus 4 times what?', [1, 2]);
 
 describe('arrayCandidates', () => {
-  it('keeps times and rows items, and skips text choices, pictures, and other topics', () => {
+  it('keeps times and rows items, and skips text choices, other pictures, and other topics', () => {
     const fact = tap('fact', '4 rows of 8', 'Which fact? 4 + 8 or 4 × 8?', ['4 × 8', '4 + 8']);
+    const family = tap('family', 'Fact family for 6 × 3 = 18', 'Which fact?', ['18 ÷ 3 = 6']);
     const sum = keypad('sum', '3 + 4 = ?', 'What is 3 + 4?', 7);
-    const picture = {
-      ...keypad('picture', '2 × 3', 'How many?', 6),
-      visual: { kind: 'objects', emoji: '🐟', count: 6 },
+    const frame = {
+      ...keypad('frame', '2 × 3', 'How many?', 6),
+      visual: { kind: 'ten-frame', filled: 6 },
     } as Item;
-    expect(arrayCandidates([rows, split, fact, sum, picture]).map((i) => i.id)).toEqual([
+    expect(arrayCandidates([rows, split, fact, family, sum, frame]).map((i) => i.id)).toEqual([
       'rows',
       'split',
     ]);
+  });
+
+  it('keeps an objects picture and a whole-number × or ÷ fact on a number line', () => {
+    const objects = {
+      ...keypad('objects', '4 groups of 2 = ?', 'There are 4 groups of 2 ducks.', 8),
+      visual: { kind: 'objects', emoji: '🦆', count: 4 },
+    } as Item;
+    const line = (id: string, prompt: string, target: number): Item => ({
+      ...base,
+      id,
+      prompt,
+      narration: `Move the frog to ${prompt}`,
+      type: 'number-line',
+      min: 0,
+      max: 40,
+      step: 1,
+      target,
+    });
+    const items = [
+      objects,
+      line('times', '7 × 5 = ?', 35),
+      line('divide', '45 ÷ 5 = ?', 9),
+      line('hops', '3 hops of 2', 6),
+      line('fraction', '5 ÷ 1/2', 10),
+    ];
+    expect(arrayCandidates(items).map((i) => i.id)).toEqual(['objects', 'times', 'divide']);
   });
 });
 
