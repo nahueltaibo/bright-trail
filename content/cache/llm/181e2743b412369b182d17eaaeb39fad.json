@@ -1,0 +1,44 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-uses-of-numbers-keypad-3",
+        "fits": true,
+        "line": ["duck", "duck", "duck", "duck", "duck"],
+        "place": 5,
+        "ask": "place",
+        "name": "",
+        "note": "Five ducks; last duck is in place 5."
+      },
+      {
+        "itemId": "k-uses-of-numbers-number-line-3",
+        "fits": true,
+        "line": ["frog", "frog", "frog", "frog", "frog"],
+        "place": 3,
+        "ask": "find",
+        "name": "",
+        "note": "Frog is third; place given, find it."
+      },
+      {
+        "itemId": "k-uses-of-numbers-number-line-4",
+        "fits": true,
+        "line": ["kid", "kid", "kid", "kid", "kid", "kid", "kid", "kid"],
+        "place": 7,
+        "ask": "find",
+        "name": "Ana",
+        "note": "Ana is seventh; place given, find it."
+      },
+      {
+        "itemId": "k-uses-of-numbers-tap-7",
+        "fits": true,
+        "line": ["dog", "cat", "bunny", "bear", "dog"],
+        "place": 2,
+        "ask": "place",
+        "name": "",
+        "note": "Cat is second; asks which place the cat is in."
+      }
+    ]
+  }
+}
