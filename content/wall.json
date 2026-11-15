@@ -1,0 +1,34 @@
+{
+  "g5-compare-order-fractions-keypad-2": {
+    "kind": "wall",
+    "ask": "pass",
+    "than": "1/2",
+    "parts": 6
+  },
+  "g5-compare-order-fractions-tap-3": {
+    "kind": "wall",
+    "ask": "relation",
+    "than": "1/2",
+    "amount": "3/8"
+  },
+  "g5-compare-order-fractions-tap-8": {
+    "kind": "wall",
+    "ask": "more",
+    "than": "3/2",
+    "amount": "11/8"
+  },
+  "g5-equivalent-fractions-keypad-1": { "kind": "wall", "ask": "fill", "than": "1/2", "parts": 4 },
+  "g5-equivalent-fractions-keypad-2": { "kind": "wall", "ask": "fill", "than": "6/3", "parts": 1 },
+  "g5-equivalent-fractions-keypad-3": { "kind": "wall", "ask": "fill", "than": "2/3", "parts": 12 },
+  "g5-equivalent-fractions-keypad-6": {
+    "kind": "wall",
+    "ask": "fill",
+    "than": "3 5/6",
+    "parts": 6
+  },
+  "g5-equivalent-fractions-tap-2": { "kind": "wall", "ask": "match", "than": "5/4" },
+  "g5-equivalent-fractions-tap-4": { "kind": "wall", "ask": "match", "than": "2 1/3" },
+  "g5-whole-by-unit-fraction-keypad-1": { "kind": "wall", "ask": "fill", "than": "1", "parts": 4 },
+  "g5-whole-by-unit-fraction-keypad-3": { "kind": "wall", "ask": "fill", "than": "4", "parts": 3 },
+  "g5-whole-by-unit-fraction-keypad-4": { "kind": "wall", "ask": "fill", "than": "3", "parts": 5 }
+}

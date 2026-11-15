@@ -1,0 +1,71 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-1",
+        "fits": true,
+        "ask": "fill",
+        "than": "1",
+        "amount": null,
+        "parts": 4,
+        "note": "4 quarter pieces fill 1 whole"
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-3",
+        "fits": true,
+        "ask": "fill",
+        "than": "4",
+        "amount": null,
+        "parts": 3,
+        "note": "4 wholes = 12 thirds"
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-4",
+        "fits": true,
+        "ask": "fill",
+        "than": "3",
+        "amount": null,
+        "parts": 5,
+        "note": "3 wholes = 15 fifths"
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-tap-4",
+        "fits": false,
+        "ask": "relation",
+        "than": "1",
+        "amount": null,
+        "parts": null,
+        "note": "Compares a product and a quotient, not two fractions"
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-5",
+        "fits": false,
+        "ask": "fill",
+        "than": "8",
+        "amount": null,
+        "parts": 4,
+        "note": "8 wholes exceeds the 4-whole wall and 32 pieces exceeds 24"
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-keypad-6",
+        "fits": false,
+        "ask": "fill",
+        "than": "1",
+        "amount": null,
+        "parts": 1,
+        "note": "Multiplication with decimal answer"
+      },
+      {
+        "itemId": "g5-whole-by-unit-fraction-tap-6",
+        "fits": false,
+        "ask": "fill",
+        "than": "1",
+        "amount": null,
+        "parts": 1,
+        "note": "True/false on division; 5 wholes and 40 pieces exceed the wall"
+      }
+    ]
+  }
+}
