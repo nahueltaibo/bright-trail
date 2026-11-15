@@ -1,6 +1,6 @@
 import { blocksProblems, type BlocksScene } from '@bright-trail/shared';
 import { BLOCKS_DEMO_ITEMS } from './demo';
-import { blocksPlan, layoutMat, sceneFrame, STAGE_W, tenParts } from './layout';
+import { blocksPlan, layoutMat, sceneFrame, STAGE_W, startMat, tenParts } from './layout';
 import { blocksWords, matWords } from './words';
 
 const scene = (s: Omit<BlocksScene, 'kind'>): BlocksScene => ({ kind: 'blocks', ...s });
@@ -10,7 +10,12 @@ const demo = (id: string) => {
   return game;
 };
 const steps = (s: BlocksScene) =>
-  blocksPlan(s).map((p) => `${p.kind} ${p.place} ${p.mat.hundreds}/${p.mat.tens}/${p.mat.ones}`);
+  blocksPlan(s).map((p) =>
+    [
+      'place' in p ? `${p.kind} ${p.place}` : p.kind,
+      `${p.mat.hundreds}/${p.mat.tens}/${p.mat.ones}`,
+    ].join(' '),
+  );
 
 describe('BLOCKS_DEMO_ITEMS', () => {
   it('each pass the shared check', () => {
@@ -40,6 +45,32 @@ describe('blocksPlan', () => {
     expect(worth).toMatchObject({ kind: 'count', place: 'tens', by: 10 });
     const [count] = blocksPlan(demo('count'));
     expect(count).toMatchObject({ kind: 'count', place: 'ones', by: 1, from: 0 });
+  });
+
+  it('joins the second number, then trades and counts for an add', () => {
+    expect(startMat(demo('add'))).toEqual({ hundreds: 0, tens: 2, ones: 11 });
+    expect(steps(demo('add'))).toEqual([
+      'join 0/2/11',
+      'trade ones 0/3/1',
+      'count tens 0/3/1',
+      'count ones 0/3/1',
+    ]);
+  });
+
+  it('breaks a ten when the ones run short, then takes away and counts', () => {
+    expect(steps(demo('take'))).toEqual(['break tens 0/2/14', 'take 0/0/6', 'count ones 0/0/6']);
+    const hundred = scene({
+      ask: 'take',
+      hundreds: 3,
+      tens: 0,
+      ones: 0,
+      second: { hundreds: 0, tens: 0, ones: 1 },
+    });
+    expect(steps(hundred).slice(0, 3)).toEqual([
+      'break hundreds 2/10/0',
+      'break tens 2/9/10',
+      'take 2/9/9',
+    ]);
   });
 
   it('counts a total on from the bigger places', () => {
@@ -102,5 +133,11 @@ describe('blocksWords', () => {
     );
     expect(blocksWords(demo('worth'))).toBe('The 8 in 583 stands for 8 tens, so it is worth 80.');
     expect(blocksWords(demo('make'))).toBe('Each hundred breaks into 10 tens. 150 makes 15 tens.');
+    expect(blocksWords(demo('add'))).toBe(
+      '25 and 6 make 2 tens and 11 ones. 10 ones trade for 1 ten. 3 tens and 1 one make 31.',
+    );
+    expect(blocksWords(demo('take'))).toBe(
+      '1 ten breaks into 10 ones. 34 take away 28 leaves 6 ones, which is 6.',
+    );
   });
 });

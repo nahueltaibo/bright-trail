@@ -1,4 +1,10 @@
-import { blocksAnswer, type BlocksScene, type Place } from '@bright-trail/shared';
+import {
+  blocksAnswer,
+  blocksValue,
+  PLACES,
+  type BlocksScene,
+  type Place,
+} from '@bright-trail/shared';
 import { useEffect, useImperativeHandle, useMemo, useRef, useState, type Ref } from 'react';
 import { Animated, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import Svg, { Line, Rect as SvgRect } from 'react-native-svg';
@@ -10,6 +16,7 @@ import { colors } from '../theme';
 import {
   layoutMat,
   sceneFrame,
+  startMat,
   STAGE_H,
   STAGE_W,
   tenParts,
@@ -24,6 +31,8 @@ const FILL: Record<Place, readonly [string, string]> = {
   tens: ['#FF7043', '#D9542B'],
   ones: ['#FFCA28', '#C99A00'],
 };
+/** A paler fill for the second number of an add ask, until it joins the first. */
+const FRESH: Record<Place, string> = { hundreds: '#B3D9F5', tens: '#FFC2AD', ones: '#FFE699' };
 const UP = { ones: 'tens', tens: 'hundreds' } as const;
 const DOWN = { hundreds: 'tens', tens: 'ones' } as const;
 const HEADER_Y = 14;
@@ -38,7 +47,7 @@ const mix = (a: Rect, b: Rect, k: number): Rect => ({
   h: a.h + (b.h - a.h) * k,
 });
 
-type Piece = { id: number; place: Place; r: Rect };
+type Piece = { id: number; place: Place; r: Rect; fresh?: boolean; fade?: number };
 
 export type BlocksStageHandle = {
   /** Trades, breaks, and counts the blocks, then shows what the ask comes to. */
@@ -53,6 +62,14 @@ type Props = { scene: BlocksScene; cheer?: boolean; handle?: Ref<BlocksStageHand
 function piecesOf(m: Mat, frame: MatFrame, next: () => number): Piece[] {
   const { slots } = layoutMat(m, frame);
   return frame.places.flatMap((place) => slots[place].map((r) => ({ id: next(), place, r })));
+}
+
+/** The pieces before the answer. An add ask's second number comes after the first's, paler. */
+function startPieces(s: BlocksScene, frame: MatFrame, next: () => number): Piece[] {
+  const seen: Record<Place, number> = { hundreds: 0, tens: 0, ones: 0 };
+  return piecesOf(startMat(s), frame, next).map((p) =>
+    seen[p.place]++ >= s[p.place] ? { ...p, fresh: true } : p,
+  );
 }
 
 /** Where each piece goes on `m`, matching pieces to slots in place order. */
@@ -78,7 +95,7 @@ export function BlocksStage({ scene: s, cheer, handle }: Props) {
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
   const [pieces, setPieces] = useState<Piece[]>(() => {
     let n = 0;
-    return piecesOf(s, frame, () => n++);
+    return startPieces(s, frame, () => n++);
   });
   const [focus, setFocus] = useState<Place | null>(null);
   const [counted, setCounted] = useState<ReadonlySet<number>>(new Set());
@@ -154,6 +171,34 @@ export function BlocksStage({ scene: s, cheer, handle }: Props) {
               { ...made, r: to.get(made.id)! },
             ]);
             await wait(250);
+          } else if (step.kind === 'join') {
+            note(`Add ${blocksValue(s.second!)} to ${blocksValue(s)}`);
+            await wait(500);
+            show(now.map((p) => ({ ...p, fresh: false })));
+            await wait(500);
+          } else if (step.kind === 'take') {
+            note(`Take away ${blocksValue(step.taken)}`);
+            const going = new Set<number>();
+            for (const place of PLACES) {
+              const these = now.filter((p) => p.place === place);
+              for (const p of these.slice(these.length - step.taken[place])) going.add(p.id);
+            }
+            await frames(
+              600,
+              (k) => {
+                if (!live(t)) return;
+                show(
+                  now.map((p) =>
+                    going.has(p.id) ? { ...p, r: { ...p.r, y: p.r.y - 30 * k }, fade: 1 - k } : p,
+                  ),
+                );
+              },
+              () => live(t),
+            );
+            if (!live(t)) return;
+            show(now.filter((p) => !going.has(p.id)));
+            await tween(targetsOf(current.current, step.mat, frame), 500, t);
+            await wait(150);
           } else if (step.kind === 'break') {
             const small = DOWN[step.place];
             const big = now.filter((p) => p.place === step.place).at(-1)!;
@@ -182,13 +227,13 @@ export function BlocksStage({ scene: s, cheer, handle }: Props) {
           }
         }
         if (!live(t)) return;
-        if (s.ask === 'total') setFocus(null);
+        if (s.ask === 'total' || s.ask === 'add' || s.ask === 'take') setFocus(null);
         setBubbles([{ id: next(), x: STAGE_W / 2, y: NOTE_Y, text: shout(s), big: true }]);
         await wait(900);
       },
       async reset() {
         run.current += 1;
-        show(piecesOf(s, frame, next));
+        show(startPieces(s, frame, next));
         setFocus(null);
         setCounted(new Set());
         setCounters({});
@@ -206,7 +251,7 @@ export function BlocksStage({ scene: s, cheer, handle }: Props) {
   const scale = box ? Math.min(box.w / STAGE_W, box.h / STAGE_H) : 0;
   const hopY = hop.interpolate({ inputRange: [0, 1], outputRange: [0, -8] });
   const opacity = (p: Piece) =>
-    focus === null || (p.place === focus && counted.has(p.id)) ? 1 : 0.35;
+    (p.fade ?? 1) * (focus === null || (p.place === focus && counted.has(p.id)) ? 1 : 0.35);
 
   return (
     <View style={styles.stage} onLayout={onLayout} testID="blocks-stage">
@@ -246,7 +291,8 @@ export function BlocksStage({ scene: s, cheer, handle }: Props) {
 /** One flat, rod, or cube, with the lines that show its ones. */
 function BlockArt({ piece: p, opacity }: { piece: Piece; opacity: number }) {
   const { r } = p;
-  const [fill, rim] = FILL[p.place];
+  const [solid, rim] = FILL[p.place];
+  const fill = p.fresh ? FRESH[p.place] : solid;
   const cols = p.place === 'hundreds' ? 10 : 1;
   const rows = p.place === 'ones' ? 1 : 10;
   const lines: { x1: number; y1: number; x2: number; y2: number }[] = [];

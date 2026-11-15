@@ -21,13 +21,29 @@ export type Rect = { x: number; y: number; w: number; h: number };
 export type Step =
   | { kind: 'trade'; place: 'ones' | 'tens'; mat: Mat }
   | { kind: 'break'; place: 'hundreds' | 'tens'; mat: Mat }
-  | { kind: 'count'; place: Place; by: number; from: number; mat: Mat };
+  | { kind: 'count'; place: Place; by: number; from: number; mat: Mat }
+  | { kind: 'join'; mat: Mat }
+  | { kind: 'take'; taken: Mat; mat: Mat };
 
 const up = { ones: 'tens', tens: 'hundreds' } as const;
 const down = { hundreds: 'tens', tens: 'ones' } as const;
 const above = (p: Place, q: Place) => PLACE_VALUE[q] > PLACE_VALUE[p];
+const NONE: Mat = { hundreds: 0, tens: 0, ones: 0 };
 
-/** What the play-out does: trade ten of a kind up, break bigger blocks down, then count. */
+/** The blocks on the mat before the answer. An add ask lays out both numbers. */
+export function startMat(s: BlocksScene): Mat {
+  const extra = s.ask === 'add' ? (s.second ?? NONE) : NONE;
+  return {
+    hundreds: s.hundreds + extra.hundreds,
+    tens: s.tens + extra.tens,
+    ones: s.ones + extra.ones,
+  };
+}
+
+/**
+ * What the play-out does: trade ten of a kind up, break bigger blocks down, then count. A sum
+ * first joins the second number's blocks, or breaks what it must and takes them away.
+ */
 export function blocksPlan(s: BlocksScene): Step[] {
   let mat: Mat = { hundreds: s.hundreds, tens: s.tens, ones: s.ones };
   const steps: Step[] = [];
@@ -43,16 +59,41 @@ export function blocksPlan(s: BlocksScene): Step[] {
       steps.push({ kind: 'break', place, mat });
     }
   };
+  const breakOne = (place: 'hundreds' | 'tens') => {
+    mat = { ...mat, [place]: mat[place] - 1, [down[place]]: mat[down[place]] + 10 };
+    steps.push({ kind: 'break', place, mat });
+  };
   const count = (place: Place, by: number, from: number) => {
     if (mat[place] > 0) steps.push({ kind: 'count', place, by, from, mat });
   };
-
-  if (s.ask === 'total') {
+  const total = () => {
     trade('ones');
     trade('tens');
     count('hundreds', 100, 0);
     count('tens', 10, mat.hundreds * 100);
     count('ones', 1, mat.hundreds * 100 + mat.tens * 10);
+  };
+
+  if (s.ask === 'total') {
+    total();
+  } else if (s.ask === 'add') {
+    mat = startMat(s);
+    steps.push({ kind: 'join', mat });
+    total();
+  } else if (s.ask === 'take') {
+    const taken = s.second ?? NONE;
+    if (mat.ones < taken.ones) {
+      if (mat.tens === 0) breakOne('hundreds');
+      breakOne('tens');
+    }
+    if (mat.tens < taken.tens) breakOne('hundreds');
+    mat = {
+      hundreds: mat.hundreds - taken.hundreds,
+      tens: mat.tens - taken.tens,
+      ones: mat.ones - taken.ones,
+    };
+    steps.push({ kind: 'take', taken, mat });
+    total();
   } else if (s.ask === 'make') {
     const p = s.place!;
     if (above('ones', p)) trade('ones');
@@ -68,7 +109,7 @@ export function blocksPlan(s: BlocksScene): Step[] {
 
 /** The places that hold a block at some point, plus every place below the highest. */
 export function shownPlaces(s: BlocksScene, plan: readonly Step[]): Place[] {
-  const mats = [s, ...plan.map((p) => p.mat)];
+  const mats = [startMat(s), ...plan.map((p) => p.mat)];
   const top = PLACES.findIndex((p) => mats.some((m) => m[p] > 0));
   return PLACES.slice(Math.max(0, top));
 }
@@ -173,5 +214,5 @@ export function tenParts(r: Rect, place: 'hundreds' | 'tens'): Rect[] {
 export function sceneFrame(s: BlocksScene): { plan: Step[]; frame: MatFrame } {
   const plan = blocksPlan(s);
   const places = shownPlaces(s, plan);
-  return { plan, frame: frameFor([s, ...plan.map((p) => p.mat)], places) };
+  return { plan, frame: frameFor([s, startMat(s), ...plan.map((p) => p.mat)], places) };
 }
