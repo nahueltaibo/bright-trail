@@ -31,11 +31,14 @@ import { acceptStones, applyStones, stonesCandidates, stonesTagRequest } from '.
 import { acceptWalls, applyWalls, wallCandidates, wallTagRequest } from '../wall/wall';
 import type { Tagger } from './tagger';
 
+const MATH = ['math'] as const;
+
 const share: Tagger<Item, Scene> = {
   file: 'scenes.json',
   outcome: 'play as sharing scenes',
   label: 'Scene',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: candidateItems,
   request: tagRequest,
   accept: (items, output) => {
@@ -50,6 +53,7 @@ const slices: Tagger<Item, SliceScene> = {
   outcome: 'play as slice scenes',
   label: 'Slices',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: sliceCandidates,
   request: sliceTagRequest,
   accept: (items, output) => {
@@ -64,6 +68,7 @@ const join: Tagger<Item, JoinScene> = {
   outcome: 'play as join scenes',
   label: 'Join',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: joinCandidates,
   request: joinTagRequest,
   accept: (items, output) => {
@@ -78,6 +83,7 @@ const compare: Tagger<Item, CompareScene> = {
   outcome: 'play as compare scenes',
   label: 'Compare',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: compareCandidates,
   request: compareTagRequest,
   accept: (items, output) => {
@@ -92,6 +98,7 @@ const arrays: Tagger<Item, ArrayScene> = {
   outcome: 'play as array scenes',
   label: 'Arrays',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: arrayCandidates,
   request: arrayTagRequest,
   accept: (items, output) => {
@@ -106,6 +113,7 @@ const grid: Tagger<Item, GridScene> = {
   outcome: 'play as grid scenes',
   label: 'Grid',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: gridCandidates,
   request: gridTagRequest,
   accept: (items, output) => {
@@ -121,6 +129,7 @@ const blocks: Tagger<Item, BlocksScene> = {
   label: 'Blocks',
   // A skill's lone sum past 20, like 16 + 9, is still worth a call.
   minPerSkill: 1,
+  subjects: MATH,
   candidates: blocksCandidates,
   request: blocksTagRequest,
   accept: (items, output) => {
@@ -136,6 +145,7 @@ const stones: Tagger<Item, StonesScene> = {
   label: 'Stones',
   // A skill's only counting run is still worth a call, like g4's one run of thirds.
   minPerSkill: 1,
+  subjects: MATH,
   candidates: stonesCandidates,
   request: stonesTagRequest,
   accept: (items, output) => {
@@ -151,6 +161,7 @@ const lineup: Tagger<Item, LineupScene> = {
   label: 'Lineup',
   // Place-in-line items are few, often one or two in a skill.
   minPerSkill: 1,
+  subjects: MATH,
   candidates: lineupCandidates,
   request: lineupTagRequest,
   accept: (items, output) => {
@@ -165,6 +176,7 @@ const wall: Tagger<Item, WallScene> = {
   outcome: 'play on a fraction wall',
   label: 'Wall',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: wallCandidates,
   request: wallTagRequest,
   accept: (items, output) => {
@@ -179,6 +191,7 @@ const hops: Tagger<NumberLineItem, Hops> = {
   outcome: 'hop a planned path',
   label: 'Hops',
   minPerSkill: 1,
+  subjects: MATH,
   candidates: hopsCandidates,
   request: hopsTagRequest,
   accept: (items, output) => {
