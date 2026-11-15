@@ -1,0 +1,134 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-compare-order-200-tap-1",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["87", "120"],
+        "target": null,
+        "claim": null,
+        "note": "greater of two"
+      },
+      {
+        "itemId": "g2-compare-order-200-tap-2",
+        "fits": true,
+        "ask": "least",
+        "values": ["150", "105"],
+        "target": null,
+        "claim": null,
+        "note": "less of two"
+      },
+      {
+        "itemId": "g2-compare-order-200-tap-3",
+        "fits": true,
+        "ask": "closer",
+        "values": ["100", "200"],
+        "target": "190",
+        "claim": null,
+        "note": "190 closer to 200"
+      },
+      {
+        "itemId": "g2-compare-order-200-keypad-1",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["94", "149"],
+        "target": null,
+        "claim": null,
+        "note": "greater of two"
+      },
+      {
+        "itemId": "g2-compare-order-200-tap-4",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["138", "183", "118"],
+        "target": null,
+        "claim": null,
+        "note": "greatest of three"
+      },
+      {
+        "itemId": "g2-compare-order-200-tap-5",
+        "fits": true,
+        "ask": "least",
+        "values": ["150", "115", "105"],
+        "target": null,
+        "claim": null,
+        "note": "least to greatest, first = least; choices are the values"
+      },
+      {
+        "itemId": "g2-compare-order-200-keypad-2",
+        "fits": true,
+        "ask": "least",
+        "values": ["163", "136", "183"],
+        "target": null,
+        "claim": null,
+        "note": "least of three"
+      },
+      {
+        "itemId": "g2-compare-order-200-keypad-3",
+        "fits": true,
+        "ask": "middle",
+        "values": ["120", "87", "150"],
+        "target": null,
+        "claim": null,
+        "note": "middle of three"
+      },
+      {
+        "itemId": "g2-compare-order-200-number-line-2",
+        "fits": true,
+        "ask": "least",
+        "values": ["140", "90", "120"],
+        "target": null,
+        "claim": null,
+        "note": "least of three"
+      },
+      {
+        "itemId": "g2-compare-order-200-tap-6",
+        "fits": true,
+        "ask": "relation",
+        "values": ["99", "101"],
+        "target": null,
+        "claim": "more",
+        "note": "claim 99 greater than 101; false"
+      },
+      {
+        "itemId": "g2-compare-order-200-keypad-4",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["175", "157", "171", "177"],
+        "target": null,
+        "claim": null,
+        "note": "greatest of four"
+      },
+      {
+        "itemId": "g2-compare-order-200-keypad-5",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["168", "170"],
+        "target": null,
+        "claim": null,
+        "note": "answer is between two numbers, not in list"
+      },
+      {
+        "itemId": "g2-compare-order-200-number-line-3",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["165", "156", "175"],
+        "target": null,
+        "claim": null,
+        "note": "greatest of three"
+      },
+      {
+        "itemId": "g2-compare-order-200-number-line-4",
+        "fits": true,
+        "ask": "middle",
+        "values": ["60", "180", "120"],
+        "target": null,
+        "claim": null,
+        "note": "middle of three"
+      }
+    ]
+  }
+}

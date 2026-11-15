@@ -1,0 +1,35 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-count-forward-back-tap-1",
+        "fits": true,
+        "ask": "relation",
+        "values": ["5", "4"],
+        "target": null,
+        "claim": null,
+        "note": "5 compared with 4: bigger."
+      },
+      {
+        "itemId": "k-count-forward-back-tap-2",
+        "fits": false,
+        "ask": "relation",
+        "values": ["5"],
+        "target": null,
+        "claim": null,
+        "note": "Takes one away; the result 4 isn't listed, so this is subtraction."
+      },
+      {
+        "itemId": "k-count-forward-back-tap-5",
+        "fits": false,
+        "ask": "relation",
+        "values": ["6", "2"],
+        "target": null,
+        "claim": null,
+        "note": "Adds 2 more; this is addition, not a comparison of listed numbers."
+      }
+    ]
+  }
+}

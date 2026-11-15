@@ -5,6 +5,8 @@ import {
   compareValue,
   compareView,
   compareWinner,
+  relationAnswer,
+  relationWord,
   type CompareScene,
 } from './compare';
 import type { Item } from './item';
@@ -52,6 +54,41 @@ describe('CompareSceneSchema', () => {
       /as close to both/,
     );
     expect(() => scene({ ask: 'least', values: ['1', '2'], target: '3' })).toThrow(/no target/);
+  });
+
+  it('takes two values for a relation, equal ones too, and a claim only there', () => {
+    expect(scene({ ask: 'relation', values: ['4', '4'] }).values).toEqual(['4', '4']);
+    expect(scene({ ask: 'relation', values: ['6.3', '6.30'], claim: 'same' }).claim).toBe('same');
+    expect(() => scene({ ask: 'relation', values: ['1', '2', '3'] })).toThrow(/two values/);
+    expect(() => scene({ ask: 'least', values: ['1', '2'], claim: 'less' })).toThrow(/no claim/);
+    const bigger = { kind: 'compare', ask: 'relation', values: ['1', '2'], claim: 'bigger' };
+    expect(CompareSceneSchema.safeParse(bigger).success).toBe(false);
+  });
+});
+
+describe('relationAnswer', () => {
+  it('says how the first value stands to the second, or whether the claim holds', () => {
+    const answer = (s: Omit<CompareScene, 'kind'>) => relationAnswer(scene(s));
+    expect(answer({ ask: 'relation', values: ['7', '5'] })).toBe('more');
+    expect(answer({ ask: 'relation', values: ['462', '500'] })).toBe('less');
+    expect(answer({ ask: 'relation', values: ['1/2', '2/4'] })).toBe('same');
+    expect(answer({ ask: 'relation', values: ['99', '101'], claim: 'more' })).toBe(false);
+    expect(answer({ ask: 'relation', values: ['6.3', '6.30'], claim: 'same' })).toBe(true);
+  });
+});
+
+describe('relationWord', () => {
+  it('reads relation words and yes or no, against the value they measure from', () => {
+    expect(relationWord('the same', '4')).toBe('same');
+    expect(relationWord('Same amount', '4')).toBe('same');
+    expect(relationWord('bigger', '4')).toBe('more');
+    expect(relationWord('fewer', '4')).toBe('less');
+    expect(relationWord('less than 1/2', '1/2')).toBe('less');
+    expect(relationWord('greater than 500', '500')).toBe('more');
+    expect(relationWord('True', '4')).toBe(true);
+    expect(relationWord('no', '4')).toBe(false);
+    expect(relationWord('greater than 400', '500')).toBeNull();
+    expect(relationWord('Mia ate more', '4')).toBeNull();
   });
 });
 
@@ -110,7 +147,7 @@ describe('compareProblems', () => {
     expect(compareProblems(item, { ...ok, target: '199' })).toEqual(['the item never says 199']);
   });
 
-  it('leaves number-line items and pictures to their own screens', () => {
+  it('plays a number-line item that picks one of the numbers it says', () => {
     const line = {
       ...base,
       prompt: 'p',
@@ -121,8 +158,88 @@ describe('compareProblems', () => {
       step: 1,
       target: 13,
     } as Item;
-    expect(compareProblems(line, scene({ ask: 'greatest', values: ['5', '13'] }))).toEqual([
-      'number-line items keep their own screen',
+    expect(compareProblems(line, scene({ ask: 'greatest', values: ['5', '13'] }))).toEqual([]);
+    expect(compareProblems(line, scene({ ask: 'least', values: ['5', '13'] }))).toEqual([
+      'the scene picks 5 but the item answers 13',
+    ]);
+  });
+
+  it('leaves pictures to their own screens', () => {
+    const picture = {
+      ...keypad('Which is greater, 7 or 12?', 12),
+      visual: { kind: 'objects', emoji: '🍎', count: 12 },
+    } as Item;
+    expect(compareProblems(picture, scene({ ask: 'greatest', values: ['7', '12'] }))).toEqual([
+      'the item has a objects picture',
+    ]);
+  });
+});
+
+const words = (narration: string, answer: string, ...others: string[]): Item => ({
+  ...base,
+  prompt: 'p',
+  narration,
+  type: 'tap',
+  choices: [answer, ...others].map((text, i) => ({ id: 'abcd'[i], kind: 'text' as const, text })),
+  answerChoiceId: 'a',
+});
+const than = words(
+  'Is 462 greater than 500 or less than 500?',
+  'less than 500',
+  'greater than 500',
+);
+const relation = (values: string[], claim?: 'more' | 'less' | 'same') =>
+  scene({ ask: 'relation', values, ...(claim && { claim }) });
+
+describe('compareProblems for a relation', () => {
+  it('accepts word choices whose answer the relation gives', () => {
+    const same = words(
+      'Pip has 4. Mia has 4. More, less, or the same?',
+      'the same',
+      'more',
+      'less',
+    );
+    expect(compareProblems(same, relation(['4', '4']))).toEqual([]);
+    expect(compareProblems(than, relation(['462', '500']))).toEqual([]);
+  });
+
+  it('accepts yes or no against a claim, and needs one', () => {
+    const item = words('True or false? 99 is greater than 101.', 'False', 'True');
+    expect(compareProblems(item, relation(['99', '101'], 'more'))).toEqual([]);
+    expect(compareProblems(item, relation(['99', '101']))).toEqual([
+      'yes-or-no choices need a claim',
+    ]);
+    expect(compareProblems(item, relation(['99', '101'], 'less'))).toEqual([
+      'the scene answers true but the item answers false',
+    ]);
+  });
+
+  it('refuses a wrong relation, other choices, unsaid values, and number answers', () => {
+    const more = words('Is 7 more than 5, less, or the same?', 'more', 'less', 'the same');
+    expect(compareProblems(more, relation(['5', '7']))).toEqual([
+      'the scene answers less but the item answers more',
+    ]);
+    expect(compareProblems(than, relation(['500', '462']))).toEqual([
+      'a choice is not more, less, same, yes, or no',
+    ]);
+    const people = words('Who gets less, Mia or Leo? 3 or 6 friends.', 'Leo', 'Mia');
+    expect(compareProblems(people, relation(['3', '6']))).toEqual([
+      'a choice is not more, less, same, yes, or no',
+    ]);
+    const unsaid = words('Is 7 more, less, or the same?', 'more', 'less', 'the same');
+    expect(compareProblems(unsaid, relation(['7', '5']))).toEqual(['the item never says 5']);
+    expect(compareProblems(keypad('Is 7 more than 5?', 7), relation(['7', '5']))).toEqual([
+      'a relation needs word choices',
+    ]);
+  });
+
+  it('lets towers stand in for a picture of one of the two amounts', () => {
+    const apples = words('Pip has 7 apples. Mia has 5. More, less, or the same?', 'more', 'less');
+    const item = { ...apples, visual: { kind: 'objects', emoji: '🍎', count: 7 } } as Item;
+    expect(compareProblems(item, relation(['7', '5']))).toEqual([]);
+    const other = { ...item, visual: { kind: 'objects', emoji: '🍎', count: 9 } } as Item;
+    expect(compareProblems(other, relation(['7', '5']))).toEqual([
+      'the item has a objects picture',
     ]);
   });
 });

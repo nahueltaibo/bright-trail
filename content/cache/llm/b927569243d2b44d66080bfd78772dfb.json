@@ -1,0 +1,98 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g5-compare-order-fractions-tap-1",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["3/8", "5/8"],
+        "target": null,
+        "claim": null,
+        "note": "5/8 is greater"
+      },
+      {
+        "itemId": "g5-compare-order-fractions-tap-2",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["2/3", "2/6"],
+        "target": null,
+        "claim": null,
+        "note": "2/3 is greater"
+      },
+      {
+        "itemId": "g5-compare-order-fractions-tap-3",
+        "fits": true,
+        "ask": "relation",
+        "values": ["3/8", "1/2"],
+        "target": null,
+        "claim": null,
+        "note": "3/8 is less than 1/2"
+      },
+      {
+        "itemId": "g5-compare-order-fractions-tap-4",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["3/8", "5/6"],
+        "target": null,
+        "claim": null,
+        "note": "5/6 is greater"
+      },
+      {
+        "itemId": "g5-compare-order-fractions-tap-5",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["1 1/2", "4/5", "7/4"],
+        "target": null,
+        "claim": null,
+        "note": "7/4 is greatest"
+      },
+      {
+        "itemId": "g5-compare-order-fractions-keypad-2",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["1/2"],
+        "target": null,
+        "claim": null,
+        "note": "Missing numerator"
+      },
+      {
+        "itemId": "g5-compare-order-fractions-tap-6",
+        "fits": true,
+        "ask": "least",
+        "values": ["5/2", "9/5", "9/4", "10/6"],
+        "target": null,
+        "claim": null,
+        "note": "10/6 is least"
+      },
+      {
+        "itemId": "g5-compare-order-fractions-tap-7",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["7/8", "5/6"],
+        "target": null,
+        "claim": null,
+        "note": "7/8 is greater"
+      },
+      {
+        "itemId": "g5-compare-order-fractions-keypad-4",
+        "fits": false,
+        "ask": "middle",
+        "values": ["3/4", "7/6", "1/3", "5/3"],
+        "target": null,
+        "claim": null,
+        "note": "Asks numerator of the third of four; not a greatest/least/middle pick"
+      },
+      {
+        "itemId": "g5-compare-order-fractions-tap-8",
+        "fits": true,
+        "ask": "relation",
+        "values": ["11/8", "3/2"],
+        "target": null,
+        "claim": "more",
+        "note": "11/8 is less than 3/2, so claim is false (No)"
+      }
+    ]
+  }
+}

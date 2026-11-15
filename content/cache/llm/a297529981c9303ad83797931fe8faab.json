@@ -1,0 +1,53 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-more-less-same-keypad-1",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["4", "9"],
+        "target": null,
+        "claim": null,
+        "note": "Bigger of 4 and 9 is 9."
+      },
+      {
+        "itemId": "k-more-less-same-tap-3",
+        "fits": true,
+        "ask": "relation",
+        "values": ["4", "4"],
+        "target": null,
+        "claim": null,
+        "note": "Same; answer 'the same'."
+      },
+      {
+        "itemId": "k-more-less-same-tap-5",
+        "fits": true,
+        "ask": "relation",
+        "values": ["7", "5"],
+        "target": null,
+        "claim": null,
+        "note": "Pip 7 vs Mia 5: more."
+      },
+      {
+        "itemId": "k-more-less-same-keypad-3",
+        "fits": true,
+        "ask": "least",
+        "values": ["7", "2"],
+        "target": null,
+        "claim": null,
+        "note": "Smaller of 7 and 2 is 2."
+      },
+      {
+        "itemId": "k-more-less-same-keypad-4",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["8", "5"],
+        "target": null,
+        "claim": null,
+        "note": "Asks for a difference (subtraction), not a size comparison."
+      }
+    ]
+  }
+}

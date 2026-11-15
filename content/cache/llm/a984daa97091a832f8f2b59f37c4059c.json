@@ -1,0 +1,35 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "k-add-sub-stories-10-tap-4",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["8", "5"],
+        "target": null,
+        "claim": null,
+        "note": "Asks how many more (a difference), not which is greater."
+      },
+      {
+        "itemId": "k-add-sub-stories-10-keypad-5",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["9", "4"],
+        "target": null,
+        "claim": null,
+        "note": "Asks how many more (subtraction); answer is a difference."
+      },
+      {
+        "itemId": "k-add-sub-stories-10-tap-6",
+        "fits": false,
+        "ask": "least",
+        "values": ["3", "7"],
+        "target": null,
+        "claim": null,
+        "note": "Asks how many fewer (a difference); answer 4 is not the lesser value."
+      }
+    ]
+  }
+}

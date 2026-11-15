@@ -57,7 +57,7 @@
 <tr><td>Sharing</td><td><code>share</code></td><td><code>content:scenes</code></td><td>86</td><td>Fair shares, equal groups, division by sharing, times and divide facts to 20</td></tr>
 <tr><td>Slices</td><td><code>slices</code></td><td><code>content:slices</code></td><td>80</td><td>Fraction pictures, equal fractions, unit fractions</td></tr>
 <tr><td>Join and leave</td><td><code>join</code></td><td><code>content:join</code></td><td>99</td><td>Counting, add and subtract to 20, make ten</td></tr>
-<tr><td>Compare and order</td><td><code>compare</code></td><td><code>content:compare</code></td><td>42</td><td>Compare and order numbers, fractions, and decimals</td></tr>
+<tr><td>Compare and order</td><td><code>compare</code></td><td><code>content:compare</code></td><td>55</td><td>Compare and order numbers, fractions, and decimals, and say if one is more, less, or the same</td></tr>
 <tr><td>Arrays</td><td><code>arrays</code></td><td><code>content:arrays</code></td><td>41</td><td>Equal groups, multiply and divide facts</td></tr>
 <tr><td>Base-ten blocks</td><td><code>blocks</code></td><td><code>content:blocks</code></td><td>39</td><td>Place value, compose and decompose numbers</td></tr>
 <tr><td>Tenths and hundredths</td><td><code>grid</code></td><td><code>content:grid</code></td><td>28</td><td>Decimals, fractions, and percent on a grid or strip</td></tr>
@@ -66,14 +66,14 @@
 <tr><td>Sort it, Put in order, Label it</td><td><code>sort</code>, <code>order</code>, <code>label</code></td><td>None yet</td><td>0</td><td>Built for the other subjects in <a href="subjects.html">subjects.html</a>. The math bundle has no items for them.</td></tr>
 <tr><td>Frog hops</td><td>Not a game. Item field <code>hops</code>.</td><td><code>content:hops</code></td><td>88 of 191 number-line items</td><td>Plays the path after a number-line check. 86 of the 88 sit on items with no game.</td></tr>
 </table>
-<p>The 437 split as 86 + 80 + 99 + 42 + 41 + 39 + 28 + 22. The app shares its frame across games: <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props.</p>
+<p>The 450 split as 86 + 80 + 99 + 55 + 41 + 39 + 28 + 22. The app shares its frame across games: <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props.</p>
 
 <h2 id="gaps">2. Items with no minigame</h2>
-<p>354 items. Counts group them by skill, so anyone can reproduce them from <code>content/out/bundle.json</code>.</p>
+<p>341 items. Counts group them by skill, so anyone can reproduce them from <code>content/out/bundle.json</code>.</p>
 <table>
 <tr><th>Group</th><th>Items</th><th>Skills</th></tr>
 <tr><td>Fractions, decimals, percent</td><td>86</td><td>g1-fair-share-drawings, g1-half-equals-two-fourths, g2-fair-share-fractions, g2-third-equals-two-sixths, g4-represent-fractions, g4-decimal-tenths, g4-fraction-decimal-equivalence, g5-equivalent-fractions, g5-decimals-hundredths, g5-fraction-decimal-percent, g5-add-sub-like-fractions, g5-whole-by-unit-fraction</td></tr>
-<tr><td>Compare and order</td><td>66</td><td>k-more-less-same, k-compare-numbers-20, g1-compare-order-50, g1-compare-unit-fractions, g2-compare-order-200, g3-compare-order-1000, g4-compare-fair-shares, g5-compare-order-fractions</td></tr>
+<tr><td>Compare and order</td><td>55</td><td>k-more-less-same, k-compare-numbers-20, g1-compare-order-50, g1-compare-unit-fractions, g2-compare-order-200, g3-compare-order-1000, g4-compare-fair-shares, g5-compare-order-fractions</td></tr>
 <tr><td>Add and subtract</td><td>63</td><td>k-add-sub-facts-5, k-add-sub-stories-10, g1-add-sub-facts-10, g1-add-sub-properties, g1-mental-math-20, g1-add-sub-problems-50, g2-add-sub-properties, g2-add-sub-facts-20</td></tr>
 <tr><td>Multiply and divide</td><td>53</td><td>k-equal-share, g1-equal-groups, g2-equal-groups-multiply, g2-division-sharing, g3-fair-share-20, g3-equivalent-fair-shares, g3-arrays-multiply-divide, g3-mult-div-*, g3-fraction-repeated-addition, g4-mult-div-facts-100</td></tr>
 <tr><td>Place value</td><td>46</td><td>k-read-write-numbers-20, k-make-numbers-to-10, g1-read-numbers-50, g1-compose-decompose-50, g2-whole-numbers-200, g3-whole-numbers-1000, g3-place-value</td></tr>
@@ -115,10 +115,10 @@ flowchart LR
 </ul>
 
 <h3 id="fixes">One fix per game</h3>
-<p>A game replaces a number-line item's line, as it already does for 36 share and slices items.</p>
+<p>A game replaces a number-line item's line, as it already does for 36 share and slices items and 5 compare items.</p>
 <table>
 <tr><th>Game</th><th>Fix</th><th>What it changes</th><th>Issue</th></tr>
-<tr><td><code>compare</code></td><td>Widen the candidates</td><td>Take number-line items like "Least: 44, 31, 38", and word answers like "the same" and "true", with a new two-value ask that answers more, less, or same. About 20 items. Leave picture choices to Line them up.</td><td>#50</td></tr>
+<tr><td><code>compare</code></td><td>Widen the candidates</td><td>Done. Takes number-line items like "Least: 44, 31, 38", and word answers like "the same" and "true" through the <code>relation</code> ask. 13 more items. Picture choices stay untagged.</td><td>#50</td></tr>
 <tr><td><code>blocks</code></td><td>Widen the candidates</td><td>Fix <code>PLACE_WORDS</code> so "15 = 10 + ?" matches, and take number-line items like "4 tens and 7 ones". About 11 items. Sums past 20 from add and subtract need regrouping here.</td><td>#48, #98</td></tr>
 <tr><td><code>arrays</code></td><td>Widen the candidates</td><td>Take items with an objects picture, like "4 groups of 2", and × and ÷ facts on a number line. About 18 items. Leave fact-family choices on their screen.</td><td>#49</td></tr>
 <tr><td><code>grid</code></td><td>Widen the candidates</td><td>Take items with a ten-frame picture, like "What decimal is filled?", and number-line items like "Find 3/10". About 14 items. Leave mixed numbers and thirds to the fraction wall.</td><td>#51, #52</td></tr>
@@ -152,7 +152,7 @@ flowchart LR
   C --> G[Hundred grid]:::done
   C --> S[Stepping stones]:::done
   T --> L[Line up]:::done
-  T -.-> M[Tag the 354 left]
+  T -.-> M[Tag the 341 left]
   R --> K[Sort, order, label]:::done
   K -.-> N[Items for other subjects]
   classDef done fill:#d9f2e0,stroke:#2e8b57,color:#1f2328
@@ -161,7 +161,7 @@ flowchart LR
 <table>
 <tr><th>Order</th><th>Minigame</th><th>Status</th><th>Items</th><th>Play</th></tr>
 <tr><td>0</td><td>Retag existing games</td><td>Done</td><td>31</td><td>Join takes bare facts like "15 - 6", and sharing takes "4 × 3" and arrays with plain counters. Products past 20, more than 6 groups, and things like legs and wheels went to Arrays.</td></tr>
-<tr><td>1</td><td>Compare and order</td><td>Done</td><td>42 of ~117</td><td>Up to 20, cube towers stand side by side. Above 20, and for fractions and decimals, flags drop onto a number line and the rightmost wins.</td></tr>
+<tr><td>1</td><td>Compare and order</td><td>Done</td><td>55 of ~117</td><td>Up to 20, cube towers stand side by side. Above 20, and for fractions and decimals, flags drop onto a number line and the rightmost wins. A <code>relation</code> ask shows two values and answers more, less, the same, or yes or no.</td></tr>
 <tr><td>2</td><td>Base-ten blocks</td><td>Done</td><td>39 of ~94</td><td>Flats, rods, and cubes build a number. Asks: read it, a digit's worth, expanded form, trade 10 ones for a ten.</td></tr>
 <tr><td>3</td><td>Arrays</td><td>Done</td><td>41 of ~94</td><td>Things fill rows and columns. Asks: total, rows, per row, turn the array, split it.</td></tr>
 <tr><td>4</td><td>Hundred grid</td><td>Done</td><td>28 of ~80</td><td>A 10 × 10 grid or a tenths strip fills in. Asks: read it as a decimal, fraction, or percent, and find equal amounts.</td></tr>
