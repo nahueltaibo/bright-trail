@@ -1,0 +1,143 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g5-fraction-decimal-percent-tap-1",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "percent",
+        "amount": "1/2",
+        "other": null,
+        "note": "1/2 = 50 hundredths"
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-keypad-1",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "percent",
+        "amount": "0.25",
+        "other": null,
+        "note": ""
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-number-line-1",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "percent",
+        "amount": "7/10",
+        "other": null,
+        "note": "percent so use hundredths"
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-tap-2",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "fraction",
+        "amount": "30%",
+        "other": null,
+        "note": ""
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-keypad-2",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "decimal",
+        "amount": "9/100",
+        "other": null,
+        "note": ""
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-keypad-3",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "percent",
+        "amount": "3/5",
+        "other": null,
+        "note": ""
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-tap-3",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "decimal",
+        "amount": "3/4",
+        "other": null,
+        "note": ""
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-number-line-2",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "percent",
+        "amount": "7/20",
+        "other": null,
+        "note": ""
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-keypad-4",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "parts",
+        "amount": "0.8",
+        "other": null,
+        "note": "0.8 = 80 hundredths"
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-tap-4",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "percent",
+        "amount": "18/20",
+        "other": null,
+        "note": ""
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-tap-5",
+        "fits": false,
+        "unit": "hundredths",
+        "ask": "percent",
+        "amount": "55%",
+        "other": null,
+        "note": "Compares several amounts; not one amount"
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-tap-6",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "same",
+        "amount": "4/25",
+        "other": "14%",
+        "note": "4/25 = 16%, not 14%"
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-keypad-5",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "decimal",
+        "amount": "9/25",
+        "other": null,
+        "note": ""
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-number-line-3",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "decimal",
+        "amount": "13/20",
+        "other": null,
+        "note": ""
+      },
+      {
+        "itemId": "g5-fraction-decimal-percent-keypad-6",
+        "fits": true,
+        "unit": "hundredths",
+        "ask": "percent",
+        "amount": "33/50",
+        "other": null,
+        "note": ""
+      }
+    ]
+  }
+}

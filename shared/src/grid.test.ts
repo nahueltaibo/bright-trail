@@ -5,6 +5,7 @@ import {
   gridFills,
   gridProblems,
   gridValue,
+  namesTarget,
   type GridScene,
 } from './grid';
 import type { Item } from './item';
@@ -109,22 +110,38 @@ describe('gridProblems', () => {
     ]);
   });
 
-  it('leaves number-line items and pictures to their own screens', () => {
-    const s = scene({ unit: 'tenths', ask: 'decimal', amount: '0.4' });
+  it('takes a ten-frame only when the strip fills the same tenths', () => {
     const picture = {
       ...keypad('Four dots are filled. Type the decimal.', 0.4),
       visual: { kind: 'ten-frame', filled: 4 },
     } as Item;
-    expect(gridProblems(picture, s)).toEqual(['the item has a ten-frame picture']);
-    const line = {
-      ...base,
-      narration: 'n',
-      type: 'number-line',
-      min: 0,
-      max: 1,
-      step: 0.1,
-      target: 0.4,
-    };
-    expect(gridProblems(line as Item, s)).toEqual(['number-line items keep their own screen']);
+    const four = scene({ unit: 'tenths', ask: 'decimal', amount: '4/10' });
+    expect(gridProblems(picture, four)).toEqual([]);
+    expect(
+      gridProblems(picture, scene({ unit: 'hundredths', ask: 'decimal', amount: '40/100' })),
+    ).toEqual(['the scene does not fill 4 tenths like the ten-frame']);
+    const objects = { ...picture, visual: { kind: 'objects', emoji: '🍎', count: 4 } } as Item;
+    expect(gridProblems(objects, four)).toEqual(['the item has a objects picture']);
+  });
+
+  it('takes number-line items unless they name the point they land on', () => {
+    const line = (prompt: string, target: number) =>
+      ({
+        ...base,
+        prompt,
+        narration: `Move the frog to ${prompt.slice(5)} on the number line.`,
+        type: 'number-line',
+        min: 0,
+        max: 1,
+        step: 0.1,
+        target,
+      }) as Item;
+    const s = scene({ unit: 'tenths', ask: 'decimal', amount: '3/10' });
+    expect(gridProblems(line('Find 3/10', 0.3), s)).toEqual([]);
+    const placed = scene({ unit: 'tenths', ask: 'decimal', amount: '0.3' });
+    expect(gridProblems(line('Find 0.3', 0.3), placed)).toEqual([
+      'the item names the point it lands on',
+    ]);
+    expect(namesTarget(line('Find 10.35', 0.35))).toBe(false);
   });
 });

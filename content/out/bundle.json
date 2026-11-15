@@ -1,7 +1,7 @@
 {
   "schemaVersion": 5,
   "version": "2026.11.15-53",
-  "generatedAt": "2026-11-15T16:23:52Z",
+  "generatedAt": "2026-11-15T16:29:44Z",
   "skills": [
     {
       "id": "k-count-to-20",
@@ -14950,6 +14950,7 @@
       "narration": "A ten-frame is one whole. Seven dots are filled. Is that 0.3, 0.7, 1.7, or 7?",
       "prompt": "What decimal is filled?",
       "why": "The frame has 10 parts. Seven are filled, so that is 7 tenths. As a decimal, 7 tenths is 0.7.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "7/10" },
       "type": "tap",
       "visual": { "kind": "ten-frame", "filled": 7 },
       "choices": [
@@ -14981,6 +14982,7 @@
       "narration": "A ten-frame is one whole. Four dots are filled. Type the decimal for the filled part.",
       "prompt": "Type the decimal",
       "why": "The frame has 10 parts and 4 are filled. That is 4 tenths. As a decimal, it is 0.4.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "4/10" },
       "type": "keypad",
       "visual": { "kind": "ten-frame", "filled": 4 },
       "answer": 0.4
@@ -15164,6 +15166,7 @@
       "narration": "A ten-frame has 7 dots out of 10 spots. Type the decimal for 7 tenths.",
       "prompt": "7 tenths = ?",
       "why": "Each dot is one tenth. Seven dots make 7 tenths, and the decimal is 0.7.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "7/10" },
       "type": "keypad",
       "visual": { "kind": "ten-frame", "filled": 7 },
       "answer": 0.7
@@ -15175,6 +15178,7 @@
       "narration": "Move the frog to 3/10 on the number line.",
       "prompt": "Find 3/10",
       "why": "The line from 0 to 1 has 10 equal jumps. Count 3 jumps from 0 to land on 0.3.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "3/10" },
       "type": "number-line",
       "min": 0,
       "max": 1,
@@ -15216,6 +15220,7 @@
       "narration": "Move the frog to 15 tenths on the number line.",
       "prompt": "Find 15/10",
       "why": "15 tenths is 1 whole and 5 tenths more. That is 1.5, halfway between 1 and 2.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "15/10" },
       "type": "number-line",
       "min": 0,
       "max": 2,
@@ -15313,6 +15318,7 @@
       "narration": "Move the frog to 24 tenths on the number line.",
       "prompt": "Find 24/10",
       "why": "24 tenths is 2 wholes, which is 20 tenths, plus 4 more tenths. That lands on 2.4.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "24/10" },
       "type": "number-line",
       "min": 0,
       "max": 3,
@@ -15337,6 +15343,7 @@
       "narration": "Move the frog to 4/5 on the number line. Think about tenths.",
       "prompt": "Find 4/5",
       "why": "Two fifths match 4 tenths, so each fifth is 2 tenths. Four fifths are 8 tenths, or 0.8.",
+      "game": { "kind": "grid", "unit": "tenths", "ask": "decimal", "amount": "4/5" },
       "type": "number-line",
       "min": 0,
       "max": 1,
@@ -16214,6 +16221,7 @@
       "narration": "Move the frog to the percent that is equal to 7/10.",
       "prompt": "7/10 = ?%",
       "why": "7/10 is equivalent to 70/100 because 10 times 10 is 100. So 7/10 is 70%.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "7/10" },
       "type": "number-line",
       "min": 0,
       "max": 100,
@@ -16283,6 +16291,7 @@
       "narration": "Move the frog to the percent that is equal to 7/20.",
       "prompt": "7/20 = ?%",
       "why": "Multiply 20 by 5 to get 100. Multiply 7 by 5 too. That gives 35/100, which is 35%.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "percent", "amount": "7/20" },
       "type": "number-line",
       "min": 0,
       "max": 100,
@@ -16372,6 +16381,7 @@
       "narration": "Move the frog to the decimal that is equal to 13/20.",
       "prompt": "13/20 = ?",
       "why": "Multiply 20 by 5 to get 100. Multiply 13 by 5 too. That gives 65/100, which is 0.65.",
+      "game": { "kind": "grid", "unit": "hundredths", "ask": "decimal", "amount": "13/20" },
       "type": "number-line",
       "min": 0,
       "max": 1,

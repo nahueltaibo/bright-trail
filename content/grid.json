@@ -1,4 +1,10 @@
 {
+  "g4-decimal-tenths-keypad-1": {
+    "kind": "grid",
+    "unit": "tenths",
+    "ask": "decimal",
+    "amount": "4/10"
+  },
   "g4-decimal-tenths-keypad-2": {
     "kind": "grid",
     "unit": "tenths",
@@ -17,12 +23,24 @@
     "ask": "decimal",
     "amount": "12/10"
   },
+  "g4-decimal-tenths-tap-1": {
+    "kind": "grid",
+    "unit": "tenths",
+    "ask": "decimal",
+    "amount": "7/10"
+  },
   "g4-decimal-tenths-tap-5": {
     "kind": "grid",
     "unit": "tenths",
     "ask": "same",
     "amount": "2.0",
     "other": "2"
+  },
+  "g4-fraction-decimal-equivalence-keypad-1": {
+    "kind": "grid",
+    "unit": "tenths",
+    "ask": "decimal",
+    "amount": "7/10"
   },
   "g4-fraction-decimal-equivalence-keypad-4": {
     "kind": "grid",
@@ -35,6 +53,30 @@
     "unit": "tenths",
     "ask": "decimal",
     "amount": "2 7/10"
+  },
+  "g4-fraction-decimal-equivalence-number-line-1": {
+    "kind": "grid",
+    "unit": "tenths",
+    "ask": "decimal",
+    "amount": "3/10"
+  },
+  "g4-fraction-decimal-equivalence-number-line-2": {
+    "kind": "grid",
+    "unit": "tenths",
+    "ask": "decimal",
+    "amount": "15/10"
+  },
+  "g4-fraction-decimal-equivalence-number-line-3": {
+    "kind": "grid",
+    "unit": "tenths",
+    "ask": "decimal",
+    "amount": "24/10"
+  },
+  "g4-fraction-decimal-equivalence-number-line-4": {
+    "kind": "grid",
+    "unit": "tenths",
+    "ask": "decimal",
+    "amount": "4/5"
   },
   "g4-fraction-decimal-equivalence-tap-1": {
     "kind": "grid",
@@ -139,6 +181,24 @@
     "unit": "hundredths",
     "ask": "percent",
     "amount": "33/50"
+  },
+  "g5-fraction-decimal-percent-number-line-1": {
+    "kind": "grid",
+    "unit": "hundredths",
+    "ask": "percent",
+    "amount": "7/10"
+  },
+  "g5-fraction-decimal-percent-number-line-2": {
+    "kind": "grid",
+    "unit": "hundredths",
+    "ask": "percent",
+    "amount": "7/20"
+  },
+  "g5-fraction-decimal-percent-number-line-3": {
+    "kind": "grid",
+    "unit": "hundredths",
+    "ask": "decimal",
+    "amount": "13/20"
   },
   "g5-fraction-decimal-percent-tap-1": {
     "kind": "grid",

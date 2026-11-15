@@ -28,13 +28,23 @@ export type GridStageHandle = {
   reset(): Promise<void>;
 };
 
-type Props = { scene: GridScene; cheer?: boolean; handle?: Ref<GridStageHandle> };
+type Props = {
+  scene: GridScene;
+  cheer?: boolean;
+  /** Parts of the first amount filled before the play-out, which then counts them from 0. */
+  filled?: number;
+  handle?: Ref<GridStageHandle>;
+};
 
 /** Tenths strips or hundred grids that fill in for a grid scene. Driven through `handle`. */
-export function GridStage({ scene: s, cheer, handle }: Props) {
+export function GridStage({ scene: s, cheer, filled = 0, handle }: Props) {
   const layout = useMemo(() => layoutOf(s), [s]);
+  const start = useMemo(
+    () => layout.groups.map((_, g) => (g === 0 ? filled : 0)),
+    [layout, filled],
+  );
   const [box, setBox] = useState<{ w: number; h: number } | null>(null);
-  const [shown, setShown] = useState<number[]>(() => layout.groups.map(() => 0));
+  const [shown, setShown] = useState<number[]>(start);
   const [bubbles, setBubbles] = useState<Bubble[]>([]);
   const [hop] = useState(() => new Animated.Value(0));
   const run = useRef(0);
@@ -84,7 +94,7 @@ export function GridStage({ scene: s, cheer, handle }: Props) {
       },
       async reset() {
         run.current += 1;
-        setShown(layout.groups.map(() => 0));
+        setShown(start);
         setBubbles([]);
         await wait(50);
       },
