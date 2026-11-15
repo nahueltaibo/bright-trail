@@ -105,9 +105,10 @@ flowchart LR
 </table>
 <p>The earlier estimates counted these items as fits, so each game tagged far fewer than its estimate.</p>
 <p>The LLM's declines hold up on a sample. "How many more does Ben have", "6.3 needs more than 2 grids", "thirds can't be shown on a grid", and "second greatest" are all outside what the scene can show. The 5 refusals come from a check too strict: the ten-frame refuses <code>+ 0</code>, <code>- 0</code>, and a part set aside from two frames.</p>
-<p>Some cached calls no longer match today's prompts:</p>
+<p>Some cached calls no longer match today's bundle or prompts:</p>
 <ul>
-<li>Arrays' 7 calls predate <code>counter</code> in <code>THING_IDS</code>. The replay matches them by item ids, and rerunning <code>content:arrays</code> makes 7 live calls.</li>
+<li>Each game was first tagged before the later games existed, so the replay runs the taggers in bundle order. On today's bundle, <code>join</code>'s candidates differ in 10 skills, so rerunning <code>content:join</code> makes new calls.</li>
+<li>Arrays' 7 calls predate <code>counter</code> in <code>THING_IDS</code>. The replay matches them by tool, answer fields, and item ids, and rerunning <code>content:arrays</code> makes 7 live calls.</li>
 <li>The slices call for <code>g1-compare-unit-fractions</code> misses, so 9 of its candidates have no answer.</li>
 <li>The hops calls for <code>g3-mult-div-facts-2-5-10</code> and <code>g3-mult-div-properties</code> miss, so 2 candidates have no path.</li>
 </ul>

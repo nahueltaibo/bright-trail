@@ -1,10 +1,11 @@
-import { existsSync, readdirSync, readFileSync } from 'node:fs';
-import { dirname, join, resolve } from 'node:path';
+import { spawnSync } from 'node:child_process';
+import { readFileSync } from 'node:fs';
+import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseArgs } from 'node:util';
 import { ContentBundleSchema } from '@bright-trail/shared';
-import { cacheKey } from '../graph/llm';
-import { countBySkill, OUTCOMES, traceAll, type CacheLookup, type Outcome } from './coverage';
+import { cacheLookup, readReviewed } from './coverage-cache';
+import { countBySkill, OUTCOMES, traceAll, type Outcome } from './coverage';
 import { isTaggerKind, TAGGERS, type TaggerKind } from './registry';
 import type { Tagger } from './tagger';
 
@@ -26,23 +27,20 @@ if (values.kind && !isTaggerKind(values.kind)) {
 const read = (file: string) => JSON.parse(readFileSync(file, 'utf8')) as unknown;
 const bundle = ContentBundleSchema.parse(read(join(contentDir, 'out', 'bundle.json')));
 const reviewed = Object.fromEntries(
-  Object.entries(TAGGERS).map(([kind, t]) => [kind, read(join(contentDir, t.file))]),
+  Object.entries(TAGGERS).map(([kind, t]) => [kind, readReviewed(join(contentDir, t.file))]),
 ) as Record<TaggerKind, Record<string, unknown>>;
 
-// Answers by the items they cover, for calls whose prompt changed since they were cached.
-const byItems = new Map<string, unknown>();
-for (const file of readdirSync(cacheDir)) {
-  const { output } = read(join(cacheDir, file)) as { output: Record<string, unknown> };
-  const list = Object.values(output ?? {}).find(Array.isArray) as { itemId?: string }[] | undefined;
-  const ids = list?.map((e) => e.itemId).filter((id) => id !== undefined);
-  if (ids?.length) byItems.set([...ids].sort().join(','), output);
+// The last commit that touched each cache file, so the newest of two older answers wins.
+const committed = new Map<string, number>();
+const log = spawnSync('git', ['log', '--format=@%ct', '--name-only', '--', cacheDir], {
+  encoding: 'utf8',
+});
+let at = 0;
+for (const line of (log.stdout ?? '').split('\n')) {
+  if (line.startsWith('@')) at = Number(line.slice(1));
+  else if (line && !committed.has(basename(line))) committed.set(basename(line), at);
 }
-const lookup: CacheLookup = (request, itemIds) => {
-  const file = join(cacheDir, `${cacheKey(request)}.json`);
-  if (existsSync(file)) return { output: (read(file) as { output: unknown }).output, stale: false };
-  const output = byItems.get([...itemIds].sort().join(','));
-  return output === undefined ? undefined : { output, stale: true };
-};
+const lookup = cacheLookup(cacheDir, (file) => committed.get(file) ?? Infinity);
 
 const { traces, bundle: replayed } = traceAll(
   TAGGERS as unknown as Record<TaggerKind, Tagger>,
@@ -51,12 +49,13 @@ const { traces, bundle: replayed } = traceAll(
   lookup,
 );
 
-const games = (b: typeof bundle) =>
-  b.items.map((i) => `${i.id}:${i.game?.kind ?? ''}:${'hops' in i && i.hops ? 1 : 0}`).join();
-if (games(replayed) !== games(bundle)) {
-  console.log(
-    'Warning: the replay plays different games than out/bundle.json. Rerun the taggers.\n',
-  );
+const plays = (i: (typeof bundle.items)[number]) =>
+  `${i.game?.kind ?? ''}${'hops' in i && i.hops ? '+hops' : ''}`;
+const mismatched = bundle.items.filter((item, n) => plays(item) !== plays(replayed.items[n]!));
+if (mismatched.length > 0) {
+  console.log('Warning: the replay plays different games than out/bundle.json on:');
+  for (const i of mismatched) console.log(`  ${i.id}`);
+  console.log('Rerun the taggers. The counts below follow the replay.\n');
 }
 
 const SHOWN = OUTCOMES.filter((o) => o !== 'other-game');
@@ -78,18 +77,22 @@ for (const kind of kinds) {
   if (trace.staleSkills.length > 0) {
     console.log(`\nAnswered from an older prompt: ${trace.staleSkills.join(', ')}`);
   }
+  if (trace.rerunDiffers.length > 0) {
+    console.log(`\nA rerun today asks about other items in: ${trace.rerunDiffers.join(', ')}`);
+  }
   if (values.why) {
     console.log('');
     for (const [id, fate] of [...trace.fates].sort(([a], [b]) => a.localeCompare(b))) {
-      if (fate.why) console.log(`- ${fate.outcome} ${id}: ${fate.why}`);
+      const listed = fate.outcome === 'declined' || fate.outcome === 'refused';
+      if (listed && fate.why) console.log(`- ${fate.outcome} ${id}: ${fate.why}`);
     }
   }
   console.log('');
 }
 
 if (!values.kind) {
-  // An item counts once, by the furthest any tagger got with it.
-  const untagged = bundle.items.filter((i) => !i.game);
+  // From the replay alone, so its set and outcomes agree. Each item counts by its furthest step.
+  const untagged = replayed.items.filter((i) => !i.game);
   const rank = (o: Outcome) => OUTCOMES.indexOf(o);
   const best = new Map<string, number>();
   for (const item of untagged) {

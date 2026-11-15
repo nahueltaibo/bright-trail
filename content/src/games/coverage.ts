@@ -1,6 +1,6 @@
 import type { ContentBundle, Item } from '@bright-trail/shared';
 import type { LlmRequest } from '../graph/llm';
-import type { Tagger } from './tagger';
+import { groupCandidates, type Tagger } from './tagger';
 
 /** What happened to one item in one tagger's run. */
 export type Outcome =
@@ -42,7 +42,14 @@ export type TaggerTrace = {
   fates: Map<string, Fate>;
   /** Skills whose call answered from an older prompt. */
   staleSkills: string[];
+  /** Skills whose candidates differ on the finished bundle, so a rerun today asks another call. */
+  rerunDiffers: string[];
 };
+
+/** Whether `apply` set this tagger's game or frog path on the item. */
+const changed = (before: Item, after: Item) =>
+  before.game !== after.game ||
+  ('hops' in before ? before.hops : undefined) !== ('hops' in after ? after.hops : undefined);
 
 /**
  * Replays one tagger's run from the cache without calling the LLM: which items it asked about,
@@ -56,26 +63,31 @@ export function traceTagger<I extends Item, G>(
 ): { trace: TaggerTrace; bundle: ContentBundle } {
   const fates = new Map<string, Fate>();
   const staleSkills: string[] = [];
-  const bySkill = new Map<string, I[]>();
-  for (const item of tagger.candidates(bundle.items)) {
-    bySkill.set(item.skillId, [...(bySkill.get(item.skillId) ?? []), item]);
-  }
+  const { bySkill, few } = groupCandidates(tagger, bundle.items);
+  for (const i of few) fates.set(i.id, { outcome: 'few' });
   for (const [skillId, group] of bySkill) {
-    if (group.length < tagger.minPerSkill) {
-      for (const i of group) fates.set(i.id, { outcome: 'few' });
+    const cached = lookup(
+      tagger.request(skillId, group),
+      group.map((i) => i.id),
+    );
+    let result: ReturnType<typeof tagger.accept> | undefined;
+    let broken: string | undefined;
+    if (cached) {
+      try {
+        result = tagger.accept(group, cached.output);
+      } catch (error) {
+        broken = `the cached answer doesn't parse: ${(error as Error).message.split('\n')[0]}`;
+      }
+    }
+    if (!result) {
+      for (const i of group)
+        fates.set(i.id, { outcome: 'uncached', ...(broken && { why: broken }) });
       continue;
     }
-    const ids = group.map((i) => i.id);
-    const cached = lookup(tagger.request(skillId, group), ids);
-    if (!cached) {
-      for (const i of group) fates.set(i.id, { outcome: 'uncached' });
-      continue;
-    }
-    if (cached.stale) staleSkills.push(skillId);
-    const { tagged, rejected } = tagger.accept(group, cached.output);
+    if (cached?.stale) staleSkills.push(skillId);
     for (const i of group) {
-      const why = rejected[i.id];
-      if (i.id in tagged) fates.set(i.id, { outcome: 'tagged' });
+      const why = result.rejected[i.id];
+      if (i.id in result.tagged) fates.set(i.id, { outcome: 'tagged' });
       else if (why?.startsWith('does not fit: ')) {
         fates.set(i.id, { outcome: 'declined', why: why.slice('does not fit: '.length) });
       } else if (why !== undefined) fates.set(i.id, { outcome: 'refused', why });
@@ -84,27 +96,36 @@ export function traceTagger<I extends Item, G>(
   }
 
   const applied = tagger.apply(bundle, reviewed);
-  const lost = new Map(
+  const dropped = new Map(
     applied.dropped.map((line) => {
       const at = line.indexOf(': ');
       return [line.slice(0, at), line.slice(at + 2)] as const;
     }),
   );
-  for (const item of bundle.items) {
+  bundle.items.forEach((item, n) => {
     const fate = fates.get(item.id);
-    const inFile = Object.hasOwn(reviewed, item.id);
-    if (inFile && !lost.has(item.id)) {
+    if (changed(item, applied.bundle.items[n]!)) {
       // The reviewed file wins: a tag can outlive the cached call that made it.
       if (fate?.outcome !== 'tagged') {
         fates.set(item.id, { outcome: 'tagged', why: `kept from ${tagger.file}` });
       }
-    } else if (fate?.outcome === 'tagged') {
-      fates.set(item.id, { outcome: 'lost', why: lost.get(item.id) ?? `not in ${tagger.file}` });
+    } else if (fate?.outcome === 'tagged' || Object.hasOwn(reviewed, item.id)) {
+      const why =
+        dropped.get(item.id) ??
+        (Object.hasOwn(reviewed, item.id) ? 'apply skipped it' : `not in ${tagger.file}`);
+      fates.set(item.id, { outcome: 'lost', why });
     } else if (!fate) {
       fates.set(item.id, { outcome: item.game ? 'other-game' : 'not-candidate' });
     }
-  }
-  return { trace: { fates, staleSkills }, bundle: applied.bundle };
+  });
+  return { trace: { fates, staleSkills, rerunDiffers: [] }, bundle: applied.bundle };
+}
+
+function differingSkills(a: Map<string, Item[]>, b: Map<string, Item[]>): string[] {
+  const ids = (m: Map<string, Item[]>, skill: string) =>
+    (m.get(skill) ?? []).map((i) => i.id).join();
+  const skills = new Set([...a.keys(), ...b.keys()]);
+  return [...skills].filter((s) => ids(a, s) !== ids(b, s)).sort();
 }
 
 /** Drops every game and frog path, so a replay starts from the generated items. */
@@ -119,8 +140,11 @@ export function stripGames(bundle: ContentBundle): ContentBundle {
 }
 
 /**
- * Replays every tagger in bundle order, each on the bundle the ones before it left. An item a
- * tagger never saw counts as `other-game` when some game plays it in the end.
+ * Replays every tagger in bundle order, each on the bundle the ones before it left. Each game was
+ * first tagged after the ones before it existed, and candidate filters skip items another game
+ * plays, so this order is what those runs saw. `rerunDiffers` names the skills where a run on the
+ * finished bundle would ask about other items. An item a tagger never saw counts as `other-game`
+ * when some game plays it in the end.
  */
 export function traceAll<K extends string>(
   taggers: Readonly<Record<K, Tagger>>,
@@ -131,7 +155,12 @@ export function traceAll<K extends string>(
   let current = stripGames(bundle);
   const traces = {} as Record<K, TaggerTrace>;
   for (const kind of Object.keys(taggers) as K[]) {
-    const run = traceTagger(taggers[kind], current, reviewed[kind], lookup);
+    const tagger = taggers[kind];
+    const run = traceTagger(tagger, current, reviewed[kind], lookup);
+    run.trace.rerunDiffers = differingSkills(
+      groupCandidates(tagger, current.items).bySkill,
+      groupCandidates(tagger, bundle.items).bySkill,
+    );
     traces[kind] = run.trace;
     current = run.bundle;
   }
@@ -148,8 +177,8 @@ export function traceAll<K extends string>(
 export type SkillCounts = { skillId: string } & Record<Outcome, number>;
 
 /**
- * Counts outcomes per skill. Lists only skills with a candidate or an untagged item the tagger
- * never saw, and leaves out items another game already plays.
+ * Counts outcomes per skill. Lists only skills where the tagger had a candidate. Items another
+ * game plays count as `other-game`.
  */
 export function countBySkill(items: readonly Item[], trace: TaggerTrace): SkillCounts[] {
   const rows = new Map<string, SkillCounts>();

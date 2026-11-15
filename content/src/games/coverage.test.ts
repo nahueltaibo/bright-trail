@@ -31,6 +31,7 @@ const fake: Tagger<Item, string> = {
     maxTokens: 1,
   }),
   accept: (items, output) => {
+    if (!Array.isArray(output)) throw new Error('not a list\nmore detail');
     const listed = output as string[];
     const tagged: Record<string, string> = {};
     const rejected: Record<string, string> = {};
@@ -46,7 +47,7 @@ const fake: Tagger<Item, string> = {
       .filter((id) => id.includes('gone'))
       .map((id) => `${id}: changed since`);
     const items = b.items.map((i) =>
-      tags[i.id] && !i.id.includes('gone')
+      tags[i.id] && !i.id.includes('gone') && !i.id.includes('ignored')
         ? ({ ...i, game: { kind: 'fake' } } as unknown as Item)
         : i,
     );
@@ -59,6 +60,7 @@ const lookup: CacheLookup = (request, ids) => {
   if (request.system === 'a')
     return { output: ids.filter((id) => !id.includes('quiet')), stale: false };
   if (request.system === 'c') return { output: ids, stale: true };
+  if (request.system === 'e') return { output: 'garbage', stale: false };
   return undefined;
 };
 
@@ -75,9 +77,13 @@ describe('traceTagger', () => {
     item('c-ok2', 'c'),
     item('d-1', 'd'),
     item('d-2', 'd'),
+    item('e-1', 'e'),
+    item('e-2', 'e'),
+    item('x-ignored', 'x'),
   ];
   const reviewed = {
     'a-ok': 'a-ok',
+    'x-ignored': 'x-ignored',
     'a-gone': 'a-gone',
     'd-1': 'd-1',
     'c-ok': 'c-ok',
@@ -94,6 +100,17 @@ describe('traceTagger', () => {
     expect(outcome('a-skip')).toEqual({ outcome: 'not-candidate' });
     expect(outcome('b-ok')).toEqual({ outcome: 'few' });
     expect(outcome('d-2')).toEqual({ outcome: 'uncached' });
+  });
+
+  it('marks a skill whose cached answer fails to parse as uncached, with the reason', () => {
+    expect(outcome('e-1')).toEqual({
+      outcome: 'uncached',
+      why: "the cached answer doesn't parse: not a list",
+    });
+  });
+
+  it('counts a reviewed tag that apply skipped as lost, not tagged', () => {
+    expect(outcome('x-ignored')).toEqual({ outcome: 'lost', why: 'apply skipped it' });
   });
 
   it('marks a tag the bundle dropped as lost', () => {
@@ -132,6 +149,8 @@ describe('traceAll', () => {
     expect(traces.first.fates.get('a-skip')).toEqual({ outcome: 'not-candidate' });
     expect(traces.fake.fates.get('a-ok')).toEqual({ outcome: 'tagged' });
     expect(after.items.map((i) => i.game?.kind)).toEqual(['fake', undefined, 'fake']);
+    // On the finished bundle, a-ok plays a game, so a rerun would skip skill a.
+    expect(traces.fake.rerunDiffers).toEqual(['a']);
   });
 });
 
@@ -144,7 +163,7 @@ describe('countBySkill', () => {
       ['a3', { outcome: 'not-candidate' as const }],
       ['b1', { outcome: 'not-candidate' as const }],
     ]);
-    const rows = countBySkill(items, { fates, staleSkills: [] });
+    const rows = countBySkill(items, { fates, staleSkills: [], rerunDiffers: [] });
     expect(rows).toHaveLength(1);
     expect(rows[0]).toMatchObject({ skillId: 'a', tagged: 1, declined: 1, 'not-candidate': 1 });
   });
