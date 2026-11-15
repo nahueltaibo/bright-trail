@@ -40,7 +40,7 @@ const SUM = /(?<![\d/.])(\d+|\?) ?[+-] ?(\d+|\?)(?![\d/.])/;
 const pastTwenty = (i: Item, answer: number) =>
   answer > 20 || (i.prompt.match(/\d+/g) ?? []).some((n) => Number(n) > 20);
 
-/** Lines keep their frog for facts like `27 + 8`. A missing part like `27 + ? = 35` takes blocks. */
+/** Lines keep their frog for facts like `30 + 15`. A missing part like `27 + ? = 35` takes blocks. */
 const MISSING_PART = /\? ?[+-]|[+-] ?\?/;
 
 /**
@@ -54,10 +54,10 @@ export function blocksCandidates(items: readonly Item[]): Item[] {
     const answer = itemAnswer(i);
     if (typeof answer !== 'number' || !Number.isInteger(answer) || answer < 0) return false;
     if (i.type === 'tap' && !i.choices.every((c) => c.kind === 'number')) return false;
-    const line = i.type === 'number-line';
-    if (PLACE_WORDS.test(line ? i.prompt : `${i.prompt} ${i.narration}`)) return true;
     const sum = SUM.test(i.prompt) && !/[×÷*/]/.test(i.prompt) && pastTwenty(i, answer);
-    return sum && (!line || MISSING_PART.test(i.prompt));
+    if (i.type !== 'number-line') return sum || PLACE_WORDS.test(`${i.prompt} ${i.narration}`);
+    if (SUM.test(i.prompt)) return sum && MISSING_PART.test(i.prompt);
+    return PLACE_WORDS.test(i.prompt);
   });
 }
 

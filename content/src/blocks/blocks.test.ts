@@ -102,6 +102,7 @@ describe('blocksCandidates', () => {
       small,
       times,
       line('fact', '27 + 8 = ?', 35),
+      line('tens', '30 + 15 = ?', 45),
       line('missing', '27 + ? = 35', 8),
     ];
     expect(blocksCandidates(items).map((i) => i.id)).toEqual(['sum', 'missing']);
