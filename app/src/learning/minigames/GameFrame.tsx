@@ -353,7 +353,6 @@ export function GameFrame(props: Props) {
           },
         }
       : undefined;
-  // eslint-disable-next-line react-hooks/refs -- `pick` reads refs only when called.
   const stageView = props.stage({ cheer, pick, answer: answerOnStage, tried, build });
   const stage = <View style={styles.stages}>{stageView}</View>;
   const bottom = feedback || inputView;
