@@ -27,17 +27,20 @@ const TaggedBlocksSchema = z.strictObject({
 export const BlocksTagOutputSchema = z.strictObject({ scenes: z.array(TaggedBlocksSchema) });
 export type TaggedBlocks = z.infer<typeof TaggedBlocksSchema>;
 
-const PLACE_WORDS =
-  /\b(ones?|tens?|hundreds?|digits?|place|worth|blocks?|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)\b|\b[1-9]0{1,2}\s*(\+|and)\s*\d/i;
+export const PLACE_WORDS =
+  /\b(ones?|tens?|hundreds?|digits?|place|worth|blocks?|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)\b|\b[1-9]0{1,2}\s*(\+|and)\s*(\d|\?)/i;
 
-/** Items that might build a number from blocks: a whole-number answer, no picture, place words. */
+/**
+ * Items that might build a number from blocks: a whole-number answer, no picture, place words.
+ * A number line counts only when its prompt names the places, since "Go to 27" practises the line.
+ */
 export function blocksCandidates(items: readonly Item[]): Item[] {
   return items.filter((i) => {
-    if ((i.game && i.game.kind !== 'blocks') || i.type === 'number-line' || i.visual) return false;
+    if ((i.game && i.game.kind !== 'blocks') || ('visual' in i && i.visual)) return false;
     const answer = itemAnswer(i);
     if (typeof answer !== 'number' || !Number.isInteger(answer) || answer < 0) return false;
     if (i.type === 'tap' && !i.choices.every((c) => c.kind === 'number')) return false;
-    return PLACE_WORDS.test(`${i.prompt} ${i.narration}`);
+    return PLACE_WORDS.test(i.type === 'number-line' ? i.prompt : `${i.prompt} ${i.narration}`);
   });
 }
 

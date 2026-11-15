@@ -6,6 +6,14 @@
     "tens": 1,
     "ones": 4
   },
+  "g1-compose-decompose-50-keypad-2": {
+    "kind": "blocks",
+    "ask": "count",
+    "hundreds": 0,
+    "tens": 1,
+    "ones": 5,
+    "place": "ones"
+  },
   "g1-compose-decompose-50-keypad-3": {
     "kind": "blocks",
     "ask": "total",
@@ -28,12 +36,41 @@
     "tens": 3,
     "ones": 5
   },
+  "g1-compose-decompose-50-number-line-1": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 1,
+    "ones": 6
+  },
+  "g1-compose-decompose-50-number-line-2": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 2,
+    "ones": 9
+  },
+  "g1-compose-decompose-50-number-line-4": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 4,
+    "ones": 7
+  },
   "g1-compose-decompose-50-tap-1": {
     "kind": "blocks",
     "ask": "total",
     "hundreds": 0,
     "tens": 1,
     "ones": 3
+  },
+  "g1-compose-decompose-50-tap-3": {
+    "kind": "blocks",
+    "ask": "count",
+    "hundreds": 0,
+    "tens": 2,
+    "ones": 4,
+    "place": "ones"
   },
   "g1-compose-decompose-50-tap-4": {
     "kind": "blocks",
@@ -136,6 +173,13 @@
     "ones": 14,
     "place": "ones"
   },
+  "g2-whole-numbers-200-number-line-3": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 0,
+    "tens": 17,
+    "ones": 5
+  },
   "g2-whole-numbers-200-tap-1": {
     "kind": "blocks",
     "ask": "make",
@@ -202,6 +246,27 @@
     "hundreds": 2,
     "tens": 14,
     "ones": 3
+  },
+  "g3-place-value-number-line-1": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 5,
+    "tens": 0,
+    "ones": 0
+  },
+  "g3-place-value-number-line-2": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 6,
+    "tens": 5,
+    "ones": 0
+  },
+  "g3-place-value-number-line-3": {
+    "kind": "blocks",
+    "ask": "total",
+    "hundreds": 3,
+    "tens": 7,
+    "ones": 0
   },
   "g3-place-value-tap-1": {
     "kind": "blocks",

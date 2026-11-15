@@ -1,0 +1,138 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-place-value-tap-1",
+        "fits": true,
+        "ask": "worth",
+        "hundreds": 3,
+        "tens": 5,
+        "ones": 2,
+        "place": "hundreds",
+        "note": "3 in 352 is worth 300"
+      },
+      {
+        "itemId": "g3-place-value-keypad-1",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 4,
+        "tens": 2,
+        "ones": 6,
+        "place": null,
+        "note": "4 hundreds 2 tens 6 ones"
+      },
+      {
+        "itemId": "g3-place-value-number-line-1",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 5,
+        "tens": 0,
+        "ones": 0,
+        "place": null,
+        "note": "5 hundreds is 500"
+      },
+      {
+        "itemId": "g3-place-value-tap-2",
+        "fits": true,
+        "ask": "worth",
+        "hundreds": 0,
+        "tens": 8,
+        "ones": 4,
+        "place": "tens",
+        "note": "8 in 84 is worth 80"
+      },
+      {
+        "itemId": "g3-place-value-keypad-2",
+        "fits": true,
+        "ask": "count",
+        "hundreds": 6,
+        "tens": 3,
+        "ones": 9,
+        "place": "tens",
+        "note": "tens digit of 639 is 3"
+      },
+      {
+        "itemId": "g3-place-value-keypad-3",
+        "fits": true,
+        "ask": "worth",
+        "hundreds": 8,
+        "tens": 6,
+        "ones": 2,
+        "place": "tens",
+        "note": "6 in 862 is worth 60"
+      },
+      {
+        "itemId": "g3-place-value-number-line-2",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 6,
+        "tens": 5,
+        "ones": 0,
+        "place": null,
+        "note": "6 hundreds 5 tens is 650"
+      },
+      {
+        "itemId": "g3-place-value-tap-4",
+        "fits": false,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 0,
+        "ones": 0,
+        "place": null,
+        "note": "Asks which of several numbers has a 4 in the hundreds place"
+      },
+      {
+        "itemId": "g3-place-value-keypad-4",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 8,
+        "tens": 0,
+        "ones": 5,
+        "place": null,
+        "note": "8 hundreds 0 tens 5 ones"
+      },
+      {
+        "itemId": "g3-place-value-keypad-5",
+        "fits": true,
+        "ask": "make",
+        "hundreds": 3,
+        "tens": 0,
+        "ones": 0,
+        "place": "tens",
+        "note": "30 tens make 300"
+      },
+      {
+        "itemId": "g3-place-value-number-line-3",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 3,
+        "tens": 7,
+        "ones": 0,
+        "place": null,
+        "note": "3 hundreds 7 tens is 370"
+      },
+      {
+        "itemId": "g3-place-value-tap-6",
+        "fits": false,
+        "ask": "total",
+        "hundreds": 0,
+        "tens": 0,
+        "ones": 0,
+        "place": null,
+        "note": "Asks how many times as much, comparing two values"
+      },
+      {
+        "itemId": "g3-place-value-keypad-6",
+        "fits": true,
+        "ask": "total",
+        "hundreds": 2,
+        "tens": 14,
+        "ones": 3,
+        "place": null,
+        "note": "2 hundreds 14 tens 3 ones is 343"
+      }
+    ]
+  }
+}

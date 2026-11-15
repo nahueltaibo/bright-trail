@@ -96,7 +96,6 @@ export function blocksProblems(item: Item, scene: BlocksScene): string[] {
   else if (!sameNumber(answer, shown)) {
     problems.push(`the blocks come to ${shown} but the item answers ${answer}`);
   }
-  if (item.type === 'number-line') problems.push('number-line items keep their own screen');
   // The stage replaces the item's picture, which would then go unseen.
   if ('visual' in item && item.visual) problems.push(`the item has a ${item.visual.kind} picture`);
 

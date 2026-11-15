@@ -1,6 +1,12 @@
 import type { BlocksScene, ContentBundle, Item } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
-import { acceptBlocks, applyBlocks, blocksCandidates, type TaggedBlocks } from './blocks';
+import {
+  acceptBlocks,
+  applyBlocks,
+  blocksCandidates,
+  PLACE_WORDS,
+  type TaggedBlocks,
+} from './blocks';
 
 const base = { skillId: 's', difficulty: 1, prompt: 'p', why: 'w' } as const;
 const keypad = (id: string, narration: string, answer: number): Item => ({
@@ -26,7 +32,7 @@ const tagged = (itemId: string, over: Partial<TaggedBlocks> = {}): TaggedBlocks 
 const build = keypad('build', 'Mia has 3 tens and 5 ones. What number is that?', 35);
 
 describe('blocksCandidates', () => {
-  it('keeps whole-number answers that talk about places, and skips text, pictures, and lines', () => {
+  it('keeps whole-number answers that talk about places, and skips text and pictures', () => {
     const thirty = keypad('thirty', 'Type the number thirty.', 30);
     const sum = keypad('sum', 'What is 100 + 7?', 107);
     const fact = keypad('fact', 'What is 7 times 8?', 56);
@@ -50,6 +56,37 @@ describe('blocksCandidates', () => {
       'thirty',
       'sum',
     ]);
+  });
+
+  it('takes a number line only when its prompt names the places', () => {
+    const line = (id: string, prompt: string, target: number): Item => ({
+      ...base,
+      id,
+      prompt,
+      narration: `Move the frog to ${prompt}. That is ninety-seven.`,
+      type: 'number-line',
+      min: 0,
+      max: 200,
+      step: 1,
+      target,
+    });
+    const items = [
+      line('places', '4 tens and 7 ones', 47),
+      line('many', '17 tens 5 ones', 175),
+      line('parts', '20 and 9 make?', 29),
+      line('find', 'Find 97', 97),
+    ];
+    expect(blocksCandidates(items).map((i) => i.id)).toEqual(['places', 'many', 'parts']);
+  });
+});
+
+describe('PLACE_WORDS', () => {
+  it('matches a missing part after a ten or a hundred', () => {
+    expect(PLACE_WORDS.test('15 = 10 + ?')).toBe(true);
+    expect(PLACE_WORDS.test('124 = 100 + ?')).toBe(true);
+    expect(PLACE_WORDS.test('10 and 6 make?')).toBe(true);
+    expect(PLACE_WORDS.test('7 + ? = 12')).toBe(false);
+    expect(PLACE_WORDS.test('17 and 3 more')).toBe(false);
   });
 });
 
