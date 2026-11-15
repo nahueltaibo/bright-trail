@@ -11,6 +11,7 @@ import type {
   Scene,
   SliceScene,
   StonesScene,
+  WallScene,
 } from '@bright-trail/shared';
 import { acceptArrays, applyArrays, arrayCandidates, arrayTagRequest } from '../arrays/arrays';
 import { acceptBlocks, applyBlocks, blocksCandidates, blocksTagRequest } from '../blocks/blocks';
@@ -27,6 +28,7 @@ import { acceptLineups, applyLineups, lineupCandidates, lineupTagRequest } from 
 import { acceptScenes, applyScenes, candidateItems, tagRequest } from '../scenes/scenes';
 import { acceptSlices, applySlices, sliceCandidates, sliceTagRequest } from '../slices/slices';
 import { acceptStones, applyStones, stonesCandidates, stonesTagRequest } from '../stones/stones';
+import { acceptWalls, applyWalls, wallCandidates, wallTagRequest } from '../wall/wall';
 import type { Tagger } from './tagger';
 
 const share: Tagger<Item, Scene> = {
@@ -157,6 +159,20 @@ const lineup: Tagger<Item, LineupScene> = {
   apply: applyLineups,
 };
 
+const wall: Tagger<Item, WallScene> = {
+  file: 'wall.json',
+  outcome: 'play on a fraction wall',
+  label: 'Wall',
+  minPerSkill: 3,
+  candidates: wallCandidates,
+  request: wallTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptWalls(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyWalls,
+};
+
 const hops: Tagger<NumberLineItem, Hops> = {
   file: 'hops.json',
   outcome: 'hop a planned path',
@@ -185,6 +201,7 @@ export const TAGGERS = {
   blocks,
   stones,
   lineup,
+  wall,
   hops,
 };
 export type TaggerKind = keyof typeof TAGGERS;
