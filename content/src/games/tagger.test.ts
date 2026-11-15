@@ -1,4 +1,4 @@
-import type { Item } from '@bright-trail/shared';
+import type { ContentBundle, Item } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
 import { arrayTagRequest } from '../arrays/arrays';
 import { blocksTagRequest } from '../blocks/blocks';
@@ -8,12 +8,15 @@ import { gridTagRequest } from '../grid/grid';
 import { wallTagRequest } from '../wall/wall';
 import { hopsTagRequest } from '../hops/hops';
 import { joinTagRequest } from '../join/join';
+import { labelTagRequest } from '../label/label';
 import { lineupTagRequest } from '../lineup/lineup';
+import { orderTagRequest } from '../order/order';
 import { tagRequest } from '../scenes/scenes';
 import { sliceTagRequest } from '../slices/slices';
+import { sortTagRequest } from '../sort/sort';
 import { stonesTagRequest } from '../stones/stones';
 import { isTaggerKind, TAGGERS } from './registry';
-import { groupCandidates, tagItems, type Tagger } from './tagger';
+import { applyTagger, groupCandidates, tagItems, type Tagger } from './tagger';
 
 const item = (id: string, skillId: string): Item =>
   ({ id, skillId, narration: id, type: 'keypad', answer: 1 }) as unknown as Item;
@@ -24,6 +27,7 @@ const fake: Tagger<Item, string> = {
   outcome: 'play the fake game',
   label: 'Fake',
   minPerSkill: 2,
+  subjects: ['math'],
   candidates: (items) => items.filter((i) => !i.id.startsWith('skip')),
   request: (skillId, items) => ({
     model: 'm',
@@ -38,6 +42,8 @@ const fake: Tagger<Item, string> = {
   }),
   apply: (bundle) => ({ bundle, dropped: [] }),
 };
+
+const math = (...ids: string[]) => ids.map((id) => ({ id, subject: 'math' as const }));
 
 const recorder = (fail = new Set<string>()) => {
   const requests: LlmRequest[] = [];
@@ -60,10 +66,11 @@ describe('tagItems', () => {
     item('c1', 'c'),
     item('skip', 'c'),
   ];
+  const skills = math('a', 'b', 'c');
 
   it('makes one call per skill with enough candidates', async () => {
     const { llm, requests } = recorder();
-    await tagItems(fake, items, llm, 1);
+    await tagItems(fake, items, skills, llm, 1);
     expect(requests.map((r) => [r.system, r.prompt])).toEqual([
       ['b', 'b2,b1'],
       ['a', 'a1,ax'],
@@ -73,7 +80,7 @@ describe('tagItems', () => {
   it('returns sorted tags and rejections, and reports each skill', async () => {
     const { llm } = recorder();
     const lines: string[] = [];
-    const run = await tagItems(fake, items, llm, 2, (line) => lines.push(line));
+    const run = await tagItems(fake, items, skills, llm, 2, (line) => lines.push(line));
     expect(Object.keys(run.tagged)).toEqual(['a1', 'b1', 'b2']);
     expect(run.rejected).toEqual(['ax: no']);
     expect(run.failed).toEqual([]);
@@ -82,7 +89,7 @@ describe('tagItems', () => {
 
   it('keeps going when one call fails', async () => {
     const { llm } = recorder(new Set(['a']));
-    const run = await tagItems(fake, items, llm, 1);
+    const run = await tagItems(fake, items, skills, llm, 1);
     expect(run.failed).toEqual(['a: offline']);
     expect(Object.keys(run.tagged)).toEqual(['b1', 'b2']);
   });
@@ -100,6 +107,9 @@ describe('TAGGERS', () => {
     expect(TAGGERS.stones.request).toBe(stonesTagRequest);
     expect(TAGGERS.lineup.request).toBe(lineupTagRequest);
     expect(TAGGERS.wall.request).toBe(wallTagRequest);
+    expect(TAGGERS.label.request).toBe(labelTagRequest);
+    expect(TAGGERS.order.request).toBe(orderTagRequest);
+    expect(TAGGERS.sort.request).toBe(sortTagRequest);
     expect(TAGGERS.hops.request).toBe(hopsTagRequest);
   });
 
@@ -115,8 +125,19 @@ describe('TAGGERS', () => {
       'stones.json',
       'lineup.json',
       'wall.json',
+      'label.json',
+      'order.json',
+      'sort.json',
       'hops.json',
     ]);
+  });
+
+  it('keeps math games on math items and card games off them', () => {
+    const cards = ['label', 'order', 'sort'];
+    for (const [kind, t] of Object.entries(TAGGERS)) {
+      const subjects = cards.includes(kind) ? ['science', 'social-studies', 'health'] : ['math'];
+      expect(t.subjects).toEqual(subjects);
+    }
   });
 
   it('knows its kinds', () => {
@@ -125,11 +146,46 @@ describe('TAGGERS', () => {
   });
 });
 
+describe('applyTagger', () => {
+  it('drops stored tags on items of another subject before apply sees them', () => {
+    const seen: string[] = [];
+    const tagger = {
+      ...fake,
+      apply: (bundle: ContentBundle, tags: Readonly<Record<string, string>>) => {
+        seen.push(...Object.keys(tags));
+        return { bundle, dropped: ['m2: changed since'] };
+      },
+    };
+    const bundle = {
+      skills: [...math('m'), { id: 's', subject: 'science' }],
+      items: [item('m1', 'm'), item('s1', 's')],
+    } as unknown as ContentBundle;
+    const { dropped } = applyTagger(tagger, bundle, { m1: 'm1', s1: 's1', gone: 'gone' });
+    expect(seen).toEqual(['m1', 'gone']);
+    expect(dropped).toEqual(['s1: the item is science, not math', 'm2: changed since']);
+  });
+});
+
 describe('groupCandidates', () => {
   it('groups candidates by skill and sets aside skills below minPerSkill', () => {
     const items = [item('a1', 'a'), item('b1', 'b'), item('a2', 'a'), item('skip', 'b')];
-    const { bySkill, few } = groupCandidates(fake, items);
+    const { bySkill, few } = groupCandidates(fake, items, math('a', 'b'));
     expect([...bySkill].map(([s, g]) => [s, g.map((i) => i.id)])).toEqual([['a', ['a1', 'a2']]]);
     expect(few.map((i) => i.id)).toEqual(['b1']);
+  });
+
+  it('skips items of other subjects and of unknown skills before candidates', () => {
+    const seen: string[] = [];
+    const candidates = (items: readonly Item[]) => {
+      seen.push(...items.map((i) => i.id));
+      return [...items];
+    };
+    const items = [item('m1', 'm'), item('s1', 's'), item('u1', 'u'), item('m2', 'm')];
+    const skills = [...math('m'), { id: 's', subject: 'science' as const }];
+    const { bySkill } = groupCandidates({ ...fake, candidates }, items, skills);
+    expect(seen).toEqual(['m1', 'm2']);
+    expect([...bySkill.keys()]).toEqual(['m']);
+    const science = { ...fake, candidates, subjects: ['science' as const] };
+    expect(groupCandidates(science, items, skills).few.map((i) => i.id)).toEqual(['s1']);
   });
 });

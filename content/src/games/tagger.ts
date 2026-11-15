@@ -1,4 +1,4 @@
-import type { ContentBundle, Item } from '@bright-trail/shared';
+import type { ContentBundle, Item, Skill, Subject } from '@bright-trail/shared';
 import type { LlmClient, LlmRequest } from '../graph/llm';
 
 /** One minigame's content tagger: which items to ask about, how to ask, and what to keep. */
@@ -11,6 +11,8 @@ export type Tagger<I extends Item = Item, G = unknown> = {
   label: string;
   /** Skills with fewer candidates are skipped, since a few hits are word matches in another topic. */
   minPerSkill: number;
+  /** Only items of these subjects' skills reach `candidates`. */
+  subjects: readonly Subject[];
   candidates(items: readonly Item[]): I[];
   request(skillId: string, items: readonly I[]): LlmRequest;
   accept(
@@ -23,6 +25,9 @@ export type Tagger<I extends Item = Item, G = unknown> = {
   ): { bundle: ContentBundle; dropped: string[] };
 };
 
+/** The skills a runner needs: each one's subject. */
+export type SkillSubjects = readonly Pick<Skill, 'id' | 'subject'>[];
+
 export type TagRun<G> = {
   /** Tags by item id, sorted by id. */
   tagged: Record<string, G>;
@@ -33,15 +38,22 @@ export type TagRun<G> = {
 };
 
 /**
- * The tagger's candidates by skill, one LLM call each. `few` holds the candidates of skills
- * below `minPerSkill`, which get no call.
+ * The tagger's candidates by skill, one LLM call each. Items whose skill has another subject, or
+ * isn't in `skills`, are never candidates. `few` holds the candidates of skills below
+ * `minPerSkill`, which get no call.
  */
 export function groupCandidates<I extends Item>(
-  tagger: Pick<Tagger<I>, 'candidates' | 'minPerSkill'>,
+  tagger: Pick<Tagger<I>, 'candidates' | 'minPerSkill' | 'subjects'>,
   items: readonly Item[],
+  skills: SkillSubjects,
 ): { bySkill: Map<string, I[]>; few: I[] } {
+  const subjects = new Map(skills.map((s) => [s.id, s.subject]));
+  const inSubject = items.filter((i) => {
+    const subject = subjects.get(i.skillId);
+    return subject !== undefined && tagger.subjects.includes(subject);
+  });
   const bySkill = new Map<string, I[]>();
-  for (const item of tagger.candidates(items)) {
+  for (const item of tagger.candidates(inSubject)) {
     bySkill.set(item.skillId, [...(bySkill.get(item.skillId) ?? []), item]);
   }
   const few: I[] = [];
@@ -60,11 +72,12 @@ export function groupCandidates<I extends Item>(
 export async function tagItems<I extends Item, G>(
   tagger: Tagger<I, G>,
   items: readonly Item[],
+  skills: SkillSubjects,
   llm: LlmClient,
   concurrency: number,
   report: (line: string) => void = () => {},
 ): Promise<TagRun<G>> {
-  const { bySkill } = groupCandidates(tagger, items);
+  const { bySkill } = groupCandidates(tagger, items, skills);
   const tagged: Record<string, G> = {};
   const rejected: string[] = [];
   const failed: string[] = [];
@@ -88,4 +101,27 @@ export async function tagItems<I extends Item, G>(
 
   const sorted = Object.fromEntries(Object.entries(tagged).sort(([a], [b]) => a.localeCompare(b)));
   return { tagged: sorted, rejected: rejected.sort(), failed };
+}
+
+/**
+ * Applies stored tags like `tagger.apply`, but first drops and reports each one on an item whose
+ * skill has another subject, so a stray entry in a reviewed file can't reach that item.
+ */
+export function applyTagger<I extends Item, G>(
+  tagger: Pick<Tagger<I, G>, 'apply' | 'subjects'>,
+  bundle: ContentBundle,
+  tagged: Readonly<Record<string, G>>,
+): { bundle: ContentBundle; dropped: string[] } {
+  const subjects = new Map(bundle.skills.map((s) => [s.id, s.subject]));
+  const subjectOf = new Map(bundle.items.map((i) => [i.id, subjects.get(i.skillId)]));
+  const kept: Record<string, G> = {};
+  const dropped: string[] = [];
+  for (const [id, tag] of Object.entries(tagged)) {
+    const subject = subjectOf.get(id);
+    if (subject && !tagger.subjects.includes(subject)) {
+      dropped.push(`${id}: the item is ${subject}, not ${tagger.subjects.join(' or ')}`);
+    } else kept[id] = tag;
+  }
+  const applied = tagger.apply(bundle, kept);
+  return { bundle: applied.bundle, dropped: [...dropped, ...applied.dropped] };
 }

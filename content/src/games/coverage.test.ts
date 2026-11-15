@@ -13,7 +13,15 @@ const item = (id: string, skillId: string, game?: string): Item =>
     ...(game && { game: { kind: game } }),
   }) as unknown as Item;
 
-const bundle = (items: Item[]) => ({ items }) as unknown as ContentBundle;
+// Every item's skill is math, but skill "y", which is science.
+const bundle = (items: Item[]) =>
+  ({
+    items,
+    skills: [...new Set(items.map((i) => i.skillId))].map((id) => ({
+      id,
+      subject: id === 'y' ? 'science' : 'math',
+    })),
+  }) as unknown as ContentBundle;
 
 // Candidates are ids without "skip". The LLM answers with the ids the cached output lists:
 // "no" ids decline, "bad" ids pass the LLM but fail the check, and the rest get tagged.
@@ -22,6 +30,7 @@ const fake: Tagger<Item, string> = {
   outcome: 'play the fake game',
   label: 'Fake',
   minPerSkill: 2,
+  subjects: ['math'],
   candidates: (items) => items.filter((i) => !i.id.includes('skip') && !i.game),
   request: (skillId, items) => ({
     model: 'm',
@@ -80,6 +89,8 @@ describe('traceTagger', () => {
     item('e-1', 'e'),
     item('e-2', 'e'),
     item('x-ignored', 'x'),
+    item('y-1', 'y'),
+    item('y-2', 'y'),
   ];
   const reviewed = {
     'a-ok': 'a-ok',
@@ -88,6 +99,7 @@ describe('traceTagger', () => {
     'd-1': 'd-1',
     'c-ok': 'c-ok',
     'c-ok2': 'c-ok2',
+    'y-1': 'y-1',
   };
   const { trace, bundle: after } = traceTagger(fake, bundle(items), reviewed, lookup);
   const outcome = (id: string) => trace.fates.get(id);
@@ -100,6 +112,11 @@ describe('traceTagger', () => {
     expect(outcome('a-skip')).toEqual({ outcome: 'not-candidate' });
     expect(outcome('b-ok')).toEqual({ outcome: 'few' });
     expect(outcome('d-2')).toEqual({ outcome: 'uncached' });
+  });
+
+  it('never asks about or applies tags to items of another subject', () => {
+    expect(outcome('y-1')).toEqual({ outcome: 'lost', why: 'the item is science, not math' });
+    expect(outcome('y-2')).toEqual({ outcome: 'not-candidate' });
   });
 
   it('marks a skill whose cached answer fails to parse as uncached, with the reason', () => {

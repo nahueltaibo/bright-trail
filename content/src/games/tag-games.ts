@@ -8,11 +8,12 @@ import { cacheKey, withDiskCache, type LlmClient } from '../graph/llm';
 import { writeFormatted } from '../graph/write';
 import { writeBundle } from '../packs/write-packs';
 import { isTaggerKind, TAGGERS } from './registry';
-import { tagItems, type Tagger } from './tagger';
+import { applyTagger, groupCandidates, tagItems, type Tagger } from './tagger';
 
 /**
- * Tags bundle items for one minigame, `--kind share|slices|join|compare|arrays|grid|blocks|stones|lineup|wall|hops`, with one cached LLM
- * call per skill. Writes the game's reviewed file under content/ and adds the tags to the bundle.
+ * Tags bundle items for one minigame, with one cached LLM call per skill. `--kind` is one of
+ * share|slices|join|compare|arrays|grid|blocks|stones|lineup|wall|label|order|sort|hops. Writes
+ * the game's reviewed file under content/ and adds the tags to the bundle.
  */
 const contentDir = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
 const bundleFile = join(contentDir, 'out', 'bundle.json');
@@ -45,11 +46,23 @@ const llm: LlmClient = withDiskCache(
 );
 
 const bundle = ContentBundleSchema.parse(JSON.parse(await readFile(bundleFile, 'utf8')));
-const run = await tagItems(tagger, bundle.items, llm, Number(values.concurrency), console.log);
+const { bySkill, few } = groupCandidates(tagger, bundle.items, bundle.skills);
+const asked = [...bySkill.values()].reduce((n, group) => n + group.length, 0);
+console.log(
+  `${asked + few.length} candidates: ${asked} in ${bySkill.size} skills to ask, ${few.length} in skills below ${tagger.minPerSkill}`,
+);
+const run = await tagItems(
+  tagger,
+  bundle.items,
+  bundle.skills,
+  llm,
+  Number(values.concurrency),
+  console.log,
+);
 if (run.failed.length > 0) process.exitCode = 1;
 
 await writeFormatted(tagsFile, JSON.stringify(run.tagged));
-const applied = tagger.apply(bundle, run.tagged);
+const applied = applyTagger(tagger, bundle, run.tagged);
 await writeBundle(bundleFile, applied.bundle);
 
 console.log(`${liveCalls} live CLI calls, the rest came from the cache`);

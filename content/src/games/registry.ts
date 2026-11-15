@@ -6,10 +6,13 @@ import type {
   Hops,
   Item,
   JoinScene,
+  LabelScene,
   LineupScene,
   NumberLineItem,
+  OrderScene,
   Scene,
   SliceScene,
+  SortScene,
   StonesScene,
   WallScene,
 } from '@bright-trail/shared';
@@ -24,18 +27,25 @@ import {
 import { acceptGrids, applyGrids, gridCandidates, gridTagRequest } from '../grid/grid';
 import { acceptHops, applyHops, hopsCandidates, hopsTagRequest } from '../hops/hops';
 import { acceptJoins, applyJoins, joinCandidates, joinTagRequest } from '../join/join';
+import { acceptLabels, applyLabels, labelCandidates, labelTagRequest } from '../label/label';
 import { acceptLineups, applyLineups, lineupCandidates, lineupTagRequest } from '../lineup/lineup';
+import { acceptOrders, applyOrders, orderCandidates, orderTagRequest } from '../order/order';
 import { acceptScenes, applyScenes, candidateItems, tagRequest } from '../scenes/scenes';
 import { acceptSlices, applySlices, sliceCandidates, sliceTagRequest } from '../slices/slices';
+import { acceptSorts, applySorts, sortCandidates, sortTagRequest } from '../sort/sort';
 import { acceptStones, applyStones, stonesCandidates, stonesTagRequest } from '../stones/stones';
 import { acceptWalls, applyWalls, wallCandidates, wallTagRequest } from '../wall/wall';
 import type { Tagger } from './tagger';
+
+const MATH = ['math'] as const;
+const CARD_SUBJECTS = ['science', 'social-studies', 'health'] as const;
 
 const share: Tagger<Item, Scene> = {
   file: 'scenes.json',
   outcome: 'play as sharing scenes',
   label: 'Scene',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: candidateItems,
   request: tagRequest,
   accept: (items, output) => {
@@ -50,6 +60,7 @@ const slices: Tagger<Item, SliceScene> = {
   outcome: 'play as slice scenes',
   label: 'Slices',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: sliceCandidates,
   request: sliceTagRequest,
   accept: (items, output) => {
@@ -64,6 +75,7 @@ const join: Tagger<Item, JoinScene> = {
   outcome: 'play as join scenes',
   label: 'Join',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: joinCandidates,
   request: joinTagRequest,
   accept: (items, output) => {
@@ -78,6 +90,7 @@ const compare: Tagger<Item, CompareScene> = {
   outcome: 'play as compare scenes',
   label: 'Compare',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: compareCandidates,
   request: compareTagRequest,
   accept: (items, output) => {
@@ -92,6 +105,7 @@ const arrays: Tagger<Item, ArrayScene> = {
   outcome: 'play as array scenes',
   label: 'Arrays',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: arrayCandidates,
   request: arrayTagRequest,
   accept: (items, output) => {
@@ -106,6 +120,7 @@ const grid: Tagger<Item, GridScene> = {
   outcome: 'play as grid scenes',
   label: 'Grid',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: gridCandidates,
   request: gridTagRequest,
   accept: (items, output) => {
@@ -121,6 +136,7 @@ const blocks: Tagger<Item, BlocksScene> = {
   label: 'Blocks',
   // A skill's lone sum past 20, like 16 + 9, is still worth a call.
   minPerSkill: 1,
+  subjects: MATH,
   candidates: blocksCandidates,
   request: blocksTagRequest,
   accept: (items, output) => {
@@ -136,6 +152,7 @@ const stones: Tagger<Item, StonesScene> = {
   label: 'Stones',
   // A skill's only counting run is still worth a call, like g4's one run of thirds.
   minPerSkill: 1,
+  subjects: MATH,
   candidates: stonesCandidates,
   request: stonesTagRequest,
   accept: (items, output) => {
@@ -151,6 +168,7 @@ const lineup: Tagger<Item, LineupScene> = {
   label: 'Lineup',
   // Place-in-line items are few, often one or two in a skill.
   minPerSkill: 1,
+  subjects: MATH,
   candidates: lineupCandidates,
   request: lineupTagRequest,
   accept: (items, output) => {
@@ -165,6 +183,7 @@ const wall: Tagger<Item, WallScene> = {
   outcome: 'play on a fraction wall',
   label: 'Wall',
   minPerSkill: 3,
+  subjects: MATH,
   candidates: wallCandidates,
   request: wallTagRequest,
   accept: (items, output) => {
@@ -174,11 +193,58 @@ const wall: Tagger<Item, WallScene> = {
   apply: applyWalls,
 };
 
+const label: Tagger<Item, LabelScene> = {
+  file: 'label.json',
+  outcome: 'play as labelled pictures',
+  label: 'Label',
+  // A skill names only a few parts of any one picture.
+  minPerSkill: 1,
+  subjects: CARD_SUBJECTS,
+  candidates: labelCandidates,
+  request: labelTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptLabels(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyLabels,
+};
+
+const order: Tagger<Item, OrderScene> = {
+  file: 'order.json',
+  outcome: 'play as rows in order',
+  label: 'Order',
+  minPerSkill: 1,
+  subjects: CARD_SUBJECTS,
+  candidates: orderCandidates,
+  request: orderTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptOrders(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyOrders,
+};
+
+const sort: Tagger<Item, SortScene> = {
+  file: 'sort.json',
+  outcome: 'play as sorts into bins',
+  label: 'Sort',
+  minPerSkill: 1,
+  subjects: CARD_SUBJECTS,
+  candidates: sortCandidates,
+  request: sortTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptSorts(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applySorts,
+};
+
 const hops: Tagger<NumberLineItem, Hops> = {
   file: 'hops.json',
   outcome: 'hop a planned path',
   label: 'Hops',
   minPerSkill: 1,
+  subjects: MATH,
   candidates: hopsCandidates,
   request: hopsTagRequest,
   accept: (items, output) => {
@@ -203,6 +269,9 @@ export const TAGGERS = {
   stones,
   lineup,
   wall,
+  label,
+  order,
+  sort,
   hops,
 };
 export type TaggerKind = keyof typeof TAGGERS;

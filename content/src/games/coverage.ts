@@ -1,6 +1,6 @@
 import type { ContentBundle, Item } from '@bright-trail/shared';
 import type { LlmRequest } from '../graph/llm';
-import { groupCandidates, type Tagger } from './tagger';
+import { applyTagger, groupCandidates, type Tagger } from './tagger';
 
 /** What happened to one item in one tagger's run. */
 export type Outcome =
@@ -63,7 +63,7 @@ export function traceTagger<I extends Item, G>(
 ): { trace: TaggerTrace; bundle: ContentBundle } {
   const fates = new Map<string, Fate>();
   const staleSkills: string[] = [];
-  const { bySkill, few } = groupCandidates(tagger, bundle.items);
+  const { bySkill, few } = groupCandidates(tagger, bundle.items, bundle.skills);
   for (const i of few) fates.set(i.id, { outcome: 'few' });
   for (const [skillId, group] of bySkill) {
     const cached = lookup(
@@ -95,7 +95,7 @@ export function traceTagger<I extends Item, G>(
     }
   }
 
-  const applied = tagger.apply(bundle, reviewed);
+  const applied = applyTagger(tagger, bundle, reviewed);
   const dropped = new Map(
     applied.dropped.map((line) => {
       const at = line.indexOf(': ');
@@ -158,8 +158,8 @@ export function traceAll<K extends string>(
     const tagger = taggers[kind];
     const run = traceTagger(tagger, current, reviewed[kind], lookup);
     run.trace.rerunDiffers = differingSkills(
-      groupCandidates(tagger, current.items).bySkill,
-      groupCandidates(tagger, bundle.items).bySkill,
+      groupCandidates(tagger, current.items, current.skills).bySkill,
+      groupCandidates(tagger, bundle.items, bundle.skills).bySkill,
     );
     traces[kind] = run.trace;
     current = run.bundle;
