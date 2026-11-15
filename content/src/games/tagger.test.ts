@@ -8,6 +8,7 @@ import { gridTagRequest } from '../grid/grid';
 import { wallTagRequest } from '../wall/wall';
 import { hopsTagRequest } from '../hops/hops';
 import { joinTagRequest } from '../join/join';
+import { labelTagRequest } from '../label/label';
 import { lineupTagRequest } from '../lineup/lineup';
 import { tagRequest } from '../scenes/scenes';
 import { sliceTagRequest } from '../slices/slices';
@@ -104,6 +105,7 @@ describe('TAGGERS', () => {
     expect(TAGGERS.stones.request).toBe(stonesTagRequest);
     expect(TAGGERS.lineup.request).toBe(lineupTagRequest);
     expect(TAGGERS.wall.request).toBe(wallTagRequest);
+    expect(TAGGERS.label.request).toBe(labelTagRequest);
     expect(TAGGERS.hops.request).toBe(hopsTagRequest);
   });
 
@@ -119,6 +121,7 @@ describe('TAGGERS', () => {
       'stones.json',
       'lineup.json',
       'wall.json',
+      'label.json',
       'hops.json',
     ]);
   });

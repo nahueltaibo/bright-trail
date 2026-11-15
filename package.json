@@ -32,6 +32,7 @@
     "content:stones": "npm run stones -w @bright-trail/content --",
     "content:lineup": "npm run lineup -w @bright-trail/content --",
     "content:wall": "npm run wall -w @bright-trail/content --",
+    "content:label": "npm run label -w @bright-trail/content --",
     "content:hops": "npm run hops -w @bright-trail/content --",
     "content:coverage": "npm run coverage -w @bright-trail/content --",
     "content:voices": "npm run voices -w @bright-trail/content",

@@ -6,6 +6,7 @@ import type {
   Hops,
   Item,
   JoinScene,
+  LabelScene,
   LineupScene,
   NumberLineItem,
   Scene,
@@ -24,6 +25,7 @@ import {
 import { acceptGrids, applyGrids, gridCandidates, gridTagRequest } from '../grid/grid';
 import { acceptHops, applyHops, hopsCandidates, hopsTagRequest } from '../hops/hops';
 import { acceptJoins, applyJoins, joinCandidates, joinTagRequest } from '../join/join';
+import { acceptLabels, applyLabels, labelCandidates, labelTagRequest } from '../label/label';
 import { acceptLineups, applyLineups, lineupCandidates, lineupTagRequest } from '../lineup/lineup';
 import { acceptScenes, applyScenes, candidateItems, tagRequest } from '../scenes/scenes';
 import { acceptSlices, applySlices, sliceCandidates, sliceTagRequest } from '../slices/slices';
@@ -32,6 +34,7 @@ import { acceptWalls, applyWalls, wallCandidates, wallTagRequest } from '../wall
 import type { Tagger } from './tagger';
 
 const MATH = ['math'] as const;
+const CARD_SUBJECTS = ['science', 'social-studies', 'health'] as const;
 
 const share: Tagger<Item, Scene> = {
   file: 'scenes.json',
@@ -186,6 +189,22 @@ const wall: Tagger<Item, WallScene> = {
   apply: applyWalls,
 };
 
+const label: Tagger<Item, LabelScene> = {
+  file: 'label.json',
+  outcome: 'play as labelled pictures',
+  label: 'Label',
+  // A skill names only a few parts of any one picture.
+  minPerSkill: 1,
+  subjects: CARD_SUBJECTS,
+  candidates: labelCandidates,
+  request: labelTagRequest,
+  accept: (items, output) => {
+    const { scenes, rejected } = acceptLabels(items, output);
+    return { tagged: scenes, rejected };
+  },
+  apply: applyLabels,
+};
+
 const hops: Tagger<NumberLineItem, Hops> = {
   file: 'hops.json',
   outcome: 'hop a planned path',
@@ -216,6 +235,7 @@ export const TAGGERS = {
   stones,
   lineup,
   wall,
+  label,
   hops,
 };
 export type TaggerKind = keyof typeof TAGGERS;
