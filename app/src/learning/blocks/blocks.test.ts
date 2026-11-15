@@ -1,6 +1,16 @@
 import { blocksProblems, type BlocksScene } from '@bright-trail/shared';
+import type { Bubble } from '../minigames/Bubble';
 import { BLOCKS_DEMO_ITEMS } from './demo';
-import { blocksPlan, layoutMat, sceneFrame, STAGE_H, STAGE_W, startMat, tenParts } from './layout';
+import {
+  blocksPlan,
+  countOnTo,
+  layoutMat,
+  sceneFrame,
+  STAGE_H,
+  STAGE_W,
+  startMat,
+  tenParts,
+} from './layout';
 import { blocksWords, matWords } from './words';
 
 const scene = (s: Omit<BlocksScene, 'kind'>): BlocksScene => ({ kind: 'blocks', ...s });
@@ -128,6 +138,30 @@ describe('blocksPlan', () => {
       ['tens', 300],
       ['ones', 340],
     ]);
+  });
+});
+
+describe('countOnTo', () => {
+  const at = (text: string): Bubble => ({ id: 0, x: 0, y: 0, text });
+
+  it('fades the counted column when the count moves on', () => {
+    expect(countOnTo({ hundreds: at('100') }, 'tens')).toEqual({
+      hundreds: { ...at('100'), out: true },
+    });
+  });
+
+  it('fades every counted column and keeps an already faded counter as it is', () => {
+    const tens = countOnTo({ hundreds: at('100') }, 'tens');
+    const ones = countOnTo({ ...tens, tens: at('130') }, 'ones');
+    expect(ones).toEqual({
+      hundreds: { ...at('100'), out: true },
+      tens: { ...at('130'), out: true },
+    });
+    expect(ones.hundreds).toBe(tens.hundreds);
+  });
+
+  it('keeps the counter of the column counting now', () => {
+    expect(countOnTo({ ones: at('3') }, 'ones')).toEqual({ ones: at('3') });
   });
 });
 
