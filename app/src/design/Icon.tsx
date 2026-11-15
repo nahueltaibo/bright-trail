@@ -59,6 +59,9 @@ const PATHS = {
     },
   ],
   bookmark: ['M7 4h10v16l-5-3.5L7 20z'],
+  hand: [
+    'M9 11V5a1.5 1.5 0 0 1 3 0v5m0-1a1.5 1.5 0 0 1 3 0v2m0-1a1.5 1.5 0 0 1 3 0v4a6 6 0 0 1-6 6h-1a6 6 0 0 1-4.6-2.2L4 15.5a1.5 1.5 0 0 1 2.3-1.9L9 16',
+  ],
 } satisfies Record<string, Part[]>;
 
 export type IconName = keyof typeof PATHS;

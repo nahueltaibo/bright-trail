@@ -3178,7 +3178,13 @@
       "why": "Count the ducks in line. The last duck matches that count.",
       "type": "keypad",
       "visual": { "kind": "objects", "emoji": "🦆", "count": 5 },
-      "answer": 5
+      "answer": 5,
+      "game": {
+        "kind": "lineup",
+        "line": ["duck", "duck", "duck", "duck", "duck"],
+        "place": 5,
+        "ask": "place"
+      }
     },
     {
       "id": "k-uses-of-numbers-number-line-3",
@@ -3191,7 +3197,13 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 3
+      "target": 3,
+      "game": {
+        "kind": "lineup",
+        "line": ["frog", "frog", "frog", "frog", "frog"],
+        "place": 3,
+        "ask": "find"
+      }
     },
     {
       "id": "k-uses-of-numbers-tap-5",
@@ -3241,7 +3253,14 @@
       "min": 0,
       "max": 10,
       "step": 1,
-      "target": 7
+      "target": 7,
+      "game": {
+        "kind": "lineup",
+        "line": ["kid", "kid", "kid", "kid", "kid", "kid", "kid", "kid"],
+        "place": 7,
+        "ask": "find",
+        "name": "Ana"
+      }
     },
     {
       "id": "k-uses-of-numbers-tap-6",
@@ -3273,7 +3292,13 @@
         { "id": "c", "kind": "number", "value": 3 },
         { "id": "d", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "game": {
+        "kind": "lineup",
+        "line": ["dog", "cat", "bunny", "bear", "dog"],
+        "place": 2,
+        "ask": "place"
+      }
     },
     {
       "id": "k-subitize-5-tap-1",

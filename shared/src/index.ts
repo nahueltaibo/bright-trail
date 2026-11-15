@@ -14,6 +14,7 @@ export * from './hops';
 export * from './item';
 export * from './join';
 export * from './label';
+export * from './lineup';
 export * from './mastery';
 export * from './nugget';
 export * from './order';

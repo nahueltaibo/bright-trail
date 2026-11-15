@@ -1,0 +1,27 @@
+{
+  "k-uses-of-numbers-keypad-3": {
+    "kind": "lineup",
+    "line": ["duck", "duck", "duck", "duck", "duck"],
+    "place": 5,
+    "ask": "place"
+  },
+  "k-uses-of-numbers-number-line-3": {
+    "kind": "lineup",
+    "line": ["frog", "frog", "frog", "frog", "frog"],
+    "place": 3,
+    "ask": "find"
+  },
+  "k-uses-of-numbers-number-line-4": {
+    "kind": "lineup",
+    "line": ["kid", "kid", "kid", "kid", "kid", "kid", "kid", "kid"],
+    "place": 7,
+    "ask": "find",
+    "name": "Ana"
+  },
+  "k-uses-of-numbers-tap-7": {
+    "kind": "lineup",
+    "line": ["dog", "cat", "bunny", "bear", "dog"],
+    "place": 2,
+    "ask": "place"
+  }
+}
