@@ -12,7 +12,10 @@ export function joinWords(s: JoinScene): { equation: string; summary: string } {
     case 'join':
       return {
         equation: `${s.start} + ${more} = ${s.start + more}`,
-        summary: `${s.start} and ${more} more make ${s.start + more}.`,
+        summary:
+          more === 0
+            ? `No more came, so there are still ${s.start}.`
+            : `${s.start} and ${more} more make ${s.start + more}.`,
       };
     case 'back':
       return {
@@ -22,9 +25,17 @@ export function joinWords(s: JoinScene): { equation: string; summary: string } {
     case 'leave':
       return {
         equation: `${s.start} − ${take} = ${s.start - take}`,
-        summary: `${s.start} take away ${take} leaves ${s.start - take}.`,
+        summary:
+          take === 0
+            ? `None went away, so there are still ${s.start}.`
+            : `${s.start} take away ${take} leaves ${s.start - take}.`,
       };
     case 'part':
+      if (take === 0)
+        return {
+          equation: `${s.start} = ${s.start} + 0`,
+          summary: `None moved, so all ${s.start} stay.`,
+        };
       return {
         equation: `${s.start} = ${take} + ${s.start - take}`,
         summary: `${s.start} is ${take} and ${s.start - take}.`,

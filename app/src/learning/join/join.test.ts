@@ -110,4 +110,16 @@ describe('joinWords', () => {
     expect(joinWords(demo('count')).summary).toBe('There are 5 frogs.');
   });
 
+  it('says when nothing came or went', () => {
+    expect(joinWords(demo('add-zero'))).toEqual({
+      equation: '6 + 0 = 6',
+      summary: 'No more came, so there are still 6.',
+    });
+    expect(joinWords(demo('take-zero')).equation).toBe('8 − 0 = 8');
+    expect(joinWords({ ...demo('part'), take: 0 })).toEqual({
+      equation: '5 = 5 + 0',
+      summary: 'None moved, so all 5 stay.',
+    });
+    expect(joinWords(demo('part-two')).equation).toBe('17 = 9 + 8');
+  });
 });
