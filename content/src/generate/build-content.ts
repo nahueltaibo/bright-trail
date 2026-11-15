@@ -14,7 +14,7 @@ import { generateRequest, type SkillContext } from './prompts';
 import { loadScope, prerequisiteClosure } from './scope';
 import { renderContentReport, renderPilotReport } from './report';
 import { TAGGERS } from '../games/registry';
-import type { Tagger } from '../games/tagger';
+import { applyTagger, type Tagger } from '../games/tagger';
 
 /** Skills the testers will meet first: 2 Kindergarten, 2 Grade 1, 1 Grade 5, 1 Grade 6, across topics. */
 const PILOT_SKILLS = [
@@ -119,7 +119,7 @@ if (values.pilot) {
   let bundle = buildBundle(bundleSkills, run.outcomes, new Date());
   for (const tagger of Object.values(TAGGERS) as Tagger[]) {
     const stored = await readFile(join(contentDir, tagger.file), 'utf8').catch(() => '{}');
-    const applied = tagger.apply(bundle, JSON.parse(stored));
+    const applied = applyTagger(tagger, bundle, JSON.parse(stored));
     for (const d of applied.dropped) console.warn(`${tagger.label} dropped: ${d}`);
     bundle = applied.bundle;
   }

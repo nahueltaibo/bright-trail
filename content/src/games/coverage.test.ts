@@ -99,6 +99,7 @@ describe('traceTagger', () => {
     'd-1': 'd-1',
     'c-ok': 'c-ok',
     'c-ok2': 'c-ok2',
+    'y-1': 'y-1',
   };
   const { trace, bundle: after } = traceTagger(fake, bundle(items), reviewed, lookup);
   const outcome = (id: string) => trace.fates.get(id);
@@ -113,8 +114,8 @@ describe('traceTagger', () => {
     expect(outcome('d-2')).toEqual({ outcome: 'uncached' });
   });
 
-  it('never asks about items of another subject', () => {
-    expect(outcome('y-1')).toEqual({ outcome: 'not-candidate' });
+  it('never asks about or applies tags to items of another subject', () => {
+    expect(outcome('y-1')).toEqual({ outcome: 'lost', why: 'the item is science, not math' });
     expect(outcome('y-2')).toEqual({ outcome: 'not-candidate' });
   });
 

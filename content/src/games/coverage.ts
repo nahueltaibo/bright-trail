@@ -1,6 +1,6 @@
 import type { ContentBundle, Item } from '@bright-trail/shared';
 import type { LlmRequest } from '../graph/llm';
-import { groupCandidates, type Tagger } from './tagger';
+import { applyTagger, groupCandidates, type Tagger } from './tagger';
 
 /** What happened to one item in one tagger's run. */
 export type Outcome =
@@ -95,7 +95,7 @@ export function traceTagger<I extends Item, G>(
     }
   }
 
-  const applied = tagger.apply(bundle, reviewed);
+  const applied = applyTagger(tagger, bundle, reviewed);
   const dropped = new Map(
     applied.dropped.map((line) => {
       const at = line.indexOf(': ');

@@ -102,3 +102,26 @@ export async function tagItems<I extends Item, G>(
   const sorted = Object.fromEntries(Object.entries(tagged).sort(([a], [b]) => a.localeCompare(b)));
   return { tagged: sorted, rejected: rejected.sort(), failed };
 }
+
+/**
+ * Applies stored tags like `tagger.apply`, but first drops and reports each one on an item whose
+ * skill has another subject, so a stray entry in a reviewed file can't reach that item.
+ */
+export function applyTagger<I extends Item, G>(
+  tagger: Pick<Tagger<I, G>, 'apply' | 'subjects'>,
+  bundle: ContentBundle,
+  tagged: Readonly<Record<string, G>>,
+): { bundle: ContentBundle; dropped: string[] } {
+  const subjects = new Map(bundle.skills.map((s) => [s.id, s.subject]));
+  const subjectOf = new Map(bundle.items.map((i) => [i.id, subjects.get(i.skillId)]));
+  const kept: Record<string, G> = {};
+  const dropped: string[] = [];
+  for (const [id, tag] of Object.entries(tagged)) {
+    const subject = subjectOf.get(id);
+    if (subject && !tagger.subjects.includes(subject)) {
+      dropped.push(`${id}: the item is ${subject}, not ${tagger.subjects.join(' or ')}`);
+    } else kept[id] = tag;
+  }
+  const applied = tagger.apply(bundle, kept);
+  return { bundle: applied.bundle, dropped: [...dropped, ...applied.dropped] };
+}

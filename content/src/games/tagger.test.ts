@@ -1,4 +1,4 @@
-import type { Item } from '@bright-trail/shared';
+import type { ContentBundle, Item } from '@bright-trail/shared';
 import { describe, expect, it } from 'vitest';
 import { arrayTagRequest } from '../arrays/arrays';
 import { blocksTagRequest } from '../blocks/blocks';
@@ -16,7 +16,7 @@ import { sliceTagRequest } from '../slices/slices';
 import { sortTagRequest } from '../sort/sort';
 import { stonesTagRequest } from '../stones/stones';
 import { isTaggerKind, TAGGERS } from './registry';
-import { groupCandidates, tagItems, type Tagger } from './tagger';
+import { applyTagger, groupCandidates, tagItems, type Tagger } from './tagger';
 
 const item = (id: string, skillId: string): Item =>
   ({ id, skillId, narration: id, type: 'keypad', answer: 1 }) as unknown as Item;
@@ -143,6 +143,26 @@ describe('TAGGERS', () => {
   it('knows its kinds', () => {
     expect(isTaggerKind('join')).toBe(true);
     expect(isTaggerKind('toString')).toBe(false);
+  });
+});
+
+describe('applyTagger', () => {
+  it('drops stored tags on items of another subject before apply sees them', () => {
+    const seen: string[] = [];
+    const tagger = {
+      ...fake,
+      apply: (bundle: ContentBundle, tags: Readonly<Record<string, string>>) => {
+        seen.push(...Object.keys(tags));
+        return { bundle, dropped: ['m2: changed since'] };
+      },
+    };
+    const bundle = {
+      skills: [...math('m'), { id: 's', subject: 'science' }],
+      items: [item('m1', 'm'), item('s1', 's')],
+    } as unknown as ContentBundle;
+    const { dropped } = applyTagger(tagger, bundle, { m1: 'm1', s1: 's1', gone: 'gone' });
+    expect(seen).toEqual(['m1', 'gone']);
+    expect(dropped).toEqual(['s1: the item is science, not math', 'm2: changed since']);
   });
 });
 

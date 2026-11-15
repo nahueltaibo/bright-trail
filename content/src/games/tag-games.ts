@@ -8,7 +8,7 @@ import { cacheKey, withDiskCache, type LlmClient } from '../graph/llm';
 import { writeFormatted } from '../graph/write';
 import { writeBundle } from '../packs/write-packs';
 import { isTaggerKind, TAGGERS } from './registry';
-import { groupCandidates, tagItems, type Tagger } from './tagger';
+import { applyTagger, groupCandidates, tagItems, type Tagger } from './tagger';
 
 /**
  * Tags bundle items for one minigame, with one cached LLM call per skill. `--kind` is one of
@@ -62,7 +62,7 @@ const run = await tagItems(
 if (run.failed.length > 0) process.exitCode = 1;
 
 await writeFormatted(tagsFile, JSON.stringify(run.tagged));
-const applied = tagger.apply(bundle, run.tagged);
+const applied = applyTagger(tagger, bundle, run.tagged);
 await writeBundle(bundleFile, applied.bundle);
 
 console.log(`${liveCalls} live CLI calls, the rest came from the cache`);
