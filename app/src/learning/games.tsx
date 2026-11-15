@@ -18,6 +18,9 @@ import { JOIN_DEMO_ITEMS } from './join/demo';
 import { JoinGame } from './join/JoinGame';
 import { LABEL_DEMO_ITEMS } from './label/demo';
 import { LabelStage } from './label/LabelStage';
+import { LINEUP_DEMO_ITEMS } from './lineup/demo';
+import { findQuestion } from './lineup/layout';
+import { LineupGame } from './lineup/LineupGame';
 import { DEMO_ITEMS } from './minigames/demo';
 import { problemFromScene } from './minigames/share';
 import { ShareGame } from './minigames/ShareGame';
@@ -119,6 +122,24 @@ function LabelView({ game, ...props }: GameViewProps<'label'>) {
   );
 }
 
+function LineupView({ game, ...props }: GameViewProps<'lineup'>) {
+  const frame = useGameProps(props);
+  const { item } = props;
+  // A `find` line-up answers with a tap on the line, so it asks to tap instead of to type.
+  const question = useMemo(() => [findQuestion(item, game)], [item, game]);
+  if (game.ask === 'find') {
+    return (
+      <LineupGame
+        {...frame}
+        question={question}
+        input={{ kind: 'stage', hint: 'Tap one in the line' }}
+        scene={game}
+      />
+    );
+  }
+  return <LineupGame {...frame} scene={game} />;
+}
+
 /** Every minigame the app plays, by `kind`. A new kind in `GAMES` fails the type check here. */
 export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   share: { title: 'Sharing', View: ShareView, demo: DEMO_ITEMS },
@@ -132,6 +153,7 @@ export const GAME_VIEWS: { [K in GameKind]: GameEntry<K> } = {
   sort: { title: 'Sort it', View: SortView, demo: SORT_DEMO_ITEMS },
   order: { title: 'Put in order', View: OrderView, demo: ORDER_DEMO_ITEMS },
   label: { title: 'Label it', View: LabelView, demo: LABEL_DEMO_ITEMS },
+  lineup: { title: 'Line up', View: LineupView, demo: LINEUP_DEMO_ITEMS },
 };
 
 export const GAME_KINDS = Object.keys(GAME_VIEWS) as GameKind[];
