@@ -92,13 +92,15 @@ describe('acceptSorts', () => {
   });
 
   it('rejects misfits, unknown bins, bins that are not the choices, and unsaid cards', () => {
-    const items = ['a', 'b', 'c', 'd'].map((id) => ({ ...brick, id }));
+    const items = ['a', 'b', 'c', 'd', 'e', 'f'].map((id) => ({ ...brick, id }));
     const { scenes, rejected } = acceptSorts(items, {
       scenes: [
         tagged('a', { fits: false, note: 'choices are things' }),
         tagged('b', { sorted: [{ ...card('steam'), bin: 'gas' }] }),
         tagged('c', { bins: [card('liquid'), card('solid'), card('gas')] }),
         tagged('d', { card: card('wall brick') }),
+        tagged('e', { card: card('Solid') }),
+        tagged('f', { sorted: [{ ...card('liquid'), bin: 'liquid' }] }),
       ],
     });
     expect(scenes).toEqual({});
@@ -107,6 +109,8 @@ describe('acceptSorts', () => {
       b: 'no bin gas',
       c: 'no choice for the bin gas',
       d: 'the item never says wall brick',
+      e: 'the card Solid is a bin',
+      f: 'the card liquid is a bin',
     });
   });
 });

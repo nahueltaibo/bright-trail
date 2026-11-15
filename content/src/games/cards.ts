@@ -10,6 +10,11 @@ export function cardItems(items: readonly Item[], kind: GameKind): Item[] {
   );
 }
 
+const YES_NO = /^(true|false|yes|no)$/i;
+
+/** Whether every choice is true, false, yes, or no. Those items ask about a claim, not cards. */
+export const isYesNo = (item: Item) => textChoices(item)!.texts.every((t) => YES_NO.test(t.trim()));
+
 /** A card the LLM writes. An empty or null emoji means none. */
 export const TaggedCardSchema = z.strictObject({ text: z.string(), emoji: z.string().nullable() });
 

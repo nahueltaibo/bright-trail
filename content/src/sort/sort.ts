@@ -11,7 +11,7 @@ import {
 } from '@bright-trail/shared';
 import { z } from 'zod';
 import { applyGame } from '../apply-game';
-import { cardItems, cardTagRequest, TaggedCardSchema, toCard } from '../games/cards';
+import { cardItems, cardTagRequest, isYesNo, TaggedCardSchema, toCard } from '../games/cards';
 import type { LlmRequest } from '../graph/llm';
 
 // Flat, like the content schema: structured output follows it more reliably.
@@ -26,13 +26,11 @@ const TaggedSortSchema = z.strictObject({
 export const SortTagOutputSchema = z.strictObject({ scenes: z.array(TaggedSortSchema) });
 export type TaggedSort = z.infer<typeof TaggedSortSchema>;
 
-const YES_NO = /^(true|false|yes|no)$/i;
-
 /** Text tap items with 2 or 3 choices that could be bins. True or false items aren't sorts. */
 export function sortCandidates(items: readonly Item[]): Item[] {
   return cardItems(items, 'sort').filter((i) => {
     const { texts } = textChoices(i)!;
-    return texts.length >= 2 && texts.length <= 3 && !texts.every((t) => YES_NO.test(t.trim()));
+    return texts.length >= 2 && texts.length <= 3 && !isYesNo(i);
   });
 }
 
@@ -65,6 +63,9 @@ function sceneFor(item: Item, t: TaggedSort): { scene?: SortScene; problems: str
   const answer = textChoices(item)!.answer;
   const unknown = [answer, ...t.sorted.map((c) => c.bin)].filter((b) => binOf(b) < 0);
   if (unknown.length > 0) return { problems: [`no bin ${[...new Set(unknown)].join(', ')}`] };
+  // A card named like a bin tells the child nothing about where it goes.
+  const named = [t.card, ...t.sorted].filter((c) => binOf(c.text) >= 0).map((c) => c.text);
+  if (named.length > 0) return { problems: [`the card ${named.join(', ')} is a bin`] };
   const candidate = SortSceneSchema.safeParse({
     kind: 'sort',
     bins: t.bins.map(toCard),
