@@ -107,6 +107,19 @@ export function blocksPlan(s: BlocksScene): Step[] {
   return steps;
 }
 
+/** The counters once a count moves on to `place`: every other column's counter fades out. */
+export function countOnTo<B extends { out?: boolean }>(
+  counters: Partial<Record<Place, B>>,
+  place: Place,
+): Partial<Record<Place, B>> {
+  const kept: Partial<Record<Place, B>> = {};
+  for (const p of PLACES) {
+    const b = counters[p];
+    if (b) kept[p] = p === place || b.out ? b : { ...b, out: true };
+  }
+  return kept;
+}
+
 /** The places that hold a block at some point, plus every place below the highest. */
 export function shownPlaces(s: BlocksScene, plan: readonly Step[]): Place[] {
   const mats = [startMat(s), ...plan.map((p) => p.mat)];

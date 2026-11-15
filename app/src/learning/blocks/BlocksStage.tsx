@@ -14,6 +14,7 @@ import { BubbleView, type Bubble } from '../minigames/Bubble';
 import { frames, wait } from '../minigames/motion';
 import { colors } from '../theme';
 import {
+  countOnTo,
   layoutMat,
   sceneFrame,
   startMat,
@@ -210,6 +211,7 @@ export function BlocksStage({ scene: s, cheer, handle }: Props) {
             await wait(150);
           } else {
             setFocus(step.place);
+            setCounters((c) => countOnTo(c, step.place));
             const zone = zones.find((z) => z.place === step.place)!;
             const these = now.filter((p) => p.place === step.place);
             for (let k = 0; k < these.length; k++) {
