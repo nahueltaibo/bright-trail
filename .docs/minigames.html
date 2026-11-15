@@ -44,73 +44,82 @@
 </style>
 </head>
 <body>
-<body>
 <main>
 <h1>BrightTrail — Minigames</h1>
-<p class="sub">Which items play as minigames, which don't, and the plan to cover them · Draft v0.1 · 2026-11-11</p>
+<p class="sub">Which items play as minigames, which don't, and what is left to build · Draft v0.2 · 2026-11-14</p>
 
-<p>522 of the 795 bundle items (66%) still play on the plain tap, keypad, or number-line screen. Six groups of them have no minigame that fits. The plan first makes adding a minigame a matter of one schema, one stage, and one tagger module, then builds the new games in order of how many items they cover.</p>
+<p>437 of the 795 bundle items (55%) play as a minigame. The other 358 (45%) use the plain tap, keypad, or number-line screen. The foundation and all five planned games are built. What remains is tagging more items, and content for the three card games.</p>
 
 <h2 id="today">1. Minigames today</h2>
+<p>Every game is a <code>kind</code> of <code>item.game</code>. <code>GAMES</code> in <code>shared/src/game.ts</code> lists them.</p>
 <table>
-<tr><th>Minigame</th><th>Item field</th><th>Tagger</th><th>Items</th><th>Skills it covers</th></tr>
-<tr><td>Sharing</td><td><code>scene</code></td><td><code>content:scenes</code></td><td>94</td><td>Fair shares, equal groups, division by sharing, times and divide facts to 20</td></tr>
+<tr><th>Minigame</th><th><code>game.kind</code></th><th>Tagger</th><th>Items</th><th>Skills it covers</th></tr>
+<tr><td>Sharing</td><td><code>share</code></td><td><code>content:scenes</code></td><td>86</td><td>Fair shares, equal groups, division by sharing, times and divide facts to 20</td></tr>
 <tr><td>Slices</td><td><code>slices</code></td><td><code>content:slices</code></td><td>80</td><td>Fraction pictures, equal fractions, unit fractions</td></tr>
 <tr><td>Join and leave</td><td><code>join</code></td><td><code>content:join</code></td><td>99</td><td>Counting, add and subtract to 20, make ten</td></tr>
-<tr><td>Frog hops</td><td><code>hops</code></td><td><code>content:hops</code></td><td>88 of 191 number-line items</td><td>Plays the path after a number-line check. Not a game of its own.</td></tr>
+<tr><td>Compare and order</td><td><code>compare</code></td><td><code>content:compare</code></td><td>42</td><td>Compare and order numbers, fractions, and decimals</td></tr>
+<tr><td>Arrays</td><td><code>arrays</code></td><td><code>content:arrays</code></td><td>41</td><td>Equal groups, multiply and divide facts</td></tr>
+<tr><td>Base-ten blocks</td><td><code>blocks</code></td><td><code>content:blocks</code></td><td>39</td><td>Place value, compose and decompose numbers</td></tr>
+<tr><td>Tenths and hundredths</td><td><code>grid</code></td><td><code>content:grid</code></td><td>28</td><td>Decimals, fractions, and percent on a grid or strip</td></tr>
+<tr><td>Stepping stones</td><td><code>stones</code></td><td><code>content:stones</code></td><td>22</td><td>Counting and skip counting</td></tr>
+<tr><td>Sort it, Put in order, Label it</td><td><code>sort</code>, <code>order</code>, <code>label</code></td><td>None yet</td><td>0</td><td>Built for the other subjects in <a href="subjects.html">subjects.html</a>. The math bundle has no items for them.</td></tr>
+<tr><td>Frog hops</td><td>Not a game. Item field <code>hops</code>.</td><td><code>content:hops</code></td><td>88 of 191 number-line items</td><td>Plays the path after a number-line check. 86 of the 88 sit on items with no game.</td></tr>
 </table>
-<p>The app side is already shared. <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props. What isn't shared:</p>
-<ul>
-<li>Three optional item fields. <code>ItemView</code> picks scene, then slices, then join, so an item tagged twice plays one game without warning.</li>
-<li><code>check-bundle.ts</code> names each game's problem check by hand.</li>
-<li>One dev page per game: <code>/dev/share</code>, <code>/dev/slices</code>, <code>/dev/join</code>.</li>
-</ul>
+<p>The 437 split as 86 + 80 + 99 + 42 + 41 + 39 + 28 + 22. The app shares its frame across games: <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props.</p>
 
 <h2 id="gaps">2. Items with no minigame</h2>
-<p>Counts come from matching prompt patterns, so they are close, not exact.</p>
+<p>358 items. Counts group them by skill, so anyone can reproduce them from <code>content/out/bundle.json</code>.</p>
 <table>
-<tr><th>Group</th><th>Items</th><th>Example prompts</th><th>Main skills</th></tr>
-<tr><td>Compare and order</td><td>~117</td><td>"Which is greater?", "190 is closer to?", "3/8 and 1/2"</td><td>k-compare-numbers-20, g1-compare-order-50, g2-compare-order-200, g3-compare-order-1000, g5-compare-order-fractions</td></tr>
-<tr><td>Place value</td><td>~94</td><td>"Tens in 42", "4 hundreds, 2 tens, 6 ones", "The 3 in 352 is worth?"</td><td>g1-read-numbers-50, g1-compose-decompose-50, g2-whole-numbers-200, g3-whole-numbers-1000, g3-place-value</td></tr>
-<tr><td>Multiply and divide</td><td>~94</td><td>"3 rows of 4", "6 × 7 = ?", "4 × 6 = 4 × 5 + 4 × ?"</td><td>g2-equal-groups-multiply, g3-arrays-multiply-divide, g3-mult-div-*, g4-mult-div-facts-100</td></tr>
-<tr><td>Fractions, decimals, percent</td><td>~80</td><td>"0.3 = ? hundredths", "1/2 = ?%", "Equivalent to 3/4?"</td><td>g4-decimal-tenths, g4-fraction-decimal-equivalence, g5-decimals-hundredths, g5-fraction-decimal-percent, g5-equivalent-fractions</td></tr>
-<tr><td>Add and subtract</td><td>~76</td><td>"15 - 6 = ?", "34 - 28 = ?"</td><td>g1-mental-math-20, g2-add-sub-facts-20, g1-add-sub-problems-50</td></tr>
-<tr><td>Sequences</td><td>~45</td><td>"2, 4, 6, ?", "1/3, 2/3, ..."</td><td>k-count-to-20, k-count-forward-back, g1-count-50, g4-count-unit-fractions</td></tr>
-<tr><td>Other</td><td>~47</td><td>"Seventh place", "1 more than 4"</td><td>k-uses-of-numbers, scattered K items</td></tr>
+<tr><th>Group</th><th>Items</th><th>Skills</th></tr>
+<tr><td>Fractions, decimals, percent</td><td>86</td><td>g1-fair-share-drawings, g1-half-equals-two-fourths, g2-fair-share-fractions, g2-third-equals-two-sixths, g4-represent-fractions, g4-decimal-tenths, g4-fraction-decimal-equivalence, g5-equivalent-fractions, g5-decimals-hundredths, g5-fraction-decimal-percent, g5-add-sub-like-fractions, g5-whole-by-unit-fraction</td></tr>
+<tr><td>Compare and order</td><td>66</td><td>k-more-less-same, k-compare-numbers-20, g1-compare-order-50, g1-compare-unit-fractions, g2-compare-order-200, g3-compare-order-1000, g4-compare-fair-shares, g5-compare-order-fractions</td></tr>
+<tr><td>Add and subtract</td><td>63</td><td>k-add-sub-facts-5, k-add-sub-stories-10, g1-add-sub-facts-10, g1-add-sub-properties, g1-mental-math-20, g1-add-sub-problems-50, g2-add-sub-properties, g2-add-sub-facts-20</td></tr>
+<tr><td>Multiply and divide</td><td>53</td><td>k-equal-share, g1-equal-groups, g2-equal-groups-multiply, g2-division-sharing, g3-fair-share-20, g3-equivalent-fair-shares, g3-arrays-multiply-divide, g3-mult-div-*, g3-fraction-repeated-addition, g4-mult-div-facts-100</td></tr>
+<tr><td>Place value</td><td>46</td><td>k-read-write-numbers-20, k-make-numbers-to-10, g1-read-numbers-50, g1-compose-decompose-50, g2-whole-numbers-200, g3-whole-numbers-1000, g3-place-value</td></tr>
+<tr><td>Sequences</td><td>29</td><td>k-count-to-20, k-count-forward-back, g1-count-50, g4-count-unit-fractions</td></tr>
+<tr><td>Other</td><td>15</td><td>k-uses-of-numbers, k-subitize-5</td></tr>
 </table>
+<p>155 of the 358 are number-line items, and 86 of those already play the frog's path.</p>
 
 <h2 id="foundation">3. Foundation</h2>
-<p>Do these first, so each new game adds files instead of touching the item schema, <code>ItemView</code>, and the bundle check.</p>
+<p>Done. A new game now adds files instead of touching the item schema, <code>ItemView</code>, and the bundle check.</p>
 <table>
-<tr><th>Step</th><th>Change</th></tr>
-<tr><td>One game field</td><td>Replace <code>scene</code>, <code>slices</code>, and <code>join</code> with <code>item.game</code>, a union on <code>kind</code>. The scenes already carry <code>kind</code>. A shared registry of <code>{ schema, problems }</code> drives <code>check-bundle.ts</code>. Bump <code>schemaVersion</code>. No native change, so it ships over the air.</td></tr>
-<tr><td>App registry</td><td>One map from <code>kind</code> to Game component. <code>ItemView</code> looks it up. One dev route, <code>/dev/games/[kind]</code>, plays each game's <code>demo.ts</code>.</td></tr>
-<tr><td>One tagger</td><td><code>content:games -- --kind &lt;kind&gt;</code> runs a per-game module <code>{ candidates, request, accept, file }</code>. Each game keeps its own reviewed file, such as <code>content/join.json</code>. LLM cache keys stay the same, so reruns stay free. The old npm scripts stay as aliases.</td></tr>
+<tr><th>Step</th><th>Status</th><th>What landed</th></tr>
+<tr><td>One game field</td><td>Done</td><td><code>item.game</code> replaced <code>scene</code>, <code>slices</code>, and <code>join</code>. It is a union on <code>kind</code>. <code>GAMES</code> in <code>shared/src/game.ts</code> holds each game's <code>{ schema, problems }</code>, and <code>check-bundle.ts</code> calls <code>gameProblems</code>. The change bumped <code>schemaVersion</code> to 2. It is 5 now. No item lost a minigame.</td></tr>
+<tr><td>App registry</td><td>Done</td><td><code>GAME_VIEWS</code> in <code>app/src/learning/games.tsx</code> maps each <code>kind</code> to a title, a view, and demo items. <code>ItemView</code> renders <code>GameView</code> for any item with a <code>game</code>. <code>/dev/games/[kind]</code> plays each game's demo items. The per-game dev pages are gone.</td></tr>
+<tr><td>One tagger</td><td>Done</td><td><code>npm run content:games -- --kind &lt;kind&gt;</code> runs a module from <code>content/src/games/registry.ts</code>. Each module has <code>candidates</code>, <code>request</code>, <code>accept</code>, <code>apply</code>, and a reviewed file such as <code>content/join.json</code>. LLM cache keys did not change. The old scripts (<code>content:scenes</code>, <code>content:join</code>, and the rest) are aliases.</td></tr>
 </table>
 
 <h2 id="games">4. New minigames</h2>
 <div class="diagram"><pre class="mermaid">
 flowchart LR
-  U[One game field] --> R[App registry]
-  U --> T[One tagger]
-  T --> RT[Retag join and sharing]
-  R --> C[Compare and order]
+  U[One game field]:::done --> R[App registry]:::done
+  U --> T[One tagger]:::done
+  T --> RT[Retag join and sharing]:::done
+  R --> C[Compare and order]:::done
   T --> C
-  C --> B[Base-ten blocks]
-  C --> A[Arrays]
-  C --> G[Hundred grid]
-  C --> S[Stepping stones]
+  C --> B[Base-ten blocks]:::done
+  C --> A[Arrays]:::done
+  C --> G[Hundred grid]:::done
+  C --> S[Stepping stones]:::done
+  S -.-> M[Tag the 358 left]
+  R --> K[Sort, order, label]:::done
+  K -.-> N[Items for other subjects]
+  classDef done fill:#d9f2e0,stroke:#2e8b57,color:#1f2328
 </pre></div>
+<p>Green is done. Dashed arrows lead to work that remains.</p>
 <table>
-<tr><th>Order</th><th>Minigame</th><th>Items</th><th>Play</th></tr>
-<tr><td>0</td><td>Retag existing games</td><td>31</td><td>Done. Join now takes bare facts like "15 - 6", and sharing takes "4 × 3" and arrays with plain counters. Products past 20, more than 6 groups, and things like legs and wheels stay for Arrays.</td></tr>
-<tr><td>1</td><td>Compare and order</td><td>~117</td><td>Up to 20, cube towers stand side by side. Above 20, and for fractions and decimals, flags drop onto a number line and the rightmost wins. Sets the pattern the later games follow.</td></tr>
-<tr><td>2</td><td>Base-ten blocks</td><td>~94</td><td>Flats, rods, and cubes build a number. Asks: read it, a digit's worth, expanded form, trade 10 ones for a ten. Later carries regrouping for g1-add-sub-problems-50.</td></tr>
-<tr><td>3</td><td>Arrays</td><td>~94</td><td>Things fill rows and columns. Asks: total, rows, per row, turn the array, split it. Reuses <code>ThingArt</code>.</td></tr>
-<tr><td>4</td><td>Hundred grid</td><td>~80</td><td>A 10 × 10 grid or a tenths strip fills in. Asks: read it as a decimal, fraction, or percent, and find equal amounts.</td></tr>
-<tr><td>5</td><td>Stepping stones</td><td>~45</td><td>The frog hops stones by a fixed step, and one stone is missing. Builds on <code>hops.ts</code> and the number-line art.</td></tr>
+<tr><th>Order</th><th>Minigame</th><th>Status</th><th>Items</th><th>Play</th></tr>
+<tr><td>0</td><td>Retag existing games</td><td>Done</td><td>31</td><td>Join takes bare facts like "15 - 6", and sharing takes "4 × 3" and arrays with plain counters. Products past 20, more than 6 groups, and things like legs and wheels went to Arrays.</td></tr>
+<tr><td>1</td><td>Compare and order</td><td>Done</td><td>42 of ~117</td><td>Up to 20, cube towers stand side by side. Above 20, and for fractions and decimals, flags drop onto a number line and the rightmost wins.</td></tr>
+<tr><td>2</td><td>Base-ten blocks</td><td>Done</td><td>39 of ~94</td><td>Flats, rods, and cubes build a number. Asks: read it, a digit's worth, expanded form, trade 10 ones for a ten.</td></tr>
+<tr><td>3</td><td>Arrays</td><td>Done</td><td>41 of ~94</td><td>Things fill rows and columns. Asks: total, rows, per row, turn the array, split it.</td></tr>
+<tr><td>4</td><td>Hundred grid</td><td>Done</td><td>28 of ~80</td><td>A 10 × 10 grid or a tenths strip fills in. Asks: read it as a decimal, fraction, or percent, and find equal amounts.</td></tr>
+<tr><td>5</td><td>Stepping stones</td><td>Done</td><td>22 of ~45</td><td>The frog hops stones by a fixed step, and one stone is missing. Builds on <code>hops.ts</code> and the number-line art.</td></tr>
+<tr><td>6</td><td>Sort it, Put in order, Label it</td><td>Built, no items</td><td>0</td><td>Card games for the other subjects. No tagger or content exists yet.</td></tr>
 </table>
-<p class="note">The "Other" group stays on the plain screens for now. An ordinal line-up game could take the ~12 "Seventh place" items later.</p>
+<p>Each "of" figure is the earlier estimate of how many items the game fits. The tagged count is what the tagger accepted.</p>
+<p class="note">Remaining work: tag more of the 358 items, write items and a tagger for the card games, and build an ordinal line-up game for the ~12 "Seventh place" items.</p>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
