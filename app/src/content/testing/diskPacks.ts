@@ -2,6 +2,7 @@ import {
   assembleBundle,
   ContentManifestSchema,
   ContentPackSchema,
+  manifestPath,
   type ContentBundle,
   type ContentManifest,
 } from '@bright-trail/shared';
@@ -24,7 +25,7 @@ export function readPackFile(path: string): string {
 }
 
 export function diskManifest(): ContentManifest {
-  return ContentManifestSchema.parse(JSON.parse(readPackFile(`manifests/${loadCore().hash}.json`)));
+  return ContentManifestSchema.parse(JSON.parse(readPackFile(manifestPath(loadCore().hash))));
 }
 
 /** Test-only: serves `content/out/packs/` under `DISK_URL`, logging each path asked for. */

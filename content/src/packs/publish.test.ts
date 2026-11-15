@@ -1,11 +1,11 @@
-import { parseContentBundle } from '@bright-trail/shared';
+import { manifestPath, parseContentBundle } from '@bright-trail/shared';
 import sample from '@bright-trail/shared/fixtures/sample-bundle.json';
 import { describe, expect, it } from 'vitest';
 import { planUploads, publish, readR2Config, type Upload } from './publish';
 import { splitBundle } from './split';
 
 const { manifest, files } = splitBundle(parseContentBundle(sample));
-const manifestKey = `manifests/${manifest.coreHash}.json`;
+const manifestKey = manifestPath(manifest.coreHash);
 
 describe('planUploads', () => {
   it('uploads every pack before the manifest', () => {

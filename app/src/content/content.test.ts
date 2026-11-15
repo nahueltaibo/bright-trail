@@ -5,6 +5,7 @@ import {
   createSkillGraph,
   finishPlacement,
   gradeRank,
+  manifestPath,
   nextPlacementItem,
   startPlacement,
   type ChildProfile,
@@ -13,7 +14,7 @@ import { openRepository, type Repository } from '../storage/repository';
 import { openNodeSqliteDatabase } from '../storage/testing/nodeSqliteDatabase';
 import { childHasPacks, loadContent, packStatus, syncPacks } from './content';
 import { loadCore } from './core';
-import { diskBundle, diskManifest, diskSource } from './testing/diskPacks';
+import { DISK_URL, diskBundle, diskManifest, diskSource, readPackFile } from './testing/diskPacks';
 
 const now = () => new Date('2026-11-11T12:00:00Z');
 const maya: ChildProfile = {
@@ -116,7 +117,7 @@ describe('syncPacks', () => {
 
     await syncPacks(repo, { source: diskSource(requests), now });
 
-    expect(requests[0]).toBe(`manifests/${loadCore().hash}.json`);
+    expect(requests[0]).toBe(manifestPath(loadCore().hash));
     expect(requests.slice(1).map((f) => f.split('.')[0])).toEqual(['math-k', 'math-1', 'math-2']);
     expect((await repo.packs.list()).map((p) => p.id)).toEqual(['math-1', 'math-2', 'math-k']);
     expect(packStatus.get()).toEqual({ state: 'ready' });
@@ -132,7 +133,7 @@ describe('syncPacks', () => {
     expect(requests).toEqual([]);
     const later = () => new Date('2026-11-11T12:05:00Z');
     await syncPacks(repo, { source: diskSource(requests), now: later });
-    expect(requests).toEqual([`manifests/${loadCore().hash}.json`]);
+    expect(requests).toEqual([manifestPath(loadCore().hash)]);
   });
 
   it('deletes packs no child needs', async () => {
@@ -220,5 +221,80 @@ describe('syncPacks', () => {
       'math-5',
       'math-k',
     ]);
+  });
+});
+
+// Main publishes packs before the OTA update that reads them, so this build meets newer games.
+describe('packs published after this build', () => {
+  /** Serves the disk packs with math-k rewritten by `edit`, under a manifest that names it. */
+  async function newerSource(edit: (items: Record<string, unknown>[]) => void) {
+    const source = diskSource();
+    const manifest = diskManifest();
+    const entry = manifest.packs.find((p) => p.id === 'math-k')!;
+    const pack = JSON.parse(readPackFile(entry.file));
+    edit(pack.items);
+    const body = JSON.stringify(pack);
+    const sha256 = await source.sha256(body);
+    const file = `math-k.${sha256.slice(0, 16)}.json`;
+    const served = new Map([
+      [file, body],
+      [
+        manifestPath(manifest.coreHash),
+        JSON.stringify({
+          ...manifest,
+          packs: manifest.packs.map((p) => (p === entry ? { ...p, file, sha256 } : p)),
+        }),
+      ],
+    ]);
+    const fetchText = source.fetchText;
+    source.fetchText = async (url) =>
+      served.get(url.slice(DISK_URL.length + 1)) ?? (await fetchText(url));
+    return source;
+  }
+
+  it('plays an item with an unknown game kind, or an unknown scene, as its own screen', async () => {
+    const repo = await freshRepo();
+    await repo.children.save(maya);
+    let kGames = 0;
+    const stripped: string[] = [];
+    const source = await newerSource((items) => {
+      const plain = items.find((i) => !i.game)!;
+      const known = items.find((i) => i.game)!;
+      plain.game = { kind: 'wall', rows: [1, 2] };
+      known.game = { kind: (known.game as { kind: string }).kind, future: true };
+      kGames = items.filter((i) => i.game).length;
+      stripped.push(plain.id as string, known.id as string);
+    });
+
+    await syncPacks(repo, { source, now });
+
+    expect(packStatus.get()).toEqual({ state: 'ready' });
+    expect(await childHasPacks(repo, 'maya', now)).toBe(true);
+    const bundle = await loadContent(repo);
+    for (const id of stripped) {
+      const item = bundle.items.find((i) => i.id === id);
+      expect(item).toBeDefined();
+      expect(item!.game).toBeUndefined();
+    }
+    const kSkills = new Set(bundle.skills.filter((s) => s.grade === 'K').map((s) => s.id));
+    const kItems = bundle.items.filter((i) => kSkills.has(i.skillId));
+    expect(kItems.filter((i) => i.game)).toHaveLength(kGames - 2);
+  });
+
+  it('leaves out an item it can’t read even without its game, and keeps the rest', async () => {
+    const repo = await freshRepo();
+    await repo.children.save(maya);
+    let dropped = '';
+    const source = await newerSource((items) => {
+      items[0].type = 'drag-to-order';
+      dropped = items[0].id as string;
+    });
+
+    await syncPacks(repo, { source, now });
+
+    expect(packStatus.get()).toEqual({ state: 'ready' });
+    const bundle = await loadContent(repo);
+    expect(bundle.items.some((i) => i.id === dropped)).toBe(false);
+    expect(bundle.items.length).toBeGreaterThan(0);
   });
 });

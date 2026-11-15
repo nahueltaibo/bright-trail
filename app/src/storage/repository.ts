@@ -1,10 +1,10 @@
 import {
   AttemptSchema,
   ChildProfileSchema,
-  ContentPackSchema,
   IsoDateTimeSchema,
   MasteryStateSchema,
   PlacementStateSchema,
+  readContentPack,
   SkillGradeSchema,
   WalkBackSchema,
   type Attempt,
@@ -387,11 +387,19 @@ export function createRepository(db: SqlDatabase) {
         'SELECT body FROM content_packs WHERE core_hash = ? ORDER BY id',
         [coreHash],
       );
-      return rows.map((r) => ContentPackSchema.parse(JSON.parse(r.body)));
+      // A pack this build can't read, such as one saved by newer JS before a rollback, is left
+      // out. Its sha256 no longer matches this build's manifest, so the next sync replaces it.
+      return rows.flatMap((r) => {
+        try {
+          return [readContentPack(JSON.parse(r.body))];
+        } catch {
+          return [];
+        }
+      });
     },
     /** Inserts or replaces the pack with the same id. Throws if `body` isn't that pack. */
     async save(pack: InstalledPack & { body: string }): Promise<void> {
-      const parsed = ContentPackSchema.parse(JSON.parse(pack.body));
+      const parsed = readContentPack(JSON.parse(pack.body));
       if (parsed.id !== pack.id) throw new Error(`Pack body is ${parsed.id}, not ${pack.id}`);
       IsoDateTimeSchema.parse(pack.installedAt);
       await db.runAsync(
