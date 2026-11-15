@@ -19,6 +19,11 @@ describe('lineOf', () => {
     expect(lineOf(['0.6', '0.06'])).toEqual({ min: 0, max: 0.6, step: 0.1 });
   });
 
+  it('keeps a line around equal values', () => {
+    expect(lineOf(['6.3', '6.30'])).toEqual({ min: 6, max: 7, step: 1 });
+    expect(lineOf(['40', '40'])).toEqual({ min: 40, max: 45, step: 5 });
+  });
+
   it('steps fractions by their common unit, or by halves when that crowds the line', () => {
     expect(lineOf(['3/8', '5/8'])).toEqual({ min: 0, max: 1, step: 1 / 8 });
     expect(lineOf(['3/8', '5/6'])).toEqual({ min: 0, max: 1, step: 0.5 });
@@ -88,6 +93,21 @@ describe('compareWords', () => {
     );
     expect(compareWords(scene({ ask: 'closer', values: ['0', '1'], target: '3/4' }))).toBe(
       '3/4 is 3/4 from 0 and 1/4 from 1, so it is closer to 1.',
+    );
+  });
+
+  it('says how two values stand, and whether that is the claim', () => {
+    expect(compareWords(demo('same'))).toBe(
+      '4 and 4 make towers just as tall, so 4 is the same as 4.',
+    );
+    expect(compareWords(demo('relation'))).toBe(
+      '462 is left of 500 on the number line, so 462 is less than 500.',
+    );
+    expect(compareWords(demo('claim'))).toBe(
+      '11/8 is left of 3/2 on the number line, so 11/8 is less than 3/2. It is not greater than 3/2.',
+    );
+    expect(compareWords(scene({ ask: 'relation', values: ['7', '5'] }))).toBe(
+      '7 makes a taller tower than 5, so 7 is more than 5.',
     );
   });
 });

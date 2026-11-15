@@ -1,4 +1,4 @@
-import type { CompareScene } from '@bright-trail/shared';
+import { compareRelation, type CompareScene } from '@bright-trail/shared';
 import { useEffect, useImperativeHandle, useMemo, useRef, useState, type Ref } from 'react';
 import { Animated, StyleSheet, View, type LayoutChangeEvent } from 'react-native';
 import Svg, { Line, Rect } from 'react-native-svg';
@@ -32,6 +32,16 @@ function shout(s: CompareScene, layout: CompareLayout): string {
   const two = s.values.length === 2;
   if (s.ask === 'middle') return 'In the middle!';
   if (s.ask === 'closer') return 'Closer!';
+  if (s.ask === 'relation') {
+    const r = compareRelation(s);
+    return r === 'same'
+      ? 'Same!'
+      : r === 'less'
+        ? 'Less!'
+        : layout.view === 'towers'
+          ? 'More!'
+          : 'Greater!';
+  }
   const most = s.ask === 'greatest';
   if (layout.view === 'towers') {
     return most ? (two ? 'Taller!' : 'Tallest!') : two ? 'Shorter!' : 'Shortest!';
@@ -83,7 +93,9 @@ export function CompareStage({ scene: s, cheer, handle }: Props) {
       return { x: t.x, y: Math.max(20, layout.base - t.value * layout.cube - 52) };
     }
     const f = layout.flags[layout.winner];
-    return { x: f.x, y: Math.max(20, layout.y - f.height - 56) };
+    // A relation's other flag can stand right above the first, as for 6.3 and 6.30.
+    const height = s.ask === 'relation' ? Math.max(...layout.flags.map((g) => g.height)) : f.height;
+    return { x: f.x, y: Math.max(20, layout.y - height - 56) };
   };
 
   useImperativeHandle(handle, () => {
@@ -143,7 +155,8 @@ export function CompareStage({ scene: s, cheer, handle }: Props) {
 
   const scale = box ? Math.min(box.w / STAGE_W, box.h / STAGE_H) : 0;
   const hopY = hop.interpolate({ inputRange: [0, 1], outputRange: [0, -10] });
-  const fade = (i: number) => (done && i !== layout.winner ? 0.4 : 1);
+  // A relation weighs both values, so neither fades.
+  const fade = (i: number) => (done && i !== layout.winner && s.ask !== 'relation' ? 0.4 : 1);
   const lift = (i: number) => (cheer && i === layout.winner ? [{ translateY: hopY }] : []);
 
   return (

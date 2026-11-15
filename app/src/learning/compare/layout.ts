@@ -65,9 +65,11 @@ export function lineOf(texts: readonly string[]): { min: number; max: number; st
     if ((max - min) * unit <= 12) return { min, max, step: 1 / unit };
     return { min, max, step: max - min <= 3 ? 0.5 : 1 };
   }
-  const step = niceStep(hi - lo);
+  // Equal values, as in "Is 6.3 equal to 6.30?", still need a line around them.
+  const step = niceStep(hi - lo || Math.max(Math.abs(hi), 1));
   const min = clean(Math.floor(clean(lo / step)) * step);
-  return { min, max: clean(Math.ceil(clean(hi / step)) * step), step };
+  const max = clean(Math.ceil(clean(hi / step)) * step);
+  return { min, max: max > min ? max : clean(min + step), step };
 }
 
 /** Labels for the ends of the line, and for each whole number on a line of fractions. */

@@ -8,9 +8,14 @@ import { choiceTextValue, itemAnswer, parseMixed } from './scene';
  *   shortest cube tower.
  * - `middle`: the one in the middle once the three are in order.
  * - `closer`: which of the values `target` is closer to.
+ * - `relation`: whether the first of two values is more than, less than, or the same as the
+ *   second. With a `claim`, whether that relation is the claimed one, for yes-or-no items.
  */
-export const COMPARE_ASKS = ['greatest', 'least', 'middle', 'closer'] as const;
+export const COMPARE_ASKS = ['greatest', 'least', 'middle', 'closer', 'relation'] as const;
 export type CompareAsk = (typeof COMPARE_ASKS)[number];
+
+export const RELATIONS = ['more', 'less', 'same'] as const;
+export type Relation = (typeof RELATIONS)[number];
 
 /** Whole numbers up to this stand as cube towers. Anything else drops flags on a number line. */
 export const TOWER_MAX = 20;
@@ -36,12 +41,18 @@ export const CompareSceneSchema = z
     values: z.array(ValueText).min(2).max(4),
     /** The number a `closer` ask measures from. */
     target: ValueText.optional(),
+    /** The relation a yes-or-no `relation` ask states, as in "Is 11/8 greater than 3/2?". */
+    claim: z.enum(RELATIONS).optional(),
   })
   .superRefine((s, ctx) => {
     const issue = (path: string, message: string) =>
       ctx.addIssue({ code: 'custom', path: [path], message });
     const nums = s.values.map((v) => compareValue(v)!);
-    if (new Set(nums).size !== nums.length) issue('values', 'values must differ');
+    if (s.ask === 'relation') {
+      if (nums.length !== 2) issue('values', 'relation needs two values');
+    } else if (new Set(nums).size !== nums.length) issue('values', 'values must differ');
+    if (s.claim !== undefined && s.ask !== 'relation')
+      issue('claim', `ask ${s.ask} takes no claim`);
     if (s.ask === 'middle' && nums.length !== 3) issue('values', 'middle needs three values');
     if (s.ask === 'closer') {
       if (s.target === undefined) issue('target', 'closer needs a target');
@@ -59,7 +70,41 @@ export function compareNumbers(s: CompareScene): number[] {
   return s.values.map((v) => compareValue(v)!);
 }
 
-/** The index in `values` of the one the scene picks. */
+const sameNumber = (a: number, b: number) => Math.abs(a - b) < 1e-9;
+
+/** How the first value stands to the second. */
+export function compareRelation(s: CompareScene): Relation {
+  const [a, b] = compareNumbers(s);
+  return sameNumber(a, b) ? 'same' : a > b ? 'more' : 'less';
+}
+
+/** What a `relation` ask answers: the relation, or whether it is the claimed one. */
+export function relationAnswer(s: CompareScene): Relation | boolean {
+  const r = compareRelation(s);
+  return s.claim === undefined ? r : r === s.claim;
+}
+
+/**
+ * Reads a choice like "the same", "less than 500", "bigger", "True", or "no" against `than`, the
+ * value it measures from. Null when it is none of these, or names another value.
+ */
+export function relationWord(text: string, than: string): Relation | boolean | null {
+  const t = text.trim().toLowerCase();
+  if (t === 'yes' || t === 'true') return true;
+  if (t === 'no' || t === 'false') return false;
+  const m = /^(?:the )?(\w+)(?: amount)?(?: (?:than|as) (.+))?$/.exec(t);
+  if (!m) return null;
+  if (m[2] !== undefined) {
+    const n = compareValue(m[2]);
+    if (n === null || !sameNumber(n, compareValue(than)!)) return null;
+  }
+  if (/^(more|greater|bigger|larger)$/.test(m[1])) return 'more';
+  if (/^(less|fewer|smaller)$/.test(m[1])) return 'less';
+  if (/^(same|equal)$/.test(m[1])) return 'same';
+  return null;
+}
+
+/** The index in `values` of the one the scene picks. A `relation` ask picks the first. */
 export function compareWinner(s: CompareScene): number {
   const nums = compareNumbers(s);
   const best = (better: (a: number, b: number) => boolean) =>
@@ -77,6 +122,8 @@ export function compareWinner(s: CompareScene): number {
       const t = compareValue(s.target!)!;
       return best((a, b) => Math.abs(a - t) < Math.abs(b - t));
     }
+    case 'relation':
+      return 0;
   }
 }
 
@@ -87,26 +134,51 @@ export function compareView(s: CompareScene): 'towers' | 'line' {
   return towers ? 'towers' : 'line';
 }
 
-const sameNumber = (a: number, b: number) => Math.abs(a - b) < 1e-9;
 const escape = (t: string) => t.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&');
+
+/** Why a `relation` scene can't play this tap item's word choices. */
+function relationProblems(item: Item, scene: CompareScene): string[] {
+  if (item.type !== 'tap') return ['a relation needs word choices'];
+  const than = scene.values[1];
+  const read = item.choices.map((c) => (c.kind === 'text' ? relationWord(c.text, than) : null));
+  if (read.some((r) => r === null)) return ['a choice is not more, less, same, yes, or no'];
+  const yesNo = read.some((r) => typeof r === 'boolean');
+  if (yesNo !== (scene.claim !== undefined)) {
+    return [yesNo ? 'yes-or-no choices need a claim' : 'a claim needs yes-or-no choices'];
+  }
+  const answer = read[item.choices.findIndex((c) => c.id === item.answerChoiceId)];
+  const expected = relationAnswer(scene);
+  return answer === expected
+    ? []
+    : [`the scene answers ${expected} but the item answers ${answer}`];
+}
 
 /** Why the scene can't play this item. Empty when it can. */
 export function compareProblems(item: Item, scene: CompareScene): string[] {
   const problems: string[] = [];
-  const answer = itemAnswer(item);
-  const nums = compareNumbers(scene);
-  const shown = scene.values[compareWinner(scene)];
-  if (typeof answer !== 'number') problems.push('the item answer is not a number');
-  else if (!sameNumber(answer, compareValue(shown)!)) {
-    problems.push(`the scene picks ${shown} but the item answers ${answer}`);
+  const relation = scene.ask === 'relation';
+  if (relation) problems.push(...relationProblems(item, scene));
+  else {
+    const answer = itemAnswer(item);
+    const shown = scene.values[compareWinner(scene)];
+    if (typeof answer !== 'number') problems.push('the item answer is not a number');
+    else if (!sameNumber(answer, compareValue(shown)!)) {
+      problems.push(`the scene picks ${shown} but the item answers ${answer}`);
+    }
   }
-  if (item.type === 'number-line') problems.push('number-line items keep their own screen');
-  // The stage replaces the item's picture, which would then go unseen.
-  if ('visual' in item && item.visual) problems.push(`the item has a ${item.visual.kind} picture`);
+  const nums = compareNumbers(scene);
+  // The stage replaces the item's picture, which would then go unseen. Towers count the same
+  // things as a picture of one of a relation's two amounts.
+  if ('visual' in item && item.visual) {
+    const v = item.visual;
+    const counted =
+      relation && v.kind === 'objects' && compareView(scene) === 'towers' && nums.includes(v.count);
+    if (!counted) problems.push(`the item has a ${v.kind} picture`);
+  }
 
   const words = `${item.prompt} ${item.narration}`;
   const said = (v: string) => new RegExp(`(^|[^\\d./])${escape(v)}(?![\\d/]|\\.\\d)`).test(words);
-  if (item.type === 'tap') {
+  if (item.type === 'tap' && !relation) {
     // The stage shows the same numbers the choices do, no more and no fewer.
     const choices = item.choices.map((c) =>
       c.kind === 'number' ? c.value : c.kind === 'text' ? choiceTextValue(c.text) : null,
@@ -119,7 +191,7 @@ export function compareProblems(item: Item, scene: CompareScene): string[] {
       problems.push(`the choices are not the scene's values ${scene.values.join(', ')}`);
     }
   } else {
-    for (const v of scene.values) if (!said(v)) problems.push(`the item never says ${v}`);
+    for (const v of new Set(scene.values)) if (!said(v)) problems.push(`the item never says ${v}`);
   }
   if (scene.target !== undefined && !said(scene.target)) {
     problems.push(`the item never says ${scene.target}`);
