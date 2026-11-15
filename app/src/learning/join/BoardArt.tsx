@@ -3,7 +3,6 @@ import Svg, { Circle, Ellipse, G, Path, Rect } from 'react-native-svg';
 import {
   STAGE_H,
   STAGE_W,
-  TWO_FRAME_CELL,
   WIRE_POLES,
   WIRE_ROWS,
   WIRE_SAG,
@@ -136,8 +135,8 @@ export function BoardArt({ board }: { board: Board }) {
       <>
         {place === 'sky' ? <Sky /> : <Table />}
         {place === 'grass' && <Grass top={250} />}
-        <Tray cells={cells.slice(0, 10)} cell={TWO_FRAME_CELL} />
-        <Tray cells={cells.slice(10)} cell={TWO_FRAME_CELL} />
+        <Tray cells={cells.slice(0, 10)} cell={board.cell} />
+        <Tray cells={cells.slice(10)} cell={board.cell} />
       </>
     );
   } else if (place === 'pond') {
@@ -235,7 +234,7 @@ export function BoardArt({ board }: { board: Board }) {
       <>
         {place === 'sky' ? <Sky /> : <Table />}
         {place === 'grass' && <Grass top={196} />}
-        <Tray cells={cells} cell={54} />
+        <Tray cells={cells} cell={board.cell} />
       </>
     );
   }

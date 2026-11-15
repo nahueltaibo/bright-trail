@@ -13,6 +13,8 @@ export type Board = {
   frames: 1 | 2;
   /** Spots in fill order: left to right, top row first, then the second frame. */
   cells: Pt[];
+  /** How wide a spot is. */
+  cell: number;
   /** How big a thing is drawn. */
   size: number;
   /** Where walkers walk, below a bus. */
@@ -69,7 +71,8 @@ export function trayOf(cells: Pt[], cell: number): Box {
   return { x, y, w: Math.max(...xs) + pad - x, h: Math.max(...ys) + pad - y };
 }
 
-export const TWO_FRAME_CELL = 42;
+/** A part's sum goes at the top, since its aside row fills the bottom. */
+const PART_SUM: Pt = { x: 180, y: 22 };
 
 /** Spots in one or two rows along the bottom band, centered. */
 function band(n: number, rows: number[], spread: number): Pt[] {
@@ -88,12 +91,11 @@ export function boardOf(s: JoinScene): Board {
   const n = s.start;
   const part = s.ask === 'part';
   if (two) {
-    // A part lifts the frames a little to make room for its aside row and counts below them.
-    const top = part ? 66 : 72;
-    const cells = [
-      ...grid(180, top, TWO_FRAME_CELL, 5),
-      ...grid(180, top + 108, TWO_FRAME_CELL, 5),
-    ];
+    // A part shrinks the frames to fit its sum above them, and its aside row and counts below.
+    const cell = part ? 38 : 42;
+    const cells = part
+      ? [...grid(180, 79, cell, 4), ...grid(180, 178, cell, 4)]
+      : [...grid(180, 72, cell, 5), ...grid(180, 180, cell, 5)];
     // Past 10 there's no room below, so the pile is a toss over the frames.
     const pile = cells.slice(0, n).map((c, i) => ({
       x: c.x + jitter(i, 16),
@@ -104,16 +106,17 @@ export function boardOf(s: JoinScene): Board {
       place: s.place,
       frames: 2,
       cells,
-      size: 32,
+      cell,
+      size: part ? 30 : 32,
       ground: 260,
       spot: '#FBF6EA',
       pile,
       // Only one row of small things fits below the frames, with its counting bubbles above it.
-      aside: part ? band(s.take!, [272], 320) : [],
+      aside: part ? band(s.take!, [269], 320) : [],
       asideSize: 24,
       asideLift: 25,
-      mat: part ? { x: 4, y: 256, w: 352, h: 32 } : null,
-      sum: { x: 180, y: 266 },
+      mat: part ? { x: 4, y: 253, w: 352, h: 32 } : null,
+      sum: part ? PART_SUM : { x: 180, y: 266 },
     };
   }
   const pile = band(n, n > 5 ? [232, 266] : [250], 280).map((p, i) => ({
@@ -126,13 +129,14 @@ export function boardOf(s: JoinScene): Board {
     pile,
     aside: part ? band(s.take!, [240], 220) : [],
     mat: part ? { x: 50, y: 214, w: 260, h: 52 } : null,
-    sum: { x: 180, y: 264 },
+    sum: part ? PART_SUM : { x: 180, y: 264 },
   };
   switch (s.place) {
     case 'pond':
       return {
         ...base,
         cells: grid(180, 121, 54, 8),
+        cell: 54,
         size: 38,
         asideSize: 38,
         asideLift: 38 * 0.62,
@@ -143,6 +147,7 @@ export function boardOf(s: JoinScene): Board {
       return {
         ...base,
         cells: grid(170, 118, 48, 8),
+        cell: 48,
         size: 36,
         asideSize: 36,
         asideLift: 36 * 0.62,
@@ -159,6 +164,7 @@ export function boardOf(s: JoinScene): Board {
       return {
         ...base,
         cells,
+        cell: 36,
         size: 36,
         asideSize: 36,
         asideLift: 36 * 0.62,
@@ -171,6 +177,7 @@ export function boardOf(s: JoinScene): Board {
       return {
         ...base,
         cells: grid(180, up ? 104 : 118, 54, 6),
+        cell: 54,
         size: 40,
         asideSize: 40,
         asideLift: 40 * 0.62,

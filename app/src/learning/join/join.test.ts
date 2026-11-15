@@ -1,5 +1,5 @@
 import { gameProblems, JoinSceneSchema } from '@bright-trail/shared';
-import { boardOf, STAGE_H, STAGE_W, trayOf, TWO_FRAME_CELL, type Box, type Pt } from './board';
+import { boardOf, STAGE_H, STAGE_W, trayOf, type Box, type Pt } from './board';
 import { JOIN_DEMO_ITEMS } from './demo';
 import { joinWords } from './words';
 
@@ -58,6 +58,20 @@ describe('boardOf', () => {
   });
 });
 
+describe('a part in one frame', () => {
+  it('keeps its board as before two-frame parts', () => {
+    const b = boardOf(demo('part'));
+    expect(b.frames).toBe(1);
+    expect(b.cells[0]).toEqual({ x: 60, y: 74 });
+    expect(b.size).toBe(40);
+    expect(b.asideSize).toBe(b.size);
+    expect(b.asideLift).toBeCloseTo(b.size * 0.62);
+    expect(b.aside).toEqual([84, 148, 212, 276].map((x) => ({ x, y: 240 })));
+    expect(b.mat).toEqual({ x: 50, y: 214, w: 260, h: 52 });
+    expect(b.sum).toEqual({ x: 180, y: 22 });
+  });
+});
+
 describe('a part past 10', () => {
   const cases: [number, number][] = [];
   for (let start = 11; start <= 20; start++)
@@ -79,12 +93,16 @@ describe('a part past 10', () => {
     expect(b.frames).toBe(2);
     // The tray's 2px stroke reaches 1 past its box.
     const trays = [b.cells.slice(0, 10), b.cells.slice(10)]
-      .map((c) => trayOf(c, TWO_FRAME_CELL))
+      .map((c) => trayOf(c, b.cell))
       .map((t) => ({ x: t.x - 1, y: t.y - 1, w: t.w + 2, h: t.h + 2 }));
     const things = b.aside.map((p) => square(p, b.asideSize));
+    const stay = b.cells.slice(0, start - take).map((p) => square(p, b.size));
+    // The sum bubble: 20 above its anchor, 40 high, and wide enough for "20 = 10 + 10".
+    const sum = { x: b.sum.x - 75, y: b.sum.y - 20, w: 150, h: 40 };
+    for (const box of [...stay, ...things]) expect(overlap(sum, box)).toBe(false);
     const counts = b.aside.map((p, i) => countBubble({ x: p.x, y: p.y - b.asideLift }, i + 1));
     expect(things).toHaveLength(take);
-    for (const box of [...trays, ...things, ...counts, b.mat!]) expect(inside(box)).toBe(true);
+    for (const box of [...trays, ...things, ...counts, sum, b.mat!]) expect(inside(box)).toBe(true);
     things.forEach((thing, i) => {
       for (const tray of trays) {
         expect(overlap(thing, tray)).toBe(false);

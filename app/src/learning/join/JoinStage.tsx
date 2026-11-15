@@ -369,8 +369,7 @@ export function JoinStage({ scene: s, cheer, handle }: Props) {
       setBubbles([]);
       setRings([]);
     };
-    const sum = (text: string) =>
-      bubble(s.ask === 'part' ? { x: 180, y: 22 } : board.sum, text, true);
+    const sum = (text: string) => bubble(board.sum, text, true);
     const startText = () => {
       if (s.start > 0) bubble({ x: 180, y: 22 }, `${s.start} ${s.start === 1 ? s.one : s.many}`);
     };
