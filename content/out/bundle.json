@@ -3176,15 +3176,15 @@
       "narration": "Five ducks stand in a line. The first duck is in place 1. What place is the last duck in? Type its place number.",
       "prompt": "Last duck's place?",
       "why": "Count the ducks in line. The last duck matches that count.",
-      "type": "keypad",
-      "visual": { "kind": "objects", "emoji": "🦆", "count": 5 },
-      "answer": 5,
       "game": {
         "kind": "lineup",
         "line": ["duck", "duck", "duck", "duck", "duck"],
         "place": 5,
         "ask": "place"
-      }
+      },
+      "type": "keypad",
+      "visual": { "kind": "objects", "emoji": "🦆", "count": 5 },
+      "answer": 5
     },
     {
       "id": "k-uses-of-numbers-number-line-3",
@@ -3193,17 +3193,17 @@
       "narration": "A frog is third in line. Hop the frog to 3.",
       "prompt": "Third is 3",
       "why": "First is 1, second is 2, and third is 3. Hop to 3.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 3,
       "game": {
         "kind": "lineup",
         "line": ["frog", "frog", "frog", "frog", "frog"],
         "place": 3,
         "ask": "find"
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 3
     },
     {
       "id": "k-uses-of-numbers-tap-5",
@@ -3249,18 +3249,18 @@
       "narration": "Ana is seventh in line. Hop the frog to the number for her place.",
       "prompt": "Seventh place",
       "why": "Seventh means the place after sixth. Count to 7 and hop there.",
-      "type": "number-line",
-      "min": 0,
-      "max": 10,
-      "step": 1,
-      "target": 7,
       "game": {
         "kind": "lineup",
         "line": ["kid", "kid", "kid", "kid", "kid", "kid", "kid", "kid"],
         "place": 7,
         "ask": "find",
         "name": "Ana"
-      }
+      },
+      "type": "number-line",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "target": 7
     },
     {
       "id": "k-uses-of-numbers-tap-6",
@@ -3284,6 +3284,12 @@
       "narration": "The cat is second in line. Is the cat's place 4, 1, 3, or 2?",
       "prompt": "Second place",
       "why": "First is 1. Second comes next, so second is 2.",
+      "game": {
+        "kind": "lineup",
+        "line": ["dog", "cat", "bunny", "bear", "dog"],
+        "place": 2,
+        "ask": "place"
+      },
       "type": "tap",
       "visual": { "kind": "emoji", "emoji": "🐱" },
       "choices": [
@@ -3292,13 +3298,7 @@
         { "id": "c", "kind": "number", "value": 3 },
         { "id": "d", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "d",
-      "game": {
-        "kind": "lineup",
-        "line": ["dog", "cat", "bunny", "bear", "dog"],
-        "place": 2,
-        "ask": "place"
-      }
+      "answerChoiceId": "d"
     },
     {
       "id": "k-subitize-5-tap-1",
@@ -3921,7 +3921,8 @@
         { "id": "a", "kind": "text", "text": "bigger" },
         { "id": "b", "kind": "text", "text": "smaller" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "relation", "values": ["5", "4"] }
     },
     {
       "id": "k-count-forward-back-keypad-1",
@@ -4172,9 +4173,9 @@
       "narration": "Which number is more, 4 or 9? Type the bigger number.",
       "prompt": "4 or 9: more?",
       "why": "9 comes after 4 when we count. So 9 is more than 4.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["4", "9"] },
       "type": "keypad",
-      "answer": 9
+      "answer": 9,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["4", "9"] }
     },
     {
       "id": "k-more-less-same-number-line-1",
@@ -4204,7 +4205,8 @@
         { "id": "b", "kind": "text", "text": "the same" },
         { "id": "c", "kind": "text", "text": "more" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "relation", "values": ["4", "4"] }
     },
     {
       "id": "k-more-less-same-tap-4",
@@ -4244,7 +4246,8 @@
         { "id": "b", "kind": "text", "text": "less" },
         { "id": "c", "kind": "text", "text": "the same" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "relation", "values": ["7", "5"] }
     },
     {
       "id": "k-more-less-same-keypad-2",
@@ -4289,9 +4292,9 @@
       "narration": "Which number is less, 7 or 2? Type the smaller number.",
       "prompt": "7 or 2: less?",
       "why": "2 comes before 7 when we count. So 2 is less than 7.",
-      "game": { "kind": "compare", "ask": "least", "values": ["7", "2"] },
       "type": "keypad",
-      "answer": 2
+      "answer": 2,
+      "game": { "kind": "compare", "ask": "least", "values": ["7", "2"] }
     },
     {
       "id": "k-more-less-same-tap-6",
@@ -4385,13 +4388,13 @@
       "narration": "Which number is greater, 3 or 6?",
       "prompt": "Which is greater?",
       "why": "6 is more than 3. Count up from 3 and you reach 6. So 6 is greater.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["3", "6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3 },
         { "id": "b", "kind": "number", "value": 6 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3", "6"] }
     },
     {
       "id": "k-compare-numbers-20-keypad-1",
@@ -4436,13 +4439,13 @@
       "narration": "Which number is less, 8 or 2?",
       "prompt": "Which is less?",
       "why": "2 is fewer than 8. Count up from 2 and you reach 8 much later. So 2 is less.",
-      "game": { "kind": "compare", "ask": "least", "values": ["8", "2"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 8 },
         { "id": "b", "kind": "number", "value": 2 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["8", "2"] }
     },
     {
       "id": "k-compare-numbers-20-keypad-2",
@@ -4461,13 +4464,13 @@
       "narration": "Which number is greater, 9 or 12?",
       "prompt": "Which is greater?",
       "why": "12 comes after 9 when we count. Numbers that come later are greater. So 12 is greater.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["12", "9"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 12 },
         { "id": "b", "kind": "number", "value": 9 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["12", "9"] }
     },
     {
       "id": "k-compare-numbers-20-keypad-3",
@@ -4536,13 +4539,13 @@
       "narration": "Which number is less, 14 or 16?",
       "prompt": "Which is less?",
       "why": "Count up: 14, 15, 16. 14 comes first, so 14 is less.",
-      "game": { "kind": "compare", "ask": "least", "values": ["16", "14"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 16 },
         { "id": "b", "kind": "number", "value": 14 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["16", "14"] }
     },
     {
       "id": "k-compare-numbers-20-number-line-3",
@@ -6332,13 +6335,13 @@
       "narration": "Which number is greater, 7 or 12?",
       "prompt": "Which is greater?",
       "why": "12 has a ten and 7 does not. So 12 is greater than 7.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["7", "12"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 7 },
         { "id": "b", "kind": "number", "value": 12 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["7", "12"] }
     },
     {
       "id": "g1-compare-order-50-tap-2",
@@ -6347,13 +6350,13 @@
       "narration": "Which number is less, 15 or 9?",
       "prompt": "Which is less?",
       "why": "9 is only ones. 15 has a ten. So 9 is less than 15.",
-      "game": { "kind": "compare", "ask": "least", "values": ["9", "15"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 9 },
         { "id": "b", "kind": "number", "value": 15 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "least", "values": ["9", "15"] }
     },
     {
       "id": "g1-compare-order-50-keypad-1",
@@ -6362,9 +6365,9 @@
       "narration": "Type the greater number, 6 or 11.",
       "prompt": "6 or 11: greater?",
       "why": "11 comes after 6 when we count. Numbers later in counting are greater. So 11 is greater.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["6", "11"] },
       "type": "keypad",
-      "answer": 11
+      "answer": 11,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["6", "11"] }
     },
     {
       "id": "g1-compare-order-50-number-line-1",
@@ -6377,7 +6380,8 @@
       "min": 0,
       "max": 20,
       "step": 1,
-      "target": 13
+      "target": 13,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["5", "13"] }
     },
     {
       "id": "g1-compare-order-50-tap-3",
@@ -6410,13 +6414,13 @@
       "narration": "Which number is greater, 34 or 28?",
       "prompt": "Which is greater?",
       "why": "34 has 3 tens. 28 has 2 tens. More tens means greater, so 34.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["28", "34"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 28 },
         { "id": "b", "kind": "number", "value": 34 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["28", "34"] }
     },
     {
       "id": "g1-compare-order-50-keypad-2",
@@ -6425,9 +6429,9 @@
       "narration": "Type the number that is less, 41 or 36.",
       "prompt": "Less: 41 or 36",
       "why": "36 has 3 tens. 41 has 4 tens. Fewer tens means less, so 36.",
-      "game": { "kind": "compare", "ask": "least", "values": ["41", "36"] },
       "type": "keypad",
-      "answer": 36
+      "answer": 36,
+      "game": { "kind": "compare", "ask": "least", "values": ["41", "36"] }
     },
     {
       "id": "g1-compare-order-50-number-line-2",
@@ -6440,7 +6444,8 @@
       "min": 20,
       "max": 50,
       "step": 1,
-      "target": 31
+      "target": 31,
+      "game": { "kind": "compare", "ask": "least", "values": ["44", "31", "38"] }
     },
     {
       "id": "g1-compare-order-50-tap-5",
@@ -6449,13 +6454,13 @@
       "narration": "Sam has 23 stickers. Mia has 32 stickers. Which number is less, 23 or 32?",
       "prompt": "Which is less?",
       "why": "23 has 2 tens. 32 has 3 tens. So 23 is less.",
-      "game": { "kind": "compare", "ask": "least", "values": ["32", "23"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 32 },
         { "id": "b", "kind": "number", "value": 23 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["32", "23"] }
     },
     {
       "id": "g1-compare-order-50-tap-6",
@@ -6464,14 +6469,14 @@
       "narration": "Put 25, 14, and 38 in order from least to greatest. Which number comes first?",
       "prompt": "Least to greatest: first?",
       "why": "Least to greatest starts with the smallest. 14 has just 1 ten. So 14 is first.",
-      "game": { "kind": "compare", "ask": "least", "values": ["25", "38", "14"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 25 },
         { "id": "b", "kind": "number", "value": 38 },
         { "id": "c", "kind": "number", "value": 14 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "least", "values": ["25", "38", "14"] }
     },
     {
       "id": "g1-compare-order-50-keypad-3",
@@ -6480,9 +6485,9 @@
       "narration": "Put 18, 42, and 27 in order from greatest to least. Type the number in the middle.",
       "prompt": "Greatest to least: middle?",
       "why": "The order is 42, 27, 18. The number in the middle is 27.",
-      "game": { "kind": "compare", "ask": "middle", "values": ["18", "42", "27"] },
       "type": "keypad",
-      "answer": 27
+      "answer": 27,
+      "game": { "kind": "compare", "ask": "middle", "values": ["18", "42", "27"] }
     },
     {
       "id": "g1-compare-order-50-tap-7",
@@ -6491,13 +6496,13 @@
       "narration": "Which number is greater, 38 or 41?",
       "prompt": "Which is greater?",
       "why": "Look at the tens first. 41 has 4 tens and 38 has 3 tens. So 41 is greater.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["38", "41"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 38 },
         { "id": "b", "kind": "number", "value": 41 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["38", "41"] }
     },
     {
       "id": "g1-compare-order-50-number-line-3",
@@ -6519,9 +6524,9 @@
       "narration": "Three kids have 26, 19, and 33 cards. Type the fewest number of cards.",
       "prompt": "Fewest: 26, 19, 33",
       "why": "19 has just 1 ten. 26 and 33 have more tens. So 19 is the least.",
-      "game": { "kind": "compare", "ask": "least", "values": ["26", "19", "33"] },
       "type": "keypad",
-      "answer": 19
+      "answer": 19,
+      "game": { "kind": "compare", "ask": "least", "values": ["26", "19", "33"] }
     },
     {
       "id": "g1-compare-order-50-tap-8",
@@ -9403,13 +9408,13 @@
       "narration": "Which number is greater, 87 or 120?",
       "prompt": "Which is greater?",
       "why": "120 has 1 hundred. 87 has no hundreds. So 120 is greater than 87.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["87", "120"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 87 },
         { "id": "b", "kind": "number", "value": 120 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["87", "120"] }
     },
     {
       "id": "g2-compare-order-200-tap-2",
@@ -9418,13 +9423,13 @@
       "narration": "Which number is less, 150 or 105?",
       "prompt": "Which is less?",
       "why": "Both have 1 hundred. 105 has 0 tens and 150 has 5 tens. So 105 is less.",
-      "game": { "kind": "compare", "ask": "least", "values": ["150", "105"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 150 },
         { "id": "b", "kind": "number", "value": 105 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["150", "105"] }
     },
     {
       "id": "g2-compare-order-200-tap-3",
@@ -9433,13 +9438,13 @@
       "narration": "Is 190 closer to 100 or closer to 200?",
       "prompt": "190 is closer to?",
       "why": "190 is only 10 away from 200. It is 90 away from 100. So it is closer to 200.",
-      "game": { "kind": "compare", "ask": "closer", "values": ["100", "200"], "target": "190" },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 100 },
         { "id": "b", "kind": "number", "value": 200 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "closer", "values": ["100", "200"], "target": "190" }
     },
     {
       "id": "g2-compare-order-200-keypad-1",
@@ -9448,9 +9453,9 @@
       "narration": "Which number is greater, 94 or 149? Type the greater number.",
       "prompt": "94 or 149?",
       "why": "149 has 1 hundred. 94 has none. So 149 is the greater number.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["94", "149"] },
       "type": "keypad",
-      "answer": 149
+      "answer": 149,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["94", "149"] }
     },
     {
       "id": "g2-compare-order-200-number-line-1",
@@ -9472,14 +9477,14 @@
       "narration": "Which number is the greatest, 138, 183, or 118?",
       "prompt": "Greatest number?",
       "why": "All have 1 hundred. Now check the tens. 8 tens is more than 3 tens or 1 ten. So 183 is greatest.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["138", "183", "118"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 138 },
         { "id": "b", "kind": "number", "value": 183 },
         { "id": "c", "kind": "number", "value": 118 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["138", "183", "118"] }
     },
     {
       "id": "g2-compare-order-200-tap-5",
@@ -9488,14 +9493,14 @@
       "narration": "Mia puts 150, 105, and 115 in order from least to greatest. Which number goes first?",
       "prompt": "Which goes first?",
       "why": "Least to greatest starts with the smallest. 105 has the fewest tens. So 105 goes first.",
-      "game": { "kind": "compare", "ask": "least", "values": ["150", "115", "105"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 150 },
         { "id": "b", "kind": "number", "value": 115 },
         { "id": "c", "kind": "number", "value": 105 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "least", "values": ["150", "115", "105"] }
     },
     {
       "id": "g2-compare-order-200-keypad-2",
@@ -9504,9 +9509,9 @@
       "narration": "Here are 163, 136, and 183. Type the least number.",
       "prompt": "163, 136, 183",
       "why": "All have 1 hundred. 136 has 3 tens. The others have more tens. So 136 is least.",
-      "game": { "kind": "compare", "ask": "least", "values": ["163", "136", "183"] },
       "type": "keypad",
-      "answer": 136
+      "answer": 136,
+      "game": { "kind": "compare", "ask": "least", "values": ["163", "136", "183"] }
     },
     {
       "id": "g2-compare-order-200-keypad-3",
@@ -9515,9 +9520,9 @@
       "narration": "Put 120, 87, and 150 in order from least to greatest. Type the middle number.",
       "prompt": "Middle number?",
       "why": "The order is 87, then 120, then 150. The middle number is 120.",
-      "game": { "kind": "compare", "ask": "middle", "values": ["120", "87", "150"] },
       "type": "keypad",
-      "answer": 120
+      "answer": 120,
+      "game": { "kind": "compare", "ask": "middle", "values": ["120", "87", "150"] }
     },
     {
       "id": "g2-compare-order-200-number-line-2",
@@ -9530,7 +9535,8 @@
       "min": 0,
       "max": 200,
       "step": 10,
-      "target": 90
+      "target": 90,
+      "game": { "kind": "compare", "ask": "least", "values": ["140", "90", "120"] }
     },
     {
       "id": "g2-compare-order-200-tap-6",
@@ -9544,7 +9550,8 @@
         { "id": "a", "kind": "text", "text": "True" },
         { "id": "b", "kind": "text", "text": "False" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "relation", "values": ["99", "101"], "claim": "more" }
     },
     {
       "id": "g2-compare-order-200-keypad-4",
@@ -9553,9 +9560,9 @@
       "narration": "Here are 175, 157, 171, and 177. Type the greatest number.",
       "prompt": "Greatest of four",
       "why": "All have 1 hundred and 7 or 5 tens. Compare the ones in 175, 171, and 177. 177 is greatest.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["175", "157", "171", "177"] },
       "type": "keypad",
-      "answer": 177
+      "answer": 177,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["175", "157", "171", "177"] }
     },
     {
       "id": "g2-compare-order-200-keypad-5",
@@ -9578,7 +9585,8 @@
       "min": 150,
       "max": 190,
       "step": 5,
-      "target": 175
+      "target": 175,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["165", "156", "175"] }
     },
     {
       "id": "g2-compare-order-200-number-line-4",
@@ -9591,7 +9599,8 @@
       "min": 0,
       "max": 200,
       "step": 20,
-      "target": 120
+      "target": 120,
+      "game": { "kind": "compare", "ask": "middle", "values": ["60", "180", "120"] }
     },
     {
       "id": "g2-fair-share-fractions-tap-1",
@@ -11858,13 +11867,13 @@
       "narration": "Which is greater, 430 or 340?",
       "prompt": "Which is greater?",
       "why": "Look at the hundreds first. 430 has 4 hundreds and 340 has 3 hundreds. So 430 is greater.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["430", "340"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 430 },
         { "id": "b", "kind": "number", "value": 340 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["430", "340"] }
     },
     {
       "id": "g3-compare-order-1000-tap-2",
@@ -11873,13 +11882,13 @@
       "narration": "Which is less, 520 or 250?",
       "prompt": "Which is less?",
       "why": "Compare the hundreds. 250 has 2 hundreds and 520 has 5 hundreds. So 250 is less.",
-      "game": { "kind": "compare", "ask": "least", "values": ["520", "250"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 520 },
         { "id": "b", "kind": "number", "value": 250 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "least", "values": ["520", "250"] }
     },
     {
       "id": "g3-compare-order-1000-keypad-1",
@@ -11888,9 +11897,9 @@
       "narration": "Sam has 275 points, Maya has 90 points, and Lena has 410 points. What is the greatest number of points?",
       "prompt": "Greatest: 275, 90, 410",
       "why": "410 has 4 hundreds. 275 has 2 hundreds and 90 has none. So 410 is the greatest.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["275", "90", "410"] },
       "type": "keypad",
-      "answer": 410
+      "answer": 410,
+      "game": { "kind": "compare", "ask": "greatest", "values": ["275", "90", "410"] }
     },
     {
       "id": "g3-compare-order-1000-number-line-1",
@@ -11925,13 +11934,13 @@
       "narration": "Which is greater, 583 or 538?",
       "prompt": "Which is greater?",
       "why": "Both have 5 hundreds. Compare the tens. 8 tens is more than 3 tens, so 583 is greater.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["583", "538"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 583 },
         { "id": "b", "kind": "number", "value": 538 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["583", "538"] }
     },
     {
       "id": "g3-compare-order-1000-tap-4",
@@ -11945,7 +11954,8 @@
         { "id": "a", "kind": "text", "text": "greater than 500" },
         { "id": "b", "kind": "text", "text": "less than 500" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "relation", "values": ["462", "500"] }
     },
     {
       "id": "g3-compare-order-1000-keypad-2",
@@ -11954,9 +11964,9 @@
       "narration": "Put 640, 604, and 460 in order from least to greatest. What is the middle number?",
       "prompt": "Middle of 640, 604, 460",
       "why": "The order is 460, 604, 640. The number in the middle is 604.",
-      "game": { "kind": "compare", "ask": "middle", "values": ["640", "604", "460"] },
       "type": "keypad",
-      "answer": 604
+      "answer": 604,
+      "game": { "kind": "compare", "ask": "middle", "values": ["640", "604", "460"] }
     },
     {
       "id": "g3-compare-order-1000-number-line-3",
@@ -11978,14 +11988,14 @@
       "narration": "Which number is least: 705, 750, or 570?",
       "prompt": "Which is least?",
       "why": "570 has 5 hundreds. The other two have 7 hundreds. So 570 is the least.",
-      "game": { "kind": "compare", "ask": "least", "values": ["705", "750", "570"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 705 },
         { "id": "b", "kind": "number", "value": 750 },
         { "id": "c", "kind": "number", "value": 570 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "least", "values": ["705", "750", "570"] }
     },
     {
       "id": "g3-compare-order-1000-tap-6",
@@ -11994,7 +12004,6 @@
       "narration": "Which number is greatest: 899, 989, 898, or 998?",
       "prompt": "Which is greatest?",
       "why": "All have 8 or 9 hundreds. 989 and 998 have 9 hundreds. Then 9 tens beats 8 tens, so 998 is greatest.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["899", "989", "898", "998"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 899 },
@@ -12002,7 +12011,8 @@
         { "id": "c", "kind": "number", "value": 898 },
         { "id": "d", "kind": "number", "value": 998 }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["899", "989", "898", "998"] }
     },
     {
       "id": "g3-compare-order-1000-keypad-3",
@@ -14459,7 +14469,6 @@
       "narration": "Four pans of brownies are the same size. Which share is the biggest: 1/5, 1/10, 1/2, or 1/4?",
       "prompt": "Which share is biggest?",
       "why": "The smallest number of sharers gives the biggest share. Sharing by 2 gives 1/2, the biggest.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["1/5", "1/10", "1/2", "1/4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "1/5" },
@@ -14467,7 +14476,8 @@
         { "id": "c", "kind": "text", "text": "1/2" },
         { "id": "d", "kind": "text", "text": "1/4" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["1/5", "1/10", "1/2", "1/4"] }
     },
     {
       "id": "g4-compare-fair-shares-keypad-2",
@@ -15753,13 +15763,13 @@
       "narration": "Which is greater, 3/8 or 5/8?",
       "prompt": "Which is greater?",
       "why": "The denominators match, so compare the numerators. 5 is more than 3, so 5/8 is greater than 3/8.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/8"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/8" },
         { "id": "b", "kind": "text", "text": "5/8" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/8"] }
     },
     {
       "id": "g5-compare-order-fractions-tap-2",
@@ -15768,13 +15778,13 @@
       "narration": "Which is greater, 2/3 or 2/6?",
       "prompt": "Which is greater?",
       "why": "The numerators match, so look at the denominators. Thirds are bigger pieces than sixths, so 2/3 is greater than 2/6.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["2/3", "2/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "2/3" },
         { "id": "b", "kind": "text", "text": "2/6" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["2/3", "2/6"] }
     },
     {
       "id": "g5-compare-order-fractions-number-line-1",
@@ -15811,7 +15821,8 @@
         { "id": "a", "kind": "text", "text": "less than 1/2" },
         { "id": "b", "kind": "text", "text": "more than 1/2" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "relation", "values": ["3/8", "1/2"] }
     },
     {
       "id": "g5-compare-order-fractions-tap-4",
@@ -15820,13 +15831,13 @@
       "narration": "Which is greater, 5/6 or 3/8?",
       "prompt": "Which is greater?",
       "why": "Half of 6 is 3, so 5/6 is more than 1/2. Half of 8 is 4, so 3/8 is less than 1/2. That makes 5/6 greater.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "3/8" },
         { "id": "b", "kind": "text", "text": "5/6" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3/8", "5/6"] }
     },
     {
       "id": "g5-compare-order-fractions-tap-5",
@@ -15835,14 +15846,14 @@
       "narration": "Which is greatest, 1 1/2, 4/5, or 7/4?",
       "prompt": "Which is greatest?",
       "why": "4/5 is less than 1 whole. 7/4 is 1 3/4. Since 1 3/4 is more than 1 1/2, 7/4 is the greatest.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["1 1/2", "4/5", "7/4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "1 1/2" },
         { "id": "b", "kind": "text", "text": "4/5" },
         { "id": "c", "kind": "text", "text": "7/4" }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["1 1/2", "4/5", "7/4"] }
     },
     {
       "id": "g5-compare-order-fractions-number-line-2",
@@ -15884,7 +15895,6 @@
       "narration": "Which is least, 5/2, 9/5, 9/4, or 10/6?",
       "prompt": "Which is least?",
       "why": "Change to mixed numbers: 5/2 is 2 1/2, 9/5 is 1 4/5, 9/4 is 2 1/4, and 10/6 is 1 4/6. 4/6 is less than 4/5, so 10/6 is least.",
-      "game": { "kind": "compare", "ask": "least", "values": ["5/2", "9/5", "9/4", "10/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "5/2" },
@@ -15892,7 +15902,8 @@
         { "id": "c", "kind": "text", "text": "9/4" },
         { "id": "d", "kind": "text", "text": "10/6" }
       ],
-      "answerChoiceId": "d"
+      "answerChoiceId": "d",
+      "game": { "kind": "compare", "ask": "least", "values": ["5/2", "9/5", "9/4", "10/6"] }
     },
     {
       "id": "g5-compare-order-fractions-number-line-3",
@@ -15914,13 +15925,13 @@
       "narration": "Which is greater, 5/6 or 7/8?",
       "prompt": "Which is greater?",
       "why": "Each is one piece short of a whole. A missing eighth is smaller than a missing sixth, so 7/8 is closer to 1 and greater.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["7/8", "5/6"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "7/8" },
         { "id": "b", "kind": "text", "text": "5/6" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["7/8", "5/6"] }
     },
     {
       "id": "g5-compare-order-fractions-keypad-4",
@@ -15944,7 +15955,8 @@
         { "id": "a", "kind": "text", "text": "No" },
         { "id": "b", "kind": "text", "text": "Yes" }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "relation", "values": ["11/8", "3/2"], "claim": "more" }
     },
     {
       "id": "g5-decimals-hundredths-tap-1",
@@ -15992,13 +16004,13 @@
       "narration": "Which is greater, 0.6 or 0.06?",
       "prompt": "Which is greater?",
       "why": "0.6 is 60 hundredths, and 0.06 is only 6 hundredths. Since 60 is more than 6, 0.6 is greater.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["0.6", "0.06"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 0.6 },
         { "id": "b", "kind": "number", "value": 0.06 }
       ],
-      "answerChoiceId": "a"
+      "answerChoiceId": "a",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["0.6", "0.06"] }
     },
     {
       "id": "g5-decimals-hundredths-keypad-2",
@@ -16018,14 +16030,14 @@
       "narration": "Which is least: 2.45, 2.54, or 2.4?",
       "prompt": "Which is least?",
       "why": "Think of 2.4 as 2.40. Then compare 240, 245, and 254 hundredths. The smallest is 2.40, so 2.4 is least.",
-      "game": { "kind": "compare", "ask": "least", "values": ["2.45", "2.54", "2.4"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 2.45 },
         { "id": "b", "kind": "number", "value": 2.54 },
         { "id": "c", "kind": "number", "value": 2.4 }
       ],
-      "answerChoiceId": "c"
+      "answerChoiceId": "c",
+      "game": { "kind": "compare", "ask": "least", "values": ["2.45", "2.54", "2.4"] }
     },
     {
       "id": "g5-decimals-hundredths-number-line-2",
@@ -16063,7 +16075,8 @@
         { "id": "a", "kind": "text", "text": "No" },
         { "id": "b", "kind": "text", "text": "Yes" }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "relation", "values": ["6.3", "6.30"], "claim": "same" }
     },
     {
       "id": "g5-decimals-hundredths-number-line-3",
@@ -16110,7 +16123,6 @@
       "narration": "Which is greatest: 3.09, 3.9, 3.19, or 3.1?",
       "prompt": "Which is greatest?",
       "why": "All have 3 ones. Rename them as 3.09, 3.90, 3.19, and 3.10. Now 90 hundredths is the most, so 3.9 is greatest.",
-      "game": { "kind": "compare", "ask": "greatest", "values": ["3.09", "3.9", "3.19", "3.1"] },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "number", "value": 3.09 },
@@ -16118,7 +16130,8 @@
         { "id": "c", "kind": "number", "value": 3.19 },
         { "id": "d", "kind": "number", "value": 3.1 }
       ],
-      "answerChoiceId": "b"
+      "answerChoiceId": "b",
+      "game": { "kind": "compare", "ask": "greatest", "values": ["3.09", "3.9", "3.19", "3.1"] }
     },
     {
       "id": "g5-decimals-hundredths-keypad-5",

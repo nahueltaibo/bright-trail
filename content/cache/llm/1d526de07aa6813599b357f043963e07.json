@@ -1,0 +1,53 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g4-compare-fair-shares-tap-3",
+        "fits": false,
+        "ask": "relation",
+        "values": ["4", "8"],
+        "target": null,
+        "claim": null,
+        "note": "Compares shares, not the listed friend counts; scene would not match answer."
+      },
+      {
+        "itemId": "g4-compare-fair-shares-tap-5",
+        "fits": true,
+        "ask": "greatest",
+        "values": ["1/5", "1/10", "1/2", "1/4"],
+        "target": null,
+        "claim": null,
+        "note": "Greatest fraction is 1/2."
+      },
+      {
+        "itemId": "g4-compare-fair-shares-keypad-2",
+        "fits": false,
+        "ask": "greatest",
+        "values": ["2", "6"],
+        "target": null,
+        "claim": null,
+        "note": "Asks for a difference (subtraction)."
+      },
+      {
+        "itemId": "g4-compare-fair-shares-tap-6",
+        "fits": false,
+        "ask": "least",
+        "values": ["4", "5", "10"],
+        "target": null,
+        "claim": null,
+        "note": "Smallest share is with most friends; scene's least would pick 4, not 10."
+      },
+      {
+        "itemId": "g4-compare-fair-shares-tap-8",
+        "fits": false,
+        "ask": "relation",
+        "values": ["1/2", "2/4"],
+        "target": null,
+        "claim": "same",
+        "note": "Shares 1/2 and 2/4 are not listed numbers; item lists 2 and 4 friends and pizzas."
+      }
+    ]
+  }
+}
