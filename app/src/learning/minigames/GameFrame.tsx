@@ -30,9 +30,11 @@ export type GameChoice = { id: string; label: string; value: GameValue };
 export type GameInput =
   | { kind: 'choices'; choices: GameChoice[] }
   /** `decimal` adds a decimal point key, for decimal answers only. */
-  | { kind: 'keypad'; decimal?: boolean };
+  | { kind: 'keypad'; decimal?: boolean }
+  /** The child answers on the stage itself, through `answer`. `hint` says where to tap. */
+  | { kind: 'stage'; hint: string };
 
-type Phase = 'ask' | 'playing' | 'result' | 'resetting';
+type Phase = 'intro' | 'ask' | 'playing' | 'result' | 'resetting';
 type Outcome = { correct: boolean; title: string; body: string };
 
 export const sameAnswer = (a: GameValue, b: GameValue) =>
@@ -66,7 +68,13 @@ type Props = GameFrameProps & {
     cheer: boolean;
     /** Answers with a choice's label, for a stage that takes drops. `undefined` once answered. */
     pick: ((label: string) => void) | undefined;
+    /** Answers from a tap on the stage, for `stage` input. `undefined` until the stage can answer. */
+    answer: ((value: GameValue, label: string) => void) | undefined;
+    /** Labels already answered wrong, so a stage can fade them for another try. */
+    tried: string[];
   }) => ReactNode;
+  /** Plays before the question is asked, like a line walking in. Answers wait for it. */
+  intro?: () => Promise<void>;
   /** Lets a choice be dragged as well as tapped. Says whether a screen point is a drop spot. */
   onDropChoice?: (pageX: number, pageY: number) => Promise<boolean>;
   /** Plays the story out for the child's answer. Returns what to say about it. */
@@ -84,7 +92,7 @@ export function GameFrame(props: Props) {
   const { landscape, scale, width } = useLayout();
   const typed = input.kind === 'keypad';
 
-  const [phase, setPhase] = useState<Phase>('ask');
+  const [phase, setPhase] = useState<Phase>(props.intro ? 'intro' : 'ask');
   const [tried, setTried] = useState<string[]>([]);
   const [picked, setPicked] = useState<string | null>(null);
   const [outcome, setOutcome] = useState<Outcome | null>(null);
@@ -107,9 +115,20 @@ export function GameFrame(props: Props) {
     narrateRef.current?.(texts);
   };
 
+  const introRef = useRef(props.intro);
   useEffect(() => {
-    lastSpoken.current = questionRef.current;
-    narrateRef.current?.(lastSpoken.current);
+    let live = true;
+    const ask = () => {
+      if (!live) return;
+      setPhase('ask');
+      lastSpoken.current = questionRef.current;
+      narrateRef.current?.(lastSpoken.current);
+    };
+    if (introRef.current) void introRef.current().then(ask);
+    else ask();
+    return () => {
+      live = false;
+    };
   }, []);
 
   const choose = async (value: GameValue, label: string, choiceId?: string) => {
@@ -161,6 +180,13 @@ export function GameFrame(props: Props) {
     narrateRef.current?.(lastSpoken.current, { replay: true });
   };
 
+  const answerOnStage =
+    phase === 'ask' && input.kind === 'stage'
+      ? (value: GameValue, label: string) => {
+          if (!tried.includes(label)) void chooseRef.current(value, label);
+        }
+      : undefined;
+
   const choices = input.kind === 'choices' ? input.choices : [];
   // Until the row lays out, guess from the window. The guess only sets the first frame's text.
   const across = (rowWidth || (landscape ? width / 2.4 : width)) - 2 * ROW_PAD;
@@ -190,7 +216,12 @@ export function GameFrame(props: Props) {
     ),
   );
   const inputView =
-    input.kind === 'choices' ? (
+    input.kind === 'stage' ? (
+      <View style={styles.hintRow}>
+        <Icon name="hand" size={28} tint={colors.softInk} />
+        <Text style={[styles.text, styles.hint, { fontSize: 20 * scale }]}>{input.hint}</Text>
+      </View>
+    ) : input.kind === 'choices' ? (
       <View
         style={[styles.choices, wrap && styles.wrap]}
         onLayout={(e: LayoutChangeEvent) => setRowWidth(e.nativeEvent.layout.width)}
@@ -295,7 +326,7 @@ export function GameFrame(props: Props) {
   );
 
   // eslint-disable-next-line react-hooks/refs -- `pick` reads refs only when called.
-  const stageView = props.stage({ cheer, pick });
+  const stageView = props.stage({ cheer, pick, answer: answerOnStage, tried });
   const stage = <View style={styles.stages}>{stageView}</View>;
   const bottom = feedback || inputView;
 
@@ -499,4 +530,6 @@ const styles = StyleSheet.create({
   },
   submit: { backgroundColor: colors.accent, ...shadow.ledgeTrail },
   empty: { color: colors.softInk },
+  hintRow: { flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8 },
+  hint: { color: colors.softInk },
 });
