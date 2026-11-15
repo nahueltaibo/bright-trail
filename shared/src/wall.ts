@@ -122,7 +122,7 @@ const RELATION_WORDS: [WallRelation, RegExp][] = [
 ];
 
 /** The one relation a choice's words name, like "less than 1/2". Null for none or several. */
-export function relationWord(text: string): WallRelation | null {
+export function wallRelationWord(text: string): WallRelation | null {
   const found = RELATION_WORDS.filter(([, word]) => word.test(text)).map(([r]) => r);
   return found.length === 1 ? found[0] : null;
 }
@@ -198,10 +198,10 @@ export function wallProblems(item: Item, scene: WallScene): string[] {
         problems.push(`the wall answers ${expected ? 'yes' : 'no'} but the item does not`);
       }
     } else if (scene.ask === 'relation') {
-      const relations = texts.map((t) => relationWord(t!));
+      const relations = texts.map((t) => wallRelationWord(t!));
       if (relations.some((r) => r === null) || new Set(relations).size !== relations.length) {
         problems.push('the choices do not each name less, more, or the same');
-      } else if (relationWord(answerText!) !== expected) {
+      } else if (wallRelationWord(answerText!) !== expected) {
         problems.push(`${scene.amount} is ${expected} but the item answers ${answerText}`);
       }
     } else if (scene.ask === 'match') {

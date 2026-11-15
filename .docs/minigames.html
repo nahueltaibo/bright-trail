@@ -48,7 +48,7 @@
 <h1>BrightTrail — Minigames</h1>
 <p class="sub">Which items play as minigames, which don't, and what is left to build · Draft v0.5 · 2026-11-15</p>
 
-<p>488 of the 795 bundle items (61%) play as a minigame. The other 307 (39%) use the plain tap, keypad, or number-line screen. The foundation, the five planned games, the ordinal line-up, and the fraction wall are built. What remains is tagging more items, and content for the three card games.</p>
+<p>498 of the 795 bundle items (63%) play as a minigame. The other 297 (37%) use the plain tap, keypad, or number-line screen. The foundation, the five planned games, the ordinal line-up, and the fraction wall are built. What remains is tagging more items, and content for the three card games.</p>
 
 <h2 id="today">1. Minigames today</h2>
 <p>Every game is a <code>kind</code> of <code>item.game</code>. <code>GAMES</code> in <code>shared/src/game.ts</code> lists them.</p>
@@ -63,25 +63,25 @@
 <tr><td>Tenths and hundredths</td><td><code>grid</code></td><td><code>content:grid</code></td><td>38</td><td>Decimals, fractions, and percent on a grid or strip</td></tr>
 <tr><td>Stepping stones</td><td><code>stones</code></td><td><code>content:stones</code></td><td>22</td><td>Counting and skip counting</td></tr>
 <tr><td>Line up</td><td><code>lineup</code></td><td><code>content:lineup</code></td><td>4</td><td>Places in a line: first, second, last</td></tr>
-<tr><td>Fraction wall</td><td><code>wall</code></td><td><code>content:wall</code></td><td>12</td><td>Equal fractions, mixed and improper fractions, comparing unlike parts, wholes in unit fractions</td></tr>
+<tr><td>Fraction wall</td><td><code>wall</code></td><td><code>content:wall</code></td><td>10</td><td>Equal fractions, mixed and improper fractions, comparing unlike parts, wholes in unit fractions</td></tr>
 <tr><td>Sort it, Put in order, Label it</td><td><code>sort</code>, <code>order</code>, <code>label</code></td><td>None yet</td><td>0</td><td>Built for the other subjects in <a href="subjects.html">subjects.html</a>. The math bundle has no items for them.</td></tr>
 <tr><td>Frog hops</td><td>Not a game. Item field <code>hops</code>.</td><td><code>content:hops</code></td><td>88 of 191 number-line items</td><td>Plays the path after a number-line check. 76 of the 88 sit on items with no game.</td></tr>
 </table>
-<p>The 488 split as 86 + 80 + 99 + 55 + 56 + 48 + 38 + 22 + 4. The app shares its frame across games: <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props.</p>
+<p>The 498 split as 86 + 80 + 99 + 55 + 56 + 48 + 38 + 22 + 4 + 10. The app shares its frame across games: <code>GameFrame</code> owns the prompt, answers, play-out, and feedback, and <code>useGameProps</code> turns any item into its props.</p>
 
 <h2 id="gaps">2. Items with no minigame</h2>
-<p>307 items. Counts group them by skill, so anyone can reproduce them from <code>content/out/bundle.json</code>.</p>
+<p>297 items. Counts group them by skill, so anyone can reproduce them from <code>content/out/bundle.json</code>.</p>
 <table>
 <tr><th>Group</th><th>Items</th><th>Skills</th></tr>
-<tr><td>Fractions, decimals, percent</td><td>76</td><td>g1-fair-share-drawings, g1-half-equals-two-fourths, g2-fair-share-fractions, g2-third-equals-two-sixths, g4-represent-fractions, g4-decimal-tenths, g4-fraction-decimal-equivalence, g5-equivalent-fractions, g5-decimals-hundredths, g5-fraction-decimal-percent, g5-add-sub-like-fractions, g5-whole-by-unit-fraction</td></tr>
-<tr><td>Compare and order</td><td>55</td><td>k-more-less-same, k-compare-numbers-20, g1-compare-order-50, g1-compare-unit-fractions, g2-compare-order-200, g3-compare-order-1000, g4-compare-fair-shares, g5-compare-order-fractions</td></tr>
+<tr><td>Fractions, decimals, percent</td><td>66</td><td>g1-fair-share-drawings, g1-half-equals-two-fourths, g2-fair-share-fractions, g2-third-equals-two-sixths, g4-represent-fractions, g4-decimal-tenths, g4-fraction-decimal-equivalence, g5-equivalent-fractions, g5-decimals-hundredths, g5-fraction-decimal-percent, g5-add-sub-like-fractions, g5-whole-by-unit-fraction</td></tr>
+<tr><td>Compare and order</td><td>54</td><td>k-more-less-same, k-compare-numbers-20, g1-compare-order-50, g1-compare-unit-fractions, g2-compare-order-200, g3-compare-order-1000, g4-compare-fair-shares, g5-compare-order-fractions</td></tr>
 <tr><td>Add and subtract</td><td>63</td><td>k-add-sub-facts-5, k-add-sub-stories-10, g1-add-sub-facts-10, g1-add-sub-properties, g1-mental-math-20, g1-add-sub-problems-50, g2-add-sub-properties, g2-add-sub-facts-20</td></tr>
 <tr><td>Multiply and divide</td><td>38</td><td>k-equal-share, g1-equal-groups, g2-equal-groups-multiply, g2-division-sharing, g3-fair-share-20, g3-equivalent-fair-shares, g3-arrays-multiply-divide, g3-mult-div-*, g3-fraction-repeated-addition, g4-mult-div-facts-100</td></tr>
 <tr><td>Place value</td><td>37</td><td>k-read-write-numbers-20, k-make-numbers-to-10, g1-read-numbers-50, g1-compose-decompose-50, g2-whole-numbers-200, g3-whole-numbers-1000, g3-place-value</td></tr>
-<tr><td>Sequences</td><td>29</td><td>k-count-to-20, k-count-forward-back, g1-count-50, g4-count-unit-fractions</td></tr>
+<tr><td>Sequences</td><td>28</td><td>k-count-to-20, k-count-forward-back, g1-count-50, g4-count-unit-fractions</td></tr>
 <tr><td>Other</td><td>11</td><td>k-uses-of-numbers, k-subitize-5</td></tr>
 </table>
-<p>122 of the 307 are number-line items, and 76 of those already play the frog's path.</p>
+<p>122 of the 297 are number-line items, and 76 of those already play the frog's path.</p>
 
 <h3 id="why">Why they have no game</h3>
 <p>The candidate filters, not the LLM, leave out most items. 311 of the 358 never reached their group's tagger. Only 47 reached it and got turned down. <code>npm run content:coverage</code> replays every tagger from the LLM cache and prints the counts per skill. Add <code>--why</code> to list each turned-down item with its reason, or <code>--kind &lt;kind&gt;</code> for one tagger.</p>
@@ -153,7 +153,7 @@ flowchart LR
   C --> S[Stepping stones]:::done
   G --> FW[Fraction wall]:::done
   T --> L[Line up]:::done
-  T -.-> M[Tag the 307 left]
+  T -.-> M[Tag the 297 left]
   R --> K[Sort, order, label]:::done
   K -.-> N[Items for other subjects]
   classDef done fill:#d9f2e0,stroke:#2e8b57,color:#1f2328
@@ -169,10 +169,10 @@ flowchart LR
 <tr><td>5</td><td>Stepping stones</td><td>Done</td><td>22 of ~45</td><td>The frog hops stones by a fixed step, and one stone is missing. Builds on <code>hops.ts</code> and the number-line art.</td></tr>
 <tr><td>6</td><td>Sort it, Put in order, Label it</td><td>Built, no items</td><td>0</td><td>Card games for the other subjects. No tagger or content exists yet.</td></tr>
 <tr><td>7</td><td>Line up</td><td>Done</td><td>4 of 7</td><td>Animals or kids walk into a line while the narrator counts the places. The child taps the one in a place, or says which place one is in. A wrong answer counts up to the right one.</td></tr>
-<tr><td>8</td><td>Fraction wall</td><td>Done</td><td>12 of ~30</td><td>Strips of halves to twelfths stack under one whole. The child fills a strip to a dashed guide, or picks an answer and the strips fill to show why. Equal fractions end at the same edge.</td></tr>
+<tr><td>8</td><td>Fraction wall</td><td>Done</td><td>10 of ~30</td><td>Strips of halves to twelfths stack under one whole. The child fills a strip to a dashed guide, or picks an answer and the strips fill to show why. Equal fractions end at the same edge.</td></tr>
 </table>
 <p>Each "of" figure is the earlier estimate of how many items the game fits. The tagged count is what the tagger accepted.</p>
-<p class="note">Remaining work: tag more of the 307 items, and write items and a tagger for the card games.</p>
+<p class="note">Remaining work: tag more of the 297 items, and write items and a tagger for the card games.</p>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>

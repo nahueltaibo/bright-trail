@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { Item } from './item';
 import {
-  relationWord,
+  wallRelationWord,
   WallSceneSchema,
   wallAnswer,
   wallFraction,
@@ -77,13 +77,13 @@ describe('WallSceneSchema', () => {
   });
 });
 
-describe('relationWord', () => {
+describe('wallRelationWord', () => {
   it('names one relation or none', () => {
-    expect(relationWord('less than 1/2')).toBe('less');
-    expect(relationWord('bigger')).toBe('more');
-    expect(relationWord('the same')).toBe('same');
-    expect(relationWord('Leo')).toBeNull();
-    expect(relationWord('more or less')).toBeNull();
+    expect(wallRelationWord('less than 1/2')).toBe('less');
+    expect(wallRelationWord('bigger')).toBe('more');
+    expect(wallRelationWord('the same')).toBe('same');
+    expect(wallRelationWord('Leo')).toBeNull();
+    expect(wallRelationWord('more or less')).toBeNull();
   });
 });
 
