@@ -1,7 +1,15 @@
 import { describe, expect, it } from 'vitest';
 import sample from '../fixtures/sample-bundle.json';
 import { CONTENT_SCHEMA_VERSION, parseContentBundle } from './bundle';
-import { assembleBundle, ContentPackSchema, packId, packsFor, type ContentCore } from './packs';
+import {
+  assembleBundle,
+  ContentPackSchema,
+  manifestPath,
+  packId,
+  packsFor,
+  readContentPack,
+  type ContentCore,
+} from './packs';
 
 const bundle = parseContentBundle(sample);
 const core: ContentCore = {
@@ -29,6 +37,43 @@ describe('packId', () => {
 describe('ContentPackSchema', () => {
   it('rejects an id that does not match the subject and grade', () => {
     expect(ContentPackSchema.safeParse({ ...pack('1'), id: 'math-2' }).success).toBe(false);
+  });
+});
+
+describe('readContentPack', () => {
+  it('drops a game this build can’t read and keeps its item', () => {
+    const newer = pack('k');
+    newer.items = newer.items.map((item, i) =>
+      i === 0 ? { ...item, game: { kind: 'wall', rows: [1] } as never } : item,
+    );
+    const read = readContentPack(newer);
+    expect(read.items).toHaveLength(newer.items.length);
+    expect(read.items[0]).toEqual(pack('k').items[0]);
+  });
+
+  it('leaves out an item it can’t read without its game', () => {
+    const newer = pack('k');
+    newer.items = newer.items.map((item, i) =>
+      i === 0 ? { ...item, type: 'drag' as never } : item,
+    );
+    expect(readContentPack(newer).items.map((i) => i.id)).toEqual(
+      pack('k')
+        .items.slice(1)
+        .map((i) => i.id),
+    );
+  });
+
+  it('still rejects a pack from another schema version', () => {
+    expect(() =>
+      readContentPack({ ...pack('k'), schemaVersion: CONTENT_SCHEMA_VERSION + 1 }),
+    ).toThrow();
+  });
+});
+
+describe('manifestPath', () => {
+  it('names the schema version, so a build only reads manifests it can parse', () => {
+    expect(manifestPath('ab')).toBe(`manifests/v${CONTENT_SCHEMA_VERSION}/ab.json`);
+    expect(manifestPath('ab', 9)).toBe('manifests/v9/ab.json');
   });
 });
 

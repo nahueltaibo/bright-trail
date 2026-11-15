@@ -4,6 +4,7 @@ import {
   ContentCoreSchema,
   ContentManifestSchema,
   ContentPackSchema,
+  manifestPath,
   packId,
   SKILL_GRADES,
   SUBJECTS,
@@ -20,7 +21,7 @@ const sha256 = (text: string) => createHash('sha256').update(text).digest('hex')
 
 /**
  * Splits a bundle into core, one pack per subject and grade with content, and a manifest named
- * by the core's hash. Output is minified and deterministic, so hashes match the served bytes.
+ * by the schema version and the core's hash. Output is minified and deterministic, so hashes match the served bytes.
  */
 export function splitBundle(bundle: ContentBundle): {
   core: ContentCore;
@@ -71,6 +72,6 @@ export function splitBundle(bundle: ContentBundle): {
     generatedAt: bundle.generatedAt,
     packs,
   });
-  files.set(`manifests/${core.hash}.json`, JSON.stringify(manifest));
+  files.set(manifestPath(core.hash), JSON.stringify(manifest));
   return { core, manifest, files };
 }

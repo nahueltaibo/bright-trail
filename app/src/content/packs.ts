@@ -3,6 +3,7 @@ import {
   createSkillGraph,
   gradeRank,
   isUnlocked,
+  manifestPath,
   packsFor,
   SKILL_GRADES,
   statusOf,
@@ -17,7 +18,7 @@ import type { Repository, StoredPlacement } from '../storage/repository';
 
 /** Where packs come from. The app passes `fetch` and expo-crypto; tests read files from disk. */
 export type PackSource = {
-  /** Serves `manifests/<coreHash>.json` and the pack files. Undefined when the build has none. */
+  /** Serves `manifests/v<schemaVersion>/<coreHash>.json` and the pack files. Undefined when the build has none. */
   baseUrl: string | undefined;
   fetchText: (url: string) => Promise<string>;
   sha256: (text: string) => Promise<string>;
@@ -63,7 +64,7 @@ export async function fetchManifest(
   core: ContentCore,
   source: PackSource,
 ): Promise<ContentManifest> {
-  const text = await download(source, `manifests/${core.hash}.json`);
+  const text = await download(source, manifestPath(core.hash));
   const parsed = ContentManifestSchema.safeParse(JSON.parse(text));
   if (!parsed.success || parsed.data.coreHash !== core.hash) {
     throw new PackError(`The manifest for core ${core.hash.slice(0, 8)} is not valid.`);

@@ -46,6 +46,31 @@ export const ContentPackSchema = z
   });
 export type ContentPack = z.infer<typeof ContentPackSchema>;
 
+/**
+ * Reads a downloaded pack. Packs can be newer than this build, so an item's `game` it can't read
+ * is dropped and the item plays its own screen. An item it still can't read is left out.
+ */
+export function readContentPack(data: unknown): ContentPack {
+  const items = (data as { items?: unknown } | null)?.items;
+  if (!Array.isArray(items)) return ContentPackSchema.parse(data);
+  const readable = items.flatMap((item: unknown) => {
+    if (ItemSchema.safeParse(item).success) return [item];
+    if (typeof item !== 'object' || item === null) return [];
+    const rest: Record<string, unknown> = { ...item };
+    delete rest.game;
+    return ItemSchema.safeParse(rest).success ? [rest] : [];
+  });
+  return ContentPackSchema.parse({ ...(data as object), items: readable });
+}
+
+/**
+ * Where a core's manifest lives for one schema version. A build only fetches its own version, so
+ * a breaking bump leaves older builds on the last manifest they can read.
+ */
+export function manifestPath(coreHash: string, schemaVersion = CONTENT_SCHEMA_VERSION): string {
+  return `manifests/v${schemaVersion}/${coreHash}.json`;
+}
+
 export const PackEntrySchema = z.object({
   id: IdSchema,
   subject: SubjectSchema,
