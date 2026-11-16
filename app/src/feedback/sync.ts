@@ -1,3 +1,5 @@
+import type { Report } from '@bright-trail/shared';
+
 import type { Repository } from '../storage/repository';
 import type { QueuedReport } from '../storage/report';
 import type { CaptureFiles } from './captureTypes';
@@ -7,7 +9,12 @@ import { captureFiles } from './files';
 export type FeedbackDeps = {
   /** The feedback Worker, without `/v1/reports`. Undefined when the build has none. */
   baseUrl: string | undefined;
-  fetch: (url: string, init: { method: 'POST'; body: FormData }) => Promise<{ status: number }>;
+  fetch: (
+    url: string,
+    init: { method: 'POST'; body: FormData; signal: AbortSignal },
+  ) => Promise<{ status: number }>;
+  /** How long an upload may take before it counts as offline. */
+  timeoutMs?: number;
   /** The multipart value for a capture file, or null when the file is gone. */
   capturePart: (uri: string) => Promise<unknown>;
   files: Pick<CaptureFiles, 'remove'>;
@@ -35,6 +42,8 @@ export function defaultFeedbackDeps(): FeedbackDeps {
 }
 
 type Outcome = 'sent' | 'rejected' | 'retry';
+
+const TIMEOUT_MS = 30_000;
 
 let running: Promise<void> | null = null;
 let again = false;
@@ -86,19 +95,46 @@ async function syncOnce(repo: Repository, deps: FeedbackDeps) {
 
 async function upload(url: string, queued: QueuedReport, deps: FeedbackDeps): Promise<Outcome> {
   const capture = queued.capturePath ? await deps.capturePart(queued.capturePath) : null;
-  // A capture lost since the flag still lets the report go, as one without a picture.
-  const report = capture ? queued.report : { ...queued.report, hasCapture: false };
+  let status = await post(url, queued.report, capture, deps);
+  // The capture can be what the Worker refuses, and the report is worth more without it than lost.
+  if (capture && (status === 413 || status === 415)) {
+    status = await post(url, queued.report, null, deps);
+  }
+  if (status === null || status === 408 || status === 429 || status >= 500) return 'retry';
+  if (status >= 200 && status < 300) return 'sent';
+  return 'rejected';
+}
+
+/** The Worker's status, or null when no answer came in time. */
+async function post(
+  url: string,
+  report: Report,
+  capture: unknown,
+  deps: FeedbackDeps,
+): Promise<number | null> {
   const body = new FormData();
-  body.append('report', JSON.stringify(report));
+  // Without a capture, lost since the flag or refused, the report says it has none.
+  body.append('report', JSON.stringify(capture ? report : { ...report, hasCapture: false }));
   if (capture) body.append('capture', capture as Blob);
 
-  let status: number;
+  const abort = new AbortController();
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  // The race also covers a fetch that ignores the signal, so a stalled upload can't hold the run.
+  const timeout = new Promise<never>((_, reject) => {
+    timer = setTimeout(() => {
+      abort.abort();
+      reject(new Error('The upload timed out'));
+    }, deps.timeoutMs ?? TIMEOUT_MS);
+  });
   try {
-    ({ status } = await deps.fetch(url, { method: 'POST', body }));
+    const response = await Promise.race([
+      deps.fetch(url, { method: 'POST', body, signal: abort.signal }),
+      timeout,
+    ]);
+    return response.status;
   } catch {
-    return 'retry';
+    return null;
+  } finally {
+    clearTimeout(timer);
   }
-  if (status >= 200 && status < 300) return 'sent';
-  if (status === 429 || status >= 500) return 'retry';
-  return 'rejected';
 }

@@ -1,6 +1,14 @@
 import { REPORT_COMMENT_MAX } from '@bright-trail/shared';
 import { useState } from 'react';
-import { KeyboardAvoidingView, Modal, Platform, StyleSheet, TextInput, View } from 'react-native';
+import {
+  KeyboardAvoidingView,
+  Modal,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  TextInput,
+  View,
+} from 'react-native';
 
 import { KidButton, KidIconButton, useKidType } from '../design/kid';
 import { Text, useDyslexicFont } from '../design/Text';
@@ -41,36 +49,40 @@ export function ReportSheet({
         behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
         style={styles.backdrop}
       >
-        <View
-          accessibilityViewIsModal
-          style={[styles.sheet, { padding: 20 * s, gap: 14 * s, maxWidth: 640 * s }]}
-        >
-          <View style={styles.top}>
-            <SpeakerButton text={[TITLE, LEDE]} />
-            <Text accessibilityRole="header" style={[type.prompt, styles.title]}>
-              {TITLE}
-            </Text>
-            <KidIconButton icon="close" label="Close" variant="quiet" onPress={onClose} />
-          </View>
-          <Text style={type.lede}>{LEDE}</Text>
-          <TextInput
-            accessibilityLabel="What looks wrong"
-            testID="report-comment"
-            value={comment}
-            onChangeText={setComment}
-            maxLength={REPORT_COMMENT_MAX}
-            multiline
-            placeholder="The towers don't match the numbers"
-            placeholderTextColor={color.kidInkSoft}
-            style={[
-              styles.input,
-              dyslexic && dyslexicFont({ ...styles.input, fontSize: 20 * s }),
-              { minHeight: 110 * s, fontSize: 20 * s, padding: 14 * s, borderRadius: radius.md },
-            ]}
-          />
-          <View style={styles.bottom}>
-            <KidButton icon="check" label="Send" showLabel onPress={send} disabled={sending} />
-          </View>
+        <View accessibilityViewIsModal style={[styles.sheet, { maxWidth: 640 * s }]}>
+          {/* Scrolls when the keyboard leaves too little room, so Send stays reachable. */}
+          <ScrollView
+            keyboardShouldPersistTaps="handled"
+            automaticallyAdjustKeyboardInsets
+            contentContainerStyle={{ padding: 20 * s, gap: 14 * s }}
+          >
+            <View style={styles.top}>
+              <SpeakerButton text={[TITLE, LEDE]} />
+              <Text accessibilityRole="header" style={[type.prompt, styles.title]}>
+                {TITLE}
+              </Text>
+              <KidIconButton icon="close" label="Close" variant="quiet" onPress={onClose} />
+            </View>
+            <Text style={type.lede}>{LEDE}</Text>
+            <TextInput
+              accessibilityLabel="What looks wrong"
+              testID="report-comment"
+              value={comment}
+              onChangeText={setComment}
+              maxLength={REPORT_COMMENT_MAX}
+              multiline
+              placeholder="The picture doesn't match the question"
+              placeholderTextColor={color.kidInkSoft}
+              style={[
+                styles.input,
+                dyslexic && dyslexicFont({ ...styles.input, fontSize: 20 * s }),
+                { minHeight: 110 * s, fontSize: 20 * s, padding: 14 * s, borderRadius: radius.md },
+              ]}
+            />
+            <View style={styles.bottom}>
+              <KidButton icon="check" label="Send" showLabel onPress={send} disabled={sending} />
+            </View>
+          </ScrollView>
         </View>
       </KeyboardAvoidingView>
     </Modal>
@@ -82,10 +94,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     alignItems: 'center',
-    backgroundColor: 'rgba(61,46,6,0.35)',
+    backgroundColor: color.kidScrim,
   },
   sheet: {
     width: '100%',
+    flexShrink: 1,
     backgroundColor: color.kidBg,
     borderTopLeftRadius: radius.xl,
     borderTopRightRadius: radius.xl,

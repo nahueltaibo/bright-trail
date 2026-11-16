@@ -16,7 +16,7 @@ export type CaptureDeps = { capture: typeof captureItem; files: CaptureFiles };
 
 /**
  * Captures the item small enough for the Worker: PNG first, then JPEG at falling quality.
- * Returns the file URI, or null when capture is unsupported, fails, or nothing fits.
+ * Returns the file URI, or null when capture is unsupported, fails, or nothing fits. Never throws.
  */
 export async function captureForReport(
   target: CaptureTarget,
@@ -25,9 +25,14 @@ export async function captureForReport(
   for (const options of TRIES) {
     const result = await deps.capture(target, options);
     if (!result.ok) return null;
-    const size = deps.files.size(result.uri);
-    if (size !== null && size <= REPORT_CAPTURE_MAX_BYTES) return result.uri;
-    deps.files.remove(result.uri);
+    try {
+      const size = deps.files.size(result.uri);
+      if (size !== null && size <= REPORT_CAPTURE_MAX_BYTES) return result.uri;
+      deps.files.remove(result.uri);
+    } catch (e) {
+      console.warn('Could not check the capture', e);
+      return null;
+    }
   }
   return null;
 }

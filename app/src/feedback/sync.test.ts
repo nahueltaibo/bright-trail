@@ -96,6 +96,7 @@ describe('syncFeedback', () => {
   it.each([
     ['a rate limit', 429],
     ['a server error', 503],
+    ['a request timeout', 408],
     ['a network error', new TypeError('Network request failed')],
   ])('keeps reports queued and stops on %s', async (_, answer) => {
     await repo.reports.enqueue(report(REPORT_A, { hasCapture: true }), 'file:///docs/a.png');
@@ -111,6 +112,48 @@ describe('syncFeedback', () => {
       [REPORT_B, null],
     ]);
     expect(removed).toEqual([]);
+  });
+
+  it('stops a stalled upload after the timeout and keeps the report', async () => {
+    await repo.reports.enqueue(report(REPORT_A), null);
+    let signal: AbortSignal | undefined;
+    const { deps } = setup(() => 201, {
+      timeoutMs: 10,
+      fetch: (_, init) => {
+        signal = init.signal;
+        return new Promise(() => undefined);
+      },
+    });
+
+    await syncFeedback(repo, deps);
+
+    expect(signal?.aborted).toBe(true);
+    expect(await repo.reports.listPending()).toHaveLength(1);
+  });
+
+  it.each([413, 415])(
+    'sends the report again without its capture when the Worker answers %i to it',
+    async (refused) => {
+      await repo.reports.enqueue(report(REPORT_A, { hasCapture: true }), 'file:///docs/a.png');
+      const { deps, calls, removed } = setup((n) => (n === 1 ? refused : 201));
+
+      await syncFeedback(repo, deps);
+
+      expect(calls).toHaveLength(2);
+      expect(calls[1].parts).toEqual([['report', JSON.stringify(report(REPORT_A))]]);
+      expect(await repo.reports.listPending()).toEqual([]);
+      expect(removed).toEqual(['file:///docs/a.png']);
+    },
+  );
+
+  it('rejects a report the Worker refuses again without its capture', async () => {
+    await repo.reports.enqueue(report(REPORT_A, { hasCapture: true }), 'file:///docs/a.png');
+    const { deps, calls } = setup(() => 413);
+
+    await syncFeedback(repo, deps);
+
+    expect(calls).toHaveLength(2);
+    expect(await repo.reports.listPending()).toEqual([]);
   });
 
   it('keeps reports queued without a Worker URL, and never calls fetch', async () => {

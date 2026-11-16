@@ -50,6 +50,15 @@ describe('captureForReport', () => {
     expect(removed).toHaveLength(4);
   });
 
+  it('reports no capture when the file system throws', async () => {
+    const { deps } = setup([]);
+    deps.files.size = () => {
+      throw new Error('disk gone');
+    };
+    jest.spyOn(console, 'warn').mockImplementation(() => undefined);
+    await expect(captureForReport(target, deps)).resolves.toBeNull();
+  });
+
   it('reports no capture where capture is unsupported', async () => {
     const { deps } = setup([]);
     deps.capture = async () => ({ ok: false, reason: 'unsupported' });

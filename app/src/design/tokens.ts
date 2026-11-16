@@ -8,6 +8,7 @@ export const color = {
   kidPressed: '#ffe7a3',
   kidInk: '#5a4a1f',
   kidInkSoft: '#6b5a2c',
+  kidScrim: 'rgba(61,46,6,0.35)',
   kidLine: '#eadbb0',
   kidLineStrong: '#9a844a',
   trail: '#ffb347',
