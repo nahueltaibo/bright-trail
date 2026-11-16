@@ -4,7 +4,8 @@
   "workspaces": [
     "shared",
     "content",
-    "app"
+    "app",
+    "feedback-worker"
   ],
   "engines": {
     "node": "^22.13.0 || >=24.3.0"
