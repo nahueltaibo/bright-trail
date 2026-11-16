@@ -73,7 +73,7 @@ describe('sortCandidates', () => {
 });
 
 describe('acceptSorts', () => {
-  it('turns bin names into indexes and puts the card in the answer bin', () => {
+  it('turns bin names into indexes and puts the card in the answer bin, without its bin emoji', () => {
     const { scenes, rejected } = acceptSorts([brick], { scenes: [tagged(brick.id)] });
     expect(rejected).toEqual({});
     expect(scenes[brick.id]).toEqual({
@@ -86,7 +86,7 @@ describe('acceptSorts', () => {
         { card: { text: 'milk', emoji: '🥛' }, bin: 0 },
         { card: { text: 'rock' }, bin: 1 },
       ],
-      card: { text: 'brick', emoji: '🧱' },
+      card: { text: 'brick' },
       bin: 1,
     });
   });
