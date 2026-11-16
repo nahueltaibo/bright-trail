@@ -33,6 +33,8 @@ let reports = [];
 let next = null;
 let selectedId = null;
 let captureUrl = null;
+let listRequest = 0;
+let loadingMore = false;
 
 class Unauthorized extends Error {}
 
@@ -77,6 +79,7 @@ function signOut(message = '') {
   reports = [];
   next = null;
   selectedId = null;
+  listRequest++;
   clearCapture();
   $('reports').replaceChildren();
   $('detail').replaceChildren();
@@ -93,7 +96,22 @@ function signIn() {
   loadReports();
 }
 
+function hashId() {
+  try {
+    return decodeURIComponent(location.hash.slice(1));
+  } catch {
+    return '';
+  }
+}
+
 async function loadReports({ more = false } = {}) {
+  if (more && loadingMore) return;
+  // A newer load, such as a filter change, makes this one's answer stale.
+  const request = ++listRequest;
+  if (more) {
+    loadingMore = true;
+    $('more').disabled = true;
+  }
   $('error').textContent = '';
   const params = new URLSearchParams({ limit: String(PAGE_SIZE) });
   const status = $('status-filter').value;
@@ -101,13 +119,19 @@ async function loadReports({ more = false } = {}) {
   if (more && next) params.set('cursor', next);
   try {
     const body = await apiJson(`/admin/reports?${params}`);
+    if (request !== listRequest) return;
     reports = more ? [...reports, ...body.reports] : body.reports;
     next = body.next;
     renderList();
-    const fromHash = decodeURIComponent(location.hash.slice(1));
+    const fromHash = hashId();
     if (!more && fromHash && fromHash !== selectedId) openReport(fromHash);
   } catch (error) {
-    showError(error);
+    if (request === listRequest) showError(error);
+  } finally {
+    if (more) {
+      loadingMore = false;
+      $('more').disabled = false;
+    }
   }
 }
 
@@ -138,6 +162,7 @@ function clearCapture() {
 
 async function openReport(id) {
   selectedId = id;
+  clearCapture();
   history.replaceState(null, '', `#${encodeURIComponent(id)}`);
   renderList();
   const detail = $('detail');
@@ -150,6 +175,7 @@ async function openReport(id) {
     loadCapture(report);
   } catch (error) {
     if (selectedId !== id) return;
+    clearCapture();
     detail.replaceChildren();
     showError(error);
   }
@@ -165,8 +191,16 @@ async function loadCapture(report) {
     if (selectedId !== report.id) return;
     if (res.status === 404) return none();
     if (!res.ok) throw new Error(`The capture failed to load (${res.status}).`);
-    captureUrl = URL.createObjectURL(await res.blob());
-    box.replaceChildren(el('img', { src: captureUrl, alt: 'What the tester saw' }));
+    const blob = await res.blob();
+    if (selectedId !== report.id) return;
+    captureUrl = URL.createObjectURL(blob);
+    const img = el('img', { src: captureUrl, alt: 'What the tester saw' });
+    img.addEventListener('error', () =>
+      box.replaceChildren(
+        el('p', { className: 'error', textContent: 'The capture is not a readable image.' }),
+      ),
+    );
+    box.replaceChildren(img);
   } catch (error) {
     if (error instanceof Unauthorized || selectedId !== report.id) return;
     box.replaceChildren(el('p', { className: 'error', textContent: error.message }));
