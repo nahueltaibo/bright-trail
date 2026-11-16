@@ -63,7 +63,7 @@ export function ReportSheet({
               </Text>
               <KidIconButton icon="close" label="Close" variant="quiet" onPress={onClose} />
             </View>
-            <Text style={type.lede}>{LEDE}</Text>
+            <Text style={[type.lede, styles.lede]}>{LEDE}</Text>
             <TextInput
               accessibilityLabel="What looks wrong"
               testID="report-comment"
@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
   },
   top: { flexDirection: 'row', alignItems: 'center', gap: 12 },
   title: { flex: 1, textAlign: 'left' },
+  lede: { maxWidth: '100%', textAlign: 'left' },
   input: {
     ...font.body(),
     color: color.kidInk,
