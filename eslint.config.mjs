@@ -4,7 +4,12 @@ import prettierConfig from 'eslint-config-prettier/flat';
 import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
-const nodePackages = ['shared/**/*.ts', 'content/**/*.ts', 'feedback-worker/**/*.{ts,mjs}'];
+const nodePackages = [
+  'shared/**/*.ts',
+  'content/**/*.ts',
+  'feedback-worker/**/*.{ts,mjs}',
+  'feedback/**/*.ts',
+];
 
 export default [
   {

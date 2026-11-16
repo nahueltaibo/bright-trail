@@ -5,7 +5,8 @@
     "shared",
     "content",
     "app",
-    "feedback-worker"
+    "feedback-worker",
+    "feedback"
   ],
   "engines": {
     "node": "^22.13.0 || >=24.3.0"
@@ -41,6 +42,7 @@
     "content:voices": "npm run voices -w @bright-trail/content",
     "content:packs": "npm run packs -w @bright-trail/content",
     "content:publish": "npm run publish-packs -w @bright-trail/content --",
+    "feedback:triage": "npm run triage -w @bright-trail/feedback --",
     "build": "npm run build --workspaces --if-present",
     "e2e:build:android": "node scripts/build-android.mjs --e2e",
     "android:build:family": "node scripts/build-android.mjs --family",
