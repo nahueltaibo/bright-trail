@@ -1,4 +1,4 @@
-import { mkdtemp, readdir, rm } from 'node:fs/promises';
+import { mkdtemp, readdir, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
@@ -42,6 +42,7 @@ function fakeGh() {
   const issues: FakeIssue[] = [];
   const labels = [{ name: 'content' }, { name: 'app' }];
   const calls: { args: string[]; input?: string }[] = [];
+  let failTitle: string | null = null;
   const page = <T>(items: T[], query: URLSearchParams) => {
     const n = Number(query.get('page') ?? 1);
     const size = Number(query.get('per_page') ?? 30);
@@ -60,6 +61,7 @@ function fakeGh() {
       if (method === 'POST') labels.push(body);
       result = method === 'POST' ? body : page(labels, url.searchParams);
     } else if (path === '/issues' && method === 'POST') {
+      if (body.title === failTitle) throw new Error('gh: Validation Failed (HTTP 422)');
       const issue: FakeIssue = {
         number: issues.length + 1,
         title: body.title,
@@ -92,16 +94,19 @@ function fakeGh() {
     return JSON.stringify(result);
   };
   const writes = () => calls.filter((c) => c.args.includes('POST'));
-  return { gh, issues, labels, writes };
+  const failCreating = (title: string) => (failTitle = title);
+  return { gh, issues, labels, writes, failCreating };
 }
 
 let fake: ReturnType<typeof fakeGh>;
 let patches: number;
+let links: number;
 let failNextPatch: boolean;
 const lines: string[] = [];
 
 const workerFetch: Fetch = async (input, init) => {
   const url = new URL(input);
+  if (url.searchParams.get('link') === '1') links++;
   if (init?.method === 'PATCH') {
     patches++;
     if (failNextPatch) {
@@ -128,6 +133,7 @@ beforeEach(async () => {
   await worker.reset();
   fake = fakeGh();
   patches = 0;
+  links = 0;
   failNextPatch = false;
   lines.length = 0;
 });
@@ -174,6 +180,52 @@ describe('file', () => {
     expect(body).toContain('"comment": "Wrong towers. Mail me at [removed] @\u200Bsomeone"');
   });
 
+  it('scrubs every string in the report, not only the comment', async () => {
+    const base = sampleReport();
+    await insertReport(worker.env, {
+      report: {
+        ...base,
+        item: { ...item, prompt: 'Ask dad@example.com which is less?' },
+        device: { ...base.device, model: 'Pixel https://evil.example/x' },
+      },
+    });
+
+    await file(context());
+
+    const { body } = fake.issues[0];
+    expect(body).not.toContain('dad@example.com');
+    expect(body).not.toContain('evil.example');
+    expect(body).toContain('| Prompt | Ask \\[removed\\] which is less? |');
+    expect(body).toContain('"model": "Pixel [removed]"');
+    expect(body).toContain(`"id": "${base.id}"`);
+    expect(body).toContain(`"coreHash": "${base.content.coreHash}"`);
+  });
+
+  it('files the other groups when one fails', async () => {
+    await insertReport(worker.env);
+    const other = await insertReport(worker.env, {
+      report: report({ target: { contentKind: 'item', contentId: 'other', cardIndex: null } }),
+    });
+    fake.failCreating(`Feedback: item ${item.id}`);
+
+    await expect(file(context())).rejects.toThrow('1 of 2 groups failed to file.');
+
+    expect(fake.issues.map((i) => i.title)).toEqual(['Feedback: item other']);
+    expect((await api.listReports('filed')).map((r) => r.id)).toEqual([other.id]);
+    expect(lines.some((l) => l.startsWith(`Failed item:${item.id}: gh: Validation Failed`))).toBe(
+      true,
+    );
+  });
+
+  it('files a report whose capture is missing, without a link', async () => {
+    await insertReport(worker.env, { report: report({ hasCapture: true }) });
+
+    await file(context());
+
+    expect(fake.issues[0].body).toContain('Capture: none could be linked.');
+    expect(await api.listReports('filed')).toHaveLength(1);
+  });
+
   it('files card reports by nugget and card', async () => {
     const card = (cardIndex: number) =>
       report({
@@ -207,7 +259,8 @@ describe('file', () => {
     await insertReport(worker.env);
     failNextPatch = true;
 
-    await expect(file(context())).rejects.toThrow('Network down');
+    await expect(file(context())).rejects.toThrow('1 of 1 group failed to file.');
+    expect(lines).toContain(`Failed item:${item.id}: Network down`);
     expect(await api.listReports('new')).toHaveLength(2);
 
     await file(context());
@@ -227,7 +280,7 @@ describe('file', () => {
     expect(fake.issues).toHaveLength(1);
     expect(fake.issues[0].comments).toHaveLength(1);
     expect(fake.issues[0].comments[0]).toContain(`<!-- feedback-report: ${id} -->`);
-    expect(fake.issues[0].comments[0]).toMatch(/^1 more report on this item\./);
+    expect(fake.issues[0].comments[0]).toMatch(/^1 more report in this group\./);
 
     fake.issues[0].state = 'closed';
     await insertReport(worker.env);
@@ -240,15 +293,19 @@ describe('file', () => {
     await insertReport(worker.env);
     await insertReport(worker.env);
 
+    await insertReport(worker.env, { capture: true });
+
     await file(context({ dryRun: true }));
 
     expect(fake.writes()).toEqual([]);
     expect(patches).toBe(0);
-    expect(await api.listReports('new')).toHaveLength(2);
+    expect(links).toBe(0);
+    expect(await api.listReports('new')).toHaveLength(3);
     expect(lines[0]).toBe(
       `Would file "Feedback: item ${item.id}" [feedback, content] for item:${item.id}:`,
     );
-    expect(lines[1]).toContain('| Reports | 2 |');
+    expect(lines[1]).toContain('| Reports | 3 |');
+    expect(lines[1]).toContain('Capture: [open](<signed link>)');
   });
 });
 
@@ -274,6 +331,23 @@ describe('group', () => {
     await group(context({ regroup: true }));
     expect(await key(a.id)).toBe(`item:${item.id}`);
   });
+
+  it('keys by skill with --by skill, and file files one issue per skill', async () => {
+    await insertReport(worker.env);
+    await insertReport(worker.env, {
+      report: report({ target: { contentKind: 'item', contentId: 'other', cardIndex: null } }),
+    });
+
+    await group(context({ by: 'skill' }));
+    await file(context());
+
+    expect(fake.issues.map((i) => i.title)).toEqual([`Feedback: skill ${item.skillId}`]);
+    const filed = await api.listReports('filed');
+    expect(filed.map((r) => r.groupKey)).toEqual([
+      `skill:${item.skillId}`,
+      `skill:${item.skillId}`,
+    ]);
+  });
 });
 
 describe('sync', () => {
@@ -298,6 +372,24 @@ describe('sync', () => {
     await sync(context());
     expect((await api.listReports('filed')).map((r) => r.issueClosedAt)).toEqual([null, null]);
   });
+
+  it('takes the new close time when an issue reopened and closed between syncs', async () => {
+    await insertReport(worker.env);
+    await file(context());
+    fake.issues[0].state = 'closed';
+    fake.issues[0].closed_at = '2026-11-20T10:00:00Z';
+    await sync(context());
+
+    fake.issues[0].closed_at = '2026-12-01T08:30:00Z';
+    await sync(context());
+    expect((await api.listReports('filed')).map((r) => r.issueClosedAt)).toEqual([
+      '2026-12-01T08:30:00.000Z',
+    ]);
+
+    patches = 0;
+    await sync(context());
+    expect(patches).toBe(0);
+  });
 });
 
 describe('pull', () => {
@@ -311,7 +403,21 @@ describe('pull', () => {
     expect(lines.at(-1)).toMatch(/^Pulled 2 new reports and 1 capture into /);
 
     await api.patchReports([withCapture.id], { status: 'rejected' });
+    await writeFile(join(inbox, 'notes.txt'), 'mine');
     await pull(context());
-    expect(await readdir(inbox)).toEqual([`${plain.id}.json`]);
+    expect((await readdir(inbox)).sort()).toEqual([`${plain.id}.json`, 'notes.txt']);
+    await rm(join(inbox, 'notes.txt'));
+  });
+
+  it('logs a capture it cannot download and saves the rest', async () => {
+    const missing = await insertReport(worker.env, { report: report({ hasCapture: true }) });
+    const plain = await insertReport(worker.env);
+
+    await pull(context());
+
+    expect((await readdir(inbox)).sort()).toEqual(
+      [`${missing.id}.json`, `${plain.id}.json`].sort(),
+    );
+    expect(lines[0]).toMatch(new RegExp(`^No capture for ${missing.id}: .*404`));
   });
 });
