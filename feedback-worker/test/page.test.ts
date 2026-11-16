@@ -34,7 +34,7 @@ describe('admin page', () => {
     const html = await res.text();
     expect(html).toContain('<meta name="robots" content="noindex, nofollow" />');
     expect(html).toContain('<script type="module" src="/admin.js"></script>');
-    expect(html).not.toMatch(/<script>|<style|\sstyle=|\son\w+=/);
+    expect(html).not.toMatch(/<script>|<style|\sstyle=|\son\w+=/i);
   });
 
   it('serves its script and stylesheet without a token, with the same headers', async () => {
