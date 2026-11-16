@@ -1,11 +1,12 @@
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import worker from '../src';
-import { runRetention } from '../src/retention';
-import { insertReport, startWorker, type TestWorker } from './helpers';
+import { MAX_BATCHES, runRetention } from '../src/retention';
+import { insertReport, sampleReport, startWorker, type TestWorker } from './helpers';
 
 let test: TestWorker;
 
 const NOW = Date.parse('2026-11-16T04:00:00.000Z');
+const NOW_ISO = new Date(NOW).toISOString();
 const daysAgo = (days: number) => new Date(NOW - days * 24 * 60 * 60 * 1000).toISOString();
 
 beforeAll(async () => {
@@ -59,6 +60,23 @@ describe('retention', () => {
     expect(await runRetention(test.env, NOW)).toEqual({ deleted: 230 });
     expect(await remaining()).toEqual([]);
     expect((await test.env.CAPTURES.list()).objects).toEqual([]);
+  });
+
+  it('stops at 1,000 reports per run and drains the rest on the next run', async () => {
+    const backlog = MAX_BATCHES * 100 + 50;
+    const insert = test.env.DB.prepare(
+      `INSERT INTO reports (id, created_at, received_at, content_kind, content_id, skill_id, report)
+       VALUES (?, ?, ?, 'item', 'x', 'y', '{}')`,
+    );
+    const rows = Array.from({ length: backlog }, () =>
+      insert.bind(sampleReport().id, NOW_ISO, daysAgo(200)),
+    );
+    for (let i = 0; i < rows.length; i += 200) await test.env.DB.batch(rows.slice(i, i + 200));
+
+    expect(await runRetention(test.env, NOW)).toEqual({ deleted: MAX_BATCHES * 100 });
+    expect(await remaining()).toHaveLength(50);
+    expect(await runRetention(test.env, NOW)).toEqual({ deleted: 50 });
+    expect(await remaining()).toEqual([]);
   });
 
   it('prunes daily usage older than 180 days', async () => {

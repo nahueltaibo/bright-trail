@@ -8,21 +8,22 @@ export const RETENTION_DAYS = {
   dailyUsage: 180,
 };
 
-/**
- * Deletes reports and their captures 90 days after their issue closes, or 180 days after upload
- * when never filed. A filed report whose issue is open stays. The Cron Trigger runs it daily.
- */
+const BATCH = 100;
+// Each batch costs 3 subrequests, and the free plan allows 50 per run. The next run continues.
+export const MAX_BATCHES = 10;
+
+/** Deletes reports and captures past retention, at most 1,000 per run. See docs/setup-feedback.md. */
 export async function runRetention(env: Env, now = Date.now()): Promise<{ deleted: number }> {
   const closedBefore = new Date(now - RETENTION_DAYS.afterIssueCloses * DAY_MS).toISOString();
   const receivedBefore = new Date(now - RETENTION_DAYS.neverFiled * DAY_MS).toISOString();
   let deleted = 0;
-  for (;;) {
+  for (let batch = 0; batch < MAX_BATCHES; batch++) {
     const { results } = await env.DB.prepare(
       `SELECT id, capture_key FROM reports
        WHERE issue_closed_at < ? OR (status != 'filed' AND received_at < ?)
-       LIMIT 100`,
+       LIMIT ?`,
     )
-      .bind(closedBefore, receivedBefore)
+      .bind(closedBefore, receivedBefore, BATCH)
       .all<{ id: string; capture_key: string | null }>();
     if (results.length === 0) break;
     const keys = results.flatMap((row) => (row.capture_key ? [row.capture_key] : []));
@@ -32,6 +33,7 @@ export async function runRetention(env: Env, now = Date.now()): Promise<{ delete
       .bind(JSON.stringify(results.map((row) => row.id)))
       .run();
     deleted += results.length;
+    if (results.length < BATCH) break;
   }
 
   const usageBefore = new Date(now - RETENTION_DAYS.dailyUsage * DAY_MS).toISOString().slice(0, 10);
