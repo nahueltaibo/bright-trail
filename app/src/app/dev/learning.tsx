@@ -55,7 +55,9 @@ function answerKey(item: Item): { answer: string; miss?: string } {
  * subjects parents can pick, so this is how to play the rest.
  */
 async function fetchFullBundle(): Promise<ContentBundle> {
-  const url = `${process.env.EXPO_PUBLIC_CONTENT_URL}/dev/bundle.json`;
+  const base = process.env.EXPO_PUBLIC_CONTENT_URL;
+  if (!base) throw new Error('EXPO_PUBLIC_CONTENT_URL is not set.');
+  const url = `${base}/dev/bundle.json`;
   const response = await fetch(url);
   if (!response.ok) throw new Error(`${url} answered ${response.status}.`);
   return ContentBundleSchema.parse(await response.json());
@@ -74,13 +76,18 @@ export default function LearningPreviewScreen() {
 
   // The preview plays every skill, so it downloads every pack. The next sync deletes the extras.
   useEffect(() => {
+    if (!SHOW_DEV_TOOLS) return;
+    let stale = false;
     const load = all
       ? fetchFullBundle()
       : syncPacks(repo, { extra: 'all' }).then(() => loadContent(repo));
     load.then(
-      (b) => setLoaded({ all, bundle: b }),
-      (e: unknown) => setLog(String(e)),
+      (b) => !stale && setLoaded({ all, bundle: b }),
+      (e: unknown) => !stale && setLog(String(e)),
     );
+    return () => {
+      stale = true;
+    };
   }, [repo, all]);
 
   const steps = useMemo(() => (bundle && skill ? playlist(bundle, skill.id) : []), [bundle, skill]);
