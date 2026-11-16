@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Feedback Admin</title>
+    <link rel="stylesheet" href="/admin.css" />
+    <script type="module" src="/admin.js"></script>
+  </head>
+  <body>
+    <form id="login" hidden>
+      <h1>Feedback Admin</h1>
+      <label for="token">Admin token</label>
+      <input id="token" type="password" autocomplete="off" required />
+      <button type="submit">Open</button>
+      <p id="login-error" class="error" role="alert"></p>
+    </form>
+
+    <main id="admin" hidden>
+      <header>
+        <h1>Feedback reports</h1>
+        <label for="status-filter">Status</label>
+        <select id="status-filter">
+          <option value="">All</option>
+          <option value="new">New</option>
+          <option value="filed">Filed</option>
+          <option value="rejected">Rejected</option>
+        </select>
+        <button id="reload" type="button">Reload</button>
+        <button id="logout" type="button">Forget token</button>
+      </header>
+      <p id="error" class="error" role="alert"></p>
+      <div class="panes">
+        <section aria-label="Reports">
+          <ul id="reports"></ul>
+          <p id="empty" hidden>No reports.</p>
+          <button id="more" type="button" hidden>Load more</button>
+        </section>
+        <section id="detail" aria-label="Report" hidden></section>
+      </div>
+    </main>
+  </body>
+</html>
