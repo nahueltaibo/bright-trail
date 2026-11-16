@@ -181,7 +181,7 @@ export function reportSection(report: AdminReport, link?: CaptureLink): string {
     typeof report.comment === 'string'
       ? escapeHtml(scrub(report.comment))
           .split('\n')
-          .map((line) => `> ${line.replace(/`/g, '\\`')}`)
+          .map((line) => `> ${line.replace(/[\\`]/g, '\\$&')}`)
           .join('\n')
       : '_No comment._';
   const capture = link
