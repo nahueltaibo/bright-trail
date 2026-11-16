@@ -1,0 +1,178 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-soc-chronology-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "makes a snack", "emoji": null },
+          { "text": "puts events in order", "emoji": null },
+          { "text": "paints a wall", "emoji": null }
+        ],
+        "card": { "text": "a timeline", "emoji": null },
+        "sorted": [
+          { "text": "sandwich", "emoji": null, "bin": "makes a snack" },
+          { "text": "calendar", "emoji": null, "bin": "puts events in order" },
+          { "text": "paint", "emoji": null, "bin": "paints a wall" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-2",
+        "fits": false,
+        "bins": [
+          { "text": "Grandma", "emoji": null },
+          { "text": "Mom", "emoji": null },
+          { "text": "baby Sam", "emoji": null }
+        ],
+        "card": { "text": "the oldest", "emoji": null },
+        "sorted": [
+          { "text": "grandpa", "emoji": null, "bin": "Grandma" },
+          { "text": "aunt", "emoji": null, "bin": "Mom" },
+          { "text": "baby", "emoji": null, "bin": "baby Sam" }
+        ],
+        "note": "Choices are people, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "purple", "emoji": null },
+          { "text": "loud", "emoji": null },
+          { "text": "first", "emoji": null }
+        ],
+        "card": { "text": "order", "emoji": null },
+        "sorted": [
+          { "text": "red", "emoji": null, "bin": "purple" },
+          { "text": "noisy", "emoji": null, "bin": "loud" },
+          { "text": "next", "emoji": null, "bin": "first" }
+        ],
+        "note": "Choices are words, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "happened long ago", "emoji": null },
+          { "text": "happened most recently", "emoji": null }
+        ],
+        "card": { "text": "newest", "emoji": null },
+        "sorted": [
+          { "text": "dinosaurs", "emoji": null, "bin": "happened long ago" },
+          { "text": "today", "emoji": null, "bin": "happened most recently" }
+        ],
+        "note": "Choices are meanings, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "Raj", "emoji": null },
+          { "text": "Priya", "emoji": null }
+        ],
+        "card": { "text": "born right after Nana", "emoji": null },
+        "sorted": [
+          { "text": "son", "emoji": null, "bin": "Raj" },
+          { "text": "granddaughter", "emoji": null, "bin": "Priya" }
+        ],
+        "note": "Choices are people, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "Winnipeg", "emoji": null },
+          { "text": "Calgary", "emoji": null },
+          { "text": "Regina", "emoji": null }
+        ],
+        "card": { "text": "second home", "emoji": null },
+        "sorted": [
+          { "text": "first home", "emoji": null, "bin": "Winnipeg" },
+          { "text": "last home", "emoji": null, "bin": "Calgary" },
+          { "text": "middle home", "emoji": null, "bin": "Regina" }
+        ],
+        "note": "Choices are places, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "a baby was born", "emoji": null },
+          { "text": "we moved to a new town", "emoji": null },
+          { "text": "my shoe is blue", "emoji": null }
+        ],
+        "card": { "text": "a family timeline", "emoji": null },
+        "sorted": [
+          { "text": "birth", "emoji": null, "bin": "a baby was born" },
+          { "text": "moving", "emoji": null, "bin": "we moved to a new town" },
+          { "text": "color", "emoji": null, "bin": "my shoe is blue" }
+        ],
+        "note": "Choices are events, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "Mom had baby Sam", "emoji": null },
+          { "text": "Grandma was born", "emoji": null },
+          { "text": "Mom was born", "emoji": null }
+        ],
+        "card": { "text": "the timeline", "emoji": null },
+        "sorted": [
+          { "text": "newest", "emoji": null, "bin": "Mom had baby Sam" },
+          { "text": "oldest", "emoji": null, "bin": "Grandma was born" },
+          { "text": "middle", "emoji": null, "bin": "Mom was born" }
+        ],
+        "note": "Choices are events, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "the spring picnic", "emoji": null },
+          { "text": "the fall harvest feast", "emoji": null }
+        ],
+        "card": { "text": "the summer camp", "emoji": null },
+        "sorted": [
+          { "text": "April", "emoji": null, "bin": "the spring picnic" },
+          { "text": "October", "emoji": null, "bin": "the fall harvest feast" }
+        ],
+        "note": "Choices are events, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "the grandparents", "emoji": null },
+          { "text": "the parents", "emoji": null },
+          { "text": "the children", "emoji": null }
+        ],
+        "card": { "text": "three generations", "emoji": null },
+        "sorted": [
+          { "text": "great-aunt", "emoji": null, "bin": "the grandparents" },
+          { "text": "dad", "emoji": null, "bin": "the parents" },
+          { "text": "kid", "emoji": null, "bin": "the children" }
+        ],
+        "note": "Choices are people groups answering which is newest, not sorting one thing."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "Barrie", "emoji": null },
+          { "text": "Ottawa", "emoji": null },
+          { "text": "Kingston", "emoji": null }
+        ],
+        "card": { "text": "Jo moved three times", "emoji": null },
+        "sorted": [
+          { "text": "age 3", "emoji": null, "bin": "Barrie" },
+          { "text": "age 9", "emoji": null, "bin": "Ottawa" },
+          { "text": "age 6", "emoji": null, "bin": "Kingston" }
+        ],
+        "note": "Choices are places, not groups."
+      }
+    ]
+  }
+}

@@ -1,0 +1,120 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-soc-chronology-tap-3",
+        "fits": false,
+        "cards": [
+          { "text": "first", "emoji": null },
+          { "text": "next", "emoji": null },
+          { "text": "last", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Asks which word helps with order, not a position in a sequence."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-6",
+        "fits": false,
+        "cards": [
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Dad learned to walk", "emoji": "🚶" },
+          { "text": "Dad grew up", "emoji": "🧑" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": true,
+        "note": "All three events are choices, so no row of 3 can leave out the other choices."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-7",
+        "fits": false,
+        "cards": [
+          { "text": "Nana", "emoji": "👵" },
+          { "text": "Raj", "emoji": "👨" },
+          { "text": "Priya", "emoji": "👧" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": false,
+        "note": "Priya is the only other person, so she must be left out; any padded row lets Priya also fit after Nana."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "Winnipeg", "emoji": "🏠" },
+          { "text": "Regina", "emoji": "🏠" },
+          { "text": "Calgary", "emoji": "🏠" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": false,
+        "note": "All three homes are choices, so the row cannot leave out the other choices."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-11",
+        "fits": true,
+        "cards": [
+          { "text": "Grandpa moved to Canada", "emoji": "✈️" },
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Omar was born", "emoji": "🍼" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Move, Dad's birth, Omar's birth; neither wrong choice fits between."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-12",
+        "fits": false,
+        "cards": [
+          { "text": "Grandma was born", "emoji": "👵" },
+          { "text": "Mom was born", "emoji": "👩" },
+          { "text": "Mom had baby Sam", "emoji": "👶" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": false,
+        "note": "All three events are choices, so the other choices cannot be left out."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-13",
+        "fits": true,
+        "cards": [
+          { "text": "the summer camp", "emoji": "⛺" },
+          { "text": "the fall harvest feast", "emoji": "🍂" },
+          { "text": "the winter party", "emoji": "⛄" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Spring picnic left out; a winter event added to reach 3 cards."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-15",
+        "fits": false,
+        "cards": [
+          { "text": "Barrie", "emoji": "🏠" },
+          { "text": "Kingston", "emoji": "🏠" },
+          { "text": "Ottawa", "emoji": "🏠" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": false,
+        "note": "All three moves are choices, so the row cannot leave out the other choices."
+      }
+    ]
+  }
+}

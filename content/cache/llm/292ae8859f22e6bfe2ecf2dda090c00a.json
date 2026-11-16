@@ -1,0 +1,92 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-life-cycles-tap-1",
+        "fits": false,
+        "cards": [
+          { "text": "an egg", "emoji": "🥚" },
+          { "text": "a pupa", "emoji": null },
+          { "text": "a moth", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": true,
+        "note": "Rows without caterpillar and adult butterfly would skip the caterpillar step."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "a caterpillar", "emoji": "🐛" },
+          { "text": "a pupa", "emoji": null },
+          { "text": "a butterfly", "emoji": "🦋" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Pupa follows caterpillar; egg and tadpole don't fit."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-7",
+        "fits": true,
+        "cards": [
+          { "text": "a tadpole", "emoji": null },
+          { "text": "a froglet", "emoji": null },
+          { "text": "a frog", "emoji": "🐸" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Froglet comes right after tadpole."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "a frog", "emoji": "🐸" },
+          { "text": "a butterfly", "emoji": "🦋" },
+          { "text": "a robin", "emoji": "🐦" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Asks which animal, not an order."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-10",
+        "fits": false,
+        "cards": [
+          { "text": "an adult bird", "emoji": "🐦" },
+          { "text": "a chick", "emoji": "🐥" },
+          { "text": "an egg", "emoji": "🥚" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Asks which stage does something, not first, next, or last."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-15",
+        "fits": false,
+        "cards": [
+          { "text": "a tadpole", "emoji": null },
+          { "text": "a frog", "emoji": "🐸" },
+          { "text": "a caterpillar", "emoji": "🐛" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Asks which stage can lay eggs, not an order."
+      }
+    ]
+  }
+}

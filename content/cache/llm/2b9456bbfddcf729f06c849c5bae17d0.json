@@ -1,0 +1,125 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-soc-events-in-order-tap-1",
+        "fits": true,
+        "cards": [
+          { "text": "being a baby", "emoji": "👶" },
+          { "text": "being a toddler", "emoji": "🧸" },
+          { "text": "being in Kindergarten", "emoji": "🎒" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Grade 1 cannot come before toddler."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-2",
+        "fits": true,
+        "cards": [
+          { "text": "learned to walk", "emoji": "🚶" },
+          { "text": "learned to run", "emoji": "🏃" },
+          { "text": "learned to jump", "emoji": "🤸" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Kindergarten left out of the row; walking comes first."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-4",
+        "fits": false,
+        "cards": [
+          { "text": "first", "emoji": null },
+          { "text": "next", "emoji": null },
+          { "text": "last", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Asks for word meaning, not a sequence of events."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "Kindergarten", "emoji": "🎒" },
+          { "text": "Grade 1", "emoji": "📚" },
+          { "text": "Grade 2", "emoji": "✏️" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Daycare left out; it cannot follow Kindergarten."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "stood up", "emoji": "🧍" },
+          { "text": "walked", "emoji": "🚶" },
+          { "text": "ran", "emoji": "🏃" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Row needs the stood up card, which is also a wrong choice, so it would appear twice."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-9",
+        "fits": false,
+        "cards": [
+          { "text": "first", "emoji": null },
+          { "text": "next", "emoji": null },
+          { "text": "last", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Asks about a word, not a sequence."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-11",
+        "fits": true,
+        "cards": [
+          { "text": "learned to walk", "emoji": "🚶" },
+          { "text": "Kindergarten", "emoji": "🎒" },
+          { "text": "Grade 1", "emoji": "📚" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Baby and Grade 2 do not fit between walking and Grade 1."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-13",
+        "fits": true,
+        "cards": [
+          { "text": "Grade 1", "emoji": "📚" },
+          { "text": "Grade 2", "emoji": "✏️" },
+          { "text": "Grade 3", "emoji": "🏫" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Kindergarten and daycare come before Grade 1."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-15",
+        "fits": true,
+        "cards": [
+          { "text": "started Kindergarten", "emoji": "🎒" },
+          { "text": "finished Kindergarten", "emoji": "🎓" },
+          { "text": "started Grade 1", "emoji": "📚" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Bike card left out of the row; Grade 1 is last."
+      }
+    ]
+  }
+}

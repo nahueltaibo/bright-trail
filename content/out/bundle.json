@@ -1,7 +1,7 @@
 {
   "schemaVersion": 5,
   "version": "2026.11.16-72",
-  "generatedAt": "2026-11-16T01:50:54Z",
+  "generatedAt": "2026-11-16T02:10:32Z",
   "skills": [
     {
       "id": "k-count-to-20",
@@ -17940,15 +17940,6 @@
       "narration": "Mia wants to make a boat. What does she do first: plan, test, or make it better?",
       "prompt": "What is the first step?",
       "why": "Mia plans first. She thinks about what to use before she builds anything.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "plan", "emoji": "📝" },
-          { "text": "build", "emoji": "🔨" },
-          { "text": "share it", "emoji": "🤝" }
-        ],
-        "missing": 0
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "test" },
@@ -17969,14 +17960,14 @@
         "bins": [
           { "text": "build", "emoji": "🔨" },
           { "text": "plan", "emoji": "📝" },
-          { "text": "test", "emoji": "🔍" }
+          { "text": "test", "emoji": "🧪" }
         ],
         "sorted": [
-          { "card": { "text": "cut the pieces", "emoji": "✂️" }, "bin": 0 },
+          { "card": { "text": "stack blocks", "emoji": "🧱" }, "bin": 0 },
           { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 1 },
           { "card": { "text": "try it out", "emoji": "🔍" }, "bin": 2 }
         ],
-        "card": { "text": "put her boat together", "emoji": "⛵" },
+        "card": { "text": "tape and a foam tray", "emoji": "🧰" },
         "bin": 0
       },
       "type": "tap",
@@ -17999,14 +17990,14 @@
         "bins": [
           { "text": "build", "emoji": "🔨" },
           { "text": "plan", "emoji": "📝" },
-          { "text": "test", "emoji": "🔍" }
+          { "text": "test", "emoji": "🧪" }
         ],
         "sorted": [
-          { "card": { "text": "stack the blocks", "emoji": "🧱" }, "bin": 0 },
+          { "card": { "text": "stack blocks", "emoji": "🧱" }, "bin": 0 },
           { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 1 },
-          { "card": { "text": "drop it to check", "emoji": "🔍" }, "bin": 2 }
+          { "card": { "text": "drop a ball", "emoji": "🔍" }, "bin": 2 }
         ],
-        "card": { "text": "puts her boat in water", "emoji": "💧" },
+        "card": { "text": "puts her boat in water", "emoji": "🚤" },
         "bin": 2
       },
       "type": "tap",
@@ -18059,7 +18050,7 @@
         "cards": [
           { "text": "build", "emoji": "🔨" },
           { "text": "test", "emoji": "🧪" },
-          { "text": "make it better", "emoji": "🔧" }
+          { "text": "make it better", "emoji": "✨" }
         ],
         "missing": 1
       },
@@ -18107,15 +18098,6 @@
       "narration": "Mia plans, builds, and tests. What step comes last: plan, build, or make it better?",
       "prompt": "What comes last?",
       "why": "After the test, we make it better. Then we can test again.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "find a problem", "emoji": "🔍" },
-          { "text": "test", "emoji": "🧪" },
-          { "text": "make it better", "emoji": "🔧" }
-        ],
-        "missing": 2
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "make it better" },
@@ -18194,13 +18176,13 @@
         "kind": "sort",
         "bins": [
           { "text": "plan", "emoji": "📝" },
-          { "text": "test", "emoji": "🔍" },
-          { "text": "make it better", "emoji": "🔧" }
+          { "text": "test", "emoji": "🧪" },
+          { "text": "make it better", "emoji": "✨" }
         ],
         "sorted": [
           { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 0 },
           { "card": { "text": "try it out", "emoji": "🔍" }, "bin": 1 },
-          { "card": { "text": "add more tape", "emoji": "📎" }, "bin": 2 }
+          { "card": { "text": "fix a problem", "emoji": "🔧" }, "bin": 2 }
         ],
         "card": { "text": "a wide base", "emoji": "🥤" },
         "bin": 2
@@ -19414,7 +19396,7 @@
       "game": {
         "kind": "order",
         "cards": [
-          { "text": "sunset", "emoji": "🌇" },
+          { "text": "evening", "emoji": "🌇" },
           { "text": "night", "emoji": "🌙" },
           { "text": "day", "emoji": "☀️" }
         ],
@@ -19506,16 +19488,6 @@
       "narration": "The seasons go spring, summer, fall. What season comes next: winter, spring, or summer?",
       "prompt": "Spring, summer, fall, then?",
       "why": "Winter comes after fall. Then spring comes back and the cycle starts again.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "leaves change color", "emoji": "🍂" },
-          { "text": "fall", "emoji": "🍁" },
-          { "text": "winter", "emoji": "⛄" },
-          { "text": "first snow", "emoji": "❄️" }
-        ],
-        "missing": 2
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "spring" },
@@ -19546,16 +19518,6 @@
       "narration": "After winter, what season comes next: spring, fall, or summer?",
       "prompt": "What comes after winter?",
       "why": "Spring comes after winter. The seasons go around and around.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "first snow", "emoji": "❄️" },
-          { "text": "winter", "emoji": "⛄" },
-          { "text": "spring", "emoji": "🌷" },
-          { "text": "flowers bloom", "emoji": "🌸" }
-        ],
-        "missing": 2
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "fall" },
@@ -19585,17 +19547,6 @@
       "narration": "Day, night, day. What comes next: night, or day?",
       "prompt": "Day, night, day, then?",
       "why": "The pattern goes day, night, day, night. After day, night comes next.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "sunrise", "emoji": "🌅" },
-          { "text": "noon", "emoji": "☀️" },
-          { "text": "sunset", "emoji": "🌇" },
-          { "text": "night", "emoji": "🌙" }
-        ],
-        "missing": 3,
-        "cycle": true
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "night" },
@@ -19610,15 +19561,6 @@
       "narration": "Leaves fall off many trees in fall. What season comes just before winter: summer, fall, or spring?",
       "prompt": "What comes just before winter?",
       "why": "Fall comes just before winter. The order is spring, summer, fall, winter.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "fall", "emoji": "🍁" },
-          { "text": "winter", "emoji": "⛄" },
-          { "text": "first snow", "emoji": "❄️" }
-        ],
-        "missing": 0
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "summer" },
@@ -19876,8 +19818,8 @@
         "kind": "order",
         "cards": [
           { "text": "fluffy down", "emoji": "🐥" },
-          { "text": "first new feathers", "emoji": "🪶" },
-          { "text": "full-grown duck", "emoji": "🦆" }
+          { "text": "first feathers", "emoji": "🪶" },
+          { "text": "flight feathers", "emoji": "🦆" }
         ],
         "missing": 0
       },
@@ -19998,6 +19940,15 @@
       "narration": "A caterpillar eats and grows. Then it makes a hard shell. What stage is inside the shell: an egg, a pupa, or a tadpole?",
       "prompt": "What stage is inside the shell?",
       "why": "After the caterpillar stage comes the pupa. The change into a butterfly happens inside the shell.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "a caterpillar", "emoji": "🐛" },
+          { "text": "a pupa" },
+          { "text": "a butterfly", "emoji": "🦋" }
+        ],
+        "missing": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "a pupa" },
@@ -20013,6 +19964,15 @@
       "narration": "A tadpole grows back legs and front legs. What stage comes next: an egg, a froglet, or a pupa?",
       "prompt": "What comes after the tadpole?",
       "why": "A tadpole grows legs and becomes a froglet. Later the froglet is an adult frog.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "a tadpole" },
+          { "text": "a froglet" },
+          { "text": "a frog", "emoji": "🐸" }
+        ],
+        "missing": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "an egg" },
@@ -20720,7 +20680,7 @@
         "tags": [
           { "part": "leaf", "text": "leaf" },
           { "part": "stem", "text": "stem" },
-          { "part": "roots", "text": "the roots" }
+          { "part": "roots", "text": "roots" }
         ],
         "asked": 2
       },
@@ -20803,7 +20763,7 @@
         "cards": [
           { "text": "Mia pours water", "emoji": "🚿" },
           { "text": "its roots take in water", "emoji": "🌱" },
-          { "text": "plant grows taller", "emoji": "🪴" }
+          { "text": "its stem gets stronger", "emoji": "🌿" }
         ],
         "missing": 1
       },
@@ -21098,7 +21058,7 @@
         "tags": [
           { "part": "leaf", "text": "leaf" },
           { "part": "stem", "text": "stem" },
-          { "part": "roots", "text": "the roots" },
+          { "part": "roots", "text": "roots" },
           { "part": "seed", "text": "seed" }
         ],
         "asked": 2
@@ -21123,7 +21083,7 @@
         "picture": "plant",
         "tags": [
           { "part": "flower", "text": "flower" },
-          { "part": "leaf", "text": "the leaf" },
+          { "part": "leaf", "text": "leaf" },
           { "part": "stem", "text": "stem" }
         ],
         "asked": 1
@@ -21192,7 +21152,7 @@
         "picture": "plant",
         "tags": [
           { "part": "leaf", "text": "leaf" },
-          { "part": "stem", "text": "the stem" },
+          { "part": "stem", "text": "stem" },
           { "part": "roots", "text": "roots" }
         ],
         "asked": 1
@@ -21288,15 +21248,6 @@
       "narration": "Mia plants a bean seed. What happens first as it starts to grow: roots grow down, a flower opens, or fruit forms?",
       "prompt": "What happens first?",
       "why": "A seed sprouts roots first. They take in water. Flowers and fruit come much later.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "roots grow down", "emoji": "🌱" },
-          { "text": "stem grows up", "emoji": "🌿" },
-          { "text": "leaves grow out", "emoji": "🍃" }
-        ],
-        "missing": 0
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "a flower opens" },
@@ -21348,7 +21299,7 @@
         "tags": [
           { "part": "flower", "text": "flower" },
           { "part": "leaf", "text": "leaf" },
-          { "part": "stem", "text": "a stem" }
+          { "part": "stem", "text": "stem" }
         ],
         "asked": 2
       },
@@ -21371,8 +21322,8 @@
         "kind": "order",
         "cards": [
           { "text": "being a baby", "emoji": "👶" },
-          { "text": "learned to walk", "emoji": "🚶" },
-          { "text": "started Kindergarten", "emoji": "🎒" }
+          { "text": "being a toddler", "emoji": "🧸" },
+          { "text": "being in Kindergarten", "emoji": "🎒" }
         ],
         "missing": 0
       },
@@ -21390,15 +21341,6 @@
       "narration": "Sam learned to walk. Sam also started Kindergarten. Which did Sam do first: learned to walk, or started Kindergarten?",
       "prompt": "Which came first?",
       "why": "Children learn to walk when they are very little. Kindergarten comes later.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "learned to walk", "emoji": "🚶" },
-          { "text": "started Grade 1", "emoji": "📚" },
-          { "text": "started Grade 2", "emoji": "✏️" }
-        ],
-        "missing": 0
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "started Kindergarten" },
@@ -21540,9 +21482,9 @@
       "game": {
         "kind": "order",
         "cards": [
-          { "text": "learned to walk", "emoji": "🚶" },
+          { "text": "walking", "emoji": "🚶" },
           { "text": "Kindergarten", "emoji": "🎒" },
-          { "text": "started Grade 1", "emoji": "📚" }
+          { "text": "Grade 1", "emoji": "📚" }
         ],
         "missing": 1
       },
@@ -21581,7 +21523,7 @@
         "cards": [
           { "text": "Grade 1", "emoji": "📚" },
           { "text": "Grade 2", "emoji": "✏️" },
-          { "text": "Grade 3", "emoji": "🏫" }
+          { "text": "Grade 3", "emoji": "🎓" }
         ],
         "missing": 1
       },
@@ -21615,15 +21557,6 @@
       "narration": "Ben learned to ride a bike. Then he started Grade 1. Which happened last: learned to ride a bike, or started Grade 1?",
       "prompt": "Which happened last?",
       "why": "Ben learned to ride a bike first. Then he started Grade 1. Grade 1 is the last one.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "Ben was born", "emoji": "👶" },
-          { "text": "learned to walk", "emoji": "🚶" },
-          { "text": "started Grade 1", "emoji": "📚" }
-        ],
-        "missing": 2
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "learned to ride a bike" },
@@ -21946,15 +21879,6 @@
       "narration": "Dad's life has three events. Which happened first: Dad was born, Dad started Grade 1, or Dad got his first job?",
       "prompt": "What happened first?",
       "why": "Dad had to be born before anything else. So being born is the first event.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "Dad was born", "emoji": "👶" },
-          { "text": "Dad learned to walk", "emoji": "🚶" },
-          { "text": "Dad lost a tooth", "emoji": "🦷" }
-        ],
-        "missing": 0
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "Dad started Grade 1" },
@@ -22052,15 +21976,6 @@
       "narration": "Grandma was born. Then Mom was born. Then Mom had baby Sam. Which event goes last on the timeline: Grandma was born, Mom was born, or Mom had baby Sam?",
       "prompt": "Which event goes last?",
       "why": "Baby Sam is the newest person. Mom having Sam happened last, so it goes at the end.",
-      "game": {
-        "kind": "order",
-        "cards": [
-          { "text": "Mom started school", "emoji": "🏫" },
-          { "text": "Mom got married", "emoji": "💍" },
-          { "text": "Mom had baby Sam", "emoji": "👶" }
-        ],
-        "missing": 2
-      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "Mom had baby Sam" },
@@ -22079,9 +21994,9 @@
       "game": {
         "kind": "order",
         "cards": [
-          { "text": "Summer camp", "emoji": "⛺" },
-          { "text": "the fall harvest feast", "emoji": "🍎" },
-          { "text": "Winter holiday party", "emoji": "⛄" }
+          { "text": "the summer camp", "emoji": "⛺" },
+          { "text": "the fall harvest feast", "emoji": "🍂" },
+          { "text": "the winter party", "emoji": "⛄" }
         ],
         "missing": 1
       },
@@ -22176,7 +22091,7 @@
         "kind": "label",
         "picture": "organs",
         "tags": [
-          { "part": "brain", "text": "your brain" },
+          { "part": "brain", "text": "brain" },
           { "part": "lungs", "text": "lungs" },
           { "part": "heart", "text": "heart" },
           { "part": "stomach", "text": "stomach" }
@@ -22345,9 +22260,8 @@
         "kind": "order",
         "cards": [
           { "text": "eat a healthy meal", "emoji": "🥗" },
-          { "text": "warm up", "emoji": "🤸" },
-          { "text": "run the race", "emoji": "🏃" },
-          { "text": "drink water", "emoji": "🚰" }
+          { "text": "run her race", "emoji": "🏃" },
+          { "text": "rest and drink water", "emoji": "💧" }
         ],
         "missing": 0
       },

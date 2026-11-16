@@ -3,7 +3,7 @@
     "kind": "label",
     "picture": "organs",
     "tags": [
-      { "part": "brain", "text": "your brain" },
+      { "part": "brain", "text": "brain" },
       { "part": "lungs", "text": "lungs" },
       { "part": "heart", "text": "heart" },
       { "part": "stomach", "text": "stomach" }
@@ -27,7 +27,7 @@
     "tags": [
       { "part": "leaf", "text": "leaf" },
       { "part": "stem", "text": "stem" },
-      { "part": "roots", "text": "the roots" }
+      { "part": "roots", "text": "roots" }
     ],
     "asked": 2
   },
@@ -37,7 +37,7 @@
     "tags": [
       { "part": "leaf", "text": "leaf" },
       { "part": "stem", "text": "stem" },
-      { "part": "roots", "text": "the roots" },
+      { "part": "roots", "text": "roots" },
       { "part": "seed", "text": "seed" }
     ],
     "asked": 2
@@ -48,7 +48,7 @@
     "tags": [
       { "part": "flower", "text": "flower" },
       { "part": "leaf", "text": "leaf" },
-      { "part": "stem", "text": "a stem" }
+      { "part": "stem", "text": "stem" }
     ],
     "asked": 2
   },
@@ -57,7 +57,7 @@
     "picture": "plant",
     "tags": [
       { "part": "flower", "text": "flower" },
-      { "part": "leaf", "text": "the leaf" },
+      { "part": "leaf", "text": "leaf" },
       { "part": "stem", "text": "stem" }
     ],
     "asked": 1
@@ -67,7 +67,7 @@
     "picture": "plant",
     "tags": [
       { "part": "leaf", "text": "leaf" },
-      { "part": "stem", "text": "the stem" },
+      { "part": "stem", "text": "stem" },
       { "part": "roots", "text": "roots" }
     ],
     "asked": 1

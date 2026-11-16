@@ -1,0 +1,22 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-hlth-food-needs-tap-15",
+        "fits": true,
+        "cards": [
+          { "text": "eat a healthy meal", "emoji": "🥗" },
+          { "text": "run her race", "emoji": "🏃" },
+          { "text": "rest and drink water", "emoji": "💧" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Eating comes first for energy before the race; skipping a meal gives no energy."
+      }
+    ]
+  }
+}

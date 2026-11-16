@@ -1,0 +1,86 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-life-cycles-tap-1",
+        "fits": false,
+        "cards": [
+          { "text": "an egg", "emoji": "🥚" },
+          { "text": "a pupa", "emoji": null },
+          { "text": "a butterfly", "emoji": "🦋" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Row would need caterpillar or adult butterfly, which are choices; only 2 other cards possible without skipping."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "a caterpillar", "emoji": "🐛" },
+          { "text": "a pupa", "emoji": null },
+          { "text": "an adult butterfly", "emoji": "🦋" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Pupa comes after caterpillar; egg and tadpole don't fit."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-7",
+        "fits": true,
+        "cards": [
+          { "text": "a tadpole", "emoji": "🐟" },
+          { "text": "a froglet", "emoji": null },
+          { "text": "a frog", "emoji": "🐸" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Froglet follows tadpole; egg and pupa don't fit."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "a frog", "emoji": "🐸" },
+          { "text": "a butterfly", "emoji": "🦋" },
+          { "text": "a robin", "emoji": "🐦" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Asks which animal, not an order in a sequence."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-10",
+        "fits": false,
+        "cards": [
+          { "text": "an adult bird", "emoji": "🐦" },
+          { "text": "a chick", "emoji": "🐤" },
+          { "text": "an egg", "emoji": "🥚" }
+        ],
+        "missing": 0,
+        "cycle": true,
+        "otherChoiceFits": false,
+        "note": "Other bird stages are all choices, so no 3-card row is possible; not a clear order question."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-15",
+        "fits": false,
+        "cards": [
+          { "text": "a tadpole", "emoji": "🐟" },
+          { "text": "a frog", "emoji": "🐸" },
+          { "text": "a caterpillar", "emoji": "🐛" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Asks which stage can lay eggs, not first/next/before/after/last; other stages are choices."
+      }
+    ]
+  }
+}

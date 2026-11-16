@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-13",
+        "fits": true,
+        "cards": [
+          { "text": "fluffy down", "emoji": "🐥" },
+          { "text": "young feathers", "emoji": "🪶" },
+          { "text": "flight feathers", "emoji": "🦆" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Adult feathers is left out of the row; it can't be first since down comes before feathers."
+      }
+    ]
+  }
+}

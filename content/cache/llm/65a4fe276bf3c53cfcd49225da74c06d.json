@@ -1,0 +1,78 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-design-steps-tap-1",
+        "fits": true,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "share", "emoji": "🤝" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": true,
+        "note": "Row must avoid test and make it better, so test falls between build and share and is skipped."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" },
+          { "text": "make it better", "emoji": "✨" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Plan is a choice, so the row starts at build."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Asks which action belongs to the plan step, not a first, next, before, after or last question."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-9",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Plan and build are choices, so they can't be cards. Only test and make it better are left, which is under 3 cards."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-12",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Choices are whole lists of steps, not a card for one slot."
+      }
+    ]
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-cycles-tap-1",
+        "fits": true,
+        "cards": [
+          { "text": "evening", "emoji": "🌇" },
+          { "text": "night", "emoji": "🌙" },
+          { "text": "day", "emoji": "☀️" }
+        ],
+        "missing": 2,
+        "cycle": true,
+        "otherChoiceFits": false,
+        "note": "Evening, night, day; winter is not part of the day cycle."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-6",
+        "fits": false,
+        "cards": [
+          { "text": "sunrise", "emoji": "🌅" },
+          { "text": "noon", "emoji": "☀️" },
+          { "text": "sunset", "emoji": "🌇" }
+        ],
+        "missing": 0,
+        "cycle": true,
+        "otherChoiceFits": false,
+        "note": "Asks what happens every day, not an order question."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-7",
+        "fits": false,
+        "cards": [
+          { "text": "fall", "emoji": "🍂" },
+          { "text": "winter", "emoji": "❄️" },
+          { "text": "fall", "emoji": "🍂" }
+        ],
+        "missing": 1,
+        "cycle": true,
+        "otherChoiceFits": false,
+        "note": "Spring and summer are choices, so they can't be in the row; only fall and winter remain, under 3 cards."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-9",
+        "fits": false,
+        "cards": [
+          { "text": "winter", "emoji": "❄️" },
+          { "text": "spring", "emoji": "🌱" },
+          { "text": "winter", "emoji": "❄️" }
+        ],
+        "missing": 1,
+        "cycle": true,
+        "otherChoiceFits": false,
+        "note": "Fall and summer are choices and are the neighbours of winter and spring, so no 3-card row avoids them."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-11",
+        "fits": false,
+        "cards": [
+          { "text": "day", "emoji": "☀️" },
+          { "text": "night", "emoji": "🌙" },
+          { "text": "day", "emoji": "☀️" }
+        ],
+        "missing": 1,
+        "cycle": true,
+        "otherChoiceFits": false,
+        "note": "Both choices, day and night, are the only cards in the sequence, so no valid 3-card row exists."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-12",
+        "fits": false,
+        "cards": [
+          { "text": "fall", "emoji": "🍂" },
+          { "text": "winter", "emoji": "❄️" },
+          { "text": "fall", "emoji": "🍂" }
+        ],
+        "missing": 0,
+        "cycle": true,
+        "otherChoiceFits": false,
+        "note": "Summer and spring are choices and the only other seasons; no 3-card row avoids them."
+      }
+    ]
+  }
+}

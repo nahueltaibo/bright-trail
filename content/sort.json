@@ -3,13 +3,13 @@
     "kind": "sort",
     "bins": [
       { "text": "plan", "emoji": "📝" },
-      { "text": "test", "emoji": "🔍" },
-      { "text": "make it better", "emoji": "🔧" }
+      { "text": "test", "emoji": "🧪" },
+      { "text": "make it better", "emoji": "✨" }
     ],
     "sorted": [
       { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 0 },
       { "card": { "text": "try it out", "emoji": "🔍" }, "bin": 1 },
-      { "card": { "text": "add more tape", "emoji": "📎" }, "bin": 2 }
+      { "card": { "text": "fix a problem", "emoji": "🔧" }, "bin": 2 }
     ],
     "card": { "text": "a wide base", "emoji": "🥤" },
     "bin": 2
@@ -19,14 +19,14 @@
     "bins": [
       { "text": "build", "emoji": "🔨" },
       { "text": "plan", "emoji": "📝" },
-      { "text": "test", "emoji": "🔍" }
+      { "text": "test", "emoji": "🧪" }
     ],
     "sorted": [
-      { "card": { "text": "cut the pieces", "emoji": "✂️" }, "bin": 0 },
+      { "card": { "text": "stack blocks", "emoji": "🧱" }, "bin": 0 },
       { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 1 },
       { "card": { "text": "try it out", "emoji": "🔍" }, "bin": 2 }
     ],
-    "card": { "text": "put her boat together", "emoji": "⛵" },
+    "card": { "text": "tape and a foam tray", "emoji": "🧰" },
     "bin": 0
   },
   "g1-sci-design-steps-tap-3": {
@@ -34,14 +34,14 @@
     "bins": [
       { "text": "build", "emoji": "🔨" },
       { "text": "plan", "emoji": "📝" },
-      { "text": "test", "emoji": "🔍" }
+      { "text": "test", "emoji": "🧪" }
     ],
     "sorted": [
-      { "card": { "text": "stack the blocks", "emoji": "🧱" }, "bin": 0 },
+      { "card": { "text": "stack blocks", "emoji": "🧱" }, "bin": 0 },
       { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 1 },
-      { "card": { "text": "drop it to check", "emoji": "🔍" }, "bin": 2 }
+      { "card": { "text": "drop a ball", "emoji": "🔍" }, "bin": 2 }
     ],
-    "card": { "text": "puts her boat in water", "emoji": "💧" },
+    "card": { "text": "puts her boat in water", "emoji": "🚤" },
     "bin": 2
   },
   "g1-sci-plant-animal-features-tap-9": {

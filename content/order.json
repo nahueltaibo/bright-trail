@@ -3,104 +3,45 @@
     "kind": "order",
     "cards": [
       { "text": "eat a healthy meal", "emoji": "🥗" },
-      { "text": "warm up", "emoji": "🤸" },
-      { "text": "run the race", "emoji": "🏃" },
-      { "text": "drink water", "emoji": "🚰" }
+      { "text": "run her race", "emoji": "🏃" },
+      { "text": "rest and drink water", "emoji": "💧" }
     ],
     "missing": 0
   },
   "g1-sci-cycles-tap-1": {
     "kind": "order",
     "cards": [
-      { "text": "sunset", "emoji": "🌇" },
+      { "text": "evening", "emoji": "🌇" },
       { "text": "night", "emoji": "🌙" },
       { "text": "day", "emoji": "☀️" }
     ],
     "missing": 2,
     "cycle": true
   },
-  "g1-sci-cycles-tap-11": {
-    "kind": "order",
-    "cards": [
-      { "text": "sunrise", "emoji": "🌅" },
-      { "text": "noon", "emoji": "☀️" },
-      { "text": "sunset", "emoji": "🌇" },
-      { "text": "night", "emoji": "🌙" }
-    ],
-    "missing": 3,
-    "cycle": true
-  },
-  "g1-sci-cycles-tap-12": {
-    "kind": "order",
-    "cards": [
-      { "text": "fall", "emoji": "🍁" },
-      { "text": "winter", "emoji": "⛄" },
-      { "text": "first snow", "emoji": "❄️" }
-    ],
-    "missing": 0
-  },
-  "g1-sci-cycles-tap-7": {
-    "kind": "order",
-    "cards": [
-      { "text": "leaves change color", "emoji": "🍂" },
-      { "text": "fall", "emoji": "🍁" },
-      { "text": "winter", "emoji": "⛄" },
-      { "text": "first snow", "emoji": "❄️" }
-    ],
-    "missing": 2
-  },
-  "g1-sci-cycles-tap-9": {
-    "kind": "order",
-    "cards": [
-      { "text": "first snow", "emoji": "❄️" },
-      { "text": "winter", "emoji": "⛄" },
-      { "text": "spring", "emoji": "🌷" },
-      { "text": "flowers bloom", "emoji": "🌸" }
-    ],
-    "missing": 2
-  },
-  "g1-sci-design-steps-tap-1": {
-    "kind": "order",
-    "cards": [
-      { "text": "plan", "emoji": "📝" },
-      { "text": "build", "emoji": "🔨" },
-      { "text": "share it", "emoji": "🤝" }
-    ],
-    "missing": 0
-  },
   "g1-sci-design-steps-tap-6": {
     "kind": "order",
     "cards": [
       { "text": "build", "emoji": "🔨" },
       { "text": "test", "emoji": "🧪" },
-      { "text": "make it better", "emoji": "🔧" }
+      { "text": "make it better", "emoji": "✨" }
     ],
     "missing": 1
-  },
-  "g1-sci-design-steps-tap-9": {
-    "kind": "order",
-    "cards": [
-      { "text": "find a problem", "emoji": "🔍" },
-      { "text": "test", "emoji": "🧪" },
-      { "text": "make it better", "emoji": "🔧" }
-    ],
-    "missing": 2
   },
   "g1-soc-events-in-order-tap-1": {
     "kind": "order",
     "cards": [
       { "text": "being a baby", "emoji": "👶" },
-      { "text": "learned to walk", "emoji": "🚶" },
-      { "text": "started Kindergarten", "emoji": "🎒" }
+      { "text": "being a toddler", "emoji": "🧸" },
+      { "text": "being in Kindergarten", "emoji": "🎒" }
     ],
     "missing": 0
   },
   "g1-soc-events-in-order-tap-11": {
     "kind": "order",
     "cards": [
-      { "text": "learned to walk", "emoji": "🚶" },
+      { "text": "walking", "emoji": "🚶" },
       { "text": "Kindergarten", "emoji": "🎒" },
-      { "text": "started Grade 1", "emoji": "📚" }
+      { "text": "Grade 1", "emoji": "📚" }
     ],
     "missing": 1
   },
@@ -109,27 +50,9 @@
     "cards": [
       { "text": "Grade 1", "emoji": "📚" },
       { "text": "Grade 2", "emoji": "✏️" },
-      { "text": "Grade 3", "emoji": "🏫" }
+      { "text": "Grade 3", "emoji": "🎓" }
     ],
     "missing": 1
-  },
-  "g1-soc-events-in-order-tap-15": {
-    "kind": "order",
-    "cards": [
-      { "text": "Ben was born", "emoji": "👶" },
-      { "text": "learned to walk", "emoji": "🚶" },
-      { "text": "started Grade 1", "emoji": "📚" }
-    ],
-    "missing": 2
-  },
-  "g1-soc-events-in-order-tap-2": {
-    "kind": "order",
-    "cards": [
-      { "text": "learned to walk", "emoji": "🚶" },
-      { "text": "started Grade 1", "emoji": "📚" },
-      { "text": "started Grade 2", "emoji": "✏️" }
-    ],
-    "missing": 0
   },
   "g1-soc-events-in-order-tap-6": {
     "kind": "order",
@@ -144,8 +67,8 @@
     "kind": "order",
     "cards": [
       { "text": "fluffy down", "emoji": "🐥" },
-      { "text": "first new feathers", "emoji": "🪶" },
-      { "text": "full-grown duck", "emoji": "🦆" }
+      { "text": "first feathers", "emoji": "🪶" },
+      { "text": "flight feathers", "emoji": "🦆" }
     ],
     "missing": 0
   },
@@ -154,7 +77,25 @@
     "cards": [
       { "text": "Mia pours water", "emoji": "🚿" },
       { "text": "its roots take in water", "emoji": "🌱" },
-      { "text": "plant grows taller", "emoji": "🪴" }
+      { "text": "its stem gets stronger", "emoji": "🌿" }
+    ],
+    "missing": 1
+  },
+  "g2-sci-life-cycles-tap-6": {
+    "kind": "order",
+    "cards": [
+      { "text": "a caterpillar", "emoji": "🐛" },
+      { "text": "a pupa" },
+      { "text": "a butterfly", "emoji": "🦋" }
+    ],
+    "missing": 1
+  },
+  "g2-sci-life-cycles-tap-7": {
+    "kind": "order",
+    "cards": [
+      { "text": "a tadpole" },
+      { "text": "a froglet" },
+      { "text": "a frog", "emoji": "🐸" }
     ],
     "missing": 1
   },
@@ -167,40 +108,13 @@
     ],
     "missing": 1
   },
-  "g2-soc-chronology-tap-12": {
-    "kind": "order",
-    "cards": [
-      { "text": "Mom started school", "emoji": "🏫" },
-      { "text": "Mom got married", "emoji": "💍" },
-      { "text": "Mom had baby Sam", "emoji": "👶" }
-    ],
-    "missing": 2
-  },
   "g2-soc-chronology-tap-13": {
     "kind": "order",
     "cards": [
-      { "text": "Summer camp", "emoji": "⛺" },
-      { "text": "the fall harvest feast", "emoji": "🍎" },
-      { "text": "Winter holiday party", "emoji": "⛄" }
+      { "text": "the summer camp", "emoji": "⛺" },
+      { "text": "the fall harvest feast", "emoji": "🍂" },
+      { "text": "the winter party", "emoji": "⛄" }
     ],
     "missing": 1
-  },
-  "g2-soc-chronology-tap-6": {
-    "kind": "order",
-    "cards": [
-      { "text": "Dad was born", "emoji": "👶" },
-      { "text": "Dad learned to walk", "emoji": "🚶" },
-      { "text": "Dad lost a tooth", "emoji": "🦷" }
-    ],
-    "missing": 0
-  },
-  "g3-sci-plant-parts-tap-12": {
-    "kind": "order",
-    "cards": [
-      { "text": "roots grow down", "emoji": "🌱" },
-      { "text": "stem grows up", "emoji": "🌿" },
-      { "text": "leaves grow out", "emoji": "🍃" }
-    ],
-    "missing": 0
   }
 }
