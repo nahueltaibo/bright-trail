@@ -89,6 +89,7 @@ For each item give:
 
 Rules:
 - The row is the order the item asks about, in the item's words. "What comes after build?" with the answer test is a row like build, test, make it better, with test missing.
+- Each card names a step, stage, or event itself, written like the item's choices, such as butterfly or Dad was born. Never a position, like first move, or a description, like flying wings.
 - No other card may say one of the item's choices, since that choice would then have two places. Leave those steps out, and start or end the row elsewhere so it still has 3 cards in order.
 - The gap sits where the item asks: an item about what comes first leaves the first slot empty, one about what comes last leaves the last slot, and "after build" puts the gap right after the build card.
 - Set fits to false when the item isn't about what comes first, next, before, after, or last in a sequence, or when no row of 3 cards can leave out the other choices. Fill the other fields with any valid value then.
