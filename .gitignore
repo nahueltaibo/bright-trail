@@ -31,6 +31,9 @@ release.properties
 *.key
 *.mobileprovision
 *.pem
+# Expo Updates keys default to keys/. The certificate is public and the APK embeds it.
+keys/
+!app/certs/certificate.pem
 
 # Env files (Claude API key lives here)
 .env

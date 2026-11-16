@@ -59,6 +59,23 @@ CI gets the same key from repo secrets. **Back up both files** somewhere safe an
 
 The family build fails if the key is missing. The e2e build keeps Expo's debug key, so an e2e build and a family build can't upgrade each other. On a test device, uninstall one before installing the other.
 
+### The Update Signing Key
+
+From 3.0.0 on, every OTA update is signed, and the APK only runs updates signed with the matching key. The pieces:
+
+- `app/certs/certificate.pem` — the public certificate, committed. The APK embeds it. It expires in November 2036.
+- `%USERPROFILE%\.bright-trail\updates\private-key.pem` — the private key. Never commit it. Set `EXPO_UPDATES_PRIVATE_KEY_PATH` to use another location.
+- `EXPO_UPDATES_PRIVATE_KEY` — the same key as a repo secret, for CI.
+
+`npm run ota:publish` and the CI step both refuse to run without the key, so nothing goes out unsigned. **Back up the private key** with the release key. Lose it, and devices can't get OTA updates until they install an APK with a new certificate.
+
+To rotate the key, for a leak, a loss, or before the certificate expires:
+
+1. Generate a new pair from `app/`: `npx expo-updates codesigning:generate --key-output-directory "$HOME/.bright-trail/updates" --certificate-output-directory certs --certificate-validity-duration-years 10 --certificate-common-name "BrightTrail"`. It overwrites the old files, so back them up first if you still need them.
+2. Store the new key in CI: `gh secret set EXPO_UPDATES_PRIVATE_KEY < "$HOME/.bright-trail/updates/private-key.pem"`.
+3. Bump the major version in the same PR as the new certificate. The certificate is part of the native fingerprint, so CI fails the PR without the bump.
+4. After it merges, every device installs the new APK. Old APKs only accept the old key, so they get no more updates.
+
 ### Publishing an Update
 
 From the repo root:

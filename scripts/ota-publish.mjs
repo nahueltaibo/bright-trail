@@ -1,6 +1,8 @@
 // Publishes the current JS and content to family devices as an OTA update (Android only).
 // Usage: npm run ota:publish -- --message "What changed" [--no-checks]
 import { spawnSync } from 'node:child_process';
+import { existsSync } from 'node:fs';
+import { homedir } from 'node:os';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -29,6 +31,17 @@ delete productionEnv.EXPO_PUBLIC_E2E;
 if (!/^https:\/\//.test(productionEnv.EXPO_PUBLIC_CONTENT_URL ?? '')) {
   console.error(
     'Set EXPO_PUBLIC_CONTENT_URL to the content host’s https URL. Nothing was published.',
+  );
+  process.exit(1);
+}
+
+// Signed APKs reject unsigned updates, so publishing without the key would strand every device.
+const privateKey =
+  process.env.EXPO_UPDATES_PRIVATE_KEY_PATH ??
+  join(homedir(), '.bright-trail', 'updates', 'private-key.pem');
+if (!existsSync(privateKey)) {
+  console.error(
+    `No update signing key at ${privateKey}. See docs/install-android.md. Nothing was published.`,
   );
   process.exit(1);
 }
@@ -82,6 +95,8 @@ const result = run(
     'production',
     '--message',
     message,
+    '--private-key-path',
+    privateKey,
     '--non-interactive',
   ],
   { cwd: app, env: productionEnv },
