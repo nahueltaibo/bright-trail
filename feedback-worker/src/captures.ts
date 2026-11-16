@@ -82,8 +82,8 @@ async function streamCapture(env: Env, id: string): Promise<Response> {
   return new Response(object.body as unknown as BodyInit, {
     headers: {
       'Content-Type': object.httpMetadata?.contentType ?? 'application/octet-stream',
-      // Screenshots from testers' devices: no shared caches.
-      'Cache-Control': 'private, max-age=3600',
+      // No cache copy may outlive the link or retention.
+      'Cache-Control': 'private, no-store',
       'X-Content-Type-Options': 'nosniff',
     },
   });

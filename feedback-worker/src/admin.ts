@@ -11,7 +11,7 @@ const sha256 = async (text: string) =>
 /** Whether the request carries `Authorization: Bearer <FEEDBACK_ADMIN_TOKEN>`. */
 export async function isAdmin(request: Request, env: Env): Promise<boolean> {
   const token = env.FEEDBACK_ADMIN_TOKEN;
-  const match = /^Bearer (.+)$/.exec(request.headers.get('Authorization') ?? '');
+  const match = /^Bearer (.+)$/i.exec(request.headers.get('Authorization') ?? '');
   if (!token || !match) return false;
   // Hashing gives both sides one length, and the loop never exits early, so timing leaks nothing.
   const [given, expected] = await Promise.all([sha256(match[1]), sha256(token)]);

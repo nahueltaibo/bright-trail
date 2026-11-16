@@ -63,6 +63,13 @@ describe('admin auth', () => {
     expect(unset.status).toBe(401);
   });
 
+  it('matches the Bearer scheme in any case', async () => {
+    const res = await worker.call('/admin/reports', {
+      headers: { Authorization: `bearer ${TOKEN}` },
+    });
+    expect(res.status).toBe(200);
+  });
+
   it('answers 401 to a PATCH or capture without the token, and changes nothing', async () => {
     const { id } = await insertReport(worker.env, { capture: true });
     const res = await worker.call('/admin/reports', {
@@ -166,6 +173,7 @@ describe('GET /admin/reports', () => {
       'limit=201',
       'since=yesterday',
       'cursor=nope',
+      `cursor=${btoa(JSON.stringify({ receivedAt: 'x' }))}`,
       'color=red',
     ]) {
       expect((await admin(`/admin/reports?${query}`)).status, query).toBe(400);
@@ -259,7 +267,7 @@ describe('captures', () => {
     const res = await worker.call(`/admin/captures/${id}`, { headers: auth });
     expect(res.status).toBe(200);
     expect(res.headers.get('Content-Type')).toBe('image/png');
-    expect(res.headers.get('Cache-Control')).toContain('private');
+    expect(res.headers.get('Cache-Control')).toBe('private, no-store');
     expect((await res.arrayBuffer()).byteLength).toBe(100);
 
     const bare = await insertReport(worker.env);
@@ -309,6 +317,9 @@ describe('captures', () => {
     expect(await open(`/captures/${other.id}?exp=${exp}&sig=${sig}`)).toBe(403);
     expect(await open(`/captures/${id}?exp=${exp}`)).toBe(403);
     expect(await open(`/captures/${id}`)).toBe(403);
+    for (const bad of ['1e10', '12.5', `0${exp}`]) {
+      expect(await open(`/captures/${id}?exp=${bad}&sig=${sig}`), bad).toBe(403);
+    }
 
     const later = await signCaptureLink('http://localhost', id, TOKEN, Date.now() + 60_000);
     expect(await open(new URL(later.url).pathname + new URL(later.url).search)).toBe(403);
