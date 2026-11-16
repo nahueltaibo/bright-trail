@@ -1,0 +1,40 @@
+import type { Env } from './env';
+
+const DAY_MS = 24 * 60 * 60 * 1000;
+
+export const RETENTION_DAYS = {
+  afterIssueCloses: 90,
+  neverFiled: 180,
+  dailyUsage: 180,
+};
+
+/**
+ * Deletes reports and their captures 90 days after their issue closes, or 180 days after upload
+ * when never filed. A filed report whose issue is open stays. The Cron Trigger runs it daily.
+ */
+export async function runRetention(env: Env, now = Date.now()): Promise<{ deleted: number }> {
+  const closedBefore = new Date(now - RETENTION_DAYS.afterIssueCloses * DAY_MS).toISOString();
+  const receivedBefore = new Date(now - RETENTION_DAYS.neverFiled * DAY_MS).toISOString();
+  let deleted = 0;
+  for (;;) {
+    const { results } = await env.DB.prepare(
+      `SELECT id, capture_key FROM reports
+       WHERE issue_closed_at < ? OR (status != 'filed' AND received_at < ?)
+       LIMIT 100`,
+    )
+      .bind(closedBefore, receivedBefore)
+      .all<{ id: string; capture_key: string | null }>();
+    if (results.length === 0) break;
+    const keys = results.flatMap((row) => (row.capture_key ? [row.capture_key] : []));
+    // Captures go before rows, so a failed run leaves rows the next run retries, not orphaned captures.
+    if (keys.length > 0) await env.CAPTURES.delete(keys);
+    await env.DB.prepare('DELETE FROM reports WHERE id IN (SELECT value FROM json_each(?))')
+      .bind(JSON.stringify(results.map((row) => row.id)))
+      .run();
+    deleted += results.length;
+  }
+
+  const usageBefore = new Date(now - RETENTION_DAYS.dailyUsage * DAY_MS).toISOString().slice(0, 10);
+  await env.DB.prepare('DELETE FROM daily_usage WHERE day < ?').bind(usageBefore).run();
+  return { deleted };
+}

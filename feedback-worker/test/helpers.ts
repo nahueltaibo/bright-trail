@@ -68,11 +68,14 @@ export async function startWorker() {
     /** Calls the Worker's fetch handler directly. */
     call: (path: string, init: RequestInit = {}) =>
       worker.fetch(new Request(`http://localhost${path}`, init), env),
-    /** Empties every table between tests. */
-    reset: () =>
-      env.DB.batch(
+    /** Empties every table and the bucket between tests. */
+    reset: async () => {
+      await env.DB.batch(
         ['reports', 'intake_hits', 'daily_usage'].map((t) => env.DB.prepare(`DELETE FROM ${t}`)),
-      ),
+      );
+      const { objects } = await env.CAPTURES.list();
+      if (objects.length > 0) await env.CAPTURES.delete(objects.map((o) => o.key));
+    },
   };
 }
 
