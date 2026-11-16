@@ -113,3 +113,24 @@ jobs:
         env:
           VERSION: ${{ steps.plan.outputs.version }}
           FINGERPRINT: ${{ steps.plan.outputs.fingerprint }}
+
+  # The Worker that takes tester reports. Separate from ship, so neither blocks the other.
+  deploy-feedback:
+    needs: build-and-test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    environment: production
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # Skipped with a warning while all three settings are unset.
+      - run: npm run deploy -w @bright-trail/feedback-worker
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          FEEDBACK_D1_DATABASE_ID: ${{ vars.FEEDBACK_D1_DATABASE_ID }}
