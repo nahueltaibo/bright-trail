@@ -31,11 +31,11 @@
     "voices": "tsx src/voices/compare-voices.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^1.6.0",
+    "@anthropic-ai/sdk": "^1.8.0",
     "@bright-trail/shared": "*",
     "zod": "^4.6.7"
   },
   "devDependencies": {
-    "prettier": "^3.9.10"
+    "prettier": "^3.10.1"
   }
 }
