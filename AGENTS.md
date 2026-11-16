@@ -99,6 +99,7 @@ Before either path, `npm run content:publish` uploads the content packs to Cloud
 CI needs these repo secrets:
 
 - `EXPO_TOKEN`.
+- The update signing key as `EXPO_UPDATES_PRIVATE_KEY`. Without it the OTA publish fails, since APKs from 3.0.0 on reject unsigned updates. [docs/install-android.md](docs/install-android.md#the-update-signing-key) covers the key and its rotation.
 - The release key as `RELEASE_KEYSTORE` (base64), `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS`, and `RELEASE_KEY_PASSWORD`.
 - An R2 API token with write access to the bucket, as `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, and `R2_BUCKET`. Until all four are set, CI skips the upload with a warning. Setting only some fails the run. [docs/setup-r2.md](docs/setup-r2.md) shows where each value comes from.
 
@@ -108,7 +109,7 @@ The OTA publish and the family build also need the content host's https URL as t
 
 - **Stale `node_modules`.** Work often happens in `.claude/worktrees/`, which install their own deps. The main checkout can then miss packages a merged branch added, and Metro fails with `Unable to resolve "expo-crypto"`. `npm run dev` reinstalls when `package-lock.json` is newer than `node_modules/.package-lock.json`. Otherwise run `npm install`.
 - **Port 8081 on Windows.** `Get-NetTCPConnection` can report Metro's listener with state `Closed`, and `netstat` may not list it at all. Find the owner by port, not by state.
-- **Adding app deps.** Use `npx expo install <pkg>` from `app/`, never plain `npm install`, so versions match Expo SDK 58.
+- **Adding app deps.** Use `npx expo install <pkg>` from `app/`, never plain `npm install`, so versions match Expo SDK 58. If its npm call fails with `EALLOWSCRIPTS`, it has already written the versions to `app/package.json`, so run `npm install` from the root to finish.
 - **ESLint 10.** `eslint-plugin-react` can't auto-detect the React version, so `eslint.config.mjs` pins it. Bump it there when React changes.
 - **Curriculum text.** `content/sources/` stays byte-for-byte as fetched. Prettier ignores it. Don't reformat it.
 - **LLM calls.** `npm run content:graph` and `npm run content:generate` use the Claude Code CLI in headless mode by default. Responses cache in `content/cache/llm/`, which is committed, so reruns are free unless a prompt changed.
