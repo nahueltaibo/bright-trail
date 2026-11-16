@@ -162,3 +162,54 @@ export function goodContent(): GeneratedContent {
     ],
   };
 }
+
+export const g1SciSkill: Skill = {
+  id: 'g1-sci-living-things',
+  subject: 'science',
+  framework: 'ontario-science-2022',
+  grade: '1',
+  strand: 'B',
+  expectationCodes: ['B2.1'],
+  title: 'Living and non-living things',
+  description: 'Find the things that are alive.',
+  prerequisiteIds: [],
+};
+
+const FACT_CHECK: GenCheck = { rule: 'none', expr: '', choices: [], note: 'fact' };
+
+/** A tap item where the living thing is right. */
+export function factTap(difficulty: number, living: string, others: [string, string]): GenItem {
+  return {
+    ...blank,
+    type: 'tap',
+    difficulty,
+    narration: `Which one is alive: ${others[0]}, ${living}, or ${others[1]}?`,
+    prompt: 'Which one is alive?',
+    why: `A ${living.replace(/^an? /, '')} grows and needs food. It is alive.`,
+    choices: [text('a', others[0]), text('b', living), text('c', others[1])],
+    answerChoiceId: 'b',
+    check: FACT_CHECK,
+  };
+}
+
+/** A Grade 1 science skill's content that passes every code check. */
+export function factContent(): GeneratedContent {
+  const living = ['a cat', 'a tree', 'a fish', 'a bird', 'a frog'];
+  const things = [
+    ['a rock', 'a cup'],
+    ['a shoe', 'a spoon'],
+    ['a ball', 'a hat'],
+  ] as const;
+  return {
+    cards: [
+      { narration: 'Ana walks in the park.', text: null, visual: emoji('🌳') },
+      { narration: 'She sees a dog run by.', text: null, visual: emoji('🐕') },
+      { narration: 'The dog eats and grows. It is alive.', text: 'alive', visual: emoji('🐕') },
+      { narration: 'She sees a rock. It does not eat.', text: null, visual: emoji('🪨') },
+      { narration: 'Now you find the living things!', text: null, visual: emoji('🎉') },
+    ],
+    items: things.flatMap(([x, y], d) =>
+      living.map((l, i) => factTap(d + 1, l, i % 2 === 0 ? [x, y] : [y, x])),
+    ),
+  };
+}

@@ -6,7 +6,15 @@ import {
   type SkillGrade,
 } from '@bright-trail/shared';
 import { edgeKey } from './overrides';
-import { gradeRank, idPrefix, type Expectation, type GradeSource } from './sources';
+import {
+  firstGrade,
+  gradeName,
+  gradeRank,
+  idPrefix,
+  sourceOf,
+  type Expectation,
+  type GradeSource,
+} from './sources';
 
 export interface Problem {
   /** Grade the problem belongs to, so the build can send it back to that grade's generator. */
@@ -66,13 +74,11 @@ export function checkStructure(
     problems.push({ grade: gradeOf(cycle[0]), message: `Cycle: ${cycle.join(' -> ')}` });
   }
 
-  const sourceByGrade = new Map(sources.map((s) => [s.grade, s]));
   for (const skill of skills) {
     const at = (message: string) => problems.push({ grade: skill.grade, message });
-    if (!skill.id.startsWith(idPrefix(skill.grade))) {
-      at(`${skill.id}: id must start with ${idPrefix(skill.grade)}`);
-    }
-    const source = sourceByGrade.get(skill.grade);
+    const prefix = idPrefix(skill.grade, skill.subject);
+    if (!skill.id.startsWith(prefix)) at(`${skill.id}: id must start with ${prefix}`);
+    const source = sourceOf(sources, skill);
     const codes = new Set(source?.expectations.map((e) => e.code));
     for (const code of skill.expectationCodes) {
       if (!codes.has(code)) at(`${skill.id}: expectation ${code} is not in Grade ${skill.grade}`);
@@ -83,25 +89,36 @@ export function checkStructure(
         at(`${skill.id}: prerequisite ${id} is in a higher grade (${grade})`);
       }
     }
-    if (skill.grade !== 'K' && skill.prerequisiteIds.length === 0) {
-      at(`${skill.id}: orphan, only Kindergarten skills may have no prerequisites`);
+    const optIns = new Set(
+      skill.expectationCodes.map(
+        (c) => source?.expectations.find((e) => e.code === c)?.parentOptIn ?? 'none',
+      ),
+    );
+    if (optIns.size > 1) at(`${skill.id}: mixes parent opt-in expectations with others`);
+    for (const id of skill.prerequisiteIds) {
+      if (!skill.parentOptIn && byId.get(id)?.parentOptIn) {
+        at(`${skill.id}: needs ${id}, which a parent must turn on, so it can stay locked`);
+      }
+    }
+    const first = gradeName(firstGrade(sources, skill.subject));
+    if (skill.grade !== firstGrade(sources, skill.subject) && skill.prerequisiteIds.length === 0) {
+      at(`${skill.id}: orphan, only ${first} skills may have no prerequisites`);
     }
   }
 
   const reachable = reachableFromRoots(skills);
   for (const skill of skills) {
     if (!reachable.has(skill.id)) {
+      const first = gradeName(firstGrade(sources, skill.subject));
       problems.push({
         grade: skill.grade,
-        message: `${skill.id}: not reachable from a Kindergarten root`,
+        message: `${skill.id}: not reachable from a ${first} root`,
       });
     }
   }
 
   for (const source of sources) {
-    const used = new Set(
-      skills.filter((s) => s.grade === source.grade).flatMap((s) => s.expectationCodes),
-    );
+    const used = new Set(skillsOf(skills, source).flatMap((s) => s.expectationCodes));
     for (const e of source.expectations) {
       if (e.kind === 'specific' && !used.has(e.code)) {
         problems.push({
@@ -148,8 +165,12 @@ const isMultDiv = (e: Expectation) => /multiplication and division/i.test(e.topi
 const isAddSub = (e: Expectation) =>
   !isMultDiv(e) && /\badd(ition|ing)?\b/i.test(e.statement) && /\bsubtract/i.test(e.statement);
 
+function skillsOf(skills: readonly Skill[], source: GradeSource): Skill[] {
+  return skills.filter((s) => s.subject === source.subject && s.grade === source.grade);
+}
+
 function expectationsOf(skill: Skill, sources: readonly GradeSource[]): Expectation[] {
-  const source = sources.find((s) => s.grade === skill.grade);
+  const source = sourceOf(sources, skill);
   const codes = new Set(skill.expectationCodes);
   return source?.expectations.filter((e) => codes.has(e.code)) ?? [];
 }
@@ -200,7 +221,7 @@ export function checkContent(
   }
 
   for (const source of sources) {
-    const count = skills.filter((s) => s.grade === source.grade).length;
+    const count = skillsOf(skills, source).length;
     const budget = source.expectations.filter((e) => e.kind === 'specific').length;
     if (count > budget) {
       problems.push({
@@ -233,8 +254,10 @@ export function findWarnings(skills: readonly Skill[], sources: readonly GradeSo
   const warnings: Problem[] = [];
   for (const skill of skills) {
     const rank = gradeRank(skill.grade);
-    if (rank === 0) continue;
-    const previous = skills.filter((s) => gradeRank(s.grade) === rank - 1);
+    if (rank <= gradeRank(firstGrade(sources, skill.subject))) continue;
+    const previous = skills.filter(
+      (s) => s.subject === skill.subject && gradeRank(s.grade) === rank - 1,
+    );
     const mine = families(skill);
     const sameTopic = previous.filter((p) => [...families(p)].some((f) => mine.has(f)));
     const targets = new Set((sameTopic.length > 0 ? sameTopic : previous).map((s) => s.id));
@@ -249,9 +272,15 @@ export function findWarnings(skills: readonly Skill[], sources: readonly GradeSo
   return warnings;
 }
 
-/** Kindergarten skills with no prerequisites: where every trail starts. */
+/** Skills of a subject's lowest grade with no prerequisites: where every trail starts. */
 export function roots(skills: readonly Skill[]): Skill[] {
-  return skills.filter((s) => s.grade === 'K' && s.prerequisiteIds.length === 0);
+  const lowest = new Map<string, number>();
+  for (const s of skills) {
+    lowest.set(s.subject, Math.min(lowest.get(s.subject) ?? Infinity, gradeRank(s.grade)));
+  }
+  return skills.filter(
+    (s) => gradeRank(s.grade) === lowest.get(s.subject) && s.prerequisiteIds.length === 0,
+  );
 }
 
 /** Ids reachable by walking from the roots to the skills that depend on them. */

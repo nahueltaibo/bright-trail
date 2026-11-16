@@ -1,0 +1,288 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g6-soc-territory",
+        "title": "Our Treaty and Traditional Territory",
+        "description": "Your community sits on traditional Indigenous land and inside a treaty area. Pick the territory and treaty names for your community.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g1-soc-territory"]
+      },
+      {
+        "id": "g6-soc-migration-reasons",
+        "title": "Why People Came to Canada",
+        "description": "People moved to Canada for freedom, land, work, family, or to escape famine and war. Some were forced to come. Match each person's story to the reason.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g3-soc-settler-communities"]
+      },
+      {
+        "id": "g6-soc-settler-life",
+        "title": "Life in Newcomer Communities",
+        "description": "Newcomers farmed, worked, worshipped, and dressed in ways from their old homes. Match each way of life to its source, and pick how it affected Indigenous communities.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g6-soc-migration-reasons", "g3-soc-daily-life-roles"]
+      },
+      {
+        "id": "g6-soc-community-types",
+        "title": "Kinds of Communities in Canada",
+        "description": "Canada has First Nations, French, British, later immigrant, religious, resource-town, and city communities. Match each kind to how it helped build the country.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g6-soc-migration-reasons", "g3-soc-indigenous-communities"]
+      },
+      {
+        "id": "g6-soc-indigenous-history",
+        "title": "Big Events for Indigenous Communities",
+        "description": "Treaties, the Indian Act, residential schools, and the creation of Nunavut changed First Nations, Métis, and Inuit communities. Match each event to how it changed them.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g3-soc-colonial-policies", "g5-soc-contact"]
+      },
+      {
+        "id": "g6-soc-settler-history",
+        "title": "Big Events for Newcomer Communities",
+        "description": "The Acadian expulsion, the Underground Railroad, and Japanese Canadian relocation shaped communities. Match each event to the community and how it changed them.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g6-soc-settler-life", "g5-soc-european-conflicts"]
+      },
+      {
+        "id": "g6-soc-jewish-history",
+        "title": "Jewish Communities in Canada",
+        "description": "Put key events in Jewish Canadian history in order, like the first synagogue and equal rights. Match unfair limits and how communities responded, like building Mount Sinai Hospital.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g6-soc-migration-reasons"]
+      },
+      {
+        "id": "g6-soc-interactions",
+        "title": "How Communities Dealt With Each Other",
+        "description": "Communities traded, made treaties, helped each other, or treated each other unfairly. Sort each story into cooperation or conflict and say who was involved.",
+        "expectationCodes": ["A3.8"],
+        "prerequisiteIds": ["g5-soc-contact", "g6-soc-settler-life"]
+      },
+      {
+        "id": "g6-soc-differences",
+        "title": "How Communities Differed",
+        "description": "Communities differed in gender roles, money, religion, and beliefs about land. Match each difference to the communities it describes.",
+        "expectationCodes": ["A3.9"],
+        "prerequisiteIds": ["g6-soc-settler-life", "g5-soc-differences"]
+      },
+      {
+        "id": "g6-soc-own-community-change",
+        "title": "Change in My Own Community",
+        "description": "Your own community has changed over time. Pick the changes that fit a local, ethnic, or religious community and put them in order.",
+        "expectationCodes": ["A3.10"],
+        "prerequisiteIds": ["g2-soc-family-change", "g6-soc-migration-reasons"]
+      },
+      {
+        "id": "g6-soc-identity-elements",
+        "title": "What Makes Canada's Identity",
+        "description": "Canada values inclusiveness, human rights, diversity, bilingualism, parliamentary democracy, and treaties. Match each idea to what it means.",
+        "expectationCodes": ["A3.11"],
+        "prerequisiteIds": ["g5-soc-citizen-rights", "g3-soc-canadian-identity"]
+      },
+      {
+        "id": "g6-soc-features-identity",
+        "title": "Features That Shape Canada's Image",
+        "description": "Memorials, mountains, winter, moose, mining towns, and city neighbourhoods all shape how people see Canada. Sort each into built, physical, or social, and pick what it adds to Canada's image.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g6-soc-community-types", "g4-soc-physical-regions"]
+      },
+      {
+        "id": "g6-soc-indigenous-contrib",
+        "title": "Indigenous Gifts to Canada",
+        "description": "First Nations, Métis, and Inuit people gave Canada art, canoes, kayaks, medicines, Arctic knowledge, and democratic ideas. Match each gift to who made it.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g3-soc-canadian-identity", "g5-soc-benefits"]
+      },
+      {
+        "id": "g6-soc-settler-contrib",
+        "title": "Newcomer Gifts to Canada",
+        "description": "Chinese railway workers, Irish and Italian canal workers, the British parliament system, and French and English communities all helped shape Canada. Match each group to its gift.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g6-soc-settler-history"]
+      },
+      {
+        "id": "g6-soc-inclusiveness",
+        "title": "Working Toward an Inclusive Canada",
+        "description": "Women's, labour, Indigenous, and disability groups worked for fairness. Match each group or law, like the Charter, to how it helped, and pick what still needs work.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g6-soc-identity-elements", "g5-soc-citizen-action"]
+      },
+      {
+        "id": "g6-soc-a-questions",
+        "title": "Questions About Different Views",
+        "description": "One event can look different to different groups, like treaties or relocation. Pick a good question to investigate how each group saw it.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g5-soc-a-questions", "g6-soc-differences"]
+      },
+      {
+        "id": "g6-soc-a-gather",
+        "title": "Sources With Different Perspectives",
+        "description": "Letters, diaries, oral stories, treaties, and interviews are primary or secondary sources. Sort them, and sort which view each one shows.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g5-soc-a-sources", "g6-soc-a-questions"]
+      },
+      {
+        "id": "g6-soc-a-maps",
+        "title": "Maps of Communities and Moves",
+        "description": "Read flow maps of relocations and thematic maps of where communities live. Pick what each map shows and how to build one.",
+        "expectationCodes": ["A2.3"],
+        "prerequisiteIds": ["g5-soc-a-maps", "g6-soc-a-gather"]
+      },
+      {
+        "id": "g6-soc-a-tools",
+        "title": "Charts and Graphs on Perspectives",
+        "description": "Use a comparison chart, a census line graph, or photos and diaries to see how people felt. Pick what the tool shows.",
+        "expectationCodes": ["A2.4"],
+        "prerequisiteIds": ["g5-soc-a-tools", "g6-soc-a-gather"]
+      },
+      {
+        "id": "g6-soc-a-conclusions",
+        "title": "Conclusions About Perspectives",
+        "description": "Check if evidence is strong and fair. Pick the conclusion about how different communities felt that the evidence supports.",
+        "expectationCodes": ["A2.5"],
+        "prerequisiteIds": ["g5-soc-a-conclusions", "g6-soc-a-tools", "g6-soc-a-maps"]
+      },
+      {
+        "id": "g6-soc-a-communicate",
+        "title": "Sharing Perspective Findings",
+        "description": "Pick the best format to share different views, and the right words like immigrant, settler, colonization, and racism.",
+        "expectationCodes": ["A2.6"],
+        "prerequisiteIds": ["g5-soc-a-communicate", "g6-soc-a-conclusions"]
+      },
+      {
+        "id": "g6-soc-gov-interactions",
+        "title": "How Canada Deals With Other Countries",
+        "description": "Canada works with other nations through trade deals, alliances, environmental agreements, and aid. Match each way to an example.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g5-soc-jurisdiction"]
+      },
+      {
+        "id": "g6-soc-accords",
+        "title": "Canada in International Groups",
+        "description": "Canada takes part in the UN, WHO, NATO, NAFTA, UNICEF, and the Blue Flag Program. Match each one to what it does.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": ["g6-soc-gov-interactions"]
+      },
+      {
+        "id": "g6-soc-groups-orgs",
+        "title": "Groups Helping the World",
+        "description": "NGOs like Doctors Without Borders, companies, and groups like the UN and the Commonwealth work on world issues. Sort each group by its type and match it to its work.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g6-soc-gov-interactions"]
+      },
+      {
+        "id": "g6-soc-disaster-response",
+        "title": "Helping After Disasters",
+        "description": "Canada and NGOs helped after the Haiti earthquake, the Indian Ocean tsunami, and health crises. Match each disaster to the help given.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g6-soc-groups-orgs"]
+      },
+      {
+        "id": "g6-soc-holocaust-rights",
+        "title": "Canada, the Holocaust, and Human Rights",
+        "description": "Canada turned away Jewish refugees, like the MS St. Louis. Later it helped write human rights laws like the Charter. Match each action to what it did.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g6-soc-jewish-history", "g6-soc-identity-elements"]
+      },
+      {
+        "id": "g6-soc-interaction-effects",
+        "title": "How Canada Affects Other Regions",
+        "description": "Peacekeeping, trade deals, and education projects change life in other places. Match each action by Canada to its effect.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g6-soc-economic-partners", "g6-soc-groups-orgs"]
+      },
+      {
+        "id": "g6-soc-locate-regions",
+        "title": "Finding Places Using Latitude and Longitude",
+        "description": "Find countries Canada works closely with on a map. Use latitude and longitude to find cities like London, Tokyo, and Nairobi.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g4-soc-directions", "g6-soc-gov-interactions"]
+      },
+      {
+        "id": "g6-soc-economic-partners",
+        "title": "Canada's Trading Partners",
+        "description": "The United States, Mexico, and China are big partners for Canada. Pick why, like being close, having stable governments, or needing products.",
+        "expectationCodes": ["B3.8"],
+        "prerequisiteIds": ["g6-soc-locate-regions", "g4-soc-sectors"]
+      },
+      {
+        "id": "g6-soc-economic-effects",
+        "title": "Trade and Jobs in Canada",
+        "description": "Trade deals, lower labour costs elsewhere, and immigration change jobs and money in Canada. Match each cause to its effect.",
+        "expectationCodes": ["B3.9"],
+        "prerequisiteIds": ["g6-soc-economic-partners"]
+      },
+      {
+        "id": "g6-soc-environment-effects",
+        "title": "Canada's Global Links and Nature",
+        "description": "Shipping brings invasive species, cheap cotton and cocoa can harm farmland, and tree-planting helps. Match each link to its effect on nature.",
+        "expectationCodes": ["B3.10"],
+        "prerequisiteIds": ["g6-soc-economic-partners", "g4-soc-industry-impact"]
+      },
+      {
+        "id": "g6-soc-why-accords",
+        "title": "Why Canada Joins Accords",
+        "description": "Canada joins groups to trade, stay safe, stay healthy, and protect rights. Match each group to why Canada joined and how much it matters.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g6-soc-accords"]
+      },
+      {
+        "id": "g6-soc-responses-issue",
+        "title": "Responses to a Global Issue",
+        "description": "Governments, NGOs, and people respond to issues like SARS, child labour, or refugees. Match each response to who did it.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g6-soc-disaster-response", "g5-soc-citizen-action"]
+      },
+      {
+        "id": "g6-soc-intl-environment",
+        "title": "Environmental Issues Everyone Shares",
+        "description": "Global warming, overfishing, and e-waste cross borders. Pick why many countries must work together to fix them.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g6-soc-environment-effects", "g4-soc-sustainable-actions"]
+      },
+      {
+        "id": "g6-soc-b-questions",
+        "title": "Questions About Global Issues",
+        "description": "Pick a good question to investigate a world issue like fresh water, child labour, or climate change, its impact, and responses.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g5-soc-b-questions", "g6-soc-responses-issue"]
+      },
+      {
+        "id": "g6-soc-b-gather",
+        "title": "Gathering Facts on Global Issues",
+        "description": "Satellite images, online data, atlases, and eyewitness accounts are sources. Sort which ones help with a global issue question.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g5-soc-b-gather", "g6-soc-b-questions"]
+      },
+      {
+        "id": "g6-soc-b-maps",
+        "title": "Maps of Global Issues",
+        "description": "Read maps of refugee areas, disease spread, and quality of life, or flow maps of imports. Pick what each map shows.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g5-soc-b-maps", "g6-soc-b-gather"]
+      },
+      {
+        "id": "g6-soc-b-tools",
+        "title": "Graphs and Data on Global Issues",
+        "description": "Read climate graphs, bar graphs, and organizers about aid or drought. Pick what the data shows.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g5-soc-b-tools", "g6-soc-b-gather"]
+      },
+      {
+        "id": "g6-soc-b-conclusions",
+        "title": "Conclusions About Global Issues",
+        "description": "Judge the evidence about a world issue and pick the conclusion it supports.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g5-soc-b-conclusions", "g6-soc-b-tools", "g6-soc-b-maps"]
+      },
+      {
+        "id": "g6-soc-b-communicate",
+        "title": "Sharing Global Issue Findings",
+        "description": "Pick the best format to share what you learned, and the right words like NGO, accord, aid, and relief efforts.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g5-soc-b-communicate", "g6-soc-b-conclusions"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 3 says fish 'drink' water. Fish take in water through the mouth and breathe it through gills, so 'drink' is a loose simplification. Consider 'Fish and ducks live in it and swim in it,' or keep it, since a grade 1 teacher is unlikely to dispute it."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 4 says seeds feed the pond animals. Seeds rarely fall into ponds, so this image is a stretch. Consider 'Plants and bugs feed the pond animals' to keep the picture accurate."
+      },
+      {
+        "target": "g1-sci-healthy-environment-tap-13",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "Labelled difficulty 3, but it is a simple either/or with an obvious answer, closer to difficulty 1. Consider raising its difficulty or making the distractors harder."
+      },
+      {
+        "target": "g1-sci-healthy-environment-tap-15",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "Labelled difficulty 3, but the 'living things need it' answer is obvious by ear. Consider lowering it to difficulty 2 or making the reasons closer."
+      }
+    ],
+    "notes": "I checked all 15 items and the story cards. Each marked answer is correct, and each wrong choice is clearly wrong (none is partly right). Every item can be understood by ear, and the pictures match the narration. Nothing is outside the grade 1 skill, and nothing stereotypes or frightens children. The only issues are small wording and difficulty points, so there are no blockers."
+  }
+}

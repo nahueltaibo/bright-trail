@@ -1,0 +1,176 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g4-soc-early-societies-map",
+        "title": "Finding Early Societies on Maps",
+        "description": "Early societies, like a First Nation and an Inuit society, lived in different places. Find them on a map and pick what climate and land maps tell about them.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g2-soc-continents-oceans", "g2-soc-photo-map-info"]
+      },
+      {
+        "id": "g4-soc-visual-evidence",
+        "title": "Clues from Art and Artefacts",
+        "description": "Carvings, masks, beadwork, tools, and pottery show how people lived long ago. Pick what each picture of an object tells about daily life.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g2-soc-photo-map-info"]
+      },
+      {
+        "id": "g4-soc-physical-features",
+        "title": "Land, Floods, and Food",
+        "description": "Rivers, floods, volcanoes, tundra, and changing seasons affected how early societies got food. Match each feature or event to how it helped or hurt.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g4-soc-early-societies-map", "g2-soc-sustainability"]
+      },
+      {
+        "id": "g4-soc-environment-needs",
+        "title": "Meeting Needs from the Land",
+        "description": "Early societies got food, shelter, and clothing from the place where they lived. Match each environment to how people met their needs.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g4-soc-early-societies-map", "g2-soc-adapting-environment"]
+      },
+      {
+        "id": "g4-soc-daily-life",
+        "title": "Daily Life in Early Societies",
+        "description": "Early societies had their own food, homes, clothes, school, fun, ceremonies, and ways of travelling. Match each one to its society.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g4-soc-early-societies-map", "g3-soc-daily-life-then"]
+      },
+      {
+        "id": "g4-soc-tech-developments",
+        "title": "Old Inventions and Discoveries",
+        "description": "People long ago invented calendars, the printing press, farming tools, and better boats. Match each invention to the society that made it and what it did.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g4-soc-daily-life"]
+      },
+      {
+        "id": "g4-soc-governance",
+        "title": "How Early Societies Were Governed",
+        "description": "Some early societies had emperors, kings, chiefs, or early democracies. Match each society to who made its rules.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g4-soc-daily-life", "g3-soc-local-government"]
+      },
+      {
+        "id": "g4-soc-social-organization",
+        "title": "Who Was Who in Early Societies",
+        "description": "Early societies had groups like nobles, peasants, slaves, priests, and merchants. Match each group to its job and how important it was.",
+        "expectationCodes": ["A3.8"],
+        "prerequisiteIds": ["g4-soc-daily-life"]
+      },
+      {
+        "id": "g4-soc-compare-organization",
+        "title": "Comparing How Societies Were Organized",
+        "description": "Some societies had social classes, inherited privilege, or matrilineal families. Sort what is the same and what is different between societies, and with Canada today.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g4-soc-social-organization"]
+      },
+      {
+        "id": "g4-soc-group-daily-lives",
+        "title": "Lives of Different Groups",
+        "description": "A lord and a serf, or a man and a woman, lived very differently. Match each group's work, food, and home to its place in society.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g4-soc-compare-organization"]
+      },
+      {
+        "id": "g4-soc-young-people",
+        "title": "Growing Up Long Ago",
+        "description": "Young people long ago had different family life, school, play, and chores depending on their background. Sort what is like your life and what is different.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g4-soc-daily-life", "g3-soc-life-compare-groups"]
+      },
+      {
+        "id": "g4-soc-environment-compare",
+        "title": "Caring for Nature Then and Now",
+        "description": "Early societies followed seasons and used land and resources in different ways. Sort what is the same and what is different from Canada today.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g4-soc-environment-needs", "g2-soc-sustainability"]
+      },
+      {
+        "id": "g4-soc-coop-conflict-reasons",
+        "title": "Why Groups Worked Together or Fought",
+        "description": "Groups cooperated or clashed to trade, explore, win land, gain power, or protect beliefs. Match each reason to an example.",
+        "expectationCodes": ["A3.9"],
+        "prerequisiteIds": ["g4-soc-governance", "g3-soc-conflict-cooperation"]
+      },
+      {
+        "id": "g4-soc-resolving-conflict",
+        "title": "Making Peace Long Ago",
+        "description": "Early societies made peace with ideas like the Great Law of Peace, the Magna Carta, treaties, and shared food. Match each one to how it helped people get along.",
+        "expectationCodes": ["A3.10"],
+        "prerequisiteIds": ["g4-soc-coop-conflict-reasons"]
+      },
+      {
+        "id": "g4-soc-physical-regions",
+        "title": "Canada's Physical Regions",
+        "description": "Canada has regions like the Western Cordillera, boreal forest, tundra, and the Prairies. Match each region to where it is and what it is like.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g3-soc-landform-regions"]
+      },
+      {
+        "id": "g4-soc-region-activities",
+        "title": "What People Do in Each Region",
+        "description": "People farm, mine, fish, ski, and hike in different regions of Canada. Match each activity to the region where it happens.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": ["g4-soc-physical-regions", "g3-soc-land-use-types"]
+      },
+      {
+        "id": "g4-soc-economic-sectors",
+        "title": "Four Kinds of Industry",
+        "description": "Industries are resource, manufacturing, service, or information based. Sort jobs like logging, car making, banking, and research into the right sector.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g3-soc-employment-types"]
+      },
+      {
+        "id": "g4-soc-political-regions",
+        "title": "Kinds of Political Regions",
+        "description": "Canada has provinces, territories, municipalities, and First Nations lands. Pick how they are alike and different.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g3-soc-local-government"]
+      },
+      {
+        "id": "g4-soc-provinces-capitals",
+        "title": "Provinces, Territories, and Capitals",
+        "description": "Match each province and territory to its capital city, where it is, and some of the people who live there.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g4-soc-political-regions", "g3-soc-political-map-type"]
+      },
+      {
+        "id": "g4-soc-map-directions-grids",
+        "title": "Intermediate Directions and Grids",
+        "description": "NE, NW, SE, and SW are directions between north, south, east, and west. Use them and map grids to find places in Canada.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g2-soc-cardinal-directions", "g3-soc-make-ontario-maps"]
+      },
+      {
+        "id": "g4-soc-quality-of-life",
+        "title": "Opportunities and Challenges by Region",
+        "description": "Some places have many jobs, while others face job loss, pollution, or crowded cities. Match each region to its good and hard things.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g4-soc-provinces-capitals", "g4-soc-region-activities"]
+      },
+      {
+        "id": "g4-soc-nature-shapes-industry",
+        "title": "Nature Shapes Industry",
+        "description": "The Shield led to mining, the Maritimes to fishing, and the Prairies to big farms. Match each region's nature to the industry it allows.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g4-soc-region-activities", "g4-soc-economic-sectors"]
+      },
+      {
+        "id": "g4-soc-industry-impact",
+        "title": "How Industry Affects Nature",
+        "description": "Oil sands, dams, mining, fishing, and shipping can change land, air, and water. Match each industry to the effect it has.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g4-soc-nature-shapes-industry"]
+      },
+      {
+        "id": "g4-soc-sustainable-actions",
+        "title": "Using Resources Wisely",
+        "description": "Companies and people can use solar panels, clean up waste, hunt and fish responsibly, and ask Indigenous communities for input. Pick the actions and how well they help.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g4-soc-industry-impact"]
+      }
+    ]
+  }
+}

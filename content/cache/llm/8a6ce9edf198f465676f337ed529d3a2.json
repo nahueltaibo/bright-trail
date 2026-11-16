@@ -1,0 +1,106 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g6-hlth-inclusion",
+        "title": "Being Inclusive and Respectful",
+        "description": "Pick ways to include and accept others. Choose how being kind and respectful helps everyone, including you.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g3-hlth-respecting-differences", "g5-hlth-hurtful-actions"]
+      },
+      {
+        "id": "g6-hlth-drug-effects",
+        "title": "Effects of Cannabis and Other Drugs",
+        "description": "Sort the effects of cannabis, opioids, and other drugs and things like glue or gas. Pick how they can hurt the body and mind.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g5-hlth-alcohol-effects"]
+      },
+      {
+        "id": "g6-hlth-explicit-media",
+        "title": "Explicit Media and Real Life",
+        "description": "Pick how viewing sexually explicit media can give a wrong idea about relationships, gender, and bodies.",
+        "expectationCodes": ["D1.3"],
+        "prerequisiteIds": ["g5-hlth-self-concept", "g5-hlth-reproductive-puberty"]
+      },
+      {
+        "id": "g6-hlth-support-services",
+        "title": "Finding Mental Health Support",
+        "description": "Match problems with mental health or substance use to people and services that can help. Pick how to reach them.",
+        "expectationCodes": ["D1.4"],
+        "prerequisiteIds": ["g5-hlth-helping-others"]
+      },
+      {
+        "id": "g6-hlth-thoughts-emotions",
+        "title": "Thoughts, Emotions, and Actions",
+        "description": "See how thoughts, feelings, and actions connect. Sort positive and negative thinking and how each affects your mind.",
+        "expectationCodes": ["D1.5"],
+        "prerequisiteIds": ["g4-hlth-mental-health-choices"]
+      },
+      {
+        "id": "g6-hlth-eating-factors",
+        "title": "What Shapes Our Food Choices",
+        "description": "Sort things that affect what we eat, like allergies, cost, feelings, media, and culture. Pick healthy eating guidelines that fit.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g5-hlth-food-labels", "g5-hlth-food-ads"]
+      },
+      {
+        "id": "g6-hlth-hunger-guidelines",
+        "title": "Hunger Cues and Growing Bodies",
+        "description": "Match what changes how hungry you are, like growth spurts, activity, and big portions. Pick eating guidelines that listen to your body.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g1-hlth-hunger-cues", "g4-hlth-eating-goals"]
+      },
+      {
+        "id": "g6-hlth-conflict-skills",
+        "title": "Handling Conflict Positively",
+        "description": "Pick ways to stay calm, listen, and speak up kindly in a conflict, in person or online.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g3-hlth-healthy-relationships", "g4-hlth-managing-stress"]
+      },
+      {
+        "id": "g6-hlth-drug-choices",
+        "title": "Safe Choices About Drugs",
+        "description": "Sort what can push a choice about alcohol, tobacco, cannabis, or vaping. Use decision steps to pick a safe choice, including saying no.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g5-hlth-refusal-skills", "g5-hlth-alcohol-cannabis-factors"]
+      },
+      {
+        "id": "g6-hlth-adolescent-changes",
+        "title": "Growing Up: Body, Friends, Feelings",
+        "description": "Sort the body, friend, and feeling changes of the teen years. Pick how knowing about them builds confidence.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g5-hlth-puberty-stress"]
+      },
+      {
+        "id": "g6-hlth-consent-respect",
+        "title": "Respect and Consent in Relationships",
+        "description": "Pick respectful choices that show you understand consent. Use skills like knowing yourself and managing feelings.",
+        "expectationCodes": ["D2.6"],
+        "prerequisiteIds": ["g3-hlth-healthy-relationships", "g5-hlth-self-concept"]
+      },
+      {
+        "id": "g6-hlth-eating-active",
+        "title": "Healthy Eating and Active Living",
+        "description": "Match how eating well and being active together help your body and mind. Pick ways to encourage others to do both.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g4-hlth-eating-goals", "g4-hlth-mental-health-choices"]
+      },
+      {
+        "id": "g6-hlth-caring-safety",
+        "title": "Safe When Caring for Others",
+        "description": "Pick safe choices when babysitting, staying home alone, or cooking. Choose what to do in emergencies like fire, allergic reactions, or bullying.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g5-hlth-threat-response", "g2-hlth-food-allergies"]
+      },
+      {
+        "id": "g6-hlth-stereotypes",
+        "title": "Stereotypes and Fair Thinking",
+        "description": "Spot stereotypes about gender, race, culture, abilities, and more. Pick ways to answer them and how they affect people.",
+        "expectationCodes": ["D3.3"],
+        "prerequisiteIds": ["g5-hlth-mental-health-stigma", "g5-hlth-self-concept"]
+      }
+    ]
+  }
+}

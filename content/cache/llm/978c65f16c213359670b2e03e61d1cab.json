@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "mismatch",
+        "note": "Card 4 narrates three events (moved to Canada, son born, Maya born) but the picture is 3 × 🏠. Houses show only the move, so two birth events are drawn as houses. A child listening while looking at the picture would hear births and see moves. Use a picture that fits the events, such as one house for the move and a baby or family emoji for each birth, or drop the picture."
+      },
+      {
+        "target": "g2-soc-chronology-tap-15",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration never says Nana is Mom's mother. The marked answer ('Nana was born before Mom') depends on that relationship, and the Why text states it as fact. Name the relationship in the narration, for example 'Nana is Mom's mother. Which is true: ...', so the answer can be worked out by ear."
+      }
+    ],
+    "notes": "Checked all 15 tap items against their marked answers and the stated facts. Each marked answer is correct, and no distractor is also partly right. Tap-1 through tap-14 are fine as written. The story text is accurate and age-appropriate. The only substantive issues are the card 4 picture mismatch (blocker) and the unstated Nana relationship in tap-15 (note)."
+  }
+}

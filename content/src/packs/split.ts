@@ -5,9 +5,9 @@ import {
   ContentManifestSchema,
   ContentPackSchema,
   manifestPath,
+  OFFERED_SUBJECTS,
   packId,
   SKILL_GRADES,
-  SUBJECTS,
   type ContentBundle,
   type ContentCore,
   type ContentManifest,
@@ -22,6 +22,8 @@ const sha256 = (text: string) => createHash('sha256').update(text).digest('hex')
 /**
  * Splits a bundle into core, one pack per subject and grade with content, and a manifest named
  * by the schema version and the core's hash. Output is minified and deterministic, so hashes match the served bytes.
+ * Only offered subjects ship: the engine would unlock any skill in core, even one with no pack.
+ * Parent opt-in skills wait for the app's opt-in switch. No other skill depends on them.
  */
 export function splitBundle(bundle: ContentBundle): {
   core: ContentCore;
@@ -29,21 +31,23 @@ export function splitBundle(bundle: ContentBundle): {
   files: PackFiles;
 } {
   const files: PackFiles = new Map();
+  const offered = new Set<string>(OFFERED_SUBJECTS);
+  const skills = bundle.skills.filter((s) => offered.has(s.subject) && !s.parentOptIn);
   const core = ContentCoreSchema.parse({
     schemaVersion: CONTENT_SCHEMA_VERSION,
-    hash: sha256(JSON.stringify(bundle.skills)),
-    skills: bundle.skills,
+    hash: sha256(JSON.stringify(skills)),
+    skills,
   });
   files.set('core.json', JSON.stringify(core));
 
-  const skillById = new Map<string, Skill>(bundle.skills.map((s) => [s.id, s]));
+  const skillById = new Map<string, Skill>(skills.map((s) => [s.id, s]));
   const keyOf = (skillId: string) => {
-    const skill = skillById.get(skillId)!;
-    return packId(skill.subject, skill.grade);
+    const skill = skillById.get(skillId);
+    return skill && packId(skill.subject, skill.grade);
   };
 
   const packs: ContentManifest['packs'] = [];
-  for (const subject of SUBJECTS) {
+  for (const subject of OFFERED_SUBJECTS) {
     for (const grade of SKILL_GRADES) {
       const id = packId(subject, grade);
       const nuggets = bundle.nuggets.filter((n) => keyOf(n.skillId) === id);

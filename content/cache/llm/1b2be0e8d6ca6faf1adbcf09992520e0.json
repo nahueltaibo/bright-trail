@@ -1,0 +1,25 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g1-soc-events-change-me",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g1-soc-roles-change"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks the kid to match each event to the change it brings. That is a matching task and does not require putting events in chronological order, so g1-soc-events-in-order is not a needed prerequisite. The needed prerequisite is g1-soc-roles-change, since the skill is about changes to roles and relationships."
+      },
+      {
+        "skillId": "g1-soc-a-questions",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g1-soc-events-change-me"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks the kid to pick a question about how jobs or feelings changed after an event. That depends directly on g1-soc-events-change-me. g1-soc-roles-change is only reached through events-change-me, so listing it directly is redundant under the directness rule."
+      }
+    ],
+    "notes": "Reviewed all 33 proposed Grade 1 skills. No prerequisites point to a later grade or to the skill itself, and every skill's expectation is covered. Two corrections were made: an unneeded prerequisite was removed from g1-soc-events-change-me, and g1-soc-a-questions now points to the direct prerequisite g1-soc-events-change-me instead of a transitively reached one. Titles and descriptions read well aloud. I considered but did not change g1-soc-a-tools (whether g1-soc-a-sources is strictly needed to read a timeline, Venn diagram, or calendar), g1-soc-respect-all (kind-behaviour), and g1-soc-responsible-plan (whether public-services is needed). These are judgment calls where the current links are defensible."
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 says \"Air and water are in our healthy places to live.\" The phrase is unclear to a listener, and the picture is a tree. Clearer wording would be something like \"Air and water are part of healthy places where living things live.\" The facts are correct."
+      }
+    ],
+    "notes": "Checked all 7 story cards and all 15 tap items. Every marked answer is correct, and every wrong choice is clearly wrong. Items 6, 12, and 14 have distractors that are plainly false, and item 14's odd one out (ball) is the only non-liquid. The facts (air takes up space, water flows and takes its container's shape, air is invisible but felt as wind, we breathe in air, clean air and water matter for living things) are accurate for Grade 2. Nothing is out of scope, scary, or stereotyping. Only one small wording note on story card 6. Items are audio-friendly: each question stands on its own without the picture, except the balloon and blown-air items, where the narration names the balloon."
+  }
+}

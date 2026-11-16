@@ -1,0 +1,25 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g5-sci-matter-defined",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-sci-liquid-solid-properties", "g2-sci-air-water-properties"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to sort matter from non-matter. The grade 2 skill g2-sci-air-water-properties teaches that air takes up space, which is the key example kids need to see that gases are matter. Without it, the idea of 'takes up space' has no concrete anchor for air. It does not depend on any other listed prerequisite."
+      },
+      {
+        "skillId": "g5-sci-thermal-energy",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g5-sci-state-changes", "g2-sci-state-conditions"],
+        "title": "",
+        "description": "",
+        "reason": "g1-sci-energy-moves is already reached through g5-sci-state-changes -> g2-sci-three-states-water -> g2-sci-water-states -> g1-sci-energy-moves, so listing it directly is redundant. The direct prerequisite this skill needs is g2-sci-state-conditions, which teaches that heat or cold makes a liquid or solid change. That is the same idea the grade 5 skill extends to heat absorbed or released in melting, freezing, boiling and condensing."
+      }
+    ],
+    "notes": "Checked all 40 proposed Grade 5 skills. All prerequisite ids exist in the prompt, and none point to a later grade or to the skill itself. Titles and descriptions read clearly aloud and match their expectations. Two corrections were needed. Two other possible gaps were considered and left alone because the link is only partial: g2-sci-mixtures for 'dissolving sugar' in g5-sci-physical-change, and g5-sci-chemical-change for the combustion mechanism in g5-sci-fossil-fuels-climate. The author may want to revisit these, but they are not clear errors."
+  }
+}

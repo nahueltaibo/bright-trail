@@ -1,0 +1,99 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g2-hlth-safety-places",
+        "title": "Staying Safe Everywhere",
+        "description": "Pick safe choices at home, outdoors, and online. Think about the phone and door, fire escapes, sun, buses, bikes, animals, and not sharing private information.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g1-hlth-injury-risks"]
+      },
+      {
+        "id": "g2-hlth-food-allergies",
+        "title": "Food Allergies and Reactions",
+        "description": "Match common food allergies, like peanuts, milk, eggs, and fish, to the reactions they can cause. Pick the signs that a reaction is happening.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g1-hlth-food-needs"]
+      },
+      {
+        "id": "g2-hlth-medicines",
+        "title": "Medicines and Safe Use",
+        "description": "Sort medicines into ones a doctor prescribes and ones you can buy without a prescription. Pick the safe rules for using any medicine.",
+        "expectationCodes": ["D1.3"],
+        "prerequisiteIds": ["g1-hlth-injury-risks"]
+      },
+      {
+        "id": "g2-hlth-life-stages",
+        "title": "Stages of Human Life",
+        "description": "Put the stages of life in order, from infant to older adult. Pick what helps people grow and stay healthy at every stage.",
+        "expectationCodes": ["D1.4"],
+        "prerequisiteIds": ["g1-hlth-body-parts"]
+      },
+      {
+        "id": "g2-hlth-body-appreciation",
+        "title": "Appreciating Your Changing Body",
+        "description": "Pick the amazing things your body can do. Choose ways to take care of and appreciate your body as it grows and changes.",
+        "expectationCodes": ["D1.5"],
+        "prerequisiteIds": ["g1-hlth-body-parts"]
+      },
+      {
+        "id": "g2-hlth-body-brain-stress",
+        "title": "Body and Brain Under Stress",
+        "description": "Match how your body and brain can feel in hard or uncomfortable times, like tired, hot, or overwhelmed. Pick what helps you feel better.",
+        "expectationCodes": ["D1.6"],
+        "prerequisiteIds": ["g1-hlth-thoughts-feelings"]
+      },
+      {
+        "id": "g2-hlth-food-guide-choices",
+        "title": "Food Guide Healthy Choices",
+        "description": "Use Canada's Food Guide to pick foods and drinks that help you eat well. Choose water and sort foods into healthy eating patterns.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g1-hlth-food-guide"]
+      },
+      {
+        "id": "g2-hlth-meal-choices",
+        "title": "Choosing Meals and Snacks",
+        "description": "Pick healthy meals and snacks. Sort what you can control, like choosing a snack, from what you can't, like allergies or what food is at home.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g2-hlth-food-guide-choices", "g2-hlth-food-allergies"]
+      },
+      {
+        "id": "g2-hlth-consent-standing-up",
+        "title": "Consent and Standing Up",
+        "description": "Know why consent matters and pick ways to say no, state your boundaries, and respect others' no. Choose when to tell a trusted adult.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g1-hlth-caring-behaviours"]
+      },
+      {
+        "id": "g2-hlth-oral-health",
+        "title": "Taking Care of Your Teeth",
+        "description": "Pick the habits that keep your teeth and mouth healthy, like brushing, flossing, and visiting the dentist. Put tooth care steps in order.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g1-hlth-hygiene"]
+      },
+      {
+        "id": "g2-hlth-naming-feelings",
+        "title": "Naming Your Feelings",
+        "description": "Match feeling words like calm, sad, angry, and worried to situations. Pick when a feeling means it's time to ask for help.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g1-hlth-thoughts-feelings"]
+      },
+      {
+        "id": "g2-hlth-relating-positively",
+        "title": "Getting Along With Others",
+        "description": "Pick kind ways to treat family and others, like cooperating, listening, and watching body language. Sort out hurtful behaviours like name calling, ignoring, and hitting.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g1-hlth-caring-behaviours"]
+      },
+      {
+        "id": "g2-hlth-health-without-medicine",
+        "title": "Staying Healthy Without Medicine",
+        "description": "Match health problems to things that can help besides medicine, like sleep for a cold or fresh air for a headache. Pick healthy meals and traditional healing practices.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g2-hlth-medicines", "g1-hlth-healthy-habits", "g2-hlth-meal-choices"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-sci-plant-parts-tap-15",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "A celery stalk is a petiole (leaf stalk), which is part of the leaf, not a stem. Botanists would dispute 'a celery stalk is a stem.' This teaches a misconception. Replace the item with a clearer stem example, such as an asparagus spear or a potato (an underground stem), or change the question to ask about the leaf stalk."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-13",
+        "severity": "blocker",
+        "category": "wrong-answer",
+        "note": "Distractors are partly right. Without leaves, the plant also cannot grow new roots or make seeds, because growing and seed-making need food. So 'it cannot grow roots' and 'it cannot hold seeds' are each partly true, and the single marked answer is not clearly the only right one. Rewrite the question so the other choices are clearly wrong, for example by asking for the first and most direct problem, or by changing the distractors."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "The closing recap lists 'root, stem, leaf, flower, fruit, seed, and cone' and leaves out stamen and pistil, even though the skill asks students to label both and step 5 teaches them. Add them to the recap."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-14",
+        "severity": "note",
+        "category": "other",
+        "note": "The narration says 'another flower part,' so a child can rule out the root and the leaf by ear without knowing the answer. Consider reworking the choices so each one is a flower part, such as stamen, petal, or the pistil."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-4",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'Roots usually grow down' is accurate as a general rule, but the 'Why' says roots go down 'where they find water.' That is a simplification. Consider adding 'usually' to the explanation as well, since some roots grow sideways."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Coverage gap: the skill is to label nine parts (root, stem, leaf, flower, stamen, pistil, seed, cone, fruit), but no item asks a child to identify the stamen or the pistil by name in a picture or by description, and there are no picture-based items. Consider adding items that match a part to its job."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 tap items against the stated facts. Most items are accurate, and the marked answers are correct for tap-1 to tap-12 and tap-14. Two blockers need fixing before children see the content: the celery item (tap-15) states a factual error, and the tomato item (tap-13) has distractors that are partly correct. No stereotyping, shaming, or frightening content was found. Items are answerable by ear, since the narration and screen text match and the choices are read aloud."
+  }
+}

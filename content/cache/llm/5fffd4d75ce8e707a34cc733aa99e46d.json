@@ -1,0 +1,620 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She is six. She wants to eat well. Today she learns about Canada's Food Guide.",
+        "text": "Canada's Food Guide",
+        "visual": { "kind": "emoji", "emoji": "🍽️", "count": null, "filled": null }
+      },
+      {
+        "narration": "The guide has a plate. It helps us pick good foods and drinks for our bodies.",
+        "text": "A plate to help us",
+        "visual": { "kind": "emoji", "emoji": "🍽️", "count": null, "filled": null }
+      },
+      {
+        "narration": "Half of the plate is vegetables and fruits. Mia picks carrots and an apple.",
+        "text": "vegetables and fruits",
+        "visual": { "kind": "objects", "emoji": "🥕", "count": 4, "filled": null }
+      },
+      {
+        "narration": "One quarter of the plate is whole grain foods. Bread and brown rice are whole grain foods.",
+        "text": "whole grain foods",
+        "visual": { "kind": "emoji", "emoji": "🍞", "count": null, "filled": null }
+      },
+      {
+        "narration": "The other quarter is protein foods. Eggs, beans, and fish are protein foods. Mia picks an egg.",
+        "text": "protein foods",
+        "visual": { "kind": "objects", "emoji": "🥚", "count": 3, "filled": null }
+      },
+      {
+        "narration": "Water is the best drink. Mia fills her cup with water. Water helps her body feel good.",
+        "text": "Water is the best drink",
+        "visual": { "kind": "emoji", "emoji": "💧", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now you can help Mia pick foods for her plate. Let's practise!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🍽️", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia has a carrot. Which group does a carrot belong to: vegetables and fruits, or protein foods?",
+        "prompt": "Where does a carrot go?",
+        "why": "A carrot is a vegetable. It goes with the vegetables and fruits on the plate.",
+        "visual": { "kind": "emoji", "emoji": "🥕", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "vegetables and fruits",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "protein foods",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Mia is thirsty. What is the best drink: water, or soda pop?",
+        "prompt": "What is the best drink?",
+        "why": "Water is the best drink. It helps your body feel good.",
+        "visual": { "kind": "emoji", "emoji": "💧", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "soda pop",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "water",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: The Food Guide helps us pick good foods and drinks.",
+        "prompt": "True or false?",
+        "why": "That is true. The guide helps us pick foods and drinks to eat well.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one is a fruit: an egg, rice, or an apple?",
+        "prompt": "Which one is a fruit?",
+        "why": "An apple is a fruit. Eggs are protein foods, and rice is a grain food.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "an egg",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "rice",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "an apple",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one is a whole grain food: an apple, bread, or an egg?",
+        "prompt": "Which is a whole grain food?",
+        "why": "Bread is made from grains. Whole grain bread is a whole grain food.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🍎", "count": null, "filled": null },
+            "narration": "an apple"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🍞", "count": null, "filled": null },
+            "narration": "bread"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🥚", "count": null, "filled": null },
+            "narration": "an egg"
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "How much of the guide's plate is vegetables and fruits: a quarter, or half?",
+        "prompt": "How much is vegetables and fruits?",
+        "why": "Half of the plate is vegetables and fruits. That is the biggest part.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "half",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a quarter",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one does not belong with vegetables and fruits: a carrot, peas, or bread?",
+        "prompt": "Which is the odd one out?",
+        "why": "Carrots and peas are vegetables. Bread is a grain food, so it goes in a different group.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a carrot",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "peas",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "bread",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Beans are a food on the plate. Which group do beans belong to: whole grain foods, protein foods, or vegetables and fruits?",
+        "prompt": "Where do beans go?",
+        "why": "Beans are protein foods. Protein foods help your muscles grow strong.",
+        "visual": { "kind": "emoji", "emoji": "🫘", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "whole grain foods",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "vegetables and fruits",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "protein foods",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia wants a lunch plate like the guide. Which plate could she pick: carrots, rice, and egg, or only cookies, or only chips?",
+        "prompt": "Which plate fits the guide?",
+        "why": "The guide plate has vegetables, a grain food, and a protein food. Carrots, rice, and egg has all three.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "only cookies",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "only chips",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "carrots, rice, and egg",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "True or false: fish is a whole grain food.",
+        "prompt": "True or false?",
+        "why": "That is false. Fish is a protein food. Bread and oatmeal are whole grain foods.",
+        "visual": { "kind": "emoji", "emoji": "🐟", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which food group fills the biggest part of the plate: protein foods, vegetables and fruits, or whole grain foods?",
+        "prompt": "What fills the most plate?",
+        "why": "Vegetables and fruits fill half of the plate. Grains and protein each fill a quarter.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "protein foods",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "whole grain foods",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "vegetables and fruits",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which pair is all protein foods: apple and carrot, fish and beans, or bread and oatmeal?",
+        "prompt": "Which pair is protein foods?",
+        "why": "Fish and beans are both protein foods. Apple and carrot are vegetables and fruits. Bread and oatmeal are grains.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "apple and carrot",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "fish and beans",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "bread and oatmeal",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Ben wants a snack from the vegetables and fruits group. Which could he pick: chips, grapes, or candy?",
+        "prompt": "Pick a fruit or vegetable snack.",
+        "why": "Grapes are a fruit. Chips and candy are not in the vegetables and fruits group.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "chips",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "candy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "grapes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one is not a protein food: chicken, an egg, or pasta?",
+        "prompt": "Which is the odd one out?",
+        "why": "Chicken and eggs are protein foods. Pasta is a grain food, so it is the odd one out.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "pasta",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "chicken",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "an egg",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Ana wants a snack with a fruit and a protein food. Which snack fits: cookies and candy, apple slices and egg, or chips and pop?",
+        "prompt": "Which snack fits the guide?",
+        "why": "Apple slices are a fruit, and an egg is a protein food. That snack uses two groups from the guide.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "cookies and candy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "chips and pop",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "apple slices and egg",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

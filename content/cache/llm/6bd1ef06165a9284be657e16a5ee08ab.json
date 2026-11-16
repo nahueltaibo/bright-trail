@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g4-hlth-nutrients",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-hlth-food-guide-choices"],
+        "title": "",
+        "description": "",
+        "reason": "Knowing where food comes from and how it is prepared (g3-hlth-food-origins) is not needed to match nutrients to foods or explain why the body needs them. The direct need is knowing how foods are sorted into healthy groups, which is g2-hlth-food-guide-choices. Food origins is only loosely related and is not a required step."
+      },
+      {
+        "skillId": "g4-hlth-eating-goals",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-hlth-nutrients"],
+        "title": "",
+        "description": "",
+        "reason": "Cultural foods (g3-hlth-cultural-foods) is not needed to read a food log and set a goal such as drinking water or eating more vegetables. The Food Guide basis is already covered through g4-hlth-nutrients, which depends on g2-hlth-food-guide-choices, so it should not be listed again here."
+      },
+      {
+        "skillId": "g4-hlth-puberty-hygiene",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-hlth-puberty-changes", "g2-hlth-oral-health"],
+        "title": "",
+        "description": "",
+        "reason": "The skill explicitly asks kids to remember hand washing and tooth care, but the prerequisite list does not include any earlier hygiene or oral health skill. g2-hlth-oral-health covers tooth care and depends on g1-hlth-hygiene (hand washing and clean habits), so it is the direct prerequisite and g1-hlth-hygiene is already covered through it and should not be listed separately."
+      }
+    ],
+    "notes": "Reviewed all 14 Grade 4 skills. Corrections were made only where a prerequisite was unnecessary, redundant with another listed prerequisite, or missing a directly referenced earlier skill. The remaining skills (g4-hlth-tech-risks, g4-hlth-bullying-abuse, g4-hlth-tobacco-substances, g4-hlth-puberty-changes, g4-hlth-smoke-vape-choices, g4-hlth-safe-decisions, g4-hlth-mental-health-choices, g4-hlth-healthy-eating-places, g4-hlth-smoke-effects, g4-hlth-managing-stress) have direct, non-redundant prerequisites that point only to earlier grades, and their titles and descriptions are suitable for reading aloud. No skill is missing a clearly needed prerequisite beyond those listed above."
+  }
+}

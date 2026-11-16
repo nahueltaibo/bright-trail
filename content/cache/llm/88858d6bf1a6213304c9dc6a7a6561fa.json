@@ -1,0 +1,309 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g4-sci-research-process",
+        "title": "Researching Habitats and Rocks",
+        "description": "Put the steps of a research in order. Pick a good question about habitats, light, or rocks and the best place to find the answer.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g3-sci-research-process"]
+      },
+      {
+        "id": "g4-sci-experiment-process",
+        "title": "Fair Tests With Light and Sound",
+        "description": "Pick the fair test that changes only one thing, like testing how sound travels through different materials. Put the steps of an experiment in order.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g3-sci-experiment-process"]
+      },
+      {
+        "id": "g4-sci-design-process",
+        "title": "Design, Build, Test Machines",
+        "description": "Put the steps for designing and building a device in order. Pick what to change to make it work better.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g3-sci-design-process"]
+      },
+      {
+        "id": "g4-sci-safety-procedures",
+        "title": "Safe Science Investigating",
+        "description": "Pick the safe way to use tools, lights, and materials. Choose the right gear to wear, like goggles or gloves.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g3-sci-safety-procedures"]
+      },
+      {
+        "id": "g4-sci-communicate",
+        "title": "Sharing Findings With an Audience",
+        "description": "Pick the best way to share what you found for different people and reasons. Match science words to what they mean.",
+        "expectationCodes": ["A1.5"],
+        "prerequisiteIds": ["g3-sci-communicate"]
+      },
+      {
+        "id": "g4-sci-code-output",
+        "title": "Code That Makes Output",
+        "description": "Look at a few lines of code and pick what output they make, like a sound, a picture, or a message. Pick the code that gives the output you want.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g3-sci-code-debug"]
+      },
+      {
+        "id": "g4-sci-coding-impacts",
+        "title": "Coding, New Tech, and Trades",
+        "description": "Pick how coding and new technology change daily life and jobs, including skilled trades.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g3-sci-coding-impacts"]
+      },
+      {
+        "id": "g4-sci-applications",
+        "title": "Science in Jobs and Subjects",
+        "description": "Match jobs, including skilled trades, to the science they use to fix real problems. Pick how science works with other subjects to help.",
+        "expectationCodes": ["A3.1", "A3.2"],
+        "prerequisiteIds": ["g3-sci-applications"]
+      },
+      {
+        "id": "g4-sci-contributions",
+        "title": "Science Ideas From Communities",
+        "description": "Match science and technology ideas to the communities that gave them to us. Pick how those ideas help people.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g3-sci-contributions"]
+      },
+      {
+        "id": "g4-sci-habitat-needs",
+        "title": "Habitats Give Living Things Needs",
+        "description": "Pick how a habitat gives plants and animals food, water, shelter, and space. Match a local habitat to the needs it meets.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g3-sci-plant-needs", "g2-sci-animal-adaptations"]
+      },
+      {
+        "id": "g4-sci-community",
+        "title": "Communities in a Habitat",
+        "description": "Pick that a community is different species living and interacting in one habitat. Pick what helps or hurts them in a local habitat, like food, weather, or space.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g4-sci-habitat-needs"]
+      },
+      {
+        "id": "g4-sci-food-chain",
+        "title": "Food Chains",
+        "description": "Put a food chain in order. Sort living things into producers, consumers, and decomposers.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g4-sci-community", "g3-sci-photosynthesis"]
+      },
+      {
+        "id": "g4-sci-food-web",
+        "title": "Food Webs",
+        "description": "Pick how many food chains link together to make a food web. Pick what happens in the web when one link changes.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g4-sci-food-chain"]
+      },
+      {
+        "id": "g4-sci-diet-groups",
+        "title": "Carnivores, Herbivores, Omnivores",
+        "description": "Sort animals into carnivores, herbivores, and omnivores by what they eat.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g4-sci-food-chain"]
+      },
+      {
+        "id": "g4-sci-structural-adaptations",
+        "title": "Adaptations for Habitats",
+        "description": "Match body parts of plants and animals, like cactus spines or webbed feet, to how they help the living thing survive in its habitat.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g4-sci-habitat-needs", "g3-sci-plant-adaptations"]
+      },
+      {
+        "id": "g4-sci-habitat-limits",
+        "title": "Habitats Have Limits",
+        "description": "Pick why a habitat can only support so many plants and animals, like limited food, water, and space.",
+        "expectationCodes": ["B2.7"],
+        "prerequisiteIds": ["g4-sci-food-web"]
+      },
+      {
+        "id": "g4-sci-human-habitat-impact",
+        "title": "People and Habitats",
+        "description": "Pick good and bad ways people's actions affect habitats and communities. Think about how different people see it.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g4-sci-community", "g2-sci-human-impact-animals"]
+      },
+      {
+        "id": "g4-sci-extinction",
+        "title": "When a Species Disappears",
+        "description": "Pick what happens to a habitat and its community when a species becomes scarce or extinct. Pick actions that help prevent it.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g4-sci-food-web", "g4-sci-human-habitat-impact"]
+      },
+      {
+        "id": "g4-sci-light-sources",
+        "title": "Natural and Artificial Light",
+        "description": "Sort light sources into natural ones, like the Sun and fireflies, and artificial ones, like lamps.",
+        "expectationCodes": ["C2.1"],
+        "prerequisiteIds": ["g1-sci-sun-energy"]
+      },
+      {
+        "id": "g4-sci-emit-reflect",
+        "title": "Makes Light or Reflects Light",
+        "description": "Sort objects and living things into ones that make their own light and ones that only reflect light, like a star and the Moon.",
+        "expectationCodes": ["C2.2"],
+        "prerequisiteIds": ["g4-sci-light-sources"]
+      },
+      {
+        "id": "g4-sci-light-properties",
+        "title": "How Light Behaves",
+        "description": "Pick facts about light: it travels in straight paths, and it can be absorbed, reflected, or refracted.",
+        "expectationCodes": ["C2.3"],
+        "prerequisiteIds": ["g4-sci-emit-reflect"]
+      },
+      {
+        "id": "g4-sci-sound-properties",
+        "title": "How Sound Behaves",
+        "description": "Pick facts about sound: it travels as a wave through a medium, and it can be absorbed, reflected, or changed in pitch and loudness.",
+        "expectationCodes": ["C2.4"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g4-sci-vibrations",
+        "title": "Vibrations Make Sound",
+        "description": "Pick how a vibrating object makes sound waves, like a guitar string or a drum.",
+        "expectationCodes": ["C2.5"],
+        "prerequisiteIds": ["g4-sci-sound-properties"]
+      },
+      {
+        "id": "g4-sci-light-sound-materials",
+        "title": "Materials, Light, and Sound",
+        "description": "Sort materials by how they treat light and sound, like see-through, shiny, or sound-blocking.",
+        "expectationCodes": ["C2.6"],
+        "prerequisiteIds": ["g4-sci-light-properties", "g4-sci-sound-properties"]
+      },
+      {
+        "id": "g4-sci-light-heat",
+        "title": "Light With or Without Heat",
+        "description": "Sort light sources into ones that give off light and heat, like a candle, and ones that give little heat, like an LED.",
+        "expectationCodes": ["C2.7"],
+        "prerequisiteIds": ["g4-sci-light-sources"]
+      },
+      {
+        "id": "g4-sci-sensory-devices",
+        "title": "Eyes, Ears, and Devices",
+        "description": "Label sense organs like the eye and ear. Match devices like glasses, microphones, and telescopes to the light or sound property they use.",
+        "expectationCodes": ["C2.8"],
+        "prerequisiteIds": ["g4-sci-light-properties", "g4-sci-vibrations", "g1-sci-body-parts"]
+      },
+      {
+        "id": "g4-sci-light-sound-devices",
+        "title": "Light and Sound Devices Help Us",
+        "description": "Pick how devices that use light or sound, like alarms and lasers, help or cause problems for people.",
+        "expectationCodes": ["C1.1"],
+        "prerequisiteIds": ["g4-sci-sensory-devices"]
+      },
+      {
+        "id": "g4-sci-light-sound-environment",
+        "title": "Light and Sound Pollution",
+        "description": "Pick how light and sound from technology, like bright city lights or loud machines, affect nature and different people.",
+        "expectationCodes": ["C1.2"],
+        "prerequisiteIds": ["g4-sci-light-sound-materials", "g4-sci-light-heat"]
+      },
+      {
+        "id": "g4-sci-machines-purpose",
+        "title": "Machines in Daily Life",
+        "description": "Pick machines we use every day and what each one is for.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g2-sci-machines-daily"]
+      },
+      {
+        "id": "g4-sci-mechanism-parts",
+        "title": "Parts of a Mechanism",
+        "description": "Label parts of mechanisms like gears, belts, cranks, and levers. Pick what each part does.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g4-sci-machines-purpose"]
+      },
+      {
+        "id": "g4-sci-transmit-motion",
+        "title": "Passing Motion Along",
+        "description": "Pick how gears, belts, and chains pass motion, including turning motion, from one part to another.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g4-sci-mechanism-parts"]
+      },
+      {
+        "id": "g4-sci-transform-motion",
+        "title": "Changing Motion",
+        "description": "Pick how mechanisms change motion, like turning round motion into up and down, or making it faster, slower, or a new direction.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g4-sci-transmit-motion"]
+      },
+      {
+        "id": "g4-sci-machine-forces",
+        "title": "How Machines Change Forces",
+        "description": "Pick how machines make a force bigger, smaller, or point a different way, like a lever or a gear set.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g4-sci-mechanism-parts", "g2-sci-machine-force"]
+      },
+      {
+        "id": "g4-sci-machines-lives",
+        "title": "Machines in People's Lives",
+        "description": "Pick how machines change daily life for people in different communities.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g4-sci-machines-purpose", "g2-sci-machines-communities"]
+      },
+      {
+        "id": "g4-sci-machines-compare-env",
+        "title": "Comparing Machines and Nature",
+        "description": "Compare machines with the same job, like a gas mower and a push mower. Pick which is better for the environment.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g4-sci-machines-purpose", "g2-sci-machines-environment"]
+      },
+      {
+        "id": "g4-sci-rock-cycle",
+        "title": "The Rock Cycle",
+        "description": "Put the rock cycle in order. Pick how heat, pressure, and settling make igneous, sedimentary, and metamorphic rocks.",
+        "expectationCodes": ["E2.1"],
+        "prerequisiteIds": ["g3-sci-erosion"]
+      },
+      {
+        "id": "g4-sci-rock-properties",
+        "title": "Three Kinds of Rock",
+        "description": "Match looks and features, like layers, crystals, or bands, to igneous, sedimentary, and metamorphic rocks.",
+        "expectationCodes": ["E2.2"],
+        "prerequisiteIds": ["g4-sci-rock-cycle"]
+      },
+      {
+        "id": "g4-sci-classify-rocks",
+        "title": "Sorting Rocks and Minerals",
+        "description": "Sort rocks and minerals using tests like hardness, colour, streak, and luster.",
+        "expectationCodes": ["E2.3"],
+        "prerequisiteIds": ["g4-sci-rock-properties"]
+      },
+      {
+        "id": "g4-sci-rock-uses",
+        "title": "Everyday Uses of Rocks",
+        "description": "Match rocks and minerals, like granite, salt, and graphite, to how we use them every day.",
+        "expectationCodes": ["E2.4"],
+        "prerequisiteIds": ["g4-sci-classify-rocks"]
+      },
+      {
+        "id": "g4-sci-fossils",
+        "title": "Fossils and Earth's History",
+        "description": "Put the steps of how a fossil forms in order. Pick what fossils tell us about Earth long ago.",
+        "expectationCodes": ["E2.5"],
+        "prerequisiteIds": ["g4-sci-rock-properties"]
+      },
+      {
+        "id": "g4-sci-fnmi-rocks",
+        "title": "First Nations, Métis, Inuit Rock Knowledge",
+        "description": "Match rocks and minerals to the purposes First Nations, Métis, and Inuit peoples chose them for, like tools, pipes, and carving.",
+        "expectationCodes": ["E2.6"],
+        "prerequisiteIds": ["g4-sci-rock-uses"]
+      },
+      {
+        "id": "g4-sci-geological-impacts",
+        "title": "Earthquakes, Volcanoes, and People",
+        "description": "Pick how geological events like volcanoes, earthquakes, and erosion affect people and nature.",
+        "expectationCodes": ["E1.1"],
+        "prerequisiteIds": ["g4-sci-rock-cycle", "g3-sci-natural-forces"]
+      },
+      {
+        "id": "g4-sci-mining-impacts",
+        "title": "Mining and Rock Products",
+        "description": "Pick good and bad effects of digging up, making, recycling, and throwing away rock and mineral products. Think about how different people see it.",
+        "expectationCodes": ["E1.2"],
+        "prerequisiteIds": ["g4-sci-rock-uses", "g1-sci-waste-reduce"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-soc-events-order-tap-13",
+        "severity": "note",
+        "category": "factual",
+        "note": "The Why says Kindergarten comes 'at about 5'. In Ontario, Junior Kindergarten starts at age 4 and Senior Kindergarten at 5, so 'about 5' is imprecise. The marked answer is unaffected. Consider 'at about 4 or 5' or simply 'Kindergarten comes later, when you are about 4 or 5.'"
+      },
+      {
+        "target": "g1-soc-events-order-tap-14",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Grade 1 is the grade Omar is in now, so it is already happening. The marked answer Grade 3 is correct, but a child could argue Grade 1 is 'not yet happened' as well. Consider rewording the question to 'Which grade is still to come: Kindergarten, Grade 1, or Grade 3?' or similar, or removing Grade 1 as a distractor and using a clearer 'still to come' framing."
+      },
+      {
+        "target": "g1-soc-events-order-tap-10",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'Which happened the longest time ago' is an abstract phrase for a Grade 1 listener to parse by ear. The answer (crawling) is correct, but 'Which did you learn first?' would be easier to follow when heard once through text-to-speech."
+      }
+    ],
+    "notes": "No blockers found. The story facts are accurate (a tricycle has three wheels, a bike has two, and the order crawl, walk, tricycle, bike is correct). I checked each marked answer for tap-1 through tap-15 and each marked answer is correct, with no second correct choice and no missing right answer. Stereotyping and fear/shame concerns are absent. The three notes are wording and precision issues only. The Ontario Kindergarten age in tap-13 is the closest thing to a fact a teacher might dispute, so consider fixing it."
+  }
+}

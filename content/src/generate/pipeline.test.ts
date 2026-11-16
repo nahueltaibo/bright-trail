@@ -4,7 +4,7 @@ import { join } from 'node:path';
 import { parseContentBundle } from '@bright-trail/shared';
 import { afterEach, describe, expect, it } from 'vitest';
 import { withDiskCache, type LlmClient, type LlmRequest } from '../graph/llm';
-import { g1Context, g1Skill, goodContent } from './fixtures';
+import { factContent, g1Context, g1SciSkill, g1Skill, goodContent } from './fixtures';
 import {
   buildBundle,
   generateAll,
@@ -13,7 +13,13 @@ import {
   splitReview,
   type SkillOutcome,
 } from './pipeline';
-import { GENERATOR_MODEL, generateRequest, REVIEWER_MODEL, type SkillContext } from './prompts';
+import {
+  GENERATOR_MODEL,
+  generateRequest,
+  REVIEWER_MODEL,
+  reviewRequest,
+  type SkillContext,
+} from './prompts';
 import { renderContentReport, renderPilotReport } from './report';
 import type { ContentReview, GeneratedContent } from './schema';
 import type { ContentEdit } from './edits';
@@ -324,6 +330,42 @@ describe('generateRequest', () => {
     expect(fraction.prompt).not.toContain('no picture can show one thing cut into pieces');
     expect(JSON.stringify(fraction.tool.inputSchema)).toContain('"shaded"');
     expect(JSON.stringify(basic.tool.inputSchema)).not.toContain('"shaded"');
+  });
+});
+
+describe('fact skills', () => {
+  const context: SkillContext = {
+    skill: g1SciSkill,
+    expectations: [
+      { code: 'B2.1', kind: 'specific', topic: '', statement: 'living things', details: '' },
+    ],
+    prerequisites: [],
+  };
+
+  it('ask for tap-only items with the fact prompt and tone', () => {
+    const request = generateRequest(context);
+    expect(request.system).toContain('all tap items');
+    expect(request.system).not.toContain('number-line:');
+    expect(request.system).not.toContain('math app');
+    expect(request.prompt).not.toContain('Keep numbers inside the skill');
+    // A title with "share" is no fraction skill outside math.
+    const sharing = { ...g1SciSkill, title: 'Sharing traditions' };
+    expect(generateRequest({ ...context, skill: sharing }).prompt).not.toContain('pizza');
+  });
+
+  it('pass after review with every item left to the reviewer', async () => {
+    const llm = new FakeLlm([factContent()]);
+    const outcome = await generateSkill(context, llm);
+    expect(outcome.status).toBe('passed');
+    expect(llm.requests[1].prompt).toContain('VERIFY');
+    expect(llm.requests[1].system).toContain('Every item here is marked VERIFY');
+  });
+
+  it('keep the math prompts for math skills', () => {
+    expect(generateRequest(g1Context).system).toContain('audio-first math app');
+    expect(
+      reviewRequest(g1Skill, { id: 's', skillId: g1Skill.id, cards: [] }, [], new Map()).system,
+    ).not.toContain('Every item here is marked VERIFY');
   });
 });
 

@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-hlth-food-needs-tap-12",
+        "severity": "note",
+        "category": "other",
+        "note": "The prompt, 'Sometimes a child is often hungry and has no food,' may worry a child who is going through this, and it is an awkward sentence to hear read aloud. Consider a gentler, clearer version such as 'Sometimes a child does not have enough to eat. Who can help?' The marked answer (a trusted adult) and the explanation are correct and appropriate."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 6 shows five apples (5 × 🍎), but the narration only says Maya eats her lunch and does not mention apples. This is not wrong, but a child listening without seeing the picture gets no link to the apples. Consider naming them in the narration, e.g. 'Maya eats her lunch, with five apples.' Cards 1 to 5 and 7 are accurate and match their pictures."
+      }
+    ],
+    "notes": "I checked all 15 items. Each marked answer is correct, and no wrong choice is partly right. Every item can be understood by ear, and no item is outside the Grade 1 health skill. The story facts are accurate: food gives energy, and it helps bones, muscles, teeth, skin, and brain. Nothing stereotypes a group. The only blockers would have come from wrong answers or false facts, and I found none. The two notes are about tone and clarity. I did not call any items too easy or too hard, since the difficulty ratings look reasonable for Grade 1."
+  }
+}

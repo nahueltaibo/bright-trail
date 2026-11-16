@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Story cards 2 and 3 and item tap-5 say the sun 'goes down' and 'comes up'. This is ordinary observational language for Grade 1, but day and night happen because Earth spins, not because the sun moves. Consider adding one clarifying line, such as 'the Earth turns, so the sun seems to move across the sky', so children don't come away with a sun-moves misconception."
+      }
+    ],
+    "notes": "I checked all 15 items against the story. Each marked answer is correct, and each wrong choice is clearly wrong, so no item has more than one right answer or is missing its right answer. Season order (spring, summer, fall, winter), the day sequence (morning, afternoon, night), and the plant sequence (seed, sprout, plant, new seeds) all match the story and the 'Why' explanations. Every item can be understood by ear. The pictures agree with the narration and nothing stereotypes or frightens. The only point raised is the observational sun-language note above. Overall the set is accurate and suitable for Grade 1."
+  }
+}

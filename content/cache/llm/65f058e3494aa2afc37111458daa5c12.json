@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g6-sci-interrelationships",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g6-sci-biodiversity-defined",
+          "g4-sci-food-web",
+          "g3-sci-plant-animal-depend"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "g6-sci-community-resilience is about how variety helps a community bounce back from change, which a kid does not need in order to match relationships like pollination, predator and prey, and sharing food to how they keep biodiversity going. The skill does need the idea of biodiversity itself (g6-sci-biodiversity-defined) and the food web links (g4-sci-food-web). Removing community-resilience also removes a non-direct link, since the food web is already available as a direct prerequisite."
+      },
+      {
+        "skillId": "g6-sci-classify-organisms",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-sci-structural-adaptations", "g3-sci-plant-parts"],
+        "title": "",
+        "description": "",
+        "reason": "Sorting plants into smaller groups with a classification key depends on recognizing plant parts such as seeds, cones, flowers, and leaves, which is a Grade 3 idea not reached through the current prerequisites. g3-sci-plant-parts does not depend on g4-sci-structural-adaptations, so it is a direct, non-redundant addition."
+      },
+      {
+        "skillId": "g6-sci-agriculture-biodiversity",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g6-sci-species-variety",
+          "g3-sci-food-plants",
+          "g3-sci-soil-components"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The skill explicitly includes soil life as a way biodiversity helps farms. The Grade 3 idea of living and non-living parts of soil (g3-sci-soil-components) is needed for this and is not reached through the existing prerequisites. It does not depend on the other listed prerequisites, so it is a direct addition."
+      }
+    ],
+    "notes": "Reviewed all 60-ish proposed Grade 6 skills against the prerequisite rules. All prerequisites point to earlier grades or to other Grade 6 skills that are not circular, and the Grade 6 expectations are covered. The three corrections address one unneeded prerequisite (interrelationships) and two missing direct Grade 3 ideas (plant parts for classification, soil components for farming). Lower-confidence items I considered but did not change: g6-sci-static-electricity linking to g5-sci-energy-forms, g6-sci-earth-moon-sun not linking to gravity for tides, and g6-sci-space-technology not linking to light-based devices for telescopes. These are judgement calls that a kid could learn without the listed links, so I left them for the curriculum author to decide."
+  }
+}

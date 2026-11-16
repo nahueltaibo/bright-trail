@@ -1,0 +1,37 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g6-soc-indigenous-history",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-soc-colonial-policies", "g5-soc-contact", "g3-soc-treaties"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to match treaties to how they changed Indigenous communities, but no listed prerequisite teaches what a treaty is or what it did. g3-soc-treaties is the direct prerequisite for that idea. None of the listed prerequisites depends on it, so adding it creates no redundancy."
+      },
+      {
+        "skillId": "g6-soc-settler-contrib",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g6-soc-community-types"],
+        "title": "",
+        "description": "",
+        "reason": "The skill matches groups such as Chinese railway workers, Irish and Italian canal workers, and the French and English communities to their gifts to Canada. g6-soc-community-types is the direct prerequisite, since it covers how each community type helped build the country. g6-soc-settler-history covers the Acadian expulsion, the Underground Railroad, and Japanese Canadian relocation, which are not needed for this skill, so it is removed."
+      },
+      {
+        "skillId": "g6-soc-locate-regions",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g4-soc-directions",
+          "g6-soc-gov-interactions",
+          "g2-soc-world-features"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "Using latitude and longitude requires knowing the equator, poles, and hemispheres, which g2-soc-world-features teaches. No listed prerequisite depends on it: g4-soc-directions covers NE/NW/SE/SW and grids, not the equator or latitude, so the link is missing."
+      }
+    ],
+    "notes": "Reviewed all 40 proposed Grade 6 skills for prerequisite necessity, directness, missing grade-before ideas, forward or self references, cycles, and title/description clarity. Three skills needed changes: g6-soc-indigenous-history (missing treaties), g6-soc-settler-contrib (direct community-types prerequisite missing, unneeded settler-history removed), and g6-soc-locate-regions (missing equator/hemisphere knowledge for latitude). No cycles, no references to later grades or to self, and no redundant listed prerequisites were found. Titles and descriptions read clearly aloud, so no wording changes were made. Other candidate additions, such as g2-soc-chronology for the ordering skills, were checked and skipped because they are already covered transitively or are not clearly required."
+  }
+}

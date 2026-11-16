@@ -1,7 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import { removeTransitivePrerequisites } from './checks';
 import { skill, validGraph } from './fixtures';
-import { applyOverrides, edgeKey, OverridesFileSchema, type Override } from './overrides';
+import {
+  applyOverrides,
+  edgeKey,
+  OverridesFileSchema,
+  overridesFor,
+  type Override,
+} from './overrides';
 
 const reason = 'test';
 
@@ -103,5 +109,21 @@ describe('OverridesFileSchema', () => {
     for (const entry of bad) {
       expect(OverridesFileSchema.safeParse({ overrides: [entry] }).success).toBe(false);
     }
+  });
+});
+
+describe('overridesFor', () => {
+  const math: Override = { op: 'setTitle', skillId: 'g3-add-within-100', title: 'Add', reason };
+  const science: Override = {
+    op: 'addPrerequisite',
+    skillId: 'g4-sci-machine-forces',
+    prerequisiteId: 'g3-sci-force-effects',
+    reason,
+  };
+
+  it('keeps the overrides whose skill id names the subject', () => {
+    expect(overridesFor([math, science], 'math')).toEqual([math]);
+    expect(overridesFor([math, science], 'science')).toEqual([science]);
+    expect(overridesFor([math, science], 'health')).toEqual([]);
   });
 });

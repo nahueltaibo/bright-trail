@@ -1,0 +1,25 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g2-sci-three-states-water",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-sci-water-states"],
+        "title": "",
+        "description": "",
+        "reason": "Sorting water as solid, liquid, or gas and describing how warming and cooling change it depends on knowing the states of water (liquid water and ice), which is already listed. Knowing where water comes from (lakes, rivers, wells, taps) is not needed for this skill, so g2-sci-water-sources is not a direct prerequisite and should be removed."
+      },
+      {
+        "skillId": "g2-sci-water-states",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-sci-liquid-solid-properties", "g1-sci-energy-moves"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks what makes water freeze or ice melt. A kid needs the Grade 1 idea that heat is energy that can melt ice (g1-sci-energy-moves, which explicitly covers heat melting ice) in order to understand these changes. This Grade 1 prerequisite is missing. It does not duplicate any other listed prerequisite, since g2-sci-liquid-solid-properties does not depend on it."
+      }
+    ],
+    "notes": "Reviewed all 40 proposed Grade 2 skills for real and direct prerequisites, missing prerequisites, grade ordering, self-references, redundant prerequisites, and kid-friendly wording. All prerequisites point to Grade 1 or earlier Grade 2 skills, with no later-grade or self references, and no redundant prerequisite pairs were found. Only two corrections were made, both to the water-states chain in strand C/E. Some links are judgement calls and were left alone: g2-sci-six-machines listing g2-sci-change-position, g2-sci-air-water-properties listing g1-sci-healthy-environment, and g2-sci-home-practices not listing a waste-sorting skill. Titles and descriptions read clearly for a child, though \"repel\" in the C2.6 title is a harder word that could be reconsidered."
+  }
+}

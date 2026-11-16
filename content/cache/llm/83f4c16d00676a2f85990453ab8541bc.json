@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-sci-plant-parts-tap-3",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The 'why' says a seed grows 'with soil, water, and light.' Seeds do not need light to sprout. Bean seeds germinate in the dark, and the usual grade 3 teaching is that seeds need water, air, and warmth. As written, this teaches that light is needed for a seed to start growing. Revise to something like: 'With water, air, and warmth, it can sprout. Light helps the plant after it grows leaves.'"
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration asks about a pine cone on the ground, but the picture is a whole pine tree emoji. A child listening by ear would see a tree while hearing 'cone'. Consider a picture that shows a cone, or no picture, so sound and image agree."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-12",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "In the 'why', 'They carry pollen from flower to flower' can be read as the petals carrying pollen. It is the bees and butterflies that carry it. Reword to: 'Bees and butterflies carry pollen from flower to flower.'"
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 6 says 'Pine trees have no flowers.' This is a common simplification, but pine trees make pollen and seeds in cones, not flowers. A teacher might want 'Pine trees do not make flowers like the bean plant does' for accuracy."
+      }
+    ],
+    "notes": "Checked all 15 items against the story. The marked answers are correct for every item, and each wrong choice is clearly wrong and not partly right. The item stems are understandable by ear, with no images needed to answer. The only blocker is the 'why' text in tap-3, which implies light is needed for seeds to sprout. The other problems are small wording and picture-match issues. No content stereotypes a group or scares a child."
+  }
+}

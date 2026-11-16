@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-animal-traits-tap-11",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The animal is wrong. The arctic hare (Lepus arcticus) is white year-round in most of its range, so 'brown in summer, white in winter' does not describe it. The seasonal brown-to-white change is typical of the snowshoe hare (Lepus americanus), which lives in Ontario. Change the animal to snowshoe hare, or change the facts so the arctic hare does not turn from brown to white. As written, it teaches a false fact about a real animal."
+      },
+      {
+        "target": "g2-sci-animal-traits-tap-3",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The marked answer 'True' rests on the claim that a fish has scales all its life. That is an overgeneralization. Many fish have scales, but some do not (for example catfish, lampreys, and hagfish). A teacher would dispute a universal claim here. Reword to 'Most fish have scales' or 'Many fish...', and use an example fish that really has scales (such as a goldfish or salmon), or change the item so it is not a universal claim."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 2 says 'A fish has scales' as a general fact, and tap-4's explanation repeats it. Consider 'Most fish have scales' so the story does not teach a universal that has exceptions."
+      },
+      {
+        "target": "g2-sci-animal-traits-tap-5",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration describes a tadpole, but the picture shows a frog (🐸). The picture shows the end result, not the thing the question is about. Consider a tadpole picture (for example 🐟 or a plain dot-style cue), or leave the picture off so the audio is not in conflict with the image."
+      },
+      {
+        "target": "g2-sci-animal-traits-tap-4",
+        "severity": "note",
+        "category": "audio",
+        "note": "Choice text 'a fish (picture: 🐟)' will be read aloud by text-to-speech as an awkward phrase including the word 'picture' and an emoji name. Remove the '(picture: ...)' text from the choice labels so the audio stays clear and the emoji is not read as part of the answer."
+      },
+      {
+        "target": "g2-sci-animal-traits-tap-15",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "Marked answer 'four legs' is correct. The explanation 'size grows bigger' duplicates tap-2 and is worded loosely. Consider 'A dog keeps four legs all its life. Its baby teeth fall out, and its size gets bigger.' for clearer audio. Also note that tap-2 and tap-15 test nearly the same idea, so one may be redundant."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 tap items. The correct answers for tap-1, 2, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, and 15 are right, and each wrong choice is clearly wrong. The two blockers are the factual errors in tap-11 (arctic hare vs snowshoe hare) and tap-3 (universal claim about fish scales). The remaining items are wording, audio, and picture-match notes. No content stereotypes a group or shames or frightens a child. Difficulty levels look reasonable for Grade 2, though tap-15 may be too similar to tap-2."
+  }
+}

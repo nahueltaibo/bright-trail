@@ -1,0 +1,239 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g1-soc-my-roles",
+        "title": "My Roles and Responsibilities",
+        "description": "You are a student, a friend, and a family member. Pick the jobs and ways you care for others that go with each role.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-important-people-places",
+        "title": "Important People, Places, Things",
+        "description": "Some people, places, and things matter a lot in your life. Match each one, like a teacher, a library, or a pet, to what it is for.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-events-in-order",
+        "title": "My Life Events in Order",
+        "description": "Put big things from a life in the order they happen, like daycare, Kindergarten, then Grade 1.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-kind-behaviour",
+        "title": "Kind and Inclusive Actions",
+        "description": "Pick actions that are kind and include everyone, like sharing, taking turns, and caring for Elders.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-respect-all",
+        "title": "Respect for People and Earth",
+        "description": "Sort ways to treat people, plants, and water with respect from ways that are not respectful.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g1-soc-kind-behaviour"]
+      },
+      {
+        "id": "g1-soc-roles-change",
+        "title": "Roles Change by Place and Time",
+        "description": "Your jobs and how you act can change at home or school, and as you grow. Pick how a role changes in a new place or time.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g1-soc-my-roles"]
+      },
+      {
+        "id": "g1-soc-events-change-me",
+        "title": "Events That Change My Roles",
+        "description": "Starting school, a new baby, or moving can change your jobs and relationships. Match each event to the change it brings.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g1-soc-events-in-order", "g1-soc-roles-change"]
+      },
+      {
+        "id": "g1-soc-compare-events",
+        "title": "Comparing Life Events",
+        "description": "Friends and family have big events too. Sort which events are the same and which are different for different people.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g1-soc-events-change-me"]
+      },
+      {
+        "id": "g1-soc-impact-on-others",
+        "title": "How People Affect Each Other",
+        "description": "What we do can make others feel happy, sad, proud, or safe. Pick how an action changes how someone feels about themselves.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g1-soc-kind-behaviour"]
+      },
+      {
+        "id": "g1-soc-reclaiming-identity",
+        "title": "Reviving Indigenous Cultures",
+        "description": "First Nations, Métis, and Inuit communities are bringing back languages and traditions. Pick ways this helps people feel proud and that they belong.",
+        "expectationCodes": ["A1.5"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-a-questions",
+        "title": "Questions About Me and My Life",
+        "description": "Pick a good question you could investigate about how your jobs or feelings changed after an event.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g1-soc-roles-change"]
+      },
+      {
+        "id": "g1-soc-a-sources",
+        "title": "Finding Sources About My Life",
+        "description": "Photos, stories, interviews, and artefacts can tell about your life. Sort which sources help answer a question.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g1-soc-a-questions"]
+      },
+      {
+        "id": "g1-soc-a-maps",
+        "title": "Maps of My Special Places",
+        "description": "Read a simple map of the route from home to school or a friend's house. Pick the title, legend, and directions.",
+        "expectationCodes": ["A2.3"],
+        "prerequisiteIds": ["g1-soc-map-elements"]
+      },
+      {
+        "id": "g1-soc-a-tools",
+        "title": "Timelines and Venn Diagrams",
+        "description": "Read a timeline, Venn diagram, or calendar about a child's life and pick what it shows.",
+        "expectationCodes": ["A2.4"],
+        "prerequisiteIds": ["g1-soc-a-sources", "g1-soc-events-in-order"]
+      },
+      {
+        "id": "g1-soc-a-conclusions",
+        "title": "Conclusions From Evidence About Me",
+        "description": "Look at clues about a child's life and pick the conclusion that the clues support.",
+        "expectationCodes": ["A2.5"],
+        "prerequisiteIds": ["g1-soc-a-tools"]
+      },
+      {
+        "id": "g1-soc-a-communicate",
+        "title": "Sharing What I Found Out",
+        "description": "Pick the best way to share results, and the right words like role, relationship, and identity.",
+        "expectationCodes": ["A2.6"],
+        "prerequisiteIds": ["g1-soc-a-conclusions"]
+      },
+      {
+        "id": "g1-soc-community-features",
+        "title": "Natural and Built Features",
+        "description": "Sort things in a community into natural ones, like rivers and forests, and built ones, like roads and schools.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-community-areas",
+        "title": "Areas of a Community",
+        "description": "Match places to areas like homes, shopping areas, busy roads, and natural areas by what you see there.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g1-soc-community-features"]
+      },
+      {
+        "id": "g1-soc-territory",
+        "title": "Land and Treaty Territory",
+        "description": "Our school sits on traditional Indigenous land and treaty territory. Pick the territory name for your school's area.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-relative-location",
+        "title": "Near, Far, Left, Right",
+        "description": "Use words like near, far, left, right, in front, and behind to tell where places are.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g1-soc-community-features"]
+      },
+      {
+        "id": "g1-soc-map-elements",
+        "title": "Parts of a Map",
+        "description": "Label the title, legend symbols, direction arrow, and colours on a simple map, and read the map.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g1-soc-relative-location"]
+      },
+      {
+        "id": "g1-soc-nonstandard-units",
+        "title": "Measuring With Footsteps and Blocks",
+        "description": "Measure with footsteps, tiles, or blocks. Pick which is longer and why the same unit must be used.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-build-maps",
+        "title": "Making a Simple Map",
+        "description": "Pick the symbols, scale, and legend to make a map of a route or a park, using blocks or steps for distance.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g1-soc-map-elements", "g1-soc-nonstandard-units"]
+      },
+      {
+        "id": "g1-soc-services-occupations",
+        "title": "Community Services and Workers",
+        "description": "Match services like the post office, clinic, and grocery store, and workers like store clerks, to the needs they meet.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": []
+      },
+      {
+        "id": "g1-soc-public-services",
+        "title": "Services and Our Responsibilities",
+        "description": "Some services, like garbage pickup and fire services, are run by the government or community. Match each to what people must do, like sorting recycling or shovelling snow.",
+        "expectationCodes": ["B3.8"],
+        "prerequisiteIds": ["g1-soc-services-occupations"]
+      },
+      {
+        "id": "g1-soc-meeting-needs",
+        "title": "How People Use Their Community",
+        "description": "People use nature, buildings, and services to meet needs. Pick what could happen if a park or service was missing.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g1-soc-community-features", "g1-soc-services-occupations"]
+      },
+      {
+        "id": "g1-soc-responsible-plan",
+        "title": "Planning to Care for Community",
+        "description": "Put steps for a clean-up or a garden plan in order, and pick how your actions make a place better.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g1-soc-meeting-needs"]
+      },
+      {
+        "id": "g1-soc-b-questions",
+        "title": "Questions About Our Community",
+        "description": "Pick a good question to investigate about how people change a place, like what happens if litter is left in a park.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g1-soc-meeting-needs"]
+      },
+      {
+        "id": "g1-soc-b-gather",
+        "title": "Gathering Community Information",
+        "description": "Pick the best tool, like a tally sheet, a photo, or an interview, to collect facts about a place.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g1-soc-b-questions"]
+      },
+      {
+        "id": "g1-soc-b-maps",
+        "title": "Maps of Community Features",
+        "description": "Read a map with symbols and a legend that shows parks, water, and shops, including Indigenous place names.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g1-soc-map-elements", "g1-soc-community-features"]
+      },
+      {
+        "id": "g1-soc-b-analyse",
+        "title": "Pictographs and Then-and-Now Photos",
+        "description": "Read a pictograph or compare old and new photos to see how a place has changed.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g1-soc-b-gather"]
+      },
+      {
+        "id": "g1-soc-b-conclusions",
+        "title": "Short and Long Term Effects",
+        "description": "Use evidence to pick conclusions about what people's actions did to a place, soon and later on.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g1-soc-b-analyse"]
+      },
+      {
+        "id": "g1-soc-b-communicate",
+        "title": "Sharing Community Findings",
+        "description": "Pick the best way to share what you learned, and the right words like location, map, symbol, and legend.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g1-soc-b-conclusions", "g1-soc-b-maps"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,596 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. She likes to visit a pond near her home. Many living things live at the pond.",
+        "text": "A healthy place",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "A healthy place has clean air. Birds and frogs need clean air to breathe.",
+        "text": "clean air",
+        "visual": { "kind": "emoji", "emoji": "🐦", "count": null, "filled": null }
+      },
+      {
+        "narration": "A healthy place has clean water. Fish and ducks drink it and swim in it.",
+        "text": "clean water",
+        "visual": { "kind": "emoji", "emoji": "💧", "count": null, "filled": null }
+      },
+      {
+        "narration": "A healthy place has good food. Plants, bugs, and seeds feed the pond animals.",
+        "text": "good food",
+        "visual": { "kind": "emoji", "emoji": "🌱", "count": null, "filled": null }
+      },
+      {
+        "narration": "One day Mia sees trash in the water. Trash can make living things sick. Mia picks it up.",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🗑️", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now the pond is clean again. The fish can swim, eat, and breathe. A healthy place helps them get what they need.",
+        "text": "healthy place, happy fish",
+        "visual": { "kind": "objects", "emoji": "🐟", "count": 5, "filled": null }
+      },
+      {
+        "narration": "Now it is your turn to practise. Let's find what makes a healthy place!",
+        "text": null,
+        "visual": { "kind": "emoji", "emoji": "🌳", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which air is healthy to breathe: smoky air, or clean air?",
+        "prompt": "Which air is healthy?",
+        "why": "Clean air is healthy. Living things need clean air to breathe.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "smoky air",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "clean air",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: Fish need clean water to live.",
+        "prompt": "Fish need clean water.",
+        "why": "This is true. Fish swim in water and breathe in it. Clean water keeps them well.",
+        "visual": { "kind": "emoji", "emoji": "🐟", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A rabbit is hungry. Which one is good food for a rabbit: a rock, a carrot, or a plastic bag?",
+        "prompt": "Good food for a rabbit?",
+        "why": "A carrot is good food for a rabbit. Rocks and plastic are not food.",
+        "visual": { "kind": "emoji", "emoji": "🐰", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a rock",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a carrot",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a plastic bag",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one does not belong in a healthy pond: clean water, fish, or trash?",
+        "prompt": "What does not belong?",
+        "why": "Trash does not belong in a pond. Clean water and fish belong there.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "clean water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "fish",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "trash",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one needs clean air to live: a rock, a toy, or a bird?",
+        "prompt": "What needs clean air?",
+        "why": "A bird is a living thing. It needs clean air. Rocks and toys are not alive.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🪨", "count": null, "filled": null },
+            "narration": "a rock"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🧸", "count": null, "filled": null },
+            "narration": "a toy"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🐦", "count": null, "filled": null },
+            "narration": "a bird"
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A pond helps a frog get what it needs. What can a healthy pond give the frog: clean water, trash, or smoke?",
+        "prompt": "What does a healthy pond give?",
+        "why": "A healthy pond has clean water. The frog needs it to live and stay well.",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "trash",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "clean water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "smoke",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia sees trash in the pond. What can she do to help: pick up the trash, or drop more trash?",
+        "prompt": "How can Mia help the pond?",
+        "why": "Picking up trash helps keep the pond clean. A clean pond is a healthy home.",
+        "visual": { "kind": "emoji", "emoji": "🗑️", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "pick up the trash",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "drop more trash",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which group is found in a healthy place: clean air and water, or smoke and trash?",
+        "prompt": "Which group is healthy?",
+        "why": "Clean air and clean water make a place healthy. Smoke and trash do not.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "smoke and trash",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "clean air and water",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "True or false: Dirty air is good for baby birds.",
+        "prompt": "Dirty air is good for birds.",
+        "why": "This is false. Birds need clean air to breathe. Dirty air can make them sick.",
+        "visual": { "kind": "emoji", "emoji": "🐥", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one is a healthy home for a fish: a dry sidewalk, a clean pond, or a dirty puddle?",
+        "prompt": "A healthy home for a fish?",
+        "why": "A clean pond has water and food for fish. A sidewalk has no water.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a dry sidewalk",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a dirty puddle",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a clean pond",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A pond has dirty water. What may happen to the fish: they may get sick, or they may grow bigger?",
+        "prompt": "Dirty water and fish",
+        "why": "Dirty water can make fish sick. Fish need clean water to stay well.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "they may get sick",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "they grow bigger",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one is the odd one out in a healthy garden: clean soil, clean water, or plastic trash?",
+        "prompt": "Odd one out in a garden",
+        "why": "Plants need clean soil and clean water. Plastic trash does not help them grow.",
+        "visual": { "kind": "emoji", "emoji": "🌻", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "clean soil",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "clean water",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "plastic trash",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one helps keep the air clean: planting trees, or burning trash?",
+        "prompt": "What helps keep air clean?",
+        "why": "Trees help keep air clean. Burning trash puts smoke into the air.",
+        "visual": { "kind": "emoji", "emoji": "🌳", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "burning trash",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "planting trees",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A clean pond helps a duck meet its needs. Which need can the pond meet: food to eat, a toy, or a phone?",
+        "prompt": "What need does a pond meet?",
+        "why": "A clean pond has plants and bugs for a duck to eat. Toys and phones are not needs.",
+        "visual": { "kind": "emoji", "emoji": "🦆", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a toy",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a phone",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "food to eat",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Why should we keep a river clean: because living things need it, or because trash needs a home?",
+        "prompt": "Why keep a river clean?",
+        "why": "Fish, birds, and people need clean water. A clean river keeps living things well.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "trash needs a home",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "living things need it",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

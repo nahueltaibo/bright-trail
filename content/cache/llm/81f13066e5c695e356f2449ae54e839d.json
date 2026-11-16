@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-sci-objects-materials-tap-13",
+        "severity": "blocker",
+        "category": "ambiguous",
+        "note": "The wrong choices are only partly wrong. A broken wood spoon can splinter into sharp pieces, and some cheap plastic bowls crack into sharp edges. Only glass reliably breaks into sharp shards, so the question has more than one defensible answer. Reword the question (e.g., 'which one breaks into sharp glass pieces') or change the distractors so no other choice can also break sharp."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-6",
+        "severity": "note",
+        "category": "factual",
+        "note": "'Often' is a fair hedge, but the explanation 'Glass would break, so it is not used' is oversimplified. Some hammer handles are steel, fibreglass, or plastic-coated. Consider 'Glass would break easily, so it is not a good choice for a handle.'"
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-15",
+        "severity": "note",
+        "category": "factual",
+        "note": "The explanation 'A pencil is wood' is a simplification. Pencils are mostly wood with graphite (the lead) and often a rubber eraser. Consider 'A pencil is mostly wood.' The answer (True) is correct."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 4 says 'Glass is hard.' Glass is hard but breaks easily, and item tap-13 says glass can break into sharp pieces. Consider adding 'but it can break' to card 4 so the two do not seem to conflict."
+      }
+    ],
+    "notes": "Checked all 7 story cards and 15 tap items. The marked answers are correct for every item: window=glass, wood is from trees (True), pencil=wood, see-through=glass, fork=metal, hammer handle=wood, odd one out=metal fork, glass jar=glass, some objects use more than one material (True), wood-and-metal chair, bridge=metal, wood=material, playhouse has 3 materials, and a pencil can have metal parts (True). The only blocker is tap-13, because a wood spoon or plastic bowl can also break into sharp pieces, which makes the item ambiguous. The remaining points are small accuracy and wording notes. No stereotyping, shaming, or scary content was found. Audio works for all items: the narration names each choice, and the picture-only cues are backed up by the narration."
+  }
+}

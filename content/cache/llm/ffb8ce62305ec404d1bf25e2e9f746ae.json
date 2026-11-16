@@ -1,0 +1,288 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g2-sci-research-process",
+        "title": "Researching Animals and Water",
+        "description": "Put the steps of a research in order. Pick a good question about animals or water and the best place to find the answer.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g1-sci-research-steps"]
+      },
+      {
+        "id": "g2-sci-experiment-process",
+        "title": "Fair Tests With Solids and Liquids",
+        "description": "Pick the fair test that changes only one thing, like testing which things float. Put the steps of an experiment in order.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g1-sci-fair-test"]
+      },
+      {
+        "id": "g2-sci-design-process",
+        "title": "Design, Build, and Test Machines",
+        "description": "Put the steps for making a simple device or structure in order. Pick what to change to make it work better.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g1-sci-design-steps"]
+      },
+      {
+        "id": "g2-sci-safety-procedures",
+        "title": "Safe Science Habits",
+        "description": "Pick the safe way to use tools and materials. Choose the right gear to wear for the job.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g1-sci-safety"]
+      },
+      {
+        "id": "g2-sci-communicate",
+        "title": "Sharing Science Findings",
+        "description": "Pick the best way to share what you found for different people, like a chart or a talk. Match science words to what they mean.",
+        "expectationCodes": ["A1.5"],
+        "prerequisiteIds": ["g1-sci-share-findings"]
+      },
+      {
+        "id": "g2-sci-code-steps",
+        "title": "Break a Problem Into Steps",
+        "description": "Look at a few lines of code and pick what they will do. Pick the smaller steps that solve a big problem.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g1-sci-code-algorithms"]
+      },
+      {
+        "id": "g2-sci-coding-impacts",
+        "title": "How Coding Changes Daily Life",
+        "description": "Pick how coding and new technology change what people do every day. Tell the good changes from the tricky ones.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g1-sci-coding-impact"]
+      },
+      {
+        "id": "g2-sci-applications",
+        "title": "Science Fixes Real Problems",
+        "description": "Match science and technology at home and in town to the problems they fix. Pick how science works with other subjects to solve problems.",
+        "expectationCodes": ["A3.1", "A3.2"],
+        "prerequisiteIds": ["g1-sci-science-solves-problems"]
+      },
+      {
+        "id": "g2-sci-contributions",
+        "title": "Science Ideas From Many Communities",
+        "description": "Match science and technology ideas to the communities that gave them to us. Pick how those ideas help people.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g1-sci-diverse-contributions"]
+      },
+      {
+        "id": "g2-sci-animal-characteristics",
+        "title": "Comparing Animal Features",
+        "description": "Compare how animals look, like their size, covering, and body parts. Sort features that stay the same from ones that change as the animal grows.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g1-sci-plant-animal-features"]
+      },
+      {
+        "id": "g2-sci-locomotion",
+        "title": "How Animals Move",
+        "description": "Match animals to how they move, like walking, hopping, swimming, flying, or slithering.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g2-sci-animal-characteristics"]
+      },
+      {
+        "id": "g2-sci-life-cycles",
+        "title": "Animal Life Cycles",
+        "description": "Put the stages of a life cycle in order for an insect, a frog, a bird, and a mammal.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g2-sci-animal-characteristics", "g1-sci-cycles"]
+      },
+      {
+        "id": "g2-sci-life-cycle-changes",
+        "title": "How Animals Change as They Grow",
+        "description": "Compare how an animal looks and acts at each stage, like a caterpillar and a butterfly.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g2-sci-life-cycles"]
+      },
+      {
+        "id": "g2-sci-animal-adaptations",
+        "title": "Animal Adaptations",
+        "description": "Match animal body parts and behaviours, like thick fur or hiding, to how they help the animal survive where it lives.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g1-sci-plant-animal-features"]
+      },
+      {
+        "id": "g2-sci-animal-impacts",
+        "title": "How Animals Affect People and Nature",
+        "description": "Pick ways animals help or cause problems for people and the environment. Pick ways to lessen the problems.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g1-sci-living-things-help"]
+      },
+      {
+        "id": "g2-sci-human-impact-animals",
+        "title": "People's Actions and Animal Homes",
+        "description": "Pick how things people do, like building roads or littering, affect animals and their homes. Choose actions that protect them.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g1-sci-healthy-actions", "g2-sci-animal-adaptations"]
+      },
+      {
+        "id": "g2-sci-liquid-or-solid",
+        "title": "Liquid or Solid?",
+        "description": "Sort things in nature and in buildings and towns into liquids and solids.",
+        "expectationCodes": ["C2.1"],
+        "prerequisiteIds": ["g1-sci-objects-materials"]
+      },
+      {
+        "id": "g2-sci-liquid-solid-properties",
+        "title": "Properties of Liquids and Solids",
+        "description": "Pick how liquids and solids are different, like holding their shape or taking the shape of a container.",
+        "expectationCodes": ["C2.2"],
+        "prerequisiteIds": ["g2-sci-liquid-or-solid"]
+      },
+      {
+        "id": "g2-sci-water-states",
+        "title": "Liquid Water and Ice",
+        "description": "Pick how liquid water and ice are different. Pick what makes water freeze or ice melt.",
+        "expectationCodes": ["C2.3"],
+        "prerequisiteIds": ["g2-sci-liquid-solid-properties"]
+      },
+      {
+        "id": "g2-sci-state-conditions",
+        "title": "When Do Liquids and Solids Change?",
+        "description": "Pick when a liquid or solid stays the same and when heat or cold makes it change, like chocolate melting.",
+        "expectationCodes": ["C2.4"],
+        "prerequisiteIds": ["g2-sci-water-states"]
+      },
+      {
+        "id": "g2-sci-mixtures",
+        "title": "Useful Mixtures",
+        "description": "Pick how mixing liquids and solids makes useful things, like juice from powder or paint.",
+        "expectationCodes": ["C2.5"],
+        "prerequisiteIds": ["g2-sci-liquid-solid-properties"]
+      },
+      {
+        "id": "g2-sci-buoyancy-absorb",
+        "title": "Float, Sink, Soak, or Repel",
+        "description": "Sort solid things by whether they float or sink. Sort them by whether they soak up water or push it away.",
+        "expectationCodes": ["C2.6"],
+        "prerequisiteIds": ["g2-sci-liquid-solid-properties", "g1-sci-material-properties"]
+      },
+      {
+        "id": "g2-sci-safety-symbols",
+        "title": "Safety Symbols on Products",
+        "description": "Match the safety symbols on cleaners and other products to what they mean.",
+        "expectationCodes": ["C2.7"],
+        "prerequisiteIds": ["g1-sci-safety"]
+      },
+      {
+        "id": "g2-sci-home-practices",
+        "title": "Using and Storing Things Safely at Home",
+        "description": "Pick safe ways to use, store, and throw away liquids and solids at home. Pick the choice that is best for health and nature.",
+        "expectationCodes": ["C1.1"],
+        "prerequisiteIds": ["g2-sci-safety-symbols", "g2-sci-liquid-solid-properties"]
+      },
+      {
+        "id": "g2-sci-state-change-impacts",
+        "title": "Freezing and Melting Effects",
+        "description": "Pick how freezing and melting, like icy roads or melting ice, affect people and places.",
+        "expectationCodes": ["C1.2"],
+        "prerequisiteIds": ["g2-sci-state-conditions"]
+      },
+      {
+        "id": "g2-sci-ways-to-move",
+        "title": "Ways Objects Move",
+        "description": "Match objects to how they move, like straight, round and round, back and forth, or up and down.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g1-sci-energy-moves"]
+      },
+      {
+        "id": "g2-sci-change-position",
+        "title": "Changing an Object's Position",
+        "description": "Pick how to move an object to a new spot, like pushing, pulling, lifting, or rolling.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g2-sci-ways-to-move"]
+      },
+      {
+        "id": "g2-sci-six-machines",
+        "title": "The Six Simple Machines",
+        "description": "Name and pick the lever, inclined plane, wedge, pulley, wheel and axle, and screw from pictures.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g2-sci-change-position"]
+      },
+      {
+        "id": "g2-sci-machines-daily",
+        "title": "Simple Machines in Daily Life",
+        "description": "Match everyday tools, like ramps, scissors, and flagpoles, to the simple machine and the job it makes easier.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g2-sci-six-machines"]
+      },
+      {
+        "id": "g2-sci-machine-force",
+        "title": "Less Push With a Machine",
+        "description": "Pick which way takes less force to move an object, with a simple machine or without one.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g2-sci-machines-daily"]
+      },
+      {
+        "id": "g2-sci-machines-communities",
+        "title": "Machines Help People Everywhere",
+        "description": "Pick how simple machines help people do daily tasks in different communities.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g2-sci-machines-daily"]
+      },
+      {
+        "id": "g2-sci-machines-environment",
+        "title": "Machines and the Environment",
+        "description": "Pick how technologies with simple machines that help us move, like bikes and cranes, affect nature.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g2-sci-machines-daily", "g1-sci-healthy-actions"]
+      },
+      {
+        "id": "g2-sci-air-water-properties",
+        "title": "Properties of Air and Water",
+        "description": "Pick key facts about air and water, like air takes up space and water flows and takes the shape of its container.",
+        "expectationCodes": ["E2.1"],
+        "prerequisiteIds": ["g1-sci-healthy-environment"]
+      },
+      {
+        "id": "g2-sci-water-sources",
+        "title": "Where Water Comes From",
+        "description": "Sort water sources in nature, like lakes and rivers, and built ones, like wells and taps.",
+        "expectationCodes": ["E2.2"],
+        "prerequisiteIds": ["g2-sci-air-water-properties"]
+      },
+      {
+        "id": "g2-sci-three-states-water",
+        "title": "Three States of Water",
+        "description": "Sort water as solid, liquid, or gas in nature. Pick how warming and cooling change it.",
+        "expectationCodes": ["E2.4"],
+        "prerequisiteIds": ["g2-sci-water-states", "g2-sci-water-sources"]
+      },
+      {
+        "id": "g2-sci-water-cycle",
+        "title": "The Water Cycle",
+        "description": "Put the water cycle in order: evaporation, condensation, precipitation, and collection.",
+        "expectationCodes": ["E2.3"],
+        "prerequisiteIds": ["g2-sci-three-states-water", "g1-sci-cycles"]
+      },
+      {
+        "id": "g2-sci-depend-air-water",
+        "title": "Living Things Need Air and Water",
+        "description": "Pick how plants, animals, and people use air and water to live.",
+        "expectationCodes": ["E2.5"],
+        "prerequisiteIds": ["g2-sci-air-water-properties", "g1-sci-basic-needs"]
+      },
+      {
+        "id": "g2-sci-protect-air-water",
+        "title": "Keeping Air and Water Clean",
+        "description": "Pick how people's actions affect air and water, including how First Nations, Métis, and Inuit see it. Pick a plan to protect them.",
+        "expectationCodes": ["E1.1"],
+        "prerequisiteIds": ["g2-sci-depend-air-water", "g1-sci-healthy-actions"]
+      },
+      {
+        "id": "g2-sci-water-use-plan",
+        "title": "Using Water Wisely",
+        "description": "Pick how we use water at home. Choose a plan to use less, like turning off the tap.",
+        "expectationCodes": ["E1.2"],
+        "prerequisiteIds": ["g2-sci-water-sources"]
+      },
+      {
+        "id": "g2-sci-world-fresh-water",
+        "title": "Fresh Water Around the World",
+        "description": "Pick where fresh and drinking water is easy or hard to get. Pick how this affects communities.",
+        "expectationCodes": ["E1.3"],
+        "prerequisiteIds": ["g2-sci-water-sources", "g2-sci-depend-air-water"]
+      }
+    ]
+  }
+}

@@ -48,6 +48,37 @@ describe('splitBundle', () => {
     expect(bundle.version).toBe(sampleBundle.version);
   });
 
+  it('leaves subjects parents cannot pick out of core and the packs', () => {
+    const skill = sampleBundle.skills.find((s) => s.grade === '1')!;
+    const sci = {
+      ...skill,
+      id: 'g1-sci-living-things',
+      subject: 'science' as const,
+      framework: 'ontario-science-2022' as const,
+      prerequisiteIds: [],
+    };
+    const item = { ...sampleBundle.items[0], id: 'g1-sci-living-things-tap-1', skillId: sci.id };
+    const { core, manifest } = splitBundle({
+      ...sampleBundle,
+      skills: [...sampleBundle.skills, sci],
+      items: [...sampleBundle.items, item],
+    });
+    expect(core).toEqual(splitBundle(sampleBundle).core);
+    expect(manifest.packs.map((p) => p.id)).toEqual(['math-k', 'math-1']);
+  });
+
+  it('leaves parent opt-in skills out until the app can turn them on', () => {
+    const skill = sampleBundle.skills.find((s) => s.grade === '1')!;
+    const optIn = {
+      ...skill,
+      id: 'g1-body-parts',
+      prerequisiteIds: [],
+      parentOptIn: 'human-development' as const,
+    };
+    const { core } = splitBundle({ ...sampleBundle, skills: [...sampleBundle.skills, optIn] });
+    expect(core).toEqual(splitBundle(sampleBundle).core);
+  });
+
   it('records each pack file hash and size', () => {
     const { manifest, files } = splitBundle(sampleBundle);
     for (const entry of manifest.packs) {

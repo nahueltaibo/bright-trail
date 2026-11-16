@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g3-sci-plant-needs-tap-15",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "'Leans toward the room' is vague. Plants lean toward light, so a child may not link the lean to the dark corner. Consider 'leans toward the dark wall' or 'leans toward a far-off light.' The marked answer (move it to a window) is correct."
+      },
+      {
+        "target": "g3-sci-plant-needs-tap-3",
+        "severity": "note",
+        "category": "other",
+        "note": "The explanation says plants take in air 'through their leaves.' That is true for carbon dioxide, but a teacher may want it phrased more simply, for example 'Plants use air, including the gas in it, to make food.' Not a factual error at Grade 3 level."
+      },
+      {
+        "target": "g3-sci-plant-needs-tap-10",
+        "severity": "note",
+        "category": "other",
+        "note": "A sunny window is a normal, healthy place for a plant, so it works as a distractor. Strong sun can scorch some plants, but the item is still clearly answered by the freezing night. No change needed unless the team wants to avoid any ambiguity."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 items. Each marked answer is correct, and no wrong choice is also partly right. The facts are accurate for Grade 3: plants need water, light, air, heat, nutrients, and space; no water causes wilting; no light causes pale, weak growth; soggy soil can harm roots; crowding limits space; plain sand is low in nutrients. Each item can be understood by ear. The picture counts (5 and 6 plants) match the narration. No content stereotypes a group or frightens a child. The three notes are small wording points, not blockers."
+  }
+}

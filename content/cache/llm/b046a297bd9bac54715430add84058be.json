@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "audio",
+        "note": "Card 4's screen text reads 'moved, born, born', which a non-reader cannot tell apart. The narration names each event, so the audio carries it, but the two 'born' labels could be clearer, for example 'Dad born' and 'Maya born'."
+      },
+      {
+        "target": "g2-soc-chronology-tap-1",
+        "severity": "note",
+        "category": "other",
+        "note": "Difficulty 1 is very easy, and the answer is guessable from the wording alone. This is fine for an opener."
+      }
+    ],
+    "notes": "I checked every item against the marked answer and the stated fact. All 15 marked answers are correct, and no distractor is partly right. Each item is clear by ear, with no picture dependence. The story cards are accurate and consistent: Rosa's son is Maya's dad, and the timeline order (moved, son born, Maya born) matches card 2. Nothing stereotypes a group, and nothing shames or frightens a child. Only two small notes were raised, neither blocking."
+  }
+}

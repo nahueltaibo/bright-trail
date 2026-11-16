@@ -1,0 +1,99 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g3-hlth-food-origins",
+        "title": "Where Food Comes From",
+        "description": "Find out where food is grown, fished, or hunted and how it is made ready. Pick how these things change how healthy food is and how they affect the Earth.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g2-hlth-food-guide-choices"]
+      },
+      {
+        "id": "g3-hlth-concussions",
+        "title": "Concussions and Staying Safe",
+        "description": "Learn what a concussion is and how it can happen. Put the school's steps in order when someone bumps their head.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g2-hlth-safety-places"]
+      },
+      {
+        "id": "g3-hlth-substances",
+        "title": "Substances and Dependency",
+        "description": "Sort substances like nicotine, caffeine, and alcohol. Pick how too much use can hurt your body, your mind, and other people.",
+        "expectationCodes": ["D1.3"],
+        "prerequisiteIds": ["g2-hlth-medicines"]
+      },
+      {
+        "id": "g3-hlth-healthy-relationships",
+        "title": "Healthy Friendships and Consent",
+        "description": "Pick what makes a relationship healthy, like listening and being honest. Choose good ways to answer bullying and to ask for consent.",
+        "expectationCodes": ["D1.4"],
+        "prerequisiteIds": ["g2-hlth-relating-positively", "g2-hlth-consent-standing-up"]
+      },
+      {
+        "id": "g3-hlth-growth-factors",
+        "title": "What Helps Us Grow",
+        "description": "Pick things like sleep, food, and caring adults that help your body and feelings grow. Choose ways to feel good about your body.",
+        "expectationCodes": ["D1.5"],
+        "prerequisiteIds": ["g2-hlth-body-appreciation"]
+      },
+      {
+        "id": "g3-hlth-stress-response",
+        "title": "Fight, Flight, Freeze",
+        "description": "Learn how your brain reacts when it thinks there is danger. Match fight, flight, and freeze to how you might think, feel, and act.",
+        "expectationCodes": ["D1.6"],
+        "prerequisiteIds": ["g2-hlth-body-brain-stress"]
+      },
+      {
+        "id": "g3-hlth-oral-food",
+        "title": "Food Choices and Healthy Teeth",
+        "description": "Learn why a healthy mouth matters for your whole body. Sort foods and drinks that help or hurt your teeth.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g2-hlth-oral-health", "g2-hlth-food-guide-choices"]
+      },
+      {
+        "id": "g3-hlth-safety-guidelines",
+        "title": "Safety Rules for Places",
+        "description": "Pick the best safety rules for places like water, camping, online, and fire plans. Choose safe ways to act around animals and with allergies.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g2-hlth-safety-places"]
+      },
+      {
+        "id": "g3-hlth-healthy-choices",
+        "title": "Making Healthy Choices",
+        "description": "Think about what to consider when using medicine or screens. Pick the choice that keeps you from getting hooked or hurt.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g3-hlth-substances"]
+      },
+      {
+        "id": "g3-hlth-cultural-foods",
+        "title": "Foods From Many Places",
+        "description": "Match foods like lentils, naan, berries, and fish to the cultures they come from. Pick how trying them adds healthy choices.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g2-hlth-food-guide-choices"]
+      },
+      {
+        "id": "g3-hlth-media-violence",
+        "title": "Pretend Violence vs Real Life",
+        "description": "Spot how shows and games make fighting look harmless. Pick what can really happen to people when violence is real.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g2-hlth-relating-positively"]
+      },
+      {
+        "id": "g3-hlth-respecting-differences",
+        "title": "Everyone Is Unique",
+        "description": "Sort differences you can see from ones you can't. Pick kind ways to show respect for others.",
+        "expectationCodes": ["D3.3"],
+        "prerequisiteIds": ["g2-hlth-relating-positively"]
+      },
+      {
+        "id": "g3-hlth-strong-feelings",
+        "title": "Big Feelings and What Causes Them",
+        "description": "Match things like moving, loud noise, or losing a pet to big feelings like worry. Pick ways to help yourself feel better.",
+        "expectationCodes": ["D3.4"],
+        "prerequisiteIds": ["g2-hlth-naming-feelings"]
+      }
+    ]
+  }
+}

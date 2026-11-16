@@ -1,0 +1,25 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g2-hlth-food-allergies",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g1-hlth-safety-basics"],
+        "title": "",
+        "description": "",
+        "reason": "g1-hlth-food-needs (why food helps the body) is not needed to match common allergies to their reactions, so a kid can learn this skill without it. g1-hlth-safety-basics stays because severe reactions such as difficulty breathing require knowing when and how to call 9-1-1."
+      },
+      {
+        "skillId": "g2-hlth-name-feelings",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-hlth-body-brain-stress"],
+        "title": "",
+        "description": "",
+        "reason": "g2-hlth-body-brain-stress already depends on g1-hlth-thoughts-feelings, so listing g1-hlth-thoughts-feelings directly is redundant. The prerequisite is reached through g2-hlth-body-brain-stress, which is the direct dependency."
+      }
+    ],
+    "notes": "Reviewed all nine Grade 2 skills against the prerequisite rules. Two corrections were needed: a non-essential prerequisite on g2-hlth-food-allergies and a redundant transitive prerequisite on g2-hlth-name-feelings. The other skills have direct, needed prerequisites with no redundancy, and no prerequisites point to later grades or to the skill itself. Titles and descriptions read clearly and match their expectations, so none were changed. Borderline items I left alone: g1-hlth-school-safety on g2-hlth-safe-home-outdoors (relevant to safe routes and bus safety), g1-hlth-hazards on g2-hlth-medicines (relevant to medicine dangers), and g1-hlth-healthy-habits on g2-hlth-medicine-alternatives (relevant to sleep, exercise, and healthy habits)."
+  }
+}

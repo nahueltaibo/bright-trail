@@ -1,0 +1,313 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g6-sci-research-process",
+        "title": "Researching Biodiversity and Space",
+        "description": "Put the steps of a research in order. Pick a good question about living things, electricity, flight, or space and the best place to find the answer.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g5-sci-research-process"]
+      },
+      {
+        "id": "g6-sci-experiment-process",
+        "title": "Fair Tests With Circuits and Flight",
+        "description": "Pick the fair test that changes only one thing, like testing how wing shape changes a glider's flight. Put the steps of an experiment in order.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g5-sci-experiment-process"]
+      },
+      {
+        "id": "g6-sci-design-process",
+        "title": "Design, Build, Test Flying Devices",
+        "description": "Put the steps for designing and building a device in order. Pick what to change to make it work better.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g5-sci-design-process"]
+      },
+      {
+        "id": "g6-sci-safety-procedures",
+        "title": "Staying Safe With Electricity",
+        "description": "Pick the safe way to use tools, batteries, and materials. Choose the right gear to wear for the job.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g5-sci-safety-procedures"]
+      },
+      {
+        "id": "g6-sci-communicate",
+        "title": "Sharing Findings With Others",
+        "description": "Pick the best way to share what you found for different people and reasons. Match science words to what they mean.",
+        "expectationCodes": ["A1.5"],
+        "prerequisiteIds": ["g5-sci-communicate"]
+      },
+      {
+        "id": "g6-sci-code-input",
+        "title": "Code That Gets Input",
+        "description": "Look at a few lines of code that get input, like a key press, a button, or a sensor. Pick what the code will do with it.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g5-sci-code-data"]
+      },
+      {
+        "id": "g6-sci-coding-impacts",
+        "title": "Coding, New Tech, and Trades",
+        "description": "Pick how coding and new technology change everyday life and jobs, including skilled trades.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g5-sci-coding-impacts"]
+      },
+      {
+        "id": "g6-sci-applications",
+        "title": "Science in Jobs and Subjects",
+        "description": "Match jobs, including skilled trades, to the science they use to fix real problems. Pick how science works with other subjects to help.",
+        "expectationCodes": ["A3.1", "A3.2"],
+        "prerequisiteIds": ["g5-sci-applications"]
+      },
+      {
+        "id": "g6-sci-contributions",
+        "title": "Science Ideas From Many Communities",
+        "description": "Match science and technology ideas to the communities that gave them to us. Pick how those ideas help people.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g5-sci-contributions"]
+      },
+      {
+        "id": "g6-sci-classify-organisms",
+        "title": "Sorting Living Things Into Groups",
+        "description": "Pick what makes groups of living things different, like animals, plants, and fungi. Sort living things into smaller groups using a classification key.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g4-sci-structural-adaptations"]
+      },
+      {
+        "id": "g6-sci-biodiversity-defined",
+        "title": "What Is Biodiversity?",
+        "description": "Pick that biodiversity is the variety of life: differences inside a species, between species, and between habitats.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g4-sci-community", "g6-sci-classify-organisms"]
+      },
+      {
+        "id": "g6-sci-species-variety",
+        "title": "Variety Helps a Species Survive",
+        "description": "Pick how differences among members of one species, like colour or disease resistance, help the species survive.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g6-sci-biodiversity-defined"]
+      },
+      {
+        "id": "g6-sci-community-resilience",
+        "title": "Variety Keeps Communities Strong",
+        "description": "Pick how having many species and habitats helps a community bounce back from change, like a drought or disease.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g6-sci-biodiversity-defined", "g4-sci-food-web"]
+      },
+      {
+        "id": "g6-sci-interrelationships",
+        "title": "Living Things Rely on Each Other",
+        "description": "Match relationships, like pollination, predators and prey, and sharing food, to how they keep biodiversity going.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g6-sci-community-resilience", "g3-sci-plant-animal-depend"]
+      },
+      {
+        "id": "g6-sci-invasive-species",
+        "title": "Invasive Species",
+        "description": "Pick how invasive species, like zebra mussels, crowd out native living things and lower biodiversity.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g6-sci-interrelationships", "g4-sci-habitat-limits"]
+      },
+      {
+        "id": "g6-sci-climate-biodiversity",
+        "title": "Climate Change and Lost Species",
+        "description": "Pick how a warming climate makes living things lose their habitats and what happens when biodiversity is lost.",
+        "expectationCodes": ["B2.7"],
+        "prerequisiteIds": ["g6-sci-community-resilience", "g5-sci-fossil-fuels-climate"]
+      },
+      {
+        "id": "g6-sci-agriculture-biodiversity",
+        "title": "Biodiversity and Farming",
+        "description": "Pick how many kinds of crops, pollinators, and soil life help farms, including Indigenous farming around the world.",
+        "expectationCodes": ["B2.8"],
+        "prerequisiteIds": ["g6-sci-species-variety", "g3-sci-food-plants"]
+      },
+      {
+        "id": "g6-sci-biodiversity-benefits",
+        "title": "Why Biodiversity Matters",
+        "description": "Pick the benefits of biodiversity for people and nature. Pick what happens when biodiversity shrinks.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g6-sci-community-resilience", "g6-sci-species-variety"]
+      },
+      {
+        "id": "g6-sci-biodiversity-action",
+        "title": "Solving a Local Biodiversity Problem",
+        "description": "Look at a local problem, like a drained wetland. Pick the different points of view and the best plan to help.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g6-sci-biodiversity-benefits", "g4-sci-human-habitat-impact"]
+      },
+      {
+        "id": "g6-sci-static-electricity",
+        "title": "Static Electricity",
+        "description": "Pick why things like a balloon rubbed on hair stick or spark. Pick that charges can attract or push away.",
+        "expectationCodes": ["C2.1"],
+        "prerequisiteIds": ["g5-sci-energy-forms"]
+      },
+      {
+        "id": "g6-sci-current-electricity",
+        "title": "Current and Static Electricity",
+        "description": "Pick that current electricity is charges flowing along a path. Compare it with static electricity.",
+        "expectationCodes": ["C2.2"],
+        "prerequisiteIds": ["g6-sci-static-electricity"]
+      },
+      {
+        "id": "g6-sci-conductors",
+        "title": "Conductors and Insulators",
+        "description": "Sort materials, like copper, rubber, and plastic, into ones that let electricity flow and ones that block it.",
+        "expectationCodes": ["C2.3"],
+        "prerequisiteIds": ["g6-sci-current-electricity", "g1-sci-material-properties"]
+      },
+      {
+        "id": "g6-sci-make-electricity",
+        "title": "Making Electrical Energy",
+        "description": "Match technologies, like solar panels, wind turbines, and batteries, to the energy they turn into electricity.",
+        "expectationCodes": ["C2.4"],
+        "prerequisiteIds": [
+          "g6-sci-current-electricity",
+          "g5-sci-renewable-sources",
+          "g5-sci-energy-conservation-law"
+        ]
+      },
+      {
+        "id": "g6-sci-use-electricity",
+        "title": "Electricity Turns Into Other Energy",
+        "description": "Match devices, like lamps, toasters, and fans, to the energy electricity turns into, like light, heat, or motion.",
+        "expectationCodes": ["C2.5"],
+        "prerequisiteIds": ["g6-sci-current-electricity", "g5-sci-energy-dissipation"]
+      },
+      {
+        "id": "g6-sci-circuit-parts",
+        "title": "Parts of a Simple Circuit",
+        "description": "Label the cell, wires, switch, and bulb in a circuit. Pick what each part does.",
+        "expectationCodes": ["C2.6"],
+        "prerequisiteIds": ["g6-sci-conductors"]
+      },
+      {
+        "id": "g6-sci-series-parallel",
+        "title": "Series and Parallel Circuits",
+        "description": "Tell series circuits from parallel circuits in pictures. Match each one to where it is used, like string lights or house outlets.",
+        "expectationCodes": ["C2.7"],
+        "prerequisiteIds": ["g6-sci-circuit-parts"]
+      },
+      {
+        "id": "g6-sci-generation-impacts",
+        "title": "Making Electricity in Canada",
+        "description": "Pick short-term and long-term effects of ways to make electricity in Canada on people, First Nations, Métis, and Inuit communities, nature, and climate.",
+        "expectationCodes": ["C1.1"],
+        "prerequisiteIds": ["g6-sci-make-electricity", "g5-sci-energy-impacts"]
+      },
+      {
+        "id": "g6-sci-save-electricity",
+        "title": "Using Less Electricity",
+        "description": "Pick choices that use less electricity at home and school. Pick the best way to get your school to use it wisely.",
+        "expectationCodes": ["C1.2"],
+        "prerequisiteIds": ["g6-sci-use-electricity", "g5-sci-tech-energy-use"]
+      },
+      {
+        "id": "g6-sci-air-flight",
+        "title": "Air and Flight",
+        "description": "Pick how properties of air, like pressure and air pushing back, are used in flying things like kites, wings, and parachutes.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g2-sci-air-water-properties"]
+      },
+      {
+        "id": "g6-sci-four-forces",
+        "title": "The Four Forces of Flight",
+        "description": "Match lift, weight, thrust, and drag to what each one does. Pick how they balance in flight.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g6-sci-air-flight", "g3-sci-force-effects"]
+      },
+      {
+        "id": "g6-sci-flight-control",
+        "title": "Controlling Flight",
+        "description": "Pick how balanced and unbalanced forces help planes and birds climb, glide, turn, and land.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g6-sci-four-forces"]
+      },
+      {
+        "id": "g6-sci-alter-forces",
+        "title": "Changing the Forces of Flight",
+        "description": "Pick how wing shape, engine power, and weight change lift, thrust, drag, and weight.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g6-sci-four-forces"]
+      },
+      {
+        "id": "g6-sci-flying-organisms",
+        "title": "How Living Things Fly",
+        "description": "Match features of birds, bats, and insects, like hollow bones and light bodies, to how they help them fly.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g6-sci-four-forces", "g4-sci-structural-adaptations"]
+      },
+      {
+        "id": "g6-sci-aviation-impacts",
+        "title": "Aviation and Our World",
+        "description": "Pick good and bad effects of planes and drones on people and nature, near home and around the world.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g6-sci-alter-forces", "g5-sci-fossil-fuels-climate"]
+      },
+      {
+        "id": "g6-sci-solar-system",
+        "title": "Parts of the Solar System",
+        "description": "Match the Sun, planets, moons, comets, asteroids, and meteoroids to their main features.",
+        "expectationCodes": ["E2.1"],
+        "prerequisiteIds": ["g1-sci-earth-sun"]
+      },
+      {
+        "id": "g6-sci-mass-weight",
+        "title": "Mass and Weight",
+        "description": "Pick the difference between mass, how much matter something has, and weight, how hard gravity pulls it.",
+        "expectationCodes": ["E2.2"],
+        "prerequisiteIds": ["g5-sci-matter-defined"]
+      },
+      {
+        "id": "g6-sci-gravity-weight",
+        "title": "Gravity and Weight",
+        "description": "Pick how weight changes on the Moon or other planets because gravity is different, while mass stays the same.",
+        "expectationCodes": ["E2.3"],
+        "prerequisiteIds": ["g6-sci-mass-weight", "g6-sci-solar-system", "g3-sci-force-types"]
+      },
+      {
+        "id": "g6-sci-space-light",
+        "title": "Bodies That Shine or Reflect",
+        "description": "Sort space bodies, like stars and the Sun, that make light from ones, like moons and planets, that reflect it.",
+        "expectationCodes": ["E2.4"],
+        "prerequisiteIds": ["g6-sci-solar-system", "g4-sci-emit-reflect"]
+      },
+      {
+        "id": "g6-sci-earth-moon-sun",
+        "title": "Earth, Moon, and Sun Motions",
+        "description": "Pick effects of how Earth, the Moon, and the Sun move, like moon phases, eclipses, and tides.",
+        "expectationCodes": ["E2.5"],
+        "prerequisiteIds": ["g6-sci-space-light"]
+      },
+      {
+        "id": "g6-sci-space-technology",
+        "title": "Space Exploration Technology",
+        "description": "Match tools like telescopes, satellites, probes, and rovers to what they taught us about space.",
+        "expectationCodes": ["E2.6"],
+        "prerequisiteIds": ["g6-sci-solar-system"]
+      },
+      {
+        "id": "g6-sci-humans-in-space",
+        "title": "Living and Working in Space",
+        "description": "Pick how space affects the body and feelings of astronauts. Pick how they get food, exercise, sleep, and contact with family.",
+        "expectationCodes": ["E1.1"],
+        "prerequisiteIds": ["g6-sci-gravity-weight", "g5-sci-system-links"]
+      },
+      {
+        "id": "g6-sci-space-earth-watch",
+        "title": "Watching Earth From Space",
+        "description": "Pick how satellites help us see changes on Earth, like melting ice, forest loss, and climate change.",
+        "expectationCodes": ["E1.2"],
+        "prerequisiteIds": ["g6-sci-space-technology", "g5-sci-fossil-fuels-climate"]
+      },
+      {
+        "id": "g6-sci-space-impacts",
+        "title": "Space Exploration and Our World",
+        "description": "Pick good and bad effects of space exploration on people and the environment, like space junk and new inventions. Think about different points of view.",
+        "expectationCodes": ["E1.3"],
+        "prerequisiteIds": ["g6-sci-space-technology", "g5-sci-material-impacts"]
+      }
+    ]
+  }
+}

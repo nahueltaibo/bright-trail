@@ -1,0 +1,50 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g3-soc-daily-life-then",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g3-soc-indigenous-places",
+          "g3-soc-settler-places",
+          "g2-soc-basic-needs"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "Daily life (eating, dressing, housing, work) is the Grade 3 extension of the Grade 2 idea that people everywhere meet basic needs in different ways (g2-soc-basic-needs). No listed prerequisite covers that idea, so it is a missing direct prerequisite."
+      },
+      {
+        "skillId": "g3-soc-canadian-identity",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-soc-colonial-policies"],
+        "title": "",
+        "description": "",
+        "reason": "g3-soc-colonial-policies already depends on g3-soc-treaties, so listing treaties directly is redundant. Removing it keeps only the direct prerequisite. The skill still reaches treaties through colonial-policies."
+      },
+      {
+        "skillId": "g3-soc-employment-types",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-soc-local-government"],
+        "title": "",
+        "description": "",
+        "reason": "g3-soc-local-government depends on g1-soc-gov-services, which depends on g1-soc-services-jobs. Listing g1-soc-services-jobs directly is redundant, since the kid reaches it through local-government."
+      },
+      {
+        "skillId": "g3-soc-make-ontario-maps",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g3-soc-political-map-type",
+          "g3-soc-landform-regions",
+          "g1-soc-build-maps",
+          "g3-soc-land-use-types"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks the kid to choose map parts that show land uses, but no listed prerequisite teaches land uses. g3-soc-land-use-types is needed and is not already reached through another listed prerequisite. The other listed prerequisites are kept."
+      }
+    ],
+    "notes": "Reviewed all 16 proposed Grade 3 skills against the Grade 1 and 2 skills and the Grade 3 expectations. I checked each prerequisite for necessity, directness (no listed prerequisite already depends on it), missing same-idea predecessors, and grade ordering. No prerequisite points to a later grade or to the skill itself. Titles and descriptions read clearly aloud and match their expectations, so I changed none. I left some borderline cases alone. g3-soc-early-challenges does not list the settler-communities skill, but the link is weak and the skill can be learned without it. g3-soc-cardinal-directions is not listed on make-ontario-maps, but it is already reached through landform-regions and location-climate."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g3-sci-forces-daily",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-sci-force-ways"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to match everyday jobs, like opening a door or kicking a ball, to the force being used. That is the push, pull, twist, or squeeze vocabulary taught in g3-sci-force-ways, not just the contact/non-contact sort. g3-sci-force-ways already depends on g3-sci-force-types, so listing force-types directly would be redundant. Replacing it with force-ways keeps the chain direct."
+      }
+    ],
+    "notes": "Reviewed all 43 proposed Grade 3 skills. Every prerequisite id exists, none point to a later grade or to the skill itself, and no listed prerequisite is a duplicate of another listed prerequisite's dependency chain, except g3-sci-forces-daily (corrected above). Titles and descriptions match their expectations and read well aloud. The remaining prerequisite lists look reasonable as written, though a few are judgment calls (for example, g3-sci-plant-needs for g3-sci-plant-animal-depend), and I left them unchanged."
+  }
+}

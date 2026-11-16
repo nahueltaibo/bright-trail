@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g1-sci-sun-light-heat",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g1-sci-earth-sun", "g1-sci-cycles", "g1-sci-sun-energy"],
+        "title": "",
+        "description": "",
+        "reason": "This skill asks kids to describe how the amount of light and heat from the Sun changes through the day and across the seasons. The idea that the Sun gives off light and heat is the core of C2.2, which is taught by g1-sci-sun-energy. A kid who does not know the Sun warms the air, land, and water and gives light would struggle with this skill. g1-sci-sun-energy depends only on g1-sci-energy-moves, so it does not duplicate the other listed prerequisites."
+      }
+    ],
+    "notes": "Reviewed all 42 Grade 1 skills. Apart from the one correction, the prerequisites are direct, non-redundant, not circular, and point only within Grade 1. The skills with no prerequisites are reasonable starting points. Two other possible gaps were considered and not changed: g1-sci-food-energy might benefit from g1-sci-basic-needs, since knowing that living things need food is the premise of the skill, but the skill is mainly about energy, so I left it. g1-sci-loss-effects might benefit from g1-sci-healthy-environment, but linked-nature covers the interconnection the skill depends on. Titles and descriptions are short and read-aloud friendly, so no wording changes are needed."
+  }
+}

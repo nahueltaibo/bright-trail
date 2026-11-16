@@ -1,0 +1,37 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g5-hlth-trusted-help",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-hlth-bullying-abuse", "g2-hlth-name-feelings"],
+        "title": "",
+        "description": "",
+        "reason": "g4-hlth-mental-health-choices is not needed to know which trusted people and help services to contact. Its content (sleep, activity, daily habits) is not what this skill assesses. g2-hlth-name-feelings directly covers matching feelings like sad, scared, or worried to times when you should ask for help, which the description's 'feeling very upset' depends on. Knowing 9-1-1 and trusted adults from Grade 1 is already reached through g4-hlth-bullying-abuse, so it is not added as a direct prerequisite."
+      },
+      {
+        "skillId": "g5-hlth-food-labels",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-hlth-nutrients"],
+        "title": "",
+        "description": "",
+        "reason": "Reading nutrition fact tables and ingredient lists does not require setting or tracking eating goals. g4-hlth-eating-goals is not needed. Allergy-related label reading is already reached through g4-hlth-nutrients, which depends on the Grade 2 food allergy skill, so no extra prerequisite is needed."
+      },
+      {
+        "skillId": "g5-hlth-refusal-pressure",
+        "changePrerequisites": true,
+        "prerequisiteIds": [
+          "g4-hlth-refusing-smoking",
+          "g5-hlth-alcohol-effects",
+          "g4-hlth-tech-risks"
+        ],
+        "title": "",
+        "description": "",
+        "reason": "The description names pressure toward too much gaming, and the Grade 4 technology skill covers screen time and gaming risks and safe ways to use them. No other listed prerequisite depends on g4-hlth-tech-risks, so it is a direct, needed addition."
+      }
+    ],
+    "notes": "Reviewed all ten Grade 5 skills. Kept the rest as written: g5-hlth-alcohol-effects, g5-hlth-threat-strategies, g5-hlth-helping-others, g5-hlth-food-marketing, g5-hlth-actions-feelings, g5-hlth-alcohol-cannabis-factors, and g5-hlth-mental-stigma. Their prerequisites are real and direct, and no prerequisite points to a later grade or to the skill itself. Notes on the rule: where a needed idea is already reached through a listed prerequisite's chain (for example, Grade 1 safety basics via the Grade 4 bullying skill, or Grade 2 food allergies via the Grade 4 nutrients skill), I did not add it directly, because the direct-prerequisite rule says not to list X when another listed prerequisite already depends on it."
+  }
+}

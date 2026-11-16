@@ -1,0 +1,39 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-hlth-food-guide-tap-12",
+        "severity": "note",
+        "category": "audio",
+        "note": "The narration lists foods with commas inside each option and semicolons between options (\"peas, brown rice, fish; cookies and candy; or chips and pop\"). A child listening by ear may not tell where each option starts and ends. Consider reading the options as separate, clearly pronounced phrases, such as \"Option one: peas, brown rice, and fish. Option two: ...\". The marked answer is correct."
+      },
+      {
+        "target": "g1-hlth-food-guide-tap-11",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Beans are listed as a protein food, which matches the guide and the story. Some children will know that green beans are vegetables, though. The marked answer (spinach) is still the only defensible odd one out for protein foods. Consider adding 'protein foods' to the narration so the category is clear by ear, e.g. 'Which one is not a protein food?'"
+      },
+      {
+        "target": "g1-hlth-food-guide-tap-8",
+        "severity": "note",
+        "category": "other",
+        "note": "The story says Sam has 'only rice' but does not say it is brown rice. That is fine for this item, but the 'Why' could be clearer: adding vegetables is what helps, since the plate still needs the half that is vegetables and fruits."
+      },
+      {
+        "target": "g1-hlth-food-guide-tap-5",
+        "severity": "note",
+        "category": "other",
+        "note": "The odd-one-out is correct, but it is a very simple item and is marked difficulty 1 while it uses the odd-one-out format. Consider making the difficulty consistent with the other odd-one-out items, which are rated 2 or 3."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Story card 2 says 'Sam loves carrots and apples', but its picture is only 5 carrots. Showing a row of apples as well, or changing the picture text, would keep narration and picture aligned. Card 6 does show apples."
+      }
+    ],
+    "notes": "I checked every item's marked answer against Canada's Food Guide and confirmed that each marked answer is correct and that no wrong choice is also partly right. The story facts also match the guide: half the plate is vegetables and fruits, a quarter is whole grains, a quarter is protein foods, and water is the drink of choice. No blockers found. Problems listed are wording, audio-clarity, and difficulty notes only."
+  }
+}

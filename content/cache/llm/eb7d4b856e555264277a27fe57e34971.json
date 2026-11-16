@@ -1,0 +1,41 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g4-soc-physical-features",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-early-locations"],
+        "title": "",
+        "description": "",
+        "reason": "g2-soc-adapt covers how people change clothing, buildings, and ways of living for climate. Matching rivers, floods, volcanoes, soil, and seasons to their effect on food does not require it. The early-locations skill already covers the climate and land map reading this skill needs."
+      },
+      {
+        "skillId": "g4-soc-governance",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-soc-local-government"],
+        "title": "",
+        "description": "",
+        "reason": "g3-soc-treaties is about agreements between peoples, not about how a society is governed. It belongs with conflict resolution, as a prerequisite of g4-soc-resolve-conflict instead. Local government is kept because it teaches who leads a community and why."
+      },
+      {
+        "skillId": "g4-soc-resolve-conflict",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-coop-conflict", "g3-soc-treaties"],
+        "title": "",
+        "description": "",
+        "reason": "The description names treaties as a way groups made peace. Grade 3 treaties and wampum belts teach treaties as agreements between peoples, which a kid needs before matching treaties to how they helped. This is a missing prerequisite that was moved here from g4-soc-governance."
+      },
+      {
+        "skillId": "g4-soc-b-maps",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-b-gather", "g3-soc-b-maps", "g3-soc-make-maps"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to pick symbols or shading to make a map of resources or land height. g3-soc-make-maps teaches making a map with a title, legend, direction arrow, and scale, and it is the direct Grade 3 prerequisite for constructing maps. Without it, the skill's map-making part has no foundation."
+      }
+    ],
+    "notes": "Reviewed all 40 proposed Grade 4 skills against the prerequisite rules. Four skills needed changes, listed above. All other skills' prerequisites are valid, direct, not later-grade, and not self-referential, and their titles and descriptions suit read-aloud use. Two judgment calls were left as they are: g4-soc-sustainable-actions could optionally add g2-soc-sustainability, and g4-soc-a-sources could optionally add g4-soc-visual-evidence."
+  }
+}

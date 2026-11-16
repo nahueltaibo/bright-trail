@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-sci-objects-materials-tap-1",
+        "severity": "blocker",
+        "category": "wrong-answer",
+        "note": "The wrong choice 'wood' is partly right. Many real windows have wood frames, so a child could reasonably pick either answer. Reword the question to target the glass pane (for example, 'What is the see-through part of a window made of?') or swap in a clearly single-material object."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-3",
+        "severity": "blocker",
+        "category": "wrong-answer",
+        "note": "The wrong choice 'a window' is partly right, because window frames are often wood. The question 'Which one is made of wood?' could then have two correct answers. Replace the window with an object that is clearly not wood, such as a glass jar or a metal spoon."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-5",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration gives the answer's own properties ('hard and shiny' for metal), so a child can match words without knowing the material. Consider asking about a property the child has to apply, or describing the fork's use instead."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-10",
+        "severity": "note",
+        "category": "other",
+        "note": "The correct choice names both materials in its own text ('wood and metal chair'), so the answer can be found by matching words. This is easy but not wrong. A stronger version would describe the object without naming its materials."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-15",
+        "severity": "note",
+        "category": "factual",
+        "note": "The explanation 'A pencil is wood' is a simplification. Pencil bodies are wood, but the writing core is graphite. Consider 'A pencil is mostly wood' so the why does not teach an oversimplified rule."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 2 says 'Wood is hard', and card 4 says 'Glass is hard'. Some woods, such as balsa, are soft. Consider 'Wood can be hard' to avoid teaching a rule that is not always true."
+      }
+    ],
+    "notes": "Reviewed all 7 story cards and all 15 tap items, checking each marked answer against its choices and the spoken question. Most items are accurate and within the Grade 1 skill. The main issues are two items where a wrong choice is partly right because some windows have wood frames (tap-1 and tap-3). Those are blockers and should be fixed before release. The rest are wording or difficulty notes. No content stereotypes a group, and the glass-safety item (tap-13) is appropriately calm and includes a grown-up instruction."
+  }
+}

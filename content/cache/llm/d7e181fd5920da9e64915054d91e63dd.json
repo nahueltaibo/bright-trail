@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g2-sci-animal-traits-tap-11",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The marked answer (changes) is correct, but the item is about seasonal colour change, not growth, which is the skill's focus. It also sits awkwardly with the story card that says fur stays the same. Consider rewording to 'Does the hare's fur colour change with the seasons?' or moving it to a later lesson, and keep the story's 'fur stays the same' rule clear."
+      },
+      {
+        "target": "g2-sci-animal-traits-tap-15",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "Answer is correct, but this item nearly duplicates tap-2 (puppy: size changes, four legs stay). Consider varying the scenario or features so the item adds practice instead of repeating the same sort."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 5 says the tadpole 'has a tail and no legs' and 'grows legs and becomes a frog' but does not say the tail goes away. That leaves out a visible change that is part of the lesson. A short clause such as 'and its tail shrinks away' would make the change clearer."
+      },
+      {
+        "target": "g2-sci-animal-traits-tap-4",
+        "severity": "note",
+        "category": "other",
+        "note": "Choice text includes the parenthetical '(picture: 🐟)'. Text-to-speech may read the picture label or emoji name aloud awkwardly. Consider keeping the choice label as plain 'a fish', 'a snake', 'a cat' and showing the picture visually."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 tap items for correct answers, single correct choice, factual accuracy, audio-only comprehension, and grade-level fit. I found no blockers: each marked answer is correct, no distractor is also partly right, and no fact is disputed (e.g., baby teeth falling out, caterpillar to butterfly, tadpole growing legs, goldfish keeping scales, duck and goose both having feathers, chick fluff replaced by feathers, leopard keeping spots). Nothing stereotypes a people or community, and nothing shames or frightens a child. The four notes are wording and clarity suggestions only."
+  }
+}

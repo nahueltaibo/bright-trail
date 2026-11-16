@@ -1,6 +1,7 @@
 import { readFile } from 'node:fs/promises';
-import { IdSchema, type Skill } from '@bright-trail/shared';
+import { IdSchema, type Skill, type Subject } from '@bright-trail/shared';
 import { z } from 'zod';
+import { subjectOfId } from './sources';
 
 const reason = z.string().trim().min(1);
 const edge = { skillId: IdSchema, prerequisiteId: IdSchema, reason };
@@ -40,6 +41,11 @@ export async function loadOverrides(file: string): Promise<Override[]> {
   const parsed = OverridesFileSchema.safeParse(JSON.parse(await readFile(file, 'utf8')));
   if (!parsed.success) throw new Error(`${file}: ${z.prettifyError(parsed.error)}`);
   return parsed.data.overrides;
+}
+
+/** The overrides of one subject, told apart by the tag in each skill id. */
+export function overridesFor(overrides: readonly Override[], subject: Subject): Override[] {
+  return overrides.filter((o) => subjectOfId(o.skillId) === subject);
 }
 
 export interface OverrideResult {

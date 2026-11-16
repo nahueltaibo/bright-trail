@@ -1,0 +1,51 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-soc-community-features-tap-4",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The marked answer 'natural' and the explanation 'Nature made the lake. People did not build it.' state as a rule that every lake is natural. Reservoirs and dammed or dug ponds are lakes that people made, so a teacher could dispute this. Reword to a clearly natural lake or to 'most lakes', and keep the same caveat in mind for the other lake items."
+      },
+      {
+        "target": "g1-soc-community-features-tap-12",
+        "severity": "blocker",
+        "category": "ambiguous",
+        "note": "The screen text 'Where do people play hockey?' does not limit the answer to built places. Kids in Ontario often play pond or river hockey on natural ice, so 'a river' is partly right on the screen. Only the narration ('People build a place to play hockey') rules it out. Change the screen to match the narration, for example 'Which place do people build for hockey?'"
+      },
+      {
+        "target": "g1-soc-community-features-tap-13",
+        "severity": "note",
+        "category": "factual",
+        "note": "The explanation 'A river and a lake were both made by nature' is broadly right but has the same exception as tap-4: some lakes are reservoirs made by people. Consider 'Rivers and most lakes are natural' or a clearer example."
+      },
+      {
+        "target": "g1-soc-community-features-tap-3",
+        "severity": "note",
+        "category": "factual",
+        "note": "The explanation 'Nature makes things like rivers and lakes' repeats the blanket lake claim. Reword to 'Nature makes things like rivers and forests'."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 3 says 'Most forests grow in nature. Trees grow on their own.' Planted forests and tree farms are people-managed, so 'trees grow on their own' is an overgeneralization. Consider 'Forests grow in nature, and trees grow on their own there.' Also, 'Most forests grow in nature' is awkward for Grade 1 listeners."
+      },
+      {
+        "target": "g1-soc-community-features-tap-15",
+        "severity": "note",
+        "category": "other",
+        "note": "'Place of worship' is abstract vocabulary for Grade 1 and is hard to follow by ear. It is factually correct and neutral in tone. Consider a concrete example such as 'a church' or 'a temple' or give a short spoken definition first."
+      },
+      {
+        "target": "g1-soc-community-features-tap-2",
+        "severity": "note",
+        "category": "other",
+        "note": "The explanation 'A forest is a natural place with trees' is fine, but 'Forests grow in nature' is clearer and matches the story card."
+      }
+    ],
+    "notes": "Checked all 15 items and the story cards. Every marked answer is correct, and no item has more than one right choice, except where noted in tap-12. Each item's picture or narration matches its question. None of the content stereotypes a people or community, shames or scares a child, or goes beyond the Grade 1 natural/built skill. The two blockers are the blanket claim that all lakes are natural (tap-4) and the screen wording of tap-12 that leaves a river arguably correct. The rest are wording and clarity notes."
+  }
+}

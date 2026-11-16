@@ -1,0 +1,21 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 4 says 'Sam went to daycare first.' Not every child attends daycare, so a child who didn't may be confused. Consider 'Many children go to daycare first' or using a neutral 'Sam started with...' phrasing. Also, Ontario Kindergarten is two years (JK and SK), but the story treats it as one event. That is a simplification a teacher might still accept at Grade 1 level."
+      },
+      {
+        "target": "g1-soc-events-in-order-tap-4",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration says 'the very start of the line,' and 'line' can be read as a queue or a drawn line. For a child listening by ear, 'the very beginning' would be clearer. The marked answer 'first' is correct."
+      }
+    ],
+    "notes": "I checked all 15 tap items and the story. Each marked answer is correct, and no wrong choice is partly right. Ordering is consistent throughout: daycare, then Kindergarten, then Grade 1, and walking comes before biking, crawling, and standing. The true/false items (tap-3 true, tap-10 false) match the facts. Every item can be understood by ear, with no picture needed. No content stereotypes a group or frightens a child. The two notes are wording and simplification issues, not blockers."
+  }
+}

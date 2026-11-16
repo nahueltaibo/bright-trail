@@ -1,0 +1,78 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g3-hlth-food-origins",
+        "title": "Where Food Comes From",
+        "description": "Food can be grown, harvested, fished, hunted, or made in a factory. Learn how where food comes from and how it is made changes how healthy it is and how it affects the Earth.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g2-hlth-food-guide-choices"]
+      },
+      {
+        "id": "g3-hlth-concussions",
+        "title": "Concussions and School Rules",
+        "description": "A concussion is a brain injury from a bump or hit to the head or body. Pick how concussions happen, the signs to watch for, and the steps your school takes.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g2-hlth-safe-home-outdoors"]
+      },
+      {
+        "id": "g3-hlth-substances",
+        "title": "Substances and Dependency",
+        "description": "Things like nicotine, caffeine, sugar, and alcohol can make a body need them. Match each one to how too much can hurt your body, your mind, and other people.",
+        "expectationCodes": ["D1.3"],
+        "prerequisiteIds": ["g2-hlth-medicines", "g1-hlth-healthy-habits"]
+      },
+      {
+        "id": "g3-hlth-stress-response",
+        "title": "Fight, Flight, or Freeze",
+        "description": "When your brain thinks there is danger, it can make you fight, run away, or freeze. Match each response to how it can change your thoughts, feelings, and actions.",
+        "expectationCodes": ["D1.6"],
+        "prerequisiteIds": ["g2-hlth-body-brain-stress"]
+      },
+      {
+        "id": "g3-hlth-oral-health",
+        "title": "Healthy Teeth and Food Choices",
+        "description": "Taking care of your mouth helps your whole body stay healthy. Sort foods and drinks into ones that help your teeth and ones that can cause cavities.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g2-hlth-food-guide-choices"]
+      },
+      {
+        "id": "g3-hlth-safety-guidelines",
+        "title": "Safety Rules for Many Places",
+        "description": "Pick good safety rules for places like water, camping, online, Halloween, and around animals. Also choose rules for staying clean, stopping germs, and managing allergies.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g2-hlth-safe-home-outdoors", "g2-hlth-food-allergies"]
+      },
+      {
+        "id": "g3-hlth-healthy-choices-substances",
+        "title": "Making Smart Choices About Substances",
+        "description": "Think about what to consider before using medicine, screens, or other things that could turn into a habit. Pick the choice that keeps you healthy.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g3-hlth-substances", "g2-hlth-medicine-alternatives"]
+      },
+      {
+        "id": "g3-hlth-cultural-foods",
+        "title": "Foods From Many Cultures",
+        "description": "Local foods and foods from different cultures, like lentils, naan, berries, and fish, can all be healthy choices. Match foods to the cultures they come from and how they help you eat well.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g2-hlth-food-guide-choices"]
+      },
+      {
+        "id": "g3-hlth-media-violence",
+        "title": "Pretend Violence vs Real Life",
+        "description": "Shows, movies, and video games can make violence look harmless. Match what you see in media to what really happens, like injuries, disability, and family stress.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g2-hlth-relating-positively", "g3-hlth-concussions"]
+      },
+      {
+        "id": "g3-hlth-strong-feelings",
+        "title": "What Makes Feelings Big",
+        "description": "Changes like a move, loud noise, or losing a pet can cause strong feelings such as worry. Match each cause to ways that can help you feel better.",
+        "expectationCodes": ["D3.4"],
+        "prerequisiteIds": ["g2-hlth-name-feelings", "g3-hlth-stress-response"]
+      }
+    ]
+  }
+}

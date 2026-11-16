@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "Card 3 says 'Bread, oatmeal, and brown rice are whole grain foods.' Bread and rice are not automatically whole grain. White bread and white rice are refined grains. Only whole grain bread or brown rice qualifies. Name the food precisely, e.g. 'whole grain bread, oatmeal, and brown rice.'"
+      },
+      {
+        "target": "g1-hlth-food-guide-tap-12",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The 'Why' says 'Rice is a whole grain.' This is false for white rice and would teach a misconception. Change the choice to 'brown rice' or change the explanation to 'brown rice is a whole grain.' The narration says only 'rice', so the item needs the same fix."
+      },
+      {
+        "target": "g1-hlth-food-guide-tap-15",
+        "severity": "blocker",
+        "category": "factual",
+        "note": "The 'Why' says 'Bread is a whole grain food.' Plain bread is not always whole grain. The explanation should say 'whole grain bread is a whole grain food,' or the narration should say 'whole grain bread.' As written it teaches that all bread is whole grain."
+      }
+    ],
+    "notes": "I checked the story and all 15 items against Canada's Food Guide. The plate proportions (half vegetables and fruits, a quarter whole grain, a quarter protein) and the marked answers for tap-1 through tap-11, tap-13, tap-14 are correct. Each item has exactly one right choice, and the wrong choices are clearly wrong. The main recurring problem is the generic use of \"bread\" and \"rice\" as whole grain foods. Fixing the wording to \"whole grain bread\" and \"brown rice\" would resolve all three blockers. The story and items are otherwise narrated clearly enough for ear-only play. Optional note-level polish: tap-7 and tap-13 use \"one quarter\" and \"half\" language that a Grade 1 child might find abstract, but it is within grade level."
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Wording: 'Every thing is made of something' should be 'Everything is made of something' so a reader doesn't split the word."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 6 says the hammer handle 'is wood' as an absolute. Many hammers have wood handles, but steel and fibreglass handles are also common. Consider 'often wood' to match tap-6."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 2 says 'Mia's pencil is made of wood.' This is a common simplification. The graphite lead is not wood, and tap-15 mentions a metal band, so the story could say 'The outside of a pencil is wood' to be more accurate."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-6",
+        "severity": "note",
+        "category": "wrong-answer",
+        "note": "The 'glass' distractor is not partly right, so the item is fine. But the 'Why' text, 'Glass would break, so it is not used,' is loose. Fibreglass handles exist, and the reason is more about glass being brittle and not used for a handle. Consider rewording the explanation."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-8",
+        "severity": "note",
+        "category": "other",
+        "note": "The 🫙 jar emoji is from a newer Unicode release (2021). It may show as a blank box on older tablets or phones, and a child then gets no picture cue. Consider a more widely supported glass or bottle emoji, or check rendering on the target devices."
+      },
+      {
+        "target": "g1-sci-objects-materials-tap-3",
+        "severity": "note",
+        "category": "factual",
+        "note": "The answer is correct, but the 'Why' text says 'A pencil is made of wood' without the nuance about the graphite lead. This is acceptable for Grade 1, but it matches the simplification noted on the story card."
+      }
+    ],
+    "notes": "Reviewed all 7 story cards and 15 tap items. Every marked answer is correct, and no wrong choice is partly right. The facts hold for Grade 1: wood from trees, metal strong and shiny, glass see-through and sharp when broken, plastic light, and a hammer with a metal head and wood handle. No stereotyping, no shaming, and the glass-safety line in tap-13 is calm. The items are clear by ear, and the pictures match the narration. I found no blockers. The notes are small wording and rendering points, plus a few places where a simplification could be tightened."
+  }
+}

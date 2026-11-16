@@ -1,0 +1,628 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Mia. Mia has a kitten named Pip. Pip is small and soft. Mia likes to look at Pip's body.",
+        "text": "Animal features",
+        "visual": { "kind": "emoji", "emoji": "🐱", "count": null, "filled": null }
+      },
+      {
+        "narration": "Animals look different from each other. A bird has feathers. A fish has scales. A cat has fur. These are features.",
+        "text": "Features",
+        "visual": { "kind": "emoji", "emoji": "🐦", "count": null, "filled": null }
+      },
+      {
+        "narration": "Some features stay the same. Pip will always have fur. Pip will always have four legs and whiskers.",
+        "text": "Stays the same",
+        "visual": { "kind": "objects", "emoji": "🐾", "count": 4, "filled": null }
+      },
+      {
+        "narration": "Some features change. Pip grows bigger. Pip gets heavier. Pip's baby teeth fall out, and new teeth grow in.",
+        "text": "Changes",
+        "visual": { "kind": "emoji", "emoji": "🐈", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia sees a tadpole at the pond. It has a tail and no legs. Soon it grows legs and becomes a frog.",
+        "text": "A tadpole changes",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia's friend has a baby chick. The chick has soft yellow fluff. Later it grows feathers. The fluff goes away.",
+        "text": "Fluff goes away",
+        "visual": { "kind": "emoji", "emoji": "🐥", "count": null, "filled": null }
+      },
+      {
+        "narration": "Mia sorts the features. Fur and four legs stay the same. Size and baby teeth change. Now you can practise too.",
+        "text": "Stays or changes?",
+        "visual": null
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A bird has a body covering. What covers a bird's body: feathers, scales, or fur?",
+        "prompt": "What covers a bird?",
+        "why": "A bird's body is covered with feathers. Fish have scales, and cats have fur.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "scales",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "fur",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "feathers",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A puppy grows up. Which feature changes as it grows: its size, or its four legs?",
+        "prompt": "What changes as a puppy grows?",
+        "why": "A puppy gets bigger as it grows. Its size changes. It still has four legs.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "its four legs",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "its size",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false? A fish keeps its scales as it grows.",
+        "prompt": "A fish keeps its scales.",
+        "why": "This is true. A fish has scales all its life. Scales are a feature that stays the same.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "True",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "False",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Some animals have fur. Which animal has fur: a fish, a snake, or a cat?",
+        "prompt": "Which animal has fur?",
+        "why": "A cat has fur. A fish has scales, and a snake has scales too.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🐟", "count": null, "filled": null },
+            "narration": "a fish"
+          },
+          {
+            "id": "b",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🐍", "count": null, "filled": null },
+            "narration": "a snake"
+          },
+          {
+            "id": "c",
+            "kind": "visual",
+            "value": null,
+            "text": null,
+            "visual": { "kind": "emoji", "emoji": "🐱", "count": null, "filled": null },
+            "narration": "a cat"
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "A tadpole grows and turns into a frog. What does the tadpole grow: wings, legs, or feathers?",
+        "prompt": "What does a tadpole grow?",
+        "why": "A tadpole grows legs as it becomes a frog. Frogs do not have wings or feathers.",
+        "visual": { "kind": "emoji", "emoji": "🐸", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "wings",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "legs",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "feathers",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A baby robin is small and fluffy. Which feature will stay the same as it grows: having a beak, being small, or being fluffy?",
+        "prompt": "Which feature stays the same?",
+        "why": "A robin has a beak all its life. Its size and fluff change as it grows.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "having a beak",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "being small",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "being fluffy",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Think about a kitten growing up. Which is the odd one out: gets taller, gets heavier, or has fur?",
+        "prompt": "Which is the odd one out?",
+        "why": "Getting taller and heavier are changes. Having fur stays the same, so it is the odd one out.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "gets taller",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "gets heavier",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "has fur",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A caterpillar eats leaves and grows. Later it changes a lot. What does a caterpillar become: a beetle, a butterfly, or a bird?",
+        "prompt": "What does a caterpillar become?",
+        "why": "A caterpillar becomes a butterfly. It looks very different, and it grows wings.",
+        "visual": { "kind": "emoji", "emoji": "🐛", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a beetle",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a butterfly",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a bird",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A child's baby teeth fall out. Which group does this belong in: features that change, or features that stay?",
+        "prompt": "Which group is it?",
+        "why": "Baby teeth fall out and new teeth grow in. That is a feature that changes.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "features that change",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "features that stay",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "A duck and a goose look alike in one way. What do both of them have: fur, scales, or feathers?",
+        "prompt": "What do a duck and goose both have?",
+        "why": "Ducks and geese are both birds. All birds have feathers.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "fur",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "scales",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "feathers",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "An arctic hare has brown fur in summer. In winter its fur turns white. Is fur colour a feature that stays the same, or changes?",
+        "prompt": "Does the hare's fur colour change?",
+        "why": "The hare's fur turns white in winter. So its fur colour changes with the seasons.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "stays the same",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "changes",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A leopard cub has spots. Which stays the same as it grows up: being small, drinking milk, or having spots?",
+        "prompt": "Which one stays the same?",
+        "why": "A leopard keeps its spots all its life. It grows bigger and stops drinking milk.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "being small",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "drinking milk",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "having spots",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Here are three animals. Which animal is the odd one out: a hen, a robin, or a dog?",
+        "prompt": "Which animal is the odd one out?",
+        "why": "A hen and a robin are birds with feathers. A dog has fur, so it is the odd one out.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a hen",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a robin",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a dog",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "A chick grows into a hen. Which feature goes away: soft yellow fluff, two legs, or a beak?",
+        "prompt": "Which feature goes away?",
+        "why": "The chick's soft fluff is replaced by feathers. The hen keeps two legs and a beak.",
+        "visual": { "kind": "emoji", "emoji": "🐥", "count": null, "filled": null },
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "soft yellow fluff",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "two legs",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "a beak",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sort a puppy's features. Which one belongs in the group that stays the same: baby teeth, small size, or four legs?",
+        "prompt": "Which feature stays the same?",
+        "why": "A dog has four legs all its life. Baby teeth fall out, and size grows bigger.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "baby teeth",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "small size",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "four legs",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

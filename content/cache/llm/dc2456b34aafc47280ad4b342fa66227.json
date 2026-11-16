@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-hlth-food-guide-tap-7",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "Peas are listed as a vegetable here, but peas are legumes, and Canada's Food Guide also counts beans, lentils and peas as protein foods. Peas are only a partly wrong distractor if the teacher reads 'peas' as dried peas. Consider 'a carrot, a banana, or bread' or 'cucumber' to avoid the overlap. The marked answer (bread) is still correct."
+      },
+      {
+        "target": "g1-hlth-food-guide-tap-9",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The marked plate (carrots, rice, and egg) has vegetables, a grain and a protein, but no fruit, and fruit is half the guide's plate. The 'Why' says it 'has all three' of the guide's groups, which is inaccurate since the guide has three groups plus fruit. The answer is still the only reasonable choice, but the wording could be 'a plate with vegetables, a grain, and a protein food' or the choice could add an apple."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Card 3 pictures 4 carrots for 'half of the plate'. The count does not show a half, and a child listening alone can't see it. Consider keeping the picture as a simple carrot illustration, or saying 'Half of the plate is vegetables and fruits, like Mia's carrots' so the narration matches the picture."
+      }
+    ],
+    "notes": "I checked every item against Canada's Food Guide: half the plate is vegetables and fruits, a quarter is whole grain foods, a quarter is protein foods, and water is the best drink. Every marked answer is correct, and no wrong choice is also right. Fish, beans, eggs, grapes, apples, brown rice and bread are all placed in the right groups. I found no blockers. The three notes are wording and clarity issues: the peas overlap in tap-7, the missing fruit in the tap-9 plate, and the carrot-count picture on story card 3. The content has no stereotypes and nothing that frightens or shames a child, and it stays within the Grade 1 skill."
+  }
+}

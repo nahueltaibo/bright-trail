@@ -1,9 +1,9 @@
 import { readdir, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import {
-  OFFERED_SUBJECTS,
   SUBJECT_FRAMEWORKS,
   type Framework,
+  type ParentOptIn,
   type SkillGrade,
   type Subject,
 } from '@bright-trail/shared';
@@ -17,6 +17,8 @@ export interface Expectation {
   statement: string;
   /** Examples and Key concepts as written in the source. */
   details: string;
+  /** Set on expectations a parent must turn on. Their skills carry it. */
+  parentOptIn?: ParentOptIn;
 }
 
 export interface GradeSource {
@@ -35,9 +37,48 @@ export function gradeRank(grade: SkillGrade): number {
   return GRADE_ORDER.indexOf(grade);
 }
 
-/** Id prefix every skill of a grade carries, e.g. `k-` or `g3-`. */
-export function idPrefix(grade: SkillGrade): string {
-  return grade === 'K' ? 'k-' : `g${grade}-`;
+/** What the graph reads from one subject's folder in `content/sources/`. */
+export interface SubjectSpec {
+  subject: Subject;
+  /** Id tag after the grade, e.g. `sci` in `g3-sci-plant-needs`. Math has none. */
+  tag: string;
+  /** Strands a tablet item can check. Undefined keeps every strand in the file. */
+  strands?: readonly string[];
+  /** Reads `kindergarten.md` too. Without it, the subject's graph starts at Grade 1. */
+  kindergarten?: boolean;
+  /** Specific expectations under a matching topic heading need a parent's opt-in. */
+  optInTopic?: { topic: RegExp; optIn: ParentOptIn };
+}
+
+export const MATH: SubjectSpec = { subject: 'math', tag: '', kindergarten: true };
+
+/** Subjects the skill graph covers. Health keeps only Strand D, Healthy Living. */
+export const GRAPH_SUBJECTS: readonly SubjectSpec[] = [
+  MATH,
+  { subject: 'science', tag: 'sci', strands: ['A', 'B', 'C', 'D', 'E'] },
+  { subject: 'social-studies', tag: 'soc', strands: ['A', 'B'] },
+  {
+    subject: 'health',
+    tag: 'hlth',
+    strands: ['D'],
+    optInTopic: { topic: /human development and sexual health/i, optIn: 'human-development' },
+  },
+];
+
+function specOf(subject: Subject): SubjectSpec {
+  return GRAPH_SUBJECTS.find((s) => s.subject === subject) ?? { subject, tag: subject };
+}
+
+/** The subject an id's tag names, e.g. science for `g3-sci-plant-needs`. Untagged ids are math. */
+export function subjectOfId(id: string): Subject {
+  const tag = /^(?:k|g\d)-([a-z]+)-/.exec(id)?.[1];
+  return GRAPH_SUBJECTS.find((s) => s.tag && s.tag === tag)?.subject ?? 'math';
+}
+
+/** Id prefix every skill of a grade and subject carries, e.g. `k-`, `g3-`, or `g3-sci-`. */
+export function idPrefix(grade: SkillGrade, subject: Subject = 'math'): string {
+  const { tag } = specOf(subject);
+  return `${grade === 'K' ? 'k' : `g${grade}`}-${tag ? `${tag}-` : ''}`;
 }
 
 function gradeOfFile(file: string): SkillGrade | null {
@@ -51,7 +92,7 @@ const SPECIFIC_HEADING = /^#### ([A-Z]\d+\.\d+)\b\s*(.*)$/;
 const STATEMENT = /^\*\*([A-Z]\d+\.\d+)\*\*\s+(.+)$/;
 
 /** Parses one curriculum file in the layout `content/sources/math/README.md` describes. */
-export function parseSource(file: string, markdown: string, subject: Subject): GradeSource {
+export function parseSource(file: string, markdown: string, spec: SubjectSpec): GradeSource {
   const grade = gradeOfFile(file);
   if (!grade) throw new Error(`Unexpected source file ${file}`);
   const expectations: Expectation[] = [];
@@ -104,15 +145,22 @@ export function parseSource(file: string, markdown: string, subject: Subject): G
   }
   flush();
 
-  const specific = expectations.filter((e) => e.kind === 'specific');
+  const kept = expectations
+    .filter((e) => !spec.strands || spec.strands.includes(e.code[0]))
+    .map((e) =>
+      e.kind === 'specific' && spec.optInTopic?.topic.test(e.topic)
+        ? { ...e, parentOptIn: spec.optInTopic.optIn }
+        : e,
+    );
+  const specific = kept.filter((e) => e.kind === 'specific');
   if (specific.length === 0) throw new Error(`${file}: no specific expectations found`);
   return {
     grade,
-    subject,
-    framework: grade === 'K' ? 'ontario-kindergarten-2026' : SUBJECT_FRAMEWORKS[subject],
-    strands: [...new Set(expectations.map((e) => e.code[0]))],
+    subject: spec.subject,
+    framework: grade === 'K' ? 'ontario-kindergarten-2026' : SUBJECT_FRAMEWORKS[spec.subject],
+    strands: [...new Set(kept.map((e) => e.code[0]))],
     file,
-    expectations,
+    expectations: kept,
   };
 }
 
@@ -121,28 +169,47 @@ export function parseSource(file: string, markdown: string, subject: Subject): G
  * README.
  */
 export async function loadSources(root: string, subject: Subject): Promise<GradeSource[]> {
+  const spec = specOf(subject);
   const dir = join(root, subject);
   const files = (
     await readdir(dir).catch(() => {
       throw new Error(`No curriculum sources for ${subject}: ${dir} is missing`);
     })
-  ).filter((f) => gradeOfFile(f));
+  ).filter((f) => {
+    const grade = gradeOfFile(f);
+    return grade !== null && (grade !== 'K' || spec.kindergarten);
+  });
   const sources = await Promise.all(
-    files.map(async (f) => parseSource(f, await readFile(join(dir, f), 'utf8'), subject)),
+    files.map(async (f) => parseSource(f, await readFile(join(dir, f), 'utf8'), spec)),
   );
   return sources.sort((a, b) => gradeRank(a.grade) - gradeRank(b.grade));
 }
 
-/**
- * Reads the sources of the given subjects, each ordered K to 6. Defaults to `OFFERED_SUBJECTS`:
- * the other folders hold text the graph build can't read yet.
- */
+/** Reads the sources of the given subjects, each ordered K to 6. Defaults to `GRAPH_SUBJECTS`. */
 export async function loadAllSources(
   root: string,
-  subjects: readonly Subject[] = OFFERED_SUBJECTS,
+  subjects: readonly Subject[] = GRAPH_SUBJECTS.map((s) => s.subject),
 ): Promise<Map<Subject, GradeSource[]>> {
   const entries = await Promise.all(
     subjects.map(async (subject) => [subject, await loadSources(root, subject)] as const),
   );
   return new Map(entries);
+}
+
+/** The source a skill's expectation codes come from. */
+export function sourceOf(
+  sources: readonly GradeSource[],
+  skill: { subject: Subject; grade: SkillGrade },
+): GradeSource | undefined {
+  return sources.find((s) => s.subject === skill.subject && s.grade === skill.grade);
+}
+
+/** The lowest grade a subject's sources cover: K for math, Grade 1 for the rest. */
+export function firstGrade(sources: readonly GradeSource[], subject: Subject): SkillGrade {
+  const ranks = sources.filter((s) => s.subject === subject).map((s) => gradeRank(s.grade));
+  return GRADE_ORDER[ranks.length > 0 ? Math.min(...ranks) : 0];
+}
+
+export function gradeName(grade: SkillGrade): string {
+  return grade === 'K' ? 'Kindergarten' : `Grade ${grade}`;
 }

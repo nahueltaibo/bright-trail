@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g6-soc-settler-contrib",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g6-soc-community-types"],
+        "title": "",
+        "description": "",
+        "reason": "g6-soc-community-types already depends on g6-soc-migration-reasons, which depends on g3-soc-settler-places. So g3-soc-settler-places is an indirect prerequisite and should not be listed directly."
+      },
+      {
+        "skillId": "g6-soc-territory-local",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-soc-treaties"],
+        "title": "",
+        "description": "",
+        "reason": "g3-soc-treaties already depends on g3-soc-indigenous-places, which depends on g1-soc-territory. Both of those are indirect prerequisites, so listing only g3-soc-treaties keeps the list direct. Treaty areas are the new knowledge this skill needs."
+      },
+      {
+        "skillId": "g6-soc-locate-countries",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-soc-map-directions-grids", "g6-soc-govt-world"],
+        "title": "",
+        "description": "",
+        "reason": "g2-soc-continents-oceans is already an indirect prerequisite through g4-soc-map-directions-grids (which depends on g3-soc-make-ontario-maps, then g3-soc-landform-regions, g2-soc-photo-map-info, g2-soc-location-climate, and finally g2-soc-continents-oceans). Remove it to keep the list direct."
+      }
+    ],
+    "notes": "Three corrections, each removing a redundant prerequisite that is already reached through another listed prerequisite. No skill points to a later grade or to itself. I found no clear missing direct prerequisites. One gap is not fixable with the ids given: g6-soc-locate-countries asks for latitude and longitude, but no prerequisite clearly teaches them. g4-soc-map-directions-grids covers grids, and it is the closest match. A future skill on latitude and longitude may be needed."
+  }
+}

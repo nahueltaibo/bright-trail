@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-sci-plant-animal-features-tap-8",
+        "severity": "note",
+        "category": "ambiguous",
+        "note": "The narration has a period where the question mark belongs ('Which one is the odd one out.'). Read aloud, it sounds like a statement and may not signal a question. The marked answer (fur) is correct and the other choices all help an animal move. Consider 'Which one does not help an animal move?' so the question is clear by ear."
+      },
+      {
+        "target": "g1-sci-plant-animal-features-tap-12",
+        "severity": "note",
+        "category": "factual",
+        "note": "The explanation 'The turtle can hide inside it from danger' is true for some turtles but not all. Sea turtles and snapping turtles, which are found in Ontario, cannot pull their heads and legs fully into the shell. Reword to 'Many turtles can hide inside it' or 'A hard shell protects a turtle from danger'. The marked answer (stay safe) is correct."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "The story introduces roots, leaves, fur, wings, and webbed feet. Several items then teach parts the story never shows: fins (tap-5, tap-14), claws (tap-15), eyes (tap-11), a beak (tap-10), a shell (tap-12), and a cactus stem (tap-9). These are fine as practice, but a child hearing them cold may need a short preview, or the story could add one line on one of them."
+      }
+    ],
+    "notes": "I checked all 15 items and the story cards against the marked answers. Every marked answer is correct, and no wrong choice is partly right. Each item has exactly one right answer. Story pictures match the narration. Nothing in the content stereotypes or frightens children. The three notes are wording and clarity issues, not factual errors."
+  }
+}

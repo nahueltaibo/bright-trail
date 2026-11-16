@@ -1,0 +1,85 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g4-hlth-nutrients",
+        "title": "Nutrients and What They Do",
+        "description": "Foods give you nutrients like carbohydrates, protein, fat, vitamins, and minerals. Match each nutrient to how it helps you grow, learn, and play.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g3-hlth-food-origins"]
+      },
+      {
+        "id": "g4-hlth-tech-risks",
+        "title": "Staying Safe With Technology",
+        "description": "Gaming, texting, and the Internet can cause risks like too much screen time, poor sleep, feeling sad, or meeting online strangers. Pick the safe ways to use them.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g3-hlth-safety-guidelines", "g3-hlth-healthy-choices-substances"]
+      },
+      {
+        "id": "g4-hlth-bullying-abuse",
+        "title": "Bullying, Abuse, and Cyberbullying",
+        "description": "Bullying can be social, emotional, physical, verbal, or online. Match each type to how it hurts and to a good way to respond.",
+        "expectationCodes": ["D1.3"],
+        "prerequisiteIds": ["g2-hlth-consent-standing-up", "g3-hlth-media-violence"]
+      },
+      {
+        "id": "g4-hlth-tobacco-substances",
+        "title": "What Is in Tobacco and Vapes",
+        "description": "Tobacco, smoke, and vaping products have things like nicotine, tar, and carbon monoxide. Match each one to how it harms the body.",
+        "expectationCodes": ["D1.4"],
+        "prerequisiteIds": ["g3-hlth-substances"]
+      },
+      {
+        "id": "g4-hlth-eating-goals",
+        "title": "Tracking Eating and Setting Goals",
+        "description": "Keeping track of what you eat helps you see your habits. Pick healthy goals from Canada's Food Guide, like choosing water and eating more vegetables and fruits.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g4-hlth-nutrients", "g3-hlth-cultural-foods"]
+      },
+      {
+        "id": "g4-hlth-safe-decisions",
+        "title": "Steps for Safe Decisions",
+        "description": "A good decision process spots dangers, thinks about options, checks with an adult, picks the safest choice, and looks back. Put the steps in order and use them in situations like cycling or going online.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g3-hlth-safety-guidelines"]
+      },
+      {
+        "id": "g4-hlth-refusing-smoking",
+        "title": "Choosing No to Smoking and Vaping",
+        "description": "Friends, stress, and family can change choices about smoking and vaping. Pick strong ways to say no, give reasons, or change the topic.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g4-hlth-tobacco-substances", "g3-hlth-healthy-choices-substances"]
+      },
+      {
+        "id": "g4-hlth-mental-health-choices",
+        "title": "Daily Choices for a Happy Mind",
+        "description": "Sleep, being active, checking in on your feelings, time with caring people, and helping others all help your mind. Match each choice to how it helps.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g3-hlth-strong-feelings"]
+      },
+      {
+        "id": "g4-hlth-healthy-eating-places",
+        "title": "Healthy Eating Everywhere",
+        "description": "You can eat healthy at school, at arenas, when camping, or at a friend's house. Pick ways to encourage healthy eating in each place.",
+        "expectationCodes": ["D3.1"],
+        "prerequisiteIds": ["g4-hlth-eating-goals"]
+      },
+      {
+        "id": "g4-hlth-smoke-effects",
+        "title": "Effects of Smoke and Vaping",
+        "description": "Smoking and vaping can hurt people in the short and long term. Second-hand smoke can hurt people nearby too.",
+        "expectationCodes": ["D3.2"],
+        "prerequisiteIds": ["g4-hlth-tobacco-substances"]
+      },
+      {
+        "id": "g4-hlth-manage-stress",
+        "title": "Handling Stress and Change",
+        "description": "Some stress you can change, like problems with friends. Some you can't, like moving. Match each kind of stress to a helpful way to cope.",
+        "expectationCodes": ["D3.3"],
+        "prerequisiteIds": ["g4-hlth-mental-health-choices", "g3-hlth-stress-response"]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g2-hlth-food-allergies",
+        "changePrerequisites": true,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "",
+        "reason": "The listed prerequisite g1-hlth-school-safety only mentions telling a teacher about allergies. A kid can learn to match common food allergies to their reactions without it, so the link is not a real need. Removed."
+      },
+      {
+        "skillId": "g2-hlth-life-stages",
+        "changePrerequisites": true,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "",
+        "reason": "Ordering the stages of life from infant to older adult does not depend on naming body parts (g1-hlth-body-parts). The listed prerequisite is not needed. Removed."
+      },
+      {
+        "skillId": "g2-hlth-health-without-medicine",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g2-hlth-medicines", "g1-hlth-healthy-habits", "g2-hlth-meal-choices"],
+        "title": "",
+        "description": "",
+        "reason": "The skill's description asks kids to pick healthy meals, and the expectation D3.2 names eating healthier meals as recommended in Canada's Food Guide. No listed prerequisite covers healthy meal choices. g2-hlth-meal-choices covers this and already builds on the food guide skill, so it is added as the direct prerequisite."
+      }
+    ],
+    "notes": "Reviewed all 13 Grade 2 skills for prerequisite necessity, directness, missing prerequisites, grade ordering, and title/description fit. Ordering is valid throughout: no prerequisite points to a later grade or to the skill itself, and no listed prerequisite is redundant with another. Titles and descriptions read clearly aloud and match their expectations. The three corrections above fix a weak or unneeded prerequisite (food allergies, life stages) and a missing prerequisite (health without medicine). The safety-places description omits some expectation items (electrical outlet covers, railway crossings, checking whether online information is true). I left that as is because it is a cue list rather than a claim the skill covers everything, but it could be expanded if full coverage is wanted. Some judgment calls remain, such as whether healthy-habits is strictly needed for health-without-medicine, and I kept those links."
+  }
+}

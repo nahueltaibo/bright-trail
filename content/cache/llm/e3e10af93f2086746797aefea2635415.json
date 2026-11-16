@@ -1,0 +1,596 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_content",
+  "output": {
+    "cards": [
+      {
+        "narration": "Meet Sam. Sam is 6 years old. Sam has had many big days. Let's put them in order.",
+        "text": "Big days in order",
+        "visual": { "kind": "emoji", "emoji": "🧒", "count": null, "filled": null }
+      },
+      {
+        "narration": "First, Sam was a baby. Babies cannot walk yet. They cannot ride a bike either.",
+        "text": "First",
+        "visual": { "kind": "emoji", "emoji": "👶", "count": null, "filled": null }
+      },
+      {
+        "narration": "Next, Sam learned to walk. Then, Sam learned to ride a bike. Walking came first.",
+        "text": "Walk, then bike",
+        "visual": { "kind": "emoji", "emoji": "🚲", "count": null, "filled": null }
+      },
+      {
+        "narration": "Sam went to daycare first. Then Sam went to Kindergarten. Now Sam is in Grade 1.",
+        "text": "Daycare, Kindergarten, Grade 1",
+        "visual": { "kind": "emoji", "emoji": "🏫", "count": null, "filled": null }
+      },
+      {
+        "narration": "Some words help us. First. Next. Then. Last. They tell us the order things happen.",
+        "text": "first, next, then, last",
+        "visual": null
+      },
+      {
+        "narration": "Things that already happened are in the past. Sam's baby days are in the past. So is Kindergarten.",
+        "text": "The past",
+        "visual": { "kind": "emoji", "emoji": "📅", "count": null, "filled": null }
+      },
+      {
+        "narration": "Now you try. Think about what happens first, next, and last. Let's practise putting events in order.",
+        "text": "Let's practise!",
+        "visual": { "kind": "emoji", "emoji": "⭐", "count": null, "filled": null }
+      }
+    ],
+    "items": [
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which happens first in a life: being a baby, or being in Grade 1?",
+        "prompt": "What happens first?",
+        "why": "Everyone starts as a baby. Grade 1 comes much later, when a child is about 6.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "being a baby",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "being in Grade 1",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Sam learned to walk. Sam also started Kindergarten. Which did Sam do first: learned to walk, or started Kindergarten?",
+        "prompt": "Which came first?",
+        "why": "Children learn to walk when they are very little. Kindergarten comes later.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "started Kindergarten",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "learned to walk",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "True or false: A baby learns to walk before learning to ride a bike.",
+        "prompt": "True or false?",
+        "why": "That is true. Walking comes first. Riding a bike comes later, when a child is bigger.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which word means the very start of the line: first, or last?",
+        "prompt": "Which word means the start?",
+        "why": "First means the very start. Last means the end.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "last",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "first",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 1,
+        "narration": "Which one is a big life event: learning to walk, a pencil, or a cloud?",
+        "prompt": "Which is a life event?",
+        "why": "Learning to walk is something that happens in a life. A pencil and a cloud are things, not events.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a pencil",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a cloud",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "learning to walk",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Sam went to daycare, then Kindergarten, then Grade 1. Which is the right order: daycare then Kindergarten then Grade 1, or Grade 1 then daycare then Kindergarten?",
+        "prompt": "Which order is right?",
+        "why": "Sam went to daycare first. Kindergarten came next. Grade 1 is the newest.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Grade 1, daycare, Kindergarten",
+            "visual": null,
+            "narration": "Grade 1 then daycare then Kindergarten"
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "daycare, Kindergarten, Grade 1",
+            "visual": null,
+            "narration": "daycare then Kindergarten then Grade 1"
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Mia rode a tricycle when she was small. Later, she learned to ride a bicycle. What did Mia ride later: a tricycle, or a bicycle?",
+        "prompt": "What did Mia ride later?",
+        "why": "The tricycle came first, when Mia was small. The bicycle came later.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "a bicycle",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "a tricycle",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Ali first crawled. Next, Ali stood up. Then Ali walked. What did Ali do right after standing up: crawled, stood up, or walked?",
+        "prompt": "What came after standing up?",
+        "why": "The order was crawled, stood up, then walked. Walking came right after standing up.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "crawled",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "stood up",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "walked",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "Which one is a word that helps us put things in order: first, apple, or blue?",
+        "prompt": "Which word shows order?",
+        "why": "First, next, then, and last help us say the order of events. Apple and blue do not.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "apple",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "blue",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "first",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 2,
+        "narration": "True or false: Grade 1 happens before Kindergarten.",
+        "prompt": "True or false?",
+        "why": "That is false. Kindergarten comes first. Then children go to Grade 1.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "true",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "false",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Sam learned to walk, then went to Kindergarten, then started Grade 1. What came between walking and Grade 1: Kindergarten, being a baby, or Grade 2?",
+        "prompt": "What came in the middle?",
+        "why": "The order was walking, Kindergarten, then Grade 1. Kindergarten is in the middle.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "being a baby",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Grade 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Kindergarten",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Jo is in Grade 1 now. Which already happened for Jo: Kindergarten, Grade 3, or Grade 5?",
+        "prompt": "What already happened?",
+        "why": "Jo finished Kindergarten before Grade 1. Grade 3 and Grade 5 are still to come.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Grade 3",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Kindergarten",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "Grade 5",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Zoe is in Grade 1. Which will happen next in school for Zoe: Grade 2, Kindergarten, or daycare?",
+        "prompt": "What is next for Zoe?",
+        "why": "After Grade 1 comes Grade 2. Daycare and Kindergarten came before.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "Grade 2",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "Kindergarten",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "daycare",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "a",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Which one is the odd one out, because it is not a big life event: learning to walk, starting Grade 1, or eating lunch today?",
+        "prompt": "Which is the odd one out?",
+        "why": "Learning to walk and starting Grade 1 are big events in a life. Eating lunch happens every day.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "learning to walk",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "starting Grade 1",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "c",
+            "kind": "text",
+            "value": null,
+            "text": "eating lunch today",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "c",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      },
+      {
+        "type": "tap",
+        "difficulty": 3,
+        "narration": "Ben learned to ride a bike. Then he started Grade 1. Which happened last: learned to ride a bike, or started Grade 1?",
+        "prompt": "Which happened last?",
+        "why": "Ben learned to ride a bike first. Then he started Grade 1. Grade 1 is the last one.",
+        "visual": null,
+        "choices": [
+          {
+            "id": "a",
+            "kind": "text",
+            "value": null,
+            "text": "learned to ride a bike",
+            "visual": null,
+            "narration": null
+          },
+          {
+            "id": "b",
+            "kind": "text",
+            "value": null,
+            "text": "started Grade 1",
+            "visual": null,
+            "narration": null
+          }
+        ],
+        "answerChoiceId": "b",
+        "answer": null,
+        "min": null,
+        "max": null,
+        "step": null,
+        "target": null,
+        "check": { "rule": "none", "expr": "", "choices": [], "note": "fact" }
+      }
+    ]
+  }
+}

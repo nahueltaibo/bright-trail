@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "factual",
+        "note": "Card 5 says the stamen makes 'a yellow dust called pollen.' Many pollens are yellow, but not all are. Consider 'a fine dust, often yellow' so children don't learn that pollen is always yellow."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Card 6 says 'A pine tree has no flowers.' This is broadly accepted at Grade 3, but it may puzzle children who see cones as flower-like. A short clarifier such as 'Its seeds grow inside cones instead of flowers and fruit' would be clearer by ear."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-4",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says 'Roots usually grow down in the soil,' but the screen text reads 'roots grow in soil.' The screen drops 'down' and 'usually,' so the screen claim is weaker than the audio. Align the screen text with the narration."
+      },
+      {
+        "target": "g3-sci-plant-parts-tap-9",
+        "severity": "note",
+        "category": "other",
+        "note": "Marked answer (pebble) is correct. At difficulty 2 it is very easy, since the one non-plant option is the only one that is not a plant structure. Consider a harder distractor set, or leave as an easy warm-up."
+      }
+    ],
+    "notes": "I checked every item's marked answer against its explanation and the story facts. All marked answers are correct, and no wrong choice is partly right. Roots hold the plant and take in water, leaves make food, the stem carries water, the stamen makes pollen, the pistil receives pollen and is where seeds form, fruit protects seeds, pine seeds grow in cones, and an asparagus spear is a young stem. Story picture pairings match their cards. No stereotyping, no frightening content, and nothing outside the Grade 3 plant-parts skill. The four notes above are wording and clarity issues only, none of which block release."
+  }
+}

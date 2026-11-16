@@ -1,0 +1,33 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g3-soc-settlement-factors",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-soc-settler-communities"],
+        "title": "",
+        "description": "",
+        "reason": "g2-soc-adapt covers how people dress and build for hot, cold, or dry climates. The skill is about rivers, soil, the fur trade, mills, and roads, and a kid can pick a good spot without knowing about climate adaptation. Its only real need is knowing where settlers lived (g3-soc-settler-communities)."
+      },
+      {
+        "skillId": "g3-soc-challenges",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-soc-settlement-factors", "g3-soc-indigenous-communities"],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to match each challenge to a community that faced it, and First Nations and Métis communities are part of that match. g3-soc-settlement-factors only leads to settler communities, so g3-soc-indigenous-communities is a missing direct prerequisite."
+      },
+      {
+        "skillId": "g3-soc-canadian-identity",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g3-soc-treaties", "g1-soc-reclaiming-identity"],
+        "title": "",
+        "description": "",
+        "reason": "The description names treaties as part of Canada's identity, but the skill does not list g3-soc-treaties, which is needed to match treaties to their community. g3-soc-then-now (jobs and challenges then and now) is not needed to match languages, treaties, the kayak, lacrosse, and maple syrup, so it is removed."
+      }
+    ],
+    "notes": "Reviewed all 34 proposed Grade 3 skills against the Grade 1-2 skills and the Grade 3 expectations. Three corrections were needed. Most skills are correct as written, including titles and descriptions, which read well aloud. No prerequisite points to a later grade or to the skill itself, and no cycles were found. Some prerequisites are only reachable transitively (for example, g1-soc-community-features through g2-soc-a-maps), and I left those as they are because the direct links are clear. Two lower-confidence observations were not turned into corrections: g3-soc-a-maps might also need g3-soc-settler-communities for its settlement maps, and g3-soc-b-maps might need g3-soc-political-maps for boundary reading."
+  }
+}

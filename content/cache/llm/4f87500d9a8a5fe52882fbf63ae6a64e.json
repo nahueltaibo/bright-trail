@@ -1,0 +1,27 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "Step 5 says \"Both birds have a beak\" and the narration refers to the chick and the hen, but the picture is 2 × 🐦 (generic birds). Step 1 shows only 🐥 and step 3 shows 🐔. Consider showing 🐥 and 🐔 in step 5 so the picture matches the narration the child hears."
+      },
+      {
+        "target": "g2-sci-animal-characteristics-tap-15",
+        "severity": "note",
+        "category": "other",
+        "note": "The claim that a hen and a rabbit are \"about the same size\" is loose. A hen and a domestic rabbit are both small, but a teacher could reasonably dispute the comparison. A clearer example would be two animals of obviously similar size with different coverings, or wording such as \"can be about the same size.\""
+      },
+      {
+        "target": "g2-sci-animal-characteristics-tap-11",
+        "severity": "note",
+        "category": "audio",
+        "note": "This is a difficulty-3 item that is read aloud with four long pairs, which is a heavy load for a child who listens without seeing the text. Consider shortening it to two or three pairs, or using a two-choice format. The answer itself is correct: a hen and a duck both have feathers, and the other pairs do not match."
+      }
+    ],
+    "notes": "Reviewed the story cards and all 15 items. I checked each marked answer against the question and confirmed that the other choices are wrong. No item has a wrong marked answer, more than one correct choice, or a missing correct answer. The facts are accurate for Grade 2: birds have feathers, fish have scales, rabbits and cats have fur, puppies and lambs keep four legs, chicks and ducklings start with fluff or down, and a bird's beak is its hard pointed mouth. Nothing stereotypes a group or frightens a child. The only issues are the three notes above, all about wording, picture alignment, and audio load. No blockers."
+  }
+}

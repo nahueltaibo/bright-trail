@@ -1,0 +1,15 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-sci-cycles-tap-14",
+        "severity": "note",
+        "category": "other",
+        "note": "Near-duplicate of tap-6 (both are about the sun coming up each day), and both are easy for a skill that is meant to teach ordering repeating events. Consider swapping in a different cycle, such as the moon or a weekly routine, for variety. Keep the answer as is."
+      }
+    ],
+    "notes": "I checked every card and item against the stated answers. All 15 marked answers are correct, and no distractor is partly right. Each one is a single unambiguous choice. The seasons facts match Ontario: four seasons, winter is cold and snowy, and many trees grow new leaves in spring. The story cards define a cycle accurately and sequence day/night and the seasons correctly. Every item can be understood by ear, since the narration includes the full question and all choices. No content stereotypes anyone or frightens a child. Only the note above is worth raising. Wording such as \"the sun comes up\" and \"the sun goes down\" is ordinary Grade 1 language for what children observe, so I did not flag it as a misconception."
+  }
+}

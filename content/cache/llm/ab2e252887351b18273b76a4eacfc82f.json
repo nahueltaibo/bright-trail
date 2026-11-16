@@ -1,0 +1,246 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g3-soc-indigenous-communities",
+        "title": "First Nations and Métis Communities Long Ago",
+        "description": "Between 1780 and 1850, First Nations and Métis communities lived in many places, and some had to move. Match each community to where it lived on a map.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g1-soc-territory", "g2-soc-a-maps"]
+      },
+      {
+        "id": "g3-soc-settler-communities",
+        "title": "Settler Communities Long Ago",
+        "description": "Settlers like the French, Scots, Loyalists, and Black settlers made new communities. Match each group to the place where it settled on a map.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g2-soc-a-maps"]
+      },
+      {
+        "id": "g3-soc-settlement-factors",
+        "title": "Why Settlements Grew Where They Did",
+        "description": "Rivers, good soil, the fur trade, mills, and roads helped towns grow. Pick what made a place a good spot to live.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g3-soc-settler-communities", "g2-soc-adapt"]
+      },
+      {
+        "id": "g3-soc-challenges",
+        "title": "Challenges Communities Faced",
+        "description": "Long ago, people faced hard weather, isolation, sickness, and unfair treatment. Match each challenge to a community that faced it.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g3-soc-settlement-factors"]
+      },
+      {
+        "id": "g3-soc-settlement-impact",
+        "title": "How Settlements Changed the Land",
+        "description": "Trading posts, farms, and towns changed nature and the people nearby. Pick what each kind of settlement did.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g3-soc-settlement-factors"]
+      },
+      {
+        "id": "g3-soc-daily-life-roles",
+        "title": "Daily Life and Roles Long Ago",
+        "description": "Food, clothing, homes, and jobs for men, women, and children were different in each community. Match each to the right group.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g3-soc-settler-communities", "g3-soc-indigenous-communities"]
+      },
+      {
+        "id": "g3-soc-treaties",
+        "title": "Treaties and Wampum Belts",
+        "description": "Treaties and wampum belts, like the Two Row Wampum, were agreements between peoples. Match each one to what it did.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g3-soc-indigenous-communities"]
+      },
+      {
+        "id": "g3-soc-conflict-cooperation",
+        "title": "Conflict or Cooperation?",
+        "description": "Communities shared medicines and farms, but also fought over land. Sort each story into conflict or cooperation.",
+        "expectationCodes": ["A3.8"],
+        "prerequisiteIds": ["g3-soc-daily-life-roles", "g3-soc-challenges"]
+      },
+      {
+        "id": "g3-soc-life-compare",
+        "title": "Everyday Life Then: Same and Different",
+        "description": "Compare homes, clothes, food, work, and play of different groups from 1780 to 1850. Sort what was the same and what was different.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g3-soc-daily-life-roles"]
+      },
+      {
+        "id": "g3-soc-colonial-policies",
+        "title": "Indigenous Life and Colonial Policies",
+        "description": "First Nations, Métis, and Inuit communities lived on and learned from the land. Later, residential schools and lost land changed their lives. Match each to before or after.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g3-soc-life-compare", "g2-soc-reclaiming"]
+      },
+      {
+        "id": "g3-soc-then-now",
+        "title": "Roles and Challenges Then and Now",
+        "description": "Jobs for women, men, and children and the problems people faced have changed since 1850. Sort what is from long ago and what is from today.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g3-soc-life-compare", "g3-soc-challenges"]
+      },
+      {
+        "id": "g3-soc-canadian-identity",
+        "title": "What Makes Canada, Canada",
+        "description": "Two official languages, treaties, the kayak, lacrosse, and maple syrup are part of Canada's identity. Match each to the community it came from.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g3-soc-then-now", "g1-soc-reclaiming-identity"]
+      },
+      {
+        "id": "g3-soc-a-questions",
+        "title": "Questions About Long Ago Challenges",
+        "description": "Pick a good question you could investigate about a challenge people faced from 1780 to 1850 and what they did about it.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g3-soc-challenges", "g2-soc-a-questions"]
+      },
+      {
+        "id": "g3-soc-a-sources",
+        "title": "Sources About the Past",
+        "description": "Journals, artefacts, old paintings, and oral histories are sources. Sort which ones help answer a question about long ago.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g3-soc-a-questions", "g2-soc-a-sources"]
+      },
+      {
+        "id": "g3-soc-a-maps",
+        "title": "Maps of Long Ago",
+        "description": "Read maps of settlements, routes, and territories from 1780 to 1850. Pick what a thematic map shows.",
+        "expectationCodes": ["A2.3"],
+        "prerequisiteIds": ["g3-soc-indigenous-communities", "g2-soc-a-maps"]
+      },
+      {
+        "id": "g3-soc-a-tools",
+        "title": "Timelines and Matrixes About the Past",
+        "description": "Use timelines, maps, and a chart to see how challenges and settlement changed things. Pick what the tool shows.",
+        "expectationCodes": ["A2.4"],
+        "prerequisiteIds": ["g3-soc-a-sources", "g2-soc-a-tools"]
+      },
+      {
+        "id": "g3-soc-a-conclusions",
+        "title": "Conclusions About Past Challenges",
+        "description": "Look at the evidence about a challenge and how people solved it. Pick the conclusion the evidence supports.",
+        "expectationCodes": ["A2.5"],
+        "prerequisiteIds": ["g3-soc-a-tools", "g2-soc-a-conclusions"]
+      },
+      {
+        "id": "g3-soc-a-communicate",
+        "title": "Sharing History Findings",
+        "description": "Pick the best way to share what you learned, and the right words like treaty, settler, Loyalist, and hardship.",
+        "expectationCodes": ["A2.6"],
+        "prerequisiteIds": ["g3-soc-a-conclusions", "g2-soc-a-communicate"]
+      },
+      {
+        "id": "g3-soc-local-government",
+        "title": "Ontario Regions and Local Governments",
+        "description": "Ontario has cities, towns, counties, First Nations, and Métis regions. Match each to who leads it and the services it gives.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g1-soc-public-services"]
+      },
+      {
+        "id": "g3-soc-political-maps",
+        "title": "Map Lettering Styles",
+        "description": "On political maps, countries, provinces, and cities are written in different styles. Pick which style fits each one.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": ["g2-soc-represent"]
+      },
+      {
+        "id": "g3-soc-landforms",
+        "title": "Ontario Landform Regions",
+        "description": "Ontario has the Canadian Shield, the Great Lakes–St. Lawrence Lowlands, and the Hudson Bay Lowlands. Match each region to what it is like.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g2-soc-represent"]
+      },
+      {
+        "id": "g3-soc-land-use-types",
+        "title": "Types of Land Use",
+        "description": "Land is used for farms, factories, shops, homes, play, roads, and protecting nature. Match each use to the need it meets.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g1-soc-community-areas", "g2-soc-needs"]
+      },
+      {
+        "id": "g3-soc-employment",
+        "title": "Jobs in Ontario Regions",
+        "description": "People work in jobs like mining, tourism, schools, arts, and caring for land. Match jobs to the kind of region where they are found.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g1-soc-services-occupations"]
+      },
+      {
+        "id": "g3-soc-nature-land-use",
+        "title": "Nature and Land Use Connections",
+        "description": "Ports grow on lakes, farms on flat rich soil, and resource towns near ore or trees. Match each natural feature to what gets built there.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g3-soc-landforms", "g3-soc-land-use-types"]
+      },
+      {
+        "id": "g3-soc-nature-jobs",
+        "title": "Nature and Jobs Connections",
+        "description": "Lakes bring tourism jobs, forests bring paper jobs, and Niagara Falls brings visitors. Match each place to the jobs its nature creates.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g3-soc-employment", "g3-soc-nature-land-use"]
+      },
+      {
+        "id": "g3-soc-population-patterns",
+        "title": "Population and Land Use Patterns",
+        "description": "Read city and land-use maps to see where people live and how land is used. Pick the pattern the map shows.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g3-soc-land-use-types", "g2-soc-b-maps"]
+      },
+      {
+        "id": "g3-soc-compare-land-use",
+        "title": "Comparing Land Use in Two Places",
+        "description": "Compare roads, parks, farmland, and shops in two places. Sort what is the same and what is different.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g3-soc-population-patterns"]
+      },
+      {
+        "id": "g3-soc-make-maps",
+        "title": "Making Ontario Maps",
+        "description": "Pick the title, legend, direction arrow, and scale in kilometres to make a map of land uses or landform regions.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g1-soc-build-maps", "g3-soc-political-maps", "g3-soc-landforms"]
+      },
+      {
+        "id": "g3-soc-b-questions",
+        "title": "Questions About Land Use Effects",
+        "description": "Pick a good question to investigate about how mining, farming, or building affects nature and what people do to help.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g3-soc-land-use-types", "g2-soc-b-questions"]
+      },
+      {
+        "id": "g3-soc-b-gather",
+        "title": "Gathering Land Use Information",
+        "description": "Photos, interviews with Elders, park websites, and recycling facts are sources. Sort which ones tell about land use effects.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g3-soc-b-questions", "g2-soc-b-gather"]
+      },
+      {
+        "id": "g3-soc-b-maps",
+        "title": "Maps of Land Use Effects",
+        "description": "Use maps and atlases to find boundaries, land uses, and resources in a region. Pick what a map shows about the land.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g3-soc-population-patterns"]
+      },
+      {
+        "id": "g3-soc-b-tools",
+        "title": "Graphs and Organizers About Land Use",
+        "description": "Read a line graph, bar graph, or organizer about forest cover or a mine. Pick the trend or effect it shows.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g3-soc-b-gather", "g2-soc-b-tools"]
+      },
+      {
+        "id": "g3-soc-b-conclusions",
+        "title": "Conclusions About Land Use and Nature",
+        "description": "Look at the evidence about short and long term effects of land use. Pick the conclusion it supports and the best way to reduce harm.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g3-soc-b-tools", "g3-soc-b-maps", "g2-soc-b-conclusions"]
+      },
+      {
+        "id": "g3-soc-b-communicate",
+        "title": "Sharing Land Use Findings",
+        "description": "Pick the best way to share what you learned, and the right words like stewardship, pollution, population, and natural resources.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g3-soc-b-conclusions", "g2-soc-b-communicate"]
+      }
+    ]
+  }
+}

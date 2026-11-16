@@ -1,0 +1,25 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g1-soc-reclaiming-identity",
+        "changePrerequisites": true,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "",
+        "reason": "The skill asks kids to pick ways First Nations, Métis, and Inuit people are reviving their identity and why it makes them proud. A kid can do this without knowing how actions affect other people's feelings (g1-soc-impact-on-others), so that prerequisite is not truly needed."
+      },
+      {
+        "skillId": "g1-soc-community-areas",
+        "changePrerequisites": false,
+        "prerequisiteIds": [],
+        "title": "",
+        "description": "Communities have home areas, shopping areas, busy roads, and natural areas. Match each area to what it looks like.",
+        "reason": "The description says 'homes areas', which is ungrammatical and awkward to hear read aloud. It should read 'home areas'."
+      }
+    ],
+    "notes": "Reviewed all 21 Grade 1 skills. Most prerequisites are direct and needed, and none point to a later grade or to the skill itself. Two corrections were made. The reclaiming-identity prerequisite is not needed. The community-areas description has a wording error. Two borderline links were left as they are: important-people-places depends on my-roles, and map-elements depends on relative-position. Both are defensible, so I did not change them."
+  }
+}

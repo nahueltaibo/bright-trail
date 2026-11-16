@@ -269,3 +269,65 @@ describe('findWarnings', () => {
     ]);
   });
 });
+
+describe('checkGraph on a subject that starts at Grade 1', () => {
+  const sources: GradeSource[] = [1, 2].map((n) => ({
+    grade: String(n) as Skill['grade'],
+    subject: 'science',
+    framework: 'ontario-science-2022',
+    strands: ['B'],
+    file: `grade-${n}.md`,
+    expectations: [{ code: 'B1.1', kind: 'specific', topic: '', statement: 'plants', details: '' }],
+  }));
+  const sci = (id: string, prerequisiteIds: string[] = []): Skill => ({
+    ...skill(id, prerequisiteIds, ['B1.1']),
+    subject: 'science',
+    framework: 'ontario-science-2022',
+    grade: id[1] as Skill['grade'],
+  });
+
+  it('roots at Grade 1 and wants the subject tag', () => {
+    const skills = [sci('g1-sci-plants'), sci('g2-sci-plant-parts', ['g1-sci-plants'])];
+    expect(checkGraph(skills, sources).map((p) => p.message)).toEqual([]);
+    expect(findWarnings(skills, sources)).toEqual([]);
+  });
+
+  it('reports a Grade 2 orphan and a missing tag', () => {
+    const found = checkGraph([sci('g1-sci-plants'), sci('g2-plant-parts')], sources).map(
+      (p) => p.message,
+    );
+    expect(found).toContain('g2-plant-parts: id must start with g2-sci-');
+    expect(found).toContain(
+      'g2-plant-parts: orphan, only Grade 1 skills may have no prerequisites',
+    );
+  });
+
+  it('keeps parent opt-in skills apart from the rest', () => {
+    const optInSources: GradeSource[] = sources.map((source) => ({
+      ...source,
+      expectations: [
+        ...source.expectations,
+        {
+          code: 'B1.2',
+          kind: 'specific',
+          topic: 'Human Development and Sexual Health',
+          statement: 'body parts',
+          details: '',
+          parentOptIn: 'human-development',
+        },
+      ],
+    }));
+    const body: Skill = {
+      ...sci('g1-sci-body'),
+      expectationCodes: ['B1.2'],
+      parentOptIn: 'human-development',
+    };
+    const mixed = { ...sci('g1-sci-plants'), expectationCodes: ['B1.1', 'B1.2'] };
+    const later = sci('g2-sci-plant-parts', ['g1-sci-plants', 'g1-sci-body']);
+    const found = checkGraph([body, mixed, later], optInSources).map((p) => p.message);
+    expect(found).toContain('g1-sci-plants: mixes parent opt-in expectations with others');
+    expect(found).toContain(
+      'g2-sci-plant-parts: needs g1-sci-body, which a parent must turn on, so it can stay locked',
+    );
+  });
+});

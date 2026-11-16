@@ -1,0 +1,17 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_review",
+  "output": {
+    "corrections": [
+      {
+        "skillId": "g5-hlth-trusted-help",
+        "changePrerequisites": true,
+        "prerequisiteIds": ["g4-hlth-bullying-abuse"],
+        "title": "",
+        "description": "",
+        "reason": "g1-hlth-safety-basics is already reached through g4-hlth-bullying-abuse, which depends on g2-hlth-relating-positively, which depends on g1-hlth-caring-behaviours, which depends on g1-hlth-safety-basics. Listing it directly is redundant under the rule that prerequisites must be direct. The remaining prerequisite, g4-hlth-bullying-abuse, covers the bullying and photo-sharing content the skill requires."
+      }
+    ],
+    "notes": "Reviewed all 14 Grade 5 skills. Only g5-hlth-trusted-help has a redundant prerequisite. The other prerequisite lists are direct, have no cycles, point only to earlier grades or to earlier Grade 5 skills, and match their titles and descriptions. Two possible gaps were considered and not changed: g5-hlth-puberty-stress could also list g5-hlth-trusted-help because it asks who to talk to, and g5-hlth-refusal-skills could list g4-hlth-tech-risks for the gaming pressure. Both are judgement calls rather than clear errors."
+  }
+}

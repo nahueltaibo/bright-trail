@@ -1,0 +1,51 @@
+{
+  "model": "claude-haiku-5-5",
+  "tool": "submit_content_review",
+  "output": {
+    "problems": [
+      {
+        "target": "g1-sci-basic-needs-tap-12",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says 'A rock needs food and water', but the screen text says 'A rock needs food.' The two disagree, so the child hears two different statements. The marked answer (False) is still correct, so align the screen text with the narration, e.g. 'A rock needs food and water.'"
+      },
+      {
+        "target": "g1-sci-basic-needs-tap-11",
+        "severity": "note",
+        "category": "audio",
+        "note": "By ear, the narration packs three comma-separated lists into one sentence joined by semicolons and 'or'. A child who cannot read may lose track of which list is which. Consider a simpler lead-in or shorter choices. The item is also marked difficulty 3, but it is fairly easy for that level."
+      },
+      {
+        "target": "g1-sci-basic-needs-tap-10",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The narration says 'Too many seeds are in one small pot', but the picture shows 12 sprouts (🌱). Seeds and sprouts are different. Consider 'Too many little plants are in one small pot' so the words match the picture."
+      },
+      {
+        "target": "story",
+        "severity": "note",
+        "category": "other",
+        "note": "Step 4 says plants 'make their own food from light, air, and water', right after 'Living things need food'. A Grade 1 child may read this as plants needing food like animals do. Consider adding a short clarifier, e.g. 'Plants make their own food, so they do not need to eat like animals.'"
+      },
+      {
+        "target": "g1-sci-basic-needs-tap-4",
+        "severity": "note",
+        "category": "mismatch",
+        "note": "The screen text 'Which one is living?' does not match the narration, which asks which one needs food, air, and water. The marked answer (cat) fits both, but the screen text is a looser question. Consider using the narration question as the screen text."
+      },
+      {
+        "target": "g1-sci-basic-needs-tap-7",
+        "severity": "note",
+        "category": "audio",
+        "note": "The question 'Which one is not a basic need' is a negative question that is hard to follow by ear, with four options read aloud. Consider stressing 'NOT' or asking 'Which one is a toy, not a need?' to make it clearer."
+      },
+      {
+        "target": "g1-sci-basic-needs-tap-14",
+        "severity": "note",
+        "category": "other",
+        "note": "The question asks which need keeps a cold bird warm, but 'heat' is also a basic need and is not an option. This is fine, but a child may be confused. Consider 'Which of these helps keep it warm and safe?' so it is clear the choices are things to pick from, not the full list of needs."
+      }
+    ],
+    "notes": "No blockers found. Every marked answer is correct, each wrong choice is clearly not a need or not living, and no fact is false or misleading enough to teach a misconception. Nothing stereotypes a group, and nothing shames or frightens a child. The flagged items are tone and clarity notes that do not affect correctness. The story covers all six needs with accurate, grade-appropriate facts. Items 1-3, 5, 6, 8, 9, 13, and 15 are clean."
+  }
+}

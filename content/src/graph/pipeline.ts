@@ -60,18 +60,24 @@ async function ask<T>(llm: LlmClient, request: LlmRequest, schema: z.ZodType<T>)
 }
 
 function toSkills(generated: GeneratedSkills, source: GradeSource): Skill[] {
-  return generated.skills.map((s) => ({
-    id: s.id.trim(),
-    subject: source.subject,
-    framework: source.framework,
-    grade: source.grade,
-    // A skill citing codes from two strands fails the schema check and goes back for repair.
-    strand: s.expectationCodes[0]?.trim()[0] ?? source.strands[0],
-    expectationCodes: [...new Set(s.expectationCodes.map((c) => c.trim()))],
-    title: s.title.trim(),
-    description: s.description.trim(),
-    prerequisiteIds: [...new Set(s.prerequisiteIds.map((id) => id.trim()))],
-  }));
+  const optIns = new Map(source.expectations.map((e) => [e.code, e.parentOptIn]));
+  return generated.skills.map((s) => {
+    const expectationCodes = [...new Set(s.expectationCodes.map((c) => c.trim()))];
+    const parentOptIn = expectationCodes.map((c) => optIns.get(c)).find(Boolean);
+    return {
+      id: s.id.trim(),
+      subject: source.subject,
+      framework: source.framework,
+      grade: source.grade,
+      // A skill citing codes from two strands fails the schema check and goes back for repair.
+      strand: expectationCodes[0]?.[0] ?? source.strands[0],
+      expectationCodes,
+      title: s.title.trim(),
+      description: s.description.trim(),
+      prerequisiteIds: [...new Set(s.prerequisiteIds.map((id) => id.trim()))],
+      ...(parentOptIn && { parentOptIn }),
+    };
+  });
 }
 
 /** Applies reviewer corrections that refer to known skills. Returns the rest as rejected. */

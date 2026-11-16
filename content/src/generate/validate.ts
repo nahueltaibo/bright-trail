@@ -225,9 +225,16 @@ export function validateSkill(skill: Skill, content: GeneratedContent): SkillVal
       problems.push(`only ${n} items at difficulty ${i + 1}, need at least ${MIN_PER_DIFFICULTY}`);
     }
   });
-  for (const type of ['tap', 'keypad', 'number-line'] as const) {
-    const n = items.filter((i) => i.type === type).length;
-    if (n < MIN_PER_TYPE) problems.push(`only ${n} ${type} items, need at least ${MIN_PER_TYPE}`);
+  if (skill.subject === 'math') {
+    for (const type of ['tap', 'keypad', 'number-line'] as const) {
+      const n = items.filter((i) => i.type === type).length;
+      if (n < MIN_PER_TYPE) problems.push(`only ${n} ${type} items, need at least ${MIN_PER_TYPE}`);
+    }
+  } else {
+    // Fact skills have no numbers to type or place, and the sort, order, and label games tap.
+    items.forEach((item, i) => {
+      if (item.type !== 'tap') problems.push(`item ${i + 1} is ${item.type}, use only tap items`);
+    });
   }
 
   const seen = new Map<string, number>();

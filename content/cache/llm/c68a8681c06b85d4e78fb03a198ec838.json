@@ -1,0 +1,246 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g2-soc-families",
+        "title": "Different Types of Families",
+        "description": "Families come in many shapes. Match each family, like one parent, blended, or foster, to its description.",
+        "expectationCodes": ["A3.1"],
+        "prerequisiteIds": ["g1-soc-my-roles"]
+      },
+      {
+        "id": "g2-soc-groups",
+        "title": "Groups in Our Community",
+        "description": "Your community has many groups. Pick the languages, foods, shops, and holidays that show this variety.",
+        "expectationCodes": ["A3.2"],
+        "prerequisiteIds": ["g1-soc-respect-all"]
+      },
+      {
+        "id": "g2-soc-special-places",
+        "title": "Special Places on a Map",
+        "description": "Some places or countries matter to your family. Find them on a globe or map.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g1-soc-a-maps", "g2-soc-represent"]
+      },
+      {
+        "id": "g2-soc-traditions",
+        "title": "Traditions and Celebrations",
+        "description": "Match celebrations like Diwali, Eid, Canada Day, or fall fairs to the group that celebrates them and what people do.",
+        "expectationCodes": ["A3.4"],
+        "prerequisiteIds": ["g2-soc-groups"]
+      },
+      {
+        "id": "g2-soc-chronology",
+        "title": "Family Events in Order",
+        "description": "Put births, moves, and other family events in order from oldest to newest, like on a family tree or timeline.",
+        "expectationCodes": ["A3.5"],
+        "prerequisiteIds": ["g1-soc-events-in-order"]
+      },
+      {
+        "id": "g2-soc-community-heritage",
+        "title": "Passing On Heritage in Community",
+        "description": "Festivals, recipes, music, and dances pass culture to new generations. Match each event to what it shares.",
+        "expectationCodes": ["A3.6"],
+        "prerequisiteIds": ["g2-soc-traditions"]
+      },
+      {
+        "id": "g2-soc-family-heritage",
+        "title": "Passing On Family Heritage",
+        "description": "Families pass on culture through celebrations and practices, including First Nations, Métis, or Inuit ones. Pick how each one is passed on.",
+        "expectationCodes": ["A3.7"],
+        "prerequisiteIds": ["g2-soc-traditions"]
+      },
+      {
+        "id": "g2-soc-family-change",
+        "title": "Family Traditions Over Time",
+        "description": "Traditions can change across generations. Pick why, like moving to Canada, new technology, or colonization.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g2-soc-traditions", "g2-soc-chronology"]
+      },
+      {
+        "id": "g2-soc-compare-families",
+        "title": "Comparing Families and Traditions",
+        "description": "Compare different families and their celebrations. Sort what is the same and what is different.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g2-soc-families", "g2-soc-traditions"]
+      },
+      {
+        "id": "g2-soc-past-present",
+        "title": "Traditions Then and Now",
+        "description": "Groups in your community celebrated differently in the past. Pick why traditions changed, like being outlawed or being given up.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g2-soc-family-change", "g2-soc-groups"]
+      },
+      {
+        "id": "g2-soc-reclaiming",
+        "title": "Reclaiming Indigenous Traditions",
+        "description": "Some traditions were banned or hidden because of colonization and residential schools. Pick how First Nations, Métis, and Inuit are bringing them back.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g1-soc-reclaiming-identity", "g2-soc-past-present"]
+      },
+      {
+        "id": "g2-soc-a-questions",
+        "title": "Questions About Traditions",
+        "description": "Pick a good question to investigate about how a celebration was done in the past and now.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g1-soc-a-questions", "g2-soc-traditions"]
+      },
+      {
+        "id": "g2-soc-a-sources",
+        "title": "Sources About Traditions",
+        "description": "Photo albums, interviews, artefacts, and Elders' stories are sources. Sort which ones answer a question.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g1-soc-a-sources", "g2-soc-a-questions"]
+      },
+      {
+        "id": "g2-soc-a-maps",
+        "title": "Maps of Celebrations",
+        "description": "Read a map with a legend that shows where settlers came from or where celebrations happen.",
+        "expectationCodes": ["A2.3"],
+        "prerequisiteIds": ["g1-soc-a-maps", "g2-soc-special-places"]
+      },
+      {
+        "id": "g2-soc-a-tools",
+        "title": "Venn Diagrams and Bar Graphs",
+        "description": "Use a Venn diagram or bar graph to see how family traditions are the same or different across generations.",
+        "expectationCodes": ["A2.4"],
+        "prerequisiteIds": ["g1-soc-a-tools", "g2-soc-a-sources"]
+      },
+      {
+        "id": "g2-soc-a-conclusions",
+        "title": "Conclusions About Traditions",
+        "description": "Look at the evidence and pick the conclusion about past and present traditions that it supports.",
+        "expectationCodes": ["A2.5"],
+        "prerequisiteIds": ["g1-soc-a-conclusions", "g2-soc-a-tools"]
+      },
+      {
+        "id": "g2-soc-a-communicate",
+        "title": "Sharing Tradition Findings",
+        "description": "Pick the best way to share your findings and the right words like tradition, culture, generations, and celebration.",
+        "expectationCodes": ["A2.6"],
+        "prerequisiteIds": ["g1-soc-a-communicate", "g2-soc-a-conclusions"]
+      },
+      {
+        "id": "g2-soc-represent",
+        "title": "Globes and Maps of the World",
+        "description": "Countries, continents, and water can be shown on globes, paper maps, and digital maps. Pick which one fits.",
+        "expectationCodes": ["B3.1"],
+        "prerequisiteIds": ["g1-soc-b-maps"]
+      },
+      {
+        "id": "g2-soc-world-features",
+        "title": "Continents, Oceans, and the Equator",
+        "description": "Find continents, oceans, the equator, the poles, and hemispheres on a globe or map.",
+        "expectationCodes": ["B3.2"],
+        "prerequisiteIds": ["g2-soc-represent"]
+      },
+      {
+        "id": "g2-soc-cardinal",
+        "title": "North, South, East, West",
+        "description": "Use N, S, E, and W on a map to tell where a country, continent, or community is.",
+        "expectationCodes": ["B3.3"],
+        "prerequisiteIds": ["g1-soc-map-elements", "g2-soc-world-features"]
+      },
+      {
+        "id": "g2-soc-location-climate",
+        "title": "Location and Climate",
+        "description": "Places close to the equator are warmer and places far from it are colder. Match places to their likely climate.",
+        "expectationCodes": ["B3.4"],
+        "prerequisiteIds": ["g2-soc-cardinal"]
+      },
+      {
+        "id": "g2-soc-photos-maps",
+        "title": "Clues From Photos and Maps",
+        "description": "Look at photos and maps to pick where a place is and what its climate is like.",
+        "expectationCodes": ["B3.5"],
+        "prerequisiteIds": ["g2-soc-location-climate"]
+      },
+      {
+        "id": "g2-soc-needs",
+        "title": "Basic Needs Around the World",
+        "description": "People need food, water, clothing, shelter, and transportation. Match the ways communities meet each need.",
+        "expectationCodes": ["B3.6"],
+        "prerequisiteIds": ["g1-soc-meeting-needs"]
+      },
+      {
+        "id": "g2-soc-describe-communities",
+        "title": "Communities Around the World",
+        "description": "Match communities, including a First Nation, Métis, or Inuit one, to their land, animals, homes, and culture.",
+        "expectationCodes": ["B3.7"],
+        "prerequisiteIds": ["g2-soc-location-climate"]
+      },
+      {
+        "id": "g2-soc-compare-community",
+        "title": "My Community and Another",
+        "description": "Sort what is the same and different between your community and one far away, like food, clothing, and homes.",
+        "expectationCodes": ["B3.8"],
+        "prerequisiteIds": ["g2-soc-describe-communities"]
+      },
+      {
+        "id": "g2-soc-compare-lifestyles",
+        "title": "Lifestyles in Different Communities",
+        "description": "Compare how people in different parts of the world get food, shelter, and other needs.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g2-soc-needs", "g2-soc-describe-communities"]
+      },
+      {
+        "id": "g2-soc-adapt",
+        "title": "Adapting to Climate and Land",
+        "description": "People change how they dress, build, and live to fit hot, cold, or dry places. Match each adaptation to its place.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g2-soc-compare-lifestyles", "g2-soc-location-climate"]
+      },
+      {
+        "id": "g2-soc-sustainability",
+        "title": "Using Nature Wisely",
+        "description": "Using water, soil, and animals carefully keeps them for the future. Pick what happens when people do or do not use them wisely.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g2-soc-needs", "g1-soc-respect-all"]
+      },
+      {
+        "id": "g2-soc-b-questions",
+        "title": "Questions About Environment and Life",
+        "description": "Pick a good question to investigate about how climate affects clothing, homes, or food.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g1-soc-b-questions", "g2-soc-adapt"]
+      },
+      {
+        "id": "g2-soc-b-gather",
+        "title": "Gathering Facts About Communities",
+        "description": "Pick the best tool, like an atlas, a satellite image, a photo, or an Elder, to learn about a place and its people.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g1-soc-b-gather", "g2-soc-b-questions", "g2-soc-photos-maps"]
+      },
+      {
+        "id": "g2-soc-b-maps",
+        "title": "Maps of Location and Lifestyle",
+        "description": "Use maps to see patterns, like how distance from the equator goes with climate, clothing, and shelter.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g2-soc-b-gather", "g2-soc-location-climate"]
+      },
+      {
+        "id": "g2-soc-b-tools",
+        "title": "Charts and Graphs About Climate",
+        "description": "Read a chart, bar graph, or pictograph, or look at photos, to tell which places have similar climates.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g1-soc-b-analyse", "g2-soc-b-gather"]
+      },
+      {
+        "id": "g2-soc-b-conclusions",
+        "title": "Conclusions About Place and Life",
+        "description": "Use the evidence to pick the conclusion about how a place's nature and its people's ways of life are connected.",
+        "expectationCodes": ["B2.5"],
+        "prerequisiteIds": ["g1-soc-b-conclusions", "g2-soc-b-tools", "g2-soc-b-maps"]
+      },
+      {
+        "id": "g2-soc-b-communicate",
+        "title": "Sharing Around-the-World Findings",
+        "description": "Pick the best way to share your findings and the right words like globe, equator, hemisphere, continent, and culture.",
+        "expectationCodes": ["B2.6"],
+        "prerequisiteIds": ["g1-soc-b-communicate", "g2-soc-b-conclusions"]
+      }
+    ]
+  }
+}

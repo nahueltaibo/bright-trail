@@ -1,0 +1,295 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_skills",
+  "output": {
+    "skills": [
+      {
+        "id": "g5-sci-research-process",
+        "title": "Researching Body and Matter Topics",
+        "description": "Put the steps of a research in order. Pick a good question about the body, matter, or energy and the best place to find the answer.",
+        "expectationCodes": ["A1.1"],
+        "prerequisiteIds": ["g4-sci-research-process"]
+      },
+      {
+        "id": "g5-sci-experiment-process",
+        "title": "Fair Tests With Matter and Energy",
+        "description": "Pick the fair test that changes only one thing, like testing how fast ice melts. Put the steps of an experiment in order.",
+        "expectationCodes": ["A1.2"],
+        "prerequisiteIds": ["g4-sci-experiment-process"]
+      },
+      {
+        "id": "g5-sci-design-process",
+        "title": "Design, Build, Test Systems",
+        "description": "Put the steps for designing and building a device or structure in order. Pick what to change to make it work better.",
+        "expectationCodes": ["A1.3"],
+        "prerequisiteIds": ["g4-sci-design-process"]
+      },
+      {
+        "id": "g5-sci-safety-procedures",
+        "title": "Staying Safe While Investigating",
+        "description": "Pick the safe way to use tools, heat, and materials. Choose the right gear to wear for the job.",
+        "expectationCodes": ["A1.4"],
+        "prerequisiteIds": ["g4-sci-safety-procedures"]
+      },
+      {
+        "id": "g5-sci-communicate",
+        "title": "Sharing Findings for an Audience",
+        "description": "Pick the best way to share what you found for different people and reasons. Match science words to what they mean.",
+        "expectationCodes": ["A1.5"],
+        "prerequisiteIds": ["g4-sci-communicate"]
+      },
+      {
+        "id": "g5-sci-code-data",
+        "title": "Code That Stores Data",
+        "description": "Look at a few lines of code that store and use data, like a list or a variable. Pick what the code will do with the data.",
+        "expectationCodes": ["A2.1"],
+        "prerequisiteIds": ["g4-sci-code-output"]
+      },
+      {
+        "id": "g5-sci-coding-impacts",
+        "title": "Coding, New Tech, and Skilled Trades",
+        "description": "Pick how coding and new technology change everyday life and jobs, including skilled trades.",
+        "expectationCodes": ["A2.2"],
+        "prerequisiteIds": ["g4-sci-coding-impacts"]
+      },
+      {
+        "id": "g5-sci-applications",
+        "title": "Science in Jobs and Subjects",
+        "description": "Match jobs, including skilled trades, to the science they use to fix real problems. Pick how science works with other subjects to help.",
+        "expectationCodes": ["A3.1", "A3.2"],
+        "prerequisiteIds": ["g4-sci-applications"]
+      },
+      {
+        "id": "g5-sci-contributions",
+        "title": "Science Ideas From Many Communities",
+        "description": "Match science and technology ideas to the communities that gave them to us. Pick how those ideas help people.",
+        "expectationCodes": ["A3.3"],
+        "prerequisiteIds": ["g4-sci-contributions"]
+      },
+      {
+        "id": "g5-sci-body-systems",
+        "title": "Body Systems and Their Jobs",
+        "description": "Pick the body systems, like digestive, breathing, and blood flow. Match each system to its main job.",
+        "expectationCodes": ["B2.1"],
+        "prerequisiteIds": ["g1-sci-body-parts"]
+      },
+      {
+        "id": "g5-sci-vital-organs",
+        "title": "Vital Organs",
+        "description": "Label organs like the heart, lungs, stomach, and brain. Pick what each one looks like inside and what it does.",
+        "expectationCodes": ["B2.2"],
+        "prerequisiteIds": ["g5-sci-body-systems"]
+      },
+      {
+        "id": "g5-sci-system-links",
+        "title": "Body Systems Work Together",
+        "description": "Pick how body systems team up, like lungs and heart getting oxygen to muscles.",
+        "expectationCodes": ["B2.3"],
+        "prerequisiteIds": ["g5-sci-vital-organs"]
+      },
+      {
+        "id": "g5-sci-diseases",
+        "title": "Diseases and Body Systems",
+        "description": "Match diseases and medical disorders, like asthma or diabetes, to the organs or body systems they affect.",
+        "expectationCodes": ["B2.4"],
+        "prerequisiteIds": ["g5-sci-vital-organs"]
+      },
+      {
+        "id": "g5-sci-health-factors",
+        "title": "What Affects Our Health",
+        "description": "Pick how things around us, like clean air, sleep, and friends, help or harm health. Pick ways to cut the harm.",
+        "expectationCodes": ["B1.1"],
+        "prerequisiteIds": ["g5-sci-body-systems"]
+      },
+      {
+        "id": "g5-sci-tech-health",
+        "title": "Technology and Our Health",
+        "description": "Pick good and bad effects of technology on health, like helmets or too much screen time. Think about different points of view.",
+        "expectationCodes": ["B1.2"],
+        "prerequisiteIds": ["g5-sci-body-systems"]
+      },
+      {
+        "id": "g5-sci-food-literacy",
+        "title": "Food Choices and Health",
+        "description": "Pick how knowing about food, like reading labels, helps you choose foods that are good for body and mind.",
+        "expectationCodes": ["B1.3"],
+        "prerequisiteIds": ["g5-sci-body-systems", "g1-sci-food-energy"]
+      },
+      {
+        "id": "g5-sci-matter-defined",
+        "title": "What Is Matter?",
+        "description": "Pick that matter is anything that has mass and takes up space. Sort things that are matter from things that are not.",
+        "expectationCodes": ["C2.1"],
+        "prerequisiteIds": ["g2-sci-liquid-solid-properties"]
+      },
+      {
+        "id": "g5-sci-states-properties",
+        "title": "Solids, Liquids, and Gases",
+        "description": "Sort things into solids, liquids, and gases. Pick how each one keeps or changes its shape and volume.",
+        "expectationCodes": ["C2.2"],
+        "prerequisiteIds": ["g5-sci-matter-defined"]
+      },
+      {
+        "id": "g5-sci-state-changes",
+        "title": "Changes of State Around Us",
+        "description": "Pick changes of state you see at home and outside, like melting, freezing, evaporating, and condensing.",
+        "expectationCodes": ["C2.3"],
+        "prerequisiteIds": ["g5-sci-states-properties", "g2-sci-three-states-water"]
+      },
+      {
+        "id": "g5-sci-thermal-energy",
+        "title": "Heat and Changes of State",
+        "description": "Pick how matter taking in or giving off heat makes it melt, freeze, boil, or condense.",
+        "expectationCodes": ["C2.6"],
+        "prerequisiteIds": ["g5-sci-state-changes", "g1-sci-energy-moves"]
+      },
+      {
+        "id": "g5-sci-physical-change",
+        "title": "Physical Changes",
+        "description": "Sort changes of state, volume, or form, like cutting paper or dissolving sugar, that make no new substance.",
+        "expectationCodes": ["C2.4"],
+        "prerequisiteIds": ["g5-sci-state-changes"]
+      },
+      {
+        "id": "g5-sci-chemical-change",
+        "title": "Chemical Changes and Signs",
+        "description": "Pick changes that make a new substance, like burning or rusting. Pick the signs, like gas bubbles, colour change, or new smell.",
+        "expectationCodes": ["C2.5"],
+        "prerequisiteIds": ["g5-sci-physical-change"]
+      },
+      {
+        "id": "g5-sci-useful-properties",
+        "title": "Useful Properties of Matter",
+        "description": "Match properties of solids, liquids, and gases, like hardness or flowing, to the job they are good for.",
+        "expectationCodes": ["C2.7"],
+        "prerequisiteIds": ["g5-sci-states-properties", "g1-sci-material-properties"]
+      },
+      {
+        "id": "g5-sci-manufacturing-processes",
+        "title": "How Making Products Affects the World",
+        "description": "Pick how the steps used to make common products, like heating or mixing, affect people and nature.",
+        "expectationCodes": ["C1.1"],
+        "prerequisiteIds": ["g5-sci-chemical-change"]
+      },
+      {
+        "id": "g5-sci-material-impacts",
+        "title": "Materials and the Environment",
+        "description": "Pick how the materials in products affect nature. Pick actions people can take to lessen the harm.",
+        "expectationCodes": ["C1.2"],
+        "prerequisiteIds": ["g5-sci-useful-properties", "g4-sci-mining-impacts"]
+      },
+      {
+        "id": "g5-sci-internal-forces",
+        "title": "Forces Inside Structures",
+        "description": "Pick the forces inside a structure, like tension, compression, shear, and torsion. Pick what each one does to it.",
+        "expectationCodes": ["D2.1"],
+        "prerequisiteIds": ["g3-sci-struts-ties"]
+      },
+      {
+        "id": "g5-sci-external-forces",
+        "title": "Forces Acting on Structures",
+        "description": "Pick outside forces on a structure, like wind, weight, and waves. Pick what they do to it.",
+        "expectationCodes": ["D2.2"],
+        "prerequisiteIds": ["g3-sci-forces-structures"]
+      },
+      {
+        "id": "g5-sci-severe-forces",
+        "title": "Structures Standing Up to Nature",
+        "description": "Pick how earthquakes, floods, and storms can harm buildings. Pick features and materials that help structures hold up.",
+        "expectationCodes": ["D2.3"],
+        "prerequisiteIds": ["g5-sci-external-forces", "g3-sci-natural-forces"]
+      },
+      {
+        "id": "g5-sci-natural-protection",
+        "title": "Plant and Animal Protection",
+        "description": "Match features of plants and animals, like turtle shells or bendy stems, to the forces they protect against.",
+        "expectationCodes": ["D2.4"],
+        "prerequisiteIds": ["g3-sci-force-effects", "g4-sci-structural-adaptations"]
+      },
+      {
+        "id": "g5-sci-protective-equipment",
+        "title": "Protective Gear and Forces",
+        "description": "Match protective gear, like helmets and pads, to how it protects people from the force.",
+        "expectationCodes": ["D2.5"],
+        "prerequisiteIds": ["g3-sci-harmful-forces"]
+      },
+      {
+        "id": "g5-sci-natural-effects-structures",
+        "title": "Nature's Forces and Structures",
+        "description": "Pick how forces like wind, water, and quakes affect natural and built structures.",
+        "expectationCodes": ["D1.1"],
+        "prerequisiteIds": ["g5-sci-severe-forces", "g4-sci-geological-impacts"]
+      },
+      {
+        "id": "g5-sci-mitigate-forces",
+        "title": "Protecting Communities From Forces",
+        "description": "Pick ways people in cities, farms, and remote places lessen harm from natural forces, like sea walls and storm shutters.",
+        "expectationCodes": ["D1.2"],
+        "prerequisiteIds": ["g5-sci-natural-effects-structures"]
+      },
+      {
+        "id": "g5-sci-energy-forms",
+        "title": "Forms of Energy",
+        "description": "Pick forms of energy like light, heat, sound, motion, and electrical. Match each to how we use it every day.",
+        "expectationCodes": ["E2.1"],
+        "prerequisiteIds": ["g1-sci-energy-sources"]
+      },
+      {
+        "id": "g5-sci-energy-conservation-law",
+        "title": "Energy Is Never Lost",
+        "description": "Pick that energy can't be made or destroyed. It only changes from one form to another.",
+        "expectationCodes": ["E2.2"],
+        "prerequisiteIds": ["g5-sci-energy-forms"]
+      },
+      {
+        "id": "g5-sci-potential-energy",
+        "title": "Stored Energy and Transformations",
+        "description": "Pick where energy is stored, like in a stretched spring. Follow how it changes form in a device.",
+        "expectationCodes": ["E2.3"],
+        "prerequisiteIds": ["g5-sci-energy-conservation-law"]
+      },
+      {
+        "id": "g5-sci-energy-dissipation",
+        "title": "Energy Escaping as Heat, Light, Sound",
+        "description": "Pick how some energy spreads out as heat, light, or sound when energy changes form, like a warm light bulb.",
+        "expectationCodes": ["E2.4"],
+        "prerequisiteIds": ["g5-sci-energy-conservation-law"]
+      },
+      {
+        "id": "g5-sci-renewable-sources",
+        "title": "Renewable and Non-Renewable Energy",
+        "description": "Sort energy sources, like wind, solar, coal, and oil, into renewable and non-renewable.",
+        "expectationCodes": ["E2.5"],
+        "prerequisiteIds": ["g5-sci-energy-forms", "g1-sci-limited-energy"]
+      },
+      {
+        "id": "g5-sci-fossil-fuels-climate",
+        "title": "Fossil Fuels and Climate Change",
+        "description": "Pick how burning fossil fuels adds gases to the air and how that warms the planet.",
+        "expectationCodes": ["E2.6"],
+        "prerequisiteIds": ["g5-sci-renewable-sources"]
+      },
+      {
+        "id": "g5-sci-energy-impacts",
+        "title": "Long-Term Effects of Using Energy",
+        "description": "Pick how long-term energy and resource use affects people and nature. Pick ways to lessen the harm.",
+        "expectationCodes": ["E1.1"],
+        "prerequisiteIds": ["g5-sci-fossil-fuels-climate"]
+      },
+      {
+        "id": "g5-sci-tech-energy-use",
+        "title": "Technology That Saves Energy",
+        "description": "Pick how technologies, like smart thermostats and LEDs, use more or less energy. Pick ways to use tech to save energy.",
+        "expectationCodes": ["E1.2"],
+        "prerequisiteIds": ["g5-sci-energy-dissipation", "g1-sci-energy-use-home"]
+      },
+      {
+        "id": "g5-sci-fnmi-conservation",
+        "title": "First Nations, Métis, Inuit Conservation",
+        "description": "Pick how First Nations, Métis, and Inuit communities use their knowledge to save energy and resources.",
+        "expectationCodes": ["E1.3"],
+        "prerequisiteIds": ["g5-sci-renewable-sources"]
+      }
+    ]
+  }
+}
