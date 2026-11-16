@@ -7,6 +7,7 @@ export * from './child';
 export * from './common';
 export * from './compare';
 export * from './engine';
+export * from './feedback';
 export * from './game';
 export * from './grade';
 export * from './grid';
