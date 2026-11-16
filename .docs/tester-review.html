@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BrightTrail Tester Review</title>
+<style>
+  :root {
+    --bg: #fbfaf7; --fg: #1f2328; --muted: #5b636d; --line: #e3e0d8;
+    --card: #ffffff; --accent: #2f6fd6; --accent-soft: #e8f0fc; --warn: #b4540a; --warn-soft: #fdf1e6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15171a; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2c3036;
+      --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15171a; --fg: #e6e8eb; --muted: #9aa3ad; --line: #2c3036;
+    --card: #1c1f23; --accent: #7aa7f0; --accent-soft: #1d2a3d; --warn: #f0a868; --warn-soft: #33261a;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 960px; margin: 0 auto; padding: 32px 16px 80px; }
+  h1 { font-size: 2rem; margin: 0 0 4px; }
+  h2 { margin-top: 48px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  a { color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: .95rem; display: block; overflow-x: auto; }
+  th, td { text-align: left; vertical-align: top; padding: 8px 10px; border-bottom: 1px solid var(--line); }
+  th { background: var(--accent-soft); }
+  td:first-child { white-space: nowrap; font-weight: 600; }
+  .diagram { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 16px 0; overflow-x: auto; }
+  .note { background: var(--accent-soft); border-left: 4px solid var(--accent); padding: 10px 14px; border-radius: 6px; margin: 16px 0; }
+  .warn { background: var(--warn-soft); border-left: 4px solid var(--warn); padding: 10px 14px; border-radius: 6px; margin: 16px 0; }
+  code { background: var(--accent-soft); padding: 1px 5px; border-radius: 4px; font-size: .9em; }
+  pre.code { background: var(--card); border: 1px solid var(--line); border-radius: 8px; padding: 12px; overflow-x: auto; font-size: .85rem; line-height: 1.45; }
+  pre.code code { background: none; padding: 0; }
+  .diagram { position: relative; cursor: zoom-in; }
+  .diagram .expand { position: absolute; top: 8px; right: 8px; font: inherit; font-size: .8rem; padding: 2px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--card); color: var(--fg); cursor: pointer; }
+  dialog.lightbox { width: 96vw; height: 92vh; max-width: none; max-height: none; padding: 0; border: 1px solid var(--line); border-radius: 10px; background: var(--card); color: var(--fg); }
+  dialog.lightbox::backdrop { background: rgba(0,0,0,.6); }
+  .lightbox .bar { position: sticky; top: 0; display: flex; gap: 6px; justify-content: flex-end; padding: 8px; background: var(--card); border-bottom: 1px solid var(--line); z-index: 1; }
+  .lightbox .bar button { font: inherit; min-width: 40px; padding: 4px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--bg); color: var(--fg); cursor: pointer; }
+  .lightbox .stage { overflow: auto; height: calc(100% - 50px); padding: 16px; }
+  .lightbox .stage svg { display: block; margin: 0 auto; max-width: none !important; height: auto; }
+</style>
+</head>
+<body>
+<main>
+<h1>BrightTrail — Tester Review</h1>
+<p class="sub">Report a broken item from the app, and turn reports into GitHub issues · MVP · Draft v0.4 · 2026-11-16</p>
+
+<p>Anyone taps the flag on an item. The app captures the item view and the details needed to replay it, shows one optional comment box, and queues the report. Reports upload when online to a Cloudflare Worker, which keeps records in D1 and captures in a private R2 bucket. A CLI and a small admin page list and triage reports. The CLI files GitHub issues with <code>gh</code>.</p>
+
+<h2 id="flow">1. Flow</h2>
+<ol>
+<li>The child or parent taps the flag (<code>FlagButton</code>) on an item, minigame, or story card.</li>
+<li>The app captures the item view, then opens a sheet with one optional comment box and <strong>Send</strong>.</li>
+<li><strong>Send</strong> writes the local <code>flags</code> row, as today, and queues the report. Closing the sheet drops it.</li>
+<li><code>syncFeedback()</code> uploads queued reports when online.</li>
+<li>An admin or AI agent runs <code>npm run feedback:triage</code> to pull, group, reject, and file issues. The admin page lists and triages the same reports.</li>
+</ol>
+
+<div class="diagram"><pre class="mermaid">
+flowchart LR
+  F[Flag tap] --> C[Capture item view<br/>and replay data]
+  C --> S[Comment and Send]
+  S --> Q[(SQLite queue)]
+  Q --> Y[syncFeedback]
+  Y --> W[Feedback Worker]
+  W --> D[(D1 reports)]
+  W --> B[(R2 captures)]
+  T[CLI, agent,<br/>or admin page] -- admin token --> W
+  T --> G[GitHub issue]
+  G --> X[Fix PR, then packs<br/>or OTA update]
+</pre></div>
+
+<h2 id="report">2. Report</h2>
+<p><code>shared/src/feedback.ts</code> holds the Zod schema. The app, the Worker, and the CLI import it.</p>
+<pre class="code"><code>Report {
+  id: uuid                        // client-made, so a retry doesn't duplicate
+  createdAt: ISO time
+  comment: string | null          // up to 500 chars
+  target: { contentKind: 'item' | 'card', contentId, cardIndex | null }
+  item: Item | null               // the item as shown, including game and scene
+  skillId
+  phase                           // placement, check, review, or probe
+  content: { bundleVersion, coreHash, contentSchemaVersion }
+  app: { appVersion, runtimeVersion, updateId | null }
+  device: { platform, osVersion, model }
+  screen: { width, height, scale, fontScale }
+  settings: { readingMode, dyslexicFont }
+  hasCapture: boolean
+}</code></pre>
+<p><code>item</code> is a snapshot, so a report still replays after the item regenerates. The device keeps queued reports in a new <code>reports</code> table, with the capture as base64 text, and deletes each row once it uploads.</p>
+
+<h2 id="backend">3. Backend</h2>
+<p><strong>A Cloudflare Worker, with D1 for reports and a private R2 bucket for captures.</strong> The content packs already live on R2, the free tier covers this load, and no secret goes on the device. A GitHub token in the app would be extractable from the APK.</p>
+<table>
+<tr><th>Route</th><th>Does</th></tr>
+<tr><td><code>POST /v1/reports</code></td><td>Multipart: <code>report</code> JSON and an optional <code>capture</code> file. Open to any device.</td></tr>
+<tr><td><code>GET /admin/reports</code></td><td>Lists reports by status, item, skill, or date.</td></tr>
+<tr><td><code>PATCH /admin/reports</code></td><td>Sets status (<code>new</code>, <code>filed</code>, <code>rejected</code>), group, and issue number.</td></tr>
+<tr><td><code>GET /admin/captures/:id</code></td><td>Streams a capture, or returns a signed link that expires in 7 days.</td></tr>
+</table>
+<p>The intake route is public and unauthenticated, so it keeps these guards:</p>
+<ul>
+<li>30 reports per IP per hour, through the Workers rate-limiting binding.</li>
+<li>JSON up to 32 KB. Capture up to 400 KB, PNG or JPEG, checked by magic bytes.</li>
+<li>At most 5,000 reports and 500 MB of captures per day. Past either, it answers 503 and the app keeps its queue.</li>
+<li>The Zod schema rejects anything else.</li>
+</ul>
+<p><code>/admin/*</code> checks the bearer secret <code>FEEDBACK_ADMIN_TOKEN</code>, kept as a Worker secret and in the admin's <code>.env</code>. The admin page is static assets on the same Worker: free, one deploy, and no CORS.</p>
+
+<h2 id="privacy">4. Privacy</h2>
+<ul>
+<li>No name, birthdate, avatar, child id, or device id in a report.</li>
+<li>The capture wraps only the session body, inside <code>SafeAreaView</code>, so it shows app content and no system UI.</li>
+<li>The repo is public. Before filing, the CLI scrubs comments of emails, phone numbers, postal codes, URLs, and long digit runs. Issues link captures with expiring links and never embed them.</li>
+<li>Captures are deleted 90 days after their issue closes, or 180 days after upload if never filed.</li>
+</ul>
+
+<h2 id="triage">5. Triage</h2>
+<p>The CLI lives in a new <code>feedback/</code> workspace and reads <code>FEEDBACK_URL</code> and <code>FEEDBACK_ADMIN_TOKEN</code> from <code>.env</code>.</p>
+<ul>
+<li><code>pull</code> downloads new reports and captures to <code>feedback/inbox/</code> (gitignored).</li>
+<li><code>group</code> groups them by item id.</li>
+<li><code>file</code> creates one issue per group, labeled <code>feedback</code> and <code>content</code> or <code>app</code>, with scrubbed comments, capture links, and the report JSON. It then marks the reports <code>filed</code>.</li>
+</ul>
+<p>Content fixes go through a <code>ContentEdit</code> in <code>content/src/generate/edits.ts</code>, or the game's scene file, then <code>npm run content:packs</code>. App fixes ship as an OTA update.</p>
+
+<h2 id="tasks">6. Tasks</h2>
+<table>
+<tr><th>Task</th><th>What</th><th>Done when</th><th>Depends on</th></tr>
+<tr><td>N1 Native bump<br/><a href="https://github.com/nahueltaibo/bright-trail/pull/122">#122</a></td><td><code>react-native-view-shot</code>, <code>expo-device</code>, Expo Updates code signing, version <code>3.0.0</code>.</td><td>Done.</td><td>None</td></tr>
+<tr><td>S1 Report schema</td><td><code>Report</code> in <code>shared/src/feedback.ts</code>.</td><td>Tests accept a sample report and reject unknown fields.</td><td>None</td></tr>
+<tr><td>S2 Worker intake</td><td>New <code>feedback-worker/</code> workspace with Wrangler, D1, and R2. <code>POST /v1/reports</code> with the four guards. CI deploy and <code>docs/setup-feedback.md</code>.</td><td>Miniflare tests: a 31st report from one IP 429, oversize 413, wrong type 415, cap hit 503, a retried id 200. A push to <code>main</code> deploys it.</td><td>S1</td></tr>
+<tr><td>S3 Admin API</td><td><code>/admin/*</code> behind the bearer secret. Signed capture links. Retention on a Cron Trigger.</td><td>Tests list, patch, and get 401 with a wrong token. A link expires after 7 days. The cron deletes captures past retention.</td><td>S2</td></tr>
+<tr><td>Q1 Queue and report builder</td><td>Migration for <code>reports</code>, a Zod repository, and <code>buildReport()</code> in <code>app/src/feedback/</code>.</td><td>Repository tests pass on Node SQLite. A report built for one item of each game kind holds no child name or id.</td><td>S1</td></tr>
+<tr><td>Q2 Capture, sheet, and sync</td><td>Capture wrapper in <code>session.tsx</code>. The comment sheet on the flag. <code>syncFeedback()</code> on the child home and after Send. Picks PNG or JPEG by size.</td><td>A report made in airplane mode uploads after reconnect, and its capture shows only the item. Screenshot of the sheet on phone and tablet.</td><td>N1, Q1, S2</td></tr>
+<tr><td>X1 Triage CLI</td><td><code>feedback:triage</code> with <code>pull</code>, <code>group</code>, and <code>file</code>, plus a short <code>AGENTS.md</code> section so an agent can run it.</td><td>Against a local Worker, 3 reports on one item file one issue. A comment with an email shows <code>[removed]</code> in the issue.</td><td>S3</td></tr>
+<tr><td>W1 Admin page</td><td>One static page on the Worker: token prompt, report list, capture, set status.</td><td>Without the token it shows nothing. With it, the admin rejects a report and the change shows on reload.</td><td>S3</td></tr>
+</table>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10.9.1/dist/mermaid.min.js"></script>
+<dialog class="lightbox" aria-label="Diagram">
+  <div class="bar">
+    <button data-zoom="out" aria-label="Zoom out">−</button>
+    <button data-zoom="fit">Fit</button>
+    <button data-zoom="in" aria-label="Zoom in">+</button>
+    <button data-close aria-label="Close">✕</button>
+  </div>
+  <div class="stage"></div>
+</dialog>
+<script>
+  const dark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  mermaid.initialize({ startOnLoad: false, theme: dark ? 'dark' : 'default', securityLevel: 'strict' });
+
+  const box = document.querySelector('dialog.lightbox');
+  const stage = box.querySelector('.stage');
+  let svg, fitWidth, scale = 1;
+
+  function applyScale() { svg.style.width = (fitWidth * scale) + 'px'; }
+
+  function open(diagram) {
+    svg = diagram.querySelector('svg').cloneNode(true);
+    svg.removeAttribute('height');
+    stage.replaceChildren(svg);
+    box.showModal();
+    const vb = svg.viewBox.baseVal;
+    const w = stage.clientWidth - 32, h = stage.clientHeight - 32;
+    fitWidth = Math.min(w, h * vb.width / vb.height);
+    scale = 1;
+    applyScale();
+  }
+
+  box.querySelector('.bar').addEventListener('click', e => {
+    const b = e.target.closest('button');
+    if (!b) return;
+    if (b.hasAttribute('data-close')) return box.close();
+    scale = b.dataset.zoom === 'in' ? scale * 1.25 : b.dataset.zoom === 'out' ? scale / 1.25 : 1;
+    applyScale();
+  });
+  box.addEventListener('click', e => { if (e.target === box) box.close(); });
+
+  mermaid.run({ querySelector: '.mermaid' }).then(() => {
+    document.querySelectorAll('.diagram').forEach(d => {
+      const btn = document.createElement('button');
+      btn.className = 'expand';
+      btn.textContent = 'Expand';
+      d.append(btn);
+      d.addEventListener('click', () => open(d));
+    });
+  });
+</script>
+</body>
+</html>
