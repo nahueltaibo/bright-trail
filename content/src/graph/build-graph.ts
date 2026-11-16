@@ -3,11 +3,11 @@ import { dirname, join, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { ClaudeCliLlm } from './cli-llm';
 import { AnthropicLlm, withDiskCache, type LlmClient } from './llm';
-import { loadOverrides } from './overrides';
+import { loadOverrides, overridesFor } from './overrides';
 import { buildGraph, mergeBuilds } from './pipeline';
 import { GENERATOR_MODEL, REVIEWER_MODEL } from './prompts';
 import { renderReport } from './report';
-import { loadAllSources, subjectOfId } from './sources';
+import { loadAllSources } from './sources';
 import { writeFormatted } from './write';
 
 const contentDir = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
@@ -41,7 +41,7 @@ const llm = withDiskCache(counted, join(contentDir, 'cache', 'llm'));
 const builds = await Promise.all(
   [...sources].map(async ([subject, subjectSources]) => {
     const build = await buildGraph(subjectSources, llm, {
-      overrides: overrides.filter((o) => subjectOfId(o.skillId) === subject),
+      overrides: overridesFor(overrides, subject),
       log: (message) => console.log(`${subject}: ${message}`),
     });
     return { subject, build };
