@@ -2,7 +2,7 @@ import type { Skill, Subject } from '@bright-trail/shared';
 import { z } from 'zod';
 import type { Problem } from './checks';
 import type { LlmRequest, ToolSpec } from './llm';
-import { idPrefix, type Expectation, type GradeSource } from './sources';
+import { gradeName, idPrefix, type Expectation, type GradeSource } from './sources';
 
 export const GENERATOR_MODEL = 'claude-sonnet-5-5';
 export const REVIEWER_MODEL = 'claude-haiku-5-5';
@@ -132,10 +132,6 @@ Rules:
   return { generator, reviewer: REVIEWER_SYSTEM.replace(GRAPH_CONTEXT, context) };
 }
 
-function gradeName(source: GradeSource): string {
-  return source.grade === 'K' ? 'Kindergarten' : `Grade ${source.grade}`;
-}
-
 function formatExpectation(e: Expectation): string {
   if (e.kind === 'overall') return `### ${e.code} (overall)\n\n${e.statement}`;
   const topic = e.topic ? ` ${e.topic}` : '';
@@ -157,7 +153,7 @@ function earlierSection(earlier: readonly Skill[]): string {
 
 // Cached LLM calls key on this wording, "strand B, C" included, so keep it.
 function expectationsSection(source: GradeSource): string {
-  return `${gradeName(source)} expectations (strand ${source.strands.join(', ')}):\n\n${source.expectations
+  return `${gradeName(source.grade)} expectations (strand ${source.strands.join(', ')}):\n\n${source.expectations
     .map(formatExpectation)
     .join('\n\n')}`;
 }
@@ -177,7 +173,7 @@ export function generateRequest(source: GradeSource, earlier: readonly Skill[]):
 
 ${expectationsSection(source)}
 
-Write the skills for ${gradeName(source)}. Every id starts with "${idPrefix(source.grade, source.subject)}". Budget: ${skillBudget(source)} skills at most.`,
+Write the skills for ${gradeName(source.grade)}. Every id starts with "${idPrefix(source.grade, source.subject)}". Budget: ${skillBudget(source)} skills at most.`,
   };
 }
 
@@ -195,11 +191,11 @@ export function reviewRequest(
 
 ${expectationsSection(source)}
 
-Proposed ${gradeName(source)} skills:
+Proposed ${gradeName(source.grade)} skills:
 
 ${proposed.map(formatSkill).join('\n')}
 
-Review the proposed ${gradeName(source)} skills.`,
+Review the proposed ${gradeName(source.grade)} skills.`,
   };
 }
 
@@ -222,6 +218,6 @@ The previous answer:
 
 ${current.map(formatSkill).join('\n')}
 
-Fix every problem and submit the complete corrected list for ${gradeName(source)}. Keep skills that had no problem as they are.`,
+Fix every problem and submit the complete corrected list for ${gradeName(source.grade)}. Keep skills that had no problem as they are.`,
   };
 }
