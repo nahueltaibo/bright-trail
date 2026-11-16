@@ -25,7 +25,7 @@ On the R2 page, click **Create bucket**:
 - **Location:** leave it on **Automatic**.
 - **Storage class:** **Standard**.
 
-Leave public access off. The app doesn't download packs from the bucket yet.
+Once it's created, open the bucket's **Settings** and turn on public access, since the app downloads packs straight from the bucket. Use **Custom Domains** to connect a domain you own, and set its https address as the `EXPO_PUBLIC_CONTENT_URL` repo variable. The **Public Development URL** (`r2.dev`) works for testing, but Cloudflare rate-limits it and doesn't support it for production.
 
 ## 3. Find the Account ID
 
