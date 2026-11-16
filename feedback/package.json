@@ -1,0 +1,14 @@
+{
+  "name": "@bright-trail/feedback",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "triage": "tsx src/cli.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p . && tsc -p test"
+  },
+  "dependencies": {
+    "@bright-trail/shared": "*"
+  }
+}

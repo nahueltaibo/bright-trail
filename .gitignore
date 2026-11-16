@@ -6,6 +6,9 @@ e2e/output/
 # Narration voice samples: npm run content:voices
 content/out/voices/
 
+# Tester reports and captures: npm run feedback:triage -- pull
+feedback/inbox/
+
 # Dependencies
 node_modules/
 
