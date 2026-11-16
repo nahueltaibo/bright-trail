@@ -1,6 +1,7 @@
 export type { SqlDatabase, SqlValue } from './db';
 export { ContentFlagSchema, type ContentFlag, type StoredContentFlag } from './flag';
 export { MIGRATIONS, SCHEMA_VERSION, migrate } from './migrations';
+export { QueuedReportStatusSchema, type QueuedReport, type QueuedReportStatus } from './report';
 export { DATABASE_NAME, openAppStorage } from './open';
 export {
   createRepository,

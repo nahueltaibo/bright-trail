@@ -88,6 +88,18 @@ export const MIGRATIONS: readonly string[] = [
     installed_at TEXT NOT NULL
   );
   `,
+  // Tester reports waiting to upload, as ReportSchema JSON. A row is deleted once it uploads, and
+  // a rejected one stays so it isn't retried. The capture stays a file on disk.
+  `
+  CREATE TABLE reports (
+    id TEXT PRIMARY KEY NOT NULL,
+    report TEXT NOT NULL,
+    capture_path TEXT,
+    status TEXT NOT NULL,
+    created_at TEXT NOT NULL,
+    attempted_at TEXT
+  );
+  `,
 ];
 
 export const SCHEMA_VERSION = MIGRATIONS.length;

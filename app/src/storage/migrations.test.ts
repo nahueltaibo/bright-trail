@@ -22,6 +22,7 @@ describe('migrate', () => {
       'flags',
       'mastery',
       'placement',
+      'reports',
       'settings',
     ]);
     expect(await userVersion(db)).toBe(SCHEMA_VERSION);
