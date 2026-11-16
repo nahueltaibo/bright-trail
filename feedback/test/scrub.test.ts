@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { cell, fence, scrub } from '../src/scrub';
 
 const R = '[removed]';
+const [ZWSP, WORD_JOINER, SOFT_HYPHEN] = [0x200b, 0x2060, 0xad].map((c) => String.fromCharCode(c));
 
 describe('scrub', () => {
   it.each([
@@ -13,6 +14,8 @@ describe('scrub', () => {
     ['See https://example.com/a?b=1 and www.site.org', `See ${R} and ${R}`],
     ['Go to example.com/path or school.on.ca', `Go to ${R} or ${R}`],
     ['Card 4111111111111111 and id 123456', `Card ${R} and id ${R}`],
+    ['Open ftp://files.host/x or myapp://open', `Open ${R} or ${R}`],
+    [`Mail mom@exa${ZWSP}mple.com or 416${WORD_JOINER}555${SOFT_HYPHEN}1234`, `Mail ${R} or ${R}`],
   ])('removes contact details from %j', (input, output) => {
     expect(scrub(input)).toBe(output);
   });
@@ -23,9 +26,10 @@ describe('scrub', () => {
   });
 
   it('breaks mentions and issue links without hiding them', () => {
-    const out = scrub('Ask @octocat about #12 and @org/team');
+    const text = 'Ask @octocat about #12, @org/team, org/repo#3, and word#12';
+    const out = scrub(text);
     expect(out).not.toMatch(/@\w|#\d/);
-    expect(out.replace(/\u200B/g, '')).toBe('Ask @octocat about #12 and @org/team');
+    expect(out.replace(/\u200B/g, '')).toBe(text);
   });
 });
 
