@@ -23,6 +23,13 @@ describe('captureItem', () => {
     expect(capture).toHaveBeenCalledWith(ref, { format: 'png', result: 'tmpfile' });
   });
 
+  it('captures a JPEG at the quality asked for', async () => {
+    capture.mockResolvedValue('file:///cache/shot.jpg');
+    const ref = mounted();
+    await captureItem(ref, { format: 'jpg', quality: 0.6 });
+    expect(capture).toHaveBeenCalledWith(ref, { format: 'jpg', quality: 0.6, result: 'tmpfile' });
+  });
+
   it('fails without capturing when the view is not mounted', async () => {
     await expect(captureItem(createRef<ComponentRef<typeof View>>())).resolves.toMatchObject({
       ok: false,
