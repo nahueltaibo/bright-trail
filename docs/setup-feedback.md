@@ -76,7 +76,7 @@ cd feedback-worker
 npx wrangler secret put FEEDBACK_ADMIN_TOKEN
 ```
 
-Keep the same value in your `.env` as `FEEDBACK_ADMIN_TOKEN`, for the admin tools.
+Keep the same value in your `.env` as `FEEDBACK_ADMIN_TOKEN`, with the Worker's URL as `FEEDBACK_URL`, for the triage CLI and other admin tools.
 
 The token also signs capture links, so there's no second secret. The flip side: **rotating the token revokes every capture link** already posted in issues. To rotate, run `secret put` again with a new value and update `.env`.
 
@@ -119,7 +119,7 @@ A Cron Trigger runs every day at 04:00 UTC. It deletes up to 1,000 reports and t
 - 90 days after `issueClosedAt`.
 - 180 days after upload, if its status isn't `filed`.
 
-A filed report whose issue is still open stays. Set `issueClosedAt` with `PATCH /admin/reports` when its issue closes. The cron also drops `daily_usage` rows older than 180 days. It runs on its own once deployed: Cloudflare lists it under the Worker's **Settings → Triggers**.
+A filed report whose issue is still open stays. `npm run feedback:triage -- sync` sets `issueClosedAt` when its issue closes. The cron also drops `daily_usage` rows older than 180 days. It runs on its own once deployed: Cloudflare lists it under the Worker's **Settings → Triggers**.
 
 ## Run It Locally
 

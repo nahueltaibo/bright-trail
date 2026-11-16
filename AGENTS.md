@@ -26,6 +26,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 ## Code Map
 
 - `feedback-worker/` — the Cloudflare Worker that takes tester reports. `POST /v1/reports` takes a multipart `report` part, checked with `ReportSchema`, and an optional PNG or JPEG `capture`. It keeps reports in D1 and captures in a private R2 bucket. Its guards: 30 requests per IP per hour, 32 KB reports, 400 KB captures, and 5,000 reports or 500 MB of captures per UTC day. A retried id answers 200 and stores nothing. `/admin/reports` and `/admin/captures/:id` sit behind the `FEEDBACK_ADMIN_TOKEN` bearer secret. A daily Cron Trigger deletes old reports and captures. [docs/setup-feedback.md](docs/setup-feedback.md) has the routes and retention rules. Tests run the handler against Miniflare's D1 and R2 through `getPlatformProxy`. Schema changes go in a new file in `feedback-worker/migrations/`.
+- `feedback/` — the triage CLI behind `npm run feedback:triage`. `scrub.ts` cleans tester comments, `issue.ts` groups reports and writes issue text, and `commands.ts` runs each subcommand. Its tests run the commands against the Worker through `feedback-worker/test/helpers.ts`, with a fake `gh`.
 - `shared/src/engine/` — learner engine: mastery, unlocks, next step. Pure TypeScript.
 - `shared/src/placement/` — adaptive placement probe.
 - `shared/src/speech/` — `toSpeech` reads math formatting aloud.
@@ -73,6 +74,20 @@ npm run lint && npm run format:check && npm run typecheck && npm test && npm run
 ```
 
 To see the app, run `npm run dev` and open `http://localhost:8081`. It also serves `content/out/packs/` at `http://localhost:8090` for the app to download. Drive it with Playwright MCP and save screenshots under `.playwright-mcp/` (gitignored). The web build keeps its SQLite data in the browser, so clear site data for `localhost:8081` to start from a fresh install.
+
+## Triaging Tester Feedback
+
+`npm run feedback:triage -- <command>` reads `FEEDBACK_URL` and `FEEDBACK_ADMIN_TOKEN` from `.env` or the environment, and calls GitHub through `gh api` (REST, not GraphQL) on this checkout's repo, or `GH_REPO`. Run the commands in this order:
+
+- `pull` saves new reports and captures to `feedback/inbox/` (gitignored), for reading.
+- `group` keys new reports `item:<itemId>`, or `card:<nuggetId>:<n>` with the card number from 1. Add `--regroup` to rekey reports that already have a group.
+- `file --dry-run` prints each issue's title, labels, and body. Check that nothing personal got through.
+- `file` opens one issue per group, labeled `feedback` and `content`, then marks the reports `filed`. Relabel it `app` by hand when the fix is in app code.
+- `sync` copies each issue's close time to its reports, and clears it on reopen. Retention counts 90 days from it, so run `sync` after closing issues.
+
+An issue holds the repro data, each report's scrubbed comment, an expiring capture link, and the report JSON. Scrubbing replaces emails, phone numbers, postal codes, URLs, and runs of 6+ digits with `[removed]`, and breaks `@mentions`. A hidden marker names the group, so a rerun adds new reports to that group's open issue instead of filing it twice.
+
+To fix content, add a `ContentEdit` to `content/content-edits.json` (see `content/src/generate/edits.ts`) or fix the game's scene file, then run `npm run content:packs`. App fixes ship as an OTA update.
 
 ## Versions and Releases
 
