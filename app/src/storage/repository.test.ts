@@ -1,5 +1,11 @@
 import { CONTENT_SCHEMA_VERSION } from '@bright-trail/shared';
-import type { Attempt, ChildProfile, MasteryState, PlacementState } from '@bright-trail/shared';
+import type {
+  Attempt,
+  ChildProfile,
+  MasteryState,
+  PlacementState,
+  Report,
+} from '@bright-trail/shared';
 import type { SqlDatabase } from './db';
 import type { ContentFlag } from './flag';
 import { openRepository, type Repository } from './repository';
@@ -59,6 +65,25 @@ const cardFlag: ContentFlag = {
   bundleVersion: 'sample-1',
   createdAt: '2026-11-06T14:32:00Z',
 };
+
+const report = (id: string, overrides: Partial<Report> = {}): Report => ({
+  id,
+  createdAt: '2026-11-16T14:30:00Z',
+  comment: null,
+  target: { contentKind: 'card', contentId: 'k-count-to-20-story', cardIndex: 2 },
+  item: null,
+  skillId: 'k-count-to-20',
+  phase: 'check',
+  content: { bundleVersion: 'sample-1', coreHash: 'a'.repeat(64), contentSchemaVersion: 5 },
+  app: { appVersion: '3.0.0', runtimeVersion: '3', updateId: null },
+  device: { platform: 'android', osVersion: '15', model: 'Samsung SM-X200' },
+  screen: { width: 800, height: 1280, scale: 2, fontScale: 1 },
+  settings: { readingMode: false, dyslexicFont: false },
+  hasCapture: false,
+  ...overrides,
+});
+const REPORT_A = '6f1c2b1e-3a4d-4c55-9a0e-2f3b4c5d6e7f';
+const REPORT_B = '0f8e7d6c-5b4a-4321-8fed-cba987654321';
 
 describe('repository', () => {
   let db: SqlDatabase;
@@ -401,6 +426,86 @@ describe('settings', () => {
     expect(await repo.settings.get('pin')).toBe('b');
     await repo.settings.remove('pin');
     expect(await repo.settings.get('pin')).toBeNull();
+  });
+});
+
+describe('report queue', () => {
+  let db: SqlDatabase;
+  let repo: Repository;
+
+  beforeEach(async () => {
+    db = openNodeSqliteDatabase(':memory:');
+    repo = await openRepository(db);
+  });
+
+  it('lists pending reports oldest first, with their capture', async () => {
+    const later = report(REPORT_A, { createdAt: '2026-11-16T15:00:00Z', hasCapture: true });
+    await repo.reports.enqueue(later, 'file:///cache/a.png');
+    await repo.reports.enqueue(report(REPORT_B), null);
+    expect(await repo.reports.listPending()).toEqual([
+      {
+        report: report(REPORT_B),
+        capturePath: null,
+        status: 'pending',
+        createdAt: '2026-11-16T14:30:00Z',
+        attemptedAt: null,
+      },
+      {
+        report: later,
+        capturePath: 'file:///cache/a.png',
+        status: 'pending',
+        createdAt: '2026-11-16T15:00:00Z',
+        attemptedAt: null,
+      },
+    ]);
+  });
+
+  it('records an attempt and keeps the report pending', async () => {
+    await repo.reports.enqueue(report(REPORT_A), null);
+    await repo.reports.recordAttempt(REPORT_A, '2026-11-16T14:31:00Z');
+    const [queued] = await repo.reports.listPending();
+    expect(queued.attemptedAt).toBe('2026-11-16T14:31:00Z');
+  });
+
+  it('deletes a sent report and drops a rejected one from the pending list', async () => {
+    await repo.reports.enqueue(report(REPORT_A), null);
+    await repo.reports.enqueue(report(REPORT_B), null);
+    await repo.reports.markSent(REPORT_A);
+    await repo.reports.markRejected(REPORT_B, '2026-11-16T14:32:00Z');
+    expect(await repo.reports.listPending()).toEqual([]);
+    expect(await db.getAllAsync('SELECT id, status, attempted_at FROM reports', [])).toEqual([
+      { id: REPORT_B, status: 'rejected', attempted_at: '2026-11-16T14:32:00Z' },
+    ]);
+  });
+
+  it('refuses an invalid report, a repeated id, and a capture that disagrees with hasCapture', async () => {
+    await expect(
+      repo.reports.enqueue({ ...report(REPORT_A), childId: 'maya' } as Report, null),
+    ).rejects.toThrow();
+    await expect(repo.reports.enqueue(report(REPORT_A), 'file:///a.png')).rejects.toThrow(
+      /hasCapture/,
+    );
+    await expect(
+      repo.reports.enqueue(report(REPORT_A, { hasCapture: true }), null),
+    ).rejects.toThrow(/hasCapture/);
+    await repo.reports.enqueue(report(REPORT_A), null);
+    await expect(repo.reports.enqueue(report(REPORT_A), null)).rejects.toThrow();
+    expect(await repo.reports.listPending()).toHaveLength(1);
+  });
+
+  it('keeps queued reports after the database is reopened', async () => {
+    const { path, cleanup } = makeTempDatabasePath();
+    try {
+      const firstDb = openNodeSqliteDatabase(path);
+      await (await openRepository(firstDb)).reports.enqueue(report(REPORT_A), null);
+      await firstDb.closeAsync();
+      const secondDb = openNodeSqliteDatabase(path);
+      const pending = await (await openRepository(secondDb)).reports.listPending();
+      expect(pending.map((q) => q.report)).toEqual([report(REPORT_A)]);
+      await secondDb.closeAsync();
+    } finally {
+      cleanup();
+    }
   });
 });
 

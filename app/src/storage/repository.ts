@@ -5,6 +5,7 @@ import {
   MasteryStateSchema,
   PlacementStateSchema,
   readContentPack,
+  ReportSchema,
   SkillGradeSchema,
   WalkBackSchema,
   type Attempt,
@@ -12,12 +13,14 @@ import {
   type ContentPack,
   type MasteryState,
   type PlacementState,
+  type Report,
   type SkillGrade,
   type WalkBack,
 } from '@bright-trail/shared';
 import type { SqlDatabase } from './db';
 import { ContentFlagSchema, type ContentFlag, type StoredContentFlag } from './flag';
 import { migrate } from './migrations';
+import { QueuedReportStatusSchema, type QueuedReport } from './report';
 
 type ChildRow = {
   id: string;
@@ -64,6 +67,14 @@ type FlagRow = {
   bundle_version: string;
   created_at: string;
   resolved_at: string | null;
+};
+
+type ReportRow = {
+  report: string;
+  capture_path: string | null;
+  status: string;
+  created_at: string;
+  attempted_at: string | null;
 };
 
 type PlacementRow = {
@@ -140,6 +151,14 @@ const toFlag = (r: FlagRow): StoredContentFlag => ({
     createdAt: r.created_at,
   }),
   resolvedAt: r.resolved_at === null ? null : IsoDateTimeSchema.parse(r.resolved_at),
+});
+
+const toQueuedReport = (r: ReportRow): QueuedReport => ({
+  report: ReportSchema.parse(JSON.parse(r.report)),
+  capturePath: r.capture_path,
+  status: QueuedReportStatusSchema.parse(r.status),
+  createdAt: IsoDateTimeSchema.parse(r.created_at),
+  attemptedAt: r.attempted_at === null ? null : IsoDateTimeSchema.parse(r.attempted_at),
 });
 
 const ATTEMPT_COLUMNS = `child_id, skill_id, item_id, answer, correct, time_to_answer_ms,
@@ -412,7 +431,45 @@ export function createRepository(db: SqlDatabase) {
     },
   };
 
-  return { children, mastery, walkBack, placement, attempts, flags, settings, packs };
+  const reports = {
+    /** Throws if the report is invalid, its id is queued already, or the capture disagrees with `hasCapture`. */
+    async enqueue(report: Report, capturePath: string | null): Promise<void> {
+      const r = ReportSchema.parse(report);
+      if (r.hasCapture !== (capturePath !== null)) {
+        throw new Error(`Report ${r.id} has hasCapture ${r.hasCapture} but capture ${capturePath}`);
+      }
+      await db.runAsync(
+        `INSERT INTO reports (id, report, capture_path, status, created_at, attempted_at)
+         VALUES (?, ?, ?, 'pending', ?, NULL)`,
+        [r.id, JSON.stringify(r), capturePath, r.createdAt],
+      );
+    },
+    /** Oldest first, so uploads go in the order reports were made. */
+    async listPending(): Promise<QueuedReport[]> {
+      const rows = await db.getAllAsync<ReportRow>(
+        "SELECT * FROM reports WHERE status = 'pending' ORDER BY created_at, rowid",
+        [],
+      );
+      return rows.map(toQueuedReport);
+    },
+    async recordAttempt(id: string, attemptedAt: string): Promise<void> {
+      IsoDateTimeSchema.parse(attemptedAt);
+      await db.runAsync('UPDATE reports SET attempted_at = ? WHERE id = ?', [attemptedAt, id]);
+    },
+    /** Deletes the row once the Worker has it. The caller deletes the capture file. */
+    async markSent(id: string): Promise<void> {
+      await db.runAsync('DELETE FROM reports WHERE id = ?', [id]);
+    },
+    async markRejected(id: string, attemptedAt: string): Promise<void> {
+      IsoDateTimeSchema.parse(attemptedAt);
+      await db.runAsync("UPDATE reports SET status = 'rejected', attempted_at = ? WHERE id = ?", [
+        attemptedAt,
+        id,
+      ]);
+    },
+  };
+
+  return { children, mastery, walkBack, placement, attempts, flags, settings, packs, reports };
 }
 
 export type Repository = ReturnType<typeof createRepository>;
