@@ -3,9 +3,11 @@ import {
   MAX_ORDER,
   OrderSceneSchema,
   orderProblems,
+  textChoices,
   type ContentBundle,
   type Item,
   type OrderScene,
+  withoutArticle,
 } from '@bright-trail/shared';
 import { z } from 'zod';
 import { applyGame } from '../apply-game';
@@ -19,6 +21,8 @@ const TaggedOrderSchema = z.strictObject({
   cards: z.array(TaggedCardSchema),
   missing: z.number().int(),
   cycle: z.boolean(),
+  otherChoiceFits: z.boolean(),
+  skipsSteps: z.boolean(),
   note: z.string(),
 });
 export const OrderTagOutputSchema = z.strictObject({ scenes: z.array(TaggedOrderSchema) });
@@ -57,7 +61,8 @@ const escape = (t: string) => t.replace(/[.*+?^${}()|[\]\\/]/g, '\\$&');
 /** Whether the words name the card as whole words, so "tadpole stage" names Tadpole. */
 function names(words: string, card: string | undefined): boolean {
   if (card === undefined) return false;
-  return new RegExp(`(^|[^a-z0-9])${escape(norm(card))}(?![a-z0-9])`).test(norm(words));
+  const bare = escape(norm(withoutArticle(card)));
+  return new RegExp(`(^|[^a-z0-9])${bare}(?![a-z0-9])`).test(norm(words));
 }
 
 /** Why the gap sits somewhere other than where the item asks. Empty when it fits. */
@@ -86,11 +91,16 @@ For each item give:
 - cards: 3 to ${MAX_ORDER} cards in order. Each has text of at most ${MAX_CARD_TEXT} letters and an emoji that shows it, or null when no emoji fits.
 - missing: the index of the empty slot, from 0. That card's text is the item's answer, exactly.
 - cycle: true when the last card leads back to the first, like seasons, day and night, or a life cycle.
+- otherChoiceFits: true when one of the item's wrong choices could also fill the slot and leave a true order.
+- skipsSteps: true when the row leaves out a step that comes between two of its cards, like plan, build, share without test, or puts other events in place of ones the item tells.
 
 Rules:
 - The row is the order the item asks about, in the item's words. "What comes after build?" with the answer test is a row like build, test, make it better, with test missing.
-- Each card names a step, stage, or event itself, written like the item's choices, such as butterfly or Dad was born. Never a position, like first move, or a description, like flying wings.
+- When the item names steps or events, the row uses those, in the item's order, and skips none between them. "Mia plans, builds, and tests" gives plan, build, test. Add a card the item doesn't name only to reach 3 cards.
+- Every card is the same kind of thing as the item's choices, written the same way. A season item uses only seasons, like spring, summer, fall, winter. Never a position, like first move, a description, like flying wings, or an event in a row of seasons.
+- Cards start in lowercase unless the item writes that first word with a capital, like Grade 1 or Dad. A card starts with the, a, or an only when every card does.
 - No other card may say one of the item's choices, since that choice would then have two places. Leave those steps out, and start or end the row elsewhere so it still has 3 cards in order.
+- No wrong choice may also fit the slot. With the choices learned to walk and started Kindergarten, a row of ?, started Grade 1, started Grade 2 fails, since Kindergarten also comes before Grade 1. Pick neighbours that rule the wrong choices out, or set fits to false.
 - The gap sits where the item asks: an item about what comes first leaves the first slot empty, one about what comes last leaves the last slot, and "after build" puts the gap right after the build card.
 - Set fits to false when the item isn't about what comes first, next, before, after, or last in a sequence, or when no row of 3 cards can leave out the other choices. Fill the other fields with any valid value then.
 - note: one short reason, mainly when fits is false.
@@ -106,6 +116,31 @@ export type OrderTagResult = {
   rejected: Record<string, string>;
 };
 
+const ARTICLE = /^(the|a|an)\s/i;
+const WORD = /[A-Za-z0-9]+/g;
+
+/**
+ * Why the cards don't read as one kind: some start with an article and some don't, or one starts
+ * with a capital the item never writes, like "Summer camp" beside "the fall harvest feast".
+ */
+export function styleProblems(item: Item, scene: OrderScene): string[] {
+  const texts = scene.cards.map((c) => c.text.trim());
+  const problems: string[] = [];
+  const articles = texts.filter((t) => ARTICLE.test(t)).length;
+  if (articles > 0 && articles < texts.length) {
+    problems.push('only some cards start with an article');
+  }
+  const said = `${item.prompt} ${item.narration} ${textChoices(item)?.texts.join(' ') ?? ''}`;
+  const words = new Set(said.match(WORD));
+  for (const t of texts) {
+    const first = t.match(WORD)?.[0] ?? '';
+    if (/^[A-Z]/.test(first) && !words.has(first)) {
+      problems.push(`the card ${t} starts with a capital the item never writes`);
+    }
+  }
+  return problems;
+}
+
 /** Keeps the scenes that parse and match their item. The rest go to `rejected` with a reason. */
 export function acceptOrders(items: readonly Item[], output: unknown): OrderTagResult {
   const parsed = OrderTagOutputSchema.parse(output);
@@ -118,6 +153,13 @@ export function acceptOrders(items: readonly Item[], output: unknown): OrderTagR
       result.rejected[t.itemId] = `does not fit: ${t.note}`;
       continue;
     }
+    // The LLM's own checks: code can't tell which choices also fit, or which steps a row skips.
+    if (t.otherChoiceFits || t.skipsSteps) {
+      result.rejected[t.itemId] = t.otherChoiceFits
+        ? 'another choice also fits the gap'
+        : 'the row skips steps or swaps the events the item tells';
+      continue;
+    }
     const candidate = OrderSceneSchema.safeParse({
       kind: 'order',
       cards: t.cards.map(toCard),
@@ -128,7 +170,11 @@ export function acceptOrders(items: readonly Item[], output: unknown): OrderTagR
       result.rejected[t.itemId] = candidate.error.issues.map((i) => i.message).join('; ');
       continue;
     }
-    const problems = [...orderProblems(item, candidate.data), ...gapProblems(item, candidate.data)];
+    const problems = [
+      ...orderProblems(item, candidate.data),
+      ...gapProblems(item, candidate.data),
+      ...styleProblems(item, candidate.data),
+    ];
     if (problems.length > 0) result.rejected[t.itemId] = problems.join('; ');
     else result.scenes[t.itemId] = candidate.data;
   }
@@ -143,5 +189,6 @@ export function applyOrders(
   return applyGame(bundle, 'order', scenes, (item, scene) => [
     ...orderProblems(item, scene),
     ...gapProblems(item, scene),
+    ...styleProblems(item, scene),
   ]);
 }

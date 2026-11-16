@@ -49,6 +49,8 @@ const tagged = (itemId: string, over: Partial<TaggedOrder> = {}): TaggedOrder =>
   cards: [card('build', '🔨'), card('test', ''), card('make it better')],
   missing: 1,
   cycle: false,
+  otherChoiceFits: false,
+  skipsSteps: false,
   note: '',
   ...over,
 });
@@ -137,14 +139,16 @@ describe('acceptOrders', () => {
     expect(scenes[after.id]?.cycle).toBe(true);
   });
 
-  it('rejects misfits, rows that show a choice, wrong answers, and short rows', () => {
-    const items = ['a', 'b', 'c', 'd'].map((id) => ({ ...after, id }));
+  it('rejects misfits, shown choices, wrong answers, short rows, open gaps, and skipped steps', () => {
+    const items = ['a', 'b', 'c', 'd', 'e', 'f'].map((id) => ({ ...after, id }));
     const { scenes, rejected } = acceptOrders(items, {
       scenes: [
         tagged('a', { fits: false, note: 'plan is a choice' }),
         tagged('b', { cards: [card('plan'), card('build'), card('test')], missing: 2 }),
         tagged('c', { missing: 2 }),
         tagged('d', { cards: [card('build'), card('test')] }),
+        tagged('e', { otherChoiceFits: true }),
+        tagged('f', { skipsSteps: true }),
       ],
     });
     expect(scenes).toEqual({});
@@ -152,6 +156,46 @@ describe('acceptOrders', () => {
     expect(rejected.b).toBe('the choice plan is already in the row');
     expect(rejected.c).toMatch(/^the missing card is make it better but the item answers test/);
     expect(rejected.d).toMatch(/3/);
+    expect(rejected.e).toBe('another choice also fits the gap');
+    expect(rejected.f).toBe('the row skips steps or swaps the events the item tells');
+  });
+
+  it('rejects cards that mix articles or start with a capital the item never writes', () => {
+    const feast = tap(
+      'g2-soc-chronology-tap-13',
+      'What comes after summer camp?',
+      'A family has a spring picnic, a summer camp, and a fall harvest feast. Which comes right after the summer camp: the spring picnic or the fall harvest feast?',
+      ['the spring picnic', 'the fall harvest feast'],
+      1,
+    );
+    const row = (...texts: string[]) =>
+      tagged(feast.id, { cards: texts.map((t) => card(t)), missing: 1 });
+    const mixed = acceptOrders([feast], {
+      scenes: [row('Summer camp', 'the fall harvest feast', 'winter party')],
+    });
+    expect(mixed.rejected[feast.id]).toBe(
+      'only some cards start with an article; the card Summer camp starts with a capital the item never writes',
+    );
+    const even = acceptOrders([feast], {
+      scenes: [row('the summer camp', 'the fall harvest feast', 'the winter party')],
+    });
+    expect(even.rejected).toEqual({});
+  });
+
+  it('keeps a capital the item writes, like Grade 1', () => {
+    const grade = tap(
+      'g1-soc-events-in-order-tap-6',
+      'What came after Kindergarten?',
+      'Sam went to daycare, then Kindergarten, then Grade 1. Which came after Kindergarten: daycare, or Grade 1?',
+      ['daycare', 'Grade 1'],
+      1,
+    );
+    const { rejected } = acceptOrders([grade], {
+      scenes: [
+        tagged(grade.id, { cards: [card('Kindergarten'), card('Grade 1'), card('Grade 2')] }),
+      ],
+    });
+    expect(rejected).toEqual({});
   });
 });
 
