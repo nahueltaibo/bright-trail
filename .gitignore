@@ -24,6 +24,8 @@ app/android/
 
 # Signing keys
 *.jks
+*.keystore
+release.properties
 *.p8
 *.p12
 *.key
@@ -32,7 +34,8 @@ app/android/
 
 # Env files (Claude API key lives here)
 .env
-.env*.local
+.env.*
+!.env.example
 
 # Logs and caches
 npm-debug.*
@@ -43,5 +46,6 @@ coverage/
 .DS_Store
 Thumbs.db
 
-# Claude Code worktrees
+# Claude Code worktrees and local settings
 .claude/worktrees/
+.claude/settings.local.json
