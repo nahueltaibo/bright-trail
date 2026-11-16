@@ -16,5 +16,13 @@
   ],
   // Daily retention: src/retention.ts.
   "triggers": { "crons": ["0 4 * * *"] },
+  // The Worker runs first so the admin page gets its security headers: src/page.ts.
+  "assets": {
+    "directory": "public",
+    "binding": "ASSETS",
+    "run_worker_first": true,
+    "html_handling": "none",
+    "not_found_handling": "none",
+  },
   "r2_buckets": [{ "binding": "CAPTURES", "bucket_name": "bright-trail-feedback-captures" }],
 }

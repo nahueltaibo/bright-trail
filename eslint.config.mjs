@@ -49,5 +49,10 @@ export default [
     files: nodePackages,
     languageOptions: { globals: globals.node },
   },
+  {
+    ...js.configs.recommended,
+    files: ['feedback-worker/public/**/*.js'],
+    languageOptions: { globals: globals.browser, sourceType: 'module' },
+  },
   prettierConfig,
 ];
