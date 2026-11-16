@@ -76,7 +76,7 @@ cd feedback-worker
 npx wrangler secret put FEEDBACK_ADMIN_TOKEN
 ```
 
-Put the same value in your `.env` as `FEEDBACK_ADMIN_TOKEN`, next to `FEEDBACK_URL`. The triage CLI and the admin page read it from there.
+Keep the same value in your `.env` as `FEEDBACK_ADMIN_TOKEN`, for the admin tools.
 
 The token also signs capture links, so there's no second secret. The flip side: **rotating the token revokes every capture link** already posted in issues. To rotate, run `secret put` again with a new value and update `.env`.
 
@@ -110,16 +110,16 @@ A wrong token answers `401`.
 | `GET /admin/captures/:id`   | Streams the capture. With `?link=1` it answers `{ url, expiresAt }`, a link that works without the token for 7 days.       |
 | `GET /captures/:id?exp&sig` | The signed link. A bad signature or an expired link answers `403`.                                                         |
 
-`since` is inclusive and `until` exclusive, on the time the Worker received the report. Both take a date or an ISO time. A list answers `{ reports, next }`. Pass `next` back as `cursor` until it's `null`.
+`since` is inclusive and `until` exclusive, on the time the Worker received the report. Both take a date or an ISO time. Encode an offset's `+` as `%2B`, or use `Z` times. A list answers `{ reports, next }`. Pass `next` back as `cursor` until it's `null`.
 
 ## Retention
 
-A Cron Trigger runs every day at 04:00 UTC. It deletes a report and its capture:
+A Cron Trigger runs every day at 04:00 UTC. It deletes up to 1,000 reports and their captures per run, and the next run picks up the rest. A report goes:
 
 - 90 days after `issueClosedAt`.
 - 180 days after upload, if its status isn't `filed`.
 
-A filed report whose issue is still open stays, so the triage CLI has to set `issueClosedAt` when the issue closes. The cron also drops `daily_usage` rows older than 180 days. It runs on its own once deployed: Cloudflare lists it under the Worker's **Settings → Triggers**.
+A filed report whose issue is still open stays. Set `issueClosedAt` with `PATCH /admin/reports` when its issue closes. The cron also drops `daily_usage` rows older than 180 days. It runs on its own once deployed: Cloudflare lists it under the Worker's **Settings → Triggers**.
 
 ## Run It Locally
 
