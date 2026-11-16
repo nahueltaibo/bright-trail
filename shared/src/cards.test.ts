@@ -139,6 +139,13 @@ describe('labelProblems', () => {
     expect(labelProblems(tap('What is this part?', 'stem', 'leaf', 'seed'), label)).toEqual([]);
   });
 
+  it('matches the tags without a leading article', () => {
+    expect(labelProblems(tap('What is this part?', 'the stem', 'a seed'), label)).toEqual([]);
+    expect(labelProblems(tap('What is this part?', 'the stem', 'the roots'), label)).toEqual([
+      'the choice roots already labels the picture',
+    ]);
+  });
+
   it('flags a wrong answer and a choice already on the picture', () => {
     expect(labelProblems(tap('What is this part?', 'leaf', 'stem'), label)).toEqual([
       'the asked tag is stem but the item answers leaf',

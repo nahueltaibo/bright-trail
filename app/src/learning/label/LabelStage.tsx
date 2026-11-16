@@ -1,4 +1,4 @@
-import { sameText, type LabelScene } from '@bright-trail/shared';
+import { sameTag, type LabelScene } from '@bright-trail/shared';
 import { useImperativeHandle, useMemo, useRef, useState, type Ref } from 'react';
 import { Animated, StyleSheet } from 'react-native';
 import Svg, { Circle, Line } from 'react-native-svg';
@@ -46,7 +46,7 @@ export function LabelStage({ scene: s, cheer, handle }: Props) {
       setFlyer({ text: picked, tone: 'plain' });
       await glide(START, asked.box, 600, setBox, live);
       if (!live()) return;
-      if (!sameText(picked, right)) {
+      if (!sameTag(picked, right)) {
         setFlyer({ text: picked, tone: 'miss' });
         await shake(setDx, live);
         await wait(200);

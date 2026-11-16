@@ -7,6 +7,7 @@ import {
   type Item,
   type LabelScene,
   type Picture,
+  withoutArticle,
 } from '@bright-trail/shared';
 import { z } from 'zod';
 import { applyGame } from '../apply-game';
@@ -27,11 +28,9 @@ const TaggedLabelSchema = z.strictObject({
 export const LabelTagOutputSchema = z.strictObject({ scenes: z.array(TaggedLabelSchema) });
 export type TaggedLabel = z.infer<typeof TaggedLabelSchema>;
 
-const ARTICLE = /^(the|a|an|your)\s+/;
-
 /** Whether the words name the part, without case, a leading "the", "a", or "your", or a plural. */
 export function namesPart(words: string, part: string): boolean {
-  const w = words.trim().toLowerCase().replace(/\s+/g, ' ').replace(ARTICLE, '');
+  const w = withoutArticle(words).toLowerCase().replace(/\s+/g, ' ');
   if (w === part) return true;
   const one = (p: string) => [p, `${p}s`, `${p}es`, p.replace(/f$/, 'ves')];
   return one(part).includes(w) || one(w).includes(part);
@@ -96,7 +95,7 @@ export type LabelTagResult = {
   rejected: Record<string, string>;
 };
 
-/** The scene for a tagged item: the asked tag says the item's answer, the others their part. */
+/** The scene for a tagged item. The asked tag says the answer without its article, like the hints. */
 function sceneFor(item: Item, t: TaggedLabel): { scene?: LabelScene; problems: string[] } {
   const { texts, answer } = textChoices(item)!;
   const problems = pictureProblems(item, t);
@@ -111,7 +110,7 @@ function sceneFor(item: Item, t: TaggedLabel): { scene?: LabelScene; problems: s
   const candidate = LabelSceneSchema.safeParse({
     kind: 'label',
     picture: t.picture,
-    tags: parts.map((part) => ({ part, text: part === t.part ? answer : part })),
+    tags: parts.map((part) => ({ part, text: part === t.part ? withoutArticle(answer) : part })),
     asked: parts.indexOf(t.part),
   });
   if (!candidate.success) return { problems: candidate.error.issues.map((i) => i.message) };
