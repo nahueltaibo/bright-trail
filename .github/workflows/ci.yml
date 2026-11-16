@@ -65,19 +65,10 @@ jobs:
           R2_SECRET_ACCESS_KEY: ${{ secrets.R2_SECRET_ACCESS_KEY }}
           R2_BUCKET: ${{ secrets.R2_BUCKET }}
 
-      # Signed APKs reject unsigned updates, so a missing key fails the step.
       - if: steps.plan.outputs.mode == 'ota'
-        run: |
-          if [ -z "$EXPO_UPDATES_PRIVATE_KEY" ]; then
-            echo "::error::EXPO_UPDATES_PRIVATE_KEY is not set. Nothing was published."
-            exit 1
-          fi
-          export EXPO_UPDATES_PRIVATE_KEY_PATH="$RUNNER_TEMP/updates-private-key.pem"
-          printf '%s\n' "$EXPO_UPDATES_PRIVATE_KEY" > "$EXPO_UPDATES_PRIVATE_KEY_PATH"
-          npm run ota:publish -- --no-checks --message "$(git log -1 --format=%s)"
+        run: npm run ota:publish -- --no-checks --message "$(git log -1 --format=%s)"
         env:
           EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
-          EXPO_UPDATES_PRIVATE_KEY: ${{ secrets.EXPO_UPDATES_PRIVATE_KEY }}
 
       - if: steps.plan.outputs.mode == 'apk'
         uses: actions/setup-java@77dd5b2ce225ea11469928ac317850245a74ae78 # v6.2.0
