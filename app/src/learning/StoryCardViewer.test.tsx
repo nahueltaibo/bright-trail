@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react-native';
+import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { StoryCardViewer } from './StoryCardViewer';
 import { bundle } from './testing';
 
@@ -59,5 +59,20 @@ describe('StoryCardViewer', () => {
     // The next card can be flagged on its own.
     await fireEvent.press(screen.getByLabelText('Next'));
     expect(screen.getByLabelText('This looks wrong')).toBeTruthy();
+  });
+
+  it('thanks only once a flag is sent, and stays a flag when it is dropped', async () => {
+    let settle!: (sent: boolean) => void;
+    const onFlag = () => new Promise<boolean>((resolve) => (settle = resolve));
+    await render(<StoryCardViewer nugget={nugget} onFlag={onFlag} />);
+
+    await fireEvent.press(screen.getByLabelText('This looks wrong'));
+    expect(screen.queryByLabelText('Thanks for telling us')).toBeNull();
+    await act(async () => settle(false));
+    expect(screen.getByLabelText('This looks wrong')).toBeTruthy();
+
+    await fireEvent.press(screen.getByLabelText('This looks wrong'));
+    await act(async () => settle(true));
+    expect(screen.getByLabelText('Thanks for telling us')).toBeDisabled();
   });
 });

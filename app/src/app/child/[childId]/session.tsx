@@ -11,6 +11,7 @@ import {
   type FlagTarget,
   type Narrate,
 } from '../../../learning';
+import { useFlagReport } from '../../../feedback';
 import { Star } from '../../../design/Icon';
 import { ArtDisc, KidButton, KidScreen, StarPill, useKidType } from '../../../design/kid';
 import { color } from '../../../design/tokens';
@@ -58,7 +59,21 @@ export default function SessionScreen() {
     (texts, options) => (options?.replay ? speak : narrate)(texts),
     [narrate, speak],
   );
-  const onFlag = useCallback((target: FlagTarget) => void session?.flag(target), [session]);
+  const describe = useCallback(
+    (flag: FlagTarget) => {
+      if (view?.kind === 'item')
+        return { target: { kind: 'item' as const, item: view.item }, phase: view.phase };
+      if (view?.kind === 'story' && flag.contentKind === 'card') {
+        // Stories open a lesson, so their cards count toward its check.
+        const target = { kind: 'card' as const, nugget: view.nugget, cardIndex: flag.cardIndex };
+        return { target, phase: 'check' as const };
+      }
+      return null;
+    },
+    [view],
+  );
+  const saveFlag = useCallback(async (flag: FlagTarget) => session?.flag(flag), [session]);
+  const { captureRef, onFlag, sheet } = useFlagReport({ repo, childId, describe, saveFlag });
   const run = useCallback(
     (step: (s: Session) => Promise<SessionView>) => {
       if (!session) return;
@@ -115,7 +130,11 @@ export default function SessionScreen() {
 
   return (
     <SafeAreaView style={styles.screen}>
-      <QuitContext.Provider value={quit}>{body}</QuitContext.Provider>
+      {/* Not collapsable, so Android keeps a native view for the capture to read. */}
+      <View ref={captureRef} collapsable={false} style={styles.screen}>
+        <QuitContext.Provider value={quit}>{body}</QuitContext.Provider>
+      </View>
+      {sheet}
     </SafeAreaView>
   );
 }

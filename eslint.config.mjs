@@ -22,6 +22,7 @@ export default [
       'app/src/app/child/**',
       'app/src/components/**',
       'app/src/design/kid.tsx',
+      'app/src/feedback/**',
       'app/src/learning/**',
       'app/src/narration/**',
     ],

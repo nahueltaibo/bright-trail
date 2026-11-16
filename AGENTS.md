@@ -26,6 +26,8 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 ## Code Map
 
 - `feedback-worker/` — the Cloudflare Worker that takes tester reports. `POST /v1/reports` takes a multipart `report` part, checked with `ReportSchema`, and an optional PNG or JPEG `capture`. It keeps reports in D1 and captures in a private R2 bucket. Its guards: 30 requests per IP per hour, 32 KB reports, 400 KB captures, and 5,000 reports or 500 MB of captures per UTC day. A retried id answers 200 and stores nothing. Tests run the handler against Miniflare's D1 and R2 through `getPlatformProxy`. Schema changes go in a new file in `feedback-worker/migrations/`.
+- `app/src/feedback/` — the flag's report flow. A flag tap captures the session's item view, PNG first, then JPEG if the PNG passes `REPORT_CAPTURE_MAX_BYTES`. Then `ReportSheet` asks for an optional comment. Send saves the local flag and queues the report with its capture file. Closing the sheet drops both.
+- `syncFeedback()` uploads queued reports to `EXPO_PUBLIC_FEEDBACK_URL` after Send and on the child home. Without the URL, reports stay queued. A 2xx deletes the row and capture, other 4xx rejects it, and 429, 5xx, or no network keeps it for the next sync. Web makes no captures.
 - `shared/src/engine/` — learner engine: mastery, unlocks, next step. Pure TypeScript.
 - `shared/src/placement/` — adaptive placement probe.
 - `shared/src/speech/` — `toSpeech` reads math formatting aloud.

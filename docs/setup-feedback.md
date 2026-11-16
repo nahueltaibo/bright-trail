@@ -73,6 +73,16 @@ If it fails:
 - `Couldn't find a D1 DB` means `FEEDBACK_D1_DATABASE_ID` doesn't match the database.
 - A bucket error means the bucket name isn't exactly `bright-trail-feedback-captures`.
 
+## 7. Point the App at It
+
+Save the Worker's URL from step 6 as a repo variable, with no trailing path:
+
+```sh
+gh variable set EXPO_PUBLIC_FEEDBACK_URL --body "https://bright-trail-feedback.<subdomain>.workers.dev"
+```
+
+The next APK and OTA update bake it in. It's optional: without it, the app keeps flagged reports queued on the device and uploads them once a build has the URL. For a local run, set it in the shell before `npm run dev`, such as `http://localhost:8787` for the local Worker below.
+
 ## Run It Locally
 
 Wrangler keeps a local D1 and R2 in `feedback-worker/.wrangler/` (gitignored):

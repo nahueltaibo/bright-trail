@@ -22,6 +22,11 @@ export type FlagTarget =
   | { contentKind: 'card'; contentId: string; cardIndex: number }
   | { contentKind: 'item'; contentId: string; cardIndex: null };
 
+/** Handles a flag tap. A promise of false means the flag was dropped, so the button stays a flag. */
+export type FlagHandler<T extends unknown[] = [target: FlagTarget]> = (
+  ...args: T
+) => void | Promise<boolean>;
+
 /** The item's place in a fixed run of questions. `current` is 0-based. */
 export type ItemProgress = { current: number; total: number };
 
@@ -29,7 +34,7 @@ export type ItemViewProps<T extends Item = Item> = {
   item: T;
   narrate?: Narrate;
   onAnswer?: (result: AnswerResult) => void;
-  onFlag?: (target: FlagTarget) => void;
+  onFlag?: FlagHandler;
   /** The child tapped "next" after the feedback. */
   onNext?: () => void;
   /** Draws step dots in the top bar. */

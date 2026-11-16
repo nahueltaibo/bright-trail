@@ -17,7 +17,7 @@ import {
   MISS_TEXT,
   useLayout,
 } from '../theme';
-import type { ItemProgress, Narrate } from '../types';
+import type { FlagHandler, ItemProgress, Narrate } from '../types';
 import { ProgressDots } from '../../design/kid';
 import { ReadAlong } from '../ReadAlong';
 import { AmountText } from './AmountText';
@@ -62,7 +62,7 @@ export type GameFrameProps = {
     correct: boolean,
     replays: number,
   ) => void;
-  onFlag?: () => void;
+  onFlag?: FlagHandler<[]>;
   onNext?: () => void;
   progress?: ItemProgress;
 };

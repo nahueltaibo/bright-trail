@@ -4,6 +4,7 @@ import { Icon } from '../design/Icon';
 import { KidIconButton } from '../design/kid';
 import { color, font, TAP_KID } from '../design/tokens';
 import { useLayout } from './theme';
+import type { FlagHandler } from './types';
 import { Text } from '../design/Text';
 
 export { KidButton, TopRow as TopBar } from '../design/kid';
@@ -14,7 +15,7 @@ export function ReplayButton({ onPress }: { onPress: () => void }) {
 }
 
 /** "This looks wrong". Turns into a thank-you so one card can't be flagged twice by accident. */
-export function FlagButton({ onFlag }: { onFlag?: () => void }) {
+export function FlagButton({ onFlag }: { onFlag?: FlagHandler<[]> }) {
   const { scale: s } = useLayout();
   const [flagged, setFlagged] = useState(false);
   if (flagged) {
@@ -37,8 +38,9 @@ export function FlagButton({ onFlag }: { onFlag?: () => void }) {
       label="This looks wrong"
       variant="quiet"
       onPress={() => {
-        setFlagged(true);
-        onFlag?.();
+        const sent = onFlag?.();
+        if (sent instanceof Promise) void sent.then((yes) => yes && setFlagged(true));
+        else setFlagged(true);
       }}
     />
   );
