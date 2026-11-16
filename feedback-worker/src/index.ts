@@ -3,6 +3,7 @@ import { handleAdmin } from './admin';
 import { handleSignedCapture } from './captures';
 import { byMethod, json, type Env } from './env';
 import { handleReport } from './intake';
+import { isPagePath, servePage } from './page';
 import { runRetention } from './retention';
 
 export default {
@@ -11,7 +12,11 @@ export default {
     if (pathname === '/v1/reports') {
       return byMethod(request, { POST: () => handleReport(request, env) });
     }
-    if (pathname === '/admin' || pathname.startsWith('/admin/')) {
+    if (isPagePath(pathname)) {
+      const serve = () => servePage(request, env, pathname);
+      return byMethod(request, { GET: serve, HEAD: serve });
+    }
+    if (pathname.startsWith('/admin/')) {
       return handleAdmin(request, env, pathname);
     }
     const capture = /^\/captures\/([^/]+)$/.exec(pathname);

@@ -61,7 +61,12 @@ export async function startWorker() {
       .filter(Boolean);
     for (const statement of statements) await proxy.env.DB.prepare(statement).run();
   }
-  const env: Env = { DB: proxy.env.DB, CAPTURES: proxy.env.CAPTURES, FEEDBACK_ADMIN_TOKEN: TOKEN };
+  const env: Env = {
+    DB: proxy.env.DB,
+    CAPTURES: proxy.env.CAPTURES,
+    ASSETS: proxy.env.ASSETS,
+    FEEDBACK_ADMIN_TOKEN: TOKEN,
+  };
   return {
     env,
     dispose: () => proxy.dispose(),

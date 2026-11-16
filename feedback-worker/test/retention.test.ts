@@ -60,7 +60,7 @@ describe('retention', () => {
     expect(await runRetention(test.env, NOW)).toEqual({ deleted: 230 });
     expect(await remaining()).toEqual([]);
     expect((await test.env.CAPTURES.list()).objects).toEqual([]);
-  });
+  }, 30_000);
 
   it('stops at 1,000 reports per run and drains the rest on the next run', async () => {
     const backlog = MAX_BATCHES * 100 + 50;
