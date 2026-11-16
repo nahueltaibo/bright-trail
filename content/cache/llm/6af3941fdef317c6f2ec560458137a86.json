@@ -1,0 +1,83 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-cycles-tap-1",
+        "fits": true,
+        "cards": [
+          { "text": "sunset", "emoji": "🌇" },
+          { "text": "night", "emoji": "🌙" },
+          { "text": "day", "emoji": "☀️" }
+        ],
+        "missing": 2,
+        "cycle": true,
+        "note": "Gap right after night; winter is not in the row."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-6",
+        "fits": false,
+        "cards": [
+          { "text": "sunrise", "emoji": "🌅" },
+          { "text": "noon", "emoji": "☀️" },
+          { "text": "sunset", "emoji": "🌇" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Not about first, next, before, after, or last in a sequence."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-7",
+        "fits": true,
+        "cards": [
+          { "text": "leaves change color", "emoji": "🍂" },
+          { "text": "fall", "emoji": "🍁" },
+          { "text": "winter", "emoji": "⛄" },
+          { "text": "first snow", "emoji": "❄️" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Spring and summer left out since they are choices; gap right after fall."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-9",
+        "fits": true,
+        "cards": [
+          { "text": "first snow", "emoji": "❄️" },
+          { "text": "winter", "emoji": "⛄" },
+          { "text": "spring", "emoji": "🌷" },
+          { "text": "flowers bloom", "emoji": "🌸" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Fall and summer left out since they are choices; gap right after winter."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-11",
+        "fits": true,
+        "cards": [
+          { "text": "sunrise", "emoji": "🌅" },
+          { "text": "noon", "emoji": "☀️" },
+          { "text": "sunset", "emoji": "🌇" },
+          { "text": "night", "emoji": "🌙" }
+        ],
+        "missing": 3,
+        "cycle": true,
+        "note": "Day is a choice so it is replaced by sunrise, noon, sunset; night comes last."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-12",
+        "fits": true,
+        "cards": [
+          { "text": "fall", "emoji": "🍁" },
+          { "text": "winter", "emoji": "⛄" },
+          { "text": "first snow", "emoji": "❄️" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Summer and spring left out since they are choices; gap right before winter."
+      }
+    ]
+  }
+}

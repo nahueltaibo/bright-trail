@@ -1,0 +1,80 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-cycles-tap-1",
+        "fits": true,
+        "cards": [
+          { "text": "sunset", "emoji": "🌇" },
+          { "text": "night", "emoji": "🌙" },
+          { "text": "day", "emoji": "☀️" }
+        ],
+        "missing": 2,
+        "cycle": true,
+        "note": "Gap right after night; sunset leads in and day leads back around."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-6",
+        "fits": false,
+        "cards": [
+          { "text": "sunrise", "emoji": "🌅" },
+          { "text": "night", "emoji": "🌙" },
+          { "text": "day", "emoji": "☀️" }
+        ],
+        "missing": 0,
+        "cycle": true,
+        "note": "Not about first, next, before, after, or last in a sequence."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-7",
+        "fits": false,
+        "cards": [
+          { "text": "fall", "emoji": "🍂" },
+          { "text": "winter", "emoji": "❄️" },
+          { "text": "fall", "emoji": "🍂" }
+        ],
+        "missing": 1,
+        "cycle": true,
+        "note": "Row needs spring and summer, which are other choices, leaving only 2 cards."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-9",
+        "fits": false,
+        "cards": [
+          { "text": "winter", "emoji": "❄️" },
+          { "text": "spring", "emoji": "🌱" },
+          { "text": "winter", "emoji": "❄️" }
+        ],
+        "missing": 1,
+        "cycle": true,
+        "note": "Other season cards are choices (fall, summer), so only 2 cards remain."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-11",
+        "fits": false,
+        "cards": [
+          { "text": "day", "emoji": "☀️" },
+          { "text": "night", "emoji": "🌙" },
+          { "text": "day", "emoji": "☀️" }
+        ],
+        "missing": 1,
+        "cycle": true,
+        "note": "The row is day, night, day, but both choices (day, night) would appear on other cards."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-12",
+        "fits": false,
+        "cards": [
+          { "text": "fall", "emoji": "🍂" },
+          { "text": "winter", "emoji": "❄️" },
+          { "text": "snow", "emoji": "⛄" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Other seasons are choices (summer, spring), so no 3-card season row works."
+      }
+    ]
+  }
+}

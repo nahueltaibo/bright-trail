@@ -1,0 +1,16 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-hlth-food-needs-tap-4",
+        "fits": true,
+        "picture": "organs",
+        "part": "brain",
+        "others": ["heart", "lungs", "stomach"],
+        "note": "Answer is brain, an organ used for thinking."
+      }
+    ]
+  }
+}

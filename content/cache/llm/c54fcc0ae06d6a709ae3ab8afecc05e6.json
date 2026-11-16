@@ -1,0 +1,116 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-soc-events-in-order-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "last", "emoji": null },
+          { "text": "first", "emoji": null }
+        ],
+        "card": { "text": "the start", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "last" },
+          { "text": "a dog", "emoji": "🐶", "bin": "first" }
+        ],
+        "note": "Choices are words, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "a pencil", "emoji": null },
+          { "text": "a cloud", "emoji": null },
+          { "text": "learning to walk", "emoji": null }
+        ],
+        "card": { "text": "a life event", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "a pencil" },
+          { "text": "a dog", "emoji": "🐶", "bin": "a cloud" },
+          { "text": "a bird", "emoji": "🐦", "bin": "learning to walk" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "a bicycle", "emoji": null },
+          { "text": "a tricycle", "emoji": null }
+        ],
+        "card": { "text": "later", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "a bicycle" },
+          { "text": "a dog", "emoji": "🐶", "bin": "a tricycle" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "crawled", "emoji": null },
+          { "text": "stood up", "emoji": null },
+          { "text": "walked", "emoji": null }
+        ],
+        "card": { "text": "right after standing", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "crawled" },
+          { "text": "a dog", "emoji": "🐶", "bin": "stood up" },
+          { "text": "a bird", "emoji": "🐦", "bin": "walked" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "apple", "emoji": null },
+          { "text": "blue", "emoji": null },
+          { "text": "first", "emoji": null }
+        ],
+        "card": { "text": "a word showing order", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "apple" },
+          { "text": "a dog", "emoji": "🐶", "bin": "blue" },
+          { "text": "a bird", "emoji": "🐦", "bin": "first" }
+        ],
+        "note": "Choices are words, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "Grade 3", "emoji": null },
+          { "text": "Kindergarten", "emoji": null },
+          { "text": "Grade 5", "emoji": null }
+        ],
+        "card": { "text": "already happened", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "Grade 3" },
+          { "text": "a dog", "emoji": "🐶", "bin": "Kindergarten" },
+          { "text": "a bird", "emoji": "🐦", "bin": "Grade 5" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "learning to walk", "emoji": null },
+          { "text": "starting Grade 1", "emoji": null },
+          { "text": "eating lunch today", "emoji": null }
+        ],
+        "card": { "text": "the odd one out", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "learning to walk" },
+          { "text": "a dog", "emoji": "🐶", "bin": "starting Grade 1" },
+          { "text": "a bird", "emoji": "🐦", "bin": "eating lunch today" }
+        ],
+        "note": "Choices are events, not groups."
+      }
+    ]
+  }
+}

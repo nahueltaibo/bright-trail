@@ -1,0 +1,166 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-hlth-food-guide-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "pop", "emoji": null },
+          { "text": "water", "emoji": null },
+          { "text": "fruit punch", "emoji": null }
+        ],
+        "card": { "text": "drink", "emoji": null },
+        "sorted": [
+          { "text": "cola", "emoji": null, "bin": "pop" },
+          { "text": "tap water", "emoji": null, "bin": "water" },
+          { "text": "punch", "emoji": null, "bin": "fruit punch" }
+        ],
+        "note": "Choices are drinks (things), not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-guide-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "eggs", "emoji": null },
+          { "text": "a peach", "emoji": null },
+          { "text": "oatmeal", "emoji": null }
+        ],
+        "card": { "text": "protein food", "emoji": null },
+        "sorted": [
+          { "text": "milk", "emoji": null, "bin": "eggs" },
+          { "text": "an apple", "emoji": null, "bin": "a peach" },
+          { "text": "rice", "emoji": null, "bin": "oatmeal" }
+        ],
+        "note": "Choices are foods (things), not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-guide-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "apple", "emoji": null },
+          { "text": "pear", "emoji": null },
+          { "text": "bread", "emoji": null }
+        ],
+        "card": { "text": "odd one out", "emoji": null },
+        "sorted": [
+          { "text": "grape", "emoji": null, "bin": "apple" },
+          { "text": "plum", "emoji": null, "bin": "pear" },
+          { "text": "rice", "emoji": null, "bin": "bread" }
+        ],
+        "note": "Choices are foods (things), not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-guide-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "broccoli", "emoji": null },
+          { "text": "tofu", "emoji": null },
+          { "text": "oatmeal", "emoji": null }
+        ],
+        "card": { "text": "whole grain food", "emoji": null },
+        "sorted": [
+          { "text": "carrot", "emoji": null, "bin": "broccoli" },
+          { "text": "beans", "emoji": null, "bin": "tofu" },
+          { "text": "brown rice", "emoji": null, "bin": "oatmeal" }
+        ],
+        "note": "Choices are foods (things), not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-guide-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "half", "emoji": null },
+          { "text": "none", "emoji": null },
+          { "text": "one quarter", "emoji": null }
+        ],
+        "card": { "text": "whole grain foods", "emoji": null },
+        "sorted": [
+          { "text": "vegetables", "emoji": null, "bin": "half" },
+          { "text": "candy", "emoji": null, "bin": "none" },
+          { "text": "protein", "emoji": null, "bin": "one quarter" }
+        ],
+        "note": "Choices are amounts, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-guide-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "candy", "emoji": null },
+          { "text": "chips", "emoji": null },
+          { "text": "carrots and peas", "emoji": null }
+        ],
+        "card": { "text": "rice", "emoji": null },
+        "sorted": [
+          { "text": "gum", "emoji": null, "bin": "candy" },
+          { "text": "fries", "emoji": null, "bin": "chips" },
+          { "text": "corn", "emoji": null, "bin": "carrots and peas" }
+        ],
+        "note": "Choices are foods (things), not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-guide-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "only one food", "emoji": null },
+          { "text": "many kinds of food", "emoji": null }
+        ],
+        "card": { "text": "eat well", "emoji": null },
+        "sorted": [
+          { "text": "just candy", "emoji": null, "bin": "only one food" },
+          { "text": "fruit and fish", "emoji": null, "bin": "many kinds of food" }
+        ],
+        "note": "Choices are ways to eat, not groups for one thing."
+      },
+      {
+        "itemId": "g1-hlth-food-guide-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "cookies and candy", "emoji": null },
+          { "text": "chips and pop", "emoji": null },
+          { "text": "peas, brown rice, fish", "emoji": null }
+        ],
+        "card": { "text": "best plate", "emoji": null },
+        "sorted": [
+          { "text": "cake", "emoji": null, "bin": "cookies and candy" },
+          { "text": "fries", "emoji": null, "bin": "chips and pop" },
+          { "text": "beans, rice", "emoji": null, "bin": "peas, brown rice, fish" }
+        ],
+        "note": "Choices are plates (things), not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-guide-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "whole grain and protein", "emoji": null },
+          { "text": "candy and pop", "emoji": null },
+          { "text": "nothing", "emoji": null }
+        ],
+        "card": { "text": "other half", "emoji": null },
+        "sorted": [
+          { "text": "brown rice", "emoji": null, "bin": "whole grain and protein" },
+          { "text": "soda", "emoji": null, "bin": "candy and pop" },
+          { "text": "empty", "emoji": null, "bin": "nothing" }
+        ],
+        "note": "Choices are foods/things, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-guide-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "a cookie", "emoji": null },
+          { "text": "a soda", "emoji": null },
+          { "text": "carrot sticks", "emoji": null }
+        ],
+        "card": { "text": "lunch", "emoji": null },
+        "sorted": [
+          { "text": "candy", "emoji": null, "bin": "a cookie" },
+          { "text": "juice", "emoji": null, "bin": "a soda" },
+          { "text": "celery", "emoji": null, "bin": "carrot sticks" }
+        ],
+        "note": "Choices are foods (things), not groups."
+      }
+    ]
+  }
+}

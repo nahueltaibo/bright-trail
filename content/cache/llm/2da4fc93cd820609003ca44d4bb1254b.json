@@ -1,0 +1,184 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-cycles-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "a rock sitting still", "emoji": null },
+          { "text": "day and night", "emoji": null }
+        ],
+        "card": { "text": "a cycle", "emoji": null },
+        "sorted": [
+          { "text": "a ball", "emoji": null, "bin": "a rock sitting still" },
+          { "text": "seasons", "emoji": null, "bin": "day and night" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "two", "emoji": null },
+          { "text": "six", "emoji": null },
+          { "text": "four", "emoji": null }
+        ],
+        "card": { "text": "seasons in a year", "emoji": null },
+        "sorted": [
+          { "text": "a ball", "emoji": null, "bin": "two" },
+          { "text": "a cup", "emoji": null, "bin": "six" }
+        ],
+        "note": "Choices are numbers, not groups."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "winter", "emoji": null },
+          { "text": "summer", "emoji": null }
+        ],
+        "card": { "text": "cold and snowy", "emoji": null },
+        "sorted": [
+          { "text": "a hot day", "emoji": null, "bin": "summer" },
+          { "text": "a snowman", "emoji": null, "bin": "winter" }
+        ],
+        "note": "Choices are seasons answering a question, not groups."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "the first snowfall", "emoji": null },
+          { "text": "the sun comes up", "emoji": null }
+        ],
+        "card": { "text": "every day", "emoji": null },
+        "sorted": [
+          { "text": "a snowman", "emoji": null, "bin": "the first snowfall" },
+          { "text": "morning", "emoji": null, "bin": "the sun comes up" }
+        ],
+        "note": "Choices are events, not groups."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "spring", "emoji": null },
+          { "text": "summer", "emoji": null },
+          { "text": "winter", "emoji": null }
+        ],
+        "card": { "text": "season after fall", "emoji": null },
+        "sorted": [
+          { "text": "flowers", "emoji": null, "bin": "spring" },
+          { "text": "beach", "emoji": null, "bin": "summer" }
+        ],
+        "note": "Asks what comes next; choices are things."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "four seasons", "emoji": null },
+          { "text": "day and night", "emoji": null },
+          { "text": "a cup that breaks", "emoji": null }
+        ],
+        "card": { "text": "not a cycle", "emoji": null },
+        "sorted": [
+          { "text": "spring", "emoji": null, "bin": "four seasons" },
+          { "text": "the moon", "emoji": null, "bin": "day and night" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "fall", "emoji": null },
+          { "text": "spring", "emoji": null },
+          { "text": "summer", "emoji": null }
+        ],
+        "card": { "text": "season after winter", "emoji": null },
+        "sorted": [
+          { "text": "leaves", "emoji": null, "bin": "fall" },
+          { "text": "flowers", "emoji": null, "bin": "spring" }
+        ],
+        "note": "Asks what comes next; choices are things."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "night", "emoji": null },
+          { "text": "day", "emoji": null }
+        ],
+        "card": { "text": "after day", "emoji": null },
+        "sorted": [
+          { "text": "the moon", "emoji": null, "bin": "night" },
+          { "text": "the sun", "emoji": null, "bin": "day" }
+        ],
+        "note": "Asks what comes next; choices are things."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "summer", "emoji": null },
+          { "text": "spring", "emoji": null },
+          { "text": "fall", "emoji": null }
+        ],
+        "card": { "text": "season before winter", "emoji": null },
+        "sorted": [
+          { "text": "beach", "emoji": null, "bin": "summer" },
+          { "text": "flowers", "emoji": null, "bin": "spring" }
+        ],
+        "note": "Asks what comes next; choices are things."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "winter", "emoji": null },
+          { "text": "spring", "emoji": null },
+          { "text": "fall", "emoji": null }
+        ],
+        "card": { "text": "new leaves", "emoji": null },
+        "sorted": [
+          { "text": "snow", "emoji": null, "bin": "winter" },
+          { "text": "falling leaves", "emoji": null, "bin": "fall" }
+        ],
+        "note": "Choices are seasons answering a question, not groups."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "the sun comes up", "emoji": null },
+          { "text": "the sun goes down", "emoji": null }
+        ],
+        "card": { "text": "the morning", "emoji": null },
+        "sorted": [
+          { "text": "bedtime", "emoji": null, "bin": "the sun goes down" },
+          { "text": "breakfast", "emoji": null, "bin": "the sun comes up" }
+        ],
+        "note": "Choices are events, not groups."
+      },
+      {
+        "itemId": "g1-sci-cycles-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "a game", "emoji": null },
+          { "text": "a plant", "emoji": null },
+          { "text": "a cycle", "emoji": null }
+        ],
+        "card": { "text": "events that repeat", "emoji": null },
+        "sorted": [
+          { "text": "a flower", "emoji": null, "bin": "a plant" },
+          { "text": "a puzzle", "emoji": null, "bin": "a game" },
+          { "text": "seasons", "emoji": null, "bin": "a cycle" }
+        ],
+        "note": "Asks for a name; choices are things."
+      }
+    ]
+  }
+}

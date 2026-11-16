@@ -1,0 +1,154 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-hlth-food-needs-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "for energy", "emoji": null },
+          { "text": "to feel bored", "emoji": null }
+        ],
+        "card": { "text": "food", "emoji": "🍎" },
+        "sorted": [
+          { "text": "running", "emoji": "🏃", "bin": "for energy" },
+          { "text": "yawning", "emoji": "🥱", "bin": "to feel bored" }
+        ],
+        "note": "Choices are reasons, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-needs-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "a toy", "emoji": null },
+          { "text": "a blanket", "emoji": null },
+          { "text": "food", "emoji": null }
+        ],
+        "card": { "text": "energy", "emoji": "⚡" },
+        "sorted": [
+          { "text": "a ball", "emoji": "⚽", "bin": "a toy" },
+          { "text": "a quilt", "emoji": "🛏️", "bin": "a blanket" },
+          { "text": "an apple", "emoji": "🍎", "bin": "food" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-needs-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "look at clouds", "emoji": null },
+          { "text": "eat a snack", "emoji": null }
+        ],
+        "card": { "text": "get energy", "emoji": "⚡" },
+        "sorted": [
+          { "text": "watch birds", "emoji": "🐦", "bin": "look at clouds" },
+          { "text": "eat fruit", "emoji": "🍌", "bin": "eat a snack" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-needs-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "to help our bones grow", "emoji": null },
+          { "text": "to make our shoes fit", "emoji": null }
+        ],
+        "card": { "text": "eating food", "emoji": "🍽️" },
+        "sorted": [
+          { "text": "drink milk", "emoji": "🥛", "bin": "to help our bones grow" },
+          { "text": "wear shoes", "emoji": "👟", "bin": "to make our shoes fit" }
+        ],
+        "note": "Choices are reasons, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-needs-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "energy", "emoji": null },
+          { "text": "strong muscles", "emoji": null },
+          { "text": "a new bike", "emoji": null }
+        ],
+        "card": { "text": "food", "emoji": "🍎" },
+        "sorted": [
+          { "text": "running", "emoji": "🏃", "bin": "energy" },
+          { "text": "lifting", "emoji": "💪", "bin": "strong muscles" },
+          { "text": "a bike", "emoji": "🚲", "bin": "a new bike" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-needs-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "a shoe", "emoji": null },
+          { "text": "a hat", "emoji": null },
+          { "text": "your skin", "emoji": null }
+        ],
+        "card": { "text": "food", "emoji": "🍎" },
+        "sorted": [
+          { "text": "a sneaker", "emoji": "👟", "bin": "a shoe" },
+          { "text": "a cap", "emoji": "🧢", "bin": "a hat" },
+          { "text": "a hand", "emoji": "✋", "bin": "your skin" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-needs-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "his body needs energy", "emoji": null },
+          { "text": "it is too sunny", "emoji": null }
+        ],
+        "card": { "text": "feeling weak", "emoji": "😞" },
+        "sorted": [
+          { "text": "empty tummy", "emoji": "🍽️", "bin": "his body needs energy" },
+          { "text": "bright sun", "emoji": "☀️", "bin": "it is too sunny" }
+        ],
+        "note": "Choices are reasons, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-needs-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "no one", "emoji": null },
+          { "text": "a trusted adult", "emoji": null }
+        ],
+        "card": { "text": "a hungry child", "emoji": "🧒" },
+        "sorted": [
+          { "text": "nobody", "emoji": "🚫", "bin": "no one" },
+          { "text": "a teacher", "emoji": "🧑‍🏫", "bin": "a trusted adult" }
+        ],
+        "note": "Choices are people, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-needs-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "move", "emoji": null },
+          { "text": "hear", "emoji": null }
+        ],
+        "card": { "text": "muscles", "emoji": "💪" },
+        "sorted": [
+          { "text": "walking", "emoji": "🚶", "bin": "move" },
+          { "text": "an ear", "emoji": "👂", "bin": "hear" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-hlth-food-needs-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "body still needs energy", "emoji": null },
+          { "text": "only when we run", "emoji": null }
+        ],
+        "card": { "text": "resting", "emoji": "🛋️" },
+        "sorted": [
+          { "text": "sleeping", "emoji": "😴", "bin": "body still needs energy" },
+          { "text": "racing", "emoji": "🏃", "bin": "only when we run" }
+        ],
+        "note": "Choices are reasons, not groups."
+      }
+    ]
+  }
+}

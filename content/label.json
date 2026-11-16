@@ -1,1 +1,75 @@
-{}
+{
+  "g1-hlth-food-needs-tap-4": {
+    "kind": "label",
+    "picture": "organs",
+    "tags": [
+      { "part": "brain", "text": "your brain" },
+      { "part": "lungs", "text": "lungs" },
+      { "part": "heart", "text": "heart" },
+      { "part": "stomach", "text": "stomach" }
+    ],
+    "asked": 0
+  },
+  "g1-sci-plant-animal-features-tap-7": {
+    "kind": "label",
+    "picture": "plant",
+    "tags": [
+      { "part": "flower", "text": "flower" },
+      { "part": "stem", "text": "stem" },
+      { "part": "roots", "text": "roots" },
+      { "part": "seed", "text": "seed" }
+    ],
+    "asked": 2
+  },
+  "g2-sci-depend-air-water-tap-7": {
+    "kind": "label",
+    "picture": "plant",
+    "tags": [
+      { "part": "leaf", "text": "leaf" },
+      { "part": "stem", "text": "stem" },
+      { "part": "roots", "text": "the roots" }
+    ],
+    "asked": 2
+  },
+  "g3-sci-plant-parts-tap-1": {
+    "kind": "label",
+    "picture": "plant",
+    "tags": [
+      { "part": "leaf", "text": "leaf" },
+      { "part": "stem", "text": "stem" },
+      { "part": "roots", "text": "the roots" },
+      { "part": "seed", "text": "seed" }
+    ],
+    "asked": 2
+  },
+  "g3-sci-plant-parts-tap-15": {
+    "kind": "label",
+    "picture": "plant",
+    "tags": [
+      { "part": "flower", "text": "flower" },
+      { "part": "leaf", "text": "leaf" },
+      { "part": "stem", "text": "a stem" }
+    ],
+    "asked": 2
+  },
+  "g3-sci-plant-parts-tap-2": {
+    "kind": "label",
+    "picture": "plant",
+    "tags": [
+      { "part": "flower", "text": "flower" },
+      { "part": "leaf", "text": "the leaf" },
+      { "part": "stem", "text": "stem" }
+    ],
+    "asked": 1
+  },
+  "g3-sci-plant-parts-tap-6": {
+    "kind": "label",
+    "picture": "plant",
+    "tags": [
+      { "part": "leaf", "text": "leaf" },
+      { "part": "stem", "text": "the stem" },
+      { "part": "roots", "text": "roots" }
+    ],
+    "asked": 1
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-8",
+        "fits": false,
+        "picture": "plant",
+        "part": "stem",
+        "others": ["leaf"],
+        "note": "Asks which thing is a liquid, not which part of a picture; choices (lake, tree, stone) are not parts."
+      }
+    ]
+  }
+}

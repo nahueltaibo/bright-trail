@@ -1,0 +1,156 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "sunlight", "emoji": "☀️" },
+          { "text": "water", "emoji": "💧" }
+        ],
+        "card": { "text": "roots", "emoji": "🌱" },
+        "sorted": [
+          { "text": "rain", "emoji": "🌧️", "bin": "water" },
+          { "text": "the sun", "emoji": "☀️", "bin": "sunlight" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-2",
+        "fits": false,
+        "bins": [
+          { "text": "warm", "emoji": "🔥" },
+          { "text": "wet", "emoji": "💧" }
+        ],
+        "card": { "text": "fur", "emoji": "🐰" },
+        "sorted": [
+          { "text": "a coat", "emoji": "🧥", "bin": "warm" },
+          { "text": "a puddle", "emoji": "💧", "bin": "wet" }
+        ],
+        "note": "Choices are results, not groups."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "roots", "emoji": "🌱" },
+          { "text": "wings", "emoji": "🪽" }
+        ],
+        "card": { "text": "a bird", "emoji": "🐦" },
+        "sorted": [
+          { "text": "a tree", "emoji": "🌳", "bin": "roots" },
+          { "text": "a bat", "emoji": "🦇", "bin": "wings" }
+        ],
+        "note": "Choices are body parts, things, not groups."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "a dog", "emoji": "🐶" },
+          { "text": "a cow", "emoji": "🐮" },
+          { "text": "a fish", "emoji": "🐟" }
+        ],
+        "card": { "text": "fins", "emoji": null },
+        "sorted": [
+          { "text": "a puppy", "emoji": "🐶", "bin": "a dog" },
+          { "text": "a calf", "emoji": "🐮", "bin": "a cow" },
+          { "text": "a goldfish", "emoji": "🐠", "bin": "a fish" }
+        ],
+        "note": "Choices are animals, not groups."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "swim", "emoji": "🏊" },
+          { "text": "climb trees", "emoji": "🧗" }
+        ],
+        "card": { "text": "webbed feet", "emoji": "🦆" },
+        "sorted": [
+          { "text": "a fish", "emoji": "🐟", "bin": "swim" },
+          { "text": "a monkey", "emoji": "🐒", "bin": "climb trees" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-9",
+        "fits": true,
+        "bins": [
+          { "text": "dry", "emoji": "🏜️" },
+          { "text": "wet", "emoji": "🌧️" }
+        ],
+        "card": { "text": "a cactus", "emoji": "🌵" },
+        "sorted": [
+          { "text": "a camel", "emoji": "🐪", "bin": "dry" },
+          { "text": "a desert", "emoji": "🏜️", "bin": "dry" },
+          { "text": "a frog", "emoji": "🐸", "bin": "wet" },
+          { "text": "a fish", "emoji": "🐟", "bin": "wet" }
+        ],
+        "note": "A cactus lives in a dry place."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "stay warm", "emoji": "🧣" },
+          { "text": "eat food", "emoji": "🍽️" }
+        ],
+        "card": { "text": "a beak", "emoji": "🐦" },
+        "sorted": [
+          { "text": "a scarf", "emoji": "🧣", "bin": "stay warm" },
+          { "text": "a fork", "emoji": "🍴", "bin": "eat food" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "a tail", "emoji": "🐕" },
+          { "text": "eyes", "emoji": "👀" },
+          { "text": "fur", "emoji": "🐻" }
+        ],
+        "card": { "text": "danger", "emoji": null },
+        "sorted": [
+          { "text": "a wagging tail", "emoji": "🐕", "bin": "a tail" },
+          { "text": "glasses", "emoji": "👓", "bin": "eyes" },
+          { "text": "a fuzzy coat", "emoji": "🧥", "bin": "fur" }
+        ],
+        "note": "Choices are body parts, not groups."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "fly", "emoji": "🕊️" },
+          { "text": "stay safe", "emoji": "🛡️" }
+        ],
+        "card": { "text": "a shell", "emoji": "🐢" },
+        "sorted": [
+          { "text": "a kite", "emoji": "🪁", "bin": "fly" },
+          { "text": "a helmet", "emoji": "⛑️", "bin": "stay safe" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "a duck", "emoji": "🦆" },
+          { "text": "a fish", "emoji": "🐟" },
+          { "text": "a mole", "emoji": "🐭" }
+        ],
+        "card": { "text": "big claws", "emoji": null },
+        "sorted": [
+          { "text": "a mallard", "emoji": "🦆", "bin": "a duck" },
+          { "text": "a goldfish", "emoji": "🐠", "bin": "a fish" },
+          { "text": "a digger", "emoji": "🐭", "bin": "a mole" }
+        ],
+        "note": "Choices are animals, not groups."
+      }
+    ]
+  }
+}

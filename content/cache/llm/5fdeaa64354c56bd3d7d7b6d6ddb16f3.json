@@ -1,0 +1,80 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-life-cycles-tap-1",
+        "fits": false,
+        "cards": [
+          { "text": "an egg", "emoji": "🥚" },
+          { "text": "a pupa", "emoji": null },
+          { "text": "a moth", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Other stages are choices (caterpillar, adult butterfly); no 3-card row can leave them out."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-6",
+        "fits": false,
+        "cards": [
+          { "text": "a caterpillar", "emoji": "🐛" },
+          { "text": "a pupa", "emoji": null },
+          { "text": "a butterfly", "emoji": "🦋" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Asks which stage is in the shell, not first/next/before/after/last."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-7",
+        "fits": true,
+        "cards": [
+          { "text": "a tadpole", "emoji": "🐟" },
+          { "text": "a froglet", "emoji": "🐸" },
+          { "text": "an adult frog", "emoji": "🐸" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Gap right after tadpole; egg and pupa left out."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "a caterpillar", "emoji": "🐛" },
+          { "text": "a pupa", "emoji": null },
+          { "text": "a butterfly", "emoji": "🦋" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Asks which animal has a stage, not an order."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-10",
+        "fits": false,
+        "cards": [
+          { "text": "a chick", "emoji": "🐥" },
+          { "text": "an adult bird", "emoji": "🐦" },
+          { "text": "a nest", "emoji": "🪹" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Asks which stage does something, not an order question."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-15",
+        "fits": false,
+        "cards": [
+          { "text": "a tadpole", "emoji": "🐟" },
+          { "text": "a frog", "emoji": "🐸" },
+          { "text": "an egg", "emoji": "🥚" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Asks which stage can lay eggs, not an order question."
+      }
+    ]
+  }
+}

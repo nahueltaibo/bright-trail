@@ -1,0 +1,32 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-3",
+        "fits": false,
+        "picture": "insect",
+        "part": "wings",
+        "others": ["head"],
+        "note": "About a bird's wings, not the insect picture."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-7",
+        "fits": true,
+        "picture": "plant",
+        "part": "roots",
+        "others": ["flower", "stem", "seed"],
+        "note": "Leaf is a choice, so it is left out of the hints."
+      },
+      {
+        "itemId": "g1-sci-plant-animal-features-tap-13",
+        "fits": false,
+        "picture": "plant",
+        "part": "stem",
+        "others": ["flower"],
+        "note": "Asks which choice is not a plant part, so it does not ask for one part."
+      }
+    ]
+  }
+}

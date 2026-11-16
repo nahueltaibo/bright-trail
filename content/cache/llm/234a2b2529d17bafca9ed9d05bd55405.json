@@ -1,0 +1,40 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-sci-plant-parts-tap-1",
+        "fits": true,
+        "picture": "plant",
+        "part": "roots",
+        "others": ["leaf", "stem", "seed"],
+        "note": "Roots hold the plant in soil; flower is a choice so left out."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-2",
+        "fits": true,
+        "picture": "plant",
+        "part": "leaf",
+        "others": ["flower", "stem"],
+        "note": "Root and seed are choices so left out."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-6",
+        "fits": true,
+        "picture": "plant",
+        "part": "stem",
+        "others": ["leaf", "roots"],
+        "note": "Flower and seed are choices so left out."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-15",
+        "fits": true,
+        "picture": "plant",
+        "part": "stem",
+        "others": ["leaf", "flower"],
+        "note": "Root and seed are choices so left out."
+      }
+    ]
+  }
+}

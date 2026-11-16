@@ -1,0 +1,104 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-design-steps-tap-1",
+        "fits": true,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "share it", "emoji": "📣" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "First slot empty; test and make it better left out."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-2",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "💧" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Asks to identify a step, not first, next, before, after or last."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-3",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "💧" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Asks to identify a step, not a position in the sequence."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "💧" },
+          { "text": "make it better", "emoji": "🔧" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Gap right after build; plan and buy a toy left out."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "think what to use", "emoji": "💭" },
+          { "text": "tape the pieces", "emoji": "🔨" },
+          { "text": "float it in water", "emoji": "💧" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Asks which action belongs to a step, not an order question."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-9",
+        "fits": true,
+        "cards": [
+          { "text": "ask a question", "emoji": "❓" },
+          { "text": "test", "emoji": "💧" },
+          { "text": "make it better", "emoji": "🔧" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Last slot empty; plan and build left out."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-12",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "💧" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Choices are whole lists, not a single step for one slot."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-14",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "test", "emoji": "💧" },
+          { "text": "make it better", "emoji": "🔧" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Asks to identify a step from a situation, not a position question."
+      }
+    ]
+  }
+}

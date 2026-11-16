@@ -1,0 +1,152 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-sci-plant-needs-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "water", "emoji": "💧" },
+          { "text": "a toy", "emoji": "🧸" },
+          { "text": "a hat", "emoji": "🎩" }
+        ],
+        "card": { "text": "water", "emoji": "💧" },
+        "sorted": [
+          { "text": "rain", "emoji": "🌧️", "bin": "water" },
+          { "text": "a ball", "emoji": "⚽", "bin": "a toy" },
+          { "text": "a cap", "emoji": "🧢", "bin": "a hat" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-needs-tap-2",
+        "fits": false,
+        "bins": [
+          { "text": "a shoe", "emoji": "👟" },
+          { "text": "a spoon", "emoji": "🥄" },
+          { "text": "the sun", "emoji": "☀️" }
+        ],
+        "card": { "text": "the sun", "emoji": "☀️" },
+        "sorted": [
+          { "text": "a boot", "emoji": "🥾", "bin": "a shoe" },
+          { "text": "a fork", "emoji": "🍴", "bin": "a spoon" },
+          { "text": "a star", "emoji": "⭐", "bin": "the sun" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-needs-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "music", "emoji": "🎵" },
+          { "text": "toys", "emoji": "🧸" },
+          { "text": "nutrients", "emoji": "🌱" }
+        ],
+        "card": { "text": "nutrients", "emoji": "🌱" },
+        "sorted": [
+          { "text": "a song", "emoji": "🎶", "bin": "music" },
+          { "text": "blocks", "emoji": "🧱", "bin": "toys" },
+          { "text": "plant food", "emoji": "🪴", "bin": "nutrients" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-needs-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "light and heat", "emoji": "☀️" },
+          { "text": "music and toys", "emoji": "🎵" },
+          { "text": "a shoe and a spoon", "emoji": "👟" }
+        ],
+        "card": { "text": "light and heat", "emoji": "☀️" },
+        "sorted": [
+          { "text": "a warm lamp", "emoji": "💡", "bin": "light and heat" },
+          { "text": "a drum and doll", "emoji": "🥁", "bin": "music and toys" },
+          { "text": "a sock and fork", "emoji": "🧦", "bin": "a shoe and a spoon" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-needs-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "a sunny window", "emoji": "🪟" },
+          { "text": "a drink of water", "emoji": "💧" },
+          { "text": "a freezing cold night", "emoji": "🥶" }
+        ],
+        "card": { "text": "a freezing cold night", "emoji": "🥶" },
+        "sorted": [
+          { "text": "bright sun", "emoji": "🌞", "bin": "a sunny window" },
+          { "text": "a watering can", "emoji": "🚿", "bin": "a drink of water" },
+          { "text": "snow storm", "emoji": "❄️", "bin": "a freezing cold night" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-needs-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "snow", "emoji": "❄️" },
+          { "text": "nutrients", "emoji": "🌱" },
+          { "text": "a cage", "emoji": "🪤" }
+        ],
+        "card": { "text": "nutrients", "emoji": "🌱" },
+        "sorted": [
+          { "text": "ice", "emoji": "🧊", "bin": "snow" },
+          { "text": "plant food", "emoji": "🪴", "bin": "nutrients" },
+          { "text": "a fence", "emoji": "🚧", "bin": "a cage" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-needs-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "it gets more light", "emoji": "💡" },
+          { "text": "it gets more heat", "emoji": "🔥" },
+          { "text": "the roots get harmed", "emoji": "🥀" }
+        ],
+        "card": { "text": "water that never drains", "emoji": "💧" },
+        "sorted": [
+          { "text": "a bright lamp", "emoji": "💡", "bin": "it gets more light" },
+          { "text": "a warm oven", "emoji": "♨️", "bin": "it gets more heat" },
+          { "text": "a wilted plant", "emoji": "🥀", "bin": "the roots get harmed" }
+        ],
+        "note": "Choices are outcomes, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-needs-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "music", "emoji": "🎵" },
+          { "text": "sand", "emoji": "🏖️" },
+          { "text": "light", "emoji": "💡" }
+        ],
+        "card": { "text": "light", "emoji": "💡" },
+        "sorted": [
+          { "text": "a song", "emoji": "🎶", "bin": "music" },
+          { "text": "a beach", "emoji": "🏝️", "bin": "sand" },
+          { "text": "sunshine", "emoji": "☀️", "bin": "light" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-needs-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "cover it with a box", "emoji": "📦" },
+          { "text": "take away its water", "emoji": "🚱" },
+          { "text": "move it to a window", "emoji": "🪟" }
+        ],
+        "card": { "text": "a weak plant", "emoji": "🪴" },
+        "sorted": [
+          { "text": "hide it in a bag", "emoji": "🛍️", "bin": "cover it with a box" },
+          { "text": "stop watering", "emoji": "🚫", "bin": "take away its water" },
+          { "text": "put in the sun", "emoji": "☀️", "bin": "move it to a window" }
+        ],
+        "note": "Choices are actions, not groups."
+      }
+    ]
+  }
+}

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 5,
   "version": "2026.11.16-72",
-  "generatedAt": "2026-11-16T00:45:39Z",
+  "generatedAt": "2026-11-16T01:50:54Z",
   "skills": [
     {
       "id": "k-count-to-20",
@@ -17940,6 +17940,15 @@
       "narration": "Mia wants to make a boat. What does she do first: plan, test, or make it better?",
       "prompt": "What is the first step?",
       "why": "Mia plans first. She thinks about what to use before she builds anything.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "share it", "emoji": "🤝" }
+        ],
+        "missing": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "test" },
@@ -17955,6 +17964,21 @@
       "narration": "Mia uses tape and a foam tray to put her boat together. Which step is that: plan, build, or test?",
       "prompt": "Which step is this?",
       "why": "Putting the pieces together is the build step. Mia makes her boat.",
+      "game": {
+        "kind": "sort",
+        "bins": [
+          { "text": "build", "emoji": "🔨" },
+          { "text": "plan", "emoji": "📝" },
+          { "text": "test", "emoji": "🔍" }
+        ],
+        "sorted": [
+          { "card": { "text": "cut the pieces", "emoji": "✂️" }, "bin": 0 },
+          { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 1 },
+          { "card": { "text": "try it out", "emoji": "🔍" }, "bin": 2 }
+        ],
+        "card": { "text": "put her boat together", "emoji": "⛵" },
+        "bin": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "build" },
@@ -17970,6 +17994,21 @@
       "narration": "Mia puts her boat in water to see if it floats. Which step is that: build, test, or plan?",
       "prompt": "Which step is this?",
       "why": "Trying it out is the test step. Mia sees if her boat floats.",
+      "game": {
+        "kind": "sort",
+        "bins": [
+          { "text": "build", "emoji": "🔨" },
+          { "text": "plan", "emoji": "📝" },
+          { "text": "test", "emoji": "🔍" }
+        ],
+        "sorted": [
+          { "card": { "text": "stack the blocks", "emoji": "🧱" }, "bin": 0 },
+          { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 1 },
+          { "card": { "text": "drop it to check", "emoji": "🔍" }, "bin": 2 }
+        ],
+        "card": { "text": "puts her boat in water", "emoji": "💧" },
+        "bin": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "build" },
@@ -18015,6 +18054,15 @@
       "narration": "Mia has built her boat. What step comes next: plan, test, or buy a toy?",
       "prompt": "What comes after build?",
       "why": "After we build, we test. Testing shows if the boat floats.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" },
+          { "text": "make it better", "emoji": "🔧" }
+        ],
+        "missing": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "plan" },
@@ -18059,6 +18107,15 @@
       "narration": "Mia plans, builds, and tests. What step comes last: plan, build, or make it better?",
       "prompt": "What comes last?",
       "why": "After the test, we make it better. Then we can test again.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "find a problem", "emoji": "🔍" },
+          { "text": "test", "emoji": "🧪" },
+          { "text": "make it better", "emoji": "🔧" }
+        ],
+        "missing": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "make it better" },
@@ -18133,6 +18190,21 @@
       "narration": "Kai's cup holder tipped over. He gives it a wide base. Which step is the wide base: plan, test, or make it better?",
       "prompt": "Which step is this?",
       "why": "After a test, we change the thing to fix it. That is make it better.",
+      "game": {
+        "kind": "sort",
+        "bins": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "test", "emoji": "🔍" },
+          { "text": "make it better", "emoji": "🔧" }
+        ],
+        "sorted": [
+          { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 0 },
+          { "card": { "text": "try it out", "emoji": "🔍" }, "bin": 1 },
+          { "card": { "text": "add more tape", "emoji": "📎" }, "bin": 2 }
+        ],
+        "card": { "text": "a wide base", "emoji": "🥤" },
+        "bin": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "plan" },
@@ -18475,6 +18547,17 @@
       "narration": "Which plant part holds the plant in the soil: leaves, roots, or petals?",
       "prompt": "What holds a plant in place?",
       "why": "Roots grow into the soil. They hold the plant up so it does not fall.",
+      "game": {
+        "kind": "label",
+        "picture": "plant",
+        "tags": [
+          { "part": "flower", "text": "flower" },
+          { "part": "stem", "text": "stem" },
+          { "part": "roots", "text": "roots" },
+          { "part": "seed", "text": "seed" }
+        ],
+        "asked": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "leaves" },
@@ -18506,6 +18589,21 @@
       "narration": "A cactus has a thick stem that holds water. This helps it live in a place that is dry, or wet?",
       "prompt": "Where can a cactus live?",
       "why": "A cactus stores water in its stem. That helps it live where it is dry.",
+      "game": {
+        "kind": "sort",
+        "bins": [
+          { "text": "dry", "emoji": "🏜️" },
+          { "text": "wet", "emoji": "🌧️" }
+        ],
+        "sorted": [
+          { "card": { "text": "a camel", "emoji": "🐪" }, "bin": 0 },
+          { "card": { "text": "a desert", "emoji": "🏜️" }, "bin": 0 },
+          { "card": { "text": "a frog", "emoji": "🐸" }, "bin": 1 },
+          { "card": { "text": "a fish", "emoji": "🐟" }, "bin": 1 }
+        ],
+        "card": { "text": "a cactus", "emoji": "🌵" },
+        "bin": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "dry" },
@@ -19313,6 +19411,16 @@
       "narration": "Mia sees night. What comes after night: day, or winter?",
       "prompt": "What comes after night?",
       "why": "After night, the sun comes up and a new day starts. Day and night repeat.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "sunset", "emoji": "🌇" },
+          { "text": "night", "emoji": "🌙" },
+          { "text": "day", "emoji": "☀️" }
+        ],
+        "missing": 2,
+        "cycle": true
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "day" },
@@ -19398,6 +19506,16 @@
       "narration": "The seasons go spring, summer, fall. What season comes next: winter, spring, or summer?",
       "prompt": "Spring, summer, fall, then?",
       "why": "Winter comes after fall. Then spring comes back and the cycle starts again.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "leaves change color", "emoji": "🍂" },
+          { "text": "fall", "emoji": "🍁" },
+          { "text": "winter", "emoji": "⛄" },
+          { "text": "first snow", "emoji": "❄️" }
+        ],
+        "missing": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "spring" },
@@ -19428,6 +19546,16 @@
       "narration": "After winter, what season comes next: spring, fall, or summer?",
       "prompt": "What comes after winter?",
       "why": "Spring comes after winter. The seasons go around and around.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "first snow", "emoji": "❄️" },
+          { "text": "winter", "emoji": "⛄" },
+          { "text": "spring", "emoji": "🌷" },
+          { "text": "flowers bloom", "emoji": "🌸" }
+        ],
+        "missing": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "fall" },
@@ -19457,6 +19585,17 @@
       "narration": "Day, night, day. What comes next: night, or day?",
       "prompt": "Day, night, day, then?",
       "why": "The pattern goes day, night, day, night. After day, night comes next.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "sunrise", "emoji": "🌅" },
+          { "text": "noon", "emoji": "☀️" },
+          { "text": "sunset", "emoji": "🌇" },
+          { "text": "night", "emoji": "🌙" }
+        ],
+        "missing": 3,
+        "cycle": true
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "night" },
@@ -19471,6 +19610,15 @@
       "narration": "Leaves fall off many trees in fall. What season comes just before winter: summer, fall, or spring?",
       "prompt": "What comes just before winter?",
       "why": "Fall comes just before winter. The order is spring, summer, fall, winter.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "fall", "emoji": "🍁" },
+          { "text": "winter", "emoji": "⛄" },
+          { "text": "first snow", "emoji": "❄️" }
+        ],
+        "missing": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "summer" },
@@ -19662,6 +19810,22 @@
       "narration": "Mia sees that a giraffe is tall and a mouse is tiny. What is she comparing: size, covering, or sound?",
       "prompt": "What is she comparing?",
       "why": "Tall and tiny are about how big an animal is. That is size.",
+      "game": {
+        "kind": "sort",
+        "bins": [
+          { "text": "covering", "emoji": "🧥" },
+          { "text": "size", "emoji": "📏" },
+          { "text": "sound", "emoji": "🔊" }
+        ],
+        "sorted": [
+          { "card": { "text": "fur", "emoji": "🧶" }, "bin": 0 },
+          { "card": { "text": "feathers", "emoji": "🪶" }, "bin": 0 },
+          { "card": { "text": "big", "emoji": "🐘" }, "bin": 1 },
+          { "card": { "text": "roar", "emoji": "🦁" }, "bin": 2 }
+        ],
+        "card": { "text": "tall", "emoji": "🦒" },
+        "bin": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "covering" },
@@ -19708,6 +19872,15 @@
       "narration": "What comes first as a duckling grows: fluffy down, or adult feathers?",
       "prompt": "What comes first?",
       "why": "A duckling starts with fluffy down. Adult feathers grow in later.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "fluffy down", "emoji": "🐥" },
+          { "text": "first new feathers", "emoji": "🪶" },
+          { "text": "full-grown duck", "emoji": "🦆" }
+        ],
+        "missing": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "adult feathers" },
@@ -20032,6 +20205,21 @@
       "narration": "A brick is used to build walls. Is a brick a liquid or a solid?",
       "prompt": "A brick is a...",
       "why": "A brick keeps its own shape and does not pour. That makes it a solid.",
+      "game": {
+        "kind": "sort",
+        "bins": [
+          { "text": "liquid", "emoji": "💧" },
+          { "text": "solid", "emoji": "🧱" }
+        ],
+        "sorted": [
+          { "card": { "text": "water", "emoji": "💧" }, "bin": 0 },
+          { "card": { "text": "milk", "emoji": "🥛" }, "bin": 0 },
+          { "card": { "text": "a rock", "emoji": "🪨" }, "bin": 1 },
+          { "card": { "text": "a chair", "emoji": "🪑" }, "bin": 1 }
+        ],
+        "card": { "text": "a brick" },
+        "bin": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "liquid" },
@@ -20526,6 +20714,16 @@
       "narration": "Which part of a plant drinks water from the soil: the roots, the petals, or the fruit?",
       "prompt": "Which part drinks water?",
       "why": "Roots grow in the soil. They drink water and send it up the plant.",
+      "game": {
+        "kind": "label",
+        "picture": "plant",
+        "tags": [
+          { "part": "leaf", "text": "leaf" },
+          { "part": "stem", "text": "stem" },
+          { "part": "roots", "text": "the roots" }
+        ],
+        "asked": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "the petals" },
@@ -20600,6 +20798,15 @@
       "narration": "Mia pours water on the soil. What does the plant do next: its roots take in water, its leaves fall off, or it starts to sing?",
       "prompt": "What happens next?",
       "why": "After Mia waters the soil, the roots take in the water. Then the plant can use it.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "Mia pours water", "emoji": "🚿" },
+          { "text": "its roots take in water", "emoji": "🌱" },
+          { "text": "plant grows taller", "emoji": "🪴" }
+        ],
+        "missing": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "its leaves fall off" },
@@ -20885,6 +21092,17 @@
       "narration": "Which part of a plant holds it in the soil: the roots, the flower, or the cone?",
       "prompt": "What holds the plant in the soil?",
       "why": "Roots grow down into the soil. They hold the plant in place and take in water.",
+      "game": {
+        "kind": "label",
+        "picture": "plant",
+        "tags": [
+          { "part": "leaf", "text": "leaf" },
+          { "part": "stem", "text": "stem" },
+          { "part": "roots", "text": "the roots" },
+          { "part": "seed", "text": "seed" }
+        ],
+        "asked": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "the roots" },
@@ -20900,6 +21118,16 @@
       "narration": "Which part of a plant uses sunlight to make food: the root, the leaf, or the seed?",
       "prompt": "Which part makes food?",
       "why": "Leaves use sunlight, air, and water to make food for the plant.",
+      "game": {
+        "kind": "label",
+        "picture": "plant",
+        "tags": [
+          { "part": "flower", "text": "flower" },
+          { "part": "leaf", "text": "the leaf" },
+          { "part": "stem", "text": "stem" }
+        ],
+        "asked": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "the root" },
@@ -20959,6 +21187,16 @@
       "narration": "Which part carries water from the roots up to the leaves: the stem, the flower, or the seed?",
       "prompt": "What carries water up?",
       "why": "The stem works like a straw. It carries water from the roots up to the leaves.",
+      "game": {
+        "kind": "label",
+        "picture": "plant",
+        "tags": [
+          { "part": "leaf", "text": "leaf" },
+          { "part": "stem", "text": "the stem" },
+          { "part": "roots", "text": "roots" }
+        ],
+        "asked": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "the stem" },
@@ -21050,6 +21288,15 @@
       "narration": "Mia plants a bean seed. What happens first as it starts to grow: roots grow down, a flower opens, or fruit forms?",
       "prompt": "What happens first?",
       "why": "A seed sprouts roots first. They take in water. Flowers and fruit come much later.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "roots grow down", "emoji": "🌱" },
+          { "text": "stem grows up", "emoji": "🌿" },
+          { "text": "leaves grow out", "emoji": "🍃" }
+        ],
+        "missing": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "a flower opens" },
@@ -21095,6 +21342,16 @@
       "narration": "Mia eats an asparagus spear for dinner. It is a young shoot of the plant. Which plant part is it: a stem, a root, or a seed?",
       "prompt": "Which plant part is asparagus?",
       "why": "An asparagus spear is a young stem. Stems hold plants up and carry water.",
+      "game": {
+        "kind": "label",
+        "picture": "plant",
+        "tags": [
+          { "part": "flower", "text": "flower" },
+          { "part": "leaf", "text": "leaf" },
+          { "part": "stem", "text": "a stem" }
+        ],
+        "asked": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "a root" },
@@ -21110,6 +21367,15 @@
       "narration": "Which happens first in a life: being a baby, or being in Grade 1?",
       "prompt": "What happens first?",
       "why": "Everyone starts as a baby. Grade 1 comes much later, when a child is about 6.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "being a baby", "emoji": "👶" },
+          { "text": "learned to walk", "emoji": "🚶" },
+          { "text": "started Kindergarten", "emoji": "🎒" }
+        ],
+        "missing": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "being a baby" },
@@ -21124,6 +21390,15 @@
       "narration": "Sam learned to walk. Sam also started Kindergarten. Which did Sam do first: learned to walk, or started Kindergarten?",
       "prompt": "Which came first?",
       "why": "Children learn to walk when they are very little. Kindergarten comes later.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "learned to walk", "emoji": "🚶" },
+          { "text": "started Grade 1", "emoji": "📚" },
+          { "text": "started Grade 2", "emoji": "✏️" }
+        ],
+        "missing": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "started Kindergarten" },
@@ -21181,6 +21456,15 @@
       "narration": "Sam went to daycare, then Kindergarten, then Grade 1. Which came after Kindergarten: daycare, or Grade 1?",
       "prompt": "What came after Kindergarten?",
       "why": "Sam went to daycare first. Kindergarten came next. Grade 1 came after that.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "Kindergarten", "emoji": "🎒" },
+          { "text": "Grade 1", "emoji": "📚" },
+          { "text": "Grade 2", "emoji": "✏️" }
+        ],
+        "missing": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "daycare" },
@@ -21253,6 +21537,15 @@
       "narration": "Sam learned to walk, then went to Kindergarten, then started Grade 1. What came between walking and Grade 1: Kindergarten, being a baby, or Grade 2?",
       "prompt": "What came in the middle?",
       "why": "The order was walking, Kindergarten, then Grade 1. Kindergarten is in the middle.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "learned to walk", "emoji": "🚶" },
+          { "text": "Kindergarten", "emoji": "🎒" },
+          { "text": "started Grade 1", "emoji": "📚" }
+        ],
+        "missing": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "being a baby" },
@@ -21283,6 +21576,15 @@
       "narration": "Zoe is in Grade 1. Which will happen next in school for Zoe: Grade 2, Kindergarten, or daycare?",
       "prompt": "What is next for Zoe?",
       "why": "After Grade 1 comes Grade 2. Daycare and Kindergarten came before.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "Grade 1", "emoji": "📚" },
+          { "text": "Grade 2", "emoji": "✏️" },
+          { "text": "Grade 3", "emoji": "🏫" }
+        ],
+        "missing": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "Grade 2" },
@@ -21313,6 +21615,15 @@
       "narration": "Ben learned to ride a bike. Then he started Grade 1. Which happened last: learned to ride a bike, or started Grade 1?",
       "prompt": "Which happened last?",
       "why": "Ben learned to ride a bike first. Then he started Grade 1. Grade 1 is the last one.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "Ben was born", "emoji": "👶" },
+          { "text": "learned to walk", "emoji": "🚶" },
+          { "text": "started Grade 1", "emoji": "📚" }
+        ],
+        "missing": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "learned to ride a bike" },
@@ -21460,6 +21771,21 @@
       "narration": "A place of worship is where people gather to pray. Is it natural or built?",
       "prompt": "Natural or built?",
       "why": "People build places of worship. It is a built feature.",
+      "game": {
+        "kind": "sort",
+        "bins": [
+          { "text": "natural", "emoji": "🌳" },
+          { "text": "built", "emoji": "🏗️" }
+        ],
+        "sorted": [
+          { "card": { "text": "a river", "emoji": "🏞️" }, "bin": 0 },
+          { "card": { "text": "a forest", "emoji": "🌲" }, "bin": 0 },
+          { "card": { "text": "a school", "emoji": "🏫" }, "bin": 1 },
+          { "card": { "text": "a road", "emoji": "🛣️" }, "bin": 1 }
+        ],
+        "card": { "text": "place of worship", "emoji": "🛐" },
+        "bin": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "natural" },
@@ -21620,6 +21946,15 @@
       "narration": "Dad's life has three events. Which happened first: Dad was born, Dad started Grade 1, or Dad got his first job?",
       "prompt": "What happened first?",
       "why": "Dad had to be born before anything else. So being born is the first event.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Dad learned to walk", "emoji": "🚶" },
+          { "text": "Dad lost a tooth", "emoji": "🦷" }
+        ],
+        "missing": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "Dad started Grade 1" },
@@ -21693,6 +22028,15 @@
       "narration": "Omar's grandpa moved to Canada. Then Omar's dad was born. Then Omar was born. Which came between the move and Omar's birth: Dad was born, Omar started school, or Grandpa was born?",
       "prompt": "What came in the middle?",
       "why": "Dad was born after the move and before Omar. Omar's school came later. Grandpa was born before the move.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "Grandpa moved to Canada", "emoji": "✈️" },
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Omar was born", "emoji": "🍼" }
+        ],
+        "missing": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "Omar started school" },
@@ -21708,6 +22052,15 @@
       "narration": "Grandma was born. Then Mom was born. Then Mom had baby Sam. Which event goes last on the timeline: Grandma was born, Mom was born, or Mom had baby Sam?",
       "prompt": "Which event goes last?",
       "why": "Baby Sam is the newest person. Mom having Sam happened last, so it goes at the end.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "Mom started school", "emoji": "🏫" },
+          { "text": "Mom got married", "emoji": "💍" },
+          { "text": "Mom had baby Sam", "emoji": "👶" }
+        ],
+        "missing": 2
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "Mom had baby Sam" },
@@ -21723,6 +22076,15 @@
       "narration": "A family has a spring picnic, a summer camp, and a fall harvest feast. Which comes right after the summer camp: the spring picnic or the fall harvest feast?",
       "prompt": "What comes after summer camp?",
       "why": "The seasons go spring, summer, fall, winter. Fall comes right after summer, so the harvest feast is next.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "Summer camp", "emoji": "⛺" },
+          { "text": "the fall harvest feast", "emoji": "🍎" },
+          { "text": "Winter holiday party", "emoji": "⛄" }
+        ],
+        "missing": 1
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "the spring picnic" },
@@ -21810,6 +22172,17 @@
       "narration": "Which part of you helps you think and learn: your brain, your knee, or your nose?",
       "prompt": "What helps you think?",
       "why": "Your brain helps you think and learn. Food helps your brain grow and work well.",
+      "game": {
+        "kind": "label",
+        "picture": "organs",
+        "tags": [
+          { "part": "brain", "text": "your brain" },
+          { "part": "lungs", "text": "lungs" },
+          { "part": "heart", "text": "heart" },
+          { "part": "stomach", "text": "stomach" }
+        ],
+        "asked": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "your knee" },
@@ -21968,6 +22341,16 @@
       "narration": "Mia has a big race today. What should she do first to have energy: eat a healthy meal, or skip her meal?",
       "prompt": "What should Mia do first?",
       "why": "Eating a healthy meal gives Mia energy for her race. Skipping food would leave her tired.",
+      "game": {
+        "kind": "order",
+        "cards": [
+          { "text": "eat a healthy meal", "emoji": "🥗" },
+          { "text": "warm up", "emoji": "🤸" },
+          { "text": "run the race", "emoji": "🏃" },
+          { "text": "drink water", "emoji": "🚰" }
+        ],
+        "missing": 0
+      },
       "type": "tap",
       "choices": [
         { "id": "a", "kind": "text", "text": "skip her meal" },

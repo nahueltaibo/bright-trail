@@ -1,0 +1,128 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-air-water-properties-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "a rock", "emoji": null },
+          { "text": "a book", "emoji": null },
+          { "text": "water", "emoji": null }
+        ],
+        "card": { "text": "pourable thing", "emoji": null },
+        "sorted": [
+          { "text": "a rock", "emoji": null, "bin": "a rock" },
+          { "text": "a book", "emoji": null, "bin": "a book" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-air-water-properties-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "water", "emoji": null },
+          { "text": "sand", "emoji": null },
+          { "text": "air", "emoji": null }
+        ],
+        "card": { "text": "what we breathe", "emoji": null },
+        "sorted": [
+          { "text": "water", "emoji": null, "bin": "water" },
+          { "text": "sand", "emoji": null, "bin": "sand" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-air-water-properties-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "It stays tall", "emoji": null },
+          { "text": "It fits the bowl", "emoji": null },
+          { "text": "It turns hard", "emoji": null }
+        ],
+        "card": { "text": "water in a bowl", "emoji": null },
+        "sorted": [
+          { "text": "stays tall", "emoji": null, "bin": "It stays tall" },
+          { "text": "turns hard", "emoji": null, "bin": "It turns hard" }
+        ],
+        "note": "Choices are outcomes, not groups."
+      },
+      {
+        "itemId": "g2-sci-air-water-properties-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "a cup", "emoji": null },
+          { "text": "air", "emoji": null },
+          { "text": "a book", "emoji": null }
+        ],
+        "card": { "text": "unseen thing", "emoji": null },
+        "sorted": [
+          { "text": "a cup", "emoji": null, "bin": "a cup" },
+          { "text": "a book", "emoji": null, "bin": "a book" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-air-water-properties-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "milk", "emoji": null },
+          { "text": "juice", "emoji": null },
+          { "text": "a brick", "emoji": null }
+        ],
+        "card": { "text": "thing that won't flow", "emoji": null },
+        "sorted": [
+          { "text": "milk", "emoji": null, "bin": "milk" },
+          { "text": "juice", "emoji": null, "bin": "juice" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-air-water-properties-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "nothing at all", "emoji": null },
+          { "text": "sand", "emoji": null },
+          { "text": "air", "emoji": null }
+        ],
+        "card": { "text": "inside the bottle", "emoji": null },
+        "sorted": [
+          { "text": "nothing", "emoji": null, "bin": "nothing at all" },
+          { "text": "sand", "emoji": null, "bin": "sand" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-air-water-properties-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "It stays round", "emoji": null },
+          { "text": "It fits each one", "emoji": null },
+          { "text": "It disappears", "emoji": null }
+        ],
+        "card": { "text": "water in a box", "emoji": null },
+        "sorted": [
+          { "text": "stays round", "emoji": null, "bin": "It stays round" },
+          { "text": "disappears", "emoji": null, "bin": "It disappears" }
+        ],
+        "note": "Choices are outcomes, not groups."
+      },
+      {
+        "itemId": "g2-sci-air-water-properties-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "A flag waves", "emoji": null },
+          { "text": "A rock sits", "emoji": null },
+          { "text": "A cup is red", "emoji": null }
+        ],
+        "card": { "text": "air is there", "emoji": null },
+        "sorted": [
+          { "text": "rock sits", "emoji": null, "bin": "A rock sits" },
+          { "text": "red cup", "emoji": null, "bin": "A cup is red" }
+        ],
+        "note": "Choices are evidence statements, not groups."
+      }
+    ]
+  }
+}

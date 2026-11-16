@@ -1,0 +1,128 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-sci-plant-parts-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "a stone", "emoji": "🪨" },
+          { "text": "a new plant", "emoji": "🌱" },
+          { "text": "a toy", "emoji": "🧸" }
+        ],
+        "card": { "text": "a seed", "emoji": "🌰" },
+        "sorted": [
+          { "text": "rock", "emoji": "🪨", "bin": "a stone" },
+          { "text": "sprout", "emoji": "🌱", "bin": "a new plant" }
+        ],
+        "note": "Choices are things, not groups a seed belongs to."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "a root", "emoji": "🌿" },
+          { "text": "a stem", "emoji": "🎋" },
+          { "text": "a cone", "emoji": "🌲" }
+        ],
+        "card": { "text": "pine seeds", "emoji": "🌲" },
+        "sorted": [
+          { "text": "carrot", "emoji": "🥕", "bin": "a root" },
+          { "text": "bamboo", "emoji": "🎋", "bin": "a stem" }
+        ],
+        "note": "Choices are plant parts (things), not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "water", "emoji": "💧" },
+          { "text": "fruit", "emoji": "🍎" },
+          { "text": "pollen", "emoji": "🌼" }
+        ],
+        "card": { "text": "yellow dust", "emoji": null },
+        "sorted": [
+          { "text": "rain", "emoji": "💧", "bin": "water" },
+          { "text": "apple", "emoji": "🍎", "bin": "fruit" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "the stamen", "emoji": null },
+          { "text": "the pistil", "emoji": null },
+          { "text": "the root", "emoji": "🌿" }
+        ],
+        "card": { "text": "where seeds begin", "emoji": null },
+        "sorted": [
+          { "text": "carrot", "emoji": "🥕", "bin": "the root" },
+          { "text": "flower", "emoji": "🌸", "bin": "the pistil" }
+        ],
+        "note": "Choices are plant parts (things), not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "it makes pollen", "emoji": null },
+          { "text": "it drinks water", "emoji": "💧" },
+          { "text": "it protects the seeds", "emoji": "🍎" }
+        ],
+        "card": { "text": "fruit", "emoji": "🍎" },
+        "sorted": [
+          { "text": "flower", "emoji": "🌼", "bin": "it makes pollen" },
+          { "text": "root", "emoji": "🥕", "bin": "it drinks water" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "they make pollen", "emoji": null },
+          { "text": "they hold it in the soil", "emoji": "🌳" },
+          { "text": "they make seeds", "emoji": "🌰" }
+        ],
+        "card": { "text": "roots", "emoji": "🌿" },
+        "sorted": [
+          { "text": "flower", "emoji": "🌼", "bin": "they make pollen" },
+          { "text": "cone", "emoji": "🌰", "bin": "they make seeds" }
+        ],
+        "note": "Choices are reasons, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "making food from light", "emoji": "☀️" },
+          { "text": "holding itself in soil", "emoji": "🌱" },
+          { "text": "taking in water by roots", "emoji": "💧" }
+        ],
+        "card": { "text": "losing leaves", "emoji": "🍃" },
+        "sorted": [
+          { "text": "sunshine", "emoji": "☀️", "bin": "making food from light" },
+          { "text": "drink", "emoji": "💧", "bin": "taking in water by roots" }
+        ],
+        "note": "Choices are jobs/actions, not groups."
+      },
+      {
+        "itemId": "g3-sci-plant-parts-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "the root", "emoji": "🌿" },
+          { "text": "the leaf", "emoji": "🍃" },
+          { "text": "the pistil", "emoji": "🌸" }
+        ],
+        "card": { "text": "pollen", "emoji": "🌼" },
+        "sorted": [
+          { "text": "carrot", "emoji": "🥕", "bin": "the root" },
+          { "text": "maple leaf", "emoji": "🍁", "bin": "the leaf" }
+        ],
+        "note": "Choices are plant parts (things), not groups."
+      }
+    ]
+  }
+}

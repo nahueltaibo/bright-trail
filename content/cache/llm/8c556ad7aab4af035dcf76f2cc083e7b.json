@@ -1,0 +1,164 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-depend-air-water-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "rocks", "emoji": "🪨" },
+          { "text": "air", "emoji": "💨" },
+          { "text": "sand", "emoji": "🏖️" }
+        ],
+        "card": { "text": "what we breathe", "emoji": null },
+        "sorted": [
+          { "text": "a boulder", "emoji": "🪨", "bin": "rocks" },
+          { "text": "wind", "emoji": "💨", "bin": "air" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-depend-air-water-tap-2",
+        "fits": false,
+        "bins": [
+          { "text": "water", "emoji": "💧" },
+          { "text": "sand", "emoji": "🏖️" },
+          { "text": "paper", "emoji": "📄" }
+        ],
+        "card": { "text": "what a puppy drinks", "emoji": "🐶" },
+        "sorted": [
+          { "text": "rain", "emoji": "🌧️", "bin": "water" },
+          { "text": "a beach", "emoji": "🏖️", "bin": "sand" },
+          { "text": "a book page", "emoji": "📄", "bin": "paper" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-depend-air-water-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "in a tree", "emoji": "🌳" },
+          { "text": "in a shoe", "emoji": "👟" },
+          { "text": "in water", "emoji": "💧" }
+        ],
+        "card": { "text": "a goldfish", "emoji": "🐟" },
+        "sorted": [
+          { "text": "a bird", "emoji": "🐦", "bin": "in a tree" },
+          { "text": "a sock", "emoji": "🧦", "bin": "in a shoe" },
+          { "text": "a whale", "emoji": "🐳", "bin": "in water" }
+        ],
+        "note": "Choices are places, not groups."
+      },
+      {
+        "itemId": "g2-sci-depend-air-water-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "glue", "emoji": "🧴" },
+          { "text": "soap", "emoji": "🧼" },
+          { "text": "water", "emoji": "💧" }
+        ],
+        "card": { "text": "what Mia drinks", "emoji": null },
+        "sorted": [
+          { "text": "a glue bottle", "emoji": "🧴", "bin": "glue" },
+          { "text": "a bar of soap", "emoji": "🧼", "bin": "soap" },
+          { "text": "rain", "emoji": "🌧️", "bin": "water" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-depend-air-water-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "air", "emoji": "💨" },
+          { "text": "juice", "emoji": "🧃" },
+          { "text": "sand", "emoji": "🏖️" }
+        ],
+        "card": { "text": "what leaves take in", "emoji": "🍃" },
+        "sorted": [
+          { "text": "wind", "emoji": "💨", "bin": "air" },
+          { "text": "apple juice", "emoji": "🧃", "bin": "juice" },
+          { "text": "a beach", "emoji": "🏖️", "bin": "sand" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-depend-air-water-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "a goldfish", "emoji": "🐟" },
+          { "text": "a clam", "emoji": "🐚" },
+          { "text": "a whale", "emoji": "🐳" }
+        ],
+        "card": { "text": "lungs", "emoji": null },
+        "sorted": [
+          { "text": "a fish", "emoji": "🐟", "bin": "a goldfish" },
+          { "text": "a shell", "emoji": "🐚", "bin": "a clam" },
+          { "text": "a dolphin", "emoji": "🐬", "bin": "a whale" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-depend-air-water-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "it grows taller fast", "emoji": "📈" },
+          { "text": "it turns into a rock", "emoji": "🪨" },
+          { "text": "it droops and dries out", "emoji": "🥀" }
+        ],
+        "card": { "text": "a plant with no water", "emoji": "🪴" },
+        "sorted": [
+          { "text": "a tall sunflower", "emoji": "🌻", "bin": "it grows taller fast" },
+          { "text": "a stone", "emoji": "🪨", "bin": "it turns into a rock" }
+        ],
+        "note": "Choices are outcomes, not groups."
+      },
+      {
+        "itemId": "g2-sci-depend-air-water-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "a tree", "emoji": "🌳" },
+          { "text": "a cat", "emoji": "🐱" },
+          { "text": "a rock", "emoji": "🪨" }
+        ],
+        "card": { "text": "odd one out", "emoji": null },
+        "sorted": [
+          { "text": "a flower", "emoji": "🌸", "bin": "a tree" },
+          { "text": "a dog", "emoji": "🐶", "bin": "a cat" },
+          { "text": "a pebble", "emoji": "🪨", "bin": "a rock" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-depend-air-water-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "drinking it", "emoji": "🥤" },
+          { "text": "breathing it in", "emoji": "😮‍💨" },
+          { "text": "wearing it", "emoji": "👕" }
+        ],
+        "card": { "text": "using water", "emoji": "💧" },
+        "sorted": [
+          { "text": "sipping milk", "emoji": "🥛", "bin": "drinking it" },
+          { "text": "putting on a hat", "emoji": "🧢", "bin": "wearing it" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g2-sci-depend-air-water-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "only animals", "emoji": "🐶" },
+          { "text": "only plants", "emoji": "🌱" },
+          { "text": "all living things", "emoji": "🌎" }
+        ],
+        "card": { "text": "who needs air and water", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "only animals" },
+          { "text": "a flower", "emoji": "🌸", "bin": "only plants" }
+        ],
+        "note": "Asks which group needs air and water, not which group a thing belongs to."
+      }
+    ]
+  }
+}
