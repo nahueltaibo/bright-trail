@@ -1,11 +1,13 @@
 // Serves content/out/packs/ the way the content host does, for dev and e2e builds.
+// Also serves the full bundle at /dev/bundle.json for /dev/learning. The content host never has it.
 // Usage: node scripts/serve-packs.mjs [--port <n>]   (default 8090)
 import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { dirname, join, normalize, sep } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 
-const packsDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'content', 'out', 'packs');
+const outDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'content', 'out');
+const packsDir = join(outDir, 'packs');
 export const PACKS_PORT = 8090;
 
 /** Starts the server and resolves once it listens. Close it with `server.close()`. */
@@ -13,10 +15,10 @@ export function servePacks(port = PACKS_PORT) {
   const server = createServer(async (req, res) => {
     // The web build fetches from another origin than Metro's.
     res.setHeader('Access-Control-Allow-Origin', '*');
-    const path = normalize(
-      join(packsDir, decodeURIComponent(new URL(req.url, 'http://x').pathname)),
-    );
-    if (req.method !== 'GET' || !path.startsWith(packsDir + sep) || !path.endsWith('.json')) {
+    const url = decodeURIComponent(new URL(req.url, 'http://x').pathname);
+    const pack = normalize(join(packsDir, url));
+    const path = url === '/dev/bundle.json' ? join(outDir, 'bundle.json') : pack;
+    if (req.method !== 'GET' || !pack.startsWith(packsDir + sep) || !path.endsWith('.json')) {
       res.writeHead(404).end();
       return;
     }

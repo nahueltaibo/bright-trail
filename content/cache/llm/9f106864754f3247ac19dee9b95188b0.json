@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-depend-air-water-tap-12",
+        "fits": true,
+        "cards": [
+          { "text": "Mia pours water", "emoji": "🚿" },
+          { "text": "its roots take in water", "emoji": "🌱" },
+          { "text": "it grows taller", "emoji": "🌿" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Pouring water, then roots take it in, then the plant grows."
+      }
+    ]
+  }
+}

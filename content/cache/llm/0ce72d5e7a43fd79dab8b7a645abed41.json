@@ -1,0 +1,148 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "a mouse", "emoji": "🐭" },
+          { "text": "a horse", "emoji": "🐴" }
+        ],
+        "card": { "text": "an animal", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "a mouse" },
+          { "text": "a cow", "emoji": "🐄", "bin": "a horse" }
+        ],
+        "note": "Choices are animals, not groups."
+      },
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-2",
+        "fits": false,
+        "bins": [
+          { "text": "a fish", "emoji": "🐟" },
+          { "text": "a dog", "emoji": "🐶" },
+          { "text": "a bird", "emoji": "🐦" }
+        ],
+        "card": { "text": "feathers", "emoji": null },
+        "sorted": [
+          { "text": "a goldfish", "emoji": "🐠", "bin": "a fish" },
+          { "text": "a puppy", "emoji": "🐕", "bin": "a dog" },
+          { "text": "a duck", "emoji": "🦆", "bin": "a bird" }
+        ],
+        "note": "Choices are animals, not groups."
+      },
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "a snake", "emoji": "🐍" },
+          { "text": "a frog", "emoji": "🐸" },
+          { "text": "a rabbit", "emoji": "🐰" }
+        ],
+        "card": { "text": "fur", "emoji": null },
+        "sorted": [
+          { "text": "a lizard", "emoji": "🦎", "bin": "a snake" },
+          { "text": "a toad", "emoji": null, "bin": "a frog" },
+          { "text": "a bear", "emoji": "🐻", "bin": "a rabbit" }
+        ],
+        "note": "Choices are animals, not groups."
+      },
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "its size", "emoji": null },
+          { "text": "its weight", "emoji": null },
+          { "text": "its four legs", "emoji": "🐕" }
+        ],
+        "card": { "text": "what stays the same", "emoji": null },
+        "sorted": [
+          { "text": "big", "emoji": null, "bin": "its size" },
+          { "text": "heavy", "emoji": null, "bin": "its weight" },
+          { "text": "paws", "emoji": "🐾", "bin": "its four legs" }
+        ],
+        "note": "Choices are traits, not groups."
+      },
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "it gets bigger", "emoji": null },
+          { "text": "it has four legs", "emoji": null }
+        ],
+        "card": { "text": "what changes", "emoji": null },
+        "sorted": [
+          { "text": "growing taller", "emoji": null, "bin": "it gets bigger" },
+          { "text": "paws", "emoji": "🐾", "bin": "it has four legs" }
+        ],
+        "note": "Choices are statements, not groups."
+      },
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "a rabbit", "emoji": "🐰" },
+          { "text": "a duck", "emoji": "🦆" },
+          { "text": "a fish", "emoji": "🐟" }
+        ],
+        "card": { "text": "scales", "emoji": null },
+        "sorted": [
+          { "text": "a cat", "emoji": "🐱", "bin": "a rabbit" },
+          { "text": "a goose", "emoji": "🪿", "bin": "a duck" },
+          { "text": "a goldfish", "emoji": "🐠", "bin": "a fish" }
+        ],
+        "note": "Choices are animals, not groups."
+      },
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "covering", "emoji": null },
+          { "text": "size", "emoji": "📏" },
+          { "text": "sound", "emoji": "🔊" }
+        ],
+        "card": { "text": "tall and tiny", "emoji": null },
+        "sorted": [
+          { "text": "fur", "emoji": null, "bin": "covering" },
+          { "text": "big", "emoji": null, "bin": "size" },
+          { "text": "roar", "emoji": null, "bin": "sound" }
+        ],
+        "note": "Asks what is compared, not a group membership."
+      },
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "its whiskers", "emoji": "🐱" },
+          { "text": "its size", "emoji": null },
+          { "text": "its weight", "emoji": null }
+        ],
+        "card": { "text": "what does not change", "emoji": null },
+        "sorted": [
+          { "text": "big", "emoji": null, "bin": "its size" },
+          { "text": "heavy", "emoji": null, "bin": "its weight" },
+          { "text": "whiskers", "emoji": null, "bin": "its whiskers" }
+        ],
+        "note": "Choices are traits, not groups."
+      },
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "a fin", "emoji": null },
+          { "text": "a tail", "emoji": null },
+          { "text": "a beak", "emoji": "🐦" }
+        ],
+        "card": { "text": "hard pointed part", "emoji": null },
+        "sorted": [
+          { "text": "fish part", "emoji": "🐟", "bin": "a fin" },
+          { "text": "dog part", "emoji": "🐕", "bin": "a tail" },
+          { "text": "bird part", "emoji": "🐦", "bin": "a beak" }
+        ],
+        "note": "Choices are body parts, not groups."
+      }
+    ]
+  }
+}

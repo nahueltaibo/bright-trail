@@ -1,0 +1,112 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-soc-chronology-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "makes a snack", "emoji": null },
+          { "text": "puts events in order", "emoji": null },
+          { "text": "paints a wall", "emoji": null }
+        ],
+        "card": { "text": "a timeline", "emoji": null },
+        "sorted": [
+          { "text": "makes a snack", "emoji": null, "bin": "makes a snack" },
+          { "text": "puts events in order", "emoji": null, "bin": "puts events in order" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-2",
+        "fits": false,
+        "bins": [
+          { "text": "Grandma", "emoji": null },
+          { "text": "Mom", "emoji": null },
+          { "text": "baby Sam", "emoji": null }
+        ],
+        "card": { "text": "the oldest", "emoji": null },
+        "sorted": [
+          { "text": "Grandma", "emoji": null, "bin": "Grandma" },
+          { "text": "Mom", "emoji": null, "bin": "Mom" }
+        ],
+        "note": "Choices are people, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "purple", "emoji": null },
+          { "text": "loud", "emoji": null },
+          { "text": "first", "emoji": null }
+        ],
+        "card": { "text": "order", "emoji": null },
+        "sorted": [
+          { "text": "purple", "emoji": null, "bin": "purple" },
+          { "text": "loud", "emoji": null, "bin": "loud" }
+        ],
+        "note": "Choices are words, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "happened long ago", "emoji": null },
+          { "text": "happened most recently", "emoji": null }
+        ],
+        "card": { "text": "newest", "emoji": null },
+        "sorted": [
+          { "text": "happened long ago", "emoji": null, "bin": "happened long ago" },
+          { "text": "happened most recently", "emoji": null, "bin": "happened most recently" }
+        ],
+        "note": "Choices are definitions, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "Winnipeg", "emoji": null },
+          { "text": "Calgary", "emoji": null },
+          { "text": "Regina", "emoji": null }
+        ],
+        "card": { "text": "second home", "emoji": null },
+        "sorted": [
+          { "text": "Winnipeg", "emoji": null, "bin": "Winnipeg" },
+          { "text": "Calgary", "emoji": null, "bin": "Calgary" }
+        ],
+        "note": "Choices are places, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "a baby was born", "emoji": null },
+          { "text": "we moved to a new town", "emoji": null },
+          { "text": "my shoe is blue", "emoji": null }
+        ],
+        "card": { "text": "a family timeline", "emoji": null },
+        "sorted": [
+          { "text": "a baby was born", "emoji": null, "bin": "a baby was born" },
+          { "text": "my shoe is blue", "emoji": null, "bin": "my shoe is blue" }
+        ],
+        "note": "Choices are events, not groups."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "the grandparents", "emoji": null },
+          { "text": "the parents", "emoji": null },
+          { "text": "the children", "emoji": null }
+        ],
+        "card": { "text": "most recently", "emoji": null },
+        "sorted": [
+          { "text": "the grandparents", "emoji": null, "bin": "the grandparents" },
+          { "text": "the parents", "emoji": null, "bin": "the parents" }
+        ],
+        "note": "Asks which generation is newest, not which group a thing belongs to."
+      }
+    ]
+  }
+}

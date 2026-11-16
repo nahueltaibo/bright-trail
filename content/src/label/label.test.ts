@@ -167,7 +167,7 @@ describe('acceptLabels picture guard', () => {
     });
   });
 
-  it('keeps real fits', () => {
+  it('keeps real fits, with every tag a bare part name', () => {
     const { scenes, rejected } = acceptLabels([roots, brain], {
       scenes: [
         tagged(roots.id),
@@ -176,9 +176,10 @@ describe('acceptLabels picture guard', () => {
     });
     expect(rejected).toEqual({});
     expect(Object.keys(scenes)).toEqual([roots.id, brain.id]);
+    expect(scenes[brain.id]?.tags.map((t) => t.text)).toEqual(['brain', 'lungs', 'heart']);
     expect(scenes[brain.id]?.tags[scenes[brain.id]!.asked]).toEqual({
       part: 'brain',
-      text: 'your brain',
+      text: 'brain',
     });
   });
 });

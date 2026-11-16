@@ -1,0 +1,22 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-13",
+        "fits": true,
+        "cards": [
+          { "text": "fluffy down", "emoji": "🐥" },
+          { "text": "first feathers", "emoji": "🪶" },
+          { "text": "flight feathers", "emoji": "🦆" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Adult feathers is left out of the row; later feather stages are added to reach 3 cards. Down comes first, so adult feathers can't fill slot 0."
+      }
+    ]
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-soc-events-in-order-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "last", "emoji": null },
+          { "text": "first", "emoji": null }
+        ],
+        "card": { "text": "first", "emoji": null },
+        "sorted": [
+          { "text": "a", "emoji": null, "bin": "first" },
+          { "text": "b", "emoji": null, "bin": "last" }
+        ],
+        "note": "Choices are words, not groups the card belongs to."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "a pencil", "emoji": null },
+          { "text": "a cloud", "emoji": null },
+          { "text": "learning to walk", "emoji": null }
+        ],
+        "card": { "text": "a life event", "emoji": null },
+        "sorted": [
+          { "text": "a", "emoji": null, "bin": "a pencil" },
+          { "text": "b", "emoji": null, "bin": "a cloud" },
+          { "text": "c", "emoji": null, "bin": "learning to walk" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "a bicycle", "emoji": null },
+          { "text": "a tricycle", "emoji": null }
+        ],
+        "card": { "text": "later", "emoji": null },
+        "sorted": [
+          { "text": "a", "emoji": null, "bin": "a bicycle" },
+          { "text": "b", "emoji": null, "bin": "a tricycle" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "crawled", "emoji": null },
+          { "text": "stood up", "emoji": null },
+          { "text": "walked", "emoji": null }
+        ],
+        "card": { "text": "standing up", "emoji": null },
+        "sorted": [
+          { "text": "a", "emoji": null, "bin": "crawled" },
+          { "text": "b", "emoji": null, "bin": "stood up" },
+          { "text": "c", "emoji": null, "bin": "walked" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "apple", "emoji": null },
+          { "text": "blue", "emoji": null },
+          { "text": "first", "emoji": null }
+        ],
+        "card": { "text": "order", "emoji": null },
+        "sorted": [
+          { "text": "a", "emoji": null, "bin": "apple" },
+          { "text": "b", "emoji": null, "bin": "blue" },
+          { "text": "c", "emoji": null, "bin": "first" }
+        ],
+        "note": "Choices are words, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "Grade 3", "emoji": null },
+          { "text": "Kindergarten", "emoji": null },
+          { "text": "Grade 5", "emoji": null }
+        ],
+        "card": { "text": "already happened", "emoji": null },
+        "sorted": [
+          { "text": "a", "emoji": null, "bin": "Grade 3" },
+          { "text": "b", "emoji": null, "bin": "Kindergarten" },
+          { "text": "c", "emoji": null, "bin": "Grade 5" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "learning to walk", "emoji": null },
+          { "text": "starting Grade 1", "emoji": null },
+          { "text": "eating lunch today", "emoji": null }
+        ],
+        "card": { "text": "odd one out", "emoji": null },
+        "sorted": [
+          { "text": "a", "emoji": null, "bin": "learning to walk" },
+          { "text": "b", "emoji": null, "bin": "starting Grade 1" },
+          { "text": "c", "emoji": null, "bin": "eating lunch today" }
+        ],
+        "note": "Choices are events, not groups."
+      }
+    ]
+  }
+}

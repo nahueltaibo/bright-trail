@@ -1,0 +1,154 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-design-steps-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "test", "emoji": null },
+          { "text": "plan", "emoji": null },
+          { "text": "make it better", "emoji": null }
+        ],
+        "card": { "text": "plan", "emoji": null },
+        "sorted": [
+          { "text": "draw", "emoji": "✏️", "bin": "plan" },
+          { "text": "try it", "emoji": "🧪", "bin": "test" }
+        ],
+        "note": "Asks which step is first, not which group a thing belongs to."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-2",
+        "fits": true,
+        "bins": [
+          { "text": "build", "emoji": "🔨" },
+          { "text": "plan", "emoji": "📝" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "card": { "text": "tape and a foam tray", "emoji": "🧰" },
+        "sorted": [
+          { "text": "stack blocks", "emoji": "🧱", "bin": "build" },
+          { "text": "draw an idea", "emoji": "✏️", "bin": "plan" },
+          { "text": "try it out", "emoji": "🔍", "bin": "test" }
+        ],
+        "note": "Card is an action of the story; its step group is build."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-3",
+        "fits": true,
+        "bins": [
+          { "text": "build", "emoji": "🔨" },
+          { "text": "plan", "emoji": "📝" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "card": { "text": "puts her boat in water", "emoji": "🚤" },
+        "sorted": [
+          { "text": "stack blocks", "emoji": "🧱", "bin": "build" },
+          { "text": "draw an idea", "emoji": "✏️", "bin": "plan" },
+          { "text": "drop a ball", "emoji": "🔍", "bin": "test" }
+        ],
+        "note": "Putting the boat in water to see if it floats is the test step."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "throw it away", "emoji": null },
+          { "text": "make it better", "emoji": null }
+        ],
+        "card": { "text": "make it better", "emoji": null },
+        "sorted": [
+          { "text": "give up", "emoji": "🗑️", "bin": "throw it away" },
+          { "text": "fix it", "emoji": "🔧", "bin": "make it better" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "tape the pieces", "emoji": null },
+          { "text": "float it in water", "emoji": null },
+          { "text": "think what to use", "emoji": null }
+        ],
+        "card": { "text": "plan step", "emoji": null },
+        "sorted": [
+          { "text": "tape", "emoji": "📎", "bin": "tape the pieces" },
+          { "text": "water", "emoji": "💧", "bin": "float it in water" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "make it better", "emoji": null },
+          { "text": "plan", "emoji": null },
+          { "text": "build", "emoji": null }
+        ],
+        "card": { "text": "last", "emoji": null },
+        "sorted": [
+          { "text": "draw", "emoji": "✏️", "bin": "plan" },
+          { "text": "make", "emoji": "🔨", "bin": "build" }
+        ],
+        "note": "Asks which step is last, not a group membership."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "give up", "emoji": null },
+          { "text": "hide it", "emoji": null },
+          { "text": "change it, test again", "emoji": null }
+        ],
+        "card": { "text": "falls fast", "emoji": null },
+        "sorted": [
+          { "text": "quit", "emoji": "🚫", "bin": "give up" },
+          { "text": "cover", "emoji": "🙈", "bin": "hide it" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "test, plan, build", "emoji": null },
+          { "text": "build, test, plan", "emoji": null },
+          { "text": "plan, build, test", "emoji": null }
+        ],
+        "card": { "text": "right order", "emoji": null },
+        "sorted": [{ "text": "one", "emoji": "1️⃣", "bin": "test, plan, build" }],
+        "note": "Choices are orderings, not groups."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "to make it pretty", "emoji": null },
+          { "text": "to see if it works", "emoji": null },
+          { "text": "to be done fast", "emoji": null }
+        ],
+        "card": { "text": "test", "emoji": null },
+        "sorted": [{ "text": "paint", "emoji": "🎨", "bin": "to make it pretty" }],
+        "note": "Choices are reasons, not groups."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-14",
+        "fits": true,
+        "bins": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "test", "emoji": "🧪" },
+          { "text": "make it better", "emoji": "✨" }
+        ],
+        "card": { "text": "a wide base", "emoji": "🥤" },
+        "sorted": [
+          { "text": "draw an idea", "emoji": "✏️", "bin": "plan" },
+          { "text": "try it out", "emoji": "🔍", "bin": "test" },
+          { "text": "fix a problem", "emoji": "🔧", "bin": "make it better" }
+        ],
+        "note": "Adding a wide base after tipping is making it better."
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-air-water-properties-tap-12",
+        "fits": false,
+        "cards": [
+          { "text": "Pour into round jar", "emoji": "🫙" },
+          { "text": "It fits each one", "emoji": "💧" },
+          { "text": "Pour into square box", "emoji": "📦" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Asks about a property of water, not first, next, before, after, or last in a sequence."
+      }
+    ]
+  }
+}

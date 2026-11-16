@@ -1,0 +1,16 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-sci-plant-needs-tap-2",
+        "fits": true,
+        "picture": "planets",
+        "part": "sun",
+        "others": ["earth", "mars", "jupiter"],
+        "note": "Answer 'the sun' is a part of the planets picture."
+      }
+    ]
+  }
+}

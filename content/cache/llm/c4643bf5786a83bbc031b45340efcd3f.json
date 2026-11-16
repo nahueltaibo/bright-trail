@@ -1,0 +1,104 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-soc-chronology-tap-3",
+        "fits": false,
+        "cards": [
+          { "text": "First", "emoji": "1️⃣" },
+          { "text": "Next", "emoji": "➡️" },
+          { "text": "Last", "emoji": "🏁" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Asks which word helps with order, not a position in a sequence."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Dad learned to walk", "emoji": "🚶" },
+          { "text": "Dad learned to ride", "emoji": "🚲" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "First slot empty; other choices left out."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-7",
+        "fits": true,
+        "cards": [
+          { "text": "Nana's mom", "emoji": "👵" },
+          { "text": "Nana", "emoji": "👵" },
+          { "text": "Raj", "emoji": "👦" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Priya left out; gap right after Nana."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-8",
+        "fits": true,
+        "cards": [
+          { "text": "First home", "emoji": "🏠" },
+          { "text": "Regina", "emoji": "🏙️" },
+          { "text": "Last home", "emoji": "🏡" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Other cities replaced with generic home cards."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-11",
+        "fits": true,
+        "cards": [
+          { "text": "Grandpa moved here", "emoji": "✈️" },
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Omar was born", "emoji": "🍼" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Middle slot empty between the move and Omar's birth."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-12",
+        "fits": true,
+        "cards": [
+          { "text": "Mom learned to walk", "emoji": "🚶" },
+          { "text": "Mom grew up", "emoji": "🧑" },
+          { "text": "Mom had baby Sam", "emoji": "👶" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Last slot empty; other choices left out."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-13",
+        "fits": true,
+        "cards": [
+          { "text": "Summer camp", "emoji": "🏕️" },
+          { "text": "the fall harvest feast", "emoji": "🍂" },
+          { "text": "Winter party", "emoji": "⛄" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Spring picnic left out; gap right after summer camp."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-15",
+        "fits": true,
+        "cards": [
+          { "text": "First move", "emoji": "📦" },
+          { "text": "Second move", "emoji": "🚚" },
+          { "text": "Ottawa", "emoji": "🏙️" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Other cities left out; last slot empty."
+      }
+    ]
+  }
+}

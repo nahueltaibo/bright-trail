@@ -1,0 +1,134 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-soc-events-in-order-tap-1",
+        "fits": true,
+        "cards": [
+          { "text": "being a baby", "emoji": "👶" },
+          { "text": "being a toddler", "emoji": "🧸" },
+          { "text": "being in Kindergarten", "emoji": "🎒" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Grade 1 is a choice so it is left out; padded with toddler and Kindergarten."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-2",
+        "fits": true,
+        "cards": [
+          { "text": "learned to walk", "emoji": "🚶" },
+          { "text": "learned to talk", "emoji": "🗣️" },
+          { "text": "learned to read", "emoji": "📖" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": true,
+        "note": "Kindergarten is a choice so it is replaced by other events; talk and read come after walking and before Kindergarten would not hold."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-4",
+        "fits": false,
+        "cards": [
+          { "text": "first", "emoji": null },
+          { "text": "next", "emoji": null },
+          { "text": "last", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Asks for a word meaning start, not an order of events."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "Kindergarten", "emoji": "🎒" },
+          { "text": "Grade 1", "emoji": "📚" },
+          { "text": "Grade 2", "emoji": "✏️" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Daycare is a choice so it is left out; the row starts at Kindergarten."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "stood up", "emoji": "🧍" },
+          { "text": "walked", "emoji": "🚶" },
+          { "text": "ran", "emoji": "🏃" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "The gap must follow stood up, but stood up and crawled are both choices, so no row of 3 can avoid them."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-9",
+        "fits": false,
+        "cards": [
+          { "text": "first", "emoji": null },
+          { "text": "next", "emoji": null },
+          { "text": "last", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Asks which word shows order, not a sequence of events."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-11",
+        "fits": true,
+        "cards": [
+          { "text": "walking", "emoji": "🚶" },
+          { "text": "Kindergarten", "emoji": "🎒" },
+          { "text": "Grade 1", "emoji": "📚" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Walking, Kindergarten, Grade 1 in the item's order."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-13",
+        "fits": true,
+        "cards": [
+          { "text": "Grade 1", "emoji": "📚" },
+          { "text": "Grade 2", "emoji": "✏️" },
+          { "text": "Grade 3", "emoji": "🎓" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Kindergarten and daycare are choices so they are left out; the row starts at Grade 1."
+      },
+      {
+        "itemId": "g1-soc-events-in-order-tap-15",
+        "fits": false,
+        "cards": [
+          { "text": "learned to walk", "emoji": "🚶" },
+          { "text": "learned to talk", "emoji": "🗣️" },
+          { "text": "started Grade 1", "emoji": "📚" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": true,
+        "note": "Bike riding is a choice and must be left out, and any earlier padding lets it also fit the last slot."
+      }
+    ]
+  }
+}

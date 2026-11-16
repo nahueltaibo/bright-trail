@@ -1,0 +1,20 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-hlth-food-guide-tap-1",
+        "fits": false,
+        "cards": [
+          { "text": "water", "emoji": "💧" },
+          { "text": "milk", "emoji": "🥛" },
+          { "text": "juice", "emoji": "🧃" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Asks which drink is best, not a sequence of first, next, before, after, or last."
+      }
+    ]
+  }
+}

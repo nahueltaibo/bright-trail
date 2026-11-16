@@ -1,0 +1,16 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-depend-air-water-tap-7",
+        "fits": true,
+        "picture": "plant",
+        "part": "roots",
+        "others": ["leaf", "stem"],
+        "note": "Roots take in water; flower left out since petals is a choice."
+      }
+    ]
+  }
+}

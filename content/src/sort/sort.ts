@@ -5,6 +5,7 @@ import {
   sameText,
   sortProblems,
   textChoices,
+  type Card,
   type ContentBundle,
   type Item,
   type SortScene,
@@ -38,11 +39,11 @@ const SYSTEM = `You map practice items for kids to a sorting game. The app shows
 
 For each item give:
 - bins: one per choice, with each choice's text exactly and in the item's order, plus an emoji that shows the group, or null.
-- card: the thing the item asks about, in words the item's prompt or narration says, like "a brick" or "place of worship". At most ${MAX_CARD_TEXT} letters, plus an emoji or null.
+- card: the thing or action the item asks about, copied word for word from the item's prompt or narration, like "a brick", "place of worship", or "a wide base". Never reword it, since the app checks that the item says it. At most ${MAX_CARD_TEXT} letters, plus an emoji or null.
 - sorted: 2 to ${MAX_SORTED} example cards, each with text, an emoji or null, and bin, the text of the bin it goes in. Use clear, everyday examples a young child knows, and put at least one in each bin. Never repeat the card.
 
 Rules:
-- Set fits to false unless the item asks which group one thing belongs to, and its choices are the groups, like "Is a brick a liquid or a solid?" or "Natural or built?". Items whose choices are things, actions, or reasons, like "Which is a need: food, or a game?", don't fit. Fill the other fields with any valid value then.
+- Set fits to false unless the item asks which group one thing belongs to, and its choices are the groups, like "Is a brick a liquid or a solid?", "Natural or built?", or "Mia puts her boat in water. Which step is that: build, test, or plan?". Items whose choices are things, actions, or reasons, like "Which is a need: food, or a game?", don't fit. Fill the other fields with any valid value then.
 - The card's group must be the item's answer.
 - note: one short reason, mainly when fits is false.
 
@@ -57,6 +58,11 @@ export type SortTagResult = {
   rejected: Record<string, string>;
 };
 
+/** The card without its emoji when a bin shows the same one, which would point to that bin. */
+function plainCard(card: Card, bins: readonly Card[]): Card {
+  return card.emoji && bins.some((b) => b.emoji === card.emoji) ? { text: card.text } : card;
+}
+
 /** The scene for a tagged item, with each bin named by its text turned into its index. */
 function sceneFor(item: Item, t: TaggedSort): { scene?: SortScene; problems: string[] } {
   const binOf = (text: string) => t.bins.findIndex((b) => sameText(b.text, text));
@@ -70,7 +76,7 @@ function sceneFor(item: Item, t: TaggedSort): { scene?: SortScene; problems: str
     kind: 'sort',
     bins: t.bins.map(toCard),
     sorted: t.sorted.map(({ bin, ...c }) => ({ card: toCard(c), bin: binOf(bin) })),
-    card: toCard(t.card),
+    card: plainCard(toCard(t.card), t.bins.map(toCard)),
     bin: binOf(answer),
   });
   if (!candidate.success) return { problems: candidate.error.issues.map((i) => i.message) };

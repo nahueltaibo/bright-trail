@@ -1,0 +1,84 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-basic-needs-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "a toy", "emoji": null },
+          { "text": "water", "emoji": null }
+        ],
+        "card": { "text": "a puppy", "emoji": "🐶" },
+        "sorted": [
+          { "text": "a ball", "emoji": "⚽", "bin": "a toy" },
+          { "text": "milk", "emoji": "🥛", "bin": "water" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-basic-needs-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "a rock", "emoji": null },
+          { "text": "a spoon", "emoji": null },
+          { "text": "a dog", "emoji": null }
+        ],
+        "card": { "text": "a living thing", "emoji": null },
+        "sorted": [
+          { "text": "a stone", "emoji": "🪨", "bin": "a rock" },
+          { "text": "a fork", "emoji": "🍴", "bin": "a spoon" },
+          { "text": "a cat", "emoji": "🐱", "bin": "a dog" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-basic-needs-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "food", "emoji": null },
+          { "text": "a game", "emoji": null }
+        ],
+        "card": { "text": "a need", "emoji": null },
+        "sorted": [
+          { "text": "water", "emoji": "💧", "bin": "food" },
+          { "text": "a puzzle", "emoji": "🧩", "bin": "a game" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-basic-needs-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "a hat", "emoji": null },
+          { "text": "water", "emoji": null },
+          { "text": "a toy", "emoji": null }
+        ],
+        "card": { "text": "a warm bed", "emoji": "🛏️" },
+        "sorted": [
+          { "text": "a cap", "emoji": "🧢", "bin": "a hat" },
+          { "text": "a drink", "emoji": "🥤", "bin": "water" },
+          { "text": "a doll", "emoji": "🧸", "bin": "a toy" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-basic-needs-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "toys, candy, and games", "emoji": null },
+          { "text": "hats, cars, and bikes", "emoji": null },
+          { "text": "air, water, and food", "emoji": null }
+        ],
+        "card": { "text": "needs of living things", "emoji": null },
+        "sorted": [
+          { "text": "a doll", "emoji": "🧸", "bin": "toys, candy, and games" },
+          { "text": "a bus", "emoji": "🚌", "bin": "hats, cars, and bikes" },
+          { "text": "an apple", "emoji": "🍎", "bin": "air, water, and food" }
+        ],
+        "note": "Choices are lists of things; item asks which list is all needs, not one thing's group."
+      }
+    ]
+  }
+}

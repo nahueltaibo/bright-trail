@@ -1,0 +1,96 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-healthy-environment-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "smoky air", "emoji": "💨" },
+          { "text": "clean air", "emoji": "🌤️" }
+        ],
+        "card": { "text": "healthy to breathe", "emoji": null },
+        "sorted": [
+          { "text": "campfire smoke", "emoji": "🔥", "bin": "smoky air" },
+          { "text": "fresh breeze", "emoji": "🍃", "bin": "clean air" }
+        ],
+        "note": "Choices are things (kinds of air), not groups for one card."
+      },
+      {
+        "itemId": "g1-sci-healthy-environment-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "clean water", "emoji": "💧" },
+          { "text": "fish", "emoji": "🐟" },
+          { "text": "trash", "emoji": "🗑️" }
+        ],
+        "card": { "text": "a healthy pond", "emoji": "🏞️" },
+        "sorted": [
+          { "text": "rain", "emoji": "💧", "bin": "clean water" },
+          { "text": "goldfish", "emoji": "🐟", "bin": "fish" },
+          { "text": "old can", "emoji": "🥫", "bin": "trash" }
+        ],
+        "note": "Choices are things in a pond, not groups."
+      },
+      {
+        "itemId": "g1-sci-healthy-environment-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "smoke and trash", "emoji": "🗑️" },
+          { "text": "clean air and water", "emoji": "💧" }
+        ],
+        "card": { "text": "a healthy place", "emoji": "🌳" },
+        "sorted": [
+          { "text": "dirty smoke", "emoji": "💨", "bin": "smoke and trash" },
+          { "text": "clear stream", "emoji": "💧", "bin": "clean air and water" }
+        ],
+        "note": "Choices are sets of things; no single card sorted into groups."
+      },
+      {
+        "itemId": "g1-sci-healthy-environment-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "a dry sidewalk", "emoji": "🛣️" },
+          { "text": "a dirty puddle", "emoji": "🟤" },
+          { "text": "a clean pond", "emoji": "🏞️" }
+        ],
+        "card": { "text": "a healthy home", "emoji": "🐟" },
+        "sorted": [
+          { "text": "hot pavement", "emoji": "🛣️", "bin": "a dry sidewalk" },
+          { "text": "muddy water", "emoji": "🟤", "bin": "a dirty puddle" },
+          { "text": "clear lake", "emoji": "🏞️", "bin": "a clean pond" }
+        ],
+        "note": "Choices are places (things), not groups."
+      },
+      {
+        "itemId": "g1-sci-healthy-environment-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "they may get sick", "emoji": "🤒" },
+          { "text": "they grow bigger", "emoji": "📈" }
+        ],
+        "card": { "text": "dirty water", "emoji": "🟤" },
+        "sorted": [
+          { "text": "sneezing", "emoji": "🤧", "bin": "they may get sick" },
+          { "text": "a growing plant", "emoji": "🌱", "bin": "they grow bigger" }
+        ],
+        "note": "Choices are outcomes, not groups."
+      },
+      {
+        "itemId": "g1-sci-healthy-environment-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "trash needs a home", "emoji": "🗑️" },
+          { "text": "living things need it", "emoji": "🌱" }
+        ],
+        "card": { "text": "keep a river clean", "emoji": "🌊" },
+        "sorted": [
+          { "text": "litter", "emoji": "🗑️", "bin": "trash needs a home" },
+          { "text": "frogs", "emoji": "🐸", "bin": "living things need it" }
+        ],
+        "note": "Choices are reasons, not groups."
+      }
+    ]
+  }
+}

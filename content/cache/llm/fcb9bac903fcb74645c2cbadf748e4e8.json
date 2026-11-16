@@ -1,0 +1,104 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-soc-chronology-tap-3",
+        "fits": false,
+        "cards": [
+          { "text": "first", "emoji": null },
+          { "text": "next", "emoji": null },
+          { "text": "last", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Asks about a word, not what comes first, next, or last in a sequence."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Dad learned to walk", "emoji": "🚶" },
+          { "text": "Dad lost a tooth", "emoji": "🦷" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Other choices left out; filler steps keep the row at 3 in order."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-7",
+        "fits": true,
+        "cards": [
+          { "text": "Nana's mom was born", "emoji": "👵" },
+          { "text": "Nana was born", "emoji": "👶" },
+          { "text": "Raj", "emoji": "👦" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Priya left out; row starts earlier so the gap follows Nana."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "Winnipeg", "emoji": null },
+          { "text": "Regina", "emoji": null },
+          { "text": "Calgary", "emoji": null }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Every home is a choice, so no row of 3 can leave out the other choices."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-11",
+        "fits": true,
+        "cards": [
+          { "text": "Grandpa moved to Canada", "emoji": "✈️" },
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Omar was born", "emoji": "🍼" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Gap is between the move and Omar's birth."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-12",
+        "fits": true,
+        "cards": [
+          { "text": "Mom started school", "emoji": "🏫" },
+          { "text": "Mom got married", "emoji": "💍" },
+          { "text": "Mom had baby Sam", "emoji": "👶" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "Other choices left out; last slot empty."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-13",
+        "fits": true,
+        "cards": [
+          { "text": "Summer camp", "emoji": "⛺" },
+          { "text": "the fall harvest feast", "emoji": "🍎" },
+          { "text": "Winter holiday party", "emoji": "⛄" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Spring picnic left out; gap right after summer camp."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-15",
+        "fits": false,
+        "cards": [
+          { "text": "Barrie", "emoji": null },
+          { "text": "Kingston", "emoji": null },
+          { "text": "Ottawa", "emoji": null }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "note": "All moves are choices, so no row of 3 can leave out the other choices."
+      }
+    ]
+  }
+}

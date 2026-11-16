@@ -1,0 +1,20 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-sci-plant-parts-tap-12",
+        "fits": true,
+        "cards": [
+          { "text": "roots grow down", "emoji": "🌱" },
+          { "text": "stem grows up", "emoji": "🌿" },
+          { "text": "leaves grow out", "emoji": "🍃" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "First slot empty; flower and fruit left out."
+      }
+    ]
+  }
+}

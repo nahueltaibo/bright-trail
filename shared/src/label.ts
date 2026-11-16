@@ -41,18 +41,27 @@ export const LabelSceneSchema = z
   });
 export type LabelScene = z.infer<typeof LabelSceneSchema>;
 
+const ARTICLE = /^(the|a|an|your)\s+/i;
+
+/** The words without a leading "the", "a", "an", or "your", so the tag for "the roots" says roots. */
+export const withoutArticle = (words: string) => words.trim().replace(ARTICLE, '');
+
+/** Whether a choice says a tag's words. Tags drop the article, so "the roots" fits roots. */
+export const sameTag = (choice: string, tag: string) =>
+  sameText(withoutArticle(choice), withoutArticle(tag));
+
 /** Why the scene can't play this item. Empty when it can. */
 export function labelProblems(item: Item, scene: LabelScene): string[] {
   const problems = cardItemProblems(item);
   const choices = textChoices(item);
   const asked = scene.tags[scene.asked]?.text;
   if (choices && asked) {
-    if (!sameText(asked, choices.answer)) {
+    if (!sameTag(choices.answer, asked)) {
       problems.push(`the asked tag is ${asked} but the item answers ${choices.answer}`);
     }
     // A choice already on the picture would answer itself.
     scene.tags.forEach((t, i) => {
-      if (i !== scene.asked && choices.texts.some((c) => sameText(c, t.text))) {
+      if (i !== scene.asked && choices.texts.some((c) => sameTag(c, t.text))) {
         problems.push(`the choice ${t.text} already labels the picture`);
       }
     });

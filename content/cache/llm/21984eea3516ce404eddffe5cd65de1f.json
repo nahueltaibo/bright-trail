@@ -1,0 +1,173 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-body-parts-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "your eyes", "emoji": null },
+          { "text": "your ears", "emoji": null },
+          { "text": "your nose", "emoji": null }
+        ],
+        "card": { "text": "seeing", "emoji": null },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "your eyes" },
+          { "text": "a cat", "emoji": "🐱", "bin": "your ears" }
+        ],
+        "note": "Choices are body parts (things), not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-2",
+        "fits": false,
+        "bins": [
+          { "text": "your tongue", "emoji": null },
+          { "text": "your ears", "emoji": null },
+          { "text": "your eyes", "emoji": null }
+        ],
+        "card": { "text": "hearing", "emoji": null },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "your tongue" },
+          { "text": "a cat", "emoji": "🐱", "bin": "your ears" }
+        ],
+        "note": "Choices are body parts (things), not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "see", "emoji": null },
+          { "text": "hear", "emoji": null },
+          { "text": "smell", "emoji": null }
+        ],
+        "card": { "text": "your nose", "emoji": "👃" },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "see" },
+          { "text": "a cat", "emoji": "🐱", "bin": "hear" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "see", "emoji": null },
+          { "text": "taste", "emoji": null },
+          { "text": "hear", "emoji": null }
+        ],
+        "card": { "text": "your tongue", "emoji": "👅" },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "see" },
+          { "text": "a cat", "emoji": "🐱", "bin": "taste" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "her ears", "emoji": null },
+          { "text": "her eyes", "emoji": null },
+          { "text": "her nose", "emoji": null }
+        ],
+        "card": { "text": "smelling cookies", "emoji": "🍪" },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "her ears" },
+          { "text": "a cat", "emoji": "🐱", "bin": "her eyes" }
+        ],
+        "note": "Choices are body parts (things), not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "on your foot", "emoji": null },
+          { "text": "on your hand", "emoji": null },
+          { "text": "on your face", "emoji": null }
+        ],
+        "card": { "text": "your eyes", "emoji": "👀" },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "on your foot" },
+          { "text": "a cat", "emoji": "🐱", "bin": "on your hand" }
+        ],
+        "note": "Choices are locations, not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "her skin", "emoji": null },
+          { "text": "her tongue", "emoji": null },
+          { "text": "her ears", "emoji": null }
+        ],
+        "card": { "text": "feeling soft fur", "emoji": "🐱" },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "her skin" },
+          { "text": "a cat", "emoji": "🐱", "bin": "her tongue" }
+        ],
+        "note": "Choices are body parts (things), not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "your nose", "emoji": null },
+          { "text": "your skin", "emoji": null },
+          { "text": "your eyes", "emoji": null }
+        ],
+        "card": { "text": "covering your body", "emoji": null },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "your nose" },
+          { "text": "a cat", "emoji": "🐱", "bin": "your skin" }
+        ],
+        "note": "Choices are body parts (things), not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "her eyes", "emoji": null },
+          { "text": "her skin", "emoji": null },
+          { "text": "her ears", "emoji": null }
+        ],
+        "card": { "text": "hearing the dog", "emoji": "🐶" },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "her eyes" },
+          { "text": "a cat", "emoji": "🐱", "bin": "her skin" }
+        ],
+        "note": "Choices are body parts (things), not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "hear a song", "emoji": null },
+          { "text": "see a rainbow", "emoji": null },
+          { "text": "taste a lemon", "emoji": null }
+        ],
+        "card": { "text": "your tongue", "emoji": "👅" },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "hear a song" },
+          { "text": "a cat", "emoji": "🐱", "bin": "see a rainbow" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g1-sci-body-parts-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "hear a song", "emoji": null },
+          { "text": "see her toys", "emoji": null },
+          { "text": "see a rainbow", "emoji": null }
+        ],
+        "card": { "text": "eyes closed", "emoji": "🙈" },
+        "sorted": [
+          { "text": "a dog", "emoji": "🐶", "bin": "hear a song" },
+          { "text": "a cat", "emoji": "🐱", "bin": "see her toys" }
+        ],
+        "note": "Choices are actions, not groups."
+      }
+    ]
+  }
+}

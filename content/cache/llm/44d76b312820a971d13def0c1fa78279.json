@@ -1,0 +1,143 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "a puddle", "emoji": null },
+          { "text": "a rock", "emoji": null },
+          { "text": "a brick", "emoji": null }
+        ],
+        "card": { "text": "a liquid", "emoji": null },
+        "sorted": [
+          { "text": "water", "emoji": "💧", "bin": "a puddle" },
+          { "text": "a stone", "emoji": "🪨", "bin": "a rock" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-2",
+        "fits": false,
+        "bins": [
+          { "text": "milk", "emoji": null },
+          { "text": "juice", "emoji": null },
+          { "text": "a chair", "emoji": null }
+        ],
+        "card": { "text": "a solid", "emoji": null },
+        "sorted": [
+          { "text": "cow milk", "emoji": "🥛", "bin": "milk" },
+          { "text": "a table", "emoji": "🪑", "bin": "a chair" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "stay hard", "emoji": null },
+          { "text": "pour", "emoji": null }
+        ],
+        "card": { "text": "a liquid", "emoji": null },
+        "sorted": [
+          { "text": "a rock", "emoji": "🪨", "bin": "stay hard" },
+          { "text": "water", "emoji": "💧", "bin": "pour" }
+        ],
+        "note": "Choices are actions, not groups."
+      },
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-5",
+        "fits": true,
+        "bins": [
+          { "text": "liquid", "emoji": "💧" },
+          { "text": "solid", "emoji": "🧱" }
+        ],
+        "card": { "text": "a brick", "emoji": "🧱" },
+        "sorted": [
+          { "text": "water", "emoji": "💧", "bin": "liquid" },
+          { "text": "milk", "emoji": "🥛", "bin": "liquid" },
+          { "text": "a rock", "emoji": "🪨", "bin": "solid" },
+          { "text": "a chair", "emoji": "🪑", "bin": "solid" }
+        ],
+        "note": "Brick is a solid."
+      },
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "rain", "emoji": null },
+          { "text": "a puddle", "emoji": null },
+          { "text": "a brick wall", "emoji": null }
+        ],
+        "card": { "text": "a solid", "emoji": null },
+        "sorted": [
+          { "text": "a drop of rain", "emoji": "🌧️", "bin": "rain" },
+          { "text": "a stone wall", "emoji": "🧱", "bin": "a brick wall" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "a lake", "emoji": null },
+          { "text": "a tree", "emoji": null },
+          { "text": "a stone", "emoji": null }
+        ],
+        "card": { "text": "a liquid", "emoji": null },
+        "sorted": [
+          { "text": "a river", "emoji": "🌊", "bin": "a lake" },
+          { "text": "a rock", "emoji": "🪨", "bin": "a stone" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "a rock", "emoji": null },
+          { "text": "a brick", "emoji": null },
+          { "text": "liquid water", "emoji": null }
+        ],
+        "card": { "text": "melted ice", "emoji": "🧊" },
+        "sorted": [
+          { "text": "a stone", "emoji": "🪨", "bin": "a rock" },
+          { "text": "a puddle", "emoji": "💧", "bin": "liquid water" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "a toy block", "emoji": null },
+          { "text": "soup", "emoji": null },
+          { "text": "a stick", "emoji": null }
+        ],
+        "card": { "text": "something to pour", "emoji": null },
+        "sorted": [
+          { "text": "a block", "emoji": "🧱", "bin": "a toy block" },
+          { "text": "milk", "emoji": "🥛", "bin": "soup" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-liquid-or-solid-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "the bottle", "emoji": null },
+          { "text": "the cap", "emoji": null },
+          { "text": "the juice", "emoji": null }
+        ],
+        "card": { "text": "the liquid part", "emoji": null },
+        "sorted": [
+          { "text": "a lid", "emoji": "🧢", "bin": "the cap" },
+          { "text": "a glass", "emoji": "🥛", "bin": "the bottle" }
+        ],
+        "note": "Choices are parts, not groups."
+      }
+    ]
+  }
+}

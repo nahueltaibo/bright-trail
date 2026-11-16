@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-hlth-food-needs-tap-15",
+        "fits": true,
+        "cards": [
+          { "text": "eat a healthy meal", "emoji": "🥗" },
+          { "text": "warm up", "emoji": "🤸" },
+          { "text": "run the race", "emoji": "🏃" },
+          { "text": "rest", "emoji": "😌" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Healthy meal comes first, before the race."
+      }
+    ]
+  }
+}

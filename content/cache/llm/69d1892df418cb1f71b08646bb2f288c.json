@@ -1,0 +1,113 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-objects-materials-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "a metal spoon", "emoji": null },
+          { "text": "a coin", "emoji": null },
+          { "text": "a pencil", "emoji": null }
+        ],
+        "card": { "text": "a pencil", "emoji": "✏️" },
+        "sorted": [
+          { "text": "a spoon", "emoji": "🥄", "bin": "a metal spoon" },
+          { "text": "a coin", "emoji": "🪙", "bin": "a coin" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-objects-materials-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "wood", "emoji": null },
+          { "text": "metal", "emoji": null },
+          { "text": "glass", "emoji": null }
+        ],
+        "card": { "text": "glass", "emoji": null },
+        "sorted": [
+          { "text": "a log", "emoji": "🪵", "bin": "wood" },
+          { "text": "a key", "emoji": "🔑", "bin": "metal" }
+        ],
+        "note": "Choices are materials to pick from, not groups for one thing."
+      },
+      {
+        "itemId": "g1-sci-objects-materials-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "wood spoon", "emoji": null },
+          { "text": "wood chair", "emoji": null },
+          { "text": "metal fork", "emoji": null }
+        ],
+        "card": { "text": "a metal fork", "emoji": "🍴" },
+        "sorted": [
+          { "text": "a spoon", "emoji": "🥄", "bin": "wood spoon" },
+          { "text": "a chair", "emoji": "🪑", "bin": "wood chair" }
+        ],
+        "note": "Odd one out; choices are things."
+      },
+      {
+        "itemId": "g1-sci-objects-materials-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "glass marble", "emoji": null },
+          { "text": "wood block", "emoji": null },
+          { "text": "wood and metal chair", "emoji": null }
+        ],
+        "card": { "text": "two materials", "emoji": null },
+        "sorted": [
+          { "text": "a marble", "emoji": "🔮", "bin": "glass marble" },
+          { "text": "a block", "emoji": "🧱", "bin": "wood block" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-objects-materials-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "paper", "emoji": null },
+          { "text": "metal", "emoji": null },
+          { "text": "cloth", "emoji": null }
+        ],
+        "card": { "text": "a bridge", "emoji": "🌉" },
+        "sorted": [
+          { "text": "a page", "emoji": "📄", "bin": "paper" },
+          { "text": "a nail", "emoji": "🔩", "bin": "metal" }
+        ],
+        "note": "Choices are materials to pick from, not groups."
+      },
+      {
+        "itemId": "g1-sci-objects-materials-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "a chair", "emoji": null },
+          { "text": "a cup", "emoji": null },
+          { "text": "wood", "emoji": null }
+        ],
+        "card": { "text": "wood", "emoji": "🪵" },
+        "sorted": [
+          { "text": "a chair", "emoji": "🪑", "bin": "a chair" },
+          { "text": "a cup", "emoji": "🥤", "bin": "a cup" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-sci-objects-materials-tap-13",
+        "fits": false,
+        "bins": [
+          { "text": "a glass cup", "emoji": null },
+          { "text": "a metal spoon", "emoji": null },
+          { "text": "a cloth bag", "emoji": null }
+        ],
+        "card": { "text": "a glass cup", "emoji": "🥛" },
+        "sorted": [
+          { "text": "a spoon", "emoji": "🥄", "bin": "a metal spoon" },
+          { "text": "a bag", "emoji": "👜", "bin": "a cloth bag" }
+        ],
+        "note": "Choices are things, not groups."
+      }
+    ]
+  }
+}

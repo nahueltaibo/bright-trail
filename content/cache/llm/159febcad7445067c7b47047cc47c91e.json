@@ -1,0 +1,130 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-soc-community-features-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "a school", "emoji": null },
+          { "text": "a river", "emoji": null },
+          { "text": "a road", "emoji": null }
+        ],
+        "card": { "text": "a river", "emoji": null },
+        "sorted": [{ "text": "a school", "emoji": null, "bin": "a school" }],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-4",
+        "fits": false,
+        "bins": [
+          { "text": "a lake", "emoji": null },
+          { "text": "a hill", "emoji": null },
+          { "text": "a store", "emoji": null }
+        ],
+        "card": { "text": "a store", "emoji": null },
+        "sorted": [{ "text": "a lake", "emoji": null, "bin": "a lake" }],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "people", "emoji": null },
+          { "text": "nature", "emoji": null }
+        ],
+        "card": { "text": "a built feature", "emoji": null },
+        "sorted": [{ "text": "people", "emoji": null, "bin": "people" }],
+        "note": "Asks who makes something; choices are makers, not groups."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "a lake", "emoji": null },
+          { "text": "a river", "emoji": null },
+          { "text": "a library", "emoji": null }
+        ],
+        "card": { "text": "a library", "emoji": null },
+        "sorted": [{ "text": "a lake", "emoji": null, "bin": "a lake" }],
+        "note": "Odd one out; choices are things."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "river, forest, school", "emoji": null },
+          { "text": "school, road, house", "emoji": null }
+        ],
+        "card": { "text": "all built group", "emoji": null },
+        "sorted": [{ "text": "river", "emoji": null, "bin": "river, forest, school" }],
+        "note": "Choices are lists of things, not groups for one thing."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "a forest", "emoji": null },
+          { "text": "a lake", "emoji": null },
+          { "text": "a library", "emoji": null }
+        ],
+        "card": { "text": "a book", "emoji": null },
+        "sorted": [{ "text": "a forest", "emoji": null, "bin": "a forest" }],
+        "note": "Choices are places, not groups."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-10",
+        "fits": true,
+        "bins": [
+          { "text": "natural", "emoji": "🌳" },
+          { "text": "built", "emoji": "🏗️" }
+        ],
+        "card": { "text": "place of worship", "emoji": "🛕" },
+        "sorted": [
+          { "text": "a river", "emoji": "🏞️", "bin": "natural" },
+          { "text": "a hill", "emoji": "⛰️", "bin": "natural" },
+          { "text": "a lake", "emoji": "🌊", "bin": "natural" },
+          { "text": "a school", "emoji": "🏫", "bin": "built" },
+          { "text": "a road", "emoji": "🛣️", "bin": "built" },
+          { "text": "a store", "emoji": "🏪", "bin": "built" }
+        ],
+        "note": "Natural or built sorting."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "an arena", "emoji": null },
+          { "text": "a forest", "emoji": null },
+          { "text": "a lake", "emoji": null }
+        ],
+        "card": { "text": "a hockey place", "emoji": null },
+        "sorted": [{ "text": "a forest", "emoji": null, "bin": "a forest" }],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "a builder made it", "emoji": null },
+          { "text": "trees grow by themselves", "emoji": null }
+        ],
+        "card": { "text": "a forest", "emoji": null },
+        "sorted": [{ "text": "a builder made it", "emoji": null, "bin": "a builder made it" }],
+        "note": "Choices are reasons."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "road, lake, forest", "emoji": null },
+          { "text": "lake, river, forest", "emoji": null }
+        ],
+        "card": { "text": "all natural group", "emoji": null },
+        "sorted": [{ "text": "road", "emoji": null, "bin": "road, lake, forest" }],
+        "note": "Choices are lists of things, not groups for one thing."
+      }
+    ]
+  }
+}

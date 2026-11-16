@@ -1,5 +1,11 @@
-import type { ContentBundle, Item, Skill, StoryNugget } from '@bright-trail/shared';
-import { Redirect, router } from 'expo-router';
+import {
+  ContentBundleSchema,
+  type ContentBundle,
+  type Item,
+  type Skill,
+  type StoryNugget,
+} from '@bright-trail/shared';
+import { Redirect, router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -44,10 +50,25 @@ function answerKey(item: Item): { answer: string; miss?: string } {
   }
 }
 
+/**
+ * Every subject, from the full bundle that `scripts/serve-packs.mjs` serves. Packs hold only the
+ * subjects parents can pick, so this is how to play the rest.
+ */
+async function fetchFullBundle(): Promise<ContentBundle> {
+  const base = process.env.EXPO_PUBLIC_CONTENT_URL;
+  if (!base) throw new Error('EXPO_PUBLIC_CONTENT_URL is not set.');
+  const url = `${base}/dev/bundle.json`;
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`${url} answered ${response.status}.`);
+  return ContentBundleSchema.parse(await response.json());
+}
+
 /** Dev and e2e only: plays one skill's nugget and items. Narration shows as a caption. */
 export default function LearningPreviewScreen() {
   const repo = useStorage();
-  const [bundle, setBundle] = useState<ContentBundle | null>(null);
+  const all = useLocalSearchParams<{ all?: string }>().all === '1';
+  const [loaded, setLoaded] = useState<{ all: boolean; bundle: ContentBundle } | null>(null);
+  const bundle = loaded?.all === all ? loaded.bundle : null;
   const [skill, setSkill] = useState<Skill | null>(null);
   const [current, setCurrent] = useState<number | null>(null);
   const [caption, setCaption] = useState('');
@@ -55,17 +76,26 @@ export default function LearningPreviewScreen() {
 
   // The preview plays every skill, so it downloads every pack. The next sync deletes the extras.
   useEffect(() => {
-    syncPacks(repo, { extra: 'all' })
-      .then(() => loadContent(repo))
-      .then(setBundle);
-  }, [repo]);
+    if (!SHOW_DEV_TOOLS) return;
+    let stale = false;
+    const load = all
+      ? fetchFullBundle()
+      : syncPacks(repo, { extra: 'all' }).then(() => loadContent(repo));
+    load.then(
+      (b) => !stale && setLoaded({ all, bundle: b }),
+      (e: unknown) => !stale && setLog(String(e)),
+    );
+    return () => {
+      stale = true;
+    };
+  }, [repo, all]);
 
   const steps = useMemo(() => (bundle && skill ? playlist(bundle, skill.id) : []), [bundle, skill]);
   const narrate = useCallback((texts: string[]) => setCaption(texts.join(' ')), []);
   const onFlag = useCallback((t: FlagTarget) => setLog(`flag ${JSON.stringify(t)}`), []);
 
   if (!SHOW_DEV_TOOLS) return <Redirect href="/" />;
-  if (!bundle) return null;
+  if (!bundle) return log ? <Text style={styles.devText}>{log}</Text> : null;
 
   if (!skill || current === null) {
     const rows = skill
@@ -87,6 +117,17 @@ export default function LearningPreviewScreen() {
         <ScrollView contentContainerStyle={styles.menu}>
           <Text style={styles.title}>{skill ? skill.title : 'Learning preview'}</Text>
           {!skill && <Text style={styles.devText}>Bundle {bundle.version}</Text>}
+          {!skill && (
+            <Pressable
+              accessibilityRole="button"
+              onPress={() => router.setParams({ all: all ? '0' : '1' })}
+              style={styles.menuRow}
+            >
+              <Text style={styles.menuText}>
+                {all ? 'Downloaded packs only' : 'All subjects, from the full bundle'}
+              </Text>
+            </Pressable>
+          )}
           {rows.map((row) => (
             <Pressable
               key={row.key}

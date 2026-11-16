@@ -1,0 +1,80 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-life-cycles-tap-1",
+        "fits": false,
+        "cards": [
+          { "text": "an egg", "emoji": "🥚" },
+          { "text": "a pupa", "emoji": null },
+          { "text": "flying", "emoji": "🦋" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Egg must be first, but the row can't have 3 cards without caterpillar or adult butterfly."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "caterpillar", "emoji": "🐛" },
+          { "text": "a pupa", "emoji": null },
+          { "text": "flying wings", "emoji": "🦋" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Pupa comes after the caterpillar; egg and tadpole left out."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-7",
+        "fits": true,
+        "cards": [
+          { "text": "tadpole", "emoji": "🐟" },
+          { "text": "a froglet", "emoji": null },
+          { "text": "grown frog", "emoji": "🐸" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "note": "Froglet right after tadpole; egg and pupa left out."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "a pupa", "emoji": null },
+          { "text": "a pupa", "emoji": null },
+          { "text": "a pupa", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Asks which animal, not a sequence position."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-10",
+        "fits": false,
+        "cards": [
+          { "text": "an adult bird", "emoji": "🐦" },
+          { "text": "a nest", "emoji": "🪺" },
+          { "text": "a chick", "emoji": "🐥" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Asks which stage does something, not first/next/last in order."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-15",
+        "fits": false,
+        "cards": [
+          { "text": "a frog", "emoji": "🐸" },
+          { "text": "a nest", "emoji": null },
+          { "text": "a froglet", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Asks which stage does something, not a sequence position."
+      }
+    ]
+  }
+}

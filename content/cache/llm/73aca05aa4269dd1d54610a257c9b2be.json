@@ -1,0 +1,21 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g3-sci-plant-parts-tap-12",
+        "fits": true,
+        "cards": [
+          { "text": "roots grow down", "emoji": "🌱" },
+          { "text": "stem grows up", "emoji": "🌿" },
+          { "text": "leaves grow", "emoji": "🍃" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Roots come first; the flower and fruit come later, so neither fits the first slot."
+      }
+    ]
+  }
+}

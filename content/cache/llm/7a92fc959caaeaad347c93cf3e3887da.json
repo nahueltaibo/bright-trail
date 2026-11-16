@@ -1,0 +1,216 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-life-cycles-tap-1",
+        "fits": false,
+        "bins": [
+          { "text": "an egg", "emoji": "🥚" },
+          { "text": "a caterpillar", "emoji": "🐛" },
+          { "text": "an adult butterfly", "emoji": "🦋" }
+        ],
+        "card": { "text": "a butterfly", "emoji": "🦋" },
+        "sorted": [
+          { "text": "hen egg", "emoji": "🥚", "bin": "an egg" },
+          { "text": "worm", "emoji": "🐛", "bin": "a caterpillar" },
+          { "text": "moth", "emoji": "🦋", "bin": "an adult butterfly" }
+        ],
+        "note": "Choices are stages (things), not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-2",
+        "fits": false,
+        "bins": [
+          { "text": "a chick", "emoji": "🐥" },
+          { "text": "a caterpillar", "emoji": "🐛" },
+          { "text": "a tadpole", "emoji": "🐸" }
+        ],
+        "card": { "text": "A baby frog", "emoji": "🐸" },
+        "sorted": [
+          { "text": "baby duck", "emoji": "🐥", "bin": "a chick" },
+          { "text": "worm", "emoji": "🐛", "bin": "a caterpillar" },
+          { "text": "fish", "emoji": "🐟", "bin": "a tadpole" }
+        ],
+        "note": "Choices are names of things, not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-3",
+        "fits": false,
+        "bins": [
+          { "text": "in a pond", "emoji": "🌊" },
+          { "text": "in an egg", "emoji": "🥚" },
+          { "text": "in a leaf", "emoji": "🍃" }
+        ],
+        "card": { "text": "A bird", "emoji": "🐦" },
+        "sorted": [
+          { "text": "fish", "emoji": "🐟", "bin": "in a pond" },
+          { "text": "hen egg", "emoji": "🥚", "bin": "in an egg" },
+          { "text": "bug", "emoji": "🐛", "bin": "in a leaf" }
+        ],
+        "note": "Choices are places, not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-5",
+        "fits": false,
+        "bins": [
+          { "text": "a chick", "emoji": "🐥" },
+          { "text": "a tadpole", "emoji": "🐸" },
+          { "text": "a kitten", "emoji": "🐱" }
+        ],
+        "card": { "text": "A baby", "emoji": "🍼" },
+        "sorted": [
+          { "text": "duckling", "emoji": "🐥", "bin": "a chick" },
+          { "text": "froglet", "emoji": "🐸", "bin": "a tadpole" },
+          { "text": "puppy", "emoji": "🐶", "bin": "a kitten" }
+        ],
+        "note": "Choices are things, not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-6",
+        "fits": false,
+        "bins": [
+          { "text": "a pupa", "emoji": "🐛" },
+          { "text": "an egg", "emoji": "🥚" },
+          { "text": "a tadpole", "emoji": "🐸" }
+        ],
+        "card": { "text": "the shell", "emoji": "🐚" },
+        "sorted": [
+          { "text": "cocoon", "emoji": "🐛", "bin": "a pupa" },
+          { "text": "hen egg", "emoji": "🥚", "bin": "an egg" },
+          { "text": "frog baby", "emoji": "🐸", "bin": "a tadpole" }
+        ],
+        "note": "Choices are stages (things), not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-7",
+        "fits": false,
+        "bins": [
+          { "text": "an egg", "emoji": "🥚" },
+          { "text": "a pupa", "emoji": "🐛" },
+          { "text": "a froglet", "emoji": "🐸" }
+        ],
+        "card": { "text": "a tadpole", "emoji": "🐸" },
+        "sorted": [
+          { "text": "hen egg", "emoji": "🥚", "bin": "an egg" },
+          { "text": "cocoon", "emoji": "🐛", "bin": "a pupa" },
+          { "text": "young frog", "emoji": "🐸", "bin": "a froglet" }
+        ],
+        "note": "Choices are stages (things), not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-8",
+        "fits": false,
+        "bins": [
+          { "text": "a frog", "emoji": "🐸" },
+          { "text": "a butterfly", "emoji": "🦋" },
+          { "text": "a robin", "emoji": "🐦" }
+        ],
+        "card": { "text": "a pupa", "emoji": null },
+        "sorted": [
+          { "text": "toad", "emoji": "🐸", "bin": "a frog" },
+          { "text": "moth", "emoji": "🦋", "bin": "a butterfly" },
+          { "text": "sparrow", "emoji": "🐦", "bin": "a robin" }
+        ],
+        "note": "Choices are animals, not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-9",
+        "fits": false,
+        "bins": [
+          { "text": "a robin", "emoji": "🐦" },
+          { "text": "a frog", "emoji": "🐸" },
+          { "text": "a horse", "emoji": "🐴" }
+        ],
+        "card": { "text": "an egg", "emoji": "🥚" },
+        "sorted": [
+          { "text": "sparrow", "emoji": "🐦", "bin": "a robin" },
+          { "text": "toad", "emoji": "🐸", "bin": "a frog" },
+          { "text": "pony", "emoji": "🐴", "bin": "a horse" }
+        ],
+        "note": "Choices are animals, not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-10",
+        "fits": false,
+        "bins": [
+          { "text": "an adult bird", "emoji": "🐦" },
+          { "text": "a chick", "emoji": "🐥" },
+          { "text": "an egg", "emoji": "🥚" }
+        ],
+        "card": { "text": "the eggs", "emoji": "🥚" },
+        "sorted": [
+          { "text": "hen", "emoji": "🐔", "bin": "an adult bird" },
+          { "text": "baby duck", "emoji": "🐥", "bin": "a chick" },
+          { "text": "hen egg", "emoji": "🥚", "bin": "an egg" }
+        ],
+        "note": "Choices are stages (things), not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-11",
+        "fits": false,
+        "bins": [
+          { "text": "chick, egg, adult bird", "emoji": null },
+          { "text": "adult bird, egg, chick", "emoji": null },
+          { "text": "egg, chick, adult bird", "emoji": null }
+        ],
+        "card": { "text": "a bird's life", "emoji": "🐦" },
+        "sorted": [
+          { "text": "wrong order", "emoji": "❌", "bin": "chick, egg, adult bird" },
+          { "text": "other wrong order", "emoji": "❌", "bin": "adult bird, egg, chick" },
+          { "text": "right order", "emoji": "✅", "bin": "egg, chick, adult bird" }
+        ],
+        "note": "Choices are sequences, not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-12",
+        "fits": false,
+        "bins": [
+          { "text": "Both have a pupa", "emoji": null },
+          { "text": "Both drink milk", "emoji": "🍼" },
+          { "text": "They both start as eggs", "emoji": "🥚" }
+        ],
+        "card": { "text": "a butterfly and a frog", "emoji": "🦋" },
+        "sorted": [
+          { "text": "cocoon", "emoji": "🐛", "bin": "Both have a pupa" },
+          { "text": "kitten", "emoji": "🐱", "bin": "Both drink milk" },
+          { "text": "hen egg", "emoji": "🥚", "bin": "They both start as eggs" }
+        ],
+        "note": "Choices are statements, not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-14",
+        "fits": false,
+        "bins": [
+          { "text": "a caterpillar", "emoji": "🐛" },
+          { "text": "a puppy", "emoji": "🐶" },
+          { "text": "a tadpole", "emoji": "🐸" }
+        ],
+        "card": { "text": "a small adult", "emoji": null },
+        "sorted": [
+          { "text": "worm", "emoji": "🐛", "bin": "a caterpillar" },
+          { "text": "kitten", "emoji": "🐱", "bin": "a puppy" },
+          { "text": "fish", "emoji": "🐟", "bin": "a tadpole" }
+        ],
+        "note": "Choices are animals, not groups."
+      },
+      {
+        "itemId": "g2-sci-life-cycles-tap-15",
+        "fits": false,
+        "bins": [
+          { "text": "a tadpole", "emoji": "🐸" },
+          { "text": "a caterpillar", "emoji": "🐛" },
+          { "text": "a frog", "emoji": "🐸" }
+        ],
+        "card": { "text": "eggs", "emoji": "🥚" },
+        "sorted": [
+          { "text": "fish", "emoji": "🐟", "bin": "a tadpole" },
+          { "text": "worm", "emoji": "🐛", "bin": "a caterpillar" },
+          { "text": "toad", "emoji": "🐸", "bin": "a frog" }
+        ],
+        "note": "Choices are stages (things), not groups."
+      }
+    ]
+  }
+}

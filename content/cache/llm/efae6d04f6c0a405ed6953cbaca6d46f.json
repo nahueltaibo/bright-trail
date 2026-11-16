@@ -1,0 +1,24 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-soc-community-features-tap-1",
+        "fits": false,
+        "picture": "map",
+        "part": "river",
+        "others": ["forest"],
+        "note": "Asks which choice is natural, a classification question, not naming a map part."
+      },
+      {
+        "itemId": "g1-soc-community-features-tap-11",
+        "fits": false,
+        "picture": "map",
+        "part": "forest",
+        "others": ["lake"],
+        "note": "Odd-one-out question about community features, not naming one part of the picture."
+      }
+    ]
+  }
+}

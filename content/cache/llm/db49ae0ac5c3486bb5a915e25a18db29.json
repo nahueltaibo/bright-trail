@@ -1,0 +1,112 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-soc-chronology-tap-3",
+        "fits": false,
+        "cards": [
+          { "text": "first", "emoji": null },
+          { "text": "next", "emoji": null },
+          { "text": "last", "emoji": null }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Vocabulary question, not about what comes first, next, before, after or last in a sequence."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Dad learned to walk", "emoji": "🚶" },
+          { "text": "Dad turned five", "emoji": "🎂" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Other two choices left out; neighbours added so neither wrong choice fits first."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-7",
+        "fits": false,
+        "cards": [
+          { "text": "Nana", "emoji": "👵" },
+          { "text": "Raj", "emoji": "👨" },
+          { "text": "Nana's mom", "emoji": null }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "note": "Priya must be left out, and then Priya also fits after Nana as a true birth order."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "Winnipeg", "emoji": null },
+          { "text": "Regina", "emoji": null },
+          { "text": "Calgary", "emoji": null }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "All three homes are choices, so no row of 3 can leave out the other choices."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-11",
+        "fits": true,
+        "cards": [
+          { "text": "Grandpa moved to Canada", "emoji": "✈️" },
+          { "text": "Dad was born", "emoji": "👶" },
+          { "text": "Omar was born", "emoji": "🍼" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Story events in order; other choices fall before the move or after Omar's birth."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-12",
+        "fits": false,
+        "cards": [
+          { "text": "Grandma was born", "emoji": null },
+          { "text": "Mom was born", "emoji": null },
+          { "text": "Mom had baby Sam", "emoji": null }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "All three events are choices, so no row of 3 can leave out the other choices."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-13",
+        "fits": false,
+        "cards": [
+          { "text": "the spring picnic", "emoji": null },
+          { "text": "the summer camp", "emoji": null },
+          { "text": "the fall harvest feast", "emoji": null }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "Both other events are choices, so a 3-card row cannot leave out the wrong choice."
+      },
+      {
+        "itemId": "g2-soc-chronology-tap-15",
+        "fits": false,
+        "cards": [
+          { "text": "Barrie", "emoji": null },
+          { "text": "Kingston", "emoji": null },
+          { "text": "Ottawa", "emoji": null }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "note": "All three moves are choices, so no row of 3 can leave out the other choices."
+      }
+    ]
+  }
+}

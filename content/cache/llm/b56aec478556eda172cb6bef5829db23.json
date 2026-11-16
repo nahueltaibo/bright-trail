@@ -1,0 +1,120 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g1-sci-design-steps-tap-1",
+        "fits": true,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "share", "emoji": "🤝" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": true,
+        "note": "Test and make it better are choices, so they are left out; test falls between build and share."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-2",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": false,
+        "note": "Asks to identify a step from a description, not first/next/last in a sequence."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-3",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": false,
+        "note": "Asks to identify a step from a description, not a position in a sequence."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-6",
+        "fits": true,
+        "cards": [
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" },
+          { "text": "make it better", "emoji": "🔧" }
+        ],
+        "missing": 1,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Plan is a choice so it is left out; row starts at build."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-8",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": false,
+        "note": "Asks which action belongs to the plan step, not an order question."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-9",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "make it better", "emoji": "🔧" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": true,
+        "note": "Item names plan and build, which are also wrong choices, so no valid 3-card row can leave them out."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-12",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": false,
+        "skipsSteps": false,
+        "note": "Choices are whole lists, not single steps for a slot."
+      },
+      {
+        "itemId": "g1-sci-design-steps-tap-14",
+        "fits": false,
+        "cards": [
+          { "text": "plan", "emoji": "📝" },
+          { "text": "build", "emoji": "🔨" },
+          { "text": "test", "emoji": "🧪" }
+        ],
+        "missing": 2,
+        "cycle": false,
+        "otherChoiceFits": true,
+        "skipsSteps": false,
+        "note": "Asks to identify which step an action is, not first/next/last."
+      }
+    ]
+  }
+}

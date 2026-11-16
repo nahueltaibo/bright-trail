@@ -1,1 +1,108 @@
-{}
+{
+  "g1-sci-design-steps-tap-14": {
+    "kind": "sort",
+    "bins": [
+      { "text": "plan", "emoji": "📝" },
+      { "text": "test", "emoji": "🧪" },
+      { "text": "make it better", "emoji": "✨" }
+    ],
+    "sorted": [
+      { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 0 },
+      { "card": { "text": "try it out", "emoji": "🔍" }, "bin": 1 },
+      { "card": { "text": "fix a problem", "emoji": "🔧" }, "bin": 2 }
+    ],
+    "card": { "text": "a wide base", "emoji": "🥤" },
+    "bin": 2
+  },
+  "g1-sci-design-steps-tap-2": {
+    "kind": "sort",
+    "bins": [
+      { "text": "build", "emoji": "🔨" },
+      { "text": "plan", "emoji": "📝" },
+      { "text": "test", "emoji": "🧪" }
+    ],
+    "sorted": [
+      { "card": { "text": "stack blocks", "emoji": "🧱" }, "bin": 0 },
+      { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 1 },
+      { "card": { "text": "try it out", "emoji": "🔍" }, "bin": 2 }
+    ],
+    "card": { "text": "tape and a foam tray", "emoji": "🧰" },
+    "bin": 0
+  },
+  "g1-sci-design-steps-tap-3": {
+    "kind": "sort",
+    "bins": [
+      { "text": "build", "emoji": "🔨" },
+      { "text": "plan", "emoji": "📝" },
+      { "text": "test", "emoji": "🧪" }
+    ],
+    "sorted": [
+      { "card": { "text": "stack blocks", "emoji": "🧱" }, "bin": 0 },
+      { "card": { "text": "draw an idea", "emoji": "✏️" }, "bin": 1 },
+      { "card": { "text": "drop a ball", "emoji": "🔍" }, "bin": 2 }
+    ],
+    "card": { "text": "puts her boat in water", "emoji": "🚤" },
+    "bin": 2
+  },
+  "g1-sci-plant-animal-features-tap-9": {
+    "kind": "sort",
+    "bins": [
+      { "text": "dry", "emoji": "🏜️" },
+      { "text": "wet", "emoji": "🌧️" }
+    ],
+    "sorted": [
+      { "card": { "text": "a camel", "emoji": "🐪" }, "bin": 0 },
+      { "card": { "text": "a desert", "emoji": "🏜️" }, "bin": 0 },
+      { "card": { "text": "a frog", "emoji": "🐸" }, "bin": 1 },
+      { "card": { "text": "a fish", "emoji": "🐟" }, "bin": 1 }
+    ],
+    "card": { "text": "a cactus", "emoji": "🌵" },
+    "bin": 0
+  },
+  "g1-soc-community-features-tap-10": {
+    "kind": "sort",
+    "bins": [
+      { "text": "natural", "emoji": "🌳" },
+      { "text": "built", "emoji": "🏗️" }
+    ],
+    "sorted": [
+      { "card": { "text": "a river", "emoji": "🏞️" }, "bin": 0 },
+      { "card": { "text": "a forest", "emoji": "🌲" }, "bin": 0 },
+      { "card": { "text": "a school", "emoji": "🏫" }, "bin": 1 },
+      { "card": { "text": "a road", "emoji": "🛣️" }, "bin": 1 }
+    ],
+    "card": { "text": "place of worship", "emoji": "🛐" },
+    "bin": 1
+  },
+  "g2-sci-animal-characteristics-tap-10": {
+    "kind": "sort",
+    "bins": [
+      { "text": "covering", "emoji": "🧥" },
+      { "text": "size", "emoji": "📏" },
+      { "text": "sound", "emoji": "🔊" }
+    ],
+    "sorted": [
+      { "card": { "text": "fur", "emoji": "🧶" }, "bin": 0 },
+      { "card": { "text": "feathers", "emoji": "🪶" }, "bin": 0 },
+      { "card": { "text": "big", "emoji": "🐘" }, "bin": 1 },
+      { "card": { "text": "roar", "emoji": "🦁" }, "bin": 2 }
+    ],
+    "card": { "text": "tall", "emoji": "🦒" },
+    "bin": 1
+  },
+  "g2-sci-liquid-or-solid-tap-5": {
+    "kind": "sort",
+    "bins": [
+      { "text": "liquid", "emoji": "💧" },
+      { "text": "solid", "emoji": "🧱" }
+    ],
+    "sorted": [
+      { "card": { "text": "water", "emoji": "💧" }, "bin": 0 },
+      { "card": { "text": "milk", "emoji": "🥛" }, "bin": 0 },
+      { "card": { "text": "a rock", "emoji": "🪨" }, "bin": 1 },
+      { "card": { "text": "a chair", "emoji": "🪑" }, "bin": 1 }
+    ],
+    "card": { "text": "a brick" },
+    "bin": 1
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "model": "claude-sonnet-5-5",
+  "tool": "submit_scenes",
+  "output": {
+    "scenes": [
+      {
+        "itemId": "g2-sci-animal-characteristics-tap-13",
+        "fits": true,
+        "cards": [
+          { "text": "fluffy down", "emoji": "🐥" },
+          { "text": "growing feathers", "emoji": "🪶" },
+          { "text": "full-grown duck", "emoji": "🦆" }
+        ],
+        "missing": 0,
+        "cycle": false,
+        "note": "Duckling growth order; gap is first slot, adult feathers left out."
+      }
+    ]
+  }
+}
