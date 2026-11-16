@@ -109,6 +109,14 @@ gh variable set EXPO_PUBLIC_FEEDBACK_URL --body "https://bright-trail-feedback.<
 
 The next APK and OTA update bake it in. It's optional: without it, the app keeps flagged reports queued on the device and uploads them once a build has the URL. For a local run, set it in the shell before `npm run dev`, such as `http://localhost:8787` for the local Worker below.
 
+## Admin Page
+
+Open `/admin` on the Worker, like `https://bright-trail-feedback.<subdomain>.workers.dev/admin`. Locally it's `http://localhost:8787/admin`, with the token from `.dev.vars`. See [Run It Locally](#run-it-locally).
+
+- It asks for `FEEDBACK_ADMIN_TOKEN` and keeps it in the tab's session storage. **Forget token** clears it, and so does any `401`.
+- It lists reports newest first, filtered by status. Click one to see its capture, comment, and repro data, and to set it `new`, `filed`, or `rejected`.
+- The page and its files live in `feedback-worker/public/`. They load without the token, since they hold no data. `src/page.ts` serves them with a strict CSP, `noindex`, and `no-store`.
+
 ## Admin Routes
 
 | Route                       | Does                                                                                                                       |

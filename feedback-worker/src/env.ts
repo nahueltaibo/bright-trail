@@ -1,8 +1,10 @@
-import type { D1Database, R2Bucket } from '@cloudflare/workers-types';
+import type { D1Database, Fetcher, R2Bucket } from '@cloudflare/workers-types';
 
 export interface Env {
   DB: D1Database;
   CAPTURES: R2Bucket;
+  /** The admin page's files in `public/`. */
+  ASSETS: Fetcher;
   /** Bearer secret for `/admin/*`. It also keys signed capture links. */
   FEEDBACK_ADMIN_TOKEN: string;
 }
