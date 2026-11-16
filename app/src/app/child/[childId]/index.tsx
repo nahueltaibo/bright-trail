@@ -16,6 +16,7 @@ import { color, radius } from '../../../design/tokens';
 import { useLayout } from '../../../learning/theme';
 import { SpeakerButton, useAutoNarration } from '../../../narration';
 import { buildTrail, countStars, type Trail } from '../../../session';
+import { syncFeedback } from '../../../feedback';
 import { useStorage } from '../../../storage/StorageProvider';
 import { Text } from '../../../design/Text';
 
@@ -31,9 +32,11 @@ export default function ChildHomeScreen() {
   const packs = usePackStatus();
 
   // Downloads on focus, so packs for the grades ahead arrive between sessions.
+  // Reports flagged offline go up then too.
   useFocusEffect(
     useCallback(() => {
       void syncPacks(repo);
+      void syncFeedback(repo);
     }, [repo]),
   );
 

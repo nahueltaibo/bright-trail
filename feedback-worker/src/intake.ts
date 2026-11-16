@@ -1,11 +1,11 @@
-import { ReportSchema, type Report } from '@bright-trail/shared';
+import { REPORT_CAPTURE_MAX_BYTES, ReportSchema, type Report } from '@bright-trail/shared';
 import type { D1Database } from '@cloudflare/workers-types';
 import { json, type Env } from './env';
 
 export const LIMITS = {
   reportsPerIpPerHour: 30,
   reportBytes: 32 * 1024,
-  captureBytes: 400 * 1024,
+  captureBytes: REPORT_CAPTURE_MAX_BYTES,
   reportsPerDay: 5000,
   captureBytesPerDay: 500 * 1024 * 1024,
 };

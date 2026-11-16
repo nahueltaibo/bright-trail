@@ -45,6 +45,8 @@ jobs:
       GH_TOKEN: ${{ github.token }}
       # Where the app downloads content packs. The OTA update and the APK both bake it in.
       EXPO_PUBLIC_CONTENT_URL: ${{ vars.EXPO_PUBLIC_CONTENT_URL }}
+      # Where flagged reports upload. Optional: without it, reports wait on the device.
+      EXPO_PUBLIC_FEEDBACK_URL: ${{ vars.EXPO_PUBLIC_FEEDBACK_URL }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0

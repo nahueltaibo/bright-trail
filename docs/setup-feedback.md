@@ -99,6 +99,16 @@ curl -H "Authorization: Bearer $FEEDBACK_ADMIN_TOKEN" "$FEEDBACK_URL/admin/repor
 
 A wrong token answers `401`.
 
+## 8. Point the App at It
+
+Save the Worker's URL from step 7 as a repo variable, with no trailing path:
+
+```sh
+gh variable set EXPO_PUBLIC_FEEDBACK_URL --body "https://bright-trail-feedback.<subdomain>.workers.dev"
+```
+
+The next APK and OTA update bake it in. It's optional: without it, the app keeps flagged reports queued on the device and uploads them once a build has the URL. For a local run, set it in the shell before `npm run dev`, such as `http://localhost:8787` for the local Worker below.
+
 ## Admin Page
 
 Open `/admin` on the Worker, like `https://bright-trail-feedback.<subdomain>.workers.dev/admin`. Locally it's `http://localhost:8787/admin`, with the token from `.dev.vars`. See [Run It Locally](#run-it-locally).

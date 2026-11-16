@@ -4,6 +4,8 @@ import { IdSchema, IsoDateTimeSchema, NonEmptyTextSchema } from './common';
 import { ItemSchema } from './item';
 
 export const REPORT_COMMENT_MAX = 500;
+/** The largest capture the Worker takes. The app drops a capture it can't fit under this. */
+export const REPORT_CAPTURE_MAX_BYTES = 400 * 1024;
 
 const NullableTextSchema = NonEmptyTextSchema.nullable();
 

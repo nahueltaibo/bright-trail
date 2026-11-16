@@ -6,7 +6,7 @@ import { font, radius, shadow } from '../design/tokens';
 import { FlagButton, KidButton, ReplayButton } from './controls';
 import { QuitButton } from './quit';
 import { colors, fontSizeFor, useLayout } from './theme';
-import type { FlagTarget, Narrate } from './types';
+import type { FlagHandler, Narrate } from './types';
 import { ReadAlong } from './ReadAlong';
 import { FitVisual } from './VisualView';
 import { Text } from '../design/Text';
@@ -14,7 +14,7 @@ import { Text } from '../design/Text';
 export type StoryCardViewerProps = {
   nugget: StoryNugget;
   narrate?: Narrate;
-  onFlag?: (target: FlagTarget) => void;
+  onFlag?: FlagHandler;
   /** The child tapped "done" on the last card. */
   onDone?: () => void;
 };
