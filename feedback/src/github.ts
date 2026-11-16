@@ -9,9 +9,11 @@ export const runGh: Gh = (args, input) =>
     const child = spawn(process.env.GH_BIN ?? 'gh', args, { stdio: ['pipe', 'pipe', 'pipe'] });
     let stdout = '';
     let stderr = '';
-    child.stdout.on('data', (chunk) => (stdout += chunk));
-    child.stderr.on('data', (chunk) => (stderr += chunk));
+    child.stdout.setEncoding('utf8').on('data', (chunk: string) => (stdout += chunk));
+    child.stderr.setEncoding('utf8').on('data', (chunk: string) => (stderr += chunk));
     child.on('error', reject);
+    // gh can exit before reading stdin. The exit code still reports what went wrong.
+    child.stdin.on('error', () => {});
     child.on('close', (code) =>
       code === 0
         ? resolve(stdout)
