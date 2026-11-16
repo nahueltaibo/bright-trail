@@ -1,0 +1,21 @@
+{
+  "name": "@bright-trail/feedback-worker",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "wrangler deploy --dry-run --outdir dist",
+    "test": "vitest run",
+    "typecheck": "tsc -p . && tsc -p test",
+    "deploy": "node scripts/deploy.mjs"
+  },
+  "dependencies": {
+    "@bright-trail/shared": "*",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^5.20261116.1",
+    "wrangler": "4.163.0"
+  }
+}

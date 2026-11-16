@@ -8,6 +8,7 @@ It's an npm workspaces monorepo:
 
 - `app/` — Expo (React Native, TypeScript) app with Expo Router. Screens live in `app/src/app/`.
 - `content/` — Node + TypeScript build scripts, run with `tsx`.
+- `feedback-worker/` — Cloudflare Worker that takes tester reports. See [docs/setup-feedback.md](docs/setup-feedback.md).
 - `shared/` — Zod schemas and inferred types for the content bundle, mastery, attempts, and child profiles. Both sides import it as `@bright-trail/shared`. A sample bundle lives at `shared/fixtures/sample-bundle.json`.
 
 ## Getting started
@@ -39,7 +40,7 @@ Run these from the root:
 - `npm run content:sources` — fetch every subject but math from the Ontario curriculum API into `content/sources/<subject>/`. Add `-- --subject science` for one.
 - `npm run content:graph` — build the skill graph from `content/sources/` (math, science, social studies, and health). It calls Claude through the Claude Code CLI in headless mode, so it runs on your Claude Code login with no API key. Set `LLM_BACKEND=sdk` to call the API with `ANTHROPIC_API_KEY` instead. Writes `content/out/skills.json` and one `skills-report*.md` per subject. Responses cache in `content/cache/llm/`, so a rerun only calls the API for prompts that changed.
 - `npm run content:generate` — write a story and 15 items per skill through the same CLI and cache, check them, and build `content/out/bundle.json` and `content/out/content-report.md`. Failing skills regenerate with the reasons up to 2 times. It covers the targets in `content/bundle-scope.json` plus every skill they depend on. Pass `-- --all` for the whole graph. If the usage limit hits, it stops and keeps what's done: rerun to resume. Pass `-- --pilot` for the 6 pilot skills and `content/out/pilot-report.md`, or `-- --skills id,id` for a few. Pass `-- --offline` to use only cached responses: a miss fails that skill instead of calling the CLI. Hand fixes live in `content/content-edits.json`. Each one holds the old values and a reason, applies after review, and fails the skill if the content changed under it.
-- `npm test` — Vitest in `shared/` and `content/`, jest-expo in `app/`.
+- `npm test` — Vitest in `shared/`, `content/`, and `feedback-worker/`, jest-expo in `app/`.
 - `npm run typecheck` — `tsc` in every package.
 - `npm run lint` — ESLint across the repo.
 - `npm run format` — Prettier writes fixes. `npm run format:check` only reports.
