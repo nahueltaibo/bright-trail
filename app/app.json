@@ -2,7 +2,7 @@
   "expo": {
     "name": "BrightTrail",
     "slug": "bright-trail",
-    "version": "3.0.0",
+    "version": "4.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
@@ -39,11 +39,6 @@
       "fallbackToCacheTimeout": 0,
       "requestHeaders": {
         "expo-channel-name": "production"
-      },
-      "codeSigningCertificate": "./certs/certificate.pem",
-      "codeSigningMetadata": {
-        "keyid": "main",
-        "alg": "rsa-v1_5-sha256"
       }
     }
   }
