@@ -14,5 +14,7 @@
       "migrations_dir": "migrations",
     },
   ],
+  // Daily retention: src/retention.ts.
+  "triggers": { "crons": ["0 4 * * *"] },
   "r2_buckets": [{ "binding": "CAPTURES", "bucket_name": "bright-trail-feedback-captures" }],
 }

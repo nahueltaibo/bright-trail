@@ -25,7 +25,7 @@ Context for coding agents working in this repo. Read [README.md](README.md) for 
 
 ## Code Map
 
-- `feedback-worker/` — the Cloudflare Worker that takes tester reports. `POST /v1/reports` takes a multipart `report` part, checked with `ReportSchema`, and an optional PNG or JPEG `capture`. It keeps reports in D1 and captures in a private R2 bucket. Its guards: 30 requests per IP per hour, 32 KB reports, 400 KB captures, and 5,000 reports or 500 MB of captures per UTC day. A retried id answers 200 and stores nothing. Tests run the handler against Miniflare's D1 and R2 through `getPlatformProxy`. Schema changes go in a new file in `feedback-worker/migrations/`.
+- `feedback-worker/` — the Cloudflare Worker that takes tester reports. `POST /v1/reports` takes a multipart `report` part, checked with `ReportSchema`, and an optional PNG or JPEG `capture`. It keeps reports in D1 and captures in a private R2 bucket. Its guards: 30 requests per IP per hour, 32 KB reports, 400 KB captures, and 5,000 reports or 500 MB of captures per UTC day. A retried id answers 200 and stores nothing. `/admin/reports` and `/admin/captures/:id` sit behind the `FEEDBACK_ADMIN_TOKEN` bearer secret. A daily Cron Trigger deletes old reports and captures. [docs/setup-feedback.md](docs/setup-feedback.md) has the routes and retention rules. Tests run the handler against Miniflare's D1 and R2 through `getPlatformProxy`. Schema changes go in a new file in `feedback-worker/migrations/`.
 - `shared/src/engine/` — learner engine: mastery, unlocks, next step. Pure TypeScript.
 - `shared/src/placement/` — adaptive placement probe.
 - `shared/src/speech/` — `toSpeech` reads math formatting aloud.
@@ -104,7 +104,7 @@ CI needs these repo secrets:
 - The release key as `RELEASE_KEYSTORE` (base64), `RELEASE_STORE_PASSWORD`, `RELEASE_KEY_ALIAS`, and `RELEASE_KEY_PASSWORD`.
 - An R2 API token with write access to the bucket, as `R2_ACCOUNT_ID`, `R2_ACCESS_KEY_ID`, `R2_SECRET_ACCESS_KEY`, and `R2_BUCKET`. Until all four are set, CI skips the upload with a warning. Setting only some fails the run. [docs/setup-r2.md](docs/setup-r2.md) shows where each value comes from.
 
-A separate `deploy-feedback` job applies D1 migrations and deploys the feedback Worker. It needs `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` as secrets, and the `FEEDBACK_D1_DATABASE_ID` repo variable. Until all three are set, it skips with a warning. Setting only some fails it. [docs/setup-feedback.md](docs/setup-feedback.md) shows where each comes from.
+A separate `deploy-feedback` job applies D1 migrations and deploys the feedback Worker. It needs `CLOUDFLARE_ACCOUNT_ID` and `CLOUDFLARE_API_TOKEN` as secrets, and the `FEEDBACK_D1_DATABASE_ID` repo variable. Until all three are set, it skips with a warning. Setting only some fails it. The deploy also ships the retention cron. The `FEEDBACK_ADMIN_TOKEN` Worker secret is set once with `wrangler secret put`, not by CI, and admin routes answer 401 until it is. [docs/setup-feedback.md](docs/setup-feedback.md) shows where each comes from.
 
 The OTA publish and the family build also need the content host's https URL as the `EXPO_PUBLIC_CONTENT_URL` repo variable, and refuse to run without it.
 
