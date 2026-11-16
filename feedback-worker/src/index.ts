@@ -1,14 +1,27 @@
-import { handleReport, type Env } from './intake';
+import type { ExecutionContext, ScheduledController } from '@cloudflare/workers-types';
+import { handleAdmin } from './admin';
+import { handleSignedCapture } from './captures';
+import { byMethod, json, type Env } from './env';
+import { handleReport } from './intake';
+import { runRetention } from './retention';
 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const { pathname } = new URL(request.url);
     if (pathname === '/v1/reports') {
-      if (request.method !== 'POST') {
-        return Response.json({ error: 'Use POST.' }, { status: 405, headers: { Allow: 'POST' } });
-      }
-      return handleReport(request, env);
+      return byMethod(request, { POST: () => handleReport(request, env) });
     }
-    return Response.json({ error: 'Not found.' }, { status: 404 });
+    if (pathname === '/admin' || pathname.startsWith('/admin/')) {
+      return handleAdmin(request, env, pathname);
+    }
+    const capture = /^\/captures\/([^/]+)$/.exec(pathname);
+    if (capture) {
+      return byMethod(request, { GET: () => handleSignedCapture(request, env, capture[1]) });
+    }
+    return json(404, { error: 'Not found.' });
+  },
+
+  async scheduled(controller: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {
+    ctx.waitUntil(runRetention(env, controller.scheduledTime));
   },
 };
