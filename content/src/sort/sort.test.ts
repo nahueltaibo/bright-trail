@@ -91,6 +91,15 @@ describe('acceptSorts', () => {
     });
   });
 
+  it('hides a card emoji that matches any bin, and keeps one that matches none', () => {
+    const accept = (emoji: string) =>
+      acceptSorts([brick], { scenes: [tagged(brick.id, { card: card('brick', emoji) })] }).scenes[
+        brick.id
+      ]?.card;
+    expect(accept('💧')).toEqual({ text: 'brick' });
+    expect(accept('🏠')).toEqual({ text: 'brick', emoji: '🏠' });
+  });
+
   it('rejects misfits, unknown bins, bins that are not the choices, and unsaid cards', () => {
     const items = ['a', 'b', 'c', 'd', 'e', 'f'].map((id) => ({ ...brick, id }));
     const { scenes, rejected } = acceptSorts(items, {

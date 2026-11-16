@@ -58,9 +58,9 @@ export type SortTagResult = {
   rejected: Record<string, string>;
 };
 
-/** The card without its emoji when its bin shows the same one, which would give the answer away. */
-function plainCard(card: Card, bin: Card): Card {
-  return card.emoji === bin.emoji ? { text: card.text } : card;
+/** The card without its emoji when a bin shows the same one, which would point to that bin. */
+function plainCard(card: Card, bins: readonly Card[]): Card {
+  return card.emoji && bins.some((b) => b.emoji === card.emoji) ? { text: card.text } : card;
 }
 
 /** The scene for a tagged item, with each bin named by its text turned into its index. */
@@ -76,7 +76,7 @@ function sceneFor(item: Item, t: TaggedSort): { scene?: SortScene; problems: str
     kind: 'sort',
     bins: t.bins.map(toCard),
     sorted: t.sorted.map(({ bin, ...c }) => ({ card: toCard(c), bin: binOf(bin) })),
-    card: plainCard(toCard(t.card), toCard(t.bins[binOf(answer)]!)),
+    card: plainCard(toCard(t.card), t.bins.map(toCard)),
     bin: binOf(answer),
   });
   if (!candidate.success) return { problems: candidate.error.issues.map((i) => i.message) };
