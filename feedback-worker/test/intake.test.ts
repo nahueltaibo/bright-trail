@@ -1,51 +1,8 @@
-import { readFile } from 'node:fs/promises';
-import { fileURLToPath } from 'node:url';
 import { afterAll, beforeAll, beforeEach, describe, expect, it } from 'vitest';
-import { getPlatformProxy, type PlatformProxy } from 'wrangler';
-import worker from '../src';
-import { LIMITS, type Env } from '../src/intake';
+import { LIMITS } from '../src/intake';
+import { item, png, sampleReport, startWorker, type TestWorker } from './helpers';
 
-const root = fileURLToPath(new URL('..', import.meta.url));
-
-const item = {
-  id: 'k-more-less-same-keypad-3',
-  skillId: 'k-more-less-same',
-  type: 'keypad',
-  difficulty: 2,
-  narration: 'Which number is less, 7 or 2? Type the smaller number.',
-  prompt: '7 or 2: less?',
-  why: '2 comes before 7 when we count. So 2 is less than 7.',
-  game: { kind: 'compare', ask: 'least', values: ['7', '2'] },
-  answer: 2,
-};
-
-function sampleReport(overrides: Record<string, unknown> = {}) {
-  return {
-    id: crypto.randomUUID(),
-    createdAt: '2026-11-16T14:30:00Z',
-    comment: 'The towers are the wrong height.',
-    target: { contentKind: 'item', contentId: item.id, cardIndex: null },
-    item,
-    skillId: item.skillId,
-    phase: 'check',
-    content: { bundleVersion: '2026.11.16-1', coreHash: 'a'.repeat(64), contentSchemaVersion: 5 },
-    app: { appVersion: '3.0.0', runtimeVersion: '3', updateId: null },
-    device: { platform: 'android', osVersion: '14', model: 'Samsung SM-X200' },
-    screen: { width: 800, height: 1280, scale: 1.5, fontScale: 1 },
-    settings: { readingMode: false, dyslexicFont: true },
-    hasCapture: false,
-    ...overrides,
-  };
-}
-
-const png = (size = 64) => {
-  const bytes = new Uint8Array(size);
-  bytes.set([0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a]);
-  return bytes;
-};
-
-// Real D1 and R2 from Miniflare, with the Worker's handler called directly.
-let proxy: PlatformProxy<Env>;
+let worker: TestWorker;
 
 /** Posts a multipart report the way the app does. A string report goes up as is. */
 async function post(
@@ -63,42 +20,28 @@ async function post(
   });
 }
 
-function call(path: string, init: RequestInit = {}) {
-  return worker.fetch(new Request(`http://localhost${path}`, init), proxy.env);
-}
-
 async function send(init: {
   method?: string;
   body?: Uint8Array<ArrayBuffer>;
   headers?: Record<string, string>;
 }) {
-  const res = await call('/v1/reports', { method: 'POST', ...init });
+  const res = await worker.call('/v1/reports', { method: 'POST', ...init });
   return { status: res.status, body: (await res.json()) as Record<string, unknown> };
 }
 
-const db = async () => proxy.env.DB;
+const db = async () => worker.env.DB;
 const today = () => new Date().toISOString().slice(0, 10);
 
 beforeAll(async () => {
-  proxy = await getPlatformProxy<Env>({ configPath: `${root}/wrangler.jsonc`, persist: false });
-  const sql = await readFile(`${root}/migrations/0001_reports.sql`, 'utf8');
-  const statements = sql
-    .replace(/--.*$/gm, '')
-    .split(';')
-    .map((s) => s.trim())
-    .filter(Boolean);
-  for (const statement of statements) await proxy.env.DB.prepare(statement).run();
+  worker = await startWorker();
 }, 60_000);
 
 afterAll(async () => {
-  await proxy?.dispose();
+  await worker?.dispose();
 });
 
 beforeEach(async () => {
-  const database = await db();
-  await database.batch(
-    ['reports', 'intake_hits', 'daily_usage'].map((t) => database.prepare(`DELETE FROM ${t}`)),
-  );
+  await worker.reset();
 });
 
 describe('POST /v1/reports', () => {
@@ -118,7 +61,7 @@ describe('POST /v1/reports', () => {
       capture_key: `captures/${report.id}.png`,
     });
     expect(JSON.parse(row!.report)).toEqual(report);
-    const object = await proxy.env.CAPTURES.get(`captures/${report.id}.png`);
+    const object = await worker.env.CAPTURES.get(`captures/${report.id}.png`);
     expect(object?.size).toBe(100);
     expect(object?.httpMetadata?.contentType).toBe('image/png');
     const usage = await database.prepare('SELECT * FROM daily_usage').first();
@@ -129,7 +72,7 @@ describe('POST /v1/reports', () => {
     const report = sampleReport({ hasCapture: true });
     const res = await post(report, { capture: new Uint8Array([0xff, 0xd8, 0xff, 0xe0, 1, 2]) });
     expect(res.status).toBe(201);
-    expect(await proxy.env.CAPTURES.head(`captures/${report.id}.jpg`)).not.toBe(null);
+    expect(await worker.env.CAPTURES.head(`captures/${report.id}.jpg`)).not.toBe(null);
   });
 
   it('answers 200 to a retried id and keeps one report', async () => {
@@ -237,7 +180,7 @@ describe('POST /v1/reports', () => {
   });
 
   it('answers 405 to other methods and 404 to other paths', async () => {
-    expect((await call('/v1/reports')).status).toBe(405);
-    expect((await call('/admin/reports')).status).toBe(404);
+    expect((await worker.call('/v1/reports')).status).toBe(405);
+    expect((await worker.call('/v2/reports')).status).toBe(404);
   });
 });

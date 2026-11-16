@@ -1,10 +1,6 @@
 import { ReportSchema, type Report } from '@bright-trail/shared';
-import type { D1Database, R2Bucket } from '@cloudflare/workers-types';
-
-export interface Env {
-  DB: D1Database;
-  CAPTURES: R2Bucket;
-}
+import type { D1Database } from '@cloudflare/workers-types';
+import { json, type Env } from './env';
 
 export const LIMITS = {
   reportsPerIpPerHour: 30,
@@ -22,9 +18,6 @@ const CAPTURE_TYPES = [
   { ext: 'png', type: 'image/png', magic: [0x89, 0x50, 0x4e, 0x47, 0x0d, 0x0a, 0x1a, 0x0a] },
   { ext: 'jpg', type: 'image/jpeg', magic: [0xff, 0xd8, 0xff] },
 ];
-
-const json = (status: number, body: object, headers?: HeadersInit) =>
-  Response.json(body, { status, headers });
 
 /** POST /v1/reports: a multipart body with a `report` JSON part and an optional `capture` image. */
 export async function handleReport(request: Request, env: Env): Promise<Response> {
