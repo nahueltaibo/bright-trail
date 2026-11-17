@@ -16,6 +16,8 @@ export type CaptureResult =
 export type CaptureFiles = {
   /** Bytes in the file, or null when it's gone. */
   size(uri: string): number | null;
+  /** The file as a multipart upload part, or null when it's gone. */
+  uploadPart(uri: string): unknown;
   /** Deletes the file if it's there. */
   remove(uri: string): void;
   /** Moves a capture out of the cache directory, named `name`, and returns its new URI. */

@@ -17,6 +17,7 @@ function setup(sizes: number[]) {
     },
     files: {
       size: (uri) => sizes[Number(/(\d+)\./.exec(uri)![1]) - 1],
+      uploadPart: () => null,
       remove: (uri) => void removed.push(uri),
       keep: async (uri) => uri,
     },

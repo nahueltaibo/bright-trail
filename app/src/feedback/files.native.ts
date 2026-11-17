@@ -7,6 +7,11 @@ export const captureFiles: CaptureFiles = {
     const file = new File(uri);
     return file.exists ? file.size : null;
   },
+  // Expo's fetch takes a File, which has bytes(), and refuses React Native's { uri } parts.
+  uploadPart(uri) {
+    const file = new File(uri);
+    return file.exists ? file : null;
+  },
   remove(uri) {
     const file = new File(uri);
     if (file.exists) file.delete();
