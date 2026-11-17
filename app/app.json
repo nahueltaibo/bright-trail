@@ -2,7 +2,7 @@
   "expo": {
     "name": "BrightTrail",
     "slug": "bright-trail",
-    "version": "4.0.0",
+    "version": "5.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

@@ -8,6 +8,7 @@ import { loadContent } from '../../content';
 import { effectiveGrade } from '../../parent/children';
 import { AboutSection } from '../../parent/components/AboutSection';
 import { ContentSection } from '../../parent/components/ContentSection';
+import { FeedbackSection } from '../../parent/components/FeedbackSection';
 import {
   Button,
   colors,
@@ -147,6 +148,7 @@ export default function ParentHomeScreen() {
           <>
             {flags}
             {exportSection}
+            <FeedbackSection />
             <AboutSection />
           </>
         }

@@ -9,6 +9,7 @@ import { captureFiles } from './files';
 import { queueReport, type FlagDraft } from './queue';
 import type { ReportTarget } from './report';
 import { ReportSheet } from './ReportSheet';
+import { noteFeedback } from './status';
 import { syncFeedback } from './sync';
 
 type Pending = { draft: FlagDraft; flag: FlagTarget; resolve: (sent: boolean) => void };
@@ -93,6 +94,7 @@ export function useFlagReport({ repo, childId, describe, saveFlag }: FlagReportO
         await queueReport(repo, p.draft, comment);
       } catch (e) {
         console.warn('Could not queue the report', e);
+        noteFeedback(`Could not queue the report: ${e instanceof Error ? e.message : String(e)}`);
         if (p.draft.capturePath) removeQuietly(p.draft.capturePath);
         return;
       }

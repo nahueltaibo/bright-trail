@@ -4,6 +4,7 @@ import type { Repository } from '../storage/repository';
 import type { QueuedReport } from '../storage/report';
 import type { CaptureFiles } from './captureTypes';
 import { captureFiles } from './files';
+import { describeUpload, noteFeedback } from './status';
 
 /** What a sync needs from the outside world. Tests pass their own. */
 export type FeedbackDeps = {
@@ -69,6 +70,7 @@ export function syncFeedback(
       } while (again);
     } catch (e) {
       console.warn('Feedback sync failed', e);
+      noteFeedback(`Sync failed: ${e instanceof Error ? e.message : String(e)}`);
     } finally {
       running = null;
     }
@@ -77,7 +79,10 @@ export function syncFeedback(
 }
 
 async function syncOnce(repo: Repository, deps: FeedbackDeps) {
-  if (!deps.baseUrl) return;
+  if (!deps.baseUrl) {
+    noteFeedback('This build has no feedback URL, so reports stay on the device.');
+    return;
+  }
   const url = `${deps.baseUrl.replace(/\/+$/, '')}/v1/reports`;
   for (const queued of await repo.reports.listPending()) {
     const outcome = await upload(url, queued, deps);
@@ -100,6 +105,7 @@ async function upload(url: string, queued: QueuedReport, deps: FeedbackDeps): Pr
   if (capture && (status === 413 || status === 415)) {
     status = await post(url, queued.report, null, deps);
   }
+  noteFeedback(describeUpload(status));
   if (status === null || status === 408 || status === 429 || status >= 500) return 'retry';
   if (status >= 200 && status < 300) return 'sent';
   return 'rejected';
