@@ -467,6 +467,14 @@ describe('report queue', () => {
     expect(queued.attemptedAt).toBe('2026-11-16T14:31:00Z');
   });
 
+  it('counts pending and rejected reports', async () => {
+    expect(await repo.reports.counts()).toEqual({ pending: 0, rejected: 0 });
+    await repo.reports.enqueue(report(REPORT_A), null);
+    await repo.reports.enqueue(report(REPORT_B), null);
+    await repo.reports.markRejected(REPORT_B, '2026-11-16T14:32:00Z');
+    expect(await repo.reports.counts()).toEqual({ pending: 1, rejected: 1 });
+  });
+
   it('deletes a sent report and drops a rejected one from the pending list', async () => {
     await repo.reports.enqueue(report(REPORT_A), null);
     await repo.reports.enqueue(report(REPORT_B), null);

@@ -452,6 +452,15 @@ export function createRepository(db: SqlDatabase) {
       );
       return rows.map(toQueuedReport);
     },
+    /** How many reports wait to upload, and how many the Worker refused. */
+    async counts(): Promise<{ pending: number; rejected: number }> {
+      const rows = await db.getAllAsync<{ status: string; n: number }>(
+        'SELECT status, COUNT(*) AS n FROM reports GROUP BY status',
+        [],
+      );
+      const n = (s: string) => rows.find((row) => row.status === s)?.n ?? 0;
+      return { pending: n('pending'), rejected: n('rejected') };
+    },
     async recordAttempt(id: string, attemptedAt: string): Promise<void> {
       IsoDateTimeSchema.parse(attemptedAt);
       await db.runAsync('UPDATE reports SET attempted_at = ? WHERE id = ?', [attemptedAt, id]);
