@@ -1,6 +1,7 @@
 import type { Report } from '@bright-trail/shared';
 import { openRepository, type Repository } from '../storage/repository';
 import { openNodeSqliteDatabase } from '../storage/testing/nodeSqliteDatabase';
+import { lastFeedbackEvent } from './status';
 import { syncFeedback, type FeedbackDeps } from './sync';
 
 const REPORT_A = '6f1c2b1e-3a4d-4c55-9a0e-2f3b4c5d6e7f';
@@ -105,7 +106,8 @@ describe('syncFeedback', () => {
 
     await expect(syncFeedback(repo, deps)).resolves.toBeUndefined();
 
-    expect(calls).toHaveLength(1);
+    // A failed request tries once more without the capture before it gives up.
+    expect(calls).toHaveLength(answer instanceof Error ? 2 : 1);
     const pending = await repo.reports.listPending();
     expect(pending.map((q) => [q.report.id, q.attemptedAt])).toEqual([
       [REPORT_A, '2026-11-16T15:00:00.000Z'],
@@ -145,6 +147,20 @@ describe('syncFeedback', () => {
       expect(removed).toEqual(['file:///docs/a.png']);
     },
   );
+
+  it('sends the report without its capture when the upload with it fails on the device', async () => {
+    await repo.reports.enqueue(report(REPORT_A, { hasCapture: true }), 'file:///docs/a.png');
+    const { deps, calls } = setup((n) => (n === 1 ? new TypeError('Network request failed') : 201));
+
+    await syncFeedback(repo, deps);
+
+    expect(calls).toHaveLength(2);
+    expect(calls[1].parts).toEqual([['report', JSON.stringify(report(REPORT_A))]]);
+    expect(await repo.reports.listPending()).toEqual([]);
+    expect(lastFeedbackEvent()?.text).toBe(
+      'Report sent without its picture. With it: Network request failed',
+    );
+  });
 
   it('rejects a report the Worker refuses again without its capture', async () => {
     await repo.reports.enqueue(report(REPORT_A, { hasCapture: true }), 'file:///docs/a.png');
