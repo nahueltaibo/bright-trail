@@ -22,22 +22,11 @@ export type FeedbackDeps = {
   now?: () => Date;
 };
 
-/** React Native's FormData uploads a file from its URI, without reading it into JS. */
-async function nativeCapturePart(uri: string): Promise<unknown> {
-  if (captureFiles.size(uri) === null) return null;
-  const jpeg = /\.jpe?g$/i.test(uri);
-  return {
-    uri,
-    name: jpeg ? 'capture.jpg' : 'capture.png',
-    type: jpeg ? 'image/jpeg' : 'image/png',
-  };
-}
-
 export function defaultFeedbackDeps(): FeedbackDeps {
   return {
     baseUrl: process.env.EXPO_PUBLIC_FEEDBACK_URL,
     fetch: (url, init) => fetch(url, init),
-    capturePart: nativeCapturePart,
+    capturePart: async (uri) => captureFiles.uploadPart(uri),
     files: captureFiles,
   };
 }
