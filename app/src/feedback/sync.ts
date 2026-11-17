@@ -100,24 +100,34 @@ async function syncOnce(repo: Repository, deps: FeedbackDeps) {
 
 async function upload(url: string, queued: QueuedReport, deps: FeedbackDeps): Promise<Outcome> {
   const capture = queued.capturePath ? await deps.capturePart(queued.capturePath) : null;
-  let status = await post(url, queued.report, capture, deps);
-  // The capture can be what the Worker refuses, and the report is worth more without it than lost.
-  if (capture && (status === 413 || status === 415)) {
-    status = await post(url, queued.report, null, deps);
+  let answer = await post(url, queued.report, capture, deps);
+  // The capture can be what the Worker or the device's upload refuses, and the report is worth
+  // more without it than lost.
+  if (capture && (typeof answer === 'string' || answer === 413 || answer === 415)) {
+    const first = answer;
+    answer = await post(url, queued.report, null, deps);
+    if (typeof first === 'string' && typeof answer === 'number' && answer >= 200 && answer < 300) {
+      noteFeedback(`Report sent without its picture. With it: ${first}`);
+      return 'sent';
+    }
   }
-  noteFeedback(describeUpload(status));
-  if (status === null || status === 408 || status === 429 || status >= 500) return 'retry';
-  if (status >= 200 && status < 300) return 'sent';
+  if (typeof answer === 'string') {
+    noteFeedback(`Upload failed: ${answer}. Will retry.`);
+    return 'retry';
+  }
+  noteFeedback(describeUpload(answer));
+  if (answer === 408 || answer === 429 || answer >= 500) return 'retry';
+  if (answer >= 200 && answer < 300) return 'sent';
   return 'rejected';
 }
 
-/** The Worker's status, or null when no answer came in time. */
+/** The Worker's status, or why no answer came, such as a timeout or a failed request. */
 async function post(
   url: string,
   report: Report,
   capture: unknown,
   deps: FeedbackDeps,
-): Promise<number | null> {
+): Promise<number | string> {
   const body = new FormData();
   // Without a capture, lost since the flag or refused, the report says it has none.
   body.append('report', JSON.stringify(capture ? report : { ...report, hasCapture: false }));
@@ -138,8 +148,8 @@ async function post(
       timeout,
     ]);
     return response.status;
-  } catch {
-    return null;
+  } catch (e) {
+    return e instanceof Error ? e.message : String(e);
   } finally {
     clearTimeout(timer);
   }
